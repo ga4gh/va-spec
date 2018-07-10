@@ -30,7 +30,7 @@ somatic_interpretive:
     biomarkerClass: Predictive
     therapeuticContext: "Predicts sensitivity to Osimertinib in NSCLC"
     effect: responsive
-	levelOfEvidence: Teir 1, Level A
+    levelOfEvidence: Teir 1, Level A
 
 -----------------------------------------------------------------------------------------------
 
@@ -87,7 +87,7 @@ annotations: [
     type: MolecularConsequenceAnnotation  
     statement:
       - id: Statement004
-	subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
         predicate: RO:XXXXXXX (has_consequence)
         descriptor: SO:0001583 (missense)
 
@@ -100,8 +100,7 @@ annotations: [
         predicate: RO:XXXXXXX (has_consequence)
         descriptor: SO:0001587 (stop gained)
 ]
-		
-		
+	
 -----------------------------------------------------------------------------------------------
 
 
