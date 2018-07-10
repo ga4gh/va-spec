@@ -16,7 +16,7 @@ allele_descriptive:
     dnaPosition: Chr7: 55181378
     refseqTranscript: NM_005228.4:c.2369C>T	
     refseqProtein: NP_005219.2:p.Thr790Met
-	
+
 allele_interpretive:
   - somaticClassification: Unknown (since from literature)
     dnaSubAndPosition: c.2369C>T
@@ -24,16 +24,16 @@ allele_interpretive:
     variantType: Single Nucleotide Variant
     variantConsequence: Missense
     pmids: [26720284, 25923549]
-	
+
 somatic_interpretive:
   - diseaseType: C0278506 (metastatic non-small cell lung cancer)
     biomarkerClass: Predictive
     therapeuticContext: "Predicts sensitivity to Osimertinib in NSCLC"
     effect: responsive
 	levelOfEvidence: Teir 1, Level A
-	
+
 -----------------------------------------------------------------------------------------------
-	
+
 # SECTION II: The example data modelled using the prototype GA4GH-VA model.
 
 # VMC-based representation of the variant
@@ -56,8 +56,8 @@ annotations: [
   - identifier: Annotation001
     type: TreatmentResponseAnnotation  
     statement:
-	  - id:Statement001
-	    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+      - id:Statement001
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
         predicate: RO:XXXXXXX (confers_response_to) # relation does not currently exist in the Relation Ontology, but may be added.
         descriptor: CHEBI:90943 (Osimertinib)
         qualifier: UMLS:C0278506 (NSCLC)
@@ -68,8 +68,8 @@ annotations: [
   - identifier: Annotation002
     type: AffectdFeatureAnnotation  
     statement:
-	  - id: Statement002
-	    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+      - id: Statement002
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
         predicate: RO:0002525(is_subsequence_of)
         descriptor: NCBIGene:1956 (human EGFR gene)
 
@@ -77,8 +77,8 @@ annotations: [
   - identifier: Annotation003
     type: VariantTypeAnnotation 
     statement:
-	  - id: Statement003
-	    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+      - id: Statement003
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
         predicate: RO:XXXXXXX (variant_type) # relation does not currently exist in the Relation Ontology, but may be added.
         descriptor: SO:0001483 (SNV)
 
@@ -86,8 +86,8 @@ annotations: [
   - identifier: Annotation004
     type: MolecularConsequenceAnnotation  
     statement:
-	  - id: Statement004
-	    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+      - id: Statement004
+	subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
         predicate: RO:XXXXXXX (has_consequence)
         descriptor: SO:0001583 (missense)
 
@@ -95,8 +95,8 @@ annotations: [
   - identifier: Annotation005
     type: MolecularConsequenceAnnotation  
     statement:
-	  - id: Statement005
-	    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+      - id: Statement005
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
         predicate: RO:XXXXXXX (has_consequence)
         descriptor: SO:0001587 (stop gained)
 ]
@@ -167,7 +167,7 @@ annotations: [
                 type: SEPIO:0000173 (study finding)
                 description: "This study summarized 9 EGFR-mutant patients from two clinical trials involving rociletinib (NCT01526928) and subsequent osimertinib (NCT01802632). 8 were T790M-positive prior to treatment with osimertinib. 6 transitioned directly from rociletinib to osimertinib. 3 patients achieved PR and 4 achieved SD. The median PFS was 208 days (95% CI, 41-208 days). Among 6 patients who transitioned directly from rociletinib to osimertinib all derived clinical benefit from osimertinib with either prolonged SD or PR."
             ]
-		
+
         - id: EvLn003
             type: ECO:XXXXXXX (pre-clinical study evidence)
             evidenceStrength: "3-star"
@@ -191,5 +191,4 @@ annotations: [
                 type: SEPIO:0000173 (study finding)
                 description: "Cell line, xenograft, and transgenic models were used to establish Osimertinib as an inhibitor of both EGFR mutation sensitizing (L858M, del exon 19) and T790M resistance mutants. Preclinically, the drug inhibits signaling pathways and cellular growth in both EGFRm(+) and EGFRm(+)/T790M(+) mutant cell lines in vitro, with lower activity against wild-type EGFR lines. Sustained tumor regression was observed in EGFR-mutant tumor xenograft and transgenic models. Treatment of 2 patients with advanced EGFRm(+) T790M(+) NSCLC was reported as proof of principle."
             ]
-		]
-		
+        ]
