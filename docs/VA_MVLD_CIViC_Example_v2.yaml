@@ -52,42 +52,79 @@ variant:
 annotations: [
 
 #Annotation representing the predictive somatic interpretation
-  - identifier: Annotation001
+  - id: Annotation001
     type: TreatmentResponseAnnotation  
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:XXXXXXX (confers_response_to) # relation does not currently exist in the Relation Ontology, but may be added.
-    descriptor: CHEBI:90943 (Osimertinib)
-    qualifier: UMLS:C0278506 (NSCLC)
-    evidenceSource: [PMID:26720284, PMID:25923549]
-    evidenceLevel: SEPIO:XXXXXXX (TierI-A)
+    subject: 
+        - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+          label: NM_005228.4:c.2369C>T
+    predicate: 
+        - id: RO:XXXXXXX # relation does not currently exist in the Relation Ontology, but may be added.
+          label: confers_response_to
+    descriptor: 
+        - id: CHEBI:90943
+          label: Osimertinib
+    qualifier: 
+        - id: UMLS:C0278506
+          label: NSCLC
+    evidenceSource: [
+      - id: PMID:26720284
+      - id: PMID:25923549
+      ]
+    evidenceLevel: 
+      - id: SEPIO:XXXXXXX
+        label: TierI-A
 
 #Annotation describing features affected by the variant (here, a gene)
-  - identifier: Annotation002
+  - id: Annotation002
     type: AffectdFeatureAnnotation  
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:0002525(is_subsequence_of)
-    descriptor: NCBIGene:1956 (human EGFR gene)
+    subject: 
+      - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+        label: NM_005228.4:c.2369C>T)
+    predicate: 
+      - id: RO:0002525
+        label:is_subsequence_of
+    descriptor: 
+      - id: NCBIGene:1956
+        label: human EGFR gene
 
 #Annotation describing the type of the variant (using the Sequence Ontology)
-  - identifier: Annotation003
+  - id: Annotation003
     type: VariantTypeAnnotation 
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:XXXXXXX (variant_type) # relation does not currently exist in the Relation Ontology, but may be added.
-    descriptor: SO:0001483 (SNV)
+    subject: 
+      -id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+        label: NM_005228.4:c.2369C>T
+    predicate: 
+      - id: RO:XXXXXXX  # relation does not currently exist in the Relation Ontology, but may be added.
+        label: variant_type 
+    descriptor:
+      - id: SO:0001483
+        label: SNV
 
 #Annotation describing a molecular consequence of the variant
   - identifier: Annotation004
     type: MolecularConsequenceAnnotation  
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:XXXXXXX (has_consequence)
-    descriptor: SO:0001583 (missense)
+    subject: 
+      - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+        label: NM_005228.4:c.2369C>T
+    predicate: 
+      - id: RO:XXXXXXX
+        label: has_consequence
+    descriptor: 
+      - id: SO:0001583
+        label: missense
 
 #Annotation describing a molecular consequence of the variant		
-  - identifier: Annotation005
+  - id: Annotation005
     type: MolecularConsequenceAnnotation  
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:XXXXXXX (has_consequence)
-    descriptor: SO:0001587 (stop gained)
+    subject: 
+      - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+        label: NM_005228.4:c.2369C>T
+    predicate: 
+      - id: RO:XXXXXXX 
+        label: has_consequence
+    descriptor: 
+      - id: SO:0001587
+        label: stop gained
 ]
 
 
@@ -95,33 +132,60 @@ annotations: [
 
   - identifier: Annotation001
     type: TreatmentResponseAnnotation  
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:XXXXXXX (confers_response_to)
-    descriptor: CHEBI:90943 (Osimertinib)
-    qualifiers: [UMLS:C0278506 (NSCLC), GENO:00008 (somatic)]
-    evidenceSource: [PMID:26720284, PMID:25923549]
-    evidenceLevel: SEPIO:XXXXXXX (TierI-A)
+    subject: 
+      - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+        label: NM_005228.4:c.2369C>T
+    predicate: 
+      - id: RO:XXXXXX
+        label: confers_response_to
+    descriptor: 
+      - id: CHEBI:90943
+        albel: Osimertinib
+    qualifier:
+      - id: UMLS:C0278506
+        label: NSCLC
+      - id: GENO:00008
+        label: somatic
+    evidenceSource: [
+      - id: PMID:2672028
+      - id: PMID:25923549
+      ]
+    evidenceLevel:
+      - id: SEPIO:XXXXXX
+        label: TierI-A
         
-    evidenceLines: [
+    evidenceLine: [
       - id: EvLn001
         type: ECO:0000180 (clinical study evidence)
-        evidenceStrength: "4-star"
-        supportingReferences: [PMID:25923549]
-        contributions: [
+        evidenceStrength: 
+          - id: SEPIO:XXXXXXX  
+            label: 4-star
+        supportingReference: [
+          - id: PMID:25923549
+          ]
+        contribution: [
           - id: Contrib001
             type: SEPIO:0000158 (contribution)
-            hasAgent: CIVICUser:15 (Malachi Griffith)
-            role: SEPIO:0000153 (creator)
+            hasAgent: 
+              - id: CIVICUser:15
+                label: Malachi Griffith
+            role: 
+              - id: SEPIO:0000153
+                label: creator
             date: "2016-01-26T19:37:06.770Z"
-            agentFor: http://civicdb.org (CIViC)               
+            agentFor: http://civicdb.org               
           - id: Contrib002
             type: SEPIO:0000158 (contribution)
-            hasAgent: CIVICUser:3 (Obi Griffith)
-            role: SEPIO:0000155 (approver)
+            hasAgent: 
+              - id: CIVICUser:3
+                label: Obi Griffith
+            role: 
+              - id: SEPIO:0000155
+                label: approver
             date: "2016-02-03T22:54:31.387Z"
-            agentFor: http://civicdb.org (CIViC)
+            agentFor: http://civicdb.org 
         ]
-        evidenceItems: [
+        evidenceItem: [
           - id: EI001
             type: SEPIO:0000173 (study finding)
             description: "This phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291). The overall objective tumor response rate was 51%. Among 127 patients with EGFR T790M who could be evaluated for response, the response rate was 61% (95% CI, 52 to 70). In contrast, among 61 patients without EGFR T790M, the response rate was 21% (95% CI, 12 to 34). The median progression-free survival was 9.6 months in EGFR T790M-positive patients and 2.8 months in EGFR T790M-negative patients."
@@ -129,23 +193,35 @@ annotations: [
                 
     - id: EvLn002
       type: ECO:0000180 (clinical study evidence)
-      evidenceStrength: "3-star"
-      supportingReferences: [PMID:26720284]
-      contributions: [
+      evidenceStrength:
+        - id: SEPIO:XXXXXXX  
+          label: 3-star"
+      supportingReference: [
+        - id: PMID:26720284
+        ]
+      contribution: [
         - id: Contrib003
           type: SEPIO:0000158 (contribution)
-          hasAgent: CIVICUser:15 (Malachi Griffith)
-          role: SEPIO:0000153 (creator)
+          hasAgent: 
+            - id: CIVICUser:15
+              label: Malachi Griffith
+          role: 
+            - id: SEPIO:0000153
+              label: creator
           date: "2016-01-26T19:51:58.427Z"
-          agentFor: http://civicdb.org (CIViC)               
+          agentFor: http://civicdb.org               
         - id: Contrib004
           type: SEPIO:0000158 (contribution)
-          hasAgent: CIVICUser:6 (Kilannin Krysiak)
-          role: SEPIO:0000155 (approver)
+          hasAgent: 
+            - id: CIVICUser:61  
+              label: Kilannin Krysiak
+          role: 
+            - id: SEPIO:0000155
+              label: approver
           date: "2016-02-11T21:39:47.552Z"
-          agentFor: http://civicdb.org (CIViC)
+          agentFor: http://civicdb.org
         ]
-      evidenceItems: [
+      evidenceItem: [
         - id: EI002
           type: SEPIO:0000173 (study finding)
           description: "This study summarized 9 EGFR-mutant patients from two clinical trials involving rociletinib (NCT01526928) and subsequent osimertinib (NCT01802632). 8 were T790M-positive prior to treatment with osimertinib. 6 transitioned directly from rociletinib to osimertinib. 3 patients achieved PR and 4 achieved SD. The median PFS was 208 days (95% CI, 41-208 days). Among 6 patients who transitioned directly from rociletinib to osimertinib all derived clinical benefit from osimertinib with either prolonged SD or PR."
@@ -153,23 +229,35 @@ annotations: [
 
     - id: EvLn003
       type: ECO:XXXXXXX (pre-clinical study evidence)
-      evidenceStrength: "3-star"
-      supportingReferences: [PMID:24893891]
-      contributions: [
+      evidenceStrength:
+        - id: SEPIO:XXXXXXX
+          label: 3-star
+      supportingReference: [
+        - id: PMID:24893891
+        ]
+      contribution: [
         - id: Contrib004
           type: SEPIO:0000158 (contribution)
-          hasAgent: CIVICUser:15 (Malachi Griffith)
-          role: SEPIO:0000153 (creator)
+          hasAgent:
+            - id: CIVICUser:15
+              label: Malachi Griffith
+          role: 
+            - id: SEPIO:0000153 
+              label: creator
           date: "2016-01-26T19:15:41.426Z"
-          agentFor: http://civicdb.org (CIViC)               
+          agentFor: http://civicdb.org               
         - id: Contrib005
           type: SEPIO:0000158 (contribution)
-          hasAgent: CIVICUser:6 (Kilannin Krysiak)
-          role: SEPIO:0000155 (approver)
+          hasAgent: 
+            - id: CIVICUser:6 
+              label: Kilannin Krysiak
+          role: 
+            - id: SEPIO:0000155
+              label: approver
           date: "2016-01-26T19:15:41.426Z"
-          agentFor: http://civicdb.org (CIViC)
+          agentFor: http://civicdb.org
         ]
-      evidenceItems: [
+      evidenceItem: [
         - id: EI004
           type: SEPIO:0000173 (study finding)
           description: "Cell line, xenograft, and transgenic models were used to establish Osimertinib as an inhibitor of both EGFR mutation sensitizing (L858M, del exon 19) and T790M resistance mutants. Preclinically, the drug inhibits signaling pathways and cellular growth in both EGFRm(+) and EGFRm(+)/T790M(+) mutant cell lines in vitro, with lower activity against wild-type EGFR lines. Sustained tumor regression was observed in EGFR-mutant tumor xenograft and transgenic models. Treatment of 2 patients with advanced EGFRm(+) T790M(+) NSCLC was reported as proof of principle."
@@ -182,14 +270,26 @@ annotations: [
 
   - identifier: Annotation001
     type: TreatmentResponseAnnotation  
-    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
-    predicate: RO:XXXXXXX (confers_response_to)
-    descriptor: CHEBI:90943 (Osimertinib)
-    qualifiers: [UMLS:C0278506 (NSCLC), GENO:00008 (somatic)] 
-    evidenceLines: [
+    subject: 
+      - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+        label: NM_005228.4:c.2369C>T
+    predicate: 
+      - id: RO:XXXXXX
+        label: confers_response_to
+    descriptor: 
+      - id: CHEBI:90943
+        albel: Osimertinib
+    qualifier:
+      - id: UMLS:C0278506
+        label: NSCLC
+      - id: GENO:00008
+        label: somatic
+    evidenceLine: [
       - id: EvLn001
-        type: ECO:0000180 (clinical study evidence) 
-        evidenceItems: [
+        type: 
+          - id: ECO:0000180
+            albel: clinical study evidence
+        evidenceItem: [
           - id: EI001
             type: SEPIO:0000173 (study finding)
             description: "This phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291). The overall objective tumor response rate was 51%. Among 127 patients with EGFR T790M who could be evaluated for response, the response rate was 61% (95% CI, 52 to 70). In contrast, among 61 patients without EGFR T790M, the response rate was 21% (95% CI, 12 to 34). The median progression-free survival was 9.6 months in EGFR T790M-positive patients and 2.8 months in EGFR T790M-negative patients."
@@ -199,7 +299,9 @@ annotations: [
                 value: "61%"
                 isAbout: 
                   - id: StudyCohort001
-                    role: OBI:XXXXXXX (test role)
+                    role: 
+                      - id: OBI:XXXXXXX
+                        label: test role
                     size: "127"
               - id: DataItem002
                 type: IAO:XXXXXXX (tumor response rate)
@@ -213,14 +315,18 @@ annotations: [
                 value: "9.6 months"
                 isAbout: 
                   - id: StudyCohort001
-                    role: OBI:XXXXXXX (test role)
+                    role: 
+                      - id: OBI:XXXXXXX
+                        label: test role
                     size: "61"
               - id: DataItem004
                 type: IAO:XXXXXXX (progression-free survival time)
                 value: "2.8 months"
                 isAbout: 
                   - id: StudyCohort002
-                    role: OBI:XXXXXXX (control role)
+                    role: 
+                      - id: OBI:XXXXXXX
+                        label: control role
                     size: "61"              
         ]
     
