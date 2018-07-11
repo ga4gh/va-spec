@@ -1,9 +1,8 @@
 schema: ga4gh-_va_prototype
 comment: This is an exploratory mock-up of how the exemplar 'predictive' variant interpretation provided by the CliniGen somatic/MVLD WG might look like using a draft prototype of the GA4GH Variant Annotation model. The example is  based on the CIViC record here (https://civicdb.org/events/genes/19/summary/variants/34/summary/evidence/965/summary#evidence) (specifically evidence items 965 and 966 from this record).
-
-Section I presents the source example data provided by the MVLD, using native MVLD fields.
-Section II presents this same data modelled using the prototype GA4GH-VA model
-Section III shows an 'enhanced' example that includes additional evidence information provided by the source CIViC record - to illustrate how SEPIO would represent this information as part of the GA4GH-VA model. 
+-> Section I presents the source example data provided by the MVLD, using native MVLD fields.
+-> Section II presents this same data modelled using the prototype GA4GH-VA model
+-> Section III shows an 'enhanced' example that includes additional evidence information provided by the source CIViC record, to illustrate how SEPIO would represent this information as part of the GA4GH-VA model. 
 
 -----------------------------------------------------------------------------------------------
 
@@ -94,7 +93,7 @@ annotations: [
 -----------------------------------------------------------------------------------------------
 
 
-# GA4GH-VA representation of an enhanced example of the MVLD 'predictive interpretation' that includes additional information provided by the CIViC record on which it is based. Includes three of the six Evidence Items captured in CIViC  (EID965, EID966, and EID963).
+# SECTION III: GA4GH-VA representation of an enhanced example of the MVLD 'predictive interpretation' that includes additional information provided by the CIViC record on which it is based. Includes three of the six Evidence Items captured in CIViC  (EID965, EID966, and EID963).
 
   - identifier: Annotation001
     type: TreatmentResponseAnnotation  
@@ -125,7 +124,7 @@ annotations: [
             agentFor: http://civicdb.org (CIViC)
         ]
         evidenceItems: [
-          - id: Statement002
+          - id: EI001
             type: SEPIO:0000173 (study finding)
             description: "This phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291). The overall objective tumor response rate was 51%. Among 127 patients with EGFR T790M who could be evaluated for response, the response rate was 61% (95% CI, 52 to 70). In contrast, among 61 patients without EGFR T790M, the response rate was 21% (95% CI, 12 to 34). The median progression-free survival was 9.6 months in EGFR T790M-positive patients and 2.8 months in EGFR T790M-negative patients."
         ]
@@ -149,7 +148,7 @@ annotations: [
           agentFor: http://civicdb.org (CIViC)
         ]
       evidenceItems: [
-        - id: Statement003
+        - id: EI002
           type: SEPIO:0000173 (study finding)
           description: "This study summarized 9 EGFR-mutant patients from two clinical trials involving rociletinib (NCT01526928) and subsequent osimertinib (NCT01802632). 8 were T790M-positive prior to treatment with osimertinib. 6 transitioned directly from rociletinib to osimertinib. 3 patients achieved PR and 4 achieved SD. The median PFS was 208 days (95% CI, 41-208 days). Among 6 patients who transitioned directly from rociletinib to osimertinib all derived clinical benefit from osimertinib with either prolonged SD or PR."
         ]
@@ -173,8 +172,63 @@ annotations: [
           agentFor: http://civicdb.org (CIViC)
         ]
       evidenceItems: [
-        - id: Statement004
+        - id: EI004
           type: SEPIO:0000173 (study finding)
           description: "Cell line, xenograft, and transgenic models were used to establish Osimertinib as an inhibitor of both EGFR mutation sensitizing (L858M, del exon 19) and T790M resistance mutants. Preclinically, the drug inhibits signaling pathways and cellular growth in both EGFRm(+) and EGFRm(+)/T790M(+) mutant cell lines in vitro, with lower activity against wild-type EGFR lines. Sustained tumor regression was observed in EGFR-mutant tumor xenograft and transgenic models. Treatment of 2 patients with advanced EGFRm(+) T790M(+) NSCLC was reported as proof of principle."
         ]
     ]
+
+
+    
+-----------------------------------------------------------------------------------------------
+
+
+# SECTION IV: Representation of Evidence Line 1 from Section III where the study data is captured as structured objects, as opposed to only in free text of the description element. Illustrates how the GA4GH-VA / SEPIO model may support more structured/computable representation of data used as evidence. More detail than this is of course possible, including explicit representation of the study and methods/resources it applied, attribution of participating researchers, etc.
+
+  - identifier: Annotation001
+    type: TreatmentResponseAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NM_005228.4:c.2369C>T)
+    predicate: RO:XXXXXXX (confers_response_to)
+    descriptor: CHEBI:90943 (Osimertinib)
+    qualifiers: [UMLS:C0278506 (NSCLC), GENO:00008 (somatic)] 
+    evidenceLines: [
+      - id: EvLn001
+        type: ECO:0000180 (clinical study evidence) 
+        evidenceItems: [
+          - id: EI001
+            type: SEPIO:0000173 (study finding)
+            description: "This phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291). The overall objective tumor response rate was 51%. Among 127 patients with EGFR T790M who could be evaluated for response, the response rate was 61% (95% CI, 52 to 70). In contrast, among 61 patients without EGFR T790M, the response rate was 21% (95% CI, 12 to 34). The median progression-free survival was 9.6 months in EGFR T790M-positive patients and 2.8 months in EGFR T790M-negative patients."
+            studyData:
+              - id: DataItem001
+                type: IAO:XXXXXXX (tumor response rate)
+                value: "61%"
+                isAbout: 
+                  - id: StudyCohort001
+                    role: OBI:XXXXXXX (test role)
+                    size: "127"
+              - id: DataItem002
+                type: IAO:XXXXXXX (tumor response rate)
+                value: "21%"
+                isAbout: 
+                  - id: StudyCohort002
+                    role: OBI:XXXXXXX (control role)
+                    size: "61"
+              - id: DataItem003
+                type: IAO:XXXXXXX (progression-free survival time)
+                value: "9.6 months"
+                isAbout: 
+                  - id: StudyCohort001
+                    role: OBI:XXXXXXX (test role)
+                    size: "61"
+              - id: DataItem004
+                type: IAO:XXXXXXX (progression-free survival time)
+                value: "2.8 months"
+                isAbout: 
+                  - id: StudyCohort002
+                    role: OBI:XXXXXXX (control role)
+                    size: "61"              
+        ]
+    
+    
+    
+    
