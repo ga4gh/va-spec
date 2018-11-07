@@ -1,0 +1,280 @@
+# v1 of a prototype model of the GeL/CellBase Molecular Consequence annotation at http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType.
+# Simply identifies all entities and statements in the CellBase record and creates a flat list of entities and annotations according to the straw man VA model.
+# Deprecated by v2
+
+entities: [		
+
+# Alleles (for sake of argument, assume a VMC-like representation of CM000681.2:g.45411941T>C)
+  - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+    type: GenomicAllele
+    label: CM000681.2:g.45411941T>C   # label not part of VMC spec, but added here for readability
+    locationId: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+    interval: 
+      - start: 45411941
+        end: 45411941
+    sequenceId: ncbi:CM000681.2     # Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly  
+
+  - id: vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL  # uniprot:VAR_000652
+    type: ProteinAllele
+    label: NP_000032.1:p.Cys130Arg    # label not part of VMC spec, but added here for readability 
+    locationId: vmc:GL_7Hry-jbsy_shRcT-cAKbghJw5u_b8rCn
+    interval: 
+      - start: 130
+        end: 130
+    sequenceId: uniprot:P02649        # Uniprot ID for APOE protein   
+    
+# Transcripts
+  - id: ensembl:ENST00000252487
+    type: Transcript
+    strand: +
+    biotype: protein-coding
+    gene: ensembl:ENSG00000130204
+
+  - id: ensembl:ENST00000592434
+    type: Transcript
+    strand: +
+    biotype: protein-coding
+    gene: ensembl:ENSG00000130204
+     
+  - id: ensembl:ENST00000252486
+    type: Transcript
+    strand: +
+    biotype: protein-coding
+    gene: ensembl:ENSG00000130203    
+    
+  - id: ensembl:ENST00000446996
+    type: Transcript
+    strand: +
+    biotype: protein-coding
+    gene: ensembl:ENSG00000130203  
+    
+# Genes
+  - id: ensembl:ENSG00000130204
+    type: Gene
+    label: TOMM40
+
+  - id: ensembl:ENSG00000130203
+    type: Gene
+    label: APOE   
+
+# Proteins
+  - id: uniprot:P02649
+    type: Protein
+    label: human APOE protein
+ ]
+
+annotations: [
+ 
+    #Molecular Consequence Annotations 
+  - identifier: Annotation001
+    type: MolecularConsequenceStatement  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:XXXXXXX (has_consequence)
+    descriptor: SO:0001632 (downstream_variant)
+    qualifier:  ensembl:ENST00000252487
+        
+  - identifier: Annotation002
+    type: MolecularConsequenceAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:XXXXXXX (has_consequence)
+    descriptor: SO:0001632 (downstream_variant)
+    qualifier:  ensembl:ENST00000592434    
+        
+  - identifier: Annotation003
+    type: MolecularConsequenceAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:XXXXXXX (has_consequence)
+    descriptor: SO:0001583 (missense_variant)
+    qualifier:  ensembl:ENST00000252486   
+ 
+  - identifier: Annotation004
+    type: MolecularConsequenceAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:XXXXXXX (has_consequence)
+    descriptor: SO:0001583 (missense_variant)
+    qualifier:  ensembl:ENST00000446996  
+
+    
+# Affected Feature annotations - describing features affected by the variant
+  - identifier: Annotation005
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature001
+        type: SequenceFeature
+        featureType: exon
+        parentFeature: ensembl:ENSG00000130203 (APOE)
+        featureNumber: 4/4
+        featureLocation:
+          - start: 44905791
+            end: 44908944
+            reference: ncbi:CM000681.2
+    percentAffectedQualifier:  0.11614402
+    description: The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon.
+
+  - identifier: Annotation006
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature002
+        type: SequenceFeature
+        featureType: cDNA
+        parentFeature: ensembl:ENSG00000130203 (APOE)
+    positionAffectedQualifier: 499
+    description: The variant lies within the subsequence of the APOE gene corresponding to its cDNA, specifically at position 499 of the cDNA.
+     
+  - identifier: Annotation007
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature003
+        type: SequenceFeature
+        featureType: CDS
+        parentFeature: ensembl:ENSG00000130203 (APOE)
+    positionAffectedQualifier: 388
+    description: The variant lies within the subsequence of the APOE gene corresponding to its CDS, specifically at position 388 of the  CDS.
+    
+  - identifier: Annotation008
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature004
+        type: SequenceFeature
+        featureType: codon
+        sequence: Tgc/Cgc
+        parentFeature: ensembl:ENSG00000130203 (APOE)
+    description: The variant lies within the subsequence of the APOE gene corresponding to its cDNA, specifically at position 499 of the cDNA. 
+
+  - identifier: Annotation011
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature005
+        type: SequenceFeature
+        featureType: helix
+        parentFeature: uniprot:P02649 (human APOE protein)
+        featureLocation:
+          - start: 106
+            end: 141
+            reference: uniprot:P02649 (human APOE protein)
+    description: The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141. 
+
+  - identifier: Annotation012
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature006
+        type: SequenceFeature
+        featureType: Apolipoprotein A1/A4/E domain
+        parentFeature: uniprot:P02649 (human APOE protein)
+        featureLocation:
+          - start: 81
+            end: 292
+            reference: uniprot:P02649 (human APOE protein)
+    description: The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292.  
+ 
+  - identifier: Annotation013
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature007
+        type: SequenceFeature
+        featureType: chain
+        parentFeature: uniprot:P02649 (human APOE protein)
+        featureLocation:
+          - start: 19
+            end: 317
+            reference: uniprot:P02649 (human APOE protein)    
+    description: The variant lies within a subregion of the APOE gene corresponding to a chain spanning position 19 to 317.        
+    
+  - identifier: Annotation014
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature009
+        type: SequenceFeature
+        featureType: repeat
+        parentFeature: uniprot:P02649 (human APOE protein)
+        featureTypeNumber: 3
+        featureLocation:
+          - start: 124
+            end: 145
+        reference: uniprot:P02649 (human APOE protein)  
+    description: The variant lies within a subregion of the APOE gene corresponding to a repeat region spanning position 124 to 145.
+		
+  - identifier: Annotation015
+    type: AffectedFeatureAnnotation  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:0002525 (is_subsequence_of)
+    descriptor: 
+      - id: ex:feature010
+        type: SequenceFeature
+        featureType: region of interest
+        parentFeature: uniprot:P02649 (human APOE protein)
+        featureLocation:
+          - start: 80
+            end: 255
+        reference: uniprot:P02649 (human APOE protein)  
+        description: "8 X 22 AA approximate tandem repeats" 
+    description: The variant lies within a subregion of the APOE gene corresponding to a region of interest spanning position 80 to 255.
+
+# Predicted Functional Impact annotations - describing predicted impact of allele on generic functionality of the protein
+  - identifier: Annotation009
+    type: PredictedFunctionalImpact  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:XXXXXXX (predicted_impact)
+    descriptor: tolerated
+    qualifier: uniprot:P02649 (human APOE protein)
+    scoreQualifier: 1.0
+    source: sift
+
+  - identifier: Annotation010
+    type: PredictedFunctionalImpact  
+    subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+    predicate: RO:XXXXXXX (predicted_impact)
+    descriptor: benign
+    qualifier:  uniprot:P02649 (human APOE protein)
+    scoreQualifier: 0.0
+    source: polyphen
+    
+    ]
+    
+    
+    
+    
+    
+    
+    
+    ##############################################################################
+    
+    variant: # NM_005228.4:c.2369C>T (NP_005219.2:p.Thr790Met)
+  - alleleId: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
+    locationId: VMC:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+    interval: 
+      - start: 55181378
+        end: 55181378
+    sequenceId: REFSEQ:NC_000007.14 (Homo sapiens chromosome 7, GRCh38.p12 Primary Assembly)
+
+    
+#Cellbase genomic variant representation (REFSEQ:NC_000007.14)
+  - chromosome: 19
+    start: 45411941
+    reference: T
+    alternate: C
+
+#CellBase protein variant representation
+  - uniprotVariantId: VAR_000652 
+    uniprotAccession: P02649
+    position: 130
+    reference: CYS
+    alternate: ARG
+
+

@@ -1,0 +1,314 @@
+"response": [  # REPOSNE MOLEC CONSEQ PAYLOAD AT http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType, ANNOTTED WITH COMMENTS.  TO VIEW VARIANT IN ITS GENOMIC  CONTEXT, SEE HERE: https://uswest.ensembl.org/Homo_sapiens/Gene/Summary?db=core;g=ENSG00000130203;r=19:44905791-44908944;t=ENST00000252486
+		{
+				"id": "19:45411941:T:C",
+				"dbTime": 17,
+				"numResults": 1,
+				"numTotalResults": 1,
+				"warningMsg": "",
+				"errorMsg": "",
+				"resultType": "",
+				"result": [
+						{  # THIS IS WHAT WAS QUERIED - A GENOMIC-LEVEL VARIANT THAT IS THE SUBJECT OF ALL ANNOTATIONS IN THIS DOCUMENT. DESCRIBED ONCE AT ROOT (SAME APPROACH AS PHENOPACKETS)
+								"chromosome": "19",  # A SPECIFIC REFERENCE SEQUENCE (GRCh37 CHROM 19) IS IMPLICIT HERE, AS DESCRIBED IN THE DOCUMENTATION
+								"start": 45411941,
+								"reference": "T",
+								"alternate": "C",
+								"displayConsequenceType": "missense_variant",  # CELLBASE PUTS THE MOST SEVERE OF  ALL CONSEQUENCES HERE AS THE 'DISPLAYED' ONE
+								"consequenceTypes": [
+										{ # MOLECCONSEQ#1 FOR THE FIRST OF TWO TRANSCRIPTS IN THE TOMM40 GENE (A SPARSE ANNOTATION BECAUSE THE VARIANT IS NOT WITHIN THE GENE - IT IS DOWNSTREAM)
+												"geneName": "TOMM40",
+												"ensemblGeneId": "ENSG00000130204",
+												"ensemblTranscriptId": "ENST00000252487",   # THE QUALIFIER - A TRANSCRIPT OBJECT (WE WOULD MODEL THE GENE, STRAND, BIOTYPE AS ATTRIBUTES OF IT)
+												"strand": "+",
+												"biotype": "protein_coding",
+												"transcriptAnnotationFlags": [  # SETS FROM GENCODE/ENSEMBL THAT THE TRANSCRIPT IS PART OF - HELPS USER FILTER TO SHOW ONLY MOST VALIDATED TRANSCRIPTS PREDICTED BY ENSEMBL/GENCODE
+														"CCDS", - THIS TRANSCRIPT IS PART OF THE GENCODE CONCENSUS CODING SEQUENCE SET
+														"basic" - THIS TRANSCRIPT IS PART OF THE GENCODE BASIC SET - OFTEN WANT TO FILTER ON THE MORE VALIDATED GENOCDE BASIC SUBSET OF ALL TRANSCRIPTS ENSEMBL CREATES
+												],
+												"sequenceOntologyTerms": [
+														{ 
+																"accession": "SO:0001632",  # THE OBJECT/DESCRIPTOR (MOLECULAR CONSEQUENCE)
+																"name": "downstream_variant"
+														}
+												]
+										},
+										{ # MOLECCONSEQ#2 - FOR THE SECOND OF TWO TRANSCRIPTS IN THE TOMM40 GENE
+												"geneName": "TOMM40",
+												"ensemblGeneId": "ENSG00000130204",
+												"ensemblTranscriptId": "ENST00000592434",
+												"strand": "+",
+												"biotype": "protein_coding",
+												"transcriptAnnotationFlags": [
+														"basic"
+												],
+												"sequenceOntologyTerms": [
+														{
+																"accession": "SO:0001632",  
+																"name": "downstream_variant"
+														}
+												]
+										},
+										{  # MOLECCONSEQ#3 - FOR THE FIRST OF SEVERAL TRANSCRIPTS IN THE APOE GENE - MUCH RICHER ANNOTATION BECAUSE THE VARIANT IS WITHIN A GENE AND HITS CODING SEQUENCE. 
+												"geneName": "APOE",
+												"ensemblGeneId": "ENSG00000130203",
+												"ensemblTranscriptId": "ENST00000252486", # THE RELEVANT TRANSCRIPT IS A QUALIFIER FOR THIS MC ANNOTAITON WHERE THE GENOME-LEVEL VARIANT ROOTING THIS DOCUMENT IS THE SUBEJCT
+												"strand": "+",
+												"biotype": "protein_coding",
+												"exonOverlap": [  # THE VARIANT HITS WITHIN THE EXON OF A GENE, SO EXON OVERLAP IS CALCULATED. MODEL AS AN AFFECTED FEATURE ANNOTATION WITH A percentOverlap QUALIFIER?
+														{
+																"number": "4/4",
+																"percentage": 0.11614402  # VARIANT AFFECTS 1 NT OUT OF THE ~850 IN EXON 4 -> .116%
+														}
+												],
+												"transcriptAnnotationFlags": [
+														"CCDS",
+														"basic"
+												],
+												"cdnaPosition": 499, #  MODEL THIS AS AN AFFECTED FEATURE ANNOTATION, WHERE THE FEATURE IS THE CDNA FOR THIS TRANSCRIPT, AND THE POSITION IS A QUALIFIER
+												"cdsPosition": 388, #  COULD ALSO MODEL THIS AS AN AFFECTED FEATURE ANNOTATION, WHERE THE FEATURE IS THE CDS FOR THIS TRANSCRIPT, AND THE POSITION IS A QUALIFIER
+												"codon": "Tgc/Cgc",  # DOES THIS NEED TO BE A NEW ANNOTATION TYPE? (FEATURE CHANGE?, CODON ALTERATION)? OR ANOTHER QUALIFIER ON THE AFFECTED FEATURE VA TYPE?
+												"proteinVariantAnnotation": {  # DESCRIPTION OF HOW THE VARIANT AFFECTS THE PROTEIN FOR THIS TRANSCRIPT
+														"uniprotAccession": "P02649",  # FIND EXAMPLE OF A TRANSCRIPT LEVEL MC ANNOTATION (E.G. SPLICE SITE, INTRON VARIANT) - IS THIS WRAPPED IN A PROTEIN VARIANT ANNOTATION OBJECT TOO?
+														"position": 130, # COULD MODEL THIS AS AN AFFECTED FEATURE ANNOTATION (AT THE PROTEIN LEVEL) - FEATURE OBJECT HAS A UNIPROT ID (SEE A FEW LINES DOWN), AND A POSITION (130)
+														"reference": "CYS",  # COULD MODEL THIS AS A NEW TYPE OF VA (SEQUENCE CHANGE ANNOTATION) OR COULD THE VR MODEL CAPTURE THIS INFO (AND WE COULD INCLUDE WITH ROOT VARIANT)
+														"alternate": "ARG",
+														"uniprotVariantId": "VAR_000652", # HOW DO WE WANT TO PACKAGE VARIANTS THAT ARE EQUIV TO OR DERIVED FROM THE ROOT SUBJECT VARIANT? IF NOT AS THE SUBJECT OF THE ANNOTATION? 
+														"functionalDescription": "In HLPP3; form E3**, form E4, form E4/3 and some forms E5-type; only form E3** is disease-linked; dbSNP:rs429358.",  # RELEVNACE OF THIS???
+														"substitutionScores": [ # MODEL THESE AS PREDICTED FUNCTIONAL IMPACT ANNOTATIONS.
+																{
+																		"score": 1.0,
+																		"source": "sift",
+																		"description": "tolerated"
+																},
+																{
+																		"score": 0.0,
+																		"source": "polyphen",
+																		"description": "benign"
+																}
+														],
+														"keywords": [ # WHERE DO THESE COME FROM, AND WHAT DO THEY MEAN?  I THINK THEY ARE THE TERMS FROMT HE VARIOUS "KEYWORDS" SECTION IN THE UNIPROT RECORD FOR THE PROTEIN.
+																"3D-structure",
+																"Alzheimer disease",
+																"Amyloidosis",
+																"Cholesterol metabolism",
+																"Chylomicron",
+																"Complete proteome",
+																"Direct protein sequencing",
+																"Disease mutation",
+																"Glycation",
+																"Glycoprotein",
+																"HDL",
+																"Heparin-binding",
+																"Hyperlipidemia",
+																"Lipid metabolism",
+																"Lipid transport",
+																"Neurodegeneration",
+																"Oxidation",
+																"Phosphoprotein",
+																"Polymorphism",
+																"Reference proteome",
+																"Repeat",
+																"Secreted",
+																"Signal",
+																"Steroid metabolism",
+																"Sterol metabolism",
+																"Transport",
+																"VLDL"
+														],
+														"features": [  # ALL OF THESE WOULD BE MODELED AS (PROTEIN LEVEL) AFFECTED FEATURE ANNOTATIONS (THE FEATURE POST COMPOSED FR0M START, END, AND featureType ATTRIBUTES
+																{
+																		"start": 106,
+																		"end": 141,
+																		"type": "helix"
+																},
+																{
+																		"id": "IPR000074",
+																		"start": 81,
+																		"end": 292,
+																		"description": "Apolipoprotein A/E"
+																},
+																{
+																		"id": "PRO_0000001987",
+																		"start": 19,
+																		"end": 317,
+																		"type": "chain",
+																		"description": "Apolipoprotein E"
+																},
+																{
+																		"start": 124,
+																		"end": 145,
+																		"type": "repeat",
+																		"description": "3"
+																},
+																{
+																		"start": 80,
+																		"end": 255,
+																		"type": "region of interest",
+																		"description": "8 X 22 AA approximate tandem repeats"
+																}
+														]
+												},
+												"sequenceOntologyTerms": [ # WHAT IF THERE ARE MORE THAN ONE SO TERMS THAT APPLY . . . CAN WE GROUP THEM AND CONSIDER IT A SINGLE POST-COMPOSED ANNOTATION? 
+														{
+																"accession": "SO:0001583",
+																"name": "missense_variant"
+														}
+												]
+										},
+										{   # MolecConseq#4 - FOR THE SECOND OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
+												"geneName": "APOE",
+												"ensemblGeneId": "ENSG00000130203",
+												"ensemblTranscriptId": "ENST00000446996",
+												"strand": "+",
+												"biotype": "protein_coding",
+												"exonOverlap": [
+														{
+																"number": "4/4",
+																"percentage": 0.24271844
+														}
+												],
+												"transcriptAnnotationFlags": [
+														"mRNA_end_NF",
+														"cds_end_NF"
+												],
+												"cdnaPosition": 477,
+												"cdsPosition": 388,
+												"codon": "Tgc/Cgc",
+												"proteinVariantAnnotation": {  # WHY DOESNT THIS ANNOTATION/OBJECT INCLUDE THE UNIPROT IDENTIFIER FOR THE PROTEIN, LIEK THE ONE ABOVE DOES?
+														"position": 130,
+														"reference": "CYS",
+														"alternate": "ARG",
+														"substitutionScores": [
+																{
+																		"score": 1.0,
+																		"source": "sift",
+																		"description": "tolerated"
+																},
+																{
+																		"score": 0.0,
+																		"source": "polyphen",
+																		"description": "benign"
+																}
+														]
+												},
+												"sequenceOntologyTerms": [
+														{
+																"accession": "SO:0001583",
+																"name": "missense_variant"
+														}
+												]
+										},
+										{   # MolecConseq#5 - FOR THE THIRD OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
+												"geneName": "APOE",
+												"ensemblGeneId": "ENSG00000130203",
+												"ensemblTranscriptId": "ENST00000485628",
+												"strand": "+",
+												"biotype": "retained_intron",
+												"sequenceOntologyTerms": [
+														{
+																"accession": "SO:0002083",
+																"name": "2KB_downstream_variant"
+														}
+												]
+										},
+										{
+												"geneName": "APOE",
+												"ensemblGeneId": "ENSG00000130203",
+												"ensemblTranscriptId": "ENST00000434152",
+												"strand": "+",
+												"biotype": "protein_coding",
+												"exonOverlap": [
+														{
+																"number": "4/4",
+																"percentage": 0.20283976
+														}
+												],
+												"transcriptAnnotationFlags": [
+														"mRNA_end_NF",
+														"cds_end_NF"
+												],
+												"cdnaPosition": 523,
+												"cdsPosition": 466,
+												"codon": "Tgc/Cgc",
+												"proteinVariantAnnotation": {
+														"position": 156,
+														"reference": "CYS",
+														"alternate": "ARG",
+														"substitutionScores": [
+																{
+																		"score": 0.91,
+																		"source": "sift",
+																		"description": "tolerated"
+																},
+																{
+																		"score": 0.0,
+																		"source": "polyphen",
+																		"description": "benign"
+																}
+														]
+												},
+												"sequenceOntologyTerms": [
+														{
+																"accession": "SO:0001583",
+																"name": "missense_variant"
+														}
+												]
+										},
+										{
+												"geneName": "APOE",
+												"ensemblGeneId": "ENSG00000130203",
+												"ensemblTranscriptId": "ENST00000425718",
+												"strand": "+",
+												"biotype": "protein_coding",
+												"exonOverlap": [
+														{
+																"number": "3/3",
+																"percentage": 0.23696682
+														}
+												],
+												"transcriptAnnotationFlags": [
+														"mRNA_end_NF",
+														"cds_end_NF"
+												],
+												"cdnaPosition": 653,
+												"cdsPosition": 388,
+												"codon": "Tgc/Cgc",
+												"proteinVariantAnnotation": {
+														"position": 130,
+														"reference": "CYS",
+														"alternate": "ARG",
+														"substitutionScores": [
+																{
+																		"score": 1.0,
+																		"source": "sift",
+																		"description": "tolerated"
+																},
+																{
+																		"score": 0.0,
+																		"source": "polyphen",
+																		"description": "benign"
+																}
+														]
+												},
+												"sequenceOntologyTerms": [
+														{
+																"accession": "SO:0001583",
+																"name": "missense_variant"
+														}
+												]
+										},
+										{
+												"sequenceOntologyTerms": [ # WHY IS THIS SO TERM JSUT HANGING OUT BY ITSELF?
+														{
+																"accession": "SO:0001566",
+																"name": "regulatory_region_variant"
+														}
+												]
+										}
+								]
+						}
+				]
+		}
+]
+
+}
