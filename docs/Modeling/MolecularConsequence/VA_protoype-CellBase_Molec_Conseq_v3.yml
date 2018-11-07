@@ -63,7 +63,7 @@ entities: [
  ]
 
 annotations: [
- # The first molecular consequence annotation is relative to the TOMM40 gene where the variant is downstream of the gene, and therefore no secondary info is provided by CellBase.
+# The first molecular consequence annotation is relative to the TOMM40 gene where the variant is downstream of the gene, and therefore no secondary info is provided by CellBase.
   - id: ex:annotation001
     type: Annotation
     primaryStatement:

@@ -15,7 +15,7 @@
 								"alternate": "C",
 								"displayConsequenceType": "missense_variant",  # CELLBASE PUTS THE MOST SEVERE OF  ALL CONSEQUENCES HERE AS THE 'DISPLAYED' ONE
 								"consequenceTypes": [
-										{ # MOLECCONSEQ#1 FOR THE FIRST OF TWO TRANSCRIPTS IN THE TOMM40 GENE (A SPARSE ANNOTATION BECAUSE THE VARIANT IS NOT WITHIN THE GENE - IT IS DOWNSTREAM)
+										{  # MOLECCONSEQ#1 - FOR THE FIRST OF TWO TRANSCRIPTS IN THE TOMM40 GENE (A SPARSE ANNOTATION BECAUSE THE VARIANT IS NOT WITHIN THE GENE - IT IS DOWNSTREAM)
 												"geneName": "TOMM40",
 												"ensemblGeneId": "ENSG00000130204",
 												"ensemblTranscriptId": "ENST00000252487",   # THE QUALIFIER - A TRANSCRIPT OBJECT (WE WOULD MODEL THE GENE, STRAND, BIOTYPE AS ATTRIBUTES OF IT)
@@ -32,7 +32,7 @@
 														}
 												]
 										},
-										{ # MOLECCONSEQ#2 - FOR THE SECOND OF TWO TRANSCRIPTS IN THE TOMM40 GENE
+										{  # MOLECCONSEQ#2 - FOR THE SECOND OF TWO TRANSCRIPTS IN THE TOMM40 GENE
 												"geneName": "TOMM40",
 												"ensemblGeneId": "ENSG00000130204",
 												"ensemblTranscriptId": "ENST00000592434",
@@ -155,7 +155,7 @@
 														}
 												]
 										},
-										{   # MolecConseq#4 - FOR THE SECOND OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
+										{  # MolecConseq#4 - FOR THE SECOND OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
 												"geneName": "APOE",
 												"ensemblGeneId": "ENSG00000130203",
 												"ensemblTranscriptId": "ENST00000446996",
@@ -198,7 +198,7 @@
 														}
 												]
 										},
-										{   # MolecConseq#5 - FOR THE THIRD OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
+										{  # MolecConseq#5 - FOR THE THIRD OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
 												"geneName": "APOE",
 												"ensemblGeneId": "ENSG00000130203",
 												"ensemblTranscriptId": "ENST00000485628",
@@ -211,7 +211,7 @@
 														}
 												]
 										},
-										{
+										{  # MolecConseq#6 - FOR THE FOURTH OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
 												"geneName": "APOE",
 												"ensemblGeneId": "ENSG00000130203",
 												"ensemblTranscriptId": "ENST00000434152",
@@ -254,7 +254,7 @@
 														}
 												]
 										},
-										{
+										{  # MolecConseq#7 - FOR THE FIFTH OF SEVERAL TRANSCRIPTS/PROTEINS IN THE APOE GENE
 												"geneName": "APOE",
 												"ensemblGeneId": "ENSG00000130203",
 												"ensemblTranscriptId": "ENST00000425718",
