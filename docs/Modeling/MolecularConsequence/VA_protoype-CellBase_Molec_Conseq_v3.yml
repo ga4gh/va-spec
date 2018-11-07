@@ -105,7 +105,7 @@ annotations: [
           - id: ex:feature001
             type: SequenceFeature
             featureType: exon
-            parentFeature: ensembl:ENSG00000130203 (APOE)
+            parentFeature:  ensembl:ENST00000252486 (APOE transcript 201)
             featureNumber: 4/4
             featureLocation:
               - start: 44905791
@@ -122,7 +122,7 @@ annotations: [
           - id: ex:feature002
             type: SequenceFeature
             featureType: cDNA
-            parentFeature: ensembl:ENSG00000130203 (APOE)
+            parentFeature: ensembl:ENST00000252486 (APOE transcript 201)
         positionAffectedQualifier: 499
         description: The variant lies within the subsequence of the APOE gene corresponding to its cDNA, specifically at position 499 of the cDNA.     
 
@@ -134,7 +134,7 @@ annotations: [
           - id: ex:feature003
             type: SequenceFeature
             featureType: CDS
-            parentFeature: ensembl:ENSG00000130203 (APOE)
+            parentFeature: ensembl:ENST00000252486 (APOE transcript 201)
         positionAffectedQualifier: 388
         description: The variant lies within the subsequence of the APOE gene corresponding to its CDS, specifically at position 388 of the  CDS.     
 
@@ -147,7 +147,7 @@ annotations: [
             type: SequenceFeature
             featureType: codon
             sequence: Tgc/Cgc
-            parentFeature: ensembl:ENSG00000130203 (APOE)
+            parentFeature: ensembl:ENST00000252486 (APOE transcript 201)
         description: The variant lies within the subsequence of the APOE gene corresponding to its cDNA, specifically at position 499 of the cDNA. 
 
       - id: ex:statement009    ## An AffectedProteinFeatureStatement
