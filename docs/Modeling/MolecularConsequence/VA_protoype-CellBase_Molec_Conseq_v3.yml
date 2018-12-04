@@ -1,26 +1,26 @@
 # v3 of a prototype model of the GeL/CellBase Molecular Consequence annotation at http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType.
-# This prototype creates a more structured message by identifying secondary statements in the CellBase record and wrapping them in with their 'parent' molecular consequence annotation.  
-# This contrasts with the structure of v2, which creates a flat list of entities and annotations and does not identify and wrap secondary statements in their parent molecular consequence annotation. 
+# This prototype creates a more structured message by identifying supporting/secondary statements in the CellBase record and wrapping them in with their 'parent' molecular consequence annotation.  
+# This contrasts with the structure of v2, which creates a flat list of entities and annotations and does not identify and wrap supporting statements in their parent molecular consequence annotation. 
 
 entities: [		
 # Alleles (for sake of argument, assume a VMC-like representation of CM000681.2:g.45411941T>C)
-  - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF    # genomic variant
+  - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF      ## genomic variant
     type: GenomicAllele
     label: CM000681.2:g.45411941T>C   # label not part of VMC spec, but added here for readability
     locationId: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
     interval: 
       - start: 45411941
         end: 45411941
-    sequenceId: ncbi:CM000681.2     # Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly  
+        sequenceId: ncbi:CM000681.2     # Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly  
 
-  - id: vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL    # protein variaint - uniprot:VAR_000652
+  - id: vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL      ## protein variaint - uniprot:VAR_000652
     type: ProteinAllele
     label: NP_000032.1:p.Cys130Arg    # label not part of VMC spec, but added here for readability 
     locationId: vmc:GL_7Hry-jbsy_shRcT-cAKbghJw5u_b8rCn
     interval: 
       - start: 130
         end: 130
-    sequenceId: uniprot:P02649        # Uniprot ID for APOE protein   
+        sequenceId: uniprot:P02649        # Uniprot ID for APOE protein   
     
 # Transcripts
   - id: ensembl:ENST00000252487
@@ -63,7 +63,7 @@ entities: [
  ]
 
 annotations: [
-# The first molecular consequence annotation is relative to the TOMM40 gene where the variant is downstream of the gene, and therefore no secondary info is provided by CellBase.
+# The first molecular consequence annotation is relative to the TOMM40 gene where the variant is downstream of the gene, and therefore no supporting statements with additional info are provided by CellBase.
   - id: ex:annotation001
     type: Annotation
     primaryStatement:
@@ -72,9 +72,9 @@ annotations: [
       subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
       predicate: RO:XXXXXXX (has_consequence)
       descriptor: SO:0001632 (downstream_variant)
-      qualifier:  ensembl:ENST00000252487
+      affectedTranscriptQualifier:  ensembl:ENST00000252487
 
-# The second molecular consequence annotation is also relative to the TOMM40 gene where the variant is downstream of the gene, and therefore no secondary info is provided by CellBase.      
+# The second molecular consequence annotation is also relative to the TOMM40 gene where the variant is downstream of the gene, and therefore no supporting statements with additional info are provided by CellBase.      
   - id: ex:annotation002
     type: Annotation 
     primaryStatement:    
@@ -83,20 +83,20 @@ annotations: [
       subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
       predicate: RO:XXXXXXX (has_consequence)
       descriptor: SO:0001632 (downstream_variant)
-      qualifier:  ensembl:ENST00000592434    
+      affectedTranscriptQualifier:  ensembl:ENST00000592434    
 
-# The third molecular consequence annotation is relative to the APOE gene, where the variant hits the coding region of the gene, and CellBase provides loads of secondary info.     
+# The third molecular consequence annotation is relative to the APOE gene, where the variant hits the coding region of the gene, and CellBase provides loads of secondary info, captured as supporting statements.     
   - id: ex:annotation003
     type: Annotation 
-    primaryStatement:     ## The root MolecularConsequenceStatement for ex:annotation003.
+    primaryStatement:   ## The root MolecularConsequenceStatement for ex:annotation003.
     - id: ex:statement003
       type: MolecularConsequenceStatement  
       subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
       predicate: RO:XXXXXXX (has_consequence)
       descriptor: SO:0001583 (missense_variant)
-      qualifier:  ensembl:ENST00000252486
+      affectedTranscriptQualifier:  ensembl:ENST00000252486
       
-    secondaryStatements: [     ## Secondary statements represented in the CellBase record, which provide useful context for interpreting and applying the parimary molecular conseqeunce statement.
+    supportingStatements: [   ## Additional statements that provide useful context for interpreting and applying the primary molecular conseqeunce statement.
       - id: ex:statement005    ## An ExonOverlapStatement
         type: AffectedFeatureStatement > AffectedTranscriptFeatureStatement > ExonOverlapStatement   ## Can help to define more specific statement subtypes to make meaning and utility of the data here more readily apparent
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
@@ -153,7 +153,7 @@ annotations: [
       - id: ex:statement009    ## An AffectedProteinFeatureStatement
         type: AffectedFeatureStatement > AffectedProteinFeatureStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
-        predicate: RO:0002525 (is_subsequence_of)
+        predicate: RO:0002525 (is_subsequence_of) ## This doesn't make much sense - to assert that a genomic variant is a subsequence of a protein feature.
         descriptor: 
           - id: ex:feature005
             type: SequenceFeature
@@ -251,3 +251,12 @@ annotations: [
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+ 

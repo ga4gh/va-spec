@@ -290,3 +290,87 @@ annotations: [
     ]
 
   
+  
+  
+  
+  
+  
+  
+  
+  --------------------------------------------------------------
+entities: [		
+# Alleles (for sake of argument, assume a VMC-like representation of CM000681.2:g.45411941T>C, see http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512)
+  - id: vmc:BV_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF    # bucket identifier
+    type: BucketVariant
+    containedVariants: [
+      - id: vmc:GA_tGZyxzBTBT5AcA5gAvg6fD4zZAxXNr67vKH  # atomic variant identifier
+        label: ENST00000252486.8:c.388T>C   
+        type: TranscriptVariant
+        locationId: vmc:GL_2Hju-lguk_jnBvG-wLJbjmBw5v_n3rB7
+        interval: 
+          - start: 388
+            end: 388
+        sequenceId: ens:ENST00000252486.8     # Homo sapiens APOE transcript 201    
+  
+      - id: vmc:GA_tGZyxzBTBT5AcA5gAvg6fD4zZAxXNr67vKH  # atomic variant identifier
+        label: NM_000041.3:c.388T>C   
+        type: TranscriptVariant
+        locationId: vmc:JT_2Hju-lguk_jnBvG-wLJbjmBw5v_n3rm4Z
+        interval: 
+          - start: 388
+            end: 388
+        sequenceId: ncbi:NM_000041.3     # Homo sapiens APOE transcript variant 2  
+    ]
+    
+    relatedVariants: [
+    - id: vmc:GA_xYBaxzR2BT0FRbReCTSc23mDAHRV7AB  # atomic variant identifier
+        label: CM000681.1:g.45411941T>C  
+        type: GenomicVariant
+        locationId: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+        interval: 
+          - start: 45411941
+            end: 45411941
+        sequenceId: ncbi:CM000681.1     # Homo sapiens chromosome 19, GRCh37 Primary Assembly  
+        
+      - id: vmc:GA_yXzcxzBTBT5AcdA5AD422VzZAxXVc2BR  # atomic variant identifier
+        label: CM000681.2:g.44908684T>C  
+        type: GenomicVariant
+        locationId: vmc:GL_8Hju-lguk_jnBvG-wLJbjmBw5v_n3yVi
+        interval: 
+          - start: 44908684
+            end: 44908684
+        sequenceId: ncbi:CM000681.2     # Homo sapiens chromosome 19, GRCh38 Primary Assembly    
+      
+      - id: vmc:GA_rZyxzBTBT5AcA5gAvg6fD4zZAxXNr4gJC  # atomic variant identifier
+        label: ENSP00000252486.3:p.Cys130Arg 
+        type: ProteinVariant
+        locationId: vmc:GL_9Bju-lguk_jnBvG-wLJbjmBw5v_n7aN3G
+        interval: 
+          - start: 130
+            end: 130
+        sequenceId: ENSP00000252486.3     # Homo sapiens APOE-201 Protein Isoform
+      
+      - id: vmc:GA_rZyxzBTBT5AcA5gAvg6fD4zZAxXNr4gJC  # atomic variant identifier
+        label: NP_000032.1:p.Cys130Arg
+        type: ProteinVariant
+        locationId: vmc:GL_9Bju-lguk_jnBvG-wLJbjmBw5v_n7aN3G
+        interval: 
+          - start: 130
+            end: 130
+        sequenceId: NP_000032.1     # Homo sapiens APOE Protein Isoform b
+       
+      - . . . 
+    ]
+  
+ 
+  
+  
+annotations: [  
+  primaryStatement:     ## The root MolecularConsequenceStatement for ex:annotation003.
+    - id: ex:statement003
+      type: MolecularConsequenceStatement  
+      subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+      predicate: RO:XXXXXXX (has_consequence)
+      descriptor: SO:0001583 (missense_variant)
+      qualifier:  ensembl:ENST00000252486 
+    
