@@ -1,0 +1,117 @@
+# v3 of a prototype model of the GeL/CellBase Molecular Consequence annotation at http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType.
+# This prototype creates a more structured message by identifying supporting/secondary statements in the CellBase record and wrapping them in with their 'parent' molecular consequence annotation.  
+# This particular example offers a data based view on the attributes
+
+entities: [		
+# Alleles (for sake of argument, assume a VMC-like representation of CM000681.2:g.45411941T>C)
+  - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF      ## genomic variant
+    type: GenomicAllele
+    label: CM000681.2:g.45411941T>C   # label not part of VMC spec, but added here for readability
+    locationId: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+    interval: 
+      - start: 45411941
+        end: 45411941
+        sequenceId: ncbi:CM000681.2     # Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly  
+
+  - id: vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL      ## protein variaint - uniprot:VAR_000652
+    type: ProteinAllele
+    label: NP_000032.1:p.Cys130Arg    # label not part of VMC spec, but added here for readability 
+    locationId: vmc:GL_7Hry-jbsy_shRcT-cAKbghJw5u_b8rCn
+    interval: 
+      - start: 130
+        end: 130
+        sequenceId: uniprot:P02649        # Uniprot ID for APOE protein       
+ ]
+
+annotations: [
+
+# Missense effect on APOE-001 transcript
+# Keep supporting statements bundled together in an additional level (e.g. exonOverlap)? 
+# Should this supportingStatements attribute be an array of VA types or a key-value Map/Dictionary
+# relevant fields from the transcript domain entity explicitly specified here as another option to describing all entities at the begining
+- variant: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+  consequence: missense_variant
+  geneProduct:
+    id: ENST00000252486
+    symbol: APOE-001
+    geneSymbol: APOE
+    geneId: ENSG00000130203
+    biotype: protein_coding
+    annotationFlags:
+    - CCDS
+    - basic
+  supportingStatements:  
+    exonOverlap:
+    - topologicalRelationship: overlaps
+      sequenceFeature:
+        id: ENSE0000024324
+        number: 4/4
+      percentOverlap: 0.11614402
+
+# Missense effect on APOE-002 transcript
+- variant: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+  consequence: missense_variant
+  geneProduct:
+    id: ENST00000446996
+    symbol: APOE-002
+    geneSymbol: APOE
+    geneId: ENSG00000130203
+    biotype: protein_coding
+    annotationFlags:
+    - mRNA_end_NF
+    - cds_end_NF
+  supportingStatements:
+    exonOverlap:
+    - topologicalRelationship: overlaps
+      sequenceFeature:
+        id: ENSE0000024324
+        number: 4/4
+      percentOverlap: 0.24271844
+
+# Missense effect on APOE-004 transcript
+- variant: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+  consequence: missense_variant
+  geneProduct:
+    id: ENST00000434152
+    symbol: APOE-004
+    geneSymbol: APOE
+    geneId: ENSG00000130203
+    biotype: protein_coding
+    annotationFlags:
+    - mRNA_end_NF
+    - cds_end_NF
+  supportingStatements:
+    exonOverlap:
+    - topologicalRelationship: overlaps
+      sequenceFeature:
+        id: ENSE0000024324
+        number: 4/4
+      percentOverlap: 0.20283976
+
+# Variant located downstream of the TOMM40-001 transcript
+- variant: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+  consequence: downstream_gene_variant
+  geneProduct:
+    id: ENST00000252487
+    symbol: TOMM40-001
+    geneSymbol: TOMM40
+    geneId: ENSG00000130204
+    biotype: protein_coding
+    annotationFlags:
+    - CCDS
+    - basic
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
