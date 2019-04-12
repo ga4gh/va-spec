@@ -4,10 +4,11 @@
 # The ClinGen Allele Registry record for the annotated variant is here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
 
 annotations: [  
-  - id: ex:annotation001     # A message/dataset may contain several annotations here, but this example contains only one (ex:annotation001)   
+    # A message/dataset may contain several annotations here, but this example message contains only one (ex:annotation001)
+  - id: ex:annotation001        
     type: Varaint Annotation
     
-    ## This 'entities' array holds the full representations of all biological entities referenced by their identifier in the data below - so we dont need to nest or repeat these full representeations each time the entity is described.
+    ## This 'entities' array holds the complete representations of all biological entities referenced by their identifier in the data below - so we dont need to nest or repeat these full representeations each time the entity is described.
     entities: [		
       # Genes
       - id: ensembl:ENSG00000130203
@@ -86,7 +87,7 @@ annotations: [
                 end: 292
     ]
 
-    ## The single primary statement in ex:annotation001.
+    ## The is the single primary statement in the ex:annotation001 annotation.
     primaryStatement:   
     - id: ex:statement001
       type: MolecularConsequenceStatement  
@@ -99,8 +100,12 @@ annotations: [
       evidence: ...   # evidence model t.b.d.
  
  
-    # Variation equivalence statements linking the particular variant used as the subject of the primary statement to sets of other particular variations considered by the asserting agenet to be equivalent in the context of the VA statement.
-    VariationEquivalenceStatement: [  
+    # The message creator can choose to include supporting statements to aid interpretation/use of the primary statement. There are two high-level categories of supporting statements:  Variation Equivalence Statements, and additional Variant Annotation Statements.
+    supportingStatements: [  
+    
+        # Variation Equivalence Statements link the particular variant used as the subject of the primary statement to sets of other particular variations considered to be equivalent in the context of the VA statement. These 'equivalence sets' can be asserted/created by the agent who make the annotation, or a downstream agent  aggregating/consuming the annotation. In this example there are two:
+     
+        # A Variation Equivalence Statement asserted by the agent who created the annotation (Cellbase)
       - id: ex:statement002
         type: VariationEquivalenceStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
@@ -115,6 +120,7 @@ annotations: [
         description: The variation 'CM000681.2:g.45411941T>C' expands to the equivalence set ex:eqset001 in the context of ex:statement001  
         statedBy: CellBase
 
+        # A Variation Equivalence Statement asserted by a ClinGen curator - a downstream consumer of the MC annotation who expands the asserted subject variaiton to a different set of particular variants than Cellbase did.
       - id: ex:statement003
         type: VariationEquivalenceStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
@@ -129,9 +135,10 @@ annotations: [
         description: The variation 'CM000681.2:g.45411941T>C' expands to the equivalence set ex:eqset002 in the context of ex:statement001  
         statedBy: Harry Stevenson (a curator for the ClinGen varint interpretation WG)
 
-    ## Four 'supporting statements' that provide useful context for interpreting and applying the primary molecular conseqeunce statement.  
-    supportingStatement: [   
-      - id: ex:statement004    ## A Relative Location Statement describing exon overlap
+        ## Another type of 'supporting statement' are other Variant Annotation Statements. Here we have four such statements that provide useful context for interpreting and applying the primary molecular conseqeunce statement - three RelativevLocationvStatements, and one FunctionalvImpactvStatement:
+
+        # A Relative Location Statement describing exon overlap
+      - id: ex:statement004    
         type: RelativeLocationStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of)
@@ -139,21 +146,24 @@ annotations: [
         percentAffectedQualifier:  0.11614402
         description: The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon.      
   
-      - id: ex:statement005     ## A Relative Location Statement describing a protein feature overlap
+        # A Relative Location Statement describing a protein feature overlap
+      - id: ex:statement005    
         type: RelativeLocationStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of) ## This doesn't make much sense - to assert that a genomic variant is a subsequence of a protein feature.
         descriptor: ex:feature005 (a helix motif in the human APOE protein)
         description: The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141. 
-
-      - id: ex:statement006    ## A Relative Location Statement describing a protein feature overlap
+        
+        # A Relative Location Statement describing a protein feature overlap
+      - id: ex:statement006  
         type: RelativeLocationStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of)
         descriptor: ex:feature006  (a Apolipoprotein A1/A4/E domain in the human APOE protein)
         description: The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292.  
-   
-      - id: ex:statement007    ## A PredictedFunctionalImpactStatement
+        
+        # A Computational Functional Impact Statement
+      - id: ex:statement007  
         type: PredictedFunctionalImpactStatement 
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:XXXXXXX (predicted_impact)
