@@ -21,9 +21,9 @@ entities: [
       - start: 130
         end: 130
         sequenceId: uniprot:P02649        # Uniprot ID for APOE protein   
-    
+   
 # Transcripts
-  - id: ensembl:ENST00000252487
+  - id: ensembl:ENST00000252486
     type: Transcript
     strand: +
     biotype: protein-coding

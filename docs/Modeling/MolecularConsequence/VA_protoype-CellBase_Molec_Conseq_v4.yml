@@ -1,0 +1,180 @@
+# A prototype example of a GeL/CellBase Molecular Consequence annotation structured using the model defined here: https://www.lucidchart.com/documents/edit/9c985671-8a53-4893-838f-5e4f8189981e/1   
+# The source data for this Molecular Consequence annotaiton is here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType. 
+# This annotation contains a single primary Molecular Consequence Statement, two EquivalenceSetStatements, and four supporting statements (3 RelativeLocationStatements, and 1 FunctionalImpactStatement).
+# The ClinGen Allele Registry record for the annotated variant is here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
+
+annotations: [  
+  - id: ex:annotation001     # A message/dataset may contain several annotations here, but this example contains only one (ex:annotation001)   
+    type: Varaint Annotation
+    
+    ## This 'entities' array holds the full representations of all biological entities referenced by their identifier in the data below - so we dont need to nest or repeat these full representeations each time the entity is described.
+    entities: [		
+      # Genes
+      - id: ensembl:ENSG00000130203
+        type: Gene
+        label: APOE   
+
+      # Proteins
+      - id: uniprot:P02649
+        type: Protein
+        label: human APOE protein
+        
+      # Alleles
+      - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## genomic variant - clinvar:xxxxxxx
+        type: vmc:Allele
+        structuralType: SO:0001483 (SNV)     
+        label: CM000681.2:g.45411941T>C   
+        locationId: 
+          - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+            sequenceId: ncbi:CM000681.2  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
+            interval: 
+              - start: 45411941
+                end: 45411941            
+
+      - id: vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL      ## a protein variaint - uniprot:VAR_000652
+        type: vmc:Allele
+        structuralType: SO:0000104  (protein) 
+        label: NP_000032.1:p.Cys130Arg    
+        locationId: 
+          - id: vmc:GL_7Hry-jbsy_shRcT-cAKbghJw5u_b8rCn
+            sequenceId: uniprot:P02649  (APOE protein)
+            interval: 
+              - start: 130
+                end: 130
+
+      # Transcripts
+      - id: ensembl:ENST00000252486
+        type: Transcript
+        strand: forward
+        biotype: SO:0000120 (protein-coding primary transcript)
+        parentGene: ensembl:ENSG00000130204 (human APOE gene)
+
+      #Exons
+       - id: ex:feature001
+         type: SequenceFeature
+         featureType: exon
+         parentFeature:  ensembl:ENST00000252486 (APOE transcript 201)
+         featureNumber: 4/4
+         locationId: 
+           - id: vmc:GL_9dwv-jbsy_shRcT-cAKbghJw5u_xq9gv
+             sequenceId: ncbi:CM000681.2  
+             interval: 
+               - start: 44905791
+                 end: 44908944
+             
+      # Protein Features      
+      - id: ex:feature005
+        type: ProteinSequenceFeature      
+        featureType: helix
+        parentFeature: uniprot:P02649 (human APOE protein)
+        locationID:
+          - id: vmc:GL_3avy-jbsy_shRcT-cAKbghJw5u_agad
+            sequenceID: uniprot:P02649 (human APOE protein)
+            interval:
+              - start: 106
+                end: 2141
+      
+      - id: ex:feature006
+        type: ProteinSequenceFeature
+        featureType: Apolipoprotein A1/A4/E domain
+        parentFeature: uniprot:P02649 (human APOE protein)
+        locationID:
+          - id: vmc:GL_3Jdv-jbsy_shRcT-cAKbghJw5u_a8cy
+            sequenceID: uniprot:P02649 (human APOE protein)
+            interval:
+              - start: 81
+                end: 292
+    ]
+
+    ## The single primary statement in ex:annotation001.
+    primaryStatement:   
+    - id: ex:statement001
+      type: MolecularConsequenceStatement  
+      subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+      predicate: RO:XXXXXXX (has_consequence)
+      descriptor: SO:0001583 (missense_variant)
+      affectedProductQualifier:  ensembl:ENST00000252486
+      statedBy: CellBase
+      date: 20140508
+      evidence: ...   # evidence model t.b.d.
+ 
+ 
+    # Variation equivalence statements linking the particular variant used as the subject of the primary statement to sets of other particular variations considered by the asserting agenet to be equivalent in the context of the VA statement.
+    VariationEquivalenceStatement: [  
+      - id: ex:statement002
+        type: VariationEquivalenceStatement
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:0002350 (member_of)
+        descriptor: 
+          - id: ex:eqset001
+            type: VariationEquivalenceSet
+            createdBy: Cellbase
+            members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY]
+            defaultMember: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)            
+        qualifier:  ex:statement001
+        description: The variation 'CM000681.2:g.45411941T>C' expands to the equivalence set ex:eqset001 in the context of ex:statement001  
+        statedBy: CellBase
+
+      - id: ex:statement003
+        type: VariationEquivalenceStatement
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:0002350 (member_of)
+        descriptor: 
+          - id: ex:eqset002
+            type: VariationEquivalenceSet
+            createdBy: ClinGen Allele Registry
+            members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY, vmc:GA_asvewASG4aAaaa4taFfb23ARFAb, ... ]   # set includes all variations on the Alelle Registry page here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
+            defaultMember: vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY (NC_000019.9:g.45411941T>C)            
+        qualifier:  ex:statement001
+        description: The variation 'CM000681.2:g.45411941T>C' expands to the equivalence set ex:eqset002 in the context of ex:statement001  
+        statedBy: Harry Stevenson (a curator for the ClinGen varint interpretation WG)
+
+    ## Four 'supporting statements' that provide useful context for interpreting and applying the primary molecular conseqeunce statement.  
+    supportingStatement: [   
+      - id: ex:statement004    ## A Relative Location Statement describing exon overlap
+        type: RelativeLocationStatement
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:0002525 (is_subsequence_of)
+        descriptor: ex:feature001 (exon 4 of APO transcript ENST00000252486)
+        percentAffectedQualifier:  0.11614402
+        description: The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon.      
+  
+      - id: ex:statement005     ## A Relative Location Statement describing a protein feature overlap
+        type: RelativeLocationStatement
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:0002525 (is_subsequence_of) ## This doesn't make much sense - to assert that a genomic variant is a subsequence of a protein feature.
+        descriptor: ex:feature005 (a helix motif in the human APOE protein)
+        description: The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141. 
+
+      - id: ex:statement006    ## A Relative Location Statement describing a protein feature overlap
+        type: RelativeLocationStatement
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:0002525 (is_subsequence_of)
+        descriptor: ex:feature006  (a Apolipoprotein A1/A4/E domain in the human APOE protein)
+        description: The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292.  
+   
+      - id: ex:statement007    ## A PredictedFunctionalImpactStatement
+        type: PredictedFunctionalImpactStatement 
+        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:XXXXXXX (predicted_impact)
+        descriptor: tolerated
+        qualifier: uniprot:P02649 (human APOE protein)
+        scoreQualifier: 1.0
+        source: sift
+
+      ]
+    
+    ]
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+ 
