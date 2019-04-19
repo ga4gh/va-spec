@@ -1,6 +1,6 @@
 # A prototype example of a GeL/CellBase Molecular Consequence annotation structured using the model defined here: https://www.lucidchart.com/documents/edit/9c985671-8a53-4893-838f-5e4f8189981e/1   
 # The source data for this Molecular Consequence annotaiton is here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType. 
-# This annotation contains a single primary Molecular Consequence Statement, two EquivalenceSetStatements, and four supporting statements (3 RelativeLocationStatements, and 1 FunctionalImpactStatement).
+# This version of the annotation contains a single primary Molecular Consequence Statement, two ExpansionSetStatements, and four supporting statements (3 RelativeLocationStatements, and 1 FunctionalImpactStatement).
 # The ClinGen Allele Registry record for the annotated variant is here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
 
 annotations: [  
@@ -100,39 +100,41 @@ annotations: [
       evidence: ...   # evidence model t.b.d.
  
  
-    # The message creator can choose to include supporting statements to aid interpretation/use of the primary statement. There are two high-level categories of supporting statements:  Variation Equivalence Statements, and additional Variant Annotation Statements.
+    # The message creator can choose to include supporting statements to aid interpretation/use of the primary statement. There are two high-level categories of supporting statements:  Variation Expansion Statements, and additional Variant Annotation Statements.
     supportingStatements: [  
     
-        # Variation Equivalence Statements link the particular variant used as the subject of the primary statement to sets of other particular variations considered to be equivalent in the context of the VA statement. These 'equivalence sets' can be asserted/created by the agent who make the annotation, or a downstream agent  aggregating/consuming the annotation. In this example there are two:
+        # Variation Expansion Statements link the particular variant used as the subject of the primary statement to sets of other particular variations considered to be equivalent in the context of the VA statement. These 'expansion sets' can be asserted/created by the agent who make the annotation, or a downstream agent  aggregating/consuming the annotation. In this example there are two:
      
-        # A Variation Equivalence Statement asserted by the agent who created the annotation (Cellbase)
+        # A Variation Expansion Statement asserted by the agent who created the annotation (Cellbase)
       - id: ex:statement002
-        type: VariationEquivalenceStatement
+        type: VariationExpansionStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002350 (member_of)
         descriptor: 
           - id: ex:eqset001
-            type: VariationEquivalenceSet
+            type: VariationExpansionSet
             createdBy: Cellbase
             members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY]
-            defaultMember: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)            
+            defaultMember: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)   
+            method: CellBase Equivalence Rules v1.0
         qualifier:  ex:statement001
-        description: The variation 'CM000681.2:g.45411941T>C' expands to the equivalence set ex:eqset001 in the context of ex:statement001  
+        description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set ex:eqset001 in the context of ex:statement001  
         statedBy: CellBase
 
-        # A Variation Equivalence Statement asserted by a ClinGen curator - a downstream consumer of the MC annotation who expands the asserted subject variaiton to a different set of particular variants than Cellbase did.
+        # A Variation Expansion Statement asserted by a ClinGen curator - a downstream consumer of the MC annotation who expands the asserted subject variaiton to a different set of particular variants than Cellbase did.
       - id: ex:statement003
-        type: VariationEquivalenceStatement
+        type: VariationExpansionStatement
         subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002350 (member_of)
         descriptor: 
           - id: ex:eqset002
-            type: VariationEquivalenceSet
+            type: VariationExpansionSet
             createdBy: ClinGen Allele Registry
             members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY, vmc:GA_asvewASG4aAaaa4taFfb23ARFAb, ... ]   # set includes all variations on the Alelle Registry page here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
-            defaultMember: vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY (NC_000019.9:g.45411941T>C)            
+            defaultMember: vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY (NC_000019.9:g.45411941T>C)  
+            method: ClinGen Canonicalization Rules v1.0
         qualifier:  ex:statement001
-        description: The variation 'CM000681.2:g.45411941T>C' expands to the equivalence set ex:eqset002 in the context of ex:statement001  
+        description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set ex:eqset002 in the context of ex:statement001  
         statedBy: Harry Stevenson (a curator for the ClinGen varint interpretation WG)
 
         ## Another type of 'supporting statement' are other Variant Annotation Statements. Here we have four such statements that provide useful context for interpreting and applying the primary molecular conseqeunce statement - three RelativevLocationvStatements, and one FunctionalvImpactvStatement:
