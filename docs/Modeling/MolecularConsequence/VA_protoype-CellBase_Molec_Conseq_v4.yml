@@ -1,11 +1,11 @@
 # An example of a GeL/CellBase Molecular Consequence annotation structured using the straw man/prototype model diagrammed here: https://www.lucidchart.com/documents/edit/9c985671-8a53-4893-838f-5e4f8189981e/1   
 # The source data for this Molecular Consequence annotation is here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType. 
-# This version of the annotation contains a single primary Molecular Consequence Statement (see lines 90-100). But the full annotation is quite large due to its two Variation Expansion Statements, four Supporting Statements (3 RelativeLocationStatements, and 1 FunctionalImpactStatement), and need to represent all 'entities' (e.g. genes, proteins, alleles, sequence features) described in these statements.
+# This version of the annotation contains a single primary Molecular Consequence Statement (see lines 90-100). But the full annotation is quite large due to its two Variation Expansion Statements, four Supporting Statements (3 RelativeLocationStatements, and 1 FunctionalImpactStatement), and rich representation of all 'entities' described by these statements (e.g. genes, proteins, alleles, sequence features) described in these statements.
 # The ClinGen Allele Registry record showing alternate representations of the annotated variant is here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
 
 annotations: [  
     # A given message may contain several annotations. This example message contains only one - a Molecular Consequence annotation with several 'supporting statements'.
-  - id: ex:annotation001        
+  - id: va:annotation001        
     type: Varaint Annotation
     
     ## This 'entities' object holds the complete representations of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representeations each time the entity is referenced).
@@ -51,7 +51,7 @@ annotations: [
         parentGene: ensembl:ENSG00000130204 (human APOE gene)
 
       #Exons
-       - id: ex:feature001
+       - id: va:feature001
          type: SequenceFeature
          featureType: exon
          parentFeature:  ensembl:ENST00000252486 (APOE transcript 201)
@@ -64,7 +64,7 @@ annotations: [
                  end: 44908944
              
       # Protein Features      
-      - id: ex:feature005     ## a helix motif in the APO protein
+      - id: va:feature005     ## a helix motif in the APO protein
         type: ProteinSequenceFeature      
         featureType: helix
         parentFeature: uniprot:P02649 (human APOE protein)
@@ -75,7 +75,7 @@ annotations: [
               - start: 106
                 end: 2141
       
-      - id: ex:feature006      ## a functional domain in the APOE protein
+      - id: va:feature006      ## a functional domain in the APOE protein
         type: ProteinSequenceFeature
         featureType: Apolipoprotein A1/A4/E domain
         parentFeature: uniprot:P02649 (human APOE protein)
@@ -87,11 +87,11 @@ annotations: [
                 end: 292
     ]
 
-    ## The is the core primary statement made in the ex:annotation001 annotation, about hte molecular consequence of the subject variant.
+    ## The is the core primary statement made in the va:annotation001 annotation, about the molecular consequence of the subject variant.
     primaryStatement:   
-    - id: ex:statement001
+    - id: va:statement001
       type: MolecularConsequenceStatement  
-      subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+      subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
       predicate: has_consequence
       descriptor: SO:0001583 (missense_variant)
       affectedProductQualifier:  ensembl:ENST00000252486
@@ -106,69 +106,69 @@ annotations: [
     variationExpansionStatements: [        
      
         # A Variation Expansion Statement asserted by the agent who created the annotation (Cellbase)
-      - id: ex:statement002
+      - id: va:statement002
         type: VariationExpansionStatement
-        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002350 (member_of)
         descriptor: 
-          - id: ex:eqset001
+          - id: va:eqset001
             type: VariationExpansionSet
             createdBy: Cellbase
             members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY, ...]
             representativeMember: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)   
             method: CellBase Equivalence Rules v1.0
-        qualifier:  ex:statement001
-        description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set ex:eqset001 in the context of ex:statement001  
+        qualifier:  va:statement001
+        description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set va:eqset001 in the context of va:statement001  
         statedBy: CellBase
 
         # A Variation Expansion Statement asserted by a ClinGen curator - a downstream consumer of the MC annotation who expands the asserted subject variaiton to a different set of particular variants than Cellbase did.
-      - id: ex:statement003
+      - id: va:statement003
         type: VariationExpansionStatement
-        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002350 (member_of)
         descriptor: 
-          - id: ex:eqset002
+          - id: va:eqset002
             type: VariationExpansionSet
             createdBy: ClinGen Allele Registry
             members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY, vmc:GA_asvewASG4aAaaa4taFfb23ARFAb, ... ]   # set includes all variations on the Alelle Registry page here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
             representativeMember: vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY (NC_000019.9:g.45411941T>C)  
             method: ClinGen Canonicalization Rules v1.0
-        qualifier:  ex:statement001
-        description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set ex:eqset002 in the context of ex:statement001  
+        qualifier:  va:statement001
+        description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set va:eqset002 in the context of va:statement001  
         statedBy: Harry Stevenson (a curator for the ClinGen varint interpretation WG)
     ]
         
     ## 'Supporting statements' are other Variant Annotation Statements to aid interpretation/use of the primary statement. Here we have four such statements that provide useful context for the primary molecular conseqeunce statement - three RelativevLocationvStatements, and one FunctionalvImpactvStatement:
     supportingStatements: [  
         # A Relative Location Statement describing exon overlap
-      - id: ex:statement004    
+      - id: va:statement004    
         type: RelativeLocationStatement
-        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of)
-        descriptor: ex:feature001 (exon 4 of APO transcript ENST00000252486)
+        descriptor: va:feature001 (exon 4 of APO transcript ENST00000252486)
         percentAffectedQualifier:  0.11614402%
         description: The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon.      
   
         # A Relative Location Statement describing a protein feature overlap
-      - id: ex:statement005    
+      - id: va:statement005    
         type: RelativeLocationStatement
-        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of) ## This doesn't make much sense - to assert that a genomic variant is a subsequence of a protein feature.
-        descriptor: ex:feature005 (a helix motif in the human APOE protein)
+        descriptor: va:feature005 (a helix motif in the human APOE protein)
         description: The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141. 
         
         # A Relative Location Statement describing a protein feature overlap
-      - id: ex:statement006  
+      - id: va:statement006  
         type: RelativeLocationStatement
-        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of)
-        descriptor: ex:feature006  (a Apolipoprotein A1/A4/E domain in the human APOE protein)
+        descriptor: va:feature006  (a Apolipoprotein A1/A4/E domain in the human APOE protein)
         description: The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292.  
         
         # A Computational Functional Impact Statement
-      - id: ex:statement007  
+      - id: va:statement007  
         type: PredictedFunctionalImpactStatement 
-        subject: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: predicted_impact
         descriptor: tolerated
         affectedGeneProductQualifier: uniprot:P02649 (human APOE protein)
