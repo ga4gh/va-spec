@@ -1,6 +1,89 @@
 
-## Source data from Cellbase record here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
-## Specifically the frequency data for the following two populations in gnomAD:
+## EXAMPLE 1: Source data from ClinGen record here: http://dataexchange.clinicalgenome.org/interpretation/entities/details/details.html#CGEX:AllFreq034
+## Specifically the frequency data for the 'NC_000006.12 131851228 C' allele in a Non-Finnish European population form the GENIUS T2D dataset
+
+    {
+      "id": "CGEX:AllFreq034",
+      "type": "PopulationAlleleFrequencyStatement",
+      "ascertainment": {
+        "id": "CGEX:Ascrt0002",
+        "label": "GENIUS T2D Cases"
+      },
+      "allele": {
+        "id": "CAR:CA123287",
+        "type": "CanonicalAllele",
+        "relatedContextualAllele": "CGEX:CtxAll027"
+      },
+      "alleleCount": 1198,
+      "alleleNumber": 7344,
+      "individualCount": 3672,
+      "homozygousAlleleIndividualCount": 113,
+      "heterozygousAlleleIndividualCount": 972,
+      "population": {
+        "id": "GNOMAD:nfe",
+        "label": "Non-Finnish European"
+       }  
+      ],
+      "@context": "http://dataexchange.clinicalgenome.org/interpretation/json/context"
+    }
+
+
+## One possible GA4GH-VA Annotation Structure to represent this ClinGen annotation in a json/yaml message
+
+annotations: [  
+    # A given message may contain several annotations. This example contains just one.
+  - id: va:annotation001        
+    type: Variant Annotation
+    
+    ## This 'entities' object holds the 'complete' representations of all entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
+    entities: [	
+    
+      # Alleles 
+      - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF       ## a genomic variant, roughly in vmc format, from http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA123287
+        type: vmc:Allele, 
+        structuralType: SO:0001483 (SNV)     
+        label: NC_000006.12 131851228 C
+        locationId: 
+          - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+            sequenceId: ncbi:NC_000006.12  (Homo sapiens chromosome 6, GRCh38.p12 Primary Assembly)
+            interval: 
+              - start: 131851228
+                end: 131851228   
+    
+      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Populaiton in the ClinGen data). The model here is a stub until we define it for real.
+      - id: va:Population001
+        type: va:HumanPopulation
+        label: "GENIUS T2D Non-Finnish European"
+        ascertainment: "GENIUS T2D"
+        ethnicity: "GNOMAD:nfe"
+      
+        ]
+    
+    ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a Non-Finnish European population.
+    primaryStatement:   
+      - id: va:statement001
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000006.12 131851228 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData001
+            type: Population Frequency Study Data
+            variationCount: 1198
+            totalVariationCount: 7344
+            totalIndividualCount: 3672
+            homozygousIndividualCount: 113
+            heterozygousIndividualCount: 972           
+        populationQualifier: va:Population001 (GENIUS T2D Non-Finnish European)
+        statedBy: ClinGen
+        date: 20140508
+      
+
+
+##------------------------------------------------------------------------------------##
+
+
+## EXAMPLE 2: Source data from Cellbase record here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
+## Specifically the frequency data for the CM000681.2 g.45411941T>C allele in one population from gnomAD. But implicit in the data are two additional alleles (the refs for these alts)
 {
     "study": "GNOMAD_EXOMES",
     "population": "FIN",
@@ -11,36 +94,26 @@
     "refHomGenotypeFreq": 0.6279271,
     "hetGenotypeFreq": 0.32709703,
     "altHomGenotypeFreq": 0.04497584
-
 },
-{
-
-    "study": "GNOMAD_EXOMES",
-    "population": "NFE",
-    "refAllele": "T",
-    "altAllele": "C",
-    "refAlleleFreq": 0.84970874,
-    "altAlleleFreq": 0.15029128,
-    "refHomGenotypeFreq": 0.71927917,
-    "hetGenotypeFreq": 0.26085907,
-    "altHomGenotypeFreq": 0.019861752
 
 
-##------------------------------------------------------------------------------------##
+## One possible GA4GH-VA Annotation Structure to represent these Cellbase annotations in a json/yaml message.  
+## Here we create separate statements for frequency data about the ref allele, and place it in the message as a supporting statement for the alt.
+## But the ref allele population frequncy could alteratively/additionally be captured in an entirely independent annotation.
 
 annotations: [  
-    # A given message may contain several annotations. This example message contains multiple Population Frequency Annotations
+    # A given message may contain several annotations. This example message contains two Population Frequency Annotations.
   - id: va:annotation001        
     type: Variant Annotation
     
-    ## This 'entities' object holds the complete representations of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representeations each time the entity is referenced).
+    ## This 'entities' object holds the 'complete' representations of all entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
     entities: [	
     
-      # Alleles
+      # Alleles 
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
         type: vmc:Allele
         structuralType: SO:0001483 (SNV)     
-        label: CM000681.2:g.45411941T>C   
+        label: CM000681.2 45411941 C   
         locationId: 
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
             sequenceId: ncbi:CM000681.2  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
@@ -48,35 +121,121 @@ annotations: [
               - start: 45411941
                 end: 45411941   
     
-      # Populations
+      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Populaiton in the Cellbase data)
       - id: va:Population001
         type: va:HumanPopulation
         label: "gnomAD Exomes FIN"
         ascertainment: "GNOMAD EXOMES"
-      
+        
         ]
     
-    ## The is the core primary statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
+    ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
     primaryStatement:   
-    - id: va:statement001
-      type: PopulationFrequencyStatement  
-      subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
-      predicate: was_observed_in
-      descriptor: va:Population001
-      quantifier:  
-         - id: va:StudyData001
-           refAlleleFreq: 0.79147565
-           altAlleleFreq: 0.20852435
-           refHomGenotypeFreq: 0.6279271
-           hetGenotypeFreq: 0.32709703
-           altHomGenotypeFreq: 0.04497584
-           refAlleleSeq: "T"
-           altAlleleSeq: "C"
-           
-      statedBy: CellBase
-      date: 20140508
+      - id: va:statement001
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData001
+            variationFrequency: 0.20852435
+            homozygousIndividualFrequency: 0.04497584
+            heterozygousIndividualFrequency: 0.32709703 
+        populationQualifier: va:Population001          
+        statedBy: CellBase
+        date: 20140508
       
-  - id: va:annotation002        
+      
+    ## The ref allele frequency is captured in a different statement - here in a supporting statement in the va:annotation001 annotation, as opposed to an entirely separate annotation, because it is only captured as context for interpreting the alt allele frequency.
+    supportingStatement:   
+      - id: va:statement002
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA (CM000681.2 45411941 T)
+        predicate: was_observed_in
+        descriptor: va:Population001
+        quantifier:  
+          - id: va:StudyData002
+            variationFrequency: 0.79147565
+            homzygousIndividualFrequency: 0.6279271
+         ## heterozygousAlleleFreq: 0.32709703 - should we also capture this? Note for the ref allele this may not be accurate?           
+        statedBy: CellBase
+        date: 20140508
+      
+  
+      
+##---------------------------------------------------------------------------------------------##
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##-------------------------------------------------------------------------------------------------##
+## Obsolete text
+
+
+# Removed second annotaiton in NFE pop form CellBase example
+- id: va:annotation002        
     type: Variant Annotation
     
     ## This 'entities' object holds the complete representations of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representeations each time the entity is referenced).
@@ -86,7 +245,7 @@ annotations: [
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
         type: vmc:Allele
         structuralType: SO:0001483 (SNV)     
-        label: CM000681.2:g.45411941T>C   
+        label: CM000681.2 45411941 C
         locationId: 
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
             sequenceId: ncbi:CM000681.2  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
@@ -97,29 +256,84 @@ annotations: [
       # Populations
       - id: va:Population002
         type: va:HumanPopulation
-        label: "gnomAD Exomes  NFE"
+        label: "gnomAD Exomes NFE"
         ascertainment: "GNOMAD EXOMES"
       
         ]
     
     ## The is the core primary statement made in the va:annotation002 annotation, about the population frequency of the subject variant in an NFE population.
     primaryStatement:   
-    - id: va:statement002
-      type: PopulationFrequencyStatement  
-      subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
-      predicate: was_observed_in
-      descriptor: va:Population002
-      quantifier:  
-         - id: va:StudyData002
-           refAlleleFreq: 0.84970874,
-           altAlleleFreq: 0.15029128,
-           refHomGenotypeFreq: 0.71927917,
-           hetGenotypeFreq: 0.26085907,
-           altHomGenotypeFreq: 0.019861752
-           refAlleleSeq: "T"
-           altAlleleSeq: "C"
+      - id: va:statement003
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
+        predicate: was_observed_in
+        descriptor: va:Population002
+        quantifier:  
+          - id: va:StudyData003
+            alleleFreq: 0.15029128,
+            hetGenotypeFreq: 0.26085907,
+            homGenotypeFreq: 0.019861752
            
-      statedBy: CellBase
-      date: 20140508 
-      
-      
+        statedBy: CellBase
+        date: 20140508 
+    
+    ## The is a supporting statement in the va:annotation001 annotation, about the population frequency of the **ref** for the subject variant in an NFE population.
+    supportingStatement:   
+      - id: va:statement003
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
+        predicate: was_observed_in
+        descriptor: va:Population002
+        quantifier:  
+          - id: va:StudyData003
+            alleleFreq: 0.84970874,
+            homGenotypeFreq: 0.71927917,
+            hetGenotypeFreq: 0.26085907,
+
+        statedBy: CellBase
+        date: 20140508 
+
+
+
+
+##----------------------------------------------------------------------------
+
+    ## The is the core primary statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
+    primaryStatement:   
+      - id: va:statement001
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
+        predicate: was_observed_in
+        descriptor: va:Population001
+        quantifier:  
+          - id: va:StudyData001
+            refAlleleFreq: 0.79147565
+            altAlleleFreq: 0.20852435
+            refHomGenotypeFreq: 0.6279271
+            hetGenotypeFreq: 0.32709703
+            altHomGenotypeFreq: 0.04497584
+            refAlleleSeq: "T"
+            altAlleleSeq: "C"
+           
+        statedBy: CellBase
+        date: 20140508
+        
+    ## The is the core primary statement made in the va:annotation002 annotation, about the population frequency of the subject variant in an NFE population.
+    primaryStatement:   
+      - id: va:statement002
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
+        predicate: was_observed_in
+        descriptor: va:Population002
+        quantifier:  
+          - id: va:StudyData002
+            refAlleleFreq: 0.84970874,
+            altAlleleFreq: 0.15029128,
+            refHomGenotypeFreq: 0.71927917,
+            hetGenotypeFreq: 0.26085907,
+            altHomGenotypeFreq: 0.019861752
+            refAlleleSeq: "T"
+            altAlleleSeq: "C"
+           
+        statedBy: CellBase
+        date: 20140508 
