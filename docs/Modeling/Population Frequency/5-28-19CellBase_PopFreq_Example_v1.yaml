@@ -1,6 +1,7 @@
 
-## EXAMPLE 1: Source data from ClinGen record here: http://dataexchange.clinicalgenome.org/interpretation/entities/details/details.html#CGEX:AllFreq034
-## Specifically the frequency data for the 'NC_000006.12 131851228 C' allele in a Non-Finnish European population form the GENIUS T2D dataset
+## EXAMPLE 1 
+
+  ##SOURCE DATA: A ClinGen record showing the frequency data for the 'NC_000006.12 131851228 C' allele in a Non-Finnish European population form the GENIUS T2D dataset http://dataexchange.clinicalgenome.org/interpretation/entities/details/details.html#CGEX:AllFreq034
 
     {
       "id": "CGEX:AllFreq034",
@@ -28,7 +29,7 @@
     }
 
 
-## One possible GA4GH-VA Annotation Structure to represent this ClinGen annotation in a json/yaml message
+  ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent this ClinGen annotation in a json/yaml message
 
 annotations: [  
     # A given message may contain several annotations. This example contains just one.
@@ -82,8 +83,11 @@ annotations: [
 ##------------------------------------------------------------------------------------##
 
 
-## EXAMPLE 2: Source data from Cellbase record here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
-## Specifically the frequency data for the CM000681.2 g.45411941T>C allele in one population from gnomAD. But implicit in the data are two additional alleles (the refs for these alts)
+## EXAMPLE 2 
+
+  ##SOURCE DATA: A Cellbase record showing the frequency data for the CM000681.2 g.45411941T>C allele in one population from gnomAD (but implicit in the data are two additional alleles (the refs for these alts) http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
+
+
 {
     "study": "GNOMAD_EXOMES",
     "population": "FIN",
@@ -97,9 +101,7 @@ annotations: [
 },
 
 
-## One possible GA4GH-VA Annotation Structure to represent these Cellbase annotations in a json/yaml message.  
-## Here we create separate statements for frequency data about the ref allele, and place it in the message as a supporting statement for the alt.
-## But the ref allele population frequncy could alteratively/additionally be captured in an entirely independent annotation.
+  ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent the Cellbase annotations in a json/yaml message. Here we create separate statements for frequency data about the ref allele, and place it in the message as a supporting statement for the alt. But the ref allele population frequency could alteratively/additionally be captured in an entirely independent annotation.
 
 annotations: [  
     # A given message may contain several annotations. This example message contains two Population Frequency Annotations.
