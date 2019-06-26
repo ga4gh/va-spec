@@ -50,13 +50,16 @@ annotations: [
             interval: 
               - start: 131851228
                 end: 131851228   
-    
-      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Populaiton in the ClinGen data). The model here is a stub until we define it for real.
+        state: C
+        
+      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Population in the ClinGen data). The model here is a stub until we define it for real.
       - id: va:Population001
         type: va:HumanPopulation
         label: "GENIUS T2D Non-Finnish European"
-        ascertainment: "GENIUS T2D"
-        ethnicity: "GNOMAD:nfe"
+        parentStudy: "GENIUS T2D"
+        characteristic: 
+            - name: ethnicity
+              value: "GNOMAD:nfe"
       
         ]
     
@@ -85,7 +88,7 @@ annotations: [
 
 ## EXAMPLE 2 
 
-  ##SOURCE DATA: A Cellbase record showing the frequency data for the CM000681.2 g.45411941T>C allele in one population from gnomAD (but implicit in the data are two additional alleles (the refs for these alts) http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
+  ##SOURCE DATA: A Cellbase record showing the frequency data for the NC_000019.9 g.45411941T>C allele in one population from gnomAD (but implicit in the data are two additional alleles (the refs for these alts) http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
 
 
 {
@@ -115,27 +118,30 @@ annotations: [
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
         type: vmc:Allele
         structuralType: SO:0001483 (SNV)     
-        label: CM000681.2 45411941 C   
+        label: NC_000019.9 45411941 C   
         locationId: 
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
-            sequenceId: ncbi:CM000681.2  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
+            sequenceId: ncbi:NC_000019.9  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
             interval: 
               - start: 45411941
                 end: 45411941   
-    
-      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Populaiton in the Cellbase data)
+        state: C
+        
+      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Population in the Cellbase data)
       - id: va:Population001
         type: va:HumanPopulation
         label: "gnomAD Exomes FIN"
-        ascertainment: "GNOMAD EXOMES"
-        
+        parentStudy: "GNOMAD EXOMES"
+        characteristic: 
+            - name: ethnicity
+              value: "FIN"
         ]
     
     ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
     primaryStatement:   
       - id: va:statement001
         type: PopulationFrequencyStatement  
-        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
         descriptor:  
           - id: va:StudyData001
@@ -151,7 +157,7 @@ annotations: [
     supportingStatement:   
       - id: va:statement002
         type: PopulationFrequencyStatement  
-        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA (CM000681.2 45411941 T)
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA (NC_000019.9 45411941 T)
         predicate: was_observed_in
         descriptor: va:Population001
         quantifier:  
@@ -164,19 +170,252 @@ annotations: [
       
   
       
-##---------------------------------------------------------------------------------------------##
+
+##------------------------------------------------------------------------------------##
+
+
+## EXAMPLE 3 
+
+  ##SOURCE DATA: gnomAD data showing the frequency data for the NC_000019.9:g.45411941T>C allele in several populations. No API/data dump for this record, but data displayed at https://gnomad.broadinstitute.org/variant/19-45411941-T-C.
+
+
+##Allele frequency is shown for several different populations based on four features: ethnicity (9), sex (2), disease status (5), sequenced material (2).  The cross-products resulting from applicaiton of these classificaiton features gives a total of 180 'populations' in which the frequency of each variant is defined. Shown in the data example below are the following populations:
+   ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES 
+   ## 2. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
+   ## 3. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: GENOMES ONLY 
+   ## 4. ethnicity: AFR, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
+   ## 5. ethnicity: AFR, sex: MALE, disease_status: ALL, sequenced_material: EXOMES ONLY
+   ## 6. ethnicity: AFR, sex: ALL, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
+   ## 7. ethnicity: AFR, sex: MALE, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
 
 
 
+  ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent the gnomAD annotations in a json/yaml message. 
+  ## As opposed to the annotation-centric message structures above, here we use a variant-centric message structure that pulls out the subject allele at the beginning of the message, and references it from each statement about it in the data.
 
 
+## This 'entities' object holds the 'complete' representations of  entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
+entities: [	    
+  # Alleles 
+  - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
+    type: vmc:Allele
+    structuralType: SO:0001483 (SNV)     
+    label: NC_000019.9 45411941 C   
+    locationId: 
+      - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+        sequenceId: ncbi:NC_000019.9  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
+        interval: 
+          - start: 45411941
+            end: 45411941   
+        state: C
+]   
+
+statements: [  
+      ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES   
+      - id: va:statement001
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData001
+            sourceMaterial: EXOMES and GENOMES
+            totalVariationCount: 200920
+            variationCount: 28637
+            variationFrequency: 0.1425
+        populationQualifier: 
+          - id: va:Population001
+            type: va:Population
+            memberType: individual organism
+            memberTaxon: homo sapiens
+            parentStudy: gnomAD Exomes and Genomes
+            characteristic: [
+                - name: ethnicity
+                  value: ALL
+                - name: sex
+                  value: ALL
+                - name: disease status
+                  value: ALL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
+
+      ## 2. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
+      - id: va:statement002
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData002
+            sourceMaterial: EXOMES
+            totalVariationCount: 169692 
+            variationCount: 23502
+            variationFrequency: 0.1385
+        populationQualifier: 
+          - id: va:Population002
+            type: va:HumanPopulation
+            parentStudy: gnomAD Exomes
+            characteristic: [
+                - name: ethnicity
+                  value: ALL
+                - name: sex
+                  value: ALL
+                - name: disease status
+                  value: ALL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
+        
+      ## 3. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: GENOMES ONLY
+      - id: va:statement003
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData003
+            sourceMaterial: GENOMES
+            totalVariationCount: 31228 
+            variationCount: 5135
+            variationFrequency: 0.1644
+        populationQualifier: 
+          - id: va:Population003
+            type: va:Population
+            memberType: individual organism
+            memberTaxon: homo sapiens
+            isSubSetOf: [va:Population001]
+            parentStudy: gnomAD Genomes
+            characteristic: [
+                - name: ethnicity
+                  value: ALL
+                - name: sex
+                  value: ALL
+                - name: disease status
+                  value: ALL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
+
+      ## 4. ethnicity: AFR, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
+      - id: va:statement004
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData004
+            sourceMaterial: EXOMES
+            totalVariationCount: 9082 
+            variationCount: 2033
+            variationFrequency: 0.2238
+            homozygousIndividualCount: 211
+        populationQualifier: 
+          - id: va:Population004
+            type: va:Population
+            memberType: individual organism
+            memberTaxon: homo sapiens
+            isSubSetOf: [va:Population001, va:Population002]
+            parentStudy: gnomAD Exomes
+            characteristic: [
+                - name: ethnicity
+                  value: AFR
+                - name: sex
+                  value: ALL
+                - name: disease status
+                  value: ALL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
+
+      ## 5. ethnicity: AFR, sex: MALE, disease_status: ALL, sequenced_material: EXOMES ONLY
+      - id: va:statement005
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData005
+            sourceMaterial: EXOMES
+            totalVariationCount: 3554 
+            variationCount: 75 
+            variationFrequency: 0.2181
+            homozygousIndividualCount: 76
+        populationQualifier: 
+          - id: va:Population005
+            type: va:Population
+            memberType: individual organism
+            memberTaxon: homo sapiens
+            isSubSetOf: [va:Population001, va:Population002, va:Population003]
+            parentStudy: gnomAD Exomes
+            characteristic: [
+                - name: ethnicity
+                  value: AFR
+                - name: sex
+                  value: MALE
+                - name: disease status
+                  value: ALL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
+
+      ## 6. ethnicity: AFR, sex: ALL, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
+      - id: va:statement006
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData006
+            sourceMaterial: EXOMES
+            totalVariationCount: 3290 
+            variationCount: 752
+            variationFrequency: 0.2286
+            homozygousIndividualCount: 78
+        populationQualifier: 
+          - id: va:Population006
+            type: va:Population
+            memberType: individual organism
+            memberTaxon: homo sapiens
+            isSubSetOf: [va:Population001, va:Population002, va:Population004]
+            parentStudy: gnomAD Exomes
+            characteristic: [
+                - name: ethnicity
+                  value: AFR
+                - name: sex
+                  value: ALL
+                - name: disease status
+                  value: CONTROL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
+        
+      ## 7. ethnicity: AFR, sex: MALE, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
+      - id: va:statement007
+        type: PopulationFrequencyStatement  
+        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
+        predicate: is_described_by
+        descriptor:  
+          - id: va:StudyData007
+            sourceMaterial: EXOMES
+            totalVariationCount: 1444 
+            variationCount: 309
+            variationFrequency: 0.2140
+            homozygousIndividualCount: 31
+        populationQualifier: 
+          - id: va:Population007
+            type: va:Population
+            memberType: individual organism
+            memberTaxon: homo sapiens
+            isSubSetOf: [va:Population001, va:Population002, va:Population004]
+            parentStudy: gnomAD Exomes
+            characteristic: [
+                - name: ethnicity
+                  value: AFR
+                - name: sex
+                  value: MALE
+                - name: disease status
+                  value: CONTROL  
+             ]
+        statedBy: gnomAD Consortium
+        date: 20140508
 
 
-
-
-
-
-
+]
 
 
 
@@ -259,7 +498,7 @@ annotations: [
       - id: va:Population002
         type: va:HumanPopulation
         label: "gnomAD Exomes NFE"
-        ascertainment: "GNOMAD EXOMES"
+        parentStudy: "GNOMAD EXOMES"
       
         ]
     

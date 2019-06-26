@@ -6,7 +6,7 @@
 annotations: [  
     # A given message may contain several annotations. This example message contains only one - a Molecular Consequence annotation with several 'supporting statements'.
   - id: va:annotation001        
-    type: Varaint Annotation
+    type: Variant Annotation
     
     ## This 'entities' object holds the complete representations of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representeations each time the entity is referenced).
     entities: [		
