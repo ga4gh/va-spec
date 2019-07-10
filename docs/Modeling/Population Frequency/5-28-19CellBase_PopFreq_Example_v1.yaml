@@ -56,6 +56,7 @@ annotations: [
       - id: va:Population001
         type: va:HumanPopulation
         label: "GENIUS T2D Non-Finnish European"
+        memberCount: 3672
         parentStudy: "GENIUS T2D"
         characteristic: 
             - name: ethnicity
@@ -72,11 +73,10 @@ annotations: [
         descriptor:  
           - id: va:StudyData001
             type: Population Frequency Study Data
-            variationCount: 1198
-            totalVariationCount: 7344
-            totalIndividualCount: 3672
-            homozygousIndividualCount: 113
-            heterozygousIndividualCount: 972           
+            count: 1198
+            totalCount: 7344
+            homozygousCount: 113
+            heterozygousCount: 972           
         populationQualifier: va:Population001 (GENIUS T2D Non-Finnish European)
         statedBy: ClinGen
         date: 20140508
@@ -126,7 +126,20 @@ annotations: [
               - start: 45411941
                 end: 45411941   
         state: C
-        
+
+      - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA          ## a genomic variant, roughly in vmc format
+        type: vmc:Allele
+        structuralType: SO:0001483 (SNV)     
+        label: NC_000019.9 45411941 T   
+        locationId: 
+          - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
+            sequenceId: ncbi:NC_000019.9  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
+            interval: 
+              - start: 45411941
+                end: 45411941   
+        state: T 
+
+ 
       # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Population in the Cellbase data)
       - id: va:Population001
         type: va:HumanPopulation
@@ -145,9 +158,9 @@ annotations: [
         predicate: is_described_by
         descriptor:  
           - id: va:StudyData001
-            variationFrequency: 0.20852435
-            homozygousIndividualFrequency: 0.04497584
-            heterozygousIndividualFrequency: 0.32709703 
+            frequency: 0.20852435
+            homozygousFrequency: 0.04497584
+            heterozygousFrequency: 0.32709703 
         populationQualifier: va:Population001          
         statedBy: CellBase
         date: 20140508
@@ -158,13 +171,12 @@ annotations: [
       - id: va:statement002
         type: PopulationFrequencyStatement  
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA (NC_000019.9 45411941 T)
-        predicate: was_observed_in
-        descriptor: va:Population001
-        quantifier:  
+        predicate: is_described_by
+        descriptor:  
           - id: va:StudyData002
-            variationFrequency: 0.79147565
-            homzygousIndividualFrequency: 0.6279271
-         ## heterozygousAlleleFreq: 0.32709703 - should we also capture this? Note for the ref allele this may not be accurate?           
+            frequency: 0.79147565
+            homzygousFrequency: 0.6279271
+        populationQualifer: va:Population001
         statedBy: CellBase
         date: 20140508
       
@@ -219,9 +231,9 @@ statements: [
         descriptor:  
           - id: va:StudyData001
             sourceMaterial: EXOMES and GENOMES
-            totalVariationCount: 200920
-            variationCount: 28637
-            variationFrequency: 0.1425
+            totalCount: 200920
+            count: 28637
+            frequency: 0.1425
         populationQualifier: 
           - id: va:Population001
             type: va:Population
@@ -247,9 +259,9 @@ statements: [
         descriptor:  
           - id: va:StudyData002
             sourceMaterial: EXOMES
-            totalVariationCount: 169692 
-            variationCount: 23502
-            variationFrequency: 0.1385
+            totalCount: 169692 
+            count: 23502
+            frequency: 0.1385
         populationQualifier: 
           - id: va:Population002
             type: va:HumanPopulation
@@ -273,9 +285,9 @@ statements: [
         descriptor:  
           - id: va:StudyData003
             sourceMaterial: GENOMES
-            totalVariationCount: 31228 
-            variationCount: 5135
-            variationFrequency: 0.1644
+            totalCount: 31228 
+            count: 5135
+            frequency: 0.1644
         populationQualifier: 
           - id: va:Population003
             type: va:Population
@@ -303,9 +315,9 @@ statements: [
           - id: va:StudyData004
             sourceMaterial: EXOMES
             totalVariationCount: 9082 
-            variationCount: 2033
-            variationFrequency: 0.2238
-            homozygousIndividualCount: 211
+            count: 2033
+            frequency: 0.2238
+            homozygousCount: 211
         populationQualifier: 
           - id: va:Population004
             type: va:Population
@@ -332,10 +344,10 @@ statements: [
         descriptor:  
           - id: va:StudyData005
             sourceMaterial: EXOMES
-            totalVariationCount: 3554 
-            variationCount: 75 
-            variationFrequency: 0.2181
-            homozygousIndividualCount: 76
+            totalCount: 3554 
+            count: 75 
+            frequency: 0.2181
+            homozygousCount: 76
         populationQualifier: 
           - id: va:Population005
             type: va:Population
@@ -362,10 +374,10 @@ statements: [
         descriptor:  
           - id: va:StudyData006
             sourceMaterial: EXOMES
-            totalVariationCount: 3290 
-            variationCount: 752
-            variationFrequency: 0.2286
-            homozygousIndividualCount: 78
+            totalCount: 3290 
+            count: 752
+            frequency: 0.2286
+            homozygousCount: 78
         populationQualifier: 
           - id: va:Population006
             type: va:Population
@@ -385,6 +397,7 @@ statements: [
         date: 20140508
         
       ## 7. ethnicity: AFR, sex: MALE, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
+      ## Note I left the StudyData attribute names in this example more verbose, as per the previous iteration, to compare with more concise labels above
       - id: va:statement007
         type: PopulationFrequencyStatement  
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
@@ -392,7 +405,7 @@ statements: [
         descriptor:  
           - id: va:StudyData007
             sourceMaterial: EXOMES
-            totalVariationCount: 1444 
+            totalVariationCount: 1444   
             variationCount: 309
             variationFrequency: 0.2140
             homozygousIndividualCount: 31
