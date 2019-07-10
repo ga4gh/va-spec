@@ -37,6 +37,7 @@ annotations: [
     type: Variant Annotation
     
     ## This 'entities' object holds the 'complete' representations of all entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
+    ## Here we include only the alleles in the entities block, and inline the Population inside the statement, to illustrate what both patterns would look like.
     entities: [	
     
       # Alleles 
@@ -50,18 +51,7 @@ annotations: [
             interval: 
               - start: 131851228
                 end: 131851228   
-        state: C
-        
-      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Population in the ClinGen data). The model here is a stub until we define it for real.
-      - id: va:Population001
-        type: va:HumanPopulation
-        label: "GENIUS T2D Non-Finnish European"
-        memberCount: 3672
-        parentStudy: "GENIUS T2D"
-        characteristic: 
-            - name: ethnicity
-              value: "GNOMAD:nfe"
-      
+        state: C      
         ]
     
     ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a Non-Finnish European population.
@@ -77,7 +67,15 @@ annotations: [
             totalCount: 7344
             homozygousCount: 113
             heterozygousCount: 972           
-        populationQualifier: va:Population001 (GENIUS T2D Non-Finnish European)
+        populationQualifier: 
+          - id: va:Population001 (GENIUS T2D Non-Finnish European)
+            type: va:HumanPopulation
+            label: "GENIUS T2D Non-Finnish European"
+            memberCount: 3672
+            parentStudy: "GENIUS T2D"
+            characteristic: 
+              - name: ethnicity
+                value: "GNOMAD:nfe"
         statedBy: ClinGen
         date: 20140508
       
@@ -112,6 +110,7 @@ annotations: [
     type: Variant Annotation
     
     ## This 'entities' object holds the 'complete' representations of all entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
+    ## Here we include only the alleles in the entities block, and inline the Population inside the statement, to illustrate what both patterns would look like.
     entities: [	
     
       # Alleles 
@@ -138,16 +137,6 @@ annotations: [
               - start: 45411941
                 end: 45411941   
         state: T 
-
- 
-      # Populations (in the VA model we would pull out and explicitly identify and represent this as a domain entity so it can be referenced and re-used in different contexts - as opposed to the implicit reference to such a Population in the Cellbase data)
-      - id: va:Population001
-        type: va:HumanPopulation
-        label: "gnomAD Exomes FIN"
-        parentStudy: "GNOMAD EXOMES"
-        characteristic: 
-            - name: ethnicity
-              value: "FIN"
         ]
     
     ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
@@ -161,7 +150,14 @@ annotations: [
             frequency: 0.20852435
             homozygousFrequency: 0.04497584
             heterozygousFrequency: 0.32709703 
-        populationQualifier: va:Population001          
+        populationQualifier:
+          - id: va:Population001
+            type: va:HumanPopulation
+            label: "gnomAD Exomes FIN"
+            parentStudy: "GNOMAD EXOMES"
+            characteristic: 
+              - name: ethnicity
+                value: "FIN"
         statedBy: CellBase
         date: 20140508
       
@@ -176,19 +172,25 @@ annotations: [
           - id: va:StudyData002
             frequency: 0.79147565
             homzygousFrequency: 0.6279271
-        populationQualifer: va:Population001
+        populationQualifer:
+          - id: va:Population001
+            type: va:HumanPopulation
+            label: "gnomAD Exomes FIN"
+            parentStudy: "GNOMAD EXOMES"
+            characteristic: 
+              - name: ethnicity
+                value: "FIN"
         statedBy: CellBase
         date: 20140508
       
-  
-      
+        
 
 ##------------------------------------------------------------------------------------##
 
 
 ## EXAMPLE 3 
 
-  ##SOURCE DATA: gnomAD data showing the frequency data for the NC_000019.9:g.45411941T>C allele in several populations. No API/data dump for this record, but data displayed at https://gnomad.broadinstitute.org/variant/19-45411941-T-C.
+  ##SOURCE DATA: gnomAD data showing the frequency data for the NC_000019.9:g.45411941T>C allele in several populations. No API/data dump for this record AFAIK, but data displayed at https://gnomad.broadinstitute.org/variant/19-45411941-T-C.
 
 
 ##Allele frequency is shown for several different populations based on four features: ethnicity (9), sex (2), disease status (5), sequenced material (2).  The cross-products resulting from applicaiton of these classificaiton features gives a total of 180 'populations' in which the frequency of each variant is defined. Shown in the data example below are the following populations:
@@ -207,6 +209,7 @@ annotations: [
 
 
 ## This 'entities' object holds the 'complete' representations of  entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
+## Here we include only the alleles in the entities block, and inline the Population inside the statement, to illustrate what both patterns would look like.
 entities: [	    
   # Alleles 
   - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
@@ -220,7 +223,7 @@ entities: [
           - start: 45411941
             end: 45411941   
         state: C
-]   
+  ]   
 
 statements: [  
       ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES   
