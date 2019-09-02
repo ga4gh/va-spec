@@ -115,7 +115,7 @@ annotations: [
             type: VariationExpansionSet
             createdBy: Cellbase
             members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY, ...]
-            representativeMember: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)   
+            foundationalMember: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)   
             method: CellBase Equivalence Rules v1.0
         qualifier:  va:statement001
         description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set va:eqset001 in the context of va:statement001  
@@ -131,7 +131,7 @@ annotations: [
             type: VariationExpansionSet
             createdBy: ClinGen Allele Registry
             members: [vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF, vmc:GA_zYAXkxyu2BT0FRbReCTSc23mDRVTE4GL, vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY, vmc:GA_asvewASG4aAaaa4taFfb23ARFAb, ... ]   # set includes all variations on the Alelle Registry page here: http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512
-            representativeMember: vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY (NC_000019.9:g.45411941T>C)  
+            foundationalMember: vmc:GA_xAECad3DSAG0edeeraDeac24ASVev3HY (NC_000019.9:g.45411941T>C)  
             method: ClinGen Canonicalization Rules v1.0
         qualifier:  va:statement001
         description: The variation 'CM000681.2:g.45411941T>C' expands to the expansion set va:eqset002 in the context of va:statement001  
