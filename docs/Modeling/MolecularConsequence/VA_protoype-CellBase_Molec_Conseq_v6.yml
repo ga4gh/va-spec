@@ -1,19 +1,13 @@
 #An example of a GeL/CellBase Molecular Consequence annotation structured using the straw man/prototype model diagrammed here: https://www.lucidchart.com/documents/edit/9c985671-8a53-4893-838f-5e4f8189981e/kgLWlf2GbRrf 
 #The source data for this Molecular Consequence annotation is here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType. 
-#This version of the annotation contains a single primary Molecular Consequence Statement. But the full annotation is quite large due to the evidence described for this statement,  its four Supporting Statements (3 Relative Location Statements, and 1 Computational Functional Impact Statement), detailed representation of all 'entities' described by these statements (e.g. alleles, genes, proteins, sequence features) described in these statements, and Resource Metadata objects for both the Annotation and the Primary Statement.
+#This version of the annotation contains a single primary Molecular Consequence Statement. But the full annotation is quite large due to the evidence described for this statement, its four Supporting Statements (3 Relative Location Statements, and 1 Computational Functional Impact Statement), and detailed representations of all 'entities' described by these statements (e.g. alleles, genes, proteins, sequence features) described in these statements.
 
 annotations: [  
-  #A given message may contain several annotations. This example message contains only one - a Molecular Consequence annotation with several 'supporting statements'.
+  #A given message may contain several annotations. This example message contains only one (annotation001) - a Molecular Consequence annotation with several 'supporting statements'.
   - id: va:annotation001        
     type: Variant Annotation
-
-    #'Resource-level' provenance metadata about this particular encoding of the Annotation as a VA-compliant json object in the CellBase dataset. Note that resource metadata here is not part of the source CellBase Annotation, but made up for demonstration purposes.
-    resourceMeta:  
-      - createdBy: CellBase v4.5.3 # A Software Agent
-        dateCreated: 2019-06-24
-        version: 2
     
-    #This 'entities' object holds the complete representations of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representations each time the entity is referenced).
+    #This 'entities' object holds the complete definition of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representations each time the entity is referenced).
     entities: [		
         
       # Alleles  
@@ -43,43 +37,43 @@ annotations: [
            sequence: R
            type: Sequence State
 
-      # Genes
+      # Genes (gene model here is just a stub until VA creates a proper one)
       - id: ensembl:ENSG00000130203
         type: Gene
         label: APOE   
 
-      # Proteins
+      # Proteins (protein model here is just a stub until VA creates a proper one)
       - id: uniprot:P02649
         type: Protein
         label: human APOE protein
         
-      # Transcripts
+      # Transcripts (transcript model here is just a stub until VA creates a proper one)
       - id: ensembl:ENST00000252486
         type: Transcript
         strand: forward
         biotype: SO:0000120 (protein-coding primary transcript)
         parentGene: ensembl:ENSG00000130204 (human APOE gene)
 
-      #Exons
+      #Exons (exon model here is just a stub until VA creates a proper one)
        - id: va:feature001
          type: SequenceFeature
          featureType: exon
          parentFeature:  ensembl:ENST00000252486 (APOE transcript 201)
          featureNumber: 4/4
          locationId: 
-           - id: vmc:GL_9dwv-jbsy_shRcT-cAKbghJw5u_xq9gv
+           - id: ex:9dwv-jbsy_shRcT-cAKbghJw5u_xq9gv
              sequenceId: ncbi:CM000681.2  
              interval: 
                - start: 44905791
                  end: 44908944
              
-      # Protein Features      
+      # Protein Features  (feature model here is just a stub until VA creates a proper one)    
       - id: va:feature005     ## a helix motif in the APO protein
         type: ProteinSequenceFeature      
         featureType: helix
         parentFeature: uniprot:P02649 (human APOE protein)
         locationID:
-          - id: vmc:GL_3avy-jbsy_shRcT-cAKbghJw5u_agad
+          - id: ex:3avy-jbsy_shRcT-cAKbghJw5u_agad
             sequenceID: uniprot:P02649 (human APOE protein)
             interval:
               - start: 106
@@ -90,18 +84,18 @@ annotations: [
         featureType: Apolipoprotein A1/A4/E domain
         parentFeature: uniprot:P02649 (human APOE protein)
         locationID:
-          - id: vmc:GL_3Jdv-jbsy_shRcT-cAKbghJw5u_a8cy
+          - id: ex:3Jdv-jbsy_shRcT-cAKbghJw5u_a8cy
             sequenceID: uniprot:P02649 (human APOE protein)
             interval:
               - start: 81
                 end: 292
     ]
 
-    #The is the core primary statement made in the va:annotation001 annotation, about the molecular consequence of the subject variant.
+    #The core statement made in the va:annotation001 annotation, about the molecular consequence of the subject variant.
     primaryStatement:   
     - id: va:statement001
       type: MolecularConsequenceStatement  
-      subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+      subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
       descriptor: 
         - id: SO:0001583
           label: missense_variant
@@ -109,7 +103,7 @@ annotations: [
         - id: ensembl:ENST00000252486
           label: APOE-201
 
-      #Evidence and provenance for the primary statement, modeled using one or many possible SEPIO-based structures (note E/P data here is made up for purposes of demonstration)  
+      #Evidence and provenance for this primary statement, modeled using one or many possible SEPIO-based structures (note E/P data here is fake, for purposes of demonstration)  
       authoredBy: 
         - id: ex:Agent001
           type: va:SoftwareAgent
@@ -141,7 +135,7 @@ annotations: [
  
    #In addition to the Primary Statement, a message creator can choose to include additional information to aid in the interpretation and use of the primary statement. Depending on the type/content of this information, it can be placed into either a 'VariationMetadata' object, or in one or more 'Supporting Statements'.
     
-   #A 'Variation Metadata' object provides a concise structure to hold basic variant information that often accompanies the primary statement in an annotation, but for which there is no dedicated VA Statement type, and for which it is not necessary to track evidence and provenance information. Note that variation metadata here is not part of the source CellBase Annotation, but made up for demonstration purposes.
+   #A 'Variation Metadata' object provides a concise structure to hold basic variant information that often accompanies the primary statement in an annotation, but for which there is no dedicated VA Statement type, and for which it is not necessary to track evidence and provenance information. Note that variation metadata here was created for demonstration purposes, and is not part of the source CellBase Annotation.
     
     variationMeta:
       - id: ex:VarMeta001
@@ -168,42 +162,48 @@ annotations: [
           - clingen:CA127512
           - dbSNP:rs429358 
         
-    #'Supporting Statements' are other Variant Annotation Statements to aid interpretation/use of the primary statement. Here we have four such statements that provide useful context for the primary molecular conseqeunce statement - three RelativeLocationStatements, and one FunctionalImpactStatement:
+    #'Supporting Statements' are other Variant Annotation Statements to aid interpretation/use of the primary statement. Here we show four such statements that CellBase includes in their MC annotation, to provide useful context for interpreting/applying primary molecular conseqeunce statement (three RelativeLocationStatements, and one ComputationaFunctionalImpactStatement).
     supportingStatements: [  
         #A Relative Location Statement describing exon overlap
       - id: va:statement004    
         type: RelativeLocationStatement
-        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        description: "The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon."
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of)
         descriptor: va:feature001 (exon 4 of APO transcript ENST00000252486)
-        percentAffectedQualifier:  0.11614402%
-        description: The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon.      
+        percentAffectedQualifier: 0.11614402%
+
   
         #A Relative Location Statement describing a protein feature overlap
       - id: va:statement005    
         type: RelativeLocationStatement
-        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
-        predicate: RO:0002525 (is_subsequence_of) ## This doesn't make much sense - to assert that a genomic variant is a subsequence of a protein feature.
+        description: "The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141."
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        predicate: RO:0002525 (is_subsequence_of) 
         descriptor: va:feature005 (a helix motif in the human APOE protein)
-        description: The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141. 
+
         
         #A Relative Location Statement describing a protein feature overlap
       - id: va:statement006  
         type: RelativeLocationStatement
-        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        description: "The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292."  
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: RO:0002525 (is_subsequence_of)
         descriptor: va:feature006  (a Apolipoprotein A1/A4/E domain in the human APOE protein)
-        description: The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292.  
+
         
         #A Computational Functional Impact Statement
       - id: va:statement007  
         type: PredictedFunctionalImpactStatement 
-        subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2:g.45411941T>C)
         predicate: predicted_impact
-        descriptor: tolerated
-        affectedGeneProductQualifier: uniprot:P02649 (human APOE protein)
-        scoreQualifier: 1.0
-        source: sift
+        descriptor: 
+          - id: ex:Dataset003
+            type: Computational Prediction Dataset
+            categoricalImpact: tolerated
+            impactScore: 1.0
+        geneProductQualifier: uniprot:P02649 (human APOE protein)
+        statedBy: sift
 
     ]
     
