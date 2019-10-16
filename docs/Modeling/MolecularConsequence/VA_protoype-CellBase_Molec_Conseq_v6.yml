@@ -1,6 +1,6 @@
 #An example of a GeL/CellBase Molecular Consequence annotation structured using the straw man/prototype model diagrammed here: https://www.lucidchart.com/documents/edit/9c985671-8a53-4893-838f-5e4f8189981e/kgLWlf2GbRrf 
 #The source data for this Molecular Consequence annotation is here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType. 
-#This version of the annotation contains a single primary Molecular Consequence Statement. But the full annotation is quite large due to its four Supporting Statements (3 RelativeLocationStatements, and 1 FunctionalImpactStatement), and rich representation of all 'entities' described by these statements (e.g. genes, proteins, alleles, sequence features) described in these statements.
+#This version of the annotation contains a single primary Molecular Consequence Statement. But the full annotation is quite large due to the evidence described for this statement,  its four Supporting Statements (3 Relative Location Statements, and 1 Computational Functional Impact Statement), detailed representation of all 'entities' described by these statements (e.g. alleles, genes, proteins, sequence features) described in these statements, and Resource Metadata objects for both the Annotation and the Primary Statement.
 
 annotations: [  
   #A given message may contain several annotations. This example message contains only one - a Molecular Consequence annotation with several 'supporting statements'.
