@@ -1,0 +1,221 @@
+# An example of a GeL/CellBase Molecular Consequence annotation structured using the straw man/prototype model diagrammed here: https://www.lucidchart.com/documents/edit/9c985671-8a53-4893-838f-5e4f8189981e/kgLWlf2GbRrf 
+# The source data for this Molecular Consequence annotation is here: http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=consequenceType. 
+# The transformed examle below has been trimmed down to remove duplicative elements, and enhanced with additional data not found in the source annotation to demonstrate the utility of VariationMetadata and ResourceMetadata structures. 
+# This document contains a single Molecular Consequence Annotation  (va:annotation001), whose key components include: 
+# (1) a 'primary' Statement object, (2) a Variation Metadata object, and (3) several 'supporting' Statement objects.
+  
+annotations: [    
+  - id: va:annotation001        
+    type: Variant Annotation
+
+    # 1. The Primary Statement below represetns the central assertion made in the annotation.
+    primaryStatement:   
+    - id: va:statement001
+      type: MolecularConsequenceStatement  
+      subject: ga4gh:VA.xXBYkgu1AH0HRbLeFESvllmAKUNN1MF # CM000681.2:g.45411941T>C
+      descriptor: 
+        - id: SO:0001583
+          label: missense_variant
+      geneProductQualifier: 
+        - id: ensembl:ENST00000252486
+          label: APOE-201
+
+      # Evidence and provenance for this primary statement. This data is fake, for demonstration purposes. And the final model here is t.b.d. - below is one of many possible SEPIO-based structures.
+      authoredBy: 
+        - id: ex:Agent001
+          type: va:SoftwareAgent
+          label: CellBase v4.5.3 
+          algorithm: CellBase MC Caller v1.0
+      dateAuthored: 2014-05-08
+      hasEvidenceLine:  
+        - id: ex:DataSet001
+          type: va:EvidenceLine
+          hasEvidenceItem:
+            - id: ex:DataSet001
+              type: va:ReferenceGenomeDataset  # Consider using the HCLS or DCAT models (in HCLS, would be version or distribution level)
+              label: Homo Sapiens GRCh38.98
+              build: 38
+              version: 8
+              url: ftp://ftp.ensembl.org/pub/release-98/genbank/homo_sapiens/
+            - id: ex:DataSet002
+              type: va:GenomeFeatureAnnotationDataset
+              label: Ensembl Homo Sapiens GTF v38.98
+              format: GTFv2.2
+              url: ftp://ftp.ensembl.org/pub/release-98/gtf/homo_sapiens
+ 
+      # Resource-level provenance metadata about this particular encoding of the Statement in the CellBase dataset. This data is made up for demonstration purposes.
+      resourceMeta:  
+        - createdBy: CellBase v4.5.3 # A Software Agent
+          dateCreated: 2019-06-24
+          version: 4
+          partOf: CellBase Knowledgebase v4
+    
+    # 2. The VariationMetadata object below captures basic variant information for which there is no dedicated VA Statement type, and for which it is not necessary to track evidence and provenance information. This is fake data created for demonstration purposes. 
+    variationMeta:
+      - id: ex:VarMeta001
+      - structuralType: 
+          - id: SO:00001483
+            label: SNV
+        referenceAllele: T
+        minorAllele: C
+        ancestralAllele: C
+        transcriptChange: 
+          - NM_000041.3:c.388T>C
+          - NM_001302688.1:c.466T>C
+        proteinChange: 
+          - NP_000032.1:p.Cys130Arg
+          - NP_001289617.1:p.Cys156Arg 
+        affectedGene:
+          - id: hgnc:613 
+            label: APOE
+        inTaxon: 
+          - id: ncbitaxon:9606
+            label: homo sapiens
+        externalIdentifiers:
+          - clinvar:17864
+          - clingen:CA127512
+          - dbSNP:rs429358 
+        
+    # 3. The 'Supporting Statements' below are other Statements that, like the Variation Metadata object, can aid in interpretation/use of the Primary Statement. Supporting Statements are used for more complex supporting information where a defined VA Statement structure exists. 
+    supportingStatements: [  
+        # A Relative Location Statement describing exon overlap.
+      - id: va:statement004    
+        type: RelativeLocationStatement
+        description: "The variant affects exon 4 of the APOE gene, and spans 0.116% of this exon."
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF # CM000681.2:g.45411941T>C
+        predicate: 
+          - id: RO:0002525
+            label: is_subsequence_of
+        descriptor: va:feature001 (exon 4 of APO transcript ENST00000252486)
+        percentAffectedQualifier: 0.11614402
+
+  
+        # A Relative Location Statement describing a protein feature overlap.
+      - id: va:statement005    
+        type: RelativeLocationStatement
+        description: "The variant lies within a subregion of the APOE gene corresponding to a helix spanning position 106 to 141."
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF # CM000681.2:g.45411941T>C
+        predicate: 
+          - id: RO:0002525
+            label: is_subsequence_of
+        descriptor: va:feature005 # a helix motif in the human APOE protein
+
+        
+        # A Relative Location Statement describing a protein feature overlap
+      - id: va:statement006  
+        type: RelativeLocationStatement
+        description: "The variant lies within a subregion of the APOE gene corresponding to an Apolipoprotein A1/A4/E domain spanning position 81 to 292."  
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF # CM000681.2:g.45411941T>C
+        predicate: 
+          - id: RO:0002525
+            label: is_subsequence_of
+        descriptor: va:feature006  # a Apolipoprotein A1/A4/E domain in the human APOE protein
+
+        
+        # A Computational Functional Impact Statement
+      - id: va:statement007  
+        type: PredictedFunctionalImpactStatement 
+        subject: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF # CM000681.2:g.45411941T>C
+        predicate: predicted_impact
+        descriptor: 
+          - id: ex:Dataset003
+            type: Computational Prediction Dataset
+            categoricalImpact: tolerated
+            impactScore: 1.0
+        geneProductQualifier: 
+          - id:uniprot:P02649
+            label: human APOE protein
+        statedBy: sift 
+
+    ]
+    
+]
+
+# END OF EXAMPLE
+s
+#--------------------------------------------------------------------------------------------------------------#
+
+#Appendix
+# The 'entities' object below holds the complete definition of all entities referenced by identifier in the data above (so as not to bloat the message with duplicated representations each time the entity is referenced.
+    entities: [		
+        
+      # Alleles  
+      - id: ga4gh:VA.xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF    # CM000681.2:g.45411941T>C  - a genomic variant, roughly in VR format
+        type: Allele     
+        location: 
+            interval: 
+              - start: 45411941
+                end: 45411941 
+                type: Simple Interval                
+            sequenceId: ga4gh:SQ._0wi-qoDrvram155UmcSC-zA5ZK4fpLT   #ncbi:CM000681.2, Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly
+            type: Sequence Location
+        state:
+           sequence: C
+           type: Sequence State     
+
+      - id: ga4gh:VA.szYAXkxyu2BT0FRbReCTSc23mDRVTE4GL  # NP_000032.1:p.Cys130Arg (uniprot:VAR_000652). A protein variant, roughly in VR format
+        type: Allele     
+        location: 
+            interval: 
+              - start: 130
+                end: 130 
+                type: Simple Interval                
+            sequenceId: ga4gh:SQ.asdg436AHR46wu8SHAh346asag   # uniprot:P02649 (APOE protein)
+            type: Sequence Location
+        state:
+           sequence: R
+           type: Sequence State
+
+      # Genes (gene model here is just a stub until VA creates a proper one)
+      - id: ensembl:ENSG00000130203
+        type: Gene
+        label: APOE   
+
+      # Proteins (protein model here is just a stub until VA creates a proper one)
+      - id: uniprot:P02649
+        type: Protein
+        label: human APOE protein
+        
+      # Transcripts (transcript model here is just a stub until VA creates a proper one)
+      - id: ensembl:ENST00000252486
+        type: Transcript
+        strand: forward
+        biotype: SO:0000120 (protein-coding primary transcript)
+        parentGene: ensembl:ENSG00000130204 (human APOE gene)
+
+      #Exons (exon model here is just a stub until VA creates a proper one)
+       - id: va:feature001
+         type: SequenceFeature
+         featureType: exon
+         parentFeature:  ensembl:ENST00000252486 (APOE transcript 201)
+         featureNumber: 4/4
+         locationId: 
+           - id: ex:9dwv-jbsy_shRcT-cAKbghJw5u_xq9gv
+             sequenceId: ncbi:CM000681.2  
+             interval: 
+               - start: 44905791
+                 end: 44908944
+             
+      # Protein Features  (feature model here is just a stub until VA creates a proper one)    
+      - id: va:feature005     ## a helix motif in the APO protein
+        type: ProteinSequenceFeature      
+        featureType: helix
+        parentFeature: uniprot:P02649 (human APOE protein)
+        locationID:
+          - id: ex:3avy-jbsy_shRcT-cAKbghJw5u_agad
+            sequenceID: uniprot:P02649 (human APOE protein)
+            interval:
+              - start: 106
+                end: 2141
+      
+      - id: va:feature006      ## a functional domain in the APOE protein
+        type: ProteinSequenceFeature
+        featureType: Apolipoprotein A1/A4/E domain
+        parentFeature: uniprot:P02649 (human APOE protein)
+        locationID:
+          - id: ex:3Jdv-jbsy_shRcT-cAKbghJw5u_a8cy
+            sequenceID: uniprot:P02649 (human APOE protein)
+            interval:
+              - start: 81
+                end: 292
+    ]
