@@ -14,7 +14,7 @@ Planned Components for the VA-Spec include:
 
 
 ### Documentation and Artifacts
-At present, modeling artifacts and documentation about VA efforts remains in various Google documents, slide decks, and tickets - several of which are linked below.  The VA team is preparing a v0 release, and more formal documentation accompanying this release will be available here soon.
+The VA team is preparing a v0 release, and more formal documentation accompanying this release will be available soon. At present, modeling artifacts and documentation about VA efforts remains in various Google documents, slide decks, and tickets - several of which are linked below.  
 
 - **Modeling Use Cases and Requirements**
     - [Data Example Catalog](https://docs.google.com/document/d/1WbW2ts7qX3ONJNj22BlcW4KqfxcPdLsUcnlua4SSZCc/edit#)
