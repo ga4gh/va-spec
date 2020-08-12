@@ -1,0 +1,2688 @@
+<VariationArchive VariationID="822" VariationName="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys)" VariationType="single nucleotide variant" DateCreated="2010-12-01" DateLastUpdated="2019-06-17" Accession="VCV000000822" Version="3" RecordType="interpreted" NumberOfSubmissions="25" NumberOfSubmitters="24">
+  <RecordStatus>current</RecordStatus>
+  <Species>Homo sapiens</Species>
+  <InterpretedRecord>
+    <SimpleAllele AlleleID="15861" VariationID="822">
+      <GeneList>
+        <Gene Symbol="APC" FullName="APC regulator of WNT signaling pathway" GeneID="324" HGNC_ID="HGNC:583" Source="submitted" RelationshipType="within single gene">
+          <Location>
+            <CytogeneticLocation>5q22.2</CytogeneticLocation>
+            <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" AssemblyStatus="current" Chr="5" Accession="NC_000005.10" start="112707498" stop="112846239" display_start="112707498" display_stop="112846239" Strand="+"/>
+            <SequenceLocation Assembly="GRCh37" AssemblyAccessionVersion="GCF_000001405.25" AssemblyStatus="previous" Chr="5" Accession="NC_000005.9" start="112043201" stop="112181935" display_start="112043201" display_stop="112181935" Strand="+"/>
+          </Location>
+          <OMIM>611731</OMIM>
+          <Haploinsufficiency last_evaluated="2012-07-06" ClinGen="https://www.ncbi.nlm.nih.gov/projects/dbvar/ISCA/isca_gene.cgi?sym=APC">Sufficient evidence for dosage pathogenicity</Haploinsufficiency>
+          <Triplosensitivity last_evaluated="2012-07-06" ClinGen="https://www.ncbi.nlm.nih.gov/projects/dbvar/ISCA/isca_gene.cgi?sym=APC">No evidence available</Triplosensitivity>
+          <Property>gene_acmg_incidental_2013</Property>
+        </Gene>
+      </GeneList>
+      <Name>NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys)</Name>
+      <VariantType>single nucleotide variant</VariantType>
+      <Location>
+        <CytogeneticLocation>5q22.2</CytogeneticLocation>
+        <SequenceLocation Assembly="GRCh38" AssemblyAccessionVersion="GCF_000001405.38" forDisplay="true" AssemblyStatus="current" Chr="5" Accession="NC_000005.10" start="112839514" stop="112839514" display_start="112839514" display_stop="112839514" variantLength="1" referenceAllele="T" alternateAllele="A" positionVCF="112839514" referenceAlleleVCF="T" alternateAlleleVCF="A"/>
+        <SequenceLocation Assembly="GRCh37" AssemblyAccessionVersion="GCF_000001405.25" AssemblyStatus="previous" Chr="5" Accession="NC_000005.9" start="112175211" stop="112175211" display_start="112175211" display_stop="112175211" variantLength="1" referenceAllele="T" alternateAllele="A" positionVCF="112175211" referenceAlleleVCF="T" alternateAlleleVCF="A"/>
+      </Location>
+      <OtherNameList>
+        <Name>p.I1307K:ATA&gt;AAA</Name>
+        <Name>CCDS4107.1:c.3920T&gt;A</Name>
+        <Name>3920T&gt;A</Name>
+      </OtherNameList>
+      <ProteinChange>I1307K</ProteinChange>
+      <ProteinChange>I1289K</ProteinChange>
+      <HGVSlist>
+        <HGVS Assembly="GRCh38" Type="genomic, top-level">
+          <NucleotideExpression sequenceAccessionVersion="NC_000005.10" sequenceAccession="NC_000005" sequenceVersion="10" change="g.112839514T&gt;A" Assembly="GRCh38">
+            <Expression>NC_000005.10:g.112839514T&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Assembly="GRCh37" Type="genomic, top-level">
+          <NucleotideExpression sequenceAccessionVersion="NC_000005.9" sequenceAccession="NC_000005" sequenceVersion="9" change="g.112175211T&gt;A" Assembly="GRCh37">
+            <Expression>NC_000005.9:g.112175211T&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_001127510.2" sequenceAccession="NM_001127510" sequenceVersion="2" change="c.3920T&gt;A">
+            <Expression>NM_001127510.2:c.3920T&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_001120982.1" sequenceAccession="NP_001120982" sequenceVersion="1" change="p.Ile1307Lys">
+            <Expression>NP_001120982.1:p.Ile1307Lys</Expression>
+          </ProteinExpression>
+          <MolecularConsequence ID="SO:0001583" Type="missense variant" DB="SO"/>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_001127511.2" sequenceAccession="NM_001127511" sequenceVersion="2" change="c.3866T&gt;A">
+            <Expression>NM_001127511.2:c.3866T&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_001120983.2" sequenceAccession="NP_001120983" sequenceVersion="2" change="p.Ile1289Lys">
+            <Expression>NP_001120983.2:p.Ile1289Lys</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="LRG_130t1" sequenceAccession="LRG_130t1" change="c.3920T&gt;A">
+            <Expression>LRG_130t1:c.3920T&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="LRG_130p1" sequenceAccession="LRG_130p1" change="p.Ile1307Lys">
+            <Expression>LRG_130p1:p.Ile1307Lys</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="LRG_130t2" sequenceAccession="LRG_130t2" change="c.3920T&gt;A">
+            <Expression>LRG_130t2:c.3920T&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="LRG_130p2" sequenceAccession="LRG_130p2" change="p.Ile1307Lys">
+            <Expression>LRG_130p2:p.Ile1307Lys</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="LRG_130t3" sequenceAccession="LRG_130t3" change="c.3920T&gt;A">
+            <Expression>LRG_130t3:c.3920T&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="LRG_130p3" sequenceAccession="LRG_130p3" change="p.Ile1307Lys">
+            <Expression>LRG_130p3:p.Ile1307Lys</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Type="coding">
+          <NucleotideExpression sequenceAccessionVersion="NM_000038.5" sequenceAccession="NM_000038" sequenceVersion="5" change="c.3920T&gt;A">
+            <Expression>NM_000038.5:c.3920T&gt;A</Expression>
+          </NucleotideExpression>
+          <ProteinExpression sequenceAccessionVersion="NP_000029.2" sequenceAccession="NP_000029" sequenceVersion="2" change="p.Ile1307Lys">
+            <Expression>NP_000029.2:p.Ile1307Lys</Expression>
+          </ProteinExpression>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="NG_008481.4" sequenceAccession="NG_008481" sequenceVersion="4" change="g.151994T&gt;A">
+            <Expression>NG_008481.4:g.151994T&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="genomic">
+          <NucleotideExpression sequenceAccessionVersion="LRG_130" sequenceAccession="LRG_130" change="g.151994T&gt;A">
+            <Expression>LRG_130:g.151994T&gt;A</Expression>
+          </NucleotideExpression>
+        </HGVS>
+        <HGVS Type="protein">
+          <ProteinExpression sequenceAccessionVersion="P25054" sequenceAccession="P25054" change="p.Ile1307Lys">
+            <Expression>P25054:p.Ile1307Lys</Expression>
+          </ProteinExpression>
+        </HGVS>
+      </HGVSlist>
+      <XRefList>
+        <XRef ID="P25054#VAR_005049" DB="UniProtKB"/>
+        <XRef Type="Allelic variant" ID="611731.0029" DB="OMIM"/>
+        <XRef Type="rs" ID="1801155" DB="dbSNP"/>
+      </XRefList>
+      <AlleleFrequencyList>
+        <AlleleFrequency Value="0.00130" Source="Trans-Omics for Precision Medicine (TOPMed)"/>
+        <AlleleFrequency Value="0.00081" Source="The Genome Aggregation Database (gnomAD)"/>
+        <AlleleFrequency Value="0.00169" Source="Exome Aggregation Consortium (ExAC)"/>
+      </AlleleFrequencyList>
+    </SimpleAllele>
+    <ReviewStatus>criteria provided, conflicting interpretations</ReviewStatus>
+    <RCVList>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Adenomatous polyposis coli, susceptibility to" DateLastEvaluated="2019-04-01" ReviewStatus="no assertion criteria provided" Interpretation="risk factor" SubmissionCount="1" Accession="RCV000000864" Version="3">
+        <InterpretedConditionList>
+          <InterpretedCondition>Adenomatous polyposis coli, susceptibility to</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Breast cancer, susceptibility to" DateLastEvaluated="2003-12-01" ReviewStatus="no assertion criteria provided" Interpretation="risk factor" SubmissionCount="1" Accession="RCV000000865" Version="4">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="C3469522">Breast cancer, susceptibility to</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Familial adenomatous polyposis 1" DateLastEvaluated="2018-11-21" ReviewStatus="criteria provided, conflicting interpretations" Interpretation="Conflicting interpretations of pathogenicity, risk factor" SubmissionCount="6" Accession="RCV000020088" Version="10">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="C2713442">Familial adenomatous polyposis 1</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND not provided" DateLastEvaluated="2018-06-20" ReviewStatus="criteria provided, conflicting interpretations" Interpretation="Conflicting interpretations of pathogenicity, risk factor" SubmissionCount="6" Accession="RCV000034388" Version="5">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="CN517202">not provided</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Hereditary cancer-predisposing syndrome" DateLastEvaluated="2018-08-01" ReviewStatus="criteria provided, multiple submitters, no conflicts" Interpretation="Pathogenic/Likely pathogenic, risk factor" SubmissionCount="4" Accession="RCV000115087" Version="12">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="C0027672">Hereditary cancer-predisposing syndrome</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND not specified" DateLastEvaluated="2017-02-08" ReviewStatus="criteria provided, multiple submitters, no conflicts" Interpretation="Uncertain significance" SubmissionCount="3" Accession="RCV000120049" Version="3">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="CN169374">not specified</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Colorectal cancer, susceptibility to" DateLastEvaluated="2015-11-20" ReviewStatus="criteria provided, single submitter" Interpretation="risk factor" SubmissionCount="1" Accession="RCV000210085" Version="1">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="C1858438">Colorectal cancer, susceptibility to</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Familial multiple polyposis syndrome" DateLastEvaluated="2015-11-24" ReviewStatus="criteria provided, single submitter" Interpretation="Uncertain significance" SubmissionCount="1" Accession="RCV000238802" Version="1">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="C0032580">Familial multiple polyposis syndrome</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Familial adenomatous polyposis" DateLastEvaluated="2018-06-01" ReviewStatus="criteria provided, single submitter" Interpretation="Uncertain significance" SubmissionCount="1" Accession="RCV000680453" Version="1">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="CN240755">Familial adenomatous polyposis</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+      <RCVAccession Title="NM_000038.5(APC):c.3920T&gt;A (p.Ile1307Lys) AND Carcinoma of colon" DateLastEvaluated="2017-01-01" ReviewStatus="criteria provided, single submitter" Interpretation="risk factor" SubmissionCount="1" Accession="RCV000722046" Version="1">
+        <InterpretedConditionList>
+          <InterpretedCondition DB="MedGen" ID="C0699790">Carcinoma of colon</InterpretedCondition>
+        </InterpretedConditionList>
+      </RCVAccession>
+    </RCVList>
+    <Interpretations>
+      <Interpretation DateLastEvaluated="2019-04-01" NumberOfSubmissions="25" NumberOfSubmitters="24" Type="Clinical significance">
+        <Description>Conflicting interpretations of pathogenicity, risk factor</Description>
+        <Explanation DataSource="ClinVar" Type="public">Likely benign(1);Likely pathogenic(3);Pathogenic(2);Uncertain significance(9)</Explanation>
+        <Citation Type="general">
+          <ID Source="PubMed">10439961</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">10938175</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">11001924</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">11159880</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">11354631</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">12173321</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">12533824</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">12621137</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">14624392</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">15712637</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">16140997</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">16228836</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">16875934</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">17854661</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">18343606</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">19047896</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">22703879</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">23576677</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">23896379</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">24416237</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">24599579</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">24728327</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">26300997</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">26314409</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">26394139</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">26421687</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">26845104</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">27146957</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">27153395</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">28125075</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">28135136</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">28135145</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">8940262</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9288102</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9585599</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9724771</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9731522</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9731533</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9751605</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9831355</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9869602</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9869603</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9869620</ID>
+        </Citation>
+        <Citation Type="general">
+          <ID Source="PubMed">9973276</ID>
+        </Citation>
+        <Citation Type="practice guideline" Abbrev="ACMG, 2014">
+          <ID Source="PubMed">24310308</ID>
+        </Citation>
+        <Citation Type="review" Abbrev="GeneReviews">
+          <ID Source="PubMed">20301519</ID>
+          <ID Source="BookShelf">NBK1345</ID>
+        </Citation>
+        <Comment DataSource="ClinVar" Type="public">Likely benign(1);Likely pathogenic(3);Pathogenic(2);Uncertain significance(9)</Comment>
+        <DescriptionHistory Dated="2017-06-30">
+          <Description>Conflicting interpretations of pathogenicity, not provided, risk factor</Description>
+        </DescriptionHistory>
+        <ConditionList>
+          <TraitSet ID="13598" Type="Disease">
+            <Trait ID="18746" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">Neoplastic Syndromes, Hereditary</ElementValue>
+                <XRef ID="D009386" DB="MeSH"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+                <XRef ID="699346009" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Tumor predisposition</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Cancer predisposition</ElementValue>
+                <XRef ID="Hereditary+Cancer/3345" DB="Genetic Alliance"/>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="keyword">Neoplasm</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <Citation Type="practice guideline" Abbrev="IARC, 2008">
+                <ID Source="pmc">3075918</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <XRef ID="C0027672" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="9590" Type="Disease">
+            <Trait ID="16789" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">AllHighlyPenetrant</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">not specified</ElementValue>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="public definition">The term 'not specified' was created for use in ClinVar so that submitters can convey the concept that a variant is benign, likely benign, or of uncertain significance for an unspecified set of disorders.  This usage was introduced in 2014 to replace AllHighlyPenetrant.</Attribute>
+              </AttributeSet>
+              <XRef ID="CN169374" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="8942" Type="Disease">
+            <Trait ID="6588" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">Familial adenomatous polyposis</ElementValue>
+                <XRef ID="6408" DB="Office of Rare Diseases"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Familial multiple polyposis syndrome</ElementValue>
+                <XRef ID="72900001" DB="SNOMED CT"/>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">FAP</ElementValue>
+                <XRef ID="6408" DB="Office of Rare Diseases"/>
+              </Symbol>
+              <Symbol>
+                <ElementValue Type="Alternate">FPC</ElementValue>
+                <XRef ID="6408" DB="Office of Rare Diseases"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="public definition">Familial adenomatous polyposis (FAP) is an inherited disorder characterized by cancer of the large intestine (colon) and rectum. People with the classic type of familial adenomatous polyposis may begin to develop multiple noncancerous (benign) growths (polyps) in the colon as early as their teenage years. Unless the colon is removed, these polyps will become malignant (cancerous). The average age at which an individual develops colon cancer in classic familial adenomatous polyposis is 39 years. Some people have a variant of the disorder, called attenuated familial adenomatous polyposis, in which polyp growth is delayed. The average age of colorectal cancer onset for attenuated familial adenomatous polyposis is 55 years.In people with classic familial adenomatous polyposis, the number of polyps increases with age, and hundreds to thousands of polyps can develop in the colon. Also of particular significance are noncancerous growths called desmoid tumors. These fibrous tumors usually occur in the tissue covering the intestines and may be provoked by surgery to remove the colon. Desmoid tumors tend to recur after they are surgically removed. In both classic familial adenomatous polyposis and its attenuated variant, benign and malignant tumors are sometimes found in other places in the body, including the duodenum (a section of the small intestine), stomach, bones, skin, and other tissues. People who have colon polyps as well as growths outside the colon are sometimes described as having Gardner syndrome.A milder type of familial adenomatous polyposis, called autosomal recessive familial adenomatous polyposis, has also been identified. People with the autosomal recessive type of this disorder have fewer polyps than those with the classic type. Fewer than 100 polyps typically develop, rather than hundreds or thousands. The autosomal recessive type of this disorder is caused by mutations in a different gene than the classic and attenuated types of familial adenomatous polyposis.</Attribute>
+                <XRef ID="familial-adenomatous-polyposis" DB="Genetics Home Reference"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="273">loss of function</Attribute>
+                <XRef ID="GTR000528529" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000528534" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000529017" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552183" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552184" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000500599" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="Decipher">
+                <URL>https://decipher.sanger.ac.uk/syndrome/49</URL>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="Mallorca, 2008">
+                <ID Source="PubMed">18194984</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ACMG/NSGC, 2015">
+                <ID Source="PubMed">25394175</ID>
+              </Citation>
+              <XRef ID="733" DB="Orphanet"/>
+              <XRef ID="C0032580" DB="MedGen"/>
+              <XRef Type="Phenotypic series" ID="PS175100" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="1735" Type="Disease">
+            <Trait ID="10229" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">Colonic carcinoma</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Carcinoma of colon</ElementValue>
+                <XRef ID="269533000" DB="SNOMED CT"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Colorectal cancer</ElementValue>
+                <XRef ID="Colorectal+Cancer/1746" DB="Genetic Alliance"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Colon cancer</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Colorectal cancer, somatic</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Colon cancer, somatic</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">Rectal cancer, somatic</ElementValue>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">CRC</ElementValue>
+                <XRef ID="GTR000500646" DB="Genetic Testing Registry (GTR)"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="keyword">Hereditary cancer syndrome</Attribute>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="public definition">Lynch syndrome is characterized by an increased risk for colorectal cancer (CRC) and cancers of the endometrium, stomach, ovary, small bowel, hepatobiliary tract, urinary tract, brain, and skin. In individuals with Lynch syndrome the following lifetime risks for cancer are seen: CRC: 52%-82% (mean age at diagnosis 44-61 years). Endometrial cancer in females: 25%-60% (mean age at diagnosis 48-62 years). Gastric cancer: 6%-13% (mean age at diagnosis 56 years). Ovarian cancer: 4%-12% (mean age at diagnosis 42.5 years; ~30% are diagnosed &lt; age 40 years). The risk for other Lynch syndrome-related cancers is lower, though substantially increased over general population rates.</Attribute>
+                <XRef ID="NBK1211" DB="GeneReviews"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301390</ID>
+                <ID Source="BookShelf">NBK1211</ID>
+              </Citation>
+              <Citation Type="Position Statement" Abbrev="EGAPP, 2009">
+                <ID Source="pmc">2743612</ID>
+              </Citation>
+              <Citation Type="Position Statement" Abbrev="EGAPP, 2009">
+                <ID Source="pmc">2743610</ID>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="AMA/NCHPEG, 2012">
+                <URL>http://www.nchpeg.org/documents/crc/11-0456%20Fact%20sheets%20(MSI%20and%20IHC%20testing).pdf</URL>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="NACB, 2008">
+                <ID Source="PubMed">19042984</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="AHRQ, 2013">
+                <URL>https://www.cms.gov/Medicare/Coverage/DeterminationProcess/downloads/id90TA.pdf</URL>
+                <CitationText>Technology Assessment on Genetic Testing or Molecular Pathology Testing of Cancers with Unknown Primary Site to Determine Origin</CitationText>
+              </Citation>
+              <Citation Type="Suggested Reading" Abbrev="Imperiale et al., 2014">
+                <ID Source="PubMed">25006736</ID>
+              </Citation>
+              <Citation Type="Recommendation" Abbrev="ASCO, 2006">
+                <ID Source="PubMed">17060676</ID>
+              </Citation>
+              <Citation Type="Translational/Evidence-based" Abbrev="NCCN, 2011">
+                <ID Source="PubMed">22138009</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ACP MPDG, 2014">
+                <ID Source="PubMed">24996433</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="SEAP/SEOM, 2012">
+                <ID Source="PubMed">22855150</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ESMO, 2012">
+                <ID Source="PubMed">23012255</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="SEAP/SEOM, 2015">
+                <ID Source="PubMed">25373533</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="EGTM, 2014">
+                <ID Source="PubMed">23852704</ID>
+              </Citation>
+              <Citation Type="Recommendation" Abbrev="EGAPP, 2013">
+                <ID Source="PubMed">23429431</ID>
+              </Citation>
+              <XRef ID="C0699790" DB="MedGen"/>
+              <XRef Type="MIM" ID="114500" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="35108" Type="Disease">
+            <Trait ID="36952" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Familial adenomatous polyposis</ElementValue>
+              </Name>
+              <XRef ID="CN240755" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="9460" Type="Disease">
+            <Trait ID="17556" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">not provided</ElementValue>
+                <XRef ID="13DG0619" DB="Developmental Genetics Unit,King Faisal Specialist Hospital &amp; Research Centre"/>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="public definition">The term 'not provided' is registered in MedGen to support identification of submissions to ClinVar for which no condition was named when assessing the variant. 'not provided' differs from 'not specified', which is used when a variant is asserted to be benign, likely benign, or of uncertain significance for conditions that have not been specified.</Attribute>
+              </AttributeSet>
+              <XRef ID="CN517202" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="6265" Type="Disease">
+            <Trait ID="15929" Type="Disease">
+              <Name>
+                <ElementValue Type="Alternate">Familial Adenomatous Polyposis</ElementValue>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">POLYPOSIS, ADENOMATOUS INTESTINAL</ElementValue>
+                <XRef Type="MIM" ID="175100" DB="OMIM"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">APC-Associated Polyposis Conditions</ElementValue>
+                <XRef ID="NBK1345" DB="GeneReviews"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Alternate">FAMILIAL ADENOMATOUS POLYPOSIS 1, ATTENUATED</ElementValue>
+                <XRef Type="Allelic variant" ID="611731.0021" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0028" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0035" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0038" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0043" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0034" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0036" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0042" DB="OMIM"/>
+                <XRef Type="Allelic variant" ID="611731.0049" DB="OMIM"/>
+              </Name>
+              <Name>
+                <ElementValue Type="Preferred">Familial adenomatous polyposis 1</ElementValue>
+              </Name>
+              <Symbol>
+                <ElementValue Type="Preferred">FAP1</ElementValue>
+                <XRef Type="MIM" ID="175100" DB="OMIM"/>
+              </Symbol>
+              <AttributeSet>
+                <Attribute Type="public definition">APC-associated polyposis conditions include: familial adenomatous polyposis (FAP), attenuated FAP, and gastric adenocarcinoma and proximal polyposis of the stomach (GAPPS). FAP is a colon cancer predisposition syndrome in which hundreds to thousands of adenomatous colonic polyps develop, beginning, on average, at age 16 years (range 7-36 years). By age 35 years, 95% of individuals with FAP have polyps; without colectomy, colon cancer is inevitable. The mean age of colon cancer diagnosis in untreated individuals is 39 years (range 34-43 years). Extracolonic manifestations are variably present and include: polyps of the gastric fundus and duodenum, osteomas, dental anomalies, congenital hypertrophy of the retinal pigment epithelium (CHRPE), soft tissue tumors, desmoid tumors, and associated cancers. Attenuated FAP is characterized by multiple colonic polyps (average of 30), more proximally located polyps, and a diagnosis of colon cancer at a later age than in FAP. Certain extracolonic manifestations, such as gastric and duodenal polyps or cancers, are variably present in attenuated FAP; risk management may be substantially different between FAP and attenuated FAP. GAPPS is characterized by gastric fundic gland polyposis, increased risk of gastric cancer, and limited colonic involvement in most individuals reported.</Attribute>
+                <XRef ID="NBK1345" DB="GeneReviews"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="273">loss of function</Attribute>
+                <XRef ID="GTR000172265" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512300" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000515885" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000515899" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000522559" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000528912" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000530120" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000530202" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552245" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000500894" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000501393" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000508954" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520047" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520069" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520394" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520870" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000521915" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000529017" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000530028" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000530118" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000321103" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000330056" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000500363" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000500599" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000501394" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512645" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000515534" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520865" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000527982" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000558907" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000326160" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000501794" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520026" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520077" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520868" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520869" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520872" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000527984" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552290" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552303" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <Citation Type="review" Abbrev="GeneReviews">
+                <ID Source="PubMed">20301519</ID>
+                <ID Source="BookShelf">NBK1345</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ASCRS, 2001">
+                <ID Source="PubMed">11598466</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="NSGC, 2004">
+                <ID Source="PubMed">15604628</ID>
+              </Citation>
+              <Citation Type="Translational/Evidence-based" Abbrev="EuroGenetest, 2011">
+                <ID Source="PubMed">21368914</ID>
+              </Citation>
+              <Citation Type="Recommendation" Abbrev="ACMG, 2013">
+                <ID Source="PubMed">23788249</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ASCO/ESMO, 2015">
+                <ID Source="PubMed">25452455</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ACMG, 2014">
+                <ID Source="PubMed">24310308</ID>
+              </Citation>
+              <Citation Type="practice guideline" Abbrev="ACG, 2015">
+                <ID Source="PubMed">25645574</ID>
+              </Citation>
+              <Citation Type="Recommendation" Abbrev="ACMG, 2015">
+                <ID Source="PubMed">25356965</ID>
+              </Citation>
+              <Citation Type="Recommendation" Abbrev="ACMG, 2016">
+                <ID Source="PubMed">27854360</ID>
+                <ID Source="DOI">10.1038/gim.2016.190</ID>
+              </Citation>
+              <XRef ID="C2713442" DB="MedGen"/>
+              <XRef Type="MIM" ID="175100" DB="OMIM"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="1570" Type="Disease">
+            <Trait ID="10180" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Colorectal cancer, susceptibility to</ElementValue>
+              </Name>
+              <XRef ID="C1858438" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="215" Type="Disease">
+            <Trait ID="9672" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Adenomatous polyposis coli, susceptibility to</ElementValue>
+              </Name>
+            </Trait>
+          </TraitSet>
+          <TraitSet ID="216" Type="Disease">
+            <Trait ID="9673" Type="Disease">
+              <Name>
+                <ElementValue Type="Preferred">Breast cancer, susceptibility to</ElementValue>
+              </Name>
+              <AttributeSet>
+                <Attribute Type="disease mechanism" integerValue="274">gain of function</Attribute>
+                <XRef ID="GTR000021468" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000210160" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000320688" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000325401" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000326160" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509363" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509427" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509980" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520071" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520394" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000525134" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000558504" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000325409" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512240" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512529" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512816" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000520069" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000522161" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000522162" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000558503" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509983" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512528" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000522159" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000522160" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000500363" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000508956" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509474" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509982" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509984" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000509985" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512644" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000512645" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552183" DB="Genetic Testing Registry (GTR)"/>
+                <XRef ID="GTR000552245" DB="Genetic Testing Registry (GTR)"/>
+              </AttributeSet>
+              <AttributeSet>
+                <Attribute Type="public definition">Breast cancer is a disease in which certain cells in the breast become abnormal and multiply uncontrollably to form a tumor. Although breast cancer is much more common in women, this form of cancer can also develop in men. In both women and men, the most common form of breast cancer begins in cells lining the milk ducts (ductal cancer). In women, cancer can also develop in the glands that produce milk (lobular cancer). Most men have little or no lobular tissue, so lobular cancer in men is very rare.In its early stages, breast cancer usually does not cause pain and may exhibit no noticeable symptoms. As the cancer progresses, signs and symptoms can include a lump or thickening in or near the breast; a change in the size or shape of the breast; nipple discharge, tenderness, or retraction (turning inward); and skin irritation, dimpling, or scaliness. However, these changes can occur as part of many different conditions. Having one or more of these symptoms does not mean that a person definitely has breast cancer.In some cases, cancerous tumors can invade surrounding tissue and spread to other parts of the body. If breast cancer spreads, cancerous cells most often appear in the bones, liver, lungs, or brain. Tumors that begin at one site and then spread to other areas of the body are called metastatic cancers.A small percentage of all breast cancers cluster in families. These cancers are described as hereditary and are associated with inherited gene mutations. Hereditary breast cancers tend to develop earlier in life than noninherited (sporadic) cases, and new (primary) tumors are more likely to develop in both breasts.</Attribute>
+                <XRef ID="breast-cancer" DB="Genetics Home Reference"/>
+              </AttributeSet>
+              <Citation Type="practice guideline" Abbrev="NSGC, 2013">
+                <ID Source="PubMed">23188549</ID>
+              </Citation>
+              <XRef ID="C3469522" DB="MedGen"/>
+            </Trait>
+          </TraitSet>
+        </ConditionList>
+      </Interpretation>
+    </Interpretations>
+    <ClinicalAssertionList>
+      <ClinicalAssertion ID="40392" DateCreated="2011-05-06" DateLastUpdated="2019-05-19" SubmissionDate="2013-01-08">
+        <ClinVarSubmissionID localKey="NM_000038.3:c.3920T&gt;A_NBK1345" title="NM_000038.3:c.3920T&gt;A and APC-Associated Polyposis Conditions"/>
+        <ClinVarAccession Accession="SCV000040392" Type="SCV" Version="1" SubmitterName="GeneReviews" OrgID="500062" OrganizationCategory="resource" OrgAbbreviation="GeneReviews"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>no assertion criteria provided</ReviewStatus>
+        <Interpretation DateLastEvaluated="2011-10-27">
+          <Description>pathologic</Description>
+          <Comment Type="ConvertedByNCBI">Converted during submission to Pathogenic.</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>not provided</Origin>
+              <Species>human</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <Purpose>Assert pathogenicity</Purpose>
+              <MethodType>curation</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <XRefList>
+            <XRef DB="dbSNP" ID="1801155"/>
+          </XRefList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.3:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">APC-Associated Polyposis Conditions</ElementValue>
+            </Name>
+            <XRef DB="GeneReviews" ID="NBK1345"/>
+            <XRef DB="OMIM" ID="175100" Type="MIM Number"/>
+          </Trait>
+        </TraitSet>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="98286" DateCreated="2013-03-26" DateLastUpdated="2019-05-02" SubmissionDate="2012-07-15">
+        <ClinVarSubmissionID localKey="NM_000038.4:c.3920T&gt;A|not provided"/>
+        <ClinVarAccession Accession="SCV000043125" Type="SCV" Version="1" SubmitterName="Biesecker Lab/Human Development Section,National Institutes of Health" OrgID="1160" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>no assertion criteria provided</ReviewStatus>
+        <Interpretation DateLastEvaluated="2012-07-13">
+          <Description>variant of unknown significance</Description>
+          <Comment Type="ConvertedByNCBI">Converted during submission to Uncertain significance.</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>570</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Illumina GAIIx</NamePlatform>
+              <TypePlatform>High-Throughput DNA Sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <Software name="Eland" purpose="alignment"/>
+              <Software name="Most Probable Genotype" purpose="variant calls"/>
+              <MethodType>research</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="5"/>
+            </ObservedData>
+            <Comment Type="public">The study set was not selected for affection status in relation to any cancer. Pathogenicity categories were based on literature curation. See Pubmed ID:22703879 for details.</Comment>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name>p.Ile1307Lys</Name>
+          </OtherNameList>
+          <XRefList>
+            <XRef DB="dbSNP" ID="1801155" Type="rsNumber"/>
+          </XRefList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.4:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <Citation Type="general">
+          <ID Source="PubMed">22703879</ID>
+        </Citation>
+        <StudyName>ClinSeq</StudyName>
+        <SubmissionNameList>
+          <SubmissionName>ClinSeq_cancer</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="281153" DateCreated="2014-06-09" DateLastUpdated="2019-05-02" SubmissionDate="2014-05-29">
+        <ClinVarSubmissionID localKey="MedGen:CN169374"/>
+        <ClinVarAccession Accession="SCV000084184" Type="SCV" Version="1" SubmitterName="ITMI" OrgID="504914" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>no assertion provided</ReviewStatus>
+        <Interpretation DateLastEvaluated="2013-09-19">
+          <Description>not provided</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>Whole_cohort</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>681</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0.0022</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>African</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>43</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>African_European</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>46</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0.0109</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>Central_Asian</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>50</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>East_Asian</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>62</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>European</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>331</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0.003</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Ethnicity>Hispanic</Ethnicity>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>118</NumberTested>
+            </Sample>
+            <Method>
+              <NamePlatform>Complete Genomics</NamePlatform>
+              <TypePlatform>next-gen sequencing</TypePlatform>
+              <Purpose>discovery</Purpose>
+              <MethodType>reference population</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <SequenceLocation Assembly="GRCh37" Chr="5" alternateAllele="A" referenceAllele="T" start="112175211" stop="112175211" variantLength="1"/>
+          </Location>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">AllHighlyPenetrant</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="CN169374" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <Citation Type="general">
+          <ID Source="PubMed">24728327</ID>
+        </Citation>
+        <Comment Type="public">Please see associated publication for description of ethnicities</Comment>
+        <SubmissionNameList>
+          <SubmissionName>Cancer_genes_01</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="498299" DateCreated="2016-03-19" DateLastUpdated="2019-05-02" SubmissionDate="2016-03-03">
+        <ClinVarSubmissionID localKey="c.3920T&gt;A" localKeyIsSubmitted="1" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000266006" Type="SCV" Version="1" SubmitterName="University of Washington Department of Laboratory Medicine,University of Washington" OrgID="506834" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2015-11-20">
+          <Description>risk factor</Description>
+          <Comment Type="public">Low penetrance mutation that is associated with a small increase in risk of colon cancer and with an increased risk of colon polyps (Boursi 2013)</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Shirts et al. (Genet Med 2016)</Attribute>
+          <Citation>
+            <ID Source="PubMed">26845104</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">40</Age>
+              <Age Type="maximum" age_unit="years">49</Age>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">278</Attribute>
+            </ObservedData>
+            <TraitSet Type="Finding">
+              <Trait Type="Finding">
+                <Name>
+                  <ElementValue Type="Preferred">breast cancer</ElementValue>
+                </Name>
+              </Trait>
+            </TraitSet>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">30</Age>
+              <Age Type="maximum" age_unit="years">39</Age>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">479</Attribute>
+            </ObservedData>
+            <TraitSet Type="Finding">
+              <Trait Type="Finding">
+                <Name>
+                  <ElementValue Type="Preferred">breast cancer</ElementValue>
+                </Name>
+              </Trait>
+            </TraitSet>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">530</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">1115</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">60</Age>
+              <Age Type="maximum" age_unit="years">69</Age>
+              <AffectedStatus>yes</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">1508</Attribute>
+            </ObservedData>
+            <TraitSet Type="Finding">
+              <Trait Type="Finding">
+                <Name>
+                  <ElementValue Type="Preferred">colon cancer</ElementValue>
+                </Name>
+              </Trait>
+            </TraitSet>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">1614</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">1931</Attribute>
+            </ObservedData>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">60</Age>
+              <Age Type="maximum" age_unit="years">69</Age>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">1960</Attribute>
+            </ObservedData>
+            <TraitSet Type="Finding">
+              <Trait Type="Finding">
+                <Name>
+                  <ElementValue Type="Preferred">ovarian cancer</ElementValue>
+                </Name>
+              </Trait>
+            </TraitSet>
+          </ObservedIn>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <Age Type="minimum" age_unit="years">50</Age>
+              <Age Type="maximum" age_unit="years">59</Age>
+              <AffectedStatus>no</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="SampleLocalID">1974</Attribute>
+            </ObservedData>
+            <TraitSet Type="Finding">
+              <Trait Type="Finding">
+                <Name>
+                  <ElementValue Type="Preferred">bilateral breast cancer</ElementValue>
+                </Name>
+              </Trait>
+            </TraitSet>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C1858438" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>GIM_BROCA</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="574598" DateCreated="2016-07-29" DateLastUpdated="2019-05-02" SubmissionDate="2016-01-06">
+        <ClinVarSubmissionID localKey="NM_001127510.2:c.3920T&gt;A|MedGen:C0032580" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000297021" Type="SCV" Version="2" SubmitterName="Division of Genomic Diagnostics,The Children's Hospital of Philadelphia" OrgID="165021" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2015-11-24">
+          <Description>Uncertain significance</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">DGD Variant Analysis Guidelines</Attribute>
+          <Citation Type="general">
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/q5qzurm4/dgd_variant_analysis_guidelines.docx</URL>
+            <CitationText>DGD_Variant_Analysis_Guidelines.docx</CitationText>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_001127510.2:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Adenomatous polyposis coli</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="C0032580" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <StudyDescription>Clinical exome data</StudyDescription>
+        <SubmissionNameList>
+          <SubmissionName>exome2015-12-22</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1147603" DateCreated="2017-08-25" DateLastUpdated="2019-05-02" SubmissionDate="2017-04-19">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|not specified" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000591159" Type="SCV" Version="1" SubmitterName="Department of Pathology and Laboratory Medicine,Sinai Health System" OrgID="506152" OrganizationCategory="laboratory" OrgAbbreviation="PLM-SHS"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2016-08-15">
+          <Description>Uncertain significance</Description>
+          <Citation>
+            <ID Source="PubMed">9731533</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9973276</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9724771</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23896379</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">16140997</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23576677</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">19047896</ID>
+          </Citation>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <GeneLocation>NM_000038.5:exon 16A</GeneLocation>
+          </Location>
+          <OtherNameList>
+            <Name>p.Ile1307Lys</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not specified</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <StudyName>The Canadian Open Genetics Repository (COGR)</StudyName>
+        <SubmissionNameList>
+          <SubmissionName>SHS20170111</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1328882" DateCreated="2018-01-04" DateLastUpdated="2019-05-02" SubmissionDate="2017-06-22">
+        <ClinVarSubmissionID localKey="76464|OMIM:175100" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000677724" Type="SCV" Version="1" SubmitterName="Counsyl" OrgID="320494" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2016-09-27">
+          <Description>Likely pathogenic</Description>
+          <Citation>
+            <ID Source="PubMed">23576677</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24310308</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23896379</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">17854661</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24728327</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">15712637</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9724771</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24599579</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24416237</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22703879</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">11001924</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">18343606</ID>
+          </Citation>
+          <Comment Type="public">I1307K is associated with a 10-20% lifetime risk of developing colon cancer in individuals of Ashkenazi Jewish ancestry and is not known to cause classic or attenuated FAP.</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Counsyl Autosomal Dominant Disease Classification criteria (2015)</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/soovr93u/mdi-5618_320494_counsyl_autosomal_dominant_disease_classification_criteria_%25282015%2529_v1.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="175100" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB2805501</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1359177" DateCreated="2018-03-01" DateLastUpdated="2019-05-02" SubmissionDate="2017-11-15">
+        <ClinVarSubmissionID localKey="CCDS4107.1:c.3920T&gt;A|Hereditary cancer-predisposing syndrome" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000693480" Type="SCV" Version="1" SubmitterName="True Health Diagnostics" OrgID="506273" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>no assertion criteria provided</ReviewStatus>
+        <Interpretation DateLastEvaluated="2017-11-10">
+          <Description>risk factor</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">CCDS4107.1:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB3222006</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="279290" DateCreated="2014-06-03" DateLastUpdated="2019-05-02" SubmissionDate="2018-04-02">
+        <ClinVarSubmissionID localKey="7840|MedGen:C2713442" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000153895" Type="SCV" Version="8" SubmitterName="Invitae" OrgID="500031" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-01-13">
+          <Description>risk factor</Description>
+          <Citation>
+            <ID Source="PubMed">23896379</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9751605</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23576677</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Comment Type="public">This sequence change replaces isoleucine with lysine at codon 1307 of the APC protein (p.Ile1307Lys). The isoleucine residue is weakly conserved and there is a moderate physicochemical difference between isoleucine and lysine. This variant is present in population databases (rs1801155, ExAC 0.3%). This variant is found in ~10% of Ashkenazi Jewish individuals and ~3% of Sephardic Jewish individuals (PMID: 23896379). Other studies have reported a 6-7% frequency in Ashkenazi individuals (PMID: 9288102). This variant is found in ~28% of Ashkenazi Jewish individuals with familial colorectal cancer (PMID: 9288102). ClinVar contains an entry for this variant (Variation ID: 822). In a large meta-analysis involving ~10,000 cases and controls (PMID: 23576677), Ashkenazi Jewish individuals who carried the I1307K change had a significantly increased risk of colorectal cancer (OR=2.17, 95% CI=1.65-2.86). By contrast, the I1307K change did not appear to confer any additional risk of colorectal cancer in non-Ashkenazi Jewish individuals (OR=1.36, 95% CI=0.59-3.13). This DNA substitution converts an AAATAAAA sequence element into an extended tract of eight adenosine nucleotides (A8). The A8 mononucleotide tract created by this change has been shown to confer an increased propensity for somatic truncating mutations on this allele (PMID: 9751605). In summary, this is a frequently observed variant that is associated with a 2-fold increased risk of colorectal cancer in the Ashkenazi Jewish population. An increased risk of colorectal cancer in individuals who are not of Ashkenazi Jewish ancestry has not been established.</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Nykamp K et al. (Genet Med 2017)</Attribute>
+          <Citation>
+            <ID Source="PubMed">28492532</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="C2713442" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB3864685</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="269650" DateCreated="2014-05-13" DateLastUpdated="2019-05-02" SubmissionDate="2018-09-07">
+        <ClinVarSubmissionID localKey="GDX:3786|Not Provided" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000148996" Type="SCV" Version="4" SubmitterName="GeneDx" OrgID="26957" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2015-05-08">
+          <Description>risk factor</Description>
+          <Comment Type="public">This variant is denoted APC c.3920T&gt;A at the DNA level and p.Ile1307Lys (I1307K) at the protein level, replacing an Isoleucine with a Lysine. APC Ile1307Lys is a common variant, observed at an allele frequency of 3.7% (371/10,138) in individuals of Ashkenazi Jewish ancestry in large population cohorts (Lek 2016) and in up to 11% of individuals in Ashkenazi Jewish cohorts in the literature (Liang 2013, Boursi 2013). A meta-analysis of epidemiologic studies of APC polymorphisms suggests that individuals of Ashkenazi Jewish ancestry who carry this variant have a 2-fold increased risk of colorectal cancer (Liang 2013). However, studies of this variant in other populations did not report an increased risk of colorectal cancer (Liang 2013); therefore, the clinical significance in individuals without Jewish ancestry is not clear at this time. In sum, we consider APC Ile1307Lys to be a risk allele. The National Comprehensive Cancer Network has management guidelines for individuals carrying the APC Ile1307Lys risk allele (NCCN).</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">GeneDX Variant Classification(06012015)</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/7oynscmk/mdi-5616_26957_genedx_interprules_final_061215.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <SequenceLocation Assembly="GRCh37" Chr="5" alternateAllele="A" referenceAllele="T" start="112175211" stop="112175211" variantLength="1"/>
+          </Location>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Not Provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4498316</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="302407" DateCreated="2014-08-01" DateLastUpdated="2019-05-02" SubmissionDate="2018-07-30">
+        <ClinVarSubmissionID localKey="a4793" localKeyIsSubmitted="1" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000183892" Type="SCV" Version="7" SubmitterName="Ambry Genetics" OrgID="61756" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-02-28">
+          <Description>Pathogenic</Description>
+          <Citation>
+            <ID Source="PubMed">23576677</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">16228836</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23896379</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24728327</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">18343606</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26421687</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9973276</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">11159880</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">10938175</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26314409</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27146957</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27153395</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28135145</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28125075</ID>
+          </Citation>
+          <Comment Type="public">Lines of evidence used in support of classification: Significant disease association in appropriately sized case-control study(ies),Detected in individual satisfying established diagnostic critera for classic disease without a clear mutation,Other strong data supporting pathogenic classification</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Ambry Autosomal Dominant and X-Linked criteria (3/2017)</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/10Jq49tz/AD_XL_ClassificationScheme_03.2017_Ambry.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+              <NumberTested>1</NumberTested>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="VariantAlleles" integerValue="1"/>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="C0027672" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4348735</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="21014" DateCreated="2011-01-25" DateLastUpdated="2019-05-02" SubmissionDate="2014-02-19">
+        <ClinVarSubmissionID localKey="611731.0029_FAMILIAL ADENOMATOUS POLYPOSIS 1, SUSCEPTIBILITY TO" title="APC, ILE1307LYS_FAMILIAL ADENOMATOUS POLYPOSIS 1, SUSCEPTIBILITY TO"/>
+        <ClinVarAccession Accession="SCV000021014" Type="SCV" Version="3" SubmitterName="OMIM" OrgID="3" OrganizationCategory="resource"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>no assertion criteria provided</ReviewStatus>
+        <Interpretation DateLastEvaluated="2019-04-01">
+          <Description>risk factor</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species>human</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>literature only</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">In a 39-year-old Ashkenazi Jewish man with colorectal adenomas and a family history of colon cancer (175100), Laken et al. (1997) identified a 3920T-A transversion in the APC gene, resulting in an ile1307-to-lys (I1307K) substitution. An in vitro synthesized protein assay from this allele showed a truncated APC protein. The T-to-A change converted an AAATAAAA sequence to (A)8 and was postulated to result in failure of the cellular transcriptional or translational machinery, resulting in a truncated protein. The (A)8 tract not only was unstable in vivo, leading to somatic mutation, but also appeared to be unstable in vitro during the enzymatic manipulations employed in the IVSP assay. The same mutation was identified in 28% of Ashkenazi Jews with a family history of CRC and in the carrier state of 6% unaffected Ashkenazim from the general population. Analysis of tumor tissue occurring in CRC patients with the I1307K mutation revealed that nearly half contained somatic truncating mutations closely surrounding the germline mutation; all the somatic mutations occurred exclusively in the I1307K allele. Laken et al. (1997) concluded that presence of the I1307K mutation results in a 2-fold increased risk for colorectal cancer, although the change in itself does not likely contribute to the disease.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9288102</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="175100" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Petersen et al. (1998) addressed the increasingly important problem of interpreting the significance of missense mutations found in disease-causing genes, citing the APC I1307K mutation as a case in point. Using a Bayesian approach that incorporated genetic information on affected relatives, relationship of the relatives to the proband, the population frequency of the mutation, and the phenocopy rate of the disease, the authors concluded that the I1307K mutation was likely to be disease causing. Petersen et al. (1998) also developed a simple approximation for rare alleles and considered the case of unknown penetrance and allele frequency.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9585599</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">By genotyping 5,081 Ashkenazi volunteers in a community survey, Woodage et al. (1998) concluded that APC I1307K carriers have a modestly elevated risk of developing cancer (less than 2-fold). Woodage et al. (1998) emphasized that the large majority of I1307K carriers would not develop cancer of the colon or breast, and that only a small proportion of Jewish individuals who develop these cancers will be carriers. Redston et al. (1998) identified a heterozygous I1307K polymorphism in 66 (10.4%) of 632 unrelated Ashkenazi Jewish women with primary invasive breast cancer (113705). This proportion was significantly greater than the 7.03% carrier frequency observed in the study by Woodage et al. (1998). However, prevalence data suggested that the effect of the I1307K allele on breast cancer risk was largely or entirely limited to those with BRCA (see, e.g., BRCA1, 113705) founder mutations. Redston et al. (1998) concluded that the I1307K polymorphism emerges as a candidate low-penetrance breast cancer susceptibility allele or a genetic modifier of risk in BRCA heterozygotes.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9731533</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9731522</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="113705" Type="MIM"/>
+              <XRef DB="OMIM" ID="113705" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Frayling et al. (1998) identified the I1307K allele in 3 patients of Ashkenazi Jewish descent with multiple colorectal adenomas and/or carcinoma.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9724771</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Yuan et al. (1998) described a French Canadian kindred in which HNPCC was related to a novel truncating mutation in the MLH1 gene (120436.0009). In the same family, they found the I1307K APC polymorphism, which had previously been identified only in individuals of self-reported Ashkenazi Jewish origin. However, there appeared to be no relationship between the I1307K polymorphism and the presence or absence of cancer in the French Canadian family.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9831355</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Gryfe et al. (1999) identified the APC I1307K allele in 48 (10.1%) of 476 Ashkenazi Jewish subjects with adenomatous polyps and/or colorectal cancer. Compared with the frequency of 2 separate population control groups, the APC I1307K allele was associated with an estimated relative risk of 1.5 to 1.7 for colorectal neoplasia (P equal to 0.01). Compared with noncarriers, APC I1307K carriers had increased numbers of adenomas and colorectal cancers per patient, as well as a younger age at diagnosis. Gryfe et al. (1999) estimated that the APC I1307K polymorphism directly contributes to 3 to 4% of all Ashkenazi Jewish colorectal cancer.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9973276</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In persons at average risk for colorectal cancer, Rozen et al. (1999) identified the APC I1307K variant in 5.0% of 120 European and 1.6% of 188 non-European Jews (P = 0.08). It occurred in 15.4% of 52 Ashkenazi Israelis with familial cancer (P = 0.02), and was not detected in 51 non-European Jews at increased cancer risk. Colorectal neoplasia occurred individually or in the families of 13 of 20 Ashkenazi I1307K carriers, 8 of whom also had a personal or family history of noncolonic neoplasia.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9869602</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Prior et al. (1999) did not identify the I1307K mutation among 345 non-Ashkenazim individuals with colorectal cancer, suggesting that it is restricted to that population. Somatic mutations occurred at a lower frequency and were more randomly distributed when the I1307K allele was not present.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9869603</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In an editorial, Gruber et al. (1999) compared the group of Prior et al. (1999) to investigators at the scene of an accident. Prior et al. (1999) carefully characterized the somatic mutations associated with the I1307K polymorphism as if they were crash sites near this hypermutability oil slick. Tumors with the wildtype allele at codon 1307 had a variety of somatic mutations that were distributed randomly in the APC gene and were not tightly clustered around the 1307 codon. These results contrasted sharply with previous crash site investigations of the mutant allele which showed characteristic mutations piling up like cars around the oil slick. This earlier work by the Vogelstein group (Laken et al., 1997), confirmed by Gryfe et al. (1998), showed that mutations arising in association with the mutant allele appeared to be localized to a 29-bp region around the gene and were almost always insertions. Furthermore, these unusual somatic mutations were restricted to the mutant allele, never occurring in the wildtype allele in the same patients. The reference to 'crash sites' and 'oil slick' provided useful imagery comparable to the 'gatekeeper' and 'caretaker' roles of other cancer-related genes--again products of the Vogelstein laboratory, as is the designation 'landscaper,' envisioned as the basis of colorectal cancer in juvenile polyposis.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9869620</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9869603</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9288102</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9751605</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Patael et al. (1999) found the I1307K polymorphism in 2 non-Ashkenazi Jewish women in Israel and hypothesized that among Jewish persons it may not be restricted to Ashkenazim, but may actually reflect a common ancestral polymorphism. The haplotype pattern in these 2 women and in 9 Ashkenazi carrier controls was identical in all individuals regardless of ethnic origin.</Attribute>
+              <Citation>
+                <ID Source="PubMed">10439961</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Lamlum et al. (2000) screened 164 unrelated patients with multiple (3-100) colorectal adenomas for germline variants throughout the APC gene, and found 3 Ashkenazi patients harboring the I1307K mutation. Germline APC variants accounted for approximately 10% of all patients with multiple adenomas. The authors recommended screening multiple adenoma patients of Ashkenazi descent for the I1307K variant.</Attribute>
+              <Citation>
+                <ID Source="PubMed">11001924</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Silverberg et al. (2001) found no increased frequency of I1307K in Ashkenazi Jewish patients with inflammatory bowel disease and concluded that this mutation cannot account for the increased susceptibility to colorectal cancer associated with inflammatory bowel disease.</Attribute>
+              <Citation>
+                <ID Source="PubMed">11354631</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Rozen et al. (2002) reported studies in Israel indicating that I1307K is a low-penetrance variant with a 1.7 relative risk for neoplasia in carriers who have familial carcinoma, clinically equivalent to obtaining a family history of sporadic colorectal neoplasia and promoting early screening. They concluded that I1307K is a founder variant in Jews of different ethnic origin, mainly Ashkenazim, and it explains only partially their higher incidence of colorectal carcinoma.</Attribute>
+              <Citation>
+                <ID Source="PubMed">12173321</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Lynch and de la Chapelle (2003) schematized the somatic mutations that occur in carriers of the I1307K polymorphism, which results in a stretch of 8 adenosines that is believed to increase the risk of somatic mutations as a result of slippage during replication. Lynch and de la Chapelle (2003) illustrated the types of somatic changes in colonic tumors, e.g., an addition of 1 adenosine seen in the affected allele of many carriers. The addition or loss of a nucleotide causes a frameshift and loss of function of APC, constituting an important somatic event in tumor initiation.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8940262</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In individuals of Ashkenazi, Sephardi, and Arab descent, Niell et al. (2003) found a common progenitor haplotype spanning across APC I1037K from the centromeric marker D5S135 to the telomeric marker D5S346. The ancestor of modern I1307K alleles existed 87.9 to 118 generations ago (approximately 2,200 to 2,950 years ago). This estimate indicated that I1307K existed at about the time of the beginning of the Jewish diaspora, explaining its presence in non-Ashkenazi populations. The data did not indicate that selection operated at I1307K, providing compelling evidence that the high frequency of disease-susceptibility alleles in the Ashkenazim is due to genetic drift, not selection.</Attribute>
+              <Citation>
+                <ID Source="PubMed">14624392</ID>
+              </Citation>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <Name>APC, ILE1307LYS</Name>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="NonHGVS">ILE1307LYS</Name>
+          </OtherNameList>
+          <XRefList>
+            <XRef DB="OMIM" ID="611731.0029" Type="Allelic variant"/>
+          </XRefList>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">FAMILIAL ADENOMATOUS POLYPOSIS 1, SUSCEPTIBILITY TO</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="21015" DateCreated="2011-01-25" DateLastUpdated="2019-05-02" SubmissionDate="2010-12-30">
+        <ClinVarSubmissionID localKey="611731.0029_BREAST CANCER, SUSCEPTIBILITY TO" title="APC, ILE1307LYS_BREAST CANCER, SUSCEPTIBILITY TO"/>
+        <ClinVarAccession Accession="SCV000021015" Type="SCV" Version="3" SubmitterName="OMIM" OrgID="3" OrganizationCategory="resource"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>no assertion criteria provided</ReviewStatus>
+        <Interpretation DateLastEvaluated="2003-12-01">
+          <Description>risk factor</Description>
+        </Interpretation>
+        <Assertion>variation to included disease</Assertion>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species>human</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>literature only</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">In a 39-year-old Ashkenazi Jewish man with colorectal adenomas and a family history of colon cancer (175100), Laken et al. (1997) identified a 3920T-A transversion in the APC gene, resulting in an ile1307-to-lys (I1307K) substitution. An in vitro synthesized protein assay from this allele showed a truncated APC protein. The T-to-A change converted an AAATAAAA sequence to (A)8 and was postulated to result in failure of the cellular transcriptional or translational machinery, resulting in a truncated protein. The (A)8 tract not only was unstable in vivo, leading to somatic mutation, but also appeared to be unstable in vitro during the enzymatic manipulations employed in the IVSP assay. The same mutation was identified in 28% of Ashkenazi Jews with a family history of CRC and in the carrier state of 6% unaffected Ashkenazim from the general population. Analysis of tumor tissue occurring in CRC patients with the I1307K mutation revealed that nearly half contained somatic truncating mutations closely surrounding the germline mutation; all the somatic mutations occurred exclusively in the I1307K allele. Laken et al. (1997) concluded that presence of the I1307K mutation results in a 2-fold increased risk for colorectal cancer, although the change in itself does not likely contribute to the disease.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9288102</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="175100" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Petersen et al. (1998) addressed the increasingly important problem of interpreting the significance of missense mutations found in disease-causing genes, citing the APC I1307K mutation as a case in point. Using a Bayesian approach that incorporated genetic information on affected relatives, relationship of the relatives to the proband, the population frequency of the mutation, and the phenocopy rate of the disease, the authors concluded that the I1307K mutation was likely to be disease causing. Petersen et al. (1998) also developed a simple approximation for rare alleles and considered the case of unknown penetrance and allele frequency.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9585599</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">By genotyping 5,081 Ashkenazi volunteers in a community survey, Woodage et al. (1998) concluded that APC I1307K carriers have a modestly elevated risk of developing cancer (less than 2-fold). Woodage et al. (1998) emphasized that the large majority of I1307K carriers would not develop cancer of the colon or breast, and that only a small proportion of Jewish individuals who develop these cancers will be carriers. Redston et al. (1998) identified a heterozygous I1307K polymorphism in 66 (10.4%) of 632 unrelated Ashkenazi Jewish women with primary invasive breast cancer (113705). This proportion was significantly greater than the 7.03% carrier frequency observed in the study by Woodage et al. (1998). However, prevalence data suggested that the effect of the I1307K allele on breast cancer risk was largely or entirely limited to those with BRCA (see, e.g., BRCA1, 113705) founder mutations. Redston et al. (1998) concluded that the I1307K polymorphism emerges as a candidate low-penetrance breast cancer susceptibility allele or a genetic modifier of risk in BRCA heterozygotes.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9731533</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9731522</ID>
+              </Citation>
+              <XRef DB="OMIM" ID="113705" Type="MIM"/>
+              <XRef DB="OMIM" ID="113705" Type="MIM"/>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Frayling et al. (1998) identified the I1307K allele in 3 patients of Ashkenazi Jewish descent with multiple colorectal adenomas and/or carcinoma.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9724771</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Yuan et al. (1998) described a French Canadian kindred in which HNPCC was related to a novel truncating mutation in the MLH1 gene (120436.0009). In the same family, they found the I1307K APC polymorphism, which had previously been identified only in individuals of self-reported Ashkenazi Jewish origin. However, there appeared to be no relationship between the I1307K polymorphism and the presence or absence of cancer in the French Canadian family.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9831355</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Gryfe et al. (1999) identified the APC I1307K allele in 48 (10.1%) of 476 Ashkenazi Jewish subjects with adenomatous polyps and/or colorectal cancer. Compared with the frequency of 2 separate population control groups, the APC I1307K allele was associated with an estimated relative risk of 1.5 to 1.7 for colorectal neoplasia (P equal to 0.01). Compared with noncarriers, APC I1307K carriers had increased numbers of adenomas and colorectal cancers per patient, as well as a younger age at diagnosis. Gryfe et al. (1999) estimated that the APC I1307K polymorphism directly contributes to 3 to 4% of all Ashkenazi Jewish colorectal cancer.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9973276</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In persons at average risk for colorectal cancer, Rozen et al. (1999) identified the APC I1307K variant in 5.0% of 120 European and 1.6% of 188 non-European Jews (P = 0.08). It occurred in 15.4% of 52 Ashkenazi Israelis with familial cancer (P = 0.02), and was not detected in 51 non-European Jews at increased cancer risk. Colorectal neoplasia occurred individually or in the families of 13 of 20 Ashkenazi I1307K carriers, 8 of whom also had a personal or family history of noncolonic neoplasia.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9869602</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Prior et al. (1999) did not identify the I1307K mutation among 345 non-Ashkenazim individuals with colorectal cancer, suggesting that it is restricted to that population. Somatic mutations occurred at a lower frequency and were more randomly distributed when the I1307K allele was not present.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9869603</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In an editorial, Gruber et al. (1999) compared the group of Prior et al. (1999) to investigators at the scene of an accident. Prior et al. (1999) carefully characterized the somatic mutations associated with the I1307K polymorphism as if they were crash sites near this hypermutability oil slick. Tumors with the wildtype allele at codon 1307 had a variety of somatic mutations that were distributed randomly in the APC gene and were not tightly clustered around the 1307 codon. These results contrasted sharply with previous crash site investigations of the mutant allele which showed characteristic mutations piling up like cars around the oil slick. This earlier work by the Vogelstein group (Laken et al., 1997), confirmed by Gryfe et al. (1998), showed that mutations arising in association with the mutant allele appeared to be localized to a 29-bp region around the gene and were almost always insertions. Furthermore, these unusual somatic mutations were restricted to the mutant allele, never occurring in the wildtype allele in the same patients. The reference to 'crash sites' and 'oil slick' provided useful imagery comparable to the 'gatekeeper' and 'caretaker' roles of other cancer-related genes--again products of the Vogelstein laboratory, as is the designation 'landscaper,' envisioned as the basis of colorectal cancer in juvenile polyposis.</Attribute>
+              <Citation>
+                <ID Source="PubMed">9869620</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9869603</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9288102</ID>
+              </Citation>
+              <Citation>
+                <ID Source="PubMed">9751605</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Patael et al. (1999) found the I1307K polymorphism in 2 non-Ashkenazi Jewish women in Israel and hypothesized that among Jewish persons it may not be restricted to Ashkenazim, but may actually reflect a common ancestral polymorphism. The haplotype pattern in these 2 women and in 9 Ashkenazi carrier controls was identical in all individuals regardless of ethnic origin.</Attribute>
+              <Citation>
+                <ID Source="PubMed">10439961</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Lamlum et al. (2000) screened 164 unrelated patients with multiple (3-100) colorectal adenomas for germline variants throughout the APC gene, and found 3 Ashkenazi patients harboring the I1307K mutation. Germline APC variants accounted for approximately 10% of all patients with multiple adenomas. The authors recommended screening multiple adenoma patients of Ashkenazi descent for the I1307K variant.</Attribute>
+              <Citation>
+                <ID Source="PubMed">11001924</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Silverberg et al. (2001) found no increased frequency of I1307K in Ashkenazi Jewish patients with inflammatory bowel disease and concluded that this mutation cannot account for the increased susceptibility to colorectal cancer associated with inflammatory bowel disease.</Attribute>
+              <Citation>
+                <ID Source="PubMed">11354631</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Rozen et al. (2002) reported studies in Israel indicating that I1307K is a low-penetrance variant with a 1.7 relative risk for neoplasia in carriers who have familial carcinoma, clinically equivalent to obtaining a family history of sporadic colorectal neoplasia and promoting early screening. They concluded that I1307K is a founder variant in Jews of different ethnic origin, mainly Ashkenazim, and it explains only partially their higher incidence of colorectal carcinoma.</Attribute>
+              <Citation>
+                <ID Source="PubMed">12173321</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">Lynch and de la Chapelle (2003) schematized the somatic mutations that occur in carriers of the I1307K polymorphism, which results in a stretch of 8 adenosines that is believed to increase the risk of somatic mutations as a result of slippage during replication. Lynch and de la Chapelle (2003) illustrated the types of somatic changes in colonic tumors, e.g., an addition of 1 adenosine seen in the affected allele of many carriers. The addition or loss of a nucleotide causes a frameshift and loss of function of APC, constituting an important somatic event in tumor initiation.</Attribute>
+              <Citation>
+                <ID Source="PubMed">8940262</ID>
+              </Citation>
+            </ObservedData>
+            <ObservedData>
+              <Attribute Type="Description">In individuals of Ashkenazi, Sephardi, and Arab descent, Niell et al. (2003) found a common progenitor haplotype spanning across APC I1037K from the centromeric marker D5S135 to the telomeric marker D5S346. The ancestor of modern I1307K alleles existed 87.9 to 118 generations ago (approximately 2,200 to 2,950 years ago). This estimate indicated that I1307K existed at about the time of the beginning of the Jewish diaspora, explaining its presence in non-Ashkenazi populations. The data did not indicate that selection operated at I1307K, providing compelling evidence that the high frequency of disease-susceptibility alleles in the Ashkenazim is due to genetic drift, not selection.</Attribute>
+              <Citation>
+                <ID Source="PubMed">14624392</ID>
+              </Citation>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <Name>APC, ILE1307LYS</Name>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name Type="NonHGVS">ILE1307LYS</Name>
+          </OtherNameList>
+          <XRefList>
+            <XRef DB="OMIM" ID="611731.0029" Type="Allelic variant"/>
+          </XRefList>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="included">BREAST CANCER, SUSCEPTIBILITY TO</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1163765" DateCreated="2017-09-27" DateLastUpdated="2019-05-02" SubmissionDate="2017-08-01">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|not provided" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000600091" Type="SCV" Version="1" SubmitterName="Quest Diagnostics Nichols Institute San Juan Capistrano" OrgID="500110" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2017-02-08">
+          <Description>Uncertain significance</Description>
+          <Citation>
+            <ID Source="PubMed">26421687</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26314409</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24416237</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">16875934</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23896379</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24728327</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22703879</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24599579</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23576677</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">10938175</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">11159880</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">12533824</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27146957</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">27153395</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28135145</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">28135136</ID>
+          </Citation>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Quest pathogenicity assessment criteria</Attribute>
+          <Citation>
+            <ID Source="PubMed">26467025</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <OtherNameList>
+            <Name>p.Ile1307Lys</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not specified</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB2915479</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1190191" DateCreated="2017-11-02" DateLastUpdated="2019-05-02" SubmissionDate="2017-10-05">
+        <ClinVarSubmissionID localKey="19388615"/>
+        <ClinVarAccession Accession="SCV000610138" Type="SCV" Version="1" SubmitterName="Center for Pediatric Genomic Medicine,Children's Mercy Hospital and Clinics" OrgID="505698" OrganizationCategory="clinic"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2017-07-27">
+          <Description>Uncertain significance</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species>Homo sapiens</Species>
+              <AffectedStatus>not provided</AffectedStatus>
+            </Sample>
+            <Method>
+              <NamePlatform>Illumina</NamePlatform>
+              <TypePlatform>Sequencing</TypePlatform>
+              <ResultType>variant call</ResultType>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="AlleleFrequency">0.000462</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>single nucleotide variant</VariantType>
+          <Location>
+            <SequenceLocation Assembly="GRCh37" Chr="5" Strand="+" alternateAllele="A" referenceAllele="T" start="112175211" stop="112175211"/>
+          </Location>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1360394" DateCreated="2018-03-15" DateLastUpdated="2019-05-02" SubmissionDate="2018-01-25">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|MedGen:CN221809" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000694042" Type="SCV" Version="1" SubmitterName="Integrated Genetics/Laboratory Corporation of America" OrgID="500026" OrganizationCategory="laboratory" OrgAbbreviation="IG"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2016-12-02">
+          <Description>Uncertain significance</Description>
+          <Citation>
+            <ID Source="PubMed">24416237</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26421687</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26394139</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23576677</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">18343606</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9751605</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26300997</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">26845104</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">24599579</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">22703879</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9973276</ID>
+          </Citation>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">LabCorp Variant Classification Summary - May 2015</Attribute>
+          <Citation Type="general">
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/pttb9itm/labcorp_variant_classification_method_-_may_2015.pdf</URL>
+            <CitationText>LabCorp Variant Classification Summary - May 2015.docx</CitationText>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <XRefList>
+            <XRef DB="dbSNP" ID="1801155" Type="rsNumber"/>
+          </XRefList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="MedGen" ID="CN221809" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>2016-2017-variants</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1570355" DateCreated="2018-09-12" DateLastUpdated="2019-05-02" SubmissionDate="2018-01-29">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|not provided" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000805404" Type="SCV" Version="1" SubmitterName="PreventionGenetics,PreventionGenetics" OrgID="239772" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2016-01-06">
+          <Description>Uncertain significance</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">not provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB3589995</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1575248" DateCreated="2018-09-20" DateLastUpdated="2019-05-02" SubmissionDate="2018-07-17">
+        <ClinVarSubmissionID localKey="APC-B1|MedGen:CN240755" submittedAssembly="GRCh38"/>
+        <ClinVarAccession Accession="SCV000807826" Type="SCV" Version="1" SubmitterName="Center for Human Genetics, Inc" OrgID="1024" OrganizationCategory="laboratory" OrgAbbreviation="CHG"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-06-01">
+          <Description>Uncertain significance</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Familial adenomatous polyposis</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="CN240755" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4304907</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1609757" DateCreated="2018-10-05" DateLastUpdated="2019-05-02" SubmissionDate="2018-08-08">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|MedGen:C0027672" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000821694" Type="SCV" Version="1" SubmitterName="GeneKor MSA" OrgID="505504" OrganizationCategory="laboratory" OrgAbbreviation="GeneKor"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-08-01">
+          <Description>risk factor</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>yes</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="C0027672" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4381212</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1637429" DateCreated="2018-10-11" DateLastUpdated="2019-05-02" SubmissionDate="2018-06-14">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|OMIM:175100" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000839876" Type="SCV" Version="1" SubmitterName="Human Genome Sequencing Center Clinical Lab,Baylor College of Medicine" OrgID="500199" OrganizationCategory="laboratory" OrgAbbreviation="HGSC-CL"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2017-06-02">
+          <Description>risk factor</Description>
+          <Comment Type="public">The c.3920T&gt;A (p.Ile1307Lys) variant in the APC gene has been reported as a common risk allele associated with familial colorectal cancer in the Ashkenazi Jewish population [PMID 18770064, 24416237]. The c.3920T&gt;A variant has been reported to result in an adenine replacing a thymine and creating an oligo-adenine (A8) tract that appears to be inherently prone to further somatic mis-pairing and slippage during DNA replication, thereby creating a frameshift change [PMID 9288102, 18770064 and 244162370]. However, this variant has also been reported at a high frequency, present in 6% of Ashkenazi Jews and about 28% of Ashkenazim with a family history of colorectal cancer [PMID: 9288102]. Isoleucine at amino acid position 1307 of the APC protein is weakly conserved during evolution. While not validated for clinical use, the SIFT and PolyPhen-2 algorithms predict this variant to be benign. Ashkenazi Jews who carry the p.Ile1307Lys variant are at increased risk for colorectal neoplasia: the risk for colorectal neoplasia in heterozygous Ashkenazi Jewish individuals was estimated to be between 1.7 to 2.17 compared to non carrier individuals [PMID 12173321, 23576677, 23896379]. This variant is classified as as a risk allele with an increased risk for colorectal neoplasia in the Ashkenazi Jewish population. However the risk in non Jewish populations has not been determined.</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="175100" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4151980</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1663716" DateCreated="2018-11-21" DateLastUpdated="2019-05-02" SubmissionDate="2018-10-29">
+        <ClinVarSubmissionID localKey="NM_001127510.2:c.3920T&gt;A|MedGen:C0699790" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000853088" Type="SCV" Version="1" SubmitterName="Snyder Lab, Genetics Department,Stanford University" OrgID="506211" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2017-01-01">
+          <Description>risk factor</Description>
+          <Citation>
+            <ID Source="PubMed">9288102</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9724771</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">9731533</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">11159880</ID>
+          </Citation>
+          <Citation>
+            <ID Source="PubMed">23896379</ID>
+          </Citation>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>research</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_001127510.2:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Carcinoma of colon</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="C0699790" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4705375</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1729239" DateCreated="2019-02-15" DateLastUpdated="2019-05-02" SubmissionDate="2018-11-26">
+        <ClinVarSubmissionID localKey="NM_000038.5:c.3920T&gt;A|OMIM:175100" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000883121" Type="SCV" Version="1" SubmitterName="Equipe Genetique des Anomalies du Developpement,Universit&#233; de Bourgogne" OrgID="506039" OrganizationCategory="laboratory" OrgAbbreviation="GADteam"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-11-21">
+          <Description>Uncertain significance</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <XRef DB="OMIM" ID="175100" Type="MIM"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4842992</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1166229" DateCreated="2017-09-27" DateLastUpdated="2019-05-27" SubmissionDate="2018-10-10">
+        <ClinVarSubmissionID localKey="11931|Not Provided" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000602533" Type="SCV" Version="2" SubmitterName="ARUP Laboratories, Molecular Genetics and Genomics,ARUP Laboratories" OrgID="25969" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-06-20">
+          <Description>Likely benign</Description>
+          <Comment Type="public">The APC c.3920T&gt;A; p.Ile1307Lys variant has been reported extensively in the literature. One recent meta-analysis of 30 published population studies, all of which examined the association between p.Ile1307Lys and colorectal neoplasia, colorectal adenoma, and/or colorectal cancer, concluded that this variant confers a two-fold increased risk of developing a colorectal neoplasia to persons of Ashkenazi Jewish ancestry (Liang 2013 and references therein). However, the c.3920T&gt;A;p.Ile1307Lys variant is observed in the general population at an overall frequency of 0.18% (506/276756 alleles, 6 homozygotes) in the Genome Aggregation Database. Due to the high frequency in the general population, this variant is considered likely benign. REFERENCES Liang et al. APC polymorphisms and the risk of colorectal neoplasia: a HuGE review and meta-analysis. Am J Epidemiol. 2013;177(11):1169-1179.</Comment>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ARUP Molecular Germline Variant Investigation Process</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/nr7Bh7s8/ARUP_MolecularGermlineVariantInvestigationProcess.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <VariantType>Variation</VariantType>
+          <Location>
+            <SequenceLocation Assembly="GRCh37" Chr="5" start="112175211" stop="112175211" variantLength="1"/>
+          </Location>
+          <OtherNameList>
+            <Name>p.Ile1307Lys</Name>
+          </OtherNameList>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_001127510.2:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Not Provided</ElementValue>
+            </Name>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4618058</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1610680" DateCreated="2018-10-05" DateLastUpdated="2019-05-02" SubmissionDate="2018-11-11">
+        <ClinVarSubmissionID localKey="NC_000005.9:g.112175211T&gt;A|MedGen:C2713442" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000838110" Type="SCV" Version="2" SubmitterName="Mendelics" OrgID="500035" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-07-02">
+          <Description>Likely pathogenic</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">Mendelics Assertion Criteria 2017</Attribute>
+          <Citation>
+            <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/chhjzatu/mendelics_assertion_criteria_2017.pdf</URL>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>unknown</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NC_000005.9:g.112175211T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Familial adenomatous polyposis 1</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="C2713442" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>MENDELICS_CLINVAR_015</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+      <ClinicalAssertion ID="1344252" DateCreated="2018-02-16" DateLastUpdated="2019-05-20" SubmissionDate="2018-11-06">
+        <ClinVarSubmissionID localKey="Db4KrQBSZeoE7-orUyypkal4dklV7Tc_lQTp9W4PGUo|MedGen:C0027672" submittedAssembly="GRCh37"/>
+        <ClinVarAccession Accession="SCV000686956" Type="SCV" Version="2" SubmitterName="Color" OrgID="505849" OrganizationCategory="laboratory"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>criteria provided, single submitter</ReviewStatus>
+        <Interpretation DateLastEvaluated="2018-05-21">
+          <Description>Likely pathogenic</Description>
+        </Interpretation>
+        <Assertion>variation to disease</Assertion>
+        <AttributeSet>
+          <Attribute Type="AssertionMethod">ACMG Guidelines, 2015</Attribute>
+          <Citation>
+            <ID Source="PubMed">25741868</ID>
+          </Citation>
+        </AttributeSet>
+        <ObservedInList>
+          <ObservedIn>
+            <Sample>
+              <Origin>germline</Origin>
+              <Species TaxonomyId="9606">human</Species>
+              <AffectedStatus>unknown</AffectedStatus>
+            </Sample>
+            <Method>
+              <TypePlatform>NGS</TypePlatform>
+              <MethodType>clinical testing</MethodType>
+            </Method>
+            <ObservedData>
+              <Attribute Type="Description">not provided</Attribute>
+            </ObservedData>
+          </ObservedIn>
+        </ObservedInList>
+        <SimpleAllele>
+          <GeneList>
+            <Gene Symbol="APC"/>
+          </GeneList>
+          <VariantType>Variation</VariantType>
+          <AttributeSet>
+            <Attribute Type="HGVS">NM_000038.5:c.3920T&gt;A</Attribute>
+          </AttributeSet>
+        </SimpleAllele>
+        <TraitSet Type="Disease">
+          <Trait Type="Disease">
+            <Name>
+              <ElementValue Type="Preferred">Hereditary cancer-predisposing syndrome</ElementValue>
+            </Name>
+            <XRef DB="MedGen" ID="C0027672" Type="CUI"/>
+          </Trait>
+        </TraitSet>
+        <SubmissionNameList>
+          <SubmissionName>SUB4721021</SubmissionName>
+        </SubmissionNameList>
+      </ClinicalAssertion>
+    </ClinicalAssertionList>
+  </InterpretedRecord>
+</VariationArchive>

@@ -1,0 +1,976 @@
+{
+    "records": [
+
+# Record 1 (under lab fake 1) is an example of a variant classified using modified ACMG criteria. If a lab’s application of the ACMG code differs to that of standard ACMG, then we provide an explain field. 
+        { 
+            "data": {   # MHB: This object seems to hold the outcomes of criterion assessments for every ACMG criterion. Were all explicitly evaluated - i.e. NM means evaluated and not met.  Or could NM mean not ever evaluated? Perhaps where no explanation, it was not even evaluated? (SEPIO: level 1 evidence lines and items.  PM2 is met is the assertion EI , and the strength and direction (supporting path, moderate) is on the EL. Will we need way to explicitly capture/distinguish criteria not evaluated from those evaluated and not met?)
+                "ba1": {
+                    "value": "NM",
+                    "explain": "[BA1 : Not Met] --- Allele frequency is >=5% in any general continental population dataset of at least 2,000 alleles for a gene without a gene- or variant-specific recommendation. Note: Published gene- or condition-specific credible AF thresholds used where available."
+                },
+                "bp1": {
+                    "value": "NM"
+                },
+                "bp2": {
+                    "value": "NM"
+                },
+                "bp3": {
+                    "value": "NM"
+                },
+                "bp4": {
+                    "value": "NM"
+                },
+                "bp5": {
+                    "value": "NM"
+                },
+                "bp7": {
+                    "value": "NM",
+                    "explain": "[BP7 : Not Met] --- A synonymous/intronic variant for which splicing prediction algorithms predict no impact to the splice consensus sequence nor the creation of a new splice site AND the nucleotide is not highly conserved."
+                },
+                "bs1": {
+                    "value": "NM",
+                    "explain": "[BS1 : Not Met] --- Allele frequency is greater than expected for disorder. Note: Published gene- or condition-specific credible AF thresholds used where available."
+                },
+                "bs2": {
+                    "value": "NM",
+                    "explain": "[BS2 : Not Met] --- Observed in >=2 healthy adult individuals for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with full penetrance expected at an early age.\n\n[BS2P : Not Met] --- Observed in >=2 healthy adult individuals for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with moderate penetrance expected at an early age."
+                },
+                "bs3": {
+                    "value": "NM",
+                    "explain": "[BS3P : Not Met] --- In vitro/in vivo functional studies with limited validation show no damaging effect on protein function or splicing."
+                },
+                "bs4": {
+                    "value": "NM",
+                    "explain": "[BS4 : Not Met] --- Lack of segregation in affected members of a family (>=2 meioses)."
+                },
+                "pm1": {
+                    "value": "NM"
+                },
+                "pm2": {
+                    "note": "[PM2 : Met] --- Absent in gnomad",
+                    "value": "PM",
+                    "explain": "[PM2 : Met] --- Absent or low frequency in population databases. Note: Published gene- or condition-specific credible AF thresholds used where available."
+                },
+                "pm3": {  # Explain modification here, given this criteria was not met . . . is curator saying this provides VS evidence against pathogenicity?
+                    "value": "NM",
+                    "explain": "[P3VS : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 4.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM3 : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 1.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM3P : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 0.5 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM3S : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 2.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations."
+                },
+                "pm4": {
+                    "value": "NM"
+                },
+                "pm5": {
+                    "value": "NM",
+                    "explain": "[PM5 : Not Met] --- Novel missense change (with PP3 activation) at an amino acid residue where a different missense change determined to be pathogenic has been seen before.\n\n[PM5P : Not Met] --- Novel missense change (without PP3 activation) at an amino acid residue where a different missense change determined to be pathogenic has been seen before."
+                },
+                "pm6": {
+                    "value": "NM",
+                    "explain": "[P6VS : Not Met] --- Assumed de novo occurrences - 4.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM6 : Not Met] --- Assumed de novo occurrence(s) - 1.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM6P : Not Met] --- Assumed de novo occurrence(s) - 0.5 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM6S : Not Met] --- Assumed de novo occurrences - 2.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations."
+                },
+                "pp1": {  # NICE EXAMPLE OF WHERE CURATOR MODIFIED STRENGTH OF EVIDENCE (FROM PP TO PS)
+                    "note": "[PP1S : Met] --- Strong segregation across 1 family. PMID:30311375",
+                    "value": "PS",
+                    "explain": "[PP1S : Met] --- >=3 affected segregations for recessive and >=7 affected segregations for dominant in multiple families, unless 3rd-degree relatives included."
+                },
+                "pp2": {
+                    "value": "NM"
+                },
+                "pp3": {
+                    "note": "[PP3 : Not Met] --- Not applicable, truncating variant.",
+                    "value": "NM"
+                },
+                "pp4": {
+                    "value": "NM"
+                },
+                "ps1": {
+                    "value": "NM",
+                    "explain": "[PS1 : Not Met] --- Same amino acid change or splice consensus variant at same nucleotide as a previously established pathogenic variant."
+                },
+                "ps2": {
+                    "value": "NM",
+                    "explain": "[P2VS : Not Met] --- Confirmed de novo occurrences - 4.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PS2 : Not Met] --- Confirmed de novo occurrence(s) - 2.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PS2M : Not Met] --- Confirmed de novo occurrence(s) - 1.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PS2P : Not Met] --- Confirmed de novo occurrence(s) - 0.5 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations."
+                },
+                "ps3": {
+                    "value": "NM",
+                    "explain": "[PS3P : Not Met] --- In vitro/in vivo functional studies with limited validation supportive of a damaging effect on the gene or gene product."
+                },
+                "ps4": {
+                    "note": "[PS4P : Met] --- 3 probands with variant",
+                    "value": "PP",
+                    "explain": "[PS4P : Met] --- >=2 probands with consistent phenotypes with variant in an autosomal dominant condition, and variant meets PM2."
+                },
+                "exon": {  # what is this about?
+                    "value": "12"
+                },
+                "pvs1": {  # note says strength modified, but value is stil PVS . . . .explain?
+                    "note": "[PVS1 : Met] --- Results in a loss of function",
+                    "value": "PVS",
+                    "explain": "[PVS1 : Met] --- Predicted null variant in a gene where LOF is a known mechanism of disease. Note: Laboratory specific modification of strength based on ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations (Tayoun et al 2018)."
+                },
+                "owner": {  # what is owner - curator in charge of this interpretation record?
+                    "value": "(hidden)"
+                },
+                "c_hgvs": {
+                    "value": "NM_004360.3(CDH1):c.1913G>A" 
+                },
+                "p_hgvs": {
+                    "value": "p.W638*"
+                },
+                "condition": {
+                    "value": "OMIM:137215"
+                },
+                "curated_by": { # can multiple curators contribute?  in differnet ways perhaps?
+                    "value": "(hidden)"
+                },
+                "gene_symbol": {
+                    "value": "CDH1"
+                },
+                "genome_build": {
+                    "value": "hg19"
+                },
+                "allele_origin": {
+                    "value": "Germline"
+                },
+                "curation_date": {  # is this the date the interpretation record was finished/submitted?
+                    "value": "2019-07-22"
+                },
+                "assertion_method": {  # is this a derivation/modification of the 2015 ACMG Guidelines?
+                    "value": "RMH v1.2"
+                },
+                "clingen_allele_id": {
+                    "value": "CA396467238"
+                },
+                "refseq_transcript_id": {  # What does this mean?
+                    "note": "Transcript version was injected by Shariant Test",
+                    "value": "NM_004360.3"
+                },
+                "clinical_significance": {
+                    "value": "P"
+                },
+                "interpretation_summary": {}
+            },
+            "withdrawn": false,
+            "allele": {
+                "clingen_allele_id": "CA396467238",
+                "genome_builds": {
+                    "GRCh38": {
+                        "variant_coordinate": "16:68822202 G>A",
+                        "g_hgvs": "NC_000016.10:g.68822202G>A",
+                        "c_hgvs": "NM_004360.3(CDH1):c.1913G>A",
+                        "variant_id": 3565455
+                    },
+                    "GRCh37": {
+                        "variant_coordinate": "16:68856105 G>A",
+                        "g_hgvs": "NC_000016.9:g.68856105G>A",
+                        "c_hgvs": "NM_004360.3(CDH1):c.1913G>A",
+                        "variant_id": 2653077
+                    }
+                }
+            },
+            "publish": "logged_in_users",
+            "meta": {
+                "id": 1488,
+                "lab_record_id": "hg19_NM_004360_3_CDH1_c_1913G_A",
+                "institution_name": "Fake 1",
+                "lab_id": "fake1/unit_1",
+                "lab_name": "Fake 1 Unit 1",
+                "title": "fake1/unit_1/hg19_NM_004360_3_CDH1_c_1913G_A.1569914189.583867",
+                "published_version": 1569914189.583867,
+                "can_write": false,
+                "can_write_latest": true,
+                "clinical_context": "default",
+                "flag_collection": 1677,
+                "has_changes": false,
+                "version": 1569914189.583867,
+                "last_edited": 1569914189.583867
+            },
+            "id": "fake1/unit_1/hg19_NM_004360_3_CDH1_c_1913G_A"
+        },     
+ 
+----------------------------------------------------
+ 
+# Record 2 (under lab fake 2) is an example of a variant classified using standard ACMG. This particular record is representative of a lab that can export more granular evidence than others as they use software that Shariant was built on.
+        
+		{
+            " data ": {
+                " age ": {  # what is this?
+                    " value ": " 45 "
+                },
+                " ba1 ": {
+                    " value ": " NM "
+                },
+                " bp1 ": {
+                    " value ": " NM "
+                },
+                " bp2 ": {
+                    " value ": " NM "
+                },
+                " bp3 ": {
+                    " value ": " NM "
+                },
+                " bp4 ": {
+                    " value ": " NM "
+                },
+                " bp5 ": {
+                    " value ": " NM "
+                },
+                " bp6 ": {
+                    " value ": " NM "
+                },
+                " bp7 ": {
+                    " value ": " NM "
+                },
+                " bs1 ": {
+                    " value ": " BS " # means this criteria was met, right?  why is this recorded differently than in Record 1?
+                },
+                " bs2 ": {
+                    " value ": " NM "
+                },
+                " bs3 ": {
+                    " value ": " NM "
+                },
+                " bs4 ": {
+                    " note ": " PubMed: 26586665 ",  # is this a pub where evidence supporting this criteria being met was found?
+                    " value ": " BS "  
+                },
+                " pm1 ": {
+                    " value ": " NM "
+                },
+                " pm2 ": {
+                    " value ": " NM "
+                },
+                " pm3 ": {
+                    " value ": " NM "
+                },
+                " pm4 ": {
+                    " value ": " NM "
+                },
+                " pm5 ": {
+                    " value ": " NM "
+                },
+                " pm6 ": {
+                    " value ": " NM "
+                },
+                " pp1 ": {
+                    " value ": " NM "
+                },
+                " pp2 ": {
+                    " value ": " NM "
+                },
+                " pp3 ": {
+                    " value ": " NM "
+                },
+                " pp4 ": {
+                    " value ": " NM "
+                },
+                " pp5 ": {
+                    " value ": " NM "
+                },
+                " ps1 ": {
+                    " value ": " NM "
+                },
+                " ps2 ": {
+                    " value ": " NM "
+                },
+                " ps3 ": {
+                    " value ": " NM "
+                },
+                " ps4 ": {
+                    " value ": " NM "
+                },
+                " pvs1 ": {
+                    " note ": " Well - known trunc resulting in minimal increase in risk.Denotes end of clinically significant boundary.",
+                    " value ": " NM "
+                },
+                " owner ": {
+                    " value ": "(hidden)"
+                },
+                " c_hgvs ": {
+                    " value ": " NM_000059.3(BRCA2): c.9976A > T "
+                },
+                " g_hgvs ": {
+                    " value ": " NC_000013.10: g.32972626A > T "
+                },
+                " p_hgvs ": {
+                    " value ": " NP_000050.2: p.Lys3326Ter "
+                },
+                " uk10k_af ": {
+                    " value ": 0.010315  # is this pop freq data used as evidence for BS2 (freq in pop inconsistent with disease penetrance)? elements/object holding evidence seem to be scattered around the message (lots more below i think) - but not linked to the criterion assessments they support.
+                },
+                " zygosity ": {
+                    " value ": " heterozygous "   #  what is significance of this?  is the interpretation for the variant in het state (i.e. a genotyep interp rather than an allele interp . . . so subject variation is NC_000013.10: g.32972626 A/T, not T?)
+                },
+                " condition ": {
+                    " value ": " Hereditary breast and ovarian cancer syndrome "
+                },
+                " cosmic_id ": {  # an xref to a CSOMIC record with more info about the variant?
+                    " value ": " COSM4984873 "
+                },
+                " topmed_af ": {
+                    " value ": 0.00618217  # pop freq data shows very log freq in general population - used as evidence against pathogenicity?
+                },
+                " literature ": {  # what is significance of all of these pubs?  any relevant pub?  those holding interpreted evidence?
+                    " value ": " Richards(2015)Genet Med, Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. \ nPubMed: 25741868 \ n \ nNykamp(2017)Genet Med, Sherloc: a comprehensive refinement of the ACMG - AMP variant classification criteria. \ nPubMed: 28492532 \ n \ nBodian(2014)PLoS One, Germline variation in cancer - susceptibility genes in a healthy, ancestrally diverse cohort: implications for individual genome sequencing. \ nPubMed: 24728327 \ n \ nAmendola(2015)Genome Res, Actionable exomic incidental findings in 6503 participants: challenges of variant classification. \ nPubMed: 25637381 \ n \ nJohnston(2012)Am J Hum Genet, Secondary variants in individuals undergoing exome sequencing: screening of 572 individuals identifies high - penetrance mutations in cancer - susceptibility genes. \ nPubMed: 22703879 \ n \ nBorg(2010)Hum Mutat, Characterization of BRCA1 and BRCA2 deleterious mutations and variants of unknown clinical significance in unilateral and bilateral breast cancer: the WECARE study. \ nPubMed: 20104584 \ n \ nMazoyer(1996)Nat Genet, A polymorphic stop codon in BRCA2. \ nPubMed: 8896551 \ n \ ngene, BRCA1 - and BRCA2 - Associated Hereditary Breast and Ovarian Cancer \ nNCBIBookShelf: NBK1247 \ n \ nOffit(2003)J Natl Cancer Inst, Shared genetic susceptibility to breast cancer, brain tumors, and Fanconi anemia. \ nPubMed: 14559878 \ n \ nWu(2005)Cancer Res, Functional evaluation and cancer risk assessment of BRCA2 unclassified variants. \ nPubMed: 15695382 \ n \ nKuznetsov(2008)Nat Med, Mouse embryonic stem cell - based functional assay to evaluate mutations in BRCA2. \ nPubMed: 18607349 \ n \ nPetrucelli(1993)BRCA1 - and BRCA2 - Associated Hereditary Breast and Ovarian Cancer \ nPubMed: 20301425 \ n \ nHowlett(2002)Science, Biallelic inactivation of BRCA2 in Fanconi anemia. \ nPubMed: 12065746 \ n \ nFarrugia(2008)Cancer Res, Functional assays for classification of BRCA2 variants of uncertain significance. \ nPubMed: 18451181 \ n \ nLindor(2012)Hum Mutat, A review of a multifactorial probability - based model for classification of BRCA1 and BRCA2 variants of uncertain significance(VUS). \ nPubMed: 21990134 \ n \ nReid(2005)J Med Genet, Biallelic BRCA2 mutations are associated with multiple malignancies in childhood including familial Wilms tumour. \ nPubMed: 15689453 \ n \ nBergthorsson(2001)J Med Genet, BRCA1 and BRCA2 mutation status and cancer family history of Danish women affected with multifocal or bilateral breast cancer at a young age. \ nPubMed: 11389159 \ n \ nCapanu(2011)Genet Epidemiol, Assessment of rare BRCA1 and BRCA2 variants of unknown significance using hierarchical modeling. \ nPubMed: 21520273 \ n \ nRudd(2006)Genome Res, Variants in the GH - IGF axis confer susceptibility to lung cancer. \ nPubMed: 16741161 \ n \ nClaes(2003)Genes Chromosomes Cancer, Differentiating pathogenic mutations from polymorphic alterations in the splice sites of BRCA1 and BRCA2. \ nPubMed: 12759930 \ n \ nHadjisavvas(2004)Cancer Genet Cytogenet, Hereditary breast and ovarian cancer in Cyprus: identification of a founder BRCA2 mutation. \ nPubMed: 15172753 \ n \ nWagner(1999)Hum Mol Genet, Global sequence diversity of BRCA2: analysis of 71 breast cancer families and 95 control individuals of worldwide populations. \ nPubMed: 9971877 \ n \ nde Garibay(2014)Hum Mutat, Capillary electrophoresis analysis of conventional splicing assays: IARC analytical and clinical classification of 31 BRCA2 genetic variants. \ nPubMed: 24123850 \ n \ nMeeks(2016)J Natl Cancer Inst, BRCA2 Polymorphic Stop Codon K3326X and the Risk of Breast, Prostate, and Ovarian Cancers. \ nPubMed: 26586665 \ n \ nMurphy(2002)Cancer Res, Evaluation of candidate genes MAP2K4, MADH4, ACVR1B, and BRCA2 in familial pancreatic cancer: deleterious BRCA2 mutations in 17 % . \ nPubMed: 12097290 \ n \ nJohnson(2007)Hum Mol Genet, Counting potentially functional variants in BRCA1, BRCA2 and ATM predicts breast cancer susceptibility. \ nPubMed: 17341484 \ n \ nMartin(2005)Oncogene, Increased prevalence of the BRCA2 polymorphic stop codon K3326X among individuals with familial pancreatic cancer. \ nPubMed: 15806175 \ n \ nAkbari(2011)Hum Genet, Mutations in Fanconi anemia genes and the risk of esophageal cancer. \ nPubMed: 21279724 \ n \ nMichailidou(2013)Nat Genet, Large - scale genotyping identifies 41 new loci associated with breast cancer risk. \ nPubMed: 23535729 \ n \ nJensen(2013)Yale J Biol Med, BRCA2: one small step for DNA repair, one giant protein purified. \ nPubMed: 24348212 \ n \ nThompson(2015)Sci Rep, Reevaluation of the BRCA2 truncating allele c.9976A > T(p.Lys3326Ter)in a familial breast cancer context. \ nPubMed: 26455428 "
+                },
+                
+                # sequenceing data suggests this is an interpretation FOR A PATIENT. (SEPIO - so would we want a patientQualifier on the statement? Semantics of the statemetn become "Variat X is pathogenic for Disease Y in Patient X". And this sequencing data is all evidence that the pateint has the variant to begin with?)
+                " read_depth ": {
+                    " value ": " 376 "
+                },
+                " variant_qc ": {
+                    " value ": " pass "
+                },
+                " vcf_filter ": {
+                    " value ": " PASS "
+                },
+                " gene_symbol ": {
+                    " value ": " BRCA2 "
+                },
+                " sample_type ": {
+                    " value ": " blood "
+                },
+                " allele_depth ": {
+                    " value ": " 168 "
+                },
+                " autopopulate ": {
+                    " value ": " The following fields were auto - populated by Shariant Test \ n \ nbasic: Genome Build \ n \ nbasic variant: g.HGVS, ClinGen Canonical Allele Identifier, Variant coordinate, Literature \ n \ nvariant annotations: ClinVar Variation ID, ClinVar Review Status, ClinVar Preferred Disease Name, ClinVar Origin, ClinVar Allele ID, ClinVar Conditions, ClinVar Clinical Significance, ClinVar Clinical Sources, Variant class, UK10K, TopMed, HOM samples in lab database, HET samples in lab database, gnomAD highest MAF, gnomAD highest pop, gnomAD homozygotes count, COSMIC ID, 1000 Genomes \ n \ nrefseq transcript: RefSeq Transcript ID, Gene symbol, c.HGVS, p.HGVS "
+                },
+                " contribution ": {  # what does this mean?
+                    " value ": " full "
+                },
+                " genome_build ": {
+                    " value ": " GRCh37 "
+                },
+                " allele_origin ": {
+                    " value ": " Germline "
+                },
+                " curation_date ": {
+                    " value ": " 2019 - 10 - 14 "
+                },
+                " gnomad_popmax ": { # wht does this mean?
+                    " value ": " FIN "
+                },
+                " variant_class ": {
+                    " value ": " SNV "
+                },
+                " capture_method ": {
+                    " value ": " agilent_sureselect_qxt_crev1 "
+                },
+                " clinvar_origin ": { # What is this?
+                    " value ": " 1 "
+                },
+                " 1000_genomes_af ": {
+                    " value ": 0.0044
+                },
+                " affected_status ": {  # does this mean that the sequenced pateint has the indicated condition?
+                    " value ": " yes "
+                },
+                " allele_frequency ": {  # what is this?
+                    " value ": " 45.541 "
+                },
+                " assertion_method ": {
+                    " value ": " acmg "
+                },
+                " curation_context ": { # is this based on the individual curator being accredited?
+                    " value ": " accredited "
+                },
+                " genotype_quality ": {
+                    " value ": " 99 "
+                },
+                " gnomad_hom_count ": {
+                    " value ": 14
+                },
+                " gnomad_popmax_af ": {
+                    " value ": 0.0109111181905065
+                },
+                " clingen_allele_id ": {
+                    " value ": " CA26350 "
+                },
+                " clinvar_allele_id ": {
+                    " value ": " 46822 "
+                },
+                " patient_phenotype ": { # are other phenos often recorded?
+                    " value ": " Ovarian cancer "
+                },
+                " sequencing_method ": {
+                    " value ": " wes "
+                },
+                " variant_coordinate ": {
+                    " value ": " 13: 32972626 A > T "
+                },
+                " mode_of_inheritance ": {
+                    " value ": [" autosomal_dominant "]
+                },
+                " nucleic_acid_source ": {
+                    " value ": " DNA "
+                },
+                " sequencing_platform ": {
+                    " value ": " Illumina_HiSeq "
+                },
+                " variant_inheritance ": { # this is in the specific pateint being evaluated here, correct?
+                    " value ": " maternal "
+                },
+                " clinvar_variation_id ": {
+                    " value ": " 38266 "
+                },
+                " refseq_transcript_id ": {
+                    " value ": " NM_000059.3 "
+                },
+                " clinical_significance ": {
+                    " value ": " B "
+                },
+                " clinvar_review_status ": {  # why is this here - what is significance?
+                    " value ": " reviewed_by_expert_panel "
+                },
+                " gene_disease_validity ": {  # evidence for evluating PVS1?
+                    " value ": " definitive "
+                },
+                " molecular_consequence ": {  # is this evidence used by one of the criteria assessments?  or just supporting information?
+                    " value ": [" stop_gained "]
+                },
+                " interpretation_summary ": {
+                    " value ": " The BRCA2 c.9976A > T(p.Lys3326X)variant results in a termination codon at the penultimate exon, predicted to cause a truncation of the last 93 amino acids.Case - control and frequency data indicate that K3326X does not confer a high risk of cancer(OR 1.3 - 1.5, dependent on breast or ovarian cancer subtype)."
+                },
+                " clinvar_clinical_sources ": {
+                    " value ": " ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories: 19350, HGMD: CM993644, Illumina Clinical Services Laboratory, Illumina: 132381 "
+                },
+                " clinvar_clinical_significance ": {
+                    " value ": [" Benign "]
+                },
+                " clinvar_disease_database_name ": {
+                    " value ": " MeSH: D061325, MedGen: C0677776, Orphanet: ORPHA145, MedGen: C0027672, SNOMED CT: 699346009, MedGen: C2675520, OMIM: 612555, MedGen: CN169374, MedGen: CN221562, MedGen: CN517202 "
+                },
+                " clinvar_preferred_disease_name ": {
+                    " value ": " Hereditary breast and ovarian cancer syndrome, Hereditary cancer - predisposing syndrome, Breast - ovarian cancer, familial 2, not specified, Breast and / or ovarian cancer, not provided "
+                }
+            },
+            " withdrawn ": false,
+            " allele ": {
+                " clingen_allele_id ": " CA26350 ",
+                " genome_builds ": {
+                    " GRCh38 ": {
+                        " variant_coordinate ": " 13: 32398489 A > T ",
+                        " g_hgvs ": " NC_000013.11: g.32398489A > T ",
+                        " c_hgvs ": " NM_000059.3(BRCA2): c.9976A > T ",
+                        " variant_id ": 3459957
+                    },
+                    " GRCh37 ": {
+                        " variant_coordinate ": " 13: 32972626 A > T ",
+                        " g_hgvs ": " NC_000013.10: g.32972626A > T ",
+                        " c_hgvs ": " NM_000059.3(BRCA2): c.9976A > T ",
+                        " variant_id ": 2547863
+                    }
+                }
+            },
+            " publish ": " public ",
+            " meta ": {
+                " id ": 2959,
+                " lab_record_id ": " vc2959 ",
+                " institution_name ": " Fake 2 ",
+                " lab_id ": " fake2 / unit_1 ",
+                " lab_name ": " Fake 2 Unit 1 ",
+                " title ": " fake2 / unit_1 / vc2959.1571036803.280019 ",
+                " published_version ": 1571036803.280019,
+                " can_write ": false,
+                " can_write_latest ": true,
+                " clinical_context ": " default ",
+                " flag_collection ": 4162,
+                " has_changes ": false,
+                " version ": 1571036803.280019,
+                " last_edited ": 1571036803.280019
+            },
+            " id ": " fake2 / unit_1 / vc2959 "
+        }
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+{
+    "records": [{
+            "data": {
+                "ba1": {
+                    "value": "NM",
+                    "explain": "[BA1 : Not Met] --- Allele frequency is >=5% in any general continental population dataset of at least 2,000 alleles for a gene without a gene- or variant-specific recommendation. Note: Published gene- or condition-specific credible AF thresholds used where available."
+                },
+                "bp1": {
+                    "value": "NM"
+                },
+                "bp2": {
+                    "value": "NM"
+                },
+                "bp3": {
+                    "value": "NM"
+                },
+                "bp4": {
+                    "value": "NM"
+                },
+                "bp5": {
+                    "value": "NM"
+                },
+                "bp7": {
+                    "value": "NM",
+                    "explain": "[BP7 : Not Met] --- A synonymous/intronic variant for which splicing prediction algorithms predict no impact to the splice consensus sequence nor the creation of a new splice site AND the nucleotide is not highly conserved."
+                },
+                "bs1": {
+                    "value": "NM",
+                    "explain": "[BS1 : Not Met] --- Allele frequency is greater than expected for disorder. Note: Published gene- or condition-specific credible AF thresholds used where available."
+                },
+                "bs2": {
+                    "value": "NM",
+                    "explain": "[BS2 : Not Met] --- Observed in >=2 healthy adult individuals for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with full penetrance expected at an early age.\n\n[BS2P : Not Met] --- Observed in >=2 healthy adult individuals for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with moderate penetrance expected at an early age."
+                },
+                "bs3": {
+                    "value": "NM",
+                    "explain": "[BS3P : Not Met] --- In vitro/in vivo functional studies with limited validation show no damaging effect on protein function or splicing."
+                },
+                "bs4": {
+                    "value": "NM",
+                    "explain": "[BS4 : Not Met] --- Lack of segregation in affected members of a family (>=2 meioses)."
+                },
+                "pm1": {
+                    "value": "NM"
+                },
+                "pm2": {
+                    "note": "[PM2 : Met] --- Absent in gnomad",
+                    "value": "PM",
+                    "explain": "[PM2 : Met] --- Absent or low frequency in population databases. Note: Published gene- or condition-specific credible AF thresholds used where available."
+                },
+                "pm3": {
+                    "value": "NM",
+                    "explain": "[P3VS : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 4.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM3 : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 1.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM3P : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 0.5 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM3S : Not Met] --- For recessive disorders, detected in trans with a pathogenic variant - 2.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations."
+                },
+                "pm4": {
+                    "value": "NM"
+                },
+                "pm5": {
+                    "value": "NM",
+                    "explain": "[PM5 : Not Met] --- Novel missense change (with PP3 activation) at an amino acid residue where a different missense change determined to be pathogenic has been seen before.\n\n[PM5P : Not Met] --- Novel missense change (without PP3 activation) at an amino acid residue where a different missense change determined to be pathogenic has been seen before."
+                },
+                "pm6": {
+                    "value": "NM",
+                    "explain": "[P6VS : Not Met] --- Assumed de novo occurrences - 4.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM6 : Not Met] --- Assumed de novo occurrence(s) - 1.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM6P : Not Met] --- Assumed de novo occurrence(s) - 0.5 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PM6S : Not Met] --- Assumed de novo occurrences - 2.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations."
+                },
+                "pp1": {
+                    "note": "[PP1S : Met] --- Strong segregation across 1 family. PMID:30311375",
+                    "value": "PS",
+                    "explain": "[PP1S : Met] --- >=3 affected segregations for recessive and >=7 affected segregations for dominant in multiple families, unless 3rd-degree relatives included."
+                },
+                "pp2": {
+                    "value": "NM"
+                },
+                "pp3": {
+                    "note": "[PP3 : Not Met] --- Not applicable, truncating variant.",
+                    "value": "NM"
+                },
+                "pp4": {
+                    "value": "NM"
+                },
+                "ps1": {
+                    "value": "NM",
+                    "explain": "[PS1 : Not Met] --- Same amino acid change or splice consensus variant at same nucleotide as a previously established pathogenic variant."
+                },
+                "ps2": {
+                    "value": "NM",
+                    "explain": "[P2VS : Not Met] --- Confirmed de novo occurrences - 4.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PS2 : Not Met] --- Confirmed de novo occurrence(s) - 2.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PS2M : Not Met] --- Confirmed de novo occurrence(s) - 1.0 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations.\n\n[PS2P : Not Met] --- Confirmed de novo occurrence(s) - 0.5 points. Note: Strength modified according to ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations."
+                },
+                "ps3": {
+                    "value": "NM",
+                    "explain": "[PS3P : Not Met] --- In vitro/in vivo functional studies with limited validation supportive of a damaging effect on the gene or gene product."
+                },
+                "ps4": {
+                    "note": "[PS4P : Met] --- 3 probands with variant",
+                    "value": "PP",
+                    "explain": "[PS4P : Met] --- >=2 probands with consistent phenotypes with variant in an autosomal dominant condition, and variant meets PM2."
+                },
+                "exon": {
+                    "value": "12"
+                },
+                "pvs1": {
+                    "note": "[PVS1 : Met] --- Results in a loss of function",
+                    "value": "PVS",
+                    "explain": "[PVS1 : Met] --- Predicted null variant in a gene where LOF is a known mechanism of disease. Note: Laboratory specific modification of strength based on ClinGen Sequence Variant Interpretation (SVI) Workgroup recommendations (Tayoun et al 2018)."
+                },
+                "owner": {
+                    "value": "(hidden)"
+                },
+                "c_hgvs": {
+                    "value": "NM_004360.3(CDH1):c.1913G>A" 
+                },
+                "p_hgvs": {
+                    "value": "p.W638*"
+                },
+                "condition": {
+                    "value": "OMIM:137215"
+                },
+                "curated_by": {
+                    "value": "(hidden)"
+                },
+                "gene_symbol": {
+                    "value": "CDH1"
+                },
+                "genome_build": {
+                    "value": "hg19"
+                },
+                "allele_origin": {
+                    "value": "Germline"
+                },
+                "curation_date": {
+                    "value": "2019-07-22"
+                },
+                "assertion_method": {
+                    "value": "RMH v1.2"
+                },
+                "clingen_allele_id": {
+                    "value": "CA396467238"
+                },
+                "refseq_transcript_id": {
+                    "note": "Transcript version was injected by Shariant Test",
+                    "value": "NM_004360.3"
+                },
+                "clinical_significance": {
+                    "value": "P"
+                },
+                "interpretation_summary": {}
+            },
+            "withdrawn": false,
+            "allele": {
+                "clingen_allele_id": "CA396467238",
+                "genome_builds": {
+                    "GRCh38": {
+                        "variant_coordinate": "16:68822202 G>A",
+                        "g_hgvs": "NC_000016.10:g.68822202G>A",
+                        "c_hgvs": "NM_004360.3(CDH1):c.1913G>A",
+                        "variant_id": 3565455
+                    },
+                    "GRCh37": {
+                        "variant_coordinate": "16:68856105 G>A",
+                        "g_hgvs": "NC_000016.9:g.68856105G>A",
+                        "c_hgvs": "NM_004360.3(CDH1):c.1913G>A",
+                        "variant_id": 2653077
+                    }
+                }
+            },
+            "publish": "logged_in_users",
+            "meta": {
+                "id": 1488,
+                "lab_record_id": "hg19_NM_004360_3_CDH1_c_1913G_A",
+                "institution_name": "Fake 1",
+                "lab_id": "fake1/unit_1",
+                "lab_name": "Fake 1 Unit 1",
+                "title": "fake1/unit_1/hg19_NM_004360_3_CDH1_c_1913G_A.1569914189.583867",
+                "published_version": 1569914189.583867,
+                "can_write": false,
+                "can_write_latest": true,
+                "clinical_context": "default",
+                "flag_collection": 1677,
+                "has_changes": false,
+                "version": 1569914189.583867,
+                "last_edited": 1569914189.583867
+            },
+            "id": "fake1/unit_1/hg19_NM_004360_3_CDH1_c_1913G_A"
+        }, 
+		{
+            " data ": {
+                " age ": {
+                    " value ": " 45 "
+                },
+                " ba1 ": {
+                    " value ": " NM "
+                },
+                " bp1 ": {
+                    " value ": " NM "
+                },
+                " bp2 ": {
+                    " value ": " NM "
+                },
+                " bp3 ": {
+                    " value ": " NM "
+                },
+                " bp4 ": {
+                    " value ": " NM "
+                },
+                " bp5 ": {
+                    " value ": " NM "
+                },
+                " bp6 ": {
+                    " value ": " NM "
+                },
+                " bp7 ": {
+                    " value ": " NM "
+                },
+                " bs1 ": {
+                    " value ": " BS "
+                },
+                " bs2 ": {
+                    " value ": " NM "
+                },
+                " bs3 ": {
+                    " value ": " NM "
+                },
+                " bs4 ": {
+                    " note ": " PubMed: 26586665 ",
+                    " value ": " BS "
+                },
+                " pm1 ": {
+                    " value ": " NM "
+                },
+                " pm2 ": {
+                    " value ": " NM "
+                },
+                " pm3 ": {
+                    " value ": " NM "
+                },
+                " pm4 ": {
+                    " value ": " NM "
+                },
+                " pm5 ": {
+                    " value ": " NM "
+                },
+                " pm6 ": {
+                    " value ": " NM "
+                },
+                " pp1 ": {
+                    " value ": " NM "
+                },
+                " pp2 ": {
+                    " value ": " NM "
+                },
+                " pp3 ": {
+                    " value ": " NM "
+                },
+                " pp4 ": {
+                    " value ": " NM "
+                },
+                " pp5 ": {
+                    " value ": " NM "
+                },
+                " ps1 ": {
+                    " value ": " NM "
+                },
+                " ps2 ": {
+                    " value ": " NM "
+                },
+                " ps3 ": {
+                    " value ": " NM "
+                },
+                " ps4 ": {
+                    " value ": " NM "
+                },
+                " pvs1 ": {
+                    " note ": " Well - known trunc resulting in minimal increase in risk.Denotes end of clinically significant boundary.",
+                    " value ": " NM "
+                },
+                " owner ": {
+                    " value ": "(hidden)"
+                },
+                " c_hgvs ": {
+                    " value ": " NM_000059.3(BRCA2): c.9976A > T "
+                },
+                " g_hgvs ": {
+                    " value ": " NC_000013.10: g.32972626A > T "
+                },
+                " p_hgvs ": {
+                    " value ": " NP_000050.2: p.Lys3326Ter "
+                },
+                " uk10k_af ": {
+                    " value ": 0.010315
+                },
+                " zygosity ": {
+                    " value ": " heterozygous "
+                },
+                " condition ": {
+                    " value ": " Hereditary breast and ovarian cancer syndrome "
+                },
+                " cosmic_id ": {
+                    " value ": " COSM4984873 "
+                },
+                " topmed_af ": {
+                    " value ": 0.00618217
+                },
+                " literature ": {
+                    " value ": " Richards(2015)Genet Med, Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. \ nPubMed: 25741868 \ n \ nNykamp(2017)Genet Med, Sherloc: a comprehensive refinement of the ACMG - AMP variant classification criteria. \ nPubMed: 28492532 \ n \ nBodian(2014)PLoS One, Germline variation in cancer - susceptibility genes in a healthy, ancestrally diverse cohort: implications for individual genome sequencing. \ nPubMed: 24728327 \ n \ nAmendola(2015)Genome Res, Actionable exomic incidental findings in 6503 participants: challenges of variant classification. \ nPubMed: 25637381 \ n \ nJohnston(2012)Am J Hum Genet, Secondary variants in individuals undergoing exome sequencing: screening of 572 individuals identifies high - penetrance mutations in cancer - susceptibility genes. \ nPubMed: 22703879 \ n \ nBorg(2010)Hum Mutat, Characterization of BRCA1 and BRCA2 deleterious mutations and variants of unknown clinical significance in unilateral and bilateral breast cancer: the WECARE study. \ nPubMed: 20104584 \ n \ nMazoyer(1996)Nat Genet, A polymorphic stop codon in BRCA2. \ nPubMed: 8896551 \ n \ ngene, BRCA1 - and BRCA2 - Associated Hereditary Breast and Ovarian Cancer \ nNCBIBookShelf: NBK1247 \ n \ nOffit(2003)J Natl Cancer Inst, Shared genetic susceptibility to breast cancer, brain tumors, and Fanconi anemia. \ nPubMed: 14559878 \ n \ nWu(2005)Cancer Res, Functional evaluation and cancer risk assessment of BRCA2 unclassified variants. \ nPubMed: 15695382 \ n \ nKuznetsov(2008)Nat Med, Mouse embryonic stem cell - based functional assay to evaluate mutations in BRCA2. \ nPubMed: 18607349 \ n \ nPetrucelli(1993)BRCA1 - and BRCA2 - Associated Hereditary Breast and Ovarian Cancer \ nPubMed: 20301425 \ n \ nHowlett(2002)Science, Biallelic inactivation of BRCA2 in Fanconi anemia. \ nPubMed: 12065746 \ n \ nFarrugia(2008)Cancer Res, Functional assays for classification of BRCA2 variants of uncertain significance. \ nPubMed: 18451181 \ n \ nLindor(2012)Hum Mutat, A review of a multifactorial probability - based model for classification of BRCA1 and BRCA2 variants of uncertain significance(VUS). \ nPubMed: 21990134 \ n \ nReid(2005)J Med Genet, Biallelic BRCA2 mutations are associated with multiple malignancies in childhood including familial Wilms tumour. \ nPubMed: 15689453 \ n \ nBergthorsson(2001)J Med Genet, BRCA1 and BRCA2 mutation status and cancer family history of Danish women affected with multifocal or bilateral breast cancer at a young age. \ nPubMed: 11389159 \ n \ nCapanu(2011)Genet Epidemiol, Assessment of rare BRCA1 and BRCA2 variants of unknown significance using hierarchical modeling. \ nPubMed: 21520273 \ n \ nRudd(2006)Genome Res, Variants in the GH - IGF axis confer susceptibility to lung cancer. \ nPubMed: 16741161 \ n \ nClaes(2003)Genes Chromosomes Cancer, Differentiating pathogenic mutations from polymorphic alterations in the splice sites of BRCA1 and BRCA2. \ nPubMed: 12759930 \ n \ nHadjisavvas(2004)Cancer Genet Cytogenet, Hereditary breast and ovarian cancer in Cyprus: identification of a founder BRCA2 mutation. \ nPubMed: 15172753 \ n \ nWagner(1999)Hum Mol Genet, Global sequence diversity of BRCA2: analysis of 71 breast cancer families and 95 control individuals of worldwide populations. \ nPubMed: 9971877 \ n \ nde Garibay(2014)Hum Mutat, Capillary electrophoresis analysis of conventional splicing assays: IARC analytical and clinical classification of 31 BRCA2 genetic variants. \ nPubMed: 24123850 \ n \ nMeeks(2016)J Natl Cancer Inst, BRCA2 Polymorphic Stop Codon K3326X and the Risk of Breast, Prostate, and Ovarian Cancers. \ nPubMed: 26586665 \ n \ nMurphy(2002)Cancer Res, Evaluation of candidate genes MAP2K4, MADH4, ACVR1B, and BRCA2 in familial pancreatic cancer: deleterious BRCA2 mutations in 17 % . \ nPubMed: 12097290 \ n \ nJohnson(2007)Hum Mol Genet, Counting potentially functional variants in BRCA1, BRCA2 and ATM predicts breast cancer susceptibility. \ nPubMed: 17341484 \ n \ nMartin(2005)Oncogene, Increased prevalence of the BRCA2 polymorphic stop codon K3326X among individuals with familial pancreatic cancer. \ nPubMed: 15806175 \ n \ nAkbari(2011)Hum Genet, Mutations in Fanconi anemia genes and the risk of esophageal cancer. \ nPubMed: 21279724 \ n \ nMichailidou(2013)Nat Genet, Large - scale genotyping identifies 41 new loci associated with breast cancer risk. \ nPubMed: 23535729 \ n \ nJensen(2013)Yale J Biol Med, BRCA2: one small step for DNA repair, one giant protein purified. \ nPubMed: 24348212 \ n \ nThompson(2015)Sci Rep, Reevaluation of the BRCA2 truncating allele c.9976A > T(p.Lys3326Ter)in a familial breast cancer context. \ nPubMed: 26455428 "
+                },
+                " read_depth ": {
+                    " value ": " 376 "
+                },
+                " variant_qc ": {
+                    " value ": " pass "
+                },
+                " vcf_filter ": {
+                    " value ": " PASS "
+                },
+                " gene_symbol ": {
+                    " value ": " BRCA2 "
+                },
+                " sample_type ": {
+                    " value ": " blood "
+                },
+                " allele_depth ": {
+                    " value ": " 168 "
+                },
+                " autopopulate ": {
+                    " value ": " The following fields were auto - populated by Shariant Test \ n \ nbasic: Genome Build \ n \ nbasic variant: g.HGVS, ClinGen Canonical Allele Identifier, Variant coordinate, Literature \ n \ nvariant annotations: ClinVar Variation ID, ClinVar Review Status, ClinVar Preferred Disease Name, ClinVar Origin, ClinVar Allele ID, ClinVar Conditions, ClinVar Clinical Significance, ClinVar Clinical Sources, Variant class, UK10K, TopMed, HOM samples in lab database, HET samples in lab database, gnomAD highest MAF, gnomAD highest pop, gnomAD homozygotes count, COSMIC ID, 1000 Genomes \ n \ nrefseq transcript: RefSeq Transcript ID, Gene symbol, c.HGVS, p.HGVS "
+                },
+                " contribution ": {
+                    " value ": " full "
+                },
+                " genome_build ": {
+                    " value ": " GRCh37 "
+                },
+                " allele_origin ": {
+                    " value ": " Germline "
+                },
+                " curation_date ": {
+                    " value ": " 2019 - 10 - 14 "
+                },
+                " gnomad_popmax ": {
+                    " value ": " FIN "
+                },
+                " variant_class ": {
+                    " value ": " SNV "
+                },
+                " capture_method ": {
+                    " value ": " agilent_sureselect_qxt_crev1 "
+                },
+                " clinvar_origin ": {
+                    " value ": " 1 "
+                },
+                " 1000_genomes_af ": {
+                    " value ": 0.0044
+                },
+                " affected_status ": {
+                    " value ": " yes "
+                },
+                " allele_frequency ": {
+                    " value ": " 45.541 "
+                },
+                " assertion_method ": {
+                    " value ": " acmg "
+                },
+                " curation_context ": {
+                    " value ": " accredited "
+                },
+                " genotype_quality ": {
+                    " value ": " 99 "
+                },
+                " gnomad_hom_count ": {
+                    " value ": 14
+                },
+                " gnomad_popmax_af ": {
+                    " value ": 0.0109111181905065
+                },
+                " clingen_allele_id ": {
+                    " value ": " CA26350 "
+                },
+                " clinvar_allele_id ": {
+                    " value ": " 46822 "
+                },
+                " patient_phenotype ": {
+                    " value ": " Ovarian cancer "
+                },
+                " sequencing_method ": {
+                    " value ": " wes "
+                },
+                " variant_coordinate ": {
+                    " value ": " 13: 32972626 A > T "
+                },
+                " mode_of_inheritance ": {
+                    " value ": [" autosomal_dominant "]
+                },
+                " nucleic_acid_source ": {
+                    " value ": " DNA "
+                },
+                " sequencing_platform ": {
+                    " value ": " Illumina_HiSeq "
+                },
+                " variant_inheritance ": {
+                    " value ": " maternal "
+                },
+                " clinvar_variation_id ": {
+                    " value ": " 38266 "
+                },
+                " refseq_transcript_id ": {
+                    " value ": " NM_000059.3 "
+                },
+                " clinical_significance ": {
+                    " value ": " B "
+                },
+                " clinvar_review_status ": {
+                    " value ": " reviewed_by_expert_panel "
+                },
+                " gene_disease_validity ": {
+                    " value ": " definitive "
+                },
+                " molecular_consequence ": {
+                    " value ": [" stop_gained "]
+                },
+                " interpretation_summary ": {
+                    " value ": " The BRCA2 c.9976A > T(p.Lys3326X)variant results in a termination codon at the penultimate exon, predicted to cause a truncation of the last 93 amino acids.Case - control and frequency data indicate that K3326X does not confer a high risk of cancer(OR 1.3 - 1.5, dependent on breast or ovarian cancer subtype)."
+                },
+                " clinvar_clinical_sources ": {
+                    " value ": " ARUP Laboratories, Molecular Genetics and Genomics, ARUP Laboratories: 19350, HGMD: CM993644, Illumina Clinical Services Laboratory, Illumina: 132381 "
+                },
+                " clinvar_clinical_significance ": {
+                    " value ": [" Benign "]
+                },
+                " clinvar_disease_database_name ": {
+                    " value ": " MeSH: D061325, MedGen: C0677776, Orphanet: ORPHA145, MedGen: C0027672, SNOMED CT: 699346009, MedGen: C2675520, OMIM: 612555, MedGen: CN169374, MedGen: CN221562, MedGen: CN517202 "
+                },
+                " clinvar_preferred_disease_name ": {
+                    " value ": " Hereditary breast and ovarian cancer syndrome, Hereditary cancer - predisposing syndrome, Breast - ovarian cancer, familial 2, not specified, Breast and / or ovarian cancer, not provided "
+                }
+            },
+            " withdrawn ": false,
+            " allele ": {
+                " clingen_allele_id ": " CA26350 ",
+                " genome_builds ": {
+                    " GRCh38 ": {
+                        " variant_coordinate ": " 13: 32398489 A > T ",
+                        " g_hgvs ": " NC_000013.11: g.32398489A > T ",
+                        " c_hgvs ": " NM_000059.3(BRCA2): c.9976A > T ",
+                        " variant_id ": 3459957
+                    },
+                    " GRCh37 ": {
+                        " variant_coordinate ": " 13: 32972626 A > T ",
+                        " g_hgvs ": " NC_000013.10: g.32972626A > T ",
+                        " c_hgvs ": " NM_000059.3(BRCA2): c.9976A > T ",
+                        " variant_id ": 2547863
+                    }
+                }
+            },
+            " publish ": " public ",
+            " meta ": {
+                " id ": 2959,
+                " lab_record_id ": " vc2959 ",
+                " institution_name ": " Fake 2 ",
+                " lab_id ": " fake2 / unit_1 ",
+                " lab_name ": " Fake 2 Unit 1 ",
+                " title ": " fake2 / unit_1 / vc2959.1571036803.280019 ",
+                " published_version ": 1571036803.280019,
+                " can_write ": false,
+                " can_write_latest ": true,
+                " clinical_context ": " default ",
+                " flag_collection ": 4162,
+                " has_changes ": false,
+                " version ": 1571036803.280019,
+                " last_edited ": 1571036803.280019
+            },
+            " id ": " fake2 / unit_1 / vc2959 "
+        }
