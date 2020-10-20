@@ -1,0 +1,225 @@
+// Matt's adaptation of Larry's MC Example from last week. It includes each piece of information in Dmitriy's spreadsheet that we decided to include on the 10-13-20 MC Modeling Call. I added column E to this spreadsheet mapping each piece of info to the structure I used here to capture it.
+
+// In this example I avoid inlining referenced objects in most places, and instead reference and create them further down in the message.  But of course we can choose to inline any of these referenced objects in our serialization.
+
+// The Variant use in this example is intronic variant, resulting in splicing alteration: 
+   //ClinGen preferred label: NM_000546.5:c.672+1G>A (https://reg.genome.network/redmine/projects/registry/genboree_registry/by_caid?caid=CA339249)
+   //ClinVar preferred label: NM_001126112.2(TP53):c.672+1G>A (https://www.ncbi.nlm.nih.gov/clinvar/variation/216078/)
+
+{   
+    "molecular-consequences" : [{  // An array of Statements (here there is just one)
+        "id" : "MCS:100",
+        "type" : "MolecularConsequenceStatement",
+        "description" : "This is intronic variant, resulting in splicing alteration.",
+        
+     // Fields capturing primary statement semantics
+        "subject" : "vrs-dto:100",     // a genomic allele
+
+        "predicate" : "ga4gh-va:hasMolecularConsequence" // MHB: We will likely have all predicates come from a set of codes, in which case this value would be represnted as a Coding (as propsoed for the SO term below)
+
+        "object" : { // MHB: Example here places the SO term alone as the object, wrapped in an inlined FHIR-like 'Coding' object.  But many ways we could do this - e.g. just capture a CURIE, which could use a DTO wrapper to caputre label, etc. We also discussed the idea of a complex 'MC object' here, that bundeles the SO term with the qualifying transcript and/or the transcript-level variation (See NOTE 1 below)
+            "code": "SO:0001568"
+            "label": "splicing variant"
+            "system": http://purl.obolibrary.org/obo/SO
+            },         
+
+        "transcriptVariantQualifier" : "vrs-dto:200"  // the relevant transcript-level variant resulting from the gneomic change (MHB: based on recent conversations, I am testing capturing this as the qualifier, rather than the transcript itself  - which can be captured in the DTO for the transcript-level variant). 
+        
+     // Fields capturing evidence and provenance (very minimal for this example)        
+        "authoredBy" : "agent:100",        
+        "dateAuthored" : "2019-10-15",
+
+    }    // End of the first Statement object
+    ],   // End of the array of MC Statement objects
+
+
+// NOTE 1: For comparison, this same Statement using an (inlined) complex MC object, might look like this:
+//      {
+//      "subject" : "vrs-dto:100",  
+//      "predicate" : "ga4gh-va:hasMolecularConsequence" 
+//      "object": {
+//          "id": MC:101
+//          "transcriptVariant": "vrs-dto:200"
+//          "consequence":  {
+//              "code": "SO:0001568"
+//              "label": "splicing variant"
+//              "system": http://purl.obolibrary.org/obo/SO
+//              }, 
+//      (MHB: No qualifier needed because the transcript-level variation is part of the MCObject.)
+//          }
+//      }
+// NOTE 1 END. 
+                
+                
+                
+                
+// Entities referenced in the Statement above (Agents, DTOs, Value Objects, ...)
+
+    // Agents contributing to the Statement(s)
+    "agents" : [{
+        "id" : "agent:100",
+        "type" : "Agent",
+        "label":"John Doe"}
+    ],
+    
+
+    // DTOs wrapping the Domain Entity value objects referenced in the Statement above, or in one of the DTOs below. 
+
+    "vrs-dtos":[
+        {       
+        // DTO#1:  Allele DTO for the genomic allele subject of the MC Statement (NC_000017.11:g.7674858C>T)
+        "id": "vrs-dto:100",
+        "type": "AlleleDto",
+        "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this DTO.     
+        "label": "NC_000017.11:g.7674858C>T",
+        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
+        "aliases" : [{   // MHB Question: represtened as stucture object here, but on other places I have seen them as strings?
+            "type": "Descriptor",
+            "system" : "ghgvs",
+            "value" : "NC_000017.11:g.7674858C>T"
+            },{
+            "type": "Descriptor",
+            "system" : "chgvs",
+            "value" : "NM_000546.5:c.672+1G>A"
+            },{
+            "type": "Descriptor",
+            "system" : "phgvs",
+            "value" : "NP_000123.1:Ala222Glu"
+            },{
+            "type": "Descriptor",   // MHB: added this and the following alias based on the content of Dmitriy's spreadsheet.
+            "value" : "TERT 'c.-124C > T"
+            },{
+            "type": "Descriptor",
+            "value" : "C228T for chr5:g.1295228G>A"
+            }
+        ],         
+            
+        "extension" : [                
+            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: In the new VO-centric paradigm Larry and Alex are proposing, I think this would be a DTO?
+            {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The reference sequence on which the wrapped genomic variant is defined.
+            {"name": "structural_type", "value": [{"code": "SO:0001483", "label": "SNV", "system": "http://purl.obolibrary.org/obo/SO"}]}      
+            ]
+        }
+    
+        // NOTE 2: These are the extensions on the genomic variation from Larry's earlier version of this example - kept here for comparison. 
+        // Note that in this older example these are named fields, rather than 'map"-style key-value pairs as above. 
+        //  "extension": { 
+        //      "transcriptSequenceDto": "vrs-dto:500", // MHB: I placed this in a DTO for that transcript variation.
+        //      "sequenceDto" : "vrs-dto:400",  // MHB: I kept this one in my example
+        //      "genes" : [["entrez_gene:7157","hgnc:11998"], "text": "TP53"}] // MHB: I represented as a gene DTO in my example
+        //      }
+        // NOTE 2 END.
+        
+        {
+        // DTO#2: Allele DTO for the qualifying transcript-level variation
+        "id" : "vrs-dto:200",
+        "type": "AlleleDto",
+        "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this DTO.
+        "label" : "NM_000546.5:c.672+1G>A",
+        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
+        "aliases" : [{
+            "type": "Descriptor",
+            "system" : "ghgvs",
+            "value" : "NC_000017.11:g.7674858C>T"
+            },{
+            "type": "Descriptor",
+            "system" : "phgvs",
+            "value" : "NP_000123.1:Ala222Glu"
+            }
+          ],            
+        "extension" : [
+            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: In the paradigm Larry and Alex are proposing, this would be a DTO?
+            {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The ref sequence on which the wrapped transcript variant is defined.
+          ]            
+        },      
+        {
+        // DTO #3: Sequence Feature DTO for the TP53 gene 
+        "id" : "vrs-dto:300",
+        "type": "FeatureDto",
+        "vrs_id": "hgnc:11998",  // MHB: would HGNC perhaps be the placeholder value object id?
+        "label" : "tumor protein p53",
+        "symbol": "TP53",
+        "xrefs" : ["entrez_gene:7157","Ensembl:ENSG00000141510","MIM:191170"],
+        "aliases": ["BRG1", "SMARCA4"]  // MHB: why represented as strings, and as objects as above? Which do we prefer here?
+        "strand": "minus",
+        ... (other 'non-essential' info to include about a gene concept)
+        },    
+        {
+         // DTO#4: Sequence DTO  for the genomic variant's reference sequence (NC_000017.11)
+        "id" : "vrs-dto:400",
+        "type": "SequenceDto",
+        "vrs_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD",
+        "label" : "NC_000017.11",
+        "xrefs" : ["RefSeq:NC_000017.11"],
+        "residue_type": "SO:0000352",   // DNA
+        "extension" : [
+            {"name": "species", "value" : { "id" : "taxonomy:9606", "display": "human"}},
+            {"name": "assembly", "value" : [{"text":"GRCh38"}]}
+          ]
+        },
+        {
+        // DTO#5: Sequence DTO for the transcript variant's reference sequence (NM_000546.5)
+        "id" : "vrs-dto:500",
+        "type": "SequenceDto",
+        "vrs_id": "ga4gh:SQ.n9ax-9x6gOC0OEt73VMYqCBfqfxG1XUH",
+        "label" : "NM_000546.5",
+        "xrefs" : ["RefSeq:NM_000546.5"],
+        "residue_type": "SO:0000756",   // cDNA
+        "extension" : [
+            {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  
+          ]
+        }
+    ]
+
+ // Value Objects wrapped by these DTOs 
+    "vrs-objects":[
+    {   
+     // Value Object #1: The subject genomic variation (NC_000017.11:g.7674858C>T)
+        "_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",
+        "type" : "Allele",
+        "state": {
+            "sequence": "T",
+            "type": "SequenceState"},
+        "location" : {
+            "_id": "ga4gh:VSL.CBfqfC0O-9x6EtMYq1XUH73Vn9axgOxG",
+            "type": "SequenceLocation",
+            "interval": {
+                "end": 7674858, "start": 7674857,
+                "type": "SimpleInterval"},
+            "sequence_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD"}
+    },
+    {   
+     // Value Object #2: The transcript variation vrs object 
+        "_id" : "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",
+        "type" : "Allele",
+        // ...rest of inlined object defining this variation
+    },
+    {   
+     // Value Object #3: The gene sequence feature vrs object 
+        "_id" : "hgnc:11998",  // Placeholder until SA (or someone else) defines a proper computed value object id for genes
+        "type" : "SequenceFeature".
+    },
+    {   
+     // Value Object #4: The vrs object for the reference sequence for the genomic variation
+        "_id" : "ga4gh:SQ.asg-asdgw4QW-32qt4-3gga",
+        "type" : "Sequence",
+        //... rest of inlined object defining the full vrs:Sequence 
+    }, 
+    {   
+     // Value Object #5: The vrs object for the reference sequence for the transcript variation (NM_000546.5)
+        "_id" : "ga4gh:SQ.n9ax-9x6gOC0OEt73VMYqCBfqfxG1XUH",
+        "type" : "Sequence",
+        //... rest of inlined object defining the full vrs:Sequence 
+    }
+    ]
+
+
+}  // End of the message/document
+
+
+
+
+
+
+
+
