@@ -7,7 +7,7 @@
    //ClinVar preferred label: NM_001126112.2(TP53):c.672+1G>A (https://www.ncbi.nlm.nih.gov/clinvar/variation/216078/)
 
 {   
-    "molecular-consequences" : [{  // An array of Statements (here there is just one)
+    "molecular-consequences" : [{  // An array of Statements 
         "id" : "MCS:100",
         "type" : "MolecularConsequenceStatement",
         "description" : "This is intronic variant, resulting in splicing alteration.",
@@ -15,45 +15,43 @@
      // Fields capturing primary statement semantics
         "subject" : "vrs-dto:100",     // a genomic allele
 
-        "predicate" : "ga4gh-va:hasMolecularConsequence" // MHB: We will likely have all predicates come from a set of codes, in which case this value would be represnted as a Coding (as propsoed for the SO term below)
+        "predicate" : "hasMolecularConsequence" // MHB: We will likely have all predicates come from a set of codes, in which case this value would be represnted as a Coding (as propsoed for the SO term below)
 
-        "object" : { // MHB: Example here places the SO term alone as the object, wrapped in an inlined FHIR-like 'Coding' object.  But many ways we could do this - e.g. just capture a CURIE, which could use a DTO wrapper to caputre label, etc. We also discussed the idea of a complex 'MC object' here, that bundeles the SO term with the qualifying transcript and/or the transcript-level variation (See NOTE 1 below)
+        "object" : { // MHB: Example here places the SO term alone as the object, wrapped in an inlined FHIR-like 'Coding' object.  But there are many ways we could do this - e.g. just capture a CURIE, which could use a DTO wrapper to caputre label, etc. We also discussed the idea of a complex 'MC object' here, that bundeles the SO term with the qualifying transcript and/or the transcript-level variation (See NOTE 1 below)
             "code": "SO:0001568"
             "label": "splicing variant"
             "system": http://purl.obolibrary.org/obo/SO
             },         
 
-        "transcriptVariantQualifier" : "vrs-dto:200"  // the relevant transcript-level variant resulting from the gneomic change (MHB: based on recent conversations, I am testing capturing this as the qualifier, rather than the transcript itself  - which can be captured in the DTO for the transcript-level variant). 
+        "transcriptVariantQualifier" : "vrs-dto:200"  // the relevant transcript-level variant resulting from the genomic change (MHB: based on recent conversations, it seems like we should include this in the main statement, here as a qualifier.  We had previously captured the transcript itself - but here this can be captured in the DTO for the transcript-level variant). 
         
      // Fields capturing evidence and provenance (very minimal for this example)        
         "authoredBy" : "agent:100",        
         "dateAuthored" : "2019-10-15",
 
-    }    // End of the first Statement object
+    },    // End of the first Statement object
+    
+    {    // Second statement - holds the same data as the first, but uses a different structure where SO term and tx variant are bundled with additional info
+        "subject" : "vrs-dto:100",  
+        "predicate" : "hasMolecularConsequence" 
+        "object": {
+            "id": "MCR:101",
+            "type": "MolecularConsequenceResult",  // MHB: What type of thing is this object?  Here I frame it as a specialization of 'StudyResult'. This is an exploratory core SEPIO class we that is used to group a subset of data from a single study that has a particular focus or perspective. We have used 'StudyResults' already to represent the Statement objects/descriptors for the PopFreq Statement, and Computaitonal Functional Impact Statement. For more on 'Study Results', see here: https://docs.google.com/spreadsheets/d/1zQU-Yv7gB7IHKIOVsTh-74BwdtgB9KQpKcWkSHZOa-Q/edit#gid=836165343&range=1:1
+            "transcript": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant?
+            "transcriptVariant": "vrs-dto:200",
+            "consequence":  [{
+                "code": "SO:0001568"
+                "label": "splicing variant"
+                "system": http://purl.obolibrary.org/obo/SO
+                }] 
+           //MHB: Is there anything else we would want to capture in this MCResult object?  The protein change/variant (or can we put this in the DTO for the tx or genomic variant, because it is not really  core part of the MCResult/Statement?)
+            }
+    }     
     ],   // End of the array of MC Statement objects
-
-
-// NOTE 1: For comparison, this same Statement using an (inlined) complex MC object, might look like this:
-//      {
-//      "subject" : "vrs-dto:100",  
-//      "predicate" : "ga4gh-va:hasMolecularConsequence" 
-//      "object": {
-//          "id": MC:101
-//          "transcriptVariant": "vrs-dto:200"
-//          "consequence":  {
-//              "code": "SO:0001568"
-//              "label": "splicing variant"
-//              "system": http://purl.obolibrary.org/obo/SO
-//              }, 
-//      (MHB: No qualifier needed because the transcript-level variation is part of the MCObject.)
-//          }
-//      }
-// NOTE 1 END. 
+          
                 
                 
-                
-                
-// Entities referenced in the Statement above (Agents, DTOs, Value Objects, ...)
+// Entities referenced in the Statements above (Agents, DTOs, Value Objects, ...)
 
     // Agents contributing to the Statement(s)
     "agents" : [{
@@ -95,7 +93,7 @@
         ],         
             
         "extension" : [                
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: In the new VO-centric paradigm Larry and Alex are proposing, I think this would be a DTO?
+            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: Would this be a DTO? Also, seems like we might make this part of the core VRS-DTO?
             {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The reference sequence on which the wrapped genomic variant is defined.
             {"name": "structural_type", "value": [{"code": "SO:0001483", "label": "SNV", "system": "http://purl.obolibrary.org/obo/SO"}]}      
             ]
@@ -115,7 +113,7 @@
         "id" : "vrs-dto:200",
         "type": "AlleleDto",
         "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this DTO.
-        "label" : "NM_000546.5:c.672+1G>A",
+        "label" : "NC_000017.11(NM_000546.5):c.672+1G>A", 
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "aliases" : [{
             "type": "Descriptor",
@@ -215,11 +213,3 @@
 
 
 }  // End of the message/document
-
-
-
-
-
-
-
-
