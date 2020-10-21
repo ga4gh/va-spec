@@ -36,8 +36,11 @@
         "object": {
             "id": "MCR:101",
             "type": "MolecularConsequenceResult",  // MHB: What type of thing is this object?  Here I frame it as a specialization of 'StudyResult'. This is an exploratory core SEPIO class we that is used to group a subset of data from a single study that has a particular focus or perspective. We have used 'StudyResults' already to represent the Statement objects/descriptors for the PopFreq Statement, and Computaitonal Functional Impact Statement. For more on 'Study Results', see here: https://docs.google.com/spreadsheets/d/1zQU-Yv7gB7IHKIOVsTh-74BwdtgB9KQpKcWkSHZOa-Q/edit#gid=836165343&range=1:1
-            "transcript": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant?
+            "transcriptSequence": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant?
             "transcriptVariant": "vrs-dto:200",
+            "proteinSequence": . . . // Agreed on 10-21 call to include this
+            "proteinVariant":  . . . // Agreed on 10-21 call to include this
+            // LB: instead of four sibling attributes, explore idea of two containers (one for tx, one for protein)
             "consequence":  [{
                 "code": "SO:0001568",
                 "label": "splicing variant",
