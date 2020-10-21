@@ -7,7 +7,7 @@
    //ClinVar preferred label: NM_001126112.2(TP53):c.672+1G>A (https://www.ncbi.nlm.nih.gov/clinvar/variation/216078/)
 
 {   
-    "molecular-consequences" : [{  // An array of Statements 
+    "molecular-consequences" : [{  // An array of Statements (here, two statements demonstrating different modeling appraoches for the same MC annotation)
         "id" : "MCS:100",
         "type" : "MolecularConsequenceStatement",
         "description" : "This is intronic variant, resulting in splicing alteration.",
@@ -18,8 +18,8 @@
         "predicate" : "hasMolecularConsequence" // MHB: We will likely have all predicates come from a set of codes, in which case this value would be represnted as a Coding (as propsoed for the SO term below)
 
         "object" : { // MHB: Example here places the SO term alone as the object, wrapped in an inlined FHIR-like 'Coding' object.  But there are many ways we could do this - e.g. just capture a CURIE, which could use a DTO wrapper to caputre label, etc. We also discussed the idea of a complex 'MC object' here, that bundeles the SO term with the qualifying transcript and/or the transcript-level variation (See NOTE 1 below)
-            "code": "SO:0001568"
-            "label": "splicing variant"
+            "code": "SO:0001568",
+            "label": "splicing variant",
             "system": http://purl.obolibrary.org/obo/SO
             },         
 
@@ -29,8 +29,7 @@
         "authoredBy" : "agent:100",        
         "dateAuthored" : "2019-10-15",
 
-    },    // End of the first Statement object
-    
+    },    
     {    // Second statement - holds the same data as the first, but uses a different structure where SO term and tx variant are bundled with additional info
         "subject" : "vrs-dto:100",  
         "predicate" : "hasMolecularConsequence" 
@@ -40,11 +39,11 @@
             "transcript": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant?
             "transcriptVariant": "vrs-dto:200",
             "consequence":  [{
-                "code": "SO:0001568"
-                "label": "splicing variant"
+                "code": "SO:0001568",
+                "label": "splicing variant",
                 "system": http://purl.obolibrary.org/obo/SO
                 }] 
-           //MHB: Is there anything else we would want to capture in this MCResult object?  The protein change/variant (or can we put this in the DTO for the tx or genomic variant, because it is not really  core part of the MCResult/Statement?)
+            // MHB: Is there anything else we would want to capture in this MCResult object?  The protein change/variant (or can we put this in the DTO for the tx or genomic variant, because it is not really  core part of the MCResult/Statement?)
             }
     }     
     ],   // End of the array of MC Statement objects
@@ -57,7 +56,8 @@
     "agents" : [{
         "id" : "agent:100",
         "type" : "Agent",
-        "label":"John Doe"}
+        "label":"John Doe"
+        }
     ],
     
 
@@ -72,7 +72,7 @@
         "label": "NC_000017.11:g.7674858C>T",
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
         "aliases" : [{   // MHB Question: represtened as stucture object here, but on other places I have seen them as strings?
-            "type": "Descriptor",
+            "type": "Descriptor",  // Explain the notion of a 'Descriptor' type? How same/diff from 'Coding' above?
             "system" : "ghgvs",
             "value" : "NC_000017.11:g.7674858C>T"
             },{
@@ -93,20 +93,20 @@
         ],         
             
         "extension" : [                
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: Would this be a DTO? Also, seems like we might make this part of the core VRS-DTO?
-            {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The reference sequence on which the wrapped genomic variant is defined.
+            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: Would this be a DTO? Also, it seems like we might make this part of the core VRS-DTO?
+            {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The reference sequence on which the wrapped genomic variant is defined. Make part of core DTO?
             {"name": "structural_type", "value": [{"code": "SO:0001483", "label": "SNV", "system": "http://purl.obolibrary.org/obo/SO"}]}      
             ]
         }
     
-        // NOTE 2: These are the extensions on the genomic variation from Larry's earlier version of this example - kept here for comparison. 
+        // NOTE 1: These are the extensions on the genomic variation from Larry's earlier version of this example - kept here for comparison. 
         // Note that in this older example these are named fields, rather than 'map"-style key-value pairs as above. 
         //  "extension": { 
         //      "transcriptSequenceDto": "vrs-dto:500", // MHB: I placed this in a DTO for that transcript variation.
         //      "sequenceDto" : "vrs-dto:400",  // MHB: I kept this one in my example
         //      "genes" : [["entrez_gene:7157","hgnc:11998"], "text": "TP53"}] // MHB: I represented as a gene DTO in my example
         //      }
-        // NOTE 2 END.
+        // NOTE 1 END.
         
         {
         // DTO#2: Allele DTO for the qualifying transcript-level variation
@@ -126,7 +126,7 @@
             }
           ],            
         "extension" : [
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: In the paradigm Larry and Alex are proposing, this would be a DTO?
+            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB: Make 'genes' part of core VRS-DTO spec?
             {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The ref sequence on which the wrapped transcript variant is defined.
           ]            
         },      
@@ -138,9 +138,9 @@
         "label" : "tumor protein p53",
         "symbol": "TP53",
         "xrefs" : ["entrez_gene:7157","Ensembl:ENSG00000141510","MIM:191170"],
-        "aliases": ["BRG1", "SMARCA4"]  // MHB: why represented as strings, and as objects as above? Which do we prefer here?
+        "aliases": ["BRG1", "SMARCA4"]  // MHB: represented as strings, and as 'Descriptor' objects as above? 
         "strand": "minus",
-        ... (other 'non-essential' info to include about a gene concept)
+        //... (other 'non-essential' info to include about a gene concept)??
         },    
         {
          // DTO#4: Sequence DTO  for the genomic variant's reference sequence (NC_000017.11)
@@ -213,3 +213,5 @@
 
 
 }  // End of the message/document
+
+
