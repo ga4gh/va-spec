@@ -73,6 +73,7 @@
         "type": "AlleleDto",
         "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this DTO.     
         "label": "NC_000017.11:g.7674858C>T",
+        "variation_type": "genomic",   // Proposed addition to variation DTOs, from 10-21-20 VA Call        
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
         "aliases" : [{   // MHB Question: represtened as stucture object here, but on other places I have seen them as strings?
             "type": "Descriptor",  // Explain the notion of a 'Descriptor' type? How same/diff from 'Coding' above?
