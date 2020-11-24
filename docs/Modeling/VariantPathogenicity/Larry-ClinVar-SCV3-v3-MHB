@@ -1,0 +1,527 @@
+SCV3
+VA/SEPIO Mock up for ClinVar SCV
+
+Namespaces (per Identifiers.org)
+    clinvar.submission         - SCV accessions
+    clinvar                    - clinvar variation ids.
+    clinvar.record             - RCV accessions
+    clinvar.archive            - VCV accessions
+
+Tasks/Todos.
+    - find examples of SCVs that don't map well to VRS Allele/Haplotype... Can we normalize all these to a "text" form ?
+    - reach out to ClinVar for VCV prefix in identifiers.org... (done - waiting on reply)
+    - review/compare the externalMetaData object with the vrsDescriptor to see if these are translatable...
+    - Terry or Tristan to verify that we use direct references on conditions in lieu of GeneticConditions when possible.
+    - bring a new SCV example to the call with multiple case level data observations....
+    - MB idea - use caseStudy VA object to group clinvar case level info. this should provide solution for multi-record case info per SCV.
+
+{
+  "annotations" : [{  // First (only) Pathogenicity Statement in this message
+    "id" : "clinvar.submission:SCV000616365.3",  //MHB: Will this be the internal, logical identifier for the Statement in the Clingen system?  I would suspect it might mint its own logical identifier, since the ClinGen Statement is distinct from the ClinVar record it is derived from. The ClinVar record identifier could be captured as a buisiness identifier (see FHIR defs/approach to using logical 'id' vs a business 'identifier').  If not, will the fully qualified/expanded id at least be unique to the ClinGen dataset / namespace?
+    "type" : "PathogenicityClassification",
+    "subject" : "vrs_dto:100",
+    "predicate" : "LOINC:Pathogenic",
+    "object" : "condition:100",
+    "variantOriginQualifier" : "GENO:germline", //MHB: Consider if/how this might be captured in the subject Allele DTO instead of as a Statement qualifier?
+    "description" :variantDescriptor:100"
+      "The c.173C>T (p.Thr58Ile) variant in HRAS has been reported in the literature as an unconfirmed de novo occurrence in a patient with clinical features of a RASopathy (PM6; PMID 20112233, 16474405). Also, at least 2 independent occurrences of this variant have been detected in patients with a RASopathy (PS4_Supporting; PMID: 22488832, 18247425, 23321623, 20949621, 16921267). This variant was absent from large population studies (PM2; ExAC, http://exac.broadinstitute.org). The p.Thr58Ile variant in HRAS is analogous to the same previously established amino acid change in the KRAS gene and the ClinGen RASopathy Expert Panel has defined that the pathogenicities of analogous variants in the HRAS and KRAS genes are correlated based on the assumption that a known functional residue in one gene is equivalent to other functions within that subgroup (PS1; 29493581). Furthermore, the variant is in a location that has been defined by the ClinGen RASopathy Expert Panel to be a mutational hotspot or domain of HRAS (PM1; PMID 29493581). The variant is in HRAS, which has been defined by the ClinGen RASopathy Expert Panel as a gene with low rate of benign missense with missense variants commonly being pathogenic (PP2; PMID 29493581). Computational prediction tools and conservation analysis suggest that the p.Thr58Ile variant may impact the protein (PP3). In summary, this variant meets criteria to be classified as pathogenic for RASopathies in an autosomal dominant manner. Rasopathy-specific ACMG/AMP criteria applied (PMID:29493581): PM6, PS4_Supporting, PM2, PS1, PM1, PP2, PP3.",
+
+    "hasEvidenceFromSource" :[{
+      "id": "PubMed:20949621",
+      "documentType" : "Publication",
+      "type": "Document"
+    },{
+      "id" : "PubMed:16474405",
+      "type" : "Document"
+    },{
+      "id" :"PubMed:20112233",
+      "type" : "Document"
+    },{
+      "id" : "PubMed:16921267",
+      "type" : "Document"
+    },{
+      "id" : "PubMed:22488832",
+      "type" : "Document"
+    },{
+      "id" : "PubMed:23321623",
+      "type" : "Document"
+    },{
+      "id" : "PubMed:18247425",
+      "type" : "Document"
+    },{
+      // this is a software system record ?DataRecord?
+      "id" : "https://erepo.clinicalgenome.org/evrepo/ui/interpretation/4fa14d9d-3bce-4dd8-affa-771b6298c4fc",
+      "documentType" : "WebPage",
+      "type" : "Document"
+    }],
+
+    "wasSpecifiedBy": "method:100",
+    "qualifiedContribution" : ["contribution:100","contribution:101"] //MHB: of the five possible contributions in the data, Contributsions created for two . . . take step back to review these 5 possible contributions, and if/how they could be represented using Combination of Contribution and RecordMetadata objects. 
+
+ 
+    "recordMetaData" : {  // MHB: a few pieces of metadata in 'extensions' below could fit here as record-level metadata (recordStatus, dateCreated, variationArchiveId, rcvAccessionId)
+    },
+    
+    // LB: we propose to add an "extensions" node to the VA statements
+    // to allow us to treat the VA statements as Data Transfer Objects
+    // and provide the ability for implementers to pass along other
+    // attributes that may be useful or necessary for specific integrations.
+
+    // MHB: I thought that VA Statements would *not* be data transfer objects, nor would other core SEPIO types (e.g. evidence lines, items methods, agents, etc) - as we decided that Domain Entities would become DTOs - not core SEPIO classes, right?  Nevertheless, core SEPIO classes including Statements would all inherit form a root 'Entity' class that includes an 'extension' field.
+    "extensions" : { // MHB: on the Statement object, correct? Take this chance to clarify importnace of exensions hanging from most suitable object. And using core fields where possible for a given piece of info, where they exist.
+      // additional clinvar SCV data elements to guarantee full exchange of submitted values
+      "variationInheritancePattern" : "GENO:Autosomal dominant inheritance", //MHB: are you including this here *and* in the Condition object?
+      "reviewStatus" : "reviewed by expert panel", // MHB: if this is a proxy/measure of confidence level in / quality of the Statement, it could go into the 'confidenceLevel' attribute that hangs from the Statement directly.
+      "recordStatus" : "current", //MHB: Which record does this describe?  The ClinGen one in this message, or an upstream ClinVar one?  A: it is about the ClinVar record (current, replaced, deleted, previous)
+      "affectedStatus" : "unknown", // MHB: What does this represent? Is this indicative of whether a specific patient/case that was the basis of some evidence had condition:100 or not?  
+      "methodType" : "curation",  // MHB: Is this the type of method used to generate evidence supporting the Statement? If so, consider framing it explicitly as such, and using the Statement.hasEvidenceOfType field to caature this info.
+      "localKey" : "4fa14d9d-3bce-4dd8-affa-771b6298c4fc|Orphanet:ORPHA3071", //MHB: what is this an id for? A particular record of the SCV Statement?
+      "submittedAssembly":""GRCh38", // MHB: might this belong in the AlleleDTO (variantDescriptor:100)?
+      "clinicalAssertionInternalId": "1202773", // MHB: we could put this in the 'identifiers' slot, as a business identifier / other identifier'?
+      "fdaRecognizedDatabase" : "true",
+      "dateCreated" : "2017-12-15", // MHB: this is the date that the ClinVar record was created, not the ClinGen record derived from the ClinVar record, correct? If so I might name it differently (if you decide to keep it here) . . .e.g. dateSourceClinVarRecordCreated
+      "dateLastUpdated" : "2019-07-17", // MHB: this is the date that the ClinVar record was last updated, not the ClinGen record derived from the ClinVar record, correct? If so I might name it differently (if you decide to keep it here) . . .e.g. dateClinVarRecordUpdated
+      "variationId" : "clinvar:12610", //MHB: this belongs in the AlleleDTO (but no reason you cannot put it here as well)
+      "variationArchiveId" : "clinvar.archive:VCV000012610.1", //MHB: is this the kind of info that might go in an xref field (in RecordMetadata)
+      "rcvAccessionId" : "clinvar.record:RCV000013444.20" //MHB: is this the kind of info that might go in an xref field (in RecordMetadata)
+    }
+    
+    // MHB: Have you explored how you will represent E/P info for SCV records that provide details about cases, sequencing methods, etc. We talked about representing metadata about each case as a CaseReport of some kind.  It should be easy enough to do if we have examples/requirements to inform this (even if on the first pass we capture most metadata as extensions - at least we will have an appropriate object to hang it from). 
+    
+  }],
+  "conditions" : [{
+        "id": "condition:100",
+        "type" : "GeneticCondition",
+        "disease" : ["Orphanet:ORPHA3071"]
+        "inheritancePattern": "GENO:Autosomal dominant inheritance"
+  }],
+  // should these submitter entities be Contribution entities? can we add the abbrev. and category columns?
+  "contributions":[{
+        // this contribution is about the activity and agent for the submission and authorship, which are co-occurrent. //MHB: 
+        "id": "contribution:100",
+        "type": "Contribution",
+        "contributionMadeTo" : "ClinVar:SCV000616365.3",
+        "contributionMadeBy" : "ClinVarOrgId:506439",
+        // this is really an activity type more so than a contributor role. propose change to contributionRole.
+        "contribtorRole" : ["submission"]
+        "startDate" : "2019-02-25",
+        "endDate" : "2019-02-25",
+        "extensions" : {
+            "submissionName" : "SUB5222244"
+        }
+  },{
+        // this contribution is about the activity agent related to the "last evaluation", "approval" or "authoredOn" date.
+        "id": "contribution:101",
+        "type": "Contribution",
+        "contributionMadeTo" : "ClinVar:SCV000616365.3",
+        "contributionMadeBy" : "ClinVarOrgId:506439",
+        "contribtorRole" : ["approval"]
+        "startDate" : "2017-04-03",
+        "endDate" : "2017-04-03"
+  },{
+        // this contribution is about the activity agent related to the generation of this message
+        "id": "contribution:200",
+        "type": "Contribution",
+        "contributionMadeTo" : "ClinVar:SCV000616365.3",
+        "contributionMadeBy" : "agent:101",
+        "contribtorRole" : ["approval"]
+        "startDate" : "2020-09-27",
+        "endDate" : "2020-09-27"
+  }],
+  
+  //MHB: I noticed you omitted contributions made by ClinVar itself (clinvar.DateCreated, clinvar.DateLastUpdated). These dates are currently in the exptesions for the Statement above. But would you want to represent these as Contributions well?  See Appendix II of this doc/file for more.
+  
+  
+  "agents" : [{
+        "id" : "ClinVarOrgId:506439",
+        "type" : "Agent",
+        "label":"ClinGen RASopathy Variant Curation Expert Panel",
+        "qualifiedContibution" : "... ?? do we need this ?? .. ",
+        "extensions" : {
+            "orgAbbreviation": "RAS-EP",
+            "orgCategory":"consortium"
+        }
+  },{
+        "id" : "agent:101",
+        "type" : "Agent",
+        "agentType" : "tool",
+        "label": "ClinVarSCVToSEPIOTransformationService",
+        "softwareVersion": "0.9.0"
+  }],
+  methods : [
+  {
+        "id" : "method:100",
+        "type" : "AssertionMethod",
+        "label" : "ClinGen RASopathy ACMG Specifications v1",
+        "methodType" : "SEPIO-CG:ACMGVariantPathogenicity" ,      // ?? what goes here? is this a custom sepio value set - Yes!
+        "hasUrl" : ["https://submit.ncbi.nlm.nih.gov/ft/byid/60rptlbs/clingen_rasopathy_acmg_specifications_v1.pdf"]
+  }],
+    "descriptors":[{
+      "id": "variant:100",
+      "type": "AlleleDescriptor",
+      "vrs_obj" : {
+        "_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",
+        "type" : "Allele",
+        "state": {
+          "sequence": "A",
+          "type": "SequenceState"
+        },
+        "location" : {
+          "_id": "ga4gh:VSL.CBfqfC0O-9x6EtMYq1XUH73Vn9axgOxG",
+          "type": "SequenceLocation",
+          "interval": {
+            "end": 533883,
+            "start": 533882,
+             "type": "SimpleInterval"
+          },
+          "sequence_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD"
+        }
+      },
+      "label": "NC_000011.10:g.533883G>A",
+      "qualifiedContributions" : ["contribution:200"],
+      "extensions" : {
+          "submittedHgvs": "NC_000011.10:g.533883G>A",
+          "submittedOtherNames": ["NM_176795.4(HRAS):c.173C>T", "p.Thr58Ile"]
+          "submittedGeneSymbol" : [{"label" : "HRAS"}]
+          "clinvarVariantType" : "variation"
+      }
+    },{
+        "id" : "sequence:101",
+        "type": "SequenceDescriptor",
+        "vrs_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD",
+        "label" : "NC_000011.10",
+        "xrefs" : ["RefSeq:"NC_000011.10"],
+        "residue_type": "SO:0000352",  //DNA
+        "extensions" : {
+            "species" : { "id" : "taxonomy:9606", "display": "human"}
+        }
+    }]
+}
+
+
+// ****Appendix I****//
+-- below is the original SCV from clinvar xml for the above.
+-- it is wrapped inside a VCV for https://www.ncbi.nlm.nih.gov/clinvar/variation/12610/ (variationId=12610, variationArchiveId=VCV000012610)
+-- and it is related to RCV https://www.ncbi.nlm.nih.gov/clinvar/RCV000013444.20/ (rcvAccessionId=RCV000013444)
+
+
+
+<ClinicalAssertion ID="1202773" FDARecognizedDatabase="true"
+        DateCreated="2017-12-15" DateLastUpdated="2019-07-17" SubmissionDate="2019-02-25">
+    <ClinVarSubmissionID localKey="4fa14d9d-3bce-4dd8-affa-771b6298c4fc|Orphanet:ORPHA3071"
+            submittedAssembly="GRCh38"/>
+    <ClinVarAccession Accession="SCV000616365" Type="SCV" Version="3"
+            <!-- submitter fields -->
+            SubmitterName="ClinGen RASopathy Variant Curation Expert Panel"
+            OrgID="506439" OrganizationCategory="consortium" OrgAbbreviation="RAS-EP"/>
+    <RecordStatus>current</RecordStatus>
+    <ReviewStatus>reviewed by expert panel</ReviewStatus>
+    <Interpretation DateLastEvaluated="2017-04-03">
+      <Description>Pathogenic</Description>
+      <Citation>
+        <ID Source="PubMed">20949621</ID>
+      </Citation>
+      <Citation>
+        <ID Source="PubMed">16474405</ID>
+      </Citation>
+      <Citation>
+        <ID Source="PubMed">20112233</ID>
+      </Citation>
+      <Citation>
+        <ID Source="PubMed">16921267</ID>
+      </Citation>
+      <Citation>
+        <ID Source="PubMed">22488832</ID>
+      </Citation>
+      <Citation>
+        <ID Source="PubMed">23321623</ID>
+      </Citation>
+      <Citation>
+        <ID Source="PubMed">18247425</ID>
+      </Citation>
+      <Citation>
+        <URL>https://erepo.clinicalgenome.org/evrepo/ui/interpretation/4fa14d9d-3bce-4dd8-affa-771b6298c4fc</URL>
+      </Citation>
+      <Comment Type="public">The c.173C&gt;T (p.Thr58Ile) variant in HRAS has been reported in the literature as an unconfirmed de novo occurrence in a patient with clinical features of a RASopathy (PM6; PMID 20112233, 16474405). Also, at least 2 independent occurrences of this variant have been detected in patients with a RASopathy (PS4_Supporting; PMID: 22488832, 18247425, 23321623, 20949621, 16921267). This variant was absent from large population studies (PM2; ExAC, http://exac.broadinstitute.org). The p.Thr58Ile variant in HRAS is analogous to the same previously established amino acid change in the KRAS gene and the ClinGen RASopathy Expert Panel has defined that the pathogenicities of analogous variants in the HRAS and KRAS genes are correlated based on the assumption that a known functional residue in one gene is equivalent to other functions within that subgroup (PS1; 29493581). Furthermore, the variant is in a location that has been defined by the ClinGen RASopathy Expert Panel to be a mutational hotspot or domain of HRAS (PM1; PMID 29493581). The variant is in HRAS, which has been defined by the ClinGen RASopathy Expert Panel as a gene with low rate of benign missense with missense variants commonly being pathogenic (PP2; PMID 29493581). Computational prediction tools and conservation analysis suggest that the p.Thr58Ile variant may impact the protein (PP3). In summary, this variant meets criteria to be classified as pathogenic for RASopathies in an autosomal dominant manner. Rasopathy-specific ACMG/AMP criteria applied (PMID:29493581): PM6, PS4_Supporting, PM2, PS1, PM1, PP2, PP3.</Comment>
+    </Interpretation>
+    <Assertion>variation to disease</Assertion>
+    <AttributeSet>
+      <Attribute Type="ModeOfInheritance">Autosomal dominant inheritance</Attribute>
+    </AttributeSet>
+    <AttributeSet>
+      <Attribute Type="AssertionMethod">ClinGen RASopathy ACMG Specifications v1</Attribute>
+      <Citation>
+        <URL>https://submit.ncbi.nlm.nih.gov/ft/byid/60rptlbs/clingen_rasopathy_acmg_specifications_v1.pdf</URL>
+      </Citation>
+    </AttributeSet>
+    <ObservedInList>
+      <ObservedIn>
+        <Sample>
+          <Origin>germline</Origin>
+          <Species TaxonomyId="9606">human</Species>
+          <AffectedStatus>unknown</AffectedStatus>
+        </Sample>
+        <Method><MethodType>curation</MethodType></Method>
+        <ObservedData>
+          <Attribute Type="Description">not provided</Attribute>
+        </ObservedData>
+      </ObservedIn>
+    </ObservedInList>
+    <SimpleAllele>
+      <GeneList><Gene Symbol="HRAS"/></GeneList>
+      <VariantType>Variation</VariantType>
+      <OtherNameList>
+        <Name>NM_176795.4(HRAS):c.173C&gt;T</Name>
+        <Name>p.Thr58Ile</Name>
+      </OtherNameList>
+      <AttributeSet>
+        <Attribute Type="HGVS">NC_000011.10:g.533883G&gt;A</Attribute>
+      </AttributeSet>
+    </SimpleAllele>
+    <TraitSet Type="Disease">
+      <Trait Type="Disease">
+        <XRef DB="Orphanet" ID="ORPHA3071"/>
+      </Trait>
+    </TraitSet>
+    <SubmissionNameList>
+      <SubmissionName>SUB5222244</SubmissionName>
+    </SubmissionNameList>
+</ClinicalAssertion>
+
+
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+
+
+//#### APPENDIX I #####//
+
+// Raw ClinVar XML showing dates and agents linked to contributions for this example:
+
+    <ClinicalAssertion ID="1202773" FDARecognizedDatabase="true"
+            DateCreated="2017-12-15" DateLastUpdated="2019-07-17" SubmissionDate="2019-02-25">
+        <ClinVarSubmissionID localKey="4fa14d9d-3bce-4dd8-affa-771b6298c4fc|Orphanet:ORPHA3071"
+                submittedAssembly="GRCh38"/>
+        <ClinVarAccession Accession="SCV000616365" Type="SCV" Version="3"
+                <!-- submitter fields -->
+                SubmitterName="ClinGen RASopathy Variant Curation Expert Panel"
+                OrgID="506439" OrganizationCategory="consortium" OrgAbbreviation="RAS-EP"/>
+        <RecordStatus>current</RecordStatus>
+        <ReviewStatus>reviewed by expert panel</ReviewStatus>
+        <Interpretation DateLastEvaluated="2017-04-03">
+   
+    // Key data concerning Contributions:
+       - DateLastEvaluated="2017-04-03" - the submitting org's contribution to the knowledge expressed in the Statement
+       - SubmissionDate="2019-02-25" - the submitting org's contribution to submitting the *latest* ClinVar SCV record 
+       - DateCreated="2017-12-15" - ClinVar's contribution to creation of the *original v1* ClinVar SCV record 
+       - DateLastUpdated="2019-07-17" - ClinVar's contribution to updating the *latest* ClinVar SCV record
+       - *Date ClinGen Record Created="2020-09-27" - ClinGen's contribution to creating the ClinGen record of this Statement (not in the ClinVar data, because thisis about creation of the ClinGen record)
+
+      
+## This  ClinGen-ClinVar use case is unique because it describes contributions to the ClinGen Statement at three 'levels': 
+    (1) a 'knowledge-level' contribution by the submitter to the asserted fact expressed in the Statement (DateLastEvaluated, 2017-04-03); 
+    (2) three contributions to 'upstream' ClinVar record-level artifacts from which the ClinGen Statement was derived
+         - one made by the submitter to the current ClinVarSCV record (DateSubmitted, 2019-02-25)
+         - one made by ClinVar to the original v1 ClinVar SCV record (DateCreated, 2017-12-15)
+         - one made by ClinVar to the current ClinVar SCV record (DateLastUpdated, 2019-07-17)
+    (3) one contribution to the ClinGen record carried in the current message - which was derived from the ClinVar records above. (DateGenerated, 2020-09-27).
+        
+## This use case to capture requirements to upstream records unique, and SEPIO/VA is exploring ways to support this (the present Record Metadata object is meant to capture record-level metadata for the record in the message itself, not upstream records from which it was derived). 
+
+## Below we propose two ways the SEPIO/VA model might accommodate this
+    - one that uses a single RecordMetadta object to hold all four record-level contributions (where the record that is being 'contributed to' is bundled into the semantics of the 'contributorRole')
+    - another that allows for multiple RecordMetadata objects (one for each record to which contributions are described) - so more explicitly capture what the contributions being described are being made to, and offering more flexibility to capture other record metadata about upstream/source records from which a given record was derived. 
+
+## Finally, before reviewing the examples below, make sure you have a thorough understanding of the difference between  "knowledge-level" and "record-level" provenance (see https://docs.google.com/document/d/11HuUMw3u9uf1RPa3FbFgSgbY47hDxAFWywbCYVxUMLI/edit#heading=h.51ekqk3uriqu)   
+    
+
+--------------------------------------
+
+ 
+   // Modeling Approach 1 - uses a single RecordMetadta object to hold all four record-level contributions, indicates the record being 'contributed to' in the semantics of the 'contributorRole'). AFTER A VERY PRELIMINARY OVERVIEW ON 11-24 CALL, WE ARE LEANING AWAY FROM THIS AND TOWARD APPROACH 2 BELOW.
+        {  ## start of the Variant Pathogenicity Classification Statement object
+          "id" : "clinvar:SCV000616365.3",  
+          "type" : "PathogenicityClassification",
+          "subject" : "vrs_dto:100",
+          "predicate" : "LOINC:Pathogenic",
+          "object" : "condition:100",
+          "variantOriginQualifier" : "GENO:germline",
+          "qualifiedContribution": [
+            {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in Statement, as performed by the original submitter/author. This Contribution is the only one that hangs directly from the Statement, because it is about the underlying knowledge.
+             "id": "contribution:001",
+             "type": "Contribution",
+             "contributionMadeBy" : "ClinVarOrgId:506439", 
+             "contributorRole" : "statement evaluator",  ## in practice these would likely be controlled/coded values 
+             "startDate" : "2017-04-03",
+             "endDate" : "2017-04-03"
+             }
+          ],
+          
+          // The remaining four Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge  
+          
+          "recordMeta": {  ## Metadata about this particular ClinGen record of the Statement, incuding contributions made to it
+             "dateRecordCreated": "2020-09-27",
+             "recordCreatedBy": "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService
+             "recordStatus": {   ## Straw man 'RecordStatus" data type to capture the status of a record, along with metadata about the status.
+                 "status": "current",
+                 "isCurrentStatus": "true"
+                 },                 
+             "xref": ["clinvar.archive:VCV000012610.1", "clinvar.record:RCV000013444.20"], # these were in the extension object in Larry's example
+             "qualifiedContribution": [  
+                { ## clinvar.DateSubmitted="2019-02-25" - describes submission of the *latest version* of the ClinVar SCV record to the ClinVar system, by the submitter/author
+                "id": "contribution:003",   
+                "type": "Contribution",
+                "contributionMadeBy" : "ClinVarOrgId:506439",  ## the submitting org
+                "contributorRole" : "latest Clinvar SCV record submitter",
+                "startDate" : "2019-02-25",
+                "endDate" : "2019-02-25", 
+                "extensions" : {     // extension from Larry's example to give the submission a name
+                    "submissionName": "SUB5222244"
+                    }
+                },
+                {  ## clinvar.DateCreated="2017-12-15" - describes the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV.
+                "id": "contribution:002",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:100", ## ClinVar
+                "contriubtorRole" : "original ClinVar SCV record creator",  ## the default assumption is that Contributions in the RecordMetadata object are made to the record in the message, unless semantics of values in the data indicate otherwise (e.g. here the contribution role value indicates the artifact is the upstream CV SCV record)
+                "startDate" : "2017-12-15",
+                "endDate" : "2017-12-15"
+                },
+                {   clinvar.DateLastUpdated="2019-07-17": describes the last update made to the *latest version* of the ClinVar SCV record by ClinVar
+                "id": "contribution:004",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:100", ## ClinVar
+                "contributorRole" : "latest ClinVar SCV record update",
+                "startDate" : "2019-07-17",
+                "endDate" : "2019-07-17" 
+                },               
+                {  ## clingen.DateGenerated="2020-09-27":  the creation of the ClinGen record in this document, by ClinGen.      
+                "id": "contribution:005",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService
+                "contributorRole" : "record creator"
+                "startDate" : "2020-09-27",
+                "endDate" : "2020-09-27" 
+                ##  If this is all the info we want to capture, the direct contribution fields 'recordCreatedBy' and 'dateRecordCreated' cover it, and we may not need a Contribution object??
+                }
+             ]
+           }
+        }  ## end of Statement object
+ 
+ --------------------------------------
+ 
+    // Modeling Approach 2, alternate approach
+    // Allows for multiple RecordMetadata objects (one for each record to which contributions are described). 
+    // Uses a new 'sourceRecordMeta' field to point to RecordMetadata object that describe usptream/source records. This field would sit alongside the existing 'recordMeta' field (rename 'thisRecordMeta'?), which is used specifically to capture metadata about the actual record in this message. 
+    // This approach would allow us to more explicitly and flexibly describe contributions made to different upstream records from which the current record was derived. 
+    // Note that while the original 'recordMeta' field has a 0..1 cardinality (as the metadata it captures it is specifically about the record of the Statement in this  
+       message), the new 'sourceRecordMetadata' field would have a 0..m cardinality - to be able to describe aspects of any number of upstream records from which the current record was derived.
+
+        {  ## start of the Variant Pathogenicity Classification Statement object
+          "id" : "clinvar:SCV000616365.3",  
+          "type" : "PathogenicityClassification",
+          "subject" : "vrs_dto:100",
+          "predicate" : "LOINC:Pathogenic",
+          "object" : "condition:100",
+          "variantOriginQualifier" : "GENO:germline",
+          "qualifiedContribution": [ 
+            {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in the Statement, as performed by the original submitter/author. Knowledge-level Contributions like this hang from the Statement directly (vs record-level contributions which are encapsulated in RecordMetadata objects)
+             "id": "contribution:001",
+             "type": "Contribution",
+             "contributionMadeBy" : "ClinVarOrgId:506439", 
+             "contributorRole" : "statement approver/evaluator",   
+             "startDate" : "2017-04-03",
+             "endDate" : "2017-04-03"
+             }
+           ], 
+           
+          // The remaining four Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge. With Approach 2, we create separate RecordMetadata objects for each distinct record we want to describe.      
+ 
+          "thisRecordMeta": ## Metadata about the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
+             {  
+             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
+             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
+             "sourceDataSet": "ClinVar Version x.x",
+             "sourceDataRecord": "clinvar:SCV000616365.3",
+             "dateSourceRetrieved": "xxxx-xx-xx"  ## not in the ClinGen example (redundant if have source dataset version), but shown as example of what could be captured
+             "qualifiedContribution": [    
+                {  ## clingen.DateGenerated="2020-09-27":  describes the creation of the ClinGen record in this document, by ClinGen.      
+                "id": "contribution:005",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService
+                "contributorRole" : "record creator"
+                "startDate" : "2020-09-27",
+                "endDate" : "2020-09-27" 
+                }
+               ]
+             },
+          "sourceRecordMeta": [  ## Two RecordMetadata objects to hold info about the two upstream source records for which contributions are described            
+
+             { ## RecordMetadata object for the *original* ClinVar SCV record, for which *one* contribution is described.
+             "description": "metadata describing contributions made to the *original version* of the ClinVar SCV from which the ClinGen record was derived",
+             "recordIdentifier": "clinvar:SCV000616365.1",
+             "partOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
+             "qualifiedContribution": [               
+                { ## clinvar.DateCreated="2017-12-15" - describes the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV.
+                "id": "contribution:002",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:100", ## this contribution is made by ClinVar
+                "contriubtorRole" : "record creator", 
+                "startDate" : "2017-12-15",
+                "endDate" : "2017-12-15"
+                }
+               ]
+             },  
+            
+             { ## RecordMetadata object for the *latest* ClinVar SCV record, for which *two* contributions are described.
+             "description": "metadata describing contributions made to the *latest version* of the ClinVar SCV from which the ClinGen record was derived",
+             "recordIdentifier": "clinvar:SCV000616365.3,
+             "partOfDataSet": "ClinVar Version x.x",
+             "recordStatus": {   ## object here represents a prototype 'RecordStatus" complex data type.
+                 "status": "current",   #E other possible status values in ClinVar data include 'deprecated', 'previous', . . . 
+                 "startDate": xxxx-xx-xx  ## not in the ClinGen example, but shown here as example of what could be captured
+                 "endDate": xxxx-xx-xx
+                 "isCurrentStatus": "true"
+                 },     
+             "qualifiedContribution": [                 
+                { ## clinvar.DateSubmitted="2019-02-25" - describes the submission of the *latest version* of the ClinVar SCV record to the ClinVar system, by the submitter/author
+                "id": "contribution:003",   
+                "type": "Contribution",
+                "contributionMadeBy" : "ClinVarOrgId:506439",  ## this contribution is made by the submitting org
+                "contributorRole" : "record submitter",
+                "startDate" : "2019-02-25",
+                "endDate" : "2019-02-25", 
+                "extensions" : {     // extension from Larry's example to give the submission a name
+                    "submissionName": "SUB5222244"
+                    }
+                },
+                { ## clinvar.DateLastUpdated="2019-07-17":  the last update made to the *latest version* of the ClinVar SCV record by ClinVar
+                "id": "contribution:004",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:100", ## ClinVar
+                "contributorRole" : "record updater",
+                "startDate" : "2019-07-17",
+                "endDate" : "2019-07-17" 
+                }
+               ]
+             }
+            ]
+        }  ## end of Statement object
+
+  
+  
+  
+  
+  
+  
+  --------------------------------
+  
+  Note that if the creator and date created for a record is all we want to capture, we can use the direct 'recordCreatedBy' and 'dateRecordCreated' fields instead of a Contribution object . . . e.g.:  
+  
+           "thisRecordMeta": ## Metadata about the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other rcord-level metadata, one Contribution to creation of the record is described.
+             {  
+             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
+             "dateRecordCreated": "2020-09-27",
+             "recordCreatedBy": "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService   
+             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  # the dataset/system of which the record is a part
+             }
