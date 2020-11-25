@@ -17,7 +17,7 @@ Tasks/Todos.
 
 {
   "annotations" : [{  // First (only) Pathogenicity Statement in this message
-    "id" : "clinvar.submission:SCV000616365.3",  //MHB: Will this be the internal, logical identifier for the Statement in the Clingen system?  I would suspect it might mint its own logical identifier, since the ClinGen Statement is distinct from the ClinVar record it is derived from. The ClinVar record identifier could be captured as a buisiness identifier (see FHIR defs/approach to using logical 'id' vs a business 'identifier').  If not, will the fully qualified/expanded id at least be unique to the ClinGen dataset / namespace?
+    "id" : "clinvar.submission:SCV000616365.3",  //MHB: Will this be the internal, logical identifier for the Statement in the Clingen system?  I would suspect it might mint its own logical identifier, since the ClinGen Statement is distinct from the ClinVar record it is derived from. The ClinVar record identifier could be captured as a buisiness identifier (see FHIR defs/approach to using logical 'id' vs a business 'identifier').  If not, will the fully qualified/expanded id at least be unique to the ClinGen dataset / namespace?  A: most likely ClinGen will assign a unique internal logical id, different from the CV id.
     "type" : "PathogenicityClassification",
     "subject" : "vrs_dto:100",
     "predicate" : "LOINC:Pathogenic",
@@ -68,7 +68,7 @@ Tasks/Todos.
     // attributes that may be useful or necessary for specific integrations.
 
     // MHB: I thought that VA Statements would *not* be data transfer objects, nor would other core SEPIO types (e.g. evidence lines, items methods, agents, etc) - as we decided that Domain Entities would become DTOs - not core SEPIO classes, right?  Nevertheless, core SEPIO classes including Statements would all inherit form a root 'Entity' class that includes an 'extension' field.
-    "extensions" : { // MHB: on the Statement object, correct? Take this chance to clarify importnace of exensions hanging from most suitable object. And using core fields where possible for a given piece of info, where they exist.
+    "extensions" : { // MHB: on the Statement object, correct? Important that extensions hang from most suitable object. And important to use core fields where one exist to support a given piece of info.
       // additional clinvar SCV data elements to guarantee full exchange of submitted values
       "variationInheritancePattern" : "GENO:Autosomal dominant inheritance", //MHB: are you including this here *and* in the Condition object?
       "reviewStatus" : "reviewed by expert panel", // MHB: if this is a proxy/measure of confidence level in / quality of the Statement, it could go into the 'confidenceLevel' attribute that hangs from the Statement directly.
@@ -77,9 +77,9 @@ Tasks/Todos.
       "methodType" : "curation",  // MHB: Is this the type of method used to generate evidence supporting the Statement? If so, consider framing it explicitly as such, and using the Statement.hasEvidenceOfType field to caature this info.
       "localKey" : "4fa14d9d-3bce-4dd8-affa-771b6298c4fc|Orphanet:ORPHA3071", //MHB: what is this an id for? A particular record of the SCV Statement?
       "submittedAssembly":""GRCh38", // MHB: might this belong in the AlleleDTO (variantDescriptor:100)?
-      "clinicalAssertionInternalId": "1202773", // MHB: we could put this in the 'identifiers' slot, as a business identifier / other identifier'?
+      "clinicalAssertionInternalId": "1202773", // MHB: we could put this in an 'identifiers' slot, as a business identifier / other identifier'?
       "fdaRecognizedDatabase" : "true",
-      "dateCreated" : "2017-12-15", // MHB: this is the date that the ClinVar record was created, not the ClinGen record derived from the ClinVar record, correct? If so I might name it differently (if you decide to keep it here) . . .e.g. dateSourceClinVarRecordCreated
+      "dateCreated" : "2017-12-15", // MHB: this is the date that the ClinVar record was created, not when the ClinGen record derived from the ClinVar record was created, correct? If so I might name it differently (if you decide to keep it here) . . .e.g. dateSourceClinVarRecordCreated
       "dateLastUpdated" : "2019-07-17", // MHB: this is the date that the ClinVar record was last updated, not the ClinGen record derived from the ClinVar record, correct? If so I might name it differently (if you decide to keep it here) . . .e.g. dateClinVarRecordUpdated
       "variationId" : "clinvar:12610", //MHB: this belongs in the AlleleDTO (but no reason you cannot put it here as well)
       "variationArchiveId" : "clinvar.archive:VCV000012610.1", //MHB: is this the kind of info that might go in an xref field (in RecordMetadata)
@@ -129,7 +129,7 @@ Tasks/Todos.
         "endDate" : "2020-09-27"
   }],
   
-  //MHB: I noticed you omitted contributions made by ClinVar itself (clinvar.DateCreated, clinvar.DateLastUpdated). These dates are currently in the exptesions for the Statement above. But would you want to represent these as Contributions well?  See Appendix II of this doc/file for more.
+  //MHB: I noticed you omitted contributions made by ClinVar itself (clinvar.DateCreated, clinvar.DateLastUpdated). These dates are currently in the extensions for the Statement above. But would you want to represent these as Contributions well?  See Appendix II of this doc/file for more.
   
   
   "agents" : [{
@@ -310,12 +310,12 @@ Tasks/Todos.
         <ReviewStatus>reviewed by expert panel</ReviewStatus>
         <Interpretation DateLastEvaluated="2017-04-03">
    
-    // Key data concerning Contributions:
+    // Key data concerning Contributions (to three record-level artifacts - ClinGen's record, ClinVar's original record, and ClinVar's latest record) :
        - DateLastEvaluated="2017-04-03" - the submitting org's contribution to the knowledge expressed in the Statement
        - SubmissionDate="2019-02-25" - the submitting org's contribution to submitting the *latest* ClinVar SCV record 
        - DateCreated="2017-12-15" - ClinVar's contribution to creation of the *original v1* ClinVar SCV record 
        - DateLastUpdated="2019-07-17" - ClinVar's contribution to updating the *latest* ClinVar SCV record
-       - *Date ClinGen Record Created="2020-09-27" - ClinGen's contribution to creating the ClinGen record of this Statement (not in the ClinVar data, because thisis about creation of the ClinGen record)
+       - *Date ClinGen Record Created="2020-09-27" - ClinGen's contribution to creating the ClinGen record of this Statement (this date is not in the ClinVar data, because this is about creation of the ClinGen record downstream of ClinVar)
 
       
 ## This  ClinGen-ClinVar use case is unique because it describes contributions to the ClinGen Statement at three 'levels': 
@@ -477,7 +477,7 @@ Tasks/Todos.
              "recordIdentifier": "clinvar:SCV000616365.3,
              "partOfDataSet": "ClinVar Version x.x",
              "recordStatus": {   ## object here represents a prototype 'RecordStatus" complex data type.
-                 "status": "current",   # other possible status values in ClinVar data include 'deprecated', 'previous', . . . 
+                 "status": "current",   # other possible status values in ClinVar data include "current", "replaced", "deleted, "previous" 
                  "startDate": xxxx-xx-xx  ## not in the ClinGen example, but shown here as example of what could be captured
                  "endDate": xxxx-xx-xx
                  "isCurrentStatus": "true"
