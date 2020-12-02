@@ -7,30 +7,29 @@
    //ClinVar preferred label: NM_001126112.2(TP53):c.672+1G>A (https://www.ncbi.nlm.nih.gov/clinvar/variation/216078/)
 
 {   
-    "molecular-consequences" : [{  // Here, a single MC Statements modeled using the recently proposed 'MCResult' approach
+    "molecular-consequences" : [{  // Here, a single MC Statement, modeled using the recently proposed 'MCResult' approach
         "id" : "MCS:100",
         "type" : "MolecularConsequenceStatement",
         "description" : "This is intronic variant, resulting in splicing alteration.",
         
      // Fields capturing primary statement semantics
         "subject" : "vrs-dto:100",  
-        "predicate" : "hasMolecularConsequence" 
+        "predicate" : "has_molecular_consequence" 
         "object": {
             "id": "MCR:101",
-            "type": "MolecularConsequenceResult",  // MHB: What type of thing is this object?  Here I frame it as a specialization of 'StudyResult'. This is an exploratory core SEPIO class we that is used to group a subset of data from a single study that has a particular focus or perspective. We have used 'StudyResults' already to represent the Statement objects/descriptors for the PopFreq Statement, and Computaitonal Functional Impact Statement. For more on 'Study Results', see here: https://docs.google.com/spreadsheets/d/1zQU-Yv7gB7IHKIOVsTh-74BwdtgB9KQpKcWkSHZOa-Q/edit#gid=836165343&range=1:1
+            "type": "MolecularConsequenceResult",  // MHB: What type of thing is this object in our VA/SEPIO Framework?  Here I frame it as a specialization of 'StudyResult'. This is an exploratory core SEPIO class we that is used to group a subset of data from a single study that has a particular focus or perspective. We have used 'StudyResults' already to represent the Statement objects/descriptors for the PopFreq Statement, and Computational Functional Impact Statement. For more on 'Study Results', see here: https://docs.google.com/spreadsheets/d/1zQU-Yv7gB7IHKIOVsTh-74BwdtgB9KQpKcWkSHZOa-Q/edit#gid=2100974074&range=131:131
             "consequence":  [{
                 "code": "SO:0001568",
                 "label": "splicing variant",
                 "system": http://purl.obolibrary.org/obo/SO
                 }] 
-            "transcriptSequence": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant?
             "transcriptVariant": "vrs-dto:200",
-            "proteinSequence": "vrs-dto:600" // Proposed on 10-21 call to include this
+            "transcriptSequence": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant? Are we referring to the Transcript as an abstract concept/ feature, or as a specific Sequence (in which case the VR object and DTO may be used)? Updates from VR group here?
             "proteinVariant": "vrs-dto:700" // Proposed on 10-21 call to include this
-            // LB: instead of four sibling attributes, explore idea of two containers (one for tx, one for protein)
+            "proteinSequence": "vrs-dto:600" // Proposed on 10-21 call to include this
             }  
         
-     // Fields capturing evidence and provenance (very minimal for this example)        
+     // Fields capturing evidence and provenance (very minimal for this example - as no info about the specific supporting datasets is given)        
         "authoredBy" : "agent:100",        
         "dateAuthored" : "2019-10-15",
     }    
@@ -48,7 +47,7 @@
         }
     ],    
 
-    // DTOs wrapping the Domain Entity value objects referenced in the Statement above, or in one of the DTOs below. 
+    // DTOs wrapping the Domain Entity value objects referenced in the Statement above (or refernced in the DTOs below). 
 
     "vrs-dtos":[
         {       
@@ -57,58 +56,68 @@
         "type": "AlleleDto",
         "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this DTO.     
         "label": "NC_000017.11:g.7674858C>T",
-        "variation_type": "genomic",   // Proposed addition to variation DTOs, from 10-21-20 VA Call        
+        "molecule_context": {
+                "code": "SO:0001026",
+                "label": "genome",
+                "system": http://purl.obolibrary.org/obo/SO
+                },                 
+        "structural_type": {
+                "code": "SO:0001483",
+                "label": "SNV",
+                "system": http://purl.obolibrary.org/obo/SO
+                },
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
-        "aliases" : [{   // MHB Question: represtened as stucture object here, but on other places I have seen them as strings?
-            "type": "Descriptor",  // Explain the notion of a 'Descriptor' type? How same/diff from 'Coding' above?
-            "system" : "ghgvs",
-            "value" : "NC_000017.11:g.7674858C>T"
+        "aliases" : [{ 
+            "type": "Name",  //MHB: for now, I am not proposing a separate explicit field for HGVS expressions. Rather, we would use this alias field to capture alternate names that are just free text, or names based on some formal nomenclature system.  And recommend that HGVS expressions are captured if possible.
+            "value" : "NC_000017.11:g.7674858C>T",
+            "system" : "ghgvs"
             },{
-            "type": "Descriptor",
-            "system" : "chgvs",
-            "value" : "NM_000546.5:c.672+1G>A"
+            "type": "Name",
+            "value" : "NM_000546.5:c.672+1G>A",
+            "system" : "chgvs"
             },{
-            "type": "Descriptor",
-            "system" : "phgvs",
-            "value" : "NP_000123.1:Ala222Glu"
+            "type": "Name",
+            "value" : "NP_000123.1:Ala222Glu",
+            "system" : "phgvs"
             },{
-            "type": "Descriptor",   // MHB: added this and the following alias based on the content of Dmitriy's spreadsheet.
+            "type": "Name",   // MHB: added this and the following alias based on the content of Dmitriy's spreadsheet.
             "value" : "TERT 'c.-124C > T"
             },{
-            "type": "Descriptor",
+            "type": "Name",
             "value" : "C228T for chr5:g.1295228G>A"
             }
         ],         
             
-        "extension" : [                
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: Would this be a DTO? Also, it seems like we might make this part of the core VRS-DTO?
-            {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The reference sequence on which the wrapped genomic variant is defined. Make part of core DTO?
-            {"name": "structural_type", "value": [{"code": "SO:0001483", "label": "SNV", "system": "http://purl.obolibrary.org/obo/SO"}]}      
+        "extension" : [     //which of the following, if an, might make sense to include in the core Varaition DTO? 
+            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: Would this be a DTO?   Include in core spec?
+            {"name": "sequenceDto", "value" : "vrs-dto:400"}  // The reference sequence on which the wrapped genomic variant is defined.     
             ]
         }
     
-        // NOTE 1: Below are the extensions on the genomic variation from Larry's earlier version of this example - kept here for comparison. 
-        // Note that in this older example these are named fields, rather than 'map"-style key-value pairs as above. 
-        //  "extension": { 
-        //      "transcriptSequenceDto": "vrs-dto:500", // MHB: I placed this in a DTO for that transcript variation.
-        //      "sequenceDto" : "vrs-dto:400",  // MHB: I kept this one in my example
-        //      "genes" : [["entrez_gene:7157","hgnc:11998"], "text": "TP53"}] // MHB: I represented as a gene/feature DTO in my example
-        //      }
-        // NOTE 1 END.
         
         {
-        // DTO#2: Allele DTO for the transcript-level variation providine more precise context for the consequence
+        // DTO#2: Allele DTO for the transcript-level variation referenced in the MCResult, providing more precise context for the consequence
         "id" : "vrs-dto:200",
         "type": "AlleleDto",
         "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this DTO.
         "label" : "NC_000017.11(NM_000546.5):c.672+1G>A", 
+        "molecule_context": {
+                "code": "SO:0000673",
+                "label": "transcript",
+                "system": http://purl.obolibrary.org/obo/SO
+                },                 
+        "structural_type": {
+                "code": "SO:0001483",
+                "label": "SNV",
+                "system": http://purl.obolibrary.org/obo/SO
+                },        
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "aliases" : [{
-            "type": "Descriptor",
+            "type": "Name",
             "system" : "ghgvs",
             "value" : "NC_000017.11:g.7674858C>T"
             },{
-            "type": "Descriptor",
+            "type": "Name",
             "system" : "phgvs",
             "value" : "NP_000123.1:Ala222Glu"
             }
@@ -117,7 +126,11 @@
             {"name": "genes", "value": ["vrs-dto:300"]},  // MHB: Make 'genes' part of core VRS-DTO spec?
             {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The ref sequence on which the wrapped transcript variant is defined.
           ]            
-        },      
+        },    
+
+
+    //MHB: DTOs below here have not been updated to reflect latest refinements to the DTO model        
+
         {
         // DTO #3: Sequence Feature DTO for the TP53 gene referenced in an extension field in the two varition DTOs above 
         "id" : "vrs-dto:300",
@@ -156,7 +169,7 @@
           ]
         }
         {
-        // DTO#6: Allele DTO for the protein-level variation providine more precise context for the consequence
+        // DTO#6: Allele DTO for the protein-level variation providing more precise context for the consequence
         "id" : "vrs-dto:600",
         "type": "AlleleDto",
         "vrs_id": "ga4gh:VA.asmdgkri-Ag43_aBA4364sx",   // The core value object wrapped by this DTO.
@@ -247,6 +260,8 @@
 
 
 }  // End of the message/document
+
+
 
 
 
