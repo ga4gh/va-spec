@@ -13,7 +13,7 @@
         "description" : "This is intronic variant, resulting in splicing alteration.",
         
      // Fields capturing primary statement semantics
-        "subject" : "vrs-dto:100",  
+        "subject" : "vrs-vod:100",  
         "predicate" : "has_molecular_consequence" 
         "object": {
             "id": "MCR:101",
@@ -23,10 +23,10 @@
                 "label": "splicing variant",
                 "system": http://purl.obolibrary.org/obo/SO
                 }] 
-            "transcriptVariant": "vrs-dto:200",
-            "transcriptSequence": "vrs-dto:500", // include transcript here, or hide it in the dto for the trancriptVariant? Are we referring to the Transcript as an abstract concept/ feature, or as a specific Sequence (in which case the VR object and DTO may be used)? Updates from VR group here?
-            "proteinVariant": "vrs-dto:700" // Proposed on 10-21 call to include this
-            "proteinSequence": "vrs-dto:600" // Proposed on 10-21 call to include this
+            "transcriptVariant": "vrs-vod:200",
+            "transcriptSequence": "vrs-vod:500", // include transcript here, or hide it in the vod for the trancriptVariant? Are we referring to the Transcript as an abstract concept/ feature, or as a specific Sequence (in which case the VR object and VOD may be used)? Updates from VR group here?
+            "proteinVariant": "vrs-vod:700" // Proposed on 10-21 call to include this
+            "proteinSequence": "vrs-vod:600" // Proposed on 10-21 call to include this
             }  
         
      // Fields capturing evidence and provenance (very minimal for this example - as no info about the specific supporting datasets is given)        
@@ -37,7 +37,7 @@
           
                 
                 
-// Entities referenced in the Statements above (Agents, DTOs, Value Objects, ...)
+// Entities referenced in the Statements above (Agents, VODs, Value Objects, ...)
 
     // Agents contributing to the Statement(s)
     "agents" : [{
@@ -47,14 +47,15 @@
         }
     ],    
 
-    // DTOs wrapping the Domain Entity value objects referenced in the Statement above (or refernced in the DTOs below). 
+    // Seven VODs wrapping the Domain Entity value objects referenced in the Statement above (or referenced in the VODs below). 
+    // Three for versions of the Allele (genomic, transcript and protein). Three for the reference sequences supporting these.  One for the affected gene. 
 
-    "vrs-dtos":[
+    "vrs-vods":[
         {       
-        // DTO#1:  Allele DTO for the genomic allele subject of the MC Statement (NC_000017.11:g.7674858C>T)
-        "id": "vrs-dto:100",
+        // VOD#1:  Allele VOD for the genomic allele subject of the MC Statement (NC_000017.11:g.7674858C>T)
+        "id": "vrs-vod:100",
         "type": "AlleleDto",
-        "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this DTO.     
+        "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this VOD.     
         "label": "NC_000017.11:g.7674858C>T",
         "molecule_context": {
                 "code": "SO:0001026",
@@ -67,39 +68,31 @@
                 "system": http://purl.obolibrary.org/obo/SO
                 },
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
+        "alternativeLabel": ["TERT 'c.-124C > T", "C228T for chr5:g.1295228G>A"],
         "aliases" : [{ 
-            "type": "Name",  //MHB: for now, I am not proposing a separate explicit field for HGVS expressions. Rather, we would use this alias field to capture alternate names that are just free text, or names based on some formal nomenclature system.  And recommend that HGVS expressions are captured if possible.
             "value" : "NC_000017.11:g.7674858C>T",
             "system" : "ghgvs"
             },{
-            "type": "Name",
             "value" : "NM_000546.5:c.672+1G>A",
             "system" : "chgvs"
             },{
-            "type": "Name",
             "value" : "NP_000123.1:Ala222Glu",
             "system" : "phgvs"
-            },{
-            "type": "Name",   // MHB: added this and the following alias based on the content of Dmitriy's spreadsheet.
-            "value" : "TERT 'c.-124C > T"
-            },{
-            "type": "Name",
-            "value" : "C228T for chr5:g.1295228G>A"
             }
         ],         
             
-        "extension" : [     //which of the following, if an, might make sense to include in the core Varaition DTO? 
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB Question: Would this be a DTO?   Include in core spec?
-            {"name": "sequenceDto", "value" : "vrs-dto:400"}  // The reference sequence on which the wrapped genomic variant is defined.     
+        "extension" : [     //which of the following, if an, might make sense to include in the core Varaition VOD? 
+            {"name": "genes", "value": ["vrs-vod:300"]},  // MHB Question: Include gene in core Variaton VOD spec? Would we represent the gene using a VOD?   
+            {"name": "sequenceDto", "value" : "vrs-vod:400"}  // The reference sequence on which the wrapped genomic allele is defined. Also captured in the VR value object for the allele.  Need it here?    
             ]
         }
     
         
         {
-        // DTO#2: Allele DTO for the transcript-level variation referenced in the MCResult, providing more precise context for the consequence
-        "id" : "vrs-dto:200",
+        // VOD#2: Allele VOD for the transcript-level variation referenced in the MCResult, providing more precise context for the consequence
+        "id" : "vrs-vod:200",
         "type": "AlleleDto",
-        "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this DTO.
+        "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this VOD.
         "label" : "NC_000017.11(NM_000546.5):c.672+1G>A", 
         "molecule_context": {
                 "code": "SO:0000673",
@@ -113,39 +106,40 @@
                 },        
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "aliases" : [{
-            "type": "Name",
             "system" : "ghgvs",
             "value" : "NC_000017.11:g.7674858C>T"
             },{
-            "type": "Name",
             "system" : "phgvs",
             "value" : "NP_000123.1:Ala222Glu"
             }
           ],            
         "extension" : [
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB: Make 'genes' part of core VRS-DTO spec?
-            {"name": "sequenceDto", "value" : "vrs-dto:500"}  // The ref sequence on which the wrapped transcript variant is defined.
+            {"name": "genes", "value": ["vrs-vod:300"]},  // MHB: Make 'genes' part of core VRS-VOD spec?
+            {"name": "sequenceDto", "value" : "vrs-vod:500"}  // The ref sequence on which the wrapped transcript variant is defined.
           ]            
         },    
 
 
-    //MHB: DTOs below here have not been updated to reflect latest refinements to the DTO model        
+
+    // ****** MHB: VODs below here have not been updated to reflect latest refinements to the VOD model  ***** //       
+
 
         {
-        // DTO #3: Sequence Feature DTO for the TP53 gene referenced in an extension field in the two varition DTOs above 
-        "id" : "vrs-dto:300",
+        // VOD #3: Sequence Feature VOD for the TP53 gene referenced in an extension field in the two varition VODs above 
+        //MHB: (assumes we want to represent conceptual features like a Gene as a VOD) 
+        "id" : "vrs-vod:300",
         "type": "FeatureDto",
         "vrs_id": "hgnc:11998",  // MHB: would HGNC perhaps be the placeholder value object id?
         "label" : "tumor protein p53",
-        "symbol": "TP53",
+        "symbol": "TP53", MHB: should this be a core field in the spec, or an extension?
         "xrefs" : ["entrez_gene:7157","Ensembl:ENSG00000141510","MIM:191170"],
-        "aliases": ["BRG1", "SMARCA4"]  // MHB: represented as strings, and as 'Descriptor' objects as above? 
-        "strand": "minus",
+        "aliases": ["BRG1", "SMARCA4"]  
+        "strand": "minus", // MHB: should this be a core field in the spec, or an extension?
         //... (other 'non-essential' info to include about a gene concept)??
         },    
         {
-         // DTO#4: Sequence DTO for the genomic variant's reference sequence (NC_000017.11)
-        "id" : "vrs-dto:400",
+         // VOD#4: Sequence VOD for the genomic variant's reference sequence (NC_000017.11)
+        "id" : "vrs-vod:400",
         "type": "SequenceDto",
         "vrs_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD",
         "label" : "NC_000017.11",
@@ -157,22 +151,22 @@
           ]
         },
         {
-        // DTO#5: Sequence DTO for the transcript variant's reference sequence (NM_000546.5)
-        "id" : "vrs-dto:500",
+        // VOD#5: Sequence VOD for the transcript variant's reference sequence (NM_000546.5)
+        "id" : "vrs-vod:500",
         "type": "SequenceDto",
         "vrs_id": "ga4gh:SQ.n9ax-9x6gOC0OEt73VMYqCBfqfxG1XUH",
         "label" : "NM_000546.5",
         "xrefs" : ["RefSeq:NM_000546.5"],
         "residue_type": "SO:0000756",   // cDNA
         "extension" : [
-            {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  //MHB: wouldnt we also reference the gene dto here?
+            {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  //MHB: wouldnt we also reference the gene vod here?
           ]
         }
         {
-        // DTO#6: Allele DTO for the protein-level variation providing more precise context for the consequence
-        "id" : "vrs-dto:600",
+        // VOD#6: Allele VOD for the protein-level variation providing more precise context for the consequence
+        "id" : "vrs-vod:600",
         "type": "AlleleDto",
-        "vrs_id": "ga4gh:VA.asmdgkri-Ag43_aBA4364sx",   // The core value object wrapped by this DTO.
+        "vrs_id": "ga4gh:VA.asmdgkri-Ag43_aBA4364sx",   // The core value object wrapped by this VOD.
         "label" : "NP_000123.1:Ala222Glu", 
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "aliases" : [{
@@ -186,25 +180,25 @@
             }
           ],            
         "extension" : [
-            {"name": "genes", "value": ["vrs-dto:300"]},  // MHB: Make 'genes' part of core VRS-DTO spec?
-            {"name": "sequenceDto", "value" : "vrs-dto:700"}  // The ref sequence on which the wrapped transcript variant is defined.
+            {"name": "genes", "value": ["vrs-vod:300"]},  // MHB: Make 'genes' part of core VRS-VOD spec?
+            {"name": "sequenceDto", "value" : "vrs-vod:700"}  // The ref sequence on which the wrapped transcript variant is defined.
           ]            
         }, 
         {
-        // DTO#7: Sequence DTO for the protein variant's reference sequence (NP_000123.1)
-        "id" : "vrs-dto:700",
+        // VOD#7: Sequence VOD for the protein variant's reference sequence (NP_000123.1)
+        "id" : "vrs-vod:700",
         "type": "SequenceDto",
         "vrs_id": "ga4gh:SQ.n9ax-9ass036q_aWQrq3414rs",
         "label" : "NP_000123.1,
         "xrefs" : ["RefSeq:NP_000123.1"],
         "residue_type": "SO:0001237",   // amino acid
         "extension" : [
-            {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}   //MHB: wouldnt we also reference the gene dto here?
+            {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}   //MHB: wouldnt we also reference the gene vod here?
           ]
         }
     ]
 
- // Value Objects wrapped by these DTOs 
+ // Seven Value Objects wrapped by the VODs 
     "vrs-objects":[
     {   
      // Value Object #1: The subject genomic variation (NC_000017.11:g.7674858C>T)
@@ -219,7 +213,7 @@
             "interval": {
                 "end": 7674858, "start": 7674857,
                 "type": "SimpleInterval"},
-            "sequence_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD"}
+            "sequence_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD"}  // This is the sequence wrapped by vrs-vod:400 ...
     },
     {   
      // Value Object #2: The transcript variation vrs object 
@@ -260,6 +254,12 @@
 
 
 }  // End of the message/document
+
+
+
+
+
+
 
 
 
