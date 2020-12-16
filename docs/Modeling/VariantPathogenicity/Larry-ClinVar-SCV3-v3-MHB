@@ -310,7 +310,7 @@ Tasks/Todos.
         <ReviewStatus>reviewed by expert panel</ReviewStatus>
         <Interpretation DateLastEvaluated="2017-04-03">
    
-    // Key data concerning Contributions (to three record-level artifacts - ClinGen's record, ClinVar's original record, and ClinVar's latest record) :
+    // Key data concerning Contributions (to the underlying knowledge and three record-level artifacts - ClinGen's record, ClinVar's original and latest records):
        - DateLastEvaluated="2017-04-03" - the submitting org's contribution to the knowledge expressed in the Statement
        - SubmissionDate="2019-02-25" - the submitting org's contribution to submitting the *latest* ClinVar SCV record 
        - DateCreated="2017-12-15" - ClinVar's contribution to creation of the *original v1* ClinVar SCV record 
@@ -320,11 +320,11 @@ Tasks/Todos.
       
 ## This  ClinGen-ClinVar use case is unique because it describes contributions to the ClinGen Statement at three 'levels': 
     (1) a 'knowledge-level' contribution by the submitter to the asserted fact expressed in the Statement (DateLastEvaluated, 2017-04-03); 
-    (2) three contributions to 'upstream' ClinVar record-level artifacts from which the ClinGen Statement was derived
-         - one made by the submitter to the current ClinVarSCV record (DateSubmitted, 2019-02-25)
-         - one made by ClinVar to the original v1 ClinVar SCV record (DateCreated, 2017-12-15)
-         - one made by ClinVar to the current ClinVar SCV record (DateLastUpdated, 2019-07-17)
-    (3) one contribution to the ClinGen record carried in the current message - which was derived from the ClinVar records above. (DateGenerated, 2020-09-27).
+    (2) three contributions to two different 'upstream' ClinVar record-level artifacts from which the ClinGen Statement was derived
+         - one made by the submitter to the *latest* ClinVar SCV record (DateSubmitted, 2019-02-25)
+         - one made by ClinVar to the *original* (v1) ClinVar SCV record (DateCreated, 2017-12-15)
+         - one made by ClinVar to the *latest* ClinVar SCV record (DateLastUpdated, 2019-07-17)
+    (3) one contribution to the ClinGen record carried in the current message - which was derived from the latest ClinVar record. (DateGenerated, 2020-09-27).
         
 ## This use case to capture requirements to upstream records unique, and SEPIO/VA is exploring ways to support this (the present Record Metadata object is meant to capture record-level metadata for the record in the message itself, not upstream records from which it was derived). 
 
@@ -336,9 +336,213 @@ Tasks/Todos.
     
 
 --------------------------------------
-
  
-   // Modeling Approach 1 - uses a single RecordMetadta object to hold all four record-level contributions, indicates the record being 'contributed to' in the semantics of the 'contributorRole'). AFTER A VERY PRELIMINARY OVERVIEW ON 11-24 CALL, WE ARE LEANING AWAY FROM THIS AND TOWARD APPROACH 2 BELOW.
+
+    // Modeling Approach 1  #####THIS IS CURENTY THE PREFERRE APPROACH, FOLLOWING THE 11-24-20 CLINGEN DATA MODELING CALL#####
+    // Allows for multiple RecordMetadata objects (one for each record to which contributions are described). 
+    // Uses a new 'sourceRecordMeta' field to point to RecordMetadata object that describe usptream/source records. This field would sit alongside the existing 'recordMeta' field (rename 'thisRecordMeta'?), which is used specifically to capture metadata about the actual record in this message. 
+    // This approach would allow us to more explicitly and flexibly describe contributions made to different upstream records from which the current record was derived. 
+    // Note that while the original 'recordMeta' field has a 0..1 cardinality (as the metadata it captures it is specifically about the record of the Statement in this  message), the new 'sourceRecordMetadata' field would have a 0..m cardinality - to be able to describe aspects of any number of upstream records from which the current record was derived.
+
+        {  ## start of the Variant Pathogenicity Classification Statement object
+          "id" : "clinvar:SCV000616365.3",  
+          "type" : "PathogenicityClassification",
+          "subject" : "vrs_dto:100",
+          "predicate" : "LOINC:Pathogenic",
+          "object" : "condition:100",
+          "variantOriginQualifier" : "GENO:germline",
+          "qualifiedContribution": [ 
+            {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in the Statement, as performed by the original submitter/author. Knowledge-level Contributions like this hang from the Statement directly (vs record-level contributions which are encapsulated in RecordMetadata objects)
+             "id": "contribution:001",
+             "type": "Contribution",
+             "contributionMadeBy" : "ClinVarOrgId:506439", 
+             "contributorRole" : "statement author/approver/evaluator",   ## MHB: What to call the role here? or perhaps >1 role? A: DateLastEvaluated
+             "startDate" : "2017-04-03",
+             "endDate" : "2017-04-03"
+             }
+           ], 
+           
+          // The remaining four Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge. With Approach 2, we create separate RecordMetadata objects for each distinct record we want to describe.      
+ 
+          "thisRecordMeta": 
+             {  ## RecordMetadata object describing the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
+             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
+             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
+             "statusMeta": [{  ## MHB: I made this data up - to demonstrate this feature of the model
+                "status": "provisional",  
+                "system": "ClinGen CrC",
+                "startDate": "2020-09-27",
+                "endDate": "2020-09-30",
+                "agent": "agent:101",  ## ClinGen's ClinVarSCVToSEPIOTransformationService gives a default 'provisional' status upon creation . . . 
+                "isCurrentStatus": "false"
+                },
+                {
+                "status": "accepted",
+                "system": "ClinGen CrC",
+                "startDate": "2020-09-30",
+                "agent": "agent:102",  # this can be the curator or tool that reviewd/accepted the record
+                "isCurrentStatus": "true"
+                }
+             ], 
+             "sourceMeta": [ {
+                "sourceDataSet": "ClinVar Version x.x",
+                "sourceDataRecord": "clinvar:SCV000616365.3",
+                "dateSourceRetrieved": "xxxx-xx-xx"  ## not in the ClinGen example (redundant if have source dataset version), but shown as example of what could be captured
+                }
+             ],
+             "qualifiedContribution": [    
+                {  ## clingen.DateGenerated="2020-09-27":  describes the creation of the ClinGen record in this document, by ClinGen.      
+                "id": "contribution:005",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService
+                "contributorRole" : "record creator"  ## can use terms from Contributor Role Ontology, or define own custom roles
+                "startDate" : "2020-09-27",
+                "endDate" : "2020-09-27" 
+                }
+               ]
+             },
+             
+          ## Two RecordMetadata objects are created to hold info about the two upstream source records for which contributions are described    
+          "sourceRecordMeta": [             
+
+             { ## RecordMetadata object for the *original* ClinVar SCV record, for which *one* contribution is described.
+             "description": "metadata describing contributions made to the *original version* of the ClinVar SCV from which the ClinGen record was derived",
+             "recordIdentifier": "clinvar:SCV000616365.1",
+             "partOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
+             "qualifiedContribution": [               
+                { ## clinvar.DateCreated="2017-12-15" - describes the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV.
+                "id": "contribution:002",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:100", ## this contribution is made by ClinVar
+                "contriubtorRole" : "record creator", 
+                "startDate" : "2017-12-15",
+                "endDate" : "2017-12-15"
+                }
+               ]
+             },  
+            
+             { ## RecordMetadata object for the *latest* ClinVar SCV record, for which *two* contributions are described.
+             "description": "metadata describing contributions made to the *latest version* of the ClinVar SCV from which the ClinGen record was derived",
+             "recordIdentifier": "clinvar:SCV000616365.3,
+             "partOfDataSet": "ClinVar Version x.x",
+             "recordStatus": {   ## object here represents a prototype 'RecordStatus" complex data type.
+                 "status": "current",   # other possible status values in ClinVar data include "current", "replaced", "deleted, "previous" 
+                 "startDate": xxxx-xx-xx  ## not in the ClinGen example, but shown here as example of what could be captured
+                 "endDate": xxxx-xx-xx
+                 "isCurrentStatus": "true"
+                 },     
+             "qualifiedContribution": [                 
+                { ## clinvar.DateSubmitted="2019-02-25" - describes the submission of the *latest version* of the ClinVar SCV record to the ClinVar system, by the submitter/author
+                "id": "contribution:003",   
+                "type": "Contribution",
+                "contributionMadeBy" : "ClinVarOrgId:506439",  ## this contribution is made by the submitting org
+                "contributorRole" : "record submitter",
+                "startDate" : "2019-02-25",
+                "endDate" : "2019-02-25", 
+                "extensions" : {     // extension from Larry's example to give the submission a name
+                    "submissionName": "SUB5222244"
+                    }
+                },
+                { ## clinvar.DateLastUpdated="2019-07-17":  the last update made to the *latest version* of the ClinVar SCV record by ClinVar
+                "id": "contribution:004",
+                "type": "Contribution",
+                "contributionMadeBy" : "agent:100", ## ClinVar
+                "contributorRole" : "record updater",
+                "startDate" : "2019-07-17",
+                "endDate" : "2019-07-17" 
+                }
+               ]
+             }
+            ]
+        }  ## end of Statement object
+
+  
+
+  
+  --------------------------------
+ 
+
+    // Modeling Approach 2
+    // Same as Approach 1 (multiple RecordMetadata objects, one for each record to which contributions are described), but using the *Direct Contribution* model that does not use Contribution objects.  
+    // Here we would simplify/flatten the model by creating/using explicit named fields in the spec for describing each of the contributorRole types relevenat for the data (e.g.  for a 'record creator' role, define the named fields for 'recordCreatedBy' and 'dateRecordCreated' to hang directly from the RecordMetadata object). 
+    // In doing so we avoid the need for Contributions altogether - which works here given that Contributions metadata includes only the contributing agent and role.
+    // But if additional detail/context for contributions is needed, we would have to go back to the Qualified Contribution model.
+
+
+        {  ## start of the Variant Pathogenicity Classification Statement object
+          "id" : "clinvar:SCV000616365.3",  
+          "type" : "PathogenicityClassification",
+          "subject" : "vrs_dto:100",
+          "predicate" : "LOINC:Pathogenic",
+          "object" : "condition:100",
+          "variantOriginQualifier" : "GENO:germline",
+          "authoredBy": "ClinVarOrgId:506439",  ## the submitting org
+          "dateAuthored": "2017-04-03",
+           
+          // The remaining four Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge. With Approach 2, we create separate RecordMetadata objects for each distinct record we want to describe.      
+ 
+          "thisRecordMeta": 
+             {  ## RecordMetadata object describing the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
+             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
+             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
+             "recordCreatedBy": "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService 
+             "dateRecordCreated": "2020-09-27",
+             "statusMeta": [{
+                "status": "provisional",  
+                "system": "ClinGen CrC",
+                "startDate": "2020-09-27",
+                "endDate": "2020-09-30",
+                "agent": "agent:101",  ## ClinGen's ClinVarSCVToSEPIOTransformationService gives a default 'provisional' status upon creation . . . 
+                "isCurrentStatus": "false"
+                },
+                {
+                "status": "accepted",
+                "system": "ClinGen CrC",
+                "startDate": "2020-09-30",
+                "agent": "agent:102",  # this can be the curator or tool that reviewd/accepted the record
+                "isCurrentStatus": "true"
+                }
+             ],
+             "sourceMeta": [ {
+                "sourceDataSet": "ClinVar Version x.x",
+                "sourceDataRecord": "clinvar:SCV000616365.3",
+                "dateSourceRetrieved": "xxxx-xx-xx"  ## not in the ClinGen example (redundant if have source dataset version), but shown as example of what could be captured
+                }
+               ]
+             },
+             
+          "sourceRecordMeta": [  ## Two RecordMetadata objects to hold info about the two upstream source records for which contributions are described            
+ 
+            { ## RecordMetadata object for the *original* ClinVar SCV record, for which *one* contribution is described (clinvar.DateCreated="2017-12-15" - the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV).
+             "description": "metadata describing contributions made to the *original version* of the ClinVar SCV from which the ClinGen record was derived",
+             "recordIdentifier": "clinvar:SCV000616365.1",
+             "recordCreatedBy": "agent:100", ## this contribution is made by ClinVar
+             "dateRecordCreated": "2017-12-15",
+             "partOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
+             },     
+             
+             { ## RecordMetadata object for the *latest* ClinVar SCV record, for which *two* contributions are described (clinvar.DateSubmitted="2019-02-25" is the submission of the latest version of the ClinVar SCV record to the ClinVar system, and clinvar.DateLastUpdated="2019-07-17" is the last update made to this record by ClinVar.
+             "description": "metadata describing contributions made to the *latest version* of the ClinVar SCV from which the ClinGen record was derived",
+             "recordIdentifier": "clinvar:SCV000616365.3,
+             "recordSubmittedBy": "ClinVarOrgId:506439",  ## this contribution is made by the submitting org
+             "dateRecordSubmitted": "2019-02-25",
+             "recordLastUpdatedBy": "agent:100", ## ClinVar
+             "dateRecordLastUpdated": "2019-07-17",
+             "partOfDataSet": "ClinVar Version x.x",
+             "recordStatus": "current"   ## also demonstrating simpler/flatter (but less expressive) model for capturing record status. 
+             "extensions" : [    // extension from Larry's example to give the submission a name
+                {"name": "submissionName", "value": "SUB5222244"} 
+               ]
+             }
+          ]
+        }  ## end of Statement object
+
+
+-----------------------------
+
+
+
+    // Modeling Approach 2 - uses a single RecordMetadta object to hold all four record-level contributions, indicates the record being 'contributed to' in the semantics of the 'contributorRole'). AFTER A VERY PRELIMINARY OVERVIEW ON 11-24 CALL, WE ARE LEANING AWAY FROM THIS APPROACH.
         {  ## start of the Variant Pathogenicity Classification Statement object
           "id" : "clinvar:SCV000616365.3",  
           "type" : "PathogenicityClassification",
@@ -408,187 +612,10 @@ Tasks/Todos.
            }
         }  ## end of Statement object
  
- --------------------------------------
  
-    // Modeling Approach 2, alternate approach
-    // Allows for multiple RecordMetadata objects (one for each record to which contributions are described). 
-    // Uses a new 'sourceRecordMeta' field to point to RecordMetadata object that describe usptream/source records. This field would sit alongside the existing 'recordMeta' field (rename 'thisRecordMeta'?), which is used specifically to capture metadata about the actual record in this message. 
-    // This approach would allow us to more explicitly and flexibly describe contributions made to different upstream records from which the current record was derived. 
-    // Note that while the original 'recordMeta' field has a 0..1 cardinality (as the metadata it captures it is specifically about the record of the Statement in this  message), the new 'sourceRecordMetadata' field would have a 0..m cardinality - to be able to describe aspects of any number of upstream records from which the current record was derived.
-
-        {  ## start of the Variant Pathogenicity Classification Statement object
-          "id" : "clinvar:SCV000616365.3",  
-          "type" : "PathogenicityClassification",
-          "subject" : "vrs_dto:100",
-          "predicate" : "LOINC:Pathogenic",
-          "object" : "condition:100",
-          "variantOriginQualifier" : "GENO:germline",
-          "qualifiedContribution": [ 
-            {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in the Statement, as performed by the original submitter/author. Knowledge-level Contributions like this hang from the Statement directly (vs record-level contributions which are encapsulated in RecordMetadata objects)
-             "id": "contribution:001",
-             "type": "Contribution",
-             "contributionMadeBy" : "ClinVarOrgId:506439", 
-             "contributorRole" : "statement author/approver/evaluator",   ## MHB: What to call the role here? or perhaps > role?
-             "startDate" : "2017-04-03",
-             "endDate" : "2017-04-03"
-             }
-           ], 
-           
-          // The remaining four Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge. With Approach 2, we create separate RecordMetadata objects for each distinct record we want to describe.      
  
-          "thisRecordMeta": 
-             {  ## RecordMetadata object describing the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
-             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
-             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
-             "sourceDataSet": "ClinVar Version x.x",
-             "sourceDataRecord": "clinvar:SCV000616365.3",
-             "dateSourceRetrieved": "xxxx-xx-xx"  ## not in the ClinGen example (redundant if have source dataset version), but shown as example of what could be captured
-             "qualifiedContribution": [    
-                {  ## clingen.DateGenerated="2020-09-27":  describes the creation of the ClinGen record in this document, by ClinGen.      
-                "id": "contribution:005",
-                "type": "Contribution",
-                "contributionMadeBy" : "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService
-                "contributorRole" : "record creator"
-                "startDate" : "2020-09-27",
-                "endDate" : "2020-09-27" 
-                }
-               ]
-             },
-          "sourceRecordMeta": [  ## Two RecordMetadata objects to hold info about the two upstream source records for which contributions are described            
-
-             { ## RecordMetadata object for the *original* ClinVar SCV record, for which *one* contribution is described.
-             "description": "metadata describing contributions made to the *original version* of the ClinVar SCV from which the ClinGen record was derived",
-             "recordIdentifier": "clinvar:SCV000616365.1",
-             "partOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
-             "qualifiedContribution": [               
-                { ## clinvar.DateCreated="2017-12-15" - describes the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV.
-                "id": "contribution:002",
-                "type": "Contribution",
-                "contributionMadeBy" : "agent:100", ## this contribution is made by ClinVar
-                "contriubtorRole" : "record creator", 
-                "startDate" : "2017-12-15",
-                "endDate" : "2017-12-15"
-                }
-               ]
-             },  
-            
-             { ## RecordMetadata object for the *latest* ClinVar SCV record, for which *two* contributions are described.
-             "description": "metadata describing contributions made to the *latest version* of the ClinVar SCV from which the ClinGen record was derived",
-             "recordIdentifier": "clinvar:SCV000616365.3,
-             "partOfDataSet": "ClinVar Version x.x",
-             "recordStatus": {   ## object here represents a prototype 'RecordStatus" complex data type.
-                 "status": "current",   # other possible status values in ClinVar data include "current", "replaced", "deleted, "previous" 
-                 "startDate": xxxx-xx-xx  ## not in the ClinGen example, but shown here as example of what could be captured
-                 "endDate": xxxx-xx-xx
-                 "isCurrentStatus": "true"
-                 },     
-             "qualifiedContribution": [                 
-                { ## clinvar.DateSubmitted="2019-02-25" - describes the submission of the *latest version* of the ClinVar SCV record to the ClinVar system, by the submitter/author
-                "id": "contribution:003",   
-                "type": "Contribution",
-                "contributionMadeBy" : "ClinVarOrgId:506439",  ## this contribution is made by the submitting org
-                "contributorRole" : "record submitter",
-                "startDate" : "2019-02-25",
-                "endDate" : "2019-02-25", 
-                "extensions" : {     // extension from Larry's example to give the submission a name
-                    "submissionName": "SUB5222244"
-                    }
-                },
-                { ## clinvar.DateLastUpdated="2019-07-17":  the last update made to the *latest version* of the ClinVar SCV record by ClinVar
-                "id": "contribution:004",
-                "type": "Contribution",
-                "contributionMadeBy" : "agent:100", ## ClinVar
-                "contributorRole" : "record updater",
-                "startDate" : "2019-07-17",
-                "endDate" : "2019-07-17" 
-                }
-               ]
-             }
-            ]
-        }  ## end of Statement object
-
-  
-  
- 
-
- 
-
-  
-  --------------------------------
-  
-  
-  
- 
-
-    // Modeling Approach 3
-    // Same as Approach 2 (multiple RecordMetadata objects, one for each record to which contributions are described), but using the *Direct Contribution* model that does not use Contribution objects.  
-    // Here we would simplify/flatten the model by creating/using explicit named fields in the spec for describing each of the contributorRole types relevenat for the data (e.g.  for a 'record creator' role, define the named fields for 'recordCreatedBy' and 'dateRecordCreated' to hang directly from the RecordMetadata object). 
-    // In doing so we avoid the need for Contributions altogether - which works here given that Contributions metadata includes only the contributing agent and role.
-    // But if additional detail/context for contributions is needed, we would have to go back to the Qualified Contribution model.
+ ---------------------------------
 
 
-        {  ## start of the Variant Pathogenicity Classification Statement object
-          "id" : "clinvar:SCV000616365.3",  
-          "type" : "PathogenicityClassification",
-          "subject" : "vrs_dto:100",
-          "predicate" : "LOINC:Pathogenic",
-          "object" : "condition:100",
-          "variantOriginQualifier" : "GENO:germline",
-          "authoredBy": "ClinVarOrgId:506439",  ## the submitting org
-          "dateAuthored": "2017-04-03",
-           
-          // The remaining four Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge. With Approach 2, we create separate RecordMetadata objects for each distinct record we want to describe.      
- 
-          "thisRecordMeta": 
-             {  ## RecordMetadata object describing the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
-             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
-             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
-             "recordCreatedBy": "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService 
-             "dateRecordCreated": "2020-09-27",
-             "sourceDataSet": "ClinVar Version x.x",
-             "sourceDataRecord": "clinvar:SCV000616365.3",
-             "dateSourceRetrieved": "xxxx-xx-xx"  ## not in the ClinGen example (redundant if have source dataset version), but shown as example of what could be captured
-             },
-             
-          "sourceRecordMeta": [  ## Two RecordMetadata objects to hold info about the two upstream source records for which contributions are described            
- 
-            { ## RecordMetadata object for the *original* ClinVar SCV record, for which *one* contribution is described (clinvar.DateCreated="2017-12-15" - the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV).
-             "description": "metadata describing contributions made to the *original version* of the ClinVar SCV from which the ClinGen record was derived",
-             "recordIdentifier": "clinvar:SCV000616365.1",
-             "recordCreatedBy": "agent:100", ## this contribution is made by ClinVar
-             "dateRecordCreated": "2017-12-15",
-             "partOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
-             },     
-             
-             { ## RecordMetadata object for the *latest* ClinVar SCV record, for which *two* contributions are described (clinvar.DateSubmitted="2019-02-25" is the submission of the latest version of the ClinVar SCV record to the ClinVar system, and clinvar.DateLastUpdated="2019-07-17" is the last update made to this record by ClinVar.
-             "description": "metadata describing contributions made to the *latest version* of the ClinVar SCV from which the ClinGen record was derived",
-             "recordIdentifier": "clinvar:SCV000616365.3,
-             "recordSubmittedBy": "ClinVarOrgId:506439",  ## this contribution is made by the submitting org
-             "dateRecordCreated": "2019-02-25",
-             "recordLastUpdatedBy": "agent:100", ## ClinVar
-             "dateRecordLAstUpdated": "2019-07-17",
-             "partOfDataSet": "ClinVar Version x.x",
-             "recordStatus": "current"   ## also demonstrating simpler/flatter (but less expressive) model for capturing record status. 
-             "extensions" : [    // extension from Larry's example to give the submission a name
-                {"name": "submissionName", "value": "SUB5222244"} 
-               ]
-             }
-          ]
-        }  ## end of Statement object
+    // Modeling Approach 4 -  I was going to draft examples using RecordStatus instead of Contribution objects to represent some of the data - but upon further review, none of the Contributions (creation, submission, updating) are really record statuses.  Unless we consider things like 'submitted' or 'updated' as a status? So I think best to keep as Contributions.  I did however add some exemplar status metadata to some of the records above to show how the Status model works. 
 
-
-
-
-
-
-
-
-
-  
-           "thisRecordMeta": ## Metadata about the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other rcord-level metadata, one Contribution to creation of the record is described.
-             {  
-             "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
-             "dateRecordCreated": "2020-09-27",
-             "recordCreatedBy": "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService   
-             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  # the dataset/system of which the record is a part
-             }
