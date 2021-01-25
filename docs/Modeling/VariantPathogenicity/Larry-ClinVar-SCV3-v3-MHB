@@ -353,15 +353,15 @@ Tasks/Todos.
         {  ## start of the Variant Pathogenicity Classification Statement object
           "id" : "clinvar:SCV000616365.3",  
           "type" : "PathogenicityClassification",
-          "subject" : "vrs_dto:100",                   # NM_005343.4(HRAS):c.173C>T
+          "subject" : "vrs_dto:100",   ## NM_005343.4(HRAS):c.173C>T
           "predicate" : "LOINC:Pathogenic",
-          "object" : "condition:100",                  # Costello Syndrome
+          "object" : "condition:100",  ## Costello Syndrome
           "variantOriginQualifier" : "GENO:germline",
           "qualifiedContribution": [ 
             {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in the Statement, as performed by the original submitter/author. Knowledge-level Contributions like this hang from the Statement directly (vs record-level contributions which are encapsulated in RecordMetadata objects)
              "id": "contribution:001",
              "type": "Contribution",
-             "contributionMadeBy" : "ClinVarOrgId:506439", 
+             "contributionMadeBy" : "ClinVarOrgId:506439",  ## ClinGen RASopathy Variant Curation Expert Panel
              "contributorRole" : "statement evaluator" 
              "startDate" : "2017-04-03",
              "endDate" : "2017-04-03"
@@ -373,25 +373,25 @@ Tasks/Todos.
           "recordMeta": 
              {  ## RecordMetadata object describing the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
              "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
-             "partOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
+             "recordPartOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 
              "qualifiedContribution": [    
                 {  ## clingen.DateGenerated="2020-09-27":  describes the creation of the ClinGen record in this document, by ClinGen.      
                 "id": "contribution:005",
                 "type": "Contribution",
-                "contributionMadeBy" : "agent:101", ## ClinGen's ClinVarSCVToSEPIOTransformationService
+                "contributionMadeBy" : "agent:101",   ## ClinGen's ClinVarSCVToSEPIOTransformationService
                 "contributorRole" : "record creator"  ## can use terms from Contributor Role Ontology, or define own custom roles
                 "startDate" : "2020-09-27",
                 "endDate" : "2020-09-27" 
                 }
                ],
-             "sourceMeta": [    ## MHB: I made this data up - to demonstrate this feature of the model
+             "sourceMeta": [    ## MHB: I added this data myself - to demonstrate this feature of the model
                 {  
                 "sourceDataSet": "ClinVar Version x.x",
                 "sourceDataRecord": "clinvar:SCV000616365.3",
                 "dateSourceRetrieved": "2020-09-24"  ## possibly redundant if have source dataset version
                 }
               ],
-             "statusMeta": [    ## MHB: I made this data up - to demonstrate this feature of the model
+             "statusMeta": [    ## MHB: I added this data myself - to demonstrate this feature of the model
                 {  
                 "status": "provisional",  
                 "system": "ClinGen CrC",
@@ -418,7 +418,7 @@ Tasks/Todos.
              { ## RecordMetadata object for the *original* ClinVar SCV record, for which *one* contribution is described.
              "description": "metadata describing contributions made to the *original version* of the ClinVar SCV from which the ClinGen record was derived",
              "recordIdentifier": "clinvar:SCV000616365.1",
-             "partOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
+             "recordPartOfDataSet": "ClinVar Version x.x",  ## Provides context for this record - the larger system/dataset of which it is a part
              "qualifiedContribution": [               
                 { ## clinvar.DateCreated="2017-12-15" - describes the creation/recording of the *original version* of the ClinVar SCV, by ClinVar. This date does not change - it follows all subsequent versions of the SCV.
                 "id": "contribution:002",
@@ -434,7 +434,7 @@ Tasks/Todos.
              { ## RecordMetadata object for the *latest* ClinVar SCV record, for which *two* contributions are described.
              "description": "metadata describing contributions made to the *latest version* of the ClinVar SCV from which the ClinGen record was derived",
              "recordIdentifier": "clinvar:SCV000616365.3,
-             "partOfDataSet": "ClinVar Version x.x",
+             "recordPartOfDataSet": "ClinVar Version x.x",
              "qualifiedContribution": [                 
                 { ## clinvar.DateSubmitted="2019-02-25" - describes the submission of the *latest version* of the ClinVar SCV record to the ClinVar system, by the submitter/author
                 "id": "contribution:003",   
