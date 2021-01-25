@@ -57,18 +57,8 @@
         "type": "AlleleDto",
         "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this VOD.     
         "label": "NC_000017.11:g.7674858C>T",
-        "molecule_context": {
-                "code": "SO:0001026",
-                "label": "genome",
-                "system": http://purl.obolibrary.org/obo/SO
-                },                 
-        "structural_type": {
-                "code": "SO:0001483",
-                "label": "SNV",
-                "system": http://purl.obolibrary.org/obo/SO
-                },
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
-        "alternativeLabel": ["TERT 'c.-124C > T", "C228T for chr5:g.1295228G>A"],
+        "alternateLabel": ["TERT 'c.-124C > T", "C228T for chr5:g.1295228G>A"],
         "aliases" : [{ 
             "value" : "NC_000017.11:g.7674858C>T",
             "system" : "ghgvs"
@@ -78,15 +68,23 @@
             },{
             "value" : "NP_000123.1:Ala222Glu",
             "system" : "phgvs"
-            }
+            },
         ],         
-            
+        "molecule_context": {
+                "code": "SO:0001026",
+                "label": "genome",
+                "system": http://purl.obolibrary.org/obo/SO
+                },
+        "structural_type": {
+                "code": "SO:0001483",
+                "label": "SNV",
+                "system": http://purl.obolibrary.org/obo/SO
+                }           
         "extension" : [     //which of the following, if an, might make sense to include in the core Varaition VOD? 
             {"name": "genes", "value": ["vrs-vod:300"]},  // MHB Question: Include gene in core Variaton VOD spec? Would we represent the gene using a VOD?   
             {"name": "sequenceDto", "value" : "vrs-vod:400"}  // The reference sequence on which the wrapped genomic allele is defined. Also captured in the VR value object for the allele.  Need it here?    
             ]
         }
-    
         
         {
         // VOD#2: Allele VOD for the transcript-level variation referenced in the MCResult, providing more precise context for the consequence
@@ -161,7 +159,7 @@
         "extension" : [
             {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  //MHB: wouldnt we also reference the gene vod here?
           ]
-        }
+        } 
         {
         // VOD#6: Allele VOD for the protein-level variation providing more precise context for the consequence
         "id" : "vrs-vod:600",
@@ -254,6 +252,7 @@
 
 
 }  // End of the message/document
+
 
 
 
