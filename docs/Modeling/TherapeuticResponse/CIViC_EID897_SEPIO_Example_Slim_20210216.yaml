@@ -1,0 +1,150 @@
+# Native and SEPIO-based REpresentation of CIViC EID879 record 
+# Illustrates the SEPIO model for curation of evidence lines (evaluating data as evidence for a target proposition, absent a materialized Asserton). 
+# CIViC data is from https://civicdb.org/api/evidence_items/879, and https://civicdb.org/events/genes/19/summary/variants/33/summary/evidence/879/summary#evidence
+
+##------------------------------------------------------------------------------------------------------------##
+
+
+# The original CIViC data for EID879.
+# Core evidence-related content only (lifecycle actions, assertions removed for now)
+
+{
+
+    "id": 879,
+    "name": "EID879",
+    "description": "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001).",
+    "disease": {
+        "id": 30,
+        "name": "Lung Adenocarcinoma",
+        "display_name": "Lung Adenocarcinoma",
+        "doid": "3910",
+        "url": "http://www.disease-ontology.org/?id=DOID:3910"
+    },
+    "drugs": [
+        {
+            "id": 146,
+            "name": "Afatinib",
+            "ncit_id": "C66940",
+            "aliases": [
+                "BIBW2992",
+                "BIBW 2992",
+                "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
+            ]
+        }
+    ],
+    "rating": 4,
+    "evidence_level": "B",
+    "evidence_type": "Predictive",
+    "clinical_significance": "Sensitivity/Response",
+    "evidence_direction": "Supports",
+    "variant_origin": "Somatic",
+    "drug_interaction_type": null,
+    "status": "accepted",
+    "open_change_count": 0,
+    "type": "evidence",
+    "source": {
+        "id": 592,
+        "name": "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations.",
+        "citation": "Sequist et al., 2013, J. Clin. Oncol.",
+        "citation_id": "23816960",
+        "source_type": "PubMed",
+        "asco_abstract_id": null,
+        "source_url": "http://www.ncbi.nlm.nih.gov/pubmed/23816960",
+        "open_access": null,
+        "pmc_id": null,
+        "publication_date": {
+            "year": 2013,
+            "month": 9,
+            "day": 20
+        },
+        "journal": "J. Clin. Oncol.",
+        "full_journal_title": "Journal of clinical oncology : official journal of the American Society of Clinical Oncology",
+        "status": "fully curated",
+        "is_review": false,
+        "clinical_trials": [
+            {
+                "nct_id": "NCT00949650",
+                "name": "BIBW 2992 (Afatinib) Versus Chemotherapy as First Line Treatment in NSCLC With EGFR Mutation",
+                "description": "This randomised, open label phase III trial will be performed in patients with adenocarcinoma of the lung with tumours harbouring an Epidermal Growth Factor Receptor activating mutation. The objectives of the trial are to compare the efficacy of single agent BIBW 2992, Arm A, with Pemetrexed/Cisplatin chemotherapy, Arm B, as first line treatment for this group of patients.",
+                "clinical_trial_url": "https://clinicaltrials.gov/show/NCT00949650"
+            }
+        ]
+    },
+    "flagged": false,
+    "variant_id": 33,
+    "phenotypes": [ ],
+    "updated_at": "2020-08-12T15:43:10.010Z",
+
+}
+
+##---------------------------------------------------------------------------------------------------------------------##
+
+
+# Proposed VA-SEPIO representation of this data, as a yaml rendering of json. 
+# Uses four objects - an Evidence Line, Proposition, Evidence Item, and Publication)
+
+
+# EVIDENCE LINE -  The message is rooted at the Evidence Line object - as this is what is being curated in this workflow.
+  - id: civic-data:EID879    # "civic-data:" is a temp namespace for all identifiers minted by CIViC for entities they create in their dataset
+    type: EvidenceLine       
+    evidence_direction:      # this field takes a 'Coding' data type (a complex data type used to hold the iri and label of coded/enumerated values)
+      - id: civic-term:002   # "civic-term:" is a temp namespace for all identifiers minted by civic for enumerated terms used in their dataset
+        label: supports
+    evidence_strength:  
+      - id: civic-term:001   
+        label: B
+    is_evidence_for: civic-data:Proposition001      # the Proposition against which the evidence is evaluated
+    has_evidence_item:  civic-data:EvItem001        # the Evidence Item / Study Result that is evaluated as evidence
+    has_evidence_from_source: civic-source:592      # the Publication / Source that provided the Evidence Item / Study Result
+    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do 
+ 
+ 
+# PROPOSITION (the target proposition representing the 'possible fact' that evidence was evaluated against to generate the Evidence Line
+  - id: civic-data:Proposition001
+     type: TherapeuticResponseProposition   # a specialization of VA-SEPIO 'Proposition'
+     subject: civic-data:33                 # EGFR L858R. This will ultimately be a GKS VariationDescriptor.
+     predicate:
+       - id: ex:001                         # ideally this coded value will come from an external, established community terminology or code set. 
+         label: predicts_sensitivity_to
+     object:
+       - id: civic-data:146
+         type: TherapeuticIntervention      # the VA-SEPIO domain entity mapping to CIViC:TherapyProfile
+         label: Afatinib 
+     allele_origin_qualifier: 
+       - id: GENO:0000882 
+         label: somatic allele origin
+     treated_condition_qualifier:
+       - id: civic-data:30
+         type: GeneticCondition             # the VA-SEPIO domain entity mapping to CIViC:Disease
+         disease:
+           - DOID:3910
+             label: Lung Adenocarcinoma
+         url: "http://www.disease-ontology.org/?id=DOID:3910
+
+
+# EVIDENCE ITEM (specifically, a StudyResult object)
+   - id: civic-data:EvItem001  # A new id may have to be minted if we split apart the CIViC EID object into its Evidence Line and Evidence Item components.
+     type: StudyResult         # VA-SEPIO object representing a curated collection/description of data from a Study that focuses on a subset/persective of interest (e.g. results relevant for a particular interrogated variant)
+     focus: civic-data:33      # The specific focus of this Study Result is to describe data relevant to the EGFR L858R variant
+     description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+     confidence_level: 
+       - id: civic-term:003 
+         label: 4-star
+#   Examples of additional structured fields to show what it *could look like* to represent individual data items from the Study Result.
+#    study_size: 308         
+#    median_PFS_afatinib: 13.6 months
+#    median_PFS_chemotherapy: 6.9 months
+#    hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
+#    p-value: 0.001
+           
+           
+# PUBLICATION (the source of data used as evidence)  VA-SEPIO has not (yet) defined a rich model to capture Publication info/metadata. A few basic fields can capture the info below.  
+   - id: civic-data:592 
+     type: Publication   
+     identifier:            # VA-SEPIO follows the FHIR model for distinguishing logical vs business identifiers, using a complex 'Identifier' data type for the latter
+       - value: 25923549    # we will likely want to consider going with a CURIE structure for identifiers here
+         system: PMID          
+     label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+     url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"    
+     
+     
