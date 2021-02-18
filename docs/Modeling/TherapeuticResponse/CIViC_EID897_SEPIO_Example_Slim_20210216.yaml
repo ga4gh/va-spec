@@ -1,13 +1,12 @@
-# Native and SEPIO-based REpresentation of CIViC EID879 record 
+# Native and SEPIO-based Representation of CIViC EID879 record.
 # Illustrates the SEPIO model for curation of evidence lines (evaluating data as evidence for a target proposition, absent a materialized Asserton). 
-# CIViC data is from https://civicdb.org/api/evidence_items/879, and https://civicdb.org/events/genes/19/summary/variants/33/summary/evidence/879/summary#evidence
+
 
 ##------------------------------------------------------------------------------------------------------------##
 
 
-# The original CIViC data for EID879.
-# Core evidence-related content only (lifecycle actions, assertions removed for now)
-
+# The *original* CIViC jaon data for EID879 (core evidence-related content only - lifecycle actions, assertions removed for now)
+# Data pulled from https://civicdb.org/api/evidence_items/879
 {
 
     "id": 879,
@@ -80,7 +79,7 @@
 ##---------------------------------------------------------------------------------------------------------------------##
 
 
-# Proposed VA-SEPIO representation of this data, as a yaml rendering of json. 
+# A proposed VA-SEPIO representation of this data (as a yaml rendering of json). 
 # Uses four objects - an Evidence Line, Proposition, Evidence Item, and Publication)
 
 
@@ -123,28 +122,29 @@
 
 
 # EVIDENCE ITEM (specifically, a StudyResult object)
-   - id: civic-data:EvItem001  # A new id may have to be minted if we split apart the CIViC EID object into its Evidence Line and Evidence Item components.
-     type: StudyResult         # VA-SEPIO object representing a curated collection/description of data from a Study that focuses on a subset/persective of interest (e.g. results relevant for a particular interrogated variant)
-     focus: civic-data:33      # The specific focus of this Study Result is to describe data relevant to the EGFR L858R variant
-     description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
-     confidence_level: 
-       - id: civic-term:003 
-         label: 4-star
-#   Examples of additional structured fields to show what it *could look like* to represent individual data items from the Study Result.
-#    study_size: 308         
-#    median_PFS_afatinib: 13.6 months
-#    median_PFS_chemotherapy: 6.9 months
-#    hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
-#    p-value: 0.001
+  - id: civic-data:EvItem001  # A new id may have to be minted if we split apart the CIViC EID object into its Evidence Line and Evidence Item components.
+    type: StudyResult         # VA-SEPIO object representing a curated collection/description of data from a Study that focuses on a subset/persective of interest (e.g. results relevant for a particular interrogated variant)
+    focus: civic-data:33      # The specific focus of this Study Result is to describe data relevant to the EGFR L858R variant
+    description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+    confidence_level: 
+      - id: civic-term:003 
+        label: 4-star
+         
+# Examples of additional structured fields to show what it *could look like* to represent individual data items from the Study Result.
+#   study_size: 308         
+#   median_PFS_afatinib: 13.6 months
+#   median_PFS_chemotherapy: 6.9 months
+#   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
+#   p-value: 0.001
            
            
 # PUBLICATION (the source of data used as evidence)  VA-SEPIO has not (yet) defined a rich model to capture Publication info/metadata. A few basic fields can capture the info below.  
-   - id: civic-data:592 
-     type: Publication   
-     identifier:            # VA-SEPIO follows the FHIR model for distinguishing logical vs business identifiers, using a complex 'Identifier' data type for the latter
-       - value: 25923549    # we will likely want to consider going with a CURIE structure for identifiers here
-         system: PMID          
-     label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
-     url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"    
+  - id: civic-data:592 
+    type: Publication   
+    identifier:            # VA-SEPIO follows the FHIR model for distinguishing logical vs business identifiers, using a complex 'Identifier' data type for the latter
+      - value: 25923549    # we will likely want to consider going with a CURIE structure for identifiers here
+        system: PMID          
+    label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+    url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"    
      
      
