@@ -94,7 +94,7 @@
         label: B
     is_evidence_for: civic-data:Proposition001      # the Proposition against which the evidence is evaluated
     has_evidence_item:  civic-data:EvItem001        # the Evidence Item / Study Result that is evaluated as evidence
-    has_evidence_from_source: civic-source:592      # the Publication / Source that provided the Evidence Item / Study Result
+    has_evidence_from_source: civic-source:592      # the Publication / Source that provided the data described in the Study Result (may want to hang this from the Evidence Item/Study Result instead)
     qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do 
  
  
@@ -109,9 +109,6 @@
        - id: civic-data:146
          type: TherapeuticIntervention      # the VA-SEPIO domain entity mapping to CIViC:TherapyProfile
          label: Afatinib 
-     allele_origin_qualifier: 
-       - id: GENO:0000882 
-         label: somatic allele origin
      treated_condition_qualifier:
        - id: civic-data:30
          type: GeneticCondition             # the VA-SEPIO domain entity mapping to CIViC:Disease
@@ -119,7 +116,9 @@
            - DOID:3910
              label: Lung Adenocarcinoma
          url: "http://www.disease-ontology.org/?id=DOID:3910
-
+     allele_origin_qualifier: 
+       - id: GENO:0000882 
+         label: somatic allele origin
 
 # EVIDENCE ITEM (specifically, a StudyResult object)
   - id: civic-data:EvItem001  # A new id may have to be minted if we split apart the CIViC EID object into its Evidence Line and Evidence Item components.
@@ -129,8 +128,9 @@
     confidence_level: 
       - id: civic-term:003 
         label: 4-star
+    reference: civic-source:592   # the Publication / Source that provided the data described in the Study Result
          
-# Examples of additional structured fields to show what it *could look like* to represent individual data items from the Study Result.
+# Examples of additional structured fields that coul dbe split out if we wanted to explicitly represent individual data items from the Study Result.
 #   study_size: 308         
 #   median_PFS_afatinib: 13.6 months
 #   median_PFS_chemotherapy: 6.9 months
