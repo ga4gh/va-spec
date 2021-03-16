@@ -1,49 +1,54 @@
-# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines - https://civicdb.org/events/assertions/6/summary
-# This example does not use Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines
-# Assertion states that "EGFR L858R (somatic) predicts sensitivity to Afatinib treatment of NSCLC".
+# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines
+# See  https://civicdb.org/events/assertions/6/summary (website record), https://civicdb.org/api/assertions/6 (API payload)
+
+# This example does not use Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines.
+# But a second proposal is shown below that dos uses Proposition in this way.  Propositions are being explored as 
+# a way to formally link the products of Evidence curation and Assertion activities - through their shared Proposition.  
 
 ## ASSERTION
-  - id: civic-data:AID6
+  - id: civic-data:AID6             # Prefixes ("civic-data") reflect made-up namespaces for naked CIViC identifiers.
     type: TherapeuticResponseStatement 
     description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
-    subject: civic-data:33                    # EGFR L858R. This will ultimately be a VRS object / descriptor. 
+    subject: civic-data:33           # EGFR L858R. This will ultimately be a VRS object / descriptor. 
     predicate: predicts_sensitivity_to  
     object:
-      - id: civic-data:drug_146               # The set of 'Drugs' comprising the treatment. To Do: Add TherInterv object    
+      - id: civic-data:drug_146      # The set of 'Drugs' comprising the treatment.    
         type: TherapeuticIntervention   
         label: Afatinib 
     allele_origin_qualifier:                      
-      - id: GENO:0000882 
+      - id: GENO:0000882             # This is a 'Coding' object that bundles a concept identifier wiht its label 
         label: somatic allele origin
-    treated_condition_qualifier:              # The 'disease' context in which the treatment is given. To Do: Add GenCond object
+    treated_condition_qualifier:     # The 'disease' context in which the treatment is given. 
       - id: civic-data:disease_8
         type: GeneticCondition   
         disease:            
           - DOID:3908    
             label: Lung Non-small Cell Carcinoma
             url: "http://www.disease-ontology.org/?id=DOID:3908   
-    has_evidence_line: [civic-data:EID879, . . . ]     # Only one of the six evidence lines is shown here  
+    has_evidence_line: [civic-data:EID879, ... ]   # Only one of the six evidence lines is included here  
     was_specified_by: [civic-data:method_1, civic-data:method_2] 
-    confidence_level: Tier I - Level A            # AMp-ASCO tier assigned to the ssertion by the curator
-    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do, add Contribution objects
+    confidence_level: Tier I - Level A             # AMP-ASCO tier assigned to the assertion by the curator
+    recordMeta: 
+      - date_last_modified: 2019-05-22T15:44:02.670Z
+        qualified_contribution: [civic-data:Contrib001, civic-data:Contrib002, ... ]   # Contribution objects are below
  
-
 
 # EVIDENCE LINE
   - id: civic-data:EID879    
     type: EvidenceLine       
-    evidence_direction:               # The evidence direction  assigned by the CIViC curator 
+    evidence_direction:               # The evidence direction assigned by the CIViC curator 
       - id: civic-term:002           
         label: supports
     evidence_strength:                # The evidence level code assigned by the CIViC curator
       - id: civic-term:001   
         label: B
-    has_evidence_item:  civic-data:EvItem001              # the Evidence Item (Study Result0 that is evaluated as evidence
-    qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ]  # To Do, add Contribution objects
+    has_evidence_item:  civic-data:EvItem001       # The Evidence Item (Study Result) that is evaluated as evidence
+    recordMeta: 
+      - date_last_modified: 2018-02-23T04:31:09.515Z
+        qualified_contributions: [civic-data:Contrib101, civic-data:Contrib102, ... ]  # Contribution objects are below
 
 
-
-# EVIDENCE ITEM  (a StudyResult object)
+# EVIDENCE ITEM  (a StudyResult object - a curated summary of a specific result from a specific study)
   - id: civic-data:EvItem001  
     type: StudyResult         
     focus: civic-data:33      
@@ -52,9 +57,14 @@
       - id: civic-term:003 
         label: 4-star
     reference: civic-source:592      # The publication that reported the result
-          
+# Additional fields that COULD be used to structure individual data items from the Study Result.
+#   study_size: 308         
+#   median_PFS_drug: 13.6 months
+#   median_PFS_comparator: 6.9 months
+#   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
+#   p-value: 0.001          
            
-# PUBLICATION (the source of data used as evidence)   # Current VA-SEPIO mdoel of Publications is minimal.   
+# PUBLICATION (the source of the data used as evidence). Current VA-SEPIO mdoel of Publications is minimal.   
   - id: civic-data:592 
     type: Publication   
     identifier:            
@@ -65,21 +75,81 @@
 
 
 # METHODS
-  - id: civic-data:method_1         
+  - id: civic-data:method_1       # The disease-specific method guiding the actual variant interpretation process   
     type: VariantInterpretationGuideline
     label: Non-Small Cell Lung Cancer (v3.2018) 
 
-  - id: civic-data:Method_2 
+  - id: civic-data:Method_2       # The general method guiding evaluation of evidence strength and Assertion confidence
     type: EvidenceLevelGuideline
     label: AMP-ASCO-CAP Guidelines
     reference: PMID: 27993330
 
 
+# CONTRIBUTIONS TO THE ASSERTION RECORD
+# One approach to representing lifecycle actions on CIViC records is using Contribution objects for each curators actions. This is still exploratory modeling in VA-SEPIO.
+
+  - id: civic:Contrib001     # Arpad's 'submitter' contribution to the Assertion record (Note that this may actually represent a knowledge-level assertion, and hang directly from the Assertion, as opposed to being record-level metadata) 
+    type: Contribution  
+    contribution_made_by: 
+      - id: civic-user:110
+        type: Agent
+        label: ArpadDanos
+        identifier: orcid:0000-0001-9815-2288
+    contributor_role: 
+      - id: CRO:0000105
+        label: submitter role
+    start_date: 2016-01-27T00:20:51.218Z
+    end_date: 2016-01-27T00:20:51.218Z          
+
+  - id: civic:Contrib002     # Erica's 'acceptor' contribution to the Assertion record 
+    type: Contribution  )
+    contribution_made_by: 
+      - id: civic-user:179
+        type: Agent
+        label: EricaBarnell
+        identifier: orcid:0000-0003-1631-1201
+    contributor_role: 
+      - id: CRO:0000104
+        label: acceptor role
+    start_date: 2016-07-06T14:48:11.341Z
+    end_date: 2016-07-06T14:48:11.341Z
+
+
+# CONTRIBUTIONS TO THE EVIDENCE LINE RECORD
+
+  - id: civic:Contrib101    # Malachi's 'submitter' contribution to this Evidence Line record (Note that this may actually represent a knowledge-level assertion, and hang directly from the Evidence Line, as opposed to being record-level metadata) 
+    type: Contribution  
+    contribution_made_by: 
+      - id: civic-user:15
+        type: Agent
+        label: Malachi Griffith
+    contributor_role: 
+      - id: CRO:0000105
+        label: submitter role
+    start_date: 2016-01-14T20:16:44.813Z
+    end_date: 2016-01-14T20:16:44.813Z           
+
+  - id: civic:Contrib102   # Obi's 'acceptor' contribution to this Evidence Line record
+    type: Contribution  
+    contribution_made_by: 
+      - id: civic-user:3
+        type: Agent
+        label: Obi Griffith
+    contributor_role: 
+      - id: CRO:0000104
+        label: acceptor role
+    start_date: 2016-02-09T00:15:24.113Z
+    end_date: 2016-02-09T00:15:24.113Z
+
+
+
+
 ##------------------------------------------------------------------------------------------------------##
 
-# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines - https://civicdb.org/events/assertions/6/summary
-# This example uses Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines
-# Assertion states that "EGFR L858R (somatic) predicts sensitivity to Afatinib treatment of NSCLC".
+# The same Asserton record, represented using a mdeified model that uses Propositions to capture Assertion semantics,
+# and the evaluated target of Evidence Lines 
+# This pattern is being explored by implementor as a way to formally link the products of Evidence curation and Assertion
+# activities - through their shared Proposition.
 
   - id: civic-data:AID6
     type: TherapeuticResponseStatement 
@@ -92,7 +162,7 @@
  
 # ASSERTED PROPOSITION (the claim that is put forth as true in Assertion AID6)
   - id: civic-data:Proposition001
-    type: TherapeuticResponseProposition          # A specialization of VA-SEPIO 'Proposition'
+    type: TherapeuticResponseProposition          
     subject: civic-data:33                        # EGFR L858R. This will ultimately be a VRS object / descriptor. 
     predicate: predicts_sensitivity_to  
     object:
@@ -121,7 +191,7 @@
       - id: civic-term:001   
         label: B
     has_evidence_item:  civic-data:EvItem001              # the Evidence Item / Study Result that is evaluated as evidence
-    qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ]  # To Do 
+    qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ] 
 
  
 # EVALUATED PROPOSITION (the 'possible fact' that evidence was evaluated against to generate the Evidence Line)
@@ -138,7 +208,7 @@
      treated_condition_qualifier:
        - id: civic-data:30
          type: GeneticCondition           
-         disease:        # The disease here is a descendent of disease int he asserted Proposition (Lung Non-small Cell Carcinoma)
+         disease:       # The disease here is a descendent of disease in the asserted Proposition (Lung Non-small Cell Carcinoma)
            - DOID:3910
              label: Lung Adenocarcinoma
          url: "http://www.disease-ontology.org/?id=DOID:3910
@@ -177,5 +247,61 @@
     type: EvidenceLevelGuideline
     label: AMP-ASCO-CAP Guidelines
     reference: PMID: 27993330
+
+# CONTRIBUTIONS TO THE ASSERTION RECORD
+# One approach to representing lifecycle actions on CIViC records is using Contribution objects for each curators actions. This is still exploratory modeling in VA-SEPIO.
+
+  - id: civic:Contrib001     # Arpad's 'submitter' contribution to the Assertion record (Note that this may actually represent a knowledge-level assertion, and hang directly from the Assertion, as opposed to being record-level metadata) 
+    type: Contribution  
+    contribution_made_by: 
+      - id: civic-user:110
+        type: Agent
+        label: ArpadDanos
+        identifier: orcid:0000-0001-9815-2288
+    contributor_role: 
+      - id: CRO:0000105
+        label: submitter role
+    start_date: 2016-01-27T00:20:51.218Z
+    end_date: 2016-01-27T00:20:51.218Z          
+
+  - id: civic:Contrib002     # Erica's 'acceptor' contribution to the Assertion record 
+    type: Contribution  )
+    contribution_made_by: 
+      - id: civic-user:179
+        type: Agent
+        label: EricaBarnell
+        identifier: orcid:0000-0003-1631-1201
+    contributor_role: 
+      - id: CRO:0000104
+        label: acceptor role
+    start_date: 2016-07-06T14:48:11.341Z
+    end_date: 2016-07-06T14:48:11.341Z
+
+
+# CONTRIBUTIONS TO THE EVIDENCE LINE RECORD
+
+  - id: civic:Contrib101    # Malachi's 'submitter' contribution to this Evidence Line record (Note that this may actually represent a knowledge-level assertion, and hang directly from the Evidence Line, as opposed to being record-level metadata) 
+    type: Contribution  
+    contribution_made_by: 
+      - id: civic-user:15
+        type: Agent
+        label: Malachi Griffith
+    contributor_role: 
+      - id: CRO:0000105
+        label: submitter role
+    start_date: 2016-01-14T20:16:44.813Z
+    end_date: 2016-01-14T20:16:44.813Z           
+
+  - id: civic:Contrib102   # Obi's 'acceptor' contribution to this Evidence Line record
+    type: Contribution  
+    contribution_made_by: 
+      - id: civic-user:3
+        type: Agent
+        label: Obi Griffith
+    contributor_role: 
+      - id: CRO:0000104
+        label: acceptor role
+    start_date: 2016-02-09T00:15:24.113Z
+    end_date: 2016-02-09T00:15:24.113Z
 
 
