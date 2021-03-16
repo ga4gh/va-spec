@@ -5,7 +5,7 @@
 ##------------------------------------------------------------------------------------------------------------##
 
 
-# The *original* CIViC jaon data for EID879 (core evidence-related content only - lifecycle actions, assertions removed for now)
+# The *original* CIViC json data for EID879 (core evidence-related content only - lifecycle actions, assertions removed for now)
 # Data pulled from https://civicdb.org/api/evidence_items/879
 {
 
@@ -86,19 +86,18 @@
 # EVIDENCE LINE -  The message is rooted at the Evidence Line object - as this is what is being curated in this workflow.
   - id: civic-data:EID879    # "civic-data:" is a temp namespace for all identifiers minted by CIViC for entities they create in their dataset
     type: EvidenceLine       
+    evaluated_proposition: civic-data:Proposition001      # the Proposition against which the evidence is evaluated
     evidence_direction:      # this field takes a 'Coding' data type (a complex data type used to hold the iri and label of coded/enumerated values)
       - id: civic-term:002   # "civic-term:" is a temp namespace for all identifiers minted by civic for enumerated terms used in their dataset
         label: supports
     evidence_strength:  
       - id: civic-term:001   
         label: B
-    is_evidence_for: civic-data:Proposition001      # the Proposition against which the evidence is evaluated
     has_evidence_item:  civic-data:EvItem001        # the Evidence Item / Study Result that is evaluated as evidence
-    has_evidence_from_source: civic-source:592      # the Publication / Source that provided the data described in the Study Result (may want to hang this from the Evidence Item/Study Result instead)
     qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do 
+
  
- 
-# PROPOSITION (the target proposition representing the 'possible fact' that evidence was evaluated against to generate the Evidence Line
+# EVALUATED PROPOSITION (the target proposition representing the 'possible fact' that evidence was evaluated against to generate the Evidence Line
   - id: civic-data:Proposition001
      type: TherapeuticResponseProposition   # a specialization of VA-SEPIO 'Proposition'
      subject: civic-data:33                 # EGFR L858R. This will ultimately be a GKS VariationDescriptor.
@@ -120,9 +119,9 @@
        - id: GENO:0000882 
          label: somatic allele origin
 
-# EVIDENCE ITEM (specifically, a StudyResult object)
-  - id: civic-data:EvItem001  # A new id may have to be minted if we split apart the CIViC EID object into its Evidence Line and Evidence Item components.
-    type: StudyResult         # VA-SEPIO object representing a curated collection/description of data from a Study that focuses on a subset/persective of interest (e.g. results relevant for a particular interrogated variant)
+# EVIDENCE ITEM (a StudyResult object)
+  - id: civic-data:EvItem001  # A new id may have to be minted if we split apart the EID object into its Evidence Line and Evidence Item components.
+    type: StudyResult         # VA-SEPIO object representing a curated collection/description of data from a Study that focuses on a subset/perspective of interest (e.g. results relevant for a particular interrogated variant)
     focus: civic-data:33      # The specific focus of this Study Result is to describe data relevant to the EGFR L858R variant
     description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
     confidence_level: 
@@ -130,7 +129,7 @@
         label: 4-star
     reference: civic-source:592   # the Publication / Source that provided the data described in the Study Result
          
-# Examples of additional structured fields that coul dbe split out if we wanted to explicitly represent individual data items from the Study Result.
+# Examples of additional structured fields that could be split out if we wanted to explicitly represent individual data items from the Study Result.
 #   study_size: 308         
 #   median_PFS_afatinib: 13.6 months
 #   median_PFS_chemotherapy: 6.9 months
@@ -147,4 +146,141 @@
     label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
     url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"    
      
-     
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# CIVIC Assertion6 (AID6) record (which points to the Evidence above as support) - https://civicdb.org/events/assertions/6/summary
+# Uses Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines
+# Assertion states that "EGFR L858R (somatic) predicts sensitivity to Afatinib treatment of NSCLC".
+
+  - id: civic-data:AID6
+    type: TherapeuticResponseStatement 
+    description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
+    asserted_proposition: civic-data:Proposition001
+    has_evidence_line: civic-data:EID879  
+    was_specified_by: [civic-data:method_1, civic-data:method_2] 
+    confidence_level: Tier I - Level A 
+    
+# ASSERTED PROPOSITION (the claim that is put forth as true in Assertion AID6)
+  - id: civic-data:Proposition001
+    type: TherapeuticResponseProposition          # A specialization of VA-SEPIO 'Proposition'
+    subject: civic-data:33                        # EGFR L858R. This will ultimately be a VRS object / descriptor. 
+    predicate: predicts_sensitivity_to  
+    object:
+      - id: civic-data:drug_146                   
+        type: TherapeuticIntervention   
+        label: Afatinib 
+    allele_origin_qualifier: 
+      - id: GENO:0000882 
+        label: somatic allele origin
+    treated_condition_qualifier:
+      - id: civic-data:disease_8
+        type: GeneticCondition   
+        disease:            
+          - DOID:3908    
+            label: Lung Non-small Cell Carcinoma
+            url: "http://www.disease-ontology.org/?id=DOID:3908   
+
+# EVIDENCE LINE
+  - id: civic-data:EID879    
+    type: EvidenceLine       
+    evaluated_proposition: civic-data:Proposition002      # the Proposition against which the evidence is evaluated
+    evidence_direction:      
+      - id: civic-term:002   
+        label: supports
+    evidence_strength:  
+      - id: civic-term:001   
+        label: B
+    has_evidence_item:  civic-data:EvItem001              # the Evidence Item / Study Result that is evaluated as evidence
+    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do 
+
+ 
+# EVALUATED PROPOSITION (the 'possible fact' that evidence was evaluated against to generate the Evidence Line)
+  - id: civic-data:Proposition002           # NOTE this is DIFFERENT from the asserted Proposition in the root Assertion (disease is more specific)
+     type: TherapeuticResponseProposition   
+     subject: civic-data:33                 
+     predicate:
+       - id: ex:001                        
+         label: predicts_sensitivity_to
+     object:
+       - id: civic-data:146
+         type: TherapeuticIntervention      
+         label: Afatinib 
+     treated_condition_qualifier:
+       - id: civic-data:30
+         type: GeneticCondition           
+         disease:        # The disease here is a descendent of disease int he asserted Proposition (Lung Non-small Cell Carcinoma)
+           - DOID:3910
+             label: Lung Adenocarcinoma
+         url: "http://www.disease-ontology.org/?id=DOID:3910
+     allele_origin_qualifier: 
+       - id: GENO:0000882 
+         label: somatic allele origin
+
+
+# EVIDENCE ITEM  (a StudyResult object)
+  - id: civic-data:EvItem001  
+    type: StudyResult         
+    focus: civic-data:33      
+    description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+    confidence_level: 
+      - id: civic-term:003 
+        label: 4-star
+    reference: civic-source:592   
+          
+           
+# PUBLICATION (the source of data used as evidence)    
+  - id: civic-data:592 
+    type: Publication   
+    identifier:            
+      - value: 25923549 
+        system: PMID          
+    label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+    url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"   
+
+
+# METHODS
+  - id: civic-data:method_1         
+    type: VariantInterpretationGuideline
+    label: Non-Small Cell Lung Cancer (v3.2018) 
+
+  - id: civic-data:Method_2 
+    type: EvidenceLevelGuideline
+    label: AMP-ASCO-CAP Guidelines
+    reference: PMID: 27993330
+
+
+
+
+
+
+
+
+
+
+    has_evidence_line: 
+      - id: civic-data:EID879    
+        type: EvidenceLine       
+        evidence_direction:     
+          - id: civic-term:002   
+            label: supports
+        evidence_strength:  
+          - id: civic-term:001   
+            label: B
+        has_evidence_item:         # here we represent info about the study result that the Evidence Line above interprets/evaluates as evidence
+         - id: civic-data:EI001 
+           type: StudyResult    
+           description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+           confidence_level: 
+             - id: civic-term:003 
+               label: 4-star
+           reference:        
+             - id: civic-data:592 
+               type: Publication   
+               identifier:         # VA-SEPIO follows the FHIR model for distinguishing logical vs business ids, using a 'Identifier' data type for the latter
+                 - value: 25923549    
+               system: PMID          
+               label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+               url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"   

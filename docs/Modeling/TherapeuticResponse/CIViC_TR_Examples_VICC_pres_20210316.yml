@@ -1,0 +1,181 @@
+# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines - https://civicdb.org/events/assertions/6/summary
+# This example does not use Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines
+# Assertion states that "EGFR L858R (somatic) predicts sensitivity to Afatinib treatment of NSCLC".
+
+## ASSERTION
+  - id: civic-data:AID6
+    type: TherapeuticResponseStatement 
+    description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
+    subject: civic-data:33                    # EGFR L858R. This will ultimately be a VRS object / descriptor. 
+    predicate: predicts_sensitivity_to  
+    object:
+      - id: civic-data:drug_146               # The set of 'Drugs' comprising the treatment. To Do: Add TherInterv object    
+        type: TherapeuticIntervention   
+        label: Afatinib 
+    allele_origin_qualifier:                      
+      - id: GENO:0000882 
+        label: somatic allele origin
+    treated_condition_qualifier:              # The 'disease' context in which the treatment is given. To Do: Add GenCond object
+      - id: civic-data:disease_8
+        type: GeneticCondition   
+        disease:            
+          - DOID:3908    
+            label: Lung Non-small Cell Carcinoma
+            url: "http://www.disease-ontology.org/?id=DOID:3908   
+    has_evidence_line: [civic-data:EID879, . . . ]     # Only one of the six evidence lines is shown here  
+    was_specified_by: [civic-data:method_1, civic-data:method_2] 
+    confidence_level: Tier I - Level A            # AMp-ASCO tier assigned to the ssertion by the curator
+    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do, add Contribution objects
+ 
+
+
+# EVIDENCE LINE
+  - id: civic-data:EID879    
+    type: EvidenceLine       
+    evidence_direction:               # The evidence direction  assigned by the CIViC curator 
+      - id: civic-term:002           
+        label: supports
+    evidence_strength:                # The evidence level code assigned by the CIViC curator
+      - id: civic-term:001   
+        label: B
+    has_evidence_item:  civic-data:EvItem001              # the Evidence Item (Study Result0 that is evaluated as evidence
+    qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ]  # To Do, add Contribution objects
+
+
+
+# EVIDENCE ITEM  (a StudyResult object)
+  - id: civic-data:EvItem001  
+    type: StudyResult         
+    focus: civic-data:33      
+    description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+    confidence_level:                # The 'evidence/trust rating' assigned by the CIViC curtor
+      - id: civic-term:003 
+        label: 4-star
+    reference: civic-source:592      # The publication that reported the result
+          
+           
+# PUBLICATION (the source of data used as evidence)   # Current VA-SEPIO mdoel of Publications is minimal.   
+  - id: civic-data:592 
+    type: Publication   
+    identifier:            
+      - value: 25923549 
+        system: PMID          
+    label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+    url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"   
+
+
+# METHODS
+  - id: civic-data:method_1         
+    type: VariantInterpretationGuideline
+    label: Non-Small Cell Lung Cancer (v3.2018) 
+
+  - id: civic-data:Method_2 
+    type: EvidenceLevelGuideline
+    label: AMP-ASCO-CAP Guidelines
+    reference: PMID: 27993330
+
+
+##------------------------------------------------------------------------------------------------------##
+
+# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines - https://civicdb.org/events/assertions/6/summary
+# This example uses Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines
+# Assertion states that "EGFR L858R (somatic) predicts sensitivity to Afatinib treatment of NSCLC".
+
+  - id: civic-data:AID6
+    type: TherapeuticResponseStatement 
+    description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
+    asserted_proposition: civic-data:Proposition001
+    has_evidence_line: civic-data:EID879  
+    was_specified_by: [civic-data:method_1, civic-data:method_2] 
+    confidence_level: Tier I - Level A 
+    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do  
+ 
+# ASSERTED PROPOSITION (the claim that is put forth as true in Assertion AID6)
+  - id: civic-data:Proposition001
+    type: TherapeuticResponseProposition          # A specialization of VA-SEPIO 'Proposition'
+    subject: civic-data:33                        # EGFR L858R. This will ultimately be a VRS object / descriptor. 
+    predicate: predicts_sensitivity_to  
+    object:
+      - id: civic-data:drug_146                   
+        type: TherapeuticIntervention   
+        label: Afatinib 
+    allele_origin_qualifier: 
+      - id: GENO:0000882 
+        label: somatic allele origin
+    treated_condition_qualifier:
+      - id: civic-data:disease_8
+        type: GeneticCondition   
+        disease:            
+          - DOID:3908    
+            label: Lung Non-small Cell Carcinoma
+            url: "http://www.disease-ontology.org/?id=DOID:3908   
+
+# EVIDENCE LINE
+  - id: civic-data:EID879    
+    type: EvidenceLine       
+    evaluated_proposition: civic-data:Proposition002      # the Proposition against which the evidence is evaluated
+    evidence_direction:      
+      - id: civic-term:002   
+        label: supports
+    evidence_strength:  
+      - id: civic-term:001   
+        label: B
+    has_evidence_item:  civic-data:EvItem001              # the Evidence Item / Study Result that is evaluated as evidence
+    qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ]  # To Do 
+
+ 
+# EVALUATED PROPOSITION (the 'possible fact' that evidence was evaluated against to generate the Evidence Line)
+  - id: civic-data:Proposition002           # NOTE this is DIFFERENT from the asserted Proposition in the root Assertion (disease is more specific)
+     type: TherapeuticResponseProposition   
+     subject: civic-data:33                 
+     predicate:
+       - id: ex:001                        
+         label: predicts_sensitivity_to
+     object:
+       - id: civic-data:146
+         type: TherapeuticIntervention      
+         label: Afatinib 
+     treated_condition_qualifier:
+       - id: civic-data:30
+         type: GeneticCondition           
+         disease:        # The disease here is a descendent of disease int he asserted Proposition (Lung Non-small Cell Carcinoma)
+           - DOID:3910
+             label: Lung Adenocarcinoma
+         url: "http://www.disease-ontology.org/?id=DOID:3910
+     allele_origin_qualifier: 
+       - id: GENO:0000882 
+         label: somatic allele origin
+
+
+# EVIDENCE ITEM  (a StudyResult object)
+  - id: civic-data:EvItem001  
+    type: StudyResult         
+    focus: civic-data:33      
+    description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+    confidence_level: 
+      - id: civic-term:003 
+        label: 4-star
+    reference: civic-source:592   
+          
+           
+# PUBLICATION (the source of data used as evidence)    
+  - id: civic-data:592 
+    type: Publication   
+    identifier:            
+      - value: 25923549 
+        system: PMID          
+    label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+    url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"   
+
+
+# METHODS
+  - id: civic-data:method_1         
+    type: VariantInterpretationGuideline
+    label: Non-Small Cell Lung Cancer (v3.2018) 
+
+  - id: civic-data:Method_2 
+    type: EvidenceLevelGuideline
+    label: AMP-ASCO-CAP Guidelines
+    reference: PMID: 27993330
+
+
