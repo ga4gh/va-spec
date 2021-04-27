@@ -54,12 +54,12 @@
         {       
         // VOD#1:  Allele VOD for the genomic allele subject of the MC Statement (NC_000017.11:g.7674858C>T)
         "id": "vrs-vod:100",
-        "type": "AlleleDto",
-        "vrs_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this VOD.     
+        "type": "AlleleDescriptor",
+        "value_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this VOD.     
         "label": "NC_000017.11:g.7674858C>T",
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
         "alternateLabel": ["TERT 'c.-124C > T", "C228T for chr5:g.1295228G>A"],
-        "aliases" : [{ 
+        "expressionLabel" : [{ 
             "value" : "NC_000017.11:g.7674858C>T",
             "system" : "ghgvs"
             },{
@@ -89,9 +89,17 @@
         {
         // VOD#2: Allele VOD for the transcript-level variation referenced in the MCResult, providing more precise context for the consequence
         "id" : "vrs-vod:200",
-        "type": "AlleleDto",
+        "type": "AlleleDescriptor",
         "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this VOD.
         "label" : "NC_000017.11(NM_000546.5):c.672+1G>A", 
+        "expressionLabel" : [{
+            "system" : "ghgvs",
+            "value" : "NC_000017.11:g.7674858C>T"
+            },{
+            "system" : "phgvs",
+            "value" : "NP_000123.1:Ala222Glu"
+            }
+          ],  
         "molecule_context": {
                 "code": "SO:0000673",
                 "label": "transcript",
@@ -102,47 +110,37 @@
                 "label": "SNV",
                 "system": http://purl.obolibrary.org/obo/SO
                 },        
-        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
-        "aliases" : [{
-            "system" : "ghgvs",
-            "value" : "NC_000017.11:g.7674858C>T"
-            },{
-            "system" : "phgvs",
-            "value" : "NP_000123.1:Ala222Glu"
-            }
-          ],            
+        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],          
         "extension" : [
             {"name": "genes", "value": ["vrs-vod:300"]},  // MHB: Make 'genes' part of core VRS-VOD spec?
-            {"name": "sequenceDto", "value" : "vrs-vod:500"}  // The ref sequence on which the wrapped transcript variant is defined.
+            {"name": "sequenceDescriptor", "value" : "vrs-vod:500"}  // The ref sequence on which the wrapped transcript variant is defined.
           ]            
         },    
-
-
-
-    // ****** MHB: VODs below here have not been updated to reflect latest refinements to the VOD model  ***** //       
-
 
         {
         // VOD #3: Sequence Feature VOD for the TP53 gene referenced in an extension field in the two varition VODs above 
         //MHB: (assumes we want to represent conceptual features like a Gene as a VOD) 
         "id" : "vrs-vod:300",
-        "type": "FeatureDto",
-        "vrs_id": "hgnc:11998",  // MHB: would HGNC perhaps be the placeholder value object id?
+        "type": "SequenceFeatureDescriptor",
+        "value_id": "hgnc:11998",  
         "label" : "tumor protein p53",
-        "symbol": "TP53", MHB: should this be a core field in the spec, or an extension?
         "xrefs" : ["entrez_gene:7157","Ensembl:ENSG00000141510","MIM:191170"],
-        "aliases": ["BRG1", "SMARCA4"]  
-        "strand": "minus", // MHB: should this be a core field in the spec, or an extension?
-        //... (other 'non-essential' info to include about a gene concept)??
+        "alternateLabel": ["BRG1", "SMARCA4"],
+        "symbol": "TP53",
+        "strand": "minus"
         },    
         {
          // VOD#4: Sequence VOD for the genomic variant's reference sequence (NC_000017.11)
         "id" : "vrs-vod:400",
-        "type": "SequenceDto",
-        "vrs_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD",
+        "type": "SequenceDescriptor",
+        "value_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD",
         "label" : "NC_000017.11",
         "xrefs" : ["RefSeq:NC_000017.11"],
-        "residue_type": "SO:0000352",   // DNA
+        "residue_type": {
+                "code": "SO:0000352",
+                "label": "DNA",
+                "system": http://purl.obolibrary.org/obo/SO
+                },
         "extension" : [
             {"name": "species", "value" : { "id" : "taxonomy:9606", "display": "human"}},
             {"name": "assembly", "value" : [{"text":"GRCh38"}]}
@@ -151,11 +149,15 @@
         {
         // VOD#5: Sequence VOD for the transcript variant's reference sequence (NM_000546.5)
         "id" : "vrs-vod:500",
-        "type": "SequenceDto",
-        "vrs_id": "ga4gh:SQ.n9ax-9x6gOC0OEt73VMYqCBfqfxG1XUH",
+        "type": "SequenceDescriptor",
+        "value_id": "ga4gh:SQ.n9ax-9x6gOC0OEt73VMYqCBfqfxG1XUH",
         "label" : "NM_000546.5",
         "xrefs" : ["RefSeq:NM_000546.5"],
-        "residue_type": "SO:0000756",   // cDNA
+        "residue_type": {
+                "code": "SO:0000356",    //MHB: original value here was SO:0000756" (cDNA) . . . should we use this, and add to our value set?
+                "label": "RNA",
+                "system": http://purl.obolibrary.org/obo/SO
+                },
         "extension" : [
             {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  //MHB: wouldnt we also reference the gene vod here?
           ]
@@ -163,23 +165,23 @@
         {
         // VOD#6: Allele VOD for the protein-level variation providing more precise context for the consequence
         "id" : "vrs-vod:600",
-        "type": "AlleleDto",
+        "type": "AlleleDescriptor",
         "vrs_id": "ga4gh:VA.asmdgkri-Ag43_aBA4364sx",   // The core value object wrapped by this VOD.
         "label" : "NP_000123.1:Ala222Glu", 
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
-        "aliases" : [{
-            "type": "Descriptor",
+        "expressionLabel" : [
+            {
             "system" : "ghgvs",
             "value" : "NC_000017.11:g.7674858C>T"
-            },{
-            "type": "Descriptor",
+            },
+            {
             "system" : "chgvs",
             "value" : "NM_000546.5:c.672+1G>A"
             }
           ],            
         "extension" : [
             {"name": "genes", "value": ["vrs-vod:300"]},  // MHB: Make 'genes' part of core VRS-VOD spec?
-            {"name": "sequenceDto", "value" : "vrs-vod:700"}  // The ref sequence on which the wrapped transcript variant is defined.
+            {"name": "sequenceDescriptor", "value" : "vrs-vod:700"}  // The ref sequence on which the wrapped transcript variant is defined.
           ]            
         }, 
         {
@@ -189,7 +191,11 @@
         "vrs_id": "ga4gh:SQ.n9ax-9ass036q_aWQrq3414rs",
         "label" : "NP_000123.1,
         "xrefs" : ["RefSeq:NP_000123.1"],
-        "residue_type": "SO:0001237",   // amino acid
+        "residue_type": {
+                "code": "SO:0001407",    //MHB: original value here was SO:0000756" (cDNA) . . . should we use this, and add to our value set?
+                "label": "amino acid",
+                "system": http://purl.obolibrary.org/obo/SO
+                },
         "extension" : [
             {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}   //MHB: wouldnt we also reference the gene vod here?
           ]
