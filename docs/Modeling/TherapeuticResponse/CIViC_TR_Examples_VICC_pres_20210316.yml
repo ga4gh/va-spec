@@ -1,11 +1,9 @@
 # CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines
 # See  https://civicdb.org/events/assertions/6/summary (website record), https://civicdb.org/api/assertions/6 (API payload)
 
-# This example does not use Propositions to capture Assertion semantics, and the evaluated target of Evidence Lines.
-# But a second proposal is shown below that dos uses Proposition in this way.  Propositions are being explored as 
-# a way to formally link the products of Evidence curation and Assertion activities - through their shared Proposition.  
+# This example does not use Propositions for 'asserted proposition' semantics, but does demonstrate their use for explicitly representing the "target proposition" of an EID / Evidence Line.  Propositions are being explored in this was as a means to formally link the products of Evidence curation and Assertion activities - through their shared Proposition.  
 
-## ASSERTION
+## ASSERTION (Domain Level . . . experiment with making this an Evidence Level Assertion)
   - id: civic-data:AID6             # Prefixes ("civic-data") reflect made-up namespaces for naked CIViC identifiers.
     type: TherapeuticResponseStatement 
     description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
@@ -16,7 +14,7 @@
         type: TherapeuticIntervention   
         label: Afatinib 
     allele_origin_qualifier:                      
-      - id: GENO:0000882             # This is a 'Coding' object that bundles a concept identifier wiht its label 
+      - id: GENO:0000882             # This is a 'Coding' object that bundles a concept identifier with its label 
         label: somatic allele origin
     treated_condition_qualifier:     # The 'disease' context in which the treatment is given. 
       - id: civic-data:disease_8
@@ -26,26 +24,53 @@
             label: Lung Non-small Cell Carcinoma
             url: "http://www.disease-ontology.org/?id=DOID:3908   
     has_evidence_line: [civic-data:EID879, ... ]   # Only one of the six evidence lines is included here  
-    was_specified_by: [civic-data:method_1, civic-data:method_2] 
+    was_specified_by: [civic-data:method_1] 
     confidence_level: Tier I - Level A             # AMP-ASCO tier assigned to the assertion by the curator
+    evidence_item_source: civic-data:ocument_001
     recordMeta: 
       - date_last_modified: 2019-05-22T15:44:02.670Z
         qualified_contribution: [civic-data:Contrib001, civic-data:Contrib002, ... ]   # Contribution objects are below
  
 
+
 # EVIDENCE LINE
   - id: civic-data:EID879    
     type: EvidenceLine       
-    evidence_direction:               # The evidence direction assigned by the CIViC curator 
-      - id: civic-term:002           
+    target_proposition: civic-data:Proposition002      # the Proposition against which the evidence is evaluated in this EID
+    evidence_direction:               # The evidence direction assigned by the CIViC curator     
+      - id: civic-term:002   
         label: supports
     evidence_strength:                # The evidence level code assigned by the CIViC curator
       - id: civic-term:001   
         label: B
-    has_evidence_item:  civic-data:EvItem001       # The Evidence Item (Study Result) that is evaluated as evidence
+    has_evidence_item:  civic-data:EvItem001              # The Evidence Item / Study Result that is evaluated as evidence
     recordMeta: 
       - date_last_modified: 2018-02-23T04:31:09.515Z
-        qualified_contributions: [civic-data:Contrib101, civic-data:Contrib102, ... ]  # Contribution objects are below
+        qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ] 
+
+ 
+# TARGET PROPOSITION OF THE EVIDENCE LINE (the 'possible fact' that evidence was evaluated against to generate the Evidence Line)
+  - id: civic-data:Proposition002           # NOTE this is DIFFERENT from the asserted Proposition implicit in the root TR Statement (the disease in the target proposition is more specific)
+     type: TherapeuticResponseProposition   
+     subject: civic-data:33                 
+     predicate:
+       - id: ex:001                        
+         label: predicts_sensitivity_to
+     object:
+       - id: civic-data:146
+         type: TherapeuticIntervention      
+         label: Afatinib 
+     treated_condition_qualifier:
+       - id: civic-data:30
+         type: GeneticCondition           
+         disease:       # The disease here is a descendent of disease in the asserted Proposition (Lung Non-small Cell Carcinoma)
+           - DOID:3910
+             label: Lung Adenocarcinoma
+         url: "http://www.disease-ontology.org/?id=DOID:3910
+     allele_origin_qualifier: 
+       - id: GENO:0000882 
+         label: somatic allele origin
+
 
 
 # EVIDENCE ITEM  (a StudyResult object - a curated summary of a specific result from a specific study)
@@ -57,14 +82,15 @@
       - id: civic-term:003 
         label: 4-star
     reference: civic-source:592      # The publication that reported the result
-# Additional fields that COULD be used to structure individual data items from the Study Result.
+# Additional fields that COULD be defined in a StudyResult specialization, and used to structure individual data items from the result.
+#   studyResultType: ClinicalTrialResult
 #   study_size: 308         
 #   median_PFS_drug: 13.6 months
 #   median_PFS_comparator: 6.9 months
 #   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
 #   p-value: 0.001          
            
-# PUBLICATION (the source of the data used as evidence). Current VA-SEPIO mdoel of Publications is minimal.   
+# PUBLICATIONS / DOCUMENTS (the source of the data used as evidence). Current VA-SEPIO model of Publications is minimal.   
   - id: civic-data:592 
     type: Publication   
     identifier:            
@@ -73,13 +99,12 @@
     label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
     url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960"   
 
-
-# METHODS
-  - id: civic-data:method_1       # The disease-specific method guiding the actual variant interpretation process   
+  - id: civic-data:document_001       # The disease-specific method guiding the actual variant interpretation process? No - Alex says these are clinical care guidelines.  But CIViC treats them as a source of evidence.  So typing as Document / Pub rather than a Method.   
     type: VariantInterpretationGuideline
     label: Non-Small Cell Lung Cancer (v3.2018) 
 
-  - id: civic-data:Method_2       # The general method guiding evaluation of evidence strength and Assertion confidence
+# METHOD
+  - id: civic-data:Method_1       # The general method guiding evaluation of evidence strength and Assertion confidence
     type: EvidenceLevelGuideline
     label: AMP-ASCO-CAP Guidelines
     reference: PMID: 27993330
@@ -146,9 +171,9 @@
 
 ##------------------------------------------------------------------------------------------------------##
 
-# The same Asserton record, represented using a mdeified model that uses Propositions to capture Assertion semantics,
+# The same Asserton record, represented using a modified model that uses Propositions to capture Assertion semantics,
 # and the evaluated target of Evidence Lines 
-# This pattern is being explored by implementor as a way to formally link the products of Evidence curation and Assertion
+# This pattern is being explored by implementers as a way to formally link the products of Evidence curation and Assertion
 # activities - through their shared Proposition.
 
   - id: civic-data:AID6

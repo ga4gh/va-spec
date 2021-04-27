@@ -162,7 +162,8 @@
     has_evidence_line: civic-data:EID879  
     was_specified_by: [civic-data:method_1, civic-data:method_2] 
     confidence_level: Tier I - Level A 
-    
+    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do  
+ 
 # ASSERTED PROPOSITION (the claim that is put forth as true in Assertion AID6)
   - id: civic-data:Proposition001
     type: TherapeuticResponseProposition          # A specialization of VA-SEPIO 'Proposition'
@@ -194,7 +195,7 @@
       - id: civic-term:001   
         label: B
     has_evidence_item:  civic-data:EvItem001              # the Evidence Item / Study Result that is evaluated as evidence
-    qualified_contributions: [civic-data:Contribution001, civic-data:Contribution002, ... ]  # To Do 
+    qualified_contributions: [civic-data:Contribution101, civic-data:Contribution102, ... ]  # To Do 
 
  
 # EVALUATED PROPOSITION (the 'possible fact' that evidence was evaluated against to generate the Evidence Line)
