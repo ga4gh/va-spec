@@ -1,0 +1,210 @@
+# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines
+# See  https://civicdb.org/events/assertions/6/summary (website record), https://civicdb.org/api/assertions/6 (API payload)
+
+# This VA data example is rooted at a 'domain level statement' - but we are experimenting wiht making this an Evidence Level Assertion
+# It does not use Propositions for 'asserted proposition' semantics, but does demonstrate their use for explicitly representing the "target proposition" of an EID / Evidence Line.  Propositions are being explored in this way as a means to formally link the products of Evidence Curation and Assertion activities - through their shared / related Propositions.  
+# Note that the prefixes "civic-data" and civic-term" reflect made-up namespaces for native CIViC identifiers.
+
+
+  - id: civic-data:AID6            
+    type: TherapeuticEfficacyStatement 
+    description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
+
+    # Statement semantics in S-P-O-Q terms (for v0 we do not support splitting these out into a Proposition objecct)
+    subject:                               # Allele VOD for the protein variant subject of the TR Statement (EGFR L858R)
+      - id: civic-data:vod-33    # For now, going with pattern where the asserted subject is a VOD that wraps its value object 
+        type: VariationDescriptor
+        value_id : ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO    # VRS id of the core value object wrapped by this VOD.     
+        label: NP_005219.2:p.Leu858Arg 
+        xrefs: [cosmic:COSM6224, clinvar:16609, dbSNP:rs121434568]
+        alternateLabel: EGFR L858R
+        expressionLabel: 
+          - value: NC_000007.13:g.55259515T>G
+            system: ghgvs
+          - value: NM_005228.5:c.2573T>G
+            system: chgvs 
+          - value: NP_005219.2:p.Leu858Arg
+            system: phgvs      
+        molecule_context:       
+          - code: SO:0000104           # This is a 'Coding' object that bundles a concept code/identifier with its label 
+            label: polypeptide
+            system: http://purl.obolibrary.org/obo/SO
+    predicate: 
+      - code: ex:001                           # At present there is no formal code for this predicate concepts - so I made up one in an 'ex' namespace.
+        label: associated_with_sensitivity_to 
+    object:
+      - id: civic-data:drug_146          
+        type: TherapeuticIntervention     # I think CIViC calls this a TreatmentProfile?
+        drug: 
+            - code: ncit:XXXXX
+              label: Afatinib            
+    allele_origin_qualifier:                      
+      - code: GENO:0000882         
+        label: somatic allele origin
+    indicated_condition_qualifier:          # The 'disease' context in which the treatment is given. 
+      - id: civic-data:disease_8
+        type: GeneticCondition   
+        label: Lung Non-small Cell Carcinoma 
+        disease:            
+          - code:doid:3908    
+            label: Lung Non-small Cell Carcinoma
+        url: "http://www.disease-ontology.org/?id=DOID:3908   
+
+    # Evidence / Provenance Metadata
+    was_specified_by: 
+      - id: civic-data:Method_1       # CIViC curator SOP -  method guiding curation, interpretation, and scoring of TR evidence  
+        type: Method
+        label: CIViC Variant Curation SOP
+        reference: PMID:31779674
+    
+      - id: civic-data:Method_2       # Community standard method for determining overall level of evidence / assertion confidence
+        type: Method
+        label: AMP-ASCO-CAP Guidelines
+        reference: PMID: 27993330
+
+    has_evidence_level: 
+      - code: civic-term:001  
+        label: Tier I - Level A             
+        system: AMP-ASCO Tier System
+
+    has_evidence_line:                      # Only one of the six evidence lines in the source data is included here 
+      - id: civic-data:EID879    
+        type: EvidenceLine       
+        target_proposition:                 # The Proposition (possible fact) against which the evidence is evaluated in this EID
+          - id: civic-data:Proposition002   # NOTE that this is DIFFERENT from the asserted proposition implicit in the root TR Statement (diff disease qualifier)
+             type: TherapeuticEfficacyProposition   
+             subject: civic-data:vod-33     # Inlined representation not repeated for space / simplicity               
+             predicate:
+               - code: ex:001                        
+                 label: associated_with_sensitivity_to
+             object:
+               - id: civic-data:146
+                 type: TherapeuticIntervention      
+                 drug: Afatinib 
+             indicated_condition_qualifier:
+               - id: civic-data:disease_30
+                 type: GeneticCondition           
+                 label: Lung Adenocarcinom
+                 disease:                   # The disease here is a descendant of disease in the asserted Proposition (Lung Non-small Cell Carcinoma)
+                   - code: doid:3910
+                     label: Lung Adenocarcinoma
+                 url: "http://www.disease-ontology.org/?id=DOID:3910
+             allele_origin_qualifier: 
+               - code: GENO:0000882 
+                 label: somatic allele origin
+        evidence_direction:       # The direction of support interpreted for the evidence item(s) w.r.t the target proposition, as assigned by CIViC curator     
+          - code: civic-term:002    
+            label: supports
+        evidence_strength:        # The strength of support interpreted for the evidence item(s) w.r.t the target proposition, as assigned by CIViC curator 
+          - code: civic-term:001   
+            label: B
+
+        has_evidence_item:              # The actual study data interpreted as evidence (represented as a VA 'Study Result')
+          - id: civic-data:StudyResult001  
+            type: StudyResult           # A StudyResult is a curated and structured summary of a specific set of results from a single study   
+            focus:               # Optionally, can use 'focus' field to indicate what entit(ies) the results are about (i.e. were curated specifically to describe)
+              - civic-data:vod-33       # Inlined representation not repeated for space / simplicity 
+              - civic-data:disease_30   # Inlined representation not repeated for space / simplicity
+            description: "A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001)."
+            confidence_level:           # The inherent quality / trustworthiness of the result - and 'evidence/trust rating' assigned by the CIViC curator
+              - code: civic-term:003 
+                label: 4-star
+            isReportedIn:               # The publication that reported the result
+              - id: civic-data:592 
+                type: Publication   
+                identifier:             # We need to decide if / how we will support CURIE forms of Identifiers
+                  - value: 25923549 
+                    system: PMID          
+                label: "Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations."
+                url: "http://www.ncbi.nlm.nih.gov/pubmed/23816960" 
+        # Additional fields that COULD be defined in a StudyResult specialization, and used to structure individual data items from the result.
+        #   studyResultType: ClinicalTrialResult
+        #   study_size: 308         
+        #   median_PFS_drug: 13.6 months
+        #   median_PFS_comparator: 6.9 months
+        #   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
+        #   p-value: 0.001     
+
+        recordMeta:      # Record Metadata describing who curated the Evidence Line (EID879). May decide not to support this in v0, to keep model simpler.
+          - date_last_modified: 2018-02-23T04:31:09.515Z
+            qualified_contribution:    # Contributions are one way represent lifecycle actions on CIViC records. This is still exploratory modeling in VA-SEPIO.
+              - id: civic-data:Contrib101    # Malachi's 'submitter' contribution to this Evidence Line record (Note that this may actually represent a knowledge-level assertion, and hang directly from the Evidence Line, as opposed to being record-level metadata) 
+                type: Contribution  
+                contribution_made_by: 
+                  - id: civic-data:user-15
+                    type: Agent
+                    label: Malachi Griffith
+                contributor_role: 
+                  - code: CRO:0000105
+                    label: submitter role
+                start_date: 2016-01-14T20:16:44.813Z
+                end_date: 2016-01-14T20:16:44.813Z           
+
+              - id: civic-data:Contrib102   # Obi's 'acceptor' contribution to this Evidence Line record
+                type: Contribution  
+                contribution_made_by: 
+                  - id: civic-data:user-3
+                    type: Agent
+                    label: Obi Griffith
+                contributor_role: 
+                  - code: CRO:0000104
+                    label: acceptor role
+                start_date: 2016-02-09T00:15:24.113Z
+                end_date: 2016-02-09T00:15:24.113Z
+
+    has_evidence_from_source:
+      - id: civic-data:592           # Duplicates pub already attached to the Study Result
+        type: Publication   
+        identifier:                  # Need to decide if / how we will support CURIE forms of Identifiers
+          - value: 25923549 
+            system: PMID      
+      - id: civic-data:document_001  # These are clinical care guidelines, but CIViC treats them as a source of evidence.  May get case as an Evidence Line/EID?  
+        type: Publication
+        label: Non-Small Cell Lung Cancer (v3.2018) 
+
+    recordMeta:           # Record Metadata describing who curated the Assertion (AID6). May decide not to support this in v0, to keep simpler.
+      - date_last_modified: 2019-05-22T15:44:02.670Z
+        qualified_contribution:
+          - id: civic-data:Contrib001     # Determine if the 'submitter' action may actually represent a knowledge-level contribution, as opposed to record-level ) 
+            type: Contribution  
+            contribution_made_by: 
+              - id: civic-data:user_110
+                type: Agent
+                label: ArpadDanos
+                identifier: orcid:0000-0001-9815-2288
+            contributor_role: 
+              - code: CRO:0000105
+                label: submitter role
+            start_date: 2016-01-27T00:20:51.218Z
+            end_date: 2016-01-27T00:20:51.218Z          
+
+          - id: civic-data:Contrib002     # Erica's 'acceptor' contribution to the Assertion record 
+            type: Contribution
+            contribution_made_by: 
+              - id: civic-data:user_179
+                type: Agent
+                label: EricaBarnell
+                identifier: orcid:0000-0003-1631-1201
+            contributor_role: 
+              - code: CRO:0000104
+                label: acceptor role
+            start_date: 2016-07-06T14:48:11.341Z
+            end_date: 2016-07-06T14:48:11.341Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
