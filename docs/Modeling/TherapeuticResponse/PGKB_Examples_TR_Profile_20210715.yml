@@ -1,0 +1,113 @@
+
+# PharmGKB Therapeutic Efficacy Statement Example, based on data from PGKB Variant Annotation 982046877.  
+# Structured source data can be found here: https://docs.google.com/spreadsheets/d/11p_T6BBa3mUTFN0Xp8aX3rDhF4PQGxlSwxp8zOO7yqI/edit#gid=1807698936
+# Variant Annotation Record: https://www.pharmgkb.org/variantAnnotation/982046877
+# Parent Clinical Annotation Record: https://www.pharmgkb.org/clinicalAnnotation/1183615415 (UI here has more info than the Var Ann record w.r.t. evidence scores)
+
+  - id: pgkb:982046877            
+    type: TherapeuticEfficacyStatement  # PGKB seems to create statements for assertions based on a single study (unlike CIViC which just describes the amount of evidence they provide)
+    text: Genotype TT is associated with decreased response to adalimumab, etanercept and infliximab in people with Arthritis, Rheumatoid as compared to genotypes CC + CT.  
+    description: "Patients with the TT genotype had poorer response to the anti-TNFalpha drugs after 3 months of treatment. Response to therapy was assessed according to EULAR response criteria. Please note alleles have been complemented to the plus chromosomal strand."
+    
+    # Statement semantics in S-P-O-Q terms 
+    subject:                               # Allele VOD for the variation subject of the TE Statement (EGFR L858R)
+      - id: pgkb:variationdescriptor-001
+        type: GenotypeDescriptor
+        value_id : ga4gh:VG.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO    # VRS id of the core value object wrapped by this VOD.     
+        label: NC_000012.12:g.6341779 T/T
+        xref: [dbSNP:rs767455]
+        molecule_context:       
+          - code: SO:0001026           # This is a 'Coding' object that bundles a concept code/identifier with its label 
+            label: genome
+            system: http://purl.obolibrary.org/obo/SO
+        affected_feature:              # Proposed addition/extension to the VariationDescriptor class - captures features that the variaton affects/overlaps
+          - id: pgkb:variationdescriptor_002
+            type: SequenceFeatureDescriptor
+            value_id: hgnc:11916
+            label: TNFRSF1A (human)
+            feature_type: 
+              - code: SO:0000704
+                label: gene
+            xref: pgkb:PA36609
+          - id: pgkb:variationdescriptor-003
+            type: SequenceFeatureDescriptor
+            value_id: CHR:9606-chr12
+            label: chromosome 12 (human)
+            feature_type: 
+              - code: SO:00007340
+                label: chromosome
+    predicate: 
+      - code: ex:002                  # At present there is no formal code for this predicate concepts - so I made up one in an 'ex' namespace.
+        label: associated_with_decreased_response/sensitivity_to 
+    object:
+      - id: pgkb:drug-PA10004         # One of these three TNFalpha-inhibitor drugs was used to treat patients in the supporting study (and results interpreted across all patients)
+        type: TherapeuticIntervention    
+        drug: 
+          - code: ncit:C65216
+            label: adalimumab
+          - code: ncit:C1789
+            label: infliximab
+          - code: ncit:C2381
+            label: etanercept
+        drug_operator:                # The alternates operator creates an extensionally-defined  class of drugs from the set above
+          - code: ex:003
+            label: alternates
+    indicated_condition_qualifier:    # The 'disease' context in which the treatment is given. 
+      - id: pgkb:disease-PA443434
+        type: MedicalCondition   
+        label: Arthritis, Rheumatoid
+        disease:            
+          - code:MeSH:D001172   
+            label: Arthritis, Rheumatoid
+    comparator_qualifier:             # Two comparators were provided in this record.
+      - id: pgkb:variationdescriptor_004
+        type: GenotypeDescriptor
+        value_id : ga4gh:VG.C2q46asvia426AG63qa-ae5r    # VRS id of the core value object wrapped by this VOD.     
+        label: NC_000012.12:g.6341779 C/T
+        xrefs: [dbSNP:rs767455]
+      - id: pgkb:vvariationdescriptor_005
+        type: GenotypeDescriptor
+        value_id : ga4gh:VG.Aadsgs345ADSd-ase4352AGae    # VRS id of the core value object wrapped by this VOD.     
+        label: NC_000012.12:g.6341779 C/C
+        xrefs: [dbSNP:rs767455]
+
+    is_reported_in:         # Assumes that the PGKB curator is asserting that the authors of this publication made the TE statement. If not, use the weaker 'reference' property.
+       - id: pmid:22480748 
+         type: Publication   
+    
+# We don't NEED an evidence line - as the data PGKB makes available doesn't include assessment of direction or strength of evidnece provided by each supporting study finding at the var_ann level.  But evidence is curated and scored at a more detailed level than PGKB reports publically - and it may be possible to use this finer grained evidence scoring information to generate evidence strength metric here. Including an Evidence Line here as a placeholder for such a metric (as it doesn't hurt anything). If we dropped it, use has_evidence to link directly from the TE Statement to the supporting Study Result 
+
+    has_evidence_line:                
+      - id: pgkb:EL001    
+        type: EvidenceLine       
+        has_evidence_item:              # The actual study data interpreted as evidence (represented as a VA 'Study Result')
+          - id: pgkb:982046886          
+            type: StudyResult           # A StudyResult is a curated and structured summary of a specific set of results from a single study   
+            focus: 
+              - ga4gh:VA.Csa3w3-sdaAEDV480ad-awdg
+                type: AlleleDescriptor
+                label: NC_000012.12:g.6341779 C
+            isReportedIn:               # The publication that reported the result
+              - id: pmid:22480748 
+                type: Publication
+                title: Effects of polymorphisms in TRAILR1 and TNFR1A on the response to anti-TNF therapies in patients with rheumatoid and psoriatic arthritis.                
+            allele_frequency_in_cases: 0.44
+            allele_frequency_in_controls: 0
+            p-value: 0.042
+              
+            supporting_study:
+              - id: pgkb:Study001
+                study_type: 
+                  - code: ex:001
+                    label: cohort
+                studyPopulation: 
+                  - id: pgkb:Study001
+                    description: Drug: infliximab (n=75), adalimumab (n=7) and etanercept (n=8)
+                    member_count: 55
+                characteristic:
+                  - name:  biogeographical group
+                    value: European
+                    exclude: FALSE
+                    
+
+                  
