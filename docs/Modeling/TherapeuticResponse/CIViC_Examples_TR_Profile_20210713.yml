@@ -225,52 +225,13 @@
 
 
 
+# ------------------------------------------------------------------------------------------------- #
+# ------------------------------------------------------------------------------------------------- #
+# ------------------------------------------------------------------------------------------------- #
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-# -------------------------------------------------------------------------------------------------#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Alternative representation of Statement semantics, following proposed ClinGen / CIViC approach.  
+# Alternative representation of Statement semantics, more closely aligned with the proposed ClinGen / CIViC approach.  
 # Key differences here are that we: (1) encapsulate statement semantics in a Proposition, and (2) make the subject the variation value object and hang its Descriptor from the Statement. 
 
   - id: civic-data:AID6            
