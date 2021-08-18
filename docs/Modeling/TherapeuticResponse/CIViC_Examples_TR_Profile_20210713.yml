@@ -1,7 +1,7 @@
 # CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines
 # See  https://civicdb.org/events/assertions/6/summary (website record), https://civicdb.org/api/assertions/6 (API payload)
 
-# This VA data example is rooted at a 'domain level statement' - but we are experimenting with making this an Evidence Level Assertion.
+# This VA data example is rooted at a 'domain level statement' / 'generalized knowledge assertion' - but we are experimenting with making this an 'Evidence Level Assertion'.
 # It does not use Propositions for 'asserted proposition' semantics, but does demonstrate their use for explicitly representing the "target proposition" of an EID / Evidence Line.  
 # Propositions at the root Assertion-level are being explored in parallel efforts as a means to formally link the products of Evidence Curation and Assertion activities - through their shared / related Propositions.  
 # Note that the prefixes "civic-data" and civic-term" reflect made-up namespaces for native CIViC identifiers.
@@ -21,7 +21,7 @@
         xrefs: [cosmic:COSM6224, clinvar:16609, dbSNP:rs121434568]
         alternate_label: [EGFR L858R]
         expression_label: 
-          - value: NC_000007.13:g.55259515T>G
+          - value: NC_000007.13:g.55259515T>G 
             system: ghgvs
           - value: NM_005228.5:c.2573T>G
             system: chgvs 
@@ -136,7 +136,7 @@
             confidence_level:           # The inherent quality / trustworthiness of the result - and 'evidence/trust rating' assigned by the CIViC curator
               - code: civic-term:003 
                 label: 4-star
-            isReportedIn:               # The publication that reported the result
+            reference:               # The publication that reported the result
               - id: civic-data:source_592 
                 type: Publication   
                 identifier:             # We need to decide if / how we will support CURIE forms of Identifiers
@@ -183,7 +183,7 @@
     has_evidence_from_source:
       - id: civic-data:source_592     # Duplicates pub already attached to the Study Result - may not want to capture here as well.
         type: Publication   
-        identifier:                   # Need to decide if / how we will support CURIE forms of Identifiers
+        identifier:                   # Need to decide if / how we will support CURIE forms of Identifiers (e.g. pmid:25923549)
           - value: 25923549 
             system: PMID      
       - id: civic-data:document_001   # These are clinical care guidelines, but CIViC treats them as a source of evidence.  May get represented as an Evidence Line/EID?  
