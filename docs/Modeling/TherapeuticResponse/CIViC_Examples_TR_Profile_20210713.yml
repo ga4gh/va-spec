@@ -7,7 +7,7 @@
 # Note that the prefixes "civic-data" and civic-term" reflect made-up namespaces for native CIViC identifiers.
 # Note also that a few of the data values below are added by me to ilustrate how the VA model could accommodate additioanl, useful information (e.g. the CIViC SOP method).
 
-
+				
   - id: civic-data:AID6            
     type: TherapeuticEfficacyStatement 
     description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
@@ -43,12 +43,12 @@
     allele_origin_qualifier:                      
       - code: GENO:0000882         
         label: somatic allele origin
-    indicated_condition_qualifier:          # The 'disease' for which the treatment is administered 
+    indicated_condition_qualifier:          # The 'disease' for which the treatment is administered. Consider renaming condition_context_qualifier?
       - id: civic-data:disease_8
         type: GeneticCondition   
         label: Lung Non-small Cell Carcinoma 
         disease:            
-          - code:doid:3908                  # Note that this is the parent of the disease that the target proposition of the supporting EID879 below is about)
+          - code:doid:3908                  # Note that this is the parent of the disease that the target proposition of the supporting EID879 below is about
             label: Lung Non-small Cell Carcinoma
         url: "http://www.disease-ontology.org/?id=DOID:3908   
 
