@@ -32,7 +32,7 @@
             label: polypeptide
             system: http://purl.obolibrary.org/obo/SO
     predicate: 
-      - code: ex:001                       # At present there is no formal code for this predicate concepts - so I made up one in an 'ex' namespace.
+      - code: ex:001                       # At present there is no formal code for this predicate concept - so I made up one in an 'ex' namespace.
         label: associated_with_sensitivity_to 
     object:
       - id: civic-data:drug_146          
@@ -52,7 +52,7 @@
             label: Lung Non-small Cell Carcinoma
         url: "http://www.disease-ontology.org/?id=DOID:3908   
 
-  # Evidence / Provenance Metadata
+  # Provenance / Evidence Metadata
     was_specified_by: 
       - id: civic-data:Method_1       # CIViC curator SOP -  method guiding curation, interpretation, and scoring of TE evidence. Does this belong here and/or on the EID?
         type: Method
@@ -94,7 +94,7 @@
                     label: polypeptide
                     system: http://purl.obolibrary.org/obo/SO
             predicate:
-              - code: ex:001                        # At present there is no formal code for this predicate concepts - so I made up one in an 'ex' namespace.
+              - code: ex:001                        # At present there is no formal code for this predicate concept - so I made up one in an 'ex' namespace.
                 label: associated_with_sensitivity_to
             object:
               - id: civic-data:drug_146
