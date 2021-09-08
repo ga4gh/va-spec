@@ -7,7 +7,6 @@
 # Note that the prefixes "civic-data" and civic-term" reflect made-up namespaces for native CIViC identifiers.
 # Note also that a few of the data values below are added by me to ilustrate how the VA model could accommodate additioanl, useful information (e.g. the CIViC SOP method).
 
-				
   - id: civic-data:AID6            
     type: TherapeuticEfficacyStatement 
     description: "EGFR L858R positive NSCLC is sensitive to afatinib."     
