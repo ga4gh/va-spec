@@ -16,7 +16,7 @@ The SEPIO-based VA-Spec is being authored by a partnership among national resour
 4. **Reference Implementation(s)**. A library of software and services that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. *Provides a working example of code that can be adopted and/or extended by adopters.*
 
 
-### Documentation and Artifacts
+### Resources and Documentation
 The VA team is preparing a v0 release, with formal documentation available soon. At present, modeling artifacts and documentation remains in various documents, slide decks, and Github tickets. Those linked below will provide an overview of this work.  
 
 - **Recent Slide Decks and Presentations:**
