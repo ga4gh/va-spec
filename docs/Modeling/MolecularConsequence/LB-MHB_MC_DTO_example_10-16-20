@@ -160,7 +160,7 @@
                 },
         "extension" : [
             {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  //MHB: wouldnt we also reference the gene vod here?
-          ]
+          ] 
         } 
         {
         // VOD#6: Allele VOD for the protein-level variation providing more precise context for the consequence

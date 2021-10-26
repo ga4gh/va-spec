@@ -204,7 +204,6 @@ Tasks/Todos.
     }]
 }
 
-
 // ****Appendix I****//
 -- below is the original SCV from clinvar xml for the above.
 -- it is wrapped inside a VCV for https://www.ncbi.nlm.nih.gov/clinvar/variation/12610/ (variationId=12610, variationArchiveId=VCV000012610)
@@ -344,7 +343,7 @@ Tasks/Todos.
 --------------------------------------
  
 
-    // Modeling Approach 1  #####THIS IS CURRENTY THE PREFERRE APPROACH, FOLLOWING THE 11-24-20 CLINGEN DATA MODELING CALL#####
+    // Modeling Approach 1  #####THIS IS CURRENTY THE PREFERRED APPROACH, FOLLOWING THE 11-24-20 CLINGEN DATA MODELING CALL#####
     // Allows for multiple RecordMetadata objects (one for each record to which contributions are described). 
     // Uses a new 'sourceRecordMeta' field to point to RecordMetadata object that describe usptream/source records. This field would sit alongside the existing 'recordMeta' field (rename 'thisRecordMeta'?), which is used specifically to capture metadata about the actual record in this message. 
     // This approach would allow us to more explicitly and flexibly describe contributions made to different upstream records from which the current record was derived. 
