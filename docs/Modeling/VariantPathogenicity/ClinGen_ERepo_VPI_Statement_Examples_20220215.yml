@@ -1,0 +1,211 @@
+# Example representations of variant pathogenicity classification from the ClinGen ERepo
+# Several classification outcomes are demonstrated, for two modeling approaches: (1) The Evidence Level Statement Approach, using a 1-predicate model; and (2) the Domain Statement Approach, with Propositions, using a 3-predicate model
+# tabular representations for thr combination/cross-product of all classification outcomes x modeling approaches can be found in the s/s here: https://docs.google.com/spreadsheets/d/1bJEFWP8BBYYCLg_k2l6kekyQbhatHQEQ--Jr2y6EPBo/edit#gid=1045853565
+ 
+ ## ----------------------------------------------------------------------------------------------------- ##
+ 
+ "statements": [
+
+# A Likely Pathogenic example: https://erepo.genome.network/evrepo/api/classification/CA6904346/MONDO:0019497/005
+# "NM_004004.5:c.-22-2A>C is liekly pathogenic for Nonsyndromic genetic deafness"
+
+    # Evidence Level Statement Approach, 1-predicate model
+    {
+      "id": "CG-PCER-VARINT:CA6904346/MONDO:0019497/005",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "target_proposition": {                          # Here we are clear that this proposition is the target of evidence evaluation, not what is asserted in the Statement.
+        "id": "CG_PROPOSITION:001",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA6904346",                    # NM_004004.5:c.-22-2A>C. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",
+        "object": "MONDO:0019497",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "Hearing Loss ACMG Specifications v1 2018",  
+      "evidence_direction": "supports",                # Alt, 'clinically significant', or 'pathogenic'. Indicates the net direction of all assessed evidence weighed against the target proposition.
+      "evidence_strength": "likely",                   # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "8.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "likely pathogenic",           # Exploratory property that holds a classificaiton of the subject/variant, based on the value of the evidence direction and strength fields. Populated in cases where these values map to some assigned outcome/category for the subject entity/variant.      
+      "has_evidence_line": [                           # Four level 1 evidence lines for this statement  - based on met PS3, PP1 PM3, and BS1 criterion. Note that PS3 and PM3 have modified strength.  and BS1 is a benign criterion providing disputing evidence.  
+        . . .
+      ],
+ 
+    # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
+    {
+      "id": "CG-PCER-VARINT:CA6904346/MONDO:0019497/005",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:001",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA6904346",                    # NM_004004.5:c.-22-2A>C. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",
+        "object": "MONDO:0019497",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "Hearing Loss ACMG Specifications v1 2018",  
+      "evidence_strength": "likely",                   # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "8.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "has_evidence_line": [                           # Four level 1 evidence lines for this statement  - based on met PS3, PP1 PM3, and BS1 criterion. Note that PS3 and PM3 have modified strength.  and BS1 is a benign criterion providing disputing evidence.  
+        . . .
+      ], 
+     
+## ----------------------------------------------------------------------------------------------------- ##
+     
+# A Benign example: https://erepo.genome.network/evrepo/ui/classification/CA176498/MONDO:0021060/004
+# "NM_004985.5:c.-160A>G is benign for RASopathy"
+
+    # Evidence Level Statement Approach, 1-predicate model  
+    {
+      "id": "CG-PCER-VARINT:CA176498/MONDO:0021060/004",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "target_proposition": {                          # Here we are clear that this proposition is the target of evidence evaluation, not what is asserted in the Statement.
+        "id": "CG_PROPOSITION:002",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA176498",                     # NM_004985.5:c.-160A>G. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",
+        "object": "MONDO:0021060",                     # RASopathy. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "ACMG variant classification (RASopathy)",  
+      "evidence_direction": "disputes",                # Alt, 'not clinically significant;, or 'benign'. Indicates the net direction of all assessed evidence weighed against the target proposition.
+      "evidence_strength": "definitive",               # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "-9.5"                         # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "benign",                      # Exploratory property that holds a classificaiton of the subject/variant, based on the value of the evidence direction and strength fields. Populated in cases where these values map to some assigned outcome/category for the subject entity/variant.      
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met BP7, BP4, BA1 criterion
+        . . .
+      ],
+ 
+ 
+     # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
+    {
+      "id": "CG-PCER-VARINT:CA176498/MONDO:0021060/004,         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:002",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA176498",                     # NM_004985.5:c.-160A>G. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_benign_for",
+        "object": "MONDO:0021060",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "ACMG variant classification (RASopathy)",  
+      "evidence_strength": "definitive",               # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "-9.5"                         # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met BP7, BP4, BA1 criterion
+        . . .
+      ], 
+ 
+## ----------------------------------------------------------------------------------------------------- ##
+ 
+ 
+# A VUS example: https://erepo.genome.network/evrepo/api/classification/CA038525/MONDO:0007750/013
+# "NM_000527.5:c.2096C>T has uncertain significance for Familial Hypercholesterolemia"
+
+    # Evidence Level Statement Approach, 1-predicate model
+    {
+      "id": "CG-PCER-VARINT:CA038525/MONDO:0007750/013",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "target_proposition": {                          # Here we are clear that this proposition is the target of evidence evaluation, not what is asserted in the Statement.
+        "id": "CG_PROPOSITION:003",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA038525",                     # NM_000527.5:c.2096C>T. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",
+        "object": "MONDO:0007750",                     # Hypercholesterolemia, familial. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": ClinGen Familial Hypercholesterolemia Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
+      "evidence_direction": "uncertain",               # Indicates the net direction of all assessed evidence weighed against the target proposition.
+      "evidence_strength": "n/a",                      # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "0.1"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "uncertain significance",      # Exploratory property that holds a classificaiton of the subject/variant, based on the value of the evidence direction and strength fields. Populated in cases where these values map to some assigned outcome/category for the subject entity/variant.      
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met PP3, PP1, BS4 criterion. Note that PP1 was modified to Strong, and BS4 is disputing.
+        . . .
+      ],
+      
+    # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
+    {
+      "id": "CG-PCER-VARINT:CA038525/MONDO:0007750/013",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:003",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA038525",                     # NM_000527.5:c.2096C>T. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "has_uncertain_significance_for",
+        "object": "MONDO:0007750",                     # Hypercholesterolemia, familial. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": ClinGen Familial Hypercholesterolemia Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
+      "evidence_strength": "n/a",                      # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "0.1"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met PP3, PP1, BS4 criterion. Note that PP1 was modified to Strong, and BS4 is disputing.
+        . . .
+      ],
+      
+      
+      
+## ----------------------------------------------------------------------------------------------------- ##
+## ----------------------------------------------------------------------------------------------------- ##
+## ----------------------------------------------------------------------------------------------------- ##
+
+A A few examples of the Evidence Level Approach, using a 3-predicate model
+
+# A Likely Pathogenic example: https://erepo.genome.network/evrepo/api/classification/CA6904346/MONDO:0019497/005
+
+    # Evidence Level Statement Approach, 3-predicate model
+    {
+      "id": "CG-PCER-VARINT:CA6904346/MONDO:0019497/005",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "target_proposition": {                          # aka Here we are clear that this proposition is the target of evidence evaluation, not what is asserted in the Statement.
+        "id": "CG_PROPOSITION:001",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA6904346",                    # NM_004004.5:c.-22-2A>C. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",
+        "object": "MONDO:0019497",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "Hearing Loss ACMG Specifications v1 2018",  
+#     "evidence_direction": "supports",                # Don't really need this field if direction captured in the predicate. B/c things are set up so the direction will always be supports.
+      "evidence_strength": "likely",                      # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "8.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "likely pathogenic",           # Exploratory property that holds a classificaiton of the subject/variant, based on the value of the evidence direction and strength fields (or here, the predicte and strength fields). Populated in cases where these values map to some assigned outcome/category for the subject entity/variant.      
+      "has_evidence_line": [                           # Four level 1 evidence lines for this statement  - based on met PS3, PP1 PM3, and BS1 criterion. Note that PS3 and PM3 have modified strength.  and BS1 is a benign criterion providing disputing evidence.  
+        . . .
+      ],
+      
+# A Benign example: https://erepo.genome.network/evrepo/ui/classification/CA176498/MONDO:0021060/004
+
+    # Evidence Level Statement Approach, 3-predicate model  
+    {
+      "id": "CG-PCER-VARINT:CA176498/MONDO:0021060/004",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "target_proposition": {                          # Here we are clear that this proposition is the target of evidence evaluation, not what is asserted in the Statement.
+        "id": "CG_PROPOSITION:002",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA176498",                     # NM_004985.5:c.-160A>G. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_benign_for",
+        "object": "MONDO:0021060",                     # RASopathy. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "ACMG variant classification (RASopathy)",  
+#     "evidence_direction": "supports",                # Don't really need this field if direction captured in the predicate. B/c things are set up so the direction will always be supports.
+      "evidence_strength": "definitive",                  # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
+      "evidence_score": "-9.5"                         # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+#     "classification": "benign",                      # May not need this field if the classification is baked into the predicate . . . but could be useful if we go with more general predicates, and want to capture a method-specific classification term here.
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met BP7, BP4, BA1 criterion
+        . . .
+      ],
+    
+    
+ # A VUS example: https://erepo.genome.network/evrepo/api/classification/CA038525/MONDO:0007750/013    
+
+     # Evidence Level Statement Approach, 3-predicate model
+    {
+      "id": "CG-PCER-VARINT:CA038525/MONDO:0007750/013",         
+      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "target_proposition": {                          # Here we are clear that this proposition is the target of evidence evaluation, not what is asserted in the Statement.
+        "id": "CG_PROPOSITION:003",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA038525",                     # NM_000527.5:c.2096C>T. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "has_uncertain_significance_for",
+        "object": "MONDO:0007750",                     # Hypercholesterolemia, familial. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": ClinGen Familial Hypercholesterolemia Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
+#     "evidence_direction": "uncertain",               # Don't really need this field if direction captured in the predicate. B/c things are set up so the direction will always be supports.
+#     "evidence_strength": "n/a",                         # No strength is associated with uncertain significance assertions.
+      "evidence_score": "0.1"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+#     "classification": "uncertain significance",      # May not need this field if the classification is baked into the predicate . . . but could be useful if we go with more general predicates, and want to capture a method-specific classification term here.
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met PP3, PP1, BS4 criterion. Note that PP1 was modified to Strong, and BS4 is disputing.
+        . . .
+      ],
