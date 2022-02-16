@@ -1,6 +1,6 @@
 # Example representations of variant pathogenicity classification from the ClinGen ERepo
 # Several classification outcomes are demonstrated, for two modeling approaches: (1) The Evidence Level Statement Approach, using a 1-predicate model; and (2) the Domain Statement Approach, with Propositions, using a 3-predicate model
-# tabular representations for thr combination/cross-product of all classification outcomes x modeling approaches can be found in the s/s here: https://docs.google.com/spreadsheets/d/1bJEFWP8BBYYCLg_k2l6kekyQbhatHQEQ--Jr2y6EPBo/edit#gid=1045853565
+# Tabular representations for the cross-product of all classification outcomes x modeling approaches can be found in the spreadsheet here: https://docs.google.com/spreadsheets/d/1bJEFWP8BBYYCLg_k2l6kekyQbhatHQEQ--Jr2y6EPBo/edit#gid=1045853565
  
  ## ----------------------------------------------------------------------------------------------------- ##
  
@@ -64,7 +64,7 @@
         "object": "MONDO:0021060",                     # RASopathy. Will be a VRSatile descriptor wrapping a condition value object in final spec.
         }, 
       "assertion_method": "ACMG variant classification (RASopathy)",  
-      "evidence_direction": "disputes",                # Alt, 'not clinically significant;, or 'benign'. Indicates the net direction of all assessed evidence weighed against the target proposition.
+      "evidence_direction": "refutes",                 # Alt, 'not clinically significant;, or 'benign'. Indicates the net direction of all assessed evidence weighed against the target proposition.
       "evidence_strength": "definitive",               # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
       "evidence_score": "-9.5"                         # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
       "classification": "benign",                      # Exploratory property that holds a classificaiton of the subject/variant, based on the value of the evidence direction and strength fields. Populated in cases where these values map to some assigned outcome/category for the subject entity/variant.      
