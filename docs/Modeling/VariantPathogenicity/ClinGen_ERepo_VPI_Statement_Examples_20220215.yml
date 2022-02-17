@@ -1,3 +1,9 @@
+##---------------------------------------------------------------------------------------------------------------------------------------------------------------##
+##
+## EXAMPLES IN THIS FILE ARE OUT OF DATE - LATEST PROPOSALS CAN BE FOUND IN FILE HERE: https://github.com/ga4gh/va-spec/blob/master/docs/Modeling/VariantPathogenicity/ClinGen_ERepo_VPI_Statement_Examples_v2_20220216.yml ##
+##
+##---------------------------------------------------------------------------------------------------------------------------------------------------------------##
+
 # Example representations of variant pathogenicity classification from the ClinGen ERepo
 # Several classification outcomes are demonstrated, for two modeling approaches: (1) The Evidence Level Statement Approach, using a 1-predicate model; and (2) the Domain Statement Approach, with Propositions, using a 3-predicate model
 # Tabular representations for the cross-product of all classification outcomes x modeling approaches can be found in the spreadsheet here: https://docs.google.com/spreadsheets/d/1bJEFWP8BBYYCLg_k2l6kekyQbhatHQEQ--Jr2y6EPBo/edit#gid=1045853565
