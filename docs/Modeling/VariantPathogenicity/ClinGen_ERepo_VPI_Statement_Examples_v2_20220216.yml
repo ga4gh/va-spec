@@ -1,0 +1,157 @@
+
+# Example representations of variant pathogenicity classification from the ClinGen ERepo
+# Several classification outcomes are demonstrated, using a 3-predicate version of the Domain Statement approach, with Propostions
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# A Pathogenic example: https://erepo.genome.network/evrepo/api/classification/CA134595/MONDO:0021060/004
+# "NM_002755.3:c.169A>C" is pathogenic for RASopathy"
+
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    {
+      "id": "CG-PCER-VARINT:CA134595/MONDO:0021060/004",         
+      "type": "VariantPathogenicityStatement",            
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:001",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA134595",                     # NM_002755.3:c.169A>C. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",              # Alt, Larry proposed using more generic terms as predicates (clinically_significant, not_clinically_significant, uncertain_clinical_significance) - which could be re-used across many statement types in purview of ClinGen and VICC.  To aid in data aggregation use cases. 
+        "object": "MONDO:0021060",                     # RASopathy. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "ACMG variant classification (RASopathy)",  
+      "evidence_strength": "definitive",               # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_score": "9.7"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "pathogenic"                   # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for) . .  but even with these more precise predicates, it may be nice to have a place to put the full ACMG classification in one field for users expecting this can find it?
+      "has_evidence_line": [                           # In the ClinGen data there are seven level 1 evidence lines for this statement  - based on met  PS2 PS4 PP3 PP2 PM1 PM6 PM2  criterion. Note that PS4 has modified strength.  
+        . . .
+      ], 
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# A Likely Pathogenic example: https://erepo.genome.network/evrepo/api/classification/CA6904346/MONDO:0019497/005
+# "NM_004004.5:c.-22-2A>C is likely pathogenic for Nonsyndromic genetic deafness"
+
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    {
+      "id": "CG-PCER-VARINT:CA6904346/MONDO:0019497/005",         
+      "type": "VariantPathogenicityStatement",            
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:001",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA6904346",                    # NM_004004.5:c.-22-2A>C. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_pathogenic_for",              # Alt, Larry proposed using more generic terms as predicates (clinically_significant, not_clinically_significant, uncertain_clinical_significance) - which could be re-used across many statement types in purview of ClinGen and VICC.  To aid in data aggregation use cases. 
+        "object": "MONDO:0019497",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "Hearing Loss ACMG Specifications v1 2018",  
+      "evidence_strength": "likely",                   # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_score": "8.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "likely pathogenic"            # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for) . .  but even with these more precise predicates, it may be nice to have a place to put the full ACMG classification in one field for users expecting this can find it?
+      "has_evidence_line": [                           # In the ClinGen data there are four level 1 evidence lines for this statement  - based on met PS3, PP1 PM3, and BS1 criterion. Note that PS3 and PM3 have modified strength.  and BS1 is a benign criterion providing disputing evidence.  
+        . . .
+      ], 
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# A Benign example: https://erepo.genome.network/evrepo/ui/classification/CA176498/MONDO:0021060/004
+# "NM_004985.5:c.-160A>G is benign for RASopathy"
+
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    {
+      "id": "CG-PCER-VARINT:CA176498/MONDO:0021060/004,         
+      "type": "VariantPathogenicityStatement",            
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:002",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA176498",                     # NM_004985.5:c.-160A>G. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_benign_for",                  # Alt, Larry proposed using more generic terms as predicates (clinically_significant, not_clinically_significant, uncertain_clinical_significance) - which could be re-used across many statement types in purview of ClinGen and VICC.  To aid in data aggregation use cases. 
+        "object": "MONDO:0021060",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "ACMG variant classification (RASopathy)",  
+      "evidence_strength": "definitive",               # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_score": "-9.5"                         # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": benign                         # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for)
+      "has_evidence_line": [                           # In the ClinGen data, there are three level 1 evidence lines for this statement  - based on met BP7, BP4, BA1 criterion
+        . . .
+      ], 
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# A Likely Benign example: https://erepo.genome.network/evrepo/api/classification/CA171640/MONDO:0100039/016
+# "NM_004985.5:c.-160A>G is likely benign for RASopathy"
+
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    {
+      "id": "CG-PCER-VARINT:CA171640/MONDO:0100039/016,         
+      "type": "VariantPathogenicityStatement",            
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:002",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA171640",                     # NM_003159.2:c.2927C>T. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "is_benign_for",                  # Alt, Larry proposed using more generic terms as predicates (clinically_significant, not_clinically_significant, uncertain_clinical_significance) - which could be re-used across many statement types in purview of ClinGen and VICC.  To aid in data aggregation use cases. 
+        "object": "MONDO:0100039",                     # CDKL5 disorder. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": "ClinGen Rett and Angelman-like Disorders Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
+      "evidence_strength": "likely",                   # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_score": "-8.5"                         # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": likely benign                  # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for)
+      "has_evidence_line": [                           # In the ClinGen data, there are three level 1 evidence lines for this statement  - based on met BS1 BP2 BP4 criterion
+        . . .
+      ], 
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# A VUS example: https://erepo.genome.network/evrepo/api/classification/CA038525/MONDO:0007750/013
+# "NM_000527.5:c.2096C>T has uncertain significance for Familial Hypercholesterolemia"
+
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    {
+      "id": "CG-PCER-VARINT:CA038525/MONDO:0007750/013",         
+      "type": "VariantPathogenicityStatement",            
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:003",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA038525",                     # NM_000527.5:c.2096C>T. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "has_uncertain_significance_for",
+        "object": "MONDO:0007750",                     # Hypercholesterolemia, familial. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": ClinGen Familial Hypercholesterolemia Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
+      "evidence_strength": "n/a",                      # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_score": "0.1"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met PP3, PP1, BS4 criterion. Note that PP1 was modified to Strong, and BS4 is disputing.
+        . . .
+      ],
+
+
+##----------------------------------------------------------------------------------------------------------##
+
+
+# A VUS "Trending Likely Pathogenic" example:(none of these in ClinGen yet, so I modified the VUS example above) https://erepo.genome.network/evrepo/api/classification/CA038525/MONDO:0007750/013
+# "NM_000527.5:c.2096C>T has uncertain significance for Familial Hypercholesterolemia"  (but evidence is trending likely pathogenic)
+
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    {
+      "id": "CG-PCER-VARINT:CA038525/MONDO:0007750/013",         
+      "type": "VariantPathogenicityStatement",            
+      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
+        "id": "CG_PROPOSITION:004",
+        "type": "VariantPathogenicityProposition",
+        "subject": "CAR:CA038525",                     # NM_000527.5:c.2096C>T. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
+        "predicate": "has_uncertain_significance_for",
+        "object": "MONDO:0007750",                     # Hypercholesterolemia, familial. Will be a VRSatile descriptor wrapping a condition value object in final spec.
+        }, 
+      "assertion_method": ClinGen Familial Hypercholesterolemia Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
+      "evidence_strength": "trending LP"               # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_score": "2.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met PP3, PP1, BS4 criterion. Note that PP1 was modified to Strong, and BS4 is disputing.
+        . . .
+      ],
