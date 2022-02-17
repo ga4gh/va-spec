@@ -7,7 +7,7 @@
  "statements": [
 
 # A Likely Pathogenic example: https://erepo.genome.network/evrepo/api/classification/CA6904346/MONDO:0019497/005
-# "NM_004004.5:c.-22-2A>C is liekly pathogenic for Nonsyndromic genetic deafness"
+# "NM_004004.5:c.-22-2A>C is likely pathogenic for Nonsyndromic genetic deafness"
 
     # Evidence Level Statement Approach, 1-predicate model
     {
@@ -32,7 +32,7 @@
     # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
     {
       "id": "CG-PCER-VARINT:CA6904346/MONDO:0019497/005",         
-      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "type": "VariantPathogenicityStatement",            
       "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
         "id": "CG_PROPOSITION:001",
         "type": "VariantPathogenicityProposition",
@@ -76,7 +76,7 @@
      # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
     {
       "id": "CG-PCER-VARINT:CA176498/MONDO:0021060/004,         
-      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "type": "VariantPathogenicityStatement",            
       "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
         "id": "CG_PROPOSITION:002",
         "type": "VariantPathogenicityProposition",
@@ -120,7 +120,7 @@
     # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
     {
       "id": "CG-PCER-VARINT:CA038525/MONDO:0007750/013",         
-      "type": "EvidenceLevelStatement",                # The Statement type here is explicit about this being an Evidence-Level Statement (as opposed to a Domain Statement)     
+      "type": "VariantPathogenicityStatement",            
       "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
         "id": "CG_PROPOSITION:003",
         "type": "VariantPathogenicityProposition",
