@@ -1,7 +1,18 @@
+# THREE-PREDICATE, 'DOMAIN STATEMENT' REPRESENTATIONS OF CLINGEN EREPO VARIANT CLASSIFICATIONS.
+# This file contains example SEPIO-VA based representations of variant pathogenicity classifications from the ClinGen ERepo, 
+# We demonstrate different classification outcomes (P, LP, B, LB, VUS, and VUS-TLP), using a  3-predicate 'Domain Statement' paradigm, with Propostions.
+# These examples focus only on representing the semantics of the assertion, and the level of evidence/confidence supporting it.
+# Evidence supporting the assertion is not shown - and will be the focus of subsequence modeling work.
+# A separate file that applies a 1-predicate 'Evidence Level Statement' approach to represent the same examples can be found here:   
 
-# Example representations of variant pathogenicity classification from the ClinGen ERepo
-# Several classification outcomes are demonstrated, using a 3-predicate version of the Domain Statement approach, with Propostions
-
+# Domain Statement vs 'Evidence Level Statement' Paradigms:
+### In a 'Domain Statement' approach/paradigm, the Proposition's job is to encapsulate what the curator is asserting to be true. 
+### This is why the field pointing to it is called 'asserted_proposition'.
+### The Statement.evidence_strength field indicates the curator's assessment of the overall strength of  ALL evidence they evaluated. THe Statement.evidence_direction field is not applicable here.
+### By contrast, in the 'Evidence Level Statement' approach/paradigm, the Proposition's role is to represent the 'possible fact' toward which the curator is assessing evidence. 
+### This is why the field pointing to it is called 'target_proposition'.  The claim it presents may not be determined to be true.
+### As in the Domain Statement paradigm, the Statement.evidence_strength field here indicates the curator's assessment of the overall strength of  ALL evidence they evaluated.
+### In addition, the Statement.evidence_direction field indicates if the net direction of this evidence supports or refutes the target Proposition.
 
 ##----------------------------------------------------------------------------------------------------------##
 

@@ -1,13 +1,19 @@
-##---------------------------------------------------------------------------------------------------------------------------------------------------------------##
-##
-## EXAMPLES IN THIS FILE ARE OUT OF DATE - LATEST PROPOSALS CAN BE FOUND IN FILE HERE: https://github.com/ga4gh/va-spec/blob/master/docs/Modeling/VariantPathogenicity/ClinGen_ERepo_VPI_Statement_Examples_v2_20220216.yml ##
-##
-##---------------------------------------------------------------------------------------------------------------------------------------------------------------##
+# ONE-PREDICATE, 'EVIDENCE LEVEL STATEMENT' REPRESENTATIONS OF CLINGEN EREPO VARIANT CLASSIFICATIONS.
+# This file contains example SEPIO-VA based representations of variant pathogenicity classifications from the ClinGen ERepo, 
+# We demonstrate different classification outcomes (P, LP, B, LB, VUS, and VUS-TLP), using a  1-predicate 'Evidence Level Statement' paradigm, with Propostions.
+# These examples focus only on representing the semantics of the assertion, and the level of evidence/confidence supporting it.
+# Evidence supporting the assertion is not shown - and will be the focus of subsequence modeling work.
+# A separate file that applies a 3-predicate 'Domain Statement' approach to represent the same examples can be found here:  
 
-# Example representations of variant pathogenicity classification from the ClinGen ERepo
-# Several classification outcomes are demonstrated, for two modeling approaches: (1) The Evidence Level Statement Approach, using a 1-predicate model; and (2) the Domain Statement Approach, with Propositions, using a 3-predicate model
-# Tabular representations for the cross-product of all classification outcomes x modeling approaches can be found in the spreadsheet here: https://docs.google.com/spreadsheets/d/1bJEFWP8BBYYCLg_k2l6kekyQbhatHQEQ--Jr2y6EPBo/edit#gid=1045853565
- 
+# Domain Statement vs 'Evidence Level Statement' Paradigms:
+### In a 'Domain Statement' approach/paradigm, the Proposition's job is to encapsulate what the curator is asserting to be true. 
+### This is why the field pointing to it is called 'asserted_proposition'.
+### The Statement.evidence_strength field indicates the curator's assessment of the overall strength of  ALL evidence they evaluated. THe Statement.evidence_direction field is not applicable here.
+### By contrast, in the 'Evidence Level Statement' approach/paradigm, the Proposition's role is to represent the 'possible fact' toward which the curator is assessing evidence. 
+### This is why the field pointing to it is called 'target_proposition'.  The claim it presents may not be determined to be true.
+### As in the Domain Statement paradigm, the Statement.evidence_strength field here indicates the curator's assessment of the overall strength of  ALL evidence they evaluated.
+### In addition, the Statement.evidence_direction field indicates if the net direction of this evidence supports or refutes the target Proposition.
+
  ## ----------------------------------------------------------------------------------------------------- ##
  
  "statements": [
@@ -35,23 +41,7 @@
         . . .
       ],
  
-    # Domain Statement Approach, with Propositions, 3-predicate model.  Here the propositon captures what is asserted to be true (as opposed to a possible fact that evidence is evaluated against)
-    {
-      "id": "CG-PCER-VARINT:CA6904346/MONDO:0019497/005",         
-      "type": "VariantPathogenicityStatement",            
-      "asserted_proposition": {                        # The field name here indicates that the role of the proposition is to capture what is asserted to be true in the Statement.
-        "id": "CG_PROPOSITION:001",
-        "type": "VariantPathogenicityProposition",
-        "subject": "CAR:CA6904346",                    # NM_004004.5:c.-22-2A>C. Will be a VRSatile descriptor wrapping a GA4GH allele id/object (or perhaps a Variation Rule?) in final spec.
-        "predicate": "is_pathogenic_for",
-        "object": "MONDO:0019497",                     # Nonsyndromic genetic deafness. Will be a VRSatile descriptor wrapping a condition value object in final spec.
-        }, 
-      "assertion_method": "Hearing Loss ACMG Specifications v1 2018",  
-      "evidence_strength": "likely",                   # The value here describes the total level of support determined to be provided for (or against) the target proposition, across all evaluated evidence.  
-      "evidence_score": "8.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
-      "has_evidence_line": [                           # Four level 1 evidence lines for this statement  - based on met PS3, PP1 PM3, and BS1 criterion. Note that PS3 and PM3 have modified strength.  and BS1 is a benign criterion providing disputing evidence.  
-        . . .
-      ], 
+
      
 ## ----------------------------------------------------------------------------------------------------- ##
      
