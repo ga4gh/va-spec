@@ -7,11 +7,11 @@
 # A separate file that applies a 1-predicate 'Evidence Level Statement' approach to represent the same examples can be found here: https://github.com/ga4gh/va-spec/blob/master/docs/Modeling/VariantPathogenicity/ClinGen_ERepo_VPI_Statement_Examples_20220215.yml  
 
 # Notes on Domain Statement vs 'Evidence Level Statement' Paradigms:
-### In a 'Domain Statement' approach/paradigm, the Proposition's job is to encapsulate what the curator is asserting to be true. 
-### This is why the field pointing to it is called 'asserted_proposition'.
-### The Statement.evidence_strength field indicates the curator's assessment of the overall strength of  ALL evidence they evaluated. THe Statement.evidence_direction field is not applicable here.
-### By contrast, in the 'Evidence Level Statement' approach/paradigm, the Proposition's role is to represent the 'possible fact' toward which the curator is assessing evidence. 
-### This is why the field pointing to it is called 'target_proposition'.  The claim it presents may not be determined to be true.
+### In a 'Domain Statement' approach/paradigm (which is demonstrated in the examples below), the Proposition's job is to encapsulate what the curator is asserting to be true. 
+### This is why the field pointing to it in the Statement is called 'asserted_proposition'.
+### The Statement.evidence_strength field indicates the curator's assessment of the overall strength of ALL evidence they evaluated. The Statement.evidence_direction field is not applicable here (because Proposition 'direction' in this approach is always framed so as to be supported by the net evidence).
+### By contrast, in the 'Evidence Level Statement' approach/paradigm (which is not demonstrated in the examples below), the Proposition's role is to represent the 'possible fact' toward which the curator is assessing evidence. 
+### This is why the field pointing to it is called 'target_proposition'.  The claim it presents may not end up being asserted as true.
 ### As in the Domain Statement paradigm, the Statement.evidence_strength field here indicates the curator's assessment of the overall strength of  ALL evidence they evaluated.
 ### In addition, the Statement.evidence_direction field indicates if the net direction of this evidence supports or refutes the target Proposition.
 
@@ -21,7 +21,7 @@
 # A Pathogenic example: https://erepo.genome.network/evrepo/api/classification/CA134595/MONDO:0021060/004
 # "NM_002755.3:c.169A>C" is pathogenic for RASopathy"
 
-    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but how the evidence/confidence level we have in this assertion is captured in the Statement)
+    # A 3-predicate version of the Domain Statement approach, with Propostions.  Here the Propositon captures what is asserted to be true (but the evidence/confidence level we have in this assertion is captured in the Statement)
     {
       "id": "CG-PCER-VARINT:CA134595/MONDO:0021060/004",         
       "type": "VariantPathogenicityStatement",            
