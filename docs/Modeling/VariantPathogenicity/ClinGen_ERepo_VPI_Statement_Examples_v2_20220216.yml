@@ -1,7 +1,7 @@
 # THREE-PREDICATE, 'DOMAIN STATEMENT' REPRESENTATIONS OF CLINGEN EREPO VARIANT CLASSIFICATIONS.
 
 # This file contains example SEPIO-VA based representations of variant pathogenicity classifications from the ClinGen ERepo, 
-# We demonstrate different classification outcomes (P, LP, B, LB, VUS, and VUS-TLP), using a  3-predicate 'Domain Statement' paradigm, with Propostions.
+# We demonstrate different classification outcomes (P, LP, B, LB, VUS, and VUS-TLP), using a 3-predicate 'Domain Statement' paradigm, with Propostions.
 # These examples focus only on representing the semantics of the assertion, and the level of evidence/confidence supporting it.
 # Evidence supporting the assertion is not shown - and will be the focus of subsequence modeling work.
 # A separate file that applies a 1-predicate 'Evidence Level Statement' approach to represent the same examples can be found here: https://github.com/ga4gh/va-spec/blob/master/docs/Modeling/VariantPathogenicity/ClinGen_ERepo_VPI_Statement_Examples_20220215.yml  
@@ -34,8 +34,8 @@
         }, 
       "assertion_method": "ACMG variant classification (RASopathy)",  
       "evidence_strength": "definitive",               # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
-      "evidence_score": "9.7"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
-      "classification": "pathogenic"                   # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for) . .  but even with these more precise predicates, it may be nice to have a place to put the full ACMG classification in one field for users expecting this can find it?
+      "evidence_score": "9.7"                          # Or, "established"? A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
+      "classification": "pathogenic"                   # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for) . .  but even with these more precise predicates, it may be nice to have a place to put the full ACMG classification in one field for users expecting this can find it?  Or, if a different guideline is used, the classification in its terms.
       "has_evidence_line": [                           # In the ClinGen data there are seven level 1 evidence lines for this statement  - based on met  PS2 PS4 PP3 PP2 PM1 PM6 PM2  criterion. Note that PS4 has modified strength.  
         . . .
       ], 
@@ -61,7 +61,7 @@
       "assertion_method": "Hearing Loss ACMG Specifications v1 2018",  
       "evidence_strength": "likely",                   # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
       "evidence_score": "8.5"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
-      "classification": "likely pathogenic"            # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for) . .  but even with these more precise predicates, it may be nice to have a place to put the full ACMG classification in one field for users expecting this can find it?
+      "classification": "likely pathogenic"            # Not sure we need this field if we use specific predicates in the Proposition (pathogenic_for, benign_for, uncertain_significance_for) . .  but even with these more precise predicates, it may be nice to have a place to put the full ACMG classification in one field for users expecting this can find it? Or, if a different guideline is used, the classification in its terms.
       "has_evidence_line": [                           # In the ClinGen data there are four level 1 evidence lines for this statement  - based on met PS3, PP1 PM3, and BS1 criterion. Note that PS3 and PM3 have modified strength.  and BS1 is a benign criterion providing disputing evidence.  
         . . .
       ], 
@@ -137,7 +137,7 @@
         "object": "MONDO:0007750",                     # Hypercholesterolemia, familial. Will be a VRSatile descriptor wrapping a condition value object in final spec.
         }, 
       "assertion_method": ClinGen Familial Hypercholesterolemia Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines Version 1",  
-      "evidence_strength": "n/a",                      # The asserting agent's assessment of the overall level of support for (or against) the asserted proposition, across all lines of evidence.  To Do: Decide if we frame this as 'evidence_strength' or 'confidence_level'?  Same for 'evidence_score' (vs 'confidence_score')?
+      "evidence_strength": "n/a",                      # No evidence strength/confidence level is assigned/relevant for varaints with uncertian significance.
       "evidence_score": "0.1"                          # A quantitative measure reflecting the strength of evidence for pathogenicity.  Scale form 10 to negative 10, where 10 = definitively pathogenic, 0 = uncertain, and -10 = definitively benign.
       "has_evidence_line": [                           # Three level 1 evidence lines for this statement  - based on met PP3, PP1, BS4 criterion. Note that PP1 was modified to Strong, and BS4 is disputing.
         . . .

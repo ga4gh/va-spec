@@ -383,14 +383,14 @@ Tasks/Todos.
                 "endDate" : "2020-09-27" 
                 }
                ],
-             "sourceMeta": [    ## MHB: I added this data myself - to demonstrate this feature of the model
+             "recordSourceMeta": [    ## MHB: I added this data myself - to demonstrate this feature of the model
                 {  
                 "sourceDataSet": "ClinVar Version x.x",
                 "sourceDataRecord": "clinvar:SCV000616365.3",
                 "dateSourceRetrieved": "2020-09-24"  ## possibly redundant if have source dataset version
                 }
               ],
-             "statusMeta": [    ## MHB: I added this data myself - to demonstrate this feature of the model
+             "recordStatusMeta": [    ## MHB: I added this data myself - to demonstrate this feature of the model
                 {  
                 "status": "provisional",  
                 "system": "ClinGen CrC",
@@ -455,7 +455,7 @@ Tasks/Todos.
                 "endDate" : "2019-07-17" 
                 }
                ],
-              "recordStatus": {   ## object here represents a prototype 'RecordStatus" complex data type.
+              "recordStatusMeta": {   ## object here represents a prototype 'RecordStatus" complex data type.
                  "status": "current",   # other possible status values in ClinVar data include "current", "replaced", "deleted, "previous" 
                  "startDate": xxxx-xx-xx  ## not in the ClinGen example, but shown here as example of what could be captured
                  "endDate": xxxx-xx-xx
