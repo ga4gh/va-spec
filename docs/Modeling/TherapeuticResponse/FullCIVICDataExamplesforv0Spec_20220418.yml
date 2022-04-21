@@ -1,0 +1,402 @@
+# CIVIC Assertion6 (AID6) record, along with one of its six Evidence Lines
+# See  https://civicdb.org/events/assertions/6/summary (website record), https://civicdb.org/api/assertions/6 (API payload)
+
+
+  - id: civic-data:AID6            
+    type: TherapeuticEfficacyStatement 
+    description: "EGFR L858R positive NSCLC is sensitive to afatinib."    
+    asserted_proposition:
+      id: civic-data:Proposition001
+      subject:                                   # Protein allele value object for the EGFR L858R variant       
+        _id: ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO 
+        type: Allele
+        state:
+          sequence: R
+          type: SequenceState
+        location:
+          _id: ga4gh:VSL.CBfqfC0O-9x6EtMYq1XUH73Vn9axgOxG
+          type: SequenceLocation
+          interval:
+            type: SimpleInterval            
+            start: 858
+            end: 858
+          sequence_id: ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD
+        predicate: 
+          code: ex:001                            # Placeholder code for this predicate - as no code exists in CIViC or community ontologies
+          label: associated_with_sensitivity_to 
+        object:                                   # The Treatment with which the variant is associated with a response to
+          id: civic-term:drug_146          
+          type: TherapeuticIntervention     
+          drug: 
+            - code: CHEBI:61390
+              label: Afatinib            
+        alleleOriginQualifier:                    # A custom qualifier defined in the TherapeuticEfficacyStatement Profile
+          code: GENO:0000882         
+          label: somatic allele origin
+        indicated_condition_qualifier:            # The 'disease' for which the treatment is administered 
+          id: civic-term:disease_8
+          type: GeneticCondition
+          label: Lung Non-small Cell Carcinoma 
+          disease:            
+            - code: doid:3908
+              label: Lung Non-small Cell Carcinoma
+              url: http://www.disease-ontology.org/?id=DOID:3908    
+        subject_descriptor:                       # A Descriptor object that provides additional useful metadata about the subject variant of this statement, which  is not accommodated by its value object representation
+          - id: civic-data:variationdescriptor_33        
+            type: VariationDescriptor
+            value_object_id : ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO         
+            value_object_label: NP_005219.2:p.Leu858Arg      
+            xrefs: [cosmic:COSM6224, clinvar:16609, dbSNP:rs121434568]
+            alternate_label: [EGFR L858R]
+            value_object_expression: 
+              - value: NC_000007.13:g.55259515T>G 
+                system: ghgvs
+              - value: NM_005228.5:c.2573T>G
+                system: chgvs 
+              - value: NP_005219.2:p.Leu858Arg
+                system: phgvs      
+            molecule_context:                      
+              code: SO:0000104               
+              label: polypeptide
+              system: http://purl.obolibrary.org/obo/SO        
+       
+    was_specified_by: 
+      - id: civic-data:Method_1                   # CIViC curator SOP method that guided curation, interpretation, and scoring of evidence supporting the final TE Statement
+        type: Method
+        label: CIViC Variant Curation SOP
+        reference: 
+          - id: civic_data:source832
+            document_type: Publication
+            identifier:
+              - PMID:31779674    
+      - id: civic-data:Method_2                   # AMP-ASCO Guidelines used to determine the overall level of evidence for the Statement
+        type: Method
+        label: AMP-ASCO-CAP Guidelines
+        reference: 
+          - id: civic_data:source832
+            document_type: Publication
+            identifier:
+              - PMID:27993330  
+    evidence_level:                               # Overall level of evidence deemed to support the TE Statement
+      - code: civic-term:001  
+        label: Tier I - Level A             
+
+    has_evidence_from_source:
+      - id: civic-data:source_592     # Duplicates pub already attached to the Study Result - may not want to capture here as well.
+        type: Publication   
+        identifier:                  
+          - pmid:25923549      
+      - id: civic-data:document_001   # These are clinical care guidelines, but CIViC treats them as a source of evidence.  May get represented as an Evidence Line/EID?  
+        type: Publication
+        label: NCCN Non-Small Cell Lung Cancer Guideline (v3.2018) 
+
+    qualified_contribution:
+      - id: civic-data:Contrib001                # We assume the submitter of the record is also the curator who made the knowledge level statement, and thus record this agent as the 'creator' of the Statement.  They are also credited as the 'submitter' in a record-level metadata Contribution object. 
+        type: Contribution  
+        contribution_made_by: 
+          id: civic-data:user_110 
+          type: Agent
+          identifier: orcid:0000-0001-9815-2288
+          label: ArpadDanos
+          agentType: 
+            - code: foaf:Person
+              label: Person
+          description: Dr. Danos is a Postdoctoral Researcher in the Griffith Lab, with research interests in developing data and knowledge models which can describe and give structure to clinical and preclinical cancer variant knowledge, and in developing standards to enable efficient trasnfer and communication of this information between groups who are generating and curating this data, as well as with the medical and research community at large, in order to address the curation bottleneck which has arisen with increasing incorporation of NGS technology into clinical as well as research contexts. Dr. Danos is also interested in elucidation of the regulatory structure of the genome, and the role of non-coding mutations in cancer.",    
+          affiliation:                         # List of different affiliations the Agent has or had with an Orgnaization (these are associated with the Agent, not a specific Contribution made by the Agent)
+            - id: clingen-data:affil_1         # The Agent's current/active affiliation with WashU as a postdoc
+              type: Affiliation
+              organization: 
+                id: civic-data:org_12
+                type: Agent
+                label: Washington University in Saint Louis
+                agentType: 
+                  - code: foaf:Organization 
+                    label: Organization
+                url: https://wustl.edu/
+              organizational_role: 
+                - code: NCIT:C19925
+                  label: Postdoctoral Scholar
+              startDate: 2017-06-29
+              affiliation_status: 
+                code: ex:status_001
+                label: active
+            - id: clingen-data:affil_2         # The Agent's past/inactive affiliation with WashU as a graduate student        
+              type: Affiliation
+              organization: 
+                id: civic-data:org_12
+                type: Agent
+                label: Washington University in Saint Louis
+                agentType: 
+                  - code: foaf:Organization 
+                    label: Organization
+                url: https://wustl.edu/
+              organizational_role: 
+                - code: NCIT:C75561
+                  label:  Student
+              startDate: 2014-09-15
+              endDate: 2017-06-22
+              affiliation_status: 
+                code: ex:status_002
+                label: inactive
+            - id: clingen-data:affil_3         # The Agent's current/active affiliation with ClinGen as a member of an expert panel
+              type: Affiliation
+              organization: 
+                id: civic-data:org_2
+                identifier:
+                  - fairsharing:3972
+                label: ClinGen
+                type: Agent
+                agentType: 
+                   - code: foaf:Organization 
+                     label: Organization
+                description: ClinGen is a National Institutes of Health (NIH)-funded resource dedicated to building an authoritative central resource that defines the clinical relevance of genes and variants for use in precision medicine and research.
+                url: https://www.clinicalgenome.org/
+              organizational_role: 
+                - code: ex:role_001
+                  label: Expert Panel Member
+              startDate: 2016-01-18
+              affiliation_status: 
+                code: ex:status_001
+                label: active
+            - id: clingen-data:affil_4         # The Agent's past/inactive affiliation with the McDonnell Genome Institute (no specific organizational role indicated)
+              type: Affiliation
+              organization: 
+                id: civic-data:org_1
+                label: The McDonnell Genome Institute
+                type: Agent
+                agentType: 
+                  - code: foaf:Organization 
+                    label: Organization
+              startDate: 2014-09-02
+              endDate: 2021-04-12
+              affiliation_status: 
+                code: ex:status_002
+                label: inactive
+        contributor_role:                      # A role indicating the specific type of Contribution made to the statement
+          - code: CRO:0000107
+            label: creator role                    
+        organizational_context: clingen-data:affil_4    # Indicates that this specific Contribution was made as a expert panel member for ClinGen (one of many affiliations the Agent has, see above)
+
+
+    has_evidence_line:                         # Only one of the six evidence lines in the source data is included here 
+      - id: civic-data:EID879    
+        type: EvidenceLine       
+        target_proposition: civic-data:Proposition001     # The Proposition (possible fact) against which the evidence is evaluated in this EvidenceLine. It is the same Proposition as that asserted in the root Statement (so just referencing here).          
+        evidence_direction:                    # The direction of support interpreted for the evidence item(s) w.r.t the target proposition, as assigned by CIViC curator     
+          code: civic-term:002    
+          label: supports
+        evidence_strength:                     # The strength of support interpreted for the evidence item(s) w.r.t the target proposition, as assigned by CIViC curator 
+          code: civic-term:001   
+          label: B
+        was_specified_by: 
+          - id: civic-data:Method_1            # The method guiding curation, interpretation, and scoring of evidence contributing to this EvidenceLine.  
+            type: Method
+            label: CIViC Variant Curation SOP
+            reference: 
+              - id: civic-data:source_235
+                type: Document   
+                documentType:
+                  - code: IAO:0000311
+                    label: Publication
+                identifier:         
+                  - pmid:31779674
+        qualified_contribution:            #  As above, we assume the submitter of the record is also the curator who generated the information expressed in this EvidenceLine, and thus record this agent as its 'creator'.
+          - id: civic-data:Contrib101      
+            type: Contribution  
+            contribution_made_by: 
+              - id: civic-data:user_15
+                type: Agent
+                label: Malachi Griffith
+            contributor_role: 
+              - code: CRO:0000107
+                label: creator role
+            start_date: 2016-01-14T20:16:44.813Z
+            end_date: 2016-01-14T20:16:44.813Z      
+       has_evidence_item:                     # The clinical trial data/result that was interpreted as evidence in the EvidenceLine
+          - id: civic-data:StudyResult001  
+            type: StudyResult                  # A StudyResult is a curated, structured summary of a specific set of data generated in a single study   
+            study_type: 
+              - code: NCIT:C71104
+                label: Clinical Trial
+            focus:                             # The 'focus' field is optional - and can be used to indicate what entit(ies) the data in the Result is about. Here it is the variation EGFR L858R. 
+              - civic-data:vod-33              # The descriptor of the variant is referenced here - and a full representation is not shown here as it is already provided in this record)
+            description: A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001).
+            confidence_level:                  # The inherent quality / trustworthiness of the result - here, an 'trust rating' assigned by the CIViC curator
+              - code: civic-term:003 
+                label: 4-star
+            reference:                         # The publication that reported the result
+              - id: civic-data:source_592 
+                type: Document   
+                documentType:
+                  - code: IAO:0000311
+                    label: Publication
+                identifier:            
+                  - pmid:25923549           
+                title: Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations.
+                url: http://www.ncbi.nlm.nih.gov/pubmed/23816960
+            data_item:                         # The data items the curator selected to include in this Result object (as they represent evidence relevant to the variant of interest). In the source data, these are described only in the free text description.  In this example, we show how it would look to structure this information. 
+              - id: civic-data:data_001
+                type: DataItem 
+                data_item_type: 
+                  - code: NCIT:C28234
+                    label: Progression Free Survival
+                value: 13.6
+                unit: 
+                  - code: UO:0000035
+                    label: month
+              - id: civic-data:data_002
+                type: DataItem 
+                data_item_type: 
+                  - code: NCIT:C93150
+                    label: Hazard Ratio
+                value: 0.47
+                confidence_interval:
+                  - id: civic-data:data_003
+                    type: DataItem 
+                    data_item_type: 
+                      - code: STATO:0000231
+                        label: 95% confidence interval
+                    component_data_item:
+                      - id: civic-data:data_004
+                        type: DataItem 
+                        data_item_type: 
+                          - code: STATO:0000314
+                            label: upper confidence limit
+                        value: 0.65
+                      - id: civic-data:data_005
+                        type: DataItem 
+                        data_item_type: 
+                          - code: STATO:0000315
+                            label: lower confidence limit
+                        value: 0.34
+              - id: civic-data:data_006
+                type: DataItem 
+                data_item_type: 
+                  - code: STATO:0000088
+                    label: study group population size
+                value: 308
+
+        recordMeta:                            # Record Metadata describing provenance of this concrete record of the EvidenceLine 
+          - date_last_modified: 2018-02-23T04:31:09.515Z
+            qualified_contribution:            # Contributions are one way represent lifecycle actions on CIViC records. This is still evolving modeling in VA-SEPIO.
+              - id: civic-data:Contrib102      # Malachi's 'submitter' contribution to this Evidence Line record
+                type: Contribution  
+                contribution_made_by: 
+                  - id: civic-data:user_15
+                    type: Agent
+                    label: Malachi Griffith
+                contributor_role: 
+                  - code: CRO:0000105
+                    label: submitter role
+                start_date: 2016-01-14T20:16:44.813Z
+                end_date: 2016-01-14T20:16:44.813Z           
+
+              - id: civic-data:Contrib103       # Obi's 'acceptor' contribution to this Evidence Line record
+                type: Contribution  
+                contribution_made_by: 
+                  - id: civic-data:user_3
+                    type: Agent
+                    label: Obi Griffith
+                contributor_role: 
+                  - code: CRO:0000104
+                    label: acceptor role
+                start_date: 2016-02-09T00:15:24.113Z
+                end_date: 2016-02-09T00:15:24.113Z
+
+
+
+    recordMeta:                                 # Record Metadata describing provenance of this concrete record of the Statement
+      - date_last_modified: 2019-05-22T15:44:02.670Z
+        qualified_contribution:
+          - id: civic-data:Contrib001           # Arpad's 'submitter' contribution to the Statement record 
+            type: Contribution  
+            contribution_made_by: 
+              - id: civic-data:user_110
+                type: Agent
+                label: ArpadDanos
+                identifier: 
+                  - orcid:0000-0001-9815-2288
+            contributor_role: 
+              - code: CRO:0000105
+                label: submitter role
+            start_date: 2016-01-27T00:20:51.218Z
+            end_date: 2016-01-27T00:20:51.218Z          
+
+          - id: civic-data:Contrib002            # Erica's 'acceptor' contribution to the Statement record 
+            type: Contribution
+            contribution_made_by: 
+              - id: civic-data:user_179
+                type: Agent
+                label: EricaBarnell
+                identifier: 
+                  - orcid:0000-0003-1631-1201
+            contributor_role: 
+              - code: CRO:0000104
+                label: acceptor role
+            start_date: 2016-07-06T14:48:11.341Z
+            end_date: 2016-07-06T14:48:11.341Z
+
+
+
+
+
+
+
+# -----------------------------------------------------------------
+
+
+#APPENDICES:
+
+# Simplified the example by making the target proposition of the evidence line the same as that of the root Statement (which is the case 99% of the time).
+# The actual target proposition in this EID record is:
+
+
+    has_evidence_line:                         # Only one of the six evidence lines in the source data is included here 
+      - id: civic-data:EID879    
+        type: EvidenceLine       
+        target_proposition:                    # The Proposition (possible fact) against which the evidence is evaluated in this EvidenceLine
+          id: civic-data:Proposition002        # Exactly the same S-P-O-Q as Proposition001 in the root Statement (except the disease here is a subtype of the disease in Proposition001)
+          subject:                                         
+            _id: ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO 
+            type: Allele
+            state:
+              sequence: R
+              type: SequenceState
+           location:
+             _id: ga4gh:VSL.CBfqfC0O-9x6EtMYq1XUH73Vn9axgOxG
+             type: SequenceLocation
+             interval:
+               type: SimpleInterval            
+               start: 858
+               end: 858
+             sequence_id: ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD
+          predicate: 
+            code: ex:001                            
+            label: associated_with_sensitivity_to 
+          object:                                   
+            id: civic-term:drug_146          
+            type: TherapeuticIntervention     
+            drug: 
+              - code: CHEBI:61390
+                label: Afatinib            
+          alleleOriginQualifier:                    
+            code: GENO:0000882         
+            label: somatic allele origin
+          indicated_condition_qualifier:            
+            id: civic-term:disease_30
+            type: GeneticCondition
+            label: Lung Adenocarcinoma
+            disease:                                # The disease here is a subtype of disease in the root TE Statement (Lung Non-small Cell Carcinoma)
+              - code: doid:3910
+                label: Lung Adenocarcinoma
+            url: "http://www.disease-ontology.org/?id=DOID:3910 
+
+#---------------------------------
+
+# Additional fields that COULD be defined in a StudyResult specialization, and used to structure individual data items from the result.
+ #   studyResultType: ClinicalTrialResult
+ #   study_size: 308         
+ #   median_PFS_drug: 13.6 months
+ #   median_PFS_comparator: 6.9 months
+ #   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
+ #   p-value: 0.001     
