@@ -1,0 +1,208 @@
+
+
+Entities:
+	• Entity   - n/a
+	
+	• InformationEntity     - n/a
+		
+	• EvidenceItem . . . show an example of one nested inside an evidence line, and inside a statement 
+		○ CIViC_Examples_TR_Profile_20210713.yml - a StudyResult inside an EL (and same example w/o an evidence line -  the study result linked directly from the Statement)
+		○ CG-VCI-SEPIO-VA_Evidence_Levels.yml - line 207 has a CriterionAssessmentStatement evidence item
+		
+	
+	• Statement    
+		○ CIViC_Examples_TR_Profile_20210713.yml - line 10 no uses proposition, line 236 does
+		○ ClinGen_ERepo_VPI_Statement_Examples_v2_20220216.yml - SCV VPI
+			§ Statement using propositions, 3-predicate model (use this, and show same assertion w/o propositions
+		○ 5-28-19CellBase_PopFreq_Example_v1.yaml . . . line 93 has a GREAT example of an annotation from CellBase that holds two separate statements - which the VA model would split into separate Statement objects.  Consider including this to highlight principle of Statement atomicity (if I do, consider making object the population, and the StudyResult a quantifier)
+		
+	
+	• Proposition   
+		○ CIViC_Examples_TR_Profile_20210713.yml - line 10 uses VOD as subject, line 236 uses the VO
+		○ CG-VCI-SEPIO-VA_Evidence_Levels.yml - VPI - line 150 has good Statement and Proposition example
+		
+	
+	• EvidenceLine    
+		○ CIViC_Examples_TR_Profile_20210713.yml  - line 71
+		○ CG-VCI-SEPIO-VA_Evidence_Levels.yml - VPI - line 178 has good evidence line example
+		
+	
+	• Method    
+		○ CIViC_Examples_TR_Profile_20210713.yml  -  (civic curation SOP) - line 55
+	
+	• Document    
+		○ CIViC_Examples_TR_Profile_20210713.yml - a publication - minimal rep - line 183 (update identifier to a curie)
+	
+	• DataItem    
+		○ create one using an EFI example?  OR a translator example?  Or osmething from a CIViC Result (I recall some have CI info . . .  (all my examples of data items in Results use dedicated fields, and string values)
+	
+	• DataSet    
+		○ create one for a genome feature annotation dataset for an MC statement, or an AVE dataset  see EFI diagrams
+	
+	• StudyResult    
+		○ CIViC_Examples_TR_Profile_20210713.yml  - line 127
+	
+	• Activity     - n/a
+	
+	• ResearchStudy   - ??  Maybe leave this out of the Spec for now???
+	
+	• Contribution    
+		○ CIViC_Examples_TR_Profile_20210713.yml  -  line 157, 194
+			§ all in recordMeta . . .but can interpret the submitter contribution on line 194 as knowledge-level?
+		○ Larry-ClinVar-SCV3-v3-MHB - knowledge and record level, this and sourcerecord meta
+	
+	• Agent    
+		○ organization agent - Javi MC example in older va_spec doc
+		○ software agent - Javi MC example in older va_spec doc
+		○ person - CIViC_Examples_TR_Profile_20210713.yml  -  line 198
+	
+	• Affiliation - create a new example? if can't find one in CAM documentation?
+        ○ TEST THIS OUT IN CIVIC EXAMPLE?
+	
+	• RecordMetadata
+		○ Larry-ClinVar-SCV3-v3-MHB
+		○ CIViC_Examples_TR_Profile_20210713.yml 
+	
+	• Coding
+		○ CG-VCI-SEPIO-VA_Evidence_Levels.yml 
+	
+	• Extension
+		○ LB-MHB_MC_DTO_example_10-16-20 line 161 (extends a Sequence descriptor with info about genes the sequence overlaps) . .  and maybe show a nested extension that holds a field for the name of the gene . . . no, the value of the first extension should be a Gene object - with structure that includes a place for names
+	
+	• Variation 
+		○ VariationDescriptor
+			§ LB-MHB_MC_DTO_example_10-16-20 - line 209
+		
+	
+	• VariationDescriptor
+		○ LB-MHB_MC_DTO_example_10-16-20
+			§ line 55 - genomic allele descriptor
+			§ line 90 - transcript allele descriptor
+
+
+----------------------------------------------
+
+
+# Statement
+  - id: civic-data:AID6            
+    type: TherapeuticEfficacyStatement 
+    description: "EGFR L858R positive NSCLC is sensitive to afatinib."    
+    asserted_proposition:
+      id: civic-data:Proposition001
+      subject:                                   # Protein allele value object for the EGFR L858R variant       
+        _id: ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO 
+        type: Allele
+        state:
+          sequence: R
+          type: SequenceState
+        location:
+          _id: ga4gh:VSL.CBfqfC0O-9x6EtMYq1XUH73Vn9axgOxG
+          type: SequenceLocation
+          interval:
+            type: SimpleInterval            
+            start: 858
+            end: 858
+          sequence_id: ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD
+        predicate: 
+          code: ex:001                            # Placeholder code for this predicate - as no code exists in CIViC or community ontologies
+          label: associated_with_sensitivity_to 
+        object:                                   # The Treatment with which the variant is associated with a response to
+          id: civic-term:drug_146          
+          type: TherapeuticIntervention     
+          drug: 
+            - code: CHEBI:61390
+              label: Afatinib            
+        alleleOriginQualifier:                    # A custom qualifier defined in the TherapeuticEfficacyStatement Profile
+          code: GENO:0000882         
+          label: somatic allele origin
+        indicated_condition_qualifier:            # The 'disease' for which the treatment is administered 
+          id: civic-term:disease_8
+          type: GeneticCondition
+          label: Lung Non-small Cell Carcinoma 
+          disease:            
+            - code: doid:3908
+              label: Lung Non-small Cell Carcinoma
+              url: http://www.disease-ontology.org/?id=DOID:3908    
+        subject_descriptor:                       # A Descriptor object that provides additional useful metadata about the subject variant of this statement, which  is not accommodated by its value object representation
+          - id: civic-data:variationdescriptor_33        
+            type: VariationDescriptor
+            value_object_id : ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO         
+            value_object_label: NP_005219.2:p.Leu858Arg      
+            xrefs: [cosmic:COSM6224, clinvar:16609, dbSNP:rs121434568]
+            alternate_label: [EGFR L858R]
+            value_object_expression: 
+              - value: NC_000007.13:g.55259515T>G 
+                system: ghgvs
+              - value: NM_005228.5:c.2573T>G
+                system: chgvs 
+              - value: NP_005219.2:p.Leu858Arg
+                system: phgvs      
+            molecule_context:                      
+              code: SO:0000104               
+              label: polypeptide
+              system: http://purl.obolibrary.org/obo/SO             
+    was_specified_by: 
+      - civic-data:Method_1                  
+      - civic-data:Method_2                  
+    evidence_level:                               
+      - code: civic-term:001  
+        label: Tier I - Level A             
+    has_evidence_from_source: 
+      - civic-data:source_592 
+      - civic-data:document_001      
+
+    qualified_contribution: 
+      - civic-data:Contrib001               
+
+    has_evidence_line: civic-data:EID879    
+
+
+
+# Document  
+
+- id: civic-data:source_592 
+  type: Document   
+  documentType:
+    - code: IAO:0000311
+      label: Publication
+  identifier:            
+    - pmid:25923549           
+  title: Phase III study of afatinib or cisplatin plus pemetrexed in patients with metastatic lung adenocarcinoma with EGFR mutations.
+  url: http://www.ncbi.nlm.nih.gov/pubmed/23816960
+  
+  
+  # Data Item
+- id: civic-data:data_001
+  type: DataItem 
+  data_item_type: 
+    - code: NCIT:C28234
+      label: Progression Free Survival
+   value: 13.6
+   unit: 
+     - code: UO:0000035
+       label: month
+ - id: civic-data:data_002
+   type: DataItem 
+   data_item_type: 
+     - code: NCIT:C93150
+       label: Hazard Ratio
+   value: 0.47
+   confidence_interval:
+     - id: civic-data:data_003
+       type: DataItem 
+       data_item_type: 
+         - code: STATO:0000231
+           label: 95% confidence interval
+       component_data_item:
+         - id: civic-data:data_004
+           type: DataItem 
+           data_item_type: 
+             - code: STATO:0000314
+               label: upper confidence limit
+           value: 0.65
+             - id: civic-data:data_005
+               type: DataItem 
+               data_item_type: 
+                 - code: STATO:0000315
+                   label: lower confidence limit
+                        value: 0.34

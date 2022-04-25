@@ -347,7 +347,7 @@ Tasks/Todos.
     // Allows for multiple RecordMetadata objects (one for each record to which contributions are described). 
     // Uses a new 'sourceRecordMeta' field to point to RecordMetadata object that describe usptream/source records. This field would sit alongside the existing 'recordMeta' field (rename 'thisRecordMeta'?), which is used specifically to capture metadata about the actual record in this message. 
     // This approach would allow us to more explicitly and flexibly describe contributions made to different upstream records from which the current record was derived. 
-    // Note that while the original 'recordMeta' field has a 0..1 cardinality (as the metadata it captures it is specifically about the record of the Statement in this  message), the new 'sourceRecordMetadata' field would have a 0..m cardinality - to be able to describe aspects of any number of upstream records from which the current record was derived.
+    // Note that while the original 'recordMeta' field has a 0..1 cardinality (as the metadata it captures it is specifically about the record of the Statement in this message), the new 'sourceRecordMetadata' field would have a 0..m cardinality - to be able to describe aspects of any number of upstream records from which the current record was derived.
 
         {  ## start of the Variant Pathogenicity Classification Statement object
           "id" : "clinvar:SCV000616365.3",  
@@ -357,7 +357,8 @@ Tasks/Todos.
           "object" : "condition:100",  ## Costello Syndrome
           "variantOriginQualifier" : "GENO:germline",
           "qualifiedContribution": [ 
-            {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in the Statement, as performed by the original submitter/author. Knowledge-level Contributions like this hang from the Statement directly (vs record-level contributions which are encapsulated in RecordMetadata objects)
+            {  ## clinvar.DateEvaluated="2017-04-03", describes the most recent review of the knowledge expressed in the Statement, as performed by the original submitter/author. 
+               ## Knowledge-level Contributions like this hang from the Statement directly (vs record-level contributions which are encapsulated in RecordMetadata objects)
              "id": "contribution:001",
              "type": "Contribution",
              "contributionMadeBy" : "ClinVarOrgId:506439",  ## ClinGen RASopathy Variant Curation Expert Panel
@@ -369,7 +370,7 @@ Tasks/Todos.
            
           // The remaining Contributions go in RecordMetadata objects, b/c they describe contributions made to specific data records, not the underlying knowledge.      
  
-          "recordMeta": 
+          "thisRecordMeta": 
              {  ## RecordMetadata object describing the provenance of *this particular ClinGen record* of the Statement (the one in this message). Along with other record-level metadata, one Contribution to creation of the record is described.
              "description": "metadata describing contributions made to the ClinGen record of the Statement carried in this message",                    
              "recordPartOfDataSet": "ClinGen Representation of ClinVar (CrC) dataset version x.x",  ## the dataset/system of which the record is a part 

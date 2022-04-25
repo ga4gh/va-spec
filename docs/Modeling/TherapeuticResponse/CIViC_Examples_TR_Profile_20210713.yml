@@ -5,7 +5,7 @@
 # It does not use Propositions for 'asserted proposition' semantics, but does demonstrate their use for explicitly representing the "target proposition" of an EID / Evidence Line.  
 # Propositions at the root Assertion-level are being explored in parallel efforts as a means to formally link the products of Evidence Curation and Assertion activities - through their shared / related Propositions.  
 # Note that the prefixes "civic-data" and civic-term" reflect made-up namespaces for native CIViC identifiers.
-# Note also that a few of the data values below are added by me to ilustrate how the VA model could accommodate additioanl, useful information (e.g. the CIViC SOP method).
+# Note also that a few of the data values below are added by me to illustrate how the VA model could accommodate additional, useful information (e.g. the CIViC SOP method).
 
   - id: civic-data:AID6            
     type: TherapeuticEfficacyStatement 
