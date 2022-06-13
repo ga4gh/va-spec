@@ -1,0 +1,17 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "ClinGen Categorical Variation Descriptor Schema"
+type: object
+description: A message on the ClinGen clinvar-public stream for variation types
+allOf:
+  # - $ref: "https://raw.githubusercontent.com/ga4gh/vrsatile/32bb5cbe3d6a0fcbe5cedb70c3cbd42f9b3f7c1e/schema/vod.json#/$defs/CategoricalVariationDescriptor"
+  - $ref: "https://raw.githubusercontent.com/ga4gh/vrsatile/clingen-variation-schema/schema/vod.json#/$defs/CategoricalVariationDescriptor"
+  - $ref: "#/$defs/ClinGenCategoricalVariationDescriptor"
+$defs:
+  ClinGenCategoricalVariationDescriptor:
+    additionalProperties: true
+    description: Adds fields to CategoricalVariationDescriptor
+    type: object
+    properties:
+      is_version_of:
+        description: Identifier for the concept this represents, absent version.
+        type: string
