@@ -200,15 +200,27 @@ $defs:
         description: TBD
 
   RecordMetadata:
-   type: object
-   description: TBD
-   properties:
-     id:
-     type:
-     is_version_of:
-     version:
-     replaces:
-     is_replaced_by:
+    type: object
+    description: Record-level fields
+    properties:
+      id:
+        type: string
+        description: A unique identifier
+      type:
+        type: string
+        const: RecordMetadata
+      is_version_of:
+        type: string
+        description: An identifier for the concept this record is a versioned instance of
+      version:
+        type: string
+        description: The version info of the record. May be something like a timestamp or GUID. This and the is_version_of should constitute a versioned identifier.
+      replaces:
+        type: string
+        description: An identifier of the record this record replaces.
+      is_replaced_by:
+        type: string
+        description: An identifier of the record which replaces this record.
 
   Statement:
     type: object
