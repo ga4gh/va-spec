@@ -1,0 +1,270 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+title: "GA4GH Statement Models"
+type: object
+description: Objects for Statement
+$defs:
+  Proposition:
+    type: object
+    additionalProperties: false
+    description: Proposition
+    properties:
+      id:
+        description: Identifier for the concept this represents, absent version.
+        type: string
+      type:
+        type: string
+        const: Proposition
+      subject:
+        type: string
+        description: TBD
+      predicate:
+        type: string
+        description: TBD
+      object:
+        type: string
+        description: TBD
+
+  CategoricalVariation:
+    $ref: "https://raw.githubusercontent.com/ga4gh/vrsatile/clingen-variation-schema/schema/catvars.json#/$defs/CategoricalVariation"
+
+  Condition:
+    type: object
+    description: TBD
+    properties:
+      id:
+        type: string
+        description: The overall id for the Condition, can be the same as the value if only one identifier is the value, otherwise some computed representation if multiple values exist.
+      type:
+        type: string
+        const: Condition
+      value:
+        type: string
+        description: A Condition identifier or a list of identifiers (CSV). TODO accept an array
+
+  VariationConditionProposition:
+    type: object
+    description: TBD
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: VariationConditionProposition
+      subject:
+        $ref: "#/$defs/CategoricalVariation"
+      predicate:
+        type: string
+        const: has_assertion_about
+        description: Intentionally general, see specializations
+      object:
+        $ref: "#/$defs/Condition"
+
+  VariationOncogenicityProposition:
+    type: object
+    description: Specialization of VariationConditionProposition
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: VariationOncogenicityProposition
+      subject:
+        $ref: "#/$defs/CategoricalVariation"
+      predicate:
+        type: string
+        const: is_somatic_cancer_driving
+        description: TBD @AlexWagner
+      object:
+        $ref: "#/$defs/Condition"
+
+  VariationPathogenicityProposition:
+    type: object
+    description: Specialization of VariationConditionProposition
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: VariationPathogenicityProposition
+      subject:
+        $ref: "#/$defs/CategoricalVariation"
+      predicate:
+        type: string
+        const: is_germline_disease_causing
+        description: TBD
+      object:
+        $ref: "#/$defs/Condition"
+
+  ClinVarVariationDrugResponsePhenotypeProposition:
+    type: object
+    description: Specialization of VariationConditionProposition
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: ClinVarVariationDrugResponsePhenotypeProposition
+      subject:
+        $ref: "#/$defs/CategoricalVariation"
+      predicate:
+        type: string
+        const: is_drug_response_for
+        description: TBD
+      object:
+        $ref: "#/$defs/Condition"
+
+  ClinVarVariationConditionMiscellaneousProposition:
+    type: object
+    description: Specialization of VariationConditionProposition
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: ClinVarVariationConditionMiscellaneousProposition
+      subject:
+        $ref: "#/$defs/CategoricalVariation"
+      predicate:
+        type: string
+        enum:
+        - is_risk_factor
+        - is_associated_with
+        - not_provided
+        - affects
+        - is_protective_for
+        description: TBD
+      object:
+        $ref: "#/$defs/Condition"
+
+  Agent:
+    type: object
+    description: TBD
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: Agent
+      name:
+        type: string
+        description: TBD
+      agent_type:
+        type: string
+        description: TODO revisit the name of this property. (person, organization, system)
+        enum:
+        - person
+        - organization
+        - system
+
+  Contribution:
+    type: object
+    description: TBD
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: Contribution
+      has_agent:
+        $ref: "#/$defs/Agent"
+      role:
+        type: string
+        description: TBD
+        enum:
+        - evaluator
+        - primary_submitter
+        - secondary_submitter
+      activity_date:
+        type: string
+        description: ISO DateTime
+
+  Method:
+    type: object
+    description: TBD
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: Method
+      label:
+        type: string
+        description: TBD
+
+  RecordMetadata:
+   type: object
+   description: TBD
+   properties:
+     id:
+     type:
+     is_version_of:
+     version:
+     replaces:
+     is_replaced_by:
+
+  Statement:
+    type: object
+    description: TBD
+    properties:
+      id:
+        type: string
+        description: TBD
+      type:
+        type: string
+        const: Statement
+      target_proposition:
+        $ref: "#/$defs/Proposition"
+      subject_descriptor:
+        description: "Descriptor for the subject of the target_proposition"
+        $ref: "https://raw.githubusercontent.com/ga4gh/vrsatile/clingen-variation-schema/schema/vod.json#/$defs/ValueObjectDescriptor"
+      object_descriptor:
+        description: "Descriptor for the object of the target_proposition"
+        $ref: "https://raw.githubusercontent.com/ga4gh/vrsatile/clingen-variation-schema/schema/vod.json#/$defs/ValueObjectDescriptor"
+      record_metadata:
+        $ref: "#/$defs/RecordMetadata"
+      # Assessment/Conclusion related fields
+      label:
+        type: string
+        description: assessment label (TODO)
+      explanation:
+        type: string
+        description: Explanation for the assessment
+      overall_assessment:
+        type: string
+        description: TBD
+        enum:
+        - positive
+        - negative
+        - inconclusive
+        - not_provided
+      strength:
+        type: string
+        description: TBD
+        enum:
+        - definitive
+        - likely
+        - uncertain
+        - not_provided
+      score:
+        type: string
+        description: TBD
+      has_contribution:
+        type: array
+        description: TBD
+        items:
+          type: "#/$defs/Contribution"
+      has_method:
+        type: array
+        description: TBD
+        items:
+          type: "#/$defs/Method"
+
+  # https://raw.githubusercontent.com/ga4gh/vrsatile/clingen-variation-schema/schema/vod.json
