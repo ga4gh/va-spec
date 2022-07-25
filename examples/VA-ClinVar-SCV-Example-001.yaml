@@ -1,9 +1,8 @@
 classification:
-  code: LN12331-1
   label: Pathogenic
-  system: LN
-  text: pathologic
-  type: CodeableConcept
+  description: submitted as `pathologic`
+significance: supports
+strength: strong
 condition:
   condition_set_id: clinvar-traitset_id:123
   id: ??
