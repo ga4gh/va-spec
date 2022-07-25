@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 jsonschema = "*"
-
+pyyaml = "*"
 
 [dev-packages]
 jupyterlab = "*"
+pyyaml = "*"
 
 [requires]
 python_version = "3.9"
