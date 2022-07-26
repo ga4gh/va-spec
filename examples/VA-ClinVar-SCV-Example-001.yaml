@@ -1,6 +1,4 @@
-classification:
-  label: Pathogenic
-  description: submitted as `pathologic`
+conclusion: Pathogenic
 significance: supports
 strength: strong
 condition:
@@ -62,16 +60,16 @@ extensions:
     value: 3-star
 - name: clinvar-scv-methods
   type: Extension
-  value:
-  - curation
+  value: curation
 - name: clinvar-scv-affected-statuses
   type: Extension
-  value:
-  - unknown
+  value: unknown
 - name: clinvar-scv-allele-origins
   type: Extension
-  value:
-  - germline
+  value: germline
+- name: clinvar-scv-submitter-classification
+  type: Extension
+  value: pathologic
 id: cvc-scv:SCV001949955-20220101
 method:
   id: cspec:123134
