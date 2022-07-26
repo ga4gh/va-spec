@@ -1,10 +1,17 @@
-conclusion: Pathogenic
+classification:
+  id: LN:LN12311-2
+  label: Pathogenic
+  type: LabeledEntity
+  extensions:
+    - name: submitter-classification
+      type: Extension
+      value: pathologic
 significance: supports
-strength: strong
-condition:
+confidence_level: strong
+condition_descriptor:
   condition_set_id: clinvar-traitset_id:123
   id: ??
-  type: ConditionSetDescriptor
+  type: ConditionDescriptor
 contributions:
 - agent:
     id: clinvar-submitter:123
@@ -67,16 +74,13 @@ extensions:
 - name: clinvar-scv-allele-origins
   type: Extension
   value: germline
-- name: clinvar-scv-submitter-classification
-  type: Extension
-  value: pathologic
-id: cvc-scv:SCV001949955-20220101
+id: cvc.scv:SCV001949955-20220101
 method:
   id: cspec:123134
   is_reported_in: PMID:1231231231
   label: Clingen BrainMalform ACMG Specifications v1
   type: Method
-recordMetaData:
+record_metadata:
   id: ''
   is_version_of: clinvar-scv:SCV001949955
   type: RecordMetadata
@@ -112,10 +116,8 @@ target_proposition:
         type: LiteralSequenceExpression
       type: Allele
 type: VariationPathogenicityStatement
-variation:
-  extension: []
+variation_descriptor:
   id: clinvar:376129
   label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)
-  members: []
   type: CanonicalVariationDescriptor
   variation_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
