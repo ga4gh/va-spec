@@ -4,13 +4,15 @@ type: object
 strict: true
 
 imports:
-  gks.core: "core-source.yaml"
-  vrs: "vrs-source.yaml"
-  catvars: "catvars-source.yaml"
-  vod: "vod-source.yaml"
+  gks.core: core-source.yaml
+  vrs: vrs-source.yaml
+  catvars: catvars-source.yaml
+  vod: vod-source.yaml
 
 namespaces:
   gks.core: core.json#/$defs/
+  vod: vod.json#/$defs/
+  catvars: catvars.json#/$defs/
 
 $defs:
   InformationEntity:
@@ -19,6 +21,10 @@ $defs:
       InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry 
       information about things in the real world).
     heritable_properties:
+      description:
+        type: string
+        description: >-
+          A free-text description of the InformationEntity.
       confidence_level:
         type: string
         enum: [ "strong", "likely", "uncertain" ]
@@ -26,10 +32,73 @@ $defs:
           A qualitative term describing the degree of confidence held by the creator of the information entity, 
           that the information it represents is true.
       confidence_score:
-        type: DataItem
+        $ref: "#/$defs/DataItem"
         description: >-
           A quantitative score reflecting the degree of confidence held by the creator of the information 
           entity, that the information it represents is true.
+      method:
+        $ref: "#/$defs/Method"
+        description: >-
+          A :ref:`Method` that describes all or part of the process through which the information was
+          generated.
+      contributions:
+        type: array
+        items:
+          $ref: "#/$defs/Contribution"
+
+  Contribution:
+    inherits: gks.core:ExtensibleEntity
+    description: >-
+      The sum of all actions taken by a single agent in contributing to the creation, modification, 
+      assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem, 
+      Publication, etc.)
+    properties:
+      type:
+        type: string
+        const: Contribution
+        default: Contribution
+        description: MUST be "Contribution".
+      agent:
+        $ref: "#/$defs/Agent"
+      date:
+        type: string
+        format: date
+      role:
+        type: string
+
+  Agent:
+    inherits: gks.core:ExtensibleEntity
+    description: >-
+      An autonomous actor (person, organization, or computational agent) that bears some form
+      of responsibility for an activity taking place, for the existence of an entity, or for 
+      another agent’s activity.
+    properties:
+      type:
+        type: string
+        const: Agent
+        default: Agent
+        description: MUST be "Agent".
+      name:
+        type: string
+
+  Method:
+    inherits: gks.core:ExtensibleEntity
+    description: >-
+      A set of instructions that specify how to achieve some objective (e.g. experimental protocols, 
+      curation guidelines, rule sets, etc.)
+    properties:
+      type:
+        type: string
+        const: Method
+        default: Method
+        description: MUST be "Method".
+      is_reported_in:
+        $ref_curie: gks.core:CURIE
+      method_type:
+        type: string
+        description: >-
+          A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, 
+          Experimental Protocol)
 
   Statement:
     inherits: InformationEntity
@@ -41,7 +110,7 @@ $defs:
         $ref: "#/$defs/Proposition"
         description: The Proposition about which the Statement is made.
       conclusion:
-        type: string
+        $ref_curie: gks.core:LabeledEntity
         description: >-
           The conclusion drawn from the statement proposition, significance, confidence level, and/or 
           confidence score.
@@ -51,8 +120,22 @@ $defs:
         description: >-
           The significance of this statement with respect to the target proposition.
 
-  VariationPathogenicityStatement:
+  VariationConditionStatement:
     inherits: Statement
+    description: >-
+      A :ref:`Statement` describing the impact of a variation on a condition.
+    heritable_properties:
+      condition_descriptor:
+        $ref_curie: vod:ConditionDescriptor
+        description: >-
+          A descriptor characterizing the condition impacted by the variation.
+      variation_descriptor:
+        $ref_curie: vod:CategoricalVariationDescriptor
+        description: >-
+          A descriptor characterizing the variation impacting the condition.
+
+  VariationPathogenicityStatement:
+    inherits: VariationConditionStatement
     description: >-
       A :ref:`Statement` describing the pathogenicity of a variation.
     properties:
@@ -64,12 +147,9 @@ $defs:
           MUST be "VariationPathogenicityStatement".
       classification:
         extends: conclusion
-        enum:
-        - "Pathogenic"
-        - "Likely Pathogenic"
-        - "Variant of Uncertain Significance"
-        - "Likely Benign"
-        - "Benign"
+      target_proposition:
+        extends: target_proposition
+        $ref: "#/$defs/VariationPathogenicityProposition"
 
   Proposition:
     inherits: gks.core:ValueEntity
@@ -78,8 +158,7 @@ $defs:
       put forth as true in a Statement.
     heritable_properties:
       subject:
-        type:
-          $ref: gks.core:ValueEntity
+        $ref: gks.core:ValueEntity
         description: >-
           The :ref:`ValueEntity` about which the Proposition is made.
       predicate:
@@ -88,12 +167,29 @@ $defs:
           The relationship asserted to hold between the subject and the object of the 
           Proposition.
       object:
-        type:
-          $ref: gks.core:ValueEntity
+        $ref_curie: gks.core:ValueEntity
         description: >-
           A ValueEntity that is related to the subject of a Proposition via its predicate.
+    required: [ "subject", "predicate", "object" ]
 
   VariationPathogenicityProposition:
     inherits: Proposition
     description: >-
-      
+      More to come!
+    properties:
+      type:
+        type: string
+        const: VariationPathogenicityProposition
+        default: VariationPathogenicityProposition
+        description: MUST be "VariationPathogenicityProposition"
+      variation:
+        extends: subject
+        $ref_curie: catvars:CategoricalVariation
+      association:
+        extends: predicate
+        type: string
+        const: is_germline_disease_causing
+        default: is_germline_disease_causing
+      condition:
+        extends: object
+        $ref_curie: gks.core:Condition

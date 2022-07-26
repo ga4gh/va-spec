@@ -1,0 +1,46 @@
+**Computational Definition**
+
+A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)
+
+**Information Model**
+
+Some Method attributes are inherited from :ref:`Entity`.
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+   
+   *  - Field
+      - Type
+      - Limits
+      - Description
+   *  - id
+      - `CURIE <core.json#/$defs/CURIE>`_
+      - 0..1
+      - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system.
+   *  - type
+      - string
+      - 1..1
+      - MUST be "Method".
+   *  - label
+      - string
+      - 0..1
+      - 
+   *  - extensions
+      - `Extension <core.json#/$defs/Extension>`_
+      - 0..m
+      - 
+   *  - record_metadata
+      - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
+      - 0..1
+      - 
+   *  - is_reported_in
+      - `CURIE <core.json#/$defs/CURIE>`_
+      - 0..1
+      - 
+   *  - method_type
+      - string
+      - 0..1
+      - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)

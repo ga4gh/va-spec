@@ -10,7 +10,6 @@ significance: supports
 confidence_level: strong
 condition_descriptor:
   condition_set_id: clinvar-traitset_id:123
-  id: ??
   type: ConditionDescriptor
 contributions:
 - agent:
@@ -81,7 +80,6 @@ method:
   label: Clingen BrainMalform ACMG Specifications v1
   type: Method
 record_metadata:
-  id: ''
   is_version_of: clinvar-scv:SCV001949955
   type: RecordMetadata
   version: '2'
@@ -95,12 +93,12 @@ target_proposition:
     type: ConditionSet
   type: VariationPathogenicityProposition
   variation:
-    _id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
+    id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
     type: CanonicalVariation
     variation:
-      _id: ga4gh:VA.Z9tYtztQ5hkRNOajjdJolwkHSBfDYXH0
+      id: ga4gh:VA.Z9tYtztQ5hkRNOajjdJolwkHSBfDYXH0
       location:
-        _id: ga4gh:VSL.rrTlrvGnEyknV7tJhO8sQSSC2LhqyuxX
+        id: ga4gh:VSL.rrTlrvGnEyknV7tJhO8sQSSC2LhqyuxX
         interval:
           end:
             type: Number
@@ -120,4 +118,4 @@ variation_descriptor:
   id: clinvar:376129
   label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)
   type: CanonicalVariationDescriptor
-  variation_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
+  categorical_variation_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk

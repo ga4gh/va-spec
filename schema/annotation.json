@@ -6,13 +6,129 @@
       "InformationEntity": {
          "description": "InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry  information about things in the real world)."
       },
+      "Contribution": {
+         "description": "The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)",
+         "properties": {
+            "id": {
+               "$ref": "core.json#/$defs/CURIE",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+            },
+            "type": {
+               "type": "string",
+               "const": "Contribution",
+               "default": "Contribution",
+               "description": "MUST be \"Contribution\"."
+            },
+            "label": {
+               "type": "string"
+            },
+            "extensions": {
+               "type": "array",
+               "items": {
+                  "$ref": "core.json#/$defs/Extension"
+               }
+            },
+            "record_metadata": {
+               "$ref": "core.json#/$defs/RecordMetadata"
+            },
+            "agent": {
+               "$ref": "#/$defs/Agent"
+            },
+            "date": {
+               "type": "string",
+               "format": "date"
+            },
+            "role": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "type"
+         ],
+         "additionalProperties": false
+      },
+      "Agent": {
+         "description": "An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for  another agent\u2019s activity.",
+         "properties": {
+            "id": {
+               "$ref": "core.json#/$defs/CURIE",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+            },
+            "type": {
+               "type": "string",
+               "const": "Agent",
+               "default": "Agent",
+               "description": "MUST be \"Agent\"."
+            },
+            "label": {
+               "type": "string"
+            },
+            "extensions": {
+               "type": "array",
+               "items": {
+                  "$ref": "core.json#/$defs/Extension"
+               }
+            },
+            "record_metadata": {
+               "$ref": "core.json#/$defs/RecordMetadata"
+            },
+            "name": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "type"
+         ],
+         "additionalProperties": false
+      },
+      "Method": {
+         "description": "A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)",
+         "properties": {
+            "id": {
+               "$ref": "core.json#/$defs/CURIE",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+            },
+            "type": {
+               "type": "string",
+               "const": "Method",
+               "default": "Method",
+               "description": "MUST be \"Method\"."
+            },
+            "label": {
+               "type": "string"
+            },
+            "extensions": {
+               "type": "array",
+               "items": {
+                  "$ref": "core.json#/$defs/Extension"
+               }
+            },
+            "record_metadata": {
+               "$ref": "core.json#/$defs/RecordMetadata"
+            },
+            "is_reported_in": {
+               "$ref": "core.json#/$defs/CURIE"
+            },
+            "method_type": {
+               "type": "string",
+               "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)"
+            }
+         },
+         "required": [
+            "type"
+         ],
+         "additionalProperties": false
+      },
       "Statement": {
          "description": "A Statement (aka \u2018Assertion\u2019) represents a claim of purported truth as made by a particular agent,  on a particular occasion."
+      },
+      "VariationConditionStatement": {
+         "description": "A Statement describing the impact of a variation on a condition."
       },
       "VariationPathogenicityStatement": {
          "description": "A Statement describing the pathogenicity of a variation.",
          "properties": {
-            "_id": {
+            "id": {
                "$ref": "core.json#/$defs/CURIE",
                "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
             },
@@ -22,11 +138,21 @@
                "default": "VariationPathogenicityStatement",
                "description": "MUST be \"VariationPathogenicityStatement\"."
             },
+            "label": {
+               "type": "string"
+            },
             "extensions": {
                "type": "array",
                "items": {
                   "$ref": "core.json#/$defs/Extension"
                }
+            },
+            "record_metadata": {
+               "$ref": "core.json#/$defs/RecordMetadata"
+            },
+            "description": {
+               "type": "string",
+               "description": "A free-text description of the InformationEntity."
             },
             "confidence_level": {
                "type": "string",
@@ -38,16 +164,26 @@
                "description": "A qualitative term describing the degree of confidence held by the creator of the information entity,  that the information it represents is true."
             },
             "confidence_score": {
-               "type": "DataItem",
+               "$ref": "#/$defs/DataItem",
                "description": "A quantitative score reflecting the degree of confidence held by the creator of the information  entity, that the information it represents is true."
             },
+            "method": {
+               "$ref": "#/$defs/Method",
+               "description": "A Method that describes all or part of the process through which the information was generated."
+            },
+            "contributions": {
+               "type": "array",
+               "items": {
+                  "$ref": "#/$defs/Contribution"
+               }
+            },
             "target_proposition": {
-               "$ref": "#/$defs/Proposition",
+               "$ref": "#/$defs/VariationPathogenicityProposition",
                "description": "The Proposition about which the Statement is made."
             },
             "conclusion": {
-               "type": "string",
-               "description": "The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score."
+               "description": "The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.",
+               "$ref": "core.json#/$defs/LabeledEntity"
             },
             "significance": {
                "type": "string",
@@ -58,16 +194,17 @@
                ],
                "description": "The significance of this statement with respect to the target proposition."
             },
+            "condition_descriptor": {
+               "description": "A descriptor characterizing the condition impacted by the variation.",
+               "$ref": "vod.json#/$defs/ConditionDescriptor"
+            },
+            "variation_descriptor": {
+               "description": "A descriptor characterizing the variation impacting the condition.",
+               "$ref": "vod.json#/$defs/CategoricalVariationDescriptor"
+            },
             "classification": {
-               "type": "string",
                "description": "The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.",
-               "enum": [
-                  "Pathogenic",
-                  "Likely Pathogenic",
-                  "Variant of Uncertain Significance",
-                  "Likely Benign",
-                  "Benign"
-               ]
+               "$ref": "core.json#/$defs/LabeledEntity"
             }
          },
          "required": [
@@ -76,10 +213,57 @@
          "additionalProperties": false
       },
       "Proposition": {
-         "description": "An abstract ValueEntity representing the shareable meaning that can be  put forth as true in a Statement."
+         "description": "An abstract ValueEntity representing the shareable meaning that can be  put forth as true in a Statement.",
+         "required": [
+            "subject",
+            "predicate",
+            "object"
+         ]
       },
       "VariationPathogenicityProposition": {
-         "description": ""
+         "description": "More to come!",
+         "properties": {
+            "id": {
+               "$ref": "core.json#/$defs/CURIE",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+            },
+            "type": {
+               "type": "string",
+               "const": "VariationPathogenicityProposition",
+               "default": "VariationPathogenicityProposition",
+               "description": "MUST be \"VariationPathogenicityProposition\""
+            },
+            "subject": {
+               "$ref": "gks.core:ValueEntity",
+               "description": "The ValueEntity about which the Proposition is made."
+            },
+            "predicate": {
+               "type": "string",
+               "description": "The relationship asserted to hold between the subject and the object of the  Proposition."
+            },
+            "object": {
+               "description": "A ValueEntity that is related to the subject of a Proposition via its predicate.",
+               "$ref": "core.json#/$defs/ValueEntity"
+            },
+            "variation": {
+               "$ref": "catvars.json#/$defs/CategoricalVariation",
+               "description": "The ValueEntity about which the Proposition is made."
+            },
+            "association": {
+               "type": "string",
+               "description": "The relationship asserted to hold between the subject and the object of the  Proposition.",
+               "const": "is_germline_disease_causing",
+               "default": "is_germline_disease_causing"
+            },
+            "condition": {
+               "description": "A ValueEntity that is related to the subject of a Proposition via its predicate.",
+               "$ref": "core.json#/$defs/Condition"
+            }
+         },
+         "required": [
+            "type"
+         ],
+         "additionalProperties": false
       }
    }
 }
