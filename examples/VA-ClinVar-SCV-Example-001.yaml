@@ -1,6 +1,4 @@
-classification:
-  label: Pathogenic
-  description: submitted as `pathologic`
+conclusion: Pathogenic
 significance: supports
 strength: strong
 condition:
