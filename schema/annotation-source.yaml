@@ -1,0 +1,99 @@
+$schema: http://json-schema.org/draft/2020-12/schema
+title: GA4GH-Categorical-Variation-Definitions
+type: object
+strict: true
+
+imports:
+  gks.core: "core-source.yaml"
+  vrs: "vrs-source.yaml"
+  catvars: "catvars-source.yaml"
+  vod: "vod-source.yaml"
+
+namespaces:
+  gks.core: core.json#/$defs/
+
+$defs:
+  InformationEntity:
+    inherits: gks.core:ExtensibleEntity
+    description: >-
+      InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry 
+      information about things in the real world).
+    heritable_properties:
+      confidence_level:
+        type: string
+        enum: [ "strong", "likely", "uncertain" ]
+        description: >-
+          A qualitative term describing the degree of confidence held by the creator of the information entity, 
+          that the information it represents is true.
+      confidence_score:
+        type: DataItem
+        description: >-
+          A quantitative score reflecting the degree of confidence held by the creator of the information 
+          entity, that the information it represents is true.
+
+  Statement:
+    inherits: InformationEntity
+    description: >-
+      A Statement (aka ‘Assertion’) represents a claim of purported truth as made by a particular agent, 
+      on a particular occasion.
+    heritable_properties:
+      target_proposition:
+        $ref: "#/$defs/Proposition"
+        description: The Proposition about which the Statement is made.
+      conclusion:
+        type: string
+        description: >-
+          The conclusion drawn from the statement proposition, significance, confidence level, and/or 
+          confidence score.
+      significance:
+        type: string
+        enum: [ "supports", "uncertain", "refutes" ]
+        description: >-
+          The significance of this statement with respect to the target proposition.
+
+  VariationPathogenicityStatement:
+    inherits: Statement
+    description: >-
+      A :ref:`Statement` describing the pathogenicity of a variation.
+    properties:
+      type:
+        type: string
+        const: "VariationPathogenicityStatement"
+        default: "VariationPathogenicityStatement"
+        description: >-
+          MUST be "VariationPathogenicityStatement".
+      classification:
+        extends: conclusion
+        enum:
+        - "Pathogenic"
+        - "Likely Pathogenic"
+        - "Variant of Uncertain Significance"
+        - "Likely Benign"
+        - "Benign"
+
+  Proposition:
+    inherits: gks.core:ValueEntity
+    description: >-
+      An abstract :ref:`ValueEntity` representing the shareable meaning that can be 
+      put forth as true in a Statement.
+    heritable_properties:
+      subject:
+        type:
+          $ref: gks.core:ValueEntity
+        description: >-
+          The :ref:`ValueEntity` about which the Proposition is made.
+      predicate:
+        type: string
+        description: >-
+          The relationship asserted to hold between the subject and the object of the 
+          Proposition.
+      object:
+        type:
+          $ref: gks.core:ValueEntity
+        description: >-
+          A ValueEntity that is related to the subject of a Proposition via its predicate.
+
+  VariationPathogenicityProposition:
+    inherits: Proposition
+    description: >-
+      
