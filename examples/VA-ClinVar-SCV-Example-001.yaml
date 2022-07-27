@@ -90,6 +90,8 @@ target_proposition:
     members:
     - disease_id: MEDGEN:CN300503
       type: Disease
+    - phenotype_id: HPO:000001
+      type: Phenotype
     type: Condition
   type: VariationPathogenicityProposition
   variation:
