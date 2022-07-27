@@ -24,18 +24,6 @@ Some VariationPathogenicityProposition attributes are inherited from :ref:`Entit
       - string
       - 1..1
       - MUST be "VariationPathogenicityProposition"
-   *  - subject
-      - `gks.core:ValueEntity <gks.core:ValueEntity>`_
-      - 0..1
-      - The :ref:`ValueEntity` about which the Proposition is made.
-   *  - predicate
-      - string
-      - 0..1
-      - The relationship asserted to hold between the subject and the object of the  Proposition.
-   *  - object
-      - `ValueEntity <core.json#/$defs/ValueEntity>`_
-      - 0..1
-      - A ValueEntity that is related to the subject of a Proposition via its predicate.
    *  - variation
       - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_
       - 0..1

@@ -86,11 +86,11 @@ record_metadata:
 target_proposition:
   association: is_germline_disease_causing
   condition:
-    id: clinvar-measurset_id:123
+    id: clinvar-measureset_id:123
     members:
-    - condition_id: MEDGEN:CN300503
-      type: Condition
-    type: ConditionSet
+    - disease_id: MEDGEN:CN300503
+      type: Disease
+    type: Condition
   type: VariationPathogenicityProposition
   variation:
     id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk

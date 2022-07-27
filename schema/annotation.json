@@ -177,14 +177,6 @@
                   "$ref": "#/$defs/Contribution"
                }
             },
-            "target_proposition": {
-               "$ref": "#/$defs/VariationPathogenicityProposition",
-               "description": "The Proposition about which the Statement is made."
-            },
-            "conclusion": {
-               "description": "The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.",
-               "$ref": "core.json#/$defs/LabeledEntity"
-            },
             "significance": {
                "type": "string",
                "enum": [
@@ -205,6 +197,10 @@
             "classification": {
                "description": "The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.",
                "$ref": "core.json#/$defs/LabeledEntity"
+            },
+            "target_proposition": {
+               "$ref": "#/$defs/VariationPathogenicityProposition",
+               "description": "The Proposition about which the Statement is made."
             }
          },
          "required": [
@@ -232,18 +228,6 @@
                "const": "VariationPathogenicityProposition",
                "default": "VariationPathogenicityProposition",
                "description": "MUST be \"VariationPathogenicityProposition\""
-            },
-            "subject": {
-               "$ref": "gks.core:ValueEntity",
-               "description": "The ValueEntity about which the Proposition is made."
-            },
-            "predicate": {
-               "type": "string",
-               "description": "The relationship asserted to hold between the subject and the object of the  Proposition."
-            },
-            "object": {
-               "description": "A ValueEntity that is related to the subject of a Proposition via its predicate.",
-               "$ref": "core.json#/$defs/ValueEntity"
             },
             "variation": {
                "$ref": "catvars.json#/$defs/CategoricalVariation",

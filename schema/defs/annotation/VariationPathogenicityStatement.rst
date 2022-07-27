@@ -56,14 +56,6 @@ Some VariationPathogenicityStatement attributes are inherited from :ref:`Entity`
       - :ref:`Contribution`
       - 0..m
       - 
-   *  - target_proposition
-      - :ref:`VariationPathogenicityProposition`
-      - 0..1
-      - The Proposition about which the Statement is made.
-   *  - conclusion
-      - `LabeledEntity <core.json#/$defs/LabeledEntity>`_
-      - 0..1
-      - The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.
    *  - significance
       - string
       - 0..1
@@ -80,3 +72,7 @@ Some VariationPathogenicityStatement attributes are inherited from :ref:`Entity`
       - `LabeledEntity <core.json#/$defs/LabeledEntity>`_
       - 0..1
       - The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.
+   *  - target_proposition
+      - :ref:`VariationPathogenicityProposition`
+      - 0..1
+      - The Proposition about which the Statement is made.
