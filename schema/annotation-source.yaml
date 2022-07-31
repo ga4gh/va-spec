@@ -1,5 +1,5 @@
 $schema: http://json-schema.org/draft/2020-12/schema
-title: GA4GH-Categorical-Variation-Definitions
+title: CVC-MetaKB-Annotation-Definitions
 type: object
 strict: true
 
