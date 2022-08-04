@@ -1,0 +1,3 @@
+[submodule "submodules/vrsatile"]
+	path = submodules/vrsatile
+	url = https://github.com/ga4gh/vrsatile.git
