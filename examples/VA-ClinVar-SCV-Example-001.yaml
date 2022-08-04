@@ -1,7 +1,7 @@
 classification:
   id: LN:LN12311-2
   label: Pathogenic
-  type: LabeledEntity
+  type: Coding
   extensions:
     - name: submitter-classification
       type: Extension
@@ -84,16 +84,16 @@ record_metadata:
   type: RecordMetadata
   version: '2'
 target_proposition:
-  association: is_germline_disease_causing
+  association: causes_mendelian_condition
   condition:
     id: clinvar-measureset_id:123
     members:
-    - disease_id: MEDGEN:CN300503
+    - id: MEDGEN:CN300503
       type: Disease
-    - phenotype_id: HPO:000001
+    - id: HPO:000001
       type: Phenotype
     type: Condition
-  type: VariationPathogenicityProposition
+  type: VariationGermlineConditionProposition
   variation:
     id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
     type: CanonicalVariation
@@ -115,7 +115,7 @@ target_proposition:
         sequence: T
         type: LiteralSequenceExpression
       type: Allele
-type: VariationPathogenicityStatement
+type: VariationGermlineConditionStatement
 variation_descriptor:
   id: clinvar:376129
   label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)

@@ -10,8 +10,8 @@
          "description": "The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)",
          "properties": {
             "id": {
-               "$ref": "core.json#/$defs/CURIE",
-               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+               "type": "string",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
             },
             "type": {
                "type": "string",
@@ -51,8 +51,8 @@
          "description": "An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for  another agent\u2019s activity.",
          "properties": {
             "id": {
-               "$ref": "core.json#/$defs/CURIE",
-               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+               "type": "string",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
             },
             "type": {
                "type": "string",
@@ -85,8 +85,8 @@
          "description": "A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)",
          "properties": {
             "id": {
-               "$ref": "core.json#/$defs/CURIE",
-               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+               "type": "string",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
             },
             "type": {
                "type": "string",
@@ -125,17 +125,17 @@
       "VariationConditionStatement": {
          "description": "A Statement describing the impact of a variation on a condition."
       },
-      "VariationPathogenicityStatement": {
+      "VariationGermlineConditionStatement": {
          "description": "A Statement describing the pathogenicity of a variation.",
          "properties": {
             "id": {
-               "$ref": "core.json#/$defs/CURIE",
-               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+               "type": "string",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
             },
             "type": {
                "type": "string",
-               "const": "VariationPathogenicityStatement",
-               "default": "VariationPathogenicityStatement",
+               "const": "VariationGermlineConditionStatement",
+               "default": "VariationGermlineConditionStatement",
                "description": "MUST be \"VariationPathogenicityStatement\"."
             },
             "label": {
@@ -196,10 +196,10 @@
             },
             "classification": {
                "description": "The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.",
-               "$ref": "core.json#/$defs/LabeledEntity"
+               "$ref": "core.json#/$defs/Coding"
             },
             "target_proposition": {
-               "$ref": "#/$defs/VariationPathogenicityProposition",
+               "$ref": "#/$defs/VariationGermlineConditionProposition",
                "description": "The Proposition about which the Statement is made."
             }
          },
@@ -209,25 +209,25 @@
          "additionalProperties": false
       },
       "Proposition": {
-         "description": "An abstract ValueEntity representing the shareable meaning that can be  put forth as true in a Statement.",
+         "description": "An abstract ValueEntity representing the shareable meaning that can be  put forth as true or false by a Statement.",
          "required": [
             "subject",
             "predicate",
             "object"
          ]
       },
-      "VariationPathogenicityProposition": {
-         "description": "More to come!",
+      "VariationGermlineConditionProposition": {
+         "description": "A proposition asserting the role of a variation in causing or preventing a germline disease condition.",
          "properties": {
             "id": {
                "$ref": "core.json#/$defs/CURIE",
-               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system."
+               "description": "The 'logical' identifier of the entity in the system of record, and MUST be represented as a CURIE. This 'id' is unique within a given system, but may also refer to an 'id' for the shared concept in  another system (represented by namespace, accordingly)."
             },
             "type": {
                "type": "string",
-               "const": "VariationPathogenicityProposition",
-               "default": "VariationPathogenicityProposition",
-               "description": "MUST be \"VariationPathogenicityProposition\""
+               "const": "VariationGermlineConditionProposition",
+               "default": "VariationGermlineConditionProposition",
+               "description": "MUST be \"VariationGermlineConditionProposition\""
             },
             "variation": {
                "$ref": "catvars.json#/$defs/CategoricalVariation",
@@ -235,9 +235,12 @@
             },
             "association": {
                "type": "string",
-               "description": "The relationship asserted to hold between the subject and the object of the  Proposition.",
-               "const": "is_germline_disease_causing",
-               "default": "is_germline_disease_causing"
+               "description": "The relationship asserted to hold between the variation (subject) and  the condition (object) of the Proposition.",
+               "enum": [
+                  "causes_mendelian_condition",
+                  "increases_risk_for_condition",
+                  "decreases_risk_for_condition"
+               ]
             },
             "condition": {
                "description": "A ValueEntity that is related to the subject of a Proposition via its predicate.",

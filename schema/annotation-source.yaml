@@ -110,7 +110,7 @@ $defs:
         $ref: "#/$defs/Proposition"
         description: The Proposition about which the Statement is made.
       conclusion:
-        $ref_curie: gks.core:LabeledEntity
+        $ref_curie: gks.core:Coding
         description: >-
           The conclusion drawn from the statement proposition, significance, confidence level, and/or 
           confidence score.
@@ -134,28 +134,28 @@ $defs:
         description: >-
           A descriptor characterizing the variation impacting the condition.
 
-  VariationPathogenicityStatement:
+  VariationGermlineConditionStatement:
     inherits: VariationConditionStatement
     description: >-
       A :ref:`Statement` describing the pathogenicity of a variation.
     properties:
       type:
         type: string
-        const: "VariationPathogenicityStatement"
-        default: "VariationPathogenicityStatement"
+        const: "VariationGermlineConditionStatement"
+        default: "VariationGermlineConditionStatement"
         description: >-
           MUST be "VariationPathogenicityStatement".
       classification:
         extends: conclusion
       target_proposition:
         extends: target_proposition
-        $ref: "#/$defs/VariationPathogenicityProposition"
+        $ref: "#/$defs/VariationGermlineConditionProposition"
 
   Proposition:
     inherits: gks.core:ValueEntity
     description: >-
       An abstract :ref:`ValueEntity` representing the shareable meaning that can be 
-      put forth as true in a Statement.
+      put forth as true or false by a Statement.
     heritable_properties:
       subject:
         $ref: gks.core:ValueEntity
@@ -172,24 +172,30 @@ $defs:
           A ValueEntity that is related to the subject of a Proposition via its predicate.
     required: [ "subject", "predicate", "object" ]
 
-  VariationPathogenicityProposition:
+  VariationGermlineConditionProposition:
     inherits: Proposition
     description: >-
-      More to come!
+      A proposition asserting the role of a variation in causing or preventing
+      a germline disease condition.
     properties:
       type:
         type: string
-        const: VariationPathogenicityProposition
-        default: VariationPathogenicityProposition
-        description: MUST be "VariationPathogenicityProposition"
+        const: VariationGermlineConditionProposition
+        default: VariationGermlineConditionProposition
+        description: MUST be "VariationGermlineConditionProposition"
       variation:
         extends: subject
         $ref_curie: catvars:CategoricalVariation
       association:
         extends: predicate
         type: string
-        const: is_germline_disease_causing
-        default: is_germline_disease_causing
+        description: >-
+          The relationship asserted to hold between the variation (subject) and 
+          the condition (object) of the Proposition.
+        enum:
+        - causes_mendelian_condition
+        - increases_risk_for_condition
+        - decreases_risk_for_condition
       condition:
         extends: object
         $ref_curie: gks.core:Condition

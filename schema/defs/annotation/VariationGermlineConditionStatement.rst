@@ -4,7 +4,7 @@ A :ref:`Statement` describing the pathogenicity of a variation.
 
 **Information Model**
 
-Some VariationPathogenicityStatement attributes are inherited from :ref:`Entity`.
+Some VariationGermlineConditionStatement attributes are inherited from :ref:`Entity`.
 
 .. list-table::
    :class: clean-wrap
@@ -17,9 +17,9 @@ Some VariationPathogenicityStatement attributes are inherited from :ref:`Entity`
       - Limits
       - Description
    *  - id
-      - `CURIE <core.json#/$defs/CURIE>`_
+      - string
       - 0..1
-      - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system.
+      - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
    *  - type
       - string
       - 1..1
@@ -69,10 +69,10 @@ Some VariationPathogenicityStatement attributes are inherited from :ref:`Entity`
       - 0..1
       - A descriptor characterizing the variation impacting the condition.
    *  - classification
-      - `LabeledEntity <core.json#/$defs/LabeledEntity>`_
+      - `Coding <core.json#/$defs/Coding>`_
       - 0..1
       - The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.
    *  - target_proposition
-      - :ref:`VariationPathogenicityProposition`
+      - :ref:`VariationGermlineConditionProposition`
       - 0..1
       - The Proposition about which the Statement is made.
