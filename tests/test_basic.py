@@ -2,7 +2,9 @@ import yaml
 from pathlib import Path
 from jsonschema import validate
 
-with open('fixtures/allele.yaml') as f:
+FIXTURES_PATH = Path(__file__).parent / 'fixtures'
+
+with open(FIXTURES_PATH / 'allele.yaml') as f:
     allele = yaml.safe_load(f)
 
 SCHEMA_URI_ROOT = (Path(__file__).parent.parent / 'schema').as_uri()
