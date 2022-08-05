@@ -2,12 +2,15 @@ import yaml
 from pathlib import Path
 from jsonschema import validate
 
-FIXTURES_PATH = Path(__file__).parent / 'fixtures'
+ROOT_PATH = Path(__file__).parent.parent
+TEST_PATH = ROOT_PATH / 'tests'
+FIXTURES_PATH = TEST_PATH / 'fixtures'
+
 
 with open(FIXTURES_PATH / 'allele.yaml') as f:
     allele = yaml.safe_load(f)
 
-SCHEMA_URI_ROOT = (Path(__file__).parent.parent / 'schema').as_uri()
+SCHEMA_URI_ROOT = (ROOT_PATH / 'schema').as_uri()
 
 
 def get_schema(schema_file, schema_class, kw="$defs"):
@@ -22,10 +25,10 @@ def test_allele_validation():
 
 
 def test_examples():
-    with open('test_definitions.yaml') as def_file:
+    with open(TEST_PATH / 'test_definitions.yaml') as def_file:
         test_spec = yaml.safe_load(def_file)
     for test in test_spec['tests']:
-        with open(f"fixtures/{test['test_file']}") as datafile:
+        with open(FIXTURES_PATH / test['test_file']) as datafile:
             data = yaml.safe_load(datafile)
         schema = get_schema(
             test['schema'],
