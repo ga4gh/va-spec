@@ -12,6 +12,7 @@ pyyaml = "*"
 [dev-packages]
 jupyterlab = "*"
 pyyaml = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.9"
