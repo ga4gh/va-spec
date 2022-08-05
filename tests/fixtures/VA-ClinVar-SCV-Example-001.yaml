@@ -13,6 +13,13 @@ strength:
   type: Coding
 condition_descriptor:
   condition_id: clinvar-condition-id:123
+  member_descriptors:
+    - type: DiseaseDescriptor
+      disease_id: MEDGEN:CN300503
+      label: Overgrowth syndrome and/or cerebral malformations due to abnormalities in MTOR pathway genes
+    - type: PhenotypeDescriptor
+      phenotype_id: HP:0000118
+      label: Phenotypic abnormality
   type: ConditionDescriptor
 contributions:
 - agent:
@@ -91,7 +98,7 @@ target_proposition:
     members:
     - id: MEDGEN:CN300503
       type: Disease
-    - id: HPO:000001
+    - id: HP:0000118
       type: Phenotype
     type: Condition
   type: VariationGermlineConditionProposition

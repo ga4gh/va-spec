@@ -138,7 +138,7 @@ therapy_descriptor:
         label: Non-small cell lung cancer
         disease_id: ncit:C2926
   therapy_id: rxcui:1430438
-disease_descriptor:
+condition_descriptor:
   id: civic.did:30
   type: DiseaseDescriptor
   label: Lung Adenocarcinoma
