@@ -153,7 +153,8 @@ $defs:
   VariationGermlineConditionStatement:
     inherits: VariationConditionStatement
     description: >-
-      A :ref:`Statement` describing the pathogenicity of a variation.
+      A :ref:`Statement` describing the role of a variation in causing or protecting
+      against a germline Condition.
     properties:
       type:
         type: string
