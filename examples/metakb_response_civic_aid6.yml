@@ -1,5 +1,13 @@
-tr_statement:
-  id: civic.aid:6
+query:
+  statement_id: civic.aid:6
+warnings: []
+matches:
+  statements:
+  - civic.aid:6
+  propositions:
+  - proposition:Zfp_VG0uvxwteCcJYO6_AJv1KDmJlFjs
+statements:
+- id: civic.aid:6
   description: L858R is among the most common sensitizing EGFR mutations in NSCLC,
     and is assessed via DNA mutational analysis, including Sanger sequencing and next
     generation sequencing methods. Tyrosine kinase inhibitor afatinib is FDA approved,
