@@ -44,6 +44,11 @@ $defs:
         type: array
         items:
           $ref: "#/$defs/Contribution"
+      is_reported_in:
+        type: array
+        items:
+          $ref: "#/$defs/Document"
+        description: A document in which the information content is expressed.
 
   Contribution:
     inherits: gks.core:ExtensibleEntity

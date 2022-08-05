@@ -8,13 +8,17 @@ strength:
   id: civic.evidence_level:B
   label: Clinical trial or cohort study
   type: Coding
-proposition:
+target_proposition:
   id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
-  type: therapeutic_response_proposition
-  predicate: predicts_sensitivity_to
-  subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
-  object_qualifier: ncit:C3512
-  object: rxcui:1430438
+  type: VariationTherapeuticResponseProposition
+  association: predicts_sensitivity_to
+  variation: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+  condition:
+    id: ncit:C3512
+    type: Disease
+  therapy:
+    id: rxcui:1430438
+    type: Drug
 variation_origin: somatic
 variation_descriptor:
   id: civic.vid:33
@@ -146,20 +150,15 @@ condition_descriptor:
   - DOID:3910
   disease_id: ncit:C3512
 method:
-  id: method:1
+  id: metakb.method:1
+  is_reported_in: pmid:31779674
   label: Standard operating procedure for curation and clinical interpretation of
     variants in cancer
-  url: https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-019-0687-x
-  version:
-    year: 2019
-    month: 11
-    day: 29
-  authors: Danos, A.M., Krysiak, K., Barnell, E.K. et al.
   type: Method
-supported_by:
+is_reported_in:
 - id: pmid:23816960
   label: Sequist et al., 2013, J. Clin. Oncol.
   description: Phase III study of afatinib or cisplatin plus pemetrexed in patients
     with metastatic lung adenocarcinoma with EGFR mutations.
   type: Document
-type: Statement
+type: VariationTherapeuticResponseStatement

@@ -56,6 +56,10 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - :ref:`Contribution`
       - 0..m
       - 
+   *  - is_reported_in
+      - :ref:`Document`
+      - 0..m
+      - A document in which the information content is expressed.
    *  - direction
       - string
       - 0..1
