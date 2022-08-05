@@ -40,14 +40,14 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - string
       - 0..1
       - A free-text description of the InformationEntity.
-   *  - confidence_level
-      - string
+   *  - strength
+      - `Coding <core.json#/$defs/Coding>`_
       - 0..1
-      - A qualitative term describing the degree of confidence held by the creator of the information entity,  that the information it represents is true.
+      - A coded term describing the strength of support that the information the statement represents is true.
    *  - confidence_score
       - :ref:`DataItem`
       - 0..1
-      - A quantitative score reflecting the degree of confidence held by the creator of the information  entity, that the information it represents is true.
+      - A quantitative score reflecting the degree of confidence that the information  the information entity represents is true.
    *  - method
       - :ref:`Method`
       - 0..1
@@ -56,22 +56,26 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - :ref:`Contribution`
       - 0..m
       - 
-   *  - significance
+   *  - direction
       - string
       - 0..1
-      - The significance of this statement with respect to the target proposition.
-   *  - condition_descriptor
-      - `ConditionDescriptor <vod.json#/$defs/ConditionDescriptor>`_
-      - 0..1
-      - A descriptor characterizing the condition impacted by the variation.
+      - The direction of this statement with respect to the target proposition.
    *  - variation_descriptor
       - `CategoricalVariationDescriptor <vod.json#/$defs/CategoricalVariationDescriptor>`_
       - 0..1
       - A descriptor characterizing the variation impacting the condition.
+   *  - variation_origin
+      - string
+      - 0..1
+      - A representation of whether the subject variation is inherited (germline) or acquired (somatic).
+   *  - condition_descriptor
+      - `ConditionDescriptor <vod.json#/$defs/ConditionDescriptor>`_
+      - 0..1
+      - A descriptor characterizing the condition impacted by the variation.
    *  - classification
       - `Coding <core.json#/$defs/Coding>`_
       - 0..1
-      - The conclusion drawn from the statement proposition, significance, confidence level, and/or  confidence score.
+      - The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.
    *  - target_proposition
       - :ref:`VariationGermlineConditionProposition`
       - 0..1

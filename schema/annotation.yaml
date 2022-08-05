@@ -103,6 +103,8 @@ $defs:
   Statement:
     description: "A Statement (aka \u2018Assertion\u2019) represents a claim of purported\
       \ truth as made by a particular agent,  on a particular occasion."
+  VariationStatement:
+    description: A Statement describing the impact of a variation.
   VariationConditionStatement:
     description: A Statement describing the impact of a variation on a condition.
   VariationGermlineConditionStatement:
@@ -130,20 +132,14 @@ $defs:
       description:
         type: string
         description: A free-text description of the InformationEntity.
-      confidence_level:
-        type: string
-        enum:
-        - strong
-        - likely
-        - uncertain
-        description: A qualitative term describing the degree of confidence held by
-          the creator of the information entity,  that the information it represents
-          is true.
+      strength:
+        description: A coded term describing the strength of support that the information
+          the statement represents is true.
+        $ref: core.json#/$defs/Coding
       confidence_score:
         $ref: '#/$defs/DataItem'
-        description: A quantitative score reflecting the degree of confidence held
-          by the creator of the information  entity, that the information it represents
-          is true.
+        description: A quantitative score reflecting the degree of confidence that
+          the information  the information entity represents is true.
       method:
         $ref: '#/$defs/Method'
         description: A Method that describes all or part of the process through which
@@ -152,23 +148,29 @@ $defs:
         type: array
         items:
           $ref: '#/$defs/Contribution'
-      significance:
+      direction:
         type: string
         enum:
         - supports
         - uncertain
         - refutes
-        description: The significance of this statement with respect to the target
-          proposition.
-      condition_descriptor:
-        description: A descriptor characterizing the condition impacted by the variation.
-        $ref: vod.json#/$defs/ConditionDescriptor
+        description: The direction of this statement with respect to the target proposition.
       variation_descriptor:
         description: A descriptor characterizing the variation impacting the condition.
         $ref: vod.json#/$defs/CategoricalVariationDescriptor
+      variation_origin:
+        type: string
+        enum:
+        - germline
+        - somatic
+        description: A representation of whether the subject variation is inherited
+          (germline) or acquired (somatic).
+      condition_descriptor:
+        description: A descriptor characterizing the condition impacted by the variation.
+        $ref: vod.json#/$defs/ConditionDescriptor
       classification:
-        description: The conclusion drawn from the statement proposition, significance,
-          confidence level, and/or  confidence score.
+        description: The conclusion drawn from the statement proposition, direction,
+          strength, and/or  confidence score.
         $ref: core.json#/$defs/Coding
       target_proposition:
         $ref: '#/$defs/VariationGermlineConditionProposition'

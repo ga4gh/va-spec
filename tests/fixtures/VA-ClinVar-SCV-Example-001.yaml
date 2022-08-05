@@ -6,8 +6,11 @@ classification:
     - name: submitter-classification
       type: Extension
       value: pathologic
-significance: supports
-confidence_level: strong
+direction: supports
+strength:
+  id: cvc:definitive
+  label: Definitive
+  type: Coding
 condition_descriptor:
   condition_id: clinvar-condition-id:123
   type: ConditionDescriptor
@@ -58,6 +61,7 @@ description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant 
   on the ACMG/AMP criteria applied, as specified by the ClinGen Brain Malformations
   Expert Panel: PM2_P, PP2, PM5, PS3_P, PS4, PS2_M; 11 points (VCEP specifications
   version 1; Approved: 1/31/2021)'
+variation_origin: germline
 extensions:
 - name: clinvar-review-status
   type: Extension
@@ -70,9 +74,6 @@ extensions:
 - name: clinvar-scv-affected-statuses
   type: Extension
   value: unknown
-- name: clinvar-scv-allele-origins
-  type: Extension
-  value: germline
 id: cvc.scv:SCV001949955-20220101
 method:
   id: cspec:123134

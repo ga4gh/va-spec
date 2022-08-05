@@ -25,17 +25,16 @@ $defs:
         type: string
         description: >-
           A free-text description of the InformationEntity.
-      confidence_level:
-        type: string
-        enum: [ "strong", "likely", "uncertain" ]
+      strength:
+        $ref_curie: gks.core:Coding
         description: >-
-          A qualitative term describing the degree of confidence held by the creator of the information entity, 
-          that the information it represents is true.
+          A coded term describing the strength of support that the information the statement
+          represents is true.
       confidence_score:
         $ref: "#/$defs/DataItem"
         description: >-
-          A quantitative score reflecting the degree of confidence held by the creator of the information 
-          entity, that the information it represents is true.
+          A quantitative score reflecting the degree of confidence that the information 
+          the information entity represents is true.
       method:
         $ref: "#/$defs/Method"
         description: >-
@@ -112,16 +111,32 @@ $defs:
       conclusion:
         $ref_curie: gks.core:Coding
         description: >-
-          The conclusion drawn from the statement proposition, significance, confidence level, and/or 
+          The conclusion drawn from the statement proposition, direction, strength, and/or 
           confidence score.
-      significance:
+      direction:
         type: string
         enum: [ "supports", "uncertain", "refutes" ]
         description: >-
-          The significance of this statement with respect to the target proposition.
+          The direction of this statement with respect to the target proposition.
+
+  VariationStatement:
+    inherits: Statement
+    description: >-
+      A :ref:`Statement` describing the impact of a variation.
+    heritable_properties:
+      variation_descriptor:
+        $ref_curie: vod:CategoricalVariationDescriptor
+        description: >-
+          A descriptor characterizing the variation impacting the condition.
+      variation_origin:
+        type: string
+        enum: [ "germline", "somatic" ]
+        description: >-
+          A representation of whether the subject variation is inherited (germline) or
+          acquired (somatic).
 
   VariationConditionStatement:
-    inherits: Statement
+    inherits: VariationStatement
     description: >-
       A :ref:`Statement` describing the impact of a variation on a condition.
     heritable_properties:
@@ -129,10 +144,6 @@ $defs:
         $ref_curie: vod:ConditionDescriptor
         description: >-
           A descriptor characterizing the condition impacted by the variation.
-      variation_descriptor:
-        $ref_curie: vod:CategoricalVariationDescriptor
-        description: >-
-          A descriptor characterizing the variation impacting the condition.
 
   VariationGermlineConditionStatement:
     inherits: VariationConditionStatement
