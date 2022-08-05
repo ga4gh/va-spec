@@ -1,0 +1,123 @@
+classification:
+  id: LN:LN12311-2
+  label: Pathogenic
+  type: Coding
+  extensions:
+    - name: submitter-classification
+      type: Extension
+      value: pathologic
+significance: supports
+confidence_level: strong
+condition_descriptor:
+  condition_id: clinvar-condition-id:123
+  type: ConditionDescriptor
+contributions:
+- agent:
+    id: clinvar-submitter:123
+    name: ClinGen Brain Malformations Variant Curation Expert Panel
+    type: Agent
+  date: '2022-02-17'
+  role: evaluator
+  type: Contribution
+- agent:
+    id: clinvar-submitter:123
+    name: ClinGen Brain Malformations Variant Curation Expert Panel
+    type: Agent
+  date: '2022-02-18'
+  role: approver
+  type: Contribution
+- agent:
+    id: genegraph:cvc1
+    name: ClinGen's ClinVar Variant Curation Transformation System
+    type: Agent
+  date: '2022-07-31'
+  role: transformer
+  type: Contribution
+description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant predicted
+  to cause substitution of (p.Ser2215Tyr). This variant is absent from gnomAD v2.1.1
+  (PM2_Supporting). MTOR, in which the variant was identified, is defined by the ClinGen
+  Brain Malformations Expert Panel as a gene that has a low rate of benign missense
+  variation and where pathogenic missense variants are a common mechanism of disease
+  (PP2). A different amino acid change (p.Ser2215Phe), at this locus, is classified
+  as pathogenic for Overgrowth with or without cerebral malformations due to abnormalities
+  in MTOR-pathway genes by the ClinGen BMEP (PM5). This variant has been shown to
+  significantly increase phosphorylation levels in experiments with case and controls
+  cells of similar isogenic backgrounds indicating that this variant impacts protein
+  function (PMIDs: 20190810, 24631838, 28963468) (PS3_Supporting). The prevalence
+  of the variant in affected individuals is significantly increased compared with
+  the prevalence in controls (PS4; PMID: 27830187, 29281825, 225401301, 26619011;
+  identified in 5 individuals with neuropathology confirmatory of a malformation of
+  cortical development, 1 individual with neuroimaging appearance consistent with
+  a malformation of cortical development (without neuropathology), 1 individual with
+  neuroimaging demonstrating at least one large cerebral hemisphere with cortical
+  malformation(s), 15 tumor samples in the literature and COSMIC). Testing of unaffected
+  and affected tissue show variable allelic fractions consistent with a post-zygotic
+  event (PS2_Moderate; PMID: 26018084). In summary, this variant meets the criteria
+  to be classified as Pathogenic for mosaic autosomal dominant overgrowth with or
+  without cerebral malformations due to abnormalities in MTOR-pathway genes based
+  on the ACMG/AMP criteria applied, as specified by the ClinGen Brain Malformations
+  Expert Panel: PM2_P, PP2, PM5, PS3_P, PS4, PS2_M; 11 points (VCEP specifications
+  version 1; Approved: 1/31/2021)'
+extensions:
+- name: clinvar-review-status
+  type: Extension
+  value:
+    label: reviewed by expert panel
+    value: 3-star
+- name: clinvar-scv-methods
+  type: Extension
+  value: curation
+- name: clinvar-scv-affected-statuses
+  type: Extension
+  value: unknown
+- name: clinvar-scv-allele-origins
+  type: Extension
+  value: germline
+id: cvc.scv:SCV001949955-20220101
+method:
+  id: cspec:123134
+  is_reported_in: PMID:1231231231
+  label: Clingen BrainMalform ACMG Specifications v1
+  type: Method
+record_metadata:
+  is_version_of: clinvar-scv:SCV001949955
+  type: RecordMetadata
+  version: '2'
+target_proposition:
+  association: causes_mendelian_condition
+  condition:
+    id: clinvar-measureset_id:123
+    members:
+    - id: MEDGEN:CN300503
+      type: Disease
+    - id: HPO:000001
+      type: Phenotype
+    type: Condition
+  type: VariationGermlineConditionProposition
+  variation:
+    id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
+    type: CanonicalVariation
+    canonical_context:
+      id: ga4gh:VA.Z9tYtztQ5hkRNOajjdJolwkHSBfDYXH0
+      location:
+        id: ga4gh:VSL.rrTlrvGnEyknV7tJhO8sQSSC2LhqyuxX
+        interval:
+          end:
+            type: Number
+            value: 11124516
+          start:
+            type: Number
+            value: 11124515
+          type: SequenceInterval
+        sequence_id: ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+        type: SequenceLocation
+      state:
+        sequence: T
+        type: LiteralSequenceExpression
+      type: Allele
+type: VariationGermlineConditionStatement
+variation_descriptor:
+  id: clinvar:376129
+  label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)
+  type: CanonicalVariationDescriptor
+  canonical_variation_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk

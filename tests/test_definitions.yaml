@@ -1,0 +1,4 @@
+tests:
+  - test_file: VA-ClinVar-SCV-Example-001.yaml
+    schema: annotation
+    definition: VariationGermlineConditionStatement
