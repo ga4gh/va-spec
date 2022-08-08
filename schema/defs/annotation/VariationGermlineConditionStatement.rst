@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A :ref:`Statement` describing the pathogenicity of a variation.
+A :ref:`Statement` describing the role of a variation in causing or protecting against a germline Condition.
 
 **Information Model**
 
@@ -32,10 +32,6 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - `Extension <core.json#/$defs/Extension>`_
       - 0..m
       - 
-   *  - record_metadata
-      - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
-      - 0..1
-      - 
    *  - description
       - string
       - 0..1
@@ -60,6 +56,10 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - :ref:`Document`
       - 0..m
       - A document in which the information content is expressed.
+   *  - record_metadata
+      - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
+      - 0..1
+      - 
    *  - direction
       - string
       - 0..1

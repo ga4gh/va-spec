@@ -49,6 +49,8 @@ $defs:
         items:
           $ref: "#/$defs/Document"
         description: A document in which the information content is expressed.
+      record_metadata:
+        $ref_curie: gks.core:RecordMetadata
 
   Contribution:
     inherits: gks.core:ExtensibleEntity
@@ -189,8 +191,16 @@ $defs:
           A ValueEntity that is related to the subject of a Proposition via its predicate.
     required: [ "subject", "predicate", "object" ]
 
-  VariationGermlineConditionProposition:
+  VariationProposition:
     inherits: Proposition
+    description: TODO
+    heritable_properties:
+      variation:
+        extends: subject
+        $ref_curie: catvars:CategoricalVariation
+
+  VariationGermlineConditionProposition:
+    inherits: VariationProposition
     description: >-
       A proposition asserting the role of a variation in causing or preventing
       a germline disease condition.
@@ -200,9 +210,6 @@ $defs:
         const: VariationGermlineConditionProposition
         default: VariationGermlineConditionProposition
         description: MUST be "VariationGermlineConditionProposition"
-      variation:
-        extends: subject
-        $ref_curie: catvars:CategoricalVariation
       association:
         extends: predicate
         type: string
@@ -216,3 +223,7 @@ $defs:
       condition:
         extends: object
         $ref_curie: gks.core:Condition
+
+  VariationTherapeuticResponseProposition:
+    inherits: VariationProposition
+    description: TODO

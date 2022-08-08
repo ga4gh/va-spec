@@ -28,9 +28,6 @@
                   "$ref": "core.json#/$defs/Extension"
                }
             },
-            "record_metadata": {
-               "$ref": "core.json#/$defs/RecordMetadata"
-            },
             "agent": {
                "$ref": "#/$defs/Agent"
             },
@@ -69,9 +66,6 @@
                   "$ref": "core.json#/$defs/Extension"
                }
             },
-            "record_metadata": {
-               "$ref": "core.json#/$defs/RecordMetadata"
-            },
             "name": {
                "type": "string"
             }
@@ -103,9 +97,6 @@
                   "$ref": "core.json#/$defs/Extension"
                }
             },
-            "record_metadata": {
-               "$ref": "core.json#/$defs/RecordMetadata"
-            },
             "is_reported_in": {
                "$ref": "core.json#/$defs/CURIE"
             },
@@ -129,7 +120,7 @@
          "description": "A Statement describing the impact of a variation on a condition."
       },
       "VariationGermlineConditionStatement": {
-         "description": "A Statement describing the pathogenicity of a variation.",
+         "description": "A Statement describing the role of a variation in causing or protecting against a germline Condition.",
          "properties": {
             "id": {
                "type": "string",
@@ -149,9 +140,6 @@
                "items": {
                   "$ref": "core.json#/$defs/Extension"
                }
-            },
-            "record_metadata": {
-               "$ref": "core.json#/$defs/RecordMetadata"
             },
             "description": {
                "type": "string",
@@ -181,6 +169,9 @@
                   "$ref": "#/$defs/Document"
                },
                "description": "A document in which the information content is expressed."
+            },
+            "record_metadata": {
+               "$ref": "core.json#/$defs/RecordMetadata"
             },
             "direction": {
                "type": "string",
@@ -229,6 +220,9 @@
             "object"
          ]
       },
+      "VariationProposition": {
+         "description": "TODO"
+      },
       "VariationGermlineConditionProposition": {
          "description": "A proposition asserting the role of a variation in causing or preventing a germline disease condition.",
          "properties": {
@@ -264,6 +258,9 @@
             "type"
          ],
          "additionalProperties": false
+      },
+      "VariationTherapeuticResponseProposition": {
+         "description": "TODO"
       }
    }
 }

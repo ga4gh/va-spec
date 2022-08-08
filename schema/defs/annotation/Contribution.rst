@@ -32,10 +32,6 @@ Some Contribution attributes are inherited from :ref:`Entity`.
       - `Extension <core.json#/$defs/Extension>`_
       - 0..m
       - 
-   *  - record_metadata
-      - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
-      - 0..1
-      - 
    *  - agent
       - :ref:`Agent`
       - 0..1

@@ -32,10 +32,6 @@ Some Agent attributes are inherited from :ref:`Entity`.
       - `Extension <core.json#/$defs/Extension>`_
       - 0..m
       - 
-   *  - record_metadata
-      - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
-      - 0..1
-      - 
    *  - name
       - string
       - 0..1
