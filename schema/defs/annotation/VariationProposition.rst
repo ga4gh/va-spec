@@ -1,3 +1,3 @@
 **Computational Definition**
 
-TODO
+A proposition describing the role of a variation subject.

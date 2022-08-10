@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A proposition asserting the role of a variation in causing or preventing a germline disease condition.
+A proposition describing the role of a variation in causing or preventing a germline disease condition.
 
 **Information Model**
 
@@ -24,15 +24,15 @@ Some VariationGermlineConditionProposition attributes are inherited from :ref:`E
       - string
       - 1..1
       - MUST be "VariationGermlineConditionProposition"
-   *  - variation
+   *  - subject
       - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_
       - 0..1
-      - The :ref:`ValueEntity` about which the Proposition is made.
-   *  - association
+      - The `Variation` about which the Proposition is made.
+   *  - predicate
       - string
       - 0..1
       - The relationship asserted to hold between the variation (subject) and  the condition (object) of the Proposition.
-   *  - condition
+   *  - object
       - `Condition <core.json#/$defs/Condition>`_
       - 0..1
       - A ValueEntity that is related to the subject of a Proposition via its predicate.

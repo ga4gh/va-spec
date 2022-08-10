@@ -11,7 +11,7 @@ strength:
   id: cvc:definitive
   label: Definitive
   type: Coding
-condition_descriptor:
+object_descriptor:
   condition_id: clinvar-condition-id:123
   member_descriptors:
     - type: DiseaseDescriptor
@@ -92,8 +92,8 @@ record_metadata:
   type: RecordMetadata
   version: '2'
 target_proposition:
-  association: causes_mendelian_condition
-  condition:
+  predicate: causes_mendelian_condition
+  object:
     id: clinvar-measureset_id:123
     members:
     - id: MEDGEN:CN300503
@@ -102,7 +102,7 @@ target_proposition:
       type: Phenotype
     type: Condition
   type: VariationGermlineConditionProposition
-  variation:
+  subject:
     id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
     type: CanonicalVariation
     canonical_context:
@@ -124,7 +124,7 @@ target_proposition:
         type: LiteralSequenceExpression
       type: Allele
 type: VariationGermlineConditionStatement
-variation_descriptor:
+subject_descriptor:
   id: clinvar:376129
   label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)
   type: CanonicalVariationDescriptor

@@ -131,7 +131,7 @@ $defs:
     description: >-
       A :ref:`Statement` describing the impact of a variation.
     heritable_properties:
-      variation_descriptor:
+      subject_descriptor:
         $ref_curie: vod:CategoricalVariationDescriptor
         description: >-
           A descriptor characterizing the variation impacting the condition.
@@ -147,7 +147,7 @@ $defs:
     description: >-
       A :ref:`Statement` describing the impact of a variation on a condition.
     heritable_properties:
-      condition_descriptor:
+      object_descriptor:
         $ref_curie: vod:ConditionDescriptor
         description: >-
           A descriptor characterizing the condition impacted by the variation.
@@ -193,16 +193,17 @@ $defs:
 
   VariationProposition:
     inherits: Proposition
-    description: TODO
+    description: A proposition describing the role of a variation subject.
     heritable_properties:
-      variation:
-        extends: subject
+      subject:
+        description: >-
+          The `Variation` about which the Proposition is made.
         $ref_curie: catvars:CategoricalVariation
 
   VariationGermlineConditionProposition:
     inherits: VariationProposition
     description: >-
-      A proposition asserting the role of a variation in causing or preventing
+      A proposition describing the role of a variation in causing or preventing
       a germline disease condition.
     properties:
       type:
@@ -210,8 +211,7 @@ $defs:
         const: VariationGermlineConditionProposition
         default: VariationGermlineConditionProposition
         description: MUST be "VariationGermlineConditionProposition"
-      association:
-        extends: predicate
+      predicate:
         type: string
         description: >-
           The relationship asserted to hold between the variation (subject) and 
@@ -220,10 +220,17 @@ $defs:
         - causes_mendelian_condition
         - increases_risk_for_condition
         - decreases_risk_for_condition
-      condition:
+      object:
         extends: object
         $ref_curie: gks.core:Condition
 
-  VariationTherapeuticResponseProposition:
+  VariationNeoplasmProposition:
     inherits: VariationProposition
-    description: TODO
+    description: >-
+      A proposition regarding the effect of a variation within a neoplasm.
+
+  VariationNeoplasmTherapeuticResponseProposition:
+    inherits: VariationNeoplasmProposition
+    description: >-
+      A proposition describing the role of a variation in modulating the response of a
+      neoplasm to one or more therapeutics.

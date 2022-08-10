@@ -182,7 +182,7 @@
                ],
                "description": "The direction of this statement with respect to the target proposition."
             },
-            "variation_descriptor": {
+            "subject_descriptor": {
                "description": "A descriptor characterizing the variation impacting the condition.",
                "$ref": "vod.json#/$defs/CategoricalVariationDescriptor"
             },
@@ -194,7 +194,7 @@
                ],
                "description": "A representation of whether the subject variation is inherited (germline) or acquired (somatic)."
             },
-            "condition_descriptor": {
+            "object_descriptor": {
                "description": "A descriptor characterizing the condition impacted by the variation.",
                "$ref": "vod.json#/$defs/ConditionDescriptor"
             },
@@ -221,10 +221,10 @@
          ]
       },
       "VariationProposition": {
-         "description": "TODO"
+         "description": "A proposition describing the role of a variation subject."
       },
       "VariationGermlineConditionProposition": {
-         "description": "A proposition asserting the role of a variation in causing or preventing a germline disease condition.",
+         "description": "A proposition describing the role of a variation in causing or preventing a germline disease condition.",
          "properties": {
             "id": {
                "$ref": "core.json#/$defs/CURIE",
@@ -236,11 +236,11 @@
                "default": "VariationGermlineConditionProposition",
                "description": "MUST be \"VariationGermlineConditionProposition\""
             },
-            "variation": {
-               "$ref": "catvars.json#/$defs/CategoricalVariation",
-               "description": "The ValueEntity about which the Proposition is made."
+            "subject": {
+               "description": "The `Variation` about which the Proposition is made.",
+               "$ref": "catvars.json#/$defs/CategoricalVariation"
             },
-            "association": {
+            "predicate": {
                "type": "string",
                "description": "The relationship asserted to hold between the variation (subject) and  the condition (object) of the Proposition.",
                "enum": [
@@ -249,7 +249,7 @@
                   "decreases_risk_for_condition"
                ]
             },
-            "condition": {
+            "object": {
                "description": "A ValueEntity that is related to the subject of a Proposition via its predicate.",
                "$ref": "core.json#/$defs/Condition"
             }
@@ -259,8 +259,11 @@
          ],
          "additionalProperties": false
       },
-      "VariationTherapeuticResponseProposition": {
-         "description": "TODO"
+      "VariationNeoplasmProposition": {
+         "description": "A proposition regarding the effect of a variation within a neoplasm."
+      },
+      "VariationNeoplasmTherapeuticResponseProposition": {
+         "description": "A proposition describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics."
       }
    }
 }
