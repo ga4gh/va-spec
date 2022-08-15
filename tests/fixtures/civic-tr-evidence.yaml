@@ -10,15 +10,15 @@ strength:
   type: Coding
 target_proposition:
   id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
-  type: VariationTherapeuticResponseProposition
-  association: predicts_sensitivity_to
-  variation: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+  type: VariationNeoplasmTherapeuticResponseProposition
+  predicate: predicts_sensitivity_to
+  subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
   condition:
     id: ncit:C3512
     type: Disease
-  therapy:
+  object:
     id: rxcui:1430438
-    type: Drug
+    type: Therapeutic
 variation_origin: somatic
 variation_descriptor:
   id: civic.vid:33
@@ -118,9 +118,9 @@ variation_descriptor:
     - ERBB1
     - ERBB
     gene_id: hgnc:3236
-therapy_descriptor:
+therapeutic_descriptor:
   id: civic.tid:146
-  type: TherapyDescriptor
+  type: Therapeutic
   label: Afatinib
   xrefs:
   - ncit:C66940

@@ -51,6 +51,7 @@ $defs:
         description: A document in which the information content is expressed.
       record_metadata:
         $ref_curie: gks.core:RecordMetadata
+    heritable_required: [ "id" ]
 
   Contribution:
     inherits: gks.core:ExtensibleEntity
@@ -222,15 +223,34 @@ $defs:
         - decreases_risk_for_condition
       object:
         extends: object
-        $ref_curie: gks.core:Condition
+        oneOf:
+        - $ref_curie: gks.core:Condition
+        - $ref_curie: gks.core:Disease
+        - $ref_curie: gks.core:Phenotype
 
   VariationNeoplasmProposition:
     inherits: VariationProposition
     description: >-
-      A proposition regarding the effect of a variation within a neoplasm.
+      A proposition regarding the effect of variation within a neoplasm.
+    heritable_properties:
+      neoplasm_type_qualifier:
+        description: >-
+          The neoplasm for which the presence of the indicated variation is relevant.
+        oneOf:
+        - $ref_curie: gks.core:Condition
+        - $ref_curie: gks.core:Disease
+        - $ref_curie: gks.core:Phenotype
 
   VariationNeoplasmTherapeuticResponseProposition:
     inherits: VariationNeoplasmProposition
     description: >-
       A proposition describing the role of a variation in modulating the response of a
       neoplasm to one or more therapeutics.
+    properties:
+      object:
+        description: >-
+          The therapeutic to which the neoplasm response is modulated in the presence of the
+          `subject` variation.
+        oneOf:
+        - $ref_curie: gks.core:Therapeutic
+        - $ref_curie: gks.core:TherapeuticsCollection

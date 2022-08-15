@@ -176,6 +176,7 @@ $defs:
         $ref: '#/$defs/VariationGermlineConditionProposition'
         description: The Proposition about which the Statement is made.
     required:
+    - id
     - type
     additionalProperties: false
   Proposition:
@@ -216,12 +217,50 @@ $defs:
       object:
         description: A ValueEntity that is related to the subject of a Proposition
           via its predicate.
-        $ref: core.json#/$defs/Condition
+        $ref: core.json#/$defs/ValueEntity
+        oneOf:
+        - $ref: core.json#/$defs/Condition
+        - $ref: core.json#/$defs/Disease
+        - $ref: core.json#/$defs/Phenotype
     required:
     - type
     additionalProperties: false
   VariationNeoplasmProposition:
-    description: A proposition regarding the effect of a variation within a neoplasm.
+    description: A proposition regarding the effect of variation within a neoplasm.
   VariationNeoplasmTherapeuticResponseProposition:
     description: A proposition describing the role of a variation in modulating the
       response of a neoplasm to one or more therapeutics.
+    properties:
+      id:
+        $ref: core.json#/$defs/CURIE
+        description: The 'logical' identifier of the entity in the system of record,
+          and MUST be represented as a CURIE. This 'id' is unique within a given system,
+          but may also refer to an 'id' for the shared concept in  another system
+          (represented by namespace, accordingly).
+      type:
+        type: string
+        description: The schema class that is instantiated by the data object. Must
+          be the name of a class from  the VA schema.
+      subject:
+        description: The `Variation` about which the Proposition is made.
+        $ref: catvars.json#/$defs/CategoricalVariation
+      predicate:
+        type: string
+        description: The relationship asserted to hold between the subject and the
+          object of the  Proposition.
+      object:
+        description: The therapeutic to which the neoplasm response is modulated in
+          the presence of the `subject` variation.
+        oneOf:
+        - $ref: core.json#/$defs/Therapeutic
+        - $ref: core.json#/$defs/TherapeuticsCollection
+      neoplasm_type_qualifier:
+        description: The neoplasm for which the presence of the indicated variation
+          is relevant.
+        oneOf:
+        - $ref: core.json#/$defs/Condition
+        - $ref: core.json#/$defs/Disease
+        - $ref: core.json#/$defs/Phenotype
+    required:
+    - type
+    additionalProperties: false

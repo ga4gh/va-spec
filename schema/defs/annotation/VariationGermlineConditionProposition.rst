@@ -33,6 +33,6 @@ Some VariationGermlineConditionProposition attributes are inherited from :ref:`E
       - 0..1
       - The relationship asserted to hold between the variation (subject) and  the condition (object) of the Proposition.
    *  - object
-      - `Condition <core.json#/$defs/Condition>`_
+      - `ValueEntity <core.json#/$defs/ValueEntity>`_
       - 0..1
       - A ValueEntity that is related to the subject of a Proposition via its predicate.

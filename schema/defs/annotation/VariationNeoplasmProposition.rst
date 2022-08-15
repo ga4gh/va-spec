@@ -1,3 +1,3 @@
 **Computational Definition**
 
-A proposition regarding the effect of a variation within a neoplasm.
+A proposition regarding the effect of variation within a neoplasm.
