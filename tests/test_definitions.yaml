@@ -2,4 +2,6 @@ tests:
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     schema: annotation
     definition: VariationGermlineConditionStatement
-
+  - test_file: tr-proposition-with-enref.yaml
+    schema: annotation
+    definition: VariationNeoplasmTherapeuticResponseProposition

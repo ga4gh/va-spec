@@ -1,0 +1,10 @@
+id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
+type: VariationNeoplasmTherapeuticResponseProposition
+predicate: predicts_sensitivity_to
+subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+neoplasm_type_qualifier:
+  id: ncit:C3512
+  type: Disease
+object:
+  id: rxcui:1430438
+  type: Therapeutic

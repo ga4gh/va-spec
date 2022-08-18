@@ -11,7 +11,7 @@ imports:
 
 namespaces:
   gks.core: core.json#/$defs/
-  vod: vod.json#/$defs/
+  vod: vod.json#/definitions/
   catvars: catvars.json#/$defs/
 
 $defs:
@@ -42,10 +42,12 @@ $defs:
           generated.
       contributions:
         type: array
+        ordered: true
         items:
           $ref: "#/$defs/Contribution"
       is_reported_in:
         type: array
+        ordered: false
         items:
           $ref: "#/$defs/Document"
         description: A document in which the information content is expressed.
@@ -199,7 +201,9 @@ $defs:
       subject:
         description: >-
           The `Variation` about which the Proposition is made.
-        $ref_curie: catvars:CategoricalVariation
+        oneOf:
+        - $ref_curie: catvars:CategoricalVariation
+        - $ref_curie: gks.core:CURIE
 
   VariationGermlineConditionProposition:
     inherits: VariationProposition
@@ -253,4 +257,5 @@ $defs:
           `subject` variation.
         oneOf:
         - $ref_curie: gks.core:Therapeutic
-        - $ref_curie: gks.core:TherapeuticsCollection
+        - $ref_curie: gks.core:SubstituteTherapeutics
+        - $ref_curie: gks.core:CombinationTherapeutics

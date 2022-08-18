@@ -13,7 +13,7 @@ target_proposition:
   type: VariationNeoplasmTherapeuticResponseProposition
   predicate: predicts_sensitivity_to
   subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
-  condition:
+  neoplasm_type_qualifier:
     id: ncit:C3512
     type: Disease
   object:

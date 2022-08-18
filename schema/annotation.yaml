@@ -2,9 +2,6 @@ $schema: http://json-schema.org/draft/2020-12/schema
 title: CVC-MetaKB-Annotation-Definitions
 type: object
 $defs:
-  InformationEntity:
-    description: InformationEntities are abstract (non-physical) entities that are
-      about something (i.e. they carry  information about things in the real world).
   Contribution:
     description: The sum of all actions taken by a single agent in contributing to
       the creation, modification,  assessment, or deprecation of a particular entity
@@ -25,6 +22,7 @@ $defs:
         type: string
       extensions:
         type: array
+        ordered: true
         items:
           $ref: core.json#/$defs/Extension
       agent:
@@ -57,6 +55,7 @@ $defs:
         type: string
       extensions:
         type: array
+        ordered: true
         items:
           $ref: core.json#/$defs/Extension
       name:
@@ -83,6 +82,7 @@ $defs:
         type: string
       extensions:
         type: array
+        ordered: true
         items:
           $ref: core.json#/$defs/Extension
       is_reported_in:
@@ -94,13 +94,6 @@ $defs:
     required:
     - type
     additionalProperties: false
-  Statement:
-    description: "A Statement (aka \u2018Assertion\u2019) represents a claim of purported\
-      \ truth as made by a particular agent,  on a particular occasion."
-  VariationStatement:
-    description: A Statement describing the impact of a variation.
-  VariationConditionStatement:
-    description: A Statement describing the impact of a variation on a condition.
   VariationGermlineConditionStatement:
     description: A Statement describing the role of a variation in causing or protecting
       against a germline Condition.
@@ -120,6 +113,7 @@ $defs:
         type: string
       extensions:
         type: array
+        ordered: true
         items:
           $ref: core.json#/$defs/Extension
       description:
@@ -139,10 +133,12 @@ $defs:
           the information was generated.
       contributions:
         type: array
+        ordered: true
         items:
           $ref: '#/$defs/Contribution'
       is_reported_in:
         type: array
+        ordered: false
         items:
           $ref: '#/$defs/Document'
         description: A document in which the information content is expressed.
@@ -157,7 +153,7 @@ $defs:
         description: The direction of this statement with respect to the target proposition.
       subject_descriptor:
         description: A descriptor characterizing the variation impacting the condition.
-        $ref: vod.json#/$defs/CategoricalVariationDescriptor
+        $ref: vod.json#/definitions/CategoricalVariationDescriptor
       variation_origin:
         type: string
         enum:
@@ -167,7 +163,7 @@ $defs:
           (germline) or acquired (somatic).
       object_descriptor:
         description: A descriptor characterizing the condition impacted by the variation.
-        $ref: vod.json#/$defs/ConditionDescriptor
+        $ref: vod.json#/definitions/ConditionDescriptor
       classification:
         description: The conclusion drawn from the statement proposition, direction,
           strength, and/or  confidence score.
@@ -179,15 +175,6 @@ $defs:
     - id
     - type
     additionalProperties: false
-  Proposition:
-    description: An abstract ValueEntity representing the shareable meaning that can
-      be  put forth as true or false by a Statement.
-    required:
-    - subject
-    - predicate
-    - object
-  VariationProposition:
-    description: A proposition describing the role of a variation subject.
   VariationGermlineConditionProposition:
     description: A proposition describing the role of a variation in causing or preventing
       a germline disease condition.
@@ -205,7 +192,9 @@ $defs:
         description: MUST be "VariationGermlineConditionProposition"
       subject:
         description: The `Variation` about which the Proposition is made.
-        $ref: catvars.json#/$defs/CategoricalVariation
+        oneOf:
+        - $ref: catvars.json#/$defs/CategoricalVariation
+        - $ref: core.json#/$defs/CURIE
       predicate:
         type: string
         description: The relationship asserted to hold between the variation (subject)
@@ -217,7 +206,6 @@ $defs:
       object:
         description: A ValueEntity that is related to the subject of a Proposition
           via its predicate.
-        $ref: core.json#/$defs/ValueEntity
         oneOf:
         - $ref: core.json#/$defs/Condition
         - $ref: core.json#/$defs/Disease
@@ -225,8 +213,6 @@ $defs:
     required:
     - type
     additionalProperties: false
-  VariationNeoplasmProposition:
-    description: A proposition regarding the effect of variation within a neoplasm.
   VariationNeoplasmTherapeuticResponseProposition:
     description: A proposition describing the role of a variation in modulating the
       response of a neoplasm to one or more therapeutics.
@@ -243,7 +229,9 @@ $defs:
           be the name of a class from  the VA schema.
       subject:
         description: The `Variation` about which the Proposition is made.
-        $ref: catvars.json#/$defs/CategoricalVariation
+        oneOf:
+        - $ref: catvars.json#/$defs/CategoricalVariation
+        - $ref: core.json#/$defs/CURIE
       predicate:
         type: string
         description: The relationship asserted to hold between the subject and the
@@ -252,8 +240,9 @@ $defs:
         description: The therapeutic to which the neoplasm response is modulated in
           the presence of the `subject` variation.
         oneOf:
+        - $ref: core.json#/$defs/CombinationTherapeutics
+        - $ref: core.json#/$defs/SubstituteTherapeutics
         - $ref: core.json#/$defs/Therapeutic
-        - $ref: core.json#/$defs/TherapeuticsCollection
       neoplasm_type_qualifier:
         description: The neoplasm for which the presence of the indicated variation
           is relevant.

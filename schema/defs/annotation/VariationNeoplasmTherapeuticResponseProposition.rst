@@ -25,7 +25,7 @@ Some VariationNeoplasmTherapeuticResponseProposition attributes are inherited fr
       - 1..1
       - The schema class that is instantiated by the data object. Must be the name of a class from  the VA schema.
    *  - subject
-      - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_
+      - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - The `Variation` about which the Proposition is made.
    *  - predicate
@@ -33,7 +33,7 @@ Some VariationNeoplasmTherapeuticResponseProposition attributes are inherited fr
       - 0..1
       - The relationship asserted to hold between the subject and the object of the  Proposition.
    *  - object
-      - `Therapeutic <core.json#/$defs/Therapeutic>`_ | `TherapeuticsCollection <core.json#/$defs/TherapeuticsCollection>`_
+      - `Therapeutic <core.json#/$defs/Therapeutic>`_ | `SubstituteTherapeutics <core.json#/$defs/SubstituteTherapeutics>`_ | `CombinationTherapeutics <core.json#/$defs/CombinationTherapeutics>`_
       - 0..1
       - The therapeutic to which the neoplasm response is modulated in the presence of the `subject` variation.
    *  - neoplasm_type_qualifier

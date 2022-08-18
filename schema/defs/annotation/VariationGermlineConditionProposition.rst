@@ -25,7 +25,7 @@ Some VariationGermlineConditionProposition attributes are inherited from :ref:`E
       - 1..1
       - MUST be "VariationGermlineConditionProposition"
    *  - subject
-      - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_
+      - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - The `Variation` about which the Proposition is made.
    *  - predicate
@@ -33,6 +33,6 @@ Some VariationGermlineConditionProposition attributes are inherited from :ref:`E
       - 0..1
       - The relationship asserted to hold between the variation (subject) and  the condition (object) of the Proposition.
    *  - object
-      - `ValueEntity <core.json#/$defs/ValueEntity>`_
+      - `Condition <core.json#/$defs/Condition>`_ | `Disease <core.json#/$defs/Disease>`_ | `Phenotype <core.json#/$defs/Phenotype>`_
       - 0..1
       - A ValueEntity that is related to the subject of a Proposition via its predicate.
