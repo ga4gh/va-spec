@@ -36,7 +36,9 @@ $defs:
           A quantitative score reflecting the degree of confidence that the information 
           the information entity represents is true.
       method:
-        $ref: "#/$defs/Method"
+        oneOf:
+        - $ref: "#/$defs/Method"
+        - $ref_curie: gks.core:CURIE
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
@@ -46,16 +48,16 @@ $defs:
         items:
           $ref: "#/$defs/Contribution"
       is_reported_in:
-        type: array
-        ordered: false
-        items:
-          $ref: "#/$defs/Document"
+        oneOf:
+        - $ref: "#/$defs/Document"
+        - $ref_curie: gks.core:CURIE
         description: A document in which the information content is expressed.
       record_metadata:
         $ref_curie: gks.core:RecordMetadata
     heritable_required: [ "id" ]
 
   Contribution:
+    type: object
     inherits: gks.core:ExtensibleEntity
     description: >-
       The sum of all actions taken by a single agent in contributing to the creation, modification, 
@@ -76,6 +78,7 @@ $defs:
         type: string
 
   Agent:
+    type: object
     inherits: gks.core:ExtensibleEntity
     description: >-
       An autonomous actor (person, organization, or computational agent) that bears some form
@@ -91,6 +94,7 @@ $defs:
         type: string
 
   Method:
+    type: object
     inherits: gks.core:ExtensibleEntity
     description: >-
       A set of instructions that specify how to achieve some objective (e.g. experimental protocols, 
@@ -102,12 +106,30 @@ $defs:
         default: Method
         description: MUST be "Method".
       is_reported_in:
-        $ref_curie: gks.core:CURIE
+        oneOf:
+        - $ref_curie: gks.core:CURIE
+        - $ref: "#/$defs/Document"
       method_type:
         type: string
         description: >-
           A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, 
           Experimental Protocol)
+
+  Document:
+    type: object
+    inherits: gks.core:ExtensibleEntity
+    description: a representation of a physical or digital document
+    properties:
+      type:
+        type: string
+        const: Document
+        default: Document
+        description: Must be "Document"
+      doi:
+        description: A Digital Object Identifier.
+        $ref_curie: gks.core:CURIE
+      title:
+        type: string
 
   Statement:
     inherits: InformationEntity
@@ -156,6 +178,7 @@ $defs:
           A descriptor characterizing the condition impacted by the variation.
 
   VariationGermlineConditionStatement:
+    type: object
     inherits: VariationConditionStatement
     description: >-
       A :ref:`Statement` describing the role of a variation in causing or protecting
@@ -172,6 +195,31 @@ $defs:
       target_proposition:
         extends: target_proposition
         $ref: "#/$defs/VariationGermlineConditionProposition"
+
+  VariationNeoplasmStatement:
+    inherits: VariationStatement
+    description: >-
+      A statement regarding the effect of variation within a neoplasm.
+    heritable_properties:
+      neoplasm_type_descriptor:
+        $ref_curie: vod:ConditionDescriptor
+        description: >-
+          A descriptor characterizing the neoplasm type for which the indicated variation is relevant.
+
+  VariationNeoplasmTherapeuticResponseStatement:
+    type: object
+    inherits: VariationNeoplasmStatement
+    description: >-
+      A :ref:`Statement` describing the role of a variation in modulating the response of a
+      neoplasm to one or more therapeutics.
+    properties:
+      object_descriptor:
+        description: >-
+          A descriptor characterizing the therapeutic(s) to which the neoplasm response is modulated in 
+          the presence of the `subject` variation.
+        oneOf:
+        - $ref_curie: vod:TherapeuticDescriptor
+        - $ref_curie: vod:TherapeuticCollectionDescriptor
 
   Proposition:
     inherits: gks.core:ValueEntity
@@ -206,6 +254,7 @@ $defs:
         - $ref_curie: gks.core:CURIE
 
   VariationGermlineConditionProposition:
+    type: object
     inherits: VariationProposition
     description: >-
       A proposition describing the role of a variation in causing or preventing
@@ -246,16 +295,17 @@ $defs:
         - $ref_curie: gks.core:Phenotype
 
   VariationNeoplasmTherapeuticResponseProposition:
+    type: object
     inherits: VariationNeoplasmProposition
     description: >-
-      A proposition describing the role of a variation in modulating the response of a
+      A :ref:`Proposition` describing the role of a variation in modulating the response of a
       neoplasm to one or more therapeutics.
     properties:
       object:
         description: >-
-          The therapeutic to which the neoplasm response is modulated in the presence of the
+          The therapeutic(s) to which the neoplasm response is modulated in the presence of the
           `subject` variation.
         oneOf:
         - $ref_curie: gks.core:Therapeutic
-        - $ref_curie: gks.core:SubstituteTherapeutics
-        - $ref_curie: gks.core:CombinationTherapeutics
+        - $ref_curie: gks.core:CombinationTherapeuticCollection
+        - $ref_curie: gks.core:SubstituteTherapeuticCollection

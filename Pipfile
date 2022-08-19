@@ -6,8 +6,8 @@ name = "pypi"
 [packages]
 jsonschema = "*"
 pyyaml = "*"
-# "gks.metaschema" = {editable = true, path = "./../gks-metaschema"}
-"ga4gh.gks.metaschema" = "==0.2.0rc3"
+"gks.metaschema" = {editable = true, path = "./../gks-metaschema"}
+# "ga4gh.gks.metaschema" = "==0.2.0rc3"
 
 [dev-packages]
 jupyterlab = "*"

@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A :ref:`Statement` describing the role of a variation in causing or protecting against a germline Condition.
+A :ref:`Statement` describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics.
 
 **Information Model**
 
-Some VariationGermlineConditionStatement attributes are inherited from :ref:`Entity`.
+Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from :ref:`Entity`.
 
 .. list-table::
    :class: clean-wrap
@@ -23,7 +23,7 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
    *  - type
       - string
       - 1..1
-      - MUST be "VariationPathogenicityStatement".
+      - The schema class that is instantiated by the data object. Must be the name of a class from  the VA schema.
    *  - label
       - string
       - 0..1
@@ -60,6 +60,14 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
       - 0..1
       - 
+   *  - target_proposition
+      - :ref:`Proposition`
+      - 0..1
+      - The Proposition about which the Statement is made.
+   *  - conclusion
+      - `Coding <core.json#/$defs/Coding>`_
+      - 0..1
+      - The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.
    *  - direction
       - string
       - 0..1
@@ -72,15 +80,11 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - string
       - 0..1
       - A representation of whether the subject variation is inherited (germline) or acquired (somatic).
-   *  - object_descriptor
+   *  - neoplasm_type_descriptor
       - `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_
       - 0..1
-      - A descriptor characterizing the condition impacted by the variation.
-   *  - classification
-      - `Coding <core.json#/$defs/Coding>`_
+      - A descriptor characterizing the neoplasm type for which the indicated variation is relevant.
+   *  - object_descriptor
+      - `TherapeuticDescriptor <vod.json#/definitions/TherapeuticDescriptor>`_ | `TherapeuticCollectionDescriptor <vod.json#/definitions/TherapeuticCollectionDescriptor>`_
       - 0..1
-      - The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.
-   *  - target_proposition
-      - :ref:`VariationGermlineConditionProposition`
-      - 0..1
-      - The Proposition about which the Statement is made.
+      - A descriptor characterizing the therapeutic(s) to which the neoplasm response is modulated in  the presence of the `subject` variation.

@@ -4,6 +4,7 @@
    "type": "object",
    "$defs": {
       "Contribution": {
+         "type": "object",
          "description": "The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)",
          "properties": {
             "id": {
@@ -43,6 +44,7 @@
          "additionalProperties": false
       },
       "Agent": {
+         "type": "object",
          "description": "An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for  another agent\u2019s activity.",
          "properties": {
             "id": {
@@ -75,6 +77,7 @@
          "additionalProperties": false
       },
       "Method": {
+         "type": "object",
          "description": "A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)",
          "properties": {
             "id": {
@@ -98,7 +101,14 @@
                }
             },
             "is_reported_in": {
-               "$ref": "core.json#/$defs/CURIE"
+               "oneOf": [
+                  {
+                     "$ref": "#/$defs/Document"
+                  },
+                  {
+                     "$ref": "core.json#/$defs/CURIE"
+                  }
+               ]
             },
             "method_type": {
                "type": "string",
@@ -110,7 +120,45 @@
          ],
          "additionalProperties": false
       },
+      "Document": {
+         "type": "object",
+         "description": "a representation of a physical or digital document",
+         "properties": {
+            "id": {
+               "type": "string",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+            },
+            "type": {
+               "type": "string",
+               "const": "Document",
+               "default": "Document",
+               "description": "Must be \"Document\""
+            },
+            "label": {
+               "type": "string"
+            },
+            "extensions": {
+               "type": "array",
+               "ordered": true,
+               "items": {
+                  "$ref": "core.json#/$defs/Extension"
+               }
+            },
+            "doi": {
+               "description": "A Digital Object Identifier.",
+               "$ref": "core.json#/$defs/CURIE"
+            },
+            "title": {
+               "type": "string"
+            }
+         },
+         "required": [
+            "type"
+         ],
+         "additionalProperties": false
+      },
       "VariationGermlineConditionStatement": {
+         "type": "object",
          "description": "A Statement describing the role of a variation in causing or protecting against a germline Condition.",
          "properties": {
             "id": {
@@ -146,7 +194,14 @@
                "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
             },
             "method": {
-               "$ref": "#/$defs/Method",
+               "oneOf": [
+                  {
+                     "$ref": "#/$defs/Method"
+                  },
+                  {
+                     "$ref": "core.json#/$defs/CURIE"
+                  }
+               ],
                "description": "A Method that describes all or part of the process through which the information was generated."
             },
             "contributions": {
@@ -157,11 +212,14 @@
                }
             },
             "is_reported_in": {
-               "type": "array",
-               "ordered": false,
-               "items": {
-                  "$ref": "#/$defs/Document"
-               },
+               "oneOf": [
+                  {
+                     "$ref": "#/$defs/Document"
+                  },
+                  {
+                     "$ref": "core.json#/$defs/CURIE"
+                  }
+               ],
                "description": "A document in which the information content is expressed."
             },
             "record_metadata": {
@@ -207,7 +265,132 @@
          ],
          "additionalProperties": false
       },
+      "VariationNeoplasmTherapeuticResponseStatement": {
+         "type": "object",
+         "description": "A Statement describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics.",
+         "properties": {
+            "id": {
+               "type": "string",
+               "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+            },
+            "type": {
+               "type": "string",
+               "description": "The schema class that is instantiated by the data object. Must be the name of a class from  the VA schema."
+            },
+            "label": {
+               "type": "string"
+            },
+            "extensions": {
+               "type": "array",
+               "ordered": true,
+               "items": {
+                  "$ref": "core.json#/$defs/Extension"
+               }
+            },
+            "description": {
+               "type": "string",
+               "description": "A free-text description of the InformationEntity."
+            },
+            "strength": {
+               "description": "A coded term describing the strength of support that the information the statement represents is true.",
+               "$ref": "core.json#/$defs/Coding"
+            },
+            "confidence_score": {
+               "$ref": "#/$defs/DataItem",
+               "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
+            },
+            "method": {
+               "oneOf": [
+                  {
+                     "$ref": "#/$defs/Method"
+                  },
+                  {
+                     "$ref": "core.json#/$defs/CURIE"
+                  }
+               ],
+               "description": "A Method that describes all or part of the process through which the information was generated."
+            },
+            "contributions": {
+               "type": "array",
+               "ordered": true,
+               "items": {
+                  "$ref": "#/$defs/Contribution"
+               }
+            },
+            "is_reported_in": {
+               "oneOf": [
+                  {
+                     "$ref": "#/$defs/Document"
+                  },
+                  {
+                     "$ref": "core.json#/$defs/CURIE"
+                  }
+               ],
+               "description": "A document in which the information content is expressed."
+            },
+            "record_metadata": {
+               "$ref": "core.json#/$defs/RecordMetadata"
+            },
+            "target_proposition": {
+               "description": "The Proposition about which the Statement is made.",
+               "oneOf": [
+                  {
+                     "$ref": "#/$defs/VariationGermlineConditionProposition"
+                  },
+                  {
+                     "$ref": "#/$defs/VariationNeoplasmTherapeuticResponseProposition"
+                  }
+               ]
+            },
+            "conclusion": {
+               "description": "The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.",
+               "$ref": "core.json#/$defs/Coding"
+            },
+            "direction": {
+               "type": "string",
+               "enum": [
+                  "supports",
+                  "uncertain",
+                  "refutes"
+               ],
+               "description": "The direction of this statement with respect to the target proposition."
+            },
+            "subject_descriptor": {
+               "description": "A descriptor characterizing the variation impacting the condition.",
+               "$ref": "vod.json#/definitions/CategoricalVariationDescriptor"
+            },
+            "variation_origin": {
+               "type": "string",
+               "enum": [
+                  "germline",
+                  "somatic"
+               ],
+               "description": "A representation of whether the subject variation is inherited (germline) or acquired (somatic)."
+            },
+            "neoplasm_type_descriptor": {
+               "description": "A descriptor characterizing the neoplasm type for which the indicated variation is relevant.",
+               "$ref": "vod.json#/definitions/ConditionDescriptor"
+            },
+            "object_descriptor": {
+               "description": "A descriptor characterizing the therapeutic(s) to which the neoplasm response is modulated in  the presence of the `subject` variation.",
+               "oneOf": [
+                  {
+                     "$ref": "vod.json#/definitions/TherapeuticCollectionDescriptor"
+                  },
+                  {
+                     "$ref": "vod.json#/definitions/TherapeuticDescriptor"
+                  }
+               ]
+            }
+         },
+         "required": [
+            "id",
+            "type"
+         ],
+         "additionalProperties": false
+      },
       "VariationGermlineConditionProposition": {
+         "type": "object",
          "description": "A proposition describing the role of a variation in causing or preventing a germline disease condition.",
          "properties": {
             "id": {
@@ -261,7 +444,8 @@
          "additionalProperties": false
       },
       "VariationNeoplasmTherapeuticResponseProposition": {
-         "description": "A proposition describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics.",
+         "type": "object",
+         "description": "A Proposition describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics.",
          "properties": {
             "id": {
                "$ref": "core.json#/$defs/CURIE",
@@ -287,13 +471,13 @@
                "description": "The relationship asserted to hold between the subject and the object of the  Proposition."
             },
             "object": {
-               "description": "The therapeutic to which the neoplasm response is modulated in the presence of the `subject` variation.",
+               "description": "The therapeutic(s) to which the neoplasm response is modulated in the presence of the `subject` variation.",
                "oneOf": [
                   {
-                     "$ref": "core.json#/$defs/CombinationTherapeutics"
+                     "$ref": "core.json#/$defs/CombinationTherapeuticCollection"
                   },
                   {
-                     "$ref": "core.json#/$defs/SubstituteTherapeutics"
+                     "$ref": "core.json#/$defs/SubstituteTherapeuticCollection"
                   },
                   {
                      "$ref": "core.json#/$defs/Therapeutic"

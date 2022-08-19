@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)
+a representation of a physical or digital document
 
 **Information Model**
 
-Some Method attributes are inherited from :ref:`Entity`.
+Some Document attributes are inherited from :ref:`Entity`.
 
 .. list-table::
    :class: clean-wrap
@@ -23,7 +23,7 @@ Some Method attributes are inherited from :ref:`Entity`.
    *  - type
       - string
       - 1..1
-      - MUST be "Method".
+      - Must be "Document"
    *  - label
       - string
       - 0..1
@@ -32,11 +32,11 @@ Some Method attributes are inherited from :ref:`Entity`.
       - `Extension <core.json#/$defs/Extension>`_
       - 0..m
       - 
-   *  - is_reported_in
-      - `CURIE <core.json#/$defs/CURIE>`_ | :ref:`Document`
+   *  - doi
+      - `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
-      - 
-   *  - method_type
+      - A Digital Object Identifier.
+   *  - title
       - string
       - 0..1
-      - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)
+      - 

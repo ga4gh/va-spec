@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A proposition describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics.
+A :ref:`Proposition` describing the role of a variation in modulating the response of a neoplasm to one or more therapeutics.
 
 **Information Model**
 
@@ -33,9 +33,9 @@ Some VariationNeoplasmTherapeuticResponseProposition attributes are inherited fr
       - 0..1
       - The relationship asserted to hold between the subject and the object of the  Proposition.
    *  - object
-      - `Therapeutic <core.json#/$defs/Therapeutic>`_ | `SubstituteTherapeutics <core.json#/$defs/SubstituteTherapeutics>`_ | `CombinationTherapeutics <core.json#/$defs/CombinationTherapeutics>`_
+      - `Therapeutic <core.json#/$defs/Therapeutic>`_ | `CombinationTherapeuticCollection <core.json#/$defs/CombinationTherapeuticCollection>`_ | `SubstituteTherapeuticCollection <core.json#/$defs/SubstituteTherapeuticCollection>`_
       - 0..1
-      - The therapeutic to which the neoplasm response is modulated in the presence of the `subject` variation.
+      - The therapeutic(s) to which the neoplasm response is modulated in the presence of the `subject` variation.
    *  - neoplasm_type_qualifier
       - `Condition <core.json#/$defs/Condition>`_ | `Disease <core.json#/$defs/Disease>`_ | `Phenotype <core.json#/$defs/Phenotype>`_
       - 0..1

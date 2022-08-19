@@ -5,3 +5,6 @@ tests:
   - test_file: tr-proposition-with-enref.yaml
     schema: annotation
     definition: VariationNeoplasmTherapeuticResponseProposition
+  - test_file: tr-statement-with-enrefs.yaml
+    schema: annotation
+    definition: VariationNeoplasmTherapeuticResponseStatement
