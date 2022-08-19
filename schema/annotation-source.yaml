@@ -25,22 +25,23 @@ $defs:
         type: string
         description: >-
           A free-text description of the InformationEntity.
-      strength:
+      confidence_level:
         $ref_curie: gks.core:Coding
         description: >-
-          A coded term describing the strength of support that the information the statement
-          represents is true.
+          A term describing the degree of confidence held by the creator 
+          of the information entity, that the information it represents is true 
+          (e.g. 'high confidence', 'likely true')
       confidence_score:
         $ref: "#/$defs/DataItem"
         description: >-
           A quantitative score reflecting the degree of confidence that the information 
           the information entity represents is true.
-      method:
+      specified_by:
         $ref: "#/$defs/Method"
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
-      contributions:
+      contribution:
         type: array
         ordered: true
         items:
@@ -67,12 +68,15 @@ $defs:
         const: Contribution
         default: Contribution
         description: MUST be "Contribution".
-      agent:
+      contribution_made_by:
         $ref: "#/$defs/Agent"
-      date:
+      started:
         type: string
         format: date
-      role:
+      ended:
+        type: string
+        format: date
+      contributor_role:
         type: string
 
   Agent:
@@ -89,6 +93,9 @@ $defs:
         description: MUST be "Agent".
       name:
         type: string
+      agent_type: 
+        type: string
+        enum: [ "person", "organization", "software agent" ]
 
   Method:
     inherits: gks.core:ExtensibleEntity
@@ -121,13 +128,17 @@ $defs:
       conclusion:
         $ref_curie: gks.core:Coding
         description: >-
-          The conclusion drawn from the statement proposition, direction, strength, and/or 
-          confidence score.
-      direction:
+          A term that describes a final conclusion about the Statement's subject, based on the statement 
+          proposition, confidence level, and/or evidence direction and strength assessments.  
+      evidence_direction:
         type: string
-        enum: [ "supports", "uncertain", "refutes" ]
+        enum: [ "supports", "uncertain", "disputes" ]
         description: >-
           The direction of this statement with respect to the target proposition.
+       evidence_strength: 
+         $ref_curie: gks.core:Coding
+         description: A term indicating the overall strength of evidence in the direction reported by 
+         the evidence_direction attribute. 
 
   VariationStatement:
     inherits: Statement
