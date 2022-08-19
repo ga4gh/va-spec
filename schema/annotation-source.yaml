@@ -138,7 +138,9 @@ $defs:
       on a particular occasion.
     heritable_properties:
       target_proposition:
-        $ref: "#/$defs/Proposition"
+        oneOf:
+        - $ref: "#/$defs/Proposition"
+        - $ref_curie: gks.core:CURIE
         description: The Proposition about which the Statement is made.
       conclusion:
         $ref_curie: gks.core:Coding
@@ -157,7 +159,9 @@ $defs:
       A :ref:`Statement` describing the impact of a variation.
     heritable_properties:
       subject_descriptor:
-        $ref_curie: vod:CategoricalVariationDescriptor
+        oneOf:
+        - $ref_curie: vod:CategoricalVariationDescriptor
+        - $ref_curie: gks.core:CURIE
         description: >-
           A descriptor characterizing the variation impacting the condition.
       variation_origin:
@@ -173,7 +177,9 @@ $defs:
       A :ref:`Statement` describing the impact of a variation on a condition.
     heritable_properties:
       object_descriptor:
-        $ref_curie: vod:ConditionDescriptor
+        oneOf:
+        - $ref_curie: vod:ConditionDescriptor
+        - $ref_curie: gks.core:CURIE
         description: >-
           A descriptor characterizing the condition impacted by the variation.
 
@@ -202,7 +208,9 @@ $defs:
       A statement regarding the effect of variation within a neoplasm.
     heritable_properties:
       neoplasm_type_descriptor:
-        $ref_curie: vod:ConditionDescriptor
+        oneOf:
+        - $ref_curie: vod:ConditionDescriptor
+        - $ref_curie: gks.core:CURIE
         description: >-
           A descriptor characterizing the neoplasm type for which the indicated variation is relevant.
 
@@ -220,6 +228,7 @@ $defs:
         oneOf:
         - $ref_curie: vod:TherapeuticDescriptor
         - $ref_curie: vod:TherapeuticCollectionDescriptor
+        - $ref_curie: gks.core:CURIE
 
   Proposition:
     inherits: gks.core:ValueEntity

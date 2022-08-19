@@ -65,7 +65,7 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - 0..1
       - The direction of this statement with respect to the target proposition.
    *  - subject_descriptor
-      - `CategoricalVariationDescriptor <vod.json#/definitions/CategoricalVariationDescriptor>`_
+      - `CategoricalVariationDescriptor <vod.json#/definitions/CategoricalVariationDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the variation impacting the condition.
    *  - variation_origin
@@ -73,7 +73,7 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - 0..1
       - A representation of whether the subject variation is inherited (germline) or acquired (somatic).
    *  - object_descriptor
-      - `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_
+      - `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the condition impacted by the variation.
    *  - classification

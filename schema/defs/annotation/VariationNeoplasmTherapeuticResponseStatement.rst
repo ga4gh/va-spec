@@ -61,7 +61,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - 0..1
       - 
    *  - target_proposition
-      - :ref:`Proposition`
+      - :ref:`Proposition` | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - The Proposition about which the Statement is made.
    *  - conclusion
@@ -73,7 +73,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - 0..1
       - The direction of this statement with respect to the target proposition.
    *  - subject_descriptor
-      - `CategoricalVariationDescriptor <vod.json#/definitions/CategoricalVariationDescriptor>`_
+      - `CategoricalVariationDescriptor <vod.json#/definitions/CategoricalVariationDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the variation impacting the condition.
    *  - variation_origin
@@ -81,10 +81,10 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - 0..1
       - A representation of whether the subject variation is inherited (germline) or acquired (somatic).
    *  - neoplasm_type_descriptor
-      - `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_
+      - `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the neoplasm type for which the indicated variation is relevant.
    *  - object_descriptor
-      - `TherapeuticDescriptor <vod.json#/definitions/TherapeuticDescriptor>`_ | `TherapeuticCollectionDescriptor <vod.json#/definitions/TherapeuticCollectionDescriptor>`_
+      - `TherapeuticDescriptor <vod.json#/definitions/TherapeuticDescriptor>`_ | `TherapeuticCollectionDescriptor <vod.json#/definitions/TherapeuticCollectionDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the therapeutic(s) to which the neoplasm response is modulated in  the presence of the `subject` variation.

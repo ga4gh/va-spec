@@ -189,8 +189,10 @@ $defs:
         - refutes
         description: The direction of this statement with respect to the target proposition.
       subject_descriptor:
+        oneOf:
+        - $ref: core.json#/$defs/CURIE
+        - $ref: vod.json#/definitions/CategoricalVariationDescriptor
         description: A descriptor characterizing the variation impacting the condition.
-        $ref: vod.json#/definitions/CategoricalVariationDescriptor
       variation_origin:
         type: string
         enum:
@@ -199,15 +201,17 @@ $defs:
         description: A representation of whether the subject variation is inherited
           (germline) or acquired (somatic).
       object_descriptor:
+        oneOf:
+        - $ref: core.json#/$defs/CURIE
+        - $ref: vod.json#/definitions/ConditionDescriptor
         description: A descriptor characterizing the condition impacted by the variation.
-        $ref: vod.json#/definitions/ConditionDescriptor
       classification:
         description: The conclusion drawn from the statement proposition, direction,
           strength, and/or  confidence score.
         $ref: core.json#/$defs/Coding
       target_proposition:
-        $ref: '#/$defs/VariationGermlineConditionProposition'
         description: The Proposition about which the Statement is made.
+        $ref: '#/$defs/VariationGermlineConditionProposition'
     required:
     - id
     - type
@@ -264,10 +268,11 @@ $defs:
       record_metadata:
         $ref: core.json#/$defs/RecordMetadata
       target_proposition:
-        description: The Proposition about which the Statement is made.
         oneOf:
         - $ref: '#/$defs/VariationGermlineConditionProposition'
         - $ref: '#/$defs/VariationNeoplasmTherapeuticResponseProposition'
+        - $ref: core.json#/$defs/CURIE
+        description: The Proposition about which the Statement is made.
       conclusion:
         description: The conclusion drawn from the statement proposition, direction,
           strength, and/or  confidence score.
@@ -280,8 +285,10 @@ $defs:
         - refutes
         description: The direction of this statement with respect to the target proposition.
       subject_descriptor:
+        oneOf:
+        - $ref: core.json#/$defs/CURIE
+        - $ref: vod.json#/definitions/CategoricalVariationDescriptor
         description: A descriptor characterizing the variation impacting the condition.
-        $ref: vod.json#/definitions/CategoricalVariationDescriptor
       variation_origin:
         type: string
         enum:
@@ -290,13 +297,16 @@ $defs:
         description: A representation of whether the subject variation is inherited
           (germline) or acquired (somatic).
       neoplasm_type_descriptor:
+        oneOf:
+        - $ref: core.json#/$defs/CURIE
+        - $ref: vod.json#/definitions/ConditionDescriptor
         description: A descriptor characterizing the neoplasm type for which the indicated
           variation is relevant.
-        $ref: vod.json#/definitions/ConditionDescriptor
       object_descriptor:
         description: A descriptor characterizing the therapeutic(s) to which the neoplasm
           response is modulated in  the presence of the `subject` variation.
         oneOf:
+        - $ref: core.json#/$defs/CURIE
         - $ref: vod.json#/definitions/TherapeuticCollectionDescriptor
         - $ref: vod.json#/definitions/TherapeuticDescriptor
     required:
