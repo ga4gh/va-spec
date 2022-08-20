@@ -1,0 +1,182 @@
+# Inlined SEPIO-VA representation of the ClinVar record Larry and Alex used to demonstrate the metakb-cvc model (SCV001949955), as of 8-9-22
+# This representation is compliant with a draft GA4GH Base 'Variant Pathogenicity Classification' Profile, which applies the 'Evidence Level Statement' paradigm.
+# The data record used for this example was Larry/Alex's file: https://github.com/ga4gh/va-spec/blob/metakb-cvc/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml (which I modified to better align with the VA Core IM and proposed pathogenicity profile)
+# All modifications made to better align wiht the VA Core model have been described in comments (there are primarily simple name changes).
+
+id: cvc.scv:SCV001949955-20220101
+type: VariationGermlineConditionStatement
+target_proposition:
+  id: ex.Proposition001                         # id added (assuming Propositions are meant to have ids?)
+  type: VariationGermlineConditionProposition
+  subject:                                      # slot name changed from 'variation'
+    id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
+    type: CanonicalVariation
+    canonical_context:
+      id: ga4gh:VA.Z9tYtztQ5hkRNOajjdJolwkHSBfDYXH0
+      location:
+        id: ga4gh:VSL.rrTlrvGnEyknV7tJhO8sQSSC2LhqyuxX
+        interval:
+          end:
+            type: Number
+            value: 11124516
+          start:
+            type: Number
+            value: 11124515
+          type: SequenceInterval
+        sequence_id: ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+        type: SequenceLocation
+      state:
+        sequence: T
+        type: LiteralSequenceExpression
+      type: Allele
+  predicate:                                    # slot name changed from 'association' to match VA name, and value represented using a Coding object
+    id: cvc:causes_mendelian_condition
+    label: causes mendelian condition
+    type: Coding
+  object:                                       # slot name changed from 'condition' to match VA name
+    id: clinvar-measureset_id:123
+    members:
+    - id: MEDGEN:CN300503
+      type: Disease
+    - id: HP:0000118
+      type: Phenotype
+    type: Condition
+
+evidence_direction:                             # slot name changed from 'direction' to match VA name, and value represented using a Coding object
+  id: cvc:supports
+  label: supports
+  type: Coding  
+
+evidence_strength:                              # slot name changed from 'strength' to match VA name
+  id: cvc:definitive
+  label: Definitive
+  type: Coding
+  
+classification:
+  id: LN:LN12311-2
+  label: Pathogenic
+  type: Coding
+
+specified_by:                                  # slot name changed from 'method' to match VA name
+  id: cspec:123134
+  label: Clingen BrainMalform ACMG Specifications v1
+  type: Method  
+  is_reported_in: pmid:1231231231
+
+contribution:                                   # slot name changed from 'contributions' to match VA name
+- id: cvc:Contribution001                       # added an id (assuming we want Contributions identified?)
+  type: Contribution
+  contribution_made_by:                         # slot name changed from 'agent' to match VA name
+    id: clinvar-submitter:123
+    type: Agent
+    name: ClinGen Brain Malformations Variant Curation Expert Panel
+    agent_type:                                 # added agent_type slot to indicate that this agent is an 'Organization' (as opposed to a 'Person' or 'Software Agent')
+        id: cvc:organization
+        label: organization
+        type: Coding
+  date: '2022-02-17'                            # TO DO: discuss representation of activity/contribution dates
+  contributor_role:                             # slot name changed from 'role' to match VA name, and value represented using a Coding object
+    id: cvc:evaluator
+    label: evaluator
+    type:Coding
+ 
+ # Same updates made to the Contribution object above would be made to the two Contributions below (but are not shown here)
+
+- agent:                                      
+    id: clinvar-submitter:123
+    name: ClinGen Brain Malformations Variant Curation Expert Panel
+    type: Agent
+  date: '2022-02-18'
+  role: approver
+  type: Contribution
+- agent:
+    id: genegraph:cvc1
+    name: ClinGen's ClinVar Variant Curation Transformation System
+    type: Agent
+  date: '2022-07-31'
+  role: transformer
+  type: Contribution
+  
+subject_descriptor:                             # slot name changed from 'variation_descriptor' to align with change of 'Proposition.variation' slot to 'subject'
+  id: clinvar:376129
+  type: CanonicalVariationDescriptor
+  label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)
+  canonical_variation_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
+
+object_descriptor:                              # slot name changed from 'condition_descriptor' to align with change of 'Proposition.condition' slot to 'object'
+  type: ConditionDescriptor
+  condition_id: clinvar-condition-id:123
+  member_descriptors:
+    - type: DiseaseDescriptor
+      disease_id: MEDGEN:CN300503
+      label: Overgrowth syndrome and/or cerebral malformations due to abnormalities in MTOR pathway genes
+    - type: PhenotypeDescriptor
+      phenotype_id: HP:0000118
+      label: Phenotypic abnormality
+
+
+extensions:
+- name: clinvar-scv-affected-statuses
+  type: Extension
+  value: unknown
+
+record_metadata:
+  is_version_of: clinvar-scv:SCV001949955
+  type: RecordMetadata
+  version: '2'
+
+# I moved the following extension out from within the Coding object in the 'classifiction' slot, to hang directly from the Statement (IMO it fits better here)
+- name: submitter-classification                   
+  value: pathologic
+  type: Extension
+  
+  
+# Proposing to use the informtion_quality core IM slot to hold the clinvar review status  metadata (instead of a custom extension)
+# - name: clinvar-review-status
+#  type: Extension
+#  value:
+#    label: reviewed by expert panel
+#    value: 3-star
+informationQuality:                                
+  id: cvc:three_star
+  label: 3-star, reviewed by expert panel          
+  
+  
+  
+# Proposing to use the has_evidence_of_type core IM slot to hold the clinvar collection method metadata (instead of a custom extension)
+#- name: clinvar-scv-methods
+#  type: Extension
+#  value: curation
+hasEvidenceOfType:                                 
+  id: cvc:curation
+  label: curation
+  type: Coding
+  
+variation_origin: germline                # Discuss this . . . what is the semantic being conveyed. I still would like to see this as part of the Proposition (and be sure that what goes into the Proposition vs the Statement is not based on what is required vs optional)
+
+
+description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant predicted
+  to cause substitution of (p.Ser2215Tyr). This variant is absent from gnomAD v2.1.1
+  (PM2_Supporting). MTOR, in which the variant was identified, is defined by the ClinGen
+  Brain Malformations Expert Panel as a gene that has a low rate of benign missense
+  variation and where pathogenic missense variants are a common mechanism of disease
+  (PP2). A different amino acid change (p.Ser2215Phe), at this locus, is classified
+  as pathogenic for Overgrowth with or without cerebral malformations due to abnormalities
+  in MTOR-pathway genes by the ClinGen BMEP (PM5). This variant has been shown to
+  significantly increase phosphorylation levels in experiments with case and controls
+  cells of similar isogenic backgrounds indicating that this variant impacts protein
+  function (PMIDs: 20190810, 24631838, 28963468) (PS3_Supporting). The prevalence
+  of the variant in affected individuals is significantly increased compared with
+  the prevalence in controls (PS4; PMID: 27830187, 29281825, 225401301, 26619011;
+  identified in 5 individuals with neuropathology confirmatory of a malformation of
+  cortical development, 1 individual with neuroimaging appearance consistent with
+  a malformation of cortical development (without neuropathology), 1 individual with
+  neuroimaging demonstrating at least one large cerebral hemisphere with cortical
+  malformation(s), 15 tumor samples in the literature and COSMIC). Testing of unaffected
+  and affected tissue show variable allelic fractions consistent with a post-zygotic
+  event (PS2_Moderate; PMID: 26018084). In summary, this variant meets the criteria
+  to be classified as Pathogenic for mosaic autosomal dominant overgrowth with or
+  without cerebral malformations due to abnormalities in MTOR-pathway genes based
+  on the ACMG/AMP criteria applied, as specified by the ClinGen Brain Malformations
+  Expert Panel: PM2_P, PP2, PM5, PS3_P, PS4, PS2_M; 11 points (VCEP specifications
+  version 1; Approved: 1/31/2021)'
