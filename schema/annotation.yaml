@@ -155,7 +155,7 @@ $defs:
       description:
         type: string
         description: A free-text description of the InformationEntity.
-      strength:
+      confidence_level:
         description: A coded term describing the strength of support that the information
           the statement represents is true.
         $ref: core.json#/$defs/Coding
@@ -181,6 +181,14 @@ $defs:
         description: A document in which the information content is expressed.
       record_metadata:
         $ref: core.json#/$defs/RecordMetadata
+      evidence_level:
+        description: A term indicating the overall strength of support for the Statement
+          based on all evidence assessed.
+        $ref: core.json#/$defs/Coding
+      evidence_score:
+        $ref: '#/$defs/DataItem'
+        description: A quantitative score reflecting the overall strength of support
+          for the Statement based on all  evidence assessed.
       direction:
         type: string
         enum:
@@ -192,6 +200,7 @@ $defs:
         oneOf:
         - $ref: core.json#/$defs/CURIE
         - $ref: vod.json#/definitions/CategoricalVariationDescriptor
+        - $ref: vod.json#/definitions/VariationDescriptor
         description: A descriptor characterizing the variation impacting the condition.
       variation_origin:
         type: string
@@ -204,6 +213,8 @@ $defs:
         oneOf:
         - $ref: core.json#/$defs/CURIE
         - $ref: vod.json#/definitions/ConditionDescriptor
+        - $ref: vod.json#/definitions/DiseaseDescriptor
+        - $ref: vod.json#/definitions/PhenotypeDescriptor
         description: A descriptor characterizing the condition impacted by the variation.
       classification:
         description: The conclusion drawn from the statement proposition, direction,
@@ -241,7 +252,7 @@ $defs:
       description:
         type: string
         description: A free-text description of the InformationEntity.
-      strength:
+      confidence_level:
         description: A coded term describing the strength of support that the information
           the statement represents is true.
         $ref: core.json#/$defs/Coding
@@ -267,6 +278,14 @@ $defs:
         description: A document in which the information content is expressed.
       record_metadata:
         $ref: core.json#/$defs/RecordMetadata
+      evidence_level:
+        description: A term indicating the overall strength of support for the Statement
+          based on all evidence assessed.
+        $ref: core.json#/$defs/Coding
+      evidence_score:
+        $ref: '#/$defs/DataItem'
+        description: A quantitative score reflecting the overall strength of support
+          for the Statement based on all  evidence assessed.
       target_proposition:
         oneOf:
         - $ref: '#/$defs/VariationGermlineConditionProposition'
@@ -288,6 +307,7 @@ $defs:
         oneOf:
         - $ref: core.json#/$defs/CURIE
         - $ref: vod.json#/definitions/CategoricalVariationDescriptor
+        - $ref: vod.json#/definitions/VariationDescriptor
         description: A descriptor characterizing the variation impacting the condition.
       variation_origin:
         type: string
@@ -300,6 +320,8 @@ $defs:
         oneOf:
         - $ref: core.json#/$defs/CURIE
         - $ref: vod.json#/definitions/ConditionDescriptor
+        - $ref: vod.json#/definitions/DiseaseDescriptor
+        - $ref: vod.json#/definitions/PhenotypeDescriptor
         description: A descriptor characterizing the neoplasm type for which the indicated
           variation is relevant.
       object_descriptor:
@@ -330,10 +352,12 @@ $defs:
         default: VariationGermlineConditionProposition
         description: MUST be "VariationGermlineConditionProposition"
       subject:
-        description: The `Variation` about which the Proposition is made.
+        description: The `Variation` or `CategoricalVariation` about which the Proposition
+          is made.
         oneOf:
         - $ref: catvars.json#/$defs/CategoricalVariation
         - $ref: core.json#/$defs/CURIE
+        - $ref: vrs.json#/definitions/Variation
       predicate:
         type: string
         description: The relationship asserted to hold between the variation (subject)
@@ -368,10 +392,12 @@ $defs:
         description: The schema class that is instantiated by the data object. Must
           be the name of a class from  the VA schema.
       subject:
-        description: The `Variation` about which the Proposition is made.
+        description: The `Variation` or `CategoricalVariation` about which the Proposition
+          is made.
         oneOf:
         - $ref: catvars.json#/$defs/CategoricalVariation
         - $ref: core.json#/$defs/CURIE
+        - $ref: vrs.json#/definitions/Variation
       predicate:
         type: string
         description: The relationship asserted to hold between the subject and the

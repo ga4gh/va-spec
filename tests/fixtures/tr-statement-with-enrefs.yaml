@@ -4,7 +4,7 @@ description: A phase III clinical trial (NCT00949650) found that median progress
   = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47;
   95% CI, 0.34 to 0.65; P = 0.001).
 direction: supports
-strength:
+evidence_level:
   id: civic.evidence_level:B
   label: Clinical trial or cohort study
   type: Coding

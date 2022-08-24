@@ -36,7 +36,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - string
       - 0..1
       - A free-text description of the InformationEntity.
-   *  - strength
+   *  - confidence_level
       - `Coding <core.json#/$defs/Coding>`_
       - 0..1
       - A coded term describing the strength of support that the information the statement represents is true.
@@ -60,6 +60,14 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
       - 0..1
       - 
+   *  - evidence_level
+      - `Coding <core.json#/$defs/Coding>`_
+      - 0..1
+      - A term indicating the overall strength of support for the Statement based on all evidence assessed.
+   *  - evidence_score
+      - :ref:`DataItem`
+      - 0..1
+      - A quantitative score reflecting the overall strength of support for the Statement based on all  evidence assessed.
    *  - target_proposition
       - :ref:`Proposition` | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
@@ -73,7 +81,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - 0..1
       - The direction of this statement with respect to the target proposition.
    *  - subject_descriptor
-      - `CategoricalVariationDescriptor <vod.json#/definitions/CategoricalVariationDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
+      - `VariationDescriptor <vod.json#/definitions/VariationDescriptor>`_ | `CategoricalVariationDescriptor <vod.json#/definitions/CategoricalVariationDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the variation impacting the condition.
    *  - variation_origin
@@ -81,7 +89,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - 0..1
       - A representation of whether the subject variation is inherited (germline) or acquired (somatic).
    *  - neoplasm_type_descriptor
-      - `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
+      - `PhenotypeDescriptor <vod.json#/definitions/PhenotypeDescriptor>`_ | `DiseaseDescriptor <vod.json#/definitions/DiseaseDescriptor>`_ | `ConditionDescriptor <vod.json#/definitions/ConditionDescriptor>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A descriptor characterizing the neoplasm type for which the indicated variation is relevant.
    *  - object_descriptor

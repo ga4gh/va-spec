@@ -7,10 +7,6 @@ classification:
       type: Extension
       value: pathologic
 direction: supports
-strength:
-  id: cvc:definitive
-  label: Definitive
-  type: Coding
 object_descriptor:
   id: clinvar-condition-descriptor:111
   condition_id: clinvar-condition-id:123

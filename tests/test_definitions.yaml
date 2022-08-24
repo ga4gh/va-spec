@@ -8,3 +8,6 @@ tests:
   - test_file: tr-statement-with-enrefs.yaml
     schema: annotation
     definition: VariationNeoplasmTherapeuticResponseStatement
+  - test_file: tr-statement-inline.yaml
+    schema: annotation
+    definition: VariationNeoplasmTherapeuticResponseStatement

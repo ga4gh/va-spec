@@ -25,9 +25,9 @@ Some VariationGermlineConditionProposition attributes are inherited from :ref:`E
       - 1..1
       - MUST be "VariationGermlineConditionProposition"
    *  - subject
-      - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
+      - `Variation <vrs.json#/definitions/Variation>`_ | `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
-      - The `Variation` about which the Proposition is made.
+      - The `Variation` or `CategoricalVariation` about which the Proposition is made.
    *  - predicate
       - string
       - 0..1

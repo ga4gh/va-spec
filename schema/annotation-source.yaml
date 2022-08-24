@@ -13,6 +13,7 @@ namespaces:
   gks.core: core.json#/$defs/
   vod: vod.json#/definitions/
   catvars: catvars.json#/$defs/
+  vrs: vrs.json#/definitions/
 
 $defs:
   InformationEntity:
@@ -25,7 +26,7 @@ $defs:
         type: string
         description: >-
           A free-text description of the InformationEntity.
-      strength:
+      confidence_level:
         $ref_curie: gks.core:Coding
         description: >-
           A coded term describing the strength of support that the information the statement
@@ -137,6 +138,15 @@ $defs:
       A Statement (aka ‘Assertion’) represents a claim of purported truth as made by a particular agent, 
       on a particular occasion.
     heritable_properties:
+      evidence_level:
+        $ref_curie: gks.core:Coding
+        description: >- 
+          A term indicating the overall strength of support for the Statement based on all evidence assessed.
+      evidence_score:
+        $ref: "#/$defs/DataItem"
+        description: >-
+          A quantitative score reflecting the overall strength of support for the Statement based on all 
+          evidence assessed.
       target_proposition:
         oneOf:
         - $ref: "#/$defs/Proposition"
@@ -160,6 +170,7 @@ $defs:
     heritable_properties:
       subject_descriptor:
         oneOf:
+        - $ref_curie: vod:VariationDescriptor
         - $ref_curie: vod:CategoricalVariationDescriptor
         - $ref_curie: gks.core:CURIE
         description: >-
@@ -178,6 +189,8 @@ $defs:
     heritable_properties:
       object_descriptor:
         oneOf:
+        - $ref_curie: vod:PhenotypeDescriptor
+        - $ref_curie: vod:DiseaseDescriptor
         - $ref_curie: vod:ConditionDescriptor
         - $ref_curie: gks.core:CURIE
         description: >-
@@ -209,6 +222,8 @@ $defs:
     heritable_properties:
       neoplasm_type_descriptor:
         oneOf:
+        - $ref_curie: vod:PhenotypeDescriptor
+        - $ref_curie: vod:DiseaseDescriptor
         - $ref_curie: vod:ConditionDescriptor
         - $ref_curie: gks.core:CURIE
         description: >-
@@ -257,8 +272,9 @@ $defs:
     heritable_properties:
       subject:
         description: >-
-          The `Variation` about which the Proposition is made.
+          The `Variation` or `CategoricalVariation` about which the Proposition is made.
         oneOf:
+        - $ref_curie: vrs:Variation
         - $ref_curie: catvars:CategoricalVariation
         - $ref_curie: gks.core:CURIE
 

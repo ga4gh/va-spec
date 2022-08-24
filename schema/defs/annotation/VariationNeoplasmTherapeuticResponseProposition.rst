@@ -25,9 +25,9 @@ Some VariationNeoplasmTherapeuticResponseProposition attributes are inherited fr
       - 1..1
       - The schema class that is instantiated by the data object. Must be the name of a class from  the VA schema.
    *  - subject
-      - `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
+      - `Variation <vrs.json#/definitions/Variation>`_ | `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
-      - The `Variation` about which the Proposition is made.
+      - The `Variation` or `CategoricalVariation` about which the Proposition is made.
    *  - predicate
       - string
       - 0..1
