@@ -244,7 +244,7 @@
          ],
          "additionalProperties": false
       },
-      "VariationGermlineConditionStatement": {
+      "VariationGermlinePathogenicityStatement": {
          "type": "object",
          "description": "A Statement describing the role of a variation in causing or protecting against a germline Condition.",
          "properties": {
@@ -254,9 +254,9 @@
             },
             "type": {
                "type": "string",
-               "const": "VariationGermlineConditionStatement",
-               "default": "VariationGermlineConditionStatement",
-               "description": "MUST be \"VariationPathogenicityStatement\"."
+               "const": "VariationGermlinePathogenicityStatement",
+               "default": "VariationGermlinePathogenicityStatement",
+               "description": "MUST be \"VariationGermlinePathogenicityStatement\"."
             },
             "label": {
                "type": "string"
@@ -374,7 +374,7 @@
             },
             "target_proposition": {
                "description": "The Proposition about which the Statement is made.",
-               "$ref": "#/$defs/VariationGermlineConditionProposition"
+               "$ref": "#/$defs/VariationGermlinePathogenicityProposition"
             }
          },
          "required": [
@@ -460,7 +460,7 @@
             "target_proposition": {
                "oneOf": [
                   {
-                     "$ref": "#/$defs/VariationGermlineConditionProposition"
+                     "$ref": "#/$defs/VariationGermlinePathogenicityProposition"
                   },
                   {
                      "$ref": "#/$defs/VariationNeoplasmTherapeuticResponseProposition"
@@ -544,7 +544,7 @@
          ],
          "additionalProperties": false
       },
-      "VariationGermlineConditionProposition": {
+      "VariationGermlinePathogenicityProposition": {
          "type": "object",
          "description": "A proposition describing the role of a variation in causing or preventing a germline disease condition.",
          "properties": {
@@ -554,9 +554,9 @@
             },
             "type": {
                "type": "string",
-               "const": "VariationGermlineConditionProposition",
-               "default": "VariationGermlineConditionProposition",
-               "description": "MUST be \"VariationGermlineConditionProposition\""
+               "const": "VariationGermlinePathogenicityProposition",
+               "default": "VariationGermlinePathogenicityProposition",
+               "description": "MUST be \"VariationGermlinePathogenicityProposition\""
             },
             "subject": {
                "description": "The `Variation` or `CategoricalVariation` about which the Proposition is made.",

@@ -196,7 +196,7 @@ $defs:
     - type
     - value
     additionalProperties: false
-  VariationGermlineConditionStatement:
+  VariationGermlinePathogenicityStatement:
     type: object
     description: A Statement describing the role of a variation in causing or protecting
       against a germline Condition.
@@ -209,9 +209,9 @@ $defs:
           an 'id' for the shared concept in another system (e.g. a CURIE).
       type:
         type: string
-        const: VariationGermlineConditionStatement
-        default: VariationGermlineConditionStatement
-        description: MUST be "VariationPathogenicityStatement".
+        const: VariationGermlinePathogenicityStatement
+        default: VariationGermlinePathogenicityStatement
+        description: MUST be "VariationGermlinePathogenicityStatement".
       label:
         type: string
       extensions:
@@ -289,7 +289,7 @@ $defs:
         $ref: core.json#/$defs/Coding
       target_proposition:
         description: The Proposition about which the Statement is made.
-        $ref: '#/$defs/VariationGermlineConditionProposition'
+        $ref: '#/$defs/VariationGermlinePathogenicityProposition'
     required:
     - id
     - type
@@ -355,7 +355,7 @@ $defs:
           for the Statement based on all  evidence assessed.
       target_proposition:
         oneOf:
-        - $ref: '#/$defs/VariationGermlineConditionProposition'
+        - $ref: '#/$defs/VariationGermlinePathogenicityProposition'
         - $ref: '#/$defs/VariationNeoplasmTherapeuticResponseProposition'
         - $ref: core.json#/$defs/CURIE
         description: The Proposition about which the Statement is made.
@@ -402,7 +402,7 @@ $defs:
     - id
     - type
     additionalProperties: false
-  VariationGermlineConditionProposition:
+  VariationGermlinePathogenicityProposition:
     type: object
     description: A proposition describing the role of a variation in causing or preventing
       a germline disease condition.
@@ -415,9 +415,9 @@ $defs:
           (represented by namespace, accordingly).
       type:
         type: string
-        const: VariationGermlineConditionProposition
-        default: VariationGermlineConditionProposition
-        description: MUST be "VariationGermlineConditionProposition"
+        const: VariationGermlinePathogenicityProposition
+        default: VariationGermlinePathogenicityProposition
+        description: MUST be "VariationGermlinePathogenicityProposition"
       subject:
         description: The `Variation` or `CategoricalVariation` about which the Proposition
           is made.

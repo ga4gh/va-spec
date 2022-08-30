@@ -4,7 +4,7 @@ A :ref:`Statement` describing the role of a variation in causing or protecting a
 
 **Information Model**
 
-Some VariationGermlineConditionStatement attributes are inherited from :ref:`Entity`.
+Some VariationGermlinePathogenicityStatement attributes are inherited from :ref:`Entity`.
 
 .. list-table::
    :class: clean-wrap
@@ -23,7 +23,7 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
    *  - type
       - string
       - 1..1
-      - MUST be "VariationPathogenicityStatement".
+      - MUST be "VariationGermlinePathogenicityStatement".
    *  - label
       - string
       - 0..1
@@ -89,6 +89,6 @@ Some VariationGermlineConditionStatement attributes are inherited from :ref:`Ent
       - 0..1
       - The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.
    *  - target_proposition
-      - :ref:`VariationGermlineConditionProposition`
+      - :ref:`VariationGermlinePathogenicityProposition`
       - 0..1
       - The Proposition about which the Statement is made.

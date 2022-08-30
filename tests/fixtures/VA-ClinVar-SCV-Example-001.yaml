@@ -100,7 +100,7 @@ target_proposition:
     - id: HP:0000118
       type: Phenotype
     type: Condition
-  type: VariationGermlineConditionProposition
+  type: VariationGermlinePathogenicityProposition
   subject:
     id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
     type: CanonicalVariation
@@ -120,7 +120,7 @@ target_proposition:
         sequence: T
         type: LiteralSequenceExpression
       type: Allele
-type: VariationGermlineConditionStatement
+type: VariationGermlinePathogenicityStatement
 subject_descriptor:
   id: clinvar:376129
   label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)

@@ -1,7 +1,10 @@
 tests:
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     schema: annotation
-    definition: VariationGermlineConditionStatement
+    definition: VariationGermlinePathogenicityStatement
+#  - test_file: scv000198442.yaml
+#    schema: annotation
+#    definition: VariationGermlinePathogenicityStatement
   - test_file: tr-proposition-with-enref.yaml
     schema: annotation
     definition: VariationNeoplasmTherapeuticResponseProposition

@@ -216,7 +216,7 @@ $defs:
         description: >-
           A descriptor characterizing the condition impacted by the variation.
 
-  VariationGermlineConditionStatement:
+  VariationGermlinePathogenicityStatement:
     type: object
     inherits: VariationConditionStatement
     description: >-
@@ -225,15 +225,15 @@ $defs:
     properties:
       type:
         type: string
-        const: "VariationGermlineConditionStatement"
-        default: "VariationGermlineConditionStatement"
+        const: "VariationGermlinePathogenicityStatement"
+        default: "VariationGermlinePathogenicityStatement"
         description: >-
-          MUST be "VariationPathogenicityStatement".
+          MUST be "VariationGermlinePathogenicityStatement".
       classification:
         extends: conclusion
       target_proposition:
         extends: target_proposition
-        $ref: "#/$defs/VariationGermlineConditionProposition"
+        $ref: "#/$defs/VariationGermlinePathogenicityProposition"
 
   VariationNeoplasmStatement:
     inherits: VariationStatement
@@ -298,7 +298,7 @@ $defs:
         - $ref_curie: catvars:CategoricalVariation
         - $ref_curie: gks.core:CURIE
 
-  VariationGermlineConditionProposition:
+  VariationGermlinePathogenicityProposition:
     type: object
     inherits: VariationProposition
     description: >-
@@ -307,9 +307,9 @@ $defs:
     properties:
       type:
         type: string
-        const: VariationGermlineConditionProposition
-        default: VariationGermlineConditionProposition
-        description: MUST be "VariationGermlineConditionProposition"
+        const: VariationGermlinePathogenicityProposition
+        default: VariationGermlinePathogenicityProposition
+        description: MUST be "VariationGermlinePathogenicityProposition"
       predicate:
         type: string
         description: >-

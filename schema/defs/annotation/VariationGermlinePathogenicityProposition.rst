@@ -4,7 +4,7 @@ A proposition describing the role of a variation in causing or preventing a germ
 
 **Information Model**
 
-Some VariationGermlineConditionProposition attributes are inherited from :ref:`Entity`.
+Some VariationGermlinePathogenicityProposition attributes are inherited from :ref:`Entity`.
 
 .. list-table::
    :class: clean-wrap
@@ -23,7 +23,7 @@ Some VariationGermlineConditionProposition attributes are inherited from :ref:`E
    *  - type
       - string
       - 1..1
-      - MUST be "VariationGermlineConditionProposition"
+      - MUST be "VariationGermlinePathogenicityProposition"
    *  - subject
       - `Variation <vrs.json#/definitions/Variation>`_ | `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
