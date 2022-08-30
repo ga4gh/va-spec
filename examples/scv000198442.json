@@ -1,69 +1,69 @@
 {
-"id" : "clingen:SCV000198442_2021-07-07",
-"type" : "VariationGermlinePathogenicityConditionStatement",
-"target_proposition" : {
-"type" : "VariationGermlinePathogenicityPropostion",
-"subject" : "variationgoeshere",
-"predicate" : "causes_mendelian_condition",
-"object" : "medgen:CN826980" },
-"subject_descriptor" : "clinvar-variation:6241",
-"object_descriptor" : {
-"id" : "genegraph-disease:101"
-"type" : "DiseaseDescriptor",
-"disease" : "medgen:CN826980",
-"label" : "Rare genetic deafness" },
-"classification" : {
-"id" : "loinc:LA6668-3",
-"type" : "Coding",
-"label" : "Pathogenic" },
-"direction" : "supports",
-"confidence_score" : null,
-"method" : {
-"id" : "cspec:123134",
-"is_reported_in" : "pmid:1231231231",
-"label" : "Clingen BrainMalform ACMG Specifications v1",
-"type" : "Method" },
-"contributions" : [ {
-"type" : "Contribution",
-"agent" : {
-"id" : "clinvar-submitter:21766",
-"type" : "agent",
-"label" : "Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine" },
-"role" : "approver",
-"date" : "2018-10-23"
-}, {
-"type" : "Contribution",
-"agent" : {
-"id" : "clinvar-submitter:21766",
-"type" : "agent",
-"label" : "Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine" },
-"role" : "submitter",
-"date" : "2019-08-31"
-} ]null,
-"is_reported_in" : [<publications>]null,
-"record_metadata" : {
-"is_version_of" : "clinvar-scv:SCV000198442",
-"type" : "RecordMetadata",
-"version" : "4" },
-"label" : null,
-"description" : "The p.Gly285Ser variant in KCNQ4 has been reported in at least three individuals with hearing loss, and segregated with disease in over 15 affected relatives fr om two families (LMM unpublished data, Kubisch 1999, Wang 2014). It was absent f rom large population studies. In vitro functional studies support an impact on p rotein function and suggest that the variant may act in a dominant-negative mann er (Kubisch 1999, Bal 2008). Furthermore, the p.Gly285Ser variant falls within t he highly conserved pore-forming region of KCNQ4 (Oza 2018). Supporting the into lerance of this position to variation, a different amino acid change at the same position (p.Gly285Cys) has been reported in one family with hearing loss (Couck e 1999). Finally, this variant was classified as Pathogenic on 9/11/2018 by the ClinGen-approved Hearing Loss Expert Panel (Variation ID 6241). In summary, this variant meets criteria to be classified as pathogenic for autosomal dominant no nsyndromic hearing loss. ACMG/AMP criteria applied: PP1_Strong, PM1, PM2, PP3, P S3_Supporting, PS4_Supporting.",
-"variation_origin" : "germline",
-"extensions" : [ {
-"name" : "submitted_allele_origin",
-"value" : ["germline"] },
-{
-"name" : "submitted_inheritance_pattern",
-"value" : ["autosomal dominant inheritance"] }, 
-{
-"name" : "submitted_classification",
-"value" : "pathogenic" }, 
-{
-"name" : "submitters_method_type",
-"value" : "clinical testing" }, 
-{
-"name" : "submitters_review_status",
-"value" : "criteria provided, single submitter" }, 
-{
-"name" : "submitted_affected_status",
-"value" : ["not provided"] } ]
+  "id" : "clingen:SCV000198442_2021-07-07",
+  "type" : "VariationGermlinePathogenicityConditionStatement",
+  "target_proposition" : {
+    "type" : "VariationGermlinePathogenicityPropostion",
+    "subject" : "variationgoeshere",
+    "predicate" : "causes_mendelian_condition",
+    "object" : "medgen:CN826980" },
+  "subject_descriptor" : "clinvar-variation:6241",
+  "object_descriptor" : {
+    "id" : "genegraph-disease:101",
+    "type" : "DiseaseDescriptor",
+    "disease" : "medgen:CN826980",
+    "label" : "Rare genetic deafness" },
+  "classification" : {
+    "id" : "loinc:LA6668-3",
+    "type" : "Coding",
+    "label" : "Pathogenic" },
+  "direction" : "supports",
+  "confidence_score" : null,
+  "method" : {
+    "id" : "cspec:123134",
+    "is_reported_in" : "pmid:1231231231",
+    "label" : "Clingen BrainMalform ACMG Specifications v1",
+    "type" : "Method" },
+  "contributions" : [ {
+    "type" : "Contribution",
+    "agent" : {
+      "id" : "clinvar-submitter:21766",
+      "type" : "agent",
+      "label" : "Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine" },
+    "role" : "approver",
+    "date" : "2018-10-23"
+  }, {
+    "type" : "Contribution",
+    "agent" : {
+      "id" : "clinvar-submitter:21766",
+      "type" : "agent",
+      "label" : "Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine" },
+    "role" : "submitter",
+    "date" : "2019-08-31"
+  } ],
+  "is_reported_in" : [ "pmid:12345" ],
+  "record_metadata" : {
+    "is_version_of" : "clinvar-scv:SCV000198442",
+    "type" : "RecordMetadata",
+    "version" : "4" },
+  "label" : null,
+  "description" : "The p.Gly285Ser variant in KCNQ4 has been reported in at least three individuals with hearing loss, and segregated with disease in over 15 affected relatives fr om two families (LMM unpublished data, Kubisch 1999, Wang 2014). It was absent f rom large population studies. In vitro functional studies support an impact on p rotein function and suggest that the variant may act in a dominant-negative mann er (Kubisch 1999, Bal 2008). Furthermore, the p.Gly285Ser variant falls within t he highly conserved pore-forming region of KCNQ4 (Oza 2018). Supporting the into lerance of this position to variation, a different amino acid change at the same position (p.Gly285Cys) has been reported in one family with hearing loss (Couck e 1999). Finally, this variant was classified as Pathogenic on 9/11/2018 by the ClinGen-approved Hearing Loss Expert Panel (Variation ID 6241). In summary, this variant meets criteria to be classified as pathogenic for autosomal dominant no nsyndromic hearing loss. ACMG/AMP criteria applied: PP1_Strong, PM1, PM2, PP3, P S3_Supporting, PS4_Supporting.",
+  "variation_origin" : "germline",
+  "extensions" : [ {
+    "name" : "submitted_allele_origin",
+    "value" : ["germline"] },
+    {
+      "name" : "submitted_inheritance_pattern",
+      "value" : ["autosomal dominant inheritance"] },
+    {
+      "name" : "submitted_classification",
+      "value" : "pathogenic" },
+    {
+      "name" : "submitters_method_type",
+      "value" : "clinical testing" },
+    {
+      "name" : "submitters_review_status",
+      "value" : "criteria provided, single submitter" },
+    {
+      "name" : "submitted_affected_status",
+      "value" : ["not provided"] } ]
 }
