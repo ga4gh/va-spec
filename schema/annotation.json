@@ -144,9 +144,13 @@
                   "$ref": "core.json#/$defs/Extension"
                }
             },
-            "doi": {
-               "description": "A Digital Object Identifier.",
-               "$ref": "core.json#/$defs/CURIE"
+            "xrefs": {
+               "description": "An array of compact Uniform Resource Identifiers (CURIE) used to identify the document in other systems, such as digital object identifiers or PubMed IDs.",
+               "type": "array",
+               "ordered": false,
+               "items": {
+                  "$ref": "core.json#/$defs/CURIE"
+               }
             },
             "title": {
                "type": "string"

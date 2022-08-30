@@ -32,10 +32,10 @@ Some Document attributes are inherited from :ref:`Entity`.
       - `Extension <core.json#/$defs/Extension>`_
       - 0..m
       - 
-   *  - doi
+   *  - xrefs
       - `CURIE <core.json#/$defs/CURIE>`_
-      - 0..1
-      - A Digital Object Identifier.
+      - 0..m
+      - An array of compact Uniform Resource Identifiers (CURIE) used to identify the document in other systems, such as digital object identifiers or PubMed IDs.
    *  - title
       - string
       - 0..1
