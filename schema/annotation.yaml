@@ -476,8 +476,11 @@ $defs:
         - $ref: vrs.json#/definitions/Variation
       predicate:
         type: string
-        description: The relationship asserted to hold between the subject and the
-          object of the  Proposition.
+        description: The relationship asserted to hold between the variation (subject)
+          and  the therapeutic (object) of the Proposition.
+        enum:
+        - predicts_sensitivity_to
+        - predicts_resistance_to
       object:
         description: The therapeutic(s) to which the neoplasm response is modulated
           in the presence of the `subject` variation.

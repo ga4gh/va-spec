@@ -357,3 +357,11 @@ $defs:
         - $ref_curie: gks.core:Therapeutic
         - $ref_curie: gks.core:CombinationTherapeuticCollection
         - $ref_curie: gks.core:SubstituteTherapeuticCollection
+      predicate:
+        type: string
+        description: >-
+          The relationship asserted to hold between the variation (subject) and 
+          the therapeutic (object) of the Proposition.
+        enum:
+          - predicts_sensitivity_to
+          - predicts_resistance_to

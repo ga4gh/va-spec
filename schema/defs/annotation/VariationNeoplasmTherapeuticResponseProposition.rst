@@ -31,7 +31,7 @@ Some VariationNeoplasmTherapeuticResponseProposition attributes are inherited fr
    *  - predicate
       - string
       - 0..1
-      - The relationship asserted to hold between the subject and the object of the  Proposition.
+      - The relationship asserted to hold between the variation (subject) and  the therapeutic (object) of the Proposition.
    *  - object
       - `Therapeutic <core.json#/$defs/Therapeutic>`_ | `CombinationTherapeuticCollection <core.json#/$defs/CombinationTherapeuticCollection>`_ | `SubstituteTherapeuticCollection <core.json#/$defs/SubstituteTherapeuticCollection>`_
       - 0..1
