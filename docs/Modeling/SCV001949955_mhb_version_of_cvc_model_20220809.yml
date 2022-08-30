@@ -219,7 +219,7 @@ confidence_direction:
 
 conclusion:                                      
   id: LN:LN12311-2                                   
-  label: Pathogenic                                  
+  label: Likely Pathogenic                                  
   type: Coding                                
 # extension:                                         # I would make this an extension on the Statement, rather than on the Coding . . .     see below  
 #   - name: submitter-classification
@@ -268,7 +268,7 @@ contributions:
 
 # I moved the following extension out from within the Coding object in the 'classification' slot, to hang directly from the Statement (IMO it fits better here, as it holds a property of the Statement, not the Coding object.)
 - name: submitter-classification                   
-  value: pathologic
+  value: likely pathologic
   type: Extension
 
 # Proposing to use the has_evidence_of_type core IM slot to hold the clinvar collection method metadata (instead of a custom Extension as in Alex/Larry's example)
