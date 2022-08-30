@@ -56,7 +56,6 @@ subject_descriptor:
   - type: Extension
     name: civic_actionability_score
     value: 375
-  variation_id: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
   variation:
     id: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
     type: Allele
@@ -115,7 +114,7 @@ subject_descriptor:
     - HER1
     - ERBB1
     - ERBB
-    gene_id: hgnc:3236
+    gene: hgnc:3236
 object_descriptor:
   id: civic.tid:146
   type: TherapeuticDescriptor
@@ -138,15 +137,15 @@ object_descriptor:
       - id: hemonc:642
         type: DiseaseDescriptor
         label: Non-small cell lung cancer
-        disease_id: ncit:C2926
-  therapeutic_id: rxcui:1430438
+        disease: ncit:C2926
+  therapeutic: rxcui:1430438
 neoplasm_type_descriptor:
   id: civic.did:30
   type: DiseaseDescriptor
   label: Lung Adenocarcinoma
   xrefs:
   - DOID:3910
-  disease_id: ncit:C3512
+  disease: ncit:C3512
 method:
   id: metakb.method:1
   is_reported_in: pmid:31779674
