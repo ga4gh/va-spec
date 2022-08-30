@@ -1,3 +1,158 @@
+# Alex/Larry's latest (as of 8-29-22) example from https://github.com/ga4gh/va-spec/blob/metakb-cvc/examples/VA-ClinVar-SCV-Example-001.yaml 
+# Comments provide mappings to elements of the VA-SEPIO Core Model (using the Proposition Assessment paradigm)
+# Below this annotated version of Alex/Larry's example, I provide a version of this record that is full aligned with the VA Core model.
+
+id: cvc-scv:SCV001949955-20220101                     # Statement.id
+type: VariationGermlineConditionStatement             # Statement.type
+target_proposition:                                   # Statement.targetProposition . . . Why no id for the proposition?
+  type: VariationGermlineConditionProposition
+  subject:                                            # Proposition.subject
+    id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk    # VRS . . .
+    type: CanonicalVariation
+    canonical_context:
+      id: ga4gh:VA.Z9tYtztQ5hkRNOajjdJolwkHSBfDYXH0
+      location:
+        id: ga4gh:VSL.rrTlrvGnEyknV7tJhO8sQSSC2LhqyuxX
+        end:
+          type: Number
+          value: 11124516
+        start:
+          type: Number
+          value: 11124515
+        sequence_id: ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+        type: SequenceLocation
+      state:
+        sequence: T
+        type: LiteralSequenceExpression
+      type: Allele
+  predicate: causes_mendelian_condition              # Proposition.predicate
+  object:                                            # Proposition.object
+    id: clinvar-measurset_id:123                     # New concept of a ConditionSet . . . if these are meant to be co-occurring conditions that comprise one higher order condition, this maps find to the VA.GeneticCondition class
+    type: Condition                                  # GeneticCondition.type
+    members:                                         # GeneticCondition.disease
+    - id: MEDGEN:CN300503                            # GeneticCondition.id
+      type: Disease                                  # GeneticCondition.type. How represent condiations defined as set sof co-occurring phenos/conditions?
+    - id: HP:0000118
+      type: Phenotype
+
+
+direction: supports                                  # Statement.evidenceDirection or confidenceDirection
+# strength: strong                                   # I think Alex removed this - it would map to Statement.evidenceStrength or confidenceLevel 
+classification:                                      # PropositionAssessmentStatement.conclusion
+  id: LN:LN12311-2                                   # Coding.id
+  label: Pathogenic                                  # Coding.label
+  type: Coding                                       # Coding.type
+  extensions:                                        # Coding.extension . . . I would not extend a Coding object here, but rather define this extension directly on the Statement.
+    - name: submitter-classification
+      type: Extension
+      value: pathologic
+
+method:                                              # Statement.specifiedBy
+  id: cspec:123134                                   # Method.id
+  type: Method                                       # Method.type
+  is_reported_in: PMID:1231231231                    # Method.isReportedIn or reference
+  label: Clingen BrainMalform ACMG Specs v1          # Method.label
+
+contributions:                                       # Statement.contribution
+- type: Contribution                                 # Contribution.type . ..  why no identifier?
+  date: '2022-02-17'                                 # Contribution.endTime
+  role: evaluator                                    # Contribution.contributorRole
+  agent:                                             # Contribution.contributor
+    id: clinvar-submitter:123                        # Agent.id
+    type: Agent                                      # Agent.type
+    name: ClinGen Brain Malf Var Cur Expert Panel    # Agent.name
+
+- agent:                                             # same mappings as annotated Contribution object above
+    id: clinvar-submitter:123
+    name: ClinGen Brain Malformations Variant Curation Expert Panel
+    type: Agent
+  date: '2022-02-18'
+  role: approver
+  type: Contribution
+ 
+- agent:                                             # same mappings as annotated Contribution object above
+    id: genegraph:cvc1
+    name: ClinGen's ClinVar Variant Curation Transformation System
+    type: Agent
+  date: '2022-07-31'
+  role: transformer
+  type: Contribution
+
+extensions:
+- name: clinvar-review-status                         # This might fit into Statement.informationQuality field?  See VA compliant version below.
+  type: Extension
+  value:
+    label: reviewed by expert panel                   # What is going on here with the nesting??  Is this meant to be a Coding? an Extension of an extension?
+    value: 3-star
+- name: clinvar-scv-methods                           # This might best fit into the VA Statement.hasEvidenceofType field? See VA compliant version below.
+  type: Extension
+  value: curation
+- name: clinvar-scv-affected-statuses                 # This seems a fitting use of an extension
+  type: Extension
+  value: unknown
+variation_origin: germline
+
+
+recordMetaData:                                       # Statement.thisRecordMeta                                           
+  type: RecordMetadata                                # RecordMetadata.type
+  is_version_of: clinvar-scv:SCV001949955             # RecordMetadata.derivedFrom.  The definition of this attribute in the schema says 'An identifier for the concept this record is a versioned instance of' . . .but the ClinGen record is not a version of the source ClinVar SCV?  May best map to RecordMetadata.derivedFrom, or RecordMetadata.sourceMeta[RecordSource.sourceDataRecord].
+  version: '2'                                        # RecordMetadata.recordVersion
+
+subject_descriptor:                                   # Statement.subjectDescriptor                                                
+  id: clinvar:376129                                  # VariationDescriptor.id
+  type: CanonicalVariationDescriptor                  # VariationDescriptor.type
+  categorical_variation_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk  # VariationDescriptor.valueObjectId            
+  label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)   # VariationDescriptor.valueOBjectName
+
+  
+object_descriptor:                                    # Statement.objectDescriptor   
+  id: clinvar-condition-descriptor:111
+  type: ConditionDescriptor
+  condition_id: clinvar-condition-id:123
+  member_descriptors:
+    - type: DiseaseDescriptor
+      id: clinvar-disease-descriptor:145
+      disease_id: MEDGEN:CN300503
+      label: Overgrowth syndrome and/or cerebral malformations due to abnormalities in MTOR pathway genes
+    - type: PhenotypeDescriptor
+      id: clinvar-disease-descriptor:156
+      phenotype_id: HP:0000118
+      label: Phenotypic abnormality
+
+
+description: >-                                       # Statement.description 
+  'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant predicted         
+  to cause substitution of (p.Ser2215Tyr). This variant is absent from gnomAD v2.1.1
+  (PM2_Supporting). MTOR, in which the variant was identified, is defined by the ClinGen
+  Brain Malformations Expert Panel as a gene that has a low rate of benign missense
+  variation and where pathogenic missense variants are a common mechanism of disease
+  (PP2). A different amino acid change (p.Ser2215Phe), at this locus, is classified
+  as pathogenic for Overgrowth with or without cerebral malformations due to abnormalities
+  in MTOR-pathway genes by the ClinGen BMEP (PM5). This variant has been shown to
+  significantly increase phosphorylation levels in experiments with case and controls
+  cells of similar isogenic backgrounds indicating that this variant impacts protein
+  function (PMIDs: 20190810, 24631838, 28963468) (PS3_Supporting). The prevalence
+  of the variant in affected individuals is significantly increased compared with
+  the prevalence in controls (PS4; PMID: 27830187, 29281825, 225401301, 26619011;
+  identified in 5 individuals with neuropathology confirmatory of a malformation of
+  cortical development, 1 individual with neuroimaging appearance consistent with
+  a malformation of cortical development (without neuropathology), 1 individual with
+  neuroimaging demonstrating at least one large cerebral hemisphere with cortical
+  malformation(s), 15 tumor samples in the literature and COSMIC). Testing of unaffected
+  and affected tissue show variable allelic fractions consistent with a post-zygotic
+  event (PS2_Moderate; PMID: 26018084). In summary, this variant meets the criteria
+  to be classified as Pathogenic for mosaic autosomal dominant overgrowth with or
+  without cerebral malformations due to abnormalities in MTOR-pathway genes based
+  on the ACMG/AMP criteria applied, as specified by the ClinGen Brain Malformations
+  Expert Panel: PM2_P, PP2, PM5, PS3_P, PS4, PS2_M; 11 points (VCEP specifications
+  version 1; Approved: 1/31/2021)'
+
+
+
+##----------------------------------------------------------------------------------##
+
+
+
 # Inlined SEPIO-VA representation of the ClinVar record Larry and Alex used to demonstrate the metakb-cvc model (SCV001949955), as of 8-29-22
 # This representation is compliant with a draft GA4GH Base 'Variant Pathogenicity Classification' Profile, which applies the 'Evidence Level Statement' paradigm.
 # The data record used for this example was Larry/Alex's file: https://github.com/ga4gh/va-spec/blob/metakb-cvc/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml (which I modified to better align with the VA Core IM and proposed pathogenicity profile)
@@ -29,10 +184,10 @@ target_proposition:
         sequence: T
         type: LiteralSequenceExpression
       type: Allele
-  predicate:                                    # slot name changed from 'association' to match VA name, and value represented using a Coding object
+  predicate:                                         
     id: cvc:causes_mendelian_condition
-    label: causes mendelian condition
     type: Coding
+    label: causes mendelian condition
   object:                                         
     id: clinvar-measurset_id:123                     # What is a ConditionSet . . . if it is meant to hold co-occurring conditions that comprise one higher order condition, this maps find to the VA.GeneticCondition class
     type: Condition                                  
@@ -42,19 +197,31 @@ target_proposition:
     - id: HP:0000118
       type: Phenotype
 
-
-evidence_level: strong                               # Would be captured in a Coding object. Statement.evidenceStrength declares how strongly the evidnece supports or disputes the target proposition. There is also a confidenceLevel property (inherited from InformationEntity) that could be used here)
-evidence_direction: supports                         # Would be captured in a Coding object. Statement.evidenceDirection declares if the evidence supports, disputes, or is inconclusive w.r.t. the truth of the target proposition
-#OR 
-confidence_level: likely
-confidence_direction: true
+# T.B.D how we will represent strength and direction semantics.  A couple possibilities are below.
+evidence_level:                                      
+  id: cvc:strong
+  type: Coding
+  label: strong
+evidence_direction:                                 
+  id: cvc:supports
+  type: Coding
+  label: supports
+# OR 
+confidence_level: 
+  id: cvc:likely
+  type: Coding
+  label: likely
+confidence_direction: 
+  id: cvc:true
+  type: Coding
+  label: true
 
 
 conclusion:                                      
   id: LN:LN12311-2                                   
   label: Pathogenic                                  
   type: Coding                                
-# extension:                                         # I would make this an extension on the Statement, rather than on the Coding . . .       
+# extension:                                         # I would make this an extension on the Statement, rather than on the Coding . . .     see below  
 #   - name: submitter-classification
 #     type: Extension
 #     value: pathologic
@@ -64,7 +231,6 @@ specified_by:
   type: Method                                       
   label: Clingen BrainMalform ACMG Specs v1   
   is_reported_in: PMID:1231231231                   # alt, use the 'reference' attribute (inherited from Entity)
-       
 
 contributions:                                                 
 - type: Contribution                                # no 'id' on Contribution objects?                                   
@@ -72,15 +238,21 @@ contributions:
     id: clinvar-submitter:123                        
     type: Agent                                     
     label: ClinGen Brain Malf Var Cur Expert Panel  
-  contributor_role: evaluator                       # Would be captured in a Coding object.  
-  date: 2022-02-17                              # T.B.D. - final model to represent when something was done
+  contributor_role:                                 
+    id: cvc:evaluator
+    type: Coding
+    label: evaluator
+  date: 2022-02-17                                  # T.B.D. - finalize model to represent when something was done
   
 - type: Contribution
   contributor:                                            
     id: clinvar-submitter:123
     type: Agent
     label: ClinGen Brain Malformations Variant Curation Expert Panel
-  contributor_role: approver                        # Would be captured in a Coding object.
+  contributor_role: approver                        
+    id: cvc:approver
+    type: Coding
+    label: approver
   date: 2022-02-18
  
 - type: Contribution
@@ -88,55 +260,53 @@ contributions:
     id: genegraph:cvc1
     type: Agent
     label: ClinGen's ClinVar Variant Curation Transformation System
-  contributor_role: transformer                     # Would be captured in a Coding object.
+  contributor_role:                     
+    id: cvc:transformer
+    type: Coding
+    label: transformer 
   date: 2022-07-31
- 
 
-extensions:
-- name: clinvar-scv-affected-statuses                 # This is a fitting use of an extension
-  type: Extension
-  value: unknown
-- name: clinvar-scv-allele-origins                    # This is a fitting use of an extension . . . Discuss this . . . what is the semantic being conveyed. I still would like to see this as part of the Proposition (and be sure that what goes into the Proposition vs the Statement is not based on what is required vs optional)
-  type: Extension
-  value: germline
-
-# I moved the following extension out from within the Coding object in the 'classification' slot, to hang directly from the Statement (IMO it fits better here)
+# I moved the following extension out from within the Coding object in the 'classification' slot, to hang directly from the Statement (IMO it fits better here, as it holds a property of the Statement, not the Coding object.)
 - name: submitter-classification                   
   value: pathologic
   type: Extension
 
-
-
-# Proposing to use the has_evidence_of_type core IM slot to hold the clinvar collection method metadata (instead of a custom extension)
-#- name: clinvar-scv-methods
-#  type: Extension
-#  value: curation
+# Proposing to use the has_evidence_of_type core IM slot to hold the clinvar collection method metadata (instead of a custom Extension as in Alex/Larry's example)
 hasEvidenceOfType:                                 
   id: cvc:curation
-  label: curation
   type: Coding
-  
-# Proposing to use the informtion_quality core IM slot to hold the clinvar review status  metadata (instead of a custom extension)
-# - name: clinvar-review-status
-#  type: Extension
-#  value:
-#    label: reviewed by expert panel
-#    value: 3-star
+  label: curation
+
+# Proposing to use the InformationEntity.information_quality attribute form the VA Core IM to hold the clinvar review status metadata (instead of a custom Extension)
 informationQuality:                                
   id: cvc:three_star
   label: 3-star, reviewed by expert panel    
 
-proposition_subject_descriptor:                                                                                   
+subject_descriptor:                                                                                   
   id: clinvar:376129                                  
   type: CanonicalVariationDescriptor                  
   value_object_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk            
   value_object_label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)   
 
   
-proposition_object_descriptor:                          
+object_descriptor:                          
   id: clinvar-condition-descriptor:111  
   type: ConditionDescriptor
   value_object_id: clinvar-traitset_id:123
+
+thisRecordMetaData:                                                                                    
+  type: RecordMetadata                                
+  derived_from: clinvar-scv:SCV001949955              
+  recordVersion: '2'           
+
+
+extensions:
+- name: clinvar-scv-affected-statuses                 
+  type: Extension
+  value: unknown
+- name: clinvar-scv-allele-origins                    # At present the VA model does not support a variation_origin property, so it would be captured in an Extension. For hte record I still would like to see this as part of the Proposition.
+  type: Extension
+  value: germline
 
 description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant predicted          
   to cause substitution of (p.Ser2215Tyr). This variant is absent from gnomAD v2.1.1
@@ -164,8 +334,4 @@ description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant 
   Expert Panel: PM2_P, PP2, PM5, PS3_P, PS4, PS2_M; 11 points (VCEP specifications
   version 1; Approved: 1/31/2021)'
 
-# To Do: understand use case for record metadata here, and provide VA representation
-recordMetaData:                                       # Statement.thisRecordMeta                                              
-  type: RecordMetadata                                # RecordMetadata.type
-  is_version_of: clinvar-scv:SCV001949955             # Not sure what intent is here? Def in schema says 'An identifier for the concept this record is a versioned instance of' . . .but the ClinGen record is not a version of the source ClinVar SCV?  May best map to Statement.sourceMeta[RecordSource.sourceDataRecord]. Or, if you want to say anything about this source record, use the Statement.sourceRecordMeta property/pattern . . 
-  version: '2'                                        # RecordMetadata.recordVersion
+                            
