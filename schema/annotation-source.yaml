@@ -179,7 +179,7 @@ $defs:
           confidence score.
       direction:
         type: string
-        enum: [ "supports", "uncertain", "refutes" ]
+        enum: [ "supports", "uncertain", "opposes" ]
         description: >-
           The direction of this statement with respect to the target proposition.
 

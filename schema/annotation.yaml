@@ -261,7 +261,7 @@ $defs:
         enum:
         - supports
         - uncertain
-        - refutes
+        - opposes
         description: The direction of this statement with respect to the target proposition.
       subject_descriptor:
         oneOf:
@@ -368,7 +368,7 @@ $defs:
         enum:
         - supports
         - uncertain
-        - refutes
+        - opposes
         description: The direction of this statement with respect to the target proposition.
       subject_descriptor:
         oneOf:
