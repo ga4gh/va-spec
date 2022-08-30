@@ -132,6 +132,21 @@ $defs:
       title:
         type: string
 
+  DataItem:
+    inherits: InformationEntity
+    type: object
+    description: >-
+      An InformationEntity representing an individual piece of data, generated/acquired through methods 
+      which reliably produce truthful information about something.
+    properties:
+      value:
+        type: string
+        description: The value of the data item
+      unit:
+        type:
+          $ref_curie: gks.core:Coding
+    required: [ "value" ]
+
   Statement:
     inherits: InformationEntity
     description: >-
