@@ -1,0 +1,24 @@
+variation:
+  - id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
+    type: CanonicalVariation
+    canonical_context:
+      id: ga4gh:VA.Z9tYtztQ5hkRNOajjdJolwkHSBfDYXH0
+      location:
+        id: ga4gh:VSL.rrTlrvGnEyknV7tJhO8sQSSC2LhqyuxX
+        end:
+          type: Number
+          value: 11124516
+        start:
+          type: Number
+          value: 11124515
+        sequence_id: ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+        type: SequenceLocation
+      state:
+        sequence: T
+        type: LiteralSequenceExpression
+      type: Allele
+variation_descriptors:
+  - id: clinvar:376129
+    label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)
+    type: CanonicalVariationDescriptor
+    canonical_variation: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk
