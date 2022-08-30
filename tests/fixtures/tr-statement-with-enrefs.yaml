@@ -14,5 +14,5 @@ subject_descriptor: civic.vid:33
 object_descriptor: civic.tid:146
 neoplasm_type_descriptor: civic.did:30
 method: metakb.method:1
-is_reported_in: civic.source:592
+is_reported_in: [ "civic.source:592" ]
 type: VariationTherapeuticResponseStatement

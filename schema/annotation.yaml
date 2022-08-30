@@ -179,9 +179,12 @@ $defs:
         items:
           $ref: '#/$defs/Contribution'
       is_reported_in:
-        oneOf:
-        - $ref: '#/$defs/Document'
-        - $ref: core.json#/$defs/CURIE
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: '#/$defs/Document'
+          - $ref: core.json#/$defs/CURIE
         description: A document in which the information content is expressed.
       record_metadata:
         $ref: core.json#/$defs/RecordMetadata
@@ -242,9 +245,12 @@ $defs:
         items:
           $ref: '#/$defs/Contribution'
       is_reported_in:
-        oneOf:
-        - $ref: '#/$defs/Document'
-        - $ref: core.json#/$defs/CURIE
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: '#/$defs/Document'
+          - $ref: core.json#/$defs/CURIE
         description: A document in which the information content is expressed.
       record_metadata:
         $ref: core.json#/$defs/RecordMetadata
@@ -339,9 +345,12 @@ $defs:
         items:
           $ref: '#/$defs/Contribution'
       is_reported_in:
-        oneOf:
-        - $ref: '#/$defs/Document'
-        - $ref: core.json#/$defs/CURIE
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: '#/$defs/Document'
+          - $ref: core.json#/$defs/CURIE
         description: A document in which the information content is expressed.
       record_metadata:
         $ref: core.json#/$defs/RecordMetadata

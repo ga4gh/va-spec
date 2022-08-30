@@ -54,7 +54,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - 
    *  - is_reported_in
       - :ref:`Document` | `CURIE <core.json#/$defs/CURIE>`_
-      - 0..1
+      - 0..m
       - A document in which the information content is expressed.
    *  - record_metadata
       - `RecordMetadata <core.json#/$defs/RecordMetadata>`_

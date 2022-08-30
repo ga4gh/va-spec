@@ -154,10 +154,10 @@ method:
     variants in cancer
   type: Method
 is_reported_in:
-  id: civic.source:592
-  label: Sequist et al., 2013, J. Clin. Oncol.
-  title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
-    with metastatic lung adenocarcinoma with EGFR mutations.
-  xrefs: [ "pmid:23816960" ]
-  type: Document
+  - id: civic.source:592
+    label: Sequist et al., 2013, J. Clin. Oncol.
+    title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
+      with metastatic lung adenocarcinoma with EGFR mutations.
+    xrefs: [ "pmid:23816960" ]
+    type: Document
 type: VariationTherapeuticResponseStatement
