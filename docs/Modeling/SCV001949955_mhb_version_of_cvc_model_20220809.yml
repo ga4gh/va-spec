@@ -189,7 +189,7 @@ target_proposition:
     type: Coding
     label: causes mendelian condition
   object:                                         
-    id: clinvar-measurset_id:123                     # What is a ConditionSet . . . if it is meant to hold co-occurring conditions that comprise one higher order condition, this maps find to the VA.GeneticCondition class
+    id: clinvar-measurset_id:123                     
     type: Condition                                  
     members:                                         
     - id: MEDGEN:CN300503                    
@@ -197,34 +197,62 @@ target_proposition:
     - id: HP:0000118
       type: Phenotype
 
-# T.B.D how we will represent strength and direction semantics.  A couple possibilities are below.
-evidence_level:                                      
-  id: cvc:strong
-  type: Coding
-  label: strong
-evidence_direction:                                 
-  id: cvc:supports
-  type: Coding
-  label: supports
-# OR 
+# It seems like we want to frame these as assessing confidence in the target proposition (not evidence strength/level)
+# Below is how the VA would accommodate this for all 5 'outcoems' (P, LB, B, LB, VUS) - using attributes of the Proposition Assessment Statement.
+# Per the data types in the current metakb-cvc schema, directions are controlled string enums, while levels and conclusions are Codings. 
+
+# Pathogenic (confidence direction + level gives a statement that reads "Proposition X is 'definitively' 'true'")
+confidence_direction: true
 confidence_level: 
-  id: cvc:likely
+  id: cvc:term001
+  label: definitive
   type: Coding
+conclusion:                                      
+  id: LN:LN12311-2                                   
+  label: Pathogenic                                  
+  type: Coding      
+  
+
+# Likely Pathogenic (confidence direction + level gives a statement that reads "Proposition X is 'likely' 'true'")
+confidence_direction: true
+confidence_level: 
+  id: cvc:term002
   label: likely
-confidence_direction: 
-  id: cvc:true
   type: Coding
-  label: true
-
-
 conclusion:                                      
   id: LN:LN12311-2                                   
   label: Likely Pathogenic                                  
   type: Coding                                
-# extension:                                         # I would make this an extension on the Statement, rather than on the Coding . . .     see below  
-#   - name: submitter-classification
-#     type: Extension
-#     value: pathologic
+
+# Likely Benign (cconfidence direction + level gives a statement that reads "Proposition X is 'likely' 'false'")
+confidence_direction: false
+confidence_level: 
+  id: cvc:term002
+  label: likely
+  type: Coding
+conclusion:                                      
+  id: LN:LN12311-2                                   
+  label: Likely Benign                                  
+  type: Coding      
+
+#  Benign (confidence direction + level gives a statement that reads "Proposition X is 'definitiely' 'false'")
+confidence_direction: false
+confidence_level: 
+  id: cvc:term001
+  label: definitively
+  type: Coding
+conclusion:                                      
+  id: LN:LN12311-2                                   
+  label: Benign                                  
+  type: Coding      
+  
+#  VUS (confidence direction + level gives a statement that reads "Proposition X is 'uncertain'")
+confidence_direction: uncertain                     # Note there is no confidence level here - as this is not relevant when direction is uncertain
+conclusion:                                      
+  id: LN:LN12311-2                                   
+  label: uncertain significance                                  
+  type: Coding      
+  
 
 specified_by:                                    
   id: cspec:123134                                   
@@ -232,25 +260,27 @@ specified_by:
   label: Clingen BrainMalform ACMG Specs v1   
   is_reported_in: PMID:1231231231                   # alt, use the 'reference' attribute (inherited from Entity)
 
-contributions:                                                 
+contribution:                                                 
 - type: Contribution                                # no 'id' on Contribution objects?                                   
   contributor:                              
     id: clinvar-submitter:123                        
     type: Agent                                     
-    label: ClinGen Brain Malf Var Cur Expert Panel  
+    label: ClinGen Brain Malf Var Cur Expert Panel 
+    agent_type: Person                              # Proposed addition to the schema, to clearly distinguish between 'Persons', 'Organizations', and 'Computational Agents'
   contributor_role:                                 
-    id: cvc:evaluator
+    id: cvc:term003
     type: Coding
     label: evaluator
   date: 2022-02-17                                  # T.B.D. - finalize model to represent when something was done
   
 - type: Contribution
   contributor:                                            
-    id: clinvar-submitter:123
+    id: clinvar-submitter:456
     type: Agent
     label: ClinGen Brain Malformations Variant Curation Expert Panel
+    agent_type: Organization  
   contributor_role: approver                        
-    id: cvc:approver
+    id: cvc:term004
     type: Coding
     label: approver
   date: 2022-02-18
@@ -260,22 +290,22 @@ contributions:
     id: genegraph:cvc1
     type: Agent
     label: ClinGen's ClinVar Variant Curation Transformation System
+    agent_type: Computational Agent  
   contributor_role:                     
-    id: cvc:transformer
+    id: cvc:term005
     type: Coding
     label: transformer 
   date: 2022-07-31
 
-# I moved the following extension out from within the Coding object in the 'classification' slot, to hang directly from the Statement (IMO it fits better here, as it holds a property of the Statement, not the Coding object.)
 - name: submitter-classification                   
   value: likely pathologic
   type: Extension
 
 # Proposing to use the has_evidence_of_type core IM slot to hold the clinvar collection method metadata (instead of a custom Extension as in Alex/Larry's example)
 hasEvidenceOfType:                                 
-  id: cvc:curation
+  id: cvc:term006
   type: Coding
-  label: curation
+  label: curated evidence                              # We could frame other CLinVar CollectionMethod terms as evidence types here as well, as these are all based on type of activity that created evidence supporting the classification. e.g. 'case-control evidence', 'clinical testing evidence', 'curated evidence', 'literature only' -> 'literatire evidence', or more accurately use the GO code 'traceable author statement', 'phenotyping evidence', 'provider interpretation evidence', 'reference population data evidence', 'research data evidence'
 
 # Proposing to use the InformationEntity.information_quality attribute form the VA Core IM to hold the clinvar review status metadata (instead of a custom Extension)
 informationQuality:                                
@@ -288,7 +318,6 @@ subject_descriptor:
   value_object_id: ga4gh:CV.NOajjdJolwkNOajjdJolwkNOajjdJolwk            
   value_object_label: NM_004958.4(MTOR):c.6644C>A (p.Ser2215Tyr)   
 
-  
 object_descriptor:                          
   id: clinvar-condition-descriptor:111  
   type: ConditionDescriptor
@@ -299,15 +328,15 @@ thisRecordMetaData:
   derived_from: clinvar-scv:SCV001949955              
   recordVersion: '2'           
 
-
 extensions:
 - name: clinvar-scv-affected-statuses                 
   type: Extension
   value: unknown
-- name: clinvar-scv-allele-origins                    # At present the VA model does not support a variation_origin property, so it would be captured in an Extension. For hte record I still would like to see this as part of the Proposition.
-  type: Extension
+- name: clinvar-scv-allele-origins                    
   value: germline
-
+- name: submitted_inheritance_pattern                 
+  value: autosomal dominant inheritance
+  
 description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant predicted          
   to cause substitution of (p.Ser2215Tyr). This variant is absent from gnomAD v2.1.1
   (PM2_Supporting). MTOR, in which the variant was identified, is defined by the ClinGen
