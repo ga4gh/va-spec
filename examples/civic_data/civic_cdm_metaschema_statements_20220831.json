@@ -7896,9 +7896,9 @@
             "label": "case study evidence"
         },
         "target_proposition": {
-            "id": "proposition:5XJJA5aUZQ7YwsALFLWBl5feaClNaexc",
+            "id": "proposition:6HrehLUH3Bo3-nBpp-zOuRp5xQa1xNsU",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "subject": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "predicate": "predicts_resistance_to",
             "object": {
                 "id": "rxcui:357977",
@@ -20707,9 +20707,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:Q1lzj3L295gz_euOLgz1THOjb184lJj7",
+            "id": "proposition:ZnyIormPEPZ-XjdFQAIs4Ae-T8XKoPzQ",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.TZi8JJHH5GGyPAu35PyoWm3HBUhfmXhe",
+            "subject": "ga4gh:VA.jD9f-R_toWrduybrjbm68lsaOpntmZAa",
             "predicate": "predicts_resistance_to",
             "object": {
                 "id": "rxcui:282388",
@@ -22102,9 +22102,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:oSqb5yGW3Nd4oUguJwAko3c0vCBAib1Q",
+            "id": "proposition:3Vj4gE4_RXwW9V2VAUSIROiX38FYUAPp",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "subject": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "predicate": "predicts_resistance_to",
             "object": {
                 "id": "rxcui:357977",
