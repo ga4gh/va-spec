@@ -1,0 +1,15 @@
+[
+    {
+        "id": "metakb.method:1",
+        "type": "Method",
+        "label": "CIViC Curation SOP (2019)",
+        "is_reported_in": {
+            "type": "Document",
+            "label": "Danos AM, Krysiak K, Barnell EK, et al., 2019, Genome Medicine",
+            "xrefs": [
+                "pmid:31779674"
+            ],
+            "title": "Standard operating procedure for curation and clinical interpretation of variants in cancer"
+        }
+    }
+]
