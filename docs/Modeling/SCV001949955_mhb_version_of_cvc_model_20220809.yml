@@ -202,7 +202,7 @@ target_proposition:
 # Per the data types in the current metakb-cvc schema, directions are controlled string enums, while levels and conclusions are Codings. 
 
 # Pathogenic (confidence direction + level gives a statement that reads "Proposition X is 'definitively' 'true'")
-confidence_direction: true
+confidence_direction: true                            # Alt, if the value 'true' / 'false' are too vague or problematic, try something like 'proposition is true' / 'proposition is false'
 confidence_level: 
   id: cvc:term001
   label: definitive
@@ -212,7 +212,6 @@ conclusion:
   label: Pathogenic                                  
   type: Coding      
   
-
 # Likely Pathogenic (confidence direction + level gives a statement that reads "Proposition X is 'likely' 'true'")
 confidence_direction: true
 confidence_level: 
