@@ -56,6 +56,11 @@ $defs:
           - $ref: "#/$defs/Document"
           - $ref_curie: gks.core:CURIE
         description: A document in which the information content is expressed.
+      information_quality:
+        type: string
+        description: >-
+           A term indicating the scientific rigor with which the information was generated and 
+           documented for use. 
       record_metadata:
         $ref_curie: gks.core:RecordMetadata
     heritable_required: [ "id" ]
@@ -185,7 +190,23 @@ $defs:
         enum: [ "supports", "uncertain", "opposes" ]
         description: >-
           The direction of this statement with respect to the target proposition.
-
+      has_evidence_of_type: 
+        type: string
+        enum: [ "case-control evidence", "clinical testing evidence", "curation-based evidence", 
+        "author statement from literature", "phenotyping evidence", "provider interpretation evidence", 
+        "reference population evidence", "research evidence" ]
+        description: >-
+          A term describing a type of evidence used to assess the validity of Statement's proposition.          
+      statement_quality: 
+        extends: information_quality
+        type: string
+        enum: ["4-star, practice guideline", "3-star, reviewed by expert panel", "1-star, criteria provided, 
+        single submitter", "0-star, no assertion criteria provided", "0-star, no assertion provided", 
+        "0-star, no interpretation for the single variant" ]
+        description: > -
+          A qualitative term indicating the scientific rigor with which the Statement was generated and/or 
+          documented for use. 
+      
   VariationStatement:
     inherits: Statement
     description: >-
