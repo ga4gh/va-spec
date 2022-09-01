@@ -36,14 +36,14 @@ $defs:
         description: >-
           A quantitative score reflecting the degree of confidence that the information 
           the information entity represents is true.
-      method:
+      specified_by:
         oneOf:
         - $ref: "#/$defs/Method"
         - $ref_curie: gks.core:CURIE
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
-      contributions:
+      contribution:
         type: array
         ordered: true
         items:
@@ -73,12 +73,12 @@ $defs:
         const: Contribution
         default: Contribution
         description: MUST be "Contribution".
-      agent:
+      contributor:
         $ref: "#/$defs/Agent"
       date:
         type: string
         format: date
-      role:
+      contributor_role:
         type: string
 
   Agent:
@@ -96,7 +96,12 @@ $defs:
         description: MUST be "Agent".
       name:
         type: string
-
+     agent_type: 
+        type: string
+        enum: [ "person", "organization", "software agent"]
+        description: >-
+            A specific type of agent the Agent object represents (e.g. a person, organization, 
+            software agent)
   Method:
     type: object
     inherits: gks.core:ExtensibleEntity
@@ -147,7 +152,17 @@ $defs:
       An InformationEntity representing an individual piece of data, generated/acquired through methods 
       which reliably produce truthful information about something.
     properties:
-      value:
+      type:
+        type: string
+        const: DataItem
+        default: DataItem
+        description: Must be "DataItem"
+     data_item_type: 
+       type: string      
+       description: >- 
+          A specific type of data the DataItem object represents (e.g. a specimen count, a 
+          patient weight, an allele frequency, a p-value, a confidence score)
+     value:
         type: string
         description: The value of the data item
       unit:
