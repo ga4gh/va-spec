@@ -155,10 +155,11 @@ $defs:
         oneOf:
         - $ref: "#/$defs/Proposition"
         - $ref_curie: gks.core:CURIE
-        description: The Proposition about which the Statement is made.
+        description: The Proposition assessed by the author of the Statement, and about which the Statement
+        is made.
       evidence_direction:
          type: string
-         enum: [ "supports", "disputes", inconclusive" ] 
+         enum: [ "supports", "disputes", "inconclusive" ] 
          description: >-
            A term indicating the net direction of all evidence assessed against the target proposition. 
       evidence_level:
