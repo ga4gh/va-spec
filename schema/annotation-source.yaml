@@ -26,16 +26,6 @@ $defs:
         type: string
         description: >-
           A free-text description of the InformationEntity.
-      confidence_level:
-        $ref_curie: gks.core:Coding
-        description: >-
-          A coded term describing the strength of support that the information the statement
-          represents is true.
-      confidence_score:
-        $ref: "#/$defs/DataItem"
-        description: >-
-          A quantitative score reflecting the degree of confidence that the information 
-          the information entity represents is true.
       method:
         oneOf:
         - $ref: "#/$defs/Method"
@@ -161,30 +151,51 @@ $defs:
       A Statement (aka ‘Assertion’) represents a claim of purported truth as made by a particular agent, 
       on a particular occasion.
     heritable_properties:
-      evidence_level:
-        $ref_curie: gks.core:Coding
-        description: >- 
-          A term indicating the overall strength of support for the Statement based on all evidence assessed.
-      evidence_score:
-        $ref: "#/$defs/DataItem"
-        description: >-
-          A quantitative score reflecting the overall strength of support for the Statement based on all 
-          evidence assessed.
       target_proposition:
         oneOf:
         - $ref: "#/$defs/Proposition"
         - $ref_curie: gks.core:CURIE
         description: The Proposition about which the Statement is made.
+      evidence_direction:
+         type: string
+         enum: [ "supports", "disputes", inconclusive" ] 
+         description: >-
+           A term indicating the net direction of all evidence assessed against the target proposition. 
+      evidence_level:
+        $ref_curie: gks.core:Coding
+        description: >- 
+          A term indicating the overall strength of support for or against the Statement's proposition, 
+          as provided by all evidence evaluated.
+      evidence_score:
+        $ref: "#/$defs/DataItem"
+        description: >-
+          A quantitative score reflecting the overall strength of support for or against the Statement's 
+          proposition, as provided by all evidence evaluated.
+      confidence_level: 
+        $ref_curie: gks.core:Coding
+        description: >-
+          A term indicating the asserting agent's level of confidence that the target 
+          proposition is true or false (the direction this assessment pertains to is captured
+          by the confidence_direction field).
+      confidence_score: 
+        $ref: "#/$defs/DataItem" 
+        description: >-
+          A quantitative score term reflecting the asserting agent's level of confidence that
+          the target proposition is true or false (the direction this assessment pertains to 
+          is captured by the confidence_direction attribute).
+      confidence_direction: 
+        type: string
+        enum: [ "true", "false", "uncertain" ]
+        description: >-
+          A term indicating whether the assessment reported in the confidence_level and 
+          confidence_score fields reflects confidence that the target proposition is true, 
+          or false. 
       conclusion:
         $ref_curie: gks.core:Coding
         description: >-
-          The conclusion drawn from the statement proposition, direction, strength, and/or 
-          confidence score.
-      direction:
-        type: string
-        enum: [ "supports", "uncertain", "opposes" ]
-        description: >-
-          The direction of this statement with respect to the target proposition.
+          A term that describes a final conclusion about the subject of the target proposition, 
+          based on what the proposition expresses, and assessments of confidence and/or evidence 
+          level and direction.     
 
   VariationStatement:
     inherits: Statement
@@ -237,7 +248,9 @@ $defs:
       target_proposition:
         extends: target_proposition
         $ref: "#/$defs/VariationGermlinePathogenicityProposition"
-
+      confidence_level:
+        extends: confidence_level
+        enum: [ "likely", "definitive" ]
   VariationNeoplasmStatement:
     inherits: VariationStatement
     description: >-
