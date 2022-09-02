@@ -195,7 +195,7 @@
                "$ref": "#/$defs/DataItem",
                "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
             },
-            "method": {
+            "specified_by": {
                "oneOf": [
                   {
                      "$ref": "#/$defs/Method"
@@ -284,7 +284,7 @@
                "$ref": "#/$defs/DataItem",
                "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
             },
-            "method": {
+            "specified_by": {
                "oneOf": [
                   {
                      "$ref": "#/$defs/Method"
@@ -425,7 +425,7 @@
                "$ref": "#/$defs/DataItem",
                "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
             },
-            "method": {
+            "specified_by": {
                "oneOf": [
                   {
                      "$ref": "#/$defs/Method"

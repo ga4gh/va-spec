@@ -44,7 +44,7 @@ Some VariationGermlinePathogenicityStatement attributes are inherited from :ref:
       - :ref:`DataItem`
       - 0..1
       - A quantitative score reflecting the degree of confidence that the information  the information entity represents is true.
-   *  - method
+   *  - specified_by
       - :ref:`Method` | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A :ref:`Method` that describes all or part of the process through which the information was generated.

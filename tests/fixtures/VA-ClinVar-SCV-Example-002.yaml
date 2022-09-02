@@ -51,7 +51,7 @@ extensions:
 id: clingen:SCV000198442_2021-07-07
 is_reported_in:
 - pmid:12345
-method:
+specified_by:
   id: cspec:123134
   is_reported_in: pmid:1231231231
   label: Clingen BrainMalform ACMG Specifications v1
