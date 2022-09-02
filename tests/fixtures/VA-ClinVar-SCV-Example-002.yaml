@@ -2,19 +2,18 @@ classification:
   id: loinc:LA6668-3
   label: Pathogenic
   type: Coding
-confidence_score: null
 contributions:
 - agent:
     id: clinvar-submitter:21766
     label: Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine
-    type: agent
+    type: Agent
   date: '2018-10-23'
   role: approver
   type: Contribution
 - agent:
     id: clinvar-submitter:21766
     label: Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine
-    type: agent
+    type: Agent
   date: '2019-08-31'
   role: submitter
   type: Contribution
@@ -52,7 +51,6 @@ extensions:
 id: clingen:SCV000198442_2021-07-07
 is_reported_in:
 - pmid:12345
-label: null
 method:
   id: cspec:123134
   is_reported_in: pmid:1231231231
@@ -69,9 +67,11 @@ record_metadata:
   version: '4'
 subject_descriptor: clinvar-variation:6241
 target_proposition:
-  object: medgen:CN826980
+  object:
+    id: medgen:CN826980
+    type: Disease
   predicate: causes_mendelian_condition
-  subject: variationgoeshere
-  type: VariationGermlinePathogenicityPropostion
-type: VariationGermlinePathogenicityConditionStatement
+  subject: ga4gh:CLV.fake13579
+  type: VariationGermlinePathogenicityProposition
+type: VariationGermlinePathogenicityStatement
 variation_origin: germline
