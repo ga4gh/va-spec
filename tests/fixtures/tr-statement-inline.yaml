@@ -146,7 +146,7 @@ neoplasm_type_descriptor:
   xrefs:
   - DOID:3910
   disease: ncit:C3512
-method:
+specified_by:
   id: metakb.method:1
   is_reported_in: pmid:31779674
   label: Standard operating procedure for curation and clinical interpretation of
