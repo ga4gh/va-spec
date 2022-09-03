@@ -43,7 +43,7 @@ $defs:
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
-      contribution:
+      contributions:
         type: array
         ordered: true
         items:
