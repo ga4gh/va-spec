@@ -79,7 +79,9 @@ $defs:
         type: string
         format: date
       contributor_role:
-        type: string
+        $ref: "#/$defs/Coding"
+        description: >-
+         SHOULD describe a concept descending from the Contributor Role Ontology.
 
   Agent:
     type: object
