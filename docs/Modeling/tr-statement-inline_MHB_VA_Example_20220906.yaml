@@ -1,0 +1,413 @@
+
+# A VA-aligned representation of Alex's latest civic tr evidence example here: https://github.com/ga4gh/va-spec/blob/metakb-cvc/tests/fixtures/tr-statement-inline.yaml  (as of 9-6-22)
+# It represents EID879 as a VA EvidenceLine, and is based on the assumption that primary statement made by this EID record is that 
+# "The Sequist et al. 2013 study results provide Level B evidence that supports the proposition that 'EGFR L858R predicts sensitivity to Afatinib in NSCLC'".
+# The Evidence Line class in the VA Model is specifically suited to represent these kinds of statements.
+# All changes from Alex's latest example are marked with an explanatory comment.
+
+id: civic.eid:879
+type: EvidenceLine                               # Changed type from VariationTherapeuticResponseStatement  (but you could always subtype as VariationTherapeuticResponseEvidenceLine if this was important)                 
+target_proposition:
+  id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
+  type: VariationNeoplasmTherapeuticResponseProposition
+  subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+  predicate: predicts_sensitivity_to
+  object:
+    id: rxcui:1430438
+    type: Therapeutic
+  neoplasm_type_qualifier:
+    id: ncit:C3512
+    type: Disease
+
+evidence_direction: supports                      # Changed name from 'direction' to 'evidence_direction' to align with VA model
+evidence_level:
+  id: vicc:e00003                                 # This is what CIViC calls level B evidence strength, I beleive.
+  label: Clinical trial or cohort study
+  type: Coding
+
+has_evidence_item:                                # Adding this attribute to link to a description of the supporting study results in a separate StudyResult object, which represents evidence items contributing to the Evidence Line. 
+  id: vicc:sr0001                                 # Creating a StudyResult object, which is specifically suited to represent data about a particular subject/focus (here, the EGFR L858R variant, that comes from a single study).  
+  type: StudyResult
+  description: >-                                 # The 'description' in the EID object describes the data used as evidence, not the Statement that is being made by the EID879 record. It is therefore placed in this StudyResult object.
+    A phase III clinical trial (NCT00949650) found that median progression 
+    free survival among patients with exon 19 deletions or L858R EGFR mutations
+    (n= 308) was 13.6 months for afatinib and 6.9 months for chemotherapy 
+    (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001).
+  is_reported_in:                                 # The reference in the EID object also belongs here - as it reports the study result, not the EID statement.
+    id: civic.source:592
+    type: Document
+    label: Sequist et al., 2013, J. Clin. Oncol.
+    title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
+      with metastatic lung adenocarcinoma with EGFR mutations.
+    xrefs: [ "pmid:23816960" ]
+# information_quality: 4-star                     # This StudyResult is where we might also put the CIViC star rating - which reports the quality of the study that generated the evidence (independent of its relevance/use as evidence in the context of EID879).
+
+
+# No changes from Alex' proposal below here
+specified_by:
+  id: metakb.method:1
+  type: Method
+  label: Standard operating procedure for curation and clinical interpretation of
+    variants in cancer
+  is_reported_in: pmid:31779674
+
+subject_descriptor:
+  id: civic.vid:33
+  type: VariationDescriptor
+  label: L858R
+  description: EGFR L858R has long been recognized as a functionally significant
+    mutation in cancer, and is one of the most prevalent single mutations in lung
+    cancer. Best described in non-small cell lung cancer (NSCLC), the mutation seems
+    to confer sensitivity to first and second generation TKI's like gefitinib and
+    neratinib. NSCLC patients with this mutation treated with TKI's show increased
+    overall and progression-free survival, as compared to chemotherapy alone. Third
+    generation TKI's are currently in clinical trials that specifically focus on
+    mutant forms of EGFR, a few of which have shown efficacy in treating patients
+    that failed to respond to earlier generation TKI therapies.
+  xrefs:
+  - clinvar:376280
+  - clinvar:16609
+  - clinvar:376282
+  - caid:CA126713
+  - dbsnp:121434568
+  alternate_labels:
+  - LEU858ARG
+  extensions:
+  - type: Extension
+    name: civic_representative_coordinate
+    value:
+      chromosome: '7'
+      start: 55259515
+      stop: 55259515
+      reference_bases: T
+      variant_bases: G
+      representative_transcript: ENST00000275493.2
+      ensembl_version: 75
+      reference_build: GRCh37
+  - type: Extension
+    name: civic_actionability_score
+    value: 375
+  variation:
+    id: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+    type: Allele
+    location:
+      id: ga4gh:VSL.Sfs_3PlVEYp9BxBsHsFfU1tvhfDq361f
+      type: SequenceLocation
+      sequence_id: ga4gh:SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+      start:
+        type: Number
+        value: 857
+      end:
+        type: Number
+        value: 858
+    state:
+      type: LiteralSequenceExpression
+      sequence: R
+  structural_type: SO:0001583
+  expressions:
+  - type: Expression
+    syntax: hgvs.g
+    value: NC_000007.13:g.55259515T>G
+  - type: Expression
+    syntax: hgvs.p
+    value: NP_005219.2:p.Leu858Arg
+  - type: Expression
+    syntax: hgvs.c
+    value: NM_005228.4:c.2573T>G
+  - type: Expression
+    syntax: hgvs.c
+    value: ENST00000275493.2:c.2573T>G
+  gene_context:
+    id: civic.gid:19
+    type: GeneDescriptor
+    label: EGFR
+    description: "EGFR is widely recognized for its importance in cancer. Amplification
+      and mutations have been shown to be driving events in many cancer types. Its
+      role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
+      has spurred many research and drug development efforts. Tyrosine kinase inhibitors
+      have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
+      Mutations in EGFR have been shown to confer resistance to these drugs, particularly
+      the variant T790M, which has been functionally characterized as a resistance
+      marker for both of these drugs. The later generation TKI's have seen some
+      success in treating these resistant cases, and targeted sequencing of the
+      EGFR locus has become a common practice in treatment of non-small cell lung
+      cancer. \nOverproduction of ligands is another possible mechanism of activation
+      of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
+      NRG1-4 (for detailed information please refer to the respective ligand section)."
+    xrefs:
+    - ncbigene:1956
+    alternate_labels:
+    - ERRP
+    - EGFR
+    - mENA
+    - PIG61
+    - NISBD2
+    - HER1
+    - ERBB1
+    - ERBB
+    gene: hgnc:3236
+object_descriptor:
+  id: civic.tid:146
+  type: TherapeuticDescriptor
+  label: Afatinib
+  xrefs:
+  - ncit:C66940
+  alternate_labels:
+  - BIBW2992
+  - BIBW 2992
+  - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
+  extensions:
+  - type: Extension
+    name: regulatory_approval
+    value:
+      approval_rating: FDA
+      has_indications:
+      - id: hemonc:25316
+        type: DiseaseDescriptor
+        label: Non-small cell lung cancer Squamous
+      - id: hemonc:642
+        type: DiseaseDescriptor
+        label: Non-small cell lung cancer
+        disease: ncit:C2926
+  therapeutic: rxcui:1430438
+neoplasm_type_descriptor:
+  id: civic.did:30
+  type: DiseaseDescriptor
+  label: Lung Adenocarcinoma
+  xrefs:
+  - DOID:3910
+  disease: ncit:C3512
+
+variation_origin: somatic                      # Currently not supported by VA model
+
+
+#--------------------------------------------------------------------------#
+
+# A VA aligned representation of this EID record as a VA PropositionAssessmentStatement (which I thnk is Alex' initial intent?).
+# This representation imparts the following, subtly different semantics onto the primary statement made by this EID record: 
+# "The proposition that 'EGFR L858R # predicts sensitivity to Afatinib in NSCLC' is supported by  Sequist et al. 2013 study results with 
+# evidence Level B".
+
+# Note that the only difference from the EvidenceLine representation is the 'type' of the root object (hence the rest of the example is not shown). 
+# But this is an important difference when considering how this EID will look alongside AID6, and other CIVIC assertion records 
+# it may support. Typing EID records as EvidenceLines makes a very important distinction very clear - namely that this record describes only the 
+# strength and direction and support of evidence as provided by a single, particular line of support - and should not be interpreted as indicative 
+# of the overall strentgh/direction of support that exists for the target Proposition. 
+# Without this type difference, I see nothing to make this clear - but I cannot say for sure as I have not seen an example of how AIDs will be represented.
+
+# This type level difference also allows us to define different enumeration bindings to attributes like evidence_level - where we need 
+# different sets of terms as permissible values when talking about assessment of 'overall evidence' for a Proposition, vs assessment of 
+# a single line of support for the Proposition.
+
+id: civic.eid:879
+type: VariationTherapeuticResponseStatement    
+            
+# Everything below here is identical to the EvidenceLine-based representation above.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# ---------------------------------------------------------------------------------------------------#
+
+
+# MHB comments on Alex's latest civic tr example here: https://github.com/ga4gh/va-spec/blob/metakb-cvc/tests/fixtures/tr-statement-inline.yaml  (as of 9-6-22)
+# (I reordered the Statement attributes to group related things together, and present a clearer narrtive of the Statement.
+
+id: civic.eid:879
+type: VariationTherapeuticResponseStatement                   # Note the name of the Statement type here is different than that of the Proposition type. Also, I would type EIDs as Evidence Lines. But I would first like to see how this compares to an AID record, and how these levels of statements will be set apart.
+
+## MHB: IMO this is a description of the evidence (the study result), not the actual/ultiamte Statement that is being made here by the EID879 record.
+## And this confusion IMO betrays a fundamental and critical disconnect between how VA and the current metakb-cvc model are understanding and representing EID statements.  
+description: A phase III clinical trial (NCT00949650) found that median progression   
+  free survival among patients with exon 19 deletions or L858R EGFR mutations (n
+  = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47;
+  95% CI, 0.34 to 0.65; P = 0.001).
+  
+target_proposition:
+  id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
+  type: VariationNeoplasmTherapeuticResponseProposition
+  subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+  predicate: predicts_sensitivity_to
+  object:
+    id: rxcui:1430438
+    type: Therapeutic
+  neoplasm_type_qualifier:
+    id: ncit:C3512
+    type: Disease
+    
+direction: supports
+evidence_level:
+  id: vicc:e00003
+  label: Clinical trial or cohort study
+  type: Coding
+
+## MHB: I think we need a has_evidence attribute here pointing to a Study Result object that describes the data from the 
+## clinical trial that supports the claim put forth by this Statement, that "Data from this particular study provides level B
+## support for the proposition that Variant X predicts sensitivity to Treatment Y in Condition Z"
+
+specified_by:
+  id: metakb.method:1
+  type: Method
+  label: Standard operating procedure for curation and clinical interpretation of
+    variants in cancer
+  is_reported_in: pmid:31779674
+
+is_reported_in:
+  id: civic.source:592
+  type: Document
+  label: Sequist et al., 2013, J. Clin. Oncol.
+  title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
+    with metastatic lung adenocarcinoma with EGFR mutations.
+  doi: doi:10.1093/jamiaopen/ooaa028
+
+  
+subject_descriptor:
+  id: civic.vid:33
+  type: VariationDescriptor
+  label: L858R
+  description: EGFR L858R has long been recognized as a functionally significant
+    mutation in cancer, and is one of the most prevalent single mutations in lung
+    cancer. Best described in non-small cell lung cancer (NSCLC), the mutation seems
+    to confer sensitivity to first and second generation TKI's like gefitinib and
+    neratinib. NSCLC patients with this mutation treated with TKI's show increased
+    overall and progression-free survival, as compared to chemotherapy alone. Third
+    generation TKI's are currently in clinical trials that specifically focus on
+    mutant forms of EGFR, a few of which have shown efficacy in treating patients
+    that failed to respond to earlier generation TKI therapies.
+  xrefs:
+  - clinvar:376280
+  - clinvar:16609
+  - clinvar:376282
+  - caid:CA126713
+  - dbsnp:121434568
+  alternate_labels:
+  - LEU858ARG
+  extensions:
+  - type: Extension
+    name: civic_representative_coordinate
+    value:
+      chromosome: '7'
+      start: 55259515
+      stop: 55259515
+      reference_bases: T
+      variant_bases: G
+      representative_transcript: ENST00000275493.2
+      ensembl_version: 75
+      reference_build: GRCh37
+  - type: Extension
+    name: civic_actionability_score
+    value: 375
+  variation:
+    id: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+    type: Allele
+    location:
+      id: ga4gh:VSL.Sfs_3PlVEYp9BxBsHsFfU1tvhfDq361f
+      type: SequenceLocation
+      sequence_id: ga4gh:SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+      start:
+        type: Number
+        value: 857
+      end:
+        type: Number
+        value: 858
+    state:
+      type: LiteralSequenceExpression
+      sequence: R
+  structural_type: SO:0001583
+  expressions:
+  - type: Expression
+    syntax: hgvs.g
+    value: NC_000007.13:g.55259515T>G
+  - type: Expression
+    syntax: hgvs.p
+    value: NP_005219.2:p.Leu858Arg
+  - type: Expression
+    syntax: hgvs.c
+    value: NM_005228.4:c.2573T>G
+  - type: Expression
+    syntax: hgvs.c
+    value: ENST00000275493.2:c.2573T>G
+  gene_context:
+    id: civic.gid:19
+    type: GeneDescriptor
+    label: EGFR
+    description: "EGFR is widely recognized for its importance in cancer. Amplification
+      and mutations have been shown to be driving events in many cancer types. Its
+      role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
+      has spurred many research and drug development efforts. Tyrosine kinase inhibitors
+      have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
+      Mutations in EGFR have been shown to confer resistance to these drugs, particularly
+      the variant T790M, which has been functionally characterized as a resistance
+      marker for both of these drugs. The later generation TKI's have seen some
+      success in treating these resistant cases, and targeted sequencing of the
+      EGFR locus has become a common practice in treatment of non-small cell lung
+      cancer. \nOverproduction of ligands is another possible mechanism of activation
+      of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
+      NRG1-4 (for detailed information please refer to the respective ligand section)."
+    xrefs:
+    - ncbigene:1956
+    alternate_labels:
+    - ERRP
+    - EGFR
+    - mENA
+    - PIG61
+    - NISBD2
+    - HER1
+    - ERBB1
+    - ERBB
+    gene: hgnc:3236
+object_descriptor:
+  id: civic.tid:146
+  type: TherapeuticDescriptor
+  label: Afatinib
+  xrefs:
+  - ncit:C66940
+  alternate_labels:
+  - BIBW2992
+  - BIBW 2992
+  - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
+  extensions:
+  - type: Extension
+    name: regulatory_approval
+    value:
+      approval_rating: FDA
+      has_indications:
+      - id: hemonc:25316
+        type: DiseaseDescriptor
+        label: Non-small cell lung cancer Squamous
+      - id: hemonc:642
+        type: DiseaseDescriptor
+        label: Non-small cell lung cancer
+        disease: ncit:C2926
+  therapeutic: rxcui:1430438
+neoplasm_type_descriptor:
+  id: civic.did:30
+  type: DiseaseDescriptor
+  label: Lung Adenocarcinoma
+  xrefs:
+  - DOID:3910
+  disease: ncit:C3512
+
+variation_origin: somatic
+
+
+# --------------------------------------------------------------------------------------## 
