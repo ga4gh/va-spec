@@ -59,7 +59,7 @@ $defs:
       information_quality:
         type: string
         description: >-
-           A term indicating the scientific rigor with which the information was generated and 
+           A term indicating the scientific rigor with which the information was generated and/or 
            documented for use. 
       record_metadata:
         $ref_curie: gks.core:RecordMetadata
