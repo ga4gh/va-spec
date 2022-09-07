@@ -1,4 +1,4 @@
-name: validate civic examples
+name: validate source examples
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate_civic_examples:
+  validate_source_examples:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -26,4 +26,8 @@ jobs:
 
       - name: Validate CIViC Examples
         run: |
-          python3 examples/civic_validation.py
+          python3 examples/source_validation.py --source civic
+
+      - name: Validate MOA Examples
+        run: |
+          python3 examples/source_validation.py --source moa

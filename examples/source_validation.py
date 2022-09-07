@@ -1,23 +1,23 @@
-from enum import Enum
 from jsonschema import validate
 import pathlib
 import json
+import argparse
 
 APP_ROOT = pathlib.Path.cwd()
 
 SCHEMA_DIR = APP_ROOT / "schema"
 SCHEMA_URI_ROOT = "file://" + str(SCHEMA_DIR)
-CIVIC_EXAMPLES_DIR = APP_ROOT / "examples" / "civic_data"
 
 
-def get_latest_file(file_obj_type):
-    files = (CIVIC_EXAMPLES_DIR).glob(f"civic_cdm_metaschema_{file_obj_type}_*.json")
+def get_latest_file(source_name, file_obj_type):
+    source_examples_dir = APP_ROOT / "examples" / f"{source_name}_data"
+    files = (source_examples_dir).glob(f"{source_name}_cdm_metaschema_{file_obj_type}_*.json")
     sorted_files = sorted(files)
     return sorted_files[-1]
 
 
-def validate_variation_descriptors():
-    variation_descriptors_file = get_latest_file("variation_descriptors")
+def validate_variation_descriptors(source_name):
+    variation_descriptors_file = get_latest_file(source_name, "variation_descriptors")
     with open(variation_descriptors_file) as jf:
         vd_records = json.load(jf)
 
@@ -33,8 +33,8 @@ def validate_variation_descriptors():
     validate(vd_records, variation_descriptor_schema)
 
 
-def validate_statements():
-    statements_file = get_latest_file("statements")
+def validate_statements(source_name):
+    statements_file = get_latest_file(source_name, "statements")
     with open(statements_file) as jf:
         statement_records = json.load(jf)
 
@@ -54,8 +54,8 @@ def validate_statements():
     validate(statement_records, statement_file_schema)
 
 
-def validate_methods():
-    methods_file = get_latest_file("methods")
+def validate_methods(source_name):
+    methods_file = get_latest_file(source_name, "methods")
     with open(methods_file) as jf:
         method_records = json.load(jf)
 
@@ -72,6 +72,12 @@ def validate_methods():
 
 
 if __name__ == "__main__":
-    validate_variation_descriptors()
-    validate_statements()
-    validate_methods()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--source", choices=["civic", "moa"],
+                        type=str.lower, required=True)
+    args = parser.parse_args()
+    source_name = args.source
+
+    validate_variation_descriptors(source_name)
+    validate_statements(source_name)
+    validate_methods(source_name)
