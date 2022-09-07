@@ -1,7 +1,7 @@
 [
     {
         "id": "metakb.method:1",
-        "type": "FAIL",
+        "type": "Method",
         "label": "CIViC Curation SOP (2019)",
         "is_reported_in": {
             "type": "Document",

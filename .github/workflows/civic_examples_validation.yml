@@ -24,6 +24,6 @@ jobs:
           python -m pip install --upgrade pip setuptools
           pip install -r .requirements.txt
 
-      - name: Test CIViC example validation
+      - name: Validate CIViC Examples
         run: |
           python3 examples/civic_validation.py

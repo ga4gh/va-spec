@@ -13512,19 +13512,19 @@
             }
         ],
         "variation": {
-            "id": "ga4gh:VA.5isPmTUCtBU1vImP1g3Ild5zzrMwEuKx",
+            "id": "ga4gh:VA.Ghi6eWMPfE7p-xavGmcIXCSxtRRgzHyF",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.zPYIAdNfSFBHcZIiegzkDtu0Fg1F_1j1",
+                "id": "ga4gh:SL.GBqdZJJ86sITKM3Aol2-ThCfNA34QHTx",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.fGPHz_BuC2mUP2mDkoh1KRbyO7QgvCFi",
                 "start": {
                     "type": "Number",
-                    "value": 131
+                    "value": 228
                 },
                 "end": {
                     "type": "Number",
-                    "value": 132
+                    "value": 229
                 }
             },
             "state": {
@@ -13551,19 +13551,19 @@
             }
         ],
         "variation": {
-            "id": "ga4gh:VA.keU1DxDu_Qz41IFceZ6-waekMSjo7XZn",
+            "id": "ga4gh:VA.8xa3q4iWAU0XHuj_CVl-VGL85xEv6_Xp",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.zPYIAdNfSFBHcZIiegzkDtu0Fg1F_1j1",
+                "id": "ga4gh:SL.GBqdZJJ86sITKM3Aol2-ThCfNA34QHTx",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.fGPHz_BuC2mUP2mDkoh1KRbyO7QgvCFi",
                 "start": {
                     "type": "Number",
-                    "value": 131
+                    "value": 228
                 },
                 "end": {
                     "type": "Number",
-                    "value": 132
+                    "value": 229
                 }
             },
             "state": {
@@ -14854,19 +14854,19 @@
             "GLY284ARG"
         ],
         "variation": {
-            "id": "ga4gh:VA.z7ARybY3rznTxs4CxVMdAHYC-yEsUKxD",
+            "id": "ga4gh:VA.JZZpkcuTotDIXhpxWJtniVphEQYboDAo",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.62smPbde77vOOQL1u4drLLIQw1yAWbc-",
+                "id": "ga4gh:SL.n0zdSZRTAwhNfWKxtUmeDcNiwjDZ_a7-",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.PczR1JRjEKoA7VHZpwjW8_n3hbJL-Lj_",
                 "start": {
                     "type": "Number",
-                    "value": 283
+                    "value": 1042
                 },
                 "end": {
                     "type": "Number",
-                    "value": 284
+                    "value": 1043
                 }
             },
             "state": {
@@ -22328,19 +22328,19 @@
             }
         ],
         "variation": {
-            "id": "ga4gh:VA.XBLlOZt-umVjKBni7wqsV7WnT0PpWfMO",
+            "id": "ga4gh:VA.iMuLpN8FuG9vnmT1LzCuhKSsedpyjGTj",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.Au_QIwvtYSi7seNh5iWtm9aEAAr0zBu4",
+                "id": "ga4gh:SL.P7R_WbCh7ZjKF3hqpAdlHj4BqYmeUcVo",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.1FffRCrInsZmG7RV1Eqx_Ym7EhjW3Je7",
                 "start": {
                     "type": "Number",
-                    "value": 1375
+                    "value": 1236
                 },
                 "end": {
                     "type": "Number",
-                    "value": 1376
+                    "value": 1237
                 }
             },
             "state": {
@@ -24057,12 +24057,12 @@
             "LEU63VAL"
         ],
         "variation": {
-            "id": "ga4gh:VA.uayg0WHhAE02U_fs1bWBo9qj1aMpYzCW",
+            "id": "ga4gh:VA.63g55q3_wl21Vpdd6kMEe6mdvt5x-JYo",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.q7wwQ8j6-aPRWZ9jEHtDDmetQLyZ9Rsg",
+                "id": "ga4gh:SL.dxRfrtan6xn60-YX5id6y8l0gM5iq12_",
                 "type": "SequenceLocation",
-                "sequence_id": "ga4gh:SQ.YZ16PaJP1nQPOsmn1kgDdrwH6lJp33K_",
+                "sequence_id": "ga4gh:SQ.jSEEnTyrC7lL5C5cfpvGjdh6y2lzauuM",
                 "start": {
                     "type": "Number",
                     "value": 62
@@ -28841,19 +28841,19 @@
             "P203H"
         ],
         "variation": {
-            "id": "ga4gh:VA.sDvWsR87Sz7L1Gj-pjDUFNt3HNYPyBb7",
+            "id": "ga4gh:VA.RfkMzLjG4B3Le7ve8gMUWuWD4X_ak9ik",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.WZyJUirMCeXTXnboqPxm9XRZX0GgJQLd",
+                "id": "ga4gh:SL.6HlSI3QFJjFMy36_GXSAFaObRAwL4tPk",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.PczR1JRjEKoA7VHZpwjW8_n3hbJL-Lj_",
                 "start": {
                     "type": "Number",
-                    "value": 261
+                    "value": 1141
                 },
                 "end": {
                     "type": "Number",
-                    "value": 262
+                    "value": 1142
                 }
             },
             "state": {
@@ -42391,19 +42391,19 @@
             "VAL443LEU"
         ],
         "variation": {
-            "id": "ga4gh:VA.vIxwzw4KmaCvAuI0Xzb7Ia46IFPFQquW",
+            "id": "ga4gh:VA.0yxxyOOuXIPaArukyL0wagh62pLNYNvO",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.UlFPLBtCQ5y44bZ2nC7kOKR-s8oZrfTj",
+                "id": "ga4gh:SL.UPGtX_eLujG2Ik68-TRoVUZ-Bs9_0pSz",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.xO86teDIIalLkqprCQaXyuvdPqvBxBG3",
                 "start": {
                     "type": "Number",
-                    "value": 552
+                    "value": 554
                 },
                 "end": {
                     "type": "Number",
-                    "value": 553
+                    "value": 555
                 }
             },
             "state": {
@@ -42466,19 +42466,19 @@
             "ENSP00000414914.2:P.VAL555MET "
         ],
         "variation": {
-            "id": "ga4gh:VA.G35iHt-DldA68RzWrE_hnEwFBYozVuJo",
+            "id": "ga4gh:VA.5499uFxrtzbSIoH9btwGfr27z50OY65I",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.UlFPLBtCQ5y44bZ2nC7kOKR-s8oZrfTj",
+                "id": "ga4gh:SL.UPGtX_eLujG2Ik68-TRoVUZ-Bs9_0pSz",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.xO86teDIIalLkqprCQaXyuvdPqvBxBG3",
                 "start": {
                     "type": "Number",
-                    "value": 552
+                    "value": 554
                 },
                 "end": {
                     "type": "Number",
-                    "value": 553
+                    "value": 555
                 }
             },
             "state": {
@@ -43152,19 +43152,19 @@
             "VAL560ASP"
         ],
         "variation": {
-            "id": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "id": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.m_U3zzk9u9J_8ugi6fU_N02VB10pfPYx",
+                "id": "ga4gh:SL.sErOgjyG3npITfBMwqsTXJsslXqWu-9-",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.TcMVFj5kDODDWpiy1d_1-3_gOf4BYaAB",
                 "start": {
                     "type": "Number",
-                    "value": 559
+                    "value": 558
                 },
                 "end": {
                     "type": "Number",
-                    "value": 560
+                    "value": 559
                 }
             },
             "state": {
@@ -43313,19 +43313,19 @@
             "VAL560GLY"
         ],
         "variation": {
-            "id": "ga4gh:VA.TZi8JJHH5GGyPAu35PyoWm3HBUhfmXhe",
+            "id": "ga4gh:VA.jD9f-R_toWrduybrjbm68lsaOpntmZAa",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.m_U3zzk9u9J_8ugi6fU_N02VB10pfPYx",
+                "id": "ga4gh:SL.sErOgjyG3npITfBMwqsTXJsslXqWu-9-",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.TcMVFj5kDODDWpiy1d_1-3_gOf4BYaAB",
                 "start": {
                     "type": "Number",
-                    "value": 559
+                    "value": 558
                 },
                 "end": {
                     "type": "Number",
-                    "value": 560
+                    "value": 559
                 }
             },
             "state": {

@@ -556,7 +556,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:2dD6CD0S7Q078KF_GLDhVknKJ6aZs9OB",
+            "id": "civic.tcd:P1PY89shAjemg7jquQ0V9pg1VnYnkPeK",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -732,7 +732,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -893,7 +893,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:D9jhjbimw5Utm2eZklLnfFfdOZAoKSei",
+            "id": "civic.tcd:QoPu2SO9N_zsHY4X6TMs5q3CLWJMHAQa",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -1627,7 +1627,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -1962,7 +1962,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -2123,7 +2123,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -2288,7 +2288,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:hr60U3WGiC9nrnFCh8Ooh9V1wMaalZ8u",
+            "id": "civic.tcd:7g5X81wE2go4GE_fB45SjFamVMgpnwsA",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -2913,7 +2913,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -3322,7 +3322,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:fL_jutTt139ih_IsYqY5S6OIAoTAAw62",
+            "id": "civic.tcd:TgPtIuv9V-lbf4OQZ9w7ag3sI2QRhkFz",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -3550,7 +3550,7 @@
             "disease": "ncit:C9311"
         },
         "object_descriptor": {
-            "id": "civic.tcd:2W28HsVS1lWVsSJNQHS36U1aEnCH8crG",
+            "id": "civic.tcd:xFFut3eEUjgeT2G4uNtiphTfxMQw9B4X",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -4024,7 +4024,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -4864,7 +4864,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:NK3NQKDbmgAM8xk8T54OaA9qXg2WVrh9",
+            "id": "civic.tcd:sUZF6fX-tmv7MQt76twjivm3eJ5Znrzm",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -5479,7 +5479,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:mrav5eFnHeLiaU-nHgSOmING7RL2QQUZ",
+            "id": "civic.tcd:rF1JcnGq_-VTc0yiCsNIORfNqXQCC3yM",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -6008,7 +6008,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -6265,7 +6265,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:Hq0JZnbnwh5hykcaqIg_BZ7HeHh4LlOK",
+            "id": "civic.tcd:TC0qf-K34RiO4MPOvi-7wmgAjjt7va7T",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -6474,7 +6474,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -6636,7 +6636,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -6797,7 +6797,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -6959,7 +6959,7 @@
             "disease": "ncit:C3878"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -7647,7 +7647,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -7877,7 +7877,7 @@
             "disease": "ncit:C3512"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -8309,7 +8309,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:iCPQ0P-O8A_iJURaLdmSx7VcEAaneAY-",
+            "id": "civic.tcd:AxHYAnCZAUw1ShJYYZKndWIE3M53hjHd",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -8930,7 +8930,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -9171,7 +9171,7 @@
             "disease": "ncit:C3512"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -9505,7 +9505,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:28Jpl1y4MRKcIzwVbq4hDvqkd5bE-vJr",
+            "id": "civic.tcd:aqQX-Uu5M67jU4vqRwbOB7diuYQozPtZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -9848,7 +9848,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -10087,7 +10087,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -10370,9 +10370,9 @@
             "label": "clinical cohort evidence"
         },
         "target_proposition": {
-            "id": "proposition:1UDUYyZZ7Y31QtwncdsRRLYwQBo-jykI",
+            "id": "proposition:q7rKMHK4Mwy_MOJroYGyVGhLEEqdexke",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.z7ARybY3rznTxs4CxVMdAHYC-yEsUKxD",
+            "subject": "ga4gh:VA.JZZpkcuTotDIXhpxWJtniVphEQYboDAo",
             "predicate": "predicts_sensitivity_to",
             "object": {
                 "id": "rxcui:1430438",
@@ -10490,7 +10490,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -10859,7 +10859,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:9tcZvaUyd2LsE1A1YRBSWCUNQvUqbsVQ",
+            "id": "civic.tcd:Ak6hp_rMbp-qqpqM6XULZHux5GbB8qFG",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -11906,7 +11906,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -12443,7 +12443,7 @@
             "disease": "ncit:C5105"
         },
         "object_descriptor": {
-            "id": "civic.tcd:3F6h-QwceX2mZdbgnRX2EiJa4yzoGpfQ",
+            "id": "civic.tcd:TJUHf9p152aDhRuAJ6lB5jfabJYZcqE_",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -12791,7 +12791,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:hr60U3WGiC9nrnFCh8Ooh9V1wMaalZ8u",
+            "id": "civic.tcd:7g5X81wE2go4GE_fB45SjFamVMgpnwsA",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -13002,7 +13002,7 @@
             "disease": "mondo:0003060"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -13163,7 +13163,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -13344,7 +13344,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:2W28HsVS1lWVsSJNQHS36U1aEnCH8crG",
+            "id": "civic.tcd:xFFut3eEUjgeT2G4uNtiphTfxMQw9B4X",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -13730,7 +13730,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:wP_dFkLA4BNsFl0MHtogl3D4_q0cJTIq",
+            "id": "civic.tcd:XLPSZcKSHPHqVNFvaTkpEccouN1BleTZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -14849,7 +14849,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:lpB1TrAIHEN0hkwcqrq5T0bGavkbBahW",
+            "id": "civic.tcd:8e8qOIfzxekUHTOw_hUntYTTmid3PG3R",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -15080,7 +15080,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:wP_dFkLA4BNsFl0MHtogl3D4_q0cJTIq",
+            "id": "civic.tcd:XLPSZcKSHPHqVNFvaTkpEccouN1BleTZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -15786,7 +15786,7 @@
             "disease": "ncit:C7431"
         },
         "object_descriptor": {
-            "id": "civic.tcd:2W28HsVS1lWVsSJNQHS36U1aEnCH8crG",
+            "id": "civic.tcd:xFFut3eEUjgeT2G4uNtiphTfxMQw9B4X",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -16088,7 +16088,7 @@
             "disease": "ncit:C7431"
         },
         "object_descriptor": {
-            "id": "civic.tcd:2W28HsVS1lWVsSJNQHS36U1aEnCH8crG",
+            "id": "civic.tcd:xFFut3eEUjgeT2G4uNtiphTfxMQw9B4X",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -18240,7 +18240,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -18859,7 +18859,7 @@
             "disease": "ncit:C4835"
         },
         "object_descriptor": {
-            "id": "civic.tcd:1ucjM1hmsmIDjVTgtvTB5_tj4zERH2x8",
+            "id": "civic.tcd:SunT6HNOnWd9x4jZqzCZjdlnGffyGYUE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -19227,7 +19227,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -19585,9 +19585,9 @@
             "label": "case study evidence"
         },
         "target_proposition": {
-            "id": "proposition:nlvCvRHHOX0G6LeX1texWoRjzK_Bwc1c",
+            "id": "proposition:wcGznln0Km9s8Rj0iMaGMq7u2vG_jMQz",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.XBLlOZt-umVjKBni7wqsV7WnT0PpWfMO",
+            "subject": "ga4gh:VA.iMuLpN8FuG9vnmT1LzCuhKSsedpyjGTj",
             "predicate": "predicts_sensitivity_to",
             "object": {
                 "type": "CombinationTherapeutics",
@@ -19620,7 +19620,7 @@
             "disease": "ncit:C6176"
         },
         "object_descriptor": {
-            "id": "civic.tcd:dRCGRnyE8ZMymDCpLw_iwoh1wZJsTqAW",
+            "id": "civic.tcd:MS46Knve6PfTIRC46pX9lhYnFP_VBKim",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -20625,7 +20625,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:HwzkrtafFQm5dsLUrqsISXBAGH-9Dv_N",
+            "id": "civic.tcd:jmoytbxOWt7JafXnPYxjtvnXiTGnD2uf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -20779,7 +20779,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:-3Xph6Bz7aokqGz-3SyKeBrMVoQQJr00",
+            "id": "civic.tcd:gLfpmiZeKZhOgi_mvPUVi0MB2VBYSsjd",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -20932,7 +20932,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -21575,7 +21575,7 @@
             "disease": "ncit:C4819"
         },
         "object_descriptor": {
-            "id": "civic.tcd:XRpxBI8oFR1QTmz6giqq6gGTjyIiU4rF",
+            "id": "civic.tcd:nk5jSUmDAbqS51d-Wm-vj2BlH0T_HAyq",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -22102,7 +22102,7 @@
             "disease": "ncit:C95404"
         },
         "object_descriptor": {
-            "id": "civic.tcd:jQqzGNll50g-6HJJtxI3DTmGMCw3jVnM",
+            "id": "civic.tcd:1u3GKJEPeqRgZXTAhLQ3qlT5HZt4jdzH",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -22636,7 +22636,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -23275,7 +23275,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -23536,7 +23536,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -23797,7 +23797,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -23966,7 +23966,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -24238,7 +24238,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -24412,7 +24412,7 @@
             "disease": "ncit:C4911"
         },
         "object_descriptor": {
-            "id": "civic.tcd:14UcXRtyeeV_4w9wtrDXwQY_9zV6g-R7",
+            "id": "civic.tcd:iX4s_CHRa8HCapUK6uTigtUxYo5IMhyU",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -24674,7 +24674,7 @@
             "disease": "ncit:C4911"
         },
         "object_descriptor": {
-            "id": "civic.tcd:14UcXRtyeeV_4w9wtrDXwQY_9zV6g-R7",
+            "id": "civic.tcd:iX4s_CHRa8HCapUK6uTigtUxYo5IMhyU",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -26608,7 +26608,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -26777,7 +26777,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -27048,7 +27048,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -27273,9 +27273,9 @@
             "label": "case study evidence"
         },
         "target_proposition": {
-            "id": "proposition:5XJJA5aUZQ7YwsALFLWBl5feaClNaexc",
+            "id": "proposition:6HrehLUH3Bo3-nBpp-zOuRp5xQa1xNsU",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "subject": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "predicate": "predicts_resistance_to",
             "object": {
                 "id": "rxcui:357977",
@@ -27397,7 +27397,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -27979,7 +27979,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -28148,7 +28148,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -28318,7 +28318,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -29068,7 +29068,7 @@
             "disease": "ncit:C5105"
         },
         "object_descriptor": {
-            "id": "civic.tcd:KyfKVXgMaNhea2NiMmWAVqytTTCerHa9",
+            "id": "civic.tcd:7VqT9zshKTBhH6t4et38ItzQoh3_XLuc",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -29303,7 +29303,7 @@
             "disease": "ncit:C4436"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -29465,7 +29465,7 @@
             "disease": "ncit:C35417"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -29627,7 +29627,7 @@
             "disease": "ncit:C35417"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -29792,7 +29792,7 @@
             "disease": "ncit:C4436"
         },
         "object_descriptor": {
-            "id": "civic.tcd:OGSExzPnIiVnZ06SkDkl_k2cJXw2q6YI",
+            "id": "civic.tcd:keEkpEukYHqb30iQi2psXXZ3Lz1wK7-2",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -30079,7 +30079,7 @@
             "disease": "ncit:C3878"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tAL3FvnF_KxZTIudaxZSoZdw6gx_bAjf",
+            "id": "civic.tcd:QjxndwLs8w8D3pJIekSdxyQ8LOHQSIF_",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -30689,7 +30689,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:F6ySGTZabV2OaukNmfMMXBUwyZE9N8H0",
+            "id": "civic.tcd:DL-rzLeUUdAwgqhOo4lMSKVLq4CR4E9_",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -30793,7 +30793,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:F6ySGTZabV2OaukNmfMMXBUwyZE9N8H0",
+            "id": "civic.tcd:DL-rzLeUUdAwgqhOo4lMSKVLq4CR4E9_",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -30896,7 +30896,7 @@
             "disease": "ncit:C3058"
         },
         "object_descriptor": {
-            "id": "civic.tcd:7yxC2lCFtKEpEXp9q9f8HLh8jHR6rCKQ",
+            "id": "civic.tcd:mnqlxI5kTjJ6WninClclCU94-Xy_RBfY",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -31855,7 +31855,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -33047,7 +33047,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:28Jpl1y4MRKcIzwVbq4hDvqkd5bE-vJr",
+            "id": "civic.tcd:aqQX-Uu5M67jU4vqRwbOB7diuYQozPtZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -33405,7 +33405,7 @@
             "disease": "ncit:C53556"
         },
         "object_descriptor": {
-            "id": "civic.tcd:0BKlbqZ_3uik3pPPyVVDIW3CnHvZjc-j",
+            "id": "civic.tcd:hAKRvUsYco9D9KhfWrgO7JE2mcctWJ0Y",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -33671,7 +33671,7 @@
             "disease": "ncit:C3512"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -34080,7 +34080,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -34444,7 +34444,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -35214,7 +35214,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -35743,7 +35743,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -36380,7 +36380,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:pcQQiNQmeJqFazlhj5Ovl3nJW3ZAZjB4",
+            "id": "civic.tcd:-TUOzS0ClpVaUo5oisn2Bt0H0ZHPi1cJ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -36623,7 +36623,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:pcQQiNQmeJqFazlhj5Ovl3nJW3ZAZjB4",
+            "id": "civic.tcd:-TUOzS0ClpVaUo5oisn2Bt0H0ZHPi1cJ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -38187,7 +38187,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -38335,7 +38335,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -38483,7 +38483,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -38664,7 +38664,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -38845,7 +38845,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -39026,7 +39026,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -39207,7 +39207,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -39388,7 +39388,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -39569,7 +39569,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -39934,7 +39934,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:TsX9VuYQuiHjsWZnryCHYHGmsxWyni_E",
+            "id": "civic.tcd:jKuLlWRt_pXwz9R2lQrLzMdihFWFZMMK",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -40128,7 +40128,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -40977,7 +40977,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -41242,7 +41242,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:mrav5eFnHeLiaU-nHgSOmING7RL2QQUZ",
+            "id": "civic.tcd:rF1JcnGq_-VTc0yiCsNIORfNqXQCC3yM",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -41458,7 +41458,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gNzI2_OhNhhHTVaCOQBurA3FbcIYGjjn",
+            "id": "civic.tcd:E39_bNJqxD2YlQvEbnaYPTYj7A6sKF3V",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -42537,7 +42537,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xR7ZWbpt5MikACVN2gyJAXWD-tB1GmRD",
+            "id": "civic.tcd:oBrlcO23adoVXv51xh-5Wigy0QyDWtfr",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -45050,7 +45050,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:HsyLEZfolELhlBCkthGTBz0BUx5yK9Cd",
+            "id": "civic.tcd:bf_BuyNMwaqXScLEAS5F0_LZZf1t1H2f",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -45449,7 +45449,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:a8CIbUz9YxikRud9Qw-pNdDyxnmhGSLk",
+            "id": "civic.tcd:Dsj0jsyr-fQXgAxQL6jcaLTVy4zoAdvF",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -45596,7 +45596,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:a8CIbUz9YxikRud9Qw-pNdDyxnmhGSLk",
+            "id": "civic.tcd:Dsj0jsyr-fQXgAxQL6jcaLTVy4zoAdvF",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -45743,7 +45743,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:a8CIbUz9YxikRud9Qw-pNdDyxnmhGSLk",
+            "id": "civic.tcd:Dsj0jsyr-fQXgAxQL6jcaLTVy4zoAdvF",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -45890,7 +45890,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:a8CIbUz9YxikRud9Qw-pNdDyxnmhGSLk",
+            "id": "civic.tcd:Dsj0jsyr-fQXgAxQL6jcaLTVy4zoAdvF",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -46037,7 +46037,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:a8CIbUz9YxikRud9Qw-pNdDyxnmhGSLk",
+            "id": "civic.tcd:Dsj0jsyr-fQXgAxQL6jcaLTVy4zoAdvF",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -46184,7 +46184,7 @@
             "disease": "ncit:C7377"
         },
         "object_descriptor": {
-            "id": "civic.tcd:jxyUniP1FLPLh8Cfk-pY7ONqANwJNKWc",
+            "id": "civic.tcd:52k4gMOXAfLSe2V5I5XjawdIEXJV5QRW",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -46555,7 +46555,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xrjv-HG0Q_x_3-IY0rU1rEvQxkxbeJe6",
+            "id": "civic.tcd:f0IOBQHIv94-aVcb5dMKA9rkPpDFY0jD",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -46717,7 +46717,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -46916,7 +46916,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -48035,9 +48035,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:9MWzLgzYyKiUqulskOHRdXdndYHxc2Pm",
+            "id": "proposition:GKwGmiwd-y-nEE_zDWAWNChgvch76MMD",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.uayg0WHhAE02U_fs1bWBo9qj1aMpYzCW",
+            "subject": "ga4gh:VA.63g55q3_wl21Vpdd6kMEe6mdvt5x-JYo",
             "predicate": "predicts_sensitivity_to",
             "object": {
                 "id": "rxcui:1546019",
@@ -48320,7 +48320,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:HsyLEZfolELhlBCkthGTBz0BUx5yK9Cd",
+            "id": "civic.tcd:bf_BuyNMwaqXScLEAS5F0_LZZf1t1H2f",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -48553,7 +48553,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -48966,7 +48966,7 @@
             "disease": "ncit:C7378"
         },
         "object_descriptor": {
-            "id": "civic.tcd:WRYEd8ONyijMDGkVAWf_BOutWU43Bzs6",
+            "id": "civic.tcd:WhfBuE9-X8HJ0XrZkBrvk5szSlPlh2lC",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -49117,7 +49117,7 @@
             "disease": "mondo:0003540"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -49316,7 +49316,7 @@
             "disease": "mondo:0003540"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -49515,7 +49515,7 @@
             "disease": "mondo:0003540"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -49920,7 +49920,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:T02DtGHK8FfzFTg_u9x2-1_jVh1PvczM",
+            "id": "civic.tcd:7UdV-6r5BcGyVPqQkUITkTOl1vZRajMR",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -50146,7 +50146,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:OKXpUDjFmFFu_tJuB0AUUgjvAzT_wTEH",
+            "id": "civic.tcd:DikLqTiUzvlAynTzqBw5f3Cj5Arf5sW1",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -50395,7 +50395,7 @@
             "disease": "ncit:C9242"
         },
         "object_descriptor": {
-            "id": "civic.tcd:bdezH-7T99r_j1TV0IpNcGWBJpuNh6oM",
+            "id": "civic.tcd:fhoJlflGcyI7CoY-_bzWLsBwlsn7GwLN",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -50626,7 +50626,7 @@
             "disease": "ncit:C9242"
         },
         "object_descriptor": {
-            "id": "civic.tcd:bdezH-7T99r_j1TV0IpNcGWBJpuNh6oM",
+            "id": "civic.tcd:fhoJlflGcyI7CoY-_bzWLsBwlsn7GwLN",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -50857,7 +50857,7 @@
             "disease": "ncit:C9242"
         },
         "object_descriptor": {
-            "id": "civic.tcd:bdezH-7T99r_j1TV0IpNcGWBJpuNh6oM",
+            "id": "civic.tcd:fhoJlflGcyI7CoY-_bzWLsBwlsn7GwLN",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -51088,7 +51088,7 @@
             "disease": "ncit:C9242"
         },
         "object_descriptor": {
-            "id": "civic.tcd:bdezH-7T99r_j1TV0IpNcGWBJpuNh6oM",
+            "id": "civic.tcd:fhoJlflGcyI7CoY-_bzWLsBwlsn7GwLN",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -51707,7 +51707,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:uqldm4OqUI2Ip2RdoWhbx257XpyLlPsw",
+            "id": "civic.tcd:YPX4hWBVzOuHhIwr13nNgLhGznlVAIEa",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -52702,7 +52702,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:8IJH1L5jImrlOk7n3y-dHUY18h7bUwgU",
+            "id": "civic.tcd:XfIozULZDMYsSPTJsoBBE_VUj4zzkscC",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -53679,7 +53679,7 @@
             "disease": "ncit:C53556"
         },
         "object_descriptor": {
-            "id": "civic.tcd:pbgwyv-9SH1zvUpAaXWJ6mkCQ2vkDnm3",
+            "id": "civic.tcd:Exy3-S7snfyhQHnOQ6ZbukSAmtGQaYfA",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -54025,7 +54025,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:Lj0L4yGdMaM6PFwTLZDRqIeCUP46zDWx",
+            "id": "civic.tcd:Bp7LSZxv3sM5AUjPNf7nTRGI6VHQfjmY",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -54389,7 +54389,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:8IJH1L5jImrlOk7n3y-dHUY18h7bUwgU",
+            "id": "civic.tcd:XfIozULZDMYsSPTJsoBBE_VUj4zzkscC",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -54585,7 +54585,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:8IJH1L5jImrlOk7n3y-dHUY18h7bUwgU",
+            "id": "civic.tcd:XfIozULZDMYsSPTJsoBBE_VUj4zzkscC",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -54781,7 +54781,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -54980,7 +54980,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -55187,7 +55187,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:q31fQOnnOPs101wJzMdHuXFyF2wAGsTz",
+            "id": "civic.tcd:gVgGkpzxqiqLKaKyQVlfGYCzm6HVoRcE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -55576,7 +55576,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:q31fQOnnOPs101wJzMdHuXFyF2wAGsTz",
+            "id": "civic.tcd:gVgGkpzxqiqLKaKyQVlfGYCzm6HVoRcE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -55965,7 +55965,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:q31fQOnnOPs101wJzMdHuXFyF2wAGsTz",
+            "id": "civic.tcd:gVgGkpzxqiqLKaKyQVlfGYCzm6HVoRcE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -56346,7 +56346,7 @@
             "disease": "ncit:C3168"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -56545,7 +56545,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -56744,7 +56744,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -56943,7 +56943,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -57142,7 +57142,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -57341,7 +57341,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -57540,7 +57540,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -57739,7 +57739,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -57938,7 +57938,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -58137,7 +58137,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -58963,7 +58963,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:zzceqmxD1kztProaIW-ypXnHFa9d4q9q",
+            "id": "civic.tcd:XAeVSqTvUR0yOysNE_Ihbb9r0EdZ4Z1z",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -59980,7 +59980,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:HQPzWLARoIkrWemNkHP7KnxZnMTPg5he",
+            "id": "civic.tcd:ngxhWeEUrfXP--l21wsFOlIfVCUCYTwb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -60111,7 +60111,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:UcNca6vNrKCl7psyjPj_sdJloJuCtWej",
+            "id": "civic.tcd:Txylx4lLlleKme7VZW1QkEDa_a2KuP3v",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -60374,7 +60374,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:Cb1ZOTJ0AyMeJLl8VftiD6PkSCHd7h0i",
+            "id": "civic.tcd:C9xIf4UNXDpcEhiDnKPFd6Gx6IIaT1E6",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -60483,7 +60483,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:oOlIC3knPgseG61R4Guf_wSjIqRjRASg",
+            "id": "civic.tcd:ga8GCopbz4xTHpmVbd_1oGREGpQbDTpo",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -61447,7 +61447,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:OgaSJGP1nmI1JagBgwGlNAf8LPS6CKeQ",
+            "id": "civic.tcd:n4NuIj-lZJTjzG0Zb7E2v0XU0V35wlV6",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -62129,7 +62129,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:Om1rcVoVoJ2P5DDs3E-gT2y7gPntSyVW",
+            "id": "civic.tcd:_4VF-9RhQ30VRa2AZYtxUNJ4lboZYB1X",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -62234,7 +62234,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:hbaIFXZLmM4jAuSrRtV4rXczGlPs6H1t",
+            "id": "civic.tcd:MJtdjSZMt7R1cOWlhK2Kv7xnNUzVRmRQ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -62346,7 +62346,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:hbaIFXZLmM4jAuSrRtV4rXczGlPs6H1t",
+            "id": "civic.tcd:MJtdjSZMt7R1cOWlhK2Kv7xnNUzVRmRQ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -62684,7 +62684,7 @@
             "disease": "ncit:C3270"
         },
         "object_descriptor": {
-            "id": "civic.tcd:9pysaOFpwbNsXHLbw7YmfH5ufmmMrFRY",
+            "id": "civic.tcd:SlRfPtAlZWrxQuj9zLGMRKRtxOV0-KKL",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -62859,7 +62859,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:OKXpUDjFmFFu_tJuB0AUUgjvAzT_wTEH",
+            "id": "civic.tcd:DikLqTiUzvlAynTzqBw5f3Cj5Arf5sW1",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -63170,7 +63170,7 @@
             "disease": "ncit:C3088"
         },
         "object_descriptor": {
-            "id": "civic.tcd:92KIN-ac1VX2ui5ksDdF4McN4MRoKcNt",
+            "id": "civic.tcd:wsLrVLsW3tlJpvelphvNfi7j0WAQrFVD",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -63338,7 +63338,7 @@
             "disease": "ncit:C3088"
         },
         "object_descriptor": {
-            "id": "civic.tcd:92KIN-ac1VX2ui5ksDdF4McN4MRoKcNt",
+            "id": "civic.tcd:wsLrVLsW3tlJpvelphvNfi7j0WAQrFVD",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -63779,7 +63779,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:P3IPMMpjeCAJGYqSB-fDMqeTrBhUFzak",
+            "id": "civic.tcd:wV3Rrz2FQm2499F4G_2mMEekgKValyx3",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -63997,7 +63997,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:LrJgtXscoDAB7-4VEuuV6lrLcGCgpWI5",
+            "id": "civic.tcd:wSyKTzr1BRXrney-dvXpG5oeafYxe5rS",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -64164,7 +64164,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:cb7rAbAatjWRYX2zI14zf_6FIx-ZGh3e",
+            "id": "civic.tcd:tWJleGyed3g0Eqv1ASxYxVix6lJUtxhw",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -64323,7 +64323,7 @@
             "disease": "ncit:C53556"
         },
         "object_descriptor": {
-            "id": "civic.tcd:fN8dPUhGUPTB_Oy4fPFIE21G4q-d11VH",
+            "id": "civic.tcd:3yTLBT7LVjztI3zPC4FWN2nJQIyFTsx2",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -64491,7 +64491,7 @@
             "disease": "ncit:C53556"
         },
         "object_descriptor": {
-            "id": "civic.tcd:OHnVvd_h52H1-Ai8c16IMglxl4_Cr3Cw",
+            "id": "civic.tcd:rCQ3ME-7NyYYWvp6hnY7uiZVkQckf9-K",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -64674,7 +64674,7 @@
             "disease": "ncit:C9335"
         },
         "object_descriptor": {
-            "id": "civic.tcd:NzFvUVbRuLx7Raeyrb-h3UAj4yizpS3K",
+            "id": "civic.tcd:6f8Y3lvR4NV9ytfANIpnRCICPpmWkjSR",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -64799,7 +64799,7 @@
             "disease": "ncit:C7510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:oeE6WmTZ7xMHzygytcyay9ypGqipyUqR",
+            "id": "civic.tcd:D46xUyn1b10HAjpKd6R9Pk2F5e_Dhj3C",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -64939,7 +64939,7 @@
             "disease": "ncit:C7510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:oeE6WmTZ7xMHzygytcyay9ypGqipyUqR",
+            "id": "civic.tcd:D46xUyn1b10HAjpKd6R9Pk2F5e_Dhj3C",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -65078,7 +65078,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:auj1Qz8Ovwgef4J_LANZPUTSeVUvGX-w",
+            "id": "civic.tcd:b5WTtG7LRkGXmkK9gDSA00gJ_AiZvgnj",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -65248,7 +65248,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:auj1Qz8Ovwgef4J_LANZPUTSeVUvGX-w",
+            "id": "civic.tcd:b5WTtG7LRkGXmkK9gDSA00gJ_AiZvgnj",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -65418,7 +65418,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:auj1Qz8Ovwgef4J_LANZPUTSeVUvGX-w",
+            "id": "civic.tcd:b5WTtG7LRkGXmkK9gDSA00gJ_AiZvgnj",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -65588,7 +65588,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:auj1Qz8Ovwgef4J_LANZPUTSeVUvGX-w",
+            "id": "civic.tcd:b5WTtG7LRkGXmkK9gDSA00gJ_AiZvgnj",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -65839,7 +65839,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -66290,7 +66290,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -66411,7 +66411,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -66532,7 +66532,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -66653,7 +66653,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -68714,7 +68714,7 @@
             "disease": "ncit:C9039"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YoOOXgADKl20kignjidkKAVytt7BqnDh",
+            "id": "civic.tcd:lKzFO2wvX0aR43_nXTZ19I1vjsXGQ6R8",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -69267,7 +69267,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:x0lVFiWq3bdRE3Dnuz62pu_IOyVWIMqF",
+            "id": "civic.tcd:KuD9fVxtGEzkO9TjmpGN0Xt5x68Qm7S-",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -69437,7 +69437,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:x0lVFiWq3bdRE3Dnuz62pu_IOyVWIMqF",
+            "id": "civic.tcd:KuD9fVxtGEzkO9TjmpGN0Xt5x68Qm7S-",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -69706,7 +69706,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:Lj0L4yGdMaM6PFwTLZDRqIeCUP46zDWx",
+            "id": "civic.tcd:Bp7LSZxv3sM5AUjPNf7nTRGI6VHQfjmY",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -69863,9 +69863,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:C3zWA2yORNjosMr6-G7zuSMv9R29-7jj",
+            "id": "proposition:un-3Zx5nTn_TQgbO4AWlow71e9tx_DPB",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "subject": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "predicate": "predicts_sensitivity_to",
             "object": {
                 "type": "SubstituteTherapeutics",
@@ -69906,7 +69906,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:ara_J3e7DwHqSyQBekuCT9qRsp7OvcKL",
+            "id": "civic.tcd:EFgr37MY89Im6stpaZjt2xyMOX1et0He",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -70681,7 +70681,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -71364,7 +71364,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:GjYLPDBCsVC75M1SUy40ElkHjZZTdR1g",
+            "id": "civic.tcd:pRXLOTUcGy266tKwrptqo3E3XUUSTYZh",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -71852,7 +71852,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:S6cEOyThU0PT-xSKmaG2l6FDb-JY55I4",
+            "id": "civic.tcd:dGeFezSlKdWXf9xk5Kn9yUW_wRthhsRt",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -72179,7 +72179,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:MMW6HP7MYbKv5gN_ylkLsxZ3r1rlbhpZ",
+            "id": "civic.tcd:mnS64Wd7Idu3tHEYX3g8MGHOl43L8wuU",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -72709,7 +72709,7 @@
             "disease": "ncit:C53556"
         },
         "object_descriptor": {
-            "id": "civic.tcd:pbgwyv-9SH1zvUpAaXWJ6mkCQ2vkDnm3",
+            "id": "civic.tcd:Exy3-S7snfyhQHnOQ6ZbukSAmtGQaYfA",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -72961,7 +72961,7 @@
             "disease": "ncit:C3171"
         },
         "object_descriptor": {
-            "id": "civic.tcd:92KIN-ac1VX2ui5ksDdF4McN4MRoKcNt",
+            "id": "civic.tcd:wsLrVLsW3tlJpvelphvNfi7j0WAQrFVD",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -73094,9 +73094,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:v0L3smEtusB0o1EmBtjJpkJA_hk_TlxM",
+            "id": "proposition:UwMdXaSa6knQnohCfFTgqCWnyPVN6qip",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.TZi8JJHH5GGyPAu35PyoWm3HBUhfmXhe",
+            "subject": "ga4gh:VA.jD9f-R_toWrduybrjbm68lsaOpntmZAa",
             "predicate": "predicts_sensitivity_to",
             "object": {
                 "type": "SubstituteTherapeutics",
@@ -73133,7 +73133,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:GjYLPDBCsVC75M1SUy40ElkHjZZTdR1g",
+            "id": "civic.tcd:pRXLOTUcGy266tKwrptqo3E3XUUSTYZh",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -73367,7 +73367,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xrjv-HG0Q_x_3-IY0rU1rEvQxkxbeJe6",
+            "id": "civic.tcd:f0IOBQHIv94-aVcb5dMKA9rkPpDFY0jD",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -73528,7 +73528,7 @@
             "disease": "ncit:C9145"
         },
         "object_descriptor": {
-            "id": "civic.tcd:403jKJWGqou3owBAW0wuIK9KGPZecCd5",
+            "id": "civic.tcd:R22Zf5CPlJKGeo-aqhjXFczWKERAMSbp",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -73754,7 +73754,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:fnFUqjI3KqPPlVS9FWKkkx0JVUQr_nKk",
+            "id": "civic.tcd:vz_W7U3qrxseu_SVPiT9P9WorfLg9cvg",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -74187,7 +74187,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:XXCs3zQZEzSqd1sWUBOkK6fRJZnD4dTo",
+            "id": "civic.tcd:gfytNdjDYwoQXo5CF4jOdAg4wrcu2AFh",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -74354,7 +74354,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -74553,7 +74553,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -74752,7 +74752,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -74951,7 +74951,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:xx79WA03ayPH04fQxon_zxT6Q1L6AvsZ",
+            "id": "civic.tcd:IMgxRLc3XTtFhF3LrdtkdhJqiCh-_3dE",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -75154,7 +75154,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:cDgq3tdUEp5HC0j2bhP9K2zDOtUVEqht",
+            "id": "civic.tcd:sRHtqV0Bx8glrh6cOUCk7nrpqP0Eeqrn",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -75405,7 +75405,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:rkTxf2PsE_NaqLJs2ILi9S6heh87LoCP",
+            "id": "civic.tcd:R8MiNUEpMs_dHqM95yJGpkvXevdk6azb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -75740,7 +75740,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:rkTxf2PsE_NaqLJs2ILi9S6heh87LoCP",
+            "id": "civic.tcd:R8MiNUEpMs_dHqM95yJGpkvXevdk6azb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -76075,7 +76075,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:rkTxf2PsE_NaqLJs2ILi9S6heh87LoCP",
+            "id": "civic.tcd:R8MiNUEpMs_dHqM95yJGpkvXevdk6azb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -76410,7 +76410,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:rkTxf2PsE_NaqLJs2ILi9S6heh87LoCP",
+            "id": "civic.tcd:R8MiNUEpMs_dHqM95yJGpkvXevdk6azb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -76745,7 +76745,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:rkTxf2PsE_NaqLJs2ILi9S6heh87LoCP",
+            "id": "civic.tcd:R8MiNUEpMs_dHqM95yJGpkvXevdk6azb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -77080,7 +77080,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:rkTxf2PsE_NaqLJs2ILi9S6heh87LoCP",
+            "id": "civic.tcd:R8MiNUEpMs_dHqM95yJGpkvXevdk6azb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -77411,7 +77411,7 @@
             "disease": "ncit:C9140"
         },
         "object_descriptor": {
-            "id": "civic.tcd:cDgq3tdUEp5HC0j2bhP9K2zDOtUVEqht",
+            "id": "civic.tcd:sRHtqV0Bx8glrh6cOUCk7nrpqP0Eeqrn",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -78048,7 +78048,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:ACMfUxEj4DvOtdgvvHRcy3Vj2pkynXTE",
+            "id": "civic.tcd:CtWln7v8hgJLNPZj6vZ7dcTMZMT2ZYdx",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -78284,7 +78284,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:mrav5eFnHeLiaU-nHgSOmING7RL2QQUZ",
+            "id": "civic.tcd:rF1JcnGq_-VTc0yiCsNIORfNqXQCC3yM",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -78500,7 +78500,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:nJKFCRQ-7zOitU-9ZU6IJZTNkE7cvn1j",
+            "id": "civic.tcd:lBPXvLJKdE1POtYbxr_yzUz79LYLApYN",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -79311,7 +79311,7 @@
             "disease": "ncit:C3161"
         },
         "object_descriptor": {
-            "id": "civic.tcd:gf6SlArvN1ehCr5qKvctMKhlyBd5qp-W",
+            "id": "civic.tcd:P-VDb1w-05LwHZRP9cAKSnie8IcKor1c",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -79569,7 +79569,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:z4DmlwzJl5aCvLfkBOXYwPpiEwt3t7wc",
+            "id": "civic.tcd:Rad3lcAGeG99UmhaaJEnYIfVq2TB5gyS",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -79879,7 +79879,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:5-nSZAUmePArExo9N0rDM4qmENiJ9-5j",
+            "id": "civic.tcd:WmGNUyuWQ9_7GPOtU24JRzOc2eee7RUA",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -80095,7 +80095,7 @@
             "disease": "ncit:C3224"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -80220,7 +80220,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:h0W5756k1VdLQ6vZfjZixs1VF5CHisud",
+            "id": "civic.tcd:v5lZVPkpFbPb9D0fGEzDQe6YBU5CmLdA",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -80937,7 +80937,7 @@
             "disease": "ncit:C4013"
         },
         "object_descriptor": {
-            "id": "civic.tcd:ystagABA5n6SfWJHe98rDeSU8BSkY5L2",
+            "id": "civic.tcd:BdRk9XEXwBZytGoulOf00oeavewtOvFC",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -81210,7 +81210,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:cb7rAbAatjWRYX2zI14zf_6FIx-ZGh3e",
+            "id": "civic.tcd:tWJleGyed3g0Eqv1ASxYxVix6lJUtxhw",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -81370,7 +81370,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:cb7rAbAatjWRYX2zI14zf_6FIx-ZGh3e",
+            "id": "civic.tcd:tWJleGyed3g0Eqv1ASxYxVix6lJUtxhw",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -81530,7 +81530,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:cb7rAbAatjWRYX2zI14zf_6FIx-ZGh3e",
+            "id": "civic.tcd:tWJleGyed3g0Eqv1ASxYxVix6lJUtxhw",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -81916,7 +81916,7 @@
             "disease": "ncit:C7510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:oeE6WmTZ7xMHzygytcyay9ypGqipyUqR",
+            "id": "civic.tcd:D46xUyn1b10HAjpKd6R9Pk2F5e_Dhj3C",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -82114,7 +82114,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:Esb5aG-7eBA7tZ3uo0IcJGtjQlvO1p6r",
+            "id": "civic.tcd:BxGzt07o7RtpY--kqGrD-2I03DB5WiMa",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -83102,7 +83102,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -83223,7 +83223,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:tr9Hhowy-2zho1A6OUZaZGhPy9SGZVYd",
+            "id": "civic.tcd:23p9szOW83imwzdNpS6omDSCucd7VZPf",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -84641,9 +84641,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:Q1lzj3L295gz_euOLgz1THOjb184lJj7",
+            "id": "proposition:ZnyIormPEPZ-XjdFQAIs4Ae-T8XKoPzQ",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.TZi8JJHH5GGyPAu35PyoWm3HBUhfmXhe",
+            "subject": "ga4gh:VA.jD9f-R_toWrduybrjbm68lsaOpntmZAa",
             "predicate": "predicts_resistance_to",
             "object": {
                 "id": "rxcui:282388",
@@ -85542,7 +85542,7 @@
             "disease": "ncit:C2926"
         },
         "object_descriptor": {
-            "id": "civic.tcd:h8n64ehfcN7OurUgA9ymUIwLw7_3JkXZ",
+            "id": "civic.tcd:7-vqdmeFPTHxXVuEkILH1hUqi8pUpKHI",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -85755,7 +85755,7 @@
             "disease": "ncit:C3171"
         },
         "object_descriptor": {
-            "id": "civic.tcd:lJAkRjOgKX__xOze8XPqW7Gn4am458MT",
+            "id": "civic.tcd:EtvnZkfmUnX9dgYyiWoe5VRjtk66aANb",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -85959,7 +85959,7 @@
             "disease": "ncit:C3171"
         },
         "object_descriptor": {
-            "id": "civic.tcd:uJpaOfibNANz6CqNosNRMv7FlvfMz-5C",
+            "id": "civic.tcd:kq_IlYPnxZshE98tdVEBg09-xj3EdRy6",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -86985,9 +86985,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:oSqb5yGW3Nd4oUguJwAko3c0vCBAib1Q",
+            "id": "proposition:3Vj4gE4_RXwW9V2VAUSIROiX38FYUAPp",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "subject": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "predicate": "predicts_resistance_to",
             "object": {
                 "id": "rxcui:357977",
@@ -87110,7 +87110,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:j7XPDGds23klNYerHIoySSG6DoOpAXSK",
+            "id": "civic.tcd:bYViGyioquX85upNxP_jx2bCYehx3bhD",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -87362,7 +87362,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:TsX9VuYQuiHjsWZnryCHYHGmsxWyni_E",
+            "id": "civic.tcd:jKuLlWRt_pXwz9R2lQrLzMdihFWFZMMK",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -87555,7 +87555,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:YPAZ24JxADN8mm7AINcxeug_5yIKnHYW",
+            "id": "civic.tcd:MHwrYYGaDMmdgFLNboI18QBl-zDj5Wso",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -88113,7 +88113,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:GjYLPDBCsVC75M1SUy40ElkHjZZTdR1g",
+            "id": "civic.tcd:pRXLOTUcGy266tKwrptqo3E3XUUSTYZh",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -88447,7 +88447,7 @@
             "disease": "ncit:C3868"
         },
         "object_descriptor": {
-            "id": "civic.tcd:ara_J3e7DwHqSyQBekuCT9qRsp7OvcKL",
+            "id": "civic.tcd:EFgr37MY89Im6stpaZjt2xyMOX1et0He",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -88817,7 +88817,7 @@
             "disease": "ncit:C9305"
         },
         "object_descriptor": {
-            "id": "civic.tcd:TsX9VuYQuiHjsWZnryCHYHGmsxWyni_E",
+            "id": "civic.tcd:jKuLlWRt_pXwz9R2lQrLzMdihFWFZMMK",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -89230,9 +89230,9 @@
             "label": "preclinical evidence"
         },
         "target_proposition": {
-            "id": "proposition:RPUljw-7CUUaWQ7TVD35hRb0bw-O_xFO",
+            "id": "proposition:Uw6_5645-sHWjylIVVQxFwGmRI2r_KMV",
             "type": "VariationNeoplasmTherapeuticResponseProposition",
-            "subject": "ga4gh:VA.RiEsKFN3rMG6tsUuTa8OiOOucsjmMOVc",
+            "subject": "ga4gh:VA.wkbbLzMJDVWkn-GLG_Q3IhYQ261bvMFN",
             "predicate": "predicts_sensitivity_to",
             "object": {
                 "id": "rxcui:282388",
@@ -89993,7 +89993,7 @@
             "disease": "ncit:C53556"
         },
         "object_descriptor": {
-            "id": "civic.tcd:2bfK4rylwslgMjmxaOm8I21lBQMttIw8",
+            "id": "civic.tcd:KpOIbC8KoMmAJMv0VhZEeNN81aMernIK",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -91054,7 +91054,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:spXNpDNRe9IU5l2QbIhIYG28ZcJ2xAJk",
+            "id": "civic.tcd:M_Sea-m2TfCKdX-BNxASF4JMdFU5Jnj9",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -92547,7 +92547,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:eDDUmlIctUpysPQ9XhudipYANXSfzuth",
+            "id": "civic.tcd:cI8a1KqlKHGJhEYJvUfvA11fkiIQd--H",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -92683,7 +92683,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R04E4_HLjth20NKI33SQyixR2xtk81yc",
+            "id": "civic.tcd:DfnGfZruKv7WdSpFN0MrdQY7MH9LeePi",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -92843,7 +92843,7 @@
             "disease": "ncit:C3510"
         },
         "object_descriptor": {
-            "id": "civic.tcd:eDDUmlIctUpysPQ9XhudipYANXSfzuth",
+            "id": "civic.tcd:cI8a1KqlKHGJhEYJvUfvA11fkiIQd--H",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
@@ -93197,7 +93197,7 @@
             "disease": "ncit:C4978"
         },
         "object_descriptor": {
-            "id": "civic.tcd:R5_dOPSj49t1hB4PYcg7Wp62hZLyG_O_",
+            "id": "civic.tcd:7IxyhCwID0QYyVCP2xuIyYvwwu-S_HrZ",
             "type": "TherapeuticsCollectionDescriptor",
             "extensions": [
                 {
