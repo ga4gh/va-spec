@@ -9,13 +9,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133747580.0",
-                    "end_position": "133747580.0",
+                    "start_position": "133747580",
+                    "end_position": "133747580",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.944C>T",
                     "protein_change": "p.T315I",
-                    "exon": "5.0"
+                    "exon": "5"
                 }
             }
         ],
@@ -53,13 +53,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133747582.0",
-                    "end_position": "133747582.0",
+                    "start_position": "133747582",
+                    "end_position": "133747582",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.943A>G",
                     "protein_change": "p.T315A",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -67,6 +67,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519772"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519772"
         ],
         "variation": {
             "id": "ga4gh:VA.AJ5CxkcHNRGf_fr3LGDf1x5uagW32wOi",
@@ -102,13 +105,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748290.0",
-                    "end_position": "133748290.0",
+                    "start_position": "133748290",
+                    "end_position": "133748290",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.951C>G",
                     "protein_change": "p.F317L",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             }
         ],
@@ -146,13 +149,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748288.0",
-                    "end_position": "133748288.0",
+                    "start_position": "133748288",
+                    "end_position": "133748288",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.949T>G",
                     "protein_change": "p.F317V",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -160,6 +163,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519773"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519773"
         ],
         "variation": {
             "id": "ga4gh:VA.yu2jVmX1vJRCJj9ie9dtAnFClAOBtQso",
@@ -195,13 +201,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748288.0",
-                    "end_position": "133748288.0",
+                    "start_position": "133748288",
+                    "end_position": "133748288",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.949T>A",
                     "protein_change": "p.F317I",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -209,6 +215,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519773"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519773"
         ],
         "variation": {
             "id": "ga4gh:VA.igcDkD6pr8Q43CyTbpZHUYFfPDAhfinc",
@@ -244,13 +253,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133747586.0",
-                    "end_position": "133747586.0",
+                    "start_position": "133747586",
+                    "end_position": "133747586",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.950T>G",
                     "protein_change": "p.F317C",
-                    "exon": "5.0"
+                    "exon": "5"
                 }
             }
         ],
@@ -288,13 +297,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133738306.0",
-                    "end_position": "133738306.0",
+                    "start_position": "133738306",
+                    "end_position": "133738306",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.763G>A",
                     "protein_change": "p.E255K",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -302,6 +311,9 @@
                 "name": "moa_rsid",
                 "value": "rs387906517"
             }
+        ],
+        "xrefs": [
+            "dbsnp:387906517"
         ],
         "variation": {
             "id": "ga4gh:VA._axmNXw7sg3Ioelbp0wvJMoOP2HF4z6l",
@@ -337,13 +349,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133738307.0",
-                    "end_position": "133738307.0",
+                    "start_position": "133738307",
+                    "end_position": "133738307",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.764A>T",
                     "protein_change": "p.E255V",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -351,6 +363,9 @@
                 "name": "moa_rsid",
                 "value": "rs387906516"
             }
+        ],
+        "xrefs": [
+            "dbsnp:387906516"
         ],
         "variation": {
             "id": "ga4gh:VA.2ovj9lZOEAVGQE-I0VtOkWRTsJ4CdYMk",
@@ -386,13 +401,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133738357.0",
-                    "end_position": "133738357.0",
+                    "start_position": "133738357",
+                    "end_position": "133738357",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.757T>C",
                     "protein_change": "p.Y253H",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -400,6 +415,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913461"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913461"
         ],
         "variation": {
             "id": "ga4gh:VA.4gclaBcrLKEiFVK0KvrBlXkbU6orqzKL",
@@ -435,13 +453,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748414.0",
-                    "end_position": "133748414.0",
+                    "start_position": "133748414",
+                    "end_position": "133748414",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1075T>G",
                     "protein_change": "p.F359V",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -449,6 +467,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913452"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913452"
         ],
         "variation": {
             "id": "ga4gh:VA.cnwDSpUl9Dgu1gETE7R529PGWLnMIXQu",
@@ -484,13 +505,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748358.0",
-                    "end_position": "133748358.0",
+                    "start_position": "133748358",
+                    "end_position": "133748358",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1076T>G",
                     "protein_change": "p.F359C",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             }
         ],
@@ -528,13 +549,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748414.0",
-                    "end_position": "133748414.0",
+                    "start_position": "133748414",
+                    "end_position": "133748414",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.1075T>A",
                     "protein_change": "p.F359I",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -542,6 +563,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913452"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913452"
         ],
         "variation": {
             "id": "ga4gh:VA.t13vbgoVZHdbn6JHD6Rc19yHSw7_diRq",
@@ -577,13 +601,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133747531.0",
-                    "end_position": "133747531.0",
+                    "start_position": "133747531",
+                    "end_position": "133747531",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.895G>T",
                     "protein_change": "p.V299L",
-                    "exon": "5.0"
+                    "exon": "5"
                 }
             }
         ],
@@ -621,13 +645,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "133748283.0",
-                    "end_position": "133748283.0",
+                    "start_position": "133748283",
+                    "end_position": "133748283",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.944C>T",
                     "protein_change": "p.T315I",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             }
         ],
@@ -665,13 +689,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "14",
-                    "start_position": "105246551.0",
-                    "end_position": "105246551.0",
+                    "start_position": "105246551",
+                    "end_position": "105246551",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.49G>A",
                     "protein_change": "p.E17K",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -679,6 +703,9 @@
                 "name": "moa_rsid",
                 "value": "rs34409589"
             }
+        ],
+        "xrefs": [
+            "dbsnp:34409589"
         ],
         "variation": {
             "id": "ga4gh:VA._veAF5iFKxk_oSX9jnfNc4AHp8MvUCKO",
@@ -714,13 +741,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "29443613.0",
-                    "end_position": "29443613.0",
+                    "start_position": "29443613",
+                    "end_position": "29443613",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.3604G>A",
                     "protein_change": "p.G1202R",
-                    "exon": "23.0"
+                    "exon": "23"
                 }
             },
             {
@@ -728,6 +755,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519783"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519783"
         ],
         "variation": {
             "id": "ga4gh:VA.26hK4cuCiUr51PE7xCN6hUMnffMHIEC2",
@@ -763,13 +793,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "29443696.0",
-                    "end_position": "29443696.0",
+                    "start_position": "29443696",
+                    "end_position": "29443696",
                     "reference_allele": "A",
                     "alternate_allele": "C",
                     "cdna_change": "c.3521T>G",
                     "protein_change": "p.F1174C",
-                    "exon": "23.0"
+                    "exon": "23"
                 }
             },
             {
@@ -777,6 +807,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519697"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519697"
         ],
         "variation": {
             "id": "ga4gh:VA.RSM_8hMJqGUJzH_VEJrENXkILKx0c4eP",
@@ -812,13 +845,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "29443631.0",
-                    "end_position": "29443631.0",
+                    "start_position": "29443631",
+                    "end_position": "29443631",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.3586C>A",
                     "protein_change": "p.L1196M",
-                    "exon": "23.0"
+                    "exon": "23"
                 }
             },
             {
@@ -826,6 +859,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519784"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519784"
         ],
         "variation": {
             "id": "ga4gh:VA.0KSewJJCSGoKAgBvo-DpKEY_t76-ln6z",
@@ -861,13 +897,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "29432682.0",
-                    "end_position": "29432682.0",
+                    "start_position": "29432682",
+                    "end_position": "29432682",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.3806G>C",
                     "protein_change": "p.G1269A",
-                    "exon": "25.0"
+                    "exon": "25"
                 }
             },
             {
@@ -875,6 +911,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519781"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519781"
         ],
         "variation": {
             "id": "ga4gh:VA.ATlbEay6yDzORVbqgPnYmzY9f8sdqFQ9",
@@ -910,13 +949,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "29443600.0",
-                    "end_position": "29443600.0",
+                    "start_position": "29443600",
+                    "end_position": "29443600",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.3617C>A",
                     "protein_change": "p.S1206Y",
-                    "exon": "23.0"
+                    "exon": "23"
                 }
             },
             {
@@ -924,6 +963,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057519782"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057519782"
         ],
         "variation": {
             "id": "ga4gh:VA.CdANEOO4ttDtDl8rYm8yiqlUmTFWy0HB",
@@ -959,13 +1001,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "X",
-                    "start_position": "66943552.0",
-                    "end_position": "66943552.0",
+                    "start_position": "66943552",
+                    "end_position": "66943552",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.2632A>G",
                     "protein_change": "p.T878A",
-                    "exon": "8.0"
+                    "exon": "8"
                 }
             },
             {
@@ -973,6 +1015,9 @@
                 "name": "moa_rsid",
                 "value": "rs137852578"
             }
+        ],
+        "xrefs": [
+            "dbsnp:137852578"
         ],
         "variation": {
             "id": "ga4gh:VA.oY-xQFs-CbOZJevfEPiEw8XNI8WaGH0j",
@@ -1008,13 +1053,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "X",
-                    "start_position": "66931463.0",
-                    "end_position": "66931463.0",
+                    "start_position": "66931463",
+                    "end_position": "66931463",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.2105T>A",
                     "protein_change": "p.L702H",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -1052,13 +1097,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "X",
-                    "start_position": "47426121.0",
-                    "end_position": "47426121.0",
+                    "start_position": "47426121",
+                    "end_position": "47426121",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.641C>G",
                     "protein_change": "p.S214C",
-                    "exon": "7.0"
+                    "exon": "7"
                 }
             }
         ],
@@ -1096,13 +1141,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "11",
-                    "start_position": "108150313.0",
-                    "end_position": "108150313.0",
+                    "start_position": "108150313",
+                    "end_position": "108150313",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.3380C>A",
                     "protein_change": "p.A1127D",
-                    "exon": "23.0"
+                    "exon": "23"
                 }
             },
             {
@@ -1110,6 +1155,9 @@
                 "name": "moa_rsid",
                 "value": "rs1555090340"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1555090340"
         ],
         "variation": {
             "id": "ga4gh:VA.iolPc7iLP88pE9jqw2yrnXptib7hTyM0",
@@ -1145,13 +1193,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "X",
-                    "start_position": "39921444.0",
-                    "end_position": "39921444.0",
+                    "start_position": "39921444",
+                    "end_position": "39921444",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.4376A>G",
                     "protein_change": "p.N1425S",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             }
         ],
@@ -1189,13 +1237,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "140453136.0",
-                    "end_position": "140453136.0",
+                    "start_position": "140453136",
+                    "end_position": "140453136",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.1799T>A",
                     "protein_change": "p.V600E",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -1203,6 +1251,9 @@
                 "name": "moa_rsid",
                 "value": "rs113488022"
             }
+        ],
+        "xrefs": [
+            "dbsnp:113488022"
         ],
         "variation": {
             "id": "ga4gh:VA.h313H4CQh6pogbbSJ3H5pI1cPoh9YMm_",
@@ -1238,13 +1289,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "140453136.0",
-                    "end_position": "140453137.0",
+                    "start_position": "140453136",
+                    "end_position": "140453137",
                     "reference_allele": "AC",
                     "alternate_allele": "TT",
                     "cdna_change": "c.1798_1799GT>AA",
                     "protein_change": "p.V600K",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -1252,6 +1303,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913227"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913227"
         ],
         "variation": {
             "id": "ga4gh:VA.cxfjgf47lCYesVEe7nvEMqHLxqh2eliW",
@@ -1278,7 +1332,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:251",
+        "id": "moa.variant:250",
         "type": "VariationDescriptor",
         "label": "DNMT3A p.R882H (Missense)",
         "extensions": [
@@ -1287,13 +1341,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "25457242.0",
-                    "end_position": "25457242.0",
+                    "start_position": "25457242",
+                    "end_position": "25457242",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.2645G>A",
                     "protein_change": "p.R882H",
-                    "exon": "23.0"
+                    "exon": "23"
                 }
             },
             {
@@ -1301,6 +1355,9 @@
                 "name": "moa_rsid",
                 "value": "rs147001633"
             }
+        ],
+        "xrefs": [
+            "dbsnp:147001633"
         ],
         "variation": {
             "id": "ga4gh:VA.Oohn0HQEIqtK0DQZIRVA5h8w3qe89WwO",
@@ -1327,7 +1384,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:255",
+        "id": "moa.variant:254",
         "type": "VariationDescriptor",
         "label": "EGFR p.T790M (Missense)",
         "extensions": [
@@ -1336,13 +1393,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "55249071.0",
-                    "end_position": "55249071.0",
+                    "start_position": "55249071",
+                    "end_position": "55249071",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.2369C>T",
                     "protein_change": "p.T790M",
-                    "exon": "20.0"
+                    "exon": "20"
                 }
             },
             {
@@ -1350,6 +1407,9 @@
                 "name": "moa_rsid",
                 "value": "rs121434569"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121434569"
         ],
         "variation": {
             "id": "ga4gh:VA.lvgJx0agONKtOZizHmwQiO3tkZ5UB7YV",
@@ -1376,7 +1436,7 @@
         "vrs_ref_allele_seq": "T"
     },
     {
-        "id": "moa.variant:268",
+        "id": "moa.variant:267",
         "type": "VariationDescriptor",
         "label": "EGFR p.L858R (Missense)",
         "extensions": [
@@ -1385,13 +1445,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "55259515.0",
-                    "end_position": "55259515.0",
+                    "start_position": "55259515",
+                    "end_position": "55259515",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.2573T>G",
                     "protein_change": "p.L858R",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -1399,6 +1459,9 @@
                 "name": "moa_rsid",
                 "value": "rs121434568"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121434568"
         ],
         "variation": {
             "id": "ga4gh:VA.g4fsoMUU_nKYxJrf-6Ah9J76mjF988xC",
@@ -1425,7 +1488,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:285",
+        "id": "moa.variant:284",
         "type": "VariationDescriptor",
         "label": "EGFR p.L858R (Missense)",
         "extensions": [
@@ -1434,8 +1497,8 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "55259515.0",
-                    "end_position": "55259515.0",
+                    "start_position": "55259515",
+                    "end_position": "55259515",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.2573T>G",
@@ -1469,7 +1532,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:287",
+        "id": "moa.variant:286",
         "type": "VariationDescriptor",
         "label": "EGFR p.L858R (Missense)",
         "extensions": [
@@ -1478,13 +1541,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "55259515.0",
-                    "end_position": "55259515.0",
+                    "start_position": "55259515",
+                    "end_position": "55259515",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.2573T>G",
                     "protein_change": "p.L858R",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             }
         ],
@@ -1513,7 +1576,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:295",
+        "id": "moa.variant:294",
         "type": "VariationDescriptor",
         "label": "ERRFI1 p.E384* (Nonsense)",
         "extensions": [
@@ -1522,13 +1585,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "8073509.0",
-                    "end_position": "8073509.0",
+                    "start_position": "8073509",
+                    "end_position": "8073509",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.1150G>T",
                     "protein_change": "p.E384*",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -1557,7 +1620,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:301",
+        "id": "moa.variant:300",
         "type": "VariationDescriptor",
         "label": "EZH2 p.Y646* (Nonsense)",
         "extensions": [
@@ -1566,13 +1629,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "148508726.0",
-                    "end_position": "148508726.0",
+                    "start_position": "148508726",
+                    "end_position": "148508726",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1938C>A",
                     "protein_change": "p.Y646*",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             }
         ],
@@ -1601,7 +1664,7 @@
         "vrs_ref_allele_seq": "Y"
     },
     {
-        "id": "moa.variant:302",
+        "id": "moa.variant:301",
         "type": "VariationDescriptor",
         "label": "EZH2 p.Y646F (Missense)",
         "extensions": [
@@ -1610,13 +1673,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "148508727.0",
-                    "end_position": "148508727.0",
+                    "start_position": "148508727",
+                    "end_position": "148508727",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.1937A>T",
                     "protein_change": "p.Y646F",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             }
         ],
@@ -1645,7 +1708,7 @@
         "vrs_ref_allele_seq": "Y"
     },
     {
-        "id": "moa.variant:303",
+        "id": "moa.variant:302",
         "type": "VariationDescriptor",
         "label": "EZH2 p.Y646N (Missense)",
         "extensions": [
@@ -1654,13 +1717,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "148508728.0",
-                    "end_position": "148508728.0",
+                    "start_position": "148508728",
+                    "end_position": "148508728",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.1936T>A",
                     "protein_change": "p.Y646N",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             }
         ],
@@ -1689,7 +1752,7 @@
         "vrs_ref_allele_seq": "Y"
     },
     {
-        "id": "moa.variant:304",
+        "id": "moa.variant:303",
         "type": "VariationDescriptor",
         "label": "EZH2 p.A682G (Missense)",
         "extensions": [
@@ -1698,13 +1761,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "148506467.0",
-                    "end_position": "148506467.0",
+                    "start_position": "148506467",
+                    "end_position": "148506467",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.2045C>G",
                     "protein_change": "p.A682G",
-                    "exon": "18.0"
+                    "exon": "18"
                 }
             }
         ],
@@ -1733,7 +1796,7 @@
         "vrs_ref_allele_seq": "A"
     },
     {
-        "id": "moa.variant:305",
+        "id": "moa.variant:304",
         "type": "VariationDescriptor",
         "label": "EZH2 p.A692V (Missense)",
         "extensions": [
@@ -1742,30 +1805,30 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "148506437.0",
-                    "end_position": "148506437.0",
+                    "start_position": "148506437",
+                    "end_position": "148506437",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.2075C>T",
                     "protein_change": "p.A692V",
-                    "exon": "18.0"
+                    "exon": "18"
                 }
             }
         ],
         "variation": {
-            "id": "ga4gh:VA.xVJJc3REms4TVqq1F2ed3fgwM0j70avb",
+            "id": "ga4gh:VA.EVbXCN6XYXx_gkF511gSWNNvUKk2zDyE",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.QZQ3nu5lNAF4kXaB5rhfzxQCUXV1c8-z",
+                "id": "ga4gh:SL.U5tQgJKvWioSAc0Omn5egYeiK8lRvNX2",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.fZuyp1_QKM5vGWsn-O-CrPHPm5jR403J",
                 "start": {
                     "type": "Number",
-                    "value": 735
+                    "value": 691
                 },
                 "end": {
                     "type": "Number",
-                    "value": 736
+                    "value": 692
                 }
             },
             "state": {
@@ -1777,7 +1840,7 @@
         "vrs_ref_allele_seq": "A"
     },
     {
-        "id": "moa.variant:308",
+        "id": "moa.variant:307",
         "type": "VariationDescriptor",
         "label": "FGFR3 p.R248C (Missense)",
         "extensions": [
@@ -1786,13 +1849,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "1803564.0",
-                    "end_position": "1803564.0",
+                    "start_position": "1803564",
+                    "end_position": "1803564",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.742C>T",
                     "protein_change": "p.R248C",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -1800,6 +1863,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913482"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913482"
         ],
         "variation": {
             "id": "ga4gh:VA.X0Qffarg2hsUJnsCo8lJ2bBo_d_AI2PS",
@@ -1826,7 +1892,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:309",
+        "id": "moa.variant:308",
         "type": "VariationDescriptor",
         "label": "FGFR3 p.S249C (Missense)",
         "extensions": [
@@ -1835,13 +1901,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "1803568.0",
-                    "end_position": "1803568.0",
+                    "start_position": "1803568",
+                    "end_position": "1803568",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.746C>G",
                     "protein_change": "p.S249C",
-                    "exon": "6.0"
+                    "exon": "6"
                 }
             },
             {
@@ -1849,6 +1915,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913483"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913483"
         ],
         "variation": {
             "id": "ga4gh:VA.FNHAUxkAFnYKIjkp3qxbDsoN31F2i-wp",
@@ -1875,7 +1944,7 @@
         "vrs_ref_allele_seq": "S"
     },
     {
-        "id": "moa.variant:310",
+        "id": "moa.variant:309",
         "type": "VariationDescriptor",
         "label": "FGFR3 p.G370C (Missense)",
         "extensions": [
@@ -1884,13 +1953,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "1806089.0",
-                    "end_position": "1806089.0",
+                    "start_position": "1806089",
+                    "end_position": "1806089",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1180G>T",
                     "protein_change": "p.G370C",
-                    "exon": "8.0"
+                    "exon": "8"
                 }
             },
             {
@@ -1898,6 +1967,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913479"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913479"
         ],
         "variation": {
             "id": "ga4gh:VA.-u7UUrAjLYvs-n8V1rUNw4hAoHaFZyAR",
@@ -1924,7 +1996,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:311",
+        "id": "moa.variant:310",
         "type": "VariationDescriptor",
         "label": "FGFR3 p.Y373C (Missense)",
         "extensions": [
@@ -1933,13 +2005,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "1806099.0",
-                    "end_position": "1806099.0",
+                    "start_position": "1806099",
+                    "end_position": "1806099",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.1118A>G",
                     "protein_change": "p.Y373C",
-                    "exon": "8.0"
+                    "exon": "8"
                 }
             },
             {
@@ -1947,6 +2019,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913485"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913485"
         ],
         "variation": {
             "id": "ga4gh:VA.G1B7U93AVZ0qmmd6CkAFL5JgaU43EdRP",
@@ -1973,7 +2048,7 @@
         "vrs_ref_allele_seq": "Y"
     },
     {
-        "id": "moa.variant:318",
+        "id": "moa.variant:317",
         "type": "VariationDescriptor",
         "label": "FLT3 p.F691L (Missense)",
         "extensions": [
@@ -1982,13 +2057,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "13",
-                    "start_position": "28601361.0",
-                    "end_position": "28601361.0",
+                    "start_position": "28601361",
+                    "end_position": "28601361",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.2071T>C",
                     "protein_change": "p.F691L",
-                    "exon": "17.0"
+                    "exon": "17"
                 }
             },
             {
@@ -1996,6 +2071,9 @@
                 "name": "moa_rsid",
                 "value": "rs759272576"
             }
+        ],
+        "xrefs": [
+            "dbsnp:759272576"
         ],
         "variation": {
             "id": "ga4gh:VA.alBmNUrND2Qcobv2zz7socu-8G727NX9",
@@ -2022,7 +2100,7 @@
         "vrs_ref_allele_seq": "F"
     },
     {
-        "id": "moa.variant:319",
+        "id": "moa.variant:318",
         "type": "VariationDescriptor",
         "label": "FLT3 p.K663Q (Missense)",
         "extensions": [
@@ -2031,13 +2109,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "13",
-                    "start_position": "28602381.0",
-                    "end_position": "28602381.0",
+                    "start_position": "28602381",
+                    "end_position": "28602381",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1987A>C",
                     "protein_change": "p.K663Q",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             },
             {
@@ -2045,6 +2123,9 @@
                 "name": "moa_rsid",
                 "value": "rs1057520026"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1057520026"
         ],
         "variation": {
             "id": "ga4gh:VA.42RunKCk9_3PSfdTBKEVee7vT9Zkn4XP",
@@ -2071,7 +2152,7 @@
         "vrs_ref_allele_seq": "K"
     },
     {
-        "id": "moa.variant:320",
+        "id": "moa.variant:319",
         "type": "VariationDescriptor",
         "label": "GATA3 p.M294K (Missense)",
         "extensions": [
@@ -2080,13 +2161,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "10",
-                    "start_position": "8106058.0",
-                    "end_position": "8106058.0",
+                    "start_position": "8106058",
+                    "end_position": "8106058",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.881T>A",
                     "protein_change": "p.M294K",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -2115,7 +2196,7 @@
         "vrs_ref_allele_seq": "M"
     },
     {
-        "id": "moa.variant:324",
+        "id": "moa.variant:323",
         "type": "VariationDescriptor",
         "label": "IDH1 p.R132H (Missense)",
         "extensions": [
@@ -2124,13 +2205,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "209113112.0",
-                    "end_position": "209113112.0",
+                    "start_position": "209113112",
+                    "end_position": "209113112",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.395G>A",
                     "protein_change": "p.R132H",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -2138,6 +2219,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913500"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913500"
         ],
         "variation": {
             "id": "ga4gh:VA.cXxt95ehS1vnyR-ZKhMNpx2eKUX136uo",
@@ -2164,7 +2248,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:325",
+        "id": "moa.variant:324",
         "type": "VariationDescriptor",
         "label": "IDH1 p.R132C (Missense)",
         "extensions": [
@@ -2173,13 +2257,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "209113113.0",
-                    "end_position": "209113113.0",
+                    "start_position": "209113113",
+                    "end_position": "209113113",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.394C>T",
                     "protein_change": "p.R132C",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -2187,6 +2271,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913499"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913499"
         ],
         "variation": {
             "id": "ga4gh:VA.rNhxmp_gYSRocQWOzkt83kNujGnV-BVj",
@@ -2213,7 +2300,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:334",
+        "id": "moa.variant:329",
         "type": "VariationDescriptor",
         "label": "IDH2 p.R140Q (Missense)",
         "extensions": [
@@ -2222,13 +2309,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "90631934.0",
-                    "end_position": "90631934.0",
+                    "start_position": "90631934",
+                    "end_position": "90631934",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.419G>A",
                     "protein_change": "p.R140Q",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -2236,6 +2323,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913502"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913502"
         ],
         "variation": {
             "id": "ga4gh:VA.SUyY1Hguz5PVWM_vB1tVzkh-8ui55NlU",
@@ -2262,7 +2352,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:335",
+        "id": "moa.variant:330",
         "type": "VariationDescriptor",
         "label": "IDH2 p.R172S (Missense)",
         "extensions": [
@@ -2271,13 +2361,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "90631837.0",
-                    "end_position": "90631837.0",
+                    "start_position": "90631837",
+                    "end_position": "90631837",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.516G>T",
                     "protein_change": "p.R172S",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -2306,7 +2396,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:336",
+        "id": "moa.variant:331",
         "type": "VariationDescriptor",
         "label": "IDH2 p.R172K (Missense)",
         "extensions": [
@@ -2315,13 +2405,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "90631837.0",
-                    "end_position": "90631837.0",
+                    "start_position": "90631837",
+                    "end_position": "90631837",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.515G>A",
                     "protein_change": "p.R172K",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -2350,7 +2440,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:339",
+        "id": "moa.variant:334",
         "type": "VariationDescriptor",
         "label": "IDH2 p.R140Q (Missense)",
         "extensions": [
@@ -2359,13 +2449,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "90631934.0",
-                    "end_position": "90631934.0",
+                    "start_position": "90631934",
+                    "end_position": "90631934",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.419G>A",
                     "protein_change": "p.R140Q",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -2394,7 +2484,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:343",
+        "id": "moa.variant:338",
         "type": "VariationDescriptor",
         "label": "JAK1 p.V656F (Missense)",
         "extensions": [
@@ -2403,13 +2493,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "65312353.0",
-                    "end_position": "65312353.0",
+                    "start_position": "65312353",
+                    "end_position": "65312353",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.1966G>T",
                     "protein_change": "p.V656F",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -2438,7 +2528,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:344",
+        "id": "moa.variant:339",
         "type": "VariationDescriptor",
         "label": "JAK1 p.A634D (Missense)",
         "extensions": [
@@ -2447,13 +2537,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "65312418.0",
-                    "end_position": "65312418.0",
+                    "start_position": "65312418",
+                    "end_position": "65312418",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1901C>A",
                     "protein_change": "p.A634D",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -2461,6 +2551,9 @@
                 "name": "moa_rsid",
                 "value": "rs869312953"
             }
+        ],
+        "xrefs": [
+            "dbsnp:869312953"
         ],
         "variation": {
             "id": "ga4gh:VA.4pF-TNpYtJUV0AHyShNxiZKpC7YEShTl",
@@ -2487,7 +2580,7 @@
         "vrs_ref_allele_seq": "A"
     },
     {
-        "id": "moa.variant:346",
+        "id": "moa.variant:341",
         "type": "VariationDescriptor",
         "label": "JAK2 p.V617F (Missense)",
         "extensions": [
@@ -2496,13 +2589,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "9",
-                    "start_position": "5073770.0",
-                    "end_position": "5073770.0",
+                    "start_position": "5073770",
+                    "end_position": "5073770",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1849G>T",
                     "protein_change": "p.V617F",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -2531,7 +2624,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:347",
+        "id": "moa.variant:342",
         "type": "VariationDescriptor",
         "label": "JAK3 p.A572T (Missense)",
         "extensions": [
@@ -2540,13 +2633,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "17948010.0",
-                    "end_position": "17948010.0",
+                    "start_position": "17948010",
+                    "end_position": "17948010",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.1714G>A",
                     "protein_change": "p.A572T",
-                    "exon": "13.0"
+                    "exon": "13"
                 }
             }
         ],
@@ -2575,7 +2668,7 @@
         "vrs_ref_allele_seq": "A"
     },
     {
-        "id": "moa.variant:348",
+        "id": "moa.variant:343",
         "type": "VariationDescriptor",
         "label": "JAK3 p.M511I (Missense)",
         "extensions": [
@@ -2584,13 +2677,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "17949108.0",
-                    "end_position": "17949108.0",
+                    "start_position": "17949108",
+                    "end_position": "17949108",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.1533G>A",
                     "protein_change": "p.M511I",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             }
         ],
@@ -2619,7 +2712,7 @@
         "vrs_ref_allele_seq": "M"
     },
     {
-        "id": "moa.variant:349",
+        "id": "moa.variant:344",
         "type": "VariationDescriptor",
         "label": "JAK3 p.L857Q (Missense)",
         "extensions": [
@@ -2628,13 +2721,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "17943438.0",
-                    "end_position": "17943438.0",
+                    "start_position": "17943438",
+                    "end_position": "17943438",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.2570T>A",
                     "protein_change": "p.L857Q",
-                    "exon": "19.0"
+                    "exon": "19"
                 }
             }
         ],
@@ -2663,7 +2756,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:357",
+        "id": "moa.variant:352",
         "type": "VariationDescriptor",
         "label": "KIT p.T670I (Missense)",
         "extensions": [
@@ -2672,13 +2765,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55595519.0",
-                    "end_position": "55595519.0",
+                    "start_position": "55595519",
+                    "end_position": "55595519",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.2009C>T",
                     "protein_change": "p.T670I",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -2686,6 +2779,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913516"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913516"
         ],
         "variation": {
             "id": "ga4gh:VA.i9jXgMZM9ZFX7HMNEDN7npl5Cl5zSgy6",
@@ -2712,7 +2808,7 @@
         "vrs_ref_allele_seq": "T"
     },
     {
-        "id": "moa.variant:358",
+        "id": "moa.variant:353",
         "type": "VariationDescriptor",
         "label": "KIT p.V654A (Missense)",
         "extensions": [
@@ -2721,13 +2817,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55594258.0",
-                    "end_position": "55594258.0",
+                    "start_position": "55594258",
+                    "end_position": "55594258",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1961T>C",
                     "protein_change": "p.V654A",
-                    "exon": "13.0"
+                    "exon": "13"
                 }
             },
             {
@@ -2735,6 +2831,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913523"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913523"
         ],
         "variation": {
             "id": "ga4gh:VA.CW1xXH97SiVFOHQp0rQ7-T5yYdwCE3ta",
@@ -2761,7 +2860,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:366",
+        "id": "moa.variant:361",
         "type": "VariationDescriptor",
         "label": "KIT p.W557C (Missense)",
         "extensions": [
@@ -2770,13 +2869,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55593605.0",
-                    "end_position": "55593605.0",
+                    "start_position": "55593605",
+                    "end_position": "55593605",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1671G>T",
                     "protein_change": "p.W557C",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             }
         ],
@@ -2805,7 +2904,7 @@
         "vrs_ref_allele_seq": "W"
     },
     {
-        "id": "moa.variant:367",
+        "id": "moa.variant:362",
         "type": "VariationDescriptor",
         "label": "KIT p.W557G (Missense)",
         "extensions": [
@@ -2814,13 +2913,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55593603.0",
-                    "end_position": "55593603.0",
+                    "start_position": "55593603",
+                    "end_position": "55593603",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1669T>G",
                     "protein_change": "p.W557G",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             }
         ],
@@ -2849,7 +2948,7 @@
         "vrs_ref_allele_seq": "W"
     },
     {
-        "id": "moa.variant:368",
+        "id": "moa.variant:363",
         "type": "VariationDescriptor",
         "label": "KIT p.W557R (Missense)",
         "extensions": [
@@ -2858,13 +2957,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55593603.0",
-                    "end_position": "55593603.0",
+                    "start_position": "55593603",
+                    "end_position": "55593603",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1669T>C",
                     "protein_change": "p.W557R",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             }
         ],
@@ -2893,7 +2992,7 @@
         "vrs_ref_allele_seq": "W"
     },
     {
-        "id": "moa.variant:369",
+        "id": "moa.variant:364",
         "type": "VariationDescriptor",
         "label": "KIT p.V559A (Missense)",
         "extensions": [
@@ -2902,13 +3001,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55593610.0",
-                    "end_position": "55593610.0",
+                    "start_position": "55593610",
+                    "end_position": "55593610",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1676T>C",
                     "protein_change": "p.V559A",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             },
             {
@@ -2916,6 +3015,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913517"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913517"
         ],
         "variation": {
             "id": "ga4gh:VA.Lb_d6ANJs93uDVVlJujz1_7iA4-VggYu",
@@ -2942,7 +3044,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:370",
+        "id": "moa.variant:365",
         "type": "VariationDescriptor",
         "label": "KIT p.V559G (Missense)",
         "extensions": [
@@ -2951,13 +3053,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55593610.0",
-                    "end_position": "55593610.0",
+                    "start_position": "55593610",
+                    "end_position": "55593610",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1676T>G",
                     "protein_change": "p.V559G",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             },
             {
@@ -2965,6 +3067,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913517"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913517"
         ],
         "variation": {
             "id": "ga4gh:VA.jD9f-R_toWrduybrjbm68lsaOpntmZAa",
@@ -2991,7 +3096,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:371",
+        "id": "moa.variant:366",
         "type": "VariationDescriptor",
         "label": "KIT p.L576P (Missense)",
         "extensions": [
@@ -3000,13 +3105,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55593661.0",
-                    "end_position": "55593661.0",
+                    "start_position": "55593661",
+                    "end_position": "55593661",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1727T>C",
                     "protein_change": "p.L576P",
-                    "exon": "11.0"
+                    "exon": "11"
                 }
             },
             {
@@ -3014,6 +3119,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913513"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913513"
         ],
         "variation": {
             "id": "ga4gh:VA.1i40nlLTUTxkw3VAG3tTQSuNjTWnMdy5",
@@ -3040,7 +3148,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:372",
+        "id": "moa.variant:367",
         "type": "VariationDescriptor",
         "label": "KIT p.K642E (Missense)",
         "extensions": [
@@ -3049,13 +3157,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55594221.0",
-                    "end_position": "55594221.0",
+                    "start_position": "55594221",
+                    "end_position": "55594221",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.1924A>G",
                     "protein_change": "p.K642E",
-                    "exon": "13.0"
+                    "exon": "13"
                 }
             }
         ],
@@ -3084,7 +3192,7 @@
         "vrs_ref_allele_seq": "K"
     },
     {
-        "id": "moa.variant:374",
+        "id": "moa.variant:369",
         "type": "VariationDescriptor",
         "label": "KIT p.D816H (Missense)",
         "extensions": [
@@ -3093,13 +3201,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55599320.0",
-                    "end_position": "55599320.0",
+                    "start_position": "55599320",
+                    "end_position": "55599320",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.2446G>C",
                     "protein_change": "p.D816H",
-                    "exon": "17.0"
+                    "exon": "17"
                 }
             },
             {
@@ -3107,6 +3215,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913506"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913506"
         ],
         "variation": {
             "id": "ga4gh:VA.RQAhdmX7Am7xNvM-DGvM4gPqYrq1ZD25",
@@ -3133,7 +3244,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:379",
+        "id": "moa.variant:374",
         "type": "VariationDescriptor",
         "label": "KIT p.D816V (Missense)",
         "extensions": [
@@ -3142,13 +3253,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55599321.0",
-                    "end_position": "55599321.0",
+                    "start_position": "55599321",
+                    "end_position": "55599321",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.2447A>T",
                     "protein_change": "p.D816V",
-                    "exon": "17.0"
+                    "exon": "17"
                 }
             }
         ],
@@ -3177,7 +3288,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:392",
+        "id": "moa.variant:387",
         "type": "VariationDescriptor",
         "label": "KRAS p.G12C (Missense)",
         "extensions": [
@@ -3186,13 +3297,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "12",
-                    "start_position": "25398285.0",
-                    "end_position": "25398285.0",
+                    "start_position": "25398285",
+                    "end_position": "25398285",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.35G>T",
                     "protein_change": "p.G12C",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -3200,6 +3311,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913530"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913530"
         ],
         "variation": {
             "id": "ga4gh:VA.rpL2_d2q0gdks_VPk_0JVl90aJG9-bEd",
@@ -3226,7 +3340,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:395",
+        "id": "moa.variant:390",
         "type": "VariationDescriptor",
         "label": "KRAS p.G12D (Missense)",
         "extensions": [
@@ -3235,13 +3349,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "12",
-                    "start_position": "25398284.0",
-                    "end_position": "25398284.0",
+                    "start_position": "25398284",
+                    "end_position": "25398284",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.35G>A",
                     "protein_change": "p.G12D",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -3249,6 +3363,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913529"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913529"
         ],
         "variation": {
             "id": "ga4gh:VA.jSiuIG2uZEbml8MfCtZi3J9jPBCBiaPw",
@@ -3275,7 +3392,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:407",
+        "id": "moa.variant:402",
         "type": "VariationDescriptor",
         "label": "MAP2K1 p.P124L (Missense)",
         "extensions": [
@@ -3284,13 +3401,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "66729163.0",
-                    "end_position": "66729163.0",
+                    "start_position": "66729163",
+                    "end_position": "66729163",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.371C>T",
                     "protein_change": "p.P124L",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             }
         ],
@@ -3319,7 +3436,7 @@
         "vrs_ref_allele_seq": "P"
     },
     {
-        "id": "moa.variant:408",
+        "id": "moa.variant:403",
         "type": "VariationDescriptor",
         "label": "MAP2K1 p.Q56P (Missense)",
         "extensions": [
@@ -3328,13 +3445,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "66727451.0",
-                    "end_position": "66727451.0",
+                    "start_position": "66727451",
+                    "end_position": "66727451",
                     "reference_allele": "A",
                     "alternate_allele": "C",
                     "cdna_change": "c.167A>C",
                     "protein_change": "p.Q56P",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3363,7 +3480,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:413",
+        "id": "moa.variant:408",
         "type": "VariationDescriptor",
         "label": "MAP2K1 p.C121S (Missense)",
         "extensions": [
@@ -3372,13 +3489,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "15",
-                    "start_position": "66729153.0",
-                    "end_position": "66729153.0",
+                    "start_position": "66729153",
+                    "end_position": "66729153",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.361T>A",
                     "protein_change": "p.C121S",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             }
         ],
@@ -3407,7 +3524,7 @@
         "vrs_ref_allele_seq": "C"
     },
     {
-        "id": "moa.variant:415",
+        "id": "moa.variant:410",
         "type": "VariationDescriptor",
         "label": "MAP2K2 p.Q60P (Missense)",
         "extensions": [
@@ -3416,13 +3533,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "4117541.0",
-                    "end_position": "4117541.0",
+                    "start_position": "4117541",
+                    "end_position": "4117541",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.179A>C",
                     "protein_change": "p.Q60P",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -3431,20 +3548,23 @@
                 "value": "rs1057519808"
             }
         ],
+        "xrefs": [
+            "dbsnp:1057519808"
+        ],
         "variation": {
-            "id": "ga4gh:VA.JXOJDjpsROlaBJohocLPg6A3ZwC7ofZ5",
+            "id": "ga4gh:VA.x3rsFgqiKDEsKtATlvmiQzECzAmSJbsy",
             "type": "Allele",
             "location": {
-                "id": "ga4gh:SL.CLfA-Lm-wW3XNRbHYubGarK9QECOHb45",
+                "id": "ga4gh:SL.YLiJyeBk2UjEPRbz1Csa-P48zjb0ESkH",
                 "type": "SequenceLocation",
                 "sequence_id": "ga4gh:SQ.fGPHz_BuC2mUP2mDkoh1KRbyO7QgvCFi",
                 "start": {
                     "type": "Number",
-                    "value": 156
+                    "value": 59
                 },
                 "end": {
                     "type": "Number",
-                    "value": 157
+                    "value": 60
                 }
             },
             "state": {
@@ -3456,7 +3576,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:416",
+        "id": "moa.variant:411",
         "type": "VariationDescriptor",
         "label": "MAPK1 p.E322K (Missense)",
         "extensions": [
@@ -3465,13 +3585,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "22",
-                    "start_position": "22127164.0",
-                    "end_position": "22127164.0",
+                    "start_position": "22127164",
+                    "end_position": "22127164",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.964G>A",
                     "protein_change": "p.E322K",
-                    "exon": "7.0"
+                    "exon": "7"
                 }
             }
         ],
@@ -3500,7 +3620,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:418",
+        "id": "moa.variant:413",
         "type": "VariationDescriptor",
         "label": "MET p.T1010I (Missense)",
         "extensions": [
@@ -3509,13 +3629,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "7",
-                    "start_position": "116411990.0",
-                    "end_position": "116411990.0",
+                    "start_position": "116411990",
+                    "end_position": "116411990",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.3029C>T",
                     "protein_change": "p.T1010I",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -3523,6 +3643,9 @@
                 "name": "moa_rsid",
                 "value": "rs56391007"
             }
+        ],
+        "xrefs": [
+            "dbsnp:56391007"
         ],
         "variation": {
             "id": "ga4gh:VA.uQhgRqg5AvenJJFEF4zkS6FhVYBwBGQr",
@@ -3549,7 +3672,7 @@
         "vrs_ref_allele_seq": "T"
     },
     {
-        "id": "moa.variant:426",
+        "id": "moa.variant:421",
         "type": "VariationDescriptor",
         "label": "MPL p.W515L (Missense)",
         "extensions": [
@@ -3558,13 +3681,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "43815009.0",
-                    "end_position": "43815009.0",
+                    "start_position": "43815009",
+                    "end_position": "43815009",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1544G>T",
                     "protein_change": "p.W515L",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -3572,6 +3695,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913615"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913615"
         ],
         "variation": {
             "id": "ga4gh:VA.rMjLjeQmL79rMUeyWah-7m4yNHer0DiD",
@@ -3598,7 +3724,7 @@
         "vrs_ref_allele_seq": "W"
     },
     {
-        "id": "moa.variant:437",
+        "id": "moa.variant:432",
         "type": "VariationDescriptor",
         "label": "NRAS p.G12A (Missense)",
         "extensions": [
@@ -3607,13 +3733,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258747.0",
-                    "end_position": "115258747.0",
+                    "start_position": "115258747",
+                    "end_position": "115258747",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.35G>C",
                     "protein_change": "p.G12A",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3642,7 +3768,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:438",
+        "id": "moa.variant:433",
         "type": "VariationDescriptor",
         "label": "NRAS p.G12C (Missense)",
         "extensions": [
@@ -3651,13 +3777,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258748.0",
-                    "end_position": "115258748.0",
+                    "start_position": "115258748",
+                    "end_position": "115258748",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.34G>T",
                     "protein_change": "p.G12C",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3686,7 +3812,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:439",
+        "id": "moa.variant:434",
         "type": "VariationDescriptor",
         "label": "NRAS p.G12D (Missense)",
         "extensions": [
@@ -3695,13 +3821,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258747.0",
-                    "end_position": "115258747.0",
+                    "start_position": "115258747",
+                    "end_position": "115258747",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.35G>A",
                     "protein_change": "p.G12D",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3730,7 +3856,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:440",
+        "id": "moa.variant:435",
         "type": "VariationDescriptor",
         "label": "NRAS p.G12R (Missense)",
         "extensions": [
@@ -3739,13 +3865,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258748.0",
-                    "end_position": "115258748.0",
+                    "start_position": "115258748",
+                    "end_position": "115258748",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "p.34G>C",
                     "protein_change": "p.G12R",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3774,7 +3900,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:441",
+        "id": "moa.variant:436",
         "type": "VariationDescriptor",
         "label": "NRAS p.G12S (Missense)",
         "extensions": [
@@ -3783,13 +3909,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258748.0",
-                    "end_position": "115258748.0",
+                    "start_position": "115258748",
+                    "end_position": "115258748",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "p.34G>A",
                     "protein_change": "p.G12S",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3818,7 +3944,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:442",
+        "id": "moa.variant:437",
         "type": "VariationDescriptor",
         "label": "NRAS p.G12V (Missense)",
         "extensions": [
@@ -3827,13 +3953,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258747.0",
-                    "end_position": "115258747.0",
+                    "start_position": "115258747",
+                    "end_position": "115258747",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "p.35G>T",
                     "protein_change": "p.G12V",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3862,7 +3988,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:443",
+        "id": "moa.variant:438",
         "type": "VariationDescriptor",
         "label": "NRAS p.G13A (Missense)",
         "extensions": [
@@ -3871,13 +3997,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258744.0",
-                    "end_position": "115258744.0",
+                    "start_position": "115258744",
+                    "end_position": "115258744",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.38G>C",
                     "protein_change": "p.G13A",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -3885,6 +4011,9 @@
                 "name": "moa_rsid",
                 "value": "rs121434596"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121434596"
         ],
         "variation": {
             "id": "ga4gh:VA.qfpvsGG58OUv3jw576ageDbHJ7uF8qId",
@@ -3911,7 +4040,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:444",
+        "id": "moa.variant:439",
         "type": "VariationDescriptor",
         "label": "NRAS p.G13D (Missense)",
         "extensions": [
@@ -3920,13 +4049,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258744.0",
-                    "end_position": "115258744.0",
+                    "start_position": "115258744",
+                    "end_position": "115258744",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.38G>A",
                     "protein_change": "p.G13D",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3955,7 +4084,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:445",
+        "id": "moa.variant:440",
         "type": "VariationDescriptor",
         "label": "NRAS p.G13R (Missense)",
         "extensions": [
@@ -3964,13 +4093,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258745.0",
-                    "end_position": "115258745.0",
+                    "start_position": "115258745",
+                    "end_position": "115258745",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.37G>C",
                     "protein_change": "p.G13R",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             }
         ],
@@ -3999,7 +4128,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:446",
+        "id": "moa.variant:441",
         "type": "VariationDescriptor",
         "label": "NRAS p.G13V (Missense)",
         "extensions": [
@@ -4008,13 +4137,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115258744.0",
-                    "end_position": "115258744.0",
+                    "start_position": "115258744",
+                    "end_position": "115258744",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.38G>T",
                     "protein_change": "p.G13V",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -4022,6 +4151,9 @@
                 "name": "moa_rsid",
                 "value": "rs121434596"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121434596"
         ],
         "variation": {
             "id": "ga4gh:VA.PvT5_Upp-jCGI6xDiihgx3uzOjZcVLpu",
@@ -4048,7 +4180,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:447",
+        "id": "moa.variant:442",
         "type": "VariationDescriptor",
         "label": "NRAS p.Q61E (Missense)",
         "extensions": [
@@ -4057,13 +4189,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115256530.0",
-                    "end_position": "115256530.0",
+                    "start_position": "115256530",
+                    "end_position": "115256530",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.181C>G",
                     "protein_change": "p.Q61E",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             },
             {
@@ -4071,6 +4203,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913254"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913254"
         ],
         "variation": {
             "id": "ga4gh:VA.6404Vhjkm9RlB6Mgv5JfQ4LPiV3jaseU",
@@ -4097,7 +4232,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:448",
+        "id": "moa.variant:443",
         "type": "VariationDescriptor",
         "label": "NRAS p.Q61H (Missense)",
         "extensions": [
@@ -4106,13 +4241,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115256528.0",
-                    "end_position": "115256528.0",
+                    "start_position": "115256528",
+                    "end_position": "115256528",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.183A>T",
                     "protein_change": "p.Q61H",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             },
             {
@@ -4120,6 +4255,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913255"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913255"
         ],
         "variation": {
             "id": "ga4gh:VA.CMcJNS2hl5LwQd2mDCHwPZowQ8JhCuE3",
@@ -4146,7 +4284,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:449",
+        "id": "moa.variant:444",
         "type": "VariationDescriptor",
         "label": "NRAS p.Q61L (Missense)",
         "extensions": [
@@ -4155,13 +4293,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115256529.0",
-                    "end_position": "115256529.0",
+                    "start_position": "115256529",
+                    "end_position": "115256529",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.182A>T",
                     "protein_change": "p.Q61L",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             }
         ],
@@ -4190,7 +4328,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:451",
+        "id": "moa.variant:446",
         "type": "VariationDescriptor",
         "label": "NRAS p.Q61P (Missense)",
         "extensions": [
@@ -4199,13 +4337,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115256529.0",
-                    "end_position": "115256529.0",
+                    "start_position": "115256529",
+                    "end_position": "115256529",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.182A>C",
                     "protein_change": "p.Q61P",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             },
             {
@@ -4213,6 +4351,9 @@
                 "name": "moa_rsid",
                 "value": "rs11554290"
             }
+        ],
+        "xrefs": [
+            "dbsnp:11554290"
         ],
         "variation": {
             "id": "ga4gh:VA.3WBJ-GVXkDEc8saOc44B7SJTHGNTjLOq",
@@ -4239,7 +4380,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:452",
+        "id": "moa.variant:447",
         "type": "VariationDescriptor",
         "label": "NRAS p.Q61R (Missense)",
         "extensions": [
@@ -4248,13 +4389,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "1",
-                    "start_position": "115256529.0",
-                    "end_position": "115256529.0",
+                    "start_position": "115256529",
+                    "end_position": "115256529",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.182A>G",
                     "protein_change": "p.Q61R",
-                    "exon": "3.0"
+                    "exon": "3"
                 }
             }
         ],
@@ -4283,7 +4424,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:464",
+        "id": "moa.variant:459",
         "type": "VariationDescriptor",
         "label": "PDGFRA p.D842V (Missense)",
         "extensions": [
@@ -4292,13 +4433,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "4",
-                    "start_position": "55152093.0",
-                    "end_position": "55152093.0",
+                    "start_position": "55152093",
+                    "end_position": "55152093",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.2525A>T",
                     "protein_change": "p.D842V",
-                    "exon": "18.0"
+                    "exon": "18"
                 }
             },
             {
@@ -4306,6 +4447,9 @@
                 "name": "moa_rsid",
                 "value": "rs121908585"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121908585"
         ],
         "variation": {
             "id": "ga4gh:VA.CaTuLaWlUwLb32qfYTW2udl2Iy02ccN6",
@@ -4332,7 +4476,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:472",
+        "id": "moa.variant:467",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E545Q (Missense)",
         "extensions": [
@@ -4341,13 +4485,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936091.0",
-                    "end_position": "178936091.0",
+                    "start_position": "178936091",
+                    "end_position": "178936091",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.1633G>C",
                     "protein_change": "p.E545Q",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4355,6 +4499,9 @@
                 "name": "moa_rsid",
                 "value": "rs104886003"
             }
+        ],
+        "xrefs": [
+            "dbsnp:104886003"
         ],
         "variation": {
             "id": "ga4gh:VA.4BYZppCvYIbPaKyAkn4KA9fjgfdPnd7Z",
@@ -4381,7 +4528,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:473",
+        "id": "moa.variant:468",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.C420R (Missense)",
         "extensions": [
@@ -4390,13 +4537,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178927980.0",
-                    "end_position": "178927980.0",
+                    "start_position": "178927980",
+                    "end_position": "178927980",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1258T>C",
                     "protein_change": "p.C420R",
-                    "exon": "8.0"
+                    "exon": "8"
                 }
             },
             {
@@ -4404,6 +4551,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913272"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913272"
         ],
         "variation": {
             "id": "ga4gh:VA.gSEj555FrQu0uZMZcSDcGpE5p5TdBwX7",
@@ -4430,7 +4580,7 @@
         "vrs_ref_allele_seq": "C"
     },
     {
-        "id": "moa.variant:474",
+        "id": "moa.variant:469",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E542K (Missense)",
         "extensions": [
@@ -4439,13 +4589,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936082.0",
-                    "end_position": "178936082.0",
+                    "start_position": "178936082",
+                    "end_position": "178936082",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.1624G>A",
                     "protein_change": "p.E542K",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4453,6 +4603,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913273"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913273"
         ],
         "variation": {
             "id": "ga4gh:VA.RTy0UiMi4D-aTPKvZBR3e3FXhFy4doaD",
@@ -4479,7 +4632,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:475",
+        "id": "moa.variant:470",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E542Q (Missense)",
         "extensions": [
@@ -4488,13 +4641,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936082.0",
-                    "end_position": "178936082.0",
+                    "start_position": "178936082",
+                    "end_position": "178936082",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.1624G>C",
                     "protein_change": "p.E542Q",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4502,6 +4655,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913273"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913273"
         ],
         "variation": {
             "id": "ga4gh:VA.X0Z-pr_A1Sy49Qd6DJ4-5dquPGfTseHU",
@@ -4528,7 +4684,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:476",
+        "id": "moa.variant:471",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E545A (Missense)",
         "extensions": [
@@ -4537,13 +4693,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936092.0",
-                    "end_position": "178936092.0",
+                    "start_position": "178936092",
+                    "end_position": "178936092",
                     "reference_allele": "A",
                     "alternate_allele": "C",
                     "cdna_change": "c.1634A>C",
                     "protein_change": "p.E545A",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4551,6 +4707,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913274"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913274"
         ],
         "variation": {
             "id": "ga4gh:VA.gGHSvgtjj8086ObJm6ZfIa68KR0CT_VO",
@@ -4577,7 +4736,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:477",
+        "id": "moa.variant:472",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E545D (Missense)",
         "extensions": [
@@ -4586,13 +4745,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936093.0",
-                    "end_position": "178936093.0",
+                    "start_position": "178936093",
+                    "end_position": "178936093",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.1635G>T",
                     "protein_change": "p.E545D",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4600,6 +4759,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913275"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913275"
         ],
         "variation": {
             "id": "ga4gh:VA.3kGBMsAR03qZ0_EQ6Ts1xP5lXvwYetEY",
@@ -4626,7 +4788,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:479",
+        "id": "moa.variant:474",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E545G (Missense)",
         "extensions": [
@@ -4635,13 +4797,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936092.0",
-                    "end_position": "178936092.0",
+                    "start_position": "178936092",
+                    "end_position": "178936092",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.1634A>G",
                     "protein_change": "p.E545G",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4649,6 +4811,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913274"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913274"
         ],
         "variation": {
             "id": "ga4gh:VA.7NSMwTRR_yBpn8GqpL2Ux_8OD5PbOqjC",
@@ -4675,7 +4840,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:480",
+        "id": "moa.variant:475",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.E545K (Missense)",
         "extensions": [
@@ -4684,13 +4849,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936091.0",
-                    "end_position": "178936091.0",
+                    "start_position": "178936091",
+                    "end_position": "178936091",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.1633G>A",
                     "protein_change": "p.E545K",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -4698,6 +4863,9 @@
                 "name": "moa_rsid",
                 "value": "rs104886003"
             }
+        ],
+        "xrefs": [
+            "dbsnp:104886003"
         ],
         "variation": {
             "id": "ga4gh:VA.5zBiXnk0ZRCfFqRnK0fQHQwAGBWW4JE8",
@@ -4724,7 +4892,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:481",
+        "id": "moa.variant:476",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.G1049R (Missense)",
         "extensions": [
@@ -4733,13 +4901,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952090.0",
-                    "end_position": "178952090.0",
+                    "start_position": "178952090",
+                    "end_position": "178952090",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.3145G>C",
                     "protein_change": "p.G1049R",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -4747,6 +4915,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913277"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913277"
         ],
         "variation": {
             "id": "ga4gh:VA.vxWenCx5Zh7thv9vYTHJsjn12LIMFve1",
@@ -4773,7 +4944,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:482",
+        "id": "moa.variant:477",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.G1049S (Missense)",
         "extensions": [
@@ -4782,13 +4953,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952090.0",
-                    "end_position": "178952090.0",
+                    "start_position": "178952090",
+                    "end_position": "178952090",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.3145G>A",
                     "protein_change": "p.G1049S",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -4796,6 +4967,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913277"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913277"
         ],
         "variation": {
             "id": "ga4gh:VA.i-AkFhlrTP9m7d-5LUmOKR1qizXjdjM4",
@@ -4822,7 +4996,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:483",
+        "id": "moa.variant:478",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.H1047L (Missense)",
         "extensions": [
@@ -4831,13 +5005,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952085.0",
-                    "end_position": "178952085.0",
+                    "start_position": "178952085",
+                    "end_position": "178952085",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.3140A>T",
                     "protein_change": "p.H1047L",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -4845,6 +5019,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913279"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913279"
         ],
         "variation": {
             "id": "ga4gh:VA.mCpnGyjIgv27feD0L-LFc95zm7d6RmDt",
@@ -4871,7 +5048,7 @@
         "vrs_ref_allele_seq": "H"
     },
     {
-        "id": "moa.variant:484",
+        "id": "moa.variant:479",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.H1047R (Missense)",
         "extensions": [
@@ -4880,13 +5057,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952085.0",
-                    "end_position": "178952085.0",
+                    "start_position": "178952085",
+                    "end_position": "178952085",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.3140A>G",
                     "protein_change": "p.H1047R",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -4894,6 +5071,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913279"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913279"
         ],
         "variation": {
             "id": "ga4gh:VA.TIcXeM9bBVAIDYM4osh5rbkEVBs3LBCJ",
@@ -4920,7 +5100,7 @@
         "vrs_ref_allele_seq": "H"
     },
     {
-        "id": "moa.variant:485",
+        "id": "moa.variant:480",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.H1047Y (Missense)",
         "extensions": [
@@ -4929,13 +5109,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952084.0",
-                    "end_position": "178952084.0",
+                    "start_position": "178952084",
+                    "end_position": "178952084",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.3139C>T",
                     "protein_change": "p.H1047Y",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -4943,6 +5123,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913281"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913281"
         ],
         "variation": {
             "id": "ga4gh:VA.1fhSfLxaMG3SWi4nUQkvFchAtKtRh9_p",
@@ -4969,7 +5152,7 @@
         "vrs_ref_allele_seq": "H"
     },
     {
-        "id": "moa.variant:486",
+        "id": "moa.variant:481",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.H701P (Missense)",
         "extensions": [
@@ -4978,13 +5161,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178938860.0",
-                    "end_position": "178938860.0",
+                    "start_position": "178938860",
+                    "end_position": "178938860",
                     "reference_allele": "A",
                     "alternate_allele": "C",
                     "cdna_change": "c.2102A>C",
                     "protein_change": "p.H701P",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -4992,6 +5175,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913282"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913282"
         ],
         "variation": {
             "id": "ga4gh:VA.wGsmoMRwSDazdAyurTnARM61XWCkKRHc",
@@ -5018,7 +5204,7 @@
         "vrs_ref_allele_seq": "H"
     },
     {
-        "id": "moa.variant:487",
+        "id": "moa.variant:482",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.M1043I (Missense)",
         "extensions": [
@@ -5027,13 +5213,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952074.0",
-                    "end_position": "178952074.0",
+                    "start_position": "178952074",
+                    "end_position": "178952074",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.3129G>A",
                     "protein_change": "p.M1043I",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -5041,6 +5227,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913283"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913283"
         ],
         "variation": {
             "id": "ga4gh:VA.bxC8DxNJMy76trFNcDtsH2X6pF23Ze5r",
@@ -5067,7 +5256,7 @@
         "vrs_ref_allele_seq": "M"
     },
     {
-        "id": "moa.variant:489",
+        "id": "moa.variant:484",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.P539R (Missense)",
         "extensions": [
@@ -5076,13 +5265,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936074.0",
-                    "end_position": "178936074.0",
+                    "start_position": "178936074",
+                    "end_position": "178936074",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.1616C>G",
                     "protein_change": "p.P539R",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -5090,6 +5279,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913285"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913285"
         ],
         "variation": {
             "id": "ga4gh:VA.33_VKxgbW1TazQGgEQUC2H6PmMZ6F-v2",
@@ -5116,7 +5308,7 @@
         "vrs_ref_allele_seq": "P"
     },
     {
-        "id": "moa.variant:490",
+        "id": "moa.variant:485",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.Q546K (Missense)",
         "extensions": [
@@ -5125,13 +5317,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178936094.0",
-                    "end_position": "178936094.0",
+                    "start_position": "178936094",
+                    "end_position": "178936094",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.1636C>A",
                     "protein_change": "p.Q546K",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -5139,6 +5331,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913286"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913286"
         ],
         "variation": {
             "id": "ga4gh:VA.nyuWYXXVPT_eO8mWhz_HvPXsS5rPrazX",
@@ -5165,7 +5360,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:491",
+        "id": "moa.variant:486",
         "type": "VariationDescriptor",
         "label": "PIK3CA p.Y1021C (Missense)",
         "extensions": [
@@ -5174,13 +5369,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "3",
-                    "start_position": "178952007.0",
-                    "end_position": "178952007.0",
+                    "start_position": "178952007",
+                    "end_position": "178952007",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.3062A>G",
                     "protein_change": "p.Y1021C",
-                    "exon": "21.0"
+                    "exon": "21"
                 }
             },
             {
@@ -5188,6 +5383,9 @@
                 "name": "moa_rsid",
                 "value": "rs121913288"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121913288"
         ],
         "variation": {
             "id": "ga4gh:VA.fDgjmQ6zm6yehkeGtfa-Ykqgy-QKnxVg",
@@ -5214,7 +5412,7 @@
         "vrs_ref_allele_seq": "Y"
     },
     {
-        "id": "moa.variant:493",
+        "id": "moa.variant:488",
         "type": "VariationDescriptor",
         "label": "POLD1 p.D316H (Missense)",
         "extensions": [
@@ -5223,13 +5421,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "50905974.0",
-                    "end_position": "50905974.0",
+                    "start_position": "50905974",
+                    "end_position": "50905974",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.946G>C",
                     "protein_change": "p.D316H",
-                    "exon": "8.0"
+                    "exon": "8"
                 }
             },
             {
@@ -5237,6 +5435,9 @@
                 "name": "moa_rsid",
                 "value": "rs746087148"
             }
+        ],
+        "xrefs": [
+            "dbsnp:746087148"
         ],
         "variation": {
             "id": "ga4gh:VA.AAiQPSndKSqXEm9l8RqvA5mfu-V_Uu5y",
@@ -5263,7 +5464,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:494",
+        "id": "moa.variant:489",
         "type": "VariationDescriptor",
         "label": "POLD1 p.D316G (Missense)",
         "extensions": [
@@ -5272,13 +5473,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "50905975.0",
-                    "end_position": "50905975.0",
+                    "start_position": "50905975",
+                    "end_position": "50905975",
                     "reference_allele": "A",
                     "alternate_allele": "G",
                     "cdna_change": "c.947A>G",
                     "protein_change": "p.D316G",
-                    "exon": "8.0"
+                    "exon": "8"
                 }
             },
             {
@@ -5286,6 +5487,9 @@
                 "name": "moa_rsid",
                 "value": "rs746087148"
             }
+        ],
+        "xrefs": [
+            "dbsnp:746087148"
         ],
         "variation": {
             "id": "ga4gh:VA.f1ZGKa495-zEI4Deee4VXk0DwiXM2xnC",
@@ -5312,7 +5516,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:495",
+        "id": "moa.variant:490",
         "type": "VariationDescriptor",
         "label": "POLD1 p.R409W (Missense)",
         "extensions": [
@@ -5321,13 +5525,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "50906837.0",
-                    "end_position": "50906837.0",
+                    "start_position": "50906837",
+                    "end_position": "50906837",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.1225C>T",
                     "protein_change": "p.R409W",
-                    "exon": "10.0"
+                    "exon": "10"
                 }
             },
             {
@@ -5335,6 +5539,9 @@
                 "name": "moa_rsid",
                 "value": "rs778135510"
             }
+        ],
+        "xrefs": [
+            "dbsnp:778135510"
         ],
         "variation": {
             "id": "ga4gh:VA.cPlYc8zX87tyiOzCprz3epkI8wUHMHLZ",
@@ -5361,7 +5568,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:496",
+        "id": "moa.variant:491",
         "type": "VariationDescriptor",
         "label": "POLD1 p.L474P (Missense)",
         "extensions": [
@@ -5370,13 +5577,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "19",
-                    "start_position": "50909701.0",
-                    "end_position": "50909701.0",
+                    "start_position": "50909701",
+                    "end_position": "50909701",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1421T>C",
                     "protein_change": "p.L474P",
-                    "exon": "12.0"
+                    "exon": "12"
                 }
             },
             {
@@ -5384,6 +5591,9 @@
                 "name": "moa_rsid",
                 "value": "rs587777627"
             }
+        ],
+        "xrefs": [
+            "dbsnp:587777627"
         ],
         "variation": {
             "id": "ga4gh:VA.eWwCpUsPcM8f4i0WBgikU9QnB2rccBzT",
@@ -5410,7 +5620,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:500",
+        "id": "moa.variant:495",
         "type": "VariationDescriptor",
         "label": "POLE p.L424V (Missense)",
         "extensions": [
@@ -5419,13 +5629,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "12",
-                    "start_position": "133250250.0",
-                    "end_position": "133250250.0",
+                    "start_position": "133250250",
+                    "end_position": "133250250",
                     "reference_allele": "G",
                     "alternate_allele": "C",
                     "cdna_change": "c.1270C>G",
                     "protein_change": "p.L424V",
-                    "exon": "13.0"
+                    "exon": "13"
                 }
             },
             {
@@ -5433,6 +5643,9 @@
                 "name": "moa_rsid",
                 "value": "rs483352909"
             }
+        ],
+        "xrefs": [
+            "dbsnp:483352909"
         ],
         "variation": {
             "id": "ga4gh:VA.x32xZwuF7WYN_9C3-REQrj2nx8QqyExv",
@@ -5459,7 +5672,7 @@
         "vrs_ref_allele_seq": "L"
     },
     {
-        "id": "moa.variant:534",
+        "id": "moa.variant:529",
         "type": "VariationDescriptor",
         "label": "RET p.V804M (Missense)",
         "extensions": [
@@ -5468,13 +5681,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "10",
-                    "start_position": "43614996.0",
-                    "end_position": "43614996.0",
+                    "start_position": "43614996",
+                    "end_position": "43614996",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.2410G>A",
                     "protein_change": "p.V804M",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -5482,6 +5695,9 @@
                 "name": "moa_rsid",
                 "value": "rs79658334"
             }
+        ],
+        "xrefs": [
+            "dbsnp:79658334"
         ],
         "variation": {
             "id": "ga4gh:VA.9ibuOLww1-x_kykE-sbtIRUr8SZhJSex",
@@ -5508,7 +5724,7 @@
         "vrs_ref_allele_seq": "V"
     },
     {
-        "id": "moa.variant:535",
+        "id": "moa.variant:530",
         "type": "VariationDescriptor",
         "label": "RET p.M918T (Missense)",
         "extensions": [
@@ -5517,13 +5733,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "10",
-                    "start_position": "43617416.0",
-                    "end_position": "43617416.0",
+                    "start_position": "43617416",
+                    "end_position": "43617416",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.2753T>C",
                     "protein_change": "p.M918T",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             },
             {
@@ -5531,6 +5747,9 @@
                 "name": "moa_rsid",
                 "value": "rs74799832"
             }
+        ],
+        "xrefs": [
+            "dbsnp:74799832"
         ],
         "variation": {
             "id": "ga4gh:VA.ld4IL6kursGxjcAXopnYRTKKS-06pP8-",
@@ -5557,7 +5776,7 @@
         "vrs_ref_allele_seq": "M"
     },
     {
-        "id": "moa.variant:540",
+        "id": "moa.variant:535",
         "type": "VariationDescriptor",
         "label": "SETBP1 p.E858K (Missense)",
         "extensions": [
@@ -5566,13 +5785,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "18",
-                    "start_position": "42531877.0",
-                    "end_position": "42531877.0",
+                    "start_position": "42531877",
+                    "end_position": "42531877",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.2572G>A",
                     "protein_change": "p.E858K",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -5601,7 +5820,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:541",
+        "id": "moa.variant:536",
         "type": "VariationDescriptor",
         "label": "SETBP1 p.T864M (Missense)",
         "extensions": [
@@ -5610,13 +5829,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "18",
-                    "start_position": "42531896.0",
-                    "end_position": "42531896.0",
+                    "start_position": "42531896",
+                    "end_position": "42531896",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.2591C>T",
                     "protein_change": "p.T864M",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -5645,7 +5864,7 @@
         "vrs_ref_allele_seq": "T"
     },
     {
-        "id": "moa.variant:543",
+        "id": "moa.variant:538",
         "type": "VariationDescriptor",
         "label": "SETBP1 p.D868N (Missense)",
         "extensions": [
@@ -5654,13 +5873,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "18",
-                    "start_position": "42531907.0",
-                    "end_position": "42531907.0",
+                    "start_position": "42531907",
+                    "end_position": "42531907",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.2602G>A",
                     "protein_change": "p.D868N",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -5668,6 +5887,9 @@
                 "name": "moa_rsid",
                 "value": "rs267607042"
             }
+        ],
+        "xrefs": [
+            "dbsnp:267607042"
         ],
         "variation": {
             "id": "ga4gh:VA.nw7GWfSUGqUy-IxQMF27X9To0dbIz1jZ",
@@ -5694,7 +5916,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:544",
+        "id": "moa.variant:539",
         "type": "VariationDescriptor",
         "label": "SETBP1 p.D868Y (Missense)",
         "extensions": [
@@ -5703,13 +5925,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "18",
-                    "start_position": "42531907.0",
-                    "end_position": "42531907.0",
+                    "start_position": "42531907",
+                    "end_position": "42531907",
                     "reference_allele": "G",
                     "alternate_allele": "T",
                     "cdna_change": "c.2602G>T",
                     "protein_change": "p.D868Y",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -5717,6 +5939,9 @@
                 "name": "moa_rsid",
                 "value": "rs267607042"
             }
+        ],
+        "xrefs": [
+            "dbsnp:267607042"
         ],
         "variation": {
             "id": "ga4gh:VA.dIYO_LqND_opNmb9eR7-rPWBndYVTm-p",
@@ -5743,7 +5968,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:545",
+        "id": "moa.variant:540",
         "type": "VariationDescriptor",
         "label": "SETBP1 p.S869C (Missense)",
         "extensions": [
@@ -5752,13 +5977,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "18",
-                    "start_position": "42531910.0",
-                    "end_position": "42531910.0",
+                    "start_position": "42531910",
+                    "end_position": "42531910",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.2605A>T",
                     "protein_change": "p.S869C",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             }
         ],
@@ -5787,7 +6012,7 @@
         "vrs_ref_allele_seq": "S"
     },
     {
-        "id": "moa.variant:546",
+        "id": "moa.variant:541",
         "type": "VariationDescriptor",
         "label": "SETBP1 p.G870S (Missense)",
         "extensions": [
@@ -5796,13 +6021,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "18",
-                    "start_position": "42531913.0",
-                    "end_position": "42531913.0",
+                    "start_position": "42531913",
+                    "end_position": "42531913",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.2608G>A",
                     "protein_change": "p.G870S",
-                    "exon": "4.0"
+                    "exon": "4"
                 }
             },
             {
@@ -5810,6 +6035,9 @@
                 "name": "moa_rsid",
                 "value": "rs267607040"
             }
+        ],
+        "xrefs": [
+            "dbsnp:267607040"
         ],
         "variation": {
             "id": "ga4gh:VA.1WYAO7f-7JweQEggAsUxZ3yJpNmCH-v_",
@@ -5836,7 +6064,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:548",
+        "id": "moa.variant:543",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.E622Q (Missense)",
         "extensions": [
@@ -5845,13 +6073,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267493.0",
-                    "end_position": "198267493.0",
+                    "start_position": "198267493",
+                    "end_position": "198267493",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.1864G>C",
                     "protein_change": "p.E622Q",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -5880,7 +6108,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:549",
+        "id": "moa.variant:544",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.E622D (Missense)",
         "extensions": [
@@ -5889,13 +6117,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267491.0",
-                    "end_position": "198267491.0",
+                    "start_position": "198267491",
+                    "end_position": "198267491",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.1866G>C",
                     "protein_change": "p.E622D",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -5903,6 +6131,9 @@
                 "name": "moa_rsid",
                 "value": "rs763149798"
             }
+        ],
+        "xrefs": [
+            "dbsnp:763149798"
         ],
         "variation": {
             "id": "ga4gh:VA.MhlAJOLjMP3Qxy8VJyYLCJQ6_3bDr2jh",
@@ -5929,7 +6160,7 @@
         "vrs_ref_allele_seq": "E"
     },
     {
-        "id": "moa.variant:550",
+        "id": "moa.variant:545",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.Y623C (Missense)",
         "extensions": [
@@ -5938,13 +6169,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267489.0",
-                    "end_position": "198267489.0",
+                    "start_position": "198267489",
+                    "end_position": "198267489",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1868A>G",
                     "protein_change": "p.Y623C",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -5952,6 +6183,9 @@
                 "name": "moa_rsid",
                 "value": "rs1039242157"
             }
+        ],
+        "xrefs": [
+            "dbsnp:1039242157"
         ],
         "variation": {
             "id": "ga4gh:VA.km33V6P7C9udYAyRQwPUJYVRzZMbKZTU",
@@ -5978,7 +6212,7 @@
         "vrs_ref_allele_seq": "Y"
     },
     {
-        "id": "moa.variant:551",
+        "id": "moa.variant:546",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.R625C (Missense)",
         "extensions": [
@@ -5987,13 +6221,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267484.0",
-                    "end_position": "198267484.0",
+                    "start_position": "198267484",
+                    "end_position": "198267484",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.1873C>T",
                     "protein_change": "p.R625C",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -6001,6 +6235,9 @@
                 "name": "moa_rsid",
                 "value": "rs775623976"
             }
+        ],
+        "xrefs": [
+            "dbsnp:775623976"
         ],
         "variation": {
             "id": "ga4gh:VA.KHOTiU3B0R5AN1FOILvcmZW_-HOQ8OJ6",
@@ -6027,7 +6264,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:552",
+        "id": "moa.variant:547",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.R625H (Missense)",
         "extensions": [
@@ -6036,13 +6273,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267483.0",
-                    "end_position": "198267483.0",
+                    "start_position": "198267483",
+                    "end_position": "198267483",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.1874G>A",
                     "protein_change": "p.R625H",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -6071,7 +6308,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:553",
+        "id": "moa.variant:548",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.N626H (Missense)",
         "extensions": [
@@ -6080,13 +6317,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267481.0",
-                    "end_position": "198267481.0",
+                    "start_position": "198267481",
+                    "end_position": "198267481",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1876A>C",
                     "protein_change": "p.N626H",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -6094,6 +6331,9 @@
                 "name": "moa_rsid",
                 "value": "rs769888451"
             }
+        ],
+        "xrefs": [
+            "dbsnp:769888451"
         ],
         "variation": {
             "id": "ga4gh:VA.EqtvWeku7hNDkrTNcD1jhA4GHbHP0LWV",
@@ -6120,7 +6360,7 @@
         "vrs_ref_allele_seq": "N"
     },
     {
-        "id": "moa.variant:554",
+        "id": "moa.variant:549",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.N626Y (Missense)",
         "extensions": [
@@ -6129,13 +6369,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267481.0",
-                    "end_position": "198267481.0",
+                    "start_position": "198267481",
+                    "end_position": "198267481",
                     "reference_allele": "T",
                     "alternate_allele": "A",
                     "cdna_change": "c.1876A>T",
                     "protein_change": "p.N626Y",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -6143,6 +6383,9 @@
                 "name": "moa_rsid",
                 "value": "rs769888451"
             }
+        ],
+        "xrefs": [
+            "dbsnp:769888451"
         ],
         "variation": {
             "id": "ga4gh:VA.Af_sr7knmQucldLSoHsRTIC1tU8gwzG0",
@@ -6169,7 +6412,7 @@
         "vrs_ref_allele_seq": "N"
     },
     {
-        "id": "moa.variant:555",
+        "id": "moa.variant:550",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.N626D (Missense)",
         "extensions": [
@@ -6178,13 +6421,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267481.0",
-                    "end_position": "198267481.0",
+                    "start_position": "198267481",
+                    "end_position": "198267481",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1876A>G",
                     "protein_change": "p.N626D",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -6192,6 +6435,9 @@
                 "name": "moa_rsid",
                 "value": "rs769888451"
             }
+        ],
+        "xrefs": [
+            "dbsnp:769888451"
         ],
         "variation": {
             "id": "ga4gh:VA.FNlxQYQ7LVHTcDtw9ufVqENE6QHgBRIT",
@@ -6218,7 +6464,7 @@
         "vrs_ref_allele_seq": "N"
     },
     {
-        "id": "moa.variant:556",
+        "id": "moa.variant:551",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.H662R (Missense)",
         "extensions": [
@@ -6227,13 +6473,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267372.0",
-                    "end_position": "198267372.0",
+                    "start_position": "198267372",
+                    "end_position": "198267372",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1985A>G",
                     "protein_change": "p.H662R",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -6262,7 +6508,7 @@
         "vrs_ref_allele_seq": "H"
     },
     {
-        "id": "moa.variant:557",
+        "id": "moa.variant:552",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.T663P (Missense)",
         "extensions": [
@@ -6271,13 +6517,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267370.0",
-                    "end_position": "198267370.0",
+                    "start_position": "198267370",
+                    "end_position": "198267370",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1987A>C",
                     "protein_change": "p.T663P",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -6306,7 +6552,7 @@
         "vrs_ref_allele_seq": "T"
     },
     {
-        "id": "moa.variant:558",
+        "id": "moa.variant:553",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.K666N (Missense)",
         "extensions": [
@@ -6315,13 +6561,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267359.0",
-                    "end_position": "198267359.0",
+                    "start_position": "198267359",
+                    "end_position": "198267359",
                     "reference_allele": "C",
                     "alternate_allele": "G",
                     "cdna_change": "c.1998G>C",
                     "protein_change": "p.K666N",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -6350,7 +6596,7 @@
         "vrs_ref_allele_seq": "K"
     },
     {
-        "id": "moa.variant:559",
+        "id": "moa.variant:554",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.K666T (Missense)",
         "extensions": [
@@ -6359,13 +6605,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267360.0",
-                    "end_position": "198267360.0",
+                    "start_position": "198267360",
+                    "end_position": "198267360",
                     "reference_allele": "T",
                     "alternate_allele": "G",
                     "cdna_change": "c.1997A>C",
                     "protein_change": "p.K666T",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             }
         ],
@@ -6394,7 +6640,7 @@
         "vrs_ref_allele_seq": "K"
     },
     {
-        "id": "moa.variant:560",
+        "id": "moa.variant:555",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.K666E (Missense)",
         "extensions": [
@@ -6403,13 +6649,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198267361.0",
-                    "end_position": "198267361.0",
+                    "start_position": "198267361",
+                    "end_position": "198267361",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.1996A>G",
                     "protein_change": "p.K666E",
-                    "exon": "14.0"
+                    "exon": "14"
                 }
             },
             {
@@ -6417,6 +6663,9 @@
                 "name": "moa_rsid",
                 "value": "rs754688962"
             }
+        ],
+        "xrefs": [
+            "dbsnp:754688962"
         ],
         "variation": {
             "id": "ga4gh:VA.Gz6VYqp2yaJR2P--hrCPXRzbSZPVxlrB",
@@ -6443,7 +6692,7 @@
         "vrs_ref_allele_seq": "K"
     },
     {
-        "id": "moa.variant:561",
+        "id": "moa.variant:556",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.K700E (Missense)",
         "extensions": [
@@ -6452,13 +6701,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198266834.0",
-                    "end_position": "198266834.0",
+                    "start_position": "198266834",
+                    "end_position": "198266834",
                     "reference_allele": "T",
                     "alternate_allele": "C",
                     "cdna_change": "c.2098A>G",
                     "protein_change": "p.K700E",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -6466,6 +6715,9 @@
                 "name": "moa_rsid",
                 "value": "rs559063155"
             }
+        ],
+        "xrefs": [
+            "dbsnp:559063155"
         ],
         "variation": {
             "id": "ga4gh:VA.Ge-C1IvZCDIFpbNRTG4-lcalHsY3uu0T",
@@ -6492,7 +6744,7 @@
         "vrs_ref_allele_seq": "K"
     },
     {
-        "id": "moa.variant:563",
+        "id": "moa.variant:558",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.G740E (Missense)",
         "extensions": [
@@ -6501,13 +6753,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198266713.0",
-                    "end_position": "198266713.0",
+                    "start_position": "198266713",
+                    "end_position": "198266713",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.2219G>A",
                     "protein_change": "p.G740E",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -6515,6 +6767,9 @@
                 "name": "moa_rsid",
                 "value": "rs776846119"
             }
+        ],
+        "xrefs": [
+            "dbsnp:776846119"
         ],
         "variation": {
             "id": "ga4gh:VA.Bmavhf7aUQWJOIQkj4wgIn4D-WfX4dTC",
@@ -6541,7 +6796,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:564",
+        "id": "moa.variant:559",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.G740V (Missense)",
         "extensions": [
@@ -6550,13 +6805,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198266713.0",
-                    "end_position": "198266713.0",
+                    "start_position": "198266713",
+                    "end_position": "198266713",
                     "reference_allele": "C",
                     "alternate_allele": "A",
                     "cdna_change": "c.2219G>T",
                     "protein_change": "p.G740V",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -6564,6 +6819,9 @@
                 "name": "moa_rsid",
                 "value": "rs776846119"
             }
+        ],
+        "xrefs": [
+            "dbsnp:776846119"
         ],
         "variation": {
             "id": "ga4gh:VA.1UzO3cso4pJ5KKaiU1lBZMxCVAuDwp0N",
@@ -6590,7 +6848,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:565",
+        "id": "moa.variant:560",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.G742D (Missense)",
         "extensions": [
@@ -6599,13 +6857,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198266611.0",
-                    "end_position": "198266611.0",
+                    "start_position": "198266611",
+                    "end_position": "198266611",
                     "reference_allele": "C",
                     "alternate_allele": "T",
                     "cdna_change": "c.2225G>A",
                     "protein_change": "p.G742D",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             },
             {
@@ -6613,6 +6871,9 @@
                 "name": "moa_rsid",
                 "value": "rs755415626"
             }
+        ],
+        "xrefs": [
+            "dbsnp:755415626"
         ],
         "variation": {
             "id": "ga4gh:VA.0oBr2e-vJvNcLoAZ-0JxJ9pbkq-dyNTl",
@@ -6639,7 +6900,7 @@
         "vrs_ref_allele_seq": "G"
     },
     {
-        "id": "moa.variant:566",
+        "id": "moa.variant:561",
         "type": "VariationDescriptor",
         "label": "SF3B1 p.D781E (Missense)",
         "extensions": [
@@ -6648,13 +6909,13 @@
                 "name": "moa_representative_coordinate",
                 "value": {
                     "chromosome": "2",
-                    "start_position": "198266493.0",
-                    "end_position": "198266493.0",
+                    "start_position": "198266493",
+                    "end_position": "198266493",
                     "reference_allele": "A",
                     "alternate_allele": "T",
                     "cdna_change": "c.2343T>A",
                     "protein_change": "p.D781E",
-                    "exon": "16.0"
+                    "exon": "16"
                 }
             }
         ],
@@ -6683,7 +6944,7 @@
         "vrs_ref_allele_seq": "D"
     },
     {
-        "id": "moa.variant:659",
+        "id": "moa.variant:654",
         "type": "VariationDescriptor",
         "label": "IL12RB1",
         "extensions": [
@@ -6691,14 +6952,14 @@
                 "type": "Extension",
                 "name": "moa_representative_coordinate",
                 "value": {
-                    "chromosome": "19.0",
-                    "start_position": "18194272.0",
-                    "end_position": "18194272.0",
+                    "chromosome": "19",
+                    "start_position": "18194272",
+                    "end_position": "18194272",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.94C>T",
                     "protein_change": "p.Q32*",
-                    "exon": "2.0"
+                    "exon": "2"
                 }
             },
             {
@@ -6706,6 +6967,9 @@
                 "name": "moa_rsid",
                 "value": "rs121434492"
             }
+        ],
+        "xrefs": [
+            "dbsnp:121434492"
         ],
         "variation": {
             "id": "ga4gh:VA.a7xRzI6dWDZvDW0UTjK6l_pBL7y2Jewb",
@@ -6732,7 +6996,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:660",
+        "id": "moa.variant:655",
         "type": "VariationDescriptor",
         "label": "IL12RB1",
         "extensions": [
@@ -6740,14 +7004,14 @@
                 "type": "Extension",
                 "name": "moa_representative_coordinate",
                 "value": {
-                    "chromosome": "19.0",
-                    "start_position": "18173082.0",
-                    "end_position": "18173082.0",
+                    "chromosome": "19",
+                    "start_position": "18173082",
+                    "end_position": "18173082",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.1624C>T",
                     "protein_change": "p.Q542*",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -6755,6 +7019,9 @@
                 "name": "moa_rsid",
                 "value": "rs372833507"
             }
+        ],
+        "xrefs": [
+            "dbsnp:372833507"
         ],
         "variation": {
             "id": "ga4gh:VA.DqSMs3MRP4vmG8-eou8RDGPSbKW9wQFG",
@@ -6781,7 +7048,7 @@
         "vrs_ref_allele_seq": "Q"
     },
     {
-        "id": "moa.variant:666",
+        "id": "moa.variant:661",
         "type": "VariationDescriptor",
         "label": "MRE11",
         "extensions": [
@@ -6789,14 +7056,14 @@
                 "type": "Extension",
                 "name": "moa_representative_coordinate",
                 "value": {
-                    "chromosome": "11.0",
-                    "start_position": "94180442.0",
-                    "end_position": "94180442.0",
+                    "chromosome": "11",
+                    "start_position": "94180442",
+                    "end_position": "94180442",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.1726C>T",
                     "protein_change": "p.R576*",
-                    "exon": "15.0"
+                    "exon": "15"
                 }
             },
             {
@@ -6804,6 +7071,9 @@
                 "name": "moa_rsid",
                 "value": "rs774277300"
             }
+        ],
+        "xrefs": [
+            "dbsnp:774277300"
         ],
         "variation": {
             "id": "ga4gh:VA.N3DnVRjKrkbduZjXVH_PSXPwavq5JgL4",
@@ -6830,7 +7100,7 @@
         "vrs_ref_allele_seq": "R"
     },
     {
-        "id": "moa.variant:685",
+        "id": "moa.variant:680",
         "type": "VariationDescriptor",
         "label": "POT1",
         "extensions": [
@@ -6838,14 +7108,14 @@
                 "type": "Extension",
                 "name": "moa_representative_coordinate",
                 "value": {
-                    "chromosome": "7.0",
-                    "start_position": "124482937.0",
-                    "end_position": "124482937.0",
+                    "chromosome": "7",
+                    "start_position": "124482937",
+                    "end_position": "124482937",
                     "reference_allele": "G",
                     "alternate_allele": "A",
                     "cdna_change": "c.1087C>T",
                     "protein_change": "p.R363*",
-                    "exon": "13.0"
+                    "exon": "13"
                 }
             },
             {
@@ -6853,6 +7123,9 @@
                 "name": "moa_rsid",
                 "value": "rs756198077"
             }
+        ],
+        "xrefs": [
+            "dbsnp:756198077"
         ],
         "variation": {
             "id": "ga4gh:VA.9Nc-cLrDbLjzHDiRiR6st0REwKxVR2dL",
