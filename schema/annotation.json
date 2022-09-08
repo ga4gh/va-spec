@@ -609,6 +609,9 @@
             }
          },
          "required": [
+            "object",
+            "predicate",
+            "subject",
             "type"
          ],
          "additionalProperties": false
@@ -677,6 +680,9 @@
             }
          },
          "required": [
+            "object",
+            "predicate",
+            "subject",
             "type"
          ],
          "additionalProperties": false

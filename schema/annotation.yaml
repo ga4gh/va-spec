@@ -450,6 +450,9 @@ $defs:
         - $ref: core.json#/$defs/Disease
         - $ref: core.json#/$defs/Phenotype
     required:
+    - object
+    - predicate
+    - subject
     - type
     additionalProperties: false
   VariationNeoplasmTherapeuticResponseProposition:
@@ -496,5 +499,8 @@ $defs:
         - $ref: core.json#/$defs/Disease
         - $ref: core.json#/$defs/Phenotype
     required:
+    - object
+    - predicate
+    - subject
     - type
     additionalProperties: false

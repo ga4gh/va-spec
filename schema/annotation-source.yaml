@@ -287,7 +287,7 @@ $defs:
         $ref_curie: gks.core:ValueEntity
         description: >-
           A ValueEntity that is related to the subject of a Proposition via its predicate.
-    required: [ "subject", "predicate", "object" ]
+    heritable_required: [ "subject", "predicate", "object" ]
 
   VariationProposition:
     inherits: Proposition
