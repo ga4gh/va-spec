@@ -26,13 +26,13 @@ Some VariationGermlinePathogenicityProposition attributes are inherited from :re
       - MUST be "VariationGermlinePathogenicityProposition"
    *  - subject
       - `Variation <vrs.json#/definitions/Variation>`_ | `CategoricalVariation <catvars.json#/$defs/CategoricalVariation>`_ | `CURIE <core.json#/$defs/CURIE>`_
-      - 0..1
+      - 1..1
       - The `Variation` or `CategoricalVariation` about which the Proposition is made.
    *  - predicate
       - string
-      - 0..1
+      - 1..1
       - The relationship asserted to hold between the variation (subject) and  the condition (object) of the Proposition.
    *  - object
       - `Condition <core.json#/$defs/Condition>`_ | `Disease <core.json#/$defs/Disease>`_ | `Phenotype <core.json#/$defs/Phenotype>`_
-      - 0..1
+      - 1..1
       - A ValueEntity that is related to the subject of a Proposition via its predicate.

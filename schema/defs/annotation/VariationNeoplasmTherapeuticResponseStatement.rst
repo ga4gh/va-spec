@@ -36,15 +36,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - string
       - 0..1
       - A free-text description of the InformationEntity.
-   *  - confidence_level
-      - `Coding <core.json#/$defs/Coding>`_
-      - 0..1
-      - A coded term describing the strength of support that the information the statement represents is true.
-   *  - confidence_score
-      - :ref:`DataItem`
-      - 0..1
-      - A quantitative score reflecting the degree of confidence that the information  the information entity represents is true.
-   *  - method
+   *  - specified_by
       - :ref:`Method` | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
       - A :ref:`Method` that describes all or part of the process through which the information was generated.
@@ -64,10 +56,6 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
       - `Coding <core.json#/$defs/Coding>`_
       - 0..1
       - A term indicating the overall strength of support for the Statement based on all evidence assessed.
-   *  - evidence_score
-      - :ref:`DataItem`
-      - 0..1
-      - A quantitative score reflecting the overall strength of support for the Statement based on all  evidence assessed.
    *  - target_proposition
       - :ref:`Proposition` | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
@@ -75,7 +63,7 @@ Some VariationNeoplasmTherapeuticResponseStatement attributes are inherited from
    *  - conclusion
       - `Coding <core.json#/$defs/Coding>`_
       - 0..1
-      - The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.
+      - The conclusion associated with the statement proposition and direction.
    *  - direction
       - string
       - 0..1

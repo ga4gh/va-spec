@@ -3,19 +3,25 @@ classification:
   label: Pathogenic
   type: Coding
 contributions:
-- agent:
+- contributor:
     id: clinvar-submitter:21766
     label: Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine
     type: Agent
   date: '2018-10-23'
-  role: approver
+  activity:
+    id: clingen.activities:approved
+    label: approved
+    type: Coding
   type: Contribution
-- agent:
+- contributor:
     id: clinvar-submitter:21766
     label: Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine
     type: Agent
   date: '2019-08-31'
-  role: submitter
+  activity:
+    id: clingen.activities:submitted
+    label: submitted
+    type: Coding
   type: Contribution
 description: 'The p.Gly285Ser variant in KCNQ4 has been reported in at least three
   individuals with hearing loss, and segregated with disease in over 15 affected relatives
@@ -51,7 +57,7 @@ extensions:
 id: clingen:SCV000198442_2021-07-07
 is_reported_in:
 - pmid:12345
-method:
+specified_by:
   id: cspec:123134
   is_reported_in: pmid:1231231231
   label: Clingen BrainMalform ACMG Specifications v1

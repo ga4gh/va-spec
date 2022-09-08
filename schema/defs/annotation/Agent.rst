@@ -36,3 +36,7 @@ Some Agent attributes are inherited from :ref:`Entity`.
       - string
       - 0..1
       - 
+   *  - subtype
+      - `Coding <core.json#/$defs/Coding>`_
+      - 0..1
+      - A specific type of agent the Agent object represents (e.g. a person, organization,  software agent)

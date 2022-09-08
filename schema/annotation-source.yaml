@@ -26,17 +26,7 @@ $defs:
         type: string
         description: >-
           A free-text description of the InformationEntity.
-      confidence_level:
-        $ref_curie: gks.core:Coding
-        description: >-
-          A coded term describing the strength of support that the information the statement
-          represents is true.
-      confidence_score:
-        $ref: "#/$defs/DataItem"
-        description: >-
-          A quantitative score reflecting the degree of confidence that the information 
-          the information entity represents is true.
-      method:
+      specified_by:
         oneOf:
         - $ref: "#/$defs/Method"
         - $ref_curie: gks.core:CURIE
@@ -73,13 +63,15 @@ $defs:
         const: Contribution
         default: Contribution
         description: MUST be "Contribution".
-      agent:
+      contributor:
         $ref: "#/$defs/Agent"
       date:
         type: string
         format: date
-      role:
-        type: string
+      activity:
+        $ref_curie: gks.core:Coding
+        description: >-
+         SHOULD describe a concept descending from the Contributor Role Ontology.
 
   Agent:
     type: object
@@ -96,7 +88,11 @@ $defs:
         description: MUST be "Agent".
       name:
         type: string
-
+      subtype:
+        $ref_curie: gks.core:Coding
+        description: >-
+            A specific type of agent the Agent object represents (e.g. a person, organization, 
+            software agent)
   Method:
     type: object
     inherits: gks.core:ExtensibleEntity
@@ -113,8 +109,8 @@ $defs:
         oneOf:
         - $ref_curie: gks.core:CURIE
         - $ref: "#/$defs/Document"
-      method_type:
-        type: string
+      subtype:
+        $ref_curie: gks.core:Coding
         description: >-
           A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, 
           Experimental Protocol)
@@ -147,9 +143,18 @@ $defs:
       An InformationEntity representing an individual piece of data, generated/acquired through methods 
       which reliably produce truthful information about something.
     properties:
-      value:
+      type:
         type: string
-        description: The value of the data item
+        const: DataItem
+        default: DataItem
+        description: Must be "DataItem"
+      subtype:
+        $ref_curie: gks.core:Coding
+        description: >- 
+          A specific type of data the DataItem object represents (e.g. a specimen count, a 
+          patient weight, an allele frequency, a p-value, a confidence score)
+      value:
+         type: string
       unit:
         type:
           $ref_curie: gks.core:Coding
@@ -165,11 +170,6 @@ $defs:
         $ref_curie: gks.core:Coding
         description: >- 
           A term indicating the overall strength of support for the Statement based on all evidence assessed.
-      evidence_score:
-        $ref: "#/$defs/DataItem"
-        description: >-
-          A quantitative score reflecting the overall strength of support for the Statement based on all 
-          evidence assessed.
       target_proposition:
         oneOf:
         - $ref: "#/$defs/Proposition"
@@ -178,8 +178,7 @@ $defs:
       conclusion:
         $ref_curie: gks.core:Coding
         description: >-
-          The conclusion drawn from the statement proposition, direction, strength, and/or 
-          confidence score.
+          The conclusion associated with the statement proposition and direction.
       direction:
         type: string
         enum: [ "supports", "uncertain", "opposes" ]
@@ -287,7 +286,7 @@ $defs:
         $ref_curie: gks.core:ValueEntity
         description: >-
           A ValueEntity that is related to the subject of a Proposition via its predicate.
-    required: [ "subject", "predicate", "object" ]
+    heritable_required: [ "subject", "predicate", "object" ]
 
   VariationProposition:
     inherits: Proposition
