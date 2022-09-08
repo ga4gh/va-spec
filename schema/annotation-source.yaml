@@ -69,7 +69,7 @@ $defs:
         type: string
         format: date
       activity:
-        $ref: "#/$defs/Coding"
+        $ref_curie: gks.core:Coding
         description: >-
          SHOULD describe a concept descending from the Contributor Role Ontology.
 

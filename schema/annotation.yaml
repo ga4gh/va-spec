@@ -32,9 +32,9 @@ $defs:
         type: string
         format: date
       activity:
-        $ref: '#/$defs/Coding'
         description: SHOULD describe a concept descending from the Contributor Role
           Ontology.
+        $ref: core.json#/$defs/Coding
     required:
     - type
     additionalProperties: false

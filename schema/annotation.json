@@ -35,8 +35,8 @@
                "format": "date"
             },
             "activity": {
-               "$ref": "#/$defs/Coding",
-               "description": "SHOULD describe a concept descending from the Contributor Role Ontology."
+               "description": "SHOULD describe a concept descending from the Contributor Role Ontology.",
+               "$ref": "core.json#/$defs/Coding"
             }
          },
          "required": [

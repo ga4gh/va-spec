@@ -41,6 +41,6 @@ Some Contribution attributes are inherited from :ref:`Entity`.
       - 0..1
       - 
    *  - activity
-      - :ref:`Coding`
+      - `Coding <core.json#/$defs/Coding>`_
       - 0..1
       - SHOULD describe a concept descending from the Contributor Role Ontology.
