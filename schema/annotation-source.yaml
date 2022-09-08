@@ -78,7 +78,7 @@ $defs:
       date:
         type: string
         format: date
-      contributor_role:
+      activity:
         $ref: "#/$defs/Coding"
         description: >-
          SHOULD describe a concept descending from the Contributor Role Ontology.
