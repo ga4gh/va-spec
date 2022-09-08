@@ -155,7 +155,6 @@ $defs:
           patient weight, an allele frequency, a p-value, a confidence score)
       value:
          type: string
-         description: The value of the data item
       unit:
         type:
           $ref_curie: gks.core:Coding

@@ -36,7 +36,7 @@ Some Method attributes are inherited from :ref:`Entity`.
       - `CURIE <core.json#/$defs/CURIE>`_ | :ref:`Document`
       - 0..1
       - 
-   *  - method_type
-      - string
+   *  - subtype
+      - `Coding <core.json#/$defs/Coding>`_
       - 0..1
       - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)
