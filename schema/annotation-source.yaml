@@ -26,16 +26,6 @@ $defs:
         type: string
         description: >-
           A free-text description of the InformationEntity.
-      confidence_level:
-        $ref_curie: gks.core:Coding
-        description: >-
-          A coded term describing the strength of support that the information the statement
-          represents is true.
-      confidence_score:
-        $ref: "#/$defs/DataItem"
-        description: >-
-          A quantitative score reflecting the degree of confidence that the information 
-          the information entity represents is true.
       specified_by:
         oneOf:
         - $ref: "#/$defs/Method"
@@ -182,11 +172,6 @@ $defs:
         $ref_curie: gks.core:Coding
         description: >- 
           A term indicating the overall strength of support for the Statement based on all evidence assessed.
-      evidence_score:
-        $ref: "#/$defs/DataItem"
-        description: >-
-          A quantitative score reflecting the overall strength of support for the Statement based on all 
-          evidence assessed.
       target_proposition:
         oneOf:
         - $ref: "#/$defs/Proposition"
@@ -195,8 +180,7 @@ $defs:
       conclusion:
         $ref_curie: gks.core:Coding
         description: >-
-          The conclusion drawn from the statement proposition, direction, strength, and/or 
-          confidence score.
+          The conclusion associated with the statement proposition and direction.
       direction:
         type: string
         enum: [ "supports", "uncertain", "opposes" ]
