@@ -21,26 +21,35 @@ object_descriptor:
       label: Phenotypic abnormality
   type: ConditionDescriptor
 contributions:
-- agent:
+- contributor:
     id: clinvar-submitter:123
     name: ClinGen Brain Malformations Variant Curation Expert Panel
     type: Agent
   date: '2022-02-17'
-  role: evaluator
+  activity:
+    id: clingen.activities:submitted
+    label: submitted
+    type: Coding
   type: Contribution
-- agent:
+- contributor:
     id: clinvar-submitter:123
     name: ClinGen Brain Malformations Variant Curation Expert Panel
     type: Agent
   date: '2022-02-18'
-  role: approver
+  activity:
+    id: clingen.activities:approved
+    label: approved
+    type: Coding
   type: Contribution
-- agent:
+- contributor:
     id: genegraph:cvc1
     name: ClinGen's ClinVar Variant Curation Transformation System
     type: Agent
   date: '2022-07-31'
-  role: transformer
+  activity:
+    id: clingen.activities:transformed
+    label: transformed
+    type: Coding
   type: Contribution
 description: 'The c.6644C>A (NM_004958.4) variant in MTOR is a missense variant predicted
   to cause substitution of (p.Ser2215Tyr). This variant is absent from gnomAD v2.1.1

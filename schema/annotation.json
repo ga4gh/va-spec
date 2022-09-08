@@ -27,15 +27,16 @@
                   "$ref": "core.json#/$defs/Extension"
                }
             },
-            "agent": {
+            "contributor": {
                "$ref": "#/$defs/Agent"
             },
             "date": {
                "type": "string",
                "format": "date"
             },
-            "role": {
-               "type": "string"
+            "activity": {
+               "description": "SHOULD describe a concept descending from the Contributor Role Ontology.",
+               "$ref": "core.json#/$defs/Coding"
             }
          },
          "required": [
@@ -69,6 +70,10 @@
             },
             "name": {
                "type": "string"
+            },
+            "subtype": {
+               "description": "A specific type of agent the Agent object represents (e.g. a person, organization,  software agent)",
+               "$ref": "core.json#/$defs/Coding"
             }
          },
          "required": [
@@ -110,9 +115,9 @@
                   }
                ]
             },
-            "method_type": {
-               "type": "string",
-               "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)"
+            "subtype": {
+               "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)",
+               "$ref": "core.json#/$defs/Coding"
             }
          },
          "required": [
@@ -171,7 +176,9 @@
             },
             "type": {
                "type": "string",
-               "description": "The schema class that is instantiated by the data object. Must be the name of a class from  the VA schema."
+               "const": "DataItem",
+               "default": "DataItem",
+               "description": "Must be \"DataItem\""
             },
             "label": {
                "type": "string"
@@ -186,14 +193,6 @@
             "description": {
                "type": "string",
                "description": "A free-text description of the InformationEntity."
-            },
-            "confidence_level": {
-               "description": "A coded term describing the strength of support that the information the statement represents is true.",
-               "$ref": "core.json#/$defs/Coding"
-            },
-            "confidence_score": {
-               "$ref": "#/$defs/DataItem",
-               "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
             },
             "specified_by": {
                "oneOf": [
@@ -231,9 +230,12 @@
             "record_metadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
+            "subtype": {
+               "description": "A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)",
+               "$ref": "core.json#/$defs/Coding"
+            },
             "value": {
-               "type": "string",
-               "description": "The value of the data item"
+               "type": "string"
             },
             "unit": {
                "type": {
@@ -276,14 +278,6 @@
                "type": "string",
                "description": "A free-text description of the InformationEntity."
             },
-            "confidence_level": {
-               "description": "A coded term describing the strength of support that the information the statement represents is true.",
-               "$ref": "core.json#/$defs/Coding"
-            },
-            "confidence_score": {
-               "$ref": "#/$defs/DataItem",
-               "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
-            },
             "specified_by": {
                "oneOf": [
                   {
@@ -323,10 +317,6 @@
             "evidence_level": {
                "description": "A term indicating the overall strength of support for the Statement based on all evidence assessed.",
                "$ref": "core.json#/$defs/Coding"
-            },
-            "evidence_score": {
-               "$ref": "#/$defs/DataItem",
-               "description": "A quantitative score reflecting the overall strength of support for the Statement based on all  evidence assessed."
             },
             "direction": {
                "type": "string",
@@ -377,7 +367,7 @@
                "description": "A descriptor characterizing the condition impacted by the variation."
             },
             "classification": {
-               "description": "The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.",
+               "description": "The conclusion associated with the statement proposition and direction.",
                "$ref": "core.json#/$defs/Coding"
             },
             "target_proposition": {
@@ -416,14 +406,6 @@
             "description": {
                "type": "string",
                "description": "A free-text description of the InformationEntity."
-            },
-            "confidence_level": {
-               "description": "A coded term describing the strength of support that the information the statement represents is true.",
-               "$ref": "core.json#/$defs/Coding"
-            },
-            "confidence_score": {
-               "$ref": "#/$defs/DataItem",
-               "description": "A quantitative score reflecting the degree of confidence that the information  the information entity represents is true."
             },
             "specified_by": {
                "oneOf": [
@@ -465,10 +447,6 @@
                "description": "A term indicating the overall strength of support for the Statement based on all evidence assessed.",
                "$ref": "core.json#/$defs/Coding"
             },
-            "evidence_score": {
-               "$ref": "#/$defs/DataItem",
-               "description": "A quantitative score reflecting the overall strength of support for the Statement based on all  evidence assessed."
-            },
             "target_proposition": {
                "oneOf": [
                   {
@@ -484,7 +462,7 @@
                "description": "The Proposition about which the Statement is made."
             },
             "conclusion": {
-               "description": "The conclusion drawn from the statement proposition, direction, strength, and/or  confidence score.",
+               "description": "The conclusion associated with the statement proposition and direction.",
                "$ref": "core.json#/$defs/Coding"
             },
             "direction": {

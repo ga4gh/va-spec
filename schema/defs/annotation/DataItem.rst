@@ -23,7 +23,7 @@ Some DataItem attributes are inherited from :ref:`Entity`.
    *  - type
       - string
       - 1..1
-      - The schema class that is instantiated by the data object. Must be the name of a class from  the VA schema.
+      - Must be "DataItem"
    *  - label
       - string
       - 0..1
@@ -36,14 +36,6 @@ Some DataItem attributes are inherited from :ref:`Entity`.
       - string
       - 0..1
       - A free-text description of the InformationEntity.
-   *  - confidence_level
-      - `Coding <core.json#/$defs/Coding>`_
-      - 0..1
-      - A coded term describing the strength of support that the information the statement represents is true.
-   *  - confidence_score
-      - :ref:`DataItem`
-      - 0..1
-      - A quantitative score reflecting the degree of confidence that the information  the information entity represents is true.
    *  - specified_by
       - :ref:`Method` | `CURIE <core.json#/$defs/CURIE>`_
       - 0..1
@@ -60,10 +52,14 @@ Some DataItem attributes are inherited from :ref:`Entity`.
       - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
       - 0..1
       - 
+   *  - subtype
+      - `Coding <core.json#/$defs/Coding>`_
+      - 0..1
+      - A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)
    *  - value
       - string
       - 1..1
-      - The value of the data item
+      - 
    *  - unit
       - {'$ref': 'core.json#/$defs/Coding'}
       - 0..1

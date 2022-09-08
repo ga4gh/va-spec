@@ -32,7 +32,7 @@ Some Contribution attributes are inherited from :ref:`Entity`.
       - `Extension <core.json#/$defs/Extension>`_
       - 0..m
       - 
-   *  - agent
+   *  - contributor
       - :ref:`Agent`
       - 0..1
       - 
@@ -40,7 +40,7 @@ Some Contribution attributes are inherited from :ref:`Entity`.
       - string
       - 0..1
       - 
-   *  - role
-      - string
+   *  - activity
+      - `Coding <core.json#/$defs/Coding>`_
       - 0..1
-      - 
+      - SHOULD describe a concept descending from the Contributor Role Ontology.
