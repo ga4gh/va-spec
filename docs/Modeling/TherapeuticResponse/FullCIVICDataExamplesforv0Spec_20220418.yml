@@ -21,51 +21,51 @@
             start: 858
             end: 858
           sequence_id: ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD
-        predicate: 
-          code: ex:001                            # Placeholder code for this predicate - as no code exists in CIViC or community ontologies
-          label: associated_with_sensitivity_to 
-        object:                                   # The Treatment with which the variant is associated with a response to
-          id: civic-term:drug_146          
-          type: TherapeuticIntervention     
-          drug: 
-            - code: CHEBI:61390
-              label: Afatinib            
-        alleleOriginQualifier:                    # A custom qualifier defined in the TherapeuticEfficacyStatement Profile
-          code: GENO:0000882         
-          label: somatic allele origin
-        indicated_condition_qualifier:            # The 'disease' for which the treatment is administered 
-          id: civic-term:disease_8
-          type: GeneticCondition
-          label: Lung Non-small Cell Carcinoma 
-          disease:            
-            - code: doid:3908
-              label: Lung Non-small Cell Carcinoma
-              url: http://www.disease-ontology.org/?id=DOID:3908    
-        subject_descriptor:                       # A Descriptor object that provides additional useful metadata about the subject variant of this statement, which  is not accommodated by its value object representation
-          - id: civic-data:variationdescriptor_33        
-            type: VariationDescriptor
-            value_object_id : ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO         
-            value_object_label: NP_005219.2:p.Leu858Arg      
-            xrefs: [cosmic:COSM6224, clinvar:16609, dbSNP:rs121434568]
-            alternate_label: [EGFR L858R]
-            value_object_expression: 
-              - value: NC_000007.13:g.55259515T>G 
-                system: ghgvs
-              - value: NM_005228.5:c.2573T>G
-                system: chgvs 
-              - value: NP_005219.2:p.Leu858Arg
-                system: phgvs      
-            molecule_context:                      
-              code: SO:0000104               
-              label: polypeptide
-              system: http://purl.obolibrary.org/obo/SO        
-       
+      predicate: 
+        code: ex:001                            # Placeholder code for this predicate - as no code exists in CIViC or community ontologies
+        label: associated_with_sensitivity_to 
+      object:                                   # The Treatment with which the variant is associated with a response to
+        id: civic-term:drug_146          
+        type: TherapeuticIntervention     
+        drug: 
+          - code: CHEBI:61390
+            label: Afatinib            
+      alleleOriginQualifier:                    # A custom qualifier defined in the TherapeuticEfficacyStatement Profile
+        code: GENO:0000882         
+        label: somatic allele origin
+      indicated_condition_qualifier:            # The 'disease' for which the treatment is administered 
+        id: civic-term:disease_8
+        type: GeneticCondition
+        label: Lung Non-small Cell Carcinoma 
+        disease:            
+          - code: doid:3908
+            label: Lung Non-small Cell Carcinoma
+            url: http://www.disease-ontology.org/?id=DOID:3908    
+    subject_descriptor:                       # A Descriptor object that provides additional useful metadata about the subject variant of this statement, which  is not accommodated by its value object representation
+      - id: civic-data:variationdescriptor_33        
+        type: VariationDescriptor
+        value_object_id : ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO         
+        value_object_label: NP_005219.2:p.Leu858Arg      
+        xrefs: [cosmic:COSM6224, clinvar:16609, dbSNP:rs121434568]
+        alternate_label: [EGFR L858R]
+        value_object_expression: 
+          - value: NC_000007.13:g.55259515T>G 
+            system: ghgvs
+          - value: NM_005228.5:c.2573T>G
+            system: chgvs 
+          - value: NP_005219.2:p.Leu858Arg
+            system: phgvs      
+        molecule_context:                      
+          code: SO:0000104               
+          label: polypeptide
+          system: http://purl.obolibrary.org/obo/SO        
+     
     was_specified_by: 
       - id: civic-data:Method_1                   # CIViC curator SOP method that guided curation, interpretation, and scoring of evidence supporting the final TE Statement
         type: Method
         label: CIViC Variant Curation SOP
         reference: 
-          - id: civic_data:source832
+          - id: civic_data:Source_832
             document_type: Publication
             identifier:
               - PMID:31779674    
@@ -73,7 +73,7 @@
         type: Method
         label: AMP-ASCO-CAP Guidelines
         reference: 
-          - id: civic_data:source832
+          - id: civic_data:Source_832
             document_type: Publication
             identifier:
               - PMID:27993330  
@@ -81,14 +81,14 @@
       - code: civic-term:001  
         label: Tier I - Level A             
 
-    has_evidence_from_source:
-      - id: civic-data:source_592     # Duplicates pub already attached to the Study Result - may not want to capture here as well.
+    has_evidence_from_source:         # Shortcut relation used to link Statement directly to any publications cited as providing evidence in EID objects below.
+      - id: civic-data:Source_592     # Duplicates pub already attached to the Study Result - may not want to capture here as well.
         type: Publication   
         identifier:                  
           - pmid:25923549      
       - id: civic-data:document_001   # These are clinical care guidelines, but CIViC treats them as a source of evidence.  May get represented as an Evidence Line/EID?  
         type: Publication
-        label: NCCN Non-Small Cell Lung Cancer Guideline (v3.2018) 
+        title: NCCN Non-Small Cell Lung Cancer Guideline (v3.2018) 
 
     qualified_contribution:
       - id: civic-data:Contrib001                # We assume the submitter of the record is also the curator who made the knowledge level statement, and thus record this agent as the 'creator' of the Statement.  They are also credited as the 'submitter' in a record-level metadata Contribution object. 
@@ -175,6 +175,8 @@
         contributor_role:                      # A role indicating the specific type of Contribution made to the statement
           - code: CRO:0000107
             label: creator role                    
+        start_date: 2016-01-27T00:20:51.218Z
+        end_date: 2016-01-27T00:20:51.218Z  
         organizational_context: clingen-data:affil_4    # Indicates that this specific Contribution was made as a expert panel member for ClinGen (one of many affiliations the Agent has, see above)
 
 
@@ -193,14 +195,14 @@
             type: Method
             label: CIViC Variant Curation SOP
             reference: 
-              - id: civic-data:source_235
+              - id: civic-data:Source_832
                 type: Document   
                 documentType:
                   - code: IAO:0000311
                     label: Publication
                 identifier:         
                   - pmid:31779674
-        qualified_contribution:            #  As above, we assume the submitter of the record is also the curator who generated the information expressed in this EvidenceLine, and thus record this agent as its 'creator'.
+        qualified_contribution:                #  As above, we assume the submitter of the record is also the curator who generated the information expressed in this EvidenceLine, and thus record this agent as its 'creator'.
           - id: civic-data:Contrib101      
             type: Contribution  
             contribution_made_by: 
@@ -212,7 +214,7 @@
                 label: creator role
             start_date: 2016-01-14T20:16:44.813Z
             end_date: 2016-01-14T20:16:44.813Z      
-       has_evidence_item:                     # The clinical trial data/result that was interpreted as evidence in the EvidenceLine
+        has_evidence_item:                      # The clinical trial data/result that was interpreted as evidence in the EvidenceLine
           - id: civic-data:StudyResult001  
             type: StudyResult                  # A StudyResult is a curated, structured summary of a specific set of data generated in a single study   
             study_type: 
@@ -347,8 +349,10 @@
 
 #APPENDICES:
 
-# Simplified the example by making the target proposition of the evidence line the same as that of the root Statement (which is the case 99% of the time).
-# The actual target proposition in this EID record is:
+# Appendix I: The real EID879
+# I simplified the example above by making the target proposition of the evidence line the same as that of the root Statement (which is the case 99% of the time).
+# But the actual target proposition in EID879 is different than the root Statement's asserted proposition (differing only in that the disease object is a subtype of the disease object in the root TE Statement)
+# Below is a representation of the true EID879:
 
 
     has_evidence_line:                         # Only one of the six evidence lines in the source data is included here 
@@ -393,10 +397,12 @@
 
 #---------------------------------
 
-# Additional fields that COULD be defined in a StudyResult specialization, and used to structure individual data items from the result.
- #   studyResultType: ClinicalTrialResult
- #   study_size: 308         
- #   median_PFS_drug: 13.6 months
- #   median_PFS_comparator: 6.9 months
- #   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
- #   p-value: 0.001     
+# Appendix II: a more concise representation of StudyREsult Data Items
+# An implementation could choose to define named fields for each type of data in their specialization of the VA Study Result class, rather than using the more verbose and nested generic structures provided by the Core IM.
+# This might look something like the following for civic-data:StudyResult001:
+   studyResultType: ClinicalTrialResult
+   study_size: 308         
+   median_PFS_drug: 13.6 months
+   median_PFS_comparator: 6.9 months
+   hazard_ratio: 0.47; 95% CI, 0.34 to 0.65
+   p-value: 0.001     

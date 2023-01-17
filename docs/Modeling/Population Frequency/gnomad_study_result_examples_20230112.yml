@@ -1,0 +1,282 @@
+## Source data: https://gnomad.broadinstitute.org/variant/18-28667778-T-C?dataset=gnomad_r2_1
+## Showing data for one variation (18-28667778-T-C) in three incresingly narrow populations (global > NFE > NWE)
+## Note that I condensed the data a bit by making all Codings into simple enums
+
+
+## Approach 1: Separate, stand-alone StudyResult objects for each discrete population in which we want to describe the frequency of a particular variation 
+
+# StudyResult 1: 18-28667778-T-C frequency data for the global population
+- id: cg-data:study_result_001
+  type: StudyResult
+  subtype: Population Allele Frequency Study Result
+  derivedFrom:                  # (partOf?) . . . the full dataset from which data included in the Result was taken (version + ' ', 'non-TOPMed', 'non-cancer','non-neuro', 'controls', ... - see https://gnomad.broadinstitute.org/help/dataset-selection.
+    - id: cg-data:100
+      type: DataSet
+      label: gnomAD v2.1.1 exomes     # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
+      version: 2.1.1       
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37) 
+  studyPopulation: 
+    id: cg-data:pop001
+    type: StudyPopulation
+    label: gnomad global
+    memberCount: ??             # generally useful info, if we can get this?
+    characteristics:
+      - name: ancestry
+        description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+        value: any
+  specifiedBy:           
+    - id: cg-data:007
+      type: Method
+      subtype: Inclusion Criteria
+      label: Gnomad population ascertainment method
+      references:
+        - https://gnomad.broadinstitute.org/help/ancestry
+  methodTypes:                # This is one way we might indicate whether the reported frequency data is based on gneomes and/or exomes
+    - Exome Sequencing
+  dataItems:                 # the set of data items assembled within this StudyResult
+    - id: cg-data:101
+      type: DataItem
+      subtype: Allele Count
+      value: 4
+    - id: cg-data:102
+      type: DataItem
+      subtype: Allele Number
+      value: 251040
+    - id: cg-data:103
+      type: DataItem
+      subtype: Allele Frequency
+      value: 0.00001593
+    - id: cg-data:104
+      type: DataItem
+      subtype: Homozygous Individual Count
+      value: 0
+    - id: cg-data:105   # this DataItem is a piece of metadata about the items above
+      type: DataItem
+      subtype: Max Coverage Depth Exomes
+      value: 79.3
+
+# StudyResult 2: 18-28667778-T-C frequency data for the Non-Finnish European (NFE) subset of the global population
+- id: cg-data:study_result_002
+  type: StudyResult
+  subtype: Population Allele Frequency Study Result
+  derivedFrom:                  # (partOf?) . . . the full dataset from which data in the Result was taken
+    - id: cg-data:100
+      type: DataSet
+      label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
+      version: 2.1.1  
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37)
+  studyPopulation: 
+    id: cg-data:pop002
+    type: StudyPopulation
+    label: gnomad Non-Finnish European
+    memberCount: ??             # generally useful info, if we can get this?
+    isSubsetOf: cg-data:pop001  # the full gnomad study population
+    characteristics:
+      - name: ancestry
+        description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+        value: Non-Finnish European
+  specifiedBy:           
+    - id: cg-data:007
+      type: Method
+      subtype: Inclusion Criteria
+      label: Gnomad population ascertainment method
+      references:
+        - https://gnomad.broadinstitute.org/help/ancestry
+  methodTypes:                # This is one way we might indicate whether the reported frequency data is based on gneomes and/or exomes
+    - Exome Sequencing
+    - Whole Genome Sequencing
+  dataItems:             # the set of data items assembled within this StudyResult
+    - id: cg-data:200
+      type: DataItem
+      subtype: Popmax Allele Filtering Frequency   # QUESTION - does this score only go with the global population StudyResult?
+      value: 0.00001123
+    - id: cg-data:201
+      type: DataItem
+      subtype: Allele Count
+      value: 4
+    - id: cg-data:202
+      type: DataItem
+      subtype: Allele Number
+      value: 113546
+    - id: cg-data:203
+      type: DataItem
+      subtype: Allele Frequency
+      value: 0.00003523
+    - id: cg-data:204
+      type: DataItem
+      subtype: Homozygous Individual Count
+      value: 0
+    - id: cg-data:205   # this DataItem is a piece of metadata about the items above
+      type: DataItem
+      subtype: Max Coverage Depth Exomes
+      value: 79.3
+
+# StudyResult 3: 18-28667778-T-C frequency data for the Non-western European subset of the NFE population
+- id: cg-data:study_result_003
+  type: StudyResult
+  subtype: Population Allele Frequency Study Result
+  derivedFrom:             # (partOf?) the full dataset from which data in the Result was taken
+    - id: cg-data:100
+      type: DataSet
+      label: gnomAD v2
+      version: 2.1.1  
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37) 
+  studyPopulation: 
+    id: cg-data:pop003
+    type: StudyPopulation
+    label: gnomad North-western European
+    memberCount: ??
+    isSubsetOf: cg-data:pop002
+    characteristics:
+      - name: ancestry
+        description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+        value: North-western European
+  specifiedBy:           
+    - id: cg-data:007
+      type: Method
+      subtype: Inclusion Criteria
+      label: Gnomad population ascertainment method
+      references:
+        - https://gnomad.broadinstitute.org/help/ancestry
+  methodTypes:                # This is one way we might indicate whether the reported frequency data is based on gneomes and/or exomes
+    - Exome Sequencing
+    - Whole Genome Sequencing
+  dataItems:             # the set of data items assembled within this StudyResult
+    - id: cg-data:300
+      type: DataItem
+      subtype: Popmax Allele Filtering Frequency
+      value: 0.00001123
+    - id: cg-data:301
+      type: DataItem
+      subtype: Allele Count
+      value: 43
+    - id: cg-data:302
+      type: DataItem
+      subtype: Allele Number
+      value: 42108
+    - id: cg-data:303
+      type: DataItem
+      subtype: Allele Frequency
+      value: 0.00007125
+    - id: cg-data:304
+      type: DataItem
+      subtype: Homozygous Individual Count
+      value: 0
+    - id: cg-data:305   # this DataItem is a piece of metadata about the items above
+      type: DataItem
+      subtype: Max Coverage Depth Exomes
+      value: 79.3
+
+
+ StudyResult 4: 18-28667778-T-C frequency data for the femal Non-Finnish European (NFE) subset of the global population only
+- id: cg-data:study_result_002
+  type: StudyResult
+  subtype: Population Allele Frequency Study Result
+  derivedFrom:                  # (partOf?) . . . the full dataset from which data in the Result was taken
+    - id: cg-data:100
+      type: DataSet
+      label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
+      version: 2.1.1  
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37)
+  studyPopulation: 
+    id: cg-data:pop002
+    type: StudyPopulation
+    label: gnomad Non-Finnish European
+    memberCount: ??             # generally useful info, if we can get this?
+    isSubsetOf: cg-data:pop001  # the full gnomad study population
+    characteristics:
+      - name: ancestry
+        description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+        value: Non-Finnish European
+      - name: biological sex
+        description: genetically defined biological sex of the individual (e.g. XX, XY, XXY, etc).
+        value: XX
+  specifiedBy:           
+    - id: cg-data:007
+      type: Method
+      subtype: Inclusion Criteria
+      label: Gnomad population ascertainment method
+      references:
+        - https://gnomad.broadinstitute.org/help/ancestry
+  methodTypes:                # This is one way we might indicate whether the reported frequency data is based on gneomes and/or exomes
+    - Exome Sequencing
+    - Whole Genome Sequencing
+  dataItems:             # the set of data items assembled within this StudyResult
+    - id: cg-data:200
+      type: DataItem
+      subtype: Popmax Allele Filtering Frequency
+      value: 0.00001123
+    - id: cg-data:201
+      type: DataItem
+      subtype: Allele Count
+      value: 1
+    - id: cg-data:202
+      type: DataItem
+      subtype: Allele Number
+      value: 50028
+    - id: cg-data:203
+      type: DataItem
+      subtype: Allele Frequency
+      value: 0.00001999
+    - id: cg-data:204
+      type: DataItem
+      subtype: Homozygous Individual Count
+      value: 0
+    - id: cg-data:205   # this DataItem is a piece of metadata about the items above
+      type: DataItem
+      subtype: Max Coverage Depth Exomes
+      value: 79.3
+
+
+
+## ------------------------------------------------------------------------------------##
+
+
+## Approach 2: Hierarchically organized StudyResults grouped under larger populations and expanding down into subpopulations.
+
+
+
+
+
+
+
+
+
+# -------------------------------------------------------------------------------------##
+
+## Populations
+
+- id: cg-data:pop001
+  type: StudyPopulation
+  label: gnomad global
+  memberType: organism
+  memberTaxon: homo sapiens
+  memberCount: ??
+  characteristics:
+    - name: ancestry
+      description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+      value: any
+
+  id: cg-data:pop002
+  type: StudyPopulation
+  label: gnomad Non-Finnish European
+  memberType: organism
+  memberTaxon: homo sapiens
+  memberCount: ??
+  isSubsetOf: cg-data:pop001
+  characteristics:
+    - name: ancestry
+      description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+      value: Non-Finnish European
+
+  id: cg-data:pop003
+  type: StudyPopulation
+  label: gnomad North-western European
+  memberType: organism
+  memberTaxon: homo sapiens
+  memberCount: ??
+  isSubsetOf: cg-data:pop002
+  characteristics:
+    - name: ancestry
+      description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
+      value: North-western European

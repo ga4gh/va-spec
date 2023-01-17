@@ -65,6 +65,7 @@ conclusion:
   label: Likely Pathogenic                                  
   type: Coding                                
 
+<<<<<<< Updated upstream
 ## Likely Benign (cconfidence direction + level gives a statement that reads "Proposition X is 'likely' 'false'")
 confidence_direction: false
 confidence_level: 
@@ -75,6 +76,13 @@ conclusion:
   id: LN:LN12311-2                                   
   label: Likely Benign                                  
   type: Coding      
+=======
+specified_by:                                   # slot name changed from 'method' to match VA name
+  id: cspec:123134
+  label: Clingen BrainMalform ACMG Specifications v1
+  type: Method  
+  is_reported_in: pmid:1231231231
+>>>>>>> Stashed changes
 
 ##  Benign (confidence direction + level gives a statement that reads "Proposition X is 'definitiely' 'false'")
 confidence_direction: false
