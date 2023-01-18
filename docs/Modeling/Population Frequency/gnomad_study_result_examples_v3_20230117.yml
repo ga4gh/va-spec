@@ -1,8 +1,8 @@
 # GKS-based Representation of gnomAD Population Allele Frequency Data
 # Allele record used in data examples: https://gnomad.broadinstitute.org/variant/1-55505485-G-A
 # VA-SEPIO based proposals leverage the VA-SEPIO 'StudyResult' Class.
-# This class is specialized to create two subclasses for representing different subsets of gnomAD data:
-   # I.  PopmaxFilteringAlleleFrequencyStudyReuslt: holds the calculated Popmax Filtering AF for the variant, along with some provenance metadata
+# This class gets specialized to create two subclasses for representing different types of gnomAD data about a particular variant:
+   # I.  PopmaxFilteringAlleleFrequencyStudyReuslt: holds the calculated Popmax Filtering AF for the variant, along with some metadata/provenance info
    # II. PopulationAlleleFrequencyStudyResult: holds more foundational allele count and frequency data for specified populations/subpopulations in the gnomAD dataset
 
 # The approach proposed here exhibits the following features:
@@ -19,6 +19,7 @@
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
       version: 2.1.1       
+
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
   studyPopulation: 
     id: cg-data:pop001
@@ -37,8 +38,8 @@
         - https://gnomad.broadinstitute.org/help/ancestry
   methodTypes:                # This is one way we might indicate whether the reported frequency data is based on genomes and/or exomes
     - Exome Sequencing
-  popmaxFilterAlleleFrequency95CI: 0.01937  #  The 95%CI means that the score they report is the upper bound of a 95% CI around the true calculated popmax filtering AF calculation.  There is no actual CI around the reported score that we want to show. 
-  popmaxFilterAlleleFrequency99CI: 0.01378  #  The 99%CI version of the score will be a bit smaller - as the  99% CI is smaller, so its upper bound will be smaller (closer to the actual calculated popmax score)
+  popmaxFilterAlleleFrequency95CI: 0.01937  # The 95%CI means that the score they report is the upper bound of a 95% CI around the true calculated popmax filtering AF calculation.  There is no actual CI around the reported score that we want to show. 
+  popmaxFilterAlleleFrequency99CI: 0.01378  # The 99%CI version of the score will be a bit smaller - as the  99% CI is smaller, so its upper bound will be smaller (closer to the actual calculated popmax score)
   popmaxBasisPopulation:      # Proposing how we might represent specific types of provenance information that describes how the score was calculated. Need to understand the method beter first. 
     - AFR                     # Here, we assume the calculation is based on the AFR superpopulation, in which the allele frequencyis highest
   popmaxExcludedPopulations:  # How it might look to explicitly report populations not considered in the calculation
@@ -95,7 +96,7 @@
       label: Gnomad population ascertainment method
       references:
         - https://gnomad.broadinstitute.org/help/ancestry
-  methodTypes:                # This is one way we might indicate whether the reported frequency data is based on genomes and/or exomes
+  methodTypes:                    # This is one way we might indicate whether the reported frequency data is based on genomes and/or exomes
     - Exome Sequencing
     - Whole Genome Sequencing
   alleleCount: 577
