@@ -14,7 +14,7 @@
 ## Scenario 1. A StudyResult showing the 95% CI filtering AF score for the 1-55505485-G-A allele, based on exome data from the global gnomAD v2.1.1 dataset (i.e. all ancestries, 141,456 samples)
 ## Scenario 2. A StudyResult showing the **99% CI** filtering AF score, based on exome data from the gnomAD v2.1.1 dataset 
 ## Scenario 3. A StudyResult showing the *true* allele frequency for the 1-55505485-G-A allele, based on exome and genome data from subjects of any ancestry in the 'non-cancer' subset of gnomAD 2.1.1  
-## Scenario 4. A StudyResult showing the *true* allele frequency for the 1-55505485-G-A allele, based on exome data from NFE females in the *control* subset of gnomAD v2.1.1 data (all ancestries, 60,146  samples)
+## Scenario 4. A StudyResult showing the *true* allele frequency for the 1-55505485-G-A allele, based on exome data from NFE female subjects in the *control* subset of gnomAD v2.1.1 data
 
 
 #-----------------------------------------------------------------------------------------------#
@@ -153,6 +153,7 @@
     id: cg-data:Pop003
     type: Population
     label: gnomAD v2.1.1 global, non-cancer           
+    isSubsetOf: cg-data:Pop001         # The global gnomad 2.1.1 population that the non-cancer subpopulation is a subset of (we could declare this populaiton to be a subset of many other populaitons - implementations should define conventions for how to do this in the most useful way for a given use case, considering the transitivity of the subset relationship)
     characteristics:             # Under the current proposal, study subject info captured in a Population object here would include ancestry (global) and cancer status. 
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
@@ -207,7 +208,7 @@
     id: cg-data:Pop004                 # The Population captures the fact that the results reported here are based on data from the female NFE subpopulation. IMO we should also include the control status of individual participants here.  But we can also leave it in the source Dataset as this is how gnomAD captures this info.
     type: Population
     label: gnomad v2  Non-Finnish European Females, Control
-    isSubsetOf: cg-data:Pop002         # The NFE population that the control female subpopulation is a subset of.
+    isSubsetOf: cg-data:Pop002         # The total NFE population that the control female subpopulation is a subset of 
     characteristics:
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
@@ -215,7 +216,7 @@
       - name: biological_sex
         description: genetically defined biological sex of the individual (e.g. XX, XY, XXY, etc).
         value: XX
-      - name: research_study_role      # Capturing this info here because it is a characteristic of the individuals in the study population. The source dataset above also happens to reflect this 'control' status, but fundamentally it belongs here because it is an attribute of a study participant.
+      - name: research_study_role      # Capturing this info here because it is a characteristic of the individuals in the study population. The source dataset above also happens to reflect this 'control' status, but fundamentally it belongs here because it is an attribute of a study participant (a role they play in the study).
         description: role the individual played in a disease study in which they participated
         values: 
           - control
