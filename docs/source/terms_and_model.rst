@@ -110,7 +110,26 @@ subclass <utilityvariation>`. Types of variation are widely varied, and
 there are several :ref:`planned-variation` currently under consideration
 to capture this diversity.
 
-.. include:: defs/Variation.rst
+**Information Model**
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+   
+   *  - Field
+      - Type
+      - Limits
+      - Description
+   *  - _id
+      - :ref:`CURIE`
+      - 0..1
+      - Variation Id. MUST be unique within document.
+   *  - type
+      - string
+      - 1..1
+      - The Variation class type. MUST match child class type.
 
 .. _MolecularVariation:
 
