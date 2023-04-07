@@ -5,6 +5,6 @@ Data Examples
    :maxdepth: 2
    :includehidden:
 
-  clinvar-pathogenicity
+  clingen-pathogenicity-scv
   civic-therapeutic-efficacy
   cellbase-molecular-consequence
