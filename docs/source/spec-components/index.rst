@@ -3,6 +3,20 @@ Specification Components
 
 The VA Specification is comprised of four key components:
 
+
+1. :ref:`domain-analysis-model`: A conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
+
+   * Provides a foundational terminology and understanding of the domain, and shared perspective from which to approach data creation and modeling tasks 
+    
+1. :ref:`domain-analysis-model`: A conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
+     Provides a foundational terminology and understanding of the domain, and shared perspective from which to approach data creation and modeling tasks 
+    
+    
+    
+# :ref:`domain-analysis-model`: A conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
+    Provides a foundational terminology and understanding of the domain, and shared perspective from which to approach data creation and modeling tasks 
+
+
 1. **Domain Analysis Model:**  A conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
     
     Provides a foundational terminology and understanding of the domain, and shared perspective from which to approach data creation and modeling tasks 
