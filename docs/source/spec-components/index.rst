@@ -43,11 +43,10 @@ The VA Specification is comprised of four key components:
  `Profile Catalog <https://va-ga4gh.readthedocs.io/en/latest/spec-components/profile-catalog.html>`__
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
  
-   * A repository of sharable and extensible Profiles, including *Implementation Profiles* tailoired for a specific data systems, and *GA4GH Standard Profiles* for broader community use. 
    * Provides examples of the Profiling proces, and facilitates coordinated development of models by enabling implementers to re-use and build on existing work.  
 
 `Reference Implementation <https://va-ga4gh.readthedocs.io/en/latest/spec-components/reference-implementation.html>`__
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
    * A library of software and services that demonstrate the creation, validation, and exchange of standards compliant data. 
    * Provides implementers with working code to apply or adapt for their applications
