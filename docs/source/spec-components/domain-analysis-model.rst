@@ -21,21 +21,21 @@ Domain Analysis Model
       - Q1 2024
       - Revised version taking into account new feedback and requirements
       
-Overview
-@@@@@@@@
 
 The VA Domain Analysis Model (DAM) is specified here as a UML-style Activity model which depicts the universal activities performed in generating and encoding evidence-based knowledge of any kind. It provides shared foundational understanding of the domain the Core Information Model aims to represent.  As an objective view of reality, it provides a common perspective from which to approach application of the VA Framework - where it can help guide requirements analysis, inform definition of VA Proifiles, and aid in mapping source data to a VA-compliant representation.
 
 
 .. figure:: ../images/dam.png
 
-   The VA Domain analysis Model
+  The VA Domain Analysis Model
   
-   **Legend**  Each lane represents one of the five universal 
-   tasks that contribute to geenration and encoding of scientific knowledge. Grey boxes name the 
-   task, and arrows and images describe the inouts and outputs of each. At the left of each lane 
-   are the roles played by actors in the process, which may be performed by the same or different 
-   actors depending on how the full knowledge creation process unfolds. 
+   **Legend**  The VA Domain Analysis Model: Each lane represents one of 
+   the five universal  tasks that contribute to geenration and encoding 
+   of scientific knowledge. Grey boxes name the task, and arrows and 
+   images describe the inouts and outputs of each. At the left of each 
+   lane    are the roles played by actors in the process, which may be 
+   performed by the same or different actors depending on how the full 
+   knowledge creation process unfolds. 
 
 
 **Table 1** below describes each of the five universal tasks depicted in the DAM.
