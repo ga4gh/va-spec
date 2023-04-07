@@ -40,7 +40,7 @@ The VA Specification is comprised of four key components:
    * A domain-agnostic information model for structuring knowledge statements and their supporting evidence and provenance.
    * Provides the foundation on which to build ‘Profiles’ that specialize the Core IM for specific statement types or data applications. 
   
-`Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/spec-components/core-im.html>`__
+`Profile Catalog <https://va-ga4gh.readthedocs.io/en/latest/spec-components/profile-catalog.html>`__
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
  
    * A repository of sharable and extensible Profiles, including *Implementation Profiles* tailoired for a specific data systems, and *GA4GH Standard Profiles* for broader community use. 
