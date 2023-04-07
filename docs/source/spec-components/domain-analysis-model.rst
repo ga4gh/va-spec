@@ -35,7 +35,8 @@ The VA Domain Analysis Model (DAM) is specified here as a UML-style Activity mod
    are the roles played by actors in the process, which may be performed by the same or different 
    actors depending on how the full knowledge creation process unfolds. 
 
-  **Table 1** below describes each of the five universal tasks depicted in the DAM.
+
+**Table 1** below describes each of the five universal tasks depicted in the DAM.
 
 .. list-table::
    :class: clean-wrap
