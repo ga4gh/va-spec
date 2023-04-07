@@ -12,7 +12,7 @@ variation.
    :includehidden:
 
    introduction
-   specification-components/index
+   spec-components/index
    terms_and_model
    schema
    impl-guide/index
