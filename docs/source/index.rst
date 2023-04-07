@@ -13,6 +13,9 @@ variation.
 
    introduction
    spec-components/index
+   implementation-support/index
+   data-examples/index
+   
    terms_and_model
    schema
    impl-guide/index
