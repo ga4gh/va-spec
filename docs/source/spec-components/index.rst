@@ -25,6 +25,6 @@ The VA Specification is comprised of four key components:
    domain-analysis-model
    core-im
    profile-catalog
-   reference-implementations
+   reference-implementation
   
 
