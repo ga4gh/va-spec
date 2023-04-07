@@ -3,6 +3,9 @@ Specification Components
 
 The VA Specification is comprised of four key components:
 
+:ref:`core-im`: test
+
+:ref:`domain-analysis-model`: test
 
 1. :ref:`domain-analysis-model`: A conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
 
@@ -41,7 +44,7 @@ The VA Specification is comprised of four key components:
      Provides implementers with working code to apply or adapt for their applications
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    domain-analysis-model
    core-im
