@@ -20,12 +20,3 @@ The VA Specification is comprised of four key components:
 
    * Provides implementers with working code to apply or adapt for their applications
 
-.. toctree::
-   :maxdepth: 1
-
-   domain-analysis-model
-   core-im
-   profile-catalog
-   reference-implementation
-  
-
