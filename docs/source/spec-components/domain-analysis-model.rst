@@ -29,7 +29,9 @@ The VA Domain Analysis Model (DAM) is specified here as a UML-style Activity mod
 
 .. figure:: ../images/dam.png
 
-   **Figure 1:** The VA Domain analysis Model: Each lane represents one of the five universal 
+   The VA Domain analysis Model
+  
+   **Legend**  Each lane represents one of the five universal 
    tasks that contribute to geenration and encoding of scientific knowledge. Grey boxes name the 
    task, and arrows and images describe the inouts and outputs of each. At the left of each lane 
    are the roles played by actors in the process, which may be performed by the same or different 
