@@ -29,11 +29,11 @@ definitions:
   # Core classes include those used to represent Statements and their supporting
   # evidence and provenance information. These will live permanently in the Core IM.
   #
-  # Fnally, Domain Entity classes representing entities in a particular domain, about
-  # which statements are made and evidence is collected. These are defined in a 
-  # separate domain-entities-source.yaml file, and referenced as needed from 
-  # domain-specific Profiles of the Core IM.  They too will ultimately live in
-  # a shared GKSfoundation model.
+  # Domain Entity classes representing entities/concepts in a particular domain 
+  # awhere the Core IM is applied are defined in a separate file
+  # (domain-entities-source.yaml), and referenced as needed from domain-specific 
+  # Profiles of the Core IM.  They too will ultimately live in a shared GKS 
+  # foundation model.
 
 
 
