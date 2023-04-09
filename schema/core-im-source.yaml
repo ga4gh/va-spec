@@ -13,25 +13,27 @@ title: "GA4GH-VA-Core-IM-Definitions"
 type: object
 
 definitions:
-  # Core IM class definitions are presented top-down, rotted at an abstract
+  # Core IM class definitions are presented top-down, rooted at an abstract
   # 'Element' class from which all other classes in the model inherit. 
-  # Class definitions are  organized into four sections: 
+  # Class definitions are organized into three sections: 
   #
   # Common classes are generic classes that will ultimately be moved into a shared 
   # GKS foundation model, and imported into the VA Core IM schema here. These 
-  # include Element and Entity classes. 
+  # include 'Element' and 'Entity' classes. 
   #
-  # Utility classes include complex datatype-like objects that provide re-usable 
-  # collections of fields that can be plugged into other objects to hold related 
+  # Utility classes resemble 'complex datatypes', and provide re-usable collections
+  # of fields that can be plugged into other objects to hold specific types of 
   # information. Some/all of these may also eventually live in a shared GKS
-  # foundation model 
+  # foundation model.
   #
-  # Core Classes include classes used to represent Statements and their supporting
+  # Core classes include those used to represent Statements and their supporting
   # evidence and provenance information. These will live permanently in the Core IM.
   #
-  # Domain Entity classes represent entities in the domain of discourse about which 
-  # statements are made. These will also ultimately live in a shared GKS 
-  # foundational model - but for now are defined in the Core IM schema itself.
+  # Fnally, Domain Entity classes representing entities in a particular domain, about
+  # which statements are made and evidence is collected. These are defined in a 
+  # separate domain-entities-source.yaml file, and referenced as needed from 
+  # domain-specific Profiles of the Core IM.  They too will ultimately live in
+  # a shared GKSfoundation model.
 
 
 
@@ -39,18 +41,32 @@ definitions:
   # Common Classes
   # =============================================================================
 
+   # Element
 
 
-
+   # Entity
 
 
   # =============================================================================
   # Core Classes
   # =============================================================================
   
+  # Information Entity
   
   
+  # Statement
   
+  
+  # Method
+  
+  
+  # Document
+  
+  
+  # Evidence Line
+  
+  
+  # Study Result
   
   
   # =============================================================================
@@ -58,10 +74,26 @@ definitions:
   # =============================================================================
   
   
+  # Coding
+  
+  
+  
+  # Expression
+  
+  
+  
+  # Extension
+  
+  
+  
+  # RecordMetadata
   
   
   
   
-  # =============================================================================
-  # Domain Entity Classes
-  # =============================================================================
+  
+  # Population
+  
+  
+
+ 
