@@ -19,14 +19,6 @@ Tools, processes, and formal guidance to facilitate adoption of the VA Modeling 
    * Definition and supporting infrastructure for processes through which GA4GH standards emerge from implementation models through collaboration and community consensus.
 
 
-Guidance and tooling support for generating implementation models and community standards using the VA-Specification Framework.  
+This minimal list will be expanded in the near future with additioanl guidance and tooling support for generating implementation models and community standards using the VA-Specification Framework.  
 
 
-.. toctree::
-   :maxdepth: 2
-   :includehidden:
-
-   profiling-methodology
-   sandbox
-   standards-process
- 
