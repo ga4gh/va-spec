@@ -9,8 +9,7 @@ laboratories — is an modeling framework of processes and formal specifications
 exchange of variation knowledge. It consistens of four primary components, and several supporting 
 resources guiding their implementation.
 
-Specifiction Components:
-########################
+**Specifiction Components**
 
 1. **Domain Analysis Model:** a conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
    
@@ -22,8 +21,7 @@ Specifiction Components:
 4. **Reference Implementation:** a library of software and services that demonstrate the creation, validation, and exchange of standards compliant data. 
 
 
-Implementation Support:
-#######################
+**Implementation Support**
 
 1. **Profiling Methodology:** detailed  guidance and tools for executing the profiling process to produce implementaton profiles and application models.
 
