@@ -20,3 +20,13 @@ Tools, processes, and formal guidance to facilitate adoption of the VA Modeling 
 
 
 Guidance and tooling support for generating implementation models and community standards using the VA-Specification Framework.  
+
+
+.. toctree::
+   :maxdepth: 2
+   :includehidden:
+
+   profiling-methodology
+   sandbox
+   standards-process
+ 
