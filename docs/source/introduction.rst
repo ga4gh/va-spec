@@ -16,7 +16,7 @@ resources guiding their implementation.
 2. **Core Information Model:** a domain-agnostic information model for structuring knowledge statements and their supporting evidence and provenance.
    * Provides the foundation on which to build ‘Profiles’ that specialize the Core IM for specific statement types or data applications. 
   
-3. **Profile Catalog:** a repository of sharable and extensible Profiles, including *Implementation Profiles* tailoired for a specific data systems, and *GA4GH Standard Profiles* for broader community use. 
+3. **Profile Catalog:** A repository of sharable and extensible Profiles, including *Implementation Profiles* tailored for specific data systems, and *GA4GH Standard Profiles* for broader community use.  
  
 4. **Reference Implementation:** a library of software and services that demonstrate the creation, validation, and exchange of standards compliant data. 
 
