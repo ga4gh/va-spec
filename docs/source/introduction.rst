@@ -6,11 +6,8 @@ that clinicians, researchers, and testing laboratories to widely and reliably ex
 variation data and knowledge. The Variant Annotation Specifiction (VA-Spec) — written by a partnership
 of national information resource providers, major public initiatives, and diagnostic testing
 laboratories — is an modeling framework of processes and formal specifications to standardize the 
-exchange of variation knowledge.
-
-Here we document the primary components of the VA-Spec Framework, and key resources guiding their 
-application toward developing data models and community standards.
-
+exchange of variation knowledge. It consistens of four primary components, and several supporting 
+resources guiding their implementation.
 
 Specifiction Components:
 ########################
