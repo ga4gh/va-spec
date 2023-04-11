@@ -16,7 +16,7 @@ Tools, processes, and formal guidance to facilitate adoption of the VA Modeling 
 `3. Standards Development Process <https://va-ga4gh.readthedocs.io/en/latest/implementation-support/standards-process.html>`__
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
  
-   * A formally defined process through which GA4GH standards emerge from implementation models through collaboration and community consensus.
+   * A formally defined process through which GA4GH standards emerge from implementation models through community collaboration and consensus.
 
 
 This minimal list will be expanded in the near future with additioanl guidance and tooling support for generating implementation models and community standards using the VA-Specification Framework.  
