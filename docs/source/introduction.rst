@@ -11,11 +11,10 @@ resources guiding their implementation.
 
 **Specifiction Components**
 
-1. **Domain Analysis Model:** a conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation
+1. **Domain Analysis Model:** a conceptual framework for understanding the processes and participants involved in evidence-based knowledge generation.
    
 2. **Core Information Model:** a domain-agnostic information model for structuring knowledge statements and their supporting evidence and provenance.
-   * Provides the foundation on which to build ‘Profiles’ that specialize the Core IM for specific statement types or data applications. 
-  
+   
 3. **Profile Catalog:** A repository of sharable and extensible Profiles, including *Implementation Profiles* tailored for specific data systems, and *GA4GH Standard Profiles* for broader community use.  
  
 4. **Reference Implementation:** a library of software and services that demonstrate the creation, validation, and exchange of standards compliant data. 
@@ -23,14 +22,14 @@ resources guiding their implementation.
 
 **Implementation Support**
 
-1. **Profiling Methodology:** detailed  guidance and tools for executing the profiling process to produce implementaton profiles and application models.
+1. **Profiling Methodology:** guidance and tools for executing the profiling process to produce implementaton profiles and application models.
 
 2. **Implementation Sandbox:** a community testbed for defining, adapting, and sharing implementation profiles.
 
-3. **Standards Development Process:** a formally defined process through which GA4GH standards emerge from implementation models through collaboration and community consensus.
+3. **Standards Development Process:** a formally defined process through which GA4GH Standard Profiles evolve from implementation models through collaboration and community consensus.
 
 
 The machine readable schema definitions and example code are available online at the va-spec
 repository (https://github.com/ga4gh/va-spec) (coming soon).
 
-Readers may wish to view some examples of framework implementationa nd data mdoels before reading the specification (coming soon).
+Readers may wish to view some examples of framework implementation and data models before reading the specification (coming soon).
