@@ -1,0 +1,49 @@
+#### Example 1: https://gnomad.broadinstitute.org/variant/1-55051215-G-GA?dataset=gnomad_r3
+- id: gnomad3:1-55051215-G-GA
+  type: PopulationAlleleFrequency
+  label: Overall Population Allele Frequency for 1-55051215-G-GA
+  derivedFrom:
+    - id: gnomad3.1.2
+      type: DataSet
+      label: gnomAD v3.1.2
+      version: 3.1.2
+  focusAllele: ga4gh:VA.12345   # Made-up id for 1-55051215-G-GA (GRCh38)
+  focusAlleleCount: 728
+  totalAlleleCount: 152206
+  alleleFrequency: 0.004783
+  otherResults:
+    popmax95: # Popmax Filtering AF (95% confidence)
+      frequency: 0.01548
+      max_population: 1-55051215-G-GA.AFR
+    homozygotes: 9 # Number of Homozygotes
+    meanDepth: 32.8 # Mean depth of coverage
+  subpopulationFrequency:
+    - id: 1-55051215-G-GA.AFR
+      type: PopulationAlleleFrequency
+      label: African/African American Population Allele Frequency for 1-55051215-G-GA
+      focusAlleleCount: 684
+      totalAlleleCount: 41446
+      alleleFrequency: 0.01650
+      otherResults:
+        homozygotes: 9 # Number of Homozygotes
+      subpopulationFrequency:
+        - id: 1-55051215-G-GA.AFR.XX
+          label: African/African American XX Population Allele Frequency for 1-55051215-G-GA
+          focusAlleleCount: 370
+          totalAlleleCount: 22150
+          alleleFrequency: 0.01670
+          otherResults:
+            homozygotes: 7 # Number of Homozygotes
+        - id: 1-55051215-G-GA.AFR.XY
+          label: African/African American XY Population Allele Frequency for 1-55051215-G-GA
+          focusAlleleCount: 314
+          totalAlleleCount: 19296
+          alleleFrequency: 0.01627
+          otherResults:
+            homozygotes: 2 # Number of Homozygotes
+    - id: 1-55051215-G-GA.LAT
+      type: PopulationAlleleFrequency
+      label: Latino/Admixed American Population Allele Frequency for 1-55051215-G-GA
+      focusAlleleCount: 27
+      totalAlleleCount: 15276
+      alleleFrequency: 0.001767
