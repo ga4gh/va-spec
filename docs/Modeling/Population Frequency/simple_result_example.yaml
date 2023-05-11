@@ -15,7 +15,7 @@
   ancillaryResults:
     popMaxFAF95: # Popmax Filtering AF (95% confidence)
       frequency: 0.01548
-      ci: 0.95
+      confidenceInterval: 0.95
       popFreqId: 1-55051215-G-GA.AFR
     homozygotes: 9 # Number of Homozygotes
     meanDepth: 32.8 # Mean depth of coverage
@@ -53,3 +53,5 @@
       locusAlleleCount: 15276
       population: gnomad3:AFR.LAT
       alleleFrequency: 0.001767
+      ancillaryResults:
+        homozygotes: 0 # Number of Homozygotes
