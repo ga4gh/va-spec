@@ -1,79 +1,104 @@
-[
-  {
-    "id": "gnomad3:1-55051215-G-GA",
-    "type": "PopulationAlleleFrequency",
-    "label": "Overall Population Allele Frequency for 1-55051215-G-GA",
-    "derivedFrom": [
-      {
-        "id": "gnomad3.1.2",
-        "type": "DataSet",
-        "label": "gnomAD v3.1.2",
-        "version": "3.1.2"
-      }
-    ],
-    "focusAllele": "ga4gh:VA.12345",
-    "focusAlleleCount": 728,
-    "locusAlleleCount": 152206,
-    "alleleFrequency": 0.004783,
-    "population": "gnomad3:global",
-    "ancillaryResults": {
-      "popMaxFAF95": {
-        "frequency": 0.01548,
-        "confidenceInterval": 0.95,
-        "popFreqId": "1-55051215-G-GA.AFR"
-      },
-      "homozygotes": 9,
-      "meanDepth": 32.8
-    },
-    "subpopulationFrequency": [
-      {
-        "id": "1-55051215-G-GA.AFR",
-        "type": "PopulationAlleleFrequency",
-        "label": "African/African American Population Allele Frequency for 1-55051215-G-GA",
-        "focusAlleleCount": 684,
-        "locusAlleleCount": 41446,
-        "alleleFrequency": 0.0165,
-        "population": "gnomad3:AFR",
-        "ancillaryResults": {
-          "homozygotes": 9
+{
+  "id": "gnomad3:1-55051215-G-GA",
+  "type": "PopulationAlleleFrequency",
+  "label": "Overall Population Allele Frequency for 1-55051215-G-GA",
+  "derivedFrom": {
+    "id": "gnomad3.1.2",
+    "type": "DataSet",
+    "label": "gnomAD v3.1.2",
+    "version": "3.1.2"
+  },
+  "focusAllele": {
+    "_id": "ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S",
+    "location": {
+      "_id": "ga4gh:VSL.InpKcN9eiYwJ2voGoMTySZ3bdsiNem1o",
+      "interval": {
+        "end": {
+          "type": "Number",
+          "value": 55051215
         },
-        "subpopulationFrequency": [
-          {
-            "id": "1-55051215-G-GA.AFR.XX",
-            "label": "African/African American XX Population Allele Frequency for 1-55051215-G-GA",
-            "focusAlleleCount": 370,
-            "locusAlleleCount": 22150,
-            "alleleFrequency": 0.0167,
-            "population": "gnomad3:AFR.XX",
-            "ancillaryResults": {
-              "homozygotes": 7
-            }
-          },
-          {
-            "id": "1-55051215-G-GA.AFR.XY",
-            "label": "African/African American XY Population Allele Frequency for 1-55051215-G-GA",
-            "focusAlleleCount": 314,
-            "locusAlleleCount": 19296,
-            "alleleFrequency": 0.01627,
-            "population": "gnomad3:AFR.XY",
-            "ancillaryResults": {
-              "homozygotes": 2
-            }
-          }
-        ]
+        "start": {
+          "type": "Number",
+          "value": 55051215
+        },
+        "type": "SequenceInterval"
       },
-      {
-        "id": "1-55051215-G-GA.LAT",
-        "type": "PopulationAlleleFrequency",
-        "label": "Latino/Admixed American Population Allele Frequency for 1-55051215-G-GA",
-        "focusAlleleCount": 27,
-        "locusAlleleCount": 15276,
-        "population": "gnomad3:AFR.LAT",
-        "alleleFrequency": 0.001767,
-        "ancillaryResults": {
-          "homozygotes": 0
+      "sequence_id": "ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+      "type": "SequenceLocation"
+    },
+    "state": {
+      "sequence": "A",
+      "type": "LiteralSequenceExpression"
+    },
+    "type": "Allele"
+  },
+  "focusAlleleCount": 728,
+  "locusAlleleCount": 152206,
+  "alleleFrequency": 0.004783,
+  "population": "gnomad3:global",
+  "ancillaryResults": {
+    "popMaxFAF95": {
+      "frequency": 0.01548,
+      "confidenceInterval": 0.95,
+      "popFreqId": "1-55051215-G-GA.AFR"
+    },
+    "homozygotes": 9,
+    "meanDepth": 32.8
+  },
+  "subpopulationFrequency": [
+    {
+      "id": "1-55051215-G-GA.AFR",
+      "type": "PopulationAlleleFrequency",
+      "label": "African/African American Population Allele Frequency for 1-55051215-G-GA",
+      "focusAllele": "ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S",
+      "focusAlleleCount": 684,
+      "locusAlleleCount": 41446,
+      "alleleFrequency": 0.0165,
+      "population": "gnomad3:AFR",
+      "ancillaryResults": {
+        "homozygotes": 9
+      },
+      "subpopulationFrequency": [
+        {
+          "id": "1-55051215-G-GA.AFR.XX",
+          "type": "PopulationAlleleFrequency",
+          "label": "African/African American XX Population Allele Frequency for 1-55051215-G-GA",
+          "focusAllele": "ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S",
+          "focusAlleleCount": 370,
+          "locusAlleleCount": 22150,
+          "alleleFrequency": 0.0167,
+          "population": "gnomad3:AFR.XX",
+          "ancillaryResults": {
+            "homozygotes": 7
+          }
+        },
+        {
+          "id": "1-55051215-G-GA.AFR.XY",
+          "type": "PopulationAlleleFrequency",
+          "label": "African/African American XY Population Allele Frequency for 1-55051215-G-GA",
+          "focusAllele": "ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S",
+          "focusAlleleCount": 314,
+          "locusAlleleCount": 19296,
+          "alleleFrequency": 0.01627,
+          "population": "gnomad3:AFR.XY",
+          "ancillaryResults": {
+            "homozygotes": 2
+          }
         }
+      ]
+    },
+    {
+      "id": "1-55051215-G-GA.LAT",
+      "type": "PopulationAlleleFrequency",
+      "label": "Latino/Admixed American Population Allele Frequency for 1-55051215-G-GA",
+      "focusAllele": "ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S",
+      "focusAlleleCount": 27,
+      "locusAlleleCount": 15276,
+      "population": "gnomad3:AFR.LAT",
+      "alleleFrequency": 0.001767,
+      "ancillaryResults": {
+        "homozygotes": 0
       }
-    ]
-  }
-]
+    }
+  ]
+}
