@@ -229,10 +229,10 @@ properties:
               type: string
             value:
               type: string
-        required:
-          - name
-          - value
-        additionalProperties: false
+          required:
+            - name
+            - value
+          additionalProperties: false
     additionalProperties: false
     required:
       - id
