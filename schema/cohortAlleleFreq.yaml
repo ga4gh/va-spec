@@ -1,5 +1,5 @@
 $schema: http://json-schema.org/draft-07/schema
-title: Population Allele Frequency
+title: Cohort Allele Frequency
 type: object
 definitions:
   Allele:
@@ -186,8 +186,8 @@ properties:
     type: string
   type:
     type: string
-    const: PopulationAlleleFrequency
-    default: PopulationAlleleFrequency
+    const: CohortAlleleFrequency
+    default: CohortAlleleFrequency
   label:
     type: string
   derivedFrom:
@@ -205,15 +205,37 @@ properties:
   focusAllele:
     oneOf:
       - $ref: "#/definitions/Allele"
-      - $ref: "#/definitions/CURIE"
+      - type: string
+        format: uri-reference
   focusAlleleCount:
     type: integer
   locusAlleleCount:
     type: integer
   alleleFrequency:
     type: number
-  population:
-    type: string
+  cohort:
+    type: object
+    properties:
+      id:
+        type: string
+      label:
+        type: string
+      characteristics:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+        required:
+          - name
+          - value
+        additionalProperties: false
+    additionalProperties: false
+    required:
+      - id
   ancillaryResults:
     type: object
     properties:
@@ -235,9 +257,9 @@ properties:
       meanDepth:
         type: number
     additonalProperties: false
-  subpopulationFrequency:
+  subcohortFrequency:
     type: array
     items:
       $ref: "#"
-required: [id, type, focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, population]
+required: [id, type, focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, cohort]
 additionalProperties: false

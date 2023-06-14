@@ -1,7 +1,7 @@
 #### Example 1: https://gnomad.broadinstitute.org/variant/1-55051215-G-GA?dataset=gnomad_r3
 id: gnomad3:1-55051215-G-GA
-type: PopulationAlleleFrequency
-label: Overall Population Allele Frequency for 1-55051215-G-GA
+type: CohortAlleleFrequency
+label: Overall Cohort Allele Frequency for 1-55051215-G-GA
 derivedFrom:
   id: gnomad3.1.2
   type: DataSet
@@ -28,7 +28,8 @@ focusAllele:
 focusAlleleCount: 728
 locusAlleleCount: 152206
 alleleFrequency: 0.004783
-population: gnomad3:global
+cohort:
+  id: ALL
 ancillaryResults:
   popMaxFAF95: # Popmax Filtering AF (95% confidence)
     frequency: 0.01548
@@ -36,45 +37,65 @@ ancillaryResults:
     popFreqId: 1-55051215-G-GA.AFR
   homozygotes: 9 # Number of Homozygotes
   meanDepth: 32.8 # Mean depth of coverage
-subpopulationFrequency:
+subcohortFrequency:
   - id: 1-55051215-G-GA.AFR
-    type: PopulationAlleleFrequency
+    type: CohortAlleleFrequency
     label: African/African American Population Allele Frequency for 1-55051215-G-GA
-    focusAllele: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
+    focusAllele: "#/focusAllele"
     focusAlleleCount: 684
     locusAlleleCount: 41446
     alleleFrequency: 0.01650
-    population: gnomad3:AFR
+    cohort:
+      id: AFR
+      characteristics:
+        - name: genetic ancestry
+          value: African/African American
     ancillaryResults:
       homozygotes: 9 # Number of Homozygotes
-    subpopulationFrequency:
+    subcohortFrequency:
       - id: 1-55051215-G-GA.AFR.XX
-        type: PopulationAlleleFrequency
+        type: CohortAlleleFrequency
         label: African/African American XX Population Allele Frequency for 1-55051215-G-GA
-        focusAllele: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
+        focusAllele: "#/focusAllele" # TODO: Update other CURIEs to match this
         focusAlleleCount: 370
         locusAlleleCount: 22150
         alleleFrequency: 0.01670
-        population: gnomad3:AFR.XX
+        cohort:
+          id: AFR.XX
+          characteristics:
+            - name: genetic ancestry
+              value: African/African American
+            - name: biological sex
+              value: XX
         ancillaryResults:
           homozygotes: 7 # Number of Homozygotes
       - id: 1-55051215-G-GA.AFR.XY
-        type: PopulationAlleleFrequency
+        type: CohortAlleleFrequency
         label: African/African American XY Population Allele Frequency for 1-55051215-G-GA
         focusAllele: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
         focusAlleleCount: 314
         locusAlleleCount: 19296
         alleleFrequency: 0.01627
-        population: gnomad3:AFR.XY
+        cohort:
+          id: AFR.XY
+          characteristics:
+            - name: genetic ancestry
+              value: African/African American
+            - name: biological sex
+              value: XY
         ancillaryResults:
           homozygotes: 2 # Number of Homozygotes
   - id: 1-55051215-G-GA.LAT
-    type: PopulationAlleleFrequency
+    type: CohortAlleleFrequency
     label: Latino/Admixed American Population Allele Frequency for 1-55051215-G-GA
     focusAllele: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
     focusAlleleCount: 27
     locusAlleleCount: 15276
-    population: gnomad3:AFR.LAT
+    cohort:
+      id: LAT
+      characteristics:
+        - name: genetic ancestry
+          value: Latino/Admixed American
     alleleFrequency: 0.001767
     ancillaryResults:
       homozygotes: 0 # Number of Homozygotes
