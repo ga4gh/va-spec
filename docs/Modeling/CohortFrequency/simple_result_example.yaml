@@ -56,7 +56,7 @@ subcohortFrequency:
       - id: 1-55051215-G-GA.AFR.XX
         type: CohortAlleleFrequency
         label: African/African American XX Population Allele Frequency for 1-55051215-G-GA
-        focusAllele: "#/focusAllele" # TODO: Update other CURIEs to match this
+        focusAllele: "#/focusAllele"
         focusAlleleCount: 370
         locusAlleleCount: 22150
         alleleFrequency: 0.01670
@@ -72,7 +72,7 @@ subcohortFrequency:
       - id: 1-55051215-G-GA.AFR.XY
         type: CohortAlleleFrequency
         label: African/African American XY Population Allele Frequency for 1-55051215-G-GA
-        focusAllele: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
+        focusAllele: "#/focusAllele"
         focusAlleleCount: 314
         locusAlleleCount: 19296
         alleleFrequency: 0.01627
@@ -88,7 +88,7 @@ subcohortFrequency:
   - id: 1-55051215-G-GA.LAT
     type: CohortAlleleFrequency
     label: Latino/Admixed American Population Allele Frequency for 1-55051215-G-GA
-    focusAllele: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
+    focusAllele: "#/focusAllele"
     focusAlleleCount: 27
     locusAlleleCount: 15276
     cohort:
