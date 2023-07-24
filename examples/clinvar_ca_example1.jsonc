@@ -23,6 +23,11 @@
 // symbol  entrez id                               omim id                              HI  TS  within #vars    all #vars
 // KCNQ4   https://www.ncbi.nlm.nih.gov/gene/9132  http://www.omim.org/entry/603537	    -	-	292             312
 // -- version 2.0alpha1 - fully decorated clinvar variation (canonical variation) 
+
+// DISCLAIMER: While the data in the example below attempts represent a valid clinvar record, the ga4gh digests and 
+//.   identifiers are not accurate to the VRS 2.0 alpha spec because not all the tooling for generating the proper
+//    digests has been completed yet. Please do not presume these digests and ids are legitamite.
+
 {
     "sequence_references": {
         // it is likely that an implementer would create key names that are unique by using the individual entity's id or digest.
@@ -37,6 +42,8 @@
             "digest": "Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
             // SequenceReference (SQR) is used by VRS 2 to provide distinction from Sequence (SQ) in refget.
             "type": "SequenceReference",
+            // refget_id is required... (NOTE: VRS SQR uses the refget SQ digest in a 1-to-1 mapping 100% of the time)
+            "refget_id": "ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
             // all identifiable concepts in VRS will have the option for a "label" attribute.
             "label": "NC_000001.11",
             // mappings as an array of Mapping concepts on all identifiable entities?
@@ -50,11 +57,15 @@
                     "relation": "exactMatch"
                 }
             ],
-            // Discuss: residue_type as a Coding or a CURIE? (proposed optional attribute on sequence)
-            "residue_type": "SO:0000348",
-            // Discuss: chromosome as an enumeration [1-22, X, Y, MT] (proposed optional attribute on sequence)
+            // Discussion #1: residue_type as a Coding or a CURIE? (proposed optional attribute on sequence)
+            "residue_type": {
+                "system":"https://identifiers.org/SO:",
+                "id":"0000348",
+                "label":"nucleid_acid"
+            },
+            // Discussion #2: chromosome as an enumeration [1-22, X, Y, MT] (proposed optional attribute on sequence)
             "chromosome": "1",
-            // Discuss: assembly as a Coding (proposed optional attribute on sequence)
+            // Discussion #3: assembly as a Coding (proposed optional attribute on sequence)
             "assembly": {
                 "system": "https://www.ncbi.nlm.nih.gov/assembly/",
                 "id": "GCF_000001405.26",
@@ -64,34 +75,17 @@
         // an incomplete example of another type of sequence (i.e. NM_004700.4)
         // again, the key name is irrelevant and has no special meaning, it is simply used for referencing elsewhere 
         "maneselect1": {
-            "id": "maneselect1",
-            "digest": "D09sdf0a22...",
+            "id": "ga4gh:SQR.BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
+            "digest": "BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
             "type": "SequenceReference",
+            "refget_id":"ga4gh:SQ.BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
             "label": "NM_004700.4",
-            "residue_type": "SO:0000348"
-        }
-    },
-    // conditions is still under construction (please ignore for now)
-    "conditions": {
-        "cond1": {
-            "label": "condition X",
-            "disease": [],
-            "phenotype": [],
-            "mappings": [
-                {
-                    "system": "https://www.ncbi.nlm.nih.gov/medgen/",
-                    "id": "123",
-                    "relation": "exactMatch"
-                }
-            ]
-            // these can be medgen ids or ncit ids or other?
-            // medgen_id...
-            // object: type: "condition", id:  MONDO, medgen, ...
-            // qualified_by : inheritance
-            // TN Three categories of data sources for concepts (identified, string terms, ....)
-            // 1. live clinical/research data (labs, ehr, off of instruments and applied sop for reporting)
-            // 2. federated variant classification data (clinvar - normalized by clinvar submissions processing)
-            // 3. curated knowledge (clinvar - from scvs, omim submissions)
+            "residue_type": {
+                "system":"https://identifiers.org/SO:",
+                "id":"0000348",
+                "label":"nucleid_acid"
+            }
+            // discussion #9: Should we make "mane select" and "mane plus clinical" first class attributes?
         }
     },
     // these are the contextual (VRS) variations AND categorical "canonical" clinvar variations that may be referenced
@@ -100,26 +94,16 @@
         "var1": {
             "digest": "Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
             "id": "ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+            "type": "Allele",
             "location": {
-                // generate the real digest, for now using "tbd" (to be done)
-                "digest": "tbd",
-
-                // in vrs 2, extensions and other optional attributes can be inserted directly into VRS identifiable concepts!
-                "extensions": [
-                    {
-                        "name": "ctyogenetic_location",
-                        "value": "1p34.2"
-                    }
-                ],
-                "id": "ga4gh:SL.tbd",
+                "id": "ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+                "digest": "5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+                "type": "SequenceLocation",
                 // NOTE: we are changing from the vrs 1.x "sequence_id" attribute to a fully-defined "sequence" concept.
                 "sequence": "#/sequence_reference/seqref1",
-
                 "start": 40819438,
-                // Discussion item: Should we rename "end" to "stop" in the vrs 2 model so that it aligns better with VCF?
-                "end": 40819446,
-
-                "type": "SequenceLocation"
+                // Discussion #4: Should we rename "end" to "stop" in the vrs 2 model? GATK and SV seems to favor start-stop while many other tools favor start-end to describe intervals - does it matter?
+                "stop": 40819446
             },
             "state": {
                 // this is a "NEW" vrs 2 state since this has a repeating sub unit.
@@ -127,40 +111,50 @@
                 "type": "ReferenceLengthExpression",
                 "value": 5
             },
-            "type": "Allele"
+            "expressions": [
+                {
+                    "syntax": "hgvs.g",
+                    "value": "NC_000001.11:g.40819441CCT[1]"
+                },
+                {
+                    "syntax": "spdi",
+                    "value": "NC_000001.11:40819438:CTCCTCCT:CTCCT"
+                }
+            ]
         },
         // This is the subject clinvar variation of the SCV below.
         "clinvar_208366": {
             "id": "clinvar_208366.2023-04-10",
-            // Discuss: need a version or recordMetadata to distinguish the changes 
-            // made to this canonicalvariation over time by the author
+            // Discussion #5: need a version or recordMetadata to distinguish the changes 
+            //                made to this canonicalvariation over time by the author
             "type": "CanonicalVariation",
-            // align with MBrush's plan - should this be on the Entity class or somewhere lower in the class hierarchy?
-            // should the "is_version_of" always be a URI?
+            // Discussion #10: should this be on the Entity class or somewhere lower in the class hierarchy?
+            //                 should the "is_version_of" always be a URI?
             "is_version_of": "https://www.ncbi.nlm.nih.gov/clinvar/variation/208366/", 
             "label": "NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)",
             "mappings": [
                 {
-                    // discuss: should we avoid repeating the "is_version_of" mapping here? (i think yes, but let's make sure)
-                    // discuss: should or would this take the place of "is_version_of"
+                    // discussion #6: should we avoid repeating the "is_version_of" mapping here? (i think yes, but let's make sure)
+                    // discussion #7: should or would this take the place of "is_version_of"
                     "system": "https://www.ncbi.nlm.nih.gov/clinvar/variation/",
                     "id": "208366",
                     "mapping": "exactMatch"
                 },
                 {
-                    //  dbSNP: rs797044966          <-- xref - this is not an exact match.
+                    //  dbSNP: rs797044966   -- use relatedMatch for dbsnp since it is representative for ALL substitutions at a location
+                    //                       -- NOTE: SNVs and InDels at the same location get 2 different rsIDs. so var type match is important.
                     "system": "https://www.ncbi.nlm.nih.gov/snp/",
                     "id": "rs797044966",
                     "mapping": "relatedMatch" //(vocab for this is https://www.w3.org/TR/skos-reference/#mapping) if blank defaults to "?"
                 },
                 {
-                    //  VarSome: https://varsome.com/variant/hg38/rs797044966
+                    //  VarSome: https://varsome.com/variant/hg38/chr1-40819439-CTC-
                     "system": "https://varsome.com/variant/",
-                    "id": "hg38/rs797044966",
+                    "id": "hg38/chr1-40819439-CTC-",
                     "mapping": "relatedMatch"
                 },
                 {
-                    //  ClinGen: CA347424           <-- exact matching 3rd party identifier? 
+                    //  ClinGen: CA347424         -- Discussion #11: close or exact match? use close since it isn't identical.
                     "system": "https://reg.clinicalgenome.org/allele/",
                     "id": "CA347424",
                     "mapping": "closeMatch"
@@ -175,10 +169,10 @@
                 }
             ],
             "defining_context": "#/variations/var1",
-            // discuss: changing the attribute "members" name to "alternate_contexts" to provide consistency and comparability with "defining_context"
-            "members": [
-                "#/variations/var1",
-                // is it possible to reference items in an array?
+            // discussion #8: changing the attribute "members" name to "alternate_contexts" to provide consistency and comparability with "defining_context".
+            //                if we do change "members" to "alternate_contexts" would it impact whether or not the "defining_context" does or does not get relisted in this array?
+            "alternate_contexts": [
+                // is it possible to reference items in an array using json-schema uri-by-reference
                 // could this be referenced as 
                 // "reference":"#/variations/clinvar_208366/members[1]"
                 {
@@ -334,6 +328,29 @@
                     "value": "204595"
                 }
             ]
+        }
+    },
+    // conditions is still under construction (please ignore for now)
+    "conditions": {
+        "cond1": {
+            "label": "condition X",
+            "disease": [],
+            "phenotype": [],
+            "mappings": [
+                {
+                    "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+                    "id": "123",
+                    "relation": "exactMatch"
+                }
+            ]
+            // these can be medgen ids or ncit ids or other?
+            // medgen_id...
+            // object: type: "condition", id:  MONDO, medgen, ...
+            // qualified_by : inheritance
+            // TN Three categories of data sources for concepts (identified, string terms, ....)
+            // 1. live clinical/research data (labs, ehr, off of instruments and applied sop for reporting)
+            // 2. federated variant classification data (clinvar - normalized by clinvar submissions processing)
+            // 3. curated knowledge (clinvar - from scvs, omim submissions)
         }
     },
     "classifications": {
