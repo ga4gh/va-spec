@@ -330,7 +330,22 @@
             ]
         }
     },
-    // conditions is still under construction (please ignore for now)
+    /*  
+        Condition 
+        the causal (or potential causal) condition that is the target trait or set of traits
+        for a single assertion
+
+        This concept is not very well standardized in practice today. While there are many
+        efforts and aims to standardizing on a single authored nosology, there is no 
+        definitive resource. In addition, there are a number of situations whereby the 
+        author of an assertion will describe the condition that is the target of the assertion
+        using a set of terms which may or may not have identifiers. As such, we will be
+        using a fairly basic structure to promote the capture of "disease" and "phenotype" concepts
+        within the condition whuile also providing the flexibility to share less structured 
+        elements to enable the sharing of assertions that have less than ideal described conditions.
+
+        For clinvar "TraitSet" maps directly to this concept. ClinVar has 
+    */
     "conditions": {
         "cond1": {
             "label": "HEMOGLOBIN MANITOBA",
@@ -352,14 +367,6 @@
                     ]
                 }
             ]
-            // these can be medgen ids or ncit ids or other?
-            // medgen_id...
-            // object: type: "condition", id:  MONDO, medgen, ...
-            // qualified_by : inheritance
-            // TN Three categories of data sources for concepts (identified, string terms, ....)
-            // 1. live clinical/research data (labs, ehr, off of instruments and applied sop for reporting)
-            // 2. federated variant classification data (clinvar - normalized by clinvar submissions processing)
-            // 3. curated knowledge (clinvar - from scvs, omim submissions)
         }
     },
     "classifications": {
