@@ -24,11 +24,22 @@
 // KCNQ4   https://www.ncbi.nlm.nih.gov/gene/9132  http://www.omim.org/entry/603537	    -	-	292             312
 // -- version 2.0alpha1 - fully decorated clinvar variation (canonical variation) 
 {
-    "sequences": {
-        "seq1": {
-            "id": "ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+    "sequence_references": {
+        // it is likely that an implementer would create key names that are unique by using the individual entity's id or digest.
+        // but we are being deliberate in showing that the key name can be anything as long as it is uniquely referencable 
+        // see https://json-schema.org/understanding-json-schema/reference/string.html#resource-identifiers 
+        "seqref1": {
+
+            // NOTE the use of the "SQR" prefix instead of the "SQ" prefix that is 'owned' by refget.
+            // we aim to use the same exact digest as refget, but we think it is wise to define a separate prefix
+            // since we are defining a concept as part of vrs 2 that represents additional semantics around refget's SQ
+            "id": "ga4gh:SQR.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
             "digest": "Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
-            "type": "Sequence",
+            // SequenceReference (SQR) is used by VRS 2 to provide distinction from Sequence (SQ) in refget.
+            "type": "SequenceReference",
+            // all identifiable concepts in VRS will have the option for a "label" attribute.
+            "label": "NC_000001.11",
+            // mappings as an array of Mapping concepts on all identifiable entities?
             // if this sequence was referenced multiple times it should be decorated in one and only one place...
             // if there was a reason to have 2 different decorated representations of the same sequence (or location or allele) 
             // then you would need to use the "id" attribute as a differentiator and place the computed identifier in the "identifiers" element.
@@ -36,115 +47,105 @@
                 {
                     "system": "https://www.ncbi.nlm.nih.gov/nuccore/",
                     "id": "NC_000001.11",
-                    "mapping": "exactMatch"
+                    "relation": "exactMatch"
                 }
             ],
-            "label": "NC_000001.11",
+            // Discuss: residue_type as a Coding or a CURIE? (proposed optional attribute on sequence)
             "residue_type": "SO:0000348",
+            // Discuss: chromosome as an enumeration [1-22, X, Y, MT] (proposed optional attribute on sequence)
             "chromosome": "1",
+            // Discuss: assembly as a Coding (proposed optional attribute on sequence)
             "assembly": {
                 "system": "https://www.ncbi.nlm.nih.gov/assembly/",
                 "id": "GCF_000001405.26",
                 "label": "GRCh38"
             }
         },
+        // an incomplete example of another type of sequence (i.e. NM_004700.4)
+        // again, the key name is irrelevant and has no special meaning, it is simply used for referencing elsewhere 
         "maneselect1": {
             "id": "maneselect1",
             "digest": "D09sdf0a22...",
-            "type": "Sequence",
-            "label": "NC_000001.11",
+            "type": "SequenceReference",
+            "label": "NM_004700.4",
             "residue_type": "SO:0000348"
         }
     },
+    // conditions is still under construction (please ignore for now)
     "conditions": {
-
         "cond1": {
-
             "label": "condition X",
-            "disease" : [],
-            "phenotype" : [],
-      
+            "disease": [],
+            "phenotype": [],
             "mappings": [
                 {
                     "system": "https://www.ncbi.nlm.nih.gov/medgen/",
                     "id": "123",
-                    "mapping": "exactMatch"
+                    "relation": "exactMatch"
                 }
-            ],
-
-           
-
-
-
-
-
-
-            -----
+            ]
             // these can be medgen ids or ncit ids or other?
-            medgen_id...
-
-            
-            object: type: "condition", id:  MONDO, medgen, ...
-            
-            qualified_by : inheritance
-
-
+            // medgen_id...
+            // object: type: "condition", id:  MONDO, medgen, ...
+            // qualified_by : inheritance
             // TN Three categories of data sources for concepts (identified, string terms, ....)
             // 1. live clinical/research data (labs, ehr, off of instruments and applied sop for reporting)
             // 2. federated variant classification data (clinvar - normalized by clinvar submissions processing)
             // 3. curated knowledge (clinvar - from scvs, omim submissions)
-            
-            // need to support both codings and terms 
-            
-            // tbd
-            // array of codings? or codeableconcepts
-
-            // SET OF QUALIFIERS
-            //...
-
-
         }
     },
+    // these are the contextual (VRS) variations AND categorical "canonical" clinvar variations that may be referenced
     "variations": {
+        // var1 is the b38 genomic contextual allele for clinvar variation 208366, which is the subject of the scv example below
         "var1": {
             "digest": "Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
             "id": "ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
             "location": {
-                "digest": "missing",
-                "end": 40819446,
+                // generate the real digest, for now using "tbd" (to be done)
+                "digest": "tbd",
+
+                // in vrs 2, extensions and other optional attributes can be inserted directly into VRS identifiable concepts!
                 "extensions": [
                     {
                         "name": "ctyogenetic_location",
                         "value": "1p34.2"
                     }
                 ],
-                "id": "ga4gh:SL.missing",
-                "sequence": "#/sequence/seq1",
+                "id": "ga4gh:SL.tbd",
+                // NOTE: we are changing from the vrs 1.x "sequence_id" attribute to a fully-defined "sequence" concept.
+                "sequence": "#/sequence_reference/seqref1",
+
                 "start": 40819438,
+                // Discussion item: Should we rename "end" to "stop" in the vrs 2 model so that it aligns better with VCF?
+                "end": 40819446,
+
                 "type": "SequenceLocation"
             },
             "state": {
+                // this is a "NEW" vrs 2 state since this has a repeating sub unit.
                 "repeating_sub_unit": 3,
                 "type": "ReferenceLengthExpression",
                 "value": 5
             },
             "type": "Allele"
         },
+        // This is the subject clinvar variation of the SCV below.
         "clinvar_208366": {
             "id": "clinvar_208366.2023-04-10",
-            // TODO need a version or recordMetadata to distinguish the changes 
+            // Discuss: need a version or recordMetadata to distinguish the changes 
             // made to this canonicalvariation over time by the author
-
             "type": "CanonicalVariation",
+            // align with MBrush's plan - should this be on the Entity class or somewhere lower in the class hierarchy?
+            // should the "is_version_of" always be a URI?
+            "is_version_of": "https://www.ncbi.nlm.nih.gov/clinvar/variation/208366/", 
             "label": "NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)",
-            
-            // should this be a mapping with "exactMatch" or do we keep "identifier" for preferred identifier?
-
             "mappings": [
                 {
+                    // discuss: should we avoid repeating the "is_version_of" mapping here? (i think yes, but let's make sure)
+                    // discuss: should or would this take the place of "is_version_of"
                     "system": "https://www.ncbi.nlm.nih.gov/clinvar/variation/",
                     "id": "208366",
-                    "mapping" : "exactMatch"
+                    "mapping": "exactMatch"
                 },
                 {
                     //  dbSNP: rs797044966          <-- xref - this is not an exact match.
@@ -159,23 +160,22 @@
                     "mapping": "relatedMatch"
                 },
                 {
-                    //  ClinGen: CA347424           <-- exact matching 3rd party identifier
+                    //  ClinGen: CA347424           <-- exact matching 3rd party identifier? 
                     "system": "https://reg.clinicalgenome.org/allele/",
                     "id": "CA347424",
                     "mapping": "closeMatch"
-                // },
-                // {
-                //     // maybe we put allele id in extensions for now until clinvar provides a system/namespace for it?
-                //     //  allele_id: 204595         <-- alt variation identifier from author
-                //     "system": "clinvar.allele", // todo - while this is a type of id, there is not a system for this right now 
-                //     // 'https://www.ncbi.nlm.nih.gov/clinvar/?term=204595[AlleleID]' works?
-                //     "id": "204595",
-                //     "mapping": "exactMatch"
+                    // },
+                    // {
+                    //     // maybe we put allele id in extensions for now until clinvar provides a system/namespace for it?
+                    //     //  allele_id: 204595         <-- alt variation identifier from author
+                    //     "system": "clinvar.allele", // todo - while this is a type of id, there is not a system for this right now 
+                    //     // 'https://www.ncbi.nlm.nih.gov/clinvar/?term=204595[AlleleID]' works?
+                    //     "id": "204595",
+                    //     "mapping": "exactMatch"
                 }
             ],
-
             "defining_context": "#/variations/var1",
-
+            // discuss: changing the attribute "members" name to "alternate_contexts" to provide consistency and comparability with "defining_context"
             "members": [
                 "#/variations/var1",
                 // is it possible to reference items in an array?
@@ -321,9 +321,9 @@
             "extensions": [
                 {
                     "name": "cytogenetic location",
-                    "value": "1p34.2"   // could have put this under a specific context (sequenceLocation)
-                                        // but thought it made sense at the clinvar variation level. 
-                                        // this makes it easier to find i think.
+                    "value": "1p34.2" // could have put this under a specific context (sequenceLocation)
+                    // but thought it made sense at the clinvar variation level. 
+                    // this makes it easier to find i think.
                 },
                 {
                     "name": "protein change",
@@ -348,100 +348,78 @@
         }
     },
     "statements": {
-
         // {Provenance - how/where are we going to inject that information so that it is clear to consumers
-       //  "this was produced under the CRC policy 1-2-3" ...}
-
+        //  "this was produced under the CRC policy 1-2-3" ...}
         "SCV001245167.1": {
             "id": "SCV001245167.1.2023-04-10",
             // version? should we have a separate field or embed it in the id or both?
-
-            "is_version_of" : "SCV001245167",   // align with MBrush's plan - should this be on the Entity class or somewhere lower in the class hierarchy?
-
+            "is_version_of": "SCV001245167", // align with MBrush's plan - should this be on the Entity class or somewhere lower in the class hierarchy?
             "type": "VariationPathogenicity",
-            
-            "variation":  "#/variations/clinvar_208366",
-
+            "variation": "#/variations/clinvar_208366",
             //predicate: "is_causal_for",   this was Alex's decision and Tristan was okay with it. (i'm still thinking about it)  predicate is type, type is predicate
-            
             // -- I do think that the "assessment" should be bundled as a single concept.
-
             //classification :  Path | Likely Path | Established RA | VUS | Lik Ben ...
             // all of these "codings" need to have the option to put in non-coded values, 
             // we CANNOT pre-code everything or we need a way to pass "uncoded data"
-            "classification" :  "#/classifications/path",
-
+            "classification": "#/classifications/path",
             // direction : supports | refutes | uncertain
-            "direction": "uncertain",           
-            
+            "direction": "uncertain",
             // evidence_strength : definitive | likely | inconclusive (prefer over uncertain plus it helps differentiate)
             // // evidence_score : 0-9  ...   the closer to 0 the more uncertain it is!
             // "score": "0.5",      // the score is coming in acmgv4
-            "strength_code": {   
-                "system": "acmgv3",   // need a system for acgmv3.strength terms
+            "strength_code": {
+                "system": "acmgv3", // need a system for acgmv3.strength terms
                 "id": "100-2",
                 "label": "inconclusive"
                 // since other systems may have altered definitions of the same terms we MUST code this.
             },
-            "strength_score" : 0.5,
-            
+            "strength_score": 0.5,
             // TN/LB Desicion: we will likely use a clingen namespace to define codes.
-
             //penetrance : "risk" | "low" | "high" | leave it blank
             "penetrance": {
-                "system":"",
-                "id":"",
-                "label":"risk"     // our own enums? (high, low, risk, or leave this out if truly unable to discern)
+                "system": "",
+                "id": "",
+                "label": "risk" // our own enums? (high, low, risk, or leave this out if truly unable to discern)
             },
-            
-            
             // in a vp statement a condition is ... the condition that the variant is (or is not) causal for (or at risk for)
             "condition": "#/conditions/cond1",
-
             // need to think through whether this is structured correctly. but this separable concept is key
             "qualifiers": {
                 // mode of inheritance / inheritance pattern (embed with condition?  )
                 "inheritancePattern": {
-                    "label":"autosomal dominant"
+                    "label": "autosomal dominant"
                 },
                 "alleleOrigin": {
                     "label": "germline"
                 }
             },
-
-            "contribution": {
-
-
-
-
-            },
-
+            "contribution": {},
             "method": {
                 "label": "ACMG Criteria v3"
             },
-
             "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting. "
-
             // clinvar review status (star level) - is this a 
             // "special clinvar thing" (i think so) it's not a standard that I know of 
-            
-
             //evidence 
             //-- pubmed references
-            "documents": [{
-
-            }],
+            "documents": [
+                {}
+            ],
             // extensions...
-            "extensions": [{
-                "name":"submitter_classification_info",
-                "value": "deleterious"
-            },{
-                "name":"submitted_variation_info",
-                "value":"..."
-            },{
-                "name":"submitted_condition_info",
-                "value":"..."
-            }]
+            "extensions": [
+                {
+                    "name": "submitter_classification_info",
+                    "value": "deleterious"
+                },
+                {
+                    "name": "submitted_variation_info",
+                    "value": "..."
+                },
+                {
+                    "name": "submitted_condition_info",
+                    "value": "..."
+                }
+            ]
             // functional evidence 
             // (should this data be a separate type of assertion or evidence to a classification?) 
             // Much of the functional data in clinvar does not have an associated classification.
