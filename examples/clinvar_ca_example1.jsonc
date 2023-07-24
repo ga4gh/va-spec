@@ -333,14 +333,23 @@
     // conditions is still under construction (please ignore for now)
     "conditions": {
         "cond1": {
-            "label": "condition X",
-            "disease": [],
-            "phenotype": [],
-            "mappings": [
+            "label": "HEMOGLOBIN MANITOBA",
+            "type": "Condition",
+            "traits": [
                 {
-                    "system": "https://www.ncbi.nlm.nih.gov/medgen/",
-                    "id": "123",
-                    "relation": "exactMatch"
+                    "id": "https://www.ncbi.nlm.nih.gov/medgen/C3890767/",
+                    "type": "Trait",            // Disease, Phenotype(Finding), Trait ....
+                    "label": "HEMOGLOBIN MANITOBA",
+                    "extensions" : [
+                        {
+                            "name":"clinvar trait type",
+                            "value": "NamedProteinVariant"
+                        },
+                        {
+                            "name": "clinvar trait id",
+                            "value": ""
+                        }
+                    ]
                 }
             ]
             // these can be medgen ids or ncit ids or other?
