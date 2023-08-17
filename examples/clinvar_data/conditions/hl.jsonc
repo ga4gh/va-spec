@@ -1,0 +1,95 @@
+/*  
+    Condition 
+    the causal (or potential causal) condition that is the target trait or set of traits
+    for a single assertion
+
+    This concept is not very well standardized in practice today. While there are many
+    efforts and aims to standardizing on a single authored nosology, there is no 
+    definitive resource. In addition, there are a number of situations whereby the 
+    author of an assertion will describe the condition that is the target of the assertion
+    using a set of terms which may or may not have identifiers. As such, we will be
+    using a fairly basic structure to promote the capture of "disease" and "phenotype" concepts
+    within the condition whuile also providing the flexibility to share less structured 
+    elements to enable the sharing of assertions that have less than ideal described conditions.
+
+    For clinvar "TraitSet" maps directly to this concept. ClinVar allows 1 to n "Trait" concepts
+    within a "TraitSet". We will be utilizing the "Trait" concept as well as an array within 
+    "Condition".  
+    
+    Condition.types
+    ClinVar currently has 5 distinct TraitSet.types; Disease, Finding, TraitChoice, DrugResponse, 
+    PhenotypeInstruction.  We will be using the generic "Condition" type and sharing the 
+    clinvar trait set type in the extensions under the name "clinvar trait set type".
+    ClinVar "Disease" would represent the idea that the Trait or Traits comprise a disease,
+    The "Finding" type would represent the ideat that the Trait or Traits comprise a phenotype,
+    The "TraitChoice" type would indicate that each of the Trait(s) specified is independent
+    and not taken as a collective condition set.
+    The "DrugResponse" would map to one or more DrugResponse Trait(s), typically 1.
+    The "PhenotypeInstruction" is typically the value "See cases" indicating that the case
+    data associated with the assertion contains all the information available to discern
+    the condition associated with the assertion.
+
+    Trait.types
+    ClinVar currently has 6 distinct Trait.types; Disease, Finding, PhenotypeInstruction,
+    DrugResponse, BloodGroup, NamedProteinVariant. We will use Disease, Phenotype and Trait to delineate
+    only 3 subtypes. Disease will map to Disease, and Finding will map to Phenotype, all others will
+    map to Trait as a general type reference (since we are unsure how to handle them at this time).
+
+    The use of extensions is available within both the Condition and Trait concepts.
+
+    We strongly urge the use of Disease and Phenotype Traits (avoiding use of the general Trait type).
+
+    Even though most Conditions will have one and only one Trait we strongly suggest using
+    the extensions, mappings, labels, etc... on the Trait concept if it is most directly 
+    associated to the values being added.
+
+    Condition attributes should be reserved for values that can only be expressed at the higher
+    order concept, which is much easier to discern when multiple traits exist.
+*/
+{
+    "ns_hl": {
+        "id": "",
+        "label": "Nonsyndromic genetic hearing loss",
+        "type": "Condition",
+        "traits": [
+            {
+                "id": "https://www.ncbi.nlm.nih.gov/medgen/CN043648/",
+                "type": "Disease", // Disease, Phenotype(Finding), Trait ....
+                "label": "Nonsyndromic genetic hearing loss"
+            }
+        ]
+    },
+    "4890": {
+        "id": "clinvar_trait_set_id_4890",
+        "label": "HEMOGLOBIN MANITOBA",
+        "type": "Condition",
+        "traits": [
+            {
+                "id": "https://www.ncbi.nlm.nih.gov/medgen/C3890767/",
+                "type": "Trait", // Disease, Phenotype(Finding), Trait ....
+                "label": "HEMOGLOBIN MANITOBA",
+                // discussion #12: if any xrefs are provided we may put them here as "relatedMatch"(es).
+                "mappings": [
+                    {
+                        "system": "OMIM",
+                        "id": "141850.0047",
+                        "relation": "relatedMatch"
+                        //"db":"OMIM","id":"141850.0047","type":"Allelic variant","ref_field":"name"
+                    }
+                ],
+                "extensions": [
+                    {
+                        "name": "clinvarTraitType",
+                        "value": "NamedProteinVariant"
+                    },
+                    {
+                        "name": "clinvarTraitId",
+                        "value": "12162"
+                    }
+                    // discussion #12: should we add extensions for submitted xrefs? to distinguish from 
+                    // the xrefs that clinvar collates on the normalized version of the trait?
+                ]
+            }
+        ]
+    }
+}
