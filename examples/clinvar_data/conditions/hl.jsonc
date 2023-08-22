@@ -48,14 +48,20 @@
 */
 {
     "ns_hl": {
-        "id": "",
+        "id": "", // traitset ID from ClinVar
         "label": "Nonsyndromic genetic hearing loss",
         "type": "Condition",
         "traits": [
             {
-                "id": "https://www.ncbi.nlm.nih.gov/medgen/CN043648/",
+                "id": "", // trait ID from ClinVar
                 "type": "Disease", // Disease, Phenotype(Finding), Trait ....
-                "label": "Nonsyndromic genetic hearing loss"
+                "label": "Nonsyndromic genetic hearing loss",
+                "mappings": {
+                    "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+                    "code": "CN043648",
+                    "label": "Nonsyndromic genetic hearing loss",
+                    "relation": "exactMatch" 
+                }
             }
         ]
     },

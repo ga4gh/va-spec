@@ -1,3 +1,5 @@
+/* example response for clinicalgenome.org/variationSCVs/208366 */
+
 /*
     #1 SCV
     SCV : SCV001245167.1
@@ -33,9 +35,13 @@
     "classifications": {
         "likpath": {
             // discussion #13: need a system for clinvar_classifications terms?
-            "system": "https://.../clinicalgenome.org/clinvar_classifications/", 
-            "id": "100-1",
-            "label": "Likely Pathogenic"
+            "id": "clinvar.lp",
+            "label": "Likely Pathogenic",
+            "mappings": {
+                "code": "acmg15.lp",
+                "label": "Likely Pathogenic (ACMG 2015)",
+                "system": "https://clinicalgenome.org/clinvar_classifications/" 
+            }
         },
         "deleterious": {
             // is this the equivalent of a blank node in JSON-LD?
