@@ -32,65 +32,317 @@
 
 */
 {
-    "classifications": {
-        "likpath": {
-            // discussion #13: need a system for clinvar_classifications terms?
-            "id": "clinvar.lp",
-            "label": "Likely Pathogenic",
-            "mappings": {
-                "code": "acmg15.lp",
-                "label": "Likely Pathogenic (ACMG 2015)",
-                "system": "https://clinicalgenome.org/clinvar_classifications/" 
-            }
-        },
-        "deleterious": {
-            // is this the equivalent of a blank node in JSON-LD?
-            "label": "deleterious"
+    "recordMetadata": {
+        // this is a work in progress, need to define the minimal set of fields to be useful to downstream users
+        "clingen_transform_v1": {
+            "runDatetime": "2023-08-23 12:30:22",
+            "id": "clinvar_transformer",
+            "version": "v1",
+            "clinvarReleaseDate": "2023-08-19"
+        } 
+    },
+    "sequenceReferences": {
+        "GRCh38_chr1": {
+            // NOTE the use of the "SQR" prefix instead of the "SQ" prefix that is 'owned' by refget.
+            // we aim to use the same exact digest as refget, but we think it is wise to define a separate prefix
+            // since we are defining a concept as part of vrs 2 that represents additional semantics around refget's SQ
+            "id": "ga4gh:SQR.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+            
+            "digest": "Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+            "type": "SequenceReference",
+            
+            // refget_id is required... (NOTE: VRS SQR uses the refget SQ digest in a 1-to-1 mapping 100% of the time)
+            "refgetId": "ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+            
+            "label": "NC_000001.11",
+            "mappings": [{
+                "system": "https://www.ncbi.nlm.nih.gov/nuccore/",
+                "code": "NC_000001.11",
+                "relation": "exactMatch"
+            }],
+
+            "residueType": {
+                "system":"https://identifiers.org/",
+                "id":"SO:0000348",
+                "label":"nucleid_acid"
+            },
+            "chromosome": "1",
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        }
+    },
+    "locations": {
+        "GRCh38_loc": {
+            "id": "ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+            "digest": "5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+            "type": "SequenceLocation",
+            "sequenceReference": "#/sequenceReferences/GRCh38_chr1",
+            "start": 40819438,
+            "end": 40819446,
+
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        }
+    },
+    "alleles": {
+        // this is the b38 genomic contextual allele for clinvar variation 208366, which is the subject of the scv example below
+        "GRCh38_contextual": {
+            "id": "ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+            "digest": "Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+            "type": "Allele",
+            "location": "#/locations/GRCh38_loc",
+            "state": {
+                // this is a "NEW" vrs 2 RLE-based state since this has a repeating sub unit.
+                "repeatSubUnitLength": 3,
+                "type": "ReferenceLengthExpression",
+                "length": 5
+            },
+           
+            "expressions": [{
+                "syntax": "hgvs.g",
+                "value": "NC_000001.11:g.40819441CCT[1]"
+            },
+            {
+                "syntax": "spdi",
+                "value": "NC_000001.11:40819438:CTCCTCCT:CTCCT"
+            }],
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        }
+    },
+    "variations": {
+        "clinvar_208366": {
+            "id": "clinvar_208366.2023-04-10",
+
+            "type": "CanonicalAllele",
+
+            "definingContext": "#/alleles/GRCh38_contextual",
+
+            "label": "NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)",
+
+            /*
+                Mappings (aka xrefs with specified relations)...
+                Mappings are meant to provide references to other authored concepts that are
+                either exact, close or related matches.
+                When using mappings on a canonical variant the presumption would be that an
+                    exactMatch when the 
+                    closeMatch is an authored concept that is the same concept as the exact, but not identical
+                    relatedMatch is an authored concept that would be related but not truly the same concept
+            */
+            "mappgings": [
+                {
+                    // discussion #6: do mappings have to deal with versions of matches? I assume no.
+                    // discussion #7: should or would this take the place of "is_version_of"
+                    "system": "https://www.ncbi.nlm.nih.gov/clinvar/variation/",
+                    "code": "208366",
+                    "relation": "exactMatch"
+                },{
+                    //  dbSNP: rs797044966   -- use relatedMatch for dbsnp since it is representative for ALL substitutions at a location
+                    //                       -- NOTE: SNVs and InDels at the same location get 2 different rsIDs. so var type match is important.
+                    "system": "https://www.ncbi.nlm.nih.gov/snp/",
+                    "code": "rs797044966",
+                    "relation": "relatedMatch" //(vocab for this is https://www.w3.org/TR/skos-reference/#mapping) if blank defaults to "?"
+                },
+                {
+                    //  ClinGen: CA347424         -- this is the same but not identical therefore "closeMatch"
+                    "system": "https://reg.clinicalgenome.org/allele/",
+                    "code": "CA347424",
+                    "relation": "closeMatch"
+                }
+            ],
+
+            "members": [
+                "#/alleles/GRCh38_contextual",          // do we need to repeat the defining context here?
+                "#/alleles/GRCh37_contextual",
+                {
+                    "id": "var3",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.g",
+                            "value": "NG_008139.3:g.40655CCT[1]"
+                        },
+                        {
+                            "syntax": "hgvs.g",
+                            "value": "LRG_1378:g.40655CCT[1]"
+                        }
+                    ]
+                },
+                {
+                    "id": "var4",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.4:c.803CCT[1]"
+                        },
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.4:c.806_808del"
+                        },
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "LRG_1378t1:c.803CCT[1]"
+                        }
+                    ]
+                },
+                {
+                    "id": "var5",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.3:c.806_808del"
+                        },
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.3:c.806_808delCCT"
+                        }
+                    ]
+                },
+                {
+                    "id": "var6",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_172163.3:c.803CCT[1]"
+                        }
+                    ]
+                }
+            ],
+            /* to demonstrate a verbose inlined representation of 
+             all genes associated to a clinvar variation.  
+             We could put the gene(s) on each contextual variation, 
+             but that is not useful in this message I think. */
+            "genes": [
+                {
+                    "id": "HGNC:HGNC:6298",
+                    "type": "Gene",
+                    "label": "KCNQ4", // should be symbol (preferred)
+                    "mappings": [
+                        {
+                            "system": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/",
+                            "id": "6298",
+                            "mapping": "exactMatch"
+                        },
+                        {
+                            "system": "https://www.ncbi.nlm.nih.gov/gene/",
+                            "id": "9132",
+                            "mapping": "exactMatch"
+                        },
+                        {
+                            "system": "https://omim.org/entry/",
+                            "id": "603537",
+                            "mapping": "exactMatch"
+                        },
+                        {
+                            "system": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?g=",
+                            "id": "ENSG00000117013",
+                            "mapping": "exactMatch"
+                        }
+                    ],
+                    "extensions": [
+                        {
+                            "name": "previous_symbols",
+                            "value": [
+                                "DFNA2"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "extensions": [
+                {
+                    "name": "cytogeneticLocation",
+                    "value": "1p34.2" // could have put this under a specific context (sequenceLocation)
+                    // but thought it made sense at the clinvar variation level. 
+                    // this makes it easier to find i think.
+                },
+                {
+                    "name": "proteinChange",
+                    "value": "S269del"
+                },
+                {
+                    "name": "clinvarAlleleId",
+                    "value": "204595"
+                }
+            ],
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        }
+
+    },
+    "conditions": {
+        "NS_HL": {
+            "id": "clinvar_trait_set_id_9568", 
+            "label": "Nonsyndromic genetic hearing loss",
+            "type": "Condition",
+            "traits": [
+                {
+                    "id": "clinvar_trait_id_9544", 
+                    "type": "Disease",          // Disease, Phenotype(Finding), Trait ....
+                    "label": "Nonsyndromic genetic hearing loss",
+                    "mappings": {
+                        "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+                        "code": "CN043648",
+                        "label": "Nonsyndromic genetic hearing loss",
+                        "relation": "exactMatch" 
+                    }
+                }
+            ]
         }
     },
     "statements": {
+        /*
+            Statement (from VA/SEPIO ontology)
+                - VariationPathogenicity (VA/SEPIO)
+                - ClinVarOther (ClinGen extended sepio type)
+                - ClinVarDrugResponse (ClinGen extended sepio type)
 
-        // {Provenance - how/where are we going to inject that information so that it is clear to consumers
-        //  "this was produced under the CRC policy 1-2-3" ...}
+                - AggregrateVariationAssoication (VCV - )
+
+                - AggregateVPClassification
+                - AggregateSomaticImpactClassification
+
+        */
         "SCV001245167.1": {
-            "id": "SCV001245167.1.2023-04-10",
-            // version? should we have a separate field or embed it in the id or both?
-            "isVersionOf": "SCV001245167", // align with MBrush's plan - should this be on the Entity class or somewhere lower in the class hierarchy?
+            "id": "SCV001245167.1.2023-04-10",      // do we need the date appended to deal with minor changes that aren't explicitly versioned by clinvar.
             "type": "VariationPathogenicity",
-            "variation": "#/variations/clinvar_208366",
 
-            // NOTE: We are dropping the use of predicate since type is a 1-to-1 representation.
-            //predicate: "is_causal_for",   this was Alex's decision and Tristan was okay with it. (i'm still thinking about it)  predicate is type, type is predicate
-            // -- I do think that the "assessment" should be bundled as a single concept.
-            //classification :  Path | Likely Path | Established RA | VUS | Lik Ben ...
-            // all of these "codings" need to have the option to put in non-coded values, 
-            // we CANNOT pre-code everything or we need a way to pass "uncoded data"
-            "classification": "#/classifications/likpath",
+            // We believe it is important to have a separate attribute for the overarching accession id, independent of version.
+            "isVersionOf": "SCV001245167", 
+
+            "variation": "#/variations/clinvar_208366",   
+
+            "classification": [{
+                "id": "clinvar.lp",
+                "label": "Likely Pathogenic",
+                "mappings": {
+                    "code": "acmg15.lp",
+                    "label": "Likely Pathogenic (ACMG 2015)",
+                    "system": "https://clinicalgenome.org/clinvar_classifications/" 
+                }
+            }],
+
+            "condition": "#/conditions/NS_HL",
+
             // enumeration: direction : supports | refutes | uncertain
-            "direction": "uncertain",
+            "direction": "supports",
+            
             // evidence_strength : definitive | likely | inconclusive (prefer over uncertain plus it helps differentiate)
-            // // evidence_score : 0-9  ...   the closer to 0 the more uncertain it is!
-            // "score": "0.5",      // the score is coming in acmgv4
             "strengthCode": {
-                "system": "acmgv3", // need a system for acgmv3.strength terms
-                "id": "100-2",
                 "label": "inconclusive"
                 // since other systems may have altered definitions of the same terms we MUST code this.
+                // add mappings...
+                // "system": "acmgv3", // need a system for acgmv3.strength terms
+                // "id": "100-2",
             },
-            "strengthScore": 0.5,
-            // TN/LB Desicion: we will likely use a clingen namespace to define codes.
-            //penetrance : "risk" | "low" | "high" | leave it blank
-            "penetrance": {
-                "system": "",
-                "id": "",
-                "label": "risk" // our own enums? (high, low, risk, or leave this out if truly unable to discern)
-            },
-
-            // in a vp statement a condition is ... the condition that the variant is (or is not) causal for (or at risk for)
-            "condition": "#/conditions/cond_101",
-
-
             
+            // FUTURE next version of ACMG guidelines will support quantified scoring.
+            "strengthScore": 0.5,
+
+            "penetrance": {
+                "label": "risk" 
+                // add mappings...
+            },
+                       
             // need to think through whether this is structured correctly. but this separable concept is key
             "qualifiers": {
                 // the MOI is submitted with explicit instructions that the MOI is relative to the variation not the disease.
@@ -104,12 +356,21 @@
                 }
             },
 
-            "contribution": {
-                "label": "ClinGen Hearing Loss Variant Curation Expert Panel",
-                "system": "https://www.ncbi.nlm.nih.gov/clinvar/submitters/",
-                "id": "506744"
-
-            },
+            "contributions": [{
+                "type": "Contribution",
+                "subtype": "",
+                "contributor": {
+                    "id": "https://www.ncbi.nlm.nih.gov/clinvar/submitters/506744",
+                    "type": "Agent",
+                    "name": "ClinGen Hearing Loss Variant Curation Expert Panel"
+                },
+                "activity": {
+                    "system":"<tbd>",
+                    "id":"<tbd>",
+                    "label":"submitter"
+                },
+                "date":"<tbd>"
+            }],
             "method": {
                 "label": "ClinGen HL ACMG Specifications v1",
                 "id":"https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf"
@@ -117,30 +378,18 @@
 
             "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting. ",
             
-            // clinvar review status (star level) - is this a 
-            // "special clinvar thing" (i think so) it's not a standard that I know of 
-            //evidence 
-
-            //-- pubmed references
+            //-- pubmed references - needs review.
             "documents": [
                 {
-                    "system": "https://pubmed.ncbi.nlm.nih.gov/",
-                    "id": "23443030"
+                    "id": "https://pubmed.ncbi.nlm.nih.gov/23443030"
                 },
                 {
-                    "system": "https://pubmed.ncbi.nlm.nih.gov",
-                    "id":"23399560"
+                    "system": "https://pubmed.ncbi.nlm.nih.gov/23399560"
                 }
             ],
 
             // extensions...
             "extensions": [
-                {
-                    // example of use case when submitter uses a non-standard term that is then normalized
-                    // this instance is made up.
-                    "name": "submitterClassification",
-                    "value": "possibly deleterious"
-                },
                 {
                     // clinvar review status (star level) - is this a 
                     // "special clinvar thing" (i think so) it's not a standard that I know of 
