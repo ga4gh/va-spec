@@ -323,10 +323,11 @@
 
             "condition": "#/conditions/NS_HL",
 
-            // enumeration: direction : supports | refutes | uncertain
+             // inferred from classification
+            // enumeration: direction : supports | refutes | uncertain | not specified
             "direction": "supports",
-            
-            // evidence_strength : definitive | likely | inconclusive (prefer over uncertain plus it helps differentiate)
+             // inferred from classification
+            // evidence_strength : definitive | likely | inconclusive (prefer over uncertain plus it helps differentiate) | not specified
             "strengthCode": {
                 "label": "inconclusive"
                 // since other systems may have altered definitions of the same terms we MUST code this.
@@ -335,9 +336,8 @@
                 // "id": "100-2",
             },
             
-            // FUTURE next version of ACMG guidelines will support quantified scoring.
-            "strengthScore": 0.5,
-
+            // inferred from classification - maybe this should be a qualifier?
+            // risk|low|high|not specified (or null)
             "penetrance": {
                 "label": "risk" 
                 // add mappings...
@@ -355,6 +355,8 @@
                     "label": "germline"
                 }
             },
+
+            "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting. ",
 
             "contributions": [{
                 "type": "Contribution",
@@ -376,8 +378,7 @@
                 "id":"https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf"
             },
 
-            "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting. ",
-            
+
             //-- pubmed references - needs review.
             "documents": [
                 {

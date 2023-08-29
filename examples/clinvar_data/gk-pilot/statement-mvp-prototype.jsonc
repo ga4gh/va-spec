@@ -1,0 +1,229 @@
+{
+  "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "VariationPathogenicity",
+    "isVersionOf": "SCV000778434",
+    "variation": "#/variations/208366",
+    "classification": {
+      "id": "p",
+      "label": "Pathogenic"
+    },
+    "condition": {
+      "id": "SCV000778434.0",
+      "label": "- Autosomal dominant nonsyndromic hearing loss 2A",
+      "type": "Condition",
+      "mappings": [
+        {
+          "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait_set/",
+          "code": "1730",
+          "label": "- Autosomal dominant nonsyndromic hearing loss 2A",
+          "relation": "exactMatch"
+        }
+      ],
+      "traits": [
+        {
+          "id": "SCV000778434.0",
+          "type": "Disease",
+          "label": "Autosomal dominant nonsyndromic hearing loss 2A",
+          "mappings": [
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
+              "code": "939",
+              "label": "Autosomal dominant nonsyndromic hearing loss 2A",
+              "relation": "exactMatch"
+            },
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+              "code": "C2677637",
+              "label": "Autosomal dominant nonsyndromic hearing loss 2A",
+              "relation": "exactMatch"
+            }
+          ]
+        }
+      ]
+    },
+    "direction": "supports",
+    "strengthCode": {
+      "label": "definitive"
+    },
+    "penetrance": {
+      "label": "not specified"
+    },
+    "qualifiers": {
+      "alleleOrigin": {
+        "label": "germline"
+      }
+    }
+  },
+  "SCV001245167.1": {
+    "id": "SCV001245167.1",
+    "type": "VariationPathogenicity",
+    "isVersionOf": "SCV001245167",
+    "variation": "#/variations/208366",
+    "classification": {
+      "id": "lp",
+      "label": "Likely pathogenic"
+    },
+    "condition": {
+      "id": "SCV001245167.0",
+      "label": "- Nonsyndromic genetic hearing loss",
+      "type": "Condition",
+      "mappings": [
+        {
+          "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait_set/",
+          "code": "9568",
+          "label": "- Nonsyndromic genetic hearing loss",
+          "relation": "exactMatch"
+        }
+      ],
+      "traits": [
+        {
+          "id": "SCV001245167.0",
+          "type": "Disease",
+          "label": "Nonsyndromic genetic hearing loss",
+          "mappings": [
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
+              "code": "9544",
+              "label": "Nonsyndromic genetic hearing loss",
+              "relation": "exactMatch"
+            },
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+              "code": "CN043648",
+              "label": "Nonsyndromic genetic hearing loss",
+              "relation": "exactMatch"
+            }
+          ]
+        }
+      ]
+    },
+    "direction": "supports",
+    "strengthCode": {
+      "label": "likely"
+    },
+    "penetrance": {
+      "label": "not specified"
+    },
+    "qualifiers": {
+      "alleleOrigin": {
+        "label": "germline"
+      }
+    },
+    "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting."
+  },
+  "SCV000568660.6": {
+    "id": "SCV000568660.6",
+    "type": "VariationPathogenicity",
+    "isVersionOf": "SCV000568660",
+    "variation": "#/variations/208366",
+    "classification": {
+      "id": "p",
+      "label": "Pathogenic"
+    },
+    "condition": {
+      "id": "SCV000568660.0",
+      "label": "- Not Provided",
+      "type": "Condition",
+      "mappings": [
+        {
+          "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait_set/",
+          "code": "9460",
+          "label": "- not provided",
+          "relation": "exactMatch"
+        }
+      ],
+      "traits": [
+        {
+          "id": "SCV000568660.0",
+          "type": "Disease",
+          "label": "Not Provided",
+          "mappings": [
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
+              "code": "17556",
+              "label": "not provided",
+              "relation": "exactMatch"
+            },
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+              "code": "CN517202",
+              "label": "not provided",
+              "relation": "exactMatch"
+            }
+          ]
+        }
+      ]
+    },
+    "direction": "supports",
+    "strengthCode": {
+      "label": "definitive"
+    },
+    "penetrance": {
+      "label": "not specified"
+    },
+    "qualifiers": {
+      "alleleOrigin": {
+        "label": "germline"
+      }
+    },
+    "description": "Published functional studies demonstrate a damaging effect (Lee et al., 2021); In-frame deletion of 1 amino acid in a non-repeat region; Not observed at significant frequency in large population cohorts (gnomAD); This variant is associated with the following publications: (PMID: 20301388, 23399560, 33367117, 23443030, 34316018, 23717403, 30311386)"
+  },
+  "SCV000967428.1": {
+    "id": "SCV000967428.1",
+    "type": "VariationPathogenicity",
+    "isVersionOf": "SCV000967428",
+    "variation": "#/variations/208366",
+    "classification": {
+      "id": "vus",
+      "label": "Uncertain significance"
+    },
+    "condition": {
+      "id": "SCV000967428.0",
+      "label": "- not specified",
+      "type": "Condition",
+      "mappings": [
+        {
+          "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait_set/",
+          "code": "9590",
+          "label": "- not specified",
+          "relation": "exactMatch"
+        }
+      ],
+      "traits": [
+        {
+          "id": "SCV000967428.0",
+          "type": "Disease",
+          "label": "not specified",
+          "mappings": [
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
+              "code": "16789",
+              "label": "not specified",
+              "relation": "exactMatch"
+            },
+            {
+              "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+              "code": "CN169374",
+              "label": "not specified",
+              "relation": "exactMatch"
+            }
+          ]
+        }
+      ]
+    },
+    "direction": "uncertain",
+    "strengthCode": {
+      "label": "inconclusive"
+    },
+    "penetrance": {
+      "label": "not specified"
+    },
+    "qualifiers": {
+      "alleleOrigin": {
+        "label": "germline"
+      }
+    },
+    "description": "Variant classified as Uncertain Significance - Favor Pathogenic. The p.Ser269del variant in KCNQ4 has been reported in 2 individuals with bilateral sloping hear ing loss and segregated with disease in 9 affected relatives from 1 family (Wata be 2013, Abdelfatah 2013). However, there was one individual with a similar hear ing loss pattern and two additional individuals with other forms of hearing loss that did not harbor the variant, as well as 7 family members with hearing loss on the other side of the family that did not harbor the variant (Abdelfatah 2013 ). The p.Ser269del variant was absent from large population studies and is repor ted in ClinVar (Variation ID# 204595). This variant is a deletion of 1 amino aci d at position 269 and is not predicted to alter the protein reading-frame. In su mmary, while there is some suspicion for a pathogenic role, the clinical signifi cance of the p.Ser269del variant is uncertain. ACMG/AMP Criteria applied: PP1_St rong, PM2, PS4_Supporting, BS4."
+  }
+}
