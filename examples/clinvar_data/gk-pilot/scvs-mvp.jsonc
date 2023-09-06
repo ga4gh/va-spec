@@ -3,7 +3,7 @@
     "id": "SCV000778434.1",
     "type": "VariationPathogenicity",
     "isVersionOf": "SCV000778434",
-    "variation": "#/variations/208366",
+    "variation": "catvars-mvp.jsonc#/208366",
     "classification": {
       "id": "p",
       "label": "Pathogenic"
@@ -59,7 +59,7 @@
     "id": "SCV001245167.1",
     "type": "VariationPathogenicity",
     "isVersionOf": "SCV001245167",
-    "variation": "#/variations/208366",
+    "variation": "catvars-mvp.jsonc#/208366",
     "classification": {
       "id": "lp",
       "label": "Likely pathogenic"
@@ -116,7 +116,7 @@
     "id": "SCV000568660.6",
     "type": "VariationPathogenicity",
     "isVersionOf": "SCV000568660",
-    "variation": "#/variations/208366",
+    "variation": "catvars-mvp.jsonc#/208366",
     "classification": {
       "id": "p",
       "label": "Pathogenic"
@@ -173,7 +173,7 @@
     "id": "SCV000967428.1",
     "type": "VariationPathogenicity",
     "isVersionOf": "SCV000967428",
-    "variation": "#/variations/208366",
+    "variation": "catvars-mvp.jsonc#/208366",
     "classification": {
       "id": "vus",
       "label": "Uncertain significance"
