@@ -1,0 +1,104 @@
+{
+    "VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK": {
+        "id": "ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+        "digest": "Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+        "type": "Allele",
+        "location": {
+            "id": "ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+            "digest": "5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+            "type": "SequenceLocation",
+            "sequenceReference": "seqrefs-mvp.jsonc#/NC_000001.11",
+            "start": 40819438,
+            "end": 40819446
+        },
+        "state": {
+            "repeatSubUnitLength": 3,
+            "type": "ReferenceLengthExpression",
+            "length": 5
+        },
+        "expressions": [
+            {
+                // hgvs.nucleotide
+                "syntax": "hgvs.g",
+                "value": "NC_000001.11:g.40819441CCT[1]"
+            },
+            {
+                // canonical_spdi
+                "syntax": "spdi",
+                "value": "NC_000001.11:40819438:CTCCTCCT:CTCCT"
+            }
+        ]
+    },
+    {
+        "id": "NC_000002.12:165354577:T:G",
+        "expressions": [
+            {
+                "syntax": "spdi",
+                "value": "NC_000002.12:165354577:T:G"
+            },
+            {
+                "syntax": "hgvs.g",
+                "value": "NC_000002.12:g.165354578T>G"
+            }
+        ],
+        "extensions": [
+            {
+                "name": "assembly",
+                "value": "GRCh38"
+            },
+            {
+                "name": "chromosome",
+                "value": "2"
+            },
+            {
+                "name": "accession",
+                "value": "NC_000002.12"
+            },
+            {
+                "name": "cyto",
+                "value": "2q24.3"
+            },
+            {
+                "name": "variation_id",
+                "value": "697623"
+            }
+        ]
+    },
+    {
+        "id": "NC_000013.10:g.(?_20640847)_(20651659_?)del..x[1]",
+        "type": "CopyNumberCount",
+
+        "digest": "xx",
+        "location": {},
+        "state":{},
+
+        "expressions": [
+            {
+                "syntax": "hgvs.g",
+                "value": "NC_000013.10:g.(?_20640847)_(20651659_?)del"
+            }
+        ],
+        "extensions": [
+            {
+                "name": "assembly",
+                "value": "GRCh37"
+            },
+            {
+                "name": "chromosome",
+                "value": "13"
+            },
+            {
+                "name": "accession",
+                "value": "NC_000013.10"
+            },
+            {
+                "name": "cyto",
+                "value": "13q12.11"
+            },
+            {
+                "name": "variation_id",
+                "value": "614023"
+            }
+        ]
+    }
+}

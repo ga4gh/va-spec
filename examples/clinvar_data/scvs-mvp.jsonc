@@ -2,115 +2,148 @@
   "SCV000778434.1": {
     "id": "SCV000778434.1",
     "type": "VariationPathogenicity",
-    "isVersionOf": "SCV000778434",
     "variation": "catvars-mvp.jsonc#/208366",
-    "classification": {
-      "id": "p",
-      "label": "Pathogenic"
-    },
     "condition": {
-      "id": "SCV000778434.0",
-      "label": "- Autosomal dominant nonsyndromic hearing loss 2A",
-      "type": "Condition",
+      "id": "clinvar.trait/939",
+      "type": "Disease",
+      "label": "Autosomal dominant nonsyndromic hearing loss 2A",
       "mappings": [
         {
-          "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait_set/",
-          "code": "1730",
-          "label": "- Autosomal dominant nonsyndromic hearing loss 2A",
-          "relation": "exactMatch"
-        }
-      ],
-      "traits": [
-        {
-          "id": "SCV000778434.0",
-          "type": "Disease",
+          "code": "C2677637",
+          "system": "https://www.ncbi.nlm.nih.gov/medgen/",
           "label": "Autosomal dominant nonsyndromic hearing loss 2A",
-          "mappings": [
-            {
-              "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
-              "code": "939",
-              "label": "Autosomal dominant nonsyndromic hearing loss 2A",
-              "relation": "exactMatch"
-            },
-            {
-              "system": "https://www.ncbi.nlm.nih.gov/medgen/",
-              "code": "C2677637",
-              "label": "Autosomal dominant nonsyndromic hearing loss 2A",
-              "relation": "exactMatch"
-            }
-          ]
+          "relation": "exactMatch"
         }
       ]
     },
     "direction": "supports",
-    "strengthCode": {
+    "strength": {
       "label": "definitive"
     },
-    "penetrance": {
-      "label": "not specified"
+    "classification": {
+      "label": "Pathogenic"
     },
     "qualifiers": {
-      "alleleOrigin": {
-        "label": "germline"
+      "penetrance": {
+        // in reality we will not include "penetrance" if it is "not specified", 
+        // leaving it here to show that "penetrance" is an available "qualifier" 
+        // for VarPath statements
+        "label": "not specified"
       }
-    }
+    },
+    "contributions": [
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/500139",
+          "type": "Agent",
+          "label": "ClinVar Staff, National Center for Biotechnology Information (NCBI)"
+        },
+        "date": "2018-06-12",
+        "activity": {
+          "label": "submitted"
+        }
+      },
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/500139",
+          "type": "Agent",
+          "label": "ClinVar Staff, National Center for Biotechnology Information (NCBI)"
+        },
+        "date": "2015-08-20",
+        "activity": {
+          "label": "last evaluated"
+        }
+      }
+    ],
+    "extensions": [
+      // {. other possible extensions if they differ from the normalized condition and classification that clinvar normalizes
+      //   "clinvarSubmittedCondition"
+      //   "clinvarSubmittedClassification"
+      // },
+      {
+        "name": "clinvarMethodCategory",
+        "value": "literature only"
+      },
+      {
+        "name": "clinvarReviewStatus",
+        "value": "no assertion criteria provided"
+      }
+    ]
   },
   "SCV001245167.1": {
     "id": "SCV001245167.1",
     "type": "VariationPathogenicity",
     "isVersionOf": "SCV001245167",
     "variation": "catvars-mvp.jsonc#/208366",
-    "classification": {
-      "id": "lp",
-      "label": "Likely pathogenic"
-    },
     "condition": {
-      "id": "SCV001245167.0",
-      "label": "- Nonsyndromic genetic hearing loss",
-      "type": "Condition",
+      "id": "clinvarTrait:9544",
+      "type": "Disease",
+      "label": "Nonsyndromic genetic hearing loss",
       "mappings": [
         {
-          "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait_set/",
-          "code": "9568",
-          "label": "- Nonsyndromic genetic hearing loss",
-          "relation": "exactMatch"
-        }
-      ],
-      "traits": [
-        {
-          "id": "SCV001245167.0",
-          "type": "Disease",
+          "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+          "code": "CN043648",
           "label": "Nonsyndromic genetic hearing loss",
-          "mappings": [
-            {
-              "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
-              "code": "9544",
-              "label": "Nonsyndromic genetic hearing loss",
-              "relation": "exactMatch"
-            },
-            {
-              "system": "https://www.ncbi.nlm.nih.gov/medgen/",
-              "code": "CN043648",
-              "label": "Nonsyndromic genetic hearing loss",
-              "relation": "exactMatch"
-            }
-          ]
+          "relation": "exactMatch"
         }
       ]
     },
     "direction": "supports",
-    "strengthCode": {
+    "strength": {
       "label": "likely"
     },
-    "penetrance": {
-      "label": "not specified"
+    "classification": {
+      "label": "Likely pathogenic"
     },
-    "qualifiers": {
-      "alleleOrigin": {
-        "label": "germline"
+    "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting.",
+    "contributions": [
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/506744",
+          "type": "Agent",
+          "label": "ClinGen Hearing Loss Variant Curation Expert Panel"
+        },
+        "date": "2020-05-04",
+        "activity": {
+          "label": "submitted"
+        }
+      },
+      {
+        "type": "Contribution",
+        "contributor": {
+          "id": "clinvar.submitter/506744",
+          "type": "Agent",
+          "label": "ClinGen Hearing Loss Variant Curation Expert Panel"
+        },
+        "date": "2019-11-26",
+        "activity": {
+          "label": "last evaluated"
+        }
+      }
+    ],
+    "methods": {
+      "id": "hearing_loss_acmg_specifications_v1_2018.pdf",
+      "type": "Method",
+      "label": "ClinGen HL ACMG Specifications v1",
+      "is_reported_in": {
+        "id": "https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf",
+        "type": "Document",
+        "label": "ClinGen HL ACMG Specifications v1"
       }
     },
-    "description": "The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030, LMM unpublished data SCV000967428.1). This variant segregated with hearing loss in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org). This variant causes a change in the length of the protein due to an in-frame deletion between the S5 membrane-spanning domain and the pore region, which is important for protein function (PM4). In summary, this variant meets criteria to be classified as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2, PM4, PS4_Supporting."
+    "extensions": [
+      {
+        "name": "clinvarMethodCategory",
+        "value": "curation"
+      },
+      {
+        "name": "clinvarReviewStatus",
+        "value": "reviewed by expert panel"
+      }
+    ]
   },
   "SCV000568660.6": {
     "id": "SCV000568660.6",
