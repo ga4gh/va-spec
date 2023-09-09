@@ -1,83 +1,59 @@
-classification:
-  id: loinc:LA6668-3
-  label: Pathogenic
-  type: Coding
-contributions:
-- contributor:
-    id: clinvar-submitter:21766
-    label: Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine
-    type: Agent
-  date: '2018-10-23'
-  activity:
-    id: clingen.activities:approved
-    label: approved
-    type: Coding
-  type: Contribution
-- contributor:
-    id: clinvar-submitter:21766
-    label: Laboratory for Molecular Medicine,Mass General Brigham Personalized Medicine
-    type: Agent
-  date: '2019-08-31'
-  activity:
-    id: clingen.activities:submitted
-    label: submitted
-    type: Coding
-  type: Contribution
-description: 'The p.Gly285Ser variant in KCNQ4 has been reported in at least three
-  individuals with hearing loss, and segregated with disease in over 15 affected relatives
-  fr om two families (LMM unpublished data, Kubisch 1999, Wang 2014). It was absent
-  f rom large population studies. In vitro functional studies support an impact on
-  p rotein function and suggest that the variant may act in a dominant-negative mann
-  er (Kubisch 1999, Bal 2008). Furthermore, the p.Gly285Ser variant falls within t
-  he highly conserved pore-forming region of KCNQ4 (Oza 2018). Supporting the into
-  lerance of this position to variation, a different amino acid change at the same
-  position (p.Gly285Cys) has been reported in one family with hearing loss (Couck
-  e 1999). Finally, this variant was classified as Pathogenic on 9/11/2018 by the
-  ClinGen-approved Hearing Loss Expert Panel (Variation ID 6241). In summary, this
-  variant meets criteria to be classified as pathogenic for autosomal dominant no
-  nsyndromic hearing loss. ACMG/AMP criteria applied: PP1_Strong, PM1, PM2, PP3, P
-  S3_Supporting, PS4_Supporting.'
+id: SCV001245167.1
+type: VariationPathogenicity
+isVersionOf: SCV001245167
+variation: catvars-mvp.jsonc#/208366
+condition:
+  id: clinvarTrait:9544
+  type: Disease
+  label: Nonsyndromic genetic hearing loss
+  mappings:
+  - system: https://www.ncbi.nlm.nih.gov/medgen/
+    code: CN043648
+    label: Nonsyndromic genetic hearing loss
+    relation: exactMatch
 direction: supports
-extensions:
-- name: submitted_allele_origin
-  value:
-  - germline
-- name: submitted_inheritance_pattern
-  value:
-  - autosomal dominant inheritance
-- name: submitted_classification
-  value: pathogenic
-- name: submitters_method_type
-  value: clinical testing
-- name: submitters_review_status
-  value: criteria provided, single submitter
-- name: submitted_affected_status
-  value:
-  - not provided
-id: clingen:SCV000198442_2021-07-07
-is_reported_in:
-- pmid:12345
-specified_by:
-  id: cspec:123134
-  is_reported_in: pmid:1231231231
-  label: Clingen BrainMalform ACMG Specifications v1
+strength:
+  label: likely
+classification:
+  label: Likely pathogenic
+description: 'The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed
+  in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030,
+  LMM unpublished data SCV000967428.1). This variant segregated with hearing loss
+  in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del
+  variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org).
+  This variant causes a change in the length of the protein due to an in-frame deletion
+  between the S5 membrane-spanning domain and the pore region, which is important
+  for protein function (PM4). In summary, this variant meets criteria to be classified
+  as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP
+  Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2,
+  PM4, PS4_Supporting.'
+contributions:
+- type: Contribution
+  contributor:
+    id: clinvar.submitter/506744
+    type: Agent
+    label: ClinGen Hearing Loss Variant Curation Expert Panel
+  date: '2020-05-04'
+  activity:
+    label: submitted
+- type: Contribution
+  contributor:
+    id: clinvar.submitter/506744
+    type: Agent
+    label: ClinGen Hearing Loss Variant Curation Expert Panel
+  date: '2019-11-26'
+  activity:
+    label: last evaluated
+methods:
+  id: hearing_loss_acmg_specifications_v1_2018.pdf
   type: Method
-object_descriptor:
-  disease: medgen:CN826980
-  id: genegraph-disease:101
-  label: Rare genetic deafness
-  type: DiseaseDescriptor
-record_metadata:
-  is_version_of: clinvar-scv:SCV000198442
-  type: RecordMetadata
-  version: '4'
-subject_descriptor: clinvar-variation:6241
-target_proposition:
-  object:
-    id: medgen:CN826980
-    type: Disease
-  predicate: causes_mendelian_condition
-  subject: ga4gh:CLV.fake13579
-  type: VariationGermlinePathogenicityProposition
-type: VariationGermlinePathogenicityStatement
-variation_origin: germline
+  label: ClinGen HL ACMG Specifications v1
+  is_reported_in:
+    id: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
+    type: Document
+    label: ClinGen HL ACMG Specifications v1
+extensions:
+- name: clinvarMethodCategory
+  value: curation
+- name: clinvarReviewStatus
+  value: reviewed by expert panel
