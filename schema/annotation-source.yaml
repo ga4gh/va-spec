@@ -29,6 +29,26 @@ $defs:
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
+      subject:
+        description: The subject of the Information Entity.
+      predicate:
+        description: The predicate of the Information Entity.
+        type: string
+      object:
+        description: The object of the Information Entity.
+      qualifiers:
+        description: Additional, optional properties that may qualify the Information Entity.
+      direction:
+        type: string
+        enum: [ "supports", "none", "refutes" ]
+        description: >-
+          The direction of this Information Entity with respect to the predicate.
+      strength:
+        oneOf:
+          - $refCurie: gks.core:Coding
+          - $refCurie: gks.core:IRI
+        description: >-
+          A term indicating the overall strength of support for the Statement based on all evidence assessed.
       contributions:
         type: array
         ordered: true
@@ -47,6 +67,8 @@ $defs:
     heritableRequired:
       - id
       - type
+      - subject
+      - direction
 
   Contribution:
     type: object
@@ -172,26 +194,6 @@ $defs:
       A Statement (aka ‘Assertion’) represents a claim of purported truth as made by a particular agent, 
       on a particular occasion.
     heritableProperties:
-      subject:
-        description: The subject of the Statement.
-      predicate:
-        description: The predicate of the Statement.
-        type: string
-      object:
-        description: The object of the Statement.
-      qualifiers:
-        description: Additional, optional properties that may qualify the Statement.
-      direction:
-        type: string
-        enum: [ "supports", "none", "refutes" ]
-        description: >-
-          The direction of this statement with respect to the statement predicate.
-      strength:
-        oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
-        description: >-
-          A term indicating the overall strength of support for the Statement based on all evidence assessed.
       conclusion:
         oneOf:
           - $refCurie: gks.core:Coding
@@ -199,5 +201,4 @@ $defs:
         description: >-
           The conclusion associated with the statement.
     heritableRequired:
-      - subject
-      - direction
+      - conclusion
