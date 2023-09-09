@@ -20,10 +20,6 @@ $defs:
       InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry 
       information about things in the real world).
     heritable_properties:
-      description:
-        type: string
-        description: >-
-          A free-text description of the InformationEntity.
       specified_by:
         oneOf:
         - $ref: "#/$defs/Method"

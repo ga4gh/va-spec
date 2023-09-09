@@ -13,17 +13,19 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Set up Python 3.9
+      - name: Set up Python 3.10
         uses: actions/setup-python@v2
         with:
-          python-version: '3.9'
+          python-version: '3.10'
           architecture: 'x64'
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools
-          pip install -r .requirements.txt
+          pip install -r .requirements.txt --pre
 
       - name: Test with pytest
         run: |
-          pytest tests/
+          pytest
+        env:
+          PYTHONPATH: /home/runner/work/va-spec/va-spec/
