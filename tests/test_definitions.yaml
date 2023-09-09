@@ -1,4 +1,7 @@
 tests:
+  - test_file: allele2.yaml
+    schema: vrs
+    definition: Allele
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     schema: varclass
     definition: VariantPathogenicity

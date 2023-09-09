@@ -137,13 +137,13 @@ $defs:
       - tumorType
       - predicate
 
-  VariantTherapyResponsePredictive:
+  VariantTherapeuticResponsePredictive:
     type: object
     maturity: Alpha
     inherits: VariantClassification
     description: >-
       A :ref:`Statement` describing the role of a variation in modulating the response of a
-      neoplasm to therapy.
+      neoplasm to drug administration or other therapeutic procedure.
     properties:
       type:
         type: string
@@ -156,10 +156,10 @@ $defs:
         enum:
           - predicts_sensitivity_to
           - predicts_resistance_to
-      therapy:
+      therapeuticProcedure:
         extends: object
         oneOf:
-          - $refCurie: gks.core:Therapy
+          - $refCurie: gks.core:therapeuticProcedure
           - $refCurie: gks.core:IRI
       tumorType:
         oneOf:

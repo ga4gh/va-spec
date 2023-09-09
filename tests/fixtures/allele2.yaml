@@ -1,0 +1,24 @@
+id: ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
+digest: Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
+type: Allele
+location:
+  id: ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr
+  digest: 5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr
+  type: SequenceLocation
+  sequenceReference:
+    id: NC_000001.11
+    digest: Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+    type: SequenceReference
+    refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+    label: NC_000001.11
+  start: 40819438
+  end: 40819446
+state:
+  repeatSubunitLength: 3
+  type: ReferenceLengthExpression
+  length: 5
+expressions:
+  - syntax: hgvs.g
+    value: NC_000001.11:g.40819441CCT[1]
+  - syntax: spdi
+    value: NC_000001.11:40819438:CTCCTCCT:CTCCT

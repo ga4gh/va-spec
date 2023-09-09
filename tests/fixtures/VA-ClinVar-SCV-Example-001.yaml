@@ -1,6 +1,6 @@
 id: SCV000778434.1
-type: VariationPathogenicity
-variation:
+type: VariantPathogenicity
+variant:
   id: '208366'
   type: CanonicalAllele
   definingContext:
@@ -20,7 +20,7 @@ variation:
       start: 40819438
       end: 40819446
     state:
-      repeatSubUnitLength: 3
+      repeatSubunitLength: 3
       type: ReferenceLengthExpression
       length: 5
     expressions:
@@ -34,9 +34,9 @@ condition:
   type: Disease
   label: Autosomal dominant nonsyndromic hearing loss 2A
   mappings:
-  - code: C2677637
-    system: https://www.ncbi.nlm.nih.gov/medgen/
-    label: Autosomal dominant nonsyndromic hearing loss 2A
+  - coding:
+      code: C2677637
+      system: https://www.ncbi.nlm.nih.gov/medgen/
     relation: exactMatch
 direction: supports
 strength:
@@ -72,7 +72,7 @@ contributions:
     system: https://dataexchange.clinicalgenome.org/codes/
   extensions:
     - name: clinvarActivityLabel
-      label: last evaluated
+      value: last evaluated
 extensions:
 - name: clinvarMethodCategory
   value: literature only

@@ -87,8 +87,8 @@ $defs:
         - $ref: core.json#/$defs/Condition
         - $ref: core.json#/$defs/IRI
       qualifiers:
+        description: Additional, optional properties that may qualify the Statement.
         type: object
-        description: Properties that qualify the Statement.
         properties:
           penetrance:
             type: string
@@ -205,8 +205,8 @@ $defs:
         - $ref: core.json#/$defs/Condition
         - $ref: core.json#/$defs/IRI
       qualifiers:
+        description: Additional, optional properties that may qualify the Statement.
         type: object
-        description: Properties that qualify the Statement.
         properties:
           alleleOrigin:
             type: string
@@ -233,11 +233,11 @@ $defs:
     - type
     - variant
     additionalProperties: false
-  VariantTherapyResponsePredictive:
+  VariantTherapeuticResponsePredictive:
     type: object
     maturity: Alpha
     description: A Statement describing the role of a variation in modulating the
-      response of a neoplasm to therapy.
+      response of a neoplasm to drug administration or other therapeutic procedure.
     properties:
       id:
         type: string
@@ -314,19 +314,19 @@ $defs:
         enum:
         - predicts_sensitivity_to
         - predicts_resistance_to
-      therapy:
+      therapeuticProcedure:
         description: The object of the Statement.
         oneOf:
         - $ref: core.json#/$defs/IRI
-        - $ref: core.json#/$defs/Therapy
+        - $ref: core.json#/$defs/therapeuticProcedure
       tumorType:
         oneOf:
         - $ref: core.json#/$defs/Condition
         - $ref: core.json#/$defs/IRI
         description: The tumor type context in which the variant impact is evaluated.
       qualifiers:
+        description: Additional, optional properties that may qualify the Statement.
         type: object
-        description: Properties that qualify the Statement.
         properties:
           alleleOrigin:
             type: string
