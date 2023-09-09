@@ -36,7 +36,7 @@ Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
           - string
           - 1..1
           - 
-       *  - specified_by
+       *  - specifiedBy
           - :ref:`Method` | `IRI <core.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
@@ -44,11 +44,11 @@ Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
           - :ref:`Contribution`
           - 0..m
           - 
-       *  - is_reported_in
+       *  - isReportedIn
           - :ref:`Document` | `IRI <core.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
-       *  - record_metadata
+       *  - recordMetadata
           - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
           - 0..1
           - 

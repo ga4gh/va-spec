@@ -30,7 +30,7 @@ $defs:
         const: VariantPathogenicity
         default: VariantPathogenicity
         description: MUST be "VariantPathogenicity".
-      specified_by:
+      specifiedBy:
         oneOf:
         - $ref: annotation.json#/$defs/Method
         - $ref: core.json#/$defs/IRI
@@ -41,7 +41,7 @@ $defs:
         ordered: true
         items:
           $ref: annotation.json#/$defs/Contribution
-      is_reported_in:
+      isReportedIn:
         type: array
         ordered: false
         items:
@@ -49,7 +49,7 @@ $defs:
           - $ref: annotation.json#/$defs/Document
           - $ref: core.json#/$defs/IRI
         description: A document in which the information content is expressed.
-      record_metadata:
+      recordMetadata:
         $ref: core.json#/$defs/RecordMetadata
       direction:
         type: string
@@ -145,7 +145,7 @@ $defs:
         const: VariantOncogenicity
         default: VariantOncogenicity
         description: MUST be "VariantPathogenicity".
-      specified_by:
+      specifiedBy:
         oneOf:
         - $ref: annotation.json#/$defs/Method
         - $ref: core.json#/$defs/IRI
@@ -156,7 +156,7 @@ $defs:
         ordered: true
         items:
           $ref: annotation.json#/$defs/Contribution
-      is_reported_in:
+      isReportedIn:
         type: array
         ordered: false
         items:
@@ -164,7 +164,7 @@ $defs:
           - $ref: annotation.json#/$defs/Document
           - $ref: core.json#/$defs/IRI
         description: A document in which the information content is expressed.
-      record_metadata:
+      recordMetadata:
         $ref: core.json#/$defs/RecordMetadata
       direction:
         type: string
@@ -261,7 +261,7 @@ $defs:
         const: VariantTherapeuticResponsePredictive
         default: VariantTherapeuticResponsePredictive
         description: MUST be "VariantTherapeuticResponsePredictive".
-      specified_by:
+      specifiedBy:
         oneOf:
         - $ref: annotation.json#/$defs/Method
         - $ref: core.json#/$defs/IRI
@@ -272,7 +272,7 @@ $defs:
         ordered: true
         items:
           $ref: annotation.json#/$defs/Contribution
-      is_reported_in:
+      isReportedIn:
         type: array
         ordered: false
         items:
@@ -280,7 +280,7 @@ $defs:
           - $ref: annotation.json#/$defs/Document
           - $ref: core.json#/$defs/IRI
         description: A document in which the information content is expressed.
-      record_metadata:
+      recordMetadata:
         $ref: core.json#/$defs/RecordMetadata
       direction:
         type: string
@@ -312,8 +312,8 @@ $defs:
         description: The predicate of the Statement.
         type: string
         enum:
-        - predicts_sensitivity_to
-        - predicts_resistance_to
+        - predictsSensitivityTo
+        - predictsResistanceTo
       therapeuticProcedure:
         description: The object of the Statement.
         oneOf:

@@ -107,7 +107,7 @@ $defs:
         const: Method
         default: Method
         description: MUST be "Method".
-      is_reported_in:
+      isReportedIn:
         oneOf:
         - $ref: '#/$defs/Document'
         - $ref: core.json#/$defs/IRI
@@ -184,7 +184,7 @@ $defs:
         const: DataItem
         default: DataItem
         description: Must be "DataItem"
-      specified_by:
+      specifiedBy:
         oneOf:
         - $ref: '#/$defs/Method'
         - $ref: core.json#/$defs/IRI
@@ -195,7 +195,7 @@ $defs:
         ordered: true
         items:
           $ref: '#/$defs/Contribution'
-      is_reported_in:
+      isReportedIn:
         type: array
         ordered: false
         items:
@@ -203,7 +203,7 @@ $defs:
           - $ref: '#/$defs/Document'
           - $ref: core.json#/$defs/IRI
         description: A document in which the information content is expressed.
-      record_metadata:
+      recordMetadata:
         $ref: core.json#/$defs/RecordMetadata
       subtype:
         description: A specific type of data the DataItem object represents (e.g.

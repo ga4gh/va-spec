@@ -121,7 +121,7 @@
                "default": "Method",
                "description": "MUST be \"Method\"."
             },
-            "is_reported_in": {
+            "isReportedIn": {
                "oneOf": [
                   {
                      "$ref": "#/$defs/Document"
@@ -214,7 +214,7 @@
                "default": "DataItem",
                "description": "Must be \"DataItem\""
             },
-            "specified_by": {
+            "specifiedBy": {
                "oneOf": [
                   {
                      "$ref": "#/$defs/Method"
@@ -232,7 +232,7 @@
                   "$ref": "#/$defs/Contribution"
                }
             },
-            "is_reported_in": {
+            "isReportedIn": {
                "type": "array",
                "ordered": false,
                "items": {
@@ -247,7 +247,7 @@
                },
                "description": "A document in which the information content is expressed."
             },
-            "record_metadata": {
+            "recordMetadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
             "subtype": {

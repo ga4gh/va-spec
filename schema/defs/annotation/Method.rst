@@ -36,7 +36,7 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
           - string
           - 0..1
           - MUST be "Method".
-       *  - is_reported_in
+       *  - isReportedIn
           - `IRI <core.json#/$defs/IRI>`_ | :ref:`Document`
           - 0..1
           - 

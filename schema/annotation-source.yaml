@@ -22,7 +22,7 @@ $defs:
     heritableProperties:
       type:
         type: string
-      specified_by:
+      specifiedBy:
         oneOf:
         - $ref: "#/$defs/Method"
         - $refCurie: gks.core:IRI
@@ -34,7 +34,7 @@ $defs:
         ordered: true
         items:
           $ref: "#/$defs/Contribution"
-      is_reported_in:
+      isReportedIn:
         type: array
         ordered: false
         items:
@@ -42,7 +42,7 @@ $defs:
           - $ref: "#/$defs/Document"
           - $refCurie: gks.core:IRI
         description: A document in which the information content is expressed.
-      record_metadata:
+      recordMetadata:
         $refCurie: gks.core:RecordMetadata
     heritableRequired:
       - id
@@ -105,7 +105,7 @@ $defs:
         const: Method
         default: Method
         description: MUST be "Method".
-      is_reported_in:
+      isReportedIn:
         oneOf:
         - $refCurie: gks.core:IRI
         - $ref: "#/$defs/Document"

@@ -33,7 +33,7 @@
                "default": "VariantPathogenicity",
                "description": "MUST be \"VariantPathogenicity\"."
             },
-            "specified_by": {
+            "specifiedBy": {
                "oneOf": [
                   {
                      "$ref": "annotation.json#/$defs/Method"
@@ -51,7 +51,7 @@
                   "$ref": "annotation.json#/$defs/Contribution"
                }
             },
-            "is_reported_in": {
+            "isReportedIn": {
                "type": "array",
                "ordered": false,
                "items": {
@@ -66,7 +66,7 @@
                },
                "description": "A document in which the information content is expressed."
             },
-            "record_metadata": {
+            "recordMetadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
             "direction": {
@@ -197,7 +197,7 @@
                "default": "VariantOncogenicity",
                "description": "MUST be \"VariantPathogenicity\"."
             },
-            "specified_by": {
+            "specifiedBy": {
                "oneOf": [
                   {
                      "$ref": "annotation.json#/$defs/Method"
@@ -215,7 +215,7 @@
                   "$ref": "annotation.json#/$defs/Contribution"
                }
             },
-            "is_reported_in": {
+            "isReportedIn": {
                "type": "array",
                "ordered": false,
                "items": {
@@ -230,7 +230,7 @@
                },
                "description": "A document in which the information content is expressed."
             },
-            "record_metadata": {
+            "recordMetadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
             "direction": {
@@ -363,7 +363,7 @@
                "default": "VariantTherapeuticResponsePredictive",
                "description": "MUST be \"VariantTherapeuticResponsePredictive\"."
             },
-            "specified_by": {
+            "specifiedBy": {
                "oneOf": [
                   {
                      "$ref": "annotation.json#/$defs/Method"
@@ -381,7 +381,7 @@
                   "$ref": "annotation.json#/$defs/Contribution"
                }
             },
-            "is_reported_in": {
+            "isReportedIn": {
                "type": "array",
                "ordered": false,
                "items": {
@@ -396,7 +396,7 @@
                },
                "description": "A document in which the information content is expressed."
             },
-            "record_metadata": {
+            "recordMetadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
             "direction": {
@@ -448,8 +448,8 @@
                "description": "The predicate of the Statement.",
                "type": "string",
                "enum": [
-                  "predicts_sensitivity_to",
-                  "predicts_resistance_to"
+                  "predictsSensitivityTo",
+                  "predictsResistanceTo"
                ]
             },
             "therapeuticProcedure": {

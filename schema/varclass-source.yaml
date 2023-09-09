@@ -154,8 +154,8 @@ $defs:
       predicate:
         extends: predicate
         enum:
-          - predicts_sensitivity_to
-          - predicts_resistance_to
+          - predictsSensitivityTo
+          - predictsResistanceTo
       therapeuticProcedure:
         extends: object
         oneOf:
