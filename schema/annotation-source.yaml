@@ -7,17 +7,15 @@ imports:
   gks.core: core-source.yaml
   vrs: vrs-source.yaml
   catvars: catvars-source.yaml
-  vod: vod-source.yaml
 
 namespaces:
   gks.core: core.json#/$defs/
-  vod: vod.json#/definitions/
   catvars: catvars.json#/$defs/
-  vrs: vrs.json#/definitions/
+  vrs: vrs.json#/$defs/
 
 $defs:
   InformationEntity:
-    inherits: gks.core:ExtensibleEntity
+    inherits: gks.core:Entity
     description: >-
       InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry 
       information about things in the real world).
@@ -29,7 +27,7 @@ $defs:
       specified_by:
         oneOf:
         - $ref: "#/$defs/Method"
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: gks.core:IRI
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
@@ -44,10 +42,10 @@ $defs:
         items:
           oneOf:
           - $ref: "#/$defs/Document"
-          - $ref_curie: gks.core:CURIE
+          - $refCurie: gks.core:IRI
         description: A document in which the information content is expressed.
       record_metadata:
-        $ref_curie: gks.core:RecordMetadata
+        $refCurie: gks.core:RecordMetadata
     heritable_required: [ "id" ]
 
   Contribution:
@@ -69,7 +67,7 @@ $defs:
         type: string
         format: date
       activity:
-        $ref_curie: gks.core:Coding
+        $refCurie: gks.core:Coding
         description: >-
          SHOULD describe a concept descending from the Contributor Role Ontology.
 
@@ -89,7 +87,7 @@ $defs:
       name:
         type: string
       subtype:
-        $ref_curie: gks.core:Coding
+        $refCurie: gks.core:Coding
         description: >-
             A specific type of agent the Agent object represents (e.g. a person, organization, 
             software agent)
@@ -107,10 +105,10 @@ $defs:
         description: MUST be "Method".
       is_reported_in:
         oneOf:
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: gks.core:IRI
         - $ref: "#/$defs/Document"
       subtype:
-        $ref_curie: gks.core:Coding
+        $refCurie: gks.core:Coding
         description: >-
           A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, 
           Experimental Protocol)
@@ -132,7 +130,7 @@ $defs:
         type: array
         ordered: false
         items:
-          $ref_curie: gks.core:CURIE
+          $refCurie: gks.core:IRI
       title:
         type: string
 
@@ -149,7 +147,7 @@ $defs:
         default: DataItem
         description: Must be "DataItem"
       subtype:
-        $ref_curie: gks.core:Coding
+        $refCurie: gks.core:Coding
         description: >- 
           A specific type of data the DataItem object represents (e.g. a specimen count, a 
           patient weight, an allele frequency, a p-value, a confidence score)
@@ -157,7 +155,7 @@ $defs:
          type: string
       unit:
         type:
-          $ref_curie: gks.core:Coding
+          $refCurie: gks.core:Coding
     required: [ "value" ]
 
   Statement:
@@ -167,16 +165,16 @@ $defs:
       on a particular occasion.
     heritable_properties:
       evidence_level:
-        $ref_curie: gks.core:Coding
+        $refCurie: gks.core:Coding
         description: >- 
           A term indicating the overall strength of support for the Statement based on all evidence assessed.
       target_proposition:
         oneOf:
         - $ref: "#/$defs/Proposition"
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: gks.core:IRI
         description: The Proposition about which the Statement is made.
       conclusion:
-        $ref_curie: gks.core:Coding
+        $refCurie: gks.core:Coding
         description: >-
           The conclusion associated with the statement proposition and direction.
       direction:
@@ -192,9 +190,9 @@ $defs:
     heritable_properties:
       subject_descriptor:
         oneOf:
-        - $ref_curie: vod:VariationDescriptor
-        - $ref_curie: vod:CategoricalVariationDescriptor
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: vod:VariationDescriptor
+        - $refCurie: vod:CategoricalVariationDescriptor
+        - $refCurie: gks.core:IRI
         description: >-
           A descriptor characterizing the variation impacting the condition.
       variation_origin:
@@ -211,10 +209,10 @@ $defs:
     heritable_properties:
       object_descriptor:
         oneOf:
-        - $ref_curie: vod:PhenotypeDescriptor
-        - $ref_curie: vod:DiseaseDescriptor
-        - $ref_curie: vod:ConditionDescriptor
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: vod:PhenotypeDescriptor
+        - $refCurie: vod:DiseaseDescriptor
+        - $refCurie: vod:ConditionDescriptor
+        - $refCurie: gks.core:IRI
         description: >-
           A descriptor characterizing the condition impacted by the variation.
 
@@ -244,10 +242,10 @@ $defs:
     heritable_properties:
       neoplasm_type_descriptor:
         oneOf:
-        - $ref_curie: vod:PhenotypeDescriptor
-        - $ref_curie: vod:DiseaseDescriptor
-        - $ref_curie: vod:ConditionDescriptor
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: vod:PhenotypeDescriptor
+        - $refCurie: vod:DiseaseDescriptor
+        - $refCurie: vod:ConditionDescriptor
+        - $refCurie: gks.core:IRI
         description: >-
           A descriptor characterizing the neoplasm type for which the indicated variation is relevant.
 
@@ -263,9 +261,9 @@ $defs:
           A descriptor characterizing the therapeutic(s) to which the neoplasm response is modulated in 
           the presence of the `subject` variation.
         oneOf:
-        - $ref_curie: vod:TherapeuticDescriptor
-        - $ref_curie: vod:TherapeuticCollectionDescriptor
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: vod:TherapeuticDescriptor
+        - $refCurie: vod:TherapeuticCollectionDescriptor
+        - $refCurie: gks.core:IRI
 
   Proposition:
     inherits: gks.core:ValueEntity
@@ -283,7 +281,7 @@ $defs:
           The relationship asserted to hold between the subject and the object of the 
           Proposition.
       object:
-        $ref_curie: gks.core:ValueEntity
+        $refCurie: gks.core:ValueEntity
         description: >-
           A ValueEntity that is related to the subject of a Proposition via its predicate.
     heritable_required: [ "subject", "predicate", "object" ]
@@ -296,9 +294,9 @@ $defs:
         description: >-
           The `Variation` or `CategoricalVariation` about which the Proposition is made.
         oneOf:
-        - $ref_curie: vrs:Variation
-        - $ref_curie: catvars:CategoricalVariation
-        - $ref_curie: gks.core:CURIE
+        - $refCurie: vrs:Variation
+        - $refCurie: catvars:CategoricalVariation
+        - $refCurie: gks.core:IRI
 
   VariationGermlinePathogenicityProposition:
     type: object
@@ -324,9 +322,9 @@ $defs:
       object:
         extends: object
         oneOf:
-        - $ref_curie: gks.core:Condition
-        - $ref_curie: gks.core:Disease
-        - $ref_curie: gks.core:Phenotype
+        - $refCurie: gks.core:Condition
+        - $refCurie: gks.core:Disease
+        - $refCurie: gks.core:Phenotype
 
   VariationNeoplasmProposition:
     inherits: VariationProposition
@@ -337,9 +335,9 @@ $defs:
         description: >-
           The neoplasm for which the presence of the indicated variation is relevant.
         oneOf:
-        - $ref_curie: gks.core:Condition
-        - $ref_curie: gks.core:Disease
-        - $ref_curie: gks.core:Phenotype
+        - $refCurie: gks.core:Condition
+        - $refCurie: gks.core:Disease
+        - $refCurie: gks.core:Phenotype
 
   VariationNeoplasmTherapeuticResponseProposition:
     type: object
@@ -353,9 +351,9 @@ $defs:
           The therapeutic(s) to which the neoplasm response is modulated in the presence of the
           `subject` variation.
         oneOf:
-        - $ref_curie: gks.core:Therapeutic
-        - $ref_curie: gks.core:CombinationTherapeuticCollection
-        - $ref_curie: gks.core:SubstituteTherapeuticCollection
+        - $refCurie: gks.core:Therapeutic
+        - $refCurie: gks.core:CombinationTherapeuticCollection
+        - $refCurie: gks.core:SubstituteTherapeuticCollection
       predicate:
         type: string
         description: >-

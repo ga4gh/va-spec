@@ -20,7 +20,7 @@ def get_schema(schema_file, schema_class, kw="$defs"):
 
 
 def test_allele_validation():
-    schema = get_schema("vrs", "Allele", kw="definitions")
+    schema = get_schema("vrs", "Allele", kw="$defs")
     assert validate(allele, schema) is None
 
 
