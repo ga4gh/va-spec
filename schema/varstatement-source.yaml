@@ -94,17 +94,18 @@ $defs:
     required:
       - condition
 
-  VariantEvidenceSummary:
+  VariantStudySummary:
     inherits: VariantStatement
     description: >-
-      A :ref:`Statement` summarizing the strength of evidence about the impact of a variant.
+      A :ref:`Statement` summarizing evidence about the impact of a variant from
+      a study.
 
-  VariantOncogenicityEvidenceSummary:
+  VariantOncogenicityStudy:
     type: object
-    inherits: VariantEvidenceSummary
+    inherits: VariantStudySummary
     maturity: Alpha
     description: >-
-      Evidence supporting or refuting the effect of variation on oncogenesis of a tumor type.
+      A study summarization supporting or refuting the effect of variation on oncogenesis of a tumor type.
     properties:
       type:
         type: string
@@ -150,12 +151,12 @@ $defs:
       - tumorType
       - predicate
 
-  VariantTherapeuticResponseSummary:
+  VariantTherapeuticResponseStudy:
     type: object
     maturity: Alpha
-    inherits: VariantClassification
+    inherits: VariantStudySummary
     description: >-
-      A :ref:`Statement` describing the role of a variation in modulating the response of a
+      A study summarization describing the role of a variation in modulating the response of a
       neoplasm to drug administration or other therapeutic procedure.
     properties:
       type:

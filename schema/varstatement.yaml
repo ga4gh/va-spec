@@ -116,11 +116,11 @@ $defs:
     - type
     - variant
     additionalProperties: false
-  VariantOncogenicityEvidenceSummary:
+  VariantOncogenicityStudy:
     type: object
     maturity: Alpha
-    description: Evidence supporting or refuting the effect of variation on oncogenesis
-      of a tumor type.
+    description: A study summarization supporting or refuting the effect of variation
+      on oncogenesis of a tumor type.
     properties:
       id:
         type: string
@@ -224,11 +224,11 @@ $defs:
     - type
     - variant
     additionalProperties: false
-  VariantTherapeuticResponseSummary:
+  VariantTherapeuticResponseStudy:
     type: object
     maturity: Alpha
-    description: A Statement describing the role of a variation in modulating the
-      response of a neoplasm to drug administration or other therapeutic procedure.
+    description: A study summarization describing the role of a variation in modulating
+      the response of a neoplasm to drug administration or other therapeutic procedure.
     properties:
       id:
         type: string
@@ -292,12 +292,6 @@ $defs:
         - $ref: catvars.json#/$defs/CategoricalVariation
         - $ref: core.json#/$defs/IRI
         - $ref: vrs.json#/$defs/Variation
-      classification:
-        oneOf:
-        - $ref: core.json#/$defs/Coding
-        - $ref: core.json#/$defs/IRI
-        description: A methodological, summary classification about the impact of
-          a variant.
       predicate:
         description: The predicate of the Statement.
         type: string
@@ -335,7 +329,6 @@ $defs:
             - rare
             - common
     required:
-    - classification
     - direction
     - id
     - predicate
