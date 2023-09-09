@@ -3,7 +3,7 @@
 .SUFFIXES:
 .DELETE_ON_ERROR:
 
-JSYAMLS:=annotation.yaml
+JSYAMLS:=annotation.yaml varclass.yaml
 JSONS:=${JSYAMLS:.yaml=.json}
 
 all: ${JSONS} defs

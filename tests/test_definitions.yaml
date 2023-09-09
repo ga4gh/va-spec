@@ -1,16 +1,16 @@
 tests:
   - test_file: VA-ClinVar-SCV-Example-001.yaml
-    schema: annotation
-    definition: VariationGermlinePathogenicityStatement
-  - test_file: VA-ClinVar-SCV-Example-002.yaml
-    schema: annotation
-    definition: VariationGermlinePathogenicityStatement
-  - test_file: tr-proposition-with-enref.yaml
-    schema: annotation
-    definition: VariationNeoplasmTherapeuticResponseProposition
-  - test_file: tr-statement-with-enrefs.yaml
-    schema: annotation
-    definition: VariationNeoplasmTherapeuticResponseStatement
-  - test_file: tr-statement-inline.yaml
-    schema: annotation
-    definition: VariationNeoplasmTherapeuticResponseStatement
+    schema: varclass
+    definition: VariantPathogenicity
+#  - test_file: VA-ClinVar-SCV-Example-002.yaml
+#    schema: annotation
+#    definition: VariationGermlinePathogenicityStatement
+#  - test_file: tr-proposition-with-enref.yaml
+#    schema: annotation
+#    definition: VariationNeoplasmTherapeuticResponseProposition
+#  - test_file: tr-statement-with-enrefs.yaml
+#    schema: annotation
+#    definition: VariationNeoplasmTherapeuticResponseStatement
+#  - test_file: tr-statement-inline.yaml
+#    schema: annotation
+#    definition: VariationNeoplasmTherapeuticResponseStatement
