@@ -189,12 +189,6 @@ $defs:
           - $refCurie: gks.core:IRI
         description: >-
           The overall strength of support for the Statement based on all evidence assessed.
-      conclusion:
-        oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
-        description: >-
-          A conclusion associated with the statement, if any.
     heritableRequired:
       - subject
       - direction

@@ -76,7 +76,3 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - `Coding <core.json#/$defs/Coding>`_ | `IRI <core.json#/$defs/IRI>`_
           - 0..1
           - The overall strength of support for the Statement based on all evidence assessed.
-       *  - conclusion
-          - `Coding <core.json#/$defs/Coding>`_ | `IRI <core.json#/$defs/IRI>`_
-          - 0..1
-          - A conclusion associated with the statement, if any.
