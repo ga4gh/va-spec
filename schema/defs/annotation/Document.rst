@@ -4,7 +4,7 @@ a representation of a physical or digital document
 
     **Information Model**
     
-Some Document attributes are inherited from :ref:`gks.core:Entity`.
+Some Document attributes are inherited from :ref:`gks.core:MappableEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -32,15 +32,23 @@ Some Document attributes are inherited from :ref:`gks.core:Entity`.
           - `Extension <core.json#/$defs/Extension>`_
           - 0..m
           - 
+       *  - mappings
+          - `Mapping <core.json#/$defs/Mapping>`_
+          - 0..m
+          - 
        *  - type
           - string
           - 0..1
           - Must be "Document"
-       *  - xrefs
-          - `IRI <core.json#/$defs/IRI>`_
-          - 0..m
-          - An array of compact Uniform Resource Identifiers (CURIE) used to identify the document in other systems, such as digital object identifiers or PubMed IDs.
-       *  - title
+       *  - url
           - string
           - 0..1
-          - 
+          - A URL at which the document may be retrieved.
+       *  - doi
+          - string
+          - 0..1
+          - A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_`  for the document.
+       *  - pmid
+          - integer
+          - 0..1
+          - A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_.
