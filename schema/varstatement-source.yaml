@@ -1,5 +1,5 @@
 $schema: http://json-schema.org/draft/2020-12/schema
-title: Variant-Classification-Definitions
+title: Variant-Statement-Definitions
 type: object
 strict: true
 
@@ -16,7 +16,7 @@ namespaces:
   annot: annotation.json#/$defs/
 
 $defs:
-  VariantClassification:
+  VariantStatement:
     inherits: annot:Statement
     description: >-
       A :ref:`Statement` describing the impact of a variant.
@@ -28,10 +28,18 @@ $defs:
           - $refCurie: catvars:CategoricalVariation
           - $refCurie: gks.core:IRI
         description: A variation object that is the subject of the Statement.
+
+  VariantClassification:
+    inherits: VariantStatement
+    description: >-
+      A :ref:`VariantStatement` classifying the impact of a variant.
+    heritableProperties:
       classification:
         extends: conclusion
         description: >-
           A methodological, summary classification about the impact of a variant.
+    heritableRequired:
+      - classification
 
   VariantPathogenicity:
     type: object

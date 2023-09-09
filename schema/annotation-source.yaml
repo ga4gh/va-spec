@@ -1,5 +1,5 @@
 $schema: http://json-schema.org/draft/2020-12/schema
-title: CVC-MetaKB-Annotation-Definitions
+title: GK-Pilot-Annotation-Definitions
 type: object
 strict: true
 
@@ -29,26 +29,6 @@ $defs:
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
-      subject:
-        description: The subject of the Information Entity.
-      predicate:
-        description: The predicate of the Information Entity.
-        type: string
-      object:
-        description: The object of the Information Entity.
-      qualifiers:
-        description: Additional, optional properties that may qualify the Information Entity.
-      direction:
-        type: string
-        enum: [ "supports", "none", "refutes" ]
-        description: >-
-          The direction of this Information Entity with respect to the predicate.
-      strength:
-        oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
-        description: >-
-          A term indicating the overall strength of support for the Statement based on all evidence assessed.
       contributions:
         type: array
         ordered: true
@@ -67,9 +47,6 @@ $defs:
     heritableRequired:
       - id
       - type
-      - subject
-      - direction
-
   Contribution:
     type: object
     inherits: gks.core:Entity
@@ -162,7 +139,6 @@ $defs:
       pmid:
         type: integer
         description: A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_.
-
   DataItem:
     inherits: InformationEntity
     maturity: Alpha
@@ -187,18 +163,38 @@ $defs:
         type:
           $refCurie: gks.core:Coding
     required: [ "value" ]
-
   Statement:
     inherits: InformationEntity
     description: >-
       A Statement (aka ‘Assertion’) represents a claim of purported truth as made by a particular agent, 
       on a particular occasion.
     heritableProperties:
+      subject:
+        description: The subject of the Statement.
+      predicate:
+        description: The predicate of the Statement.
+        type: string
+      object:
+        description: The object of the Statement.
+      qualifiers:
+        description: Additional, optional properties that may qualify the Statement.
+      direction:
+        type: string
+        enum: [ "supports", "none", "refutes" ]
+        description: >-
+          The direction of this Statement with respect to the predicate.
+      strength:
+        oneOf:
+          - $refCurie: gks.core:Coding
+          - $refCurie: gks.core:IRI
+        description: >-
+          The overall strength of support for the Statement based on all evidence assessed.
       conclusion:
         oneOf:
           - $refCurie: gks.core:Coding
           - $refCurie: gks.core:IRI
         description: >-
-          The conclusion associated with the statement.
+          A conclusion associated with the statement, if any.
     heritableRequired:
-      - conclusion
+      - subject
+      - direction

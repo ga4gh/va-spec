@@ -1,6 +1,6 @@
 {
    "$schema": "http://json-schema.org/draft/2020-12/schema",
-   "title": "CVC-MetaKB-Annotation-Definitions",
+   "title": "GK-Pilot-Annotation-Definitions",
    "type": "object",
    "$defs": {
       "Contribution": {
@@ -236,39 +236,6 @@
                ],
                "description": "A Method that describes all or part of the process through which the information was generated."
             },
-            "subject": {
-               "description": "The subject of the Information Entity."
-            },
-            "predicate": {
-               "description": "The predicate of the Information Entity.",
-               "type": "string"
-            },
-            "object": {
-               "description": "The object of the Information Entity."
-            },
-            "qualifiers": {
-               "description": "Additional, optional properties that may qualify the Information Entity."
-            },
-            "direction": {
-               "type": "string",
-               "enum": [
-                  "supports",
-                  "none",
-                  "refutes"
-               ],
-               "description": "The direction of this Information Entity with respect to the predicate."
-            },
-            "strength": {
-               "oneOf": [
-                  {
-                     "$ref": "core.json#/$defs/Coding"
-                  },
-                  {
-                     "$ref": "core.json#/$defs/IRI"
-                  }
-               ],
-               "description": "A term indicating the overall strength of support for the Statement based on all evidence assessed."
-            },
             "contributions": {
                "type": "array",
                "ordered": true,
@@ -308,9 +275,7 @@
             }
          },
          "required": [
-            "direction",
             "id",
-            "subject",
             "type",
             "value"
          ],

@@ -6,17 +6,11 @@ tests:
     schema: vrs
     definition: Allele
   - test_file: VA-ClinVar-SCV-Example-001.yaml
-    schema: varclass
+    schema: varstatement
     definition: VariantPathogenicity
   - test_file: VA-ClinVar-SCV-Example-002.yaml
-    schema: varclass
+    schema: varstatement
     definition: VariantPathogenicity
-#  - test_file: tr-proposition-with-enref.yaml
-#    schema: annotation
-#    definition: VariationNeoplasmTherapeuticResponseProposition
-#  - test_file: tr-statement-with-enrefs.yaml
-#    schema: annotation
-#    definition: VariationNeoplasmTherapeuticResponseStatement
 #  - test_file: tr-statement-inline.yaml
 #    schema: annotation
 #    definition: VariationNeoplasmTherapeuticResponseStatement

@@ -1,5 +1,5 @@
 $schema: http://json-schema.org/draft/2020-12/schema
-title: Variant-Classification-Definitions
+title: Variant-Statement-Definitions
 type: object
 $defs:
   VariantPathogenicity:
@@ -36,20 +36,6 @@ $defs:
         - $ref: core.json#/$defs/IRI
         description: A Method that describes all or part of the process through which
           the information was generated.
-      direction:
-        type: string
-        enum:
-        - supports
-        - none
-        - refutes
-        description: The direction of this Information Entity with respect to the
-          predicate.
-      strength:
-        oneOf:
-        - $ref: core.json#/$defs/Coding
-        - $ref: core.json#/$defs/IRI
-        description: A term indicating the overall strength of support for the Statement
-          based on all evidence assessed.
       contributions:
         type: array
         ordered: true
@@ -65,6 +51,19 @@ $defs:
         description: A document in which the information content is expressed.
       recordMetadata:
         $ref: core.json#/$defs/RecordMetadata
+      direction:
+        type: string
+        enum:
+        - supports
+        - none
+        - refutes
+        description: The direction of this Statement with respect to the predicate.
+      strength:
+        oneOf:
+        - $ref: core.json#/$defs/Coding
+        - $ref: core.json#/$defs/IRI
+        description: The overall strength of support for the Statement based on all
+          evidence assessed.
       variant:
         description: A variation object that is the subject of the Statement.
         oneOf:
@@ -78,7 +77,7 @@ $defs:
         description: A methodological, summary classification about the impact of
           a variant.
       predicate:
-        description: The predicate of the Information Entity.
+        description: The predicate of the Statement.
         type: string
         const: isCausalFor
       condition:
@@ -87,8 +86,7 @@ $defs:
         - $ref: core.json#/$defs/Condition
         - $ref: core.json#/$defs/IRI
       qualifiers:
-        description: Additional, optional properties that may qualify the Information
-          Entity.
+        description: Additional, optional properties that may qualify the Statement.
         type: object
         properties:
           penetrance:

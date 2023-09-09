@@ -71,12 +71,12 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
        *  - direction
           - string
           - 1..1
-          - The direction of this statement with respect to the statement predicate.
+          - The direction of this Statement with respect to the predicate.
        *  - strength
           - `Coding <core.json#/$defs/Coding>`_ | `IRI <core.json#/$defs/IRI>`_
           - 0..1
-          - A term indicating the overall strength of support for the Statement based on all evidence assessed.
+          - The overall strength of support for the Statement based on all evidence assessed.
        *  - conclusion
           - `Coding <core.json#/$defs/Coding>`_ | `IRI <core.json#/$defs/IRI>`_
           - 0..1
-          - The conclusion associated with the statement.
+          - A conclusion associated with the statement, if any.
