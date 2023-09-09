@@ -8,9 +8,9 @@ tests:
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     schema: varclass
     definition: VariantPathogenicity
-#  - test_file: VA-ClinVar-SCV-Example-002.yaml
-#    schema: annotation
-#    definition: VariationGermlinePathogenicityStatement
+  - test_file: VA-ClinVar-SCV-Example-002.yaml
+    schema: varclass
+    definition: VariantPathogenicity
 #  - test_file: tr-proposition-with-enref.yaml
 #    schema: annotation
 #    definition: VariationNeoplasmTherapeuticResponseProposition
