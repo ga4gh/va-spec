@@ -70,6 +70,9 @@ contributions:
     code: cg000011
     label: evaluated
     system: https://dataexchange.clinicalgenome.org/codes/
+  extensions:
+    - name: clinvarActivityLabel
+      label: last evaluated
 extensions:
 - name: clinvarMethodCategory
   value: literature only
