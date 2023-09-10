@@ -98,8 +98,9 @@ tumorType:
       relation: exactMatch
 qualifiers:
   alleleOrigin: somatic
-  gene:
+  geneContext:
     id: civic.gid:19
+    type: Gene
     label: EGFR
     description: "EGFR is widely recognized for its importance in cancer. Amplification
       and mutations have been shown to be driving events in many cancer types. Its

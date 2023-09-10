@@ -65,7 +65,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - The object of the Statement.
        *  - qualifiers
-          - <undefined>
+          - object
           - 0..1
           - Additional, optional properties that may qualify the Statement.
        *  - direction

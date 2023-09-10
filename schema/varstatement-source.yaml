@@ -28,13 +28,6 @@ $defs:
           - $refCurie: catvars:CategoricalVariation
           - $refCurie: gks.core:IRI
         description: A variation object that is the subject of the Statement.
-      qualifiers:
-        extends: qualifiers
-        properties:
-          geneContext:
-            description: >-
-              A gene context that qualifies the Statement.
-            $refCurie: gks.core:Gene
 
   VariantClassification:
     inherits: VariantStatement
@@ -76,7 +69,6 @@ $defs:
           The :ref:`Condition` for which the variant impact is stated.
       qualifiers:
         extends: qualifiers
-        type: object
         properties:
           penetrance:
             type: string
@@ -97,7 +89,10 @@ $defs:
               - mitochondrial
             description: >-
               The pattern of inheritance expected for the pathogenic effect of this variant.
-
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.core:Gene
     required:
       - condition
 
@@ -155,6 +150,10 @@ $defs:
             enum:
               - rare
               - common
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.core:Gene
     required:
       - tumorType
       - predicate
@@ -193,7 +192,6 @@ $defs:
           The tumor type context in which the variant impact is evaluated.
       qualifiers:
         extends: qualifiers
-        type: object
         properties:
           alleleOrigin:
             type: string
@@ -212,6 +210,10 @@ $defs:
             enum:
               - rare
               - common
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.core:Gene
     required:
       - tumorType
       - predicate

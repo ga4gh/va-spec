@@ -132,6 +132,8 @@
             },
             "qualifiers": {
                "description": "Additional, optional properties that may qualify the Statement.",
+               "type": "object",
+               "additionalProperties": false,
                "properties": {
                   "penetrance": {
                      "type": "string",
@@ -152,9 +154,12 @@
                         "mitochondrial"
                      ],
                      "description": "The pattern of inheritance expected for the pathogenic effect of this variant."
+                  },
+                  "geneContext": {
+                     "description": "A gene context that qualifies the Statement.",
+                     "$ref": "core.json#/$defs/Gene"
                   }
-               },
-               "type": "object"
+               }
             }
          },
          "required": [
@@ -289,6 +294,8 @@
             },
             "qualifiers": {
                "description": "Additional, optional properties that may qualify the Statement.",
+               "type": "object",
+               "additionalProperties": false,
                "properties": {
                   "alleleOrigin": {
                      "type": "string",
@@ -306,6 +313,10 @@
                         "rare",
                         "common"
                      ]
+                  },
+                  "geneContext": {
+                     "description": "A gene context that qualifies the Statement.",
+                     "$ref": "core.json#/$defs/Gene"
                   }
                }
             }
@@ -453,6 +464,8 @@
             },
             "qualifiers": {
                "description": "Additional, optional properties that may qualify the Statement.",
+               "type": "object",
+               "additionalProperties": false,
                "properties": {
                   "alleleOrigin": {
                      "type": "string",
@@ -470,9 +483,12 @@
                         "rare",
                         "common"
                      ]
+                  },
+                  "geneContext": {
+                     "description": "A gene context that qualifies the Statement.",
+                     "$ref": "core.json#/$defs/Gene"
                   }
-               },
-               "type": "object"
+               }
             }
          },
          "required": [

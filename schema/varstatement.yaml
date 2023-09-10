@@ -87,6 +87,8 @@ $defs:
         - $ref: core.json#/$defs/IRI
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
+        type: object
+        additionalProperties: false
         properties:
           penetrance:
             type: string
@@ -107,7 +109,9 @@ $defs:
             - mitochondrial
             description: The pattern of inheritance expected for the pathogenic effect
               of this variant.
-        type: object
+          geneContext:
+            description: A gene context that qualifies the Statement.
+            $ref: core.json#/$defs/Gene
     required:
     - classification
     - condition
@@ -198,6 +202,8 @@ $defs:
         - $ref: core.json#/$defs/IRI
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
+        type: object
+        additionalProperties: false
         properties:
           alleleOrigin:
             type: string
@@ -215,6 +221,9 @@ $defs:
             enum:
             - rare
             - common
+          geneContext:
+            description: A gene context that qualifies the Statement.
+            $ref: core.json#/$defs/Gene
     required:
     - direction
     - id
@@ -311,6 +320,8 @@ $defs:
         description: The tumor type context in which the variant impact is evaluated.
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
+        type: object
+        additionalProperties: false
         properties:
           alleleOrigin:
             type: string
@@ -328,7 +339,9 @@ $defs:
             enum:
             - rare
             - common
-        type: object
+          geneContext:
+            description: A gene context that qualifies the Statement.
+            $ref: core.json#/$defs/Gene
     required:
     - direction
     - id

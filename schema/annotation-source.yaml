@@ -181,6 +181,8 @@ $defs:
         description: The object of the Statement.
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
+        type: object
+        additionalProperties: false
       direction:
         type: string
         enum: [ "supports", "none", "refutes" ]
