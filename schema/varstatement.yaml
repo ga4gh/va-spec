@@ -218,6 +218,7 @@ $defs:
     required:
     - direction
     - id
+    - isReportedIn
     - predicate
     - tumorType
     - type
@@ -331,6 +332,7 @@ $defs:
     required:
     - direction
     - id
+    - isReportedIn
     - predicate
     - therapeutic
     - tumorType

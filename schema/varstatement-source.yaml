@@ -106,6 +106,8 @@ $defs:
     description: >-
       A :ref:`Statement` summarizing evidence about the impact of a variant from
       a study.
+    heritableRequired:
+      - isReportedIn
 
   VariantOncogenicityStudy:
     type: object

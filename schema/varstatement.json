@@ -313,6 +313,7 @@
          "required": [
             "direction",
             "id",
+            "isReportedIn",
             "predicate",
             "tumorType",
             "type",
@@ -477,6 +478,7 @@
          "required": [
             "direction",
             "id",
+            "isReportedIn",
             "predicate",
             "therapeutic",
             "tumorType",
