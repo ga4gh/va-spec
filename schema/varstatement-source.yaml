@@ -167,19 +167,21 @@ $defs:
     properties:
       type:
         type: string
-        const: "VariantTherapeuticResponseSummary"
-        default: "VariantTherapeuticResponseSummary"
+        const: "VariantTherapeuticResponseStudy"
+        default: "VariantTherapeuticResponseStudy"
         description: >-
-          MUST be "VariantTherapeuticResponseSummary".
+          MUST be "VariantTherapeuticResponseStudy".
       predicate:
         extends: predicate
         enum:
           - predictsSensitivityTo
           - predictsResistanceTo
-      therapeuticProcedure:
+      therapeutic:
+        description: A drug administration or other therapeutic procedure that the neoplasm
+          is intended to respond to.
         extends: object
         oneOf:
-          - $refCurie: gks.core:therapeuticProcedure
+          - $refCurie: gks.core:TherapeuticProcedure
           - $refCurie: gks.core:IRI
       tumorType:
         oneOf:

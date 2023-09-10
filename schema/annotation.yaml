@@ -149,6 +149,9 @@ $defs:
         const: Document
         default: Document
         description: Must be "Document"
+      title:
+        type: string
+        description: The title of the Document
       url:
         type: string
         description: A URL at which the document may be retrieved.

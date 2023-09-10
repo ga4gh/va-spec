@@ -11,6 +11,9 @@ tests:
   - test_file: VA-ClinVar-SCV-Example-002.yaml
     schema: varstatement
     definition: VariantPathogenicity
+  - test_file: therapeuticAgent.yaml
+    schema: core
+    definition: TherapeuticAgent
   - test_file: tr-statement-inline.yaml
     schema: varstatement
     definition: VariantTherapeuticResponseStudy

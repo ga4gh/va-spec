@@ -346,9 +346,9 @@
             },
             "type": {
                "type": "string",
-               "const": "VariantTherapeuticResponseSummary",
-               "default": "VariantTherapeuticResponseSummary",
-               "description": "MUST be \"VariantTherapeuticResponseSummary\"."
+               "const": "VariantTherapeuticResponseStudy",
+               "default": "VariantTherapeuticResponseStudy",
+               "description": "MUST be \"VariantTherapeuticResponseStudy\"."
             },
             "specifiedBy": {
                "oneOf": [
@@ -428,14 +428,14 @@
                   "predictsResistanceTo"
                ]
             },
-            "therapeuticProcedure": {
-               "description": "The object of the Statement.",
+            "therapeutic": {
+               "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
                "oneOf": [
                   {
                      "$ref": "core.json#/$defs/IRI"
                   },
                   {
-                     "$ref": "core.json#/$defs/therapeuticProcedure"
+                     "$ref": "core.json#/$defs/TherapeuticProcedure"
                   }
                ]
             },

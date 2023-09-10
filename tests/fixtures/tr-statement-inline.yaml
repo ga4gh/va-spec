@@ -1,11 +1,12 @@
 id: civic.eid:879
+type: VariantTherapeuticResponseStudy
 description: A phase III clinical trial (NCT00949650) found that median progression
   free survival among patients with exon 19 deletions or L858R EGFR mutations (n
   = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47;
   95% CI, 0.34 to 0.65; P = 0.001).
 direction: supports
 strength:
-  code: 000005
+  code: e000005
   label: clinical cohort evidence
   system: https://go.osu.edu/evidence-codes
 predicate: predictsSensitivityTo
@@ -36,15 +37,15 @@ variant:
         system: https://reg.clinicalgenome.org/
       relation: relatedMatch
     - coding:
-        code: 16609
+        code: '16609'
         system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
       relation: relatedMatch
     - coding:
-        code: 376282
+        code: '376282'
         system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
       relation: relatedMatch
     - coding:
-        code: 376280
+        code: '376280'
         system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
       relation: relatedMatch
     - coding:
@@ -64,6 +65,11 @@ variant:
         reference_build: GRCh37
     - name: CIViC Molecular Profile Score
       value: 379
+    - name: Variant type
+      value:
+        code: SO:0001583
+        system: http://www.sequenceontology.org/browser/current_release/term/
+        label: missense_variant
 therapeutic:
   id: civic.tid:146
   type: TherapeuticAgent
@@ -74,7 +80,7 @@ therapeutic:
         system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
       relation: exactMatch
     - coding:
-        code: 1430438
+        code: '1430438'
         system: https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=
       relation: exactMatch
   aliases:
@@ -92,87 +98,8 @@ tumorType:
       relation: exactMatch
 qualifiers:
   alleleOrigin: somatic
-target_proposition:
-  id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
-  type: VariationNeoplasmTherapeuticResponseProposition
-
-  subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
-  neoplasm_type_qualifier:
-    id: ncit:C3512
-    type: Disease
-  object:
-    id: rxcui:1430438
-    type: Therapeutic
-variation_origin: somatic
-subject_descriptor:
-  id: civic.vid:33
-  type: VariationDescriptor
-  label: L858R
-  description: EGFR L858R has long been recognized as a functionally significant
-    mutation in cancer, and is one of the most prevalent single mutations in lung
-    cancer. Best described in non-small cell lung cancer (NSCLC), the mutation seems
-    to confer sensitivity to first and second generation TKI's like gefitinib and
-    neratinib. NSCLC patients with this mutation treated with TKI's show increased
-    overall and progression-free survival, as compared to chemotherapy alone. Third
-    generation TKI's are currently in clinical trials that specifically focus on
-    mutant forms of EGFR, a few of which have shown efficacy in treating patients
-    that failed to respond to earlier generation TKI therapies.
-  xrefs:
-  - clinvar:376280
-  - clinvar:16609
-  - clinvar:376282
-  - caid:CA126713
-  - dbsnp:121434568
-  alternate_labels:
-  - LEU858ARG
-  extensions:
-  - type: Extension
-    name: civic_representative_coordinate
-    value:
-      chromosome: '7'
-      start: 55259515
-      stop: 55259515
-      reference_bases: T
-      variant_bases: G
-      representative_transcript: ENST00000275493.2
-      ensembl_version: 75
-      reference_build: GRCh37
-  - type: Extension
-    name: civic_actionability_score
-    value: 375
-  variation:
-    id: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
-    type: Allele
-    location:
-      id: ga4gh:VSL.Sfs_3PlVEYp9BxBsHsFfU1tvhfDq361f
-      type: SequenceLocation
-      sequence_id: ga4gh:SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
-      start:
-        type: Number
-        value: 857
-      end:
-        type: Number
-        value: 858
-    state:
-      type: LiteralSequenceExpression
-      sequence: R
-  structural_type: SO:0001583
-  expressions:
-  - type: Expression
-    syntax: hgvs.g
-    value: NC_000007.13:g.55259515T>G
-  - type: Expression
-    syntax: hgvs.p
-    value: NP_005219.2:p.Leu858Arg
-  - type: Expression
-    syntax: hgvs.c
-    value: NM_005228.4:c.2573T>G
-  - type: Expression
-    syntax: hgvs.c
-    value: ENST00000275493.2:c.2573T>G
-  gene_context:
+  gene:
     id: civic.gid:19
-    type: GeneDescriptor
     label: EGFR
     description: "EGFR is widely recognized for its importance in cancer. Amplification
       and mutations have been shown to be driving events in many cancer types. Its
@@ -187,60 +114,33 @@ subject_descriptor:
       cancer. \nOverproduction of ligands is another possible mechanism of activation
       of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
       NRG1-4 (for detailed information please refer to the respective ligand section)."
-    xrefs:
-    - ncbigene:1956
-    alternate_labels:
-    - ERRP
+    mappings:
+    - coding:
+        code: ncbigene:1956
+        system: https://www.ncbi.nlm.nih.gov/gene/
+      relation: exactMatch
+    aliases:
     - EGFR
-    - mENA
-    - PIG61
-    - NISBD2
-    - HER1
-    - ERBB1
     - ERBB
-    gene: hgnc:3236
-object_descriptor:
-  id: civic.tid:146
-  type: TherapeuticDescriptor
-  label: Afatinib
-  xrefs:
-  - ncit:C66940
-  alternate_labels:
-  - BIBW2992
-  - BIBW 2992
-  - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
-  extensions:
-  - type: Extension
-    name: regulatory_approval
-    value:
-      approval_rating: FDA
-      has_indications:
-      - id: hemonc:25316
-        type: DiseaseDescriptor
-        label: Non-small cell lung cancer Squamous
-      - id: hemonc:642
-        type: DiseaseDescriptor
-        label: Non-small cell lung cancer
-        disease: ncit:C2926
-  therapeutic: rxcui:1430438
-neoplasm_type_descriptor:
-  id: civic.did:30
-  type: DiseaseDescriptor
-  label: Lung Adenocarcinoma
-  xrefs:
-  - DOID:3910
-  disease: ncit:C3512
-specified_by:
-  id: metakb.method:1
-  is_reported_in: pmid:31779674
-  label: Standard operating procedure for curation and clinical interpretation of
-    variants in cancer
+    - ERBB1
+    - ERRP
+    - HER1
+    - NISBD2
+    - PIG61
+    - mENA
+specifiedBy:
+  id: civic.methods:2019
+  label: CIViC Curation SOP (2019)
+  isReportedIn:
+    label: Danos et al., 2019, Genome Med.
+    title: Standard operating procedure for curation and clinical interpretation of
+      variants in cancer
+    doi: 10.1186/s13073-019-0687-x
+    pmid: 31779674
   type: Method
-is_reported_in:
+isReportedIn:
   - id: civic.source:592
     label: Sequist et al., 2013, J. Clin. Oncol.
     title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
       with metastatic lung adenocarcinoma with EGFR mutations.
-    xrefs: [ "pmid:23816960" ]
-    type: Document
-type: VariationTherapeuticResponseStatement
+    pmid: 23816960

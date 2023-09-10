@@ -40,6 +40,10 @@ Some Document attributes are inherited from :ref:`gks.core:MappableEntity`.
           - string
           - 0..1
           - Must be "Document"
+       *  - title
+          - string
+          - 0..1
+          - The title of the Document
        *  - url
           - string
           - 0..1
