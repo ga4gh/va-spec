@@ -12,7 +12,7 @@ strength:
 predicate: predictsSensitivityTo
 variant:
   id: civic.mpid:33
-  type: DescribedVariation
+  type: ProteinSequenceConsequence
   description: >-
     EGFR L858R has long been recognized as a functionally significant mutation in cancer, 
     and is one of the most prevalent single mutations in lung cancer. Best described in 
@@ -23,11 +23,12 @@ variant:
     that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in 
     treating patients that failed to respond to earlier generation TKI therapies.
   label: EGFR L858R
+  definingContext: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
   members:
-    - variation.json#/VA.7jX7fHgVEqx4C4jMRyZOH0ZBHnLn7_gJ
-    - variation.json#/VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
-    - variation.json#/VA.zpv3dW34z8jioKL-NtbGc0fa9clsgAZT
-    - variation.json#/VA.BJOtfUhZMooMJUO4FjxHXTEimrKXtF0i
+    - vrs.json#/ga4gh:VA.7jX7fHgVEqx4C4jMRyZOH0ZBHnLn7_gJ
+    - vrs.json#/ga4gh:VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
+    - vrs.json#/ga4gh:VA.zpv3dW34z8jioKL-NtbGc0fa9clsgAZT
+    - vrs.json#/ga4gh:VA.BJOtfUhZMooMJUO4FjxHXTEimrKXtF0i
   aliases:
     - LEU858ARG
     - rs121434568

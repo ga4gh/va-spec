@@ -220,21 +220,6 @@
                   "$ref": "annotation.json#/$defs/Contribution"
                }
             },
-            "isReportedIn": {
-               "type": "array",
-               "ordered": false,
-               "items": {
-                  "oneOf": [
-                     {
-                        "$ref": "annotation.json#/$defs/Document"
-                     },
-                     {
-                        "$ref": "core.json#/$defs/IRI"
-                     }
-                  ]
-               },
-               "description": "A document in which the information content is expressed."
-            },
             "recordMetadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
@@ -271,6 +256,22 @@
                      "$ref": "vrs.json#/$defs/Variation"
                   }
                ]
+            },
+            "isReportedIn": {
+               "type": "array",
+               "ordered": false,
+               "items": {
+                  "oneOf": [
+                     {
+                        "$ref": "annotation.json#/$defs/Document"
+                     },
+                     {
+                        "$ref": "core.json#/$defs/IRI"
+                     }
+                  ]
+               },
+               "description": "A document in which the information content is expressed.",
+               "minItems": 1
             },
             "predicate": {
                "description": "The predicate of the Statement.",
@@ -380,21 +381,6 @@
                   "$ref": "annotation.json#/$defs/Contribution"
                }
             },
-            "isReportedIn": {
-               "type": "array",
-               "ordered": false,
-               "items": {
-                  "oneOf": [
-                     {
-                        "$ref": "annotation.json#/$defs/Document"
-                     },
-                     {
-                        "$ref": "core.json#/$defs/IRI"
-                     }
-                  ]
-               },
-               "description": "A document in which the information content is expressed."
-            },
             "recordMetadata": {
                "$ref": "core.json#/$defs/RecordMetadata"
             },
@@ -431,6 +417,22 @@
                      "$ref": "vrs.json#/$defs/Variation"
                   }
                ]
+            },
+            "isReportedIn": {
+               "type": "array",
+               "ordered": false,
+               "items": {
+                  "oneOf": [
+                     {
+                        "$ref": "annotation.json#/$defs/Document"
+                     },
+                     {
+                        "$ref": "core.json#/$defs/IRI"
+                     }
+                  ]
+               },
+               "description": "A document in which the information content is expressed.",
+               "minItems": 1
             },
             "predicate": {
                "description": "The predicate of the Statement.",
