@@ -28,6 +28,13 @@ $defs:
           - $refCurie: catvars:CategoricalVariation
           - $refCurie: gks.core:IRI
         description: A variation object that is the subject of the Statement.
+      qualifiers:
+        extends: qualifiers
+        properties:
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.core:Gene
 
   VariantClassification:
     inherits: VariantStatement
@@ -128,7 +135,6 @@ $defs:
           The tumor type for which the variant impact is evaluated.
       qualifiers:
         extends: qualifiers
-        type: object
         properties:
           alleleOrigin:
             type: string

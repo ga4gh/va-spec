@@ -4,14 +4,98 @@ description: A phase III clinical trial (NCT00949650) found that median progress
   = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47;
   95% CI, 0.34 to 0.65; P = 0.001).
 direction: supports
-evidence_level:
-  id: vicc:e00003
-  label: Clinical trial or cohort study
-  type: Coding
+strength:
+  code: 000005
+  label: clinical cohort evidence
+  system: https://go.osu.edu/evidence-codes
+predicate: predictsSensitivityTo
+variant:
+  id: civic.mpid:33
+  type: DescribedVariation
+  description: >-
+    EGFR L858R has long been recognized as a functionally significant mutation in cancer, 
+    and is one of the most prevalent single mutations in lung cancer. Best described in 
+    non-small cell lung cancer (NSCLC), the mutation seems to confer sensitivity to first 
+    and second generation TKI's like gefitinib and neratinib. NSCLC patients with this 
+    mutation treated with TKI's show increased overall and progression-free survival, as 
+    compared to chemotherapy alone. Third generation TKI's are currently in clinical trials 
+    that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in 
+    treating patients that failed to respond to earlier generation TKI therapies.
+  label: EGFR L858R
+  members:
+    - variation.json#/VA.7jX7fHgVEqx4C4jMRyZOH0ZBHnLn7_gJ
+    - variation.json#/VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
+    - variation.json#/VA.zpv3dW34z8jioKL-NtbGc0fa9clsgAZT
+    - variation.json#/VA.BJOtfUhZMooMJUO4FjxHXTEimrKXtF0i
+  aliases:
+    - LEU858ARG
+    - rs121434568
+  mappings:
+    - coding:
+        code: CA126713
+        system: https://reg.clinicalgenome.org/
+      relation: relatedMatch
+    - coding:
+        code: 16609
+        system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+      relation: relatedMatch
+    - coding:
+        code: 376282
+        system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+      relation: relatedMatch
+    - coding:
+        code: 376280
+        system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+      relation: relatedMatch
+    - coding:
+        code: rs121434568
+        system: https://www.ncbi.nlm.nih.gov/snp/
+      relation: relatedMatch
+  extensions:
+    - name: CIViC representative coordinate
+      value:
+        chromosome: '7'
+        start: 55259515
+        stop: 55259515
+        reference_bases: T
+        variant_bases: G
+        representative_transcript: ENST00000275493.2
+        ensembl_version: 75
+        reference_build: GRCh37
+    - name: CIViC Molecular Profile Score
+      value: 379
+therapeutic:
+  id: civic.tid:146
+  type: TherapeuticAgent
+  label: Afatinib
+  mappings:
+    - coding:
+        code: C66940
+        system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+      relation: exactMatch
+    - coding:
+        code: 1430438
+        system: https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=
+      relation: exactMatch
+  aliases:
+    - BIBW2992
+    - BIBW 2992
+    - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
+tumorType:
+  id: civic.did:30
+  type: Disease
+  label: Lung Adenocarcinoma
+  mappings:
+    - coding:
+        code: DOID:3910
+        system: https://www.disease-ontology.org/
+      relation: exactMatch
+qualifiers:
+  alleleOrigin: somatic
 target_proposition:
   id: proposition:nefbQvxqptMo6fBTdwsYsJpDkSSQeTGj
   type: VariationNeoplasmTherapeuticResponseProposition
-  predicate: predicts_sensitivity_to
+
   subject: ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
   neoplasm_type_qualifier:
     id: ncit:C3512
