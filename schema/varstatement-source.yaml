@@ -100,7 +100,11 @@ $defs:
     inherits: VariantStatement
     description: >-
       A :ref:`Statement` summarizing evidence about the impact of a variant from
-      a study.
+      one or more studies.
+    heritableProperties:
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
     heritableRequired:
       - isReportedIn
 
