@@ -265,3 +265,131 @@
     "description": "Variant classified as Uncertain Significance - Favor Pathogenic. The p.Ser269del variant in KCNQ4 has been reported in 2 individuals with bilateral sloping hear ing loss and segregated with disease in 9 affected relatives from 1 family (Wata be 2013, Abdelfatah 2013). However, there was one individual with a similar hear ing loss pattern and two additional individuals with other forms of hearing loss that did not harbor the variant, as well as 7 family members with hearing loss on the other side of the family that did not harbor the variant (Abdelfatah 2013 ). The p.Ser269del variant was absent from large population studies and is repor ted in ClinVar (Variation ID# 204595). This variant is a deletion of 1 amino aci d at position 269 and is not predicted to alter the protein reading-frame. In su mmary, while there is some suspicion for a pathogenic role, the clinical signifi cance of the p.Ser269del variant is uncertain. ACMG/AMP Criteria applied: PP1_St rong, PM2, PS4_Supporting, BS4."
   }
 }
+
+
+
+
+
+
+
+
+# --------------------------------------------------------------------------- #
+
+# SPOQ-DS attribute naming comparison: GK-Pilot Profile vs VA Core / Starter Profile
+
+# GK-Pilot - changes names of core SPOQ properties to reflect type of object captured, rather than role played / interpretation in the SPOQ-DS paradigm
+   # Prioritizes expectations of data engineers creating and parsing data, over alignment with SEPIO-VA standard, universal semantic clarity and consistency for the wider community of users
+   # IMO, it is harder identify elements carrying the assessed proposition, and compose them into a clear expression of the possible fact it puts forth
+   # Attributes like "predicate" and "qualifiers" seem out of place without a subject and object (predicate connecting what? quaklifier of what?)
+   # The direction and strength attributes are alss a bit odd, wiht out a clear SPOQ proposition as their target 
+
+ "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "VariationPathogenicity",                
+
+    "variation": "catvars-mvp.jsonc#/208366",         # subject
+    "condition": {                                    # object
+      "id": "clinvar.trait/939",
+      "type": "Disease",
+      "label": "Autosomal dominant nonsyndromic hearing loss 2A"
+    },
+    "predicate": "isCausalFor"                        # (missing in original example, LB intends to add back)
+    "qualifiers": {                                   
+      "penetrance": {                                 # penetranceQualifier
+        "label": "high"                                
+      }
+    }
+    
+    "direction": "supports",                        
+    "strength": {
+      "label": "likely"
+    },
+    "classification": {                               
+      "label": "Likely Pathogenic"                           
+    }
+
+
+#  VA-Core aligned VA Starter Profile -  names attributes composing the core Proposition to reflect the r rather than role played / interpretation in the SPOQ-DS paradigm - so the meaning of this Proposition is unambiguous for anyone coming to the data
+
+ "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "VariationPathogenicity",                
+    
+    "subject": "catvars-mvp.jsonc#/208366",         
+    "predicate": "isCausalFor",                                                     
+    "object": {                                    
+      "id": "clinvar.trait/939",
+      "type": "Disease",
+      "label": "Autosomal dominant nonsyndromic hearing loss 2A"
+    },
+    "penetranceQualifier": {                                   
+        "label": "high"                      
+      }
+    
+    "direction": "supported",                        
+    "strength": {
+      "label": "likely"
+    },
+    "classification": {                               
+      "label": "Likely Pathogenic"                           
+    }
+    
+# ------------------------------------------------------------------------------------------ #    
+
+# Another example for comparison, using a Therapeutic Response Statement in this case (a made up example)
+
+# GK-Pilot - changes names of core SPOQ properties to reflect type of object captured, rather than role played / interpretation in the SPOQ-DS paradigm
+   # Prioritizes expectations of data engineers creating and parsing data, over alignment with SEPIO-VA standard, universal semantic clarity and consistency for the wider community of users
+   # IMO, it is harder identify elements carrying the assessed proposition, and compose them into a clear expression of the possible fact it puts forth
+   # Attributes like "predicate" and "qualifiers" seem out of place without a subject and object (predicate connecting what? quaklifier of what?)
+   # The direction and strength attributes are alss a bit odd, wiht out a clear SPOQ proposition as their target 
+
+ "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "TherapeuticResponseStatement",                
+
+    "variation": "catvars-mvp.jsonc#/208366",         # subject
+    "predicate": "associatedWithSensitivityTo"        # predicate   
+    "treatment":  {                                   # object
+      "id": "clinvar.treatment/325",
+      "type": "Treatment",
+      "label": "Benralizumab"
+    },
+    "qualifiers": {                                   
+      "condition": {                                  # diseaseContextQualifier            
+        "id": "clinvar.trait/235",
+        "type": "Disease",
+        "label": "Addison's Disease"
+      },
+    }
+    
+    "direction": "supports",                        
+    "strength": {
+      "label": "Level B evidence"
+    }
+
+    
+
+#  VA-Core aligned VA Starter Profile -  names attributes composing the core Proposition to reflect the r rather than role played / interpretation in the SPOQ-DS paradigm - so the meaning of this Proposition is unambiguous for anyone coming to the data
+
+ "SCV000778434.1": {
+    "id": "SCV000778434.1",
+    "type": "TherapeuticResponseStatement",                
+
+    "subject": "catvars-mvp.jsonc#/208366",         
+    "predicate": "associatedWithSensitivityTo"         
+    "object":  {                                   
+      "id": "clinvar.treatment/325",
+      "type": "Treatment",
+      "label": "Benralizumab"
+    },
+    "diseaseContextQualifier": {                                                                    
+        "id": "clinvar.trait/235",
+        "type": "Disease",
+        "label": "Addison's Disease"
+      },
+    
+    "direction": "supported",                        
+    "strength": {
+      "label": "Level B evidence"
+    }
