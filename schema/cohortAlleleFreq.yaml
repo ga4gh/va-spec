@@ -256,7 +256,15 @@ properties:
         type: integer
       meanDepth:
         type: number
-    additonalProperties: false
+      qcFilters:
+        type: array
+        items:
+          type: string
+      lowComplexityRegion:
+        type: boolean
+      heterozygousAlleleBalanceFlagged:
+        type: integer
+    additionalProperties: false
   subcohortFrequency:
     type: array
     items:
