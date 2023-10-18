@@ -90,7 +90,7 @@
                "description": "The overall strength of support for the Statement based on all evidence assessed."
             },
             "variant": {
-               "description": "A variation object that is the subject of the Statement.",
+               "description": "A variant that is the subject of the Statement.",
                "oneOf": [
                   {
                      "$ref": "catvars.json#/$defs/CategoricalVariation"
@@ -175,7 +175,7 @@
       "VariantOncogenicityStudy": {
          "type": "object",
          "maturity": "Alpha",
-         "description": "A study summarization supporting or refuting the effect of variation on oncogenesis of a tumor type.",
+         "description": "A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.",
          "properties": {
             "id": {
                "type": "string",
@@ -244,7 +244,7 @@
                "description": "The overall strength of support for the Statement based on all evidence assessed."
             },
             "variant": {
-               "description": "A variation object that is the subject of the Statement.",
+               "description": "A variant that is the subject of the Statement.",
                "oneOf": [
                   {
                      "$ref": "catvars.json#/$defs/CategoricalVariation"
@@ -336,7 +336,7 @@
       "VariantTherapeuticResponseStudy": {
          "type": "object",
          "maturity": "Alpha",
-         "description": "A study summarization describing the role of a variation in modulating the response of a neoplasm to drug administration or other therapeutic procedure.",
+         "description": "A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.",
          "properties": {
             "id": {
                "type": "string",
@@ -405,7 +405,7 @@
                "description": "The overall strength of support for the Statement based on all evidence assessed."
             },
             "variant": {
-               "description": "A variation object that is the subject of the Statement.",
+               "description": "A variant that is the subject of the Statement.",
                "oneOf": [
                   {
                      "$ref": "catvars.json#/$defs/CategoricalVariation"

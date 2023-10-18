@@ -27,7 +27,7 @@ $defs:
           - $refCurie: vrs:Variation
           - $refCurie: catvars:CategoricalVariation
           - $refCurie: gks.core:IRI
-        description: A variation object that is the subject of the Statement.
+        description: A variant that is the subject of the Statement.
 
   VariantClassification:
     inherits: VariantStatement
@@ -113,7 +113,7 @@ $defs:
     inherits: VariantStudySummary
     maturity: Alpha
     description: >-
-      A study summarization supporting or refuting the effect of variation on oncogenesis of a tumor type.
+      A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
     properties:
       type:
         type: string
@@ -167,7 +167,7 @@ $defs:
     maturity: Alpha
     inherits: VariantStudySummary
     description: >-
-      A study summarization describing the role of a variation in modulating the response of a
+      A study summarization describing the role of a variant in modulating the response of a
       neoplasm to drug administration or other therapeutic procedure.
     properties:
       type:
