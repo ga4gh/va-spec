@@ -343,11 +343,29 @@
             "homozygotes": {
                "type": "integer"
             },
-            "meanDepth": {
-               "type": "number"
+            "hemizygotes": {
+               "type": "integer"
             }
          },
-         "additonalProperties": false
+         "additionalProperties": false
+      },
+      "qualityMeasures": {
+         "meanDepth": {
+            "type": "number"
+         },
+         "qcFilters": {
+            "type": "array",
+            "items": {
+               "type": "string"
+            }
+         },
+         "lowComplexityRegion": {
+            "type": "boolean"
+         },
+         "heterozygousSkewedAlleleCount": {
+            "description": "The count of individuals called as heterozygous for this variant with a skewed allele balance, indicating some of these individuals may be miscalled homozygous alternative allele.",
+            "type": "integer"
+         }
       },
       "subcohortFrequency": {
          "type": "array",
