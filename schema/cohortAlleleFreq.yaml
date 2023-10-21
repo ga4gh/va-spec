@@ -239,7 +239,7 @@ properties:
   ancillaryResults:
     type: object
     properties:
-      popMaxFAF95:
+      grpMaxFAF95:
         type: object
         properties:
           frequency:
