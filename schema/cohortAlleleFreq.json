@@ -342,18 +342,11 @@
          "type": "object",
          "properties": {
             "grpMaxFAF95": {
-               "$ref": "#/$defs/GrpMaxFAF95"
+               "$ref": "#/definitions/GrpMaxFAF95"
             },
             "jointGrpMaxFAF95": {
                "description": "The Group Max Filtering Allele Frequency (95% confidence interval) calculated jointly from genome and exome data.",
-               "oneOf": [
-                  {
-                     "$ref": "#/$defs/GrpMaxFAF95"
-                  },
-                  {
-                     "type": null
-                  }
-               ]
+               "$ref": "#/definitions/GrpMaxFAF95"
             },
             "homozygotes": {
                "type": "integer"

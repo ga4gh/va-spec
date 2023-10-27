@@ -31,11 +31,12 @@ alleleFrequency: 0.004783
 cohort:
   id: ALL
 ancillaryResults:
-  popMaxFAF95: # Popmax Filtering AF (95% confidence)
+  grpMaxFAF95: # Popmax Filtering AF (95% confidence)
     frequency: 0.01548
     confidenceInterval: 0.95
-    popFreqId: 1-55051215-G-GA.AFR
+    groupId: 1-55051215-G-GA.AFR
   homozygotes: 9 # Number of Homozygotes
+qualityMeasures:
   meanDepth: 32.8 # Mean depth of coverage
 subcohortFrequency:
   - id: 1-55051215-G-GA.AFR
