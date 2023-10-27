@@ -2,6 +2,21 @@ $schema: http://json-schema.org/draft-07/schema
 title: Cohort Allele Frequency
 type: object
 definitions:
+  GrpMaxFAF95:
+    type: object
+    properties:
+      frequency:
+        type: number
+      confidenceInterval:
+        type: number
+        const: 0.95
+        default: 0.95
+      groupId:
+        type: string
+        description: >-
+          The genetic ancestry group from which the max frequency was calculated.
+    required: [ frequency, confidenceInterval, groupId ]
+    additionalProperties: false
   Allele:
     description: The state of a molecule at a Location.
     type: object
@@ -240,18 +255,14 @@ properties:
     type: object
     properties:
       grpMaxFAF95:
-        type: object
-        properties:
-          frequency:
-            type: number
-          confidenceInterval:
-            type: number
-            const: 0.95
-            default: 0.95
-          popFreqId:
-            type: string
-        required: [frequency, confidenceInterval, popFreqId]
-        additionalProperties: false
+        $ref: '#/$defs/GrpMaxFAF95'
+      jointGrpMaxFAF95:
+        description: >-
+          The Group Max Filtering Allele Frequency (95% confidence interval) calculated jointly
+          from genome and exome data.
+        oneOf:
+          - $ref: '#/$defs/GrpMaxFAF95'
+          - type: null
       homozygotes:
         type: integer
       hemizygotes:
