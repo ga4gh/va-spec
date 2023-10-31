@@ -3,6 +3,29 @@
    "title": "Cohort Allele Frequency",
    "type": "object",
    "definitions": {
+      "GrpMaxFAF95": {
+         "type": "object",
+         "properties": {
+            "frequency": {
+               "type": "number"
+            },
+            "confidenceInterval": {
+               "type": "number",
+               "const": 0.95,
+               "default": 0.95
+            },
+            "groupId": {
+               "type": "string",
+               "description": "The genetic ancestry group from which the max frequency was calculated."
+            }
+         },
+         "required": [
+            "frequency",
+            "confidenceInterval",
+            "groupId"
+         ],
+         "additionalProperties": false
+      },
       "Allele": {
          "description": "The state of a molecule at a Location.",
          "type": "object",
@@ -318,36 +341,60 @@
       "ancillaryResults": {
          "type": "object",
          "properties": {
-            "popMaxFAF95": {
-               "type": "object",
-               "properties": {
-                  "frequency": {
-                     "type": "number"
-                  },
-                  "confidenceInterval": {
-                     "type": "number",
-                     "const": 0.95,
-                     "default": 0.95
-                  },
-                  "popFreqId": {
-                     "type": "string"
-                  }
-               },
-               "required": [
-                  "frequency",
-                  "confidenceInterval",
-                  "popFreqId"
-               ],
-               "additionalProperties": false
+            "grpMaxFAF95": {
+               "$ref": "#/definitions/GrpMaxFAF95"
+            },
+            "jointGrpMaxFAF95": {
+               "description": "The Group Max Filtering Allele Frequency (95% confidence interval) calculated jointly from genome and exome data.",
+               "$ref": "#/definitions/GrpMaxFAF95"
             },
             "homozygotes": {
                "type": "integer"
             },
-            "meanDepth": {
-               "type": "number"
+            "hemizygotes": {
+               "type": "integer"
             }
          },
-         "additonalProperties": false
+         "additionalProperties": false
+      },
+      "qualityMeasures": {
+         "type": "object",
+         "properties": {
+            "meanDepth": {
+               "type": "number"
+            },
+            "qcFilters": {
+               "type": "array",
+               "items": {
+                  "type": "string"
+               }
+            },
+            "monoallelic": {
+               "description": "All samples are homozygous alternate for the variant.",
+               "type": "boolean"
+            },
+            "lowComplexityRegion": {
+               "description": "This flag indicates the variant is found in a low complexity region. These regions were identified  with the symmetric DUST algorithm at a score threshold of 30.",
+               "type": "boolean"
+            },
+            "lowConfidenceLossOfFunctionError": {
+               "description": "Low confidence in predicted Loss of Function (pLoF), where variant is determined by LOFTEE  to be unlikely loss of function for a transcript.",
+               "type": "boolean"
+            },
+            "lossOfFunctionWarning": {
+               "description": "A warning provided by LOFTEE to use caution when interpreting the transcript or variant.",
+               "type": "boolean"
+            },
+            "noncodingTranscriptError": {
+               "description": "Marked in a putative loss of function category by VEP (essential splice, stop-gained, or frameshift)  but appears on a non-protein-coding transcript.",
+               "type": "boolean"
+            },
+            "heterozygousSkewedAlleleCount": {
+               "description": "The count of individuals called as heterozygous for this variant with a skewed allele balance, indicating some of these individuals may be miscalled homozygous alternative allele.",
+               "type": "integer"
+            }
+         },
+         "additionalProperties": false
       },
       "subcohortFrequency": {
          "type": "array",

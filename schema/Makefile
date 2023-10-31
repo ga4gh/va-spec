@@ -3,7 +3,7 @@
 .SUFFIXES:
 .DELETE_ON_ERROR:
 
-JSYAMLS:=annotation.yaml varstatement.yaml
+JSYAMLS:=annotation.yaml varstatement.yaml cohortAlleleFreq.yaml
 JSONS:=${JSYAMLS:.yaml=.json}
 
 all: ${JSONS} defs
