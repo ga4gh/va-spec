@@ -29,7 +29,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <core.json#/$defs/Extension>`_
+          - `Extension <gks.common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -37,7 +37,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 1..1
           - 
        *  - specifiedBy
-          - :ref:`Method` | `IRI <core.json#/$defs/IRI>`_
+          - :ref:`Method` | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
@@ -45,11 +45,11 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..m
           - 
        *  - isReportedIn
-          - :ref:`Document` | `IRI <core.json#/$defs/IRI>`_
+          - :ref:`Document` | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - recordMetadata
-          - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
+          - `RecordMetadata <gks.common.json#/$defs/RecordMetadata>`_
           - 0..1
           - 
        *  - subject
@@ -73,6 +73,6 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 1..1
           - The direction of this Statement with respect to the predicate.
        *  - strength
-          - `Coding <core.json#/$defs/Coding>`_ | `IRI <core.json#/$defs/IRI>`_
+          - `Coding <gks.common.json#/$defs/Coding>`_ | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..1
           - The overall strength of support for the Statement based on all evidence assessed.

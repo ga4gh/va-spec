@@ -4,14 +4,14 @@ type: object
 strict: true
 
 imports:
-  gks.core: core-source.yaml
+  gks.common: gks.common-source.yaml
   vrs: vrs-source.yaml
-  catvars: catvars-source.yaml
+  catvrs: catvrs-source.yaml
   annot: annotation-source.yaml
 
 namespaces:
-  gks.core: core.json#/$defs/
-  catvars: catvars.json#/$defs/
+  gks.common: gks.common.json#/$defs/
+  catvrs: catvrs.json#/$defs/
   vrs: vrs.json#/$defs/
   annot: annotation.json#/$defs/
 
@@ -25,8 +25,8 @@ $defs:
         extends: subject
         oneOf:
           - $refCurie: vrs:Variation
-          - $refCurie: catvars:CategoricalVariation
-          - $refCurie: gks.core:IRI
+          - $refCurie: catvrs:CategoricalVariation
+          - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
 
   VariantClassification:
@@ -36,8 +36,8 @@ $defs:
     heritableProperties:
       classification:
         oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           A methodological, summary classification about the impact of a variant.
     heritableRequired:
@@ -63,8 +63,8 @@ $defs:
       condition:
         extends: object
         oneOf:
-          - $refCurie: gks.core:Condition
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Condition
+          - $refCurie: gks.common:IRI
         description: >-
           The :ref:`Condition` for which the variant impact is stated.
       qualifiers:
@@ -92,7 +92,7 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.
-            $refCurie: gks.core:Gene
+            $refCurie: gks.common:Gene
     required:
       - condition
 
@@ -130,8 +130,8 @@ $defs:
       tumorType:
         extends: object
         oneOf:
-          - $refCurie: gks.core:Condition
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Condition
+          - $refCurie: gks.common:IRI
         description: >-
           The tumor type for which the variant impact is evaluated.
       qualifiers:
@@ -157,7 +157,7 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.
-            $refCurie: gks.core:Gene
+            $refCurie: gks.common:Gene
     required:
       - tumorType
       - predicate
@@ -186,12 +186,12 @@ $defs:
           is intended to respond to.
         extends: object
         oneOf:
-          - $refCurie: gks.core:TherapeuticProcedure
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:TherapeuticProcedure
+          - $refCurie: gks.common:IRI
       tumorType:
         oneOf:
-          - $refCurie: gks.core:Condition
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Condition
+          - $refCurie: gks.common:IRI
         description: >-
           The tumor type context in which the variant impact is evaluated.
       qualifiers:
@@ -217,7 +217,7 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.
-            $refCurie: gks.core:Gene
+            $refCurie: gks.common:Gene
     required:
       - tumorType
       - predicate

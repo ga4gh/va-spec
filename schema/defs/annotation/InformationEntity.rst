@@ -4,7 +4,7 @@ InformationEntities are abstract (non-physical) entities that are about somethin
 
     **Information Model**
     
-Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
+Some InformationEntity attributes are inherited from :ref:`gks.common:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -29,7 +29,7 @@ Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <core.json#/$defs/Extension>`_
+          - `Extension <gks.common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -37,7 +37,7 @@ Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
           - 1..1
           - 
        *  - specifiedBy
-          - :ref:`Method` | `IRI <core.json#/$defs/IRI>`_
+          - :ref:`Method` | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
@@ -45,10 +45,10 @@ Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
           - 0..m
           - 
        *  - isReportedIn
-          - :ref:`Document` | `IRI <core.json#/$defs/IRI>`_
+          - :ref:`Document` | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - recordMetadata
-          - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
+          - `RecordMetadata <gks.common.json#/$defs/RecordMetadata>`_
           - 0..1
           - 

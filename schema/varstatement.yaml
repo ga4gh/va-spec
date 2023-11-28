@@ -24,7 +24,7 @@ $defs:
         type: array
         ordered: true
         items:
-          $ref: core.json#/$defs/Extension
+          $ref: gks.common.json#/$defs/Extension
       type:
         type: string
         const: VariantPathogenicity
@@ -33,7 +33,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: annotation.json#/$defs/Method
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/IRI
         description: A Method that describes all or part of the process through which
           the information was generated.
       contributions:
@@ -47,10 +47,10 @@ $defs:
         items:
           oneOf:
           - $ref: annotation.json#/$defs/Document
-          - $ref: core.json#/$defs/IRI
+          - $ref: gks.common.json#/$defs/IRI
         description: A document in which the information content is expressed.
       recordMetadata:
-        $ref: core.json#/$defs/RecordMetadata
+        $ref: gks.common.json#/$defs/RecordMetadata
       direction:
         type: string
         enum:
@@ -60,20 +60,20 @@ $defs:
         description: The direction of this Statement with respect to the predicate.
       strength:
         oneOf:
-        - $ref: core.json#/$defs/Coding
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Coding
+        - $ref: gks.common.json#/$defs/IRI
         description: The overall strength of support for the Statement based on all
           evidence assessed.
       variant:
         description: A variant that is the subject of the Statement.
         oneOf:
-        - $ref: catvars.json#/$defs/CategoricalVariation
-        - $ref: core.json#/$defs/IRI
+        - $ref: catvrs.json#/$defs/CategoricalVariation
+        - $ref: gks.common.json#/$defs/IRI
         - $ref: vrs.json#/$defs/Variation
       classification:
         oneOf:
-        - $ref: core.json#/$defs/Coding
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Coding
+        - $ref: gks.common.json#/$defs/IRI
         description: A methodological, summary classification about the impact of
           a variant.
       predicate:
@@ -83,8 +83,8 @@ $defs:
       condition:
         description: The Condition for which the variant impact is stated.
         oneOf:
-        - $ref: core.json#/$defs/Condition
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Condition
+        - $ref: gks.common.json#/$defs/IRI
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
         type: object
@@ -111,7 +111,7 @@ $defs:
               of this variant.
           geneContext:
             description: A gene context that qualifies the Statement.
-            $ref: core.json#/$defs/Gene
+            $ref: gks.common.json#/$defs/Gene
     required:
     - classification
     - condition
@@ -142,7 +142,7 @@ $defs:
         type: array
         ordered: true
         items:
-          $ref: core.json#/$defs/Extension
+          $ref: gks.common.json#/$defs/Extension
       type:
         type: string
         const: VariantOncogenicity
@@ -151,7 +151,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: annotation.json#/$defs/Method
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/IRI
         description: A Method that describes all or part of the process through which
           the information was generated.
       contributions:
@@ -160,7 +160,7 @@ $defs:
         items:
           $ref: annotation.json#/$defs/Contribution
       recordMetadata:
-        $ref: core.json#/$defs/RecordMetadata
+        $ref: gks.common.json#/$defs/RecordMetadata
       direction:
         type: string
         enum:
@@ -170,15 +170,15 @@ $defs:
         description: The direction of this Statement with respect to the predicate.
       strength:
         oneOf:
-        - $ref: core.json#/$defs/Coding
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Coding
+        - $ref: gks.common.json#/$defs/IRI
         description: The overall strength of support for the Statement based on all
           evidence assessed.
       variant:
         description: A variant that is the subject of the Statement.
         oneOf:
-        - $ref: catvars.json#/$defs/CategoricalVariation
-        - $ref: core.json#/$defs/IRI
+        - $ref: catvrs.json#/$defs/CategoricalVariation
+        - $ref: gks.common.json#/$defs/IRI
         - $ref: vrs.json#/$defs/Variation
       isReportedIn:
         type: array
@@ -186,7 +186,7 @@ $defs:
         items:
           oneOf:
           - $ref: annotation.json#/$defs/Document
-          - $ref: core.json#/$defs/IRI
+          - $ref: gks.common.json#/$defs/IRI
         description: A document in which the information content is expressed.
         minItems: 1
       predicate:
@@ -199,8 +199,8 @@ $defs:
       tumorType:
         description: The tumor type for which the variant impact is evaluated.
         oneOf:
-        - $ref: core.json#/$defs/Condition
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Condition
+        - $ref: gks.common.json#/$defs/IRI
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
         type: object
@@ -224,7 +224,7 @@ $defs:
             - common
           geneContext:
             description: A gene context that qualifies the Statement.
-            $ref: core.json#/$defs/Gene
+            $ref: gks.common.json#/$defs/Gene
     required:
     - direction
     - id
@@ -256,7 +256,7 @@ $defs:
         type: array
         ordered: true
         items:
-          $ref: core.json#/$defs/Extension
+          $ref: gks.common.json#/$defs/Extension
       type:
         type: string
         const: VariantTherapeuticResponseStudy
@@ -265,7 +265,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: annotation.json#/$defs/Method
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/IRI
         description: A Method that describes all or part of the process through which
           the information was generated.
       contributions:
@@ -274,7 +274,7 @@ $defs:
         items:
           $ref: annotation.json#/$defs/Contribution
       recordMetadata:
-        $ref: core.json#/$defs/RecordMetadata
+        $ref: gks.common.json#/$defs/RecordMetadata
       direction:
         type: string
         enum:
@@ -284,15 +284,15 @@ $defs:
         description: The direction of this Statement with respect to the predicate.
       strength:
         oneOf:
-        - $ref: core.json#/$defs/Coding
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Coding
+        - $ref: gks.common.json#/$defs/IRI
         description: The overall strength of support for the Statement based on all
           evidence assessed.
       variant:
         description: A variant that is the subject of the Statement.
         oneOf:
-        - $ref: catvars.json#/$defs/CategoricalVariation
-        - $ref: core.json#/$defs/IRI
+        - $ref: catvrs.json#/$defs/CategoricalVariation
+        - $ref: gks.common.json#/$defs/IRI
         - $ref: vrs.json#/$defs/Variation
       isReportedIn:
         type: array
@@ -300,7 +300,7 @@ $defs:
         items:
           oneOf:
           - $ref: annotation.json#/$defs/Document
-          - $ref: core.json#/$defs/IRI
+          - $ref: gks.common.json#/$defs/IRI
         description: A document in which the information content is expressed.
         minItems: 1
       predicate:
@@ -313,12 +313,12 @@ $defs:
         description: A drug administration or other therapeutic procedure that the
           neoplasm is intended to respond to.
         oneOf:
-        - $ref: core.json#/$defs/IRI
-        - $ref: core.json#/$defs/TherapeuticProcedure
+        - $ref: gks.common.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/TherapeuticProcedure
       tumorType:
         oneOf:
-        - $ref: core.json#/$defs/Condition
-        - $ref: core.json#/$defs/IRI
+        - $ref: gks.common.json#/$defs/Condition
+        - $ref: gks.common.json#/$defs/IRI
         description: The tumor type context in which the variant impact is evaluated.
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
@@ -343,7 +343,7 @@ $defs:
             - common
           geneContext:
             description: A gene context that qualifies the Statement.
-            $ref: core.json#/$defs/Gene
+            $ref: gks.common.json#/$defs/Gene
     required:
     - direction
     - id

@@ -24,7 +24,7 @@
                "type": "array",
                "ordered": true,
                "items": {
-                  "$ref": "core.json#/$defs/Extension"
+                  "$ref": "gks.common.json#/$defs/Extension"
                }
             },
             "type": {
@@ -40,7 +40,7 @@
             },
             "activity": {
                "description": "SHOULD describe a concept descending from the Contributor Role Ontology.",
-               "$ref": "core.json#/$defs/Coding"
+               "$ref": "gks.common.json#/$defs/Coding"
             }
          },
          "required": [],
@@ -67,7 +67,7 @@
                "type": "array",
                "ordered": true,
                "items": {
-                  "$ref": "core.json#/$defs/Extension"
+                  "$ref": "gks.common.json#/$defs/Extension"
                }
             },
             "type": {
@@ -112,7 +112,7 @@
                "type": "array",
                "ordered": true,
                "items": {
-                  "$ref": "core.json#/$defs/Extension"
+                  "$ref": "gks.common.json#/$defs/Extension"
                }
             },
             "type": {
@@ -127,13 +127,13 @@
                      "$ref": "#/$defs/Document"
                   },
                   {
-                     "$ref": "core.json#/$defs/IRI"
+                     "$ref": "gks.common.json#/$defs/IRI"
                   }
                ]
             },
             "subtype": {
                "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)",
-               "$ref": "core.json#/$defs/Coding"
+               "$ref": "gks.common.json#/$defs/Coding"
             }
          },
          "required": [],
@@ -160,14 +160,14 @@
                "type": "array",
                "ordered": true,
                "items": {
-                  "$ref": "core.json#/$defs/Extension"
+                  "$ref": "gks.common.json#/$defs/Extension"
                }
             },
             "mappings": {
                "type": "array",
                "ordered": false,
                "items": {
-                  "$ref": "core.json#/$defs/Mapping"
+                  "$ref": "gks.common.json#/$defs/Mapping"
                }
             },
             "type": {
@@ -220,7 +220,7 @@
                "type": "array",
                "ordered": true,
                "items": {
-                  "$ref": "core.json#/$defs/Extension"
+                  "$ref": "gks.common.json#/$defs/Extension"
                }
             },
             "type": {
@@ -235,7 +235,7 @@
                      "$ref": "#/$defs/Method"
                   },
                   {
-                     "$ref": "core.json#/$defs/IRI"
+                     "$ref": "gks.common.json#/$defs/IRI"
                   }
                ],
                "description": "A Method that describes all or part of the process through which the information was generated."
@@ -256,25 +256,25 @@
                         "$ref": "#/$defs/Document"
                      },
                      {
-                        "$ref": "core.json#/$defs/IRI"
+                        "$ref": "gks.common.json#/$defs/IRI"
                      }
                   ]
                },
                "description": "A document in which the information content is expressed."
             },
             "recordMetadata": {
-               "$ref": "core.json#/$defs/RecordMetadata"
+               "$ref": "gks.common.json#/$defs/RecordMetadata"
             },
             "subtype": {
                "description": "A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)",
-               "$ref": "core.json#/$defs/Coding"
+               "$ref": "gks.common.json#/$defs/Coding"
             },
             "value": {
                "type": "string"
             },
             "unit": {
                "type": {
-                  "$ref": "core.json#/$defs/Coding"
+                  "$ref": "gks.common.json#/$defs/Coding"
                }
             }
          },

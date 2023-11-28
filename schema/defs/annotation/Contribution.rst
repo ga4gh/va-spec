@@ -4,7 +4,7 @@ The sum of all actions taken by a single agent in contributing to the creation, 
 
     **Information Model**
     
-Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
+Some Contribution attributes are inherited from :ref:`gks.common:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -29,7 +29,7 @@ Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <core.json#/$defs/Extension>`_
+          - `Extension <gks.common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -45,6 +45,6 @@ Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - 
        *  - activity
-          - `Coding <core.json#/$defs/Coding>`_
+          - `Coding <gks.common.json#/$defs/Coding>`_
           - 0..1
           - SHOULD describe a concept descending from the Contributor Role Ontology.

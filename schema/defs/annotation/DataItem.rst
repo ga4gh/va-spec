@@ -29,7 +29,7 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <core.json#/$defs/Extension>`_
+          - `Extension <gks.common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -37,7 +37,7 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
           - 1..1
           - Must be "DataItem"
        *  - specifiedBy
-          - :ref:`Method` | `IRI <core.json#/$defs/IRI>`_
+          - :ref:`Method` | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
@@ -45,15 +45,15 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
           - 0..m
           - 
        *  - isReportedIn
-          - :ref:`Document` | `IRI <core.json#/$defs/IRI>`_
+          - :ref:`Document` | `IRI <gks.common.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - recordMetadata
-          - `RecordMetadata <core.json#/$defs/RecordMetadata>`_
+          - `RecordMetadata <gks.common.json#/$defs/RecordMetadata>`_
           - 0..1
           - 
        *  - subtype
-          - `Coding <core.json#/$defs/Coding>`_
+          - `Coding <gks.common.json#/$defs/Coding>`_
           - 0..1
           - A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)
        *  - value
@@ -61,6 +61,6 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
           - 1..1
           - 
        *  - unit
-          - {'$ref': 'core.json#/$defs/Coding'}
+          - {'$ref': 'gks.common.json#/$defs/Coding'}
           - 0..1
           - 

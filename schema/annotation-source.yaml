@@ -4,18 +4,16 @@ type: object
 strict: true
 
 imports:
-  gks.core: core-source.yaml
+  gks.common: gks.common-source.yaml
   vrs: vrs-source.yaml
-  catvars: catvars-source.yaml
 
 namespaces:
-  gks.core: core.json#/$defs/
-  catvars: catvars.json#/$defs/
+  gks.common: gks.common.json#/$defs/
   vrs: vrs.json#/$defs/
 
 $defs:
   InformationEntity:
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     description: >-
       InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry 
       information about things in the real world).
@@ -25,7 +23,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: "#/$defs/Method"
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
@@ -40,16 +38,16 @@ $defs:
         items:
           oneOf:
           - $ref: "#/$defs/Document"
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:IRI
         description: A document in which the information content is expressed.
       recordMetadata:
-        $refCurie: gks.core:RecordMetadata
+        $refCurie: gks.common:RecordMetadata
     heritableRequired:
       - id
       - type
   Contribution:
     type: object
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     maturity: Alpha
     description: >-
       The sum of all actions taken by a single agent in contributing to the creation, modification, 
@@ -65,14 +63,14 @@ $defs:
         type: string
         format: date
       activity:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >-
          SHOULD describe a concept descending from the Contributor Role Ontology.
 
   Agent:
     type: object
     maturity: Alpha
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     description: >-
       An autonomous actor (person, organization, or computational agent) that bears some form
       of responsibility for an activity taking place, for the existence of an entity, or for 
@@ -94,7 +92,7 @@ $defs:
   Method:
     type: object
     maturity: Alpha
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     description: >-
       A set of instructions that specify how to achieve some objective (e.g. experimental protocols, 
       curation guidelines, rule sets, etc.)
@@ -106,10 +104,10 @@ $defs:
         description: MUST be "Method".
       isReportedIn:
         oneOf:
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         - $ref: "#/$defs/Document"
       subtype:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >-
           A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, 
           Experimental Protocol)
@@ -117,7 +115,7 @@ $defs:
   Document:
     type: object
     maturity: Alpha
-    inherits: gks.core:MappableEntity
+    inherits: gks.common:MappableEntity
     description: a representation of a physical or digital document
     properties:
       type:
@@ -156,7 +154,7 @@ $defs:
         default: DataItem
         description: Must be "DataItem"
       subtype:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >- 
           A specific type of data the DataItem object represents (e.g. a specimen count, a 
           patient weight, an allele frequency, a p-value, a confidence score)
@@ -164,7 +162,7 @@ $defs:
          type: string
       unit:
         type:
-          $refCurie: gks.core:Coding
+          $refCurie: gks.common:Coding
     required: [ "value" ]
   Statement:
     inherits: InformationEntity
@@ -190,8 +188,8 @@ $defs:
           The direction of this Statement with respect to the predicate.
       strength:
         oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           The overall strength of support for the Statement based on all evidence assessed.
     heritableRequired:

@@ -12,7 +12,7 @@ tests:
     schema: varstatement
     definition: VariantPathogenicity
   - test_file: therapeuticAgent.yaml
-    schema: core
+    schema: gks.common
     definition: TherapeuticAgent
   - test_file: tr-statement-inline.yaml
     schema: varstatement

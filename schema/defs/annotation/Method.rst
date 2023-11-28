@@ -4,7 +4,7 @@ A set of instructions that specify how to achieve some objective (e.g. experimen
 
     **Information Model**
     
-Some Method attributes are inherited from :ref:`gks.core:Entity`.
+Some Method attributes are inherited from :ref:`gks.common:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -29,7 +29,7 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <core.json#/$defs/Extension>`_
+          - `Extension <gks.common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -37,10 +37,10 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - MUST be "Method".
        *  - isReportedIn
-          - `IRI <core.json#/$defs/IRI>`_ | :ref:`Document`
+          - `IRI <gks.common.json#/$defs/IRI>`_ | :ref:`Document`
           - 0..1
           - 
        *  - subtype
-          - `Coding <core.json#/$defs/Coding>`_
+          - `Coding <gks.common.json#/$defs/Coding>`_
           - 0..1
           - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)

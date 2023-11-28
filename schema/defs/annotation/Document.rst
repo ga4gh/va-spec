@@ -4,7 +4,7 @@ a representation of a physical or digital document
 
     **Information Model**
     
-Some Document attributes are inherited from :ref:`gks.core:MappableEntity`.
+Some Document attributes are inherited from :ref:`gks.common:MappableEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -29,11 +29,11 @@ Some Document attributes are inherited from :ref:`gks.core:MappableEntity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <core.json#/$defs/Extension>`_
+          - `Extension <gks.common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - mappings
-          - `Mapping <core.json#/$defs/Mapping>`_
+          - `Mapping <gks.common.json#/$defs/Mapping>`_
           - 0..m
           - 
        *  - type
