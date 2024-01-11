@@ -363,6 +363,10 @@
             "meanDepth": {
                "type": "number"
             },
+            "fractionCoverage20x": {
+               "description": "The fraction of individuals with at least 20x coverage.",
+               "type": "number"
+            },
             "qcFilters": {
                "type": "array",
                "items": {

@@ -45,7 +45,8 @@
          "popFreqId": "1-55051215-G-GA.AFR"
       },
       "homozygotes": 9,
-      "meanDepth": 32.8
+      "meanDepth": 32.8,
+      "fractionCoverage20x": 0.9754
    },
    "subcohortFrequency": [
       {

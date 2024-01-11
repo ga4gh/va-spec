@@ -38,6 +38,7 @@ ancillaryResults:
   homozygotes: 9 # Number of Homozygotes
 qualityMeasures:
   meanDepth: 32.8 # Mean depth of coverage
+  fractionCoverage20x: 0.9754 # Fraction of individuals with at least 20x coverage
 subcohortFrequency:
   - id: 1-55051215-G-GA.AFR
     type: CohortAlleleFrequency
