@@ -33,8 +33,8 @@ def _parse_release_as_version(rls):
 
 # -- Project information -----------------------------------------------------
 
-project = 'GA4GH Variation Representation Specification'
-copyright = '2021, GA4GH VRS Contributors'
+project = 'GA4GH Variation Annotation Specification'
+copyright = '2021, GA4GH VA Contributors'
 author = 'Committers'
 master_doc = 'index'
 # N.B. RTD ignores these values. :-/
