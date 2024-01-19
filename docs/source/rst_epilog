@@ -1,37 +1,3 @@
-.. _Base64: https://tools.ietf.org/html/rfc4648
-.. _Compact URI (CURIE): https://www.w3.org/TR/curie/
-.. _Equivalence Function: https://en.wikipedia.org/wiki/Equivalence_relation
-.. _FHIR Business Identifiers: https://www.hl7.org/fhir/datatypes.html#identifier
-.. _FHIR Id: http://build.fhir.org/datatypes.html#id
-.. _HGVS: http://www.hgvs.org/
-.. _ISOGG: https://isogg.org/wiki/Allele
-.. _RFC 2119: https://www.ietf.org/rfc/rfc2119.txt
-.. _SHA-512: https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.180-4.pdf
-.. _Sequence Ontology: http://www.sequenceontology.org/browser/current_svn/term/SO:0001023
-.. _Wikipedia Residue page: https://en.wikipedia.org/wiki/Residue_%28chemistry%29
-.. _Wikipedia: https://en.wikipedia.org/wiki/Allele
-.. _base64url: https://tools.ietf.org/html/rfc4648#section-5
-.. _biocommons: https://biocommons.org/
-.. _curie-spec: https://www.w3.org/TR/curie/
-.. _ga4gh: http://genomicsandhealth.org/
-.. _monomer: https://en.wikipedia.org/wiki/Monomer
-.. _nucleic acid: https://en.wikipedia.org/wiki/Nucleic_acid
-.. _polymeric chain: https://en.wikipedia.org/wiki/Polymer
-.. _protein: https://en.wikipedia.org/wiki/Protein
-.. _vrs-issues: https://github.com/ga4gh/vrs/issues/
-.. _VRSATILE: https://vrsatile.readthedocs.io/en/latest/index.html
-
-.. |curie| replace:: `Compact URI (CURIE)`_
-.. |notebooks| replace:: `VRS Python Notebooks <https://github.com/ga4gh/vrs-python/tree/develop/notebooks>`__
-.. |seqrepo_rs| replace:: `SeqRepo REST Service <https://github.com/biocommons/seqrepo-rest-service/>`__
-.. |seqrepo| replace:: `SeqRepo <https://github.com/biocommons/biocommons.seqrepo/>`__
-.. |varnomen| replace:: `HGVS Variant Nomenclature <https://varnomen.hgvs.org/>`__
-.. |vrs-python| replace:: `GA4GH VRS Python Implementation <https://github.com/ga4gh/vrs-python/>`__
-.. |vrs| replace:: `VRS <https://github.com/ga4gh/vrs/>`__
-
-
-.. |eg| replace:: *e.g.,*
-.. |ie| replace:: *i.e.,*
 
 
 
