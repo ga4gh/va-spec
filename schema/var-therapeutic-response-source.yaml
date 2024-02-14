@@ -1,0 +1,224 @@
+$schema: http://json-schema.org/draft/2020-12/schema
+title: Variant-Statement-Definitions
+type: object
+strict: true
+
+imports:
+  gks.common: gks.common-source.yaml
+  vrs: vrs-source.yaml
+  catvrs: catvrs-source.yaml
+  annot: annotation-source.yaml
+
+namespaces:
+  gks.common: gks.common.json#/$defs/
+  catvrs: catvrs.json#/$defs/
+  vrs: vrs.json#/$defs/
+  annot: annotation.json#/$defs/
+
+$defs:
+  VariantStatement:
+    inherits: annot:Statement
+    description: >-
+      A :ref:`Statement` describing the impact of a variant.
+    heritableProperties:
+      variant:
+        extends: subject
+        oneOf:
+          - $refCurie: vrs:Variation
+          - $refCurie: catvrs:CategoricalVariation
+          - $refCurie: gks.common:IRI
+        description: A variant that is the subject of the Statement.
+
+  VariantClassification:
+    inherits: VariantStatement
+    description: >-
+      A :ref:`VariantStatement` classifying the impact of a variant.
+    heritableProperties:
+      classification:
+        oneOf:
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
+        description: >-
+          A methodological, summary classification about the impact of a variant.
+    heritableRequired:
+      - classification
+
+  VariantPathogenicity:
+    type: object
+    maturity: Alpha
+    inherits: VariantClassification
+    description: >-
+      A :ref:`VariantClassification` describing the role of a variant in causing an 
+      inherited disorder.
+    properties:
+      type:
+        type: string
+        const: "VariantPathogenicity"
+        default: "VariantPathogenicity"
+        description: >-
+          MUST be "VariantPathogenicity".
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      condition:
+        extends: object
+        oneOf:
+          - $refCurie: gks.common:Condition
+          - $refCurie: gks.common:IRI
+        description: >-
+          The :ref:`Condition` for which the variant impact is stated.
+      qualifiers:
+        extends: qualifiers
+        properties:
+          penetrance:
+            type: string
+            enum:
+              - high
+              - low
+              - risk allele
+            description: >-
+              The extent to which the variant impact is expressed by individuals carrying it as
+              a measure of the proportion of carriers exhibiting the condition.
+          modeOfInheritance:
+            type: string
+            enum:
+              - autosomal dominant
+              - autosomal recessive
+              - X-linked dominant
+              - X-linked recessive
+              - mitochondrial
+            description: >-
+              The pattern of inheritance expected for the pathogenic effect of this variant.
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.common:Gene
+    required:
+      - condition
+
+  VariantStudySummary:
+    inherits: VariantStatement
+    description: >-
+      A :ref:`Statement` summarizing evidence about the impact of a variant from
+      one or more studies.
+    heritableProperties:
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
+    heritableRequired:
+      - isReportedIn
+
+  VariantOncogenicityStudy:
+    type: object
+    inherits: VariantStudySummary
+    maturity: Alpha
+    description: >-
+      A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
+    properties:
+      type:
+        type: string
+        const: "VariantOncogenicity"
+        default: "VariantOncogenicity"
+        description: >-
+          MUST be "VariantOncogenicity".
+      predicate:
+        extends: predicate
+        enum:
+          - isOncogenicFor
+          - isProtectiveFor
+          - isPredisposingFor
+      tumorType:
+        extends: object
+        oneOf:
+          - $refCurie: gks.common:Condition
+          - $refCurie: gks.common:IRI
+        description: >-
+          The tumor type for which the variant impact is evaluated.
+      qualifiers:
+        extends: qualifiers
+        properties:
+          alleleOrigin:
+            type: string
+            description: >-
+              Whether the statement should be interpreted in the context of an inherited 
+              (germline) variant, an acquired (somatic) mutation, or both (combined).
+            enum:
+              - germline
+              - somatic
+              - combined
+          allelePrevalence:
+            type: string
+            description: >-
+              Whether the statement should be interpreted in the context of the variant
+              being rare or common.
+            enum:
+              - rare
+              - common
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.common:Gene
+    required:
+      - tumorType
+      - predicate
+
+  VariantTherapeuticResponseStudy:
+    type: object
+    maturity: Alpha
+    inherits: VariantStudySummary
+    description: >-
+      A study summarization describing the role of a variant in modulating the response of a
+      neoplasm to drug administration or other therapeutic procedure.
+    properties:
+      type:
+        type: string
+        const: "VariantTherapeuticResponseStudy"
+        default: "VariantTherapeuticResponseStudy"
+        description: >-
+          MUST be "VariantTherapeuticResponseStudy".
+      predicate:
+        extends: predicate
+        enum:
+          - predictsSensitivityTo
+          - predictsResistanceTo
+      therapeutic:
+        description: A drug administration or other therapeutic procedure that the neoplasm
+          is intended to respond to.
+        extends: object
+        oneOf:
+          - $refCurie: gks.common:TherapeuticProcedure
+          - $refCurie: gks.common:IRI
+      tumorType:
+        oneOf:
+          - $refCurie: gks.common:Condition
+          - $refCurie: gks.common:IRI
+        description: >-
+          The tumor type context in which the variant impact is evaluated.
+      qualifiers:
+        extends: qualifiers
+        properties:
+          alleleOrigin:
+            type: string
+            description: >-
+              Whether the statement should be interpreted in the context of an inherited 
+              (germline) variant, an acquired (somatic) mutation, or both (combined).
+            enum:
+              - germline
+              - somatic
+              - combined
+          allelePrevalence:
+            type: string
+            description: >-
+              Whether the statement should be interpreted in the context of the variant
+              being rare or common.
+            enum:
+              - rare
+              - common
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.common:Gene
+    required:
+      - tumorType
+      - predicate
+      - therapeutic

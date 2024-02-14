@@ -3,7 +3,7 @@
 .SUFFIXES:
 .DELETE_ON_ERROR:
 
-JSYAMLS:=annotation.yaml varstatement.yaml cohortAlleleFreq.yaml
+JSYAMLS:=core-im.yaml varstatement.yaml
 JSONS:=${JSYAMLS:.yaml=.json}
 
 all: ${JSONS} defs
@@ -16,4 +16,4 @@ all: ${JSONS} defs
 
 defs:
 	rm -rf defs
-	y2t.py annotation-source.yaml
+	y2t.py core-im-source.yaml
