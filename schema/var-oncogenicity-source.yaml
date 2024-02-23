@@ -18,8 +18,8 @@ namespaces:
 $defs:
   VariantOncogenicityStudy:
     type: object
-    inherits: VariantStudySummary
-    maturity: Alpha
+    inherits: va.core:VariantStudySummary
+    maturity: Draft
     description: >-
       A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
     properties:

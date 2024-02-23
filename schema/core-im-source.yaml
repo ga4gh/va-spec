@@ -196,7 +196,7 @@ $defs:
       - subject
       - direction
   VariantStatement:
-    inherits: annot:Statement
+    inherits: Statement
     description: >-
       A :ref:`Statement` describing the impact of a variant.
     heritableProperties:

@@ -18,8 +18,8 @@ namespaces:
 $defs:
   VariantPathogenicity:
     type: object
-    maturity: Alpha
-    inherits: VariantClassification
+    maturity: Draft
+    inherits: va.core:VariantClassification
     description: >-
       A :ref:`VariantClassification` describing the role of a variant in causing an 
       inherited disorder.

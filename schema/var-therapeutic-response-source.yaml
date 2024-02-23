@@ -18,8 +18,8 @@ namespaces:
 $defs:
   VariantTherapeuticResponseStudy:
     type: object
-    maturity: Alpha
-    inherits: VariantStudySummary
+    maturity: Draft
+    inherits: va.core:VariantStudySummary
     description: >-
       A study summarization describing the role of a variant in modulating the response of a
       neoplasm to drug administration or other therapeutic procedure.
