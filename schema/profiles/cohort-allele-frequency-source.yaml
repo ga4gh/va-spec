@@ -8,27 +8,10 @@ imports:
   vrs: imports/vrs-source.yaml
 
 namespaces:
-  va.core: core-im.json#/$defs/
+  va.core: profiles/core-im.json#/$defs/
   gks.common: imports/gks.common.json#/$defs/
   catvrs: imports/catvrs.json#/$defs/
   vrs: imports/vrs.json#/$defs/
-
-$defs:
-  GrpMaxFAF95:
-    type: object
-    properties:
-      frequency:
-        type: number
-      confidenceInterval:
-        type: number
-        const: 0.95
-        default: 0.95
-      groupId:
-        type: string
-        description: >-
-          The genetic ancestry group from which the max frequency was calculated.
-    required: [ frequency, confidenceInterval, groupId ]
-    additionalProperties: false
 
 inherits: va.core:InformationEntity
 properties:
