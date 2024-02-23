@@ -195,3 +195,39 @@ $defs:
     heritableRequired:
       - subject
       - direction
+  VariantStatement:
+    inherits: annot:Statement
+    description: >-
+      A :ref:`Statement` describing the impact of a variant.
+    heritableProperties:
+      variant:
+        extends: subject
+        oneOf:
+          - $refCurie: vrs:Variation
+          - $refCurie: catvrs:CategoricalVariation
+          - $refCurie: gks.common:IRI
+        description: A variant that is the subject of the Statement.
+  VariantClassification:
+    inherits: VariantStatement
+    description: >-
+      A :ref:`VariantStatement` classifying the impact of a variant.
+    heritableProperties:
+      classification:
+        oneOf:
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
+        description: >-
+          A methodological, summary classification about the impact of a variant.
+    heritableRequired:
+      - classification
+  VariantStudySummary:
+    inherits: VariantStatement
+    description: >-
+      A :ref:`Statement` summarizing evidence about the impact of a variant from
+      one or more studies.
+    heritableProperties:
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
+    heritableRequired:
+      - isReportedIn
