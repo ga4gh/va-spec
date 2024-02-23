@@ -1,0 +1,90 @@
+$schema: http://json-schema.org/draft/2020-12/schema
+title: Cohort Allele Frequency Definitions
+type: object
+imports:
+  va.core: core-im-source.yaml
+  gks.common: imports/gks.common-source.yaml
+  catvrs: imports/catvrs-source.yaml
+  vrs: imports/vrs-source.yaml
+
+namespaces:
+  va.core: core-im.json#/$defs/
+  gks.common: imports/gks.common.json#/$defs/
+  catvrs: imports/catvrs.json#/$defs/
+  vrs: imports/vrs.json#/$defs/
+
+$defs:
+  GrpMaxFAF95:
+    type: object
+    properties:
+      frequency:
+        type: number
+      confidenceInterval:
+        type: number
+        const: 0.95
+        default: 0.95
+      groupId:
+        type: string
+        description: >-
+          The genetic ancestry group from which the max frequency was calculated.
+    required: [ frequency, confidenceInterval, groupId ]
+    additionalProperties: false
+
+inherits: va.core:InformationEntity
+properties:
+  derivedFrom:
+    type: object
+    properties:
+      id:
+        type: string
+      type:
+        type: string
+      label:
+        type: string
+      version:
+        type: string
+      additionalProperties: false
+  focusAllele:
+    oneOf:
+      - $refCurie: vrs:Allele
+      - type: string
+        format: uri-reference
+  focusAlleleCount:
+    type: integer
+  locusAlleleCount:
+    type: integer
+  alleleFrequency:
+    type: number
+  cohort:
+    type: object
+    properties:
+      id:
+        type: string
+      label:
+        type: string
+      characteristics:
+        type: array
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+            value:
+              type: string
+          required:
+            - name
+            - value
+          additionalProperties: false
+    additionalProperties: false
+    required:
+      - id
+  ancillaryResults:
+    type: object
+  qualityMeasures:
+    type: object
+  subcohortFrequency:
+    type: array
+    items:
+      $ref: "#"
+required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, cohort]
+additionalProperties: false
