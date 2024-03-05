@@ -1,6 +1,7 @@
 pytest
-python-jsonschema-objects>=0.3,<=0.3.10
-jsonschema==3.2.0
-ipython
+sphinx ~= 7.2
+sphinx-rtd-theme ~= 1.2
 pyyaml
-ga4gh.gks.metaschema==0.2.1
+ga4gh.gks.metaschema==0.3.0b6
+jsonschema
+referencing

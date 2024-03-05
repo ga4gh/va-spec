@@ -1,19 +1,25 @@
-.PHONY: defs FORCE
-.SECONDARY:
-.SUFFIXES:
-.DELETE_ON_ERROR:
+all: va-core va-profiles
+	
+va-profiles: caf oncogenicity pathogenicity therapeutic-response
 
-JSYAMLS:=core-im.yaml varstatement.yaml
-JSONS:=${JSYAMLS:.yaml=.json}
+va-core:
+	(cd va-spec/core-im; make all)
 
-all: ${JSONS} defs
+caf:
+	(cd va-spec/profiles/caf; make all)
 
-%.json: %.yaml
-	jsy2js.py <$< >$@
+oncogenicity:
+	(cd va-spec/profiles/oncogenicity; make all)
 
-%.yaml: %-source.yaml
-	source2jsy.py $< >$@
+pathogenicity:
+	(cd va-spec/profiles/pathogenicity; make all)
 
-defs:
-	rm -rf defs
-	y2t.py core-im-source.yaml
+therapeutic-response:
+	(cd va-spec/profiles/t-resp; make all)
+
+clean:
+	(cd va-spec/core-im; make clean)
+	(cd va-spec/profiles/caf; make clean)
+	(cd va-spec/profiles/oncogenicity; make clean)
+	(cd va-spec/profiles/pathogenicity; make clean)
+	(cd va-spec/profiles/t-resp; make clean)

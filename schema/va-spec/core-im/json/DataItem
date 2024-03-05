@@ -1,0 +1,90 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataItem",
+   "title": "DataItem",
+   "type": "object",
+   "maturity": "draft",
+   "description": "An InformationEntity representing an individual piece of data, generated/acquired through methods  which reliably produce truthful information about something.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary label for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+         }
+      },
+      "type": {
+         "type": "string",
+         "const": "DataItem",
+         "default": "DataItem",
+         "description": "Must be \"DataItem\""
+      },
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "A Method that describes all or part of the process through which the information was generated."
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
+         }
+      },
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed."
+      },
+      "recordMetadata": {
+         "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
+         "type": null
+      },
+      "subtype": {
+         "description": "A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)",
+         "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+      },
+      "value": {
+         "type": "string"
+      },
+      "unit": {
+         "type": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+         }
+      }
+   },
+   "required": [
+      "id",
+      "type",
+      "value"
+   ],
+   "additionalProperties": false
+}

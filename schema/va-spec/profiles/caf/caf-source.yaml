@@ -1,17 +1,14 @@
-$schema: http://json-schema.org/draft/2020-12/schema
-title: Cohort Allele Frequency Definitions
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/caf-source.yaml"
+title: Cohort Allele Frequency
 type: object
 imports:
-  va.core: core-im-source.yaml
-  gks.common: imports/gks.common-source.yaml
-  catvrs: imports/catvrs-source.yaml
-  vrs: imports/vrs-source.yaml
+  va.core: ../../core-im/core-im-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:
-  va.core: profiles/core-im.json#/$defs/
-  gks.common: imports/gks.common.json#/$defs/
-  catvrs: imports/catvrs.json#/$defs/
-  vrs: imports/vrs.json#/$defs/
+  va.core: ../../core-im/core-im.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
 
 inherits: va.core:InformationEntity
 properties:

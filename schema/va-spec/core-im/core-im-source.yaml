@@ -1,19 +1,22 @@
-$schema: http://json-schema.org/draft/2020-12/schema
-title: GK-Pilot-Annotation-Definitions
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/core-im-source.yaml"
+title: Variant Annotation Specification Core Information Model
 type: object
 strict: true
 
 imports:
-  gks.common: imports/gks.common-source.yaml
-  vrs: imports/vrs-source.yaml
+  gks.core: ../../gks-common/core-source.yaml
+  catvrs: ../../catvrs/catvrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
 
 namespaces:
-  gks.common: imports/gks.common.json#/$defs/
-  vrs: imports/vrs.json#/$defs/
+  gks.core: ../../gks-common/core.json#/$defs/
+  catvrs: ../../catvrs/catvrs.json#/$defs/
+  vrs: ../../vrs/vrs.json#/$defs/
 
 $defs:
   InformationEntity:
-    inherits: gks.common:Entity
+    inherits: gks.core:Entity
     description: >-
       InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry 
       information about things in the real world).
@@ -23,7 +26,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: "#/$defs/Method"
-        - $refCurie: gks.common:IRI
+        - $refCurie: gks.core:IRI
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
@@ -38,17 +41,18 @@ $defs:
         items:
           oneOf:
           - $ref: "#/$defs/Document"
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.core:IRI
         description: A document in which the information content is expressed.
       recordMetadata:
-        $refCurie: gks.common:RecordMetadata
+        $comment: this should be "gks.core:RecordMetadata", but that data class is not in the common core, so using null as placeholder
+        type: null
     heritableRequired:
       - id
       - type
   Contribution:
     type: object
-    inherits: gks.common:Entity
-    maturity: Draft
+    inherits: gks.core:Entity
+    maturity: draft
     description: >-
       The sum of all actions taken by a single agent in contributing to the creation, modification, 
       assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem, 
@@ -63,14 +67,14 @@ $defs:
         type: string
         format: date
       activity:
-        $refCurie: gks.common:Coding
+        $refCurie: gks.core:Coding
         description: >-
          SHOULD describe a concept descending from the Contributor Role Ontology.
 
   Agent:
     type: object
-    maturity: Draft
-    inherits: gks.common:Entity
+    maturity: draft
+    inherits: gks.core:Entity
     description: >-
       An autonomous actor (person, organization, or computational agent) that bears some form
       of responsibility for an activity taking place, for the existence of an entity, or for 
@@ -91,8 +95,8 @@ $defs:
           - computer
   Method:
     type: object
-    maturity: Draft
-    inherits: gks.common:Entity
+    maturity: draft
+    inherits: gks.core:Entity
     description: >-
       A set of instructions that specify how to achieve some objective (e.g. experimental protocols, 
       curation guidelines, rule sets, etc.)
@@ -104,18 +108,18 @@ $defs:
         description: MUST be "Method".
       isReportedIn:
         oneOf:
-        - $refCurie: gks.common:IRI
+        - $refCurie: gks.core:IRI
         - $ref: "#/$defs/Document"
       subtype:
-        $refCurie: gks.common:Coding
+        $refCurie: gks.core:Coding
         description: >-
           A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, 
           Experimental Protocol)
 
   Document:
     type: object
-    maturity: Draft
-    inherits: gks.common:MappableEntity
+    maturity: draft
+    inherits: gks.core:MappableEntity
     description: a representation of a physical or digital document
     properties:
       type:
@@ -142,7 +146,7 @@ $defs:
         description: A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_.
   DataItem:
     inherits: InformationEntity
-    maturity: Draft
+    maturity: draft
     type: object
     description: >-
       An InformationEntity representing an individual piece of data, generated/acquired through methods 
@@ -154,7 +158,7 @@ $defs:
         default: DataItem
         description: Must be "DataItem"
       subtype:
-        $refCurie: gks.common:Coding
+        $refCurie: gks.core:Coding
         description: >- 
           A specific type of data the DataItem object represents (e.g. a specimen count, a 
           patient weight, an allele frequency, a p-value, a confidence score)
@@ -162,7 +166,7 @@ $defs:
          type: string
       unit:
         type:
-          $refCurie: gks.common:Coding
+          $refCurie: gks.core:Coding
     required: [ "value" ]
   Statement:
     inherits: InformationEntity
@@ -172,11 +176,15 @@ $defs:
     heritableProperties:
       subject:
         description: The subject of the Statement.
+        type: object
+        additionalProperties: false
       predicate:
         description: The predicate of the Statement.
         type: string
       object:
         description: The object of the Statement.
+        type: object
+        additionalProperties: false
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
         type: object
@@ -188,8 +196,8 @@ $defs:
           The direction of this Statement with respect to the predicate.
       strength:
         oneOf:
-          - $refCurie: gks.common:Coding
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.core:Coding
+          - $refCurie: gks.core:IRI
         description: >-
           The overall strength of support for the Statement based on all evidence assessed.
     heritableRequired:
@@ -205,7 +213,7 @@ $defs:
         oneOf:
           - $refCurie: vrs:Variation
           - $refCurie: catvrs:CategoricalVariation
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.core:IRI
         description: A variant that is the subject of the Statement.
   VariantClassification:
     inherits: VariantStatement
@@ -214,8 +222,8 @@ $defs:
     heritableProperties:
       classification:
         oneOf:
-          - $refCurie: gks.common:Coding
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.core:Coding
+          - $refCurie: gks.core:IRI
         description: >-
           A methodological, summary classification about the impact of a variant.
     heritableRequired:
