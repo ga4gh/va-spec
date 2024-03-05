@@ -1,24 +1,28 @@
-$schema: http://json-schema.org/draft/2020-12/schema
-title: Variant-Statement-Definitions
-type: object
-strict: true
-
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/t-resp/t-resp-source.yaml"
+title: Therapeutic Response Definitions
 imports:
-  va.core: core-im-source.yaml
-  gks.common: imports/gks.common-source.yaml
-  catvrs: imports/catvrs-source.yaml
-  vrs: imports/vrs-source.yaml
+  va.core: ../../core-im/core-im-source.yaml
+  gks.core: ../../../gks-common/core-source.yaml
+  gks.genes: ../../../gks-common/genes-source.yaml
+  gks.conditions: ../../../gks-common/conditions-source.yaml
+  gks.therapeutics: ../../../gks-common/therapeutics-source.yaml
+  catvrs: ../../../catvrs/catvrs-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:
-  va.core: core-im.json#/$defs/
-  gks.common: imports/gks.common.json#/$defs/
-  catvrs: imports/catvrs.json#/$defs/
-  vrs: imports/vrs.json#/$defs/
+  va.core: ../../core-im/core-im.json#/$defs/
+  gks.core: ../../../gks-common/core.json#/$defs/
+  gks.genes: ../../../gks-common/genes.json#/$defs/
+  gks.conditions: ../../../gks-common/conditions.json#/$defs/
+  gks.therapeutics: ../../../gks-common/conditions.json#/$defs/
+  catvrs: ../../../catvrs.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
 
 $defs:
   VariantTherapeuticResponseStudy:
     type: object
-    maturity: Draft
+    maturity: draft
     inherits: va.core:VariantStudySummary
     description: >-
       A study summarization describing the role of a variant in modulating the response of a
@@ -40,12 +44,12 @@ $defs:
           is intended to respond to.
         extends: object
         oneOf:
-          - $refCurie: gks.common:TherapeuticProcedure
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.therapeutics:TherapeuticProcedure
+          - $refCurie: gks.core:IRI
       tumorType:
         oneOf:
-          - $refCurie: gks.common:Condition
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.therapeutics:Condition
+          - $refCurie: gks.core:IRI
         description: >-
           The tumor type context in which the variant impact is evaluated.
       qualifiers:
@@ -71,7 +75,7 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.
-            $refCurie: gks.common:Gene
+            $refCurie: gks.therapeutics:Gene
     required:
       - tumorType
       - predicate

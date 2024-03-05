@@ -1,0 +1,168 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/oncogenicity/json/VariantOncogenicityStudy",
+   "title": "VariantOncogenicityStudy",
+   "maturity": "draft",
+   "type": "object",
+   "description": "A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary label for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+         }
+      },
+      "type": {
+         "type": "string",
+         "const": "VariantOncogenicity",
+         "default": "VariantOncogenicity",
+         "description": "MUST be \"VariantOncogenicity\"."
+      },
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "A Method that describes all or part of the process through which the information was generated."
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
+         }
+      },
+      "recordMetadata": {
+         "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
+         "type": null
+      },
+      "direction": {
+         "type": "string",
+         "enum": [
+            "supports",
+            "none",
+            "refutes"
+         ],
+         "description": "The direction of this Statement with respect to the predicate."
+      },
+      "strength": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "The overall strength of support for the Statement based on all evidence assessed."
+      },
+      "variant": {
+         "description": "A variant that is the subject of the Statement.",
+         "type": "object",
+         "additionalProperties": false,
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
+            }
+         ]
+      },
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed.",
+         "minItems": 1
+      },
+      "predicate": {
+         "description": "The predicate of the Statement.",
+         "type": "string",
+         "enum": [
+            "isOncogenicFor",
+            "isProtectiveFor",
+            "isPredisposingFor"
+         ]
+      },
+      "tumorType": {
+         "description": "The tumor type for which the variant impact is evaluated.",
+         "type": "object",
+         "additionalProperties": false,
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/json/Condition"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ]
+      },
+      "qualifiers": {
+         "description": "Additional, optional properties that may qualify the Statement.",
+         "type": "object",
+         "additionalProperties": false,
+         "properties": {
+            "alleleOrigin": {
+               "type": "string",
+               "description": "Whether the statement should be interpreted in the context of an inherited  (germline) variant, an acquired (somatic) mutation, or both (combined).",
+               "enum": [
+                  "germline",
+                  "somatic",
+                  "combined"
+               ]
+            },
+            "allelePrevalence": {
+               "type": "string",
+               "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
+               "enum": [
+                  "rare",
+                  "common"
+               ]
+            },
+            "geneContext": {
+               "description": "A gene context that qualifies the Statement.",
+               "$ref": "/ga4gh/schema/gks-common/json/Gene"
+            }
+         }
+      }
+   },
+   "required": [
+      "direction",
+      "id",
+      "isReportedIn",
+      "predicate",
+      "tumorType",
+      "type",
+      "variant"
+   ]
+}
