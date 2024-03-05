@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-pathogenicity-source.yaml"
-title: Cohort Allele Frequency
+title: Variant Pathogenicity Definitions
 imports:
   va.core: ../../core-im/core-im-source.yaml
   gks.core: ../../../gks-common/core-source.yaml
