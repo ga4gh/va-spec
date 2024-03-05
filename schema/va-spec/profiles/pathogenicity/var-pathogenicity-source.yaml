@@ -1,24 +1,26 @@
-$schema: http://json-schema.org/draft/2020-12/schema
-title: Variant-Statement-Definitions
-type: object
-strict: true
-
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-pathogenicity-source.yaml"
+title: Cohort Allele Frequency
 imports:
-  va.core: core-im-source.yaml
-  gks.common: imports/gks.common-source.yaml
-  catvrs: imports/catvrs-source.yaml
-  vrs: imports/vrs-source.yaml
+  va.core: ../../core-im/core-im-source.yaml
+  gks.core: ../../../gks-common/core-source.yaml
+  gks.genes: ../../../gks-common/genes-source.yaml
+  gks.conditions: ../../../gks-common/conditions-source.yaml
+  catvrs: ../../../catvrs/catvrs-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:
-  va.core: core-im.json#/$defs/
-  gks.common: imports/gks.common.json#/$defs/
-  catvrs: imports/catvrs.json#/$defs/
-  vrs: imports/vrs.json#/$defs/
+  va.core: ../../core-im/core-im.json#/$defs/
+  gks.core: ../../../gks-common/core.json#/$defs/
+  gks.genes: ../../../gks-common/genes.json#/$defs/
+  gks.conditions: ../../../gks-common/conditions.json#/$defs/
+  catvrs: ../../../catvrs.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
 
 $defs:
   VariantPathogenicity:
     type: object
-    maturity: Draft
+    maturity: draft
     inherits: va.core:VariantClassification
     description: >-
       A :ref:`VariantClassification` describing the role of a variant in causing an 
@@ -36,8 +38,8 @@ $defs:
       condition:
         extends: object
         oneOf:
-          - $refCurie: gks.common:Condition
-          - $refCurie: gks.common:IRI
+          - $refCurie: gks.conditions:Condition
+          - $refCurie: gks.core:IRI
         description: >-
           The :ref:`Condition` for which the variant impact is stated.
       qualifiers:
@@ -65,6 +67,6 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.
-            $refCurie: gks.common:Gene
+            $refCurie: gks.genes:Gene
     required:
       - condition
