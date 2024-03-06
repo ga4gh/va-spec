@@ -67,6 +67,7 @@
       },
       "derivedFrom": {
          "type": "object",
+         "description": "Information about the dataset from which the CohortAlleleFrequency was reported.",
          "properties": {
             "id": {
                "type": "string"
@@ -79,9 +80,9 @@
             },
             "version": {
                "type": "string"
-            },
-            "additionalProperties": false
-         }
+            }
+         },
+         "additionalProperties": false
       },
       "focusAllele": {
          "oneOf": [
@@ -138,13 +139,20 @@
          ]
       },
       "ancillaryResults": {
-         "type": "object"
+         "maturity": "draft",
+         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
+         "type": "object",
+         "additionalProperties": true
       },
       "qualityMeasures": {
-         "type": "object"
+         "maturity": "draft",
+         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
+         "type": "object",
+         "additionalProperties": true
       },
       "subcohortFrequency": {
          "type": "array",
+         "ordered": false,
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/profiles/caf/json/CohortAlleleFrequency"
          }

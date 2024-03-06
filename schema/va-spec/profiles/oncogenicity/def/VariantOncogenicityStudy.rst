@@ -57,7 +57,7 @@ Some VariantOncogenicityStudy attributes are inherited from :ref:`va.core:Varian
           - 0..1
           - The overall strength of support for the Statement based on all evidence assessed.
        *  - variant
-          - object
+          - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
        *  - isReportedIn
@@ -69,7 +69,7 @@ Some VariantOncogenicityStudy attributes are inherited from :ref:`va.core:Varian
           - 1..1
           - The predicate of the Statement.
        *  - tumorType
-          - object
+          - `Condition <../../../gks-common/conditions.json#/$defs/Condition>`_ | `IRI <../../../gks-common/core.json#/$defs/IRI>`_
           - 1..1
           - The tumor type for which the variant impact is evaluated.
        *  - qualifiers

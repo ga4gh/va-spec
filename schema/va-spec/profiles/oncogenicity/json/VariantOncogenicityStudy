@@ -75,8 +75,6 @@
       },
       "variant": {
          "description": "A variant that is the subject of the Statement.",
-         "type": "object",
-         "additionalProperties": false,
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
@@ -116,8 +114,6 @@
       },
       "tumorType": {
          "description": "The tumor type for which the variant impact is evaluated.",
-         "type": "object",
-         "additionalProperties": false,
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/json/Condition"

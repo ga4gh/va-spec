@@ -56,7 +56,7 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
        *  - derivedFrom
           - object
           - 0..1
-          - 
+          - Information about the dataset from which the CohortAlleleFrequency was reported.
        *  - focusAllele
           - `Allele <../../../vrs/vrs.json#/$defs/Allele>`_ | string
           - 1..1

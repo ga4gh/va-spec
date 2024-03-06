@@ -53,7 +53,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - 
        *  - subject
-          - object
+          - _Not Specified_
           - 1..1
           - The subject of the Statement.
        *  - predicate
@@ -61,7 +61,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - The predicate of the Statement.
        *  - object
-          - object
+          - _Not Specified_
           - 0..1
           - The object of the Statement.
        *  - qualifiers

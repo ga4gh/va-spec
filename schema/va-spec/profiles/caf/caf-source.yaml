@@ -21,6 +21,7 @@ $defs:
     properties:
       derivedFrom:
         type: object
+        description: Information about the dataset from which the CohortAlleleFrequency was reported.
         properties:
           id:
             type: string
@@ -30,7 +31,7 @@ $defs:
             type: string
           version:
             type: string
-          additionalProperties: false
+        additionalProperties: false
       focusAllele:
         oneOf:
           - $refCurie: vrs:Allele
@@ -66,11 +67,18 @@ $defs:
         required:
           - id
       ancillaryResults:
+        maturity: draft
+        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
+        additionalProperties: true
       qualityMeasures:
+        maturity: draft
+        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
+        additionalProperties: true
       subcohortFrequency:
         type: array
+        ordered: false
         items:
           $ref: "#/$defs/CohortAlleleFrequency"
     required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, cohort]

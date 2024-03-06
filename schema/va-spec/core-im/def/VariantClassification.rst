@@ -57,7 +57,7 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
           - 0..1
           - The predicate of the Statement.
        *  - object
-          - object
+          - _Not Specified_
           - 0..1
           - The object of the Statement.
        *  - qualifiers
@@ -73,7 +73,7 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
           - 0..1
           - The overall strength of support for the Statement based on all evidence assessed.
        *  - variant
-          - object
+          - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
        *  - classification

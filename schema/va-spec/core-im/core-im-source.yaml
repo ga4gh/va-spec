@@ -176,15 +176,11 @@ $defs:
     heritableProperties:
       subject:
         description: The subject of the Statement.
-        type: object
-        additionalProperties: false
       predicate:
         description: The predicate of the Statement.
         type: string
       object:
         description: The object of the Statement.
-        type: object
-        additionalProperties: false
       qualifiers:
         description: Additional, optional properties that may qualify the Statement.
         type: object

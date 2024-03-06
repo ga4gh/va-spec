@@ -75,8 +75,6 @@
       },
       "variant": {
          "description": "A variant that is the subject of the Statement.",
-         "type": "object",
-         "additionalProperties": false,
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
@@ -115,8 +113,6 @@
       },
       "therapeutic": {
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
-         "type": "object",
-         "additionalProperties": false,
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/json/TherapeuticProcedure"

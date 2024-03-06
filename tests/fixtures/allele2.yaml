@@ -7,7 +7,6 @@ location:
   type: SequenceLocation
   sequenceReference:
     id: NC_000001.11
-    digest: Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
     type: SequenceReference
     refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
     label: NC_000001.11

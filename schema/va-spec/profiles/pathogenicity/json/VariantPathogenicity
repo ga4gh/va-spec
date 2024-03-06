@@ -90,8 +90,6 @@
       },
       "variant": {
          "description": "A variant that is the subject of the Statement.",
-         "type": "object",
-         "additionalProperties": false,
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
@@ -122,8 +120,6 @@
       },
       "condition": {
          "description": "The Condition for which the variant impact is stated.",
-         "type": "object",
-         "additionalProperties": false,
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/json/Condition"
