@@ -43,6 +43,16 @@ $defs:
           - $ref: "#/$defs/Document"
           - $refCurie: gks.core:IRI
         description: A document in which the information content is expressed.
+     dateAuthored:
+       $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
+       type: string
+       description: Indicates when the information content expressed in the Information Entity was generated.
+      derivedFrom: 
+        type: array
+        ordered: false
+        items:
+          $ref: "#/$defs/InformationEntity
+        description: Another Information Entity from which this Information Entity is derived, in whole or in part.
       recordMetadata:
         $comment: this should be "gks.core:RecordMetadata", but that data class is not in the common core, so using null as placeholder
         type: null
@@ -127,6 +137,10 @@ $defs:
         const: Document
         default: Document
         description: Must be "Document"
+      subtype:
+        $refCurie: gks.core:Coding
+        description: >-
+          A more specific type for the document (e.g. a publication, patent, pathology report)
       title:
         type: string
         description: The title of the Document
@@ -168,6 +182,31 @@ $defs:
         type:
           $refCurie: gks.core:Coding
     required: [ "value" ]
+  DataSet:
+    inherits: InformationEntity
+    maturity: draft
+    type: object
+    description: >-  
+      A collection of related data items or records that are organized together in a common format
+      or structure, to enable their computational manipulation as a unit.
+    properties:
+      subtype: 
+        $refCurie: gks.core:Coding
+        descriptiom: >- 
+          A specific type of data set the DataSet object represents (e.g. a clinical data set,
+          a sequencing data set, a gene expression data set, a genome annotation data set)
+      releaseDate:
+        $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
+        type: string
+        description: Indicates when a version of a Data Set was formally released.
+      version:
+        type: string
+        description: The version of the Data Set, as assigned by its creator.
+      license:
+        type: string
+        description: >-
+          A license that dictates legal permissions for how the Data Set can be used -  
+          referenced by a URL where possible.
   Statement:
     inherits: InformationEntity
     description: >-
