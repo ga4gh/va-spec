@@ -328,7 +328,8 @@ $defs:
         items: $ref: "#/$defs/StudyResult"
         description: >-
           A Study Result comprised of data items about the same focus as its parent Result, but based on a 
-          analysis of a different subset of the data pertaining to that focus. 
+          analysis of a different subset of the data pertaining to that focus (e.g. data fron analysis of a
+          subset of the full Study Group). 
       studyGroup:
         type: $ref: "#/$defs/StudyGroup"
         description: >-
@@ -444,6 +445,55 @@ $defs:
       - subject
       - predicate
       - object
+  StudyGroup:
+    type: object
+    maturity: draft
+    inherits: gks.core:Entity
+    description: >-
+      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
+      study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin, 
+      clinical history, age, gender, geographic location, income, etc.)
+    properties:
+      memberCount:
+        type: integer
+        description: the total number of individual members in the study group
+      isSubsetOf:
+        type: array
+        items: $ref: "#/$defs/StudyGroup"
+        ordered: false
+        description: A larger study group of which this study group represents a subset.
+      characteristics:
+        type: array
+        items: $ref: "#/$defs/Characterisitc"
+        ordered: false
+        description: >-
+          A feature or characteristic shared by all members of the study group, and representing a criteria for 
+          membership in the group.
+  Characterisitc:
+    type: object
+    maturity: draft
+    description: >-
+      An object holding a name-value pair used to describe any characteristic of an individual member of a 
+      Study Group (e.g. name = sex, value = female)
+    properties:
+      name:
+        type: string
+        description: >-
+          The type of the feature/trait described by the characteristic 
+          (e.g. 'ethnicity', 'sex', 'age', 'disease status').
+      value:
+        type: string
+        description: >-
+          The specific value(s) that the indicated feature/trait holds in all population members 
+          (e.g. 'east asian', 'female', 'adolescent', 'cancer').
+      exclude:
+        type: boolean
+        description: >-
+          A boolean attribute set to TRUE if the characteristic must be absent to qualify as a member of a 
+          study group or population.
+    required:
+      - name
+      - value
   VariantStatement:
     inherits: Statement
     description: >-
