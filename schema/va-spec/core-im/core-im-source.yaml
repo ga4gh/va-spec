@@ -43,15 +43,15 @@ $defs:
           - $ref: "#/$defs/Document"
           - $refCurie: gks.core:IRI
         description: A document in which the information content is expressed.
-     dateAuthored:
-       $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
-       type: string
-       description: Indicates when the information content expressed in the Information Entity was generated.
+      dateAuthored:
+        $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
+        type: string
+        description: Indicates when the information content expressed in the Information Entity was generated.
       derivedFrom: 
         type: array
         ordered: false
         items:
-          $ref: "#/$defs/InformationEntity
+          $ref: "#/$defs/InformationEntity"
         description: Another Information Entity from which this Information Entity is derived, in whole or in part.
       recordMetadata:
         $comment: this should be "gks.core:RecordMetadata", but that data class is not in the common core, so using null as placeholder
@@ -266,26 +266,28 @@ $defs:
           Statement subject. Permissible values for this attribute are typically 
           selected to be succinct and familar in the target community of practice. e.g. 
           'likely pathogenic' in the doamin of variant pathogenicity classification'.
-    hasEvidenceOfType:
+      hasEvidenceOfType:
         type: array
         ordered: false
         items:
           $refCurie: gks.core:Coding
-      description: >-
-        A term describing a type of evidence used to assess the validity of Statement's proposition
-        (e.g. 'sequence similarity evidence', 'in vitro assay evidence').    
-    hasEvidenceLines:
+        description: >-
+          A term describing a type of evidence used to assess the validity of Statement's proposition
+          (e.g. 'sequence similarity evidence', 'in vitro assay evidence').    
+      hasEvidenceLines:
+        type: array
+        ordered: false
+        items: 
+          $ref: "#/$defs/EvidenceLine"
+        description: >-
+          A discrete, independent argument relevant to the validity of the Proposition assessed or 
+          put forth in the Statement. This arguent is based on the interpretation of one or more 
+          pieces of information as evidence.
+      hasEvidence:
       type: array
       ordered: false
-      items: $ref: "#/$defs/EvidenceLine"
-      description: >-
-        A discrete, independent argument relevant to the validity of the Proposition assessed or 
-        put forth in the Statement. This arguent is based on the interpretation of one or more 
-        pieces of information as evidence.
-    hasEvidence:
-      type: array
-      ordered: false
-      items: $ref: "#/$defs/InformationEntity"
+      items: 
+        $ref: "#/$defs/InformationEntity"
       description: >-
         A piece of information that represents or contributes to an argument for or against the 
         validity of the Proposition put forth in a Statement. This is a shortcut relation that links 
@@ -306,32 +308,37 @@ $defs:
       knowledge about a particular variant or other entity. 
     heritableProperties:
       focus: 
-        type: $ref: "#/$defs/Entity"
+        type: 
+          $ref: "#/$defs/Entity"
         description: >-
           The specific subject or experimental unit in a Study that data in the StudyResult object is about. 
           e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
       dataItems:
         type: array
         ordered: false
-        items: $ref: "#/$defs/InformationEntity"
+        items: 
+          $ref: "#/$defs/InformationEntity"
         description: >-
           A piece of data that is included in the StudyResult because it pertains to the 
           entity that is the 'focus'. This data can directly describe this focus, or represent metadata about 
           how other data items in the Result were generated.  
       sourceDataSet:
-        type: $ref: "#/$defs/DataSet"
+        type: 
+          $ref: "#/$defs/DataSet"
         description: >-
           A larger Data Set from which the content of the Result was derived.
       componentResult:
         type: array
         ordered: false
-        items: $ref: "#/$defs/StudyResult"
+        items: 
+          $ref: "#/$defs/StudyResult"
         description: >-
           A Study Result comprised of data items about the same focus as its parent Result, but based on a 
           analysis of a different subset of the data pertaining to that focus (e.g. data fron analysis of a
           subset of the full Study Group). 
       studyGroup:
-        type: $ref: "#/$defs/StudyGroup"
+        type: 
+          $ref: "#/$defs/StudyGroup"
         description: >-
           A structured description of specific population of subjects interrogated in the Research Study to
           produce the subset of data captured in the StudyResult.
@@ -354,7 +361,8 @@ $defs:
       evidenceItems:
         type: array
         ordered: false
-        items: $ref: "#/$defs/InformationEntity"
+        items: 
+          $ref: "#/$defs/InformationEntity"
         description: >-
           An individual piece of information that was evaluated as evidence in building the argument represented 
           by an Evidence Line.    
@@ -380,7 +388,8 @@ $defs:
       generate, modify, move, or destroy one or more entities.
     heritableProperties:
       subtype:
-        type: $refCurie: gks.core:Coding
+        type: 
+          $refCurie: gks.core:Coding
         description: A more specific type of activity that an Activity object may represent.
       date:  
         $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
@@ -392,13 +401,15 @@ $defs:
       performedBy:
         type: array
         ordered: false
-        items: $ref: "#/$defs/Agent"
+        items: 
+          $ref: "#/$defs/Agent"
         description: >-
           An Agent who contributed to executing the Activity.         
       specifiedBy:
         type: array
         ordered: false
-        items: $ref: "#/$defs/Method"
+        items: 
+          $ref: "#/$defs/Method"
         description: >-
           A method that was followed in performing an Activity, that describes how it was executed.  
   Proposition:
@@ -419,13 +430,16 @@ $defs:
          A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for 
          Breast Cancer".
       subject:
-        type: $ref: "#/$defs/Entity"
+        type: 
+          $ref: "#/$defs/Entity"
         description: The Entity or concept about which the Proposition is made.
       predicate:
-        type: $refCurie: gks.core:Coding
+        type: 
+          $refCurie: gks.core:Coding
         description: The relationship asserted to hold between the subject and the object of the Proposition.
       object:
-        type: $ref: "#/$defs/Entity"
+        type: 
+          $ref: "#/$defs/Entity"
         description: An Entity that is related to the subject of a Proposition via its predicate.
       qualifier:
         oneOf:
@@ -459,12 +473,14 @@ $defs:
         description: the total number of individual members in the study group
       isSubsetOf:
         type: array
-        items: $ref: "#/$defs/StudyGroup"
+        items: 
+          $ref: "#/$defs/StudyGroup"
         ordered: false
         description: A larger study group of which this study group represents a subset.
       characteristics:
         type: array
-        items: $ref: "#/$defs/Characterisitc"
+        items: 
+          $ref: "#/$defs/Characterisitc"
         ordered: false
         description: >-
           A feature or characteristic shared by all members of the study group, and representing a criteria for 
