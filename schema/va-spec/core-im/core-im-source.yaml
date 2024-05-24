@@ -317,11 +317,10 @@ $defs:
         type: array
         ordered: false
         items: 
-          $ref: "#/$defs/InformationEntity"
+          $ref: "#/$defs/DataItem"
         description: >-
-          A piece of data that is included in the StudyResult because it pertains to the 
-          entity that is the 'focus'. This data can directly describe this focus, or represent metadata about 
-          how other data items in the Result were generated.  
+          A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. 
+          This data can directly describe this focus, or represent metadata about data in the Result were generated.  
       sourceDataSet:
         type: 
           $ref: "#/$defs/DataSet"
@@ -528,6 +527,7 @@ $defs:
       A :ref:`VariantStatement` classifying the impact of a variant.
     heritableProperties:
       classification:
+        extends: subjectClassification
         oneOf:
           - $refCurie: gks.core:Coding
           - $refCurie: gks.core:IRI
