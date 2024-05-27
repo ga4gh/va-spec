@@ -1,0 +1,72 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-pathogenicity-source.yaml"
+title: Variant Pathogenicity Definitions
+imports:
+  va.core: ../../core-im/core-im-source.yaml
+  gks.core: ../../../gks-common/core-source.yaml
+  gks.genes: ../../../gks-common/genes-source.yaml
+  gks.conditions: ../../../gks-common/conditions-source.yaml
+  catvrs: ../../../catvrs/catvrs-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
+
+namespaces:
+  va.core: ../../core-im/core-im.json#/$defs/
+  gks.core: ../../../gks-common/core.json#/$defs/
+  gks.genes: ../../../gks-common/genes.json#/$defs/
+  gks.conditions: ../../../gks-common/conditions.json#/$defs/
+  catvrs: ../../../catvrs.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
+
+$defs:
+  VariantPathogenicity:
+    type: object
+    maturity: draft
+    inherits: va.core:VariantClassification
+    description: >-
+      A :ref:`VariantClassification` describing the role of a variant in causing an 
+      inherited disorder.
+    properties:
+      type:
+        type: string
+        const: "VariantPathogenicity"
+        default: "VariantPathogenicity"
+        description: >-
+          MUST be "VariantPathogenicity".
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      condition:
+        extends: object
+        oneOf:
+          - $refCurie: gks.conditions:Condition
+          - $refCurie: gks.core:IRI
+        description: >-
+          The :ref:`Condition` for which the variant impact is stated.
+      qualifiers:
+        extends: qualifiers
+        properties:
+          penetrance:
+            type: string
+            enum:
+              - high
+              - low
+              - risk allele
+            description: >-
+              The extent to which the variant impact is expressed by individuals carrying it as
+              a measure of the proportion of carriers exhibiting the condition.
+          modeOfInheritance:
+            type: string
+            enum:
+              - autosomal dominant
+              - autosomal recessive
+              - X-linked dominant
+              - X-linked recessive
+              - mitochondrial
+            description: >-
+              The pattern of inheritance expected for the pathogenic effect of this variant.
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.genes:Gene
+    required:
+      - condition

@@ -62,7 +62,7 @@ annotations: [
         predicate: is_described_by
         descriptor:  
           - id: va:StudyData001
-            type: Population Frequency Study Data
+            type: CohortFrequency Study Data
             count: 1198
             totalCount: 7344
             homozygousCount: 113
@@ -105,7 +105,7 @@ annotations: [
   ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent the Cellbase annotations in a json/yaml message. Here we create separate statements for frequency data about the ref allele, and place it in the message as a supporting statement for the alt. But the ref allele population frequency could alteratively/additionally be captured in an entirely independent annotation.
 
 annotations: [  
-    # A given message may contain several annotations. This example message contains two Population Frequency Annotations.
+    # A given message may contain several annotations. This example message contains two CohortFrequency Annotations.
   - id: va:annotation001        
     type: Variant Annotation
     

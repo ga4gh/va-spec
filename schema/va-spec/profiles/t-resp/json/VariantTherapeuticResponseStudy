@@ -1,0 +1,231 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/t-resp/json/VariantTherapeuticResponseStudy",
+   "title": "VariantTherapeuticResponseStudy",
+   "type": "object",
+   "maturity": "draft",
+   "description": "A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary label for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+         }
+      },
+      "type": {
+         "type": "string",
+         "const": "VariantTherapeuticResponseStudy",
+         "default": "VariantTherapeuticResponseStudy",
+         "description": "MUST be \"VariantTherapeuticResponseStudy\"."
+      },
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "A Method that describes all or part of the process through which the information was generated."
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
+         }
+      },
+      "dateAuthored": {
+         "$comment": "the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.",
+         "type": "string",
+         "description": "Indicates when the information content expressed in the Information Entity was generated."
+      },
+      "derivedFrom": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
+         },
+         "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
+      },
+      "recordMetadata": {
+         "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
+         "type": null
+      },
+      "direction": {
+         "type": "string",
+         "enum": [
+            "supports",
+            "none",
+            "refutes"
+         ],
+         "description": "The direction of this Statement with respect to the predicate."
+      },
+      "strength": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "The overall strength of support for the Statement based on all evidence assessed."
+      },
+      "statementText": {
+         "type": "string",
+         "description": "A natural-language expression of what a structured Statement object asserts to be true.  e.g. for a Variant Pathgenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast  Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G  for Breast Cancer\"."
+      },
+      "proposition": {
+         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
+         "description": "A possible fact that the Statement assesses or puts forth as true. This attribute provides  the option of encapsulating the structured semantics of the possible fact asserted or  evaluated by a Statement in a separate 'Proposition' object - instead of using the subject,  predicate, object, qualifier properties directly in the Statement object."
+      },
+      "subjectClassification": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically  selected to be succinct and familar in the target community of practice. e.g.  'likely pathogenic' in the doamin of variant pathogenicity classification'."
+      },
+      "hasEvidenceOfType": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+         },
+         "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').    "
+      },
+      "hasEvidenceLines": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
+         },
+         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or  put forth in the Statement. This arguent is based on the interpretation of one or more  pieces of information as evidence."
+      },
+      "hasEvidence": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
+         },
+         "description": "A piece of information that represents or contributes to an argument for or against the  validity of the Proposition put forth in a Statement. This is a shortcut relation that links  a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class  when used data creators do not utilize an Evidence Line object."
+      },
+      "variant": {
+         "description": "A variant that is the subject of the Statement.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
+            }
+         ]
+      },
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed.",
+         "minItems": 1
+      },
+      "predicate": {
+         "description": "The predicate of the Statement.",
+         "type": "string",
+         "enum": [
+            "predictsSensitivityTo",
+            "predictsResistanceTo"
+         ]
+      },
+      "therapeutic": {
+         "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/json/TherapeuticProcedure"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ]
+      },
+      "tumorType": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/json/Condition"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ],
+         "description": "The tumor type context in which the variant impact is evaluated."
+      },
+      "qualifiers": {
+         "description": "Additional, optional properties that may qualify the Statement.",
+         "type": "object",
+         "additionalProperties": false,
+         "properties": {
+            "alleleOrigin": {
+               "type": "string",
+               "description": "Whether the statement should be interpreted in the context of an inherited  (germline) variant, an acquired (somatic) mutation, or both (combined).",
+               "enum": [
+                  "germline",
+                  "somatic",
+                  "combined"
+               ]
+            },
+            "allelePrevalence": {
+               "type": "string",
+               "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
+               "enum": [
+                  "rare",
+                  "common"
+               ]
+            },
+            "geneContext": {
+               "description": "A gene context that qualifies the Statement.",
+               "$ref": "/ga4gh/schema/gks-common/json/Gene"
+            }
+         }
+      }
+   },
+   "required": [
+      "direction",
+      "id",
+      "isReportedIn",
+      "predicate",
+      "therapeutic",
+      "tumorType",
+      "type",
+      "variant"
+   ]
+}

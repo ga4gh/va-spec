@@ -1,0 +1,412 @@
+
+// -- version 2.0alpha1 - fully decorated clinvar variation (canonical variation) 
+
+// DISCLAIMER: While the data in the example below attempts represent a valid clinvar record, the ga4gh digests and 
+//.   identifiers are not accurate to the VRS 2.0 alpha spec because not all the tooling for generating the proper
+//    digests has been completed yet. Please do not presume these digests and ids are legitamite.
+
+/*
+    The structure below was chosen to show how to separate out the various 
+    sub-components of the variation being demonstrated in this example
+
+    record_metadata - contains metadata about the source system and process used to create all records.
+    sequence_references - contains all unique sequence components referenced in locations
+    locations - contains all unique sequence & canonical location components referenced in alleles
+    alleles   - contains all unique allele & canonical allele components that demonstrate how 
+                  clinvar variant 208366 can be fully represented.
+
+    We are applying ui-reference data types (json pointers) to reference relative components within this file       
+     (see https://json-schema.org/understanding-json-schema/reference/string.html#resource-identifiers )
+
+     Example: >> NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del) << 
+     Link: https://www.ncbi.nlm.nih.gov/clinvar/variation/208366
+     Elements:
+        variation_id: 208366      <-- preferred variation identifier from author
+        allele_id: 204595         <-- alt variation identifier from author
+        label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)     <-- preferred label
+        spdi: NC_000001.11:40819438:CTCCTCCT:CTCCT      <-- expression
+        xrefs/mappings
+            ClinGen: CA347424           <-- close match to 3rd party identifier
+            dbSNP: rs797044966          <-- xref
+        variation_type: Microsatellite  <-- extension - clinvar decoration
+        cytoloc: 1p34.2                 <-- extension? - possibly
+        hgvs:                           <-- nomenclatiure expressions - members
+            NC_000001.11:g.40819441CCT[1]       <-- b38 defining_context
+            NC_000001.10:g.41285113CCT[1]       <-- b37
+            NG_008139.3:g.40655CCT[1]
+            LRG_1378:g.40655CCT[1]
+            NM_004700.4(KCNQ4):c.803_805CCT[1] MANE SELECT
+            NM_004700.4:c.803CCT[1] MANE SELECT
+            NM_004700.3:c.806_808del
+            NM_004700.3:c.806_808delCCT
+            NM_172163.3:c.803CCT[1]
+            LRG_1378t1:c.803CCT[1]
+        genes 
+        symbol  entrez id                               omim id                              HI  TS  within #vars    all #vars
+        KCNQ4   https://www.ncbi.nlm.nih.gov/gene/9132  http://www.omim.org/entry/603537	    -	-	292             312
+*/
+{
+    "recordMetadata": {
+        // this is a work in progress, need to define the minimal set of fields to be useful to downstream users
+        "clingen_transform_v1": {
+            "runDatetime": "2023-08-01 12:30:22",
+            "id": "clinvar_transformer",
+            "version": "v1",
+            "clinvarReleaseDate": "2023-07-22"
+        } 
+    },
+    "sequenceReferences": {
+
+        "GRCh38_chr1": {
+            // NOTE the use of the "SQR" prefix instead of the "SQ" prefix that is 'owned' by refget.
+            // we aim to use the same exact digest as refget, but we think it is wise to define a separate prefix
+            // since we are defining a concept as part of vrs 2 that represents additional semantics around refget's SQ
+            "id": "ga4gh:SQR.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+            "digest": "Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+            // SequenceReference (SQR) is used by VRS 2 to provide distinction from Sequence (SQ) in refget.
+            "type": "SequenceReference",
+            // refget_id is required... (NOTE: VRS SQR uses the refget SQ digest in a 1-to-1 mapping 100% of the time)
+            "refgetId": "ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+            // all identifiable concepts in VRS will have the option for a "label" attribute.
+            "label": "NC_000001.11",
+            // mappings as an array of Mapping concepts on all identifiable entities?
+            // if this sequence was referenced multiple times it should be decorated in one and only one place...
+            // if there was a reason to have 2 different decorated representations of the same sequence (or location or allele) 
+            // then you would need to use the "id" attribute as a differentiator and place the computed identifier in the "identifiers" element.
+            "mappings": [{
+                "system": "https://www.ncbi.nlm.nih.gov/nuccore/",
+                "id": "NC_000001.11",
+                "isVersionOf": "NC_000001",           // discussion #16: is "is_version_of" inside mapping a good idea?
+                "relation": "exactMatch"
+            }],
+            // Discussion #1: residue_type as a Coding or a CURIE? (proposed optional attribute on sequence)
+            "residueType": {
+                "system":"https://identifiers.org/",
+                "id":"SO:0000348",
+                "label":"nucleid_acid"
+            },
+            // Discussion #2: chromosome as an enumeration [1-22, X, Y, MT] (proposed optional attribute on sequence)
+            "chromosome": "1",
+            // Discussion #3: assembly as a Coding (proposed optional attribute on sequence)
+            "assembly": {
+                "system": "https://www.ncbi.nlm.nih.gov/assembly/",
+                "id": "GCF_000001405.26",
+                "label": "GRCh38"
+            },
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        },
+        "GRCh37_chr1": {
+            "id": "ga4gh:SQR.Js23sdJRF...",
+            "digest": "Js23sdJRF...",
+            "type": "SequenceReference",
+            "refgetId": "ga4gh:SQ.Js23sdJRF...",
+            "label": "NC_000001.10",
+            "mappings": [{
+                "system": "https://www.ncbi.nlm.nih.gov/nuccore/",
+                "id": "NC_000001.10",
+                "isVersionOf": "NC_000001",           // discussion #16: is "is_version_of" inside mapping a good idea?
+                "relation": "exactMatch"
+            }],
+            "residueType": {
+                "system":"https://identifiers.org/",
+                "id":"SO:0000348",
+                "label":"nucleid_acid"
+            },
+            "chromosome": "1",
+            "assembly": {
+                "label": "GRCh37"
+            },
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        },
+        // an incomplete example of another type of sequence (i.e. NM_004700.4)
+        // again, the key name is irrelevant and has no special meaning, it is simply used for referencing elsewhere 
+        "KCNQ4_maneselect": {
+            "id": "ga4gh:SQR.BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
+            "digest": "BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
+            "type": "SequenceReference",
+            "refgetId":"ga4gh:SQ.BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
+            "label": "NM_004700.4",
+            "mappings": [{
+                "system": "https://www.ncbi.nlm.nih.gov/nuccore/",
+                "id": "NM_004700.4",
+                "isVersionOf": "NM_004700",           // discussion #16: is "is_version_of" inside mapping a good idea?
+                "relation": "exactMatch"
+            }],
+            "residueType": {
+                "system":"https://identifiers.org",
+                "id":"SO:0000348",
+                "label":"nucleid_acid"
+            },
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+            // discussion #9: Should we make "mane select" and "mane plus clinical" first class attributes?
+        }
+    },
+    "locations": {
+        "GRCh38_loc": {
+            "id": "ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+            "digest": "5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr",
+            "type": "SequenceLocation",
+            // first example of a relative reference using a uri-reference datatype
+            "sequenceReference": "#/sequenceReferences/GRCh38_chr1",
+            "start": 40819438,
+            "end": 40819446,
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        },
+        "GRCh37_loc": {
+            "id": "ga4gh:VSL.asjf9d842...",
+            "digest": "asjf9d842...",
+            "type": "SequenceLocation",
+            "sequenceReference": "#/sequenceReferences/GRCh37_chr1",
+            "start": 41285110,
+            "end": 41285118,
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        }
+    },
+    "alleles": {
+        // this is the b38 genomic contextual allele for clinvar variation 208366, which is the subject of the scv example below
+        "GRCh38_contextual": {
+            "digest": "Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+            "id": "ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+            "type": "Allele",
+            "location": "#/locations/GRCh38_loc",
+            "state": {
+                // this is a "NEW" vrs 2 RLE-based state since this has a repeating sub unit.
+                "repeatingSubUnit": 3,
+                "type": "ReferenceLengthExpression",
+                "value": 5
+            },
+            /*
+                the presumption is that 'expressions' are nomenclature expressions for this exact variation.
+                At some point we were considering that expressions could be used on canonical variation
+                to represent all the different "members" of a given canonical variation instance. The reality
+                is that each set of like expression(s) is based on a single contextual representation of an allele.
+            */
+            "expressions": [{
+                "syntax": "hgvs.g",
+                "value": "NC_000001.11:g.40819441CCT[1]"
+            },
+            {
+                "syntax": "spdi",
+                "value": "NC_000001.11:40819438:CTCCTCCT:CTCCT"
+            }],
+            // discussion #15: could we/should we add the option to map other expressions to a contextual variant?
+
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        },
+         // this is the b37 genomic contextual allele for clinvar variation 208366, which is the subject of the scv example below
+         "GRCh37_contextual": {
+            "digest": "asdf982f...",
+            "id": "ga4gh:VA.asdf982f...",
+            "type": "Allele",
+            "location": "#/locations/GRCh37_loc",
+            "state": {
+                // this is a "NEW" vrs 2 RLE-based state since this has a repeating sub unit.
+                "repeatingSubUnit": 3,
+                "type": "ReferenceLengthExpression",
+                "value": 5
+            },
+            /*
+                the presumption is that 'expressions' are nomenclature expressions for this exact variation.
+                At some point we were considering that expressions could be used on canonical variation
+                to represent all the different "members" of a given canonical variation instance. The reality
+                is that each set of like expression(s) is based on a single contextual representation of an allele.
+            */
+            "expressions": [{
+                "syntax": "hgvs.g",
+                "value": "NC_000001.10:g.41285113CCT[1]"
+            }],
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        },
+
+        /*
+            What is 'ExternalVariation'?
+            we need an "ExternalVariation" class that allows for a dealing 
+            with variation that does not comply with VRS, yet is necessary 
+            for sharing knowledge. There may be valid reasons why some variation
+            does not comply with VRS. For example, VRS may not have certain
+            variation types specified yet or the producing system may not have
+            the complete set of information to computationally define it based 
+            on existing VRS standards.
+
+            ClinVar Variation Transofrmation Policies and Notes
+            1.  all clinvar variation is versioned. and all are either canonical, 
+                contextual, or external variation.
+
+            2.  clinvar canonical spdi only occurs if the hgvs is GRCh38 
+                'genomic, top-level' hgvs and the var length is <= 50bp
+
+            3.  clinvar variation is transformed to canonical if...
+                a.  they have at least one genomic, top-level location or hgvs
+                    member (this would also occur if there is a canonical spdi)
+                b.  if it is an allele and the length is <= 1000bp. (unless we 
+                    can improve normalization performance considerably we need 
+                    to limit the size)
+                c.  if it is a cnv and there is no limit on length
+
+            4.  versioning. clinvar variation versions occure when changes
+                occur to any of the following elements
+                a.  the genomic, top level locations and/or hgvs members
+                b.  the clinvar variation_type or subclass_type
+                c.  the clinvar preferred name
+        */
+
+        // This is the top-level canonical allele for this example
+        "clinvar_208366": {
+            "id": "clinvar_208366.2023-04-10",
+            "type": "CanonicalAllele",
+            // if we put the clinvar variation id in the mappings do we still want "isVersionOf"?
+            "isVersionOf": "https://www.ncbi.nlm.nih.gov/clinvar/variation/208366/", 
+            "label": "NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)",
+
+            /*
+                Mappings...
+                Mappings are meant to provide references to other authored concepts that are
+                either exact, close or related matches.
+                When using mappings on a canonical variant the presumption would be that an
+                    exactMatch when the 
+                    closeMatch is an authored concept that is the same concept as the exact, but not identical
+                    relatedMatch is an authored concept that would be related but not truly the same concept
+            */
+            "mappgings": [{
+                // discussion #6: do mappings have to deal with versions of matches? I assume no.
+                // discussion #7: should or would this take the place of "is_version_of"
+                "system": "https://www.ncbi.nlm.nih.gov/clinvar/variation/",
+                "id": "208366",
+                "mapping": "exactMatch"
+            },{
+                //  dbSNP: rs797044966   -- use relatedMatch for dbsnp since it is representative for ALL substitutions at a location
+                //                       -- NOTE: SNVs and InDels at the same location get 2 different rsIDs. so var type match is important.
+                "system": "https://www.ncbi.nlm.nih.gov/snp/",
+                "id": "rs797044966",
+                "mapping": "relatedMatch" //(vocab for this is https://www.w3.org/TR/skos-reference/#mapping) if blank defaults to "?"
+            },
+            {
+                //  ClinGen: CA347424         -- this is the same but not identical therefore "closeMatch"
+                "system": "https://reg.clinicalgenome.org/allele/",
+                "id": "CA347424",
+                "mapping": "closeMatch"
+            }],
+
+            "definingContext": "#/alleles/GRCh38_contextual",
+
+            "members": [
+                "#/alleles/GRCh38_contextual",          // do we need to repeat the defining context here?
+                "#/alleles/GRCh37_contextual",
+                {
+                    "id": "var3",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.g",
+                            "value": "NG_008139.3:g.40655CCT[1]"
+                        },
+                        {
+                            "syntax": "hgvs.g",
+                            "value": "LRG_1378:g.40655CCT[1]"
+                        }
+                    ]
+                },
+                {
+                    "id": "var4",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.4:c.803CCT[1]"
+                        },
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.4:c.806_808del"
+                        },
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "LRG_1378t1:c.803CCT[1]"
+                        }
+                    ]
+                },
+                {
+                    "id": "var5",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.3:c.806_808del"
+                        },
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_004700.3:c.806_808delCCT"
+                        }
+                    ]
+                },
+                {
+                    "id": "var6",
+                    "type": "Allele",
+                    "expressions": [
+                        {
+                            "syntax": "hgvs.c",
+                            "value": "NM_172163.3:c.803CCT[1]"
+                        }
+                    ]
+                }
+            ],
+            // to demonstrate a verbose inlined representation of 
+            // all genes associated to a clinvar variation.  
+            // We could put the gene(s) on each contextual variation, 
+            // but that is not useful in this message I think.
+            "genes": [
+                {
+                    "id": "HGNC:HGNC:6298",
+                    "type": "Gene",
+                    "label": "KCNQ4", // should be symbol (preferred)
+                    "mappings": [
+                        {
+                            "system": "https://www.genenames.org/data/gene-symbol-report/#!/hgnc_id/",
+                            "id": "6298",
+                            "mapping": "exactMatch"
+                        },
+                        {
+                            "system": "https://www.ncbi.nlm.nih.gov/gene/",
+                            "id": "9132",
+                            "mapping": "exactMatch"
+                        },
+                        {
+                            "system": "https://omim.org/entry/",
+                            "id": "603537",
+                            "mapping": "exactMatch"
+                        },
+                        {
+                            "system": "http://useast.ensembl.org/Homo_sapiens/Gene/Summary?g=",
+                            "id": "ENSG00000117013",
+                            "mapping": "exactMatch"
+                        }
+                    ],
+                    "extensions": [
+                        {
+                            "name": "previous_symbols",
+                            "value": [
+                                "DFNA2"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "extensions": [
+                {
+                    "name": "cytogeneticLocation",
+                    "value": "1p34.2" // could have put this under a specific context (sequenceLocation)
+                    // but thought it made sense at the clinvar variation level. 
+                    // this makes it easier to find i think.
+                },
+                {
+                    "name": "proteinChange",
+                    "value": "S269del"
+                },
+                {
+                    "name": "clinvarAlleleId",
+                    "value": "204595"
+                }
+            ],
+            "recordMetadata": "#/recordMetadata/clingen_transform_v1"
+        }
+    }
+}

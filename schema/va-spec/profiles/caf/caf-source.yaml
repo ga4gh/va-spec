@@ -1,0 +1,85 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/caf-source.yaml"
+title: Cohort Allele Frequency
+strict: true
+imports:
+  va.core: ../../core-im/core-im-source.yaml
+  gks.core: ../../../gks-common/core-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
+
+namespaces:
+  va.core: ../../core-im/core-im.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
+
+$defs:
+  CohortAlleleFrequency:
+    maturity: draft
+    type: object
+    inherits: va.core:InformationEntity
+    description: >
+      A measure of the frequency of an Allele in a cohort.
+    properties:
+      derivedFrom:
+        type: object
+        description: Information about the dataset from which the CohortAlleleFrequency was reported.
+        properties:
+          id:
+            type: string
+          type:
+            type: string
+          label:
+            type: string
+          version:
+            type: string
+        additionalProperties: false
+      focusAllele:
+        oneOf:
+          - $refCurie: vrs:Allele
+          - type: string
+            format: uri-reference
+      focusAlleleCount:
+        type: integer
+      locusAlleleCount:
+        type: integer
+      alleleFrequency:
+        type: number
+      cohort:
+        type: object
+        properties:
+          id:
+            type: string
+          label:
+            type: string
+          characteristics:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                value:
+                  type: string
+              required:
+                - name
+                - value
+              additionalProperties: false
+        additionalProperties: false
+        required:
+          - id
+      ancillaryResults:
+        maturity: draft
+        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        type: object
+        additionalProperties: true
+      qualityMeasures:
+        maturity: draft
+        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        type: object
+        additionalProperties: true
+      subcohortFrequency:
+        type: array
+        ordered: false
+        items:
+          $ref: "#/$defs/CohortAlleleFrequency"
+    required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, cohort]
+    additionalProperties: false

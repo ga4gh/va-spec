@@ -1,0 +1,17 @@
+_id: ga4gh:VA.hingrE1dTh6sN0lzvUD-vpatd6ukTP3S
+location:
+  _id: ga4gh:VSL.InpKcN9eiYwJ2voGoMTySZ3bdsiNem1o
+  interval:
+    end:
+      type: Number
+      value: 55051215
+    start:
+      type: Number
+      value: 55051215
+    type: SequenceInterval
+  sequence_id: ga4gh:SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+  type: SequenceLocation
+state:
+  sequence: A
+  type: LiteralSequenceExpression
+type: Allele

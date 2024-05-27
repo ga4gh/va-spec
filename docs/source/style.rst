@@ -52,10 +52,9 @@ A cheat sheet for making references, links, and literals in sphinx.
 * For external links, use ``target_``.
 
   * See ``epilog.rst`` for pre-defined links.
-  * e.g, ``Base64_`` renders as Base64_ and ```Compact URI (CURIE)`_``
-    renders as `Compact URI (CURIE)`_.
+  * e.g, todo
 
-* *Within* VRS documentation, use ``.. _refname:`` to create link
+* *Within* VA documentation, use ``.. _refname:`` to create link
   target, and use ``:ref:`refname``` to reference it.
 
   * Create explicit link targets for all headings.
@@ -64,19 +63,16 @@ A cheat sheet for making references, links, and literals in sphinx.
   * e.g., ``:ref:`text-styles-target``` renders as
     :ref:`text-styles-target` and uses the heading text as
     the link name.
-  * e.g., ``:ref:`Alleles <Allele>``` renders as :ref:`Alleles
-    <Allele>`, with custom link text.
-  * Use class names verbatim when making link targets (e.g.,
-    ``.. _SequenceLocation:``). Use (lowercase) kebab-case for other
-    sections (e.g., ``.. computed-identifiers:``).
+  * e.g., todo
+  * Use class names verbatim when making link targets (e.g., todo).
 
 * Use \* for attributes.
 
   * ``*attribute*`` renders as *attribute*.
-  * e.g., The :ref:`Allele` *location* attribute must be set.
+  * e.g., todo
 
 * Use double backticks for literals.
 
   * ````literal```` renders as ``literal``
-  * e.g., The :ref:`Allele` *type* attribute must be set to ``"Allele"``.
+  * e.g., todo
 

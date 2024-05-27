@@ -1,0 +1,18 @@
+{
+    "208366": {
+        "id": "208366",
+        "type": "CanonicalAllele",
+        "definingContext": "ctxvars-mvp.jsonc#/VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+        // name
+        "label": "NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)",
+        "members": [
+            "ctxvars-mvp.jsonc#/VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK",
+            {
+                "label": "NM_004700.4(KCNQ4):c.803CCT[1]",
+                "expressions": [
+                    {}
+                ]
+            }
+        ]
+    }
+}

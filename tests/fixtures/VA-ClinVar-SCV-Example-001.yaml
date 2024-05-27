@@ -1,0 +1,79 @@
+id: SCV000778434.1
+type: VariantPathogenicity
+variant:
+  id: '208366'
+  type: CanonicalAllele
+  definingContext:
+    id: ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
+    digest: Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
+    type: Allele
+    location:
+      id: ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr
+      digest: 5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr
+      type: SequenceLocation
+      sequenceReference:
+        id: NC_000001.11
+        type: SequenceReference
+        refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
+        label: NC_000001.11
+      start: 40819438
+      end: 40819446
+    state:
+      repeatSubunitLength: 3
+      type: ReferenceLengthExpression
+      length: 5
+    expressions:
+      - syntax: hgvs.g
+        value: NC_000001.11:g.40819441CCT[1]
+      - syntax: spdi
+        value: NC_000001.11:40819438:CTCCTCCT:CTCCT
+  label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
+condition:
+  id: clinvar.trait/939
+  type: Disease
+  label: Autosomal dominant nonsyndromic hearing loss 2A
+  mappings:
+  - coding:
+      code: C2677637
+      system: https://www.ncbi.nlm.nih.gov/medgen/
+    relation: exactMatch
+direction: supports
+strength:
+  code: cg000021
+  label: Definitive (ACMG 2015)
+  system: https://dataexchange.clinicalgenome.org/codes/
+classification:
+  code: cg000001
+  label: Pathogenic (ACMG 2015)
+  system: https://dataexchange.clinicalgenome.org/codes/
+qualifiers:
+  penetrance: high
+contributions:
+- type: Contribution
+  contributor:
+    id: clinvar.submitter/500139
+    type: Agent
+    label: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+  date: '2018-06-12'
+  activity:
+    code: cg000010
+    label: submitted
+    system: https://dataexchange.clinicalgenome.org/codes/
+- type: Contribution
+  contributor:
+    id: clinvar.submitter/500139
+    type: Agent
+    label: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+  date: '2015-08-20'
+  activity:
+    code: cg000011
+    label: evaluated
+    system: https://dataexchange.clinicalgenome.org/codes/
+  extensions:
+    - name: clinvarActivityLabel
+      value: last evaluated
+extensions:
+- name: clinvarMethodCategory
+  value: literature only
+- name: clinvarReviewStatus
+  value: no assertion criteria provided

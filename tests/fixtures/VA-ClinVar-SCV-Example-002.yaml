@@ -1,0 +1,70 @@
+id: SCV001245167.1
+type: VariantPathogenicity
+variant: catvars-mvp.jsonc#/208366 # NOQA: IRI resolution not tested; inline
+                                   # version of this object tested in SCV example 1
+condition:
+  id: clinvarTrait:9544 # This ID syntax is clinvar.trait/9544 in example 1. Both OK.
+  type: Disease
+  label: Nonsyndromic genetic hearing loss
+  mappings:
+    - coding:
+        system: https://www.ncbi.nlm.nih.gov/medgen/
+        code: CN043648
+      relation: exactMatch
+direction: supports
+strength:
+  code: cg000022
+  label: Likely (ACMG 2015)
+  system: https://dataexchange.clinicalgenome.org/codes/
+classification:
+  code: cg000002
+  label: Likely Pathogenic (ACMG 2015)
+  system: https://dataexchange.clinicalgenome.org/codes/
+description: 'The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed
+  in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030,
+  LMM unpublished data SCV000967428.1). This variant segregated with hearing loss
+  in 12 additional individuals from 1 family (PP1_Strong; PMID: 23443030). The p.Ser269del
+  variant was absent from large population studies (PM2; https://gnomad.broadinstitute.org).
+  This variant causes a change in the length of the protein due to an in-frame deletion
+  between the S5 membrane-spanning domain and the pore region, which is important
+  for protein function (PM4). In summary, this variant meets criteria to be classified
+  as likely pathogenic for autosomal dominant nonsyndromic hearing loss. ACMG/AMP
+  Criteria applied as specified by the Hearing Loss Expert Panel: PP1_Strong, PM2,
+  PM4, PS4_Supporting.'
+contributions:
+- type: Contribution
+  contributor:
+    id: clinvar.submitter/506744
+    type: Agent
+    label: ClinGen Hearing Loss Variant Curation Expert Panel
+  date: '2020-05-04'
+  activity:
+    code: cg000010
+    label: submitted
+    system: https://dataexchange.clinicalgenome.org/codes/
+- type: Contribution
+  contributor:
+    id: clinvar.submitter/506744
+    type: Agent
+    label: ClinGen Hearing Loss Variant Curation Expert Panel
+  date: '2019-11-26'
+  activity:
+    code: cg000011
+    label: evaluated
+    system: https://dataexchange.clinicalgenome.org/codes/
+  extensions:
+    - name: clinvarActivityLabel
+      value: last evaluated
+specifiedBy:
+  id: hearing_loss_acmg_specifications_v1_2018.pdf
+  type: Method
+  label: ClinGen HL ACMG Specifications v1
+  isReportedIn:
+    url: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
+    type: Document
+    label: ClinGen HL ACMG Specifications v1
+extensions:
+- name: clinvarMethodCategory
+  value: curation
+- name: clinvarReviewStatus
+  value: reviewed by expert panel

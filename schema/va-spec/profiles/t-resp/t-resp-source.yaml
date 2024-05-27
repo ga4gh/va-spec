@@ -1,0 +1,82 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/t-resp/t-resp-source.yaml"
+title: Therapeutic Response Definitions
+imports:
+  va.core: ../../core-im/core-im-source.yaml
+  gks.core: ../../../gks-common/core-source.yaml
+  gks.genes: ../../../gks-common/genes-source.yaml
+  gks.conditions: ../../../gks-common/conditions-source.yaml
+  gks.therapeutics: ../../../gks-common/therapeutics-source.yaml
+  catvrs: ../../../catvrs/catvrs-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
+
+namespaces:
+  va.core: ../../core-im/core-im.json#/$defs/
+  gks.core: ../../../gks-common/core.json#/$defs/
+  gks.genes: ../../../gks-common/genes.json#/$defs/
+  gks.conditions: ../../../gks-common/conditions.json#/$defs/
+  gks.therapeutics: ../../../gks-common/conditions.json#/$defs/
+  catvrs: ../../../catvrs.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
+
+$defs:
+  VariantTherapeuticResponseStudy:
+    type: object
+    maturity: draft
+    inherits: va.core:VariantStudySummary
+    description: >-
+      A study summarization describing the role of a variant in modulating the response of a
+      neoplasm to drug administration or other therapeutic procedure.
+    properties:
+      type:
+        type: string
+        const: "VariantTherapeuticResponseStudy"
+        default: "VariantTherapeuticResponseStudy"
+        description: >-
+          MUST be "VariantTherapeuticResponseStudy".
+      predicate:
+        extends: predicate
+        enum:
+          - predictsSensitivityTo
+          - predictsResistanceTo
+      therapeutic:
+        description: A drug administration or other therapeutic procedure that the neoplasm
+          is intended to respond to.
+        extends: object
+        oneOf:
+          - $refCurie: gks.therapeutics:TherapeuticProcedure
+          - $refCurie: gks.core:IRI
+      tumorType:
+        oneOf:
+          - $refCurie: gks.therapeutics:Condition
+          - $refCurie: gks.core:IRI
+        description: >-
+          The tumor type context in which the variant impact is evaluated.
+      qualifiers:
+        extends: qualifiers
+        properties:
+          alleleOrigin:
+            type: string
+            description: >-
+              Whether the statement should be interpreted in the context of an inherited 
+              (germline) variant, an acquired (somatic) mutation, or both (combined).
+            enum:
+              - germline
+              - somatic
+              - combined
+          allelePrevalence:
+            type: string
+            description: >-
+              Whether the statement should be interpreted in the context of the variant
+              being rare or common.
+            enum:
+              - rare
+              - common
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.therapeutics:Gene
+    required:
+      - tumorType
+      - predicate
+      - therapeutic
