@@ -1,10 +1,10 @@
 **Computational Definition**
 
-The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)
+A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific  study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin,  clinical history, age, gender, geographic location, income, etc.)
 
     **Information Model**
     
-Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
+Some StudyGroup attributes are inherited from :ref:`gks.core:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -32,23 +32,15 @@ Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
           - `Extension <../../gks-common/core.json#/$defs/Extension>`_
           - 0..m
           - 
-       *  - type
-          - string
+       *  - memberCount
+          - integer
           - 0..1
-          - 
-       *  - contributor
-          - :ref:`Agent`
-          - 0..1
-          - 
-       *  - date
-          - string
-          - 0..1
-          - 
-       *  - contributionMadeTo
-          - :ref:`InformationEntity`
-          - 0..1
-          - The artifact toward which the contribution was made.
-       *  - activity
-          - `Coding <../../gks-common/core.json#/$defs/Coding>`_
-          - 0..1
-          - SHOULD describe a concept descending from the Contributor Role Ontology.
+          - the total number of individual members in the study group
+       *  - isSubsetOf
+          - :ref:`StudyGroup`
+          - 0..m
+          - A larger study group of which this study group represents a subset.
+       *  - characteristics
+          - :ref:`Characterisitc`
+          - 0..m
+          - A feature or characteristic shared by all members of the study group, and representing a criteria for  membership in the group.

@@ -284,21 +284,20 @@ $defs:
           put forth in the Statement. This arguent is based on the interpretation of one or more 
           pieces of information as evidence.
       hasEvidence:
-      type: array
-      ordered: false
-      items: 
-        $ref: "#/$defs/InformationEntity"
-      description: >-
-        A piece of information that represents or contributes to an argument for or against the 
-        validity of the Proposition put forth in a Statement. This is a shortcut relation that links 
-        a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class 
-        when used data creators do not utilize an Evidence Line object.
+        type: array
+        ordered: false
+        items: 
+          $ref: "#/$defs/InformationEntity"
+        description: >-
+          A piece of information that represents or contributes to an argument for or against the 
+          validity of the Proposition put forth in a Statement. This is a shortcut relation that links 
+          a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class 
+          when used data creators do not utilize an Evidence Line object.
     heritableRequired:
       - subject
       - direction
   StudyResult:
-    type: object
-    inherits: gks.core:InformationEntity
+    inherits: InformationEntity
     maturity: draft
     description: >-
       A collection of data items from a single study that are about a particular subject or experimental 
@@ -308,8 +307,7 @@ $defs:
       knowledge about a particular variant or other entity. 
     heritableProperties:
       focus: 
-        type: 
-          $ref: "#/$defs/Entity"
+        $ref: "#/$defs/Entity"
         description: >-
           The specific subject or experimental unit in a Study that data in the StudyResult object is about. 
           e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
@@ -343,14 +341,13 @@ $defs:
           A structured description of specific population of subjects interrogated in the Research Study to
           produce the subset of data captured in the StudyResult.
   EvidenceLine:
-    type: object
-    inherits: gks.core:InformationEntity
+    inherits: InformationEntity
     maturity: draft
     description: >-
       A discrete, independent argument relevant to the validity of the Proposition assessed or put forth as 
       true in a Statement. This argument is based on an interpretation of one or more pieces of information 
       as evidence (i.e. Evidence Items). 
-    properties:
+    heritableProperties:
       targetProposition:
         $ref: "#/$defs/Proposition"
         description: >-
@@ -380,9 +377,8 @@ $defs:
           The strength of support that an Evidence Line is determined to provide for or against its target 
           Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.
   Activity:
-    type: object
-    maturity: draft
     inherits: gks.core:Entity
+    maturity: draft
     description: >-
       An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, 
       generate, modify, move, or destroy one or more entities.
@@ -413,9 +409,8 @@ $defs:
         description: >-
           A method that was followed in performing an Activity, that describes how it was executed.  
   Proposition:
-    type: object
-    maturity: draft
     inherits: gks.core:Entity
+    maturity: draft
     description: >-
       The abstract entity representing a possible fact that may be put forth as true, or subjected to 
       an evidence-based assessment, by a Statement. As abstract entities, their identity and existence 
@@ -460,14 +455,13 @@ $defs:
       - predicate
       - object
   StudyGroup:
-    type: object
-    maturity: draft
     inherits: gks.core:Entity
+    maturity: draft
     description: >-
       A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
       study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin, 
       clinical history, age, gender, geographic location, income, etc.)
-    properties:
+    heritableProperties:
       memberCount:
         type: integer
         description: the total number of individual members in the study group

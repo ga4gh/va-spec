@@ -1,10 +1,10 @@
 **Computational Definition**
 
-InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry  information about things in the real world).
+A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.
 
     **Information Model**
     
-Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
+Some DataSet attributes are inherited from :ref:`InformationEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -60,3 +60,19 @@ Some InformationEntity attributes are inherited from :ref:`gks.core:Entity`.
           - None
           - 0..1
           - 
+       *  - subtype
+          - `Coding <../../gks-common/core.json#/$defs/Coding>`_
+          - 0..1
+          - 
+       *  - releaseDate
+          - string
+          - 0..1
+          - Indicates when a version of a Data Set was formally released.
+       *  - version
+          - string
+          - 0..1
+          - The version of the Data Set, as assigned by its creator.
+       *  - license
+          - string
+          - 0..1
+          - A license that dictates legal permissions for how the Data Set can be used -   referenced by a URL where possible.

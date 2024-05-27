@@ -44,6 +44,10 @@
       "subtype": {
          "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+      },
+      "license": {
+         "type": "string",
+         "description": "A particular license that dictates legal permissions for how a published method (e.g. an  experimental protocol, workflow specification, curation guideline) can be used.       "
       }
    },
    "required": [],

@@ -1,10 +1,10 @@
 **Computational Definition**
 
-The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)
+An action or set of actions performed by an agent, that occurs over a period of time. Activities may use,  generate, modify, move, or destroy one or more entities.
 
     **Information Model**
     
-Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
+Some Activity attributes are inherited from :ref:`gks.core:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -32,23 +32,19 @@ Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
           - `Extension <../../gks-common/core.json#/$defs/Extension>`_
           - 0..m
           - 
-       *  - type
-          - string
+       *  - subtype
+          - {'$ref': '../../gks-common/core.json#/$defs/Coding'}
           - 0..1
-          - 
-       *  - contributor
-          - :ref:`Agent`
-          - 0..1
-          - 
+          - A more specific type of activity that an Activity object may represent.
        *  - date
           - string
           - 0..1
-          - 
-       *  - contributionMadeTo
-          - :ref:`InformationEntity`
-          - 0..1
-          - The artifact toward which the contribution was made.
-       *  - activity
-          - `Coding <../../gks-common/core.json#/$defs/Coding>`_
-          - 0..1
-          - SHOULD describe a concept descending from the Contributor Role Ontology.
+          - The date (and possibly specific time) that the Activity was performed. If tracking time more precisely,  use this attribute to capture when the activity completed.
+       *  - performedBy
+          - :ref:`Agent`
+          - 0..m
+          - An Agent who contributed to executing the Activity.         
+       *  - specifiedBy
+          - :ref:`Method`
+          - 0..m
+          - A method that was followed in performing an Activity, that describes how it was executed.  

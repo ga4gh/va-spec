@@ -61,9 +61,10 @@
          },
          "description": "A document in which the information content is expressed."
       },
-      "recordMetadata": {
-         "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
-         "type": null
+      "dateAuthored": {
+         "$comment": "the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.",
+         "type": "string",
+         "description": "Indicates when the information content expressed in the Information Entity was generated."
       },
       "derivedFrom": {
          "type": "object",
@@ -83,6 +84,10 @@
             }
          },
          "additionalProperties": false
+      },
+      "recordMetadata": {
+         "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
+         "type": null
       },
       "focusAllele": {
          "oneOf": [

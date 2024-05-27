@@ -49,14 +49,18 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - `Document <../../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
-       *  - recordMetadata
-          - None
+       *  - dateAuthored
+          - string
           - 0..1
-          - 
+          - Indicates when the information content expressed in the Information Entity was generated.
        *  - derivedFrom
           - object
           - 0..1
           - Information about the dataset from which the CohortAlleleFrequency was reported.
+       *  - recordMetadata
+          - None
+          - 0..1
+          - 
        *  - focusAllele
           - `Allele <../../../vrs/vrs.json#/$defs/Allele>`_ | string
           - 1..1

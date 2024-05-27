@@ -40,6 +40,10 @@ Some Document attributes are inherited from :ref:`gks.core:MappableEntity`.
           - string
           - 0..1
           - Must be "Document"
+       *  - subtype
+          - `Coding <../../gks-common/core.json#/$defs/Coding>`_
+          - 0..1
+          - A more specific type for the document (e.g. a publication, patent, pathology report)
        *  - title
           - string
           - 0..1
