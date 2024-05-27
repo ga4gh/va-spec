@@ -322,6 +322,7 @@ $defs:
           A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. 
           This data can directly describe this focus, or represent metadata about data in the Result were generated.  
       sourceDataSet:
+        extends: derivedFrom
         type: 
           $ref: "#/$defs/DataSet"
         description: >-
