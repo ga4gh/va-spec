@@ -36,6 +36,29 @@
          "type": "string",
          "format": "date"
       },
+      "contributionMadeTo": {
+         "description": "The artifact toward which the contribution was made.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/VariantClassification"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/VariantStudySummary"
+            }
+         ]
+      },
       "activity": {
          "description": "SHOULD describe a concept descending from the Contributor Role Ontology.",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"

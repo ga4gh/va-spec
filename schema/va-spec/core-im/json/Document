@@ -38,6 +38,10 @@
          "default": "Document",
          "description": "Must be \"Document\""
       },
+      "subtype": {
+         "description": "A more specific type for the document (e.g. a publication, patent, pathology report)",
+         "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+      },
       "title": {
          "type": "string",
          "description": "The title of the Document"

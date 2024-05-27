@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataItem",
-   "title": "DataItem",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataSet",
+   "title": "DataSet",
    "type": "object",
    "maturity": "draft",
-   "description": "An InformationEntity representing an individual piece of data, generated/acquired through methods  which reliably produce truthful information about something.",
+   "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
    "properties": {
       "id": {
          "type": "string",
@@ -26,10 +26,7 @@
          }
       },
       "type": {
-         "type": "string",
-         "const": "DataItem",
-         "default": "DataItem",
-         "description": "Must be \"DataItem\""
+         "type": "string"
       },
       "specifiedBy": {
          "oneOf": [
@@ -101,22 +98,27 @@
          "type": null
       },
       "subtype": {
-         "description": "A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)",
+         "descriptiom": "A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
       },
-      "value": {
-         "type": "string"
+      "releaseDate": {
+         "$comment": "the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.",
+         "type": "string",
+         "format": "date",
+         "description": "Indicates when a version of a Data Set was formally released."
       },
-      "unit": {
-         "type": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
-         }
+      "version": {
+         "type": "string",
+         "description": "The version of the Data Set, as assigned by its creator."
+      },
+      "license": {
+         "type": "string",
+         "description": "A license that dictates legal permissions for how the Data Set can be used -   referenced by a URL where possible."
       }
    },
    "required": [
       "id",
-      "type",
-      "value"
+      "type"
    ],
    "additionalProperties": false
 }

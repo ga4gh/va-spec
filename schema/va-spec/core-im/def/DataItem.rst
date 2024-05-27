@@ -48,6 +48,14 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
           - :ref:`Document` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
+       *  - dateAuthored
+          - string
+          - 0..1
+          - Indicates when the information content expressed in the Information Entity was generated.
+       *  - derivedFrom
+          - :ref:`InformationEntity`
+          - 0..m
+          - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
           - None
           - 0..1
