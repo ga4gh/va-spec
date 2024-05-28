@@ -1,6 +1,6 @@
 **Computational Definition**
 
-The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)
+An action taken by an agent in contributing to the creation, modification, assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem, Publication, etc.)
 
     **Information Model**
     
@@ -35,15 +35,15 @@ Some Contribution attributes are inherited from :ref:`gks.core:Entity`.
        *  - type
           - string
           - 0..1
-          - 
+          - MUST be "Contribution".
        *  - contributor
           - :ref:`Agent`
           - 0..1
-          - 
+          - The agent that made the contribution.
        *  - date
           - string
           - 0..1
-          - 
+          - The date on which the contribution was made. The date SHOULD be formatted as a date string in ISO format "YYYY-MM-DD".
        *  - contributionMadeTo
           - :ref:`InformationEntity`
           - 0..1

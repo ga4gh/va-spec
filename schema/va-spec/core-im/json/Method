@@ -4,7 +4,7 @@
    "title": "Method",
    "type": "object",
    "maturity": "draft",
-   "description": "A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)",
+   "description": "A set of instructions that specify how to achieve some objective (e.g. experimental protocols, curation guidelines, rule sets, etc.)",
    "properties": {
       "id": {
          "type": "string",
@@ -42,12 +42,12 @@
          ]
       },
       "subtype": {
-         "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)",
+         "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, Experimental Protocol)",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
       },
       "license": {
          "type": "string",
-         "description": "A particular license that dictates legal permissions for how a published method (e.g. an  experimental protocol, workflow specification, curation guideline) can be used.       "
+         "description": "A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used."
       }
    },
    "required": [],

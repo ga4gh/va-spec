@@ -1,6 +1,6 @@
 **Computational Definition**
 
-An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for  another agent’s activity.
+An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.
 
     **Information Model**
     
@@ -39,8 +39,8 @@ Some Agent attributes are inherited from :ref:`gks.core:Entity`.
        *  - name
           - string
           - 0..1
-          - 
+          - The descriptive name of the agent.
        *  - subtype
           - string
           - 0..1
-          - 
+          - A more specific type of agent the agent represents.

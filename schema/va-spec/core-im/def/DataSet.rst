@@ -35,7 +35,7 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - specifiedBy
           - :ref:`Method` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..1
@@ -43,7 +43,7 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
        *  - contributions
           - :ref:`Contribution`
           - 0..m
-          - 
+          - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
           - :ref:`Document` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..m
@@ -59,7 +59,7 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
        *  - recordMetadata
           - None
           - 0..1
-          - 
+          - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - subtype
           - `Coding <../../gks-common/core.json#/$defs/Coding>`_
           - 0..1
@@ -75,4 +75,4 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
        *  - license
           - string
           - 0..1
-          - A license that dictates legal permissions for how the Data Set can be used -   referenced by a URL where possible.
+          - A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible.

@@ -4,7 +4,7 @@
    "title": "Agent",
    "type": "object",
    "maturity": "draft",
-   "description": "An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for  another agent\u2019s activity.",
+   "description": "An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.",
    "properties": {
       "id": {
          "type": "string",
@@ -32,10 +32,12 @@
          "description": "MUST be \"Agent\"."
       },
       "name": {
-         "type": "string"
+         "type": "string",
+         "description": "The descriptive name of the agent."
       },
       "subtype": {
          "type": "string",
+         "description": "A more specific type of agent the agent represents.",
          "enum": [
             "person",
             "organization",

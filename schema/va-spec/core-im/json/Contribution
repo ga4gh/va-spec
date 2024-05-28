@@ -4,7 +4,7 @@
    "title": "Contribution",
    "type": "object",
    "maturity": "draft",
-   "description": "The sum of all actions taken by a single agent in contributing to the creation, modification,  assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem,  Publication, etc.)",
+   "description": "An action taken by an agent in contributing to the creation, modification, assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem, Publication, etc.)",
    "properties": {
       "id": {
          "type": "string",
@@ -27,14 +27,18 @@
       },
       "type": {
          "type": "string",
-         "const": "Contribution"
+         "const": "Contribution",
+         "default": "Contribution",
+         "description": "MUST be \"Contribution\"."
       },
       "contributor": {
-         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Agent"
+         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Agent",
+         "description": "The agent that made the contribution."
       },
       "date": {
          "type": "string",
-         "format": "date"
+         "format": "date",
+         "description": "The date on which the contribution was made. The date SHOULD be formatted as a date string in ISO format \"YYYY-MM-DD\"."
       },
       "contributionMadeTo": {
          "description": "The artifact toward which the contribution was made.",

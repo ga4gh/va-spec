@@ -55,7 +55,7 @@ Some Document attributes are inherited from :ref:`gks.core:MappableEntity`.
        *  - doi
           - string
           - 0..1
-          - A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_`  for the document.
+          - A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document.
        *  - pmid
           - integer
           - 0..1

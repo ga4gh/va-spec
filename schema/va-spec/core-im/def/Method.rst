@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A set of instructions that specify how to achieve some objective (e.g. experimental protocols,  curation guidelines, rule sets, etc.)
+A set of instructions that specify how to achieve some objective (e.g. experimental protocols, curation guidelines, rule sets, etc.)
 
     **Information Model**
     
@@ -43,8 +43,8 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
        *  - subtype
           - `Coding <../../gks-common/core.json#/$defs/Coding>`_
           - 0..1
-          - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,  Experimental Protocol)
+          - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, Experimental Protocol)
        *  - license
           - string
           - 0..1
-          - A particular license that dictates legal permissions for how a published method (e.g. an  experimental protocol, workflow specification, curation guideline) can be used.       
+          - A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used.

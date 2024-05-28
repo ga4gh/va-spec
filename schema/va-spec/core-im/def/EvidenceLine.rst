@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A discrete, independent argument relevant to the validity of the Proposition assessed or put forth as  true in a Statement. This argument is based on an interpretation of one or more pieces of information  as evidence (i.e. Evidence Items). 
+A discrete, independent argument relevant to the validity of the Proposition assessed or put forth as true in a Statement. This argument is based on an interpretation of one or more pieces of information as evidence (i.e. Evidence Items).
 
     **Information Model**
     
@@ -35,7 +35,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - specifiedBy
           - :ref:`Method` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..1
@@ -43,7 +43,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
        *  - contributions
           - :ref:`Contribution`
           - 0..m
-          - 
+          - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
           - :ref:`Document` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..m
@@ -59,20 +59,20 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
        *  - recordMetadata
           - None
           - 0..1
-          - 
+          - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - targetProposition
           - :ref:`Proposition`
           - 0..1
-          - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated,  in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based assessment of variant pathogneicity, the support provided by distinct lines of evidenceare assessed against  a target proposition that a variant is pathogenic for a specific disease.
+          - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based assessment of variant pathogneicity, the support provided by distinct lines of evidenceare assessed against a target proposition that a variant is pathogenic for a specific disease.
        *  - evidenceItems
           - :ref:`InformationEntity`
           - 0..m
-          - An individual piece of information that was evaluated as evidence in building the argument represented  by an Evidence Line.    
+          - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
        *  - directionOfEvidenceProvided
           - string
           - 0..1
-          - The direction of support that the Evidence Line is determined to provide toward its target Proposition  (can be supporting, disputing, or neutral)
+          - The direction of support that the Evidence Line is determined to provide toward its target Proposition (can be supporting, disputing, or neutral)
        *  - strengthOfEvidenceProvided
           - `Coding <../../gks-common/core.json#/$defs/Coding>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..1
-          - The strength of support that an Evidence Line is determined to provide for or against its target  Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.
+          - The strength of support that an Evidence Line is determined to provide for or against its target Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.

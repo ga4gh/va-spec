@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A collection of data items from a single study that are about a particular subject or experimental  unit in the study, along with optional provenance information describing how these data items were  generated. StudyResult objects provide a flexible and useful way to summarize a subset of data items  from a larger study that are cited as evidence in curation workflows that generate higher order  knowledge about a particular variant or other entity. 
+A collection of data items from a single study that are about a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated. StudyResult objects provide a flexible and useful way to summarize a subset of data items from a larger study that are cited as evidence in curation workflows that generate higher order knowledge about a particular variant or other entity.
 
     **Information Model**
     
@@ -35,7 +35,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - specifiedBy
           - :ref:`Method` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..1
@@ -43,7 +43,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
        *  - contributions
           - :ref:`Contribution`
           - 0..m
-          - 
+          - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
           - :ref:`Document` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..m
@@ -55,15 +55,15 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
        *  - recordMetadata
           - None
           - 0..1
-          - 
+          - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - focus
           - :ref:`Entity`
           - 0..1
-          - The specific subject or experimental unit in a Study that data in the StudyResult object is about.  e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
+          - The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
        *  - dataItems
           - :ref:`DataItem`
           - 0..m
-          - A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'.  This data can directly describe this focus, or represent metadata about data in the Result were generated.  
+          - A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about data in the Result were generated.
        *  - sourceDataSet
           - {'$ref': '#/$defs/DataSet'}
           - 0..1
@@ -71,7 +71,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
        *  - componentResult
           - :ref:`StudyResult`
           - 0..m
-          - A Study Result comprised of data items about the same focus as its parent Result, but based on a  analysis of a different subset of the data pertaining to that focus (e.g. data fron analysis of a subset of the full Study Group). 
+          - A Study Result comprised of data items about the same focus as its parent Result, but based on a analysis of a different subset of the data pertaining to that focus (e.g. data fron analysis of a subset of the full Study Group).
        *  - studyGroup
           - {'$ref': '#/$defs/StudyGroup'}
           - 0..1

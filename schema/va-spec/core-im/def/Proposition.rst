@@ -1,6 +1,6 @@
 **Computational Definition**
 
-The abstract entity representing a possible fact that may be put forth as true, or subjected to  an evidence-based assessment, by a Statement. As abstract entities, their identity and existence  are independent of space and time, and whether they are ever asserted to be true by some agent.  Propositions may be used in two contexts; (1) by Statements that assert them to be true or false,  or describe the overall level of confidence/evidence for or against them; (2) by Evidence Lines that  report the direction and strength of an evidence-based argument for the Proposition.
+The abstract entity representing a possible fact that may be put forth as true, or subjected to an evidence-based assessment, by a Statement. As abstract entities, their identity and existence are independent of space and time, and whether they are ever asserted to be true by some agent. Propositions may be used in two contexts; (1) by Statements that assert them to be true or false, or describe the overall level of confidence/evidence for or against them; (2) by Evidence Lines that report the direction and strength of an evidence-based argument for the Proposition.
 
     **Information Model**
     
@@ -35,7 +35,7 @@ Some Proposition attributes are inherited from :ref:`gks.core:Entity`.
        *  - statementText
           - string
           - 0..1
-          - A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for  Breast Cancer".
+          - A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for Breast Cancer".
        *  - subject
           - {'$ref': '#/$defs/Entity'}
           - 1..1
@@ -51,8 +51,8 @@ Some Proposition attributes are inherited from :ref:`gks.core:Entity`.
        *  - qualifier
           - :ref:`Entity` | `Coding <../../gks-common/core.json#/$defs/Coding>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..1
-          - An entity or concept applied to extend or refine the meaning of a Proposition's core subject-predicate-object  'triple' - by providing additional detail, or constraining the claim to apply in a particular context.
+          - An entity or concept applied to extend or refine the meaning of a Proposition's core subject-predicate-object 'triple' - by providing additional detail, or constraining the claim to apply in a particular context.
        *  - negated
           - string
           - 0..1
-          - A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate,  object, and qualifiers (e.g. that "Variant X is NOT pathogenic for Disease Y")/
+          - A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifiers (e.g. that "Variant X is NOT pathogenic for Disease Y")/

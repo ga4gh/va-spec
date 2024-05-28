@@ -149,6 +149,7 @@ $defs:
         description: >-
           A particular license that dictates legal permissions for how a published method (e.g. an
           experimental protocol, workflow specification, curation guideline) can be used.
+
   Document:
     type: object
     maturity: draft
@@ -207,6 +208,7 @@ $defs:
           $refCurie: gks.core:Coding
     required:
       - value
+
   DataSet:
     inherits: InformationEntity
     maturity: draft
@@ -233,6 +235,7 @@ $defs:
         description: >-
           A license that dictates legal permissions for how the Data Set can be used -
           referenced by a URL where possible.
+
   Statement:
     inherits: InformationEntity
     description: >-
@@ -318,6 +321,7 @@ $defs:
     heritableRequired:
       - subject
       - direction
+
   StudyResult:
     inherits: InformationEntity
     maturity: draft
@@ -362,6 +366,7 @@ $defs:
         description: >-
           A structured description of specific population of subjects interrogated in the Research Study to
           produce the subset of data captured in the StudyResult.
+
   EvidenceLine:
     inherits: InformationEntity
     maturity: draft
@@ -398,6 +403,7 @@ $defs:
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against its target
           Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.
+
   Activity:
     inherits: gks.core:Entity
     maturity: draft
@@ -430,6 +436,7 @@ $defs:
           $ref: "#/$defs/Method"
         description: >-
           A method that was followed in performing an Activity, that describes how it was executed.
+
   Proposition:
     inherits: gks.core:Entity
     maturity: draft
@@ -476,6 +483,7 @@ $defs:
       - subject
       - predicate
       - object
+
   StudyGroup:
     inherits: gks.core:Entity
     maturity: draft
@@ -501,6 +509,7 @@ $defs:
         description: >-
           A feature or characteristic shared by all members of the study group, and representing a criteria for
           membership in the group.
+
   Characterisitc:
     type: object
     maturity: draft
@@ -526,6 +535,7 @@ $defs:
     required:
       - name
       - value
+
   VariantStatement:
     inherits: Statement
     description: >-
@@ -552,6 +562,7 @@ $defs:
           A methodological, summary classification about the impact of a variant.
     heritableRequired:
       - classification
+
   VariantStudySummary:
     inherits: VariantStatement
     description: >-
