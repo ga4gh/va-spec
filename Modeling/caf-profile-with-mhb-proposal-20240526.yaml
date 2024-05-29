@@ -92,6 +92,7 @@ $defs:
     required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, cohort]
     additionalProperties: false
 
+# As general comment, most of the properties in the schema here do not have descriptions (here or in the derived json schema). It would be nice if the metaschema tooling could automatically pull in these descriptions form the core-im anytime a property 'extends' a core property - so that these don't have to be re-written (unless the developer wants to overwrite the core-im description in their profile).
 
 # ----------------------------------------------------------------------------------------------#
 
@@ -116,7 +117,7 @@ $defs:
     maturity: draft
     type: object
     inherits: va.core:StudyResult                # I think this should inherit from the StudyResult class, not InformationEntity, if this is meant to be a StudyResult-like object.
-    description: >                               # Updated description below to  
+    description: >-                               # Updated description below 
       A StudyResult that reports measures related to the frequency of an Allele in a cohort
     properties:
       sourceDataSet:
@@ -161,7 +162,7 @@ $defs:
   DataSet:         
     maturity: draft
     type: object
-    overwrites: va.core:DataSet                 # One possible meachansim to allow profiles to explicitly specify a subset of properties to pull in from a core class, and potentially overwrite some characteristics of these properties? See proposal here: https://github.com/ga4gh/va-spec/issues/142
+    overwrites: va.core:DataSet                 # One possible meachansim to allow profiles to explicitly specify a subset of properties to pull in from a core class, and potentially overwrite some characteristics of these properties? (contrast 'overwrites' with 'inherits' which pulls in ALL properties from ancestory classes) See proposal here: https://github.com/ga4gh/va-spec/issues/142
     description: >-
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
@@ -214,6 +215,7 @@ $defs:
     additionalProperties: false
 
 
+# As general comment, most of the properties in the schema here do not have descriptions (here or in the derived json schema). It would be nice if the metaschema tooling could automatically pull in these descriptions form the core-im anytime a property 'extends' a core property - so that these don't have to be re-written (unless the developer wants to overwrite the core-im description in their profile).
 
 
 
