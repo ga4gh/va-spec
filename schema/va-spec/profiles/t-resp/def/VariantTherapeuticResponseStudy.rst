@@ -104,10 +104,10 @@ Some VariantTherapeuticResponseStudy attributes are inherited from :ref:`va.core
           - `TherapeuticProcedure <../../../gks-common/conditions.json#/$defs/TherapeuticProcedure>`_ | `IRI <../../../gks-common/core.json#/$defs/IRI>`_
           - 1..1
           - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
-       *  - tumorType
+       *  - disease
           - `Condition <../../../gks-common/conditions.json#/$defs/Condition>`_ | `IRI <../../../gks-common/core.json#/$defs/IRI>`_
           - 1..1
-          - The tumor type context in which the variant impact is evaluated.
+          - The disease context in which the variant impact is evaluated.
        *  - qualifiers
           - object
           - 0..1

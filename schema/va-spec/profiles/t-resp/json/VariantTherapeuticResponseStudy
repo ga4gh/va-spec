@@ -178,7 +178,7 @@
             }
          ]
       },
-      "tumorType": {
+      "disease": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/json/Condition"
@@ -187,7 +187,7 @@
                "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
-         "description": "The tumor type context in which the variant impact is evaluated."
+         "description": "The disease context in which the variant impact is evaluated."
       },
       "qualifiers": {
          "description": "Additional, optional properties that may qualify the Statement.",
@@ -196,7 +196,7 @@
          "properties": {
             "alleleOrigin": {
                "type": "string",
-               "description": "Whether the statement should be interpreted in the context of an inherited  (germline) variant, an acquired (somatic) mutation, or both (combined).",
+               "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
                "enum": [
                   "germline",
                   "somatic",
@@ -220,11 +220,11 @@
    },
    "required": [
       "direction",
+      "disease",
       "id",
       "isReportedIn",
       "predicate",
       "therapeutic",
-      "tumorType",
       "type",
       "variant"
    ]
