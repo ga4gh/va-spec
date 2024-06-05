@@ -75,7 +75,7 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.
-            $refCurie: gks.therapeutics:Gene
+            $refCurie: gks.genes:Gene
     required:
       - disease
       - predicate
