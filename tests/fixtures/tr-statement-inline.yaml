@@ -14,13 +14,13 @@ variant:
   id: civic.mpid:33
   type: ProteinSequenceConsequence
   description: >-
-    EGFR L858R has long been recognized as a functionally significant mutation in cancer, 
-    and is one of the most prevalent single mutations in lung cancer. Best described in 
-    non-small cell lung cancer (NSCLC), the mutation seems to confer sensitivity to first 
-    and second generation TKI's like gefitinib and neratinib. NSCLC patients with this 
-    mutation treated with TKI's show increased overall and progression-free survival, as 
-    compared to chemotherapy alone. Third generation TKI's are currently in clinical trials 
-    that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in 
+    EGFR L858R has long been recognized as a functionally significant mutation in cancer,
+    and is one of the most prevalent single mutations in lung cancer. Best described in
+    non-small cell lung cancer (NSCLC), the mutation seems to confer sensitivity to first
+    and second generation TKI's like gefitinib and neratinib. NSCLC patients with this
+    mutation treated with TKI's show increased overall and progression-free survival, as
+    compared to chemotherapy alone. Third generation TKI's are currently in clinical trials
+    that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in
     treating patients that failed to respond to earlier generation TKI therapies.
   label: EGFR L858R
   definingContext: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
@@ -88,7 +88,7 @@ therapeutic:
     - BIBW2992
     - BIBW 2992
     - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
-tumorType:
+disease:
   id: civic.did:30
   type: Disease
   label: Lung Adenocarcinoma
