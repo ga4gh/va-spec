@@ -17,3 +17,9 @@ tests:
   - test_file: tr-statement-inline.yaml
     schema: varstatement
     definition: VariantTherapeuticResponseStudy
+  - test_file: diagnostic-inline.yaml
+    schema: varstatement
+    definition: VariantDiagnosticStudy
+  - test_file: prognostic-inline.yaml
+    schema: varstatement
+    definition: VariantPrognosticStudy
