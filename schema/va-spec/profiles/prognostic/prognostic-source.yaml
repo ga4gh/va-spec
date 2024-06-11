@@ -37,7 +37,7 @@ $defs:
       predicate:
         extends: predicate
         enum:
-          - Improved Outcome
+          - Better Outcome
           - Worse Outcome
       disease:
         extends: object
