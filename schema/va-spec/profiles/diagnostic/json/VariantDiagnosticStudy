@@ -168,7 +168,7 @@
          ]
       },
       "disease": {
-         "description": "The disease that is evaluated for presence",
+         "description": "The disease that is evaluated for diagnosis.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/json/Condition"

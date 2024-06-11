@@ -163,12 +163,12 @@
          "description": "The predicate of the Statement.",
          "type": "string",
          "enum": [
-            "Improved Outcome",
+            "Better Outcome",
             "Worse Outcome"
          ]
       },
       "disease": {
-         "description": "The disease that is evaluated for outcome",
+         "description": "The disease that is evaluated for outcome.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/json/Condition"

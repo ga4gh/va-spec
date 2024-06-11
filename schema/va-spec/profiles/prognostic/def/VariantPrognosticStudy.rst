@@ -103,7 +103,7 @@ Some VariantPrognosticStudy attributes are inherited from :ref:`va.core:VariantS
        *  - disease
           - `Condition <../../../gks-common/conditions.json#/$defs/Condition>`_ | `IRI <../../../gks-common/core.json#/$defs/IRI>`_
           - 1..1
-          - The disease that is evaluated for outcome
+          - The disease that is evaluated for outcome.
        *  - qualifiers
           - object
           - 0..1
