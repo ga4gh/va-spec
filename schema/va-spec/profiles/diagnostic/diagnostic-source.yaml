@@ -45,7 +45,7 @@ $defs:
           - $refCurie: gks.conditions:Condition
           - $refCurie: gks.core:IRI
         description: >-
-          The disease that is evaluated for presence
+          The disease that is evaluated for diagnosis.
       qualifiers:
         extends: qualifiers
         properties:
