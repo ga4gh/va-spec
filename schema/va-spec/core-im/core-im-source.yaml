@@ -5,18 +5,18 @@ type: object
 strict: true
 
 imports:
-  gks.core: ../../gks-common/core-source.yaml
+  gks.common: ../../gks-common/common-source.yaml
   catvrs: ../../catvrs/catvrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
 
 namespaces:
-  gks.core: ../../gks-common/core.json#/$defs/
+  gks.common: ../../gks-common/common.json#/$defs/
   catvrs: ../../catvrs/catvrs.json#/$defs/
   vrs: ../../vrs/vrs.json#/$defs/
 
 $defs:
   InformationEntity:
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     description: >-
       InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry
       information about things in the real world).
@@ -29,7 +29,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: "#/$defs/Method"
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: >-
           A :ref:`Method` that describes all or part of the process through which the information was
           generated.
@@ -46,7 +46,7 @@ $defs:
         items:
           oneOf:
           - $ref: "#/$defs/Document"
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:IRI
         description: A document in which the information content is expressed.
       dateAuthored:
         $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
@@ -59,7 +59,7 @@ $defs:
           $ref: "#/$defs/InformationEntity"
         description: Another Information Entity from which this Information Entity is derived, in whole or in part.
       recordMetadata:
-        $comment: this should be "gks.core:RecordMetadata", but that data class is not in the common core, so using null as placeholder
+        $comment: this should be "gks.common:RecordMetadata", but that data class is not in gks common, so using null as placeholder
         type: null
         description: Metadata that applies to a specific concrete record of information as encoded in a particular system.
     heritableRequired:
@@ -68,7 +68,7 @@ $defs:
 
   Contribution:
     type: object
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     maturity: draft
     description: >-
       An action taken by an agent in contributing to the creation, modification, assessment, or
@@ -93,14 +93,14 @@ $defs:
         $ref: "#/$defs/InformationEntity"
         description: The artifact toward which the contribution was made.
       activity:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >-
           SHOULD describe a concept descending from the Contributor Role Ontology.
 
   Agent:
     type: object
     maturity: draft
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     description: >-
       An autonomous actor (person, organization, or computational agent) that bears some form
       of responsibility for an activity taking place, for the existence of an entity, or for
@@ -125,7 +125,7 @@ $defs:
   Method:
     type: object
     maturity: draft
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     description: >-
       A set of instructions that specify how to achieve some objective (e.g. experimental protocols,
       curation guidelines, rule sets, etc.)
@@ -137,10 +137,10 @@ $defs:
         description: MUST be "Method".
       isReportedIn:
         oneOf:
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         - $ref: "#/$defs/Document"
       subtype:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >-
           A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,
           Experimental Protocol)
@@ -153,7 +153,7 @@ $defs:
   Document:
     type: object
     maturity: draft
-    inherits: gks.core:MappableEntity
+    inherits: gks.common:MappableEntity
     description: a representation of a physical or digital document
     properties:
       type:
@@ -162,7 +162,7 @@ $defs:
         default: Document
         description: Must be "Document"
       subtype:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >-
           A more specific type for the document (e.g. a publication, patent, pathology report)
       title:
@@ -197,7 +197,7 @@ $defs:
         default: DataItem
         description: Must be "DataItem"
       subtype:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         description: >-
           A specific type of data the DataItem object represents (e.g. a specimen count, a
           patient weight, an allele frequency, a p-value, a confidence score)
@@ -205,7 +205,7 @@ $defs:
          type: string
       unit:
         type:
-          $refCurie: gks.core:Coding
+          $refCurie: gks.common:Coding
     required:
       - value
 
@@ -218,7 +218,7 @@ $defs:
       or structure, to enable their computational manipulation as a unit.
     properties:
       subtype:
-        $refCurie: gks.core:Coding
+        $refCurie: gks.common:Coding
         descriptiom: >-
           A specific type of data set the DataSet object represents (e.g. a clinical data set,
           a sequencing data set, a gene expression data set, a genome annotation data set)
@@ -263,8 +263,8 @@ $defs:
           The direction of this Statement with respect to the predicate.
       strength:
         oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           The overall strength of support for the Statement based on all evidence assessed.
       statementText:
@@ -283,8 +283,8 @@ $defs:
           predicate, object, qualifier properties directly in the Statement object.
       subjectClassification:
         oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's proposition, in terms of a classification of the
@@ -295,7 +295,7 @@ $defs:
         type: array
         ordered: false
         items:
-          $refCurie: gks.core:Coding
+          $refCurie: gks.common:Coding
         description: >-
           A term describing a type of evidence used to assess the validity of Statement's proposition
           (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
@@ -398,14 +398,14 @@ $defs:
           (can be supporting, disputing, or neutral)
       strengthOfEvidenceProvided:
         oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against its target
           Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.
 
   Activity:
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     maturity: draft
     description: >-
       An action or set of actions performed by an agent, that occurs over a period of time. Activities may use,
@@ -413,7 +413,7 @@ $defs:
     heritableProperties:
       subtype:
         type:
-          $refCurie: gks.core:Coding
+          $refCurie: gks.common:Coding
         description: A more specific type of activity that an Activity object may represent.
       date:
         $comment: the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.
@@ -438,7 +438,7 @@ $defs:
           A method that was followed in performing an Activity, that describes how it was executed.
 
   Proposition:
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     maturity: draft
     description: >-
       The abstract entity representing a possible fact that may be put forth as true, or subjected to
@@ -459,7 +459,7 @@ $defs:
         description: The Entity or concept about which the Proposition is made.
       predicate:
         type:
-          $refCurie: gks.core:Coding
+          $refCurie: gks.common:Coding
         description: The relationship asserted to hold between the subject and the object of the Proposition.
       object:
         type:
@@ -468,8 +468,8 @@ $defs:
       qualifier:
         oneOf:
           - $ref: "#/$defs/Entity"
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           An entity or concept applied to extend or refine the meaning of a Proposition's core subject-predicate-object
           'triple' - by providing additional detail, or constraining the claim to apply in a particular context.
@@ -485,7 +485,7 @@ $defs:
       - object
 
   StudyGroup:
-    inherits: gks.core:Entity
+    inherits: gks.common:Entity
     maturity: draft
     description: >-
       A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
@@ -547,7 +547,7 @@ $defs:
         oneOf:
           - $refCurie: vrs:Variation
           - $refCurie: catvrs:CategoricalVariation
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
   VariantClassification:
     inherits: VariantStatement
@@ -557,8 +557,8 @@ $defs:
       classification:
         extends: subjectClassification
         oneOf:
-          - $refCurie: gks.core:Coding
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:Coding
+          - $refCurie: gks.common:IRI
         description: >-
           A methodological, summary classification about the impact of a variant.
     heritableRequired:
