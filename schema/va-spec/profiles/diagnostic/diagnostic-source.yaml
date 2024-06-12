@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/t-resp/t-resp-source.yaml"
-title: Therapeutic Response Definitions
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/diagnostic/diagnostic-source.yaml"
+title: Diagnostic Definitions
 imports:
   va.core: ../../core-im/core-im-source.yaml
   gks.core: ../../../gks-common/core-source.yaml
@@ -20,38 +20,32 @@ namespaces:
   vrs: ../../../vrs/vrs.json#/$defs/
 
 $defs:
-  VariantTherapeuticResponseStudy:
+  VariantDiagnosticStudy:
     type: object
     maturity: draft
     inherits: va.core:VariantStudySummary
     description: >-
-      A study summarization describing the role of a variant in modulating the response of a
-      neoplasm to drug administration or other therapeutic procedure.
+      A study summarization describing whether a variant is associated with a disease
+      (positive) or lack of a disease (negative).
     properties:
       type:
         type: string
-        const: "VariantTherapeuticResponseStudy"
-        default: "VariantTherapeuticResponseStudy"
+        const: "VariantDiagnosticStudy"
+        default: "VariantDiagnosticStudy"
         description: >-
-          MUST be "VariantTherapeuticResponseStudy".
+          MUST be "VariantDiagnosticStudy".
       predicate:
         extends: predicate
         enum:
-          - predictsSensitivityTo
-          - predictsResistanceTo
-      therapeutic:
-        description: A drug administration or other therapeutic procedure that the neoplasm
-          is intended to respond to.
-        extends: object
-        oneOf:
-          - $refCurie: gks.therapeutics:TherapeuticProcedure
-          - $refCurie: gks.core:IRI
+          - positive
+          - negative
       disease:
+        extends: object
         oneOf:
           - $refCurie: gks.conditions:Condition
           - $refCurie: gks.core:IRI
         description: >-
-          The disease context in which the variant impact is evaluated.
+          The disease that is evaluated for diagnosis.
       qualifiers:
         extends: qualifiers
         properties:
@@ -79,4 +73,3 @@ $defs:
     required:
       - disease
       - predicate
-      - therapeutic
