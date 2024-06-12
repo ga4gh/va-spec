@@ -4,19 +4,19 @@
    "title": "Characterisitc",
    "type": "object",
    "maturity": "draft",
-   "description": "An object holding a name-value pair used to describe any characteristic of an individual member of a  Study Group (e.g. name = sex, value = female)",
+   "description": "An object holding a name-value pair used to describe any characteristic of an individual member of a Study Group (e.g. name = sex, value = female)",
    "properties": {
       "name": {
          "type": "string",
-         "description": "The type of the feature/trait described by the characteristic  (e.g. 'ethnicity', 'sex', 'age', 'disease status')."
+         "description": "The type of the feature/trait described by the characteristic (e.g. 'ethnicity', 'sex', 'age', 'disease status')."
       },
       "value": {
          "type": "string",
-         "description": "The specific value(s) that the indicated feature/trait holds in all population members  (e.g. 'east asian', 'female', 'adolescent', 'cancer')."
+         "description": "The specific value(s) that the indicated feature/trait holds in all population members (e.g. 'east asian', 'female', 'adolescent', 'cancer')."
       },
       "exclude": {
          "type": "boolean",
-         "description": "A boolean attribute set to TRUE if the characteristic must be absent to qualify as a member of a  study group or population."
+         "description": "A boolean attribute set to TRUE if the characteristic must be absent to qualify as a member of a study group or population."
       }
    },
    "required": [

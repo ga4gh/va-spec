@@ -55,7 +55,7 @@
       "doi": {
          "type": "string",
          "pattern": "^10.(\\d+)(\\.\\d+)*/[\\w\\-\\.]+",
-         "description": "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_`  for the document."
+         "description": "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document."
       },
       "pmid": {
          "type": "integer",

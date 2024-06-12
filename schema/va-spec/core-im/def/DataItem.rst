@@ -1,6 +1,6 @@
 **Computational Definition**
 
-An InformationEntity representing an individual piece of data, generated/acquired through methods  which reliably produce truthful information about something.
+An InformationEntity representing an individual piece of data, generated/acquired through methods which reliably produce truthful information about something.
 
     **Information Model**
     
@@ -43,7 +43,7 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
        *  - contributions
           - :ref:`Contribution`
           - 0..m
-          - 
+          - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
           - :ref:`Document` | `IRI <../../gks-common/core.json#/$defs/IRI>`_
           - 0..m
@@ -59,11 +59,11 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
        *  - recordMetadata
           - None
           - 0..1
-          - 
+          - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - subtype
           - `Coding <../../gks-common/core.json#/$defs/Coding>`_
           - 0..1
-          - A specific type of data the DataItem object represents (e.g. a specimen count, a  patient weight, an allele frequency, a p-value, a confidence score)
+          - A specific type of data the DataItem object represents (e.g. a specimen count, a patient weight, an allele frequency, a p-value, a confidence score)
        *  - value
           - string
           - 1..1

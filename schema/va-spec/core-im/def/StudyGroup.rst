@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific  study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin,  clinical history, age, gender, geographic location, income, etc.)
+A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin, clinical history, age, gender, geographic location, income, etc.)
 
     **Information Model**
     
@@ -43,4 +43,4 @@ Some StudyGroup attributes are inherited from :ref:`gks.core:Entity`.
        *  - characteristics
           - :ref:`Characterisitc`
           - 0..m
-          - A feature or characteristic shared by all members of the study group, and representing a criteria for  membership in the group.
+          - A feature or characteristic shared by all members of the study group, and representing a criteria for membership in the group.

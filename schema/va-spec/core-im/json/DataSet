@@ -26,7 +26,10 @@
          }
       },
       "type": {
-         "type": "string"
+         "type": "string",
+         "const": "InformationEntity",
+         "default": "InformationEntity",
+         "description": "MUST be \"InformationEntity\"."
       },
       "specifiedBy": {
          "oneOf": [
@@ -44,7 +47,8 @@
          "ordered": true,
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
-         }
+         },
+         "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
       "isReportedIn": {
          "type": "array",
@@ -95,7 +99,8 @@
       },
       "recordMetadata": {
          "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
-         "type": null
+         "type": null,
+         "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "subtype": {
          "descriptiom": "A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)",
@@ -113,7 +118,7 @@
       },
       "license": {
          "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used -   referenced by a URL where possible."
+         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
       }
    },
    "required": [

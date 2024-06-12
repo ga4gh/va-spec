@@ -4,7 +4,7 @@
    "title": "CohortAlleleFrequency",
    "maturity": "draft",
    "type": "object",
-   "description": "A measure of the frequency of an Allele in a cohort. ",
+   "description": "A measure of the frequency of an Allele in a cohort.",
    "properties": {
       "id": {
          "type": "string",
@@ -26,7 +26,10 @@
          }
       },
       "type": {
-         "type": "string"
+         "type": "string",
+         "const": "InformationEntity",
+         "default": "InformationEntity",
+         "description": "MUST be \"InformationEntity\"."
       },
       "specifiedBy": {
          "oneOf": [
@@ -44,7 +47,8 @@
          "ordered": true,
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
-         }
+         },
+         "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
       "isReportedIn": {
          "type": "array",
@@ -71,23 +75,28 @@
          "description": "Information about the dataset from which the CohortAlleleFrequency was reported.",
          "properties": {
             "id": {
-               "type": "string"
+               "type": "string",
+               "description": "The identifier of the dataset."
             },
             "type": {
-               "type": "string"
+               "type": "string",
+               "description": "The type of the dataset. (e.g. \"DataSet\")"
             },
             "label": {
-               "type": "string"
+               "type": "string",
+               "description": "A descriptive label for the dataset."
             },
             "version": {
-               "type": "string"
+               "type": "string",
+               "description": "The version of the dataset."
             }
          },
          "additionalProperties": false
       },
       "recordMetadata": {
          "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
-         "type": null
+         "type": null,
+         "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "focusAllele": {
          "oneOf": [
@@ -98,16 +107,20 @@
                "type": "string",
                "format": "uri-reference"
             }
-         ]
+         ],
+         "description": "The Allele for which the frequency is being reported."
       },
       "focusAlleleCount": {
-         "type": "integer"
+         "type": "integer",
+         "description": "The number of occurrences of the focusAllele in the cohort."
       },
       "locusAlleleCount": {
-         "type": "integer"
+         "type": "integer",
+         "description": "The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as \"allele number\")."
       },
       "alleleFrequency": {
-         "type": "number"
+         "type": "number",
+         "description": "The frequency of the focusAllele in the cohort."
       },
       "cohort": {
          "type": "object",
@@ -141,26 +154,30 @@
          "additionalProperties": false,
          "required": [
             "id"
-         ]
+         ],
+         "description": "The cohort from which the frequency was derived."
       },
       "ancillaryResults": {
          "maturity": "draft",
          "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
          "type": "object",
-         "additionalProperties": true
+         "additionalProperties": true,
+         "description": "Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information."
       },
       "qualityMeasures": {
          "maturity": "draft",
          "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
          "type": "object",
-         "additionalProperties": true
+         "additionalProperties": true,
+         "description": "Quality measures associated with the CohortAlleleFrequency and how it was derived, which may impact interpretation."
       },
       "subcohortFrequency": {
          "type": "array",
          "ordered": false,
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/profiles/caf/json/CohortAlleleFrequency"
-         }
+         },
+         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups."
       }
    },
    "required": [

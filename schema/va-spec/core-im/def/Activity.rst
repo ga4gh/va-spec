@@ -1,6 +1,6 @@
 **Computational Definition**
 
-An action or set of actions performed by an agent, that occurs over a period of time. Activities may use,  generate, modify, move, or destroy one or more entities.
+An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.
 
     **Information Model**
     
@@ -39,12 +39,12 @@ Some Activity attributes are inherited from :ref:`gks.core:Entity`.
        *  - date
           - string
           - 0..1
-          - The date (and possibly specific time) that the Activity was performed. If tracking time more precisely,  use this attribute to capture when the activity completed.
+          - The date (and possibly specific time) that the Activity was performed. If tracking time more precisely, use this attribute to capture when the activity completed.
        *  - performedBy
           - :ref:`Agent`
           - 0..m
-          - An Agent who contributed to executing the Activity.         
+          - An Agent who contributed to executing the Activity.
        *  - specifiedBy
           - :ref:`Method`
           - 0..m
-          - A method that was followed in performing an Activity, that describes how it was executed.  
+          - A method that was followed in performing an Activity, that describes how it was executed.
