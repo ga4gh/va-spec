@@ -4,7 +4,7 @@ title: Cohort Allele Frequency
 strict: true
 imports:
   va.core: ../../core-im/core-im-source.yaml
-  gks.core: ../../../gks-common/core-source.yaml
+  gks.common: ../../../gks-common/common-source.yaml
   vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:

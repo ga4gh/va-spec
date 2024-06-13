@@ -4,7 +4,7 @@ An action or set of actions performed by an agent, that occurs over a period of 
 
     **Information Model**
     
-Some Activity attributes are inherited from :ref:`gks.core:Entity`.
+Some Activity attributes are inherited from :ref:`gks.common:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -19,7 +19,7 @@ Some Activity attributes are inherited from :ref:`gks.core:Entity`.
        *  - id
           - string
           - 0..1
-          - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
+          - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
        *  - label
           - string
           - 0..1
@@ -29,11 +29,11 @@ Some Activity attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <../../gks-common/core.json#/$defs/Extension>`_
+          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - subtype
-          - {'$ref': '../../gks-common/core.json#/$defs/Coding'}
+          - {'$ref': '../../gks-common/common.json#/$defs/Coding'}
           - 0..1
           - A more specific type of activity that an Activity object may represent.
        *  - date

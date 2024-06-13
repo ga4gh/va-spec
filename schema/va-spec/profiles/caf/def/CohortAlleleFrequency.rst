@@ -19,7 +19,7 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
        *  - id
           - string
           - 1..1
-          - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
+          - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
        *  - label
           - string
           - 0..1
@@ -29,7 +29,7 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <../../core-im/../../gks-common/core.json#/$defs/Extension>`_
+          - `Extension <../../core-im/../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -37,7 +37,7 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - 1..1
           - MUST be "InformationEntity".
        *  - specifiedBy
-          - `Method <../../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
+          - `Method <../../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
@@ -45,7 +45,7 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - `Document <../../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/core.json#/$defs/IRI>`_
+          - `Document <../../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
