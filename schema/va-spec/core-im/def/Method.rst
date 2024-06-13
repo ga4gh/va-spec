@@ -4,7 +4,7 @@ A set of instructions that specify how to achieve some objective (e.g. experimen
 
     **Information Model**
     
-Some Method attributes are inherited from :ref:`gks.core:Entity`.
+Some Method attributes are inherited from :ref:`gks.common:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -19,7 +19,7 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
        *  - id
           - string
           - 0..1
-          - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
+          - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
        *  - label
           - string
           - 0..1
@@ -29,7 +29,7 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - A free-text description of the entity.
        *  - extensions
-          - `Extension <../../gks-common/core.json#/$defs/Extension>`_
+          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - 
        *  - type
@@ -37,11 +37,11 @@ Some Method attributes are inherited from :ref:`gks.core:Entity`.
           - 0..1
           - MUST be "Method".
        *  - isReportedIn
-          - `IRI <../../gks-common/core.json#/$defs/IRI>`_ | :ref:`Document`
+          - `IRI <../../gks-common/common.json#/$defs/IRI>`_ | :ref:`Document`
           - 0..1
           - 
        *  - subtype
-          - `Coding <../../gks-common/core.json#/$defs/Coding>`_
+          - `Coding <../../gks-common/common.json#/$defs/Coding>`_
           - 0..1
           - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, Experimental Protocol)
        *  - license

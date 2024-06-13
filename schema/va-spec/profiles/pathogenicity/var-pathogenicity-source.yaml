@@ -3,7 +3,7 @@ $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-patho
 title: Variant Pathogenicity Definitions
 imports:
   va.core: ../../core-im/core-im-source.yaml
-  gks.core: ../../../gks-common/core-source.yaml
+  gks.common: ../../../gks-common/common-source.yaml
   gks.genes: ../../../gks-common/genes-source.yaml
   gks.conditions: ../../../gks-common/conditions-source.yaml
   catvrs: ../../../catvrs/catvrs-source.yaml
@@ -11,7 +11,7 @@ imports:
 
 namespaces:
   va.core: ../../core-im/core-im.json#/$defs/
-  gks.core: ../../../gks-common/core.json#/$defs/
+  gks.common: ../../../gks-common/common.json#/$defs/
   gks.genes: ../../../gks-common/genes.json#/$defs/
   gks.conditions: ../../../gks-common/conditions.json#/$defs/
   catvrs: ../../../catvrs.json#/$defs/
@@ -39,7 +39,7 @@ $defs:
         extends: object
         oneOf:
           - $refCurie: gks.conditions:Condition
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:IRI
         description: >-
           The :ref:`Condition` for which the variant impact is stated.
       qualifiers:

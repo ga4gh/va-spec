@@ -3,7 +3,7 @@ $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/prognostic/prognostic-s
 title: Prognostic Definitions
 imports:
   va.core: ../../core-im/core-im-source.yaml
-  gks.core: ../../../gks-common/core-source.yaml
+  gks.common: ../../../gks-common/common-source.yaml
   gks.genes: ../../../gks-common/genes-source.yaml
   gks.conditions: ../../../gks-common/conditions-source.yaml
   gks.therapeutics: ../../../gks-common/therapeutics-source.yaml
@@ -12,7 +12,7 @@ imports:
 
 namespaces:
   va.core: ../../core-im/core-im.json#/$defs/
-  gks.core: ../../../gks-common/core.json#/$defs/
+  gks.common: ../../../gks-common/common.json#/$defs/
   gks.genes: ../../../gks-common/genes.json#/$defs/
   gks.conditions: ../../../gks-common/conditions.json#/$defs/
   gks.therapeutics: ../../../gks-common/conditions.json#/$defs/
@@ -43,7 +43,7 @@ $defs:
         extends: object
         oneOf:
           - $refCurie: gks.conditions:Condition
-          - $refCurie: gks.core:IRI
+          - $refCurie: gks.common:IRI
         description: >-
           The disease that is evaluated for outcome.
       qualifiers:
