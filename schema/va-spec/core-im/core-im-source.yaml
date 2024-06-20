@@ -488,9 +488,9 @@ $defs:
     inherits: gks.common:Entity
     maturity: draft
     description: >-
-      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
-      study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of 
-      origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or 
+      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific
+      study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of
+      origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or
       'population' in specific research settings.
     heritableProperties:
       memberCount:
@@ -505,13 +505,13 @@ $defs:
       characteristics:
         type: array
         items:
-          $ref: "#/$defs/Characterisitc"
+          $ref: "#/$defs/Characteristic"
         ordered: false
         description: >-
           A feature or characteristic shared by all members of the study group, and representing a criteria for
           membership in the group.
 
-  Characterisitc:
+  Characteristic:
     type: object
     maturity: draft
     description: >-
