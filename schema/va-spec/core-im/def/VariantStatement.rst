@@ -83,7 +83,7 @@ Some VariantStatement attributes are inherited from :ref:`Statement`.
        *  - statementText
           - string
           - 0..1
-          - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathgenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
+          - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
        *  - proposition
           - :ref:`Proposition`
           - 0..1
@@ -91,7 +91,7 @@ Some VariantStatement attributes are inherited from :ref:`Statement`.
        *  - subjectClassification
           - `Coding <../../gks-common/common.json#/$defs/Coding>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 0..1
-          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically selected to be succinct and familar in the target community of practice. e.g. 'likely pathogenic' in the doamin of variant pathogenicity classification'.
+          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'.
        *  - hasEvidenceOfType
           - `Coding <../../gks-common/common.json#/$defs/Coding>`_
           - 0..m
@@ -99,11 +99,11 @@ Some VariantStatement attributes are inherited from :ref:`Statement`.
        *  - hasEvidenceLines
           - :ref:`EvidenceLine`
           - 0..m
-          - A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This arguent is based on the interpretation of one or more pieces of information as evidence.
+          - A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence.
        *  - hasEvidence
           - :ref:`InformationEntity`
           - 0..m
-          - A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.
+          - A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.
        *  - variant
           - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 1..1
