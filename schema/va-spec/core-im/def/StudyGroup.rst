@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific  study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of  origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or  'population' in specific research settings.
+A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or 'population' in specific research settings.
 
     **Information Model**
     
@@ -41,6 +41,6 @@ Some StudyGroup attributes are inherited from :ref:`gks.common:Entity`.
           - 0..m
           - A larger study group of which this study group represents a subset.
        *  - characteristics
-          - :ref:`Characterisitc`
+          - :ref:`Characteristic`
           - 0..m
           - A feature or characteristic shared by all members of the study group, and representing a criteria for membership in the group.

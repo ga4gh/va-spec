@@ -63,7 +63,7 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
        *  - subtype
           - `Coding <../../gks-common/common.json#/$defs/Coding>`_
           - 0..1
-          - 
+          - A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)
        *  - releaseDate
           - string
           - 0..1

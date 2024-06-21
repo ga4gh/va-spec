@@ -71,7 +71,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
        *  - componentResult
           - :ref:`StudyResult`
           - 0..m
-          - A Study Result comprised of data items about the same focus as its parent Result, but based on a analysis of a different subset of the data pertaining to that focus (e.g. data fron analysis of a subset of the full Study Group).
+          - A Study Result comprised of data items about the same focus as its parent Result, but based on a analysis of a different subset of the data pertaining to that focus (e.g. data from analysis of a subset of the full Study Group).
        *  - studyGroup
           - {'$ref': '#/$defs/StudyGroup'}
           - 0..1

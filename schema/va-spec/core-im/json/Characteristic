@@ -1,7 +1,7 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/Characterisitc",
-   "title": "Characterisitc",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/Characteristic",
+   "title": "Characteristic",
    "type": "object",
    "maturity": "draft",
    "description": "An object holding a name-value pair used to describe any characteristic of an individual member of a Study Group (e.g. name = sex, value = female)",

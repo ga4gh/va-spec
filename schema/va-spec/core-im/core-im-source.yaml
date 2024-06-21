@@ -219,7 +219,7 @@ $defs:
     properties:
       subtype:
         $refCurie: gks.common:Coding
-        descriptiom: >-
+        description: >-
           A specific type of data set the DataSet object represents (e.g. a clinical data set,
           a sequencing data set, a gene expression data set, a genome annotation data set)
       releaseDate:
@@ -271,7 +271,7 @@ $defs:
         type: string
         description: >-
           A natural-language expression of what a structured Statement object asserts to be true.
-          e.g. for a Variant Pathgenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast
+          e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast
           Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G
           for Breast Cancer".
       proposition:
@@ -289,8 +289,8 @@ $defs:
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's proposition, in terms of a classification of the
           Statement subject. Permissible values for this attribute are typically
-          selected to be succinct and familar in the target community of practice. e.g.
-          'likely pathogenic' in the doamin of variant pathogenicity classification'.
+          selected to be succinct and familiar in the target community of practice. e.g.
+          'likely pathogenic' in the domain of variant pathogenicity classification'.
       hasEvidenceOfType:
         type: array
         ordered: false
@@ -306,7 +306,7 @@ $defs:
           $ref: "#/$defs/EvidenceLine"
         description: >-
           A discrete, independent argument relevant to the validity of the Proposition assessed or
-          put forth in the Statement. This arguent is based on the interpretation of one or more
+          put forth in the Statement. This argument is based on the interpretation of one or more
           pieces of information as evidence.
       hasEvidence:
         type: array
@@ -316,7 +316,7 @@ $defs:
         description: >-
           A piece of information that represents or contributes to an argument for or against the
           validity of the Proposition put forth in a Statement. This is a shortcut relation that links
-          a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class
+          a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class
           when used data creators do not utilize an Evidence Line object.
     heritableRequired:
       - subject
@@ -358,7 +358,7 @@ $defs:
           $ref: "#/$defs/StudyResult"
         description: >-
           A Study Result comprised of data items about the same focus as its parent Result, but based on a
-          analysis of a different subset of the data pertaining to that focus (e.g. data fron analysis of a
+          analysis of a different subset of the data pertaining to that focus (e.g. data from analysis of a
           subset of the full Study Group).
       studyGroup:
         type:
@@ -380,7 +380,7 @@ $defs:
         description: >-
           The possible fact against which evidence items contained in an Evidence Line were collectively evaluated,
           in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based
-          assessment of variant pathogneicity, the support provided by distinct lines of evidenceare assessed against
+          assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against
           a target proposition that a variant is pathogenic for a specific disease.
       evidenceItems:
         type: array
@@ -488,9 +488,9 @@ $defs:
     inherits: gks.common:Entity
     maturity: draft
     description: >-
-      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
-      study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of 
-      origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or 
+      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific
+      study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of
+      origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or
       'population' in specific research settings.
     heritableProperties:
       memberCount:
@@ -505,13 +505,13 @@ $defs:
       characteristics:
         type: array
         items:
-          $ref: "#/$defs/Characterisitc"
+          $ref: "#/$defs/Characteristic"
         ordered: false
         description: >-
           A feature or characteristic shared by all members of the study group, and representing a criteria for
           membership in the group.
 
-  Characterisitc:
+  Characteristic:
     type: object
     maturity: draft
     description: >-
