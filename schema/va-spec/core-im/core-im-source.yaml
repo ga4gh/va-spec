@@ -18,7 +18,7 @@ $defs:
   InformationEntity:
     inherits: gks.common:Entity
     description: >-
-      InformationEntities are abstract (non-physical) entities that are about something (i.e. they carry
+      Information Entities are abstract (non-physical) entities that are about something (i.e. they carry
       information about things in the real world).
     heritableProperties:
       type:
@@ -217,6 +217,11 @@ $defs:
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
     properties:
+      type:
+        type: string
+        const: DataSet
+        default: DataSet
+        description: MUST be "DataSet".
       subtype:
         $refCurie: gks.common:Coding
         descriptiom: >-
@@ -492,7 +497,12 @@ $defs:
       study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of 
       origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or 
       'population' in specific research settings.
-    heritableProperties:
+    properties:
+      type:
+        type: string
+        const: StudyGroup
+        default: StudyGroup
+        description: Must be "StudyGroup"    
       memberCount:
         type: integer
         description: the total number of individual members in the study group
