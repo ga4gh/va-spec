@@ -331,7 +331,7 @@ $defs:
       generated. StudyResult objects provide a flexible and useful way to summarize a subset of data items
       from a larger study that are cited as evidence in curation workflows that generate higher order
       knowledge about a particular variant or other entity.
-    heritableProperties:
+    properties:
       focus:
         $ref: "#/$defs/Entity"
         description: >-
@@ -374,7 +374,7 @@ $defs:
       A discrete, independent argument relevant to the validity of the Proposition assessed or put forth as
       true in a Statement. This argument is based on an interpretation of one or more pieces of information
       as evidence (i.e. Evidence Items).
-    heritableProperties:
+    properties:
       targetProposition:
         $ref: "#/$defs/Proposition"
         description: >-
@@ -447,7 +447,7 @@ $defs:
       Propositions may be used in two contexts; (1) by Statements that assert them to be true or false,
       or describe the overall level of confidence/evidence for or against them; (2) by Evidence Lines that
       report the direction and strength of an evidence-based argument for the Proposition.
-    heritableProperties:
+    properties:
       statementText:
         type: string
         description: >-
@@ -492,7 +492,7 @@ $defs:
       study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of 
       origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or 
       'population' in specific research settings.
-    heritableProperties:
+    properties:
       memberCount:
         type: integer
         description: the total number of individual members in the study group
