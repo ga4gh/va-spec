@@ -12,18 +12,27 @@
       },
       "label": {
          "type": "string",
-         "description": "A primary label for the entity."
+         "description": "A primary name for the entity."
       },
       "description": {
          "type": "string",
          "description": "A free-text description of the entity."
+      },
+      "mappings": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/ConceptMapping"
+         },
+         "description": "A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation."
       },
       "extensions": {
          "type": "array",
          "ordered": true,
          "items": {
             "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
-         }
+         },
+         "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "type": {
          "type": "string",
@@ -105,7 +114,7 @@
       },
       "statementText": {
          "type": "string",
-         "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathgenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
+         "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
       },
       "proposition": {
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
@@ -125,7 +134,7 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
          },
-         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This arguent is based on the interpretation of one or more pieces of information as evidence."
+         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence."
       },
       "hasEvidence": {
          "type": "array",
@@ -133,7 +142,7 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
          },
-         "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
+         "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
       },
       "variant": {
          "description": "A variant that is the subject of the Statement.",
