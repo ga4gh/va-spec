@@ -123,6 +123,8 @@ specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)
   isReportedIn:
+    id: pmid:31779674
+    type: Document
     label: Danos et al., 2019, Genome Med.
     title: Standard operating procedure for curation and clinical interpretation of
       variants in cancer
@@ -131,6 +133,7 @@ specifiedBy:
   type: Method
 isReportedIn:
   - id: civic.source:94
+    type: Document
     label: Crescenzi et al., 2014
     title: Immunohistochemistry for BRAF(V600E) antibody VE1 performed in core needle
       biopsy samples identifies mutated papillary thyroid cancers.
