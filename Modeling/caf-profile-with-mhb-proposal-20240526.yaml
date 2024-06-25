@@ -45,7 +45,7 @@ $defs:
           - $refCurie: vrs:Allele
           - type: string
             format: uri-reference
-      focusAlleleCount:                           # Make it so that this "extends" the core-im StudyResult.dataItem attribute - see comment above). Note however that some adjustment to the core-im StudyResult.dataItems model may be needed to make the specialization here valid (e.g. make the value oneOf DataItem or string or number, or split into separate data-type specific attributes).  
+      focusAlleleCount:                           # Make it so that this "extends" the core-im StudyResult.dataItem attribute - see comment above. Note however that some adjustment to the core-im StudyResult.dataItems model may be needed to make the specialization here valid (e.g. make the value oneOf DataItem or string or number, or split into separate data-type specific attributes). And a 'multiplies' keyword/functionality would have to be added to the metaschema processer, per the proposal here: https://github.com/ga4gh/va-spec/issues/134#issuecomment-2163480970 
         type: integer
       locusAlleleCount:                           # Make it so that this "extends" the core-im StudyResult.dataItem attribute, per the rationale above.
         type: integer
@@ -74,17 +74,17 @@ $defs:
         additionalProperties: false
         required:
           - id
-      ancillaryResults:                         # See comments/questions in issue/ here: https://github.com/ga4gh/va-spec/issues/144
+      ancillaryResults:                         # See comments/questions in the issue here: https://github.com/ga4gh/va-spec/issues/144
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
-      qualityMeasures:                          # See comments/questions in issue here: https://github.com/ga4gh/va-spec/issues/144
+      qualityMeasures:                          # See comments/questions in the issue here: https://github.com/ga4gh/va-spec/issues/144
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
-      subcohortFrequency:                       # The core-im property to use here would be 'StudyResult.componentResult' which takes a 'StudyResult' object. Note there is an existing suggestion/issue to consider renaming this 'subResult' - which might fit better with the intended meaning/use, and the caf use case for it.
+      subcohortFrequency:                       # The core-im property to use/extend here would be 'StudyResult.componentResult' which takes a 'StudyResult' object. Note there is an existing suggestion/issue to consider renaming this 'subResult' - which might fit better with the intended meaning/use, and the caf use case for it.
         type: array
         ordered: false
         items:
@@ -92,7 +92,7 @@ $defs:
     required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, cohort]
     additionalProperties: false
 
-# As general comment, most of the properties in the schema here do not have descriptions (here or in the derived json schema). It would be nice if the metaschema tooling could automatically pull in these descriptions form the core-im anytime a property 'extends' a core property - so that these don't have to be re-written (unless the developer wants to overwrite the core-im description in their profile).
+# As general comment, most of the properties in the schema here do not have descriptions (here or in the derived json schema). It would be nice if the metaschema tooling could automatically pull in these descriptions from the core-im anytime a profile property 'extends' a core property - so that these don't have to be re-written (unless the developer wants to overwrite the core-im description in their profile).
 
 # ----------------------------------------------------------------------------------------------#
 
@@ -130,15 +130,15 @@ $defs:
           - $refCurie: vrs:Allele
           - type: string
             format: uri-reference
-      focusAlleleCount:                          # Made it so that this "extends" the core-im StudyResult.dataItem attribute. 
+      focusAlleleCount:                          # Made it so that this "multiplies" the core-im StudyResult.dataItem attribute. Dependent on Alex implementing this keyword/functionality in the metaschema processer.
         type: integer
-        extends: dataItem
-      locusAlleleCount:                          # Made it so that this "extends" the core-im StudyResult.dataItem attribute, per the rationale above.
+        multiplies: dataItem
+      locusAlleleCount:                          # Made it so that this "multiplies" the core-im StudyResult.dataItem attribute, per the rationale above.  Dependent on Alex implementing this keyword/functionality in the metaschema processer.
         type: integer
-        extends: dataItem
-      alleleFrequency:                           # Made it so that this "extends" the StudyResult.dataItem attribute, per the rationale above.
+        multiplies: dataItem
+      alleleFrequency:                           # Made it so that this "multiplies" the StudyResult.dataItem attribute, per the rationale above.  Dependent on Alex implementing this keyword/functionality in the metaschema processer.
         type: number
-        extends: dataItem
+        multiplies: dataItem
       studyGroup:                                # The core-im property to use (or extend) here would be 'StudyResult.studyGroup', which takes a StudyGroup object.
         $ref: "#/$defs/DataSet"                  # Actually uses the StudyGroup class here, rather than imply use of it (the caf-specific DataSet class is defined below - following approach 2 in the ticket here: https://github.com/ga4gh/va-spec/issues/142)
       ancillaryResults:                          # Propose to keep this as is for now - t.b.d. if we want to declare this to extend an 'ancillaryResults' property defined in the core-im - see https://github.com/ga4gh/va-spec/issues/144.
@@ -151,22 +151,23 @@ $defs:
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
-      componentResult:                           # Updated to use the existing core-im StudyResult property for this kind of info.  But consider renaming from compnentResult to something like subResult - which might fit better with the intended meaning/use, and the caf use case for it.
+      subCohortFrequency:                        # Updated to declar this extends the existing core-im StudyResult property for this kind of info.  But consider renaming from compnentResult to something like subResult - which might fit better with the intended meaning/use, and the caf use case for it.
         type: array
         ordered: false
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
+        extends: componentResult 
     required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, studyGroup]
     additionalProperties: false
 
-  DataSet:         
+  DataSet:                                      # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.
     maturity: draft
     type: object
     overwrites: va.core:DataSet                 # One possible meachansim to allow profiles to explicitly specify a subset of properties to pull in from a core class, and potentially overwrite some characteristics of these properties? (contrast 'overwrites' with 'inherits' which pulls in ALL properties from ancestory classes) See proposal here: https://github.com/ga4gh/va-spec/issues/142
     description: >-
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
-    properties:
+    properties:                              
       id:
         type: string
       type:
@@ -177,7 +178,7 @@ $defs:
         type: string
     additionalProperties: false
 
-  StudyGroup:         
+  StudyGroup:                                   # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.               
     maturity: draft
     type: object
     overwrites: va.core:StudyGroup        
@@ -197,7 +198,7 @@ $defs:
     required:
       - id
       
-  Characteristic:         
+  Characteristic:                               # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.
     maturity: draft
     type: object
     overwrites: va.core:Characteristic   
