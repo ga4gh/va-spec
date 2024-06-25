@@ -139,8 +139,9 @@ $defs:
       alleleFrequency:                           # Made it so that this "multiplies" the StudyResult.dataItem attribute, per the rationale above.  Dependent on Alex implementing this keyword/functionality in the metaschema processer.
         type: number
         multiplies: dataItem
-      studyGroup:                                # The core-im property to use (or extend) here would be 'StudyResult.studyGroup', which takes a StudyGroup object.
-        $ref: "#/$defs/DataSet"                  # Actually uses the StudyGroup class here, rather than imply use of it (the caf-specific DataSet class is defined below - following approach 2 in the ticket here: https://github.com/ga4gh/va-spec/issues/142)
+      cohortStudyGroup:                          # Made it so that this property (or extend) extends 'StudyResult.studyGroup'
+        $ref: "#/$defs/Cohort                    # COhort inherits from / specializes the core-im StudyGroup class (see below) 
+        extends: studyGroup
       ancillaryResults:                          # Propose to keep this as is for now - t.b.d. if we want to declare this to extend an 'ancillaryResults' property defined in the core-im - see https://github.com/ga4gh/va-spec/issues/144.
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
@@ -163,7 +164,7 @@ $defs:
   DataSet:                                      # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.
     maturity: draft
     type: object
-    overwrites: va.core:DataSet                 # One possible meachansim to allow profiles to explicitly specify a subset of properties to pull in from a core class, and potentially overwrite some characteristics of these properties? (contrast 'overwrites' with 'inherits' which pulls in ALL properties from ancestory classes) See proposal here: https://github.com/ga4gh/va-spec/issues/142
+    inherits: va.core:DataSet                  
     description: >-
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
@@ -178,10 +179,10 @@ $defs:
         type: string
     additionalProperties: false
 
-  StudyGroup:                                   # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.               
+  Cohort:                                       
     maturity: draft
     type: object
-    overwrites: va.core:StudyGroup        
+    inherits: va.core:StudyGroup        
     description: >-
       A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
       study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin, 
@@ -201,7 +202,7 @@ $defs:
   Characteristic:                               # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.
     maturity: draft
     type: object
-    overwrites: va.core:Characteristic   
+    inherits: va.core:Characteristic   
     description: >-
       An object holding a name-value pair used to describe any characteristic of an individual member of a 
       Study Group (e.g. name = sex, value = female) 
