@@ -1,0 +1,75 @@
+# Larries pathogenicity profile schema as of 6-24-24 - https://github.com/ga4gh/va-spec/blob/1.x/schema/va-spec/profiles/pathogenicity/var-pathogenicity-source.yaml  
+# here with MHB comments concerning core-im alignment
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-pathogenicity-source.yaml"
+title: Variant Pathogenicity Definitions
+imports:
+  va.core: ../../core-im/core-im-source.yaml
+  gks.common: ../../../gks-common/common-source.yaml
+  gks.genes: ../../../gks-common/genes-source.yaml
+  gks.conditions: ../../../gks-common/conditions-source.yaml
+  catvrs: ../../../catvrs/catvrs-source.yaml
+  vrs: ../../../vrs/vrs-source.yaml
+
+namespaces:
+  va.core: ../../core-im/core-im.json#/$defs/
+  gks.common: ../../../gks-common/common.json#/$defs/
+  gks.genes: ../../../gks-common/genes.json#/$defs/
+  gks.conditions: ../../../gks-common/conditions.json#/$defs/
+  catvrs: ../../../catvrs.json#/$defs/
+  vrs: ../../../vrs/vrs.json#/$defs/
+
+$defs:
+  VariantPathogenicity:                         # For the "standard" profile, name this VariantPathogenicityStatement
+    type: object
+    maturity: draft
+    inherits: va.core:VariantClassification     # Note that in this class we will change the name of the 'variation' property to subjectVariation, or variationObject. Prefer the former for two reasons: {(1) IMO users looking at a Statement data will first and foremost want to easily find SPO properties, and putting first will help. Also, the menaing of 'object' in 'variationObject' is ambiguous (could be interpreted as a data object that describes a Variation)
+    description: >-
+      A :ref:`VariantClassification` describing the role of a variant in causing an 
+      inherited disorder.
+    properties:
+      type:
+        type: string
+        const: "VariantPathogenicity"
+        default: "VariantPathogenicity"
+        description: >-
+          MUST be "VariantPathogenicity".
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      condition:                            # for the "standard" profile, name this objectCondition, or conditionObject. Prefer the former for two reasons: {(1) IMO users looking at a Statement data will first and foremost want to easily find SPO properties, and putting first will help. Also, the menaing of 'object' in 'conditionObject' is ambiguous (could be interpreted as a data object that describes a Condition)
+        extends: object
+        oneOf:
+          - $refCurie: gks.conditions:Condition
+          - $refCurie: gks.common:IRI
+        description: >-
+          The :ref:`Condition` for which the variant impact is stated.
+      qualifiers:                           # TO DO: Make recommendations based on pending decision about how to specify qualifier specializations in profiles. Hopefully metaschema additions will allow it to look as described here: https://github.com/ga4gh/va-spec/issues/134#issuecomment-2163480970
+        extends: qualifiers
+        properties:
+          penetrance:
+            type: string
+            enum:
+              - high
+              - low
+              - risk allele
+            description: >-
+              The extent to which the variant impact is expressed by individuals carrying it as
+              a measure of the proportion of carriers exhibiting the condition.
+          modeOfInheritance:
+            type: string
+            enum:
+              - autosomal dominant
+              - autosomal recessive
+              - X-linked dominant
+              - X-linked recessive
+              - mitochondrial
+            description: >-
+              The pattern of inheritance expected for the pathogenic effect of this variant.
+          geneContext:
+            description: >-
+              A gene context that qualifies the Statement.
+            $refCurie: gks.genes:Gene
+    required:    
+      - condition
