@@ -66,10 +66,10 @@ $defs:
               - X-linked recessive
               - mitochondrial
             description: >-
-              The pattern of inheritance expected for the pathogenic effect of this variant.
+              The pattern of inheritance expected for the pathogenic effect of this variant.    # Suggested improvement: The expected pattern of inheritance for the object Condition as caused by the subject Variation.
           geneContext:
             description: >-
-              A gene context that qualifies the Statement.
+              A gene context that qualifies the Statement.                                      # Larry - can you give a more informative defintion for this qualifier? Is this meant to capture the gene through which the pathogenic effect of the Variation is mediated? i.e. it is the variant's impact on this gene that causes the disease?
             $refCurie: gks.genes:Gene
     required:    
       - condition
