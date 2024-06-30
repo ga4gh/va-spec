@@ -26,7 +26,7 @@ variant:
   definingContext: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
   members:
     - vrs.json#/ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
-  aliases:
+  alternativeLabels:
     - VAL600GLU
     - V640E
     - VAL640GLU
@@ -111,7 +111,7 @@ qualifiers:
         code: ncbigene:673
         system: https://www.ncbi.nlm.nih.gov/gene/
       relation: exactMatch
-    aliases:
+    alternativeLabels:
     - B-RAF1
     - B-raf
     - BRAF

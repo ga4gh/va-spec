@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataSet",
-   "title": "DataSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine",
+   "title": "EvidenceLine",
    "maturity": "draft",
    "type": "object",
-   "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
+   "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or put forth as true in a Statement. This argument is based on an interpretation of one or more pieces of information as evidence (i.e. Evidence Items).",
    "properties": {
       "id": {
          "type": "string",
@@ -35,10 +35,7 @@
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "type": {
-         "type": "string",
-         "const": "DataSet",
-         "default": "DataSet",
-         "description": "MUST be \"DataSet\"."
+         "type": "string"
       },
       "specifiedBy": {
          "oneOf": [
@@ -91,22 +88,37 @@
          "type": "#/$defs/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
-      "subtype": {
-         "description": "A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)",
-         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+      "targetProposition": {
+         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
+         "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that a variant is pathogenic for a specific disease."
       },
-      "releaseDate": {
-         "type": "string",
-         "format": "datetime",
-         "description": "Indicates when a version of a Data Set was formally released."
+      "evidenceItems": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
+         },
+         "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line."
       },
-      "version": {
+      "directionOfEvidenceProvided": {
          "type": "string",
-         "description": "The version of the Data Set, as assigned by its creator."
+         "enum": [
+            "supports",
+            "neutral",
+            "disputes"
+         ],
+         "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (can be supporting, disputing, or neutral)"
       },
-      "license": {
-         "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
+      "strengthOfEvidenceProvided": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+            }
+         ],
+         "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value."
       }
    },
    "required": [

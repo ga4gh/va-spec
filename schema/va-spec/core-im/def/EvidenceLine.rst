@@ -4,7 +4,7 @@ A discrete, independent argument relevant to the validity of the Proposition ass
 
     **Information Model**
     
-Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
+Some EvidenceLine attributes are inherited from :ref:`gks.core:InformationEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -28,28 +28,28 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
           - string
           - 0..1
           - A free-text description of the entity.
-       *  - mappings
-          - `ConceptMapping <../../gks-common/common.json#/$defs/ConceptMapping>`_
+       *  - alternativeLabels
+          - string
           - 0..m
-          - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
+          - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension <../../gks-core-im/core.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - type
           - string
           - 1..1
-          - MUST be "InformationEntity".
+          - 
        *  - specifiedBy
-          - :ref:`Method` | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Method <../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
-          - :ref:`Contribution`
+          - `Contribution <../../gks-core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - :ref:`Document` | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Document <../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
@@ -57,11 +57,11 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - derivedFrom
-          - :ref:`InformationEntity`
+          - `InformationEntity <../../gks-core-im/core.json#/$defs/InformationEntity>`_
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - None
+          - #/$defs/RecordMetadata
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - targetProposition
@@ -69,7 +69,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that a variant is pathogenic for a specific disease.
        *  - evidenceItems
-          - :ref:`InformationEntity`
+          - `InformationEntity <../../gks-core-im/core-im-source.yaml#/$defs/InformationEntity>`_
           - 0..m
           - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
        *  - directionOfEvidenceProvided
@@ -77,6 +77,6 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - The direction of support that the Evidence Line is determined to provide toward its target Proposition (can be supporting, disputing, or neutral)
        *  - strengthOfEvidenceProvided
-          - `Coding <../../gks-common/common.json#/$defs/Coding>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Coding <../../gks-core-im/core-im-source.yaml#/$defs/Coding>`_ | `IRI <../../gks-core-im/core-im-source.yaml#/$defs/IRI>`_
           - 0..1
           - The strength of support that an Evidence Line is determined to provide for or against its target Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.

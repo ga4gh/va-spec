@@ -4,7 +4,7 @@ An action or set of actions performed by an agent, that occurs over a period of 
 
     **Information Model**
     
-Some Activity attributes are inherited from :ref:`gks.common:Entity`.
+Some Activity attributes are inherited from :ref:`gks.core:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -28,16 +28,16 @@ Some Activity attributes are inherited from :ref:`gks.common:Entity`.
           - string
           - 0..1
           - A free-text description of the entity.
-       *  - mappings
-          - `ConceptMapping <../../gks-common/common.json#/$defs/ConceptMapping>`_
+       *  - alternativeLabels
+          - string
           - 0..m
-          - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
+          - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension <../../gks-core-im/core.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - subtype
-          - {'$ref': '../../gks-common/common.json#/$defs/Coding'}
+          - {'$ref': '../../gks-core-im/core-im-source.yaml#/$defs/Coding'}
           - 0..1
           - A more specific type of activity that an Activity object may represent.
        *  - date
@@ -45,10 +45,10 @@ Some Activity attributes are inherited from :ref:`gks.common:Entity`.
           - 0..1
           - The date (and possibly specific time) that the Activity was performed. If tracking time more precisely, use this attribute to capture when the activity completed.
        *  - performedBy
-          - :ref:`Agent`
+          - `Agent <../../gks-core-im/core-im-source.yaml#/$defs/Agent>`_
           - 0..m
           - An Agent who contributed to executing the Activity.
        *  - specifiedBy
-          - :ref:`Method`
+          - `Method <../../gks-core-im/core-im-source.yaml#/$defs/Method>`_
           - 0..m
           - A method that was followed in performing an Activity, that describes how it was executed.

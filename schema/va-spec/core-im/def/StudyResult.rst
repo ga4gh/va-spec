@@ -4,7 +4,7 @@ A collection of data items from a single study that are about a particular subje
 
     **Information Model**
     
-Some StudyResult attributes are inherited from :ref:`InformationEntity`.
+Some StudyResult attributes are inherited from :ref:`gks.core:InformationEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -28,28 +28,28 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
           - string
           - 0..1
           - A free-text description of the entity.
-       *  - mappings
-          - `ConceptMapping <../../gks-common/common.json#/$defs/ConceptMapping>`_
+       *  - alternativeLabels
+          - string
           - 0..m
-          - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
+          - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension <../../gks-core-im/core.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - type
           - string
           - 1..1
-          - MUST be "InformationEntity".
+          - 
        *  - specifiedBy
-          - :ref:`Method` | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Method <../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
-          - :ref:`Contribution`
+          - `Contribution <../../gks-core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - :ref:`Document` | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Document <../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
@@ -57,11 +57,11 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - recordMetadata
-          - None
+          - #/$defs/RecordMetadata
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - focus
-          - :ref:`Entity`
+          - `DomainEntity <../../gks-core-im/core-im-source.yaml#/$defs/DomainEntity>`_
           - 0..1
           - The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
        *  - dataItems
