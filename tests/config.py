@@ -7,13 +7,12 @@ import re
 
 root_path = Path(__file__).parents[1]
 schema_root_path = root_path / 'schema'
-va_profiles_path = schema_root_path / 'va-spec/profiles'
+va_spec_path = schema_root_path / 'va-spec'
 
 test_path = root_path / 'tests'
 fixtures_path = test_path / 'fixtures'
 
 ga4gh_re = re.compile(r'.*\/ga4gh\/schema\/([\w\-\.]+)\/[\w\.]+\/(.*)$')
-
 
 def retrieve_rel_ref(ga4gh_ref: str):
     ga4gh_match = ga4gh_re.match(ga4gh_ref)
@@ -25,12 +24,11 @@ def retrieve_rel_ref(ga4gh_ref: str):
     schema = json.loads(resolved_path.read_text())
     return Resource.from_contents(schema)
 
-
 js_registry = Registry(retrieve=retrieve_rel_ref)
 js_def = dict()
 validator = dict()
 
-paths = list(schema_root_path.glob('*/json/*'))+list(va_profiles_path.glob('*/json/*'))
+paths = list(schema_root_path.glob('*/json/*'))+list(va_spec_path.glob('*/json/*'))
 
 for schema_path in paths:
     content = json.loads(schema_path.read_text())
