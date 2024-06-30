@@ -112,8 +112,7 @@ env.bak/
 venv.bak/
 
 # IDEs
-.vscode/
-.vscode/settings.json
+.vscode
 
 # Spyder project settings
 .spyderproject
