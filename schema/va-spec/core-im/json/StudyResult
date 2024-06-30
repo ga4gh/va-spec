@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataSet",
-   "title": "DataSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult",
+   "title": "StudyResult",
    "maturity": "draft",
    "type": "object",
-   "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
+   "description": "A collection of data items from a single study that are about a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated. StudyResult objects provide a flexible and useful way to summarize a subset of data items from a larger study that are cited as evidence in curation workflows that generate higher order knowledge about a particular variant or other entity.",
    "properties": {
       "id": {
          "type": "string",
@@ -35,10 +35,7 @@
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "type": {
-         "type": "string",
-         "const": "DataSet",
-         "default": "DataSet",
-         "description": "MUST be \"DataSet\"."
+         "type": "string"
       },
       "specifiedBy": {
          "oneOf": [
@@ -79,34 +76,45 @@
          "format": "datetime",
          "description": "Indicates when the information content expressed in the Information Entity was generated."
       },
-      "derivedFrom": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
-         },
-         "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
-      },
       "recordMetadata": {
          "type": "#/$defs/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
-      "subtype": {
-         "description": "A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)",
-         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+      "focus": {
+         "description": "The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.",
+         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/DomainEntity"
       },
-      "releaseDate": {
-         "type": "string",
-         "format": "datetime",
-         "description": "Indicates when a version of a Data Set was formally released."
+      "dataItems": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
+         },
+         "description": "A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about data in the Result were generated."
       },
-      "version": {
-         "type": "string",
-         "description": "The version of the Data Set, as assigned by its creator."
+      "sourceDataSet": {
+         "type": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
+         },
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
+         },
+         "description": "A larger Data Set from which the content of the Result was derived."
       },
-      "license": {
-         "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
+      "componentResult": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult"
+         },
+         "description": "A Study Result comprised of data items about the same focus as its parent Result, but based on a analysis of a different subset of the data pertaining to that focus (e.g. data from analysis of a subset of the full Study Group)."
+      },
+      "studyGroup": {
+         "type": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyGroup"
+         },
+         "description": "A structured description of specific population of subjects interrogated in the Research Study to produce the subset of data captured in the StudyResult."
       }
    },
    "required": [

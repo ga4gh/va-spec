@@ -4,7 +4,7 @@ The abstract entity representing a possible fact that may be put forth as true, 
 
     **Information Model**
     
-Some Proposition attributes are inherited from :ref:`gks.common:Entity`.
+Some Proposition attributes are inherited from :ref:`gks.core:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -28,12 +28,12 @@ Some Proposition attributes are inherited from :ref:`gks.common:Entity`.
           - string
           - 0..1
           - A free-text description of the entity.
-       *  - mappings
-          - `ConceptMapping <../../gks-common/common.json#/$defs/ConceptMapping>`_
+       *  - alternativeLabels
+          - string
           - 0..m
-          - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
+          - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension <../../gks-core-im/core.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - statementText
@@ -41,22 +41,22 @@ Some Proposition attributes are inherited from :ref:`gks.common:Entity`.
           - 0..1
           - A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for Breast Cancer".
        *  - subject
-          - {'$ref': '#/$defs/Entity'}
+          - {'$ref': '../../gks-core-im/core-im-source.yaml#/$defs/Entity'}
           - 1..1
           - The Entity or concept about which the Proposition is made.
        *  - predicate
-          - {'$ref': '../../gks-common/common.json#/$defs/Coding'}
+          - {'$ref': '../../gks-core-im/core-im-source.yaml#/$defs/Coding'}
           - 1..1
           - The relationship asserted to hold between the subject and the object of the Proposition.
        *  - object
-          - {'$ref': '#/$defs/Entity'}
+          - {'$ref': '../../gks-core-im/core-im-source.yaml#/$defs/Entity'}
           - 1..1
           - An Entity that is related to the subject of a Proposition via its predicate.
        *  - qualifier
-          - :ref:`Entity` | `Coding <../../gks-common/common.json#/$defs/Coding>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Entity <../../gks-core-im/core-im-source.yaml#/$defs/Entity>`_ | `Coding <../../gks-core-im/core-im-source.yaml#/$defs/Coding>`_ | `IRI <../../gks-core-im/core-im-source.yaml#/$defs/IRI>`_
           - 0..1
           - An entity or concept applied to extend or refine the meaning of a Proposition's core subject-predicate-object 'triple' - by providing additional detail, or constraining the claim to apply in a particular context.
        *  - negated
-          - string
+          - boolean
           - 0..1
           - A boolean flag set to 'true' to represent a negation of the proposition expressed by the subject, predicate, object, and qualifiers (e.g. that "Variant X is NOT pathogenic for Disease Y")/

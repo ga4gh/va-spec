@@ -18,19 +18,19 @@
          "type": "string",
          "description": "A free-text description of the entity."
       },
-      "mappings": {
+      "alternativeLabels": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/ConceptMapping"
+            "type": "string"
          },
-         "description": "A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation."
+         "description": "Alternative name(s) for the Entity."
       },
       "extensions": {
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
@@ -43,10 +43,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -55,26 +55,25 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Contribution"
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
       "dateAuthored": {
-         "$comment": "the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.",
          "type": "string",
+         "format": "datetime",
          "description": "Indicates when the information content expressed in the Information Entity was generated."
       },
       "derivedFrom": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
          },
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "$comment": "this should be \"gks.common:RecordMetadata\", but that data class is not in gks common, so using null as placeholder",
-         "type": null,
+         "type": "#/$defs/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "direction": {
@@ -89,10 +88,10 @@
       "strength": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
             }
          ],
          "description": "The overall strength of support for the Statement based on all evidence assessed."
@@ -108,10 +107,10 @@
       "subjectClassification": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
             }
          ],
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
@@ -120,7 +119,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
          },
          "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')."
       },
@@ -136,7 +135,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
          },
          "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
       },
@@ -147,7 +146,7 @@
                "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
             },
             {
                "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
@@ -160,10 +159,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
                }
             ]
          },
@@ -183,10 +182,10 @@
          "description": "The tumor type for which the variant impact is evaluated.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/json/Condition"
+               "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Condition"
             }
          ]
       },
@@ -214,7 +213,7 @@
             },
             "geneContext": {
                "description": "A gene context that qualifies the Statement.",
-               "$ref": "/ga4gh/schema/gks-common/json/Gene"
+               "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
             }
          }
       }

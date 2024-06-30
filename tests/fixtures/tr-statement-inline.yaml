@@ -29,7 +29,7 @@ variant:
     - vrs.json#/ga4gh:VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
     - vrs.json#/ga4gh:VA.zpv3dW34z8jioKL-NtbGc0fa9clsgAZT
     - vrs.json#/ga4gh:VA.BJOtfUhZMooMJUO4FjxHXTEimrKXtF0i
-  aliases:
+  alternativeLabels:
     - LEU858ARG
     - rs121434568
   mappings:
@@ -84,7 +84,7 @@ therapeutic:
         code: '1430438'
         system: https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=
       relation: exactMatch
-  aliases:
+  alternativeLabels:
     - BIBW2992
     - BIBW 2992
     - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
@@ -121,7 +121,7 @@ qualifiers:
         code: ncbigene:1956
         system: https://www.ncbi.nlm.nih.gov/gene/
       relation: exactMatch
-    aliases:
+    alternativeLabels:
     - EGFR
     - ERBB
     - ERBB1

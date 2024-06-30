@@ -2,8 +2,8 @@
    "$schema": "https://json-schema.org/draft/2020-12/schema",
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataItem",
    "title": "DataItem",
-   "type": "object",
    "maturity": "draft",
+   "type": "object",
    "description": "An InformationEntity representing an individual piece of data, generated/acquired through methods which reliably produce truthful information about something.",
    "properties": {
       "id": {
@@ -18,19 +18,19 @@
          "type": "string",
          "description": "A free-text description of the entity."
       },
-      "mappings": {
+      "alternativeLabels": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/ConceptMapping"
+            "type": "string"
          },
-         "description": "A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation."
+         "description": "Alternative name(s) for the Entity."
       },
       "extensions": {
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
@@ -43,10 +43,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -55,7 +55,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Contribution"
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
@@ -65,62 +65,42 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
                }
             ]
          },
          "description": "A document in which the information content is expressed."
       },
       "dateAuthored": {
-         "$comment": "the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.",
          "type": "string",
+         "format": "datetime",
          "description": "Indicates when the information content expressed in the Information Entity was generated."
       },
       "derivedFrom": {
          "type": "array",
          "ordered": false,
          "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-               },
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
-               },
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
-               },
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Statement"
-               },
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult"
-               }
-            ]
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
          },
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "$comment": "this should be \"gks.common:RecordMetadata\", but that data class is not in gks common, so using null as placeholder",
-         "type": null,
+         "type": "#/$defs/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "subtype": {
          "description": "A specific type of data the DataItem object represents (e.g. a specimen count, a patient weight, an allele frequency, a p-value, a confidence score)",
-         "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
       },
       "value": {
          "type": "string"
       },
       "unit": {
          "type": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
          }
       }
    },
