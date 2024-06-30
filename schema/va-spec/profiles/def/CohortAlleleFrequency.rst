@@ -29,11 +29,11 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - 0..1
           - A free-text description of the entity.
        *  - mappings
-          - `ConceptMapping <../../core-im/../../gks-common/common.json#/$defs/ConceptMapping>`_
+          - `ConceptMapping <../core-im/../../gks-common/common.json#/$defs/ConceptMapping>`_
           - 0..m
           - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
        *  - extensions
-          - `Extension <../../core-im/../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension <../core-im/../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - type
@@ -41,15 +41,15 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - 1..1
           - MUST be "InformationEntity".
        *  - specifiedBy
-          - `Method <../../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
-          - `Contribution <../../core-im/core.json#/$defs/Contribution>`_
+          - `Contribution <../core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - `Document <../../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
@@ -65,7 +65,7 @@ Some CohortAlleleFrequency attributes are inherited from :ref:`va.core:Informati
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - focusAllele
-          - `Allele <../../../vrs/vrs.json#/$defs/Allele>`_ | string
+          - `Allele <../../vrs/vrs.json#/$defs/Allele>`_ | string
           - 1..1
           - The Allele for which the frequency is being reported.
        *  - focusAlleleCount

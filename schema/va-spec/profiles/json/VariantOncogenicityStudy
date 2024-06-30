@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/t-resp/json/VariantTherapeuticResponseStudy",
-   "title": "VariantTherapeuticResponseStudy",
-   "type": "object",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantOncogenicityStudy",
+   "title": "VariantOncogenicityStudy",
    "maturity": "draft",
-   "description": "A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.",
+   "type": "object",
+   "description": "A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.",
    "properties": {
       "id": {
          "type": "string",
@@ -36,17 +36,17 @@
       },
       "type": {
          "type": "string",
-         "const": "VariantTherapeuticResponseStudy",
-         "default": "VariantTherapeuticResponseStudy",
-         "description": "MUST be \"VariantTherapeuticResponseStudy\"."
+         "const": "VariantOncogenicity",
+         "default": "VariantOncogenicity",
+         "description": "MUST be \"VariantOncogenicity\"."
       },
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -160,10 +160,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
                }
             ]
          },
@@ -174,22 +174,13 @@
          "type": "string",
          "description": "The predicate of the Statement.",
          "enum": [
-            "predictsSensitivityTo",
-            "predictsResistanceTo"
+            "isOncogenicFor",
+            "isProtectiveFor",
+            "isPredisposingFor"
          ]
       },
-      "therapeutic": {
-         "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-common/json/TherapeuticProcedure"
-            }
-         ]
-      },
-      "disease": {
+      "tumorType": {
+         "description": "The tumor type for which the variant impact is evaluated.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
@@ -197,8 +188,7 @@
             {
                "$ref": "/ga4gh/schema/gks-common/json/Condition"
             }
-         ],
-         "description": "The disease context in which the variant impact is evaluated."
+         ]
       },
       "qualifiers": {
          "description": "Additional, optional properties that may qualify the Statement.",
@@ -207,7 +197,7 @@
          "properties": {
             "alleleOrigin": {
                "type": "string",
-               "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+               "description": "Whether the statement should be interpreted in the context of an inherited  (germline) variant, an acquired (somatic) mutation, or both (combined).",
                "enum": [
                   "germline",
                   "somatic",
@@ -231,12 +221,12 @@
    },
    "required": [
       "direction",
-      "disease",
       "id",
       "isReportedIn",
       "predicate",
-      "therapeutic",
+      "tumorType",
       "type",
       "variant"
-   ]
+   ],
+   "additionalProperties": false
 }
