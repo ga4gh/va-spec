@@ -65,13 +65,10 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
             },
             {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Statement"
+            },
+            {
                "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult"
-            },
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/VariantClassification"
-            },
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/VariantStudySummary"
             }
          ]
       },

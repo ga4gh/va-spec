@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/json/CohortAlleleFrequency",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/CohortAlleleFrequency",
    "title": "CohortAlleleFrequency",
    "maturity": "draft",
    "type": "object",
@@ -43,10 +43,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -65,10 +65,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
                }
             ]
          },
@@ -184,7 +184,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/profiles/caf/json/CohortAlleleFrequency"
+            "$ref": "/ga4gh/schema/va-spec/1.x/profiles/json/CohortAlleleFrequency"
          },
          "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups."
       }

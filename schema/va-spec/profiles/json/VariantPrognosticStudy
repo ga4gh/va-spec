@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/prognostic/json/VariantPrognosticStudy",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantPrognosticStudy",
    "title": "VariantPrognosticStudy",
    "type": "object",
    "maturity": "draft",
@@ -8,22 +8,31 @@
    "properties": {
       "id": {
          "type": "string",
-         "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is  unique within a given system. The identified entity may have a different 'id' in a different  system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+         "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
       },
       "label": {
          "type": "string",
-         "description": "A primary label for the entity."
+         "description": "A primary name for the entity."
       },
       "description": {
          "type": "string",
          "description": "A free-text description of the entity."
+      },
+      "mappings": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/ConceptMapping"
+         },
+         "description": "A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation."
       },
       "extensions": {
          "type": "array",
          "ordered": true,
          "items": {
             "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
-         }
+         },
+         "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "type": {
          "type": "string",
@@ -34,10 +43,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -47,7 +56,8 @@
          "ordered": true,
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
-         }
+         },
+         "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
       "dateAuthored": {
          "$comment": "the data type here should be 'date' or 'dateTime' - update after we add this to gks-common, per https://github.com/ga4gh/gks-common/issues/3.",
@@ -63,8 +73,9 @@
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "$comment": "this should be \"gks.core:RecordMetadata\", but that data class is not in the common core, so using null as placeholder",
-         "type": null
+         "$comment": "this should be \"gks.common:RecordMetadata\", but that data class is not in gks common, so using null as placeholder",
+         "type": null,
+         "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "direction": {
          "type": "string",
@@ -88,11 +99,11 @@
       },
       "statementText": {
          "type": "string",
-         "description": "A natural-language expression of what a structured Statement object asserts to be true.  e.g. for a Variant Pathgenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast  Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G  for Breast Cancer\"."
+         "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
       },
       "proposition": {
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
-         "description": "A possible fact that the Statement assesses or puts forth as true. This attribute provides  the option of encapsulating the structured semantics of the possible fact asserted or  evaluated by a Statement in a separate 'Proposition' object - instead of using the subject,  predicate, object, qualifier properties directly in the Statement object."
+         "description": "A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object."
       },
       "subjectClassification": {
          "oneOf": [
@@ -103,7 +114,7 @@
                "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
-         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically  selected to be succinct and familar in the target community of practice. e.g.  'likely pathogenic' in the doamin of variant pathogenicity classification'."
+         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
       },
       "hasEvidenceOfType": {
          "type": "array",
@@ -111,7 +122,7 @@
          "items": {
             "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
          },
-         "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').    "
+         "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')."
       },
       "hasEvidenceLines": {
          "type": "array",
@@ -119,7 +130,7 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
          },
-         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or  put forth in the Statement. This arguent is based on the interpretation of one or more  pieces of information as evidence."
+         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence."
       },
       "hasEvidence": {
          "type": "array",
@@ -127,7 +138,7 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
          },
-         "description": "A piece of information that represents or contributes to an argument for or against the  validity of the Proposition put forth in a Statement. This is a shortcut relation that links  a Statement directly to a piece of evidnece supporting it, bypassing the Evidence Line class  when used data creators do not utilize an Evidence Line object."
+         "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
       },
       "variant": {
          "description": "A variant that is the subject of the Statement.",
@@ -149,10 +160,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
                }
             ]
          },
@@ -160,8 +171,8 @@
          "minItems": 1
       },
       "predicate": {
-         "description": "The predicate of the Statement.",
          "type": "string",
+         "description": "The predicate of the Statement.",
          "enum": [
             "Better Outcome",
             "Worse Outcome"
@@ -171,10 +182,10 @@
          "description": "The disease that is evaluated for outcome.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/json/Condition"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/json/Condition"
             }
          ]
       },
@@ -215,5 +226,6 @@
       "predicate",
       "type",
       "variant"
-   ]
+   ],
+   "additionalProperties": false
 }
