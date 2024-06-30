@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A Statement (aka "Assertion") represents a claim of purported truth as made by a particular agent, on a particular occasion.
+A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
 
     **Information Model**
     
-Some Statement attributes are inherited from :ref:`InformationEntity`.
+Some VariantOncogenicityStudy attributes are inherited from :ref:`VariantStudySummary`.
 
     .. list-table::
        :class: clean-wrap
@@ -29,57 +29,37 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - A free-text description of the entity.
        *  - mappings
-          - `ConceptMapping <../../gks-common/common.json#/$defs/ConceptMapping>`_
+          - `ConceptMapping <../core-im/../../gks-common/common.json#/$defs/ConceptMapping>`_
           - 0..m
           - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
        *  - extensions
-          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension <../core-im/../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - type
           - string
           - 1..1
-          - MUST be "InformationEntity".
+          - MUST be "VariantOncogenicity".
        *  - specifiedBy
-          - :ref:`Method` | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
-          - :ref:`Contribution`
+          - `Contribution <../core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
-       *  - isReportedIn
-          - :ref:`Document` | `IRI <../../gks-common/common.json#/$defs/IRI>`_
-          - 0..m
-          - A document in which the information content is expressed.
        *  - dateAuthored
           - string
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - derivedFrom
-          - :ref:`InformationEntity`
+          - `InformationEntity <../core-im/core.json#/$defs/InformationEntity>`_
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
           - None
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
-       *  - subject
-          - _Not Specified_
-          - 1..1
-          - The subject of the Statement.
-       *  - predicate
-          - string
-          - 0..1
-          - The predicate of the Statement.
-       *  - object
-          - _Not Specified_
-          - 0..1
-          - The object of the Statement.
-       *  - qualifiers
-          - object
-          - 0..1
-          - Additional, optional properties that may qualify the Statement.
        *  - direction
           - string
           - 1..1
@@ -93,7 +73,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
        *  - proposition
-          - :ref:`Proposition`
+          - `Proposition <../core-im/core.json#/$defs/Proposition>`_
           - 0..1
           - A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object.
        *  - subjectClassification
@@ -105,10 +85,30 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..m
           - A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
        *  - hasEvidenceLines
-          - :ref:`EvidenceLine`
+          - `EvidenceLine <../core-im/core.json#/$defs/EvidenceLine>`_
           - 0..m
           - A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence.
        *  - hasEvidence
-          - :ref:`InformationEntity`
+          - `InformationEntity <../core-im/core.json#/$defs/InformationEntity>`_
           - 0..m
           - A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.
+       *  - variant
+          - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - 1..1
+          - A variant that is the subject of the Statement.
+       *  - isReportedIn
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - 1..m
+          - A document in which the information content is expressed.
+       *  - predicate
+          - string
+          - 1..1
+          - The predicate of the Statement.
+       *  - tumorType
+          - `Condition <../../gks-common/conditions.json#/$defs/Condition>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - 1..1
+          - The tumor type for which the variant impact is evaluated.
+       *  - qualifiers
+          - object
+          - 0..1
+          - Additional, optional properties that may qualify the Statement.

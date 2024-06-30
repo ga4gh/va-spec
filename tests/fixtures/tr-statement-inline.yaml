@@ -134,6 +134,8 @@ specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)
   isReportedIn:
+    id: pmid:31779674
+    type: Document
     label: Danos et al., 2019, Genome Med.
     title: Standard operating procedure for curation and clinical interpretation of
       variants in cancer
@@ -142,6 +144,7 @@ specifiedBy:
   type: Method
 isReportedIn:
   - id: civic.source:592
+    type: Document
     label: Sequist et al., 2013, J. Clin. Oncol.
     title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
       with metastatic lung adenocarcinoma with EGFR mutations.
