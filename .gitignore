@@ -1,4 +1,4 @@
-# Byte-compiled / optimized / DLL files
+.gitignore# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -112,7 +112,7 @@ env.bak/
 venv.bak/
 
 # IDEs
-.vscode
+.vscode/
 
 # Spyder project settings
 .spyderproject
