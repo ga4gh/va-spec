@@ -1,5 +1,5 @@
 id: civic.eid:879
-type: VariantTherapeuticResponseStudy
+type: VariantTherapeuticResponseStudyStatement
 description: A phase III clinical trial (NCT00949650) found that median progression
   free survival among patients with exon 19 deletions or L858R EGFR mutations (n
   = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47;
@@ -10,7 +10,7 @@ strength:
   label: clinical cohort evidence
   system: https://go.osu.edu/evidence-codes
 predicate: predictsSensitivityTo
-variant:
+subjectVariant:
   id: civic.mpid:33
   type: ProteinSequenceConsequence
   description: >-
@@ -71,7 +71,7 @@ variant:
         code: SO:0001583
         system: http://www.sequenceontology.org/browser/current_release/term/
         label: missense_variant
-therapeutic:
+objectTherapeutic:
   id: civic.tid:146
   type: TherapeuticAgent
   label: Afatinib
@@ -97,39 +97,38 @@ disease:
         code: DOID:3910
         system: https://www.disease-ontology.org/
       relation: exactMatch
-qualifiers:
-  alleleOrigin: somatic
-  geneContext:
-    id: civic.gid:19
-    type: Gene
-    label: EGFR
-    description: "EGFR is widely recognized for its importance in cancer. Amplification
-      and mutations have been shown to be driving events in many cancer types. Its
-      role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
-      has spurred many research and drug development efforts. Tyrosine kinase inhibitors
-      have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
-      Mutations in EGFR have been shown to confer resistance to these drugs, particularly
-      the variant T790M, which has been functionally characterized as a resistance
-      marker for both of these drugs. The later generation TKI's have seen some
-      success in treating these resistant cases, and targeted sequencing of the
-      EGFR locus has become a common practice in treatment of non-small cell lung
-      cancer. \nOverproduction of ligands is another possible mechanism of activation
-      of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
-      NRG1-4 (for detailed information please refer to the respective ligand section)."
-    mappings:
-    - coding:
-        code: ncbigene:1956
-        system: https://www.ncbi.nlm.nih.gov/gene/
-      relation: exactMatch
-    alternativeLabels:
-    - EGFR
-    - ERBB
-    - ERBB1
-    - ERRP
-    - HER1
-    - NISBD2
-    - PIG61
-    - mENA
+alleleOriginQualifier: somatic
+geneContextQualifier:
+  id: civic.gid:19
+  type: Gene
+  label: EGFR
+  description: "EGFR is widely recognized for its importance in cancer. Amplification
+    and mutations have been shown to be driving events in many cancer types. Its
+    role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
+    has spurred many research and drug development efforts. Tyrosine kinase inhibitors
+    have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
+    Mutations in EGFR have been shown to confer resistance to these drugs, particularly
+    the variant T790M, which has been functionally characterized as a resistance
+    marker for both of these drugs. The later generation TKI's have seen some
+    success in treating these resistant cases, and targeted sequencing of the
+    EGFR locus has become a common practice in treatment of non-small cell lung
+    cancer. \nOverproduction of ligands is another possible mechanism of activation
+    of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
+    NRG1-4 (for detailed information please refer to the respective ligand section)."
+  mappings:
+  - coding:
+      code: ncbigene:1956
+      system: https://www.ncbi.nlm.nih.gov/gene/
+    relation: exactMatch
+  alternativeLabels:
+  - EGFR
+  - ERBB
+  - ERBB1
+  - ERRP
+  - HER1
+  - NISBD2
+  - PIG61
+  - mENA
 specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)

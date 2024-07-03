@@ -1,6 +1,6 @@
 id: SCV000778434.1
-type: VariantPathogenicity
-variant:
+type: VariantPathogenicityStatement
+subjectVariant:
   id: '208366'
   type: CanonicalAllele
   definingContext:
@@ -28,7 +28,7 @@ variant:
       - syntax: spdi
         value: NC_000001.11:40819438:CTCCTCCT:CTCCT
   label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
-condition:
+objectCondition:
   id: clinvar.trait/939
   type: Disease
   label: Autosomal dominant nonsyndromic hearing loss 2A
@@ -37,17 +37,18 @@ condition:
       code: C2677637
       system: https://www.ncbi.nlm.nih.gov/medgen/
     relation: exactMatch
+predicate: isCausalFor
 direction: supports
 strength:
   code: cg000021
   label: Definitive (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/
-classification:
+subjectClassification:
   code: cg000001
   label: Pathogenic (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/
-qualifiers:
-  penetrance: high
+
+penetranceQualifier: high
 contributions:
 - type: Contribution
   contributor:

@@ -1,0 +1,327 @@
+# --- partial extract from gnomad with minor updates to meet newer schema standardization alignment ---
+# 1. gnomad uses v1.3 of VRS so focusAllele was modified as follows
+#    focusAllele: 
+#      _id: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+#      type: Allele
+#    changed to
+#    focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+# 2. class 'type' value was modified from 'CohortAlleleFrequency' to 'CohortAlleleFrequencyStudyResult'
+# 3. 'derivedFrom' was renamed to 'sourceDataSet'
+# 4. 'sourceDataset' (frmrly derivedFrom) was modified to be an array of 1 item instead of a single object
+# 5. 'cohort' was renamed to 'cohortStudyGroup'
+# 6. 'subcohortFrequency' was renamed to 'subCohortFrequency'
+
+
+id: gnomad4:1-10120-T-G
+type: CohortAlleleFrequencyStudyResult
+label: Overall Cohort Allele Frequency for 1-10120-T-G
+sourceDataSet:
+- id: gnomad4.1.0
+  type: DataSet
+  label: gnomAD v4.1.0
+  version: 4.1.0
+focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+focusAlleleCount: 0
+locusAlleleCount: 34086
+alleleFrequency: 0
+cohortStudyGroup:
+  id: ALL
+  label: Overall
+ancillaryResults:
+  grpMaxFAF95:
+    frequency: 0
+    confidenceInterval: 0.95
+    groupId: afr
+  jointGrpMaxFAF95: 
+  homozygotes: 0
+  hemizygotes: 0
+subCohortFrequency:
+- id: gnomad4:1-10120-T-G.remaining
+  type: CohortAlleleFrequencyStudyResult
+  label: Remaining individuals Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 468
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: remaining
+    label: Remaining individuals Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Remaining individuals
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.amr
+  type: CohortAlleleFrequencyStudyResult
+  label: Admixed American Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 2282
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: amr
+    label: Admixed American Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Admixed American
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.fin
+  type: CohortAlleleFrequencyStudyResult
+  label: Finnish Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 1112
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: fin
+    label: Finnish Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Finnish
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.ami
+  type: CohortAlleleFrequencyStudyResult
+  label: Amish Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 190
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: ami
+    label: Amish Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Amish
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.eas
+  type: CohortAlleleFrequencyStudyResult
+  label: East Asian Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 872
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: eas
+    label: East Asian Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: East Asian
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.mid
+  type: CohortAlleleFrequencyStudyResult
+  label: Middle Eastern Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 32
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: mid
+    label: Middle Eastern Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Middle Eastern
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.sas
+  type: CohortAlleleFrequencyStudyResult
+  label: South Asian Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 716
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: sas
+    label: South Asian Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: South Asian
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.asj
+  type: CohortAlleleFrequencyStudyResult
+  label: Ashkenazi Jewish Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 1076
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: asj
+    label: Ashkenazi Jewish Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Ashkenazi Jewish
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.afr
+  type: CohortAlleleFrequencyStudyResult
+  label: African/African-American Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 8666
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: afr
+    label: African/African-American Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: African/African-American
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.nfe
+  type: CohortAlleleFrequencyStudyResult
+  label: Non-Finnish European Ancestry Group Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 18672
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: nfe
+    label: Non-Finnish European Ancestry Group
+    characteristics:
+    - name: genetic ancestry
+      value: Non-Finnish European
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.XX
+  type: CohortAlleleFrequencyStudyResult
+  label: XX Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 18952
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: XX
+    label: XX
+    characteristics:
+    - name: biological sex
+      value: XX
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+- id: gnomad4:1-10120-T-G.XY
+  type: CohortAlleleFrequencyStudyResult
+  label: XY Allele Frequency for 1-10120-T-G
+  sourceDataSet:
+  - id: gnomad4.1.0
+    type: DataSet
+    label: gnomAD v4.1.0
+    version: 4.1.0
+  focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
+  focusAlleleCount: 0
+  locusAlleleCount: 15134
+  alleleFrequency: 0
+  cohortStudyGroup:
+    id: XY
+    label: XY
+    characteristics:
+    - name: biological sex
+      value: XY
+  ancillaryResults:
+    grpMaxFAF95: 
+    jointGrpMaxFAF95: 
+    homozygotes: 0
+    hemizygotes: 0
+  subCohortFrequency: []
+

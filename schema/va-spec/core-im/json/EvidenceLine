@@ -35,7 +35,10 @@
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "type": {
-         "type": "string"
+         "type": "string",
+         "const": "InformationEntity",
+         "default": "InformationEntity",
+         "description": "MUST be \"InformationEntity\"."
       },
       "specifiedBy": {
          "oneOf": [
@@ -85,7 +88,7 @@
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "type": "#/$defs/RecordMetadata",
+         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "targetProposition": {

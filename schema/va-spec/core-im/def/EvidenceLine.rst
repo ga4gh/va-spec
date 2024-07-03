@@ -39,7 +39,7 @@ Some EvidenceLine attributes are inherited from :ref:`gks.core:InformationEntity
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - specifiedBy
           - `Method <../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
@@ -61,7 +61,7 @@ Some EvidenceLine attributes are inherited from :ref:`gks.core:InformationEntity
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - #/$defs/RecordMetadata
+          - `RecordMetadata <../../gks-core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - targetProposition

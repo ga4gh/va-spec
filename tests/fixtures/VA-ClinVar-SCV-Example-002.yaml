@@ -1,8 +1,8 @@
 id: SCV001245167.1
-type: VariantPathogenicity
-variant: catvars-mvp.jsonc#/208366 # NOQA: IRI resolution not tested; inline
+type: VariantPathogenicityStatement
+subjectVariant: catvars-mvp.jsonc#/208366 # NOQA: IRI resolution not tested; inline
                                    # version of this object tested in SCV example 1
-condition:
+objectCondition:
   id: clinvarTrait:9544 # This ID syntax is clinvar.trait/9544 in example 1. Both OK.
   type: Disease
   label: Nonsyndromic genetic hearing loss
@@ -11,12 +11,13 @@ condition:
         system: https://www.ncbi.nlm.nih.gov/medgen/
         code: CN043648
       relation: exactMatch
+predicate: isCausalFor
 direction: supports
 strength:
   code: cg000022
   label: Likely (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/
-classification:
+subjectClassification:
   code: cg000002
   label: Likely Pathogenic (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/

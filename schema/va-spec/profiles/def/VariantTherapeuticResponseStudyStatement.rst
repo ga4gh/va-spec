@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A study summarization describing whether a variant is associated with improved or worse outcome for a disease.
+A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.
 
     **Information Model**
     
-Some VariantPrognosticStudy attributes are inherited from :ref:`VariantStudySummary`.
+Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref:`va.core:Statement`.
 
     .. list-table::
        :class: clean-wrap
@@ -39,7 +39,7 @@ Some VariantPrognosticStudy attributes are inherited from :ref:`VariantStudySumm
        *  - type
           - string
           - 1..1
-          - MUST be "VariantPrognosticStudy".
+          - MUST be "VariantTherapeuticResponseStudyStatement".
        *  - specifiedBy
           - `Method <../core-im/../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
@@ -57,7 +57,7 @@ Some VariantPrognosticStudy attributes are inherited from :ref:`VariantStudySumm
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - #/$defs/RecordMetadata
+          - `RecordMetadata <../core-im/../../gks-core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - direction
@@ -92,23 +92,35 @@ Some VariantPrognosticStudy attributes are inherited from :ref:`VariantStudySumm
           - `InformationEntity <../../gks-core-im/core-im-source.yaml#/$defs/InformationEntity>`_
           - 0..m
           - A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.
-       *  - variant
+       *  - subjectVariant
           - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
-       *  - isReportedIn
-          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
-          - 1..m
-          - A document in which the information content is expressed.
        *  - predicate
           - string
           - 1..1
           - The predicate of the Statement.
+       *  - objectTherapeutic
+          - `TherapeuticProcedure <../../gks-domain-entities/domain-entities.json#/$defs/TherapeuticProcedure>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
+          - 1..1
+          - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
        *  - disease
           - `Condition <../../gks-domain-entities/domain-entities.json#/$defs/Condition>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
-          - 1..1
-          - The disease that is evaluated for outcome.
-       *  - qualifiers
-          - object
           - 0..1
-          - Additional, optional properties that may qualify the Statement.
+          - The disease context in which the variant impact is evaluated.
+       *  - isReportedIn
+          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
+          - 1..m
+          - A document in which the information content is expressed.
+       *  - alleleOriginQualifier
+          - string
+          - 0..1
+          - Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
+       *  - allelePrevalenceQualifier
+          - string
+          - 0..1
+          - Whether the statement should be interpreted in the context of the variant being rare or common.
+       *  - geneContextQualifier
+          - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
+          - 0..1
+          - A gene context that qualifies the Statement.

@@ -39,7 +39,7 @@ Some StudyResult attributes are inherited from :ref:`gks.core:InformationEntity`
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - specifiedBy
           - `Method <../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
@@ -57,7 +57,7 @@ Some StudyResult attributes are inherited from :ref:`gks.core:InformationEntity`
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - recordMetadata
-          - #/$defs/RecordMetadata
+          - `RecordMetadata <../../gks-core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - focus
@@ -69,14 +69,14 @@ Some StudyResult attributes are inherited from :ref:`gks.core:InformationEntity`
           - 0..m
           - A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about data in the Result were generated.
        *  - sourceDataSet
-          - {'$ref': '#/$defs/DataSet'}
-          - 0..1
+          - :ref:`DataSet`
+          - 0..m
           - A larger Data Set from which the content of the Result was derived.
        *  - componentResult
           - :ref:`StudyResult`
           - 0..m
           - A Study Result comprised of data items about the same focus as its parent Result, but based on a analysis of a different subset of the data pertaining to that focus (e.g. data from analysis of a subset of the full Study Group).
        *  - studyGroup
-          - {'$ref': '#/$defs/StudyGroup'}
+          - :ref:`StudyGroup`
           - 0..1
           - A structured description of specific population of subjects interrogated in the Research Study to produce the subset of data captured in the StudyResult.

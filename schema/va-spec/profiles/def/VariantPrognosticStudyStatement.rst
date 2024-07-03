@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A :ref:`VariantStatement` classifying the impact of a variant.
+A study summarization describing whether a variant is associated with improved or worse outcome for a disease.
 
     **Information Model**
     
-Some VariantClassification attributes are inherited from :ref:`VariantStatement`.
+Some VariantPrognosticStudyStatement attributes are inherited from :ref:`va.core:Statement`.
 
     .. list-table::
        :class: clean-wrap
@@ -39,7 +39,7 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "VariantPrognosticStudyStatement".
        *  - specifiedBy
           - `Method <../core-im/../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
@@ -48,10 +48,6 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
           - `Contribution <../core-im/../../gks-core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
-       *  - isReportedIn
-          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
-          - 0..m
-          - A document in which the information content is expressed.
        *  - dateAuthored
           - string
           - 0..1
@@ -61,21 +57,9 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - #/$defs/RecordMetadata
+          - `RecordMetadata <../core-im/../../gks-core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
-       *  - predicate
-          - string
-          - 0..1
-          - The predicate of the Statement.
-       *  - object
-          - _Not Specified_
-          - 0..1
-          - The object of the Statement.
-       *  - qualifiers
-          - object
-          - 0..1
-          - Additional, optional properties that may qualify the Statement.
        *  - direction
           - string
           - 1..1
@@ -92,6 +76,10 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
           - `Proposition <../core-im/core.json#/$defs/Proposition>`_
           - 0..1
           - A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object.
+       *  - subjectClassification
+          - `Coding <../../gks-core-im/core-im-source.yaml#/$defs/Coding>`_ | `IRI <../../gks-core-im/core-im-source.yaml#/$defs/IRI>`_
+          - 0..1
+          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'.
        *  - hasEvidenceOfType
           - `Coding <../../gks-core-im/core-im-source.yaml#/$defs/Coding>`_
           - 0..m
@@ -104,11 +92,31 @@ Some VariantClassification attributes are inherited from :ref:`VariantStatement`
           - `InformationEntity <../../gks-core-im/core-im-source.yaml#/$defs/InformationEntity>`_
           - 0..m
           - A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.
-       *  - variant
+       *  - subjectVariant
           - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
-       *  - classification
-          - `Coding <../../gks-core-im/core-im.json#/$defs/Coding>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
+       *  - predicate
+          - string
           - 1..1
-          - A methodological, summary classification about the impact of a variant.
+          - The predicate of the Statement.
+       *  - objectDisease
+          - `Condition <../../gks-domain-entities/domain-entities.json#/$defs/Condition>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
+          - 1..1
+          - The disease that is evaluated for outcome.
+       *  - isReportedIn
+          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
+          - 1..m
+          - A document in which the information content is expressed.
+       *  - alleleOriginQualifier
+          - string
+          - 0..1
+          - Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
+       *  - allelePrevalenceQualifier
+          - string
+          - 0..1
+          - Whether the statement should be interpreted in the context of the variant being rare or common.
+       *  - geneContextQualifier
+          - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
+          - 0..1
+          - A gene context that qualifies the Statement.

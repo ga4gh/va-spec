@@ -16,6 +16,23 @@ namespaces:
   vrs: ../../vrs/vrs.json#/$defs/
 
 $defs:
+  # Qualifier:
+  #   maturity: draft
+  #   description: >-
+  #     An entity or concept applied to extend or refine the meaning of a subject-predicate-object
+  #     'triple' - by providing additional detail, or constraining the claim to apply in a particular context.
+  #   heritableProperties:
+  #     type:
+  #       type: string
+  #       const: Qualifier
+  #       default: Qualifier
+  #       description: Must be "Qualifier"
+  #     value:
+  #       description: The specific value of the qualifier.
+  #   heritableRequired:
+  #   - type  
+  #   - value
+
   DataItem:
     inherits: gks.core:InformationEntity
     maturity: draft
@@ -86,10 +103,6 @@ $defs:
         description: The predicate of the Statement.
       object:
         description: The object of the Statement.
-      qualifiers:
-        description: Additional, optional properties that may qualify the Statement.
-        type: object
-        additionalProperties: false
       direction:
         type: string
         enum:
@@ -162,14 +175,13 @@ $defs:
   StudyResult:
     inherits: gks.core:InformationEntity
     maturity: draft
-    type: object
     description: >-
       A collection of data items from a single study that are about a particular subject or experimental
       unit in the study, along with optional provenance information describing how these data items were
       generated. StudyResult objects provide a flexible and useful way to summarize a subset of data items
       from a larger study that are cited as evidence in curation workflows that generate higher order
       knowledge about a particular variant or other entity.
-    properties:
+    heritableProperties:
       focus:
         $refCurie: gks.core:DomainEntity
         description: >-
@@ -185,8 +197,9 @@ $defs:
           This data can directly describe this focus, or represent metadata about data in the Result were generated.
       sourceDataSet:
         extends: derivedFrom
-        type:
+        items:
           $ref: "#/$defs/DataSet"
+        maximum: 1
         description: >-
           A larger Data Set from which the content of the Result was derived.
       componentResult:
@@ -199,8 +212,7 @@ $defs:
           analysis of a different subset of the data pertaining to that focus (e.g. data from analysis of a
           subset of the full Study Group).
       studyGroup:
-        type:
-          $ref: "#/$defs/StudyGroup"
+        $ref: "#/$defs/StudyGroup"
         description: >-
           A structured description of specific population of subjects interrogated in the Research Study to
           produce the subset of data captured in the StudyResult.
@@ -380,5 +392,4 @@ $defs:
     required:
       - name
       - value
-
 

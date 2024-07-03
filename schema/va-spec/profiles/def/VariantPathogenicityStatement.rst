@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
+A :ref:`VariantClassification` describing the role of a variant in causing an  inherited disorder.
 
     **Information Model**
     
-Some VariantOncogenicityStudy attributes are inherited from :ref:`VariantStudySummary`.
+Some VariantPathogenicityStatement attributes are inherited from :ref:`va.core:Statement`.
 
     .. list-table::
        :class: clean-wrap
@@ -39,7 +39,7 @@ Some VariantOncogenicityStudy attributes are inherited from :ref:`VariantStudySu
        *  - type
           - string
           - 1..1
-          - MUST be "VariantOncogenicity".
+          - MUST be "VariantPathogenicityStatement".
        *  - specifiedBy
           - `Method <../core-im/../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
           - 0..1
@@ -48,6 +48,10 @@ Some VariantOncogenicityStudy attributes are inherited from :ref:`VariantStudySu
           - `Contribution <../core-im/../../gks-core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
+       *  - isReportedIn
+          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
+          - 0..m
+          - A document in which the information content is expressed.
        *  - dateAuthored
           - string
           - 0..1
@@ -57,7 +61,7 @@ Some VariantOncogenicityStudy attributes are inherited from :ref:`VariantStudySu
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - #/$defs/RecordMetadata
+          - `RecordMetadata <../core-im/../../gks-core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - direction
@@ -92,23 +96,27 @@ Some VariantOncogenicityStudy attributes are inherited from :ref:`VariantStudySu
           - `InformationEntity <../../gks-core-im/core-im-source.yaml#/$defs/InformationEntity>`_
           - 0..m
           - A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object.
-       *  - variant
+       *  - subjectVariant
           - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
-       *  - isReportedIn
-          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
-          - 1..m
-          - A document in which the information content is expressed.
        *  - predicate
           - string
           - 1..1
           - The predicate of the Statement.
-       *  - tumorType
+       *  - objectCondition
           - `Condition <../../gks-domain-entities/domain-entities.json#/$defs/Condition>`_ | `IRI <../../gks-core-im/core-im.json#/$defs/IRI>`_
           - 1..1
-          - The tumor type for which the variant impact is evaluated.
-       *  - qualifiers
-          - object
+          - The :ref:`Condition` for which the variant impact is stated.
+       *  - penetranceQualifier
+          - string
           - 0..1
-          - Additional, optional properties that may qualify the Statement.
+          - The extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
+       *  - modeOfInheritanceQualifier
+          - string
+          - 0..1
+          - The pattern of inheritance expected for the pathogenic effect of this variant.
+       *  - geneContextQualifier
+          - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
+          - 0..1
+          - A gene context that qualifies the Statement.

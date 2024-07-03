@@ -1,5 +1,5 @@
 id: civic.eid:80
-type: VariantDiagnosticStudy
+type: VariantDiagnosticStudyStatement
 description: https://civicdb.org/evidence/80/summary
 direction: supports
 strength:
@@ -7,7 +7,7 @@ strength:
   label: clinical cohort evidence
   system: https://go.osu.edu/evidence-codes
 predicate: positive
-variant:
+subjectVariant:
   id: civic.mpid:12
   type: ProteinSequenceConsequence
   description: >-
@@ -69,7 +69,7 @@ variant:
         code: SO:0001583
         system: http://www.sequenceontology.org/browser/current_release/term/
         label: missense_variant
-disease:
+objectDisease:
   id: civic.did:156
   type: Disease
   label: Thyroid Gland Papillary Carcinoma
@@ -78,47 +78,46 @@ disease:
         code: DOID:3969
         system: https://www.disease-ontology.org/
       relation: exactMatch
-qualifiers:
-  alleleOrigin: somatic
-  geneContext:
-    id: civic.gid:5
-    type: Gene
-    label: BRAF
-    description: "BRAF mutations are found to be recurrent in many cancer types. Of
-      these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
-      V600E has been determined to be an activating mutation, and cells that harbor it,
-      along with other V600 mutations are sensitive to the BRAF inhibitor dabrafenib. It
-      is also common to use MEK inhibition as a substitute for BRAF inhibitors, and the
-      MEK inhibitor trametinib has seen some success in BRAF mutant melanomas. BRAF
-      mutations have also been correlated with poor prognosis in many cancer types,
-      although there is at least one study that questions this conclusion in papillary
-      thyroid cancer. Oncogenic BRAF mutations are divided into three categories that
-      determine their sensitivity to inhibitors. Class 1 BRAF mutations (V600) are
-      RAS-independent, signal as monomers and are sensitive to current RAF monomer
-      inhibitors. Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A,
-      G469V, G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
-       constitutive dimers and are resistant to vemurafenib. Such mutants may be
-       sensitive to novel RAF dimer inhibitors or MEK inhibitors. Class 3 BRAF mutations
-       (D287H, V459L, G466V, G466E, G466A, S467L, G469E, N581S, N581I, D594N, D594G,
-       D594A, D594H, F595L, G596D, and G596R) with low or absent kinase activity are
-       RAS-dependent and they activate ERK by increasing their binding to activated RAS
-       and wild-type CRAF. Class 3 BRAF mutations coexist with mutations in RAS or NF1
-       in melanoma may be treated with MEK inhibitors. In epithelial tumors such as CRC
-       or NSCLC may be effectively treated with combinations that include inhibitors of
-       receptor tyrosine kinase."
-    mappings:
-    - coding:
-        code: ncbigene:673
-        system: https://www.ncbi.nlm.nih.gov/gene/
-      relation: exactMatch
-    alternativeLabels:
-    - B-RAF1
-    - B-raf
-    - BRAF
-    - BRAF-1
-    - BRAF1
-    - NS7
-    - RAFB1
+alleleOriginQualifier: somatic
+geneContextQualifier:
+  id: civic.gid:5
+  type: Gene
+  label: BRAF
+  description: "BRAF mutations are found to be recurrent in many cancer types. Of
+    these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
+    V600E has been determined to be an activating mutation, and cells that harbor it,
+    along with other V600 mutations are sensitive to the BRAF inhibitor dabrafenib. It
+    is also common to use MEK inhibition as a substitute for BRAF inhibitors, and the
+    MEK inhibitor trametinib has seen some success in BRAF mutant melanomas. BRAF
+    mutations have also been correlated with poor prognosis in many cancer types,
+    although there is at least one study that questions this conclusion in papillary
+    thyroid cancer. Oncogenic BRAF mutations are divided into three categories that
+    determine their sensitivity to inhibitors. Class 1 BRAF mutations (V600) are
+    RAS-independent, signal as monomers and are sensitive to current RAF monomer
+    inhibitors. Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A,
+    G469V, G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+      constitutive dimers and are resistant to vemurafenib. Such mutants may be
+      sensitive to novel RAF dimer inhibitors or MEK inhibitors. Class 3 BRAF mutations
+      (D287H, V459L, G466V, G466E, G466A, S467L, G469E, N581S, N581I, D594N, D594G,
+      D594A, D594H, F595L, G596D, and G596R) with low or absent kinase activity are
+      RAS-dependent and they activate ERK by increasing their binding to activated RAS
+      and wild-type CRAF. Class 3 BRAF mutations coexist with mutations in RAS or NF1
+      in melanoma may be treated with MEK inhibitors. In epithelial tumors such as CRC
+      or NSCLC may be effectively treated with combinations that include inhibitors of
+      receptor tyrosine kinase."
+  mappings:
+  - coding:
+      code: ncbigene:673
+      system: https://www.ncbi.nlm.nih.gov/gene/
+    relation: exactMatch
+  alternativeLabels:
+  - B-RAF1
+  - B-raf
+  - BRAF
+  - BRAF-1
+  - BRAF1
+  - NS7
+  - RAFB1
 specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)

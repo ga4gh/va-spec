@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantOncogenicityStudy",
-   "title": "VariantOncogenicityStudy",
-   "maturity": "draft",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantPathogenicityStatement",
+   "title": "VariantPathogenicityStatement",
    "type": "object",
-   "description": "A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.",
+   "maturity": "draft",
+   "description": "A VariantClassification describing the role of a variant in causing an  inherited disorder.",
    "properties": {
       "id": {
          "type": "string",
@@ -36,9 +36,9 @@
       },
       "type": {
          "type": "string",
-         "const": "VariantOncogenicity",
-         "default": "VariantOncogenicity",
-         "description": "MUST be \"VariantOncogenicity\"."
+         "const": "VariantPathogenicityStatement",
+         "default": "VariantPathogenicityStatement",
+         "description": "MUST be \"VariantPathogenicityStatement\"."
       },
       "specifiedBy": {
          "oneOf": [
@@ -59,6 +59,21 @@
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed."
+      },
       "dateAuthored": {
          "type": "string",
          "format": "datetime",
@@ -73,7 +88,7 @@
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "type": "#/$defs/RecordMetadata",
+         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "direction": {
@@ -139,7 +154,7 @@
          },
          "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
       },
-      "variant": {
+      "subjectVariant": {
          "description": "A variant that is the subject of the Statement.",
          "oneOf": [
             {
@@ -153,33 +168,13 @@
             }
          ]
       },
-      "isReportedIn": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
-               }
-            ]
-         },
-         "description": "A document in which the information content is expressed.",
-         "minItems": 1
-      },
       "predicate": {
          "type": "string",
          "description": "The predicate of the Statement.",
-         "enum": [
-            "isOncogenicFor",
-            "isProtectiveFor",
-            "isPredisposingFor"
-         ]
+         "const": "isCausalFor"
       },
-      "tumorType": {
-         "description": "The tumor type for which the variant impact is evaluated.",
+      "objectCondition": {
+         "description": "The Condition for which the variant impact is stated.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
@@ -189,43 +184,38 @@
             }
          ]
       },
-      "qualifiers": {
-         "description": "Additional, optional properties that may qualify the Statement.",
-         "type": "object",
-         "additionalProperties": false,
-         "properties": {
-            "alleleOrigin": {
-               "type": "string",
-               "description": "Whether the statement should be interpreted in the context of an inherited  (germline) variant, an acquired (somatic) mutation, or both (combined).",
-               "enum": [
-                  "germline",
-                  "somatic",
-                  "combined"
-               ]
-            },
-            "allelePrevalence": {
-               "type": "string",
-               "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
-               "enum": [
-                  "rare",
-                  "common"
-               ]
-            },
-            "geneContext": {
-               "description": "A gene context that qualifies the Statement.",
-               "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
-            }
-         }
+      "penetranceQualifier": {
+         "type": "string",
+         "enum": [
+            "high",
+            "low",
+            "risk allele"
+         ],
+         "description": "The extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition."
+      },
+      "modeOfInheritanceQualifier": {
+         "type": "string",
+         "enum": [
+            "autosomal dominant",
+            "autosomal recessive",
+            "X-linked dominant",
+            "X-linked recessive",
+            "mitochondrial"
+         ],
+         "description": "The pattern of inheritance expected for the pathogenic effect of this variant."
+      },
+      "geneContextQualifier": {
+         "description": "A gene context that qualifies the Statement.",
+         "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
       }
    },
    "required": [
       "direction",
       "id",
-      "isReportedIn",
+      "objectCondition",
       "predicate",
-      "tumorType",
-      "type",
-      "variant"
+      "subjectVariant",
+      "type"
    ],
    "additionalProperties": false
 }

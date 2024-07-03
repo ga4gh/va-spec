@@ -1,7 +1,7 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantTherapeuticResponseStudy",
-   "title": "VariantTherapeuticResponseStudy",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantTherapeuticResponseStudyStatement",
+   "title": "VariantTherapeuticResponseStudyStatement",
    "maturity": "draft",
    "type": "object",
    "description": "A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.",
@@ -36,9 +36,9 @@
       },
       "type": {
          "type": "string",
-         "const": "VariantTherapeuticResponseStudy",
-         "default": "VariantTherapeuticResponseStudy",
-         "description": "MUST be \"VariantTherapeuticResponseStudy\"."
+         "const": "VariantTherapeuticResponseStudyStatement",
+         "default": "VariantTherapeuticResponseStudyStatement",
+         "description": "MUST be \"VariantTherapeuticResponseStudyStatement\"."
       },
       "specifiedBy": {
          "oneOf": [
@@ -73,7 +73,7 @@
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "type": "#/$defs/RecordMetadata",
+         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "direction": {
@@ -139,7 +139,7 @@
          },
          "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
       },
-      "variant": {
+      "subjectVariant": {
          "description": "A variant that is the subject of the Statement.",
          "oneOf": [
             {
@@ -153,22 +153,6 @@
             }
          ]
       },
-      "isReportedIn": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
-               }
-            ]
-         },
-         "description": "A document in which the information content is expressed.",
-         "minItems": 1
-      },
       "predicate": {
          "type": "string",
          "description": "The predicate of the Statement.",
@@ -177,7 +161,7 @@
             "predictsResistanceTo"
          ]
       },
-      "therapeutic": {
+      "objectTherapeutic": {
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
          "oneOf": [
             {
@@ -199,44 +183,52 @@
          ],
          "description": "The disease context in which the variant impact is evaluated."
       },
-      "qualifiers": {
-         "description": "Additional, optional properties that may qualify the Statement.",
-         "type": "object",
-         "additionalProperties": false,
-         "properties": {
-            "alleleOrigin": {
-               "type": "string",
-               "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
-               "enum": [
-                  "germline",
-                  "somatic",
-                  "combined"
-               ]
-            },
-            "allelePrevalence": {
-               "type": "string",
-               "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
-               "enum": [
-                  "rare",
-                  "common"
-               ]
-            },
-            "geneContext": {
-               "description": "A gene context that qualifies the Statement.",
-               "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
-            }
-         }
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed.",
+         "minItems": 1
+      },
+      "alleleOriginQualifier": {
+         "type": "string",
+         "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+         "enum": [
+            "germline",
+            "somatic",
+            "combined"
+         ]
+      },
+      "allelePrevalenceQualifier": {
+         "type": "string",
+         "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
+         "enum": [
+            "rare",
+            "common"
+         ]
+      },
+      "geneContextQualifier": {
+         "description": "A gene context that qualifies the Statement.",
+         "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
       }
    },
    "required": [
       "direction",
-      "disease",
       "id",
       "isReportedIn",
+      "objectTherapeutic",
       "predicate",
-      "therapeutic",
-      "type",
-      "variant"
+      "subjectVariant",
+      "type"
    ],
    "additionalProperties": false
 }
