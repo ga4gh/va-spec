@@ -57,7 +57,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - recordMetadata
-          - `RecordMetadata <../core-im/../../gks-core-im/core.json#/$defs/RecordMetadata>`_
+          - #/$defs/RecordMetadata
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - dataItems

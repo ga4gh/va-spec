@@ -73,7 +73,7 @@
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/RecordMetadata",
+         "type": "#/$defs/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "direction": {

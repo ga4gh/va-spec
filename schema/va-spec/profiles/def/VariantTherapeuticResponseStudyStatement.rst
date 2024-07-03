@@ -57,7 +57,7 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - `RecordMetadata <../core-im/../../gks-core-im/core.json#/$defs/RecordMetadata>`_
+          - #/$defs/RecordMetadata
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - direction
