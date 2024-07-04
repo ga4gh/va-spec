@@ -33,6 +33,56 @@ $defs:
   #   - type  
   #   - value
 
+  InformationEntity:
+    inherits: Entity
+    description: >-
+      Information Entities are abstract (non-physical) entities that are about something (i.e. they carry
+      information about things in the real world).
+    heritableProperties:
+      type:
+        type: string
+        const: InformationEntity
+        default: InformationEntity
+        description: MUST be "InformationEntity".
+      specifiedBy:
+        oneOf:
+        - $ref: "#/$defs/Method"
+        - $ref: "#/$defs/IRI"
+        description: >-
+          A :ref:`Method` that describes all or part of the process through which the information was
+          generated.
+      contributions:
+        type: array
+        ordered: true
+        items:
+          $refCurie: gks.core:Contribution
+        description: >-
+          A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
+      isReportedIn:
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: "#/$defs/Document"
+          - $ref: "#/$defs/IRI"
+        description: A document in which the information content is expressed.
+      dateAuthored:
+        type: string
+        format: datetime
+        description: Indicates when the information content expressed in the Information Entity was generated.
+      derivedFrom:
+        type: array
+        ordered: false
+        items:
+          $ref: "#/$defs/InformationEntity"
+        description: Another Information Entity from which this Information Entity is derived, in whole or in part.
+      recordMetadata:
+        $ref: "#/$defs/RecordMetadata"
+        description: Metadata that applies to a specific concrete record of information as encoded in a particular system.
+    heritableRequired:
+      - id
+      - type
+
   DataItem:
     inherits: gks.core:InformationEntity
     maturity: draft
@@ -89,6 +139,67 @@ $defs:
         description: >-
           A license that dictates legal permissions for how the Data Set can be used -
           referenced by a URL where possible.
+
+  Document:
+    type: object
+    inherits: InformationEntity
+    maturity: draft
+    description: a representation of a physical or digital document
+    properties:
+      type:
+        type: string
+        const: Document
+        default: Document
+        description: Must be "Document"
+      subtype:
+        $refCurie: gks.core:Coding
+        description: >-
+          A more specific type for the document (e.g. a publication, patent, pathology report)
+      title:
+        type: string
+        description: The title of the Document
+      url:
+        type: string
+        description: A URL at which the document may be retrieved.
+        format: uri
+        pattern: "^(https?|s?ftp)://"
+      doi:
+        type: string
+        pattern: "^10.(\\d+)(\\.\\d+)*/[\\w\\-\\.]+"
+        description: >-
+          A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_`
+          for the document.
+      pmid:
+        type: integer
+        description: A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_.
+
+  Method:
+    type: object
+    inherits: InformationEntity
+    maturity: draft
+    description: >-
+      A set of instructions that specify how to achieve some objective (e.g. experimental protocols,
+      curation guidelines, rule sets, etc.)
+    properties:
+      type:
+        type: string
+        const: Method
+        default: Method
+        description: MUST be "Method".
+      isReportedIn:
+        oneOf:
+        - $refCurie: gks.core:IRI
+        - $ref: "#/$defs/Document"
+      subtype:
+        $refCurie: gks.core:Coding
+        description: >-
+          A more specific type of entity the method represents (e.g. Variant Interpretation Guideline,
+          Experimental Protocol)
+      license:
+        type: string
+        description: >-
+          A particular license that dictates legal permissions for how a published method (e.g. an
+          experimental protocol, workflow specification, curation guideline) can be used.
 
   Statement:
     inherits: gks.core:InformationEntity
