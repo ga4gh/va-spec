@@ -103,6 +103,13 @@ $defs:
         description: The predicate of the Statement.
       object:
         description: The object of the Statement.
+      qualifier:
+        description: >-
+          An additional piece of information that extends or refines the meaning of the core 
+          subject-predicate-object 'triple' - by providing additional detail, or constraining 
+          the statement to apply in a particular context.
+        type: object
+        additionalProperties: false
       direction:
         type: string
         enum:
@@ -138,7 +145,7 @@ $defs:
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's proposition, in terms of a classification of the
-          Statement subject. Permissible values for this attribute are typically
+          Statement's subject. Permissible values for this attribute are typically
           selected to be succinct and familiar in the target community of practice. e.g.
           'likely pathogenic' in the domain of variant pathogenicity classification'.
       hasEvidenceOfType:
