@@ -187,14 +187,18 @@ $defs:
         description: >-
           The specific subject or experimental unit in a Study that data in the StudyResult object is about.
           e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
-      dataItems:
-        type: array
-        ordered: false
-        items:
-          $ref: "#/$defs/DataItem"
+      dataItem:
+        type: object
+        additionalProperties: false
         description: >-
-          A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'.
-          This data can directly describe this focus, or represent metadata about data in the Result were generated.
+          An item of data that is included in the StudyResult because it pertains to the 'focus' of the result.
+          This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or 
+          represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to 
+          determine this allele frequency).
+        comment: >-
+          Note that in profiles of the StudyResult class, 'dataItem' is typically specialized into one or more 
+          datatype-specific properties that are defined to capture a specifc kind of data. e.g. 'focusAlleleCount'
+          and 'focusAlleleFrequency' in a CohortAlleleFrequencyStudyResult profile.
       sourceDataSet:
         extends: derivedFrom
         items:
