@@ -104,11 +104,16 @@ $defs:
       object:
         description: The object of the Statement.
       qualifier:
+        type: object
         description: >-
           An additional piece of information that extends or refines the meaning of the core 
-          subject-predicate-object 'triple' - by providing additional detail, or constraining 
-          the statement to apply in a particular context.
-        type: object
+          subject-predicate-object 'triple' - by providing additional details, precision, or 
+          constraining the statement to apply in a particular context.
+        comment: >-
+          Note that in profiles of the Statement class, 'qualifier' is typically specialized into one
+          or more properties that are defined to capture a specifc kind of qualifying information.
+          e.g.'modeOfInheritanceQualifier' and 'geneContextQualifier' in a VariantPathogenicityStatement 
+          profile.
         additionalProperties: false
       direction:
         type: string
