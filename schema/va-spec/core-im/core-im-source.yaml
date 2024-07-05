@@ -103,18 +103,25 @@ $defs:
         description: The predicate of the Statement.
       object:
         description: The object of the Statement.
-      qualifier:
-        type: object
-        description: >-
-          An additional piece of information that extends or refines the meaning of the core 
-          subject-predicate-object 'triple' - by providing additional details, precision, or 
-          constraining the statement to apply in a particular context.
-        comment: >-
-          Note that in profiles of the Statement class, 'qualifier' is typically specialized into one
-          or more properties that are defined to capture a specifc kind of qualifying information.
-          e.g.'modeOfInheritanceQualifier' and 'geneContextQualifier' in a VariantPathogenicityStatement 
-          profile.
-        additionalProperties: false
+        
+#  Commenting out the 'qualifier' property for now to aviod its unwanted inheritance in Statement profiles.
+#  Ww will re-instate this property once we determine if/how the metaschema processer can evolve to support
+#  the use case described in the 'comment' below, and discussed in va-spec issue #134.
+#
+#     qualifier:
+#       type: object
+#       description: >-
+#         An additional piece of information that extends or refines the meaning of the core 
+#         subject-predicate-object 'triple' - by providing additional details, precision, or 
+#         constraining the statement to apply in a particular context.
+#       comment: >-
+#         Note that this qualifier property is a 'placeholder' that should not be inherited or used 
+#         as is in dervied Statement profiles. It is meant to be specialized into more specifc properties
+#         that are defined to capture a specifc kind of qualifying information relevant to a particular 
+#         Statement profile. e.g. for a VariantPathogenicityStatement, it is specalized into 
+#        'modeOfInheritanceQualifier' and 'geneContextQualifier' properties.  
+#       additionalProperties: false
+
       direction:
         type: string
         enum:
