@@ -139,6 +139,7 @@ $defs:
         extends: isReportedIn
         minItems: 1
       alleleOriginQualifier:
+#       multiplies: qualifier    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         description: >-
           Whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
@@ -148,6 +149,7 @@ $defs:
         - somatic
         - combined
       allelePrevalenceQualifier:
+#       multiplies: qualifier    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         description: >-
           Whether the statement should be interpreted in the context of the variant
           being rare or common.
@@ -156,6 +158,7 @@ $defs:
         - rare
         - common
       geneContextQualifier:
+#       multiplies: qualifier    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         description: A gene context that qualifies the Statement.
         $refCurie: gks.domain-entities:Gene
     required:
@@ -264,8 +267,9 @@ $defs:
         - low
         - risk allele
         description: >-
-          The extent to which the variant impact is expressed by individuals carrying it as
-          a measure of the proportion of carriers exhibiting the condition.
+          Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent 
+          to which the variant impact is expressed by individuals carrying it as a measure of the 
+          proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
         type: string
         enum:
@@ -275,9 +279,11 @@ $defs:
         - X-linked recessive
         - mitochondrial
         description: >-
-          The pattern of inheritance expected for the pathogenic effect of this variant.
+          Reports a pattern of inheritance expected for the pathogenic effect of the variant. 
       geneContextQualifier:
-        description: A gene context that qualifies the Statement.
+        description: >-
+          Reports the gene through which the pathogenic effect asserted for the variant is mediated 
+          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
         $refCurie: gks.domain-entities:Gene
     required:
     - subjectVariant

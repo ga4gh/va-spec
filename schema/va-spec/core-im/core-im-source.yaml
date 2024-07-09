@@ -103,6 +103,24 @@ $defs:
         description: The predicate of the Statement.
       object:
         description: The object of the Statement.
+
+#  Note that the `qualifier` property below is a *placeholder* that should not be inherited or used 
+#  as is in dervied Statement profiles. It is meant to be specialized into more specifc properties
+#  that are defined to capture a specifc kind of qualifying information relevant to a particular 
+#  Statement profile. e.g. for a VariantPathogenicityStatement, it is specalized into 
+#  'modeOfInheritanceQualifier' and 'geneContextQualifier' properties. 
+#  Commenting out this property for now to aviod its unwanted inheritance in Statement profiles.
+#  Ww will re-instate this property once we determine if/how the metaschema processer can evolve to support
+#  the use case described in the 'comment' below, and discussed in va-spec issue #134.
+#
+#     qualifier:
+#       type: object
+#       placeholder: true      # example of what a flag on core-im properties meant to be placeholders might look like
+#       description: >-
+#         An additional piece of information that extends or refines the meaning of the core 
+#         subject-predicate-object 'triple' - by providing additional details, precision, or 
+#         constraining the statement to apply in a particular context.
+
       direction:
         type: string
         enum:
@@ -138,7 +156,7 @@ $defs:
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's proposition, in terms of a classification of the
-          Statement subject. Permissible values for this attribute are typically
+          Statement's subject. Permissible values for this attribute are typically
           selected to be succinct and familiar in the target community of practice. e.g.
           'likely pathogenic' in the domain of variant pathogenicity classification'.
       hasEvidenceOfType:
