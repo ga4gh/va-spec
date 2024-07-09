@@ -139,6 +139,7 @@ $defs:
         extends: isReportedIn
         minItems: 1
       alleleOriginQualifier:
+#       multiplies: qualifier    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         description: >-
           Whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
@@ -148,6 +149,7 @@ $defs:
         - somatic
         - combined
       allelePrevalenceQualifier:
+#       multiplies: qualifier    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         description: >-
           Whether the statement should be interpreted in the context of the variant
           being rare or common.
@@ -156,6 +158,7 @@ $defs:
         - rare
         - common
       geneContextQualifier:
+#       multiplies: qualifier    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         description: A gene context that qualifies the Statement.
         $refCurie: gks.domain-entities:Gene
     required:
