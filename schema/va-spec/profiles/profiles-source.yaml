@@ -328,7 +328,7 @@ $defs:
       alleleOriginQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of an inherited
+          Reports whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         enum:
         - germline
@@ -337,7 +337,7 @@ $defs:
       allelePrevalenceQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of the variant
+          Reports whether the statement should be interpreted in the context of the variant
           being rare or common.
         enum:
         - rare
@@ -384,18 +384,18 @@ $defs:
         oneOf:
         - $refCurie: gks.domain-entities:TherapeuticProcedure
         - $refCurie: gks.core:IRI
-      disease:
+      diseaseQualifier:
         oneOf:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.core:IRI
-        description: The disease context in which the variant impact is evaluated.
-      isReportedIn:
-        extends: isReportedIn
-        minItems: 1
+        description: >-
+          Reports the disease context in which the variant's association with therapeutic 
+          sensitivity or resistance is evaluated. Note that this is a required qualifier in 
+          therapeutic response statements.
       alleleOriginQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of an inherited
+          Reports whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         enum:
           - germline
@@ -404,16 +404,22 @@ $defs:
       allelePrevalenceQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of the variant
+         Reports wWhether the statement should be interpreted in the context of the variant
           being rare or common.
         enum:
           - rare
           - common
       geneContextQualifier:
-        description: A gene context that qualifies the Statement.
+        description: >
+          Reports a gene impacted by the variant, which contributes to the therapeutic 
+          sensitivity or resistance reported in the Statement. 
         $refCurie: gks.domain-entities:Gene
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
     required:
     - subjectVariant
     - predicate
     - objectTherapeutic
+    - diseaseQualifier
     - isReportedIn
