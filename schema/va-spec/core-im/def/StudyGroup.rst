@@ -4,7 +4,7 @@ A collection of individuals or specimens from the same taxonomic class, selected
 
     **Information Model**
     
-Some StudyGroup attributes are inherited from :ref:`gks.core:Entity`.
+Some StudyGroup attributes are inherited from :ref:`gks.common:Entity`.
 
     .. list-table::
        :class: clean-wrap
@@ -33,12 +33,12 @@ Some StudyGroup attributes are inherited from :ref:`gks.core:Entity`.
           - 0..m
           - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../../gks-core-im/core.json#/$defs/Extension>`_
+          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - type
           - string
-          - 0..1
+          - 1..1
           - Must be "StudyGroup"
        *  - memberCount
           - integer

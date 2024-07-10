@@ -30,9 +30,15 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "type": {
+         "type": "string",
+         "const": "Proposition",
+         "default": "Proposition",
+         "description": "Must be \"Proposition\""
       },
       "statementText": {
          "type": "string",
@@ -40,32 +46,32 @@
       },
       "subject": {
          "type": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Entity"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Entity"
          },
          "description": "The Entity or concept about which the Proposition is made."
       },
       "predicate": {
          "type": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
          },
          "description": "The relationship asserted to hold between the subject and the object of the Proposition."
       },
       "object": {
          "type": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Entity"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Entity"
          },
          "description": "An Entity that is related to the subject of a Proposition via its predicate."
       },
       "qualifier": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Entity"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Entity"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
          "description": "An entity or concept applied to extend or refine the meaning of a Proposition's core subject-predicate-object 'triple' - by providing additional detail, or constraining the claim to apply in a particular context."
@@ -80,6 +86,8 @@
       "predicate",
       "object"
    ],
-   "required": [],
+   "required": [
+      "type"
+   ],
    "additionalProperties": false
 }

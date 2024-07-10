@@ -6,13 +6,13 @@ strict: true
 imports:
   va.core: ../core-im/core-im-source.yaml
   catvrs: ../../catvrs/catvrs-source.yaml
-  gks.core: ../../gks-core-im/core-im-source.yaml
+  gks.common: ../../gks-common/common-source.yaml
   gks.domain-entities: ../../gks-domain-entities/domain-entities-source.yaml
   vrs: ../../vrs/vrs-source.yaml
 
 namespaces:
   va.core: ../core-im/core-im.json#/$defs/
-  gks.core: ../../gks-core-im/core-im.json#/$defs/
+  gks.common: ../../gks-common/common.json#/$defs/
   gks.domain-entities: ../../gks-domain-entities/domain-entities.json#/$defs/
   catvrs: ../../catvrs/catvrs.json#/$defs/
   vrs: ../../vrs/vrs.json#/$defs/
@@ -26,7 +26,7 @@ $defs:
       A StudyResult that reports measures related to the frequency of an Allele in a cohort
     properties:
       type:
-        type: string
+        extends: type
         const: "CohortAlleleFrequencyStudyResult"
         default: "CohortAlleleFrequencyStudyResult"
         description: MUST be "CohortAlleleFrequencyStudyResult".
@@ -42,33 +42,44 @@ $defs:
           format: uri-reference
           description: The Allele for which the frequency is being reported.
       focusAlleleCount:
-        inherits: va.core:DataItem
-        description: The number of occurrences of the focusAllele in the cohort.
-        properties:
-          value:
-            extends: value
-            type: integer
-            description: The number of occurrences of the focusAllele in the cohort.
+#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
+        # $refCurie: va.core:DataItem
+        # description: The number of occurrences of the focusAllele in the cohort.
+        # properties:
+        #   value:
+        #     extends: value
+        #     type: integer
+        #     description: The number of occurrences of the focusAllele in the cohort.
+        type: integer
+        description: The number of occurrences of the focusAllele in the cohort.        
       locusAlleleCount:  
-        inherits: va.core:DataItem
+#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)      
+        # $refCurie: va.core:DataItem
+        # description: >-
+        #   The number of occurrences of alleles at the locus in the cohort
+        #   (count of all alleles at this locus, sometimes referred to as "allele number")    
+        # properties:
+        #   value:
+        #     extends: value
+        #     type: integer
+        #     description: >-
+        #       The number of occurrences of alleles at the locus in the cohort
+        #       (count of all alleles at this locus, sometimes referred to as "allele number")
+        type: integer
         description: >-
           The number of occurrences of alleles at the locus in the cohort
-          (count of all alleles at this locus, sometimes referred to as "allele number")    
-        properties:
-          value:
-            extends: value
-            type: integer
-            description: >-
-              The number of occurrences of alleles at the locus in the cohort
-              (count of all alleles at this locus, sometimes referred to as "allele number")
+          (count of all alleles at this locus, sometimes referred to as "allele number")
       alleleFrequency: 
-        inherits: va.core:DataItem
-        description: The frequency of the focusAllele in the cohort.
-        properties:
-          value:
-            extends: value
-            type: number
-            description: The frequency of the focusAllele in the cohort.
+#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)      
+        # $refCurie: va.core:DataItem
+        # description: The frequency of the focusAllele in the cohort.
+        # properties:
+        #   value:
+        #     extends: value
+        #     type: number
+        #     description: The frequency of the focusAllele in the cohort.
+        type: number
+        description: The frequency of the focusAllele in the cohort.        
       cohortStudyGroup:    
         extends: studyGroup   
         description: The cohort from which the frequency was derived.
@@ -79,15 +90,39 @@ $defs:
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
-        additionalProperties: true
-      qualityMeasures:    
-        description: >-
-          Quality measures associated with the CohortAlleleFrequency and how it was
-          derived, which may impact interpretation.                             
-        maturity: draft
-        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-        type: object
-        additionalProperties: true
+        additionalProperties: false
+        properties:
+          grpMaxFAF95:
+            description: >-
+              The maximum allele frequency in the cohort group for a within a 95% confidence interval.
+            type: object
+            properties:
+              frequency:
+                type: number
+                description: The maximum allele frequency in the cohort group.
+              confidenceInterval:
+                type: number
+                description: The confidence interval for the maximum allele frequency.
+              groupId:
+                type: string
+                description: The group ID for which the maximum allele frequency is reported.
+          jointGrpMaxFAF95: 
+            description: >-
+              The maximum allele frequency in the joint cohort group within a 95% confidence interval.
+            type: number
+            description: The maximum allele frequency in the cohort group.            
+          homozygotes: 
+            type: integer
+          hemizygotes: 
+            type: integer
+      # qualityMeasures:    
+      #   description: >-
+      #     Quality measures associated with the CohortAlleleFrequency and how it was
+      #     derived, which may impact interpretation.                             
+      #   maturity: draft
+      #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+      #   type: object
+      #   additionalProperties: true
       subCohortFrequency:    
         description: >-
           A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
@@ -113,7 +148,7 @@ $defs:
       (positive) or lack of a disease (negative).
     properties:
       type:
-        type: string
+        extends: type
         const: "VariantDiagnosticStudyStatement"
         default: "VariantDiagnosticStudyStatement"
         description: MUST be "VariantDiagnosticStudyStatement".
@@ -122,7 +157,7 @@ $defs:
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -133,7 +168,7 @@ $defs:
         extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: The disease that is evaluated for diagnosis.
       isReportedIn:
         extends: isReportedIn
@@ -176,7 +211,7 @@ $defs:
       A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
     properties:
       type:
-        type: string
+        extends: type
         const: "VariantOncogenicityStatement"
         default: "VariantOncogenicityStatement"
         description: MUST be "VariantOncogenicityStatement".
@@ -185,7 +220,7 @@ $defs:
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -197,7 +232,7 @@ $defs:
         extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: >-
           The tumor type for which the variant impact is evaluated.
       isReportedIn:
@@ -240,7 +275,7 @@ $defs:
       inherited disorder.
     properties:
       type:
-        type: string
+        extends: type
         const: "VariantPathogenicityStatement"
         default: "VariantPathogenicityStatement"
         description: MUST be "VariantPathogenicityStatement".
@@ -249,7 +284,7 @@ $defs:
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -258,7 +293,7 @@ $defs:
         extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: The :ref:`Condition` for which the variant impact is stated.    
       penetranceQualifier:
         type: string
@@ -300,7 +335,7 @@ $defs:
       worse outcome for a disease.
     properties:
       type:
-        type: string
+        extends: type
         const: "VariantPrognosticStudyStatement"
         default: "VariantPrognosticStudyStatement"
         description: MUST be "VariantPrognosticStudyStatement".
@@ -309,7 +344,7 @@ $defs:
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -320,7 +355,7 @@ $defs:
         extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: The disease that is evaluated for outcome.
       isReportedIn:
         extends: isReportedIn
@@ -361,7 +396,7 @@ $defs:
       neoplasm to drug administration or other therapeutic procedure.
     properties:
       type:
-        type: string
+        extends: type
         const: "VariantTherapeuticResponseStudyStatement"
         default: "VariantTherapeuticResponseStudyStatement"
         description: MUST be "VariantTherapeuticResponseStudyStatement".
@@ -370,7 +405,7 @@ $defs:
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -383,11 +418,11 @@ $defs:
         extends: object
         oneOf:
         - $refCurie: gks.domain-entities:TherapeuticProcedure
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
       diseaseQualifier:
         oneOf:
         - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.core:IRI
+        - $refCurie: gks.common:IRI
         description: >-
           Reports the disease context in which the variant's association with therapeutic 
           sensitivity or resistance is evaluated. Note that this is a required qualifier in 

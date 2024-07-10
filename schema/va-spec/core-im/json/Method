@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataSet",
-   "title": "DataSet",
-   "maturity": "draft",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/Method",
+   "title": "Method",
    "type": "object",
-   "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
+   "maturity": "draft",
+   "description": "A set of instructions that specify how to achieve some objective (e.g. experimental protocols, curation guidelines, rule sets, etc.)",
    "properties": {
       "id": {
          "type": "string",
@@ -54,19 +54,14 @@
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
       "isReportedIn": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
-               }
-            ]
-         },
-         "description": "A document in which the information content is expressed."
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ]
       },
       "dateAuthored": {
          "type": "string",
@@ -109,26 +104,17 @@
       },
       "type": {
          "type": "string",
-         "const": "DataSet",
-         "default": "DataSet",
-         "description": "MUST be \"DataSet\"."
+         "const": "Method",
+         "default": "Method",
+         "description": "MUST be \"Method\"."
       },
       "subtype": {
-         "description": "A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)",
+         "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, Experimental Protocol)",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
-      },
-      "releaseDate": {
-         "type": "string",
-         "format": "datetime",
-         "description": "Indicates when a version of a Data Set was formally released."
-      },
-      "version": {
-         "type": "string",
-         "description": "The version of the Data Set, as assigned by its creator."
       },
       "license": {
          "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
+         "description": "A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used.          "
       }
    },
    "required": [

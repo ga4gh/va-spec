@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/StudyGroup",
-   "title": "StudyGroup",
-   "maturity": "draft",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/Agent",
+   "title": "Agent",
    "type": "object",
-   "description": "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, ethnicity, race, country of origin, clinical history, age, gender, geographic location, income, etc.) May be referred to as a 'cohort' or 'population' in specific research settings.",
+   "maturity": "draft",
+   "description": "An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.",
    "properties": {
       "id": {
          "type": "string",
@@ -36,29 +36,22 @@
       },
       "type": {
          "type": "string",
-         "const": "StudyGroup",
-         "default": "StudyGroup",
-         "description": "Must be \"StudyGroup\""
+         "const": "Agent",
+         "default": "Agent",
+         "description": "MUST be \"Agent\"."
       },
-      "memberCount": {
-         "type": "integer",
-         "description": "the total number of individual members in the study group"
+      "name": {
+         "type": "string",
+         "description": "The descriptive name of the agent."
       },
-      "isSubsetOf": {
-         "type": "array",
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyGroup"
-         },
-         "ordered": false,
-         "description": "A larger study group of which this study group represents a subset."
-      },
-      "characteristics": {
-         "type": "array",
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Characteristic"
-         },
-         "ordered": false,
-         "description": "A feature or characteristic shared by all members of the study group, and representing a criteria for membership in the group."
+      "subtype": {
+         "type": "string",
+         "description": "A more specific type of agent the agent represents.",
+         "enum": [
+            "person",
+            "organization",
+            "software"
+         ]
       }
    },
    "required": [

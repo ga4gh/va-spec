@@ -33,23 +33,19 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 0..m
           - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../core-im/../../gks-core-im/core.json#/$defs/Extension>`_
+          - `Extension <../core-im/../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
-       *  - type
-          - string
-          - 1..1
-          - MUST be "CohortAlleleFrequencyStudyResult".
        *  - specifiedBy
-          - `Method <../core-im/../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
+          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
-          - `Contribution <../core-im/../../gks-core-im/core.json#/$defs/Contribution>`_
+          - `Contribution <../core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - `Document <../core-im/../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../core-im/../../gks-core-im/core.json#/$defs/IRI>`_
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
@@ -57,13 +53,17 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - recordMetadata
-          - #/$defs/RecordMetadata
+          - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
-       *  - dataItems
-          - `DataItem <../core-im/core.json#/$defs/DataItem>`_
-          - 0..m
-          - A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about data in the Result were generated.
+       *  - dataItem
+          - object
+          - 0..1
+          - An item of data that is included in the StudyResult because it pertains to the 'focus' of the result. This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or  represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to  determine this allele frequency).
+       *  - type
+          - string
+          - 1..1
+          - MUST be "CohortAlleleFrequencyStudyResult".
        *  - sourceDataSet
           - `DataSet <../core-im/core.json#/$defs/DataSet>`_
           - 0..m
@@ -73,15 +73,15 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 1..1
           - The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
        *  - focusAlleleCount
-          - _Not Specified_
+          - integer
           - 1..1
           - The number of occurrences of the focusAllele in the cohort.
        *  - locusAlleleCount
-          - _Not Specified_
+          - integer
           - 1..1
-          - The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as "allele number")    
+          - The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as "allele number")
        *  - alleleFrequency
-          - _Not Specified_
+          - number
           - 1..1
           - The frequency of the focusAllele in the cohort.
        *  - cohortStudyGroup
@@ -92,10 +92,6 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - object
           - 0..1
           - Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.               
-       *  - qualityMeasures
-          - object
-          - 0..1
-          - Quality measures associated with the CohortAlleleFrequency and how it was derived, which may impact interpretation.                             
        *  - subCohortFrequency
           - :ref:`CohortAlleleFrequencyStudyResult`
           - 0..m

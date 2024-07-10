@@ -30,23 +30,17 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
-      },
-      "type": {
-         "type": "string",
-         "const": "InformationEntity",
-         "default": "InformationEntity",
-         "description": "MUST be \"InformationEntity\"."
       },
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Method"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -55,7 +49,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
@@ -65,10 +59,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
                }
             ]
          },
@@ -83,13 +77,41 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Statement"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult"
+               }
+            ]
          },
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "$ref": "/ga4gh/schema/gks-core-im/1.x/json/RecordMetadata",
+         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
+      },
+      "type": {
+         "type": "string",
+         "const": "EvidenceLine",
+         "default": "EvidenceLine",
+         "description": "Must be \"EvidenceLine\""
       },
       "targetProposition": {
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
@@ -99,7 +121,29 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Statement"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyResult"
+               }
+            ]
          },
          "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line."
       },
@@ -115,10 +159,10 @@
       "strengthOfEvidenceProvided": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
          "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value."
