@@ -1,10 +1,10 @@
 **Computational Definition**
 
-An action or set of actions performed by an agent, that occurs over a period of time. Activities may use, generate, modify, move, or destroy one or more entities.
+An action taken by an agent in contributing to the creation, modification, assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataItem, Publication, etc.)
 
     **Information Model**
     
-Some Activity attributes are inherited from :ref:`gks.common:Entity`.
+Some Contribution attributes are inherited from :ref:`Activity`.
 
     .. list-table::
        :class: clean-wrap
@@ -20,10 +20,6 @@ Some Activity attributes are inherited from :ref:`gks.common:Entity`.
           - string
           - 0..1
           - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
-       *  - type
-          - string
-          - 1..1
-          - 
        *  - label
           - string
           - 0..1
@@ -48,11 +44,19 @@ Some Activity attributes are inherited from :ref:`gks.common:Entity`.
           - string
           - 0..1
           - The date that the Activity was completed. The date SHOULD be formatted as a date string in ISO format "YYYY-MM-DD".
-       *  - performedBy
-          - :ref:`Agent`
-          - 0..m
-          - An Agent who contributed to executing the Activity.
        *  - specifiedBy
           - :ref:`Method`
           - 0..m
           - A method that was followed in performing an Activity, that describes how it was executed.
+       *  - type
+          - string
+          - 1..1
+          - MUST be "Contribution".
+       *  - contributor
+          - :ref:`Agent`
+          - 1..1
+          - The agent that made the contribution.
+       *  - activityType
+          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_
+          - 0..1
+          - SHOULD describe a concept descending from the Contributor Role Ontology.

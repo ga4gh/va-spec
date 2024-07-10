@@ -30,23 +30,17 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
-      },
-      "type": {
-         "type": "string",
-         "const": "CohortAlleleFrequencyStudyResult",
-         "default": "CohortAlleleFrequencyStudyResult",
-         "description": "MUST be \"CohortAlleleFrequencyStudyResult\"."
       },
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -55,7 +49,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
@@ -65,10 +59,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
                }
             ]
          },
@@ -80,16 +74,20 @@
          "description": "Indicates when the information content expressed in the Information Entity was generated."
       },
       "recordMetadata": {
-         "type": "#/$defs/RecordMetadata",
+         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
-      "dataItems": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-         },
-         "description": "A Data Item  that is included in the StudyResult because it pertains to the entity that is the 'focus'. This data can directly describe this focus, or represent metadata about data in the Result were generated."
+      "dataItem": {
+         "type": "object",
+         "additionalProperties": false,
+         "description": "An item of data that is included in the StudyResult because it pertains to the 'focus' of the result. This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or  represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to  determine this allele frequency).",
+         "comment": "Note that in profiles of the StudyResult class, 'dataItem' is typically specialized into one or more  datatype-specific properties that are defined to capture a specifc kind of data. e.g. 'focusAlleleCount' and 'focusAlleleFrequency' in a CohortAlleleFrequencyStudyResult profile."
+      },
+      "type": {
+         "type": "string",
+         "const": "CohortAlleleFrequencyStudyResult",
+         "default": "CohortAlleleFrequencyStudyResult",
+         "description": "MUST be \"CohortAlleleFrequencyStudyResult\"."
       },
       "sourceDataSet": {
          "type": "array",
@@ -115,37 +113,16 @@
          ]
       },
       "focusAlleleCount": {
-         "inherits": "va.core:DataItem",
-         "description": "The number of occurrences of the focusAllele in the cohort.",
-         "properties": {
-            "value": {
-               "extends": "value",
-               "type": "integer",
-               "description": "The number of occurrences of the focusAllele in the cohort."
-            }
-         }
+         "type": "integer",
+         "description": "The number of occurrences of the focusAllele in the cohort."
       },
       "locusAlleleCount": {
-         "inherits": "va.core:DataItem",
-         "description": "The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as \"allele number\")    ",
-         "properties": {
-            "value": {
-               "extends": "value",
-               "type": "integer",
-               "description": "The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as \"allele number\")"
-            }
-         }
+         "type": "integer",
+         "description": "The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as \"allele number\")"
       },
       "alleleFrequency": {
-         "inherits": "va.core:DataItem",
-         "description": "The frequency of the focusAllele in the cohort.",
-         "properties": {
-            "value": {
-               "extends": "value",
-               "type": "number",
-               "description": "The frequency of the focusAllele in the cohort."
-            }
-         }
+         "type": "number",
+         "description": "The frequency of the focusAllele in the cohort."
       },
       "cohortStudyGroup": {
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyGroup",
@@ -156,14 +133,37 @@
          "maturity": "draft",
          "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
          "type": "object",
-         "additionalProperties": true
-      },
-      "qualityMeasures": {
-         "description": "Quality measures associated with the CohortAlleleFrequency and how it was derived, which may impact interpretation.                             ",
-         "maturity": "draft",
-         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
-         "type": "object",
-         "additionalProperties": true
+         "additionalProperties": false,
+         "properties": {
+            "grpMaxFAF95": {
+               "description": "The maximum allele frequency in the cohort group for a within a 95% confidence interval.",
+               "type": "object",
+               "properties": {
+                  "frequency": {
+                     "type": "number",
+                     "description": "The maximum allele frequency in the cohort group."
+                  },
+                  "confidenceInterval": {
+                     "type": "number",
+                     "description": "The confidence interval for the maximum allele frequency."
+                  },
+                  "groupId": {
+                     "type": "string",
+                     "description": "The group ID for which the maximum allele frequency is reported."
+                  }
+               }
+            },
+            "jointGrpMaxFAF95": {
+               "description": "The maximum allele frequency in the cohort group.",
+               "type": "number"
+            },
+            "homozygotes": {
+               "type": "integer"
+            },
+            "hemizygotes": {
+               "type": "integer"
+            }
+         }
       },
       "subCohortFrequency": {
          "type": "array",

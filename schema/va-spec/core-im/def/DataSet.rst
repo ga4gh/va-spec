@@ -4,7 +4,7 @@ A collection of related data items or records that are organized together in a c
 
     **Information Model**
     
-Some DataSet attributes are inherited from :ref:`gks.core:InformationEntity`.
+Some DataSet attributes are inherited from :ref:`InformationEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -33,23 +33,19 @@ Some DataSet attributes are inherited from :ref:`gks.core:InformationEntity`.
           - 0..m
           - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../../gks-core-im/core.json#/$defs/Extension>`_
+          - `Extension <../../gks-common/common.json#/$defs/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
-       *  - type
-          - string
-          - 1..1
-          - MUST be "DataSet".
        *  - specifiedBy
-          - `Method <../../gks-core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
+          - :ref:`Method` | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
-          - `Contribution <../../gks-core-im/core.json#/$defs/Contribution>`_
+          - :ref:`Contribution`
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - `Document <../../gks-core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-core-im/core.json#/$defs/IRI>`_
+          - :ref:`Document` | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
@@ -57,15 +53,19 @@ Some DataSet attributes are inherited from :ref:`gks.core:InformationEntity`.
           - 0..1
           - Indicates when the information content expressed in the Information Entity was generated.
        *  - derivedFrom
-          - `InformationEntity <../../gks-core-im/core.json#/$defs/InformationEntity>`_
+          - :ref:`InformationEntity`
           - 0..m
           - Another Information Entity from which this Information Entity is derived, in whole or in part.
        *  - recordMetadata
-          - `RecordMetadata <../../gks-core-im/core.json#/$defs/RecordMetadata>`_
+          - :ref:`RecordMetadata`
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
+       *  - type
+          - string
+          - 1..1
+          - MUST be "DataSet".
        *  - subtype
-          - `Coding <../../gks-core-im/core-im-source.yaml#/$defs/Coding>`_
+          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_
           - 0..1
           - A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)
        *  - releaseDate

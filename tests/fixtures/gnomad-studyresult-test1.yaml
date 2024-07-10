@@ -27,12 +27,12 @@ alleleFrequency: 0
 cohortStudyGroup:
   id: ALL
   label: Overall
+  type: StudyGroup
 ancillaryResults:
   grpMaxFAF95:
     frequency: 0
     confidenceInterval: 0.95
     groupId: afr
-  jointGrpMaxFAF95: 
   homozygotes: 0
   hemizygotes: 0
 subCohortFrequency:
@@ -51,12 +51,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: remaining
     label: Remaining individuals Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Remaining individuals
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -75,12 +75,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: amr
     label: Admixed American Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Admixed American
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -99,12 +99,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: fin
     label: Finnish Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Finnish
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -123,12 +123,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: ami
     label: Amish Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Amish
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -147,12 +147,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: eas
     label: East Asian Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: East Asian
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -171,12 +171,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: mid
     label: Middle Eastern Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Middle Eastern
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -195,12 +195,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: sas
     label: South Asian Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: South Asian
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -219,12 +219,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: asj
     label: Ashkenazi Jewish Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Ashkenazi Jewish
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -243,12 +243,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: afr
     label: African/African-American Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: African/African-American
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -267,12 +267,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: nfe
     label: Non-Finnish European Ancestry Group
+    type: StudyGroup
     characteristics:
     - name: genetic ancestry
       value: Non-Finnish European
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -291,12 +291,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: XX
     label: XX
+    type: StudyGroup
     characteristics:
     - name: biological sex
       value: XX
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []
@@ -315,12 +315,12 @@ subCohortFrequency:
   cohortStudyGroup:
     id: XY
     label: XY
+    type: StudyGroup
     characteristics:
     - name: biological sex
       value: XY
   ancillaryResults:
-    grpMaxFAF95: 
-    jointGrpMaxFAF95: 
+    grpMaxFAF95: {}
     homozygotes: 0
     hemizygotes: 0
   subCohortFrequency: []

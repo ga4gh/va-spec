@@ -35,21 +35,21 @@ description: 'The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observ
 contributions:
 - type: Contribution
   contributor:
-    id: clinvar.submitter/506744
-    type: Agent
-    label: ClinGen Hearing Loss Variant Curation Expert Panel
+    - id: clinvar.submitter/506744
+      type: Agent
+      label: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2020-05-04'
-  activity:
+  activityType:
     code: cg000010
     label: submitted
     system: https://dataexchange.clinicalgenome.org/codes/
 - type: Contribution
   contributor:
-    id: clinvar.submitter/506744
-    type: Agent
-    label: ClinGen Hearing Loss Variant Curation Expert Panel
+    - id: clinvar.submitter/506744
+      type: Agent
+      label: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2019-11-26'
-  activity:
+  activityType:
     code: cg000011
     label: evaluated
     system: https://dataexchange.clinicalgenome.org/codes/

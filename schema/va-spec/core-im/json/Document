@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/DataSet",
-   "title": "DataSet",
-   "maturity": "draft",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/Document",
+   "title": "Document",
    "type": "object",
-   "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
+   "maturity": "draft",
+   "description": "a representation of a physical or digital document",
    "properties": {
       "id": {
          "type": "string",
@@ -109,26 +109,32 @@
       },
       "type": {
          "type": "string",
-         "const": "DataSet",
-         "default": "DataSet",
-         "description": "MUST be \"DataSet\"."
+         "const": "Document",
+         "default": "Document",
+         "description": "Must be \"Document\""
       },
       "subtype": {
-         "description": "A specific type of data set the DataSet object represents (e.g. a clinical data set, a sequencing data set, a gene expression data set, a genome annotation data set)",
+         "description": "A more specific type for the document (e.g. a publication, patent, pathology report)",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
       },
-      "releaseDate": {
+      "title": {
          "type": "string",
-         "format": "datetime",
-         "description": "Indicates when a version of a Data Set was formally released."
+         "description": "The title of the Document"
       },
-      "version": {
+      "url": {
          "type": "string",
-         "description": "The version of the Data Set, as assigned by its creator."
+         "description": "A URL at which the document may be retrieved.",
+         "format": "uri",
+         "pattern": "^(https?|s?ftp)://"
       },
-      "license": {
+      "doi": {
          "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
+         "pattern": "^10.(\\d+)(\\.\\d+)*/[\\w\\-\\.]+",
+         "description": "A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>_` for the document."
+      },
+      "pmid": {
+         "type": "integer",
+         "description": "A [PubMed unique identifier](https://en.wikipedia.org/wiki/PubMed#PubMed_identifier)."
       }
    },
    "required": [
