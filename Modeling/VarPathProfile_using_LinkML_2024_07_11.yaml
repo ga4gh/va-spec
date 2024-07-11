@@ -1,0 +1,308 @@
+# Example of what a minimal core-im and derived VariantPathogenicityStatement profile model would look like if specified using LinkML (based on the founding linkML model, "Biolink": https://github.com/biolink/biolink-model/blob/master/biolink-model.yaml)
+# Part I includes content from the core-im needed to support a minimal VariantPathogenicityStatement profile (InformationEntity and Statement)
+# Part II includes content from profiles-source that specifies a minimal VariantPathogenicityStatement profile
+
+# ----------------------------------------------------------------------------#
+
+# Part I: core-im-source.yaml content - just InformationEntity and Statement
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/core-im-source.yaml"
+title: Variant Annotation Specification Core Information Model
+strict: true
+
+imports:
+  gks.common: ../../gks-common/common-source.yaml
+  catvrs: ../../catvrs/catvrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
+
+namespaces:
+  gks.common: ../../gks-common/common-source.json#/$defs/
+  catvrs: ../../catvrs/catvrs.json#/$defs/
+  vrs: ../../vrs/vrs.json#/$defs/
+
+$slotdefs                    # in linkML/Biolink, all slots/properties are declared independently here in slotdefs 
+
+  #InformationEntity slots
+  specifiedBy:
+     description: >-
+      A Method that describes all or part of the process through which the information was
+      generated.
+     domain:
+        oneOf:                                           # Not sure if LinkML supports 'oneOf', but it could
+          - $ref: "#/$defs/InformationEntity" 
+          - $ref: "#/$defs/Activity" 
+     range:
+       oneOf:
+         - $ref: "#/$defs/Method"
+         - $refCurie: gks.common:IRI
+  contributions:
+    description: >-
+     A list of Contribution objects that describe the activities performed by agents upon this entity.
+    domain: 
+      - $ref: "#/$defs/InformationEntity"
+    range: 
+      - $ref: "#/$defs/Contribution"
+    multivalued: true
+  isReportedIn:
+    description: A document in which the information content is expressed.
+    domain:
+      - $ref: "#/$defs/InformationEntity"
+    range:
+      oneOf:
+        - $ref: "#/$defs/Document"
+        - $refCurie: gks.common:IRI
+    multivalued: true
+  dateAuthored:
+    description: Indicates when the information content expressed in the Information Entity was generated.
+    range: 
+      - dateTime
+  derivedFrom:
+    description: Another Information Entity from which this Information Entity is derived, in whole or in part.
+    domain:  
+      -  $ref: "#/$defs/InformationEntity"
+    range:
+      - $ref: "#/$defs/InformationEntity"
+    multivalued: true    
+  recordMetadata:
+    description: Metadata that applies to a specific concrete record of information as encoded in a particular system.
+    domain:
+      - $ref: "#/$defs/InformationEntity"
+    range:
+      - $ref: "#/$defs/RecordMetadata"
+        
+  # Statement slots
+  subject:
+    description: The subject of the Statement.
+    domain:
+      - $ref: "#/$defs/Statement"
+    range:
+      oneOf: 
+        - $refCurie: gks.common:Entity
+        - $refCurie: gks.common:IRI
+        - $refCurie: gks.common:Coding
+    required: true
+  predicate:
+    description: The predicate of the Statement.
+    domain: 
+      - $ref: "#/$defs/Statement"
+    range:
+      - string
+  object:
+    description: The object of the Statement.
+    domain:
+      - $ref: "#/$defs/Statement"
+    range:
+      oneOf: 
+        - $refCurie: gks.common:Entity
+        - $refCurie: gks.common:IRI
+        - $refCurie: gks.common:Coding  
+  qualifier: 
+    description: >-
+      An additional piece of information that extends or refines the meaning of the core 
+      subject-predicate-object 'triple' - by providing additional details, precision, or 
+      constraining the statement to apply in a particular context.
+    domain:
+      - $ref: "#/$defs/Statement"
+    range:
+      oneOf: 
+        - $refCurie: gks.common:Entity
+        - $refCurie: gks.common:IRI
+        - $refCurie: gks.common:Coding  
+  direction:
+    description: >-
+      The direction of this Statement with respect to the predicate.  
+    domain:
+      - $ref: "#/$defs/Statement"
+    range:
+      - statementDirectionEnum  # supports, none, refutes
+    required: true
+  strength:
+    description: >-
+    The overall strength of support for the Statement based on all evidence assessed.
+    domain:
+      - $ref: "#/$defs/Statement"
+    range:
+      oneOf:
+        - $refCurie: gks.common:Coding
+        - $refCurie: gks.common:IRI
+  subjectClassification:
+    description: >-
+      A single term or phrase summarizing the outcome of direction and strength
+      assessments of a Statement's proposition, in terms of a classification of the
+      Statement's subject. Permissible values for this attribute are typically
+      selected to be succinct and familiar in the target community of practice. e.g.
+      'likely pathogenic' in the domain of variant pathogenicity classification'.
+    domain:
+      - $ref: "#/$defs/Statement"
+    range:
+      oneOf:
+        - $refCurie: gks.common:Coding
+        - $refCurie: gks.common:IRI
+
+# Class definitiosn start here
+$defs:
+  InformationEntity:
+    is_a: gks.common:Entity          # this class will inherit slots from Entity, in addition to those defined for this class below
+    maturity: draft
+    description: >-
+      Information Entities are abstract (non-physical) entities that are about something (i.e. they carry
+      information about things in the real world).
+    abstract: true 
+    slots:                        # 'slots' is where we formally list what properties are defined specifically for this class (in addition to thsoe inherited from its is_a ancestors)
+      - specifiedBy
+      - contributions
+      - isReportedIn
+      - dateAuthored
+      - derivedFrom
+      - recordMetadata
+    slot_usage:                   # 'slot_usage' is where we indicate where use of this slot in the context fo this class may differ from its abstract definition or how it is defined in a parent 
+      id:
+        required:true             #  here we may say that 'id' is a required slot in the context of the InformationEntity class (whereas this is not true of Entity)
+
+  Statement:
+    is_a: InformationEntity
+    maturity: draft
+    description: >-
+      A Statement (aka "Assertion") represents a claim of purported truth as made by a particular agent,
+      on a particular occasion.
+    slots:
+      - subject
+      - predicate
+      - object
+      - qualifier
+      - direction
+      - strength
+      - subjectClassification
+
+# ------------------------------------------------------------------- #
+
+# Part II: profiles-source.yaml content
+
+# Here are the slots we would define in the profiles-source.yaml file (which here only contains the VarPathStatementProfile)
+
+$slotdefs                         
+  subjectVariant:
+    is_a: $refCurie: va.core.slots:subject
+    description: A variant that is the subject of the Statement.
+    domain:
+      - $ref: "#/$defs/VariantStatement"             # note below that I do end up defining abstract intermediate classes here (e.g. 'VariantStatement', to support domain declaration for some of the slotdefs
+    range:
+      oneOf:
+        - $refCurie: vrs:Variation
+        - $refCurie: catvrs:CategoricalVariation
+        - $refCurie: gks.common:IRI
+        
+  objectCondition:
+    is_a: $refCurie: va.core.slots:object
+    description: A Condition that is the object of the Statement.
+    domain:
+      - $ref: "#/$defs/VariantConditionStatement"
+    range:
+      oneOf:
+        - $refCurie: gks.domain-entities:Condition
+        - $refCurie: gks.common:IRI
+        
+  penetranceQualifier:
+    is_a: $refCurie: va.core.slots:qualifier
+    description: >-
+      Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent 
+      to which the variant impact is expressed by individuals carrying it as a measure of the 
+      proportion of carriers exhibiting the condition.
+    domain:
+      - $ref: "#/$defs/VariantPathogenicityStatement"
+    range:
+      - penetranceEnum     # high, low, risk_allele       (in linkML, enumerations are defined as independent objects referenced from slots that are bound to them. here i just list enum members in a comment however)
+      
+   modeOfInheritanceQualifier:
+    is_a: $refCurie: va.core.slots:qualifier
+    description: >-
+      Reports a pattern of inheritance expected for the pathogenic effect of the variant.
+    domain:
+      - $ref: "#/$defs/VariantPathogenicityStatement"
+    range:
+      - modeOfInheritanceEnum      # autosomal dominant, autosomal recessive, X-linked dominant, X-linked recessive, mitochondrial      
+      
+   geneContextQualifier:
+    is_a: $refCurie: va.core.slots:qualifier
+    description: >-
+      Reports the gene through which the pathogenic effect asserted for the variant is mediated 
+      (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+    domain:
+      - $ref: "#/$defs/VariantPathogenicityStatement"
+    range:
+      - $refCurie: gks.domain-entities:Gene
+
+
+$defs
+
+  # Note that I do introduce abstract intermediate classes here, to support domain declaration for some of the slots above
+  VariantStatement:
+    is_a: va.core:Statement
+    maturity: draft
+    abstract: true
+    description: >-
+      A Statement describing a Variant.
+    slots:
+      - subjectVariant
+
+  VariantConditionStatement:
+    is_a: va.core:VariantStatement
+    maturity: draft
+    abstract: true
+    description: >-
+      A Statement describing the relationship of a Variant to a Condition.
+    slots:
+      - objectCondition
+
+  VariantConditionClassificationStatement:
+    is_a: va.core:VariantConditionStatement
+    maturity: draft
+    abstract: true
+    description: >-
+      A Statement that provides a classification of a Variant that describes its relationship to a Condition.
+    slot_usage:
+      subjectClassification:
+        required: true
+
+  # Here is the actual concrete VarPathStatement profile
+  VariantPathogenicityStatement:
+    is_a: va.core:VariantConditionClassificationStatement
+    maturity: draft
+    description: >-
+      A VariantConditionClassification describing the role of a variant in causing an 
+      inherited disorder.
+    slots:                 # lists what slots from $slotdefs above are defined for this specific class
+      - penetranceQualifier
+      - modeOfInheritanceQualifier
+      - geneContextQualifier
+    slot_usage:            # refines/constrains how slots (inherited from ancestors) are used in the context of this specific class 
+      type:
+        description: MUST be "VariantPathogenicityStatement".
+        const: "VariantPathogenicityStatement"                                # I don't think LinkML currently supports this type of thing, but it could . . . 
+        default: "VariantPathogenicityStatement"                              # I don't think LinkML currently supports this type of thing, but it could . . .
+        required: true
+      subjectVariant:
+        description: > 
+          The variant whose pathogenicity for the object Condition is assessed and described in the Statement
+      predicate:
+        description: the causal relationship asserted between the subject variant and object condition
+        required: true
+        const: "isCausalFor"
+      objectCondition:
+        description: The Condition for which the pathogenicity of the variant is assessed and stated.
+        required: true
+      direction:
+        required: true
+      subjectClassification:
+        description: >-
+          A single term or phrase summarizing the outcome of the pathogenicity assessment for the variant.
+        range: 
+          pathogenicityClassificationEnum  # pathogenic, likely_pathogenic, benign, likely_benign, uncertain_significance
+
+
+
+
+
+
+
