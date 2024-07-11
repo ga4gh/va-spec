@@ -13,6 +13,16 @@ namespaces:
   catvrs: ../../catvrs/catvrs.json#/$defs/
   vrs: ../../vrs/vrs.json#/$defs/
 
+$slotdefs:
+  subject:
+    description: The subject slot of a class using the SPOQ terms.
+  predicate:
+    description: The predicate slot of a class using the SPOQ terms.
+  object:
+    description: The object slot of a class using the SPOQ terms.
+  qualifier:
+    description: A qualifier slot of a class using the SPOQ terms.
+    
 $defs:
   InformationEntity:
     inherits: gks.common:Entity
@@ -302,35 +312,10 @@ $defs:
     inherits: InformationEntity
     description: >-
       A Statement (aka "Assertion") represents a claim of purported truth as made by a particular agent,
-      on a particular occasion.
+      on a particular occasion. In addition to the properties shared by all Statements, statements MUST
+      also have properties inheriting from Subject<ref> and Predicate<ref>, MAY also have a property inheriting
+      from Object<ref> and MAY also have one or more properties inheriting from Qualifier<ref>.
     heritableProperties:
-      subject:
-        oneOf: 
-          - type: string
-        description: The subject of the Statement.
-      predicate:
-        type: string
-        description: The predicate of the Statement.
-      object:
-        oneOf: 
-          - type: string
-        description: The object of the Statement.
-#  Note that the `qualifier` property below is a *placeholder* that should not be inherited or used 
-#  as is in dervied Statement profiles. It is meant to be specialized into more specifc properties
-#  that are defined to capture a specifc kind of qualifying information relevant to a particular 
-#  Statement profile. e.g. for a VariantPathogenicityStatement, it is specalized into 
-#  'modeOfInheritanceQualifier' and 'geneContextQualifier' properties. 
-#  Commenting out this property for now to aviod its unwanted inheritance in Statement profiles.
-#  Ww will re-instate this property once we determine if/how the metaschema processer can evolve to support
-#  the use case described in the 'comment' below, and discussed in va-spec issue #134.
-#
-#     qualifier:
-#       type: object
-#       placeholder: true      # example of what a flag on core-im properties meant to be placeholders might look like
-#       description: >-
-#         An additional piece of information that extends or refines the meaning of the core 
-#         subject-predicate-object 'triple' - by providing additional details, precision, or 
-#         constraining the statement to apply in a particular context.
       direction:
         type: string
         enum:
@@ -397,7 +382,6 @@ $defs:
           a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class
           when used data creators do not utilize an Evidence Line object.
     heritableRequired:
-      - subject
       - direction
 
   StudyResult:

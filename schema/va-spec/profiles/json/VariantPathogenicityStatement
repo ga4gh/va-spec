@@ -154,7 +154,10 @@
          "default": "VariantPathogenicityStatement",
          "description": "MUST be \"VariantPathogenicityStatement\"."
       },
-      "subjectVariant": {
+      "variant": {
+         "is_a": {
+            "$ref": "../core-im/core-im.json#/$slotdefs/subject"
+         },
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
@@ -168,12 +171,16 @@
          ],
          "description": "A variant that is the subject of the Statement."
       },
-      "predicate": {
-         "type": "string",
-         "description": "The predicate of the Statement.",
+      "causality": {
+         "is_a": {
+            "$ref": "../core-im/core-im.json#/$slotdefs/predicate"
+         },
          "const": "isCausalFor"
       },
-      "objectCondition": {
+      "condition": {
+         "is_a": {
+            "$ref": "../core-im/core-im.json#/$slotdefs/object"
+         },
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
@@ -184,7 +191,10 @@
          ],
          "description": "The Condition for which the variant impact is stated."
       },
-      "penetranceQualifier": {
+      "penetrance": {
+         "is_a": {
+            "$ref": "../core-im/core-im.json#/$slotdefs/qualifier"
+         },
          "type": "string",
          "enum": [
             "high",
@@ -193,7 +203,10 @@
          ],
          "description": "Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent  to which the variant impact is expressed by individuals carrying it as a measure of the  proportion of carriers exhibiting the condition."
       },
-      "modeOfInheritanceQualifier": {
+      "modeOfInheritance": {
+         "is_a": {
+            "$ref": "../core-im/core-im.json#/$slotdefs/qualifier"
+         },
          "type": "string",
          "enum": [
             "autosomal dominant",
@@ -204,18 +217,21 @@
          ],
          "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. "
       },
-      "geneContextQualifier": {
+      "geneContext": {
+         "is_a": {
+            "$ref": "../core-im/core-im.json#/$slotdefs/qualifier"
+         },
          "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated  (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
          "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
       }
    },
    "required": [
+      "causality",
+      "condition",
       "direction",
       "id",
-      "objectCondition",
-      "predicate",
-      "subjectVariant",
-      "type"
+      "type",
+      "variant"
    ],
    "additionalProperties": false
 }

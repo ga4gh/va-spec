@@ -12,6 +12,7 @@ imports:
 
 namespaces:
   va.core: ../core-im/core-im.json#/$defs/
+  va.core.slots: ../core-im/core-im.json#/$slotdefs/
   gks.common: ../../gks-common/common.json#/$defs/
   gks.domain-entities: ../../gks-domain-entities/domain-entities.json#/$defs/
   catvrs: ../../catvrs/catvrs.json#/$defs/
@@ -153,19 +154,19 @@ $defs:
         default: "VariantDiagnosticStudyStatement"
         description: MUST be "VariantDiagnosticStudyStatement".
       subjectVariant:
-        extends: subject
+        # extends: subject
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
         - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
-        extends: predicate
+        # extends: predicate
         enum:
         - positive
         - negative
       objectDisease:
-        extends: object
+        # extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.common:IRI
@@ -216,20 +217,20 @@ $defs:
         default: "VariantOncogenicityStatement"
         description: MUST be "VariantOncogenicityStatement".
       subjectVariant:
-        extends: subject
+        # extends: subject
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
         - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
-        extends: predicate
+        # extends: predicate
         enum:
         - isOncogenicFor
         - isProtectiveFor
         - isPredisposingFor
       objectTumorType:
-        extends: object
+        # extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.common:IRI
@@ -279,23 +280,28 @@ $defs:
         const: "VariantPathogenicityStatement"
         default: "VariantPathogenicityStatement"
         description: MUST be "VariantPathogenicityStatement".
-      subjectVariant:
-        extends: subject
+      variant:
+        is_a:
+          $refCurie: va.core.slots:subject
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
         - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
-      predicate:
-        extends: predicate
+      causality:
+        is_a:
+          $refCurie: va.core.slots:predicate
         const: isCausalFor
-      objectCondition:
-        extends: object
+      condition:
+        is_a:
+          $refCurie: va.core.slots:object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.common:IRI
         description: The :ref:`Condition` for which the variant impact is stated.    
-      penetranceQualifier:
+      penetrance:
+        is_a:
+          $refCurie: va.core.slots:qualifier
         type: string
         enum:
         - high
@@ -305,7 +311,9 @@ $defs:
           Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent 
           to which the variant impact is expressed by individuals carrying it as a measure of the 
           proportion of carriers exhibiting the condition.
-      modeOfInheritanceQualifier:
+      modeOfInheritance:
+        is_a:
+          $refCurie: va.core.slots:qualifier
         type: string
         enum:
         - autosomal dominant
@@ -315,15 +323,17 @@ $defs:
         - mitochondrial
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant. 
-      geneContextQualifier:
+      geneContext:
+        is_a:
+          $refCurie: va.core.slots:qualifier
         description: >-
           Reports the gene through which the pathogenic effect asserted for the variant is mediated 
           (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
         $refCurie: gks.domain-entities:Gene
     required:
-    - subjectVariant
-    - predicate
-    - objectCondition
+    - variant
+    - causality
+    - condition
 
 # Variant Prognostic Study Statement
   VariantPrognosticStudyStatement:
@@ -340,19 +350,19 @@ $defs:
         default: "VariantPrognosticStudyStatement"
         description: MUST be "VariantPrognosticStudyStatement".
       subjectVariant:
-        extends: subject
+        # extends: subject
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
         - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
-        extends: predicate
+        # extends: predicate
         enum:
         - Better Outcome
         - Worse Outcome
       objectDisease:
-        extends: object
+        # extends: object
         oneOf:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.common:IRI
@@ -401,21 +411,21 @@ $defs:
         default: "VariantTherapeuticResponseStudyStatement"
         description: MUST be "VariantTherapeuticResponseStudyStatement".
       subjectVariant:
-        extends: subject
+        # extends: subject
         oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
         - $refCurie: gks.common:IRI
         description: A variant that is the subject of the Statement.
       predicate:
-        extends: predicate
+        # extends: predicate
         enum:
         - predictsSensitivityTo
         - predictsResistanceTo
       objectTherapeutic:
         description: A drug administration or other therapeutic procedure that the neoplasm
           is intended to respond to.
-        extends: object
+        # extends: object
         oneOf:
         - $refCurie: gks.domain-entities:TherapeuticProcedure
         - $refCurie: gks.common:IRI
