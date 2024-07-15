@@ -4,7 +4,7 @@
    "title": "VariantPathogenicityStatement",
    "type": "object",
    "maturity": "draft",
-   "description": "A VariantClassification describing the role of a variant in causing an  inherited disorder.",
+   "description": "A VariantClassification describing the role of a variant in causing an inherited disorder.",
    "properties": {
       "id": {
          "type": "string",
@@ -191,7 +191,7 @@
             "low",
             "risk allele"
          ],
-         "description": "Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent  to which the variant impact is expressed by individuals carrying it as a measure of the  proportion of carriers exhibiting the condition."
+         "description": "Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition."
       },
       "modeOfInheritanceQualifier": {
          "type": "string",
@@ -202,10 +202,10 @@
             "X-linked recessive",
             "mitochondrial"
          ],
-         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. "
+         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant."
       },
       "geneContextQualifier": {
-         "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated  (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
+         "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
          "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
       }
    },

@@ -129,7 +129,7 @@
          "description": "The cohort from which the frequency was derived."
       },
       "ancillaryResults": {
-         "description": "Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.               ",
+         "description": "Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.",
          "maturity": "draft",
          "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
          "type": "object",
@@ -154,7 +154,7 @@
                }
             },
             "jointGrpMaxFAF95": {
-               "description": "The maximum allele frequency in the cohort group.",
+               "description": "The maximum allele frequency in the joint cohort group within a 95% confidence interval.",
                "type": "number"
             },
             "homozygotes": {
@@ -171,7 +171,7 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/profiles/json/CohortAlleleFrequencyStudyResult"
          },
-         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.                    "
+         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups."
       }
    },
    "required": [

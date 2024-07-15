@@ -107,7 +107,7 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
        *  - diseaseQualifier
           - `Condition <../../gks-domain-entities/domain-entities.json#/$defs/Condition>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 1..1
-          - Reports the disease context in which the variant's association with therapeutic  sensitivity or resistance is evaluated. Note that this is a required qualifier in  therapeutic response statements.
+          - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements.
        *  - alleleOriginQualifier
           - string
           - 0..1
@@ -120,7 +120,7 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
        *  - geneContextQualifier
           - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
           - 0..1
-          - Reports a gene impacted by the variant, which contributes to the therapeutic  sensitivity or resistance reported in the Statement. 
+          - Reports a gene impacted by the variant, which contributes to the therapeutic sensitivity or resistance reported in the Statement.
 
        *  - isReportedIn
           - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_

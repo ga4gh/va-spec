@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A :ref:`VariantClassification` describing the role of a variant in causing an  inherited disorder.
+A :ref:`VariantClassification` describing the role of a variant in causing an inherited disorder.
 
     **Information Model**
     
@@ -111,12 +111,12 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`va.core:S
        *  - penetranceQualifier
           - string
           - 0..1
-          - Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent  to which the variant impact is expressed by individuals carrying it as a measure of the  proportion of carriers exhibiting the condition.
+          - Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
        *  - modeOfInheritanceQualifier
           - string
           - 0..1
-          - Reports a pattern of inheritance expected for the pathogenic effect of the variant. 
+          - Reports a pattern of inheritance expected for the pathogenic effect of the variant.
        *  - geneContextQualifier
           - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
           - 0..1
-          - Reports the gene through which the pathogenic effect asserted for the variant is mediated  (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+          - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).

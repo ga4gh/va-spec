@@ -181,7 +181,7 @@
                "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Condition"
             }
          ],
-         "description": "Reports the disease context in which the variant's association with therapeutic  sensitivity or resistance is evaluated. Note that this is a required qualifier in  therapeutic response statements."
+         "description": "Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements."
       },
       "alleleOriginQualifier": {
          "type": "string",
@@ -201,7 +201,7 @@
          ]
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which contributes to the therapeutic  sensitivity or resistance reported in the Statement.  ",
+         "description": "Reports a gene impacted by the variant, which contributes to the therapeutic sensitivity or resistance reported in the Statement. ",
          "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
       },
       "isReportedIn": {
