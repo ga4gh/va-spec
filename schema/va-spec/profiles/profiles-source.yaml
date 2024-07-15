@@ -51,13 +51,13 @@ $defs:
         #     type: integer
         #     description: The number of occurrences of the focusAllele in the cohort.
         type: integer
-        description: The number of occurrences of the focusAllele in the cohort.        
-      locusAlleleCount:  
-#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)      
+        description: The number of occurrences of the focusAllele in the cohort.
+      locusAlleleCount:
+#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         # $refCurie: va.core:DataItem
         # description: >-
         #   The number of occurrences of alleles at the locus in the cohort
-        #   (count of all alleles at this locus, sometimes referred to as "allele number")    
+        #   (count of all alleles at this locus, sometimes referred to as "allele number")
         # properties:
         #   value:
         #     extends: value
@@ -69,8 +69,8 @@ $defs:
         description: >-
           The number of occurrences of alleles at the locus in the cohort
           (count of all alleles at this locus, sometimes referred to as "allele number")
-      alleleFrequency: 
-#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)      
+      alleleFrequency:
+#       multiplies: dataItem    (placeholder for flag I would like to add to indicate that 1:m property specialization is happening here - see issue #134)
         # $refCurie: va.core:DataItem
         # description: The frequency of the focusAllele in the cohort.
         # properties:
@@ -79,14 +79,14 @@ $defs:
         #     type: number
         #     description: The frequency of the focusAllele in the cohort.
         type: number
-        description: The frequency of the focusAllele in the cohort.        
-      cohortStudyGroup:    
-        extends: studyGroup   
+        description: The frequency of the focusAllele in the cohort.
+      cohortStudyGroup:
+        extends: studyGroup
         description: The cohort from which the frequency was derived.
-      ancillaryResults:           
+      ancillaryResults:
         description: >-
           Ancillary results that may be associated with the CohortAlleleFrequency,
-          providing additional context or information.               
+          providing additional context or information.
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
@@ -106,32 +106,31 @@ $defs:
               groupId:
                 type: string
                 description: The group ID for which the maximum allele frequency is reported.
-          jointGrpMaxFAF95: 
+          jointGrpMaxFAF95:
             description: >-
               The maximum allele frequency in the joint cohort group within a 95% confidence interval.
             type: number
-            description: The maximum allele frequency in the cohort group.            
-          homozygotes: 
+          homozygotes:
             type: integer
-          hemizygotes: 
+          hemizygotes:
             type: integer
-      # qualityMeasures:    
+      # qualityMeasures:
       #   description: >-
       #     Quality measures associated with the CohortAlleleFrequency and how it was
-      #     derived, which may impact interpretation.                             
+      #     derived, which may impact interpretation.
       #   maturity: draft
       #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
       #   type: object
       #   additionalProperties: true
-      subCohortFrequency:    
+      subCohortFrequency:
         description: >-
           A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
           This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts.
-          This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.                    
-        extends: componentResult  
+          This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+        extends: componentResult
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
-    required: 
+    required:
     - focusAllele
     - focusAlleleCount
     - locusAlleleCount
@@ -241,7 +240,7 @@ $defs:
       alleleOriginQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of an inherited 
+          Whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         enum:
         - germline
@@ -271,7 +270,7 @@ $defs:
     maturity: draft
     inherits: va.core:Statement
     description: >-
-      A :ref:`VariantClassification` describing the role of a variant in causing an 
+      A :ref:`VariantClassification` describing the role of a variant in causing an
       inherited disorder.
     properties:
       type:
@@ -294,7 +293,7 @@ $defs:
         oneOf:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.common:IRI
-        description: The :ref:`Condition` for which the variant impact is stated.    
+        description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:
         type: string
         enum:
@@ -302,8 +301,8 @@ $defs:
         - low
         - risk allele
         description: >-
-          Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent 
-          to which the variant impact is expressed by individuals carrying it as a measure of the 
+          Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent
+          to which the variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
         type: string
@@ -314,10 +313,10 @@ $defs:
         - X-linked recessive
         - mitochondrial
         description: >-
-          Reports a pattern of inheritance expected for the pathogenic effect of the variant. 
+          Reports a pattern of inheritance expected for the pathogenic effect of the variant.
       geneContextQualifier:
         description: >-
-          Reports the gene through which the pathogenic effect asserted for the variant is mediated 
+          Reports the gene through which the pathogenic effect asserted for the variant is mediated
           (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
         $refCurie: gks.domain-entities:Gene
     required:
@@ -424,8 +423,8 @@ $defs:
         - $refCurie: gks.domain-entities:Condition
         - $refCurie: gks.common:IRI
         description: >-
-          Reports the disease context in which the variant's association with therapeutic 
-          sensitivity or resistance is evaluated. Note that this is a required qualifier in 
+          Reports the disease context in which the variant's association with therapeutic
+          sensitivity or resistance is evaluated. Note that this is a required qualifier in
           therapeutic response statements.
       alleleOriginQualifier:
         type: string
@@ -446,8 +445,8 @@ $defs:
           - common
       geneContextQualifier:
         description: >
-          Reports a gene impacted by the variant, which contributes to the therapeutic 
-          sensitivity or resistance reported in the Statement. 
+          Reports a gene impacted by the variant, which contributes to the therapeutic
+          sensitivity or resistance reported in the Statement.
         $refCurie: gks.domain-entities:Gene
       isReportedIn:
         extends: isReportedIn

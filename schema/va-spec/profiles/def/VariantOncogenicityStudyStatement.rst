@@ -111,7 +111,7 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.co
        *  - alleleOriginQualifier
           - string
           - 0..1
-          - Whether the statement should be interpreted in the context of an inherited  (germline) variant, an acquired (somatic) mutation, or both (combined).
+          - Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
        *  - allelePrevalenceQualifier
           - string
           - 0..1

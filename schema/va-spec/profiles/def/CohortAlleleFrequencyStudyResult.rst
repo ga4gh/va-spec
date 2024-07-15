@@ -91,8 +91,8 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
        *  - ancillaryResults
           - object
           - 0..1
-          - Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.               
+          - Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.
        *  - subCohortFrequency
           - :ref:`CohortAlleleFrequencyStudyResult`
           - 0..m
-          - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.                    
+          - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
