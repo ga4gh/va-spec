@@ -1,0 +1,38 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/core-im/json/RecordMetadata",
+   "title": "RecordMetadata",
+   "type": "object",
+   "maturity": "draft",
+   "description": "A reusable structure that encapsulates provenance metadata about a serialized data record or object in a particular dataset (as opposed to provenance about the real world entity this record or object represents).",
+   "comment": "Record-level metadata applies to a specific concrete encoding/serialization of information  (e.g as a record in a specific data/knowlegebase, or an online digital resource).  A RecordMetadata object can capture when, how, and by whom a specific record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level  administrative information such as versioning and lifecycle status. RecordMetadata objects should  not be used to describe provenance of the abstract information content or knowledge captured in a  data record or object - other properties in the model are defined to support this use case. ",
+   "properties": {
+      "recordIdentifier": {
+         "type": "string",
+         "description": "The identifier of the data record or object described in this RecordMetadata object."
+      },
+      "recordVersion": {
+         "type": "string",
+         "description": "The version number of the record-level artifact the object describes."
+      },
+      "derivedFrom": {
+         "type": "string",
+         "description": "Another data record from which the record described here was derived, through a data  ingest and/or transformation process. Value should be a string representing the identifier of the source record."
+      },
+      "dateRecordCreated": {
+         "type": "string",
+         "format": "datetime",
+         "description": "The date the record was initially created."
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
+         },
+         "description": "Describes specific contributions made by an human or software agent to the creation, modification, or administrative management of a data record or object."
+      }
+   },
+   "required": [],
+   "additionalProperties": false
+}

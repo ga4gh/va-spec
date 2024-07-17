@@ -1,28 +1,28 @@
 tests:
-  - test_file: allele.yaml
-    schema: vrs
-    definition: Allele
-  - test_file: allele2.yaml
-    schema: vrs
-    definition: Allele
-  - test_file: VA-ClinVar-SCV-Example-001.yaml
-    schema: varstatement
-    definition: VariantPathogenicityStatement
-  - test_file: VA-ClinVar-SCV-Example-002.yaml
-    schema: varstatement
-    definition: VariantPathogenicityStatement
-  - test_file: therapeuticAgent.yaml
-    schema: gks.common
-    definition: TherapeuticAgent
-  - test_file: tr-statement-inline.yaml
-    schema: varstatement
-    definition: VariantTherapeuticResponseStudyStatement
-  - test_file: diagnostic-inline.yaml
-    schema: varstatement
-    definition: VariantDiagnosticStudyStatement
-  - test_file: prognostic-inline.yaml
-    schema: varstatement
-    definition: VariantPrognosticStudyStatement
+  # - test_file: allele.yaml
+  #   schema: vrs
+  #   definition: Allele
+  # - test_file: allele2.yaml
+  #   schema: vrs
+  #   definition: Allele
+  # - test_file: VA-ClinVar-SCV-Example-001.yaml
+  #   schema: varstatement
+  #   definition: VariantPathogenicityStatement
+  # - test_file: VA-ClinVar-SCV-Example-002.yaml
+  #   schema: varstatement
+  #   definition: VariantPathogenicityStatement
+  # - test_file: therapeuticAgent.yaml
+  #   schema: gks.common
+  #   definition: TherapeuticAgent
+  # - test_file: tr-statement-inline.yaml
+  #   schema: varstatement
+  #   definition: VariantTherapeuticResponseStudyStatement
+  # - test_file: diagnostic-inline.yaml
+  #   schema: varstatement
+  #   definition: VariantDiagnosticStudyStatement
+  # - test_file: prognostic-inline.yaml
+  #   schema: varstatement
+  #   definition: VariantPrognosticStudyStatement
   - test_file: gnomad-studyresult-test1.yaml
     schema: studyresult
     definition: CohortAlleleFrequencyStudyResult

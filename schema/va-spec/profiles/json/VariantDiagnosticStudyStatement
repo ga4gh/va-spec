@@ -30,23 +30,17 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
-      },
-      "type": {
-         "type": "string",
-         "const": "VariantDiagnosticStudyStatement",
-         "default": "VariantDiagnosticStudyStatement",
-         "description": "MUST be \"VariantDiagnosticStudyStatement\"."
       },
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -55,7 +49,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Contribution"
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
@@ -68,12 +62,12 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
          },
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "type": "#/$defs/RecordMetadata",
+         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
       "direction": {
@@ -88,10 +82,10 @@
       "strength": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
          "description": "The overall strength of support for the Statement based on all evidence assessed."
@@ -107,19 +101,19 @@
       "subjectClassification": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
-         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
+         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
       },
       "hasEvidenceOfType": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Coding"
+            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
          },
          "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')."
       },
@@ -135,23 +129,29 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/json/InformationEntity"
+            "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/InformationEntity"
          },
          "description": "A piece of information that represents or contributes to an argument for or against the validity of the Proposition put forth in a Statement. This is a shortcut relation that links a Statement directly to a piece of evidence supporting it, bypassing the Evidence Line class when used data creators do not utilize an Evidence Line object."
       },
+      "type": {
+         "type": "string",
+         "const": "VariantDiagnosticStudyStatement",
+         "default": "VariantDiagnosticStudyStatement",
+         "description": "MUST be \"VariantDiagnosticStudyStatement\"."
+      },
       "subjectVariant": {
-         "description": "A variant that is the subject of the Statement.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
                "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
             }
-         ]
+         ],
+         "description": "A variant that is the subject of the Statement."
       },
       "predicate": {
          "type": "string",
@@ -162,15 +162,15 @@
          ]
       },
       "objectDisease": {
-         "description": "The disease that is evaluated for diagnosis.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             },
             {
                "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Condition"
             }
-         ]
+         ],
+         "description": "The disease that is evaluated for diagnosis."
       },
       "isReportedIn": {
          "type": "array",
@@ -178,10 +178,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/Document"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
                }
             ]
          },

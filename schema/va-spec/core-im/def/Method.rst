@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A discrete, independent argument relevant to the validity of the Proposition assessed or put forth as true in a Statement. This argument is based on an interpretation of one or more pieces of information as evidence (i.e. Evidence Items).
+A set of instructions that specify how to achieve some objective (e.g. experimental protocols, curation guidelines, rule sets, etc.)
 
     **Information Model**
     
-Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
+Some Method attributes are inherited from :ref:`InformationEntity`.
 
     .. list-table::
        :class: clean-wrap
@@ -45,9 +45,9 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - :ref:`Document` | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
-          - 0..m
-          - A document in which the information content is expressed.
+          - `IRI <../../gks-common/common-source.json#/$defs/IRI>`_ | :ref:`Document`
+          - 0..1
+          - 
        *  - dateAuthored
           - string
           - 0..1
@@ -63,20 +63,12 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
        *  - type
           - string
           - 1..1
-          - Must be "EvidenceLine"
-       *  - targetProposition
-          - :ref:`Proposition`
+          - MUST be "Method".
+       *  - subtype
+          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_
           - 0..1
-          - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that a variant is pathogenic for a specific disease.
-       *  - evidenceItems
-          - :ref:`InformationEntity`
-          - 0..m
-          - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
-       *  - directionOfEvidenceProvided
+          - A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, Experimental Protocol)
+       *  - license
           - string
           - 0..1
-          - The direction of support that the Evidence Line is determined to provide toward its target Proposition (can be supporting, disputing, or neutral)
-       *  - strengthOfEvidenceProvided
-          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
-          - 0..1
-          - The strength of support that an Evidence Line is determined to provide for or against its target Proposition. Strength is evaluated in the direction indicated by the directionOfEvidenceProvided value.
+          - A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used.          
