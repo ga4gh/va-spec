@@ -79,9 +79,6 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-               },
-               {
                   "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
                },
                {
@@ -113,18 +110,11 @@
          "default": "EvidenceLine",
          "description": "Must be \"EvidenceLine\""
       },
-      "targetProposition": {
-         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
-         "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. e.g. in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that a variant is pathogenic for a specific disease."
-      },
       "evidenceItems": {
          "type": "array",
          "ordered": false,
          "items": {
             "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-               },
                {
                   "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
                },

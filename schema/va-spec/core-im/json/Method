@@ -74,9 +74,6 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-               },
-               {
                   "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
                },
                {
@@ -114,7 +111,7 @@
       },
       "license": {
          "type": "string",
-         "description": "A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used.          "
+         "description": "A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used."
       }
    },
    "required": [

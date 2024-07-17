@@ -79,9 +79,6 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-               },
-               {
                   "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
                },
                {

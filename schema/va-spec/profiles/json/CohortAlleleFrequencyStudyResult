@@ -77,12 +77,6 @@
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
-      "dataItem": {
-         "type": "object",
-         "additionalProperties": false,
-         "description": "An item of data that is included in the StudyResult because it pertains to the 'focus' of the result. This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or  represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to  determine this allele frequency).",
-         "comment": "Note that in profiles of the StudyResult class, 'dataItem' is typically specialized into one or more  datatype-specific properties that are defined to capture a specifc kind of data. e.g. 'focusAlleleCount' and 'focusAlleleFrequency' in a CohortAlleleFrequencyStudyResult profile."
-      },
       "type": {
          "type": "string",
          "const": "CohortAlleleFrequencyStudyResult",
@@ -100,7 +94,6 @@
          "additionalProperties": false
       },
       "focusAllele": {
-         "description": "The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/vrs/2.x/json/Allele"
@@ -110,7 +103,8 @@
                "format": "uri-reference",
                "description": "The Allele for which the frequency is being reported."
             }
-         ]
+         ],
+         "description": "The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD."
       },
       "focusAlleleCount": {
          "type": "integer",
@@ -127,43 +121,6 @@
       "cohortStudyGroup": {
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/StudyGroup",
          "description": "The cohort from which the frequency was derived."
-      },
-      "ancillaryResults": {
-         "description": "Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.",
-         "maturity": "draft",
-         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
-         "type": "object",
-         "additionalProperties": false,
-         "properties": {
-            "grpMaxFAF95": {
-               "description": "The maximum allele frequency in the cohort group for a within a 95% confidence interval.",
-               "type": "object",
-               "properties": {
-                  "frequency": {
-                     "type": "number",
-                     "description": "The maximum allele frequency in the cohort group."
-                  },
-                  "confidenceInterval": {
-                     "type": "number",
-                     "description": "The confidence interval for the maximum allele frequency."
-                  },
-                  "groupId": {
-                     "type": "string",
-                     "description": "The group ID for which the maximum allele frequency is reported."
-                  }
-               }
-            },
-            "jointGrpMaxFAF95": {
-               "description": "The maximum allele frequency in the joint cohort group within a 95% confidence interval.",
-               "type": "number"
-            },
-            "homozygotes": {
-               "type": "integer"
-            },
-            "hemizygotes": {
-               "type": "integer"
-            }
-         }
       },
       "subCohortFrequency": {
          "type": "array",

@@ -70,7 +70,7 @@
          "maxItems": 1
       },
       "activityType": {
-         "description": "SHOULD describe a concept descending from the Contributor Role Ontology.",
+         "description": "The type of activity performed or role realized in making the contribution. MAY use  terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro),  e.g. 'author role', 'evaluator role', 'data collection role'.",
          "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
       }
    },

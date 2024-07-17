@@ -71,4 +71,4 @@ Some Method attributes are inherited from :ref:`InformationEntity`.
        *  - license
           - string
           - 0..1
-          - A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used.          
+          - A particular license that dictates legal permissions for how a published method (e.g. an experimental protocol, workflow specification, curation guideline) can be used.

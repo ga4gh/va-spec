@@ -109,10 +109,6 @@
          "type": "string",
          "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
       },
-      "proposition": {
-         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
-         "description": "A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object."
-      },
       "subjectClassification": {
          "oneOf": [
             {
@@ -207,6 +203,17 @@
       "geneContextQualifier": {
          "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
          "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
+      },
+      "classification": {
+         "description": "A methodological, summary classification about the impact of a variant.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+            }
+         ]
       }
    },
    "required": [
