@@ -1,6 +1,6 @@
 **Computational Definition**
 
-An autonomous actor (person, organization, or computational agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.
+An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.
 
     **Information Model**
     

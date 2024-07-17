@@ -53,6 +53,21 @@
          },
          "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
       },
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed."
+      },
       "dateAuthored": {
          "type": "string",
          "format": "datetime",
@@ -93,10 +108,6 @@
       "statementText": {
          "type": "string",
          "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
-      },
-      "proposition": {
-         "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Proposition",
-         "description": "A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object."
       },
       "subjectClassification": {
          "oneOf": [
@@ -171,22 +182,6 @@
             }
          ],
          "description": "The disease that is evaluated for diagnosis."
-      },
-      "isReportedIn": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
-               },
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
-               }
-            ]
-         },
-         "description": "A document in which the information content is expressed.",
-         "minItems": 1
       },
       "alleleOriginQualifier": {
          "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",

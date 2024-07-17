@@ -23,7 +23,7 @@ Some InformationEntity attributes are inherited from :ref:`gks.common:Entity`.
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - label
           - string
           - 0..1

@@ -23,7 +23,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - label
           - string
           - 0..1
@@ -65,7 +65,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - subject
-          - string
+          - object
           - 1..1
           - The subject of the Statement.
        *  - predicate
@@ -73,7 +73,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - The predicate of the Statement.
        *  - object
-          - string
+          - object
           - 0..1
           - The object of the Statement.
        *  - direction
@@ -88,10 +88,6 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - string
           - 0..1
           - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
-       *  - proposition
-          - :ref:`Proposition`
-          - 0..1
-          - A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object.
        *  - subjectClassification
           - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1

@@ -23,7 +23,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
        *  - type
           - string
           - 1..1
-          - 
+          - MUST be "InformationEntity".
        *  - label
           - string
           - 0..1
@@ -61,13 +61,9 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
        *  - focus
-          - `DomainEntity <../../gks-common/common-source.json#/$defs/DomainEntity>`_
+          - `DomainEntity <../../gks-common/common-source.json#/$defs/DomainEntity>`_ | `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1
           - The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
-       *  - dataItem
-          - object
-          - 0..1
-          - An item of data that is included in the StudyResult because it pertains to the 'focus' of the result. This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or  represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to  determine this allele frequency).
        *  - sourceDataSet
           - :ref:`DataSet`
           - 0..m

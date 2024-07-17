@@ -28,13 +28,6 @@ cohortStudyGroup:
   id: ALL
   label: Overall
   type: StudyGroup
-ancillaryResults:
-  grpMaxFAF95:
-    frequency: 0
-    confidenceInterval: 0.95
-    groupId: afr
-  homozygotes: 0
-  hemizygotes: 0
 subCohortFrequency:
 - id: gnomad4:1-10120-T-G.remaining
   type: CohortAlleleFrequencyStudyResult
@@ -55,11 +48,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Remaining individuals
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.amr
   type: CohortAlleleFrequencyStudyResult
   label: Admixed American Ancestry Group Allele Frequency for 1-10120-T-G
@@ -79,11 +67,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Admixed American
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.fin
   type: CohortAlleleFrequencyStudyResult
   label: Finnish Ancestry Group Allele Frequency for 1-10120-T-G
@@ -103,11 +86,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Finnish
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.ami
   type: CohortAlleleFrequencyStudyResult
   label: Amish Ancestry Group Allele Frequency for 1-10120-T-G
@@ -127,11 +105,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Amish
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.eas
   type: CohortAlleleFrequencyStudyResult
   label: East Asian Ancestry Group Allele Frequency for 1-10120-T-G
@@ -151,11 +124,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: East Asian
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.mid
   type: CohortAlleleFrequencyStudyResult
   label: Middle Eastern Ancestry Group Allele Frequency for 1-10120-T-G
@@ -175,11 +143,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Middle Eastern
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.sas
   type: CohortAlleleFrequencyStudyResult
   label: South Asian Ancestry Group Allele Frequency for 1-10120-T-G
@@ -199,11 +162,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: South Asian
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.asj
   type: CohortAlleleFrequencyStudyResult
   label: Ashkenazi Jewish Ancestry Group Allele Frequency for 1-10120-T-G
@@ -223,11 +181,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Ashkenazi Jewish
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.afr
   type: CohortAlleleFrequencyStudyResult
   label: African/African-American Ancestry Group Allele Frequency for 1-10120-T-G
@@ -247,11 +200,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: African/African-American
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.nfe
   type: CohortAlleleFrequencyStudyResult
   label: Non-Finnish European Ancestry Group Allele Frequency for 1-10120-T-G
@@ -271,11 +219,6 @@ subCohortFrequency:
     characteristics:
     - name: genetic ancestry
       value: Non-Finnish European
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.XX
   type: CohortAlleleFrequencyStudyResult
   label: XX Allele Frequency for 1-10120-T-G
@@ -295,11 +238,6 @@ subCohortFrequency:
     characteristics:
     - name: biological sex
       value: XX
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 - id: gnomad4:1-10120-T-G.XY
   type: CohortAlleleFrequencyStudyResult
   label: XY Allele Frequency for 1-10120-T-G
@@ -319,9 +257,4 @@ subCohortFrequency:
     characteristics:
     - name: biological sex
       value: XY
-  ancillaryResults:
-    grpMaxFAF95: {}
-    homozygotes: 0
-    hemizygotes: 0
-  subCohortFrequency: []
 

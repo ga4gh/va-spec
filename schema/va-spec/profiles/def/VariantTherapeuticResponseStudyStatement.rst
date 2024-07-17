@@ -44,6 +44,10 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
           - `Contribution <../core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
+       *  - isReportedIn
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+          - 0..m
+          - A document in which the information content is expressed.
        *  - dateAuthored
           - string
           - 0..1
@@ -68,10 +72,6 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
           - string
           - 0..1
           - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
-       *  - proposition
-          - `Proposition <../core-im/core.json#/$defs/Proposition>`_
-          - 0..1
-          - A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object.
        *  - subjectClassification
           - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1
@@ -122,7 +122,3 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
           - 0..1
           - Reports a gene impacted by the variant, which contributes to the therapeutic sensitivity or resistance reported in the Statement.
 
-       *  - isReportedIn
-          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
-          - 1..m
-          - A document in which the information content is expressed.

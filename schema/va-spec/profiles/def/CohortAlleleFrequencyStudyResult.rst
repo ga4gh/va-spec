@@ -56,10 +56,6 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
-       *  - dataItem
-          - object
-          - 0..1
-          - An item of data that is included in the StudyResult because it pertains to the 'focus' of the result. This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or  represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to  determine this allele frequency).
        *  - type
           - string
           - 1..1
@@ -88,10 +84,6 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - `StudyGroup <../core-im/core.json#/$defs/StudyGroup>`_
           - 1..1
           - The cohort from which the frequency was derived.
-       *  - ancillaryResults
-          - object
-          - 0..1
-          - Ancillary results that may be associated with the CohortAlleleFrequency, providing additional context or information.
        *  - subCohortFrequency
           - :ref:`CohortAlleleFrequencyStudyResult`
           - 0..m

@@ -72,10 +72,6 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`va.core:S
           - string
           - 0..1
           - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
-       *  - proposition
-          - `Proposition <../core-im/core.json#/$defs/Proposition>`_
-          - 0..1
-          - A possible fact that the Statement assesses or puts forth as true. This attribute provides the option of encapsulating the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the subject, predicate, object, qualifier properties directly in the Statement object.
        *  - subjectClassification
           - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1
@@ -120,3 +116,7 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`va.core:S
           - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
           - 0..1
           - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+       *  - classification
+          - `Coding <../../gks-common/common.json#/$defs/Coding>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - 0..1
+          - A methodological, summary classification about the impact of a variant.

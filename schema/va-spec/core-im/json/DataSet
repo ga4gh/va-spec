@@ -79,9 +79,6 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataItem"
-               },
-               {
                   "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/DataSet"
                },
                {
@@ -128,7 +125,7 @@
       },
       "license": {
          "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
+         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible.      "
       }
    },
    "required": [
