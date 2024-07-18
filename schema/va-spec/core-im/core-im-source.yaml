@@ -360,23 +360,23 @@ $defs:
       #     the option of encapsulating the structured semantics of the possible fact asserted or
       #     evaluated by a Statement in a separate 'Proposition' object - instead of using the subject,
       #     predicate, object, qualifier properties directly in the Statement object.
-      subjectClassification:
+      classification:
         oneOf:
           - $refCurie: gks.common:Coding
           - $refCurie: gks.common:IRI
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
-          assessments of a Statement's proposition, in terms of a classification of the
-          Statement's subject. Permissible values for this attribute are typically
-          selected to be succinct and familiar in the target community of practice. e.g.
-          'likely pathogenic' in the domain of variant pathogenicity classification'.
+          assessments of a Statement, in terms of a classification of the Statement's
+          subject. Permissible values for this attribute are typically selected to be
+          succinct and familiar in the target community of practice. e.g. 'likely pathogenic'
+          in the domain of variant pathogenicity classification'.
       hasEvidenceOfType:
         type: array
         ordered: false
         items:
           $refCurie: gks.common:Coding
         description: >-
-          A term describing a type of evidence used to assess the validity of Statement's proposition
+          A term describing a type of evidence used to assess the validity of Statement
           (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
       hasEvidenceLines:
         type: array
@@ -384,9 +384,8 @@ $defs:
         items:
           $ref: "#/$defs/EvidenceLine"
         description: >-
-          A discrete, independent argument relevant to the validity of the Proposition assessed or
-          put forth in the Statement. This argument is based on the interpretation of one or more
-          pieces of information as evidence.
+          A discrete, independent argument relevant to the validity put forth in the Statement. This
+          argument is based on the interpretation of one or more pieces of information as evidence.
       hasEvidence:
         type: array
         ordered: false
