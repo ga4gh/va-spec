@@ -17,7 +17,7 @@ strength:
   code: cg000022
   label: Likely (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/
-subjectClassification:
+classification:
   code: cg000002
   label: Likely Pathogenic (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/
@@ -70,3 +70,5 @@ extensions:
   value: curation
 - name: clinvarReviewStatus
   value: reviewed by expert panel
+- name: clinvarSubmittedClassification
+  value: Likely pathogenic

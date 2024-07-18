@@ -88,18 +88,18 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
           - string
           - 0..1
           - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
-       *  - subjectClassification
+       *  - classification
           - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
           - 0..1
-          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'.
+          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'.
        *  - hasEvidenceOfType
           - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_
           - 0..m
-          - A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
+          - A term describing a type of evidence used to assess the validity of Statement (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
        *  - hasEvidenceLines
           - :ref:`EvidenceLine`
           - 0..m
-          - A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence.
+          - A discrete, independent argument relevant to the validity put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence.
        *  - hasEvidence
           - :ref:`InformationEntity`
           - 0..m

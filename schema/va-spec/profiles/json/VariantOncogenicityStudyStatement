@@ -109,7 +109,7 @@
          "type": "string",
          "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
       },
-      "subjectClassification": {
+      "classification": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
@@ -118,7 +118,7 @@
                "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
             }
          ],
-         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
+         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
       },
       "hasEvidenceOfType": {
          "type": "array",
@@ -126,7 +126,7 @@
          "items": {
             "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
          },
-         "description": "A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence')."
+         "description": "A term describing a type of evidence used to assess the validity of Statement (e.g. 'sequence similarity evidence', 'in vitro assay evidence')."
       },
       "hasEvidenceLines": {
          "type": "array",
@@ -134,7 +134,7 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/EvidenceLine"
          },
-         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence."
+         "description": "A discrete, independent argument relevant to the validity put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence."
       },
       "hasEvidence": {
          "type": "array",
