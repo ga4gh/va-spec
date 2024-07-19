@@ -44,10 +44,6 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.co
           - `Contribution <../core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
-       *  - isReportedIn
-          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
-          - 0..m
-          - A document in which the information content is expressed.
        *  - dateAuthored
           - string
           - 0..1
@@ -116,3 +112,7 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.co
           - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
           - 0..1
           - A gene context that qualifies the Statement.
+       *  - isReportedIn
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+          - 1..m
+          - A document in which the information content is expressed.

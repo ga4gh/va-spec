@@ -162,6 +162,9 @@ $defs:
       geneContextQualifier:
         description: A gene context that qualifies the Statement.
         $refCurie: gks.domain-entities:Gene
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1        
     required:
     - subjectVariant
     - predicate
@@ -222,6 +225,9 @@ $defs:
         description: >-
           A gene context that qualifies the Statement.
         $refCurie: gks.domain-entities:Gene
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
     required:
       - subjectVariant
       - predicate
@@ -340,6 +346,9 @@ $defs:
       geneContextQualifier:
         description: A gene context that qualifies the Statement.
         $refCurie: gks.domain-entities:Gene
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
     required:
       - subjectVariant
       - predicate
@@ -409,6 +418,9 @@ $defs:
           Reports a gene impacted by the variant, which contributes to the therapeutic
           sensitivity or resistance reported in the Statement.
         $refCurie: gks.domain-entities:Gene
+      isReportedIn:
+        extends: isReportedIn
+        minItems: 1
     required:
     - subjectVariant
     - predicate
