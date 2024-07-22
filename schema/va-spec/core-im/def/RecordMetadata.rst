@@ -25,7 +25,7 @@ A reusable structure that encapsulates provenance metadata about a serialized da
        *  - derivedFrom
           - string
           - 0..1
-          - Another data record from which the record described here was derived, through a data  ingest and/or transformation process. Value should be a string representing the identifier of the source record.
+          - Another data record from which the record described here was derived, through a data ingest and/or transformation process. Value should be a string representing the identifier of the source record.
        *  - dateRecordCreated
           - string
           - 0..1
