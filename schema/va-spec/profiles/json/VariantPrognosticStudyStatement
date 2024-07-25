@@ -30,14 +30,14 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
@@ -82,10 +82,10 @@
       "strength": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             }
          ],
          "description": "The overall strength of support for the Statement based on all evidence assessed."
@@ -97,10 +97,10 @@
       "classification": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             }
          ],
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'."
@@ -109,7 +109,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Coding"
          },
          "description": "A term describing a type of evidence used to assess the validity of Statement (e.g. 'sequence similarity evidence', 'in vitro assay evidence')."
       },
@@ -138,10 +138,10 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/catvrs/1.x/json/CategoricalVariation"
+               "$ref": "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             },
             {
                "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
@@ -160,10 +160,10 @@
       "objectDisease": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Condition"
+               "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
             }
          ],
          "description": "The disease that is evaluated for outcome."
@@ -187,7 +187,7 @@
       },
       "geneContextQualifier": {
          "description": "A gene context that qualifies the Statement.",
-         "$ref": "/ga4gh/schema/gks-domain-entities/1.x/json/Gene"
+         "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
       },
       "isReportedIn": {
          "type": "array",
@@ -195,7 +195,7 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+                  "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
                },
                {
                   "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"

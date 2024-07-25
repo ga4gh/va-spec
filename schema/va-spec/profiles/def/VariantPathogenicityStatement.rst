@@ -93,7 +93,7 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`va.core:S
           - 1..1
           - MUST be "VariantPathogenicityStatement".
        *  - subjectVariant
-          - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../catvrs/catvrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../cat-vrs/cat-vrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
        *  - predicate
