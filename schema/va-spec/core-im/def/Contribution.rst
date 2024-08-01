@@ -59,4 +59,4 @@ Some Contribution attributes are inherited from :ref:`Activity`.
        *  - activityType
           - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_
           - 0..1
-          - The type of activity performed or role realized in making the contribution. MAY use  terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro),  e.g. 'author role', 'evaluator role', 'data collection role'.
+          - The type of activity performed or role realized in making the contribution. MAY use terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro), e.g. 'author role', 'evaluator role', 'data collection role'.

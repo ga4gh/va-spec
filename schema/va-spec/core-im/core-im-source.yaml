@@ -204,8 +204,8 @@ $defs:
       activityType:
         $refCurie: gks.common:Coding
         description: >-
-          The type of activity performed or role realized in making the contribution. MAY use 
-          terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro), 
+          The type of activity performed or role realized in making the contribution. MAY use
+          terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro),
           e.g. 'author role', 'evaluator role', 'data collection role'.
 
   RecordMetadata:
@@ -216,13 +216,13 @@ $defs:
       object in a particular dataset (as opposed to provenance about the real world entity this
       record or object represents).
     comment: >-
-      Record-level metadata applies to a specific concrete encoding/serialization of information 
-      (e.g as a record in a specific data/knowlegebase, or an online digital resource). 
+      Record-level metadata applies to a specific concrete encoding/serialization of information
+      (e.g as a record in a specific data/knowlegebase, or an online digital resource).
       A RecordMetadata object can capture when, how, and by whom a specific record serialization was
-      generated or modified; what upstream resources it was derived or retrieved from; and record-level 
-      administrative information such as versioning and lifecycle status. RecordMetadata objects should 
-      not be used to describe provenance of the abstract information content or knowledge captured in a 
-      data record or object - other properties in the model are defined to support this use case. 
+      generated or modified; what upstream resources it was derived or retrieved from; and record-level
+      administrative information such as versioning and lifecycle status. RecordMetadata objects should
+      not be used to describe provenance of the abstract information content or knowledge captured in a
+      data record or object - other properties in the model are defined to support this use case.
     properties:
       recordIdentifier:
         type: string
@@ -234,7 +234,7 @@ $defs:
       derivedFrom:
         type: string
         description: >-
-          Another data record from which the record described here was derived, through a data 
+          Another data record from which the record described here was derived, through a data
           ingest and/or transformation process. Value should be a string representing the identifier
           of the source record.
       dateRecordCreated:
@@ -264,9 +264,9 @@ $defs:
         const: EvidenceLine
         default: EvidenceLine
         description: Must be "EvidenceLine"
-      # Note that the `proposition` property below is a proposed addition to the EvidenceLine class that is not 
-      # yet implemented in the core IM. 
-      #        
+      # Note that the `proposition` property below is a proposed addition to the EvidenceLine class that is not
+      # yet implemented in the core IM.
+      #
       # targetProposition:
       #   $ref: "#/$defs/Proposition"
       #   description: >-
@@ -313,21 +313,21 @@ $defs:
         oneOf:
         - type: object
         description: The object of the Statement.
-      #  Note that the `qualifier` property below is a *placeholder* that should not be inherited or used 
-      #  as is in dervied Statement profiles. It is meant to be specialized into more specifc properties
-      #  that are defined to capture a specifc kind of qualifying information relevant to a particular 
-      #  Statement profile. e.g. for a VariantPathogenicityStatement, it is specalized into 
-      #  'modeOfInheritanceQualifier' and 'geneContextQualifier' properties. 
-      #  Commenting out this property for now to aviod its unwanted inheritance in Statement profiles.
-      #  Ww will re-instate this property once we determine if/how the metaschema processer can evolve to support
+      #  Note that the `qualifier` property below is a *placeholder* that should not be inherited or used
+      #  as is in derived Statement profiles. It is meant to be specialized into more specific properties
+      #  that are defined to capture a specific kind of qualifying information relevant to a particular
+      #  Statement profile. e.g. for a VariantPathogenicityStatement, it is specialized into
+      #  'modeOfInheritanceQualifier' and 'geneContextQualifier' properties.
+      #  Commenting out this property for now to avoid its unwanted inheritance in Statement profiles.
+      #  Ww will re-instate this property once we determine if/how the metaschema processor can evolve to support
       #  the use case described in the 'comment' below, and discussed in va-spec issue #134.
       #
       #     qualifier:
       #       type: object
       #       placeholder: true      # example of what a flag on core-im properties meant to be placeholders might look like
       #       description: >-
-      #         An additional piece of information that extends or refines the meaning of the core 
-      #         subject-predicate-object 'triple' - by providing additional details, precision, or 
+      #         An additional piece of information that extends or refines the meaning of the core
+      #         subject-predicate-object 'triple' - by providing additional details, precision, or
       #         constraining the statement to apply in a particular context.
       direction:
         type: string
@@ -351,7 +351,7 @@ $defs:
           Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G
           for Breast Cancer".
       # Note that the `proposition` property below is a proposed addition to the Statement class that is not yet
-      # implemented in the core IM. 
+      # implemented in the core IM.
       #
       # proposition:
       #   $ref: "#/$defs/Proposition"
@@ -400,9 +400,9 @@ $defs:
       - subject
       - direction
 
-  # Note that the `DataItem` class below is a proposed addition to the StudyResult class that is not yet 
-  # implemented in the core IM. 
-  #    
+  # Note that the `DataItem` class below is a proposed addition to the StudyResult class that is not yet
+  # implemented in the core IM.
+  #
   # DataItem:
   #   inherits: InformationEntity
   #   maturity: draft
@@ -457,7 +457,7 @@ $defs:
         type: string
         description: >-
           A license that dictates legal permissions for how the Data Set can be used -
-          referenced by a URL where possible.      
+          referenced by a URL where possible.
 
   StudyResult:
     inherits: InformationEntity
@@ -473,24 +473,24 @@ $defs:
         oneOf:
           - $refCurie: gks.common:DomainEntity
           - $refCurie: gks.common:Coding
-          - $refCurie: gks.common:IRI        
+          - $refCurie: gks.common:IRI
         description: >-
           The specific subject or experimental unit in a Study that data in the StudyResult object is about.
           e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
 
-      #  Note that the `dataItem` property below is a *placeholder* that should not be inherited or used 
-      #  as is in dervied StudyResult profiles. It is meant to be specialized into more specifc properties.
-      #    
+      #  Note that the `dataItem` property below is a *placeholder* that should not be inherited or used
+      #  as is in derived StudyResult profiles. It is meant to be specialized into more specific properties.
+      #
       # dataItem:
       #   - $ref: "#/$defs/DataItem"
       #   description: >-
       #     One or more data items that are included in the StudyResult because it pertains to the 'focus' of the result.
-      #     This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or 
-      #     represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to 
+      #     This data can directly describe this 'focus' (e.g. the population frequency of an allele focus), or
+      #     represent metadata about how data about the 'focus' were generated (e.g the sequencing method used to
       #     determine this allele frequency).
       #   comment: >-
-      #     Note that in profiles of the StudyResult class, 'DataItem' is typically specialized into one or more 
-      #     datatype-specific properties that are defined to capture a specifc kind of data. e.g. 'focusAlleleCount'
+      #     Note that in profiles of the StudyResult class, 'DataItem' is typically specialized into one or more
+      #     datatype-specific properties that are defined to capture a specific kind of data. e.g. 'focusAlleleCount'
       #     and 'focusAlleleFrequency' in a CohortAlleleFrequencyStudyResult profile.
       sourceDataSet:
         extends: derivedFrom
@@ -574,8 +574,8 @@ $defs:
       - value
 
 
-  # Note that the `Proposition` class below is a proposed addition to both the Statement and EvidenceLine 
-  # classes that is not yet implemented in the core IM. 
+  # Note that the `Proposition` class below is a proposed addition to both the Statement and EvidenceLine
+  # classes that is not yet implemented in the core IM.
   #
   # Proposition:
   #   inherits: gks.common:Entity

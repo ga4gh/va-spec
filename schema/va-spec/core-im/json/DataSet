@@ -125,7 +125,7 @@
       },
       "license": {
          "type": "string",
-         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible.      "
+         "description": "A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible."
       }
    },
    "required": [

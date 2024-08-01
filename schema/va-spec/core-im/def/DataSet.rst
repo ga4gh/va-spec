@@ -79,4 +79,4 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
        *  - license
           - string
           - 0..1
-          - A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible.      
+          - A license that dictates legal permissions for how the Data Set can be used - referenced by a URL where possible.
