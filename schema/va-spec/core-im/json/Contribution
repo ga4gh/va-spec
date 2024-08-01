@@ -30,13 +30,13 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "subtype": {
          "type": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+            "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Coding"
          },
          "description": "A more specific type of activity that an Activity object may represent."
       },
@@ -70,8 +70,8 @@
          "maxItems": 1
       },
       "activityType": {
-         "description": "The type of activity performed or role realized in making the contribution. MAY use terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro), e.g. 'author role', 'evaluator role', 'data collection role'.",
-         "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+         "description": "The type of activity performed or role realized in making the contribution. MAY use  terms from the Contributor Role Ontology (https://www.ebi.ac.uk/ols4/ontologies/cro),  e.g. 'author role', 'evaluator role', 'data collection role'.",
+         "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Coding"
       }
    },
    "required": [

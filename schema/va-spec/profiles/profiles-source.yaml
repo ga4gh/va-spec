@@ -5,7 +5,7 @@ strict: true
 
 imports:
   va.core: ../core-im/core-im-source.yaml
-  catvrs: ../../catvrs/catvrs-source.yaml
+  catvrs: ../../cat-vrs/cat-vrs-source.yaml
   gks.common: ../../gks-common/common-source.yaml
   gks.domain-entities: ../../gks-domain-entities/domain-entities-source.yaml
   vrs: ../../vrs/vrs-source.yaml
@@ -14,7 +14,7 @@ namespaces:
   va.core: ../core-im/core-im.json#/$defs/
   gks.common: ../../gks-common/common.json#/$defs/
   gks.domain-entities: ../../gks-domain-entities/domain-entities.json#/$defs/
-  catvrs: ../../catvrs/catvrs.json#/$defs/
+  catvrs: ../../cat-vrs/cat-vrs.json#/$defs/
   vrs: ../../vrs/vrs.json#/$defs/
 
 $defs:

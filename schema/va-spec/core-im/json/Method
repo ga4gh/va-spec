@@ -30,7 +30,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Extension"
          },
          "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
@@ -40,7 +40,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             }
          ],
          "description": "A Method that describes all or part of the process through which the information was generated."
@@ -59,7 +59,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/Document"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.x/common/json/IRI"
             }
          ]
       },
@@ -107,7 +107,7 @@
       },
       "subtype": {
          "description": "A more specific type of entity the method represents (e.g. Variant Interpretation Guideline, Experimental Protocol)",
-         "$ref": "/ga4gh/schema/gks-common/1.x/json/Coding"
+         "$ref": "/ga4gh/schema/gks-common/1.x/common/json/Coding"
       },
       "license": {
          "type": "string",
