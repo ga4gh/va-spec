@@ -517,12 +517,12 @@ $defs:
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
-        additionalProperties: false
+        additionalProperties: true
       qualityMeasures:
         maturity: draft
         $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
         type: object
-        additionalProperties: false
+        additionalProperties: true
 
   StudyGroup:
     inherits: gks.common:Entity
