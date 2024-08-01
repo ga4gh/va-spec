@@ -513,6 +513,16 @@ $defs:
         description: >-
           A structured description of specific population of subjects interrogated in the Research Study to
           produce the subset of data captured in the StudyResult.
+      ancillaryResults:
+        maturity: draft
+        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        type: object
+        additionalProperties: false
+      qualityMeasures:
+        maturity: draft
+        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        type: object
+        additionalProperties: false
 
   StudyGroup:
     inherits: gks.common:Entity

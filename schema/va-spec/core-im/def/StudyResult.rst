@@ -76,3 +76,11 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
           - :ref:`StudyGroup`
           - 0..1
           - A structured description of specific population of subjects interrogated in the Research Study to produce the subset of data captured in the StudyResult.
+       *  - ancillaryResults
+          - object
+          - 0..1
+          - 
+       *  - qualityMeasures
+          - object
+          - 0..1
+          - 

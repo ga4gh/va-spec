@@ -70,46 +70,6 @@ $defs:
     - alleleFrequency
     - cohortStudyGroup
 
-    # ancillaryResults:
-    #     description: >-
-    #       Ancillary results that may be associated with the CohortAlleleFrequency,
-    #       providing additional context or information.
-    #     maturity: draft
-    #     $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-    #     type: object
-    #     additionalProperties: false
-    #     properties:
-    #       grpMaxFAF95:
-    #         description: >-
-    #           The maximum allele frequency in the cohort group for a within a 95% confidence interval.
-    #         type: object
-    #         properties:
-    #           frequency:
-    #             type: number
-    #             description: The maximum allele frequency in the cohort group.
-    #           confidenceInterval:
-    #             type: number
-    #             description: The confidence interval for the maximum allele frequency.
-    #           groupId:
-    #             type: string
-    #             description: The group ID for which the maximum allele frequency is reported.
-    #       jointGrpMaxFAF95:
-    #         description: >-
-    #           The maximum allele frequency in the joint cohort group within a 95% confidence interval.
-    #         type: number
-    #       homozygotes:
-    #         type: integer
-    #       hemizygotes:
-    #         type: integer
-    #   # qualityMeasures:
-    #   #   description: >-
-    #   #     Quality measures associated with the CohortAlleleFrequency and how it was
-    #   #     derived, which may impact interpretation.
-    #   #   maturity: draft
-    #   #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-    #   #   type: object
-    #   #   additionalProperties: true
-
 # Variant Diagnostic Study Statement
   VariantDiagnosticStudyStatement:
     inherits: va.core:Statement

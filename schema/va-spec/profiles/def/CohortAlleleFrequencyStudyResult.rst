@@ -56,6 +56,14 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
           - 0..1
           - Metadata that applies to a specific concrete record of information as encoded in a particular system.
+       *  - ancillaryResults
+          - object
+          - 0..1
+          - 
+       *  - qualityMeasures
+          - object
+          - 0..1
+          - 
        *  - type
           - string
           - 1..1

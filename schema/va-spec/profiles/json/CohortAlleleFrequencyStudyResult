@@ -77,6 +77,18 @@
          "$ref": "/ga4gh/schema/va-spec/1.x/core-im/json/RecordMetadata",
          "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
       },
+      "ancillaryResults": {
+         "maturity": "draft",
+         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
+         "type": "object",
+         "additionalProperties": false
+      },
+      "qualityMeasures": {
+         "maturity": "draft",
+         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
+         "type": "object",
+         "additionalProperties": false
+      },
       "type": {
          "type": "string",
          "const": "CohortAlleleFrequencyStudyResult",
