@@ -129,7 +129,6 @@ $defs:
     - subjectVariant
     - predicate
     - objectDisease
-    - isReportedIn
 
 # Variant Oncogenicity Study Statement
   VariantOncogenicityStudyStatement:
@@ -192,7 +191,6 @@ $defs:
       - subjectVariant
       - predicate
       - objectTumorType
-      - isReportedIn
 
 # Variant Pathogenicity Statement
   VariantPathogenicityStatement:
@@ -313,7 +311,6 @@ $defs:
       - subjectVariant
       - predicate
       - objectDisease
-      - isReportedIn
 
 # Variant Therapeutic Response Study Statement
   VariantTherapeuticResponseStudyStatement:
@@ -386,4 +383,3 @@ $defs:
     - predicate
     - objectTherapeutic
     - diseaseQualifier
-    - isReportedIn

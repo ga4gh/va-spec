@@ -209,7 +209,6 @@
    "required": [
       "direction",
       "id",
-      "isReportedIn",
       "objectDisease",
       "predicate",
       "subjectVariant",

@@ -210,7 +210,6 @@
    "required": [
       "direction",
       "id",
-      "isReportedIn",
       "objectTumorType",
       "predicate",
       "subjectVariant",
