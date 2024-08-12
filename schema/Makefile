@@ -1,11 +1,7 @@
-all: va-core va-profiles
-	
-va-core:
-	(cd va-spec/core-im; make all)
+all: va-profiles
 
 va-profiles:
-	(cd va-spec/profiles; make all)
+	(cd profiles; make all)
 
 clean:
-	(cd va-spec/core-im; make clean)
-	(cd va-spec/profiles; make clean)
+	(cd profiles; make clean)

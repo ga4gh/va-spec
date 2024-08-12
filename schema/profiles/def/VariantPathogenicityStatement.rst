@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
+A :ref:`VariantClassification` describing the role of a variant in causing an inherited disorder.
 
     **Information Model**
     
-Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.core:Statement`.
+Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-im:Statement`.
 
     .. list-table::
        :class: clean-wrap
@@ -33,17 +33,21 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.co
           - 0..m
           - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../core-im/../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension </ga4gh/schema/gks-common/1.x/data-types/json/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - specifiedBy
-          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
           - `Contribution <../core-im/core.json#/$defs/Contribution>`_
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
+       *  - isReportedIn
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+          - 0..m
+          - A document in which the information content is expressed.
        *  - dateAuthored
           - string
           - 0..1
@@ -61,25 +65,29 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.co
           - 1..1
           - The direction of this Statement with respect to the predicate.
        *  - strength
-          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+          - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 0..1
-          - The overall strength of support for the Statement based on all evidence assessed.
+          - A qualitative term indicating the overall strength of support for or against the Statement based on all evidence assessed.
+       *  - score
+          - number
+          - 0..1
+          - A quantitative score indicating the overall strength of support for or against the Statement based on all evidence assessed.
        *  - statementText
           - string
           - 0..1
           - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
-       *  - classification
-          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+       *  - subjectClassification
+          - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 0..1
-          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g. 'likely pathogenic' in the domain of variant pathogenicity classification'.
+          - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of the Statement's subject. Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice. e.g.  'likely pathogenic' in the domain of variant pathogenicity classification'.
        *  - hasEvidenceOfType
-          - `Coding <../../gks-common/common-source.json#/$defs/Coding>`_
+          - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_
           - 0..m
-          - A term describing a type of evidence used to assess the validity of Statement (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
+          - A term describing a type of evidence used to assess the validity of Statement's proposition (e.g. 'sequence similarity evidence', 'in vitro assay evidence').
        *  - hasEvidenceLines
           - `EvidenceLine <../core-im/core.json#/$defs/EvidenceLine>`_
           - 0..m
-          - A discrete, independent argument relevant to the validity put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence.
+          - A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence. argument is based on the interpretation of one or more pieces of information as evidence.
        *  - hasEvidence
           - `InformationEntity <../core-im/core.json#/$defs/InformationEntity>`_
           - 0..m
@@ -87,32 +95,28 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`va.co
        *  - type
           - string
           - 1..1
-          - MUST be "VariantOncogenicityStatement".
+          - MUST be "VariantPathogenicityStatement".
        *  - subjectVariant
-          - `Variation <../../vrs/vrs.json#/$defs/Variation>`_ | `CategoricalVariation <../../cat-vrs/cat-vrs.json#/$defs/CategoricalVariation>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+          - `Variation </ga4gh/schema/vrs/2.x/json/Variation>`_ | `CategoricalVariation </ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 1..1
           - A variant that is the subject of the Statement.
        *  - predicate
           - string
           - 1..1
           - The predicate of the Statement.
-       *  - objectTumorType
-          - `Condition <../../gks-domain-entities/domain-entities.json#/$defs/Condition>`_ | `IRI <../../gks-common/common.json#/$defs/IRI>`_
+       *  - objectCondition
+          - `Condition </ga4gh/schema/gks-common/1.x/domain-entities/json/Condition>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 1..1
-          - The tumor type for which the variant impact is evaluated.
-       *  - alleleOriginQualifier
+          - The :ref:`Condition` for which the variant impact is stated.
+       *  - penetranceQualifier
           - string
           - 0..1
-          - Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
-       *  - allelePrevalenceQualifier
+          - Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
+       *  - modeOfInheritanceQualifier
           - string
           - 0..1
-          - Whether the statement should be interpreted in the context of the variant being rare or common.
+          - Reports a pattern of inheritance expected for the pathogenic effect of the variant.
        *  - geneContextQualifier
-          - `Gene <../../gks-domain-entities/domain-entities.json#/$defs/Gene>`_
+          - `Gene </ga4gh/schema/gks-common/1.x/domain-entities/json/Gene>`_
           - 0..1
-          - A gene context that qualifies the Statement.
-       *  - isReportedIn
-          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
-          - 1..m
-          - A document in which the information content is expressed.
+          - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).

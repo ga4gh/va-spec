@@ -4,22 +4,15 @@ title: VA Spec Standard Profiles
 strict: true
 
 imports:
-  va.core: ../core-im/core-im-source.yaml
-  catvrs: ../../cat-vrs/cat-vrs-source.yaml
-  gks.common: ../../gks-common/common-source.yaml
-  gks.domain-entities: ../../gks-domain-entities/domain-entities-source.yaml
-  vrs: ../../vrs/vrs-source.yaml
-
-namespaces:
-  va.core: ../core-im/core-im.json#/$defs/
-  gks.common: ../../gks-common/common.json#/$defs/
-  gks.domain-entities: ../../gks-domain-entities/domain-entities.json#/$defs/
-  catvrs: ../../cat-vrs/cat-vrs.json#/$defs/
-  vrs: ../../vrs/vrs.json#/$defs/
+  catvrs: ../cat-vrs/cat-vrs-source.yaml
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+  gks.data-types: ../data-types/data-types-source.yaml
+  gks.domain-entities: ../domain-entities/domain-entities-source.yaml
 
 $defs:
   CohortAlleleFrequencyStudyResult:
-    inherits: va.core:StudyResult
+    inherits: gks.core-im:StudyResult
     maturity: draft
     type: object
     description: >-
@@ -37,7 +30,7 @@ $defs:
       focusAllele:
         extends: focus
         oneOf:
-        - $refCurie: vrs:Allele
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
         - type: string
           format: uri-reference
           description: The Allele for which the frequency is being reported.
@@ -72,7 +65,7 @@ $defs:
 
 # Variant Diagnostic Study Statement
   VariantDiagnosticStudyStatement:
-    inherits: va.core:Statement
+    inherits: gks.core-im:Statement
     type: object
     maturity: draft
     description: >-
@@ -87,9 +80,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $refCurie: vrs:Variation
-        - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -99,8 +92,8 @@ $defs:
       objectDisease:
         extends: object
         oneOf:
-        - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: The disease that is evaluated for diagnosis.
       alleleOriginQualifier:
         description: >-
@@ -121,19 +114,15 @@ $defs:
         - common
       geneContextQualifier:
         description: A gene context that qualifies the Statement.
-        $refCurie: gks.domain-entities:Gene
-      isReportedIn:
-        extends: isReportedIn
-        minItems: 1        
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
     - subjectVariant
     - predicate
     - objectDisease
-    - isReportedIn
 
 # Variant Oncogenicity Study Statement
   VariantOncogenicityStudyStatement:
-    inherits: va.core:Statement
+    inherits: gks.core-im:Statement
     maturity: draft
     type: object
     description: >-
@@ -147,9 +136,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $refCurie: vrs:Variation
-        - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -160,8 +149,8 @@ $defs:
       objectTumorType:
         extends: object
         oneOf:
-        - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: >-
           The tumor type for which the variant impact is evaluated.
       alleleOriginQualifier:
@@ -184,21 +173,17 @@ $defs:
       geneContextQualifier:
         description: >-
           A gene context that qualifies the Statement.
-        $refCurie: gks.domain-entities:Gene
-      isReportedIn:
-        extends: isReportedIn
-        minItems: 1
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
       - subjectVariant
       - predicate
       - objectTumorType
-      - isReportedIn
 
 # Variant Pathogenicity Statement
   VariantPathogenicityStatement:
     type: object
     maturity: draft
-    inherits: va.core:Statement
+    inherits: gks.core-im:Statement
     description: >-
       A :ref:`VariantClassification` describing the role of a variant in causing an
       inherited disorder.
@@ -211,9 +196,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $refCurie: vrs:Variation
-        - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -221,8 +206,8 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-        - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:
         type: string
@@ -248,7 +233,7 @@ $defs:
         description: >-
           Reports the gene through which the pathogenic effect asserted for the variant is mediated
           (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
-        $refCurie: gks.domain-entities:Gene
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
     - subjectVariant
     - predicate
@@ -256,7 +241,7 @@ $defs:
 
 # Variant Prognostic Study Statement
   VariantPrognosticStudyStatement:
-    inherits: va.core:Statement
+    inherits: gks.core-im:Statement
     type: object
     maturity: draft
     description: >-
@@ -271,9 +256,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $refCurie: vrs:Variation
-        - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -283,8 +268,8 @@ $defs:
       objectDisease:
         extends: object
         oneOf:
-        - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: The disease that is evaluated for outcome.
       alleleOriginQualifier:
         type: string
@@ -305,19 +290,15 @@ $defs:
         - common
       geneContextQualifier:
         description: A gene context that qualifies the Statement.
-        $refCurie: gks.domain-entities:Gene
-      isReportedIn:
-        extends: isReportedIn
-        minItems: 1
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
       - subjectVariant
       - predicate
       - objectDisease
-      - isReportedIn
 
 # Variant Therapeutic Response Study Statement
   VariantTherapeuticResponseStudyStatement:
-    inherits: va.core:Statement
+    inherits: gks.core-im:Statement
     maturity: draft
     type: object
     description: >-
@@ -332,9 +313,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $refCurie: vrs:Variation
-        - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -346,12 +327,12 @@ $defs:
           is intended to respond to.
         extends: object
         oneOf:
-        - $refCurie: gks.domain-entities:TherapeuticProcedure
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/TherapeuticProcedure"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
       diseaseQualifier:
         oneOf:
-        - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.common:IRI
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in
@@ -377,13 +358,9 @@ $defs:
         description: >
           Reports a gene impacted by the variant, which contributes to the therapeutic
           sensitivity or resistance reported in the Statement.
-        $refCurie: gks.domain-entities:Gene
-      isReportedIn:
-        extends: isReportedIn
-        minItems: 1
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
     - subjectVariant
     - predicate
     - objectTherapeutic
     - diseaseQualifier
-    - isReportedIn
