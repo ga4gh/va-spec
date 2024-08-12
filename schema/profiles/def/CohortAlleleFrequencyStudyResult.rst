@@ -4,7 +4,7 @@ A StudyResult that reports measures related to the frequency of an Allele in a c
 
     **Information Model**
     
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.core:StudyResult`.
+Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.core-im:StudyResult`.
 
     .. list-table::
        :class: clean-wrap
@@ -33,11 +33,11 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 0..m
           - Alternative name(s) for the Entity.
        *  - extensions
-          - `Extension <../core-im/../../gks-common/common.json#/$defs/Extension>`_
+          - `Extension </ga4gh/schema/gks-common/1.x/data-types/json/Extension>`_
           - 0..m
           - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
        *  - specifiedBy
-          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+          - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 0..1
           - A :ref:`Method` that describes all or part of the process through which the information was generated.
        *  - contributions
@@ -45,7 +45,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 0..m
           - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
        *  - isReportedIn
-          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI <../../gks-common/common-source.json#/$defs/IRI>`_
+          - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
           - 0..m
           - A document in which the information content is expressed.
        *  - dateAuthored
@@ -73,7 +73,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va.cor
           - 0..m
           - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
        *  - focusAllele
-          - `Allele <../../vrs/vrs.json#/$defs/Allele>`_ | string
+          - `Allele </ga4gh/schema/vrs/2.x/json/Allele>`_ | string
           - 1..1
           - The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
        *  - focusAlleleCount
