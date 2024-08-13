@@ -63,7 +63,7 @@ $defs:
     - alleleFrequency
     - cohortStudyGroup
 
-# Variant Diagnostic Study Statement
+  # Variant Diagnostic Study Statement
   VariantDiagnosticStudyStatement:
     inherits: gks.core-im:Statement
     type: object
@@ -120,7 +120,7 @@ $defs:
     - predicate
     - objectDisease
 
-# Variant Oncogenicity Study Statement
+  # Variant Oncogenicity Study Statement
   VariantOncogenicityStudyStatement:
     inherits: gks.core-im:Statement
     maturity: draft
@@ -179,7 +179,7 @@ $defs:
       - predicate
       - objectTumorType
 
-# Variant Pathogenicity Statement
+  # Variant Pathogenicity Statement
   VariantPathogenicityStatement:
     type: object
     maturity: draft
@@ -239,7 +239,7 @@ $defs:
     - predicate
     - objectCondition
 
-# Variant Prognostic Study Statement
+  # Variant Prognostic Study Statement
   VariantPrognosticStudyStatement:
     inherits: gks.core-im:Statement
     type: object
@@ -296,7 +296,7 @@ $defs:
       - predicate
       - objectDisease
 
-# Variant Therapeutic Response Study Statement
+  # Variant Therapeutic Response Study Statement
   VariantTherapeuticResponseStudyStatement:
     inherits: gks.core-im:Statement
     maturity: draft
