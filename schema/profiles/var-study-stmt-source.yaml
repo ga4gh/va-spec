@@ -1,0 +1,254 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/var-study-stmt-source.yaml"
+title: VA Spec Standard Profiles
+strict: true
+
+imports:
+  catvrs: ../cat-vrs/cat-vrs-source.yaml
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+  gks.data-types: ../data-types/data-types-source.yaml
+  gks.domain-entities: ../domain-entities/domain-entities-source.yaml
+
+$defs:
+  # Variant Diagnostic Study Statement
+  VariantDiagnosticStudyStatement:
+    inherits: gks.core-im:Statement
+    type: object
+    maturity: draft
+    description: >-
+      A study summarization describing whether a variant is associated with a disease
+      (positive) or lack of a disease (negative).
+    properties:
+      type:
+        extends: type
+        const: "VariantDiagnosticStudyStatement"
+        default: "VariantDiagnosticStudyStatement"
+        description: MUST be "VariantDiagnosticStudyStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        enum:
+        - positive
+        - negative
+      objectDisease:
+        extends: object
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: The disease that is evaluated for diagnosis.
+      alleleOriginQualifier:
+        description: >-
+          Whether the statement should be interpreted in the context of an inherited
+          (germline) variant, an acquired (somatic) mutation, or both (combined).
+        type: string
+        enum:
+        - germline
+        - somatic
+        - combined
+      allelePrevalenceQualifier:
+        description: >-
+          Whether the statement should be interpreted in the context of the variant
+          being rare or common.
+        type: string
+        enum:
+        - rare
+        - common
+      geneContextQualifier:
+        description: A gene context that qualifies the Statement.
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+    required:
+    - subjectVariant
+    - predicate
+    - objectDisease
+
+  # Variant Oncogenicity Study Statement
+  VariantOncogenicityStudyStatement:
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: >-
+      A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
+    properties:
+      type:
+        extends: type
+        const: "VariantOncogenicityStatement"
+        default: "VariantOncogenicityStatement"
+        description: MUST be "VariantOncogenicityStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        enum:
+        - isOncogenicFor
+        - isProtectiveFor
+        - isPredisposingFor
+      objectTumorType:
+        extends: object
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: >-
+          The tumor type for which the variant impact is evaluated.
+      alleleOriginQualifier:
+        type: string
+        description: >-
+          Whether the statement should be interpreted in the context of an inherited
+          (germline) variant, an acquired (somatic) mutation, or both (combined).
+        enum:
+        - germline
+        - somatic
+        - combined
+      allelePrevalenceQualifier:
+        type: string
+        description: >-
+          Whether the statement should be interpreted in the context of the variant
+          being rare or common.
+        enum:
+        - rare
+        - common
+      geneContextQualifier:
+        description: >-
+          A gene context that qualifies the Statement.
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+    required:
+      - subjectVariant
+      - predicate
+      - objectTumorType
+
+  # Variant Prognostic Study Statement
+  VariantPrognosticStudyStatement:
+    inherits: gks.core-im:Statement
+    type: object
+    maturity: draft
+    description: >-
+      A study summarization describing whether a variant is associated with improved or
+      worse outcome for a disease.
+    properties:
+      type:
+        extends: type
+        const: "VariantPrognosticStudyStatement"
+        default: "VariantPrognosticStudyStatement"
+        description: MUST be "VariantPrognosticStudyStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        enum:
+        - Better Outcome
+        - Worse Outcome
+      objectDisease:
+        extends: object
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: The disease that is evaluated for outcome.
+      alleleOriginQualifier:
+        type: string
+        description: >-
+          Reports whether the statement should be interpreted in the context of an inherited
+          (germline) variant, an acquired (somatic) mutation, or both (combined).
+        enum:
+        - germline
+        - somatic
+        - combined
+      allelePrevalenceQualifier:
+        type: string
+        description: >-
+          Reports whether the statement should be interpreted in the context of the variant
+          being rare or common.
+        enum:
+        - rare
+        - common
+      geneContextQualifier:
+        description: A gene context that qualifies the Statement.
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+    required:
+      - subjectVariant
+      - predicate
+      - objectDisease
+
+  # Variant Therapeutic Response Study Statement
+  VariantTherapeuticResponseStudyStatement:
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: >-
+      A study summarization describing the role of a variant in modulating the response of a
+      neoplasm to drug administration or other therapeutic procedure.
+    properties:
+      type:
+        extends: type
+        const: "VariantTherapeuticResponseStudyStatement"
+        default: "VariantTherapeuticResponseStudyStatement"
+        description: MUST be "VariantTherapeuticResponseStudyStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        enum:
+        - predictsSensitivityTo
+        - predictsResistanceTo
+      objectTherapeutic:
+        description: A drug administration or other therapeutic procedure that the neoplasm
+          is intended to respond to.
+        extends: object
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/TherapeuticProcedure"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+      diseaseQualifier:
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: >-
+          Reports the disease context in which the variant's association with therapeutic
+          sensitivity or resistance is evaluated. Note that this is a required qualifier in
+          therapeutic response statements.
+      alleleOriginQualifier:
+        type: string
+        description: >-
+          Reports whether the statement should be interpreted in the context of an inherited
+          (germline) variant, an acquired (somatic) mutation, or both (combined).
+        enum:
+          - germline
+          - somatic
+          - combined
+      allelePrevalenceQualifier:
+        type: string
+        description: >-
+         Reports wWhether the statement should be interpreted in the context of the variant
+          being rare or common.
+        enum:
+          - rare
+          - common
+      geneContextQualifier:
+        description: >
+          Reports a gene impacted by the variant, which contributes to the therapeutic
+          sensitivity or resistance reported in the Statement.
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+    required:
+    - subjectVariant
+    - predicate
+    - objectTherapeutic
+    - diseaseQualifier

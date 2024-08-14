@@ -1,0 +1,192 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/AssayVariantEffectClassificationStatement",
+   "title": "AssayVariantEffectClassificationStatement",
+   "maturity": "draft",
+   "type": "object",
+   "description": "TODO @alanrubin will fill out a description",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE)."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the entity."
+      },
+      "alternativeLabels": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Extension"
+         },
+         "description": "A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Contribution"
+         },
+         "description": "A list of Contribution objects that describe the activities performed by agents upon this entity."
+      },
+      "isReportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the information content is expressed."
+      },
+      "dateAuthored": {
+         "type": "string",
+         "format": "datetime",
+         "description": "Indicates when the information content expressed in the Information Entity was generated."
+      },
+      "derivedFrom": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/InformationEntity"
+         },
+         "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
+      },
+      "recordMetadata": {
+         "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/RecordMetadata",
+         "description": "Metadata that applies to a specific concrete record of information as encoded in a particular system."
+      },
+      "direction": {
+         "type": "string",
+         "enum": [
+            "supports",
+            "neutral",
+            "disputes"
+         ],
+         "description": "The direction of this Statement with respect to the predicate."
+      },
+      "strength": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            }
+         ],
+         "description": "A qualitative term indicating the overall strength of support for or against the Statement based on all evidence assessed."
+      },
+      "score": {
+         "type": "number",
+         "description": "A quantitative score indicating the overall strength of support for or against the Statement based on all evidence assessed."
+      },
+      "statementText": {
+         "type": "string",
+         "description": "A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\"."
+      },
+      "hasEvidenceLines": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/EvidenceLine"
+         },
+         "description": "A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence. argument is based on the interpretation of one or more pieces of information as evidence."
+      },
+      "type": {
+         "type": "string",
+         "const": "AssayVariantEffectClassificationStatement",
+         "default": "AssayVariantEffectClassificationStatement",
+         "description": "MUST be \"AssayVariantEffectClassificationStatement\"."
+      },
+      "subjectVariant": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+            }
+         ],
+         "description": "A protein or genomic contextual or canonical molecular variant."
+      },
+      "predicate": {
+         "type": "string",
+         "description": "The predicate of the Statement.",
+         "enum": [
+            "hasAssayVariantEffectFor"
+         ]
+      },
+      "objectAssay": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            },
+            {
+               "type": "string"
+            }
+         ],
+         "description": "The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)"
+      },
+      "subjectClassification": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            }
+         ],
+         "description": "The classification of the variant effect in the assay.",
+         "enum": [
+            "normal",
+            "indeterminate",
+            "abnormal"
+         ]
+      },
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            }
+         ],
+         "description": "The method that specifies the classification of the variant effect in the assay."
+      }
+   },
+   "required": [
+      "direction",
+      "id",
+      "objectAssay",
+      "predicate",
+      "subjectClassification",
+      "subjectVariant",
+      "type"
+   ],
+   "additionalProperties": false
+}

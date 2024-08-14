@@ -1,0 +1,62 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf-study-result-source.yaml"
+title: VA Spec Standard Profiles
+strict: true
+
+imports:
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+  gks.data-types: ../data-types/data-types-source.yaml
+
+$defs:
+  CohortAlleleFrequencyStudyResult:
+    inherits: gks.core-im:StudyResult
+    maturity: draft
+    type: object
+    description: >-
+      A StudyResult that reports measures related to the frequency of an Allele in a cohort
+    properties:
+      type:
+        extends: type
+        const: "CohortAlleleFrequencyStudyResult"
+        default: "CohortAlleleFrequencyStudyResult"
+        description: MUST be "CohortAlleleFrequencyStudyResult".
+      sourceDataSet:
+        extends: sourceDataSet
+        description: The dataset from which the CohortAlleleFrequencyStudyResult was reported.
+        additionalProperties: false
+      focusAllele:
+        extends: focus
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
+        - type: string
+          format: uri-reference
+          description: The Allele for which the frequency is being reported.
+      focusAlleleCount:
+        type: integer
+        description: The number of occurrences of the focusAllele in the cohort.
+      locusAlleleCount:
+        type: integer
+        description: >-
+          The number of occurrences of alleles at the locus in the cohort
+          (count of all alleles at this locus, sometimes referred to as "allele number")
+      alleleFrequency:
+        type: number
+        description: The frequency of the focusAllele in the cohort.
+      cohortStudyGroup:
+        extends: studyGroup
+        description: The cohort from which the frequency was derived.
+      subCohortFrequency:
+        description: >-
+          A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
+          This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts.
+          This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+        extends: componentResult
+        items:
+          $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
+    required:
+    - focusAllele
+    - focusAlleleCount
+    - locusAlleleCount
+    - alleleFrequency
+    - cohortStudyGroup

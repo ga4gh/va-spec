@@ -1,0 +1,96 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/assay-var-effect-source.yaml"
+title: VA Spec Assay Variant Effect statement and study result Profiles
+strict: true
+
+imports:
+  catvrs: ../cat-vrs/cat-vrs-source.yaml
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+  gks.data-types: ../data-types/data-types-source.yaml
+
+$defs:
+  # mavedb work in progress (super early draft)
+  AssayVariantEffectClassificationStatement:
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: >-
+      TODO @alanrubin will fill out a description
+    properties:
+      type:
+        extends: type
+        const: "AssayVariantEffectClassificationStatement"
+        default: "AssayVariantEffectClassificationStatement"
+        description: MUST be "AssayVariantEffectClassificationStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A protein or genomic contextual or canonical molecular variant.
+      predicate:
+        extends: predicate
+        enum:
+          - hasAssayVariantEffectFor
+      objectAssay:
+        # TODO we may need to model this more specifically as a DomainEntity subtype
+        extends: object
+        oneOf:
+          - type: string
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+        description: >-
+          The assay that is evaluated for the variant effect. (e.g growth in
+          haploid cell culture protein stability in fluorescence assay)
+      subjectClassification:
+        extends: subjectClassification
+        description: >-
+          The classification of the variant effect in the assay.
+        enum:
+          - normal 
+          - indeterminate
+          - abnormal
+      # method for classification contains info about thresholds for how to classify
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          The method that specifies the classification of the variant effect in the assay.
+        # will will likely need to enhance this a bit due to the complexity of the methods used
+    required:
+      - subjectVariant
+      - predicate
+      - objectAssay
+      - subjectClassification
+
+  AssayVariantEffectMeasurementStudyResult:
+    inherits: gks.core-im:StudyResult
+    maturity: draft
+    type: object
+    description: >-
+      A StudyResult that reports measures related to the frequency of an Allele in a cohort
+    properties:
+      type:
+        extends: type
+        const: "AssayVariantEffectMeasurementStudyResult"
+        default: "AssayVariantEffectMeasurementStudyResult"
+        description: MUST be "AssayVariantEffectMeasurementStudyResult".
+      focusVariant:
+        extends: focus
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: The human mapped representation of the variant that is the subject of the Statement.
+        # derivedFrom:
+        #   #this is the actual assayed variant (e.g. yeast, non-reference, pre-spliced trx, anything you can possibly dream of)
+      score:
+        type: number
+        description: The score of the variant effect in the assay.     
+      isReportedIn:
+        description:  The assay that was used to measure the variant effect with all the various properties
+        extends: isReportedIn
+        minItems: 1
+        # url: document url  
+    
+

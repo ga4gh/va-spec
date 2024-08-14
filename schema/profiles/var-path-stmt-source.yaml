@@ -1,0 +1,72 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/var-path-stmt-source.yaml"
+title: VA Spec Standard Profiles
+strict: true
+
+imports:
+  catvrs: ../cat-vrs/cat-vrs-source.yaml
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+  gks.data-types: ../data-types/data-types-source.yaml
+  gks.domain-entities: ../domain-entities/domain-entities-source.yaml
+
+$defs:
+  # Variant Pathogenicity Statement
+  VariantPathogenicityStatement:
+    type: object
+    maturity: draft
+    inherits: gks.core-im:Statement
+    description: >-
+      A :ref:`VariantClassification` describing the role of a variant in causing an
+      inherited disorder.
+    properties:
+      type:
+        extends: type
+        const: "VariantPathogenicityStatement"
+        default: "VariantPathogenicityStatement"
+        description: MUST be "VariantPathogenicityStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      objectCondition:
+        extends: object
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: The :ref:`Condition` for which the variant impact is stated.
+      penetranceQualifier:
+        type: string
+        enum:
+        - high
+        - low
+        - risk allele
+        description: >-
+          Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent
+          to which the variant impact is expressed by individuals carrying it as a measure of the
+          proportion of carriers exhibiting the condition.
+      modeOfInheritanceQualifier:
+        type: string
+        enum:
+        - autosomal dominant
+        - autosomal recessive
+        - X-linked dominant
+        - X-linked recessive
+        - mitochondrial
+        description: >-
+          Reports a pattern of inheritance expected for the pathogenic effect of the variant.
+      geneContextQualifier:
+        description: >-
+          Reports the gene through which the pathogenic effect asserted for the variant is mediated
+          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+    required:
+    - subjectVariant
+    - predicate
+    - objectCondition
