@@ -47,7 +47,7 @@
       },
       "contributions": {
          "type": "array",
-         "ordered": true,
+         "ordered": false,
          "items": {
             "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Contribution"
          },
