@@ -105,10 +105,10 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-
       - 0..1
       - Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
    *  - modeOfInheritanceQualifier
-      - string
-      - 0..1
-      - Reports a pattern of inheritance expected for the pathogenic effect of the variant.
+      - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_
+      - 0..m
+      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
    *  - geneContextQualifier
-      - `Gene </ga4gh/schema/gks-common/1.x/domain-entities/json/Gene>`_
+      - `Gene </ga4gh/schema/gks-common/1.x/domain-entities/json/Gene>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
       - 0..1
       - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).

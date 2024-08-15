@@ -178,19 +178,23 @@
          "description": "Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition."
       },
       "modeOfInheritanceQualifier": {
-         "type": "string",
-         "enum": [
-            "autosomal dominant",
-            "autosomal recessive",
-            "X-linked dominant",
-            "X-linked recessive",
-            "mitochondrial"
-         ],
-         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant."
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+         },
+         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify."
       },
       "geneContextQualifier": {
          "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
-         "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+            }
+         ]
       }
    },
    "required": [
