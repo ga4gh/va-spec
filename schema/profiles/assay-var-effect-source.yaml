@@ -16,7 +16,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      TODO @alanrubin will fill out a description
+      A statement that assigns a functional classification to a variant effect from a functional assay.
     properties:
       type:
         extends: type
@@ -69,7 +69,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A StudyResult that reports measures related to the frequency of an Allele in a cohort
+      A StudyResult that reports a variant effect score from a functional assay.
     properties:
       type:
         extends: type
