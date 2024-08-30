@@ -17,8 +17,9 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A study summarization describing whether a variant is associated with a disease
-      (positive) or lack of a disease (negative).
+      A statement reporting a conclusion from a single study about whether a variant
+      is associated with a disease (positive) or lack of a disease (negative) - based
+      on interpretation of the study's results as evidence.
     properties:
       type:
         extends: type
@@ -35,8 +36,8 @@ $defs:
       predicate:
         extends: predicate
         enum:
-        - positive
-        - negative
+        - supports_positive_diagnosis_for
+        - supports_negative_diagnosis_for
       objectDisease:
         extends: object
         oneOf:
@@ -45,7 +46,7 @@ $defs:
         description: The disease that is evaluated for diagnosis.
       alleleOriginQualifier:
         description: >-
-          Whether the statement should be interpreted in the context of an inherited
+          Reports whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         type: string
         enum:
@@ -54,14 +55,15 @@ $defs:
         - combined
       allelePrevalenceQualifier:
         description: >-
-          Whether the statement should be interpreted in the context of the variant
+          Reports whether the statement should be interpreted in the context of the variant
           being rare or common.
         type: string
         enum:
         - rare
         - common
       geneContextQualifier:
-        description: A gene context that qualifies the Statement.
+        description: Reports a gene impacted by the variant, which may contribute to the
+        diagnostic association  in the Statement.
         $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
     - subjectVariant
@@ -74,7 +76,9 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.
+      A statement reporting a conclusion from a single study that supports or refutes a
+      variant's effect on oncogenesis for a specific tumor type - based on interpretation
+      of the study's results as evidence.
     properties:
       type:
         extends: type
@@ -104,7 +108,7 @@ $defs:
       alleleOriginQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of an inherited
+          Reports whether the statement should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         enum:
         - germline
@@ -113,14 +117,15 @@ $defs:
       allelePrevalenceQualifier:
         type: string
         description: >-
-          Whether the statement should be interpreted in the context of the variant
+          Reports whether the statement should be interpreted in the context of the variant
           being rare or common.
         enum:
         - rare
         - common
       geneContextQualifier:
         description: >-
-          A gene context that qualifies the Statement.
+          Reports a gene impacted by the variant, which may contribute to the oncogenic
+          role  in the Statement.
         $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
       - subjectVariant
@@ -133,8 +138,9 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A study summarization describing whether a variant is associated with improved or
-      worse outcome for a disease.
+      A statement reporting a conclusion from a single study about whether a variant
+      is associated with an improved or worse outcome for a disease - based on
+      interpretation of the study's results as evidence. 
     properties:
       type:
         extends: type
@@ -177,7 +183,8 @@ $defs:
         - rare
         - common
       geneContextQualifier:
-        description: A gene context that qualifies the Statement.
+        description: Reports a gene impacted by the variant, which may contribute to the 
+        prognostic association  in the Statement.
         $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
       - subjectVariant
@@ -190,8 +197,9 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A study summarization describing the role of a variant in modulating the response of a
-      neoplasm to drug administration or other therapeutic procedure.
+      A statement reporting a conclusion from a single study about the role of a variant
+      in modulating the response of a neoplasm to drug administration or other therapeutic
+      procedures - based on interpretation of the study's results as evidence. 
     properties:
       type:
         extends: type
@@ -237,14 +245,14 @@ $defs:
       allelePrevalenceQualifier:
         type: string
         description: >-
-         Reports wWhether the statement should be interpreted in the context of the variant
+          Reports whether the statement should be interpreted in the context of the variant
           being rare or common.
         enum:
           - rare
           - common
       geneContextQualifier:
         description: >
-          Reports a gene impacted by the variant, which contributes to the therapeutic
+          Reports a gene impacted by the variant, which may contribute to the therapeutic
           sensitivity or resistance reported in the Statement.
         $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
