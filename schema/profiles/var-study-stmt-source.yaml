@@ -17,7 +17,7 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A statement reporting a conclusion from a single study about whether a variant
+      A Statement reporting a conclusion from a single study about whether a variant
       is associated with a disease (positive) or lack of a disease (negative) - based
       on interpretation of the study's results as evidence.
     properties:
@@ -76,7 +76,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A statement reporting a conclusion from a single study that supports or refutes a
+      A Statement reporting a conclusion from a single study that supports or refutes a
       variant's effect on oncogenesis for a specific tumor type - based on interpretation
       of the study's results as evidence.
     properties:
@@ -138,7 +138,7 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A statement reporting a conclusion from a single study about whether a variant
+      A Statement reporting a conclusion from a single study about whether a variant
       is associated with an improved or worse outcome for a disease - based on
       interpretation of the study's results as evidence. 
     properties:
@@ -197,7 +197,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A statement reporting a conclusion from a single study about the role of a variant
+      A Statement reporting a conclusion from a single study about the role of a variant
       in modulating the response of a neoplasm to drug administration or other therapeutic
       procedures - based on interpretation of the study's results as evidence. 
     properties:
