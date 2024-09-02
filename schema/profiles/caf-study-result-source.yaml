@@ -40,7 +40,7 @@ $defs:
         description: >-
           The number of occurrences of all alleles at the locus in the cohort 
           (sometimes referred to as "allele number")
-      alleleFrequency:
+      focusAlleleFrequency:
         type: number
         description: The frequency of the focusAllele in the cohort.
       cohort:
