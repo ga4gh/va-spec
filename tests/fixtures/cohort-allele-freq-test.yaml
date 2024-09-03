@@ -8,8 +8,7 @@
 # 2. class 'type' value was modified from 'CohortAlleleFrequency' to 'CohortAlleleFrequencyStudyResult'
 # 3. 'derivedFrom' was renamed to 'sourceDataSet'
 # 4. 'sourceDataset' (frmrly derivedFrom) was modified to be an array of 1 item instead of a single object
-# 5. 'cohort' was renamed to 'cohortStudyGroup'
-# 6. 'subcohortFrequency' was renamed to 'subCohortFrequency'
+# 5. 'subcohortFrequency' was renamed to 'subCohortFrequency'
 
 
 id: gnomad4:1-10120-T-G
@@ -23,8 +22,8 @@ sourceDataSet:
 focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
 focusAlleleCount: 0
 locusAlleleCount: 34086
-alleleFrequency: 0
-cohortStudyGroup:
+focusAlleleFrequency: 0
+cohort:
   id: ALL
   label: Overall
   type: StudyGroup
@@ -40,8 +39,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 468
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: remaining
     label: Remaining individuals Ancestry Group
     type: StudyGroup
@@ -59,8 +58,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 2282
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: amr
     label: Admixed American Ancestry Group
     type: StudyGroup
@@ -78,8 +77,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 1112
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: fin
     label: Finnish Ancestry Group
     type: StudyGroup
@@ -97,8 +96,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 190
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: ami
     label: Amish Ancestry Group
     type: StudyGroup
@@ -116,8 +115,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 872
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: eas
     label: East Asian Ancestry Group
     type: StudyGroup
@@ -135,8 +134,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 32
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: mid
     label: Middle Eastern Ancestry Group
     type: StudyGroup
@@ -154,8 +153,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 716
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: sas
     label: South Asian Ancestry Group
     type: StudyGroup
@@ -173,8 +172,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 1076
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: asj
     label: Ashkenazi Jewish Ancestry Group
     type: StudyGroup
@@ -192,8 +191,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 8666
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: afr
     label: African/African-American Ancestry Group
     type: StudyGroup
@@ -211,8 +210,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 18672
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: nfe
     label: Non-Finnish European Ancestry Group
     type: StudyGroup
@@ -230,8 +229,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 18952
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: XX
     label: XX
     type: StudyGroup
@@ -249,8 +248,8 @@ subCohortFrequency:
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 15134
-  alleleFrequency: 0
-  cohortStudyGroup:
+  focusAlleleFrequency: 0
+  cohort:
     id: XY
     label: XY
     type: StudyGroup

@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf-study-result-source.yaml"
-title: VA Spec Cohort Allele Frequency (population frequency) study result Standard Profiles
+title: VA Spec Cohort Allele Frequency (population frequency) Study Result Standard Profile
 strict: true
 
 imports:
@@ -31,32 +31,32 @@ $defs:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
         - type: string
           format: uri-reference
-          description: The Allele for which the frequency is being reported.
+          description: The Allele for which frequency results are reported.
       focusAlleleCount:
         type: integer
         description: The number of occurrences of the focusAllele in the cohort.
       locusAlleleCount:
         type: integer
         description: >-
-          The number of occurrences of alleles at the locus in the cohort
-          (count of all alleles at this locus, sometimes referred to as "allele number")
-      alleleFrequency:
+          The number of occurrences of all alleles at the locus in the cohort
+          (sometimes referred to as "allele number")
+      focusAlleleFrequency:
         type: number
         description: The frequency of the focusAllele in the cohort.
-      cohortStudyGroup:
+      cohort:
         extends: studyGroup
         description: The cohort from which the frequency was derived.
       subCohortFrequency:
+        extends: componentResult
         description: >-
           A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
           This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts.
           This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
-        extends: componentResult
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
     required:
     - focusAllele
     - focusAlleleCount
     - locusAlleleCount
-    - alleleFrequency
-    - cohortStudyGroup
+    - focusAlleleFrequency
+    - cohort
