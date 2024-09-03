@@ -83,10 +83,10 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
    *  - locusAlleleCount
       - integer
       - 1..1
-      - The number of occurrences of all alleles at the locus in the cohort  (sometimes referred to as "allele number")
+      - The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as "allele number")
    *  - focusAlleleFrequency
       - number
-      - 0..1
+      - 1..1
       - The frequency of the focusAllele in the cohort.
    *  - cohort
       - `StudyGroup <../core-im/core.json#/$defs/StudyGroup>`_

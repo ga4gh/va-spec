@@ -124,7 +124,7 @@
       },
       "locusAlleleCount": {
          "type": "integer",
-         "description": "The number of occurrences of all alleles at the locus in the cohort  (sometimes referred to as \"allele number\")"
+         "description": "The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as \"allele number\")"
       },
       "focusAlleleFrequency": {
          "type": "number",
@@ -144,10 +144,10 @@
       }
    },
    "required": [
-      "alleleFrequency",
       "cohort",
       "focusAllele",
       "focusAlleleCount",
+      "focusAlleleFrequency",
       "id",
       "locusAlleleCount",
       "type"

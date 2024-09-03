@@ -58,5 +58,5 @@ $defs:
     - focusAllele
     - focusAlleleCount
     - locusAlleleCount
-    - alleleFrequency
+    - focusAlleleFrequency
     - cohort
