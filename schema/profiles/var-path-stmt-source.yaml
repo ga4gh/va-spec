@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/var-path-stmt-source.yaml"
-title: VA Spec Variant Pathogenicity statement Standard Profile
+title: VA Spec Variant Pathogenicity Statement Standard Profile
 strict: true
 
 imports:
@@ -17,8 +17,7 @@ $defs:
     maturity: draft
     inherits: gks.core-im:Statement
     description: >-
-      A :ref:`VariantClassification` describing the role of a variant in causing an
-      inherited disorder.
+      A Statement describing the role of a variant in causing an inherited condition.
     properties:
       type:
         extends: type
@@ -48,8 +47,8 @@ $defs:
           - low
           - risk allele
         description: >-
-          Extends the statement to report the penetrance of the pathogenic effect - i.e. the extent
-          to which the variant impact is expressed by individuals carrying it as a measure of the
+          Reports the penetrance of the pathogenic effect - i.e. the extent to which the
+          variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
         type: array
