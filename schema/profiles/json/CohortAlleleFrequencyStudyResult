@@ -113,7 +113,7 @@
             {
                "type": "string",
                "format": "uri-reference",
-               "description": "The Allele for which the frequency is being reported."
+               "description": "The Allele for which frequency results are reported."
             }
          ],
          "description": "The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD."
@@ -124,13 +124,13 @@
       },
       "locusAlleleCount": {
          "type": "integer",
-         "description": "The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as \"allele number\")"
+         "description": "The number of occurrences of all alleles at the locus in the cohort  (sometimes referred to as \"allele number\")"
       },
-      "alleleFrequency": {
+      "focusAlleleFrequency": {
          "type": "number",
          "description": "The frequency of the focusAllele in the cohort."
       },
-      "cohortStudyGroup": {
+      "cohort": {
          "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/StudyGroup",
          "description": "The cohort from which the frequency was derived."
       },
@@ -145,7 +145,7 @@
    },
    "required": [
       "alleleFrequency",
-      "cohortStudyGroup",
+      "cohort",
       "focusAllele",
       "focusAlleleCount",
       "id",
