@@ -8,10 +8,13 @@ improve sharing of knowledge about any form of genetic or molecular
 variation. 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :includehidden:
 
    introduction
+   overview
+   quick-start
+   models-and-types/index
    spec-components/index
    implementation-support/index
    data-examples/index
