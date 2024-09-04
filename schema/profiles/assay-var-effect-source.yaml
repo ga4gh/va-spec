@@ -49,7 +49,7 @@ $defs:
         description: >-
           The classification of the variant effect in the assay.
         enum:
-          - normal 
+          - normal
           - indeterminate
           - abnormal
       # method for classification contains info about thresholds for how to classify
@@ -86,11 +86,11 @@ $defs:
         #   #this is the actual assayed variant (e.g. yeast, non-reference, pre-spliced trx, anything you can possibly dream of)
       score:
         type: number
-        description: The score of the variant effect in the assay.     
-      isReportedIn:
+        description: The score of the variant effect in the assay.
+      reportedIn:
         description:  The assay that was used to measure the variant effect with all the various properties
-        extends: isReportedIn
+        extends: reportedIn
         minItems: 1
-        # url: document url  
-    
+        # url: document url
+
 
