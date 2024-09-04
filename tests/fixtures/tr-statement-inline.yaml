@@ -132,16 +132,16 @@ geneContextQualifier:
 specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)
-  isReportedIn:
-    id: pmid:31779674
-    type: Document
-    label: Danos et al., 2019, Genome Med.
-    title: Standard operating procedure for curation and clinical interpretation of
-      variants in cancer
-    doi: 10.1186/s13073-019-0687-x
-    pmid: 31779674
+  reportedIn:
+    - id: pmid:31779674
+      type: Document
+      label: Danos et al., 2019, Genome Med.
+      title: Standard operating procedure for curation and clinical interpretation of
+        variants in cancer
+      doi: 10.1186/s13073-019-0687-x
+      pmid: 31779674
   type: Method
-isReportedIn:
+reportedIn:
   - id: civic.source:592
     type: Document
     label: Sequist et al., 2013, J. Clin. Oncol.

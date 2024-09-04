@@ -60,11 +60,12 @@ specifiedBy:
   id: hearing_loss_acmg_specifications_v1_2018.pdf
   type: Method
   label: ClinGen HL ACMG Specifications v1
-  isReportedIn:
-    id: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
-    url: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
-    type: Document
-    label: ClinGen HL ACMG Specifications v1
+  reportedIn:
+    - id: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
+      urls:
+      - https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
+      type: Document
+      label: ClinGen HL ACMG Specifications v1
 extensions:
 - name: clinvarMethodCategory
   value: curation
