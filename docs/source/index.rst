@@ -7,9 +7,11 @@ developed by the Global Alliance for Genomic Health to facilitate and
 improve sharing of knowledge about any form of genetic or molecular 
 variation. 
 
+
+
 .. toctree::
-   :maxdepth: 3
-   :includehidden:
+   :maxdepth: 4
+   :caption: Site Contents
 
    overview
    quick-start
