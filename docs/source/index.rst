@@ -12,6 +12,9 @@ variation.
    :includehidden:
 
    introduction
+   overview
+   quick-start
+   models-and-types/index
    spec-components/index
    implementation-support/index
    data-examples/index
