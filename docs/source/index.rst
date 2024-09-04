@@ -11,7 +11,8 @@ variation.
 
 .. toctree::
    :maxdepth: 4
-   :caption: Site Contents
+   :hidden:
+   :includehidden:
 
    overview
    quick-start
