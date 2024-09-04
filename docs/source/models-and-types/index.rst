@@ -5,3 +5,4 @@ Models and Types
    :maxdepth: 3
 
     entity/index
+    page1
