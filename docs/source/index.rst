@@ -8,7 +8,7 @@ improve sharing of knowledge about any form of genetic or molecular
 variation. 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :includehidden:
 
    introduction
