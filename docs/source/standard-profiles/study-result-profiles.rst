@@ -8,10 +8,11 @@ Study Result Profiles
 Cohort Allele Frequency Study Result
 ####################################
 
-model . . . 
+
+.. include::  ../../../schema/profiles/def/CohortAlleleFrequencyStudyResult.rst
 
 
 Assay Variant Effect Measurement Study Result
 ############################################
 
-model . . . 
+.. include::  ../../../schema/profiles/def/AssayVariantEffectMeasurementStudyResult.rst
