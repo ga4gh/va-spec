@@ -3,15 +3,13 @@ Overview
 
 The **Variant Annotation Specification (VA-Spec)** provides standard models for flexible and unambiguous representation of knowledge about molecular variation, along with supporting evidence and provenance information - to support exchange through GA4GH APIs and other data sharing mechanisms. 
 
-This document provides an overview of key concepts, defines the scope and components of the VA-Spec, summarizes modeling principles and sturctures, and illustrates the profiling process through which VA Standard PRofiles are created. 
+This document provides an overview of key concepts, defines the scope and components of the VA-Spec, summarizes modeling principles and sturctures, and illustrates the profiling process through which VA Standard Profiles are created. 
 
 **Contents**
- * :ref:'Definitions and Scope`
- * :ref:'Modeling Principles and Framework
 
-.. toctree::
-   :titlesonly:
-   :caption: Contents
+:ref:`Definitions and Scope`
+:ref:`Modeling Principles and Framework`
+
 
 Definitions and Scope
 ######################
