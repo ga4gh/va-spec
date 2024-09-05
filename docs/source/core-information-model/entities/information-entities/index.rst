@@ -1,2 +1,2 @@
-Information Entities
-!!!!!!!!!!!!!!!!!!!!
+Information Entity Classes
+!!!!!!!!!!!!!!!!!!!!!!!!!!
