@@ -9,5 +9,5 @@ model . . .
    :titlesonly:
    :maxdepth: 6
 
-   information-entity/index
-   activity/index
+   information-entities/index
+   activities/index
