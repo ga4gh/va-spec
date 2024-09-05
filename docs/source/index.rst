@@ -17,3 +17,5 @@ variation.
    overview
    quick-start
    core-information-model/index
+   standard-profiles/index
+   implementation-guidance
