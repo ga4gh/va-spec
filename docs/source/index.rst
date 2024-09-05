@@ -10,7 +10,7 @@ variation.
 
 
 .. toctree::
-   :maxdepth: 6
+   :maxdepth: 8
    :hidden:
    :includehidden:
 
