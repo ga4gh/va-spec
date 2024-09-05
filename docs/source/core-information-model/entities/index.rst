@@ -1,10 +1,13 @@
-Entity Classes
-!!!!!!!!!!!!!!
+Entity
+!!!!!!
 
-  
+
+model . . . 
+
+
 .. toctree::
    :titlesonly:
    :maxdepth: 6
 
-   information-entity
-   activity
+   information-entity/index
+   activity/index
