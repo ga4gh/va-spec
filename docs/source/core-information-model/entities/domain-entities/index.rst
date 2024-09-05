@@ -10,6 +10,6 @@ model . . .
    :titlesonly:
 
    gene
-   condition/index
-   therapeutic-procedure/index
+   conditions/index
+   therapeutic-procedures/index
  
