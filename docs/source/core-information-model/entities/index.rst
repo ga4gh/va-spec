@@ -5,6 +5,9 @@ Entity
 model . . . 
 
 
+
+Subclasses
+
 .. toctree::
    :titlesonly:
    :maxdepth: 6
