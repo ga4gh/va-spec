@@ -1,3 +1,5 @@
+.. _entities:
+
 Entity Classes
 !!!!!!!!!!!!!!
 
