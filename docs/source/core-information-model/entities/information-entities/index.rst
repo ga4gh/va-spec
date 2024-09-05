@@ -10,3 +10,7 @@ Subclasses
 
    method
    document
+   dataset
+   statement
+   evidence-line
+   study-result
