@@ -8,6 +8,7 @@ GA4GH Variant Annotation Specification
 * This framework has allowed for **implementation-driven development** that reduces bottlenecks imposed by centralized approaches, leverages the collective expertise and perspective of diverse applications, and delivers schema that have bene proven out in working data systems.
 
 **VA-Spec Components:**
+
 #. **A Generic Core Information Model (IM)**. A foundational, domain-agnostic conceptual model that includes SEPIO elements pertinent to VA use cases. *Provides a base on which VA-specific Statement Profiles are built for the GA4GH Community*. `LINK <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_
 
 #. **Standard VA Profiles**: A set of standard models that extend the Core IM to represent specific Statement types, formalized as json-schema specifications. *Provides GA4GH community with recommended standards for out-of-the-box interoperability, and example of how to apply the modeling framework to create new Profiles.* `LINK <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_
