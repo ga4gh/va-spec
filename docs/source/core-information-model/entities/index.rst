@@ -6,7 +6,7 @@ model . . .
 
 
 
-Subclasses
+**Subclasses**
 
 .. toctree::
    :titlesonly:
