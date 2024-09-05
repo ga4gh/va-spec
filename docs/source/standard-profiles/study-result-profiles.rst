@@ -11,7 +11,7 @@ Cohort Allele Frequency Study Result
 model . . . 
 
 
-AssayVariant Effect Measurement Study Result
+Assay Variant Effect Measurement Study Result
 ############################################
 
 model . . . 
