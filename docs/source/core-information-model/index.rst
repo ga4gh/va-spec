@@ -6,4 +6,4 @@ Core Information Model
     :maxdepth: 6
 
     entities/index
-    data-types/index
+    data-types
