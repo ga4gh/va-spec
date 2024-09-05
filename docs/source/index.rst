@@ -16,11 +16,10 @@ GA4GH Variant Annotation Specification
 
 #. **Reference Implementation(s)**. A library of software and services that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. *Provides a working example of code that can be adopted and/or extended by adopters.* (`IN PROGRESS`) 
 
-Site Map:
-*********
 .. toctree::
    :maxdepth: 8
    :includehidden:
+   :caption: Site Map
 
    overview
    quick-start
