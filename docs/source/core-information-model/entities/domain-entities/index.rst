@@ -1,4 +1,4 @@
-Doamin Entity
+Domain Entity
 !!!!!!!!!!!!!
 
 model . . . 
