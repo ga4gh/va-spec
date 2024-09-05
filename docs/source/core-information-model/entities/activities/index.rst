@@ -8,4 +8,4 @@ Subclasses
 .. toctree::
    :titlesonly:
 
-   contirbution
+   contribution
