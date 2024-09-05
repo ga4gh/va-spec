@@ -15,3 +15,6 @@ model . . .
    information-entities/index
    activities/index
    agent
+   study-group
+   characteristic
+   domain-entities/index
