@@ -6,8 +6,7 @@ Subclasses
 .. toctree::
    :titlesonly:
 
-   therapeutic-agent.rst
-   therapeutic-action.rst
-   combination-therapy.rst
-
-    
+   therapeutic-agent
+   therapeutic-action
+   combination-therapy
+   therapeutic-substitute-group
