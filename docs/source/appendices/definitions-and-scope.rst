@@ -12,4 +12,4 @@ Annotation
 **Definition**:  “A structured data object that holds a central statement of knowledge about a molecular variation, along with metadata supporting its interpretation and use.
 
 .. image:: ../images/annotation-definition.PNG
-  :width: 400
+  :width: 700
