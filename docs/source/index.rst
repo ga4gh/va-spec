@@ -24,3 +24,4 @@ GA4GH Variant Annotation Specification
    core-information-model/index
    standard-profiles/index
    implementation-guidance
+   appendices/index
