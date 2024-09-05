@@ -4,23 +4,22 @@ Data Types
 !!!!!!!!!!
 
 
-
-  Coding
-  ######
-
-
-  Extension
-  #########
+Coding
+######
 
 
-
-  RecordMetadata
-  ##############
-
-
-  Code
-  ####
+Extension
+#########
 
 
-  IRI
-  ###
+
+RecordMetadata
+##############
+
+
+Code
+####
+
+
+ IRI
+###
