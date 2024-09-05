@@ -27,7 +27,7 @@ Variant Prognostic Study Statement
 model . . . 
 
 
-Variant Therapeutic Reesponse Study Statement
+Variant Therapeutic Response Study Statement
 #############################################
 
 model . . . 
