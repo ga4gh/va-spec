@@ -8,7 +8,7 @@ model . . .
 Information Entity
 ##################
 
-model . . . 
+.. include::  ../../../schema/core-im/def/InformationEntity.rst
 
 Method
 ******
