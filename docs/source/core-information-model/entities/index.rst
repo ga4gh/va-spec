@@ -14,3 +14,4 @@ model . . .
 
    information-entities/index
    activities/index
+   agent
