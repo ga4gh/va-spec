@@ -2,10 +2,22 @@ Overview
 !!!!!!!!
 
 The **Variant Annotation Specification (VA-Spec)** provides standard models for flexible and unambiguous representation of knowledge about molecular variation, along with supporting evidence and provenance information - to support exchange through GA4GH APIs and other data sharing mechanisms. 
+This document provides an overview of key concepts, defines the scope and components of the VA-Spec, summarizes modeling principles and sturctures, and illustrates the profiling process through which VA Standard PRofiles are created. 
 
-Definitions and Scope:
+
+.. toctree::
+   :titlesonly:
+   :caption: Contents
+
+Definitions and Scope
 ######################
 
+.. toctree::
+   :titlesonly:
+   :caption: Contents
+
+   :ref: 'Definitions and Scope`
+   :ref: 'Modeling Principles and Framework`
 
 Variant
 *******
@@ -36,8 +48,8 @@ Annotation
  * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or  alterations in gene expression/amount (see :ref:`Variant`). 
  * **‘metadata’**:  may include evidence and provenance for the primary statement, and additional information that helps the user appreciate the significance and utility of this knowledge
 
-Variant Annotation Scope
-************************
+VA-Spec Scope
+*************
 **Definition**: The VA-Spec supports diverse types of **biological** and **clinical** variant knowledge, but leaves **case-level observations** to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
 
 Examples of in scope statements:
@@ -46,3 +58,11 @@ Examples of in scope statements:
 
 Examples of out of scope 'case-level' statements:
  * observation of a variant in a patient, disease causality of an observed variant, origin of an observed variant, clonality of a variant in a patient
+
+
+.. toctree::
+   :titlesonly:
+   :caption: Contents
+
+   Definitions and Scope
+   Modeling Principles and Framework
