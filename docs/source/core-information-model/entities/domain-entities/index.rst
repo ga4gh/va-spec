@@ -1,8 +1,10 @@
 Doamin Entity
 !!!!!!!!!!!!!
 
+model . . . 
 
-  Subclasses
+
+  **Subclasses**
 
 .. toctree::
    :titlesonly:
