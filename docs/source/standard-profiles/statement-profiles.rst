@@ -12,7 +12,7 @@ Variant Pathogenicity Statement
 Variant Oncogenicity Statement
 ##############################
 
-.. include::  ../../../schema/profiles/def/VariantOncogenicityStatement.rst
+.. include::  ../../../schema/profiles/def/VariantOncogenicityStudyStatement.rst
 
 
 Variant Therapeutic Response Study Statement
