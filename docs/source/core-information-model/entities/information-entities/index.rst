@@ -1,6 +1,7 @@
-Information Entity Classes
-!!!!!!!!!!!!!!!!!!!!!!!!!!
+Information Entity
+!!!!!!!!!!!!!!!!!!
 
+model . . . 
 
 Subclasses
 
