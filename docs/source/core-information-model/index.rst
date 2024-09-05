@@ -3,7 +3,7 @@ Core Information Model
 
 .. toctree::
     :hidden:
-    :maxdepth: 3
+    :maxdepth: 6
 
-    entities
-    data-types
+    entities/index
+    data-types/index
