@@ -4,5 +4,5 @@ Appendices
 .. toctree::
     :maxdepth: 6
 
-    annotation-definition.rst
+    definitions-and-scope.rst
     
