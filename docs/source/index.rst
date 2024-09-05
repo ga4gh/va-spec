@@ -16,4 +16,4 @@ variation.
 
    overview
    quick-start
-   models-and-types/index
+   core-information-model/index
