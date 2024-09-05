@@ -5,6 +5,5 @@ Core Information Model
     :hidden:
     :maxdepth: 6
 
-    entity
-    entities/index
+    entities/information-entity
     data-types/index
