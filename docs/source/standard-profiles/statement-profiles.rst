@@ -12,22 +12,23 @@ Variant Pathogenicity Statement
 Variant Oncogenicity Statement
 ##############################
 
-model . . . 
-
-
-Variant Diagnostic Study Statement
-##################################
-
-model . . . 
-
-
-Variant Prognostic Study Statement
-##################################
-
-model . . . 
+.. include::  ../../../schema/profiles/def/VariantOncogenicityStatement.rst
 
 
 Variant Therapeutic Response Study Statement
 #############################################
 
-model . . . 
+.. include::  ../../../schema/profiles/def/VariantTherapeuticResponseStudyStatement.rst
+
+
+Variant Diagnostic Study Statement
+##################################
+
+.. include::  ../../../schema/profiles/def/VariantDiagnosticStudyStatement.rst
+
+
+Variant Prognostic Study Statement
+##################################
+
+.. include::  ../../../schema/profiles/def/VariantPrognosticStudyStatement.rst
+
