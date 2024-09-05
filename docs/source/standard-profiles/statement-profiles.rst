@@ -7,7 +7,7 @@ Statement Profiles
 Variant Pathogenicity Statement
 ###############################
 
-model . . . 
+.. include::  ../../../schema/profiles/def/VariantPathogenicityStatement.rst
 
 Variant Oncogenicity Statement
 ##############################
