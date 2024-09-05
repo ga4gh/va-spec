@@ -15,3 +15,31 @@ Method
 
 model . . . 
 
+
+Document
+********
+
+model . . . 
+
+
+Data Set
+********
+
+model . . . 
+
+Statement
+*********
+
+model . . . 
+
+
+Activity
+########
+
+model . . . 
+
+
+Proposition
+###########
+
+model . . . 
