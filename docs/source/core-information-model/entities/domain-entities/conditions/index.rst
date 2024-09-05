@@ -9,6 +9,6 @@ Condition
 .. toctree::
    :titlesonly:
 
-   disease.rst
-   phenotype.rst
-   trait-set.rst
+   disease
+   phenotype
+   trait-set
