@@ -7,7 +7,7 @@ The Variant Annotation Specification (VA-Spec) provides standard models for unam
  * It provides machine-readable **json-schema specifications** of these models, to enable sharing and validation of data through APIs and other exchange mechanisms. 
  * It offers a **modeling framework** through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
 
-This document provides an high-level introduction of VA-Spec **principles**, **models**, and **processes** - linking out to separate pages for additional details. 
+This document provides an high-level introduction of VA-Spec **principles**, **models**, and **processes**, and links out to separate pages for additional details. For a hands on experience with va-spec data, see the simple **Variant Pathogenicity Statement example** here (TO DO).
 
 Definitions and Scope
 ######################
