@@ -22,9 +22,11 @@ This modeling framework has allowed for **implementation-driven development** th
    :includehidden:
    :caption: Site Map
 
+   introduction
    overview
    quick-start
    core-information-model/index
    standard-profiles/index
    implementation-guidance
    appendices/index
+   file-formatting-test
