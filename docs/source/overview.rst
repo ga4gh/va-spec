@@ -62,8 +62,8 @@ The VA-Spec supports annotation statements about the **biological** and **clinic
  * **Case-Level Knowledge Statement** (*out-of-scope*):  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
 
 
-Modeling Principles and Framework
-#################################
+Modeling Foundations
+####################
 
 The VA-Spec was built on top of the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - adopting its established models, conventions, and profiling methodology to produce standard models for the GA4GH community. The SEPIO framework provides a domain-agnostic **Core Information Model (Core-IM)** and **Profiling Methodology** that can be used to define schema for specific kinds of Statements, and the specific kinds of evidence and provenance information that support them. For example, the VA-Spec has applied the framework to define 'Variant Pathogenicity Statement' and 'Variant Therapeutic Response Statement' profiles, among others found `here <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_. 
 
@@ -104,12 +104,12 @@ Legend:
 
 
 Profiling tasks may include:
- * selecting a subset of classes and attributes needed to represent the Statement/use case of interest (e.g. a data creator may decide not to bring the ``Statement.hasEvidenceLines`` or the ``Evidence Line` class into their profile).
- * defining domain-specific subtypes of general purpose Core IM classes (e.g. ``Statement`` -> ``VariantPathogenicityStatement``).
- * specializing certain attributes to capture domain-specific information (e.g. ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``).
- * defining or importing classes representing domain entities that a specific type of Statement is about (e.g. classes to represent a ``Variation``, ``Gene``, ``Disease``).
- * constraining values of generic Core IM attributes to take specific domain entities or data types as values (e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances).
- * defining domain-specific value sets that get bound to attributes taking coded values (e.g. binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_). 
+ * Selecting a subset of classes and attributes needed to represent the Statement/use case of interest (e.g. a data creator may decide not to bring the ``Statement.hasEvidenceLines`` or the ``Evidence Line`` class into their profile).
+ * Defining domain-specific subtypes of general purpose Core IM classes (e.g. ``Statement`` -> ``VariantPathogenicityStatement``).
+ * Specializing certain attributes to capture domain-specific information (e.g. ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``).
+ * Defining or importing classes representing domain entities that a specific type of Statement is about (e.g. classes to represent a ``Variation``, ``Gene``, ``Disease``).
+ * Constraining values of generic Core IM attributes to take specific domain entities or data types as values (e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances).
+ * Defining domain-specific value sets that get bound to attributes taking coded values (e.g. binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ from the GENO Ontology)
 
 
 Profiling tasks may include:
@@ -131,8 +131,20 @@ The Profiles that result from this process represent custom, domain-specific inf
 
 
 
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
 
-
+   *  - Profiling Task
+      - Example
+   *  - Selecting a subset of classes and attributes needed to represent the Statement/use case of interest 
+      - A data creator may decide not to bring the ``Statement.hasEvidenceLines`` or the ``Evidence Line` class into their profile, if not necessary to represent their data
+   *  - Defining domain-specific subtypes of general purpose Core IM classes 
+      - ``Statement`` -> ``VariantPathogenicityStatement``
+   *  - Specializing certain attributes to capture domain-specific information
+      - ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
 
 
 
