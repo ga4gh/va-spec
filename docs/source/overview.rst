@@ -8,7 +8,9 @@ The Variant Annotation Specification (VA-Spec) provides standard models for unam
  * It offers a `modeling framework <https://github.com/ga4gh/va-spec/blob/1.x/docs/source/implementation-guidance.rst#profiling-methodology>`_ through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
  * It is based on the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - applying SEPIO's established models, conventions, and profiling methodology to produce these resources.
 
-This document provides an **high-level introduction  VA-Spec principles, models, and processes**, and links out to separate pages for additional details. For a hands on experience with VA-Spec data, see the simple **Variant Pathogenicity Statement example** here (TO DO).
+This document provides an **high-level introduction to VA-Spec principles, models, and processes**, and links out to separate pages for additional details. 
+
+For a hands on experience with VA-Spec data, see the simple Variant Pathogenicity Statement example here (TO DO).
 
 Definitions and Scope
 ######################
@@ -17,7 +19,9 @@ Below we define foundational concepts and outline the scope of what the VA-Spec 
 
 Variant
 *******
-**Definition**: alternative forms of a genetic sequence, or of its molecular manifestation in a biological system (also referred to as a 'molecular variation'). Variants are the subjects of `Annotations <https://va-ga4gh.readthedocs.io/en/stable/overview.html#annotation>`_ that the VA-Spec was built to support. 
+Variants are the subjects of `Annotations <https://va-ga4gh.readthedocs.io/en/stable/overview.html#annotation>`_ that the VA-Spec was built to support. 
+
+**Definition**: alternative forms of a genetic sequence, or of its molecular manifestation in a biological system (also referred to as a 'molecular variation'). 
 
 Covers *sequence variations* in a genome, transcript, or protein.
  * **simple** (SNV, indels) or **complex** (inversions, repeat regions) sequence changes
@@ -30,51 +34,42 @@ Covers *post-sequence* variations in the state of a program that unfolds 'downst
  * changes in **epigenetic alterations** of a gene or region (e.g. increased enhancer methylation)
 
 Covers different levels of **'represenational specificity'** at which these variations can be described
- * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_), the APOE ɛ2/ɛ3 genotype (`link <https://www.snpedia.com/index.php/Gs269>`_)
- * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). e.g. ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_), with members {NC_000019.10:g.44908684T>C, NC_000019.9:g.45411941T>C, NM_000041.3:c.388T>C NP_000032.1:p.Cys130Arg, ... }  
+ * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
+ * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
  * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
 
 The VA-Spec uses the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/stable/index.html>`_ as a standard for identifying and representing these different forms of molecular variation.
 
 Annotation
 **********
+
 **Definition**:  “A **structured data object** that holds a **central statement of knowledge** about a **molecular variation**, along with **evidence and provenance metadata** supporting it.
+
  * **‘structured data object’**: an organized, computable representation of knowledge, in any format or syntax.
  * **‘central statement of knowledge’**: the single primary statement about a molecular variation is at the core of an annotation.
  * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or alterations in gene expression or location (see `Variant`_). 
  * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
 
-The VA-Spec model was  defined to **explcitly represent** and **clearly distinguish** these **key types of information** within a Variant Annotation - so that users can appreciate the **significance and utility** of the knowledge they provide.
+The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
 
 
 Variant Annotation Types
 ************************
-The VA-Spec supports annotation statements about the **biological** and **clinical** significance of a variant, but leaves thsoe reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
+The VA-Spec supports annotation statements about the **biological** and **clinical** significance of a variant, but leaves thoae reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
 
-Examples of In-Scope Statements:
- * **Biological Knowledge**: Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
- * **Clinical Knowledge**: Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
-
-Examples of Out-of-Scope Statements:
- * **Case-Level Knowledge**:  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
+ * **Biological Variant Statements** (*in-scope*): Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
+ * **Clinical Knolwedge Statements** (*in-scope*): Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
+ * **Case-Level Knowledge Statement** (*out-of-scope*):  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
 
 
 Modeling Principles and Framework
 #################################
 
-The VA-Spec was built on top of the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - adopting its established models, conventions, and profiling methodology to produce standard models for the GA4GH community. 
+The VA-Spec was built on top of the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - adopting its established models, conventions, and profiling methodology to produce standard models for the GA4GH community. The SEPIO framework provides a domain-agnostic **Core Information Model (Core-IM)** and **Profiling Methodology** that can be used to define schema for specific kinds of Statements, and the specific kinds of evidence and provenance information that support them. For example, the VA-Spec has applied the framework to define 'Variant Pathogenicity Statement' and 'Variant Therapeutic Response Statement' profiles, among others found `here <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_. 
 
-The SEPIO framework provides a **domain-agnostic Core Information Model (Core-IM)** and **Profiling Methodology** that can be used to define schema for specific kinds of Statements, and the specific kinds of evidence and provenance information that support them. For example, the VA-Spec has applied the framework to define 'Variant Pathogenicity Statement' and 'Variant Therapeutic Response Statement' profiles, among others found `here <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_. 
-
-The **SEPIO Core Information Model**
-************************************
-The foundational SEPIO Core-IM provides doamin-agnostic model for describing the scientific knowledge assertions of any kind, and their provenance and evidence information (Figure XXX). 
-In this model: 
- * each knowledge assertion is captured in a self-contained Statement object
- * he semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s) (the statement’s ‘Proposition’)
- * organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
-
-The inherent flexibility of SEPIO supports representation of this information at the level of detaial and complexity that matches the needs of a given Statement type or application. 
+The SEPIO Core Information Model
+********************************
+The foundational SEPIO Core-IM is a doamin-agnostic model for describing the scientific knowledge assertions of any kind. As shown in Figure XXX, each knowledge assertion is captured in a self-contained ``Statement`` object, where the semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s). Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
 
 .. _sepio-class-diagram-w-statement:
 
@@ -82,7 +77,7 @@ The inherent flexibility of SEPIO supports representation of this information at
 
    Statement-Centric SEPIO Data Strucutres 
 
-   **Legend** The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') - 
+   **Legend** (A) Explicit Statement Semantics (B) SEPIO Data Strucutre:  The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') - 
    which may be linked to one or more **Evidence Lines** representing disctrete arguments for or against it. 
    Each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) 
    contributing to such an argument. Surrounding the central axis are classes that describe the provenance of these
@@ -99,8 +94,8 @@ test
            around other classes as their central focus. For exapmle, implementations have defined profiles focused on describing and
            tracking the provenance of **Evidence Line** or **Study Reuslt** objects, where the same modeling patterns and principles are applied (see here).
 
-The **SEPIO Profiling Methodology** 
-***********************************
+The SEPIO Profiling Methodology
+*******************************
 In practice, application of SEPIO to represent actual data requires a 'Profiling' process, in which the gneeric Core-IM is specialized represent specific Statement types. For example, Figure XXX shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements. Note that these profiles exhibit very different levels of complexity, to support the specific evidence and provenance requirements for each type of Statement.   
 
 FIGURE:
