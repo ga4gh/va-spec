@@ -124,7 +124,7 @@ Profiling tasks may include:
  * constraining values of generic Core IM attributes to take specific domain entities or data types as values
      * e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
  * defining domain-specific value sets that get bound to attributes taking coded values
-     * e.g. binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_). 
+     * e.g. binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ terms from the GENO Ontology
 
 The Profiles that result from this process represent custom, domain-specific information models that can be implemented as formal schema for a particular use case or application.  
 
@@ -141,16 +141,16 @@ The Profiles that result from this process represent custom, domain-specific inf
       - Example
    *  - Select a subset of classes and attributes needed to represent the Statement/use case of interest 
       - Implementers may choose not to use the``Evidence Line` class and related attributes in their profile.
-   *  - Definie domain-specific subtypes of general purpose Core IM classes 
-      - ``Statement`` -> ``VariantPathogenicityStatement``
+   *  - Define domain-specific subtypes of general purpose Core IM classes 
+      - Specialize ``Statement`` -> ``VariantPathogenicityStatement``
    *  - Specialize attributes to capture domain-specific information
-      - ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
+      - Specialize ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
    *  - Define or import classes for domain entities that profiles Statements are about
-      -  For a ``VariantPathogencityStatement`` profile. classes to represent a ``Variation`` and``Disease`` 
+      - For a Variant Pathogencity Statement profile, classes to represent the subject ``Variation`` and object ``Disease`` 
    *  - Constrain values of Core IM attributes to take specific domain entities or data types as values
-       - Restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
-   *   - Define value sets that get bound to attributes taking coded values
-       - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_). 
+      - Restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
+   *  - Define value sets that get bound to attributes taking coded values
+      - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_). 
 
 
 
