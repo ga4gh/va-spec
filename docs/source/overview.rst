@@ -78,7 +78,7 @@ The inherent flexibility of SEPIO supports representation of this information at
 
 .. _sepio-class-diagram-w-statement:
 
-.. figure:: ../images/sepio-class-diagram-w-statement.PNG
+.. figure:: images/sepio-class-diagram-w-statement.PNG
 
    Statement-Centric SEPIO Data Strucutres 
 
