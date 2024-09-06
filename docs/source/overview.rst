@@ -69,18 +69,31 @@ The SEPIO framework provides a **domain-agnostic Core Information Model (Core-IM
 The **SEPIO Core Information Model**
 ************************************
 The foundational SEPIO Core-IM provides doamin-agnostic model for describing the scientific knowledge assertions of any kind, and their provenance and evidence information (Figure XXX). 
-In this SEPIO model, each knowledge assertion is captured in a self-contained Statement object. 
-The semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s) (the statement’s ‘Proposition’).
-Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
+In this model: 
+ * each knowledge assertion is captured in a self-contained Statement object
+ * he semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s) (the statement’s ‘Proposition’)
+ * organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
+
 The inherent flexibility of SEPIO supports representation of this information at the level of detaial and complexity that matches the needs of a given Statement type or application. 
 
-FIGURE: Statement-Centric SEPIO Data STrucutres 
-Legend: The central axis of SEPIO data strucutres is rooted at a **Statement** object (aka 'Assertion') - which may be linked to one or more **Evidence Lines** representing disctrete arguments for or against it. 
-Each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) in building up the these arguments. 
-Surrounding the central axis are classes that let us describe the provenance of these core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
-This core structure allows precise and fine-grained tracking of provenance at the level of a Statement and each supporting Evidence Lines and Items.
+.. _sepio-class-diagram-w-statement:
 
-BOX: Note that while the majority of applications are focused on representing knowledge Statements, SEPIO data structures can be built around other classes as their central focus. For examle, implementations have defined profiles focused on describing and tracking the provenance of Evidence Line or StudyReuslt objects, where the same modelign patterns and principles are applied (see here).
+.. figure:: images/sepio-class-diagram-w-statement.png
+
+   Statement-Centric SEPIO Data Strucutres 
+
+   **Legend** The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') - 
+   which may be linked to one or more **Evidence Lines** representing disctrete arguments for or against it. 
+   Each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) 
+   contributing to such an argument. Surrounding the central axis are classes that describe the provenance of these
+   core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods**
+   that specify their creation, and **Documents** that describe them. This core structure allows precise tracking of provenance
+   at the level of a Statement and each supporting Evidence Lines and Items.
+
+
+.. note::  While the majority of applications are focused on representing knowledge Statements, SEPIO data structures can be built
+           around other classes as their central focus. For exapmle, implementations have defined profiles focused on describing and
+           tracking the provenance of Evidence Line or StudyReuslt objects, where the same modeling patterns and principles are applied (see here).
 
 The **SEPIO Profiling Methodology** 
 ***********************************
