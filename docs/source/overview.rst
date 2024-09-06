@@ -139,39 +139,18 @@ The Profiles that result from this process represent custom, domain-specific inf
 
    *  - Profiling Task
       - Example
-   *  - Selecting a subset of classes and attributes needed to represent the Statement/use case of interest 
-      - A data creator may decide not to bring the ``Statement.hasEvidenceLines`` or the ``Evidence Line` class into their profile, if not necessary to represent their data
-   *  - Defining domain-specific subtypes of general purpose Core IM classes 
+   *  - Select a subset of classes and attributes needed to represent the Statement/use case of interest 
+      - Implementers may choose not to use the``Evidence Line` class and related attributes in their profile.
+   *  - Definie domain-specific subtypes of general purpose Core IM classes 
       - ``Statement`` -> ``VariantPathogenicityStatement``
-   *  - Specializing certain attributes to capture domain-specific information
+   *  - Specialize attributes to capture domain-specific information
       - ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
-
-
-
-
-
-.. _vr-schema-diagram:
-
-.. figure:: images/schema-current.png
-
-   Current Variation Representation Specification Schema
-
-   **Legend** The VRS information model consists of several interdependent
-   data classes, including both concrete classes and abstract superclasses
-   (indicated by <<abst>> stereotype in header). These classes may be broadly
-   categorized as conceptual representations of Variation (green boxes),
-   Feature (blue boxes), Location (light blue boxes), SequenceExpression
-   (purple boxes), and General Purpose Types (gray boxes). The general purpose
-   types support the primary classes, including intervals, ranges, Number and
-   GA4GH Sequence strings (not shown). While all VRS objects are Value
-   Objects, only some objects are intended to be identifiable (Variation,
-   Location, and Sequence). Conceptual inheritance relationships between
-   classes is indicated by connecting lines.  [`source
-   <https://app.diagrams.net/#G1Qimkvi-Fnd1hhuixbd6aU4Se6zr5Nc1h>`__]
-
-
-
-
+   *  - Define or import classes for domain entities that profiles Statements are about
+      -  For a ``VariantPathogencityStatement`` profile. classes to represent a ``Variation`` and``Disease`` 
+   *  - Constrain values of Core IM attributes to take specific domain entities or data types as values
+       - Restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
+   *   - Define value sets that get bound to attributes taking coded values
+       - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_). 
 
 
 
