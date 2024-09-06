@@ -25,3 +25,9 @@ The VA-Spec will support different levels of adoption and use  - from direct con
 
 Profiling Methodology
 #####################
+
+Initial version informally specified as instructions, conventions, examples.
+
+Future work will provide templates and tools that help implement and validate the mothodology and its outputs.
+
+. . . 
