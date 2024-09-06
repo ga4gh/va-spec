@@ -6,6 +6,7 @@ The Variant Annotation Specification (VA-Spec) provides standard models for unam
  * It defines a **set of information models** to represent different kinds of statements made about variants - built as discrete **profiles** that extend a common **core information model**. 
  * It provides machine-readable **json-schema specifications** of these models, to enable sharing and validation of data through APIs and other exchange mechanisms. 
  * It offers a **modeling framework** through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
+ * It uses the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ to provide these resources - applying SEPIO's established models, conventions, and profiling methodology.
 
 This document provides an high-level introduction of VA-Spec **principles**, **models**, and **processes**, and links out to separate pages for additional details. For a hands on experience with va-spec data, see the simple **Variant Pathogenicity Statement example** here (TO DO).
 
