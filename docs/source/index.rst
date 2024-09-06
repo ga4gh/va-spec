@@ -1,11 +1,14 @@
 GA4GH Variant Annotation Specification
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-* The **Variant Annotation Specification (VA-Spec)** is a standard developed by the Global Alliance for Genomic Health to facilitate and improve sharing of knowledge about any form of genetic or molecular variation. 
+The **Variant Annotation Specification (VA-Spec)** is a standard developed by the Global Alliance for Genomic Health to facilitate and improve sharing of knowledge about any form of genetic or molecular variation. 
+
 * It defines a **set of information models** to represent different kinds of statements made about genetic variants - each built as **profiles** that extend a foundational **core information model**. 
 * It provides machine-readable **json-schema specifications** of these models, to support sharing and validation of data through APIs and other exchange mechanisms. 
-* It also provides a **modeling framework** through which implementers can build profiles for **new statement types**, or **extend existing profiles** to support novel use cases. 
-* This framework has allowed for **implementation-driven development** that reduces bottlenecks imposed by centralized approaches, leverages the collective expertise and perspective of diverse applications, and delivers schema that have bene proven out in working data systems.
+* It  provides a **modeling framework** through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
+* It uses the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ to produce these resources - applying SEPIO's established models, conventions, and profiling methodology.
+
+This framework has allowed for **implementation-driven development** that reduces bottlenecks imposed by centralized approaches, leverages the collective expertise and perspective of diverse applications, and delivers schema that have bene proven out in working data systems.
 
 **VA-Spec Components:**
 
