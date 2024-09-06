@@ -1,7 +1,7 @@
 Overview
 !!!!!!!!
 
-The **Variant Annotation Specification (VA-Spec)** provides standard models for unambiguous representation of knowledge about molecular variation, along with supporting evidence and provenance information. 
+The Variant Annotation Specification (VA-Spec) provides standard models for unambiguous representation of knowledge about molecular variation, along with supporting evidence and provenance information. 
  * It defines a **set of information models** to represent different kinds of statements made about variants - built as discrete **profiles** that extend a common **core information model**. 
  * It provides machine-readable **json-schema specifications** of these models, to enable sharing and validation of data through APIs and other exchange mechanisms. 
  * It offers a **modeling framework** through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
@@ -37,7 +37,7 @@ Annotation
 **Definition**:  “A **structured data object** that holds a **central statement of knowledge** about a **molecular variation**, along with **metadata** supporting its interpretation and use.
  * **‘structured data object’**: an organized, computable representation of knowledge (in any format or syntax)
  * **‘central statement of knowledge’**: the single primary statement about a molecular variation is at the core of an annotation
- * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or  alterations in gene expression/amount (see :ref:`Variant`). 
+ * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or  alterations in gene expression/amount (see `Variant`_). 
  * **‘metadata’**:  may include evidence and provenance for the primary statement, and additional information that helps the user appreciate the significance and utility of this knowledge
 
 VA-Spec Scope
