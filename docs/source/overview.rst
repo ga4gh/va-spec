@@ -86,35 +86,6 @@ The foundational SEPIO Core-IM is a doamin-agnostic model for describing the sci
    at the level of a Statement and each supporting Evidence Lines and Items.
 
 
-test 
-test 
-
-.. _vr-schema-diagram:
-
-.. figure:: images/schema-current.png
-
-   Current Variation Representation Specification Schema
-
-   **Legend** The VRS information model consists of several interdependent
-   data classes, including both concrete classes and abstract superclasses
-   (indicated by <<abst>> stereotype in header). These classes may be broadly
-   categorized as conceptual representations of Variation (green boxes),
-   Feature (blue boxes), Location (light blue boxes), SequenceExpression
-   (purple boxes), and General Purpose Types (gray boxes). The general purpose
-   types support the primary classes, including intervals, ranges, Number and
-   GA4GH Sequence strings (not shown). While all VRS objects are Value
-   Objects, only some objects are intended to be identifiable (Variation,
-   Location, and Sequence). Conceptual inheritance relationships between
-   classes is indicated by connecting lines.  [`source
-   <https://app.diagrams.net/#G1Qimkvi-Fnd1hhuixbd6aU4Se6zr5Nc1h>`__]
-
-
-
-
-
-
-
-
 .. note::  While the majority of applications are focused on representing knowledge **Statements**, SEPIO data structures can be built
            around other classes as their central focus. For exapmle, implementations have defined profiles focused on describing and
            tracking the provenance of **Evidence Line** or **Study Reuslt** objects, where the same modeling patterns and principles are applied (see here).
