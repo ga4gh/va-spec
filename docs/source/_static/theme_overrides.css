@@ -25,7 +25,7 @@
      text-decoration: underline;
  }
 
- figcaption {
+ figure {
      border: thin solid #6ab0de;
      padding: 2px;
  }
