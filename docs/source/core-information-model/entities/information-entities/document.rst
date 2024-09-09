@@ -2,3 +2,6 @@
 
 Document
 !!!!!!!!
+
+
+.. include::  ../../../../../schema/core-im/def/Document.rst
