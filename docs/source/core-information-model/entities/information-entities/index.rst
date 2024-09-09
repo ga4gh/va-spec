@@ -1,3 +1,5 @@
+.. _InformationEntity:
+
 Information Entity
 !!!!!!!!!!!!!!!!!!
 
