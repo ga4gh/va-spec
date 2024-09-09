@@ -16,17 +16,3 @@ Information Entity
    statement
    evidence-line
    study-result
-
-
-Subclasses
-**********
-
-.. toctree::
-   :titlesonly:
-
-   method
-   document
-   dataset
-   statement
-   evidence-line
-   study-result
