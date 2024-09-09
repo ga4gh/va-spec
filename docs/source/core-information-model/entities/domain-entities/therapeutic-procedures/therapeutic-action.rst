@@ -1,4 +1,4 @@
 Therapeutic Action
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../../../../../../schema/domain-entities/def/Therapeutic-Action.rst
+.. include::  ../../../../../../schema/domain-entities/def/TherapeuticAction.rst
