@@ -90,7 +90,7 @@ $defs:
       reportedIn:
         description:  The assay that was used to measure the variant effect with all the various properties
         extends: reportedIn
-        minItems: 1
+        # minItems: 1
         # url: document url
 
 
