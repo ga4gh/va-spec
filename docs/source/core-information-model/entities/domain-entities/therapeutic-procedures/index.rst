@@ -3,7 +3,7 @@
 Therapeutic Procedure
 !!!!!!!!!!!!!!!!!!!!
 
-.. include::  ../../../../../../schema/domain-entiies/def/TherapeuticProcedure.rst  
+.. include::  ../../../../../../schema/domain-entities/def/TherapeuticProcedure.rst  
 
 
 Subclasses
