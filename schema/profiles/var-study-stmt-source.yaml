@@ -237,7 +237,7 @@ $defs:
       allelePrevalenceQualifier:
         type: string
         description: >-
-         Reports wWhether the statement should be interpreted in the context of the variant
+          Reports wWhether the statement should be interpreted in the context of the variant
           being rare or common.
         enum:
           - rare
