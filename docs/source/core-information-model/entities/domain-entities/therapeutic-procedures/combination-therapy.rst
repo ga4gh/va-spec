@@ -2,4 +2,4 @@ Combination Therapy
 !!!!!!!!!!!!!!!!!!!
 
 
-.. include::  ../../../../../../schema/domain-entities/def/Combination-Therapy.rst
+.. include::  ../../../../../../schema/domain-entities/def/CombinationTherapy.rst
