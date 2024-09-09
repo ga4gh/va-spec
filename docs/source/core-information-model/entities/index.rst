@@ -1,9 +1,9 @@
+.. _Entity:
+
 Entity
 !!!!!!
 
-
-model . . . 
-
+.. include::  ../../../../schema/core-im/def/Entity.rst
 
 
 **Subclasses**
