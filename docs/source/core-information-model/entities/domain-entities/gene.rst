@@ -1,4 +1,4 @@
 Gene
 !!!!
 
-.. include::  ../../../../../schema/core-im/def/Gene.rst  
+.. include::  ../../../../../schema/domain-entities/def/Gene.rst  
