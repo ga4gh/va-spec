@@ -6,7 +6,7 @@ Therapeutic Procedure
 .. include::  ../../../../../../schema/domain-entities/def/TherapeuticProcedure.rst  
 
 
-Subclasses
+**Subclasses**
 
 .. toctree::
    :titlesonly:
