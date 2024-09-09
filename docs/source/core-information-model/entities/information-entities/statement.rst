@@ -1,3 +1,5 @@
+.. _Statement:
+
 Statement
 !!!!!!!!!
 

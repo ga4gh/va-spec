@@ -1,2 +1,4 @@
+.. _StudyResult:
+
 Study Result
 !!!!!!!!!!!!
