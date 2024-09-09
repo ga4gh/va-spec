@@ -1,10 +1,12 @@
+.. _Condition:
+
 Condition
 !!!!!!!!!
 
-  model . . . 
+  .. include::  ../../../../../../schema/domain-entities/def/Condition.rst
 
-  
-  **Subclasses**
+
+**Subclasses**
 
 .. toctree::
    :titlesonly:
