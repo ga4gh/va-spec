@@ -1,7 +1,9 @@
+.. _Activity:
+
 Activity
 !!!!!!!!
 
-model . . . 
+.. include::  ../../../../../schema/core-im/def/Activity.rst  
 
 Subclasses
 
