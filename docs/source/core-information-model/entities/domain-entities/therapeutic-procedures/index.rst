@@ -1,7 +1,9 @@
+.. TherapeuticProcedure:: 
+
 Therapeutic Procedure
 !!!!!!!!!!!!!!!!!!!!
 
-model . . . 
+.. include::  ../../../../../../schema/domain-entity/def/TherapeuticProcedure.rst  
 
 
 Subclasses
