@@ -1,7 +1,9 @@
+.. _DomainEntity:
+
 Domain Entity
 !!!!!!!!!!!!!
 
-model . . . 
+.. include::  ../../../../../schema/core-im/def/DomainEntity.rst
 
 
   **Subclasses**
