@@ -11,13 +11,13 @@ Complex Data Types
 Coding
 ******
 
-model . . . 
+.. include::  ../../../schema/data-types/def/Coding.rst
 
 .. _Extension:
 
 Extension
 *********
-model . . . 
+.. include::  ../../../schema/data-types/def/Extension.rst
 
 
 .. _RecordMetadata:
@@ -25,7 +25,7 @@ model . . .
 RecordMetadata
 **************
 
-model . . . 
+.. include::  ../../../schema/core-im/def/RecordMetadata.rst
 
 
 Simple Data Types
@@ -36,7 +36,7 @@ Simple Data Types
 Code
 ****
 
-model . . . 
+.. include::  ../../../schema/data-types/def/Code.rst
 
 
 .. _IRI:
@@ -44,4 +44,4 @@ model . . .
 IRI
 ***
 
-model . . . 
+.. include::  ../../../schema/data-types/def/IRI.rst
