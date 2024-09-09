@@ -1,9 +1,9 @@
-.. TherapeuticProcedure:: 
+.. _TherapeuticProcedure:
 
 Therapeutic Procedure
 !!!!!!!!!!!!!!!!!!!!
 
-.. include::  ../../../../../../schema/domain-entity/def/TherapeuticProcedure.rst  
+.. include::  ../../../../../../schema/domain-entiies/def/TherapeuticProcedure.rst  
 
 
 Subclasses
