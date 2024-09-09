@@ -43,7 +43,7 @@ strength:
   code: cg000021
   label: Definitive (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/
-subjectClassification:
+classification:
   code: cg000001
   label: Pathogenic (ACMG 2015)
   system: https://dataexchange.clinicalgenome.org/codes/

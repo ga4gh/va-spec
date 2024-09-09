@@ -39,7 +39,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
    *  - specifiedBy
       - :ref:`Method` | :ref:`IRI`
       - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity (e.g. a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification).
+      - A specification that describes all or part of the process that led to creation of the Information Entity 
    *  - contributions
       - :ref:`Contribution`
       - 0..m
@@ -55,7 +55,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
    *  - recordMetadata
       - :ref:`RecordMetadata`
       - 0..1
-      - Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries.
+      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - ancillaryResults
       - object
       - 0..1

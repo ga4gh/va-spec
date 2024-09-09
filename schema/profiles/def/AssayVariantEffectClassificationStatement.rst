@@ -55,7 +55,7 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
    *  - recordMetadata
       - :ref:`RecordMetadata`
       - 0..1
-      - Provenance metadata about a specific concrete encoding/serialization of information (e.g. as a record in a specific data/knowledgebase, or an online digital resource) - as opposed to provenance about the abstract information content a record carries.
+      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - direction
       - string
       - 0..1
@@ -92,7 +92,7 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
       - string | :ref:`IRI` | :ref:`Coding`
       - 1..1
       - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
-   *  - subjectClassification
+   *  - classification
       - :ref:`Coding` | :ref:`IRI`
       - 1..1
       - The classification of the variant effect in the assay.
