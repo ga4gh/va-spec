@@ -1,2 +1,4 @@
+.. _StudyGroup:
+
 Study Group
 !!!!!!!!!!!

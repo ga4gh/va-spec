@@ -139,8 +139,7 @@
                }
             ]
          },
-         "description": "The assay that was used to measure the variant effect with all the various properties",
-         "minItems": 1
+         "description": "The assay that was used to measure the variant effect with all the various properties"
       }
    },
    "required": [

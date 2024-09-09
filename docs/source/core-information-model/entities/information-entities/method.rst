@@ -1,4 +1,4 @@
-.. _method:
+.. _Method:
 
 Method
 !!!!!!

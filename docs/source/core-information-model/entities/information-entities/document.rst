@@ -1,4 +1,4 @@
-.. _document:
+.. _Document:
 
 Document
 !!!!!!!!
