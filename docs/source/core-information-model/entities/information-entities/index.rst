@@ -1,7 +1,7 @@
 Information Entity
 !!!!!!!!!!!!!!!!!!
 
-model . . . 
+.. include::  ../../../../../schema/core-im/def/InformationEntity.rst  
 
 Subclasses
 
