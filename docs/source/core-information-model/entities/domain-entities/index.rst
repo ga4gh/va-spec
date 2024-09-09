@@ -5,8 +5,7 @@ Domain Entity
 
 .. include::  ../../../../../schema/core-im/def/DomainEntity.rst
 
-
-  **Subclasses**
+**Subclasses**
 
 .. toctree::
    :titlesonly:
