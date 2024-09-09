@@ -1,4 +1,4 @@
-.. _Disesae:
+.._Disease:
 
 Disease
 !!!!!!!
