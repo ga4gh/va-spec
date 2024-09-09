@@ -111,8 +111,7 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
    *  - allelePrevalenceQualifier
       - string
       - 0..1
-      - Reports wWhether the statement should be interpreted in the context of the variant
- being rare or common.
+      - Reports wWhether the statement should be interpreted in the context of the variant being rare or common.
    *  - geneContextQualifier
       - :ref:`Gene`
       - 0..1
