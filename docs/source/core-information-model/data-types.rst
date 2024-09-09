@@ -7,18 +7,21 @@ Complex Data Types
 ###################
 
 .. _Coding:
+
 Coding
 ******
 
 model . . . 
 
 .. _Extension:
+
 Extension
 *********
 model . . . 
 
 
 .. _RecordMetadata:
+
 RecordMetadata
 **************
 
@@ -29,6 +32,7 @@ Simple Data Types
 ###################
 
 .. _Code:
+
 Code
 ****
 
@@ -36,6 +40,7 @@ model . . .
 
 
 .. _IRI:
+
 IRI
 ***
 
