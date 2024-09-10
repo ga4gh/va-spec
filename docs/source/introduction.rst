@@ -15,7 +15,7 @@ Reliable exchange of these and other types of Variant Annotations by clinicians,
 
 #. `A Foundational Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This model, which is based on the SEPIO Framework, establishes a shared understanding of fundamental terms, concepts, and modeling patterns, and provides a foundation on which standard models for specific types of statements about molecular variation are built.  
 
-#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Core Information Model, which describe specific types of statements made about molecular variation (e.g. 'Variant Pathogenicity Statements'). These models are provided in machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
+#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Core Information Model, which describe specific types of statements made about molecular variation (e.g. a `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_). These models are provided in machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
 
 #. `A Modeling Framework <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html>`_:  A profiling methodology and tooling support to guide VA and external developers in executing the profiling process. This framework allows community adopters can build profiles for new statement types, or extend existing profiles - supporting an implementation-led approach that drives VA standards development.
 
@@ -30,7 +30,7 @@ Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
 To represent molecular variations that are subjects of VA Annotation Statements, we adopt two complementary GKS standards:
 
-#. The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers. VRS variants represent discrete instances of sequence variation in a specified context (reference, location, state) - e.g. `NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_. This includes single continuous alleles, haplotypes, genotypes, and copy number changes.
+#. The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers. VRS variants represent discrete instances of sequence variation in a specified context (reference, location, state) - e.g. the NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) variant `here <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_. This includes single continuous alleles, haplotypes, genotypes, and copy number changes.
 
 #. The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts. Categorical variations are intensionally defined sets of variations, based on criteria that must be met for inclusion in a given category. Examples include `BRAF V600 mutations <https://civicdb.org/molecular-profiles/17/summary>`_ and `EGFR exon 19 deletions <https://civicdb.org/molecular-profiles/133/summary>`_. 
 
@@ -39,10 +39,11 @@ VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Sp
 Statement Representation
 @@@@@@@@@@@@@@@@@@@@@@@@
 
-The VA-Spec Modeling Framework defines the **Core Information Model (Core-IM)** illustrated in **Figure 1**, as a foundation on which Statement-specific profiles are built (e.g. the `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_ profile, among others found `here <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_). 
+The **Core Information Model (Core-IM)** is a domain-agnostic model for representing statements of knowledge, and the foundation on which Statement-specific VA profiles are built. Below we provide an overview of the Core-IM **Class Hierarchy**, the **Statement Structures** these classes are used to construct, and features of the model that allow explicit representation of **Statement Semantics**. 
 
 Core-IM Class Hierarchy
-$$$$$$$$$$$$$$$$$$$$$$
+$$$$$$$$$$$$$$$$$$$$$$$
+The initial version of the Core-IM was derived from the SEPIO Core Information Model, through selection of elements needed to support initial VA implementation use cases. A hierarchical view of this model is illustrated in **Figure 1**.
 
 .. core-im-class-hierarchy:
 
@@ -50,7 +51,7 @@ $$$$$$$$$$$$$$$$$$$$$$
 
 **Legend** Figure 1: Hierarchical structure of classes and attributes comprising the domain-agnostic Core-IM. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures, but is omitted here for space. See here for details. 
 
-This initial version of the Core-IM was derived from the SEPIO Core Information Model, through selection of elements needed to support initial VA implementation use cases. As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `What is the SEPIO Framework <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-the-sepio-framework>`_, and `How does the VA-Spec use SEPIO`<https://va-ga4gh.readthedocs.io/en/stable/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
+As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-the-sepio-framework>`_, and `"How does the VA-Spec use SEPIO?"` <https://va-ga4gh.readthedocs.io/en/stable/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
 
 Core-IM Statement Structure
 $$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -74,14 +75,7 @@ In the Core-IM, every Statement object puts forth a **Proposition** - a possible
 
 **Legend** Figure 3: Explicit Statement Semantics are supported by the Core-IM. (a) The Statement object schema, showing only attributes used to represent the semantics of what they report to be true. (b) An example of a Variant Pathogenicity Statement - reporting that moderate evidence supports the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'.
 
-This basic model supports two "modes of use" for Statements, which allow for simple assertions of knowledge, or nuanced representations of the state of evidence surrounding a given Proposition. Implementations can choose the mode that best fits their data. Details are provided in the `Statement` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
-
-
-
-
-
-
-.. note::  **Study Result Profiles**: While the majority of applications are focused on creating **Statement** profiles, the modeling framework supports profiling of other Core-IM classes, including *Study Results** and **Evidence Lines**. For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata. More information on these types of profiles can be found `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
+This basic model supports two "modes of use" for Statements, which allow for simple assertions of knowledge, or nuanced representations of the state of evidence surrounding a given Proposition. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
 
 
 
@@ -90,6 +84,8 @@ This basic model supports two "modes of use" for Statements, which allow for sim
 
 
 
+VA Statement Profiles
+#####################
 
 
 
@@ -98,6 +94,27 @@ This basic model supports two "modes of use" for Statements, which allow for sim
 
 
 
+
+
+
+
+
+
+
+
+
+.. note::  **Study Result Profiles**: While the majority of applications are focused on creating **Statement** profiles, the modeling framework supports profiling of other Core-IM classes, including **Study Results** and **Evidence Lines**. For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata. More information on these types of profiles can be found `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
+
+
+
+
+
+
+
+
+
+
+**Attic:**
 
 
 .. image:: images/annotation-definition.PNG
