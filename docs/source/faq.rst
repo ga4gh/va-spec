@@ -35,9 +35,12 @@ Covers *sequence variations* in a genome, transcript, or protein.
  * **in cis** (haplotypes) or **in trans** (genotypes) sets of variant regions
 
 Covers *post-sequence* variations in the state of a program that unfolds 'downstream' of sequence 
- * changes in **expression level** or **location** of a gene product (e.g. decreased cytosolic expression)
- * changes in **post-translational modification** of proteins (e.g. increased PEST domain phosphorylation)
- * changes in **epigenetic alterations** of a gene or region (e.g. increased enhancer methylation)
+ * changes in **expression level** or **location** of a gene product
+       e.g. decreased cytosolic expression of the MYOD1 gene
+ * changes in **post-translational modification** of proteins 
+       e.g. increased PEST domain phosphorylation of the GADD34 gene
+ * changes in **epigenetic alterations** of a gene or region
+       e.g. increased AKT1 enhancer methylation
 
 Covers different levels of **'represenational specificity'** at which these variations can be described
  * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). 
@@ -55,9 +58,9 @@ What types of variant knowledge are covered by the VA-Spec?
 The VA-Spec supports annotation statements about the **biological** and **clinical** significance of a variant, but leaves those
 reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
 
- * **Biological Variant Statements** (``in-scope``): Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
- * **Clinical Knolwedge Statements** (``in-scope``): Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
- * **Case-Level Knowledge Statement** (``out-of-scope``):  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
+ * **Biological Variant Statements**  ``IN-SCOPE``: Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
+ * **Clinical Knolwedge Statements**  ``IN-SCOPE``: Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
+ * **Case-Level Knowledge Statement**  ``OUT-OF-SCOPE``:  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient - these kinds of information are not covered by the VA-Spec.
 
 
 What is the SEPIO framework?
