@@ -34,6 +34,8 @@ text . . .
 
 The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
 
+.. image:: images/annotation-definition.PNG
+  :width: 700
   
 What types of variants are covered by the VA-spec?
 ##################################################
