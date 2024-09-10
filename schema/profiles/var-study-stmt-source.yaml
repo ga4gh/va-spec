@@ -36,8 +36,8 @@ $defs:
       predicate:
         extends: predicate
         enum:
-        - supports_positive_diagnosis_for
-        - supports_negative_diagnosis_for
+        - isDiagnosticInclusionCriterionFor
+        - isDiagnosticExclusionCriterionFor
       objectDisease:
         extends: object
         oneOf:
@@ -157,8 +157,8 @@ $defs:
       predicate:
         extends: predicate
         enum:
-        - Better Outcome
-        - Worse Outcome
+        - associatedWithBetterOutcomeFor
+        - associatedWithWorseOutcomeFor
       objectDisease:
         extends: object
         oneOf:
