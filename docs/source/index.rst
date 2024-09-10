@@ -27,5 +27,5 @@ This modeling framework has allowed for **implementation-driven development** th
    quick-start
    core-information-model/index
    standard-profiles/index
-   implementation-guidance
+   modeling-framework
    faq
