@@ -1,6 +1,26 @@
 Overview
 !!!!!!!!
 
+The **Variant Annotation Specification (VA-Spec)** is a standard developed by the Global Alliance for Genomic Health to facilitate and improve sharing of knowledge about molecular variations. 
+
+* It defines a **set of information models** to represent diverse kinds of statements about molecular variants - built as **profiles** that extend a foundational **core information model**. 
+* It provides machine-readable **json-schema specifications** of these models, to support sharing and validation of data through APIs and other exchange mechanisms. 
+* It provides a **modeling framework** through which data providers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
+* It is based on the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - applying SEPIO's established models, conventions, and profiling methodology to produce these resources.
+
+This modeling framework has allowed for **implementation-driven development** that reduces bottlenecks imposed by centralized approaches, leverages the collective expertise and perspective of diverse applications, and delivers schema that have proven out in working data systems.
+
+**VA-Spec Components:**
+
+#. **A Generic Core Information Model (Core IM)**. A foundational, domain-agnostic conceptual model, built from SEPIO elements pertinent to VA use cases. *Provides a base on which VA Statement Profiles are built for the GA4GH Community*. (`LINK <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_)
+#. **Standard VA Profiles**: A set of standard models that extend the Core IM to represent specific Statement types, formalized as json-schema specifications. *Provides GA4GH community with recommended standards for out-of-the-box interoperability, and example of how to apply the modeling framework to create new Profiles.* (`LINK <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_)
+#. **A Modeling Framework**:  A methodology with implementation support and tooling to facilitate extension and de novo development of Profiles. *Allows community-driven development and testing of models for specific annotation types and use cases*.  (`LINK <https://va-ga4gh.readthedocs.io/en/stable/implementation-guidance.html#profiling-methodology>`_)
+#. **Reference Implementation(s)**. A library of software and services that demonstrate the creation, validation, and exchange of compliant data using VA Profiles. *Provides a working example of code that can be adopted and/or extended by adopters.* (`IN PROGRESS`) 
+
+
+-----------
+
+
 The Variant Annotation Specification (VA-Spec) provides standard models for unambiguous representation of knowledge about molecular variation, along with supporting evidence and provenance information.
 
  * It defines a `set of information models <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to represent different kinds of statements made about variants - built as distinct **"profiles"** that extend a common `core information model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_. 
@@ -11,55 +31,6 @@ The Variant Annotation Specification (VA-Spec) provides standard models for unam
 This document provides an **high-level introduction to VA-Spec principles, models, and processes**, and links out to separate pages for additional details. 
 
 For a hands on experience with VA-Spec data, see the simple Variant Pathogenicity Statement example here (TO DO).
-
-Definitions and Scope
-######################
-
-Below we define foundational concepts and outline the scope of what the VA-Spec was created to support - as a basis for understanding the models it provides, the data to which it can be applied. 
-
-Variant
-*******
-Variants are the subjects of `Annotations <https://va-ga4gh.readthedocs.io/en/stable/overview.html#annotation>`_ that the VA-Spec was built to support. 
-
-**Definition**: alternative forms of a genetic sequence, or of its molecular manifestation in a biological system. (Also referred to as a 'molecular variations'). 
-
-  Covers *sequence variations* in a genome, transcript, or protein.
- * **simple** (SNV, indels) or **complex** (inversions, repeat regions) sequence changes
- * **continuous** (allele) or **discontinuous** (translocations) regions
- * **in cis** (haplotypes) or **in trans** (genotypes) sets of variant regions
-
-  Covers *post-sequence* variations in the state of a program that unfolds 'downstream' of sequence 
- * changes in **expression level** or **location** of a gene product (e.g. decreased cytosolic expression)
- * changes in **post-translational modification** of proteins (e.g. increased PEST domain phosphorylation)
- * changes in **epigenetic alterations** of a gene or region (e.g. increased enhancer methylation)
-
-  Covers different levels of **'represenational specificity'** at which these variations can be described
- * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
- * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
- * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
-
-The VA-Spec uses the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/stable/index.html>`_ as a standard for identifying and representing these different forms of molecular variation.
-
-Annotation
-**********
-
-**Definition**:  “A **structured data object** that holds a **central statement of knowledge** about a **molecular variation**, along with **evidence and provenance metadata** supporting it.
-
- * **‘structured data object’**: an organized, computable representation of knowledge, in any format or syntax.
- * **‘central statement of knowledge’**: the single primary statement about a molecular variation is at the core of an annotation.
- * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or alterations in gene expression or location (see `Variant`_). 
- * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
-
-The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
-
-
-Variant Annotation Types
-************************
-The VA-Spec supports annotation statements about the **biological** and **clinical** significance of a variant, but leaves thoae reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
-
- * **Biological Variant Statements** (*in-scope*): Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
- * **Clinical Knolwedge Statements** (*in-scope*): Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
- * **Case-Level Knowledge Statement** (*out-of-scope*):  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
 
 
 Modeling Foundations
