@@ -11,7 +11,7 @@ Statement
 Implementation Guidance
 #######################
 
-``Statement``
+**Statement:**
 
  * Statement objects are used to report primary assertions of knowledge at the core of a Varaint Annotation, along with evidence and provenance information. Every Statement puts forth a 'proposition' - a possible fact it assesses or reports to be true.  The semantics of this proposition are explicitly captured using 'subject', 'predicate', and 'object' attributes, and optional 'qualifier' slot(s).
  * The model supports two "modes of use" for Statements, which differ in what they say about their proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated. 
