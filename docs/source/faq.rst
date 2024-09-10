@@ -44,7 +44,7 @@ This definition covers:
     Different levels of **'represenational specificity'** at which these variations can be described
      * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). 
             e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
-     * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). 
+     * **Canonical Variation**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). 
             e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
      * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
             e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
