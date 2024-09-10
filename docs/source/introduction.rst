@@ -21,7 +21,7 @@ Reliable exchange of these and other types of Variant Annotations by clinicians,
 
 #. `A Python Reference Implementation <https://va-ga4gh.readthedocs.io/en/stable/reference-implementation.html>`_:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. These resources provide a working example of code that can be adopted and/or extended by adopters. ``COMING SOON``
 
-This framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the collective expertise of diverse adopters, and delivers schema that have bene proven out in working applications.
+This framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and delivers schema that have proven out in working applications.
 
 Modeling Foundations
 ####################
