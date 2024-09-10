@@ -19,8 +19,8 @@ The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish
 .. image:: images/annotation-definition.PNG
   :width: 700
   
-What types of variants and knowledge are supported by the VA-spec?
-################################################################
+What types of variants and knowledge are supported?
+###################################################
   
 Variants are the subjects of the knowledge statements that the VA-Spec was built to support. We define the notion of 'variant' broadly
 to cover the diversity of variation concepts that are annotated with knowledge in different  curtaion efforts and knowledgebases. 
