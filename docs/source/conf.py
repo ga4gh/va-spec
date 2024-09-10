@@ -74,7 +74,8 @@ todo_emit_warnings = True
 #
 html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
-    'navigation_depth': 5  # Increase to 4 levels of nested sections
+    'navigation_depth': 5,  # Increase to 4 levels of nested sections
+    'collapse_navigation': False
 }
 html_logo = 'images/GA-logo.png'
 
