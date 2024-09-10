@@ -19,8 +19,8 @@ The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish
 .. image:: images/annotation-definition.PNG
   :width: 700
   
-What types of variants and knowledge are supported?
-###################################################
+What types of variants are supported?
+#####################################
   
 Variants are the subjects of the knowledge statements that the VA-Spec was built to support. We define the notion of 'variant' broadly
 to cover the diversity of variation concepts that are annotated with knowledge in different  curtaion efforts and knowledgebases. 
@@ -49,7 +49,8 @@ This definition covers:
      * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
             e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
 
---------
+What kinds of variant knowledge are supported?
+##############################################
 
 The VA-Spec supports statements of knowledge about the **biological** and **clinical** significance of these different types of variants, but leaves those
 reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
