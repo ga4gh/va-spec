@@ -18,8 +18,9 @@ $defs:
     maturity: draft
     description: >-
       A Statement reporting a conclusion from a single study about whether a variant
-      is associated with a disease (positive) or lack of a disease (negative) - based
-      on interpretation of the study's results as evidence.
+      is associated with a disease (a diagnostic inclusion criterion), or absence of a
+      disease (diagnostic exclusion criterion) - based on interpretation of the study's
+      results.
     properties:
       type:
         extends: type
@@ -78,7 +79,7 @@ $defs:
     description: >-
       A Statement reporting a conclusion from a single study that supports or refutes a
       variant's effect on oncogenesis for a specific tumor type - based on interpretation
-      of the study's results as evidence.
+      of the study's results.
     properties:
       type:
         extends: type
@@ -140,7 +141,7 @@ $defs:
     description: >-
       A Statement reporting a conclusion from a single study about whether a variant
       is associated with an improved or worse outcome for a disease - based on
-      interpretation of the study's results as evidence. 
+      interpretation of the study's results. 
     properties:
       type:
         extends: type
@@ -199,7 +200,7 @@ $defs:
     description: >-
       A Statement reporting a conclusion from a single study about the role of a variant
       in modulating the response of a neoplasm to drug administration or other therapeutic
-      procedures - based on interpretation of the study's results as evidence. 
+      procedures - based on interpretation of the study's results. 
     properties:
       type:
         extends: type
