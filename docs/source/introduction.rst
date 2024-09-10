@@ -5,11 +5,11 @@ Overview
 ########
 
 Variant Annotations are structured data object that holds a central statement of knowledge about a molecular variation (aka 'variant'), along with evidence and provenance metadata supporting its interpretation and use. For example, a given annotation may report knowledge about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on therapeutic response to treatment - and provide evidence and provenance information supporting this knowledge. For detailed definition and scope information, see  
-`"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types of variants are covered?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-covered-by-the-va-spec>`_, and `"What types of variant knowledge are covered?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-covered-by-the-va-spec>`_ FAQ pages.
+`"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types of variants are covered?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-covered-by-the-va-spec>`_, and `"What types of variant knowledge are covered?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-covered-by-the-va-spec>`_ FAQs.
 
 Reliable exchange of these and other types of Variant Annotations by clinicians, researchers, and testing laboratories is required to maximize the personal, public, research, and clinical value of genomic information.  The GA4GH Variant Annotation Specification (VA-Spec)  was developed by a partnership among national information resource providers, major public initiatives, and diagnostic testing laboratories — as an open specification to standardize the exchange of such variation knowledge.
 
-The VA-Spec is comprised of the following components:
+**The VA-Spec is comprised of the following components:**
 
 #. `A Foundational Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This model, which is based on the SEPIO Framework, establishes a shared understanding of fundamental terms, concepts, and modeling patterns, and provides a foundation on which standard models for specific types of statements about molecular variation are built.  
 
