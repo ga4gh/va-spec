@@ -27,28 +27,29 @@ What types of variants are covered by the VA-spec?
 Variants are the subjects of the knowledge statements that the VA-Spec was built to support. We define the notion of 'variant' broadly
 to cover the diversity of targets annotated with knowledge in variant curtaion efforts and knowledgebases.
 
-**Definition**: alternative forms of a genetic sequence, or of its molecular manifestation in a biological system. (Also referred to as a 'molecular variations'). 
+**Definition**: 
+    Alternative forms of a genetic sequence, or of its molecular manifestation in a biological system. (Also referred to as a 'molecular variations'). 
 
-Covers *sequence variations* in a genome, transcript, or protein.
- * **simple** (SNV, indels) or **complex** (inversions, repeat regions) sequence changes
- * **continuous** (allele) or **discontinuous** (translocations) regions
- * **in cis** (haplotypes) or **in trans** (genotypes) sets of variant regions
+    Covers *sequence variations* in a genome, transcript, or protein.
+     * **simple** (SNV, indels) or **complex** (inversions, repeat regions) sequence changes
+     * **continuous** (allele) or **discontinuous** (translocations) regions
+     * **in cis** (haplotypes) or **in trans** (genotypes) sets of variant regions
 
-Covers *post-sequence* variations in the state of a program that unfolds 'downstream' of sequence 
- * changes in **expression level** or **location** of a gene product
-       e.g. decreased cytosolic expression of the MYOD1 gene
- * changes in **post-translational modification** of proteins 
-       e.g. increased PEST domain phosphorylation of the GADD34 gene
- * changes in **epigenetic alterations** of a gene or region
-       e.g. increased AKT1 enhancer methylation
+    Covers *post-sequence* variations in the state of a program that unfolds 'downstream' of sequence 
+     * changes in **expression level** or **location** of a gene product
+           e.g. decreased cytosolic expression of the MYOD1 gene
+     * changes in **post-translational modification** of proteins 
+           e.g. increased PEST domain phosphorylation of the GADD34 gene
+     * changes in **epigenetic alterations** of a gene or region
+           e.g. increased AKT1 enhancer methylation
 
-Covers different levels of **'represenational specificity'** at which these variations can be described
- * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). 
-        e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
- * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). 
-        e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
- * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
-        e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
+    Covers different levels of **'represenational specificity'** at which these variations can be described
+     * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). 
+            e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
+     * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). 
+            e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
+     * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
+            e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
 
 The VA-Spec uses the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/stable/index.html>`_ as a standard for identifying and representing these different forms of molecular variation.
   
