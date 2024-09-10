@@ -7,25 +7,9 @@ What is a Variant Annotation?
 To appreciate modeling and development choices made for the VA-Spec, it helps to understand
 how we define and think about the content of a Variant Annotation.
 
-  .. definition:: Normalizing objects is STRONGLY RECOMMENDED for
-               interoperability. While normalization is not strictly
-               required, automated validation mechanisms are
-               anticipated that will likely disqualify Variation that
-               is not normalized. See :ref:`should-normalize` for
-               a rationale.
-
-
-text . . . 
-  
-  
-.. important:: Normalizing objects is STRONGLY RECOMMENDED for
-              interoperability. While normalization is not strictly
-              required, automated validation mechanisms are
-              anticipated that will likely disqualify Variation that
-              is not normalized. See :ref:`should-normalize` for
-              a rationale.
-  
-**Definition**:  “A **structured data object** that holds a **central statement of knowledge** about a **molecular variation**, along with **evidence and provenance metadata** supporting it.
+**Definition**:  
+   “A **structured data object** that holds a **central statement of knowledge** about a **molecular variation**, 
+   along with **evidence and provenance metadata** supporting it.
 
  * **‘structured data object’**: an organized, computable representation of knowledge, in any format or syntax.
  * **‘central statement of knowledge’**: the single primary statement about a molecular variation is at the core of an annotation.
