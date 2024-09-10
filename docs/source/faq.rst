@@ -59,9 +59,9 @@ What types of variant knowledge are covered by the VA-Spec?
 The VA-Spec supports annotation statements about the **biological** and **clinical** significance of a variant, but leaves those
 reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
 
- * **Biological Variant Statements**  ``IN-SCOPE``: Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
- * **Clinical Knolwedge Statements**  ``IN-SCOPE``: Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
- * **Case-Level Knowledge Statement**  ``OUT-OF-SCOPE``:  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient - these kinds of information are not covered by the VA-Spec.
+ * **Biological Variant Statements**  ``IN-SCOPE``: e.g. Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
+ * **Clinical Knolwedge Statements**  ``IN-SCOPE``: e.g. Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
+ * **Case-Level Knowledge Statement**  ``OUT-OF-SCOPE``:  e.g. observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient - these kinds of information are not covered by the VA-Spec.
 
 
 What is the SEPIO framework?
