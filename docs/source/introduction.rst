@@ -23,11 +23,7 @@ This framework has allowed for implementation-driven development that reduces bo
 
 -------------
 
-The document below provides an high-level introduction to VA-Spec models, development processes, and modes of use - with links to separate pages for additional details.
-
-For a hands on experience with VA-Spec data, see the simple Variant Pathogenicity Statement example here (TO DO).
-
-
+This introduction provides an high-level overview of VA-Spec models, development processes, and modes of use - with links to separate pages for additional details.
 
 Modeling Foundations
 ####################
