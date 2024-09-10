@@ -89,7 +89,7 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-
       - 1..1
       - MUST be "VariantPathogenicityStatement".
    *  - subjectVariant
-      - :ref:`Variation` | :ref:`CategoricalVariation` | :ref:`IRI`
+      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
       - A variant that is the subject of the Statement.
    *  - predicate

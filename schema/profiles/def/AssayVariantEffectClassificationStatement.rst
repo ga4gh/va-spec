@@ -81,7 +81,7 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
       - 1..1
       - MUST be "AssayVariantEffectClassificationStatement".
    *  - subjectVariant
-      - :ref:`MolecularVariation` | :ref:`CategoricalVariation` | :ref:`IRI`
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
       - A protein or genomic contextual or canonical molecular variant.
    *  - predicate

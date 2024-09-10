@@ -89,7 +89,7 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`gks.c
       - 1..1
       - MUST be "VariantOncogenicityStatement".
    *  - subjectVariant
-      - :ref:`Variation` | :ref:`CategoricalVariation` | :ref:`IRI`
+      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
       - A variant that is the subject of the Statement.
    *  - predicate

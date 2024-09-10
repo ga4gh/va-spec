@@ -89,7 +89,7 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
       - 1..1
       - MUST be "VariantTherapeuticResponseStudyStatement".
    *  - subjectVariant
-      - :ref:`Variation` | :ref:`CategoricalVariation` | :ref:`IRI`
+      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
       - A variant that is the subject of the Statement.
    *  - predicate
