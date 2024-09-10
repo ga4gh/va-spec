@@ -75,7 +75,26 @@ reporting **case-level observations** about a variant to other standards (e.g. P
 
 What is the SEPIO framework?
 #############################
+The foundational SEPIO Core-IM is a doamin-agnostic model for describing the scientific knowledge assertions of any kind. As shown in Figure XXX, each knowledge assertion is captured in a self-contained ``Statement`` object, where the semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s). Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
 
+.. _sepio-class-diagram-w-statement:
+
+.. figure:: images/sepio-class-diagram-w-statement.PNG
+
+   Statement-Centric SEPIO Data Strucutres 
+
+   **Legend** (A) Explicit Statement Semantics (B) SEPIO Data Strucutre:  The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') - 
+   which may be linked to one or more **Evidence Lines** representing disctrete arguments for or against it. 
+   Each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) 
+   contributing to such an argument. Surrounding the central axis are classes that describe the provenance of these
+   core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods**
+   that specify their creation, and **Documents** that describe them. This core structure allows precise tracking of provenance
+   at the level of a Statement and each supporting Evidence Lines and Items.
+
+
+.. note::  While the majority of applications are focused on representing knowledge **Statements**, SEPIO data structures can be built
+           around other classes as their central focus. For exapmle, implementations have defined profiles focused on describing and
+           tracking the provenance of **Evidence Line** or **Study Reuslt** objects, where the same modeling patterns and principles are applied (see here).
   
   
 How does the VA Spec build on the SEPIO framework?
