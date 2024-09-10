@@ -28,5 +28,4 @@ This modeling framework has allowed for **implementation-driven development** th
    core-information-model/index
    standard-profiles/index
    implementation-guidance
-   appendices/index
-   file-formatting-test
+   faq
