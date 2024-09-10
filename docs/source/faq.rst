@@ -88,7 +88,7 @@ The foundational SEPIO Core-IM is a doamin-agnostic model for describing the sci
            tracking the provenance of **Evidence Line** or **Study Reuslt** objects, where the same modeling patterns and principles are applied (see here).
   
   
-How does the VA Spec build on the SEPIO framework?
+How does the VA Spec use the SEPIO framework?
 ##################################################
 
 
