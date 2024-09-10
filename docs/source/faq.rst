@@ -40,9 +40,12 @@ Covers *post-sequence* variations in the state of a program that unfolds 'downst
  * changes in **epigenetic alterations** of a gene or region (e.g. increased enhancer methylation)
 
 Covers different levels of **'represenational specificity'** at which these variations can be described
- * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
- * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
- * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
+ * **Discrete Variation**:  specific instances of a sequence variation in a specified context (reference, location, state - even if incompletely known). 
+        e.g. the NC_000019.9:g.45411941T>C genomic allele (`link <https://gnomad.broadinstitute.org/variant/19-45411941-T-C>`_)
+ * **Expansion Sets**: sets of Discrete Variation instances that are related via lift-over, or projection functions (or combinations thereof). 
+        e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
+ * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
+        e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
 
 The VA-Spec uses the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/stable/index.html>`_ as a standard for identifying and representing these different forms of molecular variation.
   
@@ -52,9 +55,9 @@ What types of variant knowledge are covered by the VA-Spec?
 The VA-Spec supports annotation statements about the **biological** and **clinical** significance of a variant, but leaves those
 reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
 
- * **Biological Variant Statements** (*in-scope*): Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
- * **Clinical Knolwedge Statements** (*in-scope*): Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
- * **Case-Level Knowledge Statement** (*out-of-scope*):  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
+ * **Biological Variant Statements** (``in-scope``): Molecular Consequence, Functional Impact, Population Frequency, Relative Location, Evolutionary Conservation
+ * **Clinical Knolwedge Statements** (``in-scope``): Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
+ * **Case-Level Knowledge Statement** (``out-of-scope``):  observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient.
 
 
 What is the SEPIO framework?
@@ -84,9 +87,8 @@ The foundational SEPIO Core-IM is a doamin-agnostic model for describing the sci
 How does the VA Spec build on the SEPIO framework?
 ##################################################
 
-  
+
   
 Why was the VA-Spec built as a modeling framework? 
 ##################################################
 
-How does implementation led dev work / lead to standards?
