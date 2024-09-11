@@ -132,6 +132,7 @@ $defs:
         const: "AssayVariantEffectMeasurementStudyResult"
         default: "AssayVariantEffectMeasurementStudyResult"
         description: MUST be "AssayVariantEffectMeasurementStudyResult".
+      # @Larry why is this focusVariant instead of subjectVariant?
       focusVariant:
         extends: focus
         oneOf:
@@ -143,6 +144,7 @@ $defs:
       score:
         type: number
         description: The score of the variant effect in the assay.     
+      # @Larry does this need objectAssay also?
       isReportedIn:
         description:  The assay that was used to measure the variant effect with all the various properties
         extends: isReportedIn
