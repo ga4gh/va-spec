@@ -23,16 +23,16 @@ This framework has allowed for implementation-driven development that reduces bo
 
 VA Standards Development and Adoption
 #####################################
-The Modeling Framework described above provides **many options for engaging with the VA-Specification**, as some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop profiles for entirely new types of Statements**. The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides more information on these modes of use, and a decision tree to help adopters identify their best entry point into the VA Framework.
+The Modeling Framework described above provides **many modes for engaging with the VA-Specification**, as some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop profiles for entirely new types of Statements**. The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework.
 
-The series of figures below provides a high level overview of the general processes through which VA models are generated, from the creation and evolution of the foundational Core-IM, to derivation of Statement-specific profiles, to the maturation of these profiles into shared standards, and the adoption or refinement of these standards by implementers. We use development of a **Variant Pathogenicity Statement** profile as an example, but the process described applied generally to any Standard Profile development task.
+The series of figures below provides a high-level overview of the **processes through which VA Profiles are created and matured into standards**, starting from the initial definition of the Core-IM. We use development of a **Variant Pathogenicity Statement** profile as an example, but the process described applied generally to any Standard Profile development task.
 
 
 
 **Figure 1**: Seeding the Initial Core Information Model
 
 
-**Figure 2**: Building Profiles on the Core-IM
+**Figure 2**: Deriving Statement Profiles from the Core-IM
 Initial version of the Core-IM represents a subset of SEPIO model, selected based on requirements from an initial set of Statement and Statement models for active driver project implementations .
 
 
@@ -41,11 +41,11 @@ Negotiate harmonization of profile elements that may diverge from the Core Infpr
 This may involve changes to the draft profile to beign it into alignment, or poulling in new content from the upstream full SEPIO IM to support data not covered by the GKS Core-IM subset, or changes to the Core-IM itself where nnew requirements surfaced by the draft point to modeling soluotions that represent generally useful improvements.  
 
 
-**Figure 4**: Release of a Final Standard Profile
+**Figure 4**: Establishment of a Profile as a Standard
 Vettign of the final proposed profile with VA community, including implementers who have regsitered interest in the Statement type. 
 
 
-**Figure 5**: Profile Adoption and Extension 
+**Figure 5**: Standard Profile Adoption and Extension 
 Adopters implement the profile in their systems as is, or propose extensions / impriovements to addres their use case - leading to another round of model alignemnt and refinement. 
 
 
@@ -155,6 +155,7 @@ Standard Profiles
 
 **Attic:**
 
+The series of figures below provides a high-level overview of the processes through which VA models are generated, from the creation and evolution of the foundational Core-IM, to derivation of Statement profiles from the Core-IM, to the maturation of draft profiles into established standards, and the adoption and iterative refinement of these standards.
 
 This basic model supports two "modes of use" for Statements, which allow for simple assertions of knowledge, or nuanced representations of the state of evidence surrounding a given Proposition. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
 
