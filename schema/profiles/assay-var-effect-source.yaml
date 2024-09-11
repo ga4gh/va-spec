@@ -132,6 +132,7 @@ $defs:
         const: "AssayVariantEffectMeasurementStudyResult"
         default: "AssayVariantEffectMeasurementStudyResult"
         description: MUST be "AssayVariantEffectMeasurementStudyResult".
+      # @Larry why is this focusVariant instead of subjectVariant?
       focusVariant:
         extends: focus
         oneOf:
