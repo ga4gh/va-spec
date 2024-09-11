@@ -23,16 +23,9 @@ This framework has allowed for implementation-driven development that reduces bo
 
 VA Standards Development and Adoption
 #####################################
-The Modeling Framework described above provides many options for engaging with the VA-Specification, as some users will want to adopt established standard profiles out-of-the-box, others may want to exgtend or refine an existing standard profile for their use case, while others may want to develop profiles for entirely new types of VA Statements. The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides more information on these modes of use, and a decision tree to help adopters identify the best entry point for them into the VA Framework.
+The Modeling Framework described above provides **many options for engaging with the VA-Specification**, as some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop profiles for entirely new types of Statements**. The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides more information on these modes of use, and a decision tree to help adopters identify their best entry point into the VA Framework.
 
-The series of figures below provides a high level overview of the geenral processes through which VA models are generated, from the creation and evolution of the foundational Core-IM, to derivation of Statement-specific profiles, to the maturation of these profiles into shared standards, and the adoption or refinement of these standards by implementers. 
-
-We use development of a Variant Pathogenicity Statement profile as an example, but the process described applied generally to any Standard Profile development task. Additional details about the models and methodologies involved are provided in referenced documents, for further exploration.
-
-.. note::  **Statement vs Study Result Profiles**: While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports profiling of other Core-IM classes such as **Study Result**. This is done when the information captured represents data items a study or dataset pertaining to some variant of interest, as opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data). 
-
-For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata. More information on these types of profiles can be found `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
-
+The series of figures below provides a high level overview of the general processes through which VA models are generated, from the creation and evolution of the foundational Core-IM, to derivation of Statement-specific profiles, to the maturation of these profiles into shared standards, and the adoption or refinement of these standards by implementers. We use development of a **Variant Pathogenicity Statement** profile as an example, but the process described applied generally to any Standard Profile development task.
 
 
 
@@ -58,6 +51,10 @@ Adopters implement the profile in their systems as is, or propose extensions / i
 
 
 
+
+.. note::  **Statement vs Study Result Profiles**: While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports        profiling of other Core-IM classes such as **Study Result**. This is done when the information captured represents data items a study or dataset pertaining to some variant of interest, as           opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data). 
+
+    For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile            specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata. More        information on these types of profiles can be found `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
 
 
 ---------------------------------------------
@@ -168,3 +165,4 @@ This basic model supports two "modes of use" for Statements, which allow for sim
 
 Cat-VRS tools will facilitate mapping of such categorical concepts onto sets of discrete variant instances in the real world. For example, `NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_ is a discrete variant that matches the "EGFR exon 19 deletions" categorical variant definition.
 
+ Additional details about the models and methodologies involved are provided in referenced documents for further exploration.
