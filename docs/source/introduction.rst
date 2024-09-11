@@ -6,16 +6,19 @@ This document provides an high-level overview of VA-Spec components, modeling pr
 Overview
 ########
 
-Variant Annotations are structured data object that holds a **central statement of knowledge** about a **molecular variation** (aka 'variant'), along with **evidence and provenance metadata** supporting its interpretation and use. Variant annotations may describe about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on response to treatment - and would ideally provide information about how this knowledge was generated. For more on definitions and scope, see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_, and `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ FAQs.
+Variant Annotations are structured data object that holds a **central statement of knowledge** about a **molecular variation** (aka 'variant'), along with **evidence and provenance metadata** supporting its interpretation and use. These annotations may describe about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on response to treatment - and would ideally provide information about how this knowledge was generated. For more on definitions and scope, see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_, and `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ FAQs.
 
 Reliable exchange of these and other types of Variant Annotations by clinicians, researchers, and testing laboratories is required to maximize the personal, public, research, and clinical value of genomic information.  The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers, major public initiatives, and diagnostic testing laboratories — as an open specification to standardize the exchange of such variation knowledge.
 
 
 -------
 
-Variant Annotations are structured data object that holds a **central statement of knowledge** about a **molecular variation** (aka 'variant'), along with **evidence and provenance metadata** supporting its interpretation and use (see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_). Variant annotations may describe about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on response to treatment. Reliable exchange of these and other types of variation knowledge by clinicians, researchers, and testing laboratories is required to maximize the personal, public, research, and clinical value of genomic information.  
+Variant Annotations are structured data object that holds a **central statement of knowledge** about a **molecular variation** (aka 'variant'), along with **evidence and provenance metadata** supporting its interpretation and use (see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_). These annotations may describe diverse types of knowledge, including what is known about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on response to treatment. Reliable exchange of these and other types of variation knowledge by clinicians, researchers, and testing laboratories is required to maximize the personal, public, research, and clinical value of genomic information.  
 
-The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers, major public initiatives, and diagnostic testing laboratories — as an open specification to standardize the exchange of such variation knowledge. It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent diverse kinds of molecular variation as annotation subjects (see `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_).  It supports diverse kinds of biological and clinical variant knolwedge, leaving case-level variant inforamtion to other standards (see `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ ). And it is built on the SEPIO Modeling Framework - leveraging this established methodology for defining provenance-focused standards, to define diverse VA Statement profiles as extensions of a Core Information Model (see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-the-sepio-framework>`_.
+The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers, major public initiatives, and diagnostic testing laboratories — as an open specification to standardize the exchange of such variation knowledge. 
+ * It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent diverse kinds of molecular variation as annotation subjects (see `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_).
+ * It supports diverse kinds of biological and clinical variant knolwedge, leaving case-level variant inforamtion to other standards (see `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ ). 
+ * It is built on the SEPIO Modeling Framework - leveraging this established methodology for defining provenance-focused standards, to define diverse VA Statement profiles as extensions of a Core Information Model (see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-the-sepio-framework>`_.
 
 **The VA-Spec is comprised of the following components:**
 
@@ -28,6 +31,21 @@ The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partners
 #. `A Python Reference Implementation <https://va-ga4gh.readthedocs.io/en/stable/reference-implementation.html>`_:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. These resources provide a working example of code that can be adopted and/or extended by adopters. ``COMING SOON``
 
 This framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and delivers schema that have proven out in working applications.
+
+The VA-Spec Standards Development Process
+#########################################
+The VA Modeling Framework allows for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverage the expertise of diverse adopters, and delivers schema that have proven out in working applications. **Figure 1** provides a summary level illustration of how Standard Statement Profiles are developed through this process - using a VAriant PAthogenicity Statement profile as an example. Details of the models and methodologies involved are provided in referenced documents, which can be further explored as desired.
+
+
+
+1. Seeding the initial GKS Core Information Model . . . Initial version of the Core-IM represetns a subset of SEPIO model, selected based on requirements from an initial set of Statement and Statement models for active driver project implementations .
+
+2. Buidling Profiles on the Core IM 
+
+3. Expanding / Refining the Core Information Model to support implementation needs
+
+
+
 
 Modeling Foundations
 ####################
