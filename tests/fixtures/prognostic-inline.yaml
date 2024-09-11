@@ -6,7 +6,7 @@ strength:
   code: e000005
   label: clinical cohort evidence
   system: https://go.osu.edu/evidence-codes
-predicate: Worse Outcome
+predicate: associatedWithWorseOutcomeFor
 subjectVariant:
   id: civic.mpid:12
   type: CategoricalVariant

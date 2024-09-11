@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A study summarization describing whether a variant is associated with improved or worse outcome for a disease.
+A Statement reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.
 
 **Information Model**
 
@@ -111,4 +111,4 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks.cor
    *  - geneContextQualifier
       - :ref:`Gene`
       - 0..1
-      - A gene context that qualifies the Statement.
+      - Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Statement.

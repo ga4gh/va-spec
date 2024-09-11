@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A study summarization describing whether a variant is associated with a disease (positive) or lack of a disease (negative).
+A Statement reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.
 
 **Information Model**
 
@@ -103,12 +103,12 @@ Some VariantDiagnosticStudyStatement attributes are inherited from :ref:`gks.cor
    *  - alleleOriginQualifier
       - string
       - 0..1
-      - Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
+      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
    *  - allelePrevalenceQualifier
       - string
       - 0..1
-      - Whether the statement should be interpreted in the context of the variant being rare or common.
+      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
    *  - geneContextQualifier
       - :ref:`Gene`
       - 0..1
-      - A gene context that qualifies the Statement.
+      - Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Statement.

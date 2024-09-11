@@ -4,7 +4,7 @@
    "title": "VariantPrognosticStudyStatement",
    "type": "object",
    "maturity": "draft",
-   "description": "A study summarization describing whether a variant is associated with improved or worse outcome for a disease.",
+   "description": "A Statement reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.",
    "properties": {
       "id": {
          "type": "string",
@@ -170,8 +170,8 @@
          "description": "The relationship declared to hold between the subject and the object of the Statement.",
          "$comment": "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).",
          "enum": [
-            "Better Outcome",
-            "Worse Outcome"
+            "associatedWithBetterOutcomeFor",
+            "associatedWithWorseOutcomeFor"
          ]
       },
       "objectDisease": {
@@ -204,7 +204,7 @@
          ]
       },
       "geneContextQualifier": {
-         "description": "A gene context that qualifies the Statement.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Statement.",
          "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
       }
    },

@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.
+A Statement reporting a conclusion from a single study about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures - based on interpretation of the study's results.
 
 **Information Model**
 
@@ -111,9 +111,9 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
    *  - allelePrevalenceQualifier
       - string
       - 0..1
-      - Reports wWhether the statement should be interpreted in the context of the variant being rare or common.
+      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
    *  - geneContextQualifier
       - :ref:`Gene`
       - 0..1
-      - Reports a gene impacted by the variant, which contributes to the therapeutic sensitivity or resistance reported in the Statement.
+      - Reports a gene impacted by the variant, which may contribute to the therapeutic sensitivity or resistance reported in the Statement.
 

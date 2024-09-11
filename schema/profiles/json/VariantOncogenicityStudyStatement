@@ -4,7 +4,7 @@
    "title": "VariantOncogenicityStudyStatement",
    "maturity": "draft",
    "type": "object",
-   "description": "A study summarization supporting or refuting the effect of variant on oncogenesis of a tumor type.",
+   "description": "A Statement reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.",
    "properties": {
       "id": {
          "type": "string",
@@ -189,7 +189,7 @@
       },
       "alleleOriginQualifier": {
          "type": "string",
-         "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+         "description": "Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
          "enum": [
             "germline",
             "somatic",
@@ -198,14 +198,14 @@
       },
       "allelePrevalenceQualifier": {
          "type": "string",
-         "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
+         "description": "Reports whether the statement should be interpreted in the context of the variant being rare or common.",
          "enum": [
             "rare",
             "common"
          ]
       },
       "geneContextQualifier": {
-         "description": "A gene context that qualifies the Statement.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the oncogenic role  in the Statement.",
          "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
       }
    },

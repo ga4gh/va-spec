@@ -4,7 +4,7 @@
    "title": "VariantTherapeuticResponseStudyStatement",
    "maturity": "draft",
    "type": "object",
-   "description": "A study summarization describing the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedure.",
+   "description": "A Statement reporting a conclusion from a single study about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures - based on interpretation of the study's results.",
    "properties": {
       "id": {
          "type": "string",
@@ -208,14 +208,14 @@
       },
       "allelePrevalenceQualifier": {
          "type": "string",
-         "description": "Reports wWhether the statement should be interpreted in the context of the variant being rare or common.",
+         "description": "Reports whether the statement should be interpreted in the context of the variant being rare or common.",
          "enum": [
             "rare",
             "common"
          ]
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which contributes to the therapeutic sensitivity or resistance reported in the Statement. ",
+         "description": "Reports a gene impacted by the variant, which may contribute to the therapeutic sensitivity or resistance reported in the Statement. ",
          "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
       }
    },

@@ -4,7 +4,7 @@
    "title": "VariantDiagnosticStudyStatement",
    "type": "object",
    "maturity": "draft",
-   "description": "A study summarization describing whether a variant is associated with a disease (positive) or lack of a disease (negative).",
+   "description": "A Statement reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.",
    "properties": {
       "id": {
          "type": "string",
@@ -170,8 +170,8 @@
          "description": "The relationship declared to hold between the subject and the object of the Statement.",
          "$comment": "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).",
          "enum": [
-            "positive",
-            "negative"
+            "isDiagnosticInclusionCriterionFor",
+            "isDiagnosticExclusionCriterionFor"
          ]
       },
       "objectDisease": {
@@ -187,7 +187,7 @@
          "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
       "alleleOriginQualifier": {
-         "description": "Whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+         "description": "Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
          "type": "string",
          "enum": [
             "germline",
@@ -196,7 +196,7 @@
          ]
       },
       "allelePrevalenceQualifier": {
-         "description": "Whether the statement should be interpreted in the context of the variant being rare or common.",
+         "description": "Reports whether the statement should be interpreted in the context of the variant being rare or common.",
          "type": "string",
          "enum": [
             "rare",
@@ -204,7 +204,7 @@
          ]
       },
       "geneContextQualifier": {
-         "description": "A gene context that qualifies the Statement.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Statement.",
          "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
       }
    },

@@ -63,8 +63,9 @@ $defs:
         - rare
         - common
       geneContextQualifier:
-        description: Reports a gene impacted by the variant, which may contribute to the
-        diagnostic association  in the Statement.
+        description: >-
+          Reports a gene impacted by the variant, which may contribute to the
+          diagnostic association  in the Statement.
         $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
     - subjectVariant
@@ -141,7 +142,7 @@ $defs:
     description: >-
       A Statement reporting a conclusion from a single study about whether a variant
       is associated with an improved or worse outcome for a disease - based on
-      interpretation of the study's results. 
+      interpretation of the study's results.
     properties:
       type:
         extends: type
@@ -184,8 +185,9 @@ $defs:
         - rare
         - common
       geneContextQualifier:
-        description: Reports a gene impacted by the variant, which may contribute to the 
-        prognostic association  in the Statement.
+        description: >-
+          Reports a gene impacted by the variant, which may contribute to the
+          prognostic association  in the Statement.
         $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
     required:
       - subjectVariant
@@ -200,7 +202,7 @@ $defs:
     description: >-
       A Statement reporting a conclusion from a single study about the role of a variant
       in modulating the response of a neoplasm to drug administration or other therapeutic
-      procedures - based on interpretation of the study's results. 
+      procedures - based on interpretation of the study's results.
     properties:
       type:
         extends: type
