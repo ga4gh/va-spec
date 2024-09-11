@@ -6,10 +6,12 @@ This document provides an high-level overview of VA-Spec components, modeling pr
 Overview
 ########
 
-Variant Annotations are structured data object that holds a central statement of knowledge about a molecular variation (aka 'variant'), along with evidence and provenance metadata supporting its interpretation and use. For example, a given annotation may report knowledge about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on response to treatment - and provide evidence and provenance information supporting this knowledge. For detailed definition and scope information, see  
-`"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_, and `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ FAQs.
+Variant Annotations are structured data object that holds a **central statement of knowledge** about a **molecular variation** (aka 'variant'), along with **evidence and provenance metadata** supporting its interpretation and use. A given annotation may describe about a variant's pathogenicity, impact on gene function, population frequency, molecular consequence, or effect on response to treatment - and would ideally provide information about how this knowledge was generated. For more on definitions and scope, see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_, and `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ FAQs.
 
 Reliable exchange of these and other types of Variant Annotations by clinicians, researchers, and testing laboratories is required to maximize the personal, public, research, and clinical value of genomic information.  The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers, major public initiatives, and diagnostic testing laboratories — as an open specification to standardize the exchange of such variation knowledge.
+
+.. note::
+   For more on definitions and scope, see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-is-a-variant-annotation>`_, `"What types     of variants are supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variants-are-supported>`_, and `"What types of variant knowledge are            supported?" <https://va-ga4gh.readthedocs.io/en/stable/faq.html#what-types-of-variant-knowledge-are-supported>`_ FAQs.
 
 **The VA-Spec is comprised of the following components:**
 
@@ -28,7 +30,7 @@ Modeling Foundations
 
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
-To represent molecular variations that are subjects of VA Annotation Statements, we adopt two complementary GKS standards:
+To represent molecular variations that are subjects of VA Statements, the VA-Spec adopts two complementary GKS standards:
 
 #. The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers. VRS variants represent discrete instances of sequence variation in a specified context (reference, location, state) - e.g. the NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) variant `here <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_. This includes single continuous alleles, haplotypes, genotypes, and copy number changes.
 
@@ -36,8 +38,8 @@ To represent molecular variations that are subjects of VA Annotation Statements,
 
 VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Spec reference implementation will incorporate VRS tools for identifier generation, normalization, and validation. See linked documentation above for more information about these specifications.  
 
-Statement Representation
-@@@@@@@@@@@@@@@@@@@@@@@@
+VA Statement Representation
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 The **Core Information Model (Core-IM)** is a domain-agnostic model for representing statements of knowledge, and the foundation on which Statement-specific VA profiles are built. Below we provide an overview of the Core-IM **Class Hierarchy**, the **Statement Structures** these classes are used to construct, and features of the model that allow explicit representation of **Statement Semantics**. 
 
@@ -55,37 +57,28 @@ As VA implementations evolve and new VA profiles are created, more content from 
 
 Core-IM Statement Structure
 $$$$$$$$$$$$$$$$$$$$$$$$$$$
-When used to represent variant knowledge, the Core-IM supports Statement-centric data structures where each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object (**Figure 2**). 
+The Core-IM supports Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in **Figure 2**. 
+
 
 .. core-im-statement-data-structure:
 
 .. figure:: images/core-im-statement-data-structure.PNG
 
-**Legend** Figure 2: The 'associative' structure that VA data takes when representing Statement objects, and the evidence/provenance supporting them (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in **Figure 1**).
+**Legend** Figure 2: A class-level view of the 'associative' structure that VA Statements takes (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in **Figure 1**). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
-The Statement object roots a central axis, where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) contributing to such an argument. Surrounding the axis are classes that describe the provenance of these core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A data example illustrating representation of a Variant Pathogenicity Statement using this structure can be found here (``TO DO``).
+In this structure, a Statement object roots a central axis, where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) contributing to such an argument. Surrounding the axis are classes that describe the provenance of these core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A full data example illustrating the structure of a Variant Pathogenicity Statement can be found here (``TO DO``).
 
 Core-IM Statement Semantics
 $$$$$$$$$$$$$$$$$$$$$$$$$$$
-In the Core-IM, every Statement object puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, and ``object`` attributes, and optional ``qualifier`` slot(s) (**Figure 3**). Additional ``direction`` and ``strength`` attributes can report whether the Statement reports the Proposition to be true or false, and the strength of evidence supporting this claim. 
+Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, and ``object`` attributes, and optional ``qualifier`` slot(s) (**Figure 3**). Additional ``direction`` and ``strength`` attributes can report whether the Statement reports the Proposition to be true or false, and the strength of evidence supporting this claim. 
 
 .. core-im-statement-semantics:
 
 .. figure:: images/core-im-statement-semantics.PNG
 
-**Legend** Figure 3: Explicit Statement Semantics are supported by the Core-IM. (a) The Statement object schema, showing only attributes used to represent the semantics of what they report to be true. (b) An example of a Variant Pathogenicity Statement - reporting that moderate evidence supports the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'.
+**Legend** Figure 3: Explicit Statement Semantics are supported by the Core-IM. (a) Model: the Statement model for a Variant Pathogenicity Profile, showing only attributes used to represent the semantics of what a statement reports to be true. (b) Data: a json data example of a Variant Pathogenicity Statement instance, noting elements holding the Statement's proposition and those assessing it's strength and direction. (c) Semantics: the  plain-language meaning of what the statement data structure reports to be true. 
 
-This basic model supports two "modes of use" for Statements, which allow for simple assertions of knowledge, or nuanced representations of the state of evidence surrounding a given Proposition. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
-
-
-
-
-
-
-
-
-VA Statement Profiles
-#####################
+This basic model supports two "modes of use" for Statements: an 'Assertion Mode' which support simple assertions of knowledge, and a 'Proposition Assessment Mode' allowing nuanced representations of the state of evidence surrounding a possible fact. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
 
 
 
@@ -93,6 +86,15 @@ VA Statement Profiles
 
 
 
+Standard Statement Profiles
+###########################
+
+
+1. Layer Cake Figure
+2. Hierarchical view of the Var Path Profile Subset
+3. Data Structure View of the VarPath Statement Model
+    a. List examples of specializations implemented via profiling . . . 
+    b. Reference Profiling Methodology Guide
 
 
 
@@ -117,8 +119,12 @@ VA Statement Profiles
 **Attic:**
 
 
+This basic model supports two "modes of use" for Statements, which allow for simple assertions of knowledge, or nuanced representations of the state of evidence surrounding a given Proposition. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
+
+
 .. image:: images/annotation-definition.PNG
   :width: 700
+
 
 Cat-VRS tools will facilitate mapping of such categorical concepts onto sets of discrete variant instances in the real world. For example, `NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_ is a discrete variant that matches the "EGFR exon 19 deletions" categorical variant definition.
 
