@@ -1,0 +1,140 @@
+{
+    "urn:mavedb:00000013-a-1#4288": {
+        "AssayVariantEffectMeasurementStudyResult": {
+            "type": "AssayVariantEffectMeasurementStudyResult",
+            "focusVariant": {
+                "id": "ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz",
+                "type": "VariationDescriptor",
+                "variation": {
+                    "id": "ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz",
+                    "type": "Allele",
+                    "location": {
+                        "id": null,
+                        "type": "SequenceLocation",
+                        "sequence_id": "ga4gh:SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi",
+                        "interval": {
+                            "type": "SequenceInterval",
+                            "start": {
+                                "type": "Number",
+                                "value": 10
+                            },
+                            "end": {
+                                "type": "Number",
+                                "value": 11
+                            }
+                        }
+                    },
+                    "state": {
+                        "type": "LiteralSequenceExpression",
+                        "sequence": "T"
+                    }
+                },
+                "expressions": [
+                    {
+                        "type": "Expression",
+                        "syntax": "hgvs.p",
+                        "value": "NP_000305.3:p.Arg11Thr",
+                        "syntax_version": null
+                    }
+                ],
+                "vrs_ref_allele_seq": "R"
+            },
+            "score": 1.29395467005388,
+            "isReportedIn": "urn:mavedb:00000013-a-1"    
+        },
+        "AssayVariantEffectFunctionalClassificationStatement": {
+            "type": "AssayVariantEffectFunctionalClassificationStatement",
+            "subjectVariant": {
+                "id": "ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz",
+                "type": "VariationDescriptor",
+                "variation": {
+                    "id": "ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz",
+                    "type": "Allele",
+                    "location": {
+                        "id": null,
+                        "type": "SequenceLocation",
+                        "sequence_id": "ga4gh:SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi",
+                        "interval": {
+                            "type": "SequenceInterval",
+                            "start": {
+                                "type": "Number",
+                                "value": 10
+                            },
+                            "end": {
+                                "type": "Number",
+                                "value": 11
+                            }
+                        }
+                    },
+                    "state": {
+                        "type": "LiteralSequenceExpression",
+                        "sequence": "T"
+                    }
+                },
+                "expressions": [
+                    {
+                        "type": "Expression",
+                        "syntax": "hgvs.p",
+                        "value": "NP_000305.3:p.Arg11Thr",
+                        "syntax_version": null
+                    }
+                ],
+                "vrs_ref_allele_seq": "R"
+            },
+            "predicate": "hasAssayVariantEffectFor",
+            "objectAssay": "https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml",
+            "subjectClassification": "normal",
+            "specifiedBy": {
+                "type": "Method",
+                "isReportedIn": "https://pubmed.ncbi.nlm.nih.gov/29785012/"
+            }
+        },
+        "AssayVariantEffectClinicalClassificationStatement": {
+            "type": "AssayVariantEffectClinicalClassificationStatement",
+            "subjectVariant": {
+                "id": "ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz",
+                "type": "VariationDescriptor",
+                "variation": {
+                    "id": "ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz",
+                    "type": "Allele",
+                    "location": {
+                        "id": null,
+                        "type": "SequenceLocation",
+                        "sequence_id": "ga4gh:SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi",
+                        "interval": {
+                            "type": "SequenceInterval",
+                            "start": {
+                                "type": "Number",
+                                "value": 10
+                            },
+                            "end": {
+                                "type": "Number",
+                                "value": 11
+                            }
+                        }
+                    },
+                    "state": {
+                        "type": "LiteralSequenceExpression",
+                        "sequence": "T"
+                    }
+                },
+                "expressions": [
+                    {
+                        "type": "Expression",
+                        "syntax": "hgvs.p",
+                        "value": "NP_000305.3:p.Arg11Thr",
+                        "syntax_version": null
+                    }
+                ],
+                "vrs_ref_allele_seq": "R"
+            },
+            "predicate": "hasAssayVariantEffectFor",
+            "objectAssay": "https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml",
+            "subjectClassification": "BS3_Supporting",
+            "specifiedBy": {
+                "type": "Method",
+                "isReportedIn": "https://pubmed.ncbi.nlm.nih.gov/34793697/"
+            }
+        }
+    }
+}
