@@ -73,6 +73,10 @@ todo_emit_warnings = True
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+html_theme_options = {
+    'navigation_depth': 5,  # Increase to 4 levels of nested sections
+    'collapse_navigation': False
+}
 html_logo = 'images/GA-logo.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,

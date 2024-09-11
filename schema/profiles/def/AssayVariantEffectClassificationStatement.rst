@@ -18,8 +18,8 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
       - Description
    *  - id
       - string
-      - 1..1
-      - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
+      - 0..1
+      - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
    *  - label
       - string
       - 0..1
@@ -27,76 +27,76 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
    *  - description
       - string
       - 0..1
-      - A free-text description of the entity.
+      - A free-text description of the Entity.
    *  - alternativeLabels
       - string
       - 0..m
       - Alternative name(s) for the Entity.
    *  - extensions
-      - `Extension </ga4gh/schema/gks-common/1.x/data-types/json/Extension>`_
+      - :ref:`Extension`
       - 0..m
-      - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
+      - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - contributions
-      - `Contribution <../core-im/core.json#/$defs/Contribution>`_
+      - :ref:`Contribution`
       - 0..m
-      - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
-   *  - isReportedIn
-      - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
+   *  - reportedIn
+      - :ref:`Document` | :ref:`IRI`
       - 0..m
-      - A document in which the information content is expressed.
+      - A document in which the the Information Entity is reported.
    *  - dateAuthored
       - string
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
    *  - derivedFrom
-      - `InformationEntity <../core-im/core.json#/$defs/InformationEntity>`_
+      - :ref:`InformationEntity`
       - 0..m
       - Another Information Entity from which this Information Entity is derived, in whole or in part.
    *  - recordMetadata
-      - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
+      - :ref:`RecordMetadata`
       - 0..1
-      - Metadata that applies to a specific concrete record of information as encoded in a particular system.
+      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - direction
       - string
-      - 1..1
-      - The direction of this Statement with respect to the predicate.
-   *  - strength
-      - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
       - 0..1
-      - A qualitative term indicating the overall strength of support for or against the Statement based on all evidence assessed.
+      - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
+   *  - strength
+      - :ref:`Coding` | :ref:`IRI`
+      - 0..1
+      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.
    *  - score
       - number
       - 0..1
-      - A quantitative score indicating the overall strength of support for or against the Statement based on all evidence assessed.
+      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.
    *  - statementText
       - string
       - 0..1
-      - A natural-language expression of what a structured Statement object asserts to be true. e.g. for a Variant Pathogenicity statement, "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or "there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer".
+      - A natural-language expression of what a Statement asserts to be true.
    *  - hasEvidenceLines
-      - `EvidenceLine <../core-im/core.json#/$defs/EvidenceLine>`_
+      - :ref:`EvidenceLine`
       - 0..m
-      - A discrete, independent argument relevant to the validity of the Proposition assessed or put forth in the Statement. This argument is based on the interpretation of one or more pieces of information as evidence. argument is based on the interpretation of one or more pieces of information as evidence.
+      - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
    *  - type
       - string
       - 1..1
       - MUST be "AssayVariantEffectClassificationStatement".
    *  - subjectVariant
-      - `MolecularVariation </ga4gh/schema/vrs/2.x/json/MolecularVariation>`_ | `CategoricalVariation </ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
       - A protein or genomic contextual or canonical molecular variant.
    *  - predicate
       - string
       - 1..1
-      - The predicate of the Statement.
+      - The relationship declared to hold between the subject and the object of the Statement.
    *  - objectAssay
-      - string | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_ | `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_
+      - string | :ref:`IRI` | :ref:`Coding`
       - 1..1
       - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
-   *  - subjectClassification
-      - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+   *  - classification
+      - :ref:`Coding` | :ref:`IRI`
       - 1..1
       - The classification of the variant effect in the assay.
    *  - specifiedBy
-      - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`Method` | :ref:`IRI`
       - 0..1
       - The method that specifies the classification of the variant effect in the assay.

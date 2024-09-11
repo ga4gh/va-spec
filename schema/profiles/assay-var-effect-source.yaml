@@ -4,7 +4,7 @@ title: VA Spec Assay Variant Effect statement and study result Profiles
 strict: true
 
 imports:
-  catvrs: ../cat-vrs/cat-vrs-source.yaml
+  catvrs.core: ../cat-vrs/core/cat-vrs-core-source.yaml
   vrs: ../vrs/vrs-source.yaml
   gks.core-im: ../core-im/core-im-source.yaml
   gks.data-types: ../data-types/data-types-source.yaml
@@ -27,7 +27,7 @@ $defs:
         extends: subject
         oneOf:
           - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
-          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A protein or genomic contextual or canonical molecular variant.
       predicate:
@@ -44,12 +44,12 @@ $defs:
         description: >-
           The assay that is evaluated for the variant effect. (e.g growth in
           haploid cell culture protein stability in fluorescence assay)
-      subjectClassification:
-        extends: subjectClassification
+      classification:
+        extends: classification
         description: >-
           The classification of the variant effect in the assay.
         enum:
-          - normal 
+          - normal
           - indeterminate
           - abnormal
       # method for classification contains info about thresholds for how to classify
@@ -62,7 +62,7 @@ $defs:
       - subjectVariant
       - predicate
       - objectAssay
-      - subjectClassification
+      - classification
 
   AssayVariantEffectMeasurementStudyResult:
     inherits: gks.core-im:StudyResult
@@ -86,11 +86,11 @@ $defs:
         #   #this is the actual assayed variant (e.g. yeast, non-reference, pre-spliced trx, anything you can possibly dream of)
       score:
         type: number
-        description: The score of the variant effect in the assay.     
-      isReportedIn:
+        description: The score of the variant effect in the assay.
+      reportedIn:
         description:  The assay that was used to measure the variant effect with all the various properties
-        extends: isReportedIn
-        minItems: 1
-        # url: document url  
-    
+        extends: reportedIn
+        # minItems: 1
+        # url: document url
+
 

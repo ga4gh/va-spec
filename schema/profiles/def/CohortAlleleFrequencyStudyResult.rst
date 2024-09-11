@@ -18,8 +18,8 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
       - Description
    *  - id
       - string
-      - 1..1
-      - The 'logical' identifier of the entity in the system of record, e.g. a UUID. This 'id' is unique within a given system. The identified entity may have a different 'id' in a different system, or may refer to an 'id' for the shared concept in another system (e.g. a CURIE).
+      - 0..1
+      - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
    *  - label
       - string
       - 0..1
@@ -27,35 +27,35 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
    *  - description
       - string
       - 0..1
-      - A free-text description of the entity.
+      - A free-text description of the Entity.
    *  - alternativeLabels
       - string
       - 0..m
       - Alternative name(s) for the Entity.
    *  - extensions
-      - `Extension </ga4gh/schema/gks-common/1.x/data-types/json/Extension>`_
+      - :ref:`Extension`
       - 0..m
-      - A list of extensions to the entity. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.
+      - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - specifiedBy
-      - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`Method` | :ref:`IRI`
       - 0..1
-      - A :ref:`Method` that describes all or part of the process through which the information was generated.
+      - A specification that describes all or part of the process that led to creation of the Information Entity 
    *  - contributions
-      - `Contribution <../core-im/core.json#/$defs/Contribution>`_
+      - :ref:`Contribution`
       - 0..m
-      - A list of :ref:`Contribution` objects that describe the activities performed by agents upon this entity.
-   *  - isReportedIn
-      - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
+   *  - reportedIn
+      - :ref:`Document` | :ref:`IRI`
       - 0..m
-      - A document in which the information content is expressed.
+      - A document in which the the Information Entity is reported.
    *  - dateAuthored
       - string
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
    *  - recordMetadata
-      - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
+      - :ref:`RecordMetadata`
       - 0..1
-      - Metadata that applies to a specific concrete record of information as encoded in a particular system.
+      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - ancillaryResults
       - object
       - 0..1
@@ -69,13 +69,13 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
       - 1..1
       - MUST be "CohortAlleleFrequencyStudyResult".
    *  - sourceDataSet
-      - `DataSet <../core-im/core.json#/$defs/DataSet>`_
+      - :ref:`DataSet`
       - 0..m
       - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
    *  - focusAllele
-      - `Allele </ga4gh/schema/vrs/2.x/json/Allele>`_ | string
+      - :ref:`Allele` | string
       - 1..1
-      - The specific subject or experimental unit in a Study that data in the StudyResult object is about. e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
+      - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - focusAlleleCount
       - integer
       - 1..1
@@ -83,13 +83,13 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks.co
    *  - locusAlleleCount
       - integer
       - 1..1
-      - The number of occurrences of alleles at the locus in the cohort (count of all alleles at this locus, sometimes referred to as "allele number")
-   *  - alleleFrequency
+      - The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as "allele number")
+   *  - focusAlleleFrequency
       - number
       - 1..1
       - The frequency of the focusAllele in the cohort.
-   *  - cohortStudyGroup
-      - `StudyGroup <../core-im/core.json#/$defs/StudyGroup>`_
+   *  - cohort
+      - :ref:`StudyGroup`
       - 1..1
       - The cohort from which the frequency was derived.
    *  - subCohortFrequency

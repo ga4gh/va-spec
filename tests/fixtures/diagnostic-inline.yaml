@@ -9,7 +9,7 @@ strength:
 predicate: positive
 subjectVariant:
   id: civic.mpid:12
-  type: ProteinSequenceConsequence
+  type: CategoricalVariant
   description: >-
     BRAF V600E has been shown to be recurrent in many cancer types. It is one of the
     most widely studied variants in cancer. This variant is correlated with poor
@@ -23,7 +23,9 @@ subjectVariant:
     V600E mutations. However, cetuximab and panitumumab have been largely shown to be
     ineffective without supplementary treatment.
   label: BRAF V600E
-  definingContext: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+  constraints:
+    - type: "DefiningContextConstraint"
+      definingContext: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
   members:
     - vrs.json#/ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
   alternativeLabels:
@@ -121,16 +123,16 @@ geneContextQualifier:
 specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)
-  isReportedIn:
-    id: pmid:31779674
-    type: Document
-    label: Danos et al., 2019, Genome Med.
-    title: Standard operating procedure for curation and clinical interpretation of
-      variants in cancer
-    doi: 10.1186/s13073-019-0687-x
-    pmid: 31779674
+  reportedIn:
+    - id: pmid:31779674
+      type: Document
+      label: Danos et al., 2019, Genome Med.
+      title: Standard operating procedure for curation and clinical interpretation of
+        variants in cancer
+      doi: 10.1186/s13073-019-0687-x
+      pmid: 31779674
   type: Method
-isReportedIn:
+reportedIn:
   - id: civic.source:94
     type: Document
     label: Crescenzi et al., 2014

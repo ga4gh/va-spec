@@ -4,7 +4,7 @@ title: VA Spec Variant Study Statement Standard Profiles
 strict: true
 
 imports:
-  catvrs: ../cat-vrs/cat-vrs-source.yaml
+  catvrs.core: ../cat-vrs/core/cat-vrs-core-source.yaml
   vrs: ../vrs/vrs-source.yaml
   gks.core-im: ../core-im/core-im-source.yaml
   gks.data-types: ../data-types/data-types-source.yaml
@@ -31,7 +31,7 @@ $defs:
         extends: subject
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
         - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
@@ -90,7 +90,7 @@ $defs:
         extends: subject
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
         - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
@@ -152,7 +152,7 @@ $defs:
         extends: subject
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
         - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
@@ -211,7 +211,7 @@ $defs:
         extends: subject
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
         - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:

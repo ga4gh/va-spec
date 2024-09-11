@@ -12,7 +12,7 @@ strength:
 predicate: predictsSensitivityTo
 subjectVariant:
   id: civic.mpid:33
-  type: ProteinSequenceConsequence
+  type: CategoricalVariant
   description: >-
     EGFR L858R has long been recognized as a functionally significant mutation in cancer,
     and is one of the most prevalent single mutations in lung cancer. Best described in
@@ -23,7 +23,9 @@ subjectVariant:
     that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in
     treating patients that failed to respond to earlier generation TKI therapies.
   label: EGFR L858R
-  definingContext: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+  constraints:
+    - type: DefiningContextConstraint
+      definingContext: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
   members:
     - vrs.json#/ga4gh:VA.7jX7fHgVEqx4C4jMRyZOH0ZBHnLn7_gJ
     - vrs.json#/ga4gh:VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
@@ -132,16 +134,16 @@ geneContextQualifier:
 specifiedBy:
   id: civic.methods:2019
   label: CIViC Curation SOP (2019)
-  isReportedIn:
-    id: pmid:31779674
-    type: Document
-    label: Danos et al., 2019, Genome Med.
-    title: Standard operating procedure for curation and clinical interpretation of
-      variants in cancer
-    doi: 10.1186/s13073-019-0687-x
-    pmid: 31779674
+  reportedIn:
+    - id: pmid:31779674
+      type: Document
+      label: Danos et al., 2019, Genome Med.
+      title: Standard operating procedure for curation and clinical interpretation of
+        variants in cancer
+      doi: 10.1186/s13073-019-0687-x
+      pmid: 31779674
   type: Method
-isReportedIn:
+reportedIn:
   - id: civic.source:592
     type: Document
     label: Sequist et al., 2013, J. Clin. Oncol.
