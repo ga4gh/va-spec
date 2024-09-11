@@ -8,8 +8,7 @@ Statement
 
 
 
-Implementation Guidance
-#######################
+**Implementation Guidance**
 
 **Statement:**
 
