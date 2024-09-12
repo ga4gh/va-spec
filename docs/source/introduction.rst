@@ -1,7 +1,9 @@
 Introduction
 !!!!!!!!!!!!
 
-This document provides an high-level overview of VA-Spec components, modeling principles, development processes, and modes of use - with links to separate pages for additional details.
+``PREREQUISITES``: None
+
+------------
 
 Overview
 ########
@@ -49,7 +51,7 @@ This may involve changes to the draft profile to beign it into alignment, or pou
 Vetting of the final proposed profile with VA community, including implementers who have regsitered interest in the Statement type. 
 
 
-**Task 5: Standard Profile Adoption and Extension **
+**Task 5: Standard Profile Adoption and Extension**
 
 Adopters implement the profile in their systems as is, or propose extensions / improvements to addres their use case - leading to another round of model alignemnt and refinement. 
 
