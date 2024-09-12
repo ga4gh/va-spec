@@ -4,7 +4,21 @@ Quick Start Guide
 Modes of Use
 ############
 
+The VA-Spec will support different levels of adoption and use - from direct contribution to model development and testing, to out-of-the-box adoption of final VA standards.
+ * **Mode 1: Direct Adoption**: users want to use an existing VA model as is.
+    * Use Case 
+       * adopeters have an existing resource that provides variant knowledge, represented using an established model
+       * adopters want to transform their data into VA-compliant form as best that existing VA models allow . . . not interested in developing or extending a profile
+       * adopters don’t want to use VA model internally, or need VA model to support every last piece of data in their system. 
 
+    * Guidenace:
+       * review documentation of existing VA Standard Profiles `HERE <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_.
+       * access formal json schema specifications of selected models `HERE <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_.
+
+* **Mode 2: Modified Adoption**: users want to take standard and adapt for use in internal systems
+
+
+* **Mode 3: De novo Profiling**: uers want to define profiles from scratch - for new statement types perhaps . . . 
 
 
 Types of Profiles
@@ -28,7 +42,7 @@ Note that this tree focuses on getting you to a **Statement** Profile for your d
 Finally, if you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.
 
 .. image:: images/quick-start-decision-tree.png
-  :width: 700
+  :width: 800
 
 
 **Node Guidance:**
@@ -67,7 +81,7 @@ Finally, if you get stuck or have questions at any point in the process,  reach 
 
 #. ``ACTION``: **Adopt Statement Profile as is, and use 'Extensions' for unsupported data as desired**
     #. If it acceptable that the Profile does not directly support the orphan data, you can use the `Extension <https://va-ga4gh.readthedocs.io/en/stable/core-information-model/data-types.html#extension>`_ modeling pattern capture this data informally, and still be in compliance with the Profile specification. 
-	b. We suggest that you still file a Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your unmet need, so that we might one day add support to the model, and notify you if/when this happens. 
+	b. We suggest that you still file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your unmet need, so that we might one day add support to the model, and notify you if/when this happens. 
 
 #. ``DECISION``: **Does the GKS Core-IM contain elements needed to define a new Profile for my data?**
     #. If none of the existing Standard Profiles matches your data, you will have to help us create one!
@@ -85,7 +99,7 @@ Finally, if you get stuck or have questions at any point in the process,  reach 
 	
 #. ``ACTION``: Build Profile from existing Core-IM elements, use  'Extensions' to capture unsupported data
     #. If it acceptable that the Profile does not directly support the orphan data, you can use the `Extension <https://va-ga4gh.readthedocs.io/en/stable/core-information-model/data-types.html#extension>`_ modeling pattern capture this data informally, and still be in compliance with the Profile specification. 
-    #. We suggest that you still file a Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your unmet need, so that we might one day add support to the model, and notify you if/when this happens. 
+    #. We suggest that you still file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your unmet need, so that we might one day add support to the model, and notify you if/when this happens. 
 
 #. ``ACTION``: Build new Statement Profile on the existing GKS Core-IM
     #. If the GKS Core-IM has what you need to represent your data, follow the `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/stable/modeling-framework.html#profiling-methodology>`_ to derive a Profile for your new Statement type.  Reach out for help as you go, and submit a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_ when you have a draft ready to share.
