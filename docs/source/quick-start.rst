@@ -33,36 +33,36 @@ Models and Dependencies
 
 * **Implementation schema**: concrete schema that are actually implemented in application data systems.  May directly implement VA Standard JSON schema, or specify custom versions of the standard models in a language of choice. May also make application-specific changes/additions to the standard models to support implementation needs. 
 
-While the SEPIO and GKS Core models are the basis for **deriving downstream Standard Profiles**, the evolution of these core models is driven by **bottom-up requirements arising from implementation models** for working data applications. These requirements flow upstream to **inform extension or refinement of the GKS Core-IM**, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
+While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
 Resources and Contributions
 ###########################
 Below we list where each model resides, the specific location of the 'model source' yaml file(s) that are directly edited when defining a model, and a documentation landing page.
 
 **SEPIO Core-IM**:
- * repo: 
- * model source:
- * documentation:
+ * repo: https://github.com/sepio-framework/sepio-linkml
+ * model source: https://github.com/sepio-framework/sepio-linkml/blob/main/src/sepio_linkml/schema/sepio_linkml.yaml
+ * documentation: https://sepio-framework.github.io/sepio-linkml/
 
 **GKS Core-IM**: 
- * repo: 
- * model source:
- * documentation:
+ * repo: https://github.com/ga4gh/gks-common/
+ * model source: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
+ * documentation: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
 
 **GKS Domain Entity IMS**: 
- * repo: 
- * model source:
- * documentation:
+ * repo: https://github.com/ga4gh/gks-common/
+ * model source: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
+ * documentation: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
 
 **VA Standard Profile IMs**:
- * repo: 
- * model source: 
- * documentation:
+ * repo: https://github.com/ga4gh/va-spec
+ * model source: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles
+ * documentation: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
 
 **VA Standard Profile JSON Schema**: 
- * repo: 
- * model source: n/a (these are automatically generated from standard profile source yaml files via metaschema processor tooling)
- * documentation:
+ * repo: https://github.com/ga4gh/va-spec
+ * model source: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json (do not edit directly, these are automatically generated from standard profile source yaml files via metaschema processor tooling)
+ * documentation: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
 
 **Implementation Schema**:
  * repo: distributed (like in repos associated with implementing projects)
@@ -75,6 +75,7 @@ Where do I Start?
 As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standard Profiles yet exists for the type of knowledge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
 
 The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.   
+
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
  * Blue nodes present a ``DECISION`` to be made.
  * Red nodes describe a terminal ``ACTION`` to be taken. 
@@ -86,7 +87,7 @@ The **decision tree** below is designed to help newcomers find the right entry p
 
 **Node Guidance and Resources:**
 
-If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.
+*If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.*
 
 #. ``DECISION``: **Does a Statement Profile exist for my use case?**
     #. Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
