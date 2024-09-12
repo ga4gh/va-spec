@@ -67,11 +67,11 @@ If you get stuck or have questions at any point in the process,  reach out to th
     #. If the existing profile covers the data you need it to, you can find its json schema specification `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ for implementation in your system.
 
 #. ``ACTION``: **Extend the Statement Profile using these GKS Core-IM elements**
-    #. Add the new Core-IM elements to the existing Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_ to specialize them for your data as needed.
+    #. Add the new Core-IM elements to the existing Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ to specialize them for your data as needed.
 
 #. ``ACTION``: **Pull required elements from the SEPIO Core-IM into the GKS Core-IM, and build Statement Profile**
     #. Contact the VA team for help pulling these into the GKS Core-IM.
-    #. These new Core-IM elements can then be pulled into the existing Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_ to specialize them for your data as needed.
+    #. These new Core-IM elements can then be pulled into the existing Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ to specialize them for your data as needed.
 
 #. ``ACTION``: **Adopt Statement Profile as is, and use 'Extensions' for unsupported data as desired**
     #. If it acceptable that the Profile does not directly support the orphan data, you can use the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ modeling pattern capture this data informally, and still be in compliance with the Profile specification. 
@@ -79,7 +79,7 @@ If you get stuck or have questions at any point in the process,  reach out to th
 
 #. ``DECISION``: **Does the GKS Core-IM contain elements needed to define a new Profile for my data?**
     #. If none of the existing Standard Profiles matches your data, you will have to help us create one!
-    #. You can follow the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
+    #. You can follow the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_.
     #. An initial step is to look at the generic `GKS Core-IM <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ to identify elements needed to support your data, and note any gaps that may exist. 
 
 #. ``DECISION``: **Does upstream SEPIO Core-IM contain elements needed to define a Statement Profile for my data?**
@@ -96,13 +96,13 @@ If you get stuck or have questions at any point in the process,  reach out to th
     #. We suggest that you still file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your unmet need, so that we might one day add support to the model, and notify you if/when this happens. 
 
 #. ``ACTION``: Build new Statement Profile on the existing GKS Core-IM
-    #. If the GKS Core-IM has what you need to represent your data, follow the `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_ to derive a Profile for your new Statement type.  Reach out for help as you go, and submit a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_ when you have a draft ready to share.
+    #. If the GKS Core-IM has what you need to represent your data, follow the `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ to derive a Profile for your new Statement type.  Reach out for help as you go, and submit a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_ when you have a draft ready to share.
     #. If the GKS Core-IM is lacking, consult the upstream SEPIO Core-IM to see if it contains the elements you need. If it does, contact the VA team for help pulling these into the GKS Core-IM, so they can be used in your Profile.
     #. If neither Core-IM has what you need, building your Statement Profile may require working with SEPIO and VA teams to add support to these upstream models, and then pulling these new elements into your Profile.  Reach out and we will be happy to help.
 
 #. ``ACTION``: Pull required elements from the SEPIO Core-IM into the GKS Core-IM, and build Statement Profile 
     #. Contact the VA team for help pulling these into the GKS Core-IM.
-    #. These new Core-IM elements can then be pulled into your new Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_ to specialize them for your data as needed.
+    #. These new Core-IM elements can then be pulled into your new Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ to specialize them for your data as needed.
 
 #. ``ACTION``: Work with SEPIO / GKS teams to change Core-IM models, then build Statement Profile on them
     #. If you decide you want to work with the VA team to create a Statement Profile that fully  supports your data, start by adding the proposed new elements into your Statement Profile. 
@@ -117,6 +117,6 @@ Types of Profiles
 #################
 While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
 
-For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
+For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_.
 
 Note that the decision tree above focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
