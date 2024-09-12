@@ -17,9 +17,9 @@ Models and Dependencies
 
 .. figure:: images/va-model-layers.png
 
-   Figure 1: VA Model Dependencies
+   VA Models and Dependencies
 
-   **Legend** Stack of models and dependencies in the VA-Spec ecosystem. Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the      right describe the propagation of requirements upstream to inform model expansion/refinement. Format of each model is indicated by icons at the left of each level.
+   **Legend**  Models and dependencies in the VA-Spec ecosystem. Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the              right describe the propagation of requirements upstream to inform model expansion/refinement. Format of each model is indicated by icons at the left of each level.
 
 
 * The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting cureated sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
@@ -69,7 +69,6 @@ Below we list where each model resides, the specific location of the 'model sour
  * repo: distributed (like in repos associated with implementing projects)
  * model source: n/a (will be specific to each implementing project)
  * documentation: distributed (specific to each implementing project)
-
 
 
 Where do I Start?
