@@ -33,8 +33,8 @@ Models and Dependencies
 
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
-Model Resource Links
-####################
+Resource Links
+##############
 Below we list where each model resides, the specific location of the 'model source' yaml file(s) that are directly edited when defining a model, and a documentation landing page.
 
 **SEPIO Core-IM**:
