@@ -3,41 +3,21 @@ Quick Start Guide
 
 ``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
-Modes of Use
-############
+---------------
 
-The VA-Spec will support different levels of adoption and use - from direct contribution to model development and testing, to out-of-the-box adoption of final VA standards.
+There are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standrd Profiles yest exists for the type of knowelge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
 
- **Mode 1: Direct Adoption**: users want to use an existing VA model as is.
-  * Use Case 
-      * adopeters have an existing resource that provides variant knowledge, represented using an established model
-      * adopters want to transform their data into VA-compliant form as best that existing VA models allow . . . not interested in developing or extending a profile
-      * adopters don’t want to use VA model internally, or need VA model to support every last piece of data in their system. 
-
-  * Guidance:
-      * review documentation of existing VA Standard Profiles `HERE <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_.
-      * access formal json schema specifications of selected models `HERE <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_.
-
-**Mode 2: Modified Adoption**: users want to take standard and adapt for use in internal systems
-
-
-**Mode 3: De novo Profiling**: uers want to define profiles from scratch - for new statement types perhaps . . . 
-
-
-Where Do I Start?
-#################
-
-As noted, there are many ways that users may engage with the VA-Spec, depending on their data and project requirements.  The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework.  
- * Follow the tree downward by choosing the appropriate path based on your data and project requirements.
- * For each blue ``DECISION`` node you traverse, you may consult information and linked resources provided in text below the tree for guidance.
- * When a red ``ACTION`` node is reached, follow the guidance for that node below. 
-
+The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.   
+ * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
+ * Each node is numbered and maps to additional guidance and resources provided in the text below the tree. 
+ * Blue nodes present a ``DECISION`` to be made.
+ * Red nodes describe a terminal ``ACTION`` ot be taken. 
 
 .. image:: images/quick-start-decision-tree.png
   :width: 1000
 
 
-**Node Guidance:**
+**Node Guidance and Resources:**
 
 If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.
 
