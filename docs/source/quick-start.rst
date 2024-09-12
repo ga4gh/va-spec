@@ -45,7 +45,7 @@ If you get stuck or have questions at any point in the process,  reach out to th
     #. Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
 
 #. ``DECISION``: **Does the existing Statement Profile cover all my data and requirements?**
-    #. Use the documentation for the existing profile (e.g. `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) to map your data onto the classes and attributes it provides. Note any data that is not accommodated by the existing model. 
+    #. Use the documentation for the existing profile `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_ to map your data onto the classes and attributes it provides. Note any data that is not accommodated by the existing model. 
 
 #. ``DECISION``: **Does the GKS Core-IM contain elements needed to extend the Profile for my data?**
     #. Look at the generic `GKS Core-IM <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ to identify elements that might support your orphan data.
