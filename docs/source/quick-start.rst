@@ -5,13 +5,66 @@ Quick Start Guide
 
 ---------------
 
-There are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standrd Profiles yest exists for the type of knowelge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
+Model Dependencies and Interactions
+###################################
+VA Standard Profile schema represent the endpoint of modeling efforts that unfold across a stack of dependent specifications. It is important to understand this hierarchy of models and their dependencies and interactions before beginning to use or contribute to the VA-Spec.  Figure 1 illustrates the relationships between assets supporting the VA-Spec. 
+
+
+
+
+* The **SEPIO Core-IM** provides foundational representation of doamin-agnostic concepts describing the knowledge genertion process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that inclides a Profiling Methodology for deriving models specialized for particualr types of Statements reporting varint knowledge, or Study Results reporting variant data.  
+
+* The **GKS Core-IM** represents a manually derived subset of the SEPIO Core-IM, that includes elements required by initial implementations of the VA-Spec. It is the basis for the profiling process that generates Statemetn or Study Result profiles for specific types of variant annotations. As existing VA profiles are expanded, or new profiles are created, the GKS Core-IM may pull in additional content from the SEPIO Core-IM to support these use cases. 
+
+* **GKS Domain Entity Models** are defined to represent the entities and concepts that Variant Annotations are about - e.g. Genes, Conditions, Therapeutic Procedures. These are used to represent the subjects, objects, and qualifiers in VA Statements. 
+
+* **VA Standard Profiles** represent Standard Models for describing specific types of Statments or Study Results about molecular variation. They are generated through specializations of the GKS Core-IM.  They are defiend as conceptual information models, and dervied into formal json schema through the GKS Metaschema Processor tools.
+
+While the SEPIO and GKS Core models are the basis for deriving downstream VA profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
+
+.. image:: images/va-spec-layers.png
+  :width: 400
+
+
+Resources and Contributions
+###########################
+The repository where each resides, the location of the 'model source' (yaml file(s) directly editted in defining a model), and documentation landing page.
+
+**SEPIO Core-IM**:
+ * repo: 
+ * model source:
+ * documentation:
+
+**GKS Core-IM**: 
+ * repo: 
+ * model source:
+ * documentation:
+
+**GKS Domain Entities**: 
+ * repo: 
+ * model source:
+ * documentation:
+
+**VA Standard Profile IMs**:
+ * repo: 
+ * model source: 
+ * documentation:
+
+**VA Standard Profile JSON Schema**: concrete formal specifications for implementation in data systems
+ * repo: 
+ * model source: n/a (these are automatically generated from standard profile source yaml files via metaschema processor tooling)
+ * documentation:
+
+
+Where do I Start?
+#################
+As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standrd Profiles yest exists for the type of knowelge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
 
 The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.   
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
- * Each node is numbered and maps to additional guidance and resources provided in the text below the tree. 
  * Blue nodes present a ``DECISION`` to be made.
- * Red nodes describe a terminal ``ACTION`` ot be taken. 
+ * Red nodes describe a terminal ``ACTION`` to be taken. 
+ * Each node is numbered and maps to additional guidance and resources provided in the text below the tree. 
 
 .. image:: images/quick-start-decision-tree.png
   :width: 1000
@@ -91,12 +144,11 @@ If you get stuck or have questions at any point in the process,  reach out to th
     #. We will also coordinate discussions with SEPIO developers to add new elements to these models as appropriate, ensuring compliance with these upstream standards.  
 
 
+Note that the decision tree above focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
+
 -----------------
 
-Types of Profiles
-#################
-While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
+**Attic:**
 
-For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_.
+Evolution of SEPIO and GKS Core Information Models is driven by bottom-up requirements arising from implementations developing profiles for working data applications.  These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
 
-Note that the decision tree above focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
