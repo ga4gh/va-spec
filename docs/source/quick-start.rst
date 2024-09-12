@@ -5,13 +5,12 @@ Quick Start Guide
 
 ---------------
 
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent specifications. It is important to understand this hierarchy of models and their dependencies and interactions before beginning to use or contribute to the VA-Spec. 
-
-This document provides an overview of these models and their depdneencies, links to resources for accessing and contributing to them, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
+This document provides an overview of models in the VA ecosystem and their depdenencies, links to resources for accessing and contributing to them, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
 
 Models and Dependencies
 #######################
-**Figure 1** illustrates the stack of models in the VA-Spec ecosystem, and highlighting dependencies and interactions between them. 
+
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications. It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. **Figure 1** illustrates the stack of models in the VA-Spec ecosystem, and highlighting interactions between them. 
 
 .. _va-model-layers:
 
@@ -30,11 +29,11 @@ Models and Dependencies
 
 * **VA Standard Profile IMs** represent Standard Models for describing specific types of Statements or Study Results about molecular variation. They are generated through specializations of the GKS Core-IM.  They are defined as conceptual information models, and derived into formal json schema through the GKS Metaschema Processor tools.
   
-**VA Standard Profile JSON Schema**: formal schema intended for use in data systems, which are generated automatically from the Standard Profile yaml source files by a metaschema processor pipeline. 
+* **VA Standard Profile JSON Schema**: formal schema intended for use in data systems, which are generated automatically from the Standard Profile yaml source files by a metaschema processor pipeline. 
 
-**Implementation schema**: concrete schema that are actually implemented in application data systems.  May directly implement VA Standard JSON schema, or specify custom versions of the standard models in a language of choice. May also make application-specific changes/additions to the standard models to support implementation needs. 
+* **Implementation schema**: concrete schema that are actually implemented in application data systems.  May directly implement VA Standard JSON schema, or specify custom versions of the standard models in a language of choice. May also make application-specific changes/additions to the standard models to support implementation needs. 
 
-While the SEPIO and GKS Core models are the basis for deriving downstream VA profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
+While the SEPIO and GKS Core models are the basis for **deriving downstream Standard Profiles**, the evolution of these core models is driven by **bottom-up requirements arising from implementation models** for working data applications. These requirements flow upstream to **inform extension or refinement of the GKS Core-IM**, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
 Resources and Contributions
 ###########################
