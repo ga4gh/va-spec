@@ -28,26 +28,30 @@ The series of figures below provides a high-level overview of the **processes th
 
 
 
-**Figure 1**: Seeding the Initial Core Information Model
-The initial version of the Core-IM represents a subset of SEPIO model, selected based on requirements for  Statement and Study Result models required by early adopter implementations .
+**Task 1: Creating the GKS Core Information Model**
+
+The initial version of the Core-IM represents a subset of SEPIO model, selected based on requirements for  Statement and Study Result models required by early adopter implementations.
 
 .. image:: images/va-profiling-step1.png
   :width: 1000
 
-**Figure 2**: Deriving Statement Profiles from the Core-IM
+**Task 2: Deriving Statement Profiles from the Core-IM**
 
 
-**Figure 3**: Model Alignment/Refinement
+**Task 3: Model Alignment/Refinement**
+
 Negotiate harmonization of profile elements that may diverge from the Core Infprmation Model and principles.
 This may involve changes to the draft profile to beign it into alignment, or poulling in new content from the upstream full SEPIO IM to support data not covered by the GKS Core-IM subset, or changes to the Core-IM itself where nnew requirements surfaced by the draft point to modeling soluotions that represent generally useful improvements.  
 
 
-**Figure 4**: Establishment of a Profile as a Standard
-Vettign of the final proposed profile with VA community, including implementers who have regsitered interest in the Statement type. 
+**Task 4: Establishment of a Profile as a Standard**
+
+Vetting of the final proposed profile with VA community, including implementers who have regsitered interest in the Statement type. 
 
 
-**Figure 5**: Standard Profile Adoption and Extension 
-Adopters implement the profile in their systems as is, or propose extensions / impriovements to addres their use case - leading to another round of model alignemnt and refinement. 
+**Task 5: Standard Profile Adoption and Extension **
+
+Adopters implement the profile in their systems as is, or propose extensions / improvements to addres their use case - leading to another round of model alignemnt and refinement. 
 
 
 
