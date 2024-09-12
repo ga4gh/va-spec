@@ -10,7 +10,7 @@ imports:
   gks.data-types: ../data-types/data-types-source.yaml
 
 $defs:
-  # mavedb work in progress (super early draft)
+  # MaveDB work in progress
   AssayVariantEffectFunctionalClassificationStatement:
     inherits: gks.core-im:Statement
     maturity: draft
@@ -76,6 +76,9 @@ $defs:
         const: "AssayVariantEffectFunctionalClassificationStatement"
         default: "AssayVariantEffectFunctionalClassificationStatement"
         description: MUST be "AssayVariantEffectFunctionalClassificationStatement".
+        const: "AssayVariantEffectFunctionalClassificationStatement"
+        default: "AssayVariantEffectFunctionalClassificationStatement"
+        description: MUST be "AssayVariantEffectFunctionalClassificationStatement".
       subjectVariant:
         extends: subject
         oneOf:
@@ -126,13 +129,13 @@ $defs:
     type: object
     description: >-
       A StudyResult that reports a variant effect score from a functional assay.
+      A StudyResult that reports a variant effect score from a functional assay.
     properties:
       type:
         extends: type
         const: "AssayVariantEffectMeasurementStudyResult"
         default: "AssayVariantEffectMeasurementStudyResult"
         description: MUST be "AssayVariantEffectMeasurementStudyResult".
-      # @Larry why is this focusVariant instead of subjectVariant?
       focusVariant:
         extends: focus
         oneOf:
