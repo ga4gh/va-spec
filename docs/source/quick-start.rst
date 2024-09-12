@@ -18,11 +18,20 @@ For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs
 Where Do I Start?
 #################
 
-As noted, there are many ways that users may engage with the VA-Spec, depending on their data and use case.  The decision tree below is designed to help newcomers to the VA Framework to find the right entry point for engagement with the specification.  Follow the tree until a red 'stop' node is reached, and consult information and linked resources for that node in the text below.  This text also provides guidance to help users understand and answer questions in the blue non-terminal nodes along the way.  
+As noted, there are many ways that users may engage with the VA-Spec, depending on their data and project requirements.  The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework.  
+ * Follow the tree downward by choosing the appropriate path based on your data and project requirements.
+ * For each blue ``DECISION`` node you traverse, you may consult information and linked resources provided in text below the tree for guidance.
+ * When a red ``ACTION`` node is reached, follow the guidance for that node below. 
 
 Note that this tree focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
 
-*If you get stuck or have questions at any point in the process below,  you can always reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.*
+Finally, if you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.
+
+.. image:: images/quick-start-decision-tree.png
+  :width: 700
+
+
+**Node Guidance:**
 
 #. ``DECISION``: **Does a Statement Profile exist for my use case?**
     #. Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
