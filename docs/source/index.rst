@@ -9,6 +9,7 @@ Consult the pages on this site for information about the specification and how t
  * `Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: Detailed descriptions of the classes and attributes in the foundational Core-IM.
  * `Standard Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: Detailed descriptions and implementation guidance for the Statement and Study Result Profiles provided as standards for representing variant knowledge. 
  * `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_: Specific instructions and resoruces for creating or refining profiles of the Core-IM to build new Statement models.
+ * `Modeling Foundations <https://va-ga4gh.readthedocs.io/en/latest/modeling-foundations.html>`_: An overview of the modeling standareds and principles that underpin VA-Spec information models.
  * `Reference Implementation <https://va-ga4gh.readthedocs.io/en/latest/reference-implementation.html>`_: Documentation about code libraries that facilitate implementation of the VA-Spec.
  * `FAQ <https://va-ga4gh.readthedocs.io/en/latest/faq.html>`_: Answers to commonly asked questions that provide deeper insight into specific aspects of the VA-Spec.
 
@@ -22,6 +23,7 @@ Consult the pages on this site for information about the specification and how t
    quick-start
    core-information-model/index
    standard-profiles/index
-   modeling-framework
+   profiling-methodology
+   modeling-foundations
    reference-implementation
    faq
