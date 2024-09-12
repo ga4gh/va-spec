@@ -13,17 +13,13 @@ Models and Dependencies
 #######################
 **Figure 1** illustrates the stack of models in the VA-Spec ecosystem, and highlighting dependencies and interactions between them. 
 
-
-.. image:: images/va-model-layers.png
-  :width: 700
-
-. . . 
-
-.. va-model-layers:
+.. _va-model-layers:
 
 .. figure:: images/va-model-layers.png
 
-**Legend** Figure 1: Stack of models and dependencies in the VA-Spec ecosystem. Arrows on the left describe processes through which downstream models are generated from foundational ones.  Arrows on the right describe the propagation of requirements upstream to inform model expansion/refinement. 
+   Figure 1: VA Model Dependencies
+
+   **Legend** Stack of models and dependencies in the VA-Spec ecosystem. Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the      right describe the propagation of requirements upstream to inform model expansion/refinement. Format of each model is indicated by icons at the left of each level.
 
 
 * The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting cureated sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
@@ -173,3 +169,9 @@ Note that the decision tree above focuses on getting you to a **Statement** Prof
 Evolution of SEPIO and GKS Core Information Models is driven by bottom-up requirements arising from implementations developing profiles for working data applications.  These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
 
 `VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the endpoint of modeling efforts that unfold across a stack of dependent specifications. It is important to understand this hierarchy of models and their dependencies and interactions before beginning to use or contribute to the VA-Spec.  Figure 1 illustrates the relationships between assets supporting the VA-Spec. 
+
+
+.. image:: images/va-model-layers.png
+  :width: 700
+
+
