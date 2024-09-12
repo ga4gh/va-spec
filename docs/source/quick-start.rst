@@ -7,36 +7,42 @@ Quick Start Guide
 
 `VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent specifications. It is important to understand this hierarchy of models and their dependencies and interactions before beginning to use or contribute to the VA-Spec. 
 
-This document provides an overview of these models and their depdndencies, links to resources for accessing and contributing to them, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
+This document provides an overview of these models and their depdneencies, links to resources for accessing and contributing to them, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
 
 Models and Dependencies
 #######################
-**Figure 1** illustrates the stack of models in the VA-Spec ecosystem, and highlighting dependencies and interactiosn between them. 
+**Figure 1** illustrates the stack of models in the VA-Spec ecosystem, and highlighting dependencies and interactions between them. 
 
 
+.. image:: images/va-model-layers.png
+  :width: 700
+
+. . . 
+
+.. va-model-layers:
+
+.. figure:: images/va-model-layers.png
+
+**Legend** Figure 1: Stack of models and dependencies in the VA-Spec ecosystem. Arrows on the left describe processes through which downstream models are generated from foundational ones.  Arrows on the right describe the propagation of requirements upstream to inform model expansion/refinement. 
 
 
-* The **SEPIO Core-IM** provides foundational representation of doamin-agnostic concepts describing the knowledge genertion process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that inclides a Profiling Methodology for deriving models specialized for particualr types of Statements reporting varint knowledge, or Study Results reporting variant data.  It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
+* The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting cureated sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
 
 * The **GKS Core-IM** represents a manually derived subset of the SEPIO Core-IM, that includes elements required by initial implementations of the VA-Spec. It is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. As existing VA profiles are expanded, or new profiles are created, the GKS Core-IM may pull in additional content from the SEPIO Core-IM to support these use cases. 
 
 * **GKS Domain Entity IMs** are defined to represent the entities and concepts that Variant Annotations are about - e.g. Genes, Conditions, Therapeutic Procedures. These are used to represent the subjects, objects, and qualifiers in VA Statements. 
 
-* **VA Standard Profile IMs** represent Standard Models for describing specific types of Statments or Study Results about molecular variation. They are generated through specializations of the GKS Core-IM.  They are defiend as conceptual information models, and dervied into formal json schema through the GKS Metaschema Processor tools.
-ms.  
+* **VA Standard Profile IMs** represent Standard Models for describing specific types of Statements or Study Results about molecular variation. They are generated through specializations of the GKS Core-IM.  They are defined as conceptual information models, and derived into formal json schema through the GKS Metaschema Processor tools.
+  
 **VA Standard Profile JSON Schema**: formal schema intended for use in data systems, which are generated automatically from the Standard Profile yaml source files by a metaschema processor pipeline. 
 
-**Implementation schema**: concrete schema that are actually implemented in application data systems.  May directly implement VA Standard JSON schema, or specify custom versions of the standard models in a language of choice. May also make applciaiton-specific changes/additions to the standard models to support implementation needs. 
+**Implementation schema**: concrete schema that are actually implemented in application data systems.  May directly implement VA Standard JSON schema, or specify custom versions of the standard models in a language of choice. May also make application-specific changes/additions to the standard models to support implementation needs. 
 
-While the SEPIO and GKS Core models are the basis for deriving downstream VA profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
-
-.. image:: images/va-spec-layers.png
-  :width: 400
-
+While the SEPIO and GKS Core models are the basis for deriving downstream VA profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
 Resources and Contributions
 ###########################
-Below we list where each model resides, the specific location of the 'model source' yaml file(s) that are directly editted when defining a model, and a documentation landing page.
+Below we list where each model resides, the specific location of the 'model source' yaml file(s) that are directly edited when defining a model, and a documentation landing page.
 
 **SEPIO Core-IM**:
  * repo: 
@@ -64,7 +70,7 @@ Below we list where each model resides, the specific location of the 'model sour
  * documentation:
 
 **Implementation Schema**:
- * repo: distributed (like in repos assocaited with implementing projects)
+ * repo: distributed (like in repos associated with implementing projects)
  * model source: n/a (will be specific to each implementing project)
  * documentation: distributed (specific to each implementing project)
 
@@ -72,7 +78,7 @@ Below we list where each model resides, the specific location of the 'model sour
 
 Where do I Start?
 #################
-As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standrd Profiles yest exists for the type of knowelge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
+As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standard Profiles yet exists for the type of knowledge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
 
 The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.   
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
