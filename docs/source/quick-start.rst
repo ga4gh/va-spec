@@ -3,8 +3,6 @@ Quick Start Guide
 
 ``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
----------------
-
 This document provides an overview of models in the VA ecosystem and their depdenencies, links to resources for accessing and contributing to them, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
 
 Models and Dependencies
