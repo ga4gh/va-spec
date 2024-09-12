@@ -1,34 +1,27 @@
 Quick Start Guide
 !!!!!!!!!!!!!!!!!
 
-``PREREQUISITE``: `Intorduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
+``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
 Modes of Use
 ############
 
 The VA-Spec will support different levels of adoption and use - from direct contribution to model development and testing, to out-of-the-box adoption of final VA standards.
- * **Mode 1: Direct Adoption**: users want to use an existing VA model as is.
-    * Use Case 
-       * adopeters have an existing resource that provides variant knowledge, represented using an established model
-       * adopters want to transform their data into VA-compliant form as best that existing VA models allow . . . not interested in developing or extending a profile
-       * adopters don’t want to use VA model internally, or need VA model to support every last piece of data in their system. 
 
-    * Guidenace:
-       * review documentation of existing VA Standard Profiles `HERE <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_.
-       * access formal json schema specifications of selected models `HERE <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_.
+ **Mode 1: Direct Adoption**: users want to use an existing VA model as is.
+  * Use Case 
+      * adopeters have an existing resource that provides variant knowledge, represented using an established model
+      * adopters want to transform their data into VA-compliant form as best that existing VA models allow . . . not interested in developing or extending a profile
+      * adopters don’t want to use VA model internally, or need VA model to support every last piece of data in their system. 
 
-* **Mode 2: Modified Adoption**: users want to take standard and adapt for use in internal systems
+  * Guidance:
+      * review documentation of existing VA Standard Profiles `HERE <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_.
+      * access formal json schema specifications of selected models `HERE <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_.
 
-
-* **Mode 3: De novo Profiling**: uers want to define profiles from scratch - for new statement types perhaps . . . 
+**Mode 2: Modified Adoption**: users want to take standard and adapt for use in internal systems
 
 
-Types of Profiles
-#################
-While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
-
-For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
-
+**Mode 3: De novo Profiling**: uers want to define profiles from scratch - for new statement types perhaps . . . 
 
 
 Where Do I Start?
@@ -39,15 +32,14 @@ As noted, there are many ways that users may engage with the VA-Spec, depending 
  * For each blue ``DECISION`` node you traverse, you may consult information and linked resources provided in text below the tree for guidance.
  * When a red ``ACTION`` node is reached, follow the guidance for that node below. 
 
-Note that this tree focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
-
-Finally, if you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.
 
 .. image:: images/quick-start-decision-tree.png
-  :width: 800
+  :width: 1000
 
 
 **Node Guidance:**
+
+If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.
 
 #. ``DECISION``: **Does a Statement Profile exist for my use case?**
     #. Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
@@ -117,3 +109,14 @@ Finally, if you get stuck or have questions at any point in the process,  reach 
     #. When a draft of your new Profile is ready for review, make a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_ to initiate a broader review.  
     #. The VA Team will coordinate discussions with other implementers to ensure the proposed changes are amenable to implementation needs and aligned with broader VA modeling principles. 
     #. We will also coordinate discussions with SEPIO developers to add new elements to these models as appropriate, ensuring compliance with these upstream standards.  
+
+
+-----------------
+
+Types of Profiles
+#################
+While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
+
+For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
+
+Note that the decision tree above focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
