@@ -18,7 +18,11 @@ VA Standard Profile schema represent the endpoint of modeling efforts that unfol
 
 * **GKS Domain Entity Models** are defined to represent the entities and concepts that Variant Annotations are about - e.g. Genes, Conditions, Therapeutic Procedures. These are used to represent the subjects, objects, and qualifiers in VA Statements. 
 
-* **VA Standard Profiles** represent Standard Models for describing specific types of Statments or Study Results about molecular variation. They are generated through specializations of the GKS Core-IM.  They are defiend as conceptual information models, and dervied into formal json schema through the GKS Metaschema Processor tools.
+* **VA Standard Profile Models** represent Standard Models for describing specific types of Statments or Study Results about molecular variation. They are generated through specializations of the GKS Core-IM.  They are defiend as conceptual information models, and dervied into formal json schema through the GKS Metaschema Processor tools.
+
+** VA Standard Profile JSON Schema** . . . 
+
+** Implementation schema** . . . 
 
 While the SEPIO and GKS Core models are the basis for deriving downstream VA profiles, the evolution of these core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
 
