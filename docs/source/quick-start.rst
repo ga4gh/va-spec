@@ -77,8 +77,7 @@ As a modeling framework, there are many ways that users may engage with the VA-S
 The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.   
 
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
- * Blue nodes present a ``DECISION`` to be made.
- * Red nodes describe a terminal ``ACTION`` to be taken. 
+ * Blue nodes present a ``DECISION`` to be made. Red nodes describe a terminal ``ACTION`` to be taken. 
  * Each node is numbered and maps to additional guidance and resources provided in the text below the tree. 
 
 .. image:: images/quick-start-decision-tree.png
