@@ -10,13 +10,13 @@ This document provides an overview of models in the VA ecosystem and their depde
 Models and Dependencies
 #######################
 
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications. It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. **Figure 1** illustrates the stack of models in the VA-Spec ecosystem, and highlighting interactions between them. 
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications (**Figure 1**). It is **important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec**. 
 
 .. _va-model-layers:
 
 .. figure:: images/va-model-layers.png
 
-   VA Models and Dependencies
+   VA Ecosystem Models and Dependencies
 
    **Legend**  Models and dependencies in the VA-Spec ecosystem. Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the              right describe the propagation of requirements upstream to inform model expansion/refinement. Format of each model is indicated by icons at the left of each level.
 
@@ -40,34 +40,34 @@ Resources and Contributions
 Below we list where each model resides, the specific location of the 'model source' yaml file(s) that are directly edited when defining a model, and a documentation landing page.
 
 **SEPIO Core-IM**:
- * repo: https://github.com/sepio-framework/sepio-linkml
- * model source: https://github.com/sepio-framework/sepio-linkml/blob/main/src/sepio_linkml/schema/sepio_linkml.yaml
- * documentation: https://sepio-framework.github.io/sepio-linkml/
+ * **repository**: https://github.com/sepio-framework/sepio-linkml
+ * **model source**: https://github.com/sepio-framework/sepio-linkml/blob/main/src/sepio_linkml/schema/sepio_linkml.yaml
+ * **documentation**: https://sepio-framework.github.io/sepio-linkml/
 
 **GKS Core-IM**: 
- * repo: https://github.com/ga4gh/gks-common/
- * model source: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
- * documentation: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
+ * **repository**: https://github.com/ga4gh/gks-common/
+ * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
 
 **GKS Domain Entity IMS**: 
- * repo: https://github.com/ga4gh/gks-common/
- * model source: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
- * documentation: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
+ * **repository**: https://github.com/ga4gh/gks-common/
+ * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
 
 **VA Standard Profile IMs**:
- * repo: https://github.com/ga4gh/va-spec
- * model source: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles
- * documentation: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
+ * **repository**: https://github.com/ga4gh/va-spec
+ * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
 
 **VA Standard Profile JSON Schema**: 
- * repo: https://github.com/ga4gh/va-spec
- * model source: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json (do not edit directly, these are automatically generated from standard profile source yaml files via metaschema processor tooling)
- * documentation: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
+ * **repository**: https://github.com/ga4gh/va-spec
+ * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json (do not edit directly, these are automatically generated from standard profile source yaml files via metaschema processor tooling)
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
 
 **Implementation Schema**:
- * repo: distributed (like in repos associated with implementing projects)
- * model source: n/a (will be specific to each implementing project)
- * documentation: distributed (specific to each implementing project)
+ * **repository**: distributed (like in repos associated with implementing projects)
+ * **model source**: n/a (will be specific to each implementing project)
+ * **documentation**: distributed (specific to each implementing project)
 
 
 Where do I Start?
@@ -167,10 +167,5 @@ Note that the decision tree above focuses on getting you to a **Statement** Prof
 
 Evolution of SEPIO and GKS Core Information Models is driven by bottom-up requirements arising from implementations developing profiles for working data applications.  These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
 
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the endpoint of modeling efforts that unfold across a stack of dependent specifications. It is important to understand this hierarchy of models and their dependencies and interactions before beginning to use or contribute to the VA-Spec.  Figure 1 illustrates the relationships between assets supporting the VA-Spec. 
-
-
-.. image:: images/va-model-layers.png
-  :width: 700
-
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the endpoint of modeling efforts that unfold across a stack of dependent specifications. It is important to understand this hierarchy of models and their dependencies and interactions before beginning to use or contribute to the VA-Spec.  Figure 1 illustrates the relationships between assets supporting the VA-Spec.
 
