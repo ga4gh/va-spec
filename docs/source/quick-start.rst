@@ -59,7 +59,7 @@ If you get stuck or have questions at any point in the process,  reach out to th
 
 #. ``ACTION``: **Formally extend/refine the Statement Profile to address my requirements**
     #. If you decide you want to work with the VA team to enhance the Profile to better support your data, start by adding proposed elements into the existing Statement Profile. 
-    #. You may file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your needs, make a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_on the Profile proposing model updates, or reach out for help via the communication channels listed above.  
+    #. You may file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your needs, make a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_ on the Profile proposing model updates, or reach out for help via the communication channels listed above.  
     #. The VA Team will coordinate discussions with other implementers to ensure the proposed changes are amenable to implementation needs and aligned with broader VA modeling principles. 
     #. We will also coordinate discussions with SEPIO developers to propagate requested changes from the Profile upstream to GKS and SEPIO Core IMs. 
 	
