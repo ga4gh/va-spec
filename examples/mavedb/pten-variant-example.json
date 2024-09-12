@@ -40,7 +40,17 @@
                 "vrs_ref_allele_seq": "R"
             },
             "score": 1.29395467005388,
-            "isReportedIn": "urn:mavedb:00000013-a-1"    
+            "specifiedBy": {
+                "type": "Method",
+                "subtype": "Experimental Protocol",
+                "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/29785012/",
+                },
+            "sourceDataSet": {
+                "type": "DataSet",
+                "subtype": "variant effect data set",
+                "license": "CC0",
+                "reportedIn": "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
+            }
         },
         "AssayVariantEffectFunctionalClassificationStatement": {
             "type": "AssayVariantEffectFunctionalClassificationStatement",
@@ -86,7 +96,8 @@
             "subjectClassification": "normal",
             "specifiedBy": {
                 "type": "Method",
-                "isReportedIn": "https://pubmed.ncbi.nlm.nih.gov/29785012/"
+                "subtype": "Variant Interpretation Guideline",
+                "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/29785012/"
             }
         },
         "AssayVariantEffectClinicalClassificationStatement": {
@@ -133,7 +144,8 @@
             "subjectClassification": "BS3_Supporting",
             "specifiedBy": {
                 "type": "Method",
-                "isReportedIn": "https://pubmed.ncbi.nlm.nih.gov/34793697/"
+                "subtype": "Variant Interpretation Guideline",
+                "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/34793697/"
             }
         }
     }

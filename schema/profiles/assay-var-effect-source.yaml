@@ -126,7 +126,6 @@ $defs:
     type: object
     description: >-
       A StudyResult that reports a variant effect score from a functional assay.
-      A StudyResult that reports a variant effect score from a functional assay.
     properties:
       type:
         extends: type
@@ -144,10 +143,11 @@ $defs:
       score:
         type: number
         description: The score of the variant effect in the assay.
-      reportedIn:
-        description:  The assay that was used to measure the variant effect with all the various properties
-        extends: reportedIn
-        # minItems: 1
-        # url: document url
-
-
+      specifiedBy:
+        description: >-
+          The assay that was used to measure the variant effect with all the various properties
+        extends: specifiedBy
+      sourceDataSet:
+        description: >-
+          The full data set that this measurement is a part of
+        extends: sourceDataSet
