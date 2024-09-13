@@ -12,9 +12,9 @@ Models and Dependencies
 
 It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. 
 
-.. _va-model-dependencies:
+.. _va-model-layers:
 
-.. figure:: images/va-model-dependencies.png
+.. figure:: images/va-model-layers.png
 
    VA Ecosystem Models and Dependencies
 
