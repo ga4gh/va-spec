@@ -1,10 +1,10 @@
 **Computational Definition**
 
-TODO @alanrubin will fill out a description
+A statement that assigns a functional classification to a variant effect from a functional assay.
 
 **Information Model**
 
-Some AssayVariantEffectClassificationStatement attributes are inherited from :ref:`gks.core-im:Statement`.
+Some AssayVariantEffectFunctionalClassificationStatement attributes are inherited from :ref:`gks.core-im:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -79,7 +79,7 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
    *  - type
       - string
       - 1..1
-      - MUST be "AssayVariantEffectClassificationStatement".
+      - MUST be "AssayVariantEffectFunctionalClassificationStatement".
    *  - subjectVariant
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
@@ -94,9 +94,9 @@ Some AssayVariantEffectClassificationStatement attributes are inherited from :re
       - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
    *  - classification
       - :ref:`Coding` | :ref:`IRI`
-      - 1..1
-      - The classification of the variant effect in the assay.
+      - 0..1
+      - The functional classification of the variant effect in the assay.
    *  - specifiedBy
       - :ref:`Method` | :ref:`IRI`
       - 0..1
-      - The method that specifies the classification of the variant effect in the assay.
+      - The method that specifies the functional classification of the variant effect in the assay.

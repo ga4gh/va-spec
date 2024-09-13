@@ -4,7 +4,7 @@
    "title": "AssayVariantEffectMeasurementStudyResult",
    "maturity": "draft",
    "type": "object",
-   "description": "A StudyResult that reports measures related to the frequency of an Allele in a cohort",
+   "description": "A StudyResult that reports a variant effect score from a functional assay.",
    "properties": {
       "id": {
          "type": "string",
@@ -36,18 +36,6 @@
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
-      "specifiedBy": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Method"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-            }
-         ],
-         "description": "A specification that describes all or part of the process that led to creation of the Information Entity ",
-         "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
-      },
       "contributions": {
          "type": "array",
          "ordered": false,
@@ -56,6 +44,21 @@
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
+      },
+      "reportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               }
+            ]
+         },
+         "description": "A document in which the the Information Entity is reported."
       },
       "dateAuthored": {
          "type": "string",
@@ -67,16 +70,6 @@
          "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/RecordMetadata",
          "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).",
          "$comment": "This attribute holds a structured RecordMetadata object, which can be used to capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status."
-      },
-      "sourceDataSet": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/DataSet"
-         },
-         "description": "A larger DataSet from which the content of the StudyResult was derived.",
-         "maximum": 1,
-         "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       },
       "componentResult": {
          "type": "array",
@@ -126,20 +119,27 @@
          "type": "number",
          "description": "The score of the variant effect in the assay."
       },
-      "reportedIn": {
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+            }
+         ],
+         "description": "The assay that was used to measure the variant effect with all the various properties",
+         "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
+      },
+      "sourceDataSet": {
          "type": "array",
          "ordered": false,
          "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-               }
-            ]
+            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/DataSet"
          },
-         "description": "The assay that was used to measure the variant effect with all the various properties"
+         "description": "The full data set that this measurement is a part of",
+         "maximum": 1,
+         "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       }
    },
    "required": [

@@ -80,7 +80,7 @@ $defs:
         extends: subject
         oneOf:
           - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
-          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
         description: A protein or genomic contextual or canonical molecular variant.
       predicate:
