@@ -10,19 +10,19 @@ imports:
   gks.data-types: ../data-types/data-types-source.yaml
 
 $defs:
-  # mavedb work in progress (super early draft)
-  AssayVariantEffectClassificationStatement:
+  # MaveDB work in progress
+  AssayVariantEffectFunctionalClassificationStatement:
     inherits: gks.core-im:Statement
     maturity: draft
     type: object
     description: >-
-      TODO @alanrubin will fill out a description
+      A statement that assigns a functional classification to a variant effect from a functional assay.
     properties:
       type:
         extends: type
-        const: "AssayVariantEffectClassificationStatement"
-        default: "AssayVariantEffectClassificationStatement"
-        description: MUST be "AssayVariantEffectClassificationStatement".
+        const: "AssayVariantEffectFunctionalClassificationStatement"
+        default: "AssayVariantEffectFunctionalClassificationStatement"
+        description: MUST be "AssayVariantEffectFunctionalClassificationStatement".
       subjectVariant:
         extends: subject
         oneOf:
@@ -47,7 +47,7 @@ $defs:
       classification:
         extends: classification
         description: >-
-          The classification of the variant effect in the assay.
+          The functional classification of the variant effect in the assay.
         enum:
           - normal
           - indeterminate
@@ -56,7 +56,63 @@ $defs:
       specifiedBy:
         extends: specifiedBy
         description: >-
-          The method that specifies the classification of the variant effect in the assay.
+          The method that specifies the functional classification of the variant effect in the assay.
+        # will will likely need to enhance this a bit due to the complexity of the methods used
+    required:
+      - subjectVariant
+      - predicate
+      - objectAssay
+      - subjectClassification
+
+  AssayVariantEffectClinicalClassificationStatement:
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: >-
+      A statement that assigns a clinical strength of evidence to a variant effect from a functional assay.
+    properties:
+      type:
+        extends: type
+        const: "AssayVariantEffectClinicalClassificationStatement"
+        default: "AssayVariantEffectClinicalClassificationStatement"
+        description: MUST be "AssayVariantEffectClinicalClassificationStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariation"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A protein or genomic contextual or canonical molecular variant.
+      predicate:
+        extends: predicate
+        enum:
+          - hasAssayVariantEffectFor
+      objectAssay:
+        # TODO we may need to model this more specifically as a DomainEntity subtype
+        extends: object
+        oneOf:
+          - type: string
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+        description: >-
+          The assay that is evaluated for the variant effect. (e.g growth in
+          haploid cell culture protein stability in fluorescence assay)
+      subjectClassification:
+        extends: classification
+        description: >-
+          The clinical strength of evidence of the variant effect in the assay.
+        enum:
+          - PS3_Strong
+          - PS3_Moderate
+          - PS3_Supporting
+          - BS3_Strong
+          - BS3_Moderate
+          - BS3_Supporting
+      # method for classification contains info about thresholds for how to classify
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          The method that specifies the clinical strength of evidence of the variant effect in the assay.
         # will will likely need to enhance this a bit due to the complexity of the methods used
     required:
       - subjectVariant
@@ -69,7 +125,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A StudyResult that reports measures related to the frequency of an Allele in a cohort
+      A StudyResult that reports a variant effect score from a functional assay.
     properties:
       type:
         extends: type
@@ -87,10 +143,11 @@ $defs:
       score:
         type: number
         description: The score of the variant effect in the assay.
-      reportedIn:
-        description:  The assay that was used to measure the variant effect with all the various properties
-        extends: reportedIn
-        # minItems: 1
-        # url: document url
-
-
+      specifiedBy:
+        description: >-
+          The assay that was used to measure the variant effect with all the various properties
+        extends: specifiedBy
+      sourceDataSet:
+        description: >-
+          The full data set that this measurement is a part of
+        extends: sourceDataSet
