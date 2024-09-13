@@ -1,7 +1,7 @@
 Modeling Foundations
 !!!!!!!!!!!!!!!!!!!!
 
-This document describes modeling standards, patterns, and principles adopted by the VA Specification.
+This document describes modeling standards, patterns, and principles adopted by the VA Specification. 
 
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
