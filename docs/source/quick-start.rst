@@ -29,7 +29,7 @@ It is important to understand this hierarchy of models and their dependencies be
 
 * **VA Standard Profile IMs** are the Standard Models produced by the modeling framework for implementation by the GA4GH community. Separate profiles are generated for different kinds of VA Statements and Study Results - through specializations of the GKS Core-IM. They are defined as conceptual information models in a bespoke yaml format, from which formal json schema are automatically derived.
   
-* **VA Standard Profile JSON Schema**: formal schema intended for application in data systems, which are erived automatically from the Standard Profile yaml source files by a Metaschema Processor tools. 
+* **VA Standard Profile JSON Schema**: formal schema intended for application in data systems, which are derived automatically from the Standard Profile yaml source files by a Metaschema Processor tools. These are the final product of the VA Specification Framework.
 
 * **Implementation schema**: concrete schema that are actually implemented in application data systems.   Implementations may directly implement VA Standard JSON schema directly, translate it into different schema languages (eg. graphql, ShEX), and/or make application-specific changes/additions to the standard schema to support local implementation needs. 
 
