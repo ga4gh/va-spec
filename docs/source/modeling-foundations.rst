@@ -24,7 +24,7 @@ The initial version of the Core-IM was derived from the SEPIO Core Information M
 
 .. core-im-class-hierarchy:
 
-.. figure:: images/core-im-class-hierarchy.PNG
+.. figure:: images/core-im-class-hierarchy.png
 
 **Legend** Figure 1: Hierarchical structure of classes and attributes comprising the domain-agnostic Core-IM. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures, but is omitted here for space. See here for details. 
 
