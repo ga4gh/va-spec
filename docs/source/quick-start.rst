@@ -10,7 +10,7 @@ Models and Dependencies
 
 `VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications (**Figure 1**). 
 
-**It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec**. 
+It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. 
 
 .. _va-model-dependencies:
 
@@ -18,7 +18,7 @@ Models and Dependencies
 
    VA Ecosystem Models and Dependencies
 
-   **Legend**  Models in the VA-Spec ecosystem that support generation of VA Standard Profiles ``RED``, representing the final product of the VA-Specification.  Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the right describe the propagation of requirements upstream to inform model expansion/refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons at the left of each.
+   **Legend**  Models in the VA-Spec ecosystem that support generation of VA Standard Profile Schema (``RED``), representing the final product of the VA-Specification.  Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the right describe the propagation of requirements upstream, from implementation models to inform Core-IM model expansion/refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons at the left of each.
 
 
 * The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting cureated sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
@@ -27,7 +27,7 @@ Models and Dependencies
 
 * **GKS Domain Entity IMs** are defined to represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers in VA Statements (Genes, Conditions, Therapeutic Procedures).
 
-* **VA Standard Profile IMs** are the Standard Models produced by the modeling framework for implementation by the gA4GH community. They are generated through specializations of the GKS Core-IM, to produce models describing specific types of Statements or Study Results about molecular variation. They are defined as conceptual information models in a bespoke yaml format, from which formal json schema are automatically derived.
+* **VA Standard Profile IMs** are the Standard Models produced by the modeling framework for implementation by the GA4GH community. Separate profiles are generated for different kinds of VA Statements and Study Results - through specializations of the GKS Core-IM. They are defined as conceptual information models in a bespoke yaml format, from which formal json schema are automatically derived.
   
 * **VA Standard Profile JSON Schema**: formal schema intended for application in data systems, which are erived automatically from the Standard Profile yaml source files by a Metaschema Processor tools. 
 
