@@ -8,13 +8,13 @@ Overview
 
 Reliable exchange of knowledge about molecular variation between clinicians, researchers, and testing laboratories is required to maximize the personal, public, research, and clinical value of genomic information. This knowledge is typically exchanged as **Variant Annotations** - structured data objects that holds a **central statement of knowledge** about a **molecular variation**, along with **evidence and provenance metadata** supporting its interpretation and use (see `"What is a Variant Annotation?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-a-variant-annotation>`_). 
 
-The **GA4GH Variant Annotation Specification (VA-Spec)** was developed by a partnership among national information resource providers and major public initiatives — as an open specification to standardize the exchange of such variation knowledge. It was built as a SEPIO-based modeling framework that supports implementation-driven development of standard models for specific VA Statement types (see `"What is SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_). It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent diverse kinds of molecular variation as annotation subjects (see `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-types-of-variants-are-supported>`_). And it supports diverse kinds of biological and clinical variant knolwedge, leaving case-level variant information to other standards (see `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-kinds-of-variant-knowledge-are-supported>`_). 
+The **GA4GH Variant Annotation Specification (VA-Spec)** was developed by a partnership among national information resource providers and major public initiatives — as an open specification to standardize the exchange of such variation knowledge. It was built as a SEPIO-based modeling framework that supports implementation-driven development of standard models for specific VA Statement types (see `"What is SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_). It leverages the **GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications** to represent diverse kinds of molecular variation as annotation subjects (see `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-types-of-variants-are-supported>`_). And it supports diverse kinds of biological and clinical variant knolwedge, leaving case-level variant information to other standards (see `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-kinds-of-variant-knowledge-are-supported>`_). 
 
 The VA-Spec Modeling framework is comprised of the following components:
 
-#. `A Foundational Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This model, which is based on the SEPIO Core-IM, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which standard models for specific types of statements about molecular variation are built.  
+#. `A Foundational 'GKS Core Information Model' <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This model, which is based on the SEPIO Core-IM, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which standard models for specific types of statements about molecular variation are built.  
 
-#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Core Information Model, which describe specific types of statements made about molecular variation (e.g. a `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) profile. These models are provided in machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
+#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Statement or Study Result classes in the Core Information Model, to support specific types of knolwedge about molecular variation (e.g. a `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) profile. These models are provided in machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
 
 #. `A Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html>`_:  A formal method and tooling support to guide internal and external developers in executing the profiling process. This approach allows community adopters to  build profiles for new statement types, or extend existing profiles - supporting an implementation-led approach that drives VA standards development.
 
@@ -23,43 +23,39 @@ The VA-Spec Modeling framework is comprised of the following components:
 This framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and delivers schema that have proven out in working applications.
 
 
-.. note::  **Additional Reading**:  (1) `"What is SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_ FAQ, (2) `"What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-types-of-variants-are-supported>`_ FAQ, (3) `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-kinds-of-variant-knowledge-are-supported>`_ FAQ.
+.. note::  **Additional Reading**:  (1) `"What is SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_ FAQ, (2) "What types of variants are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-types-of-variants-are-supported>`_ FAQ, (3) `"What types of variant knowledge are supported?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-kinds-of-variant-knowledge-are-supported>`_ FAQ.
 
 
 VA Standards Development and Adoption
 #####################################
-The series of figures below provides a high-level overview of the **processes through which VA Profiles are created and matured into standards**, starting from the initial definition of the Core-IM. A **Variant Pathogenicity Statement** profile is used as an example, but the process described applied generally to any Standard Profile development task.
+The series of figures below provides a high-level overview of the **implementation-driven processes through which VA Profiles are created and matured into standards**. A **Variant Pathogenicity Statement** profile is used as an example, but the process described applied generally to any Standard Profile development task.
 
 
+** GKS Core-IM extracted from the SEPIO Information Model*
 
-**Task 1: Creating the GKS Core Information Model**
+The initial version of the GKS Core-IM represents a subset of SEPIO model, with elements selected based on the needs of early adopter VA-Spec implementations, including a ClinGen/VICC Variant Pathogenicity Statement Profile to support ClinVar data. As these inital profiles expand to support more data, or profiles for new statement types are developed, additional elements can be pulled into the GKS Core-IM form the SEPIO model to support them. 
 
-The initial version of the Core-IM represents a subset of SEPIO model, selected based on requirements for  Statement and Study Result models required by early adopter implementations.
 
 .. image:: images/va-profiling-step1.png
   :width: 1000
 
-**Task 2: Deriving Statement Profiles from the Core-IM**
+**Draft Implementation Profiles Specialize the GKS Core-IM**
+Elements form the GKS Core-IM are selected for includsion and then specialized with statement and application-specific constraints - based on the needs of active implementations. In this case, classes and attributes are sleected and specialized to represent ClinVar Variant Pathogenicity statements. These **Draft Implementation Profiles** stick to the Core-IM model where possible, but may add new features where this model does not support source data or requirements. 
+
+**Align and Refine Models**
+Draft implementation models may include features that are not consistent with or included in the foundational GKS and SEPIO Core Models. Implementers work with the VA Team to identify such cases, and refine models to bring them into alignment. This may involve refining the draft implementation model to use GKS or SEPIO modeling patterns, or adding new features to these standard models to support new requirements surfaced by the implementation. This process requries negotioan across developers of SEPIO, VA, and Implementation models. Any implementation-specific features not ultimately supported by the GKS Core-IM can be captured in a compliant way by using the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element.
 
 
-**Task 3: Model Alignment/Refinement**
-
-Negotiate harmonization of profile elements that may diverge from the Core Infprmation Model and principles.
-This may involve changes to the draft profile to beign it into alignment, or poulling in new content from the upstream full SEPIO IM to support data not covered by the GKS Core-IM subset, or changes to the Core-IM itself where nnew requirements surfaced by the draft point to modeling soluotions that represent generally useful improvements.  
+**Publish as a GA4GH Standard Profile**
+Once all models are aligned, the draft is circulated for community review.  After concernes and feedback are addressed, it is published as an official VA Standard Profile for the Statement type. 
 
 
-**Task 4: Establishment of a Profile as a Standard**
-
-Vetting of the final proposed profile with VA community, including implementers who have regsitered interest in the Statement type. 
-
-
-**Task 5: Standard Profile Adoption and Extension**
-
-Adopters implement the profile in their systems as is, or propose extensions / improvements to addres their use case - leading to another round of model alignemnt and refinement. 
+**Evolve Profile to Support New Requirements**
+Standard Profiles will evolve as existing implementations expand coverage of the initial draft, or additional implementations provide new requirements to cover their knowledge sources. e.g. the Variant Pathogeniity Profile will evolve as ClinGen expands the ClinVar data it needs the profile to cover, and other Driver Projects such AGHA/Shariant adopt the standard and need it to support their implementations. 
 
 
 
-
+The activities described above unfold across a stack of interdependent models and specifications. The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides a more detailed overview of this ecosystem, and how to engage with it. And this `Profiling Methodology overview <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_  explains specific tasks and conventions involved in buidling VA Profiles. Finally, See the `Modeling Foundations document <>`_ to understand model general patterns and principles employed by the VA Standards, and the `Core Information Model <>`_ index of Class definitions for a deep dive into the data supported by each.
 
 .. note::  **Statement vs Study Result Profiles**: While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports        profiling of other Core-IM classes such as **Study Result**. This is done when the information captured represents data items a study or dataset pertaining to some variant of interest, as           opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data). For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata. More information on these types of profiles can be found `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
 
@@ -67,8 +63,16 @@ Adopters implement the profile in their systems as is, or propose extensions / i
 
 Implementing the VA-Spec
 ########################
-The VA Modeling Framework offers **many modes for engaging with the VA-Specification**. Some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop profiles for entirely new types of Statements**. The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework.
 
+The VA Modeling Framework offers many modes for engaging with the VA-Specification. Some users will want to adopt established standard profiles out-of-the-box, others may want to extend or refine an existing standard profile for their use case, while others may want to develop profiles for entirely new types of Statements. The Quick Start Guide provides more information on these modes of use, and a decision tree to help adopters identify their best entry point into the VA Framework.
+
+
+
+The activities described above unfold across a stack of interdependent models and specifications, and the VA Modeling Framework offers **many modes for engaging with these specifications**. Some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop profiles for entirely new types of Statements**. 
+
+The `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html>`_ provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework.
+
+And this `Profiling Methodology guide <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_  explains specific tasks and conventions involved in buidling VA Profiles.  
 
 
 ---------------------------------------------
@@ -196,5 +200,8 @@ This basic model supports two "modes of use" for Statements, which allow for sim
 
 
 Cat-VRS tools will facilitate mapping of such categorical concepts onto sets of discrete variant instances in the real world. For example, `NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_ is a discrete variant that matches the "EGFR exon 19 deletions" categorical variant definition.
+
+ Additional details about the models and methodologies involved are provided in referenced documents for further exploration.
+
 
  Additional details about the models and methodologies involved are provided in referenced documents for further exploration.
