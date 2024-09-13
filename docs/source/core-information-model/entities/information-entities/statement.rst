@@ -26,7 +26,7 @@ The model supports two "modes of use" for Statements, which differ in what they 
 * In **"Proposition Assessment Mode"** a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The ``direction`` and ``strength`` or ``score`` attributes are populated, which allows for Statements to report that "there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'", or "we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.   
 
 
-``Statement.qualifier``:
+Use of the ``Statement.qualifier`` attribute:
 
 * This attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. 
 * Qualifiers can also add information that quantifies aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Statement profiles may define more than one qualifier, as needed to capture different types of qualifying information. 
