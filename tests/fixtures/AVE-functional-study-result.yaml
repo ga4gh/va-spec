@@ -4,9 +4,7 @@ focusVariant:
   type: Allele
   location:
     type: SequenceLocation
-    sequenceReference:
-      refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
-      type: SequenceReference
+    sequenceReference: ga4gh:SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
     start: 10
     end: 11
     sequence: R
@@ -14,7 +12,8 @@ focusVariant:
     type: LiteralSequenceExpression
     sequence: T
   expressions:
-    - syntax: hgvs.p
+    - type: Expression
+      syntax: hgvs.p
       value: NP_000305.3:p.Arg11Thr
 score: 1.29395467005388
 specifiedBy:
