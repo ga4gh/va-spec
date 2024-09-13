@@ -15,9 +15,6 @@ To appreciate modeling and development choices made for the VA-Spec, it helps to
      * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
 
 The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
-
-.. image:: images/annotation-definition.PNG
-  :width: 700
   
 What types of variants are supported?
 #####################################
@@ -70,6 +67,7 @@ The Core IM is domain-agnostic, and able to represent assertions and their evide
 Application of SEPIO to a specific data set or use case requires defining a ‘Profile’ that extends/customizes the generic core model for a specific domain or application.
 
 The components of the SEPIO Framework include: 
+
 #. **A Domain Analysis Model (DAM)**: an informal description of the domain we are modeling (scientific assertions and their evidence/provenance)
 #. **A Core Information Model (IM)**:  defines data structures that can represent information about this domain (for any type of assertion and evidence).
 #. **A 'Profiling' Methodology**:  Implementations extend the core model with domain-specific content to define a “SEPIO Profile” - a custom schema for a particular application or use case.
@@ -77,7 +75,7 @@ The components of the SEPIO Framework include:
 
 The framework approach addresses challenges posed by the diversity of types, levels of complexity, and use cases for evidence and provenance across knowledge domains and application - which means there is no ‘one-size-fits-all’ solution. The framework allows custom models built on a common semantic foundation can provide a base level of understanding and interoperability, without restricting expressivity. While this approach may not always support out-of-the-box interoperability across all communities of use, it can significantly lower barriers to aggregating, harmonizing, and operating across disparate data.
 
-See the SEPIO Framework website `here <https://sepio-framework.github.io/sepio-linkml/about/> for more information about this foundational standard on which the VA Specification is built. 
+See the `SEPIO Framework website <https://sepio-framework.github.io/sepio-linkml/about/>`_ for more information about this foundational standard on which the VA Specification is built. 
 
 How does the VA Spec use the SEPIO framework?
 #############################################
