@@ -1,11 +1,7 @@
 Core Information Model
 !!!!!!!!!!!!!!!!!!!!!!
 
-The **Core Information Model (Core-IM)** is a domain-agnostic model for representing statements of knowledge, and the foundation on which profiles for specific types of Statements and Study Results are built. 
-
-A hierarchical view of this model is illustrated below, along with links to separate pages outlining details of each class. 
-
-More information about the standards, patterns, and principles employed by the Core-IM can be found on the `Modeling Foundations <https://va-ga4gh.readthedocs.io/en/stable/modeling-foundations.html>`_ page. 
+The **Core Information Model (Core-IM)** is a domain-agnostic model for representing statements of knowledge, and the foundation on which profiles for specific types of Statements and Study Results are built. A hierarchical view of this model is illustrated below, along with links to separate pages outlining details of each class. More information about the standards, patterns, and principles employed by the Core-IM can be found on the `Modeling Foundations <https://va-ga4gh.readthedocs.io/en/stable/modeling-foundations.html>`_ page. 
 
 .. core-im-class-hierarchy:
 
