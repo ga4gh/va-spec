@@ -12,20 +12,20 @@ VA Framework Components
 
 The VA-Spec modeling framework is comprised of the following components:
 
-#. `A Foundational 'GKS Core Information Model' <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This model, which is based on the SEPIO Core-IM, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which standard models for specific types of statements about molecular variation are built.  
+#. `A Foundational 'GKS Core Information Model' <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ (Core-IM): A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This model, which is based on the SEPIO Core-IM, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which standard 'profiles' for specific types of statements about molecular variation are built.  
 
-#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Statement or Study Result classes in the Core Information Model, to support specific types of knolwedge about molecular variation (e.g. a `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) profile. These models are provided in machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
+#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Statement or Study Result classes in the Core-IM, each supporting a specific types of knowledge about molecular variation (e.g. a `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) profile. These models are provided in machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
 
-#. `A Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html>`_:  A formal method and tooling support to guide internal and external developers in executing the profiling process. This approach allows community adopters to  build profiles for new statement types, or extend existing profiles - supporting an implementation-led approach that drives VA standards development.
+#. `A Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html>`_:  A set of defined processes, conventions, and tooling support to guide VA and community developers in executing the profiling process. This approach allows adopters to  build profiles for new statement types, or extend existing profiles - supporting an implementation-driven approach to VA standards development.
 
 #. `A Python Reference Implementation <https://va-ga4gh.readthedocs.io/en/latest/reference-implementation.html>`_:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. These resources provide a working example of code that can be adopted and/or extended by adopters. ``COMING SOON``
 
-This framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and delivers schema that have proven out in working applications.
+This modeling framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and delivers schema that have proven out in working applications.
 
 
 VA Standard Development and Dependencies
 ########################################
-While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_ is grounded in foundational SEPIO and GKS Core IM standards, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications. It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. 
+While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_ is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as descrived below. 
 
 .. _va-model-layers:
 
@@ -33,7 +33,7 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/s
 
    VA Ecosystem Models and Dependencies
 
-   **Legend**  Models in the VA-Spec ecosystem that support generation of the VA Standard Profile Schema representing the final product of the VA-Specification.  Arrows on the left describe processes through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons at the left of each.
+   **VA Ecosystem Models and Dependencies**: A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
 * The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting created sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
 
