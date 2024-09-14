@@ -3,39 +3,12 @@ Quick Start Guide
 
 ``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
-This document provides an overview of models in the VA ecosystem and their depdenencies, links to resources for accessing and contributing to these models, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
+This document provide links to resources for accessing and contributing to these models in thh VA-Spec ecosystem, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
 
-Models and Dependencies
-#######################
+Models and Links
+################
 
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications (**Figure 1**). It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. 
-
-.. _va-model-layers:
-
-.. figure:: images/va-model-layers.png
-
-   VA Ecosystem Models and Dependencies
-
-   **Legend**  Models in the VA-Spec ecosystem that support generation of VA Standard Profile Schema representing the final product of the VA-Specification.  Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the right describe the propagation of requirements upstream, from implementation models to inform Core-IM model expansion/refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons at the left of each.
-
-
-* The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting cureated sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
-
-* The **GKS Core-IM** represents a hand-selected subset of the SEPIO Core-IM, chosed specifically to cover data from initial Driver Project implementations of the VA-Spec. It is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The GKS Core-IM may pull in additional content from the SEPIO Core-IM to support new data and use cases, as profiles are expanded and profiles for new knwoeldge types are created. 
-
-* **GKS Domain Entity IMs** are defined to represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers in VA Statements (Genes, Conditions, Therapeutic Procedures).
-
-* **VA Standard Profile IMs** are the Standard Models produced by the modeling framework for implementation by the GA4GH community. Separate profiles are generated for different kinds of VA Statements and Study Results - through specializations of the GKS Core-IM. They are defined as conceptual information models in a bespoke yaml format, from which formal json schema are automatically derived.
-  
-* **VA Standard Profile JSON Schema**: formal schema intended for application in data systems, which are derived automatically from the Standard Profile yaml source files by a Metaschema Processor tools. These are the final product of the VA Specification Framework.
-
-* **Implementation schema**: concrete schema that are actually implemented in application data systems.   Implementations may directly implement VA Standard JSON schema directly, translate it into different schema languages (eg. graphql, ShEX), and/or make application-specific changes/additions to the standard schema to support local implementation needs. 
-
-While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
-
-Resource Links
-##############
-Below we list where each model resides, the specific location of the 'model source' yaml file(s) that are directly edited when defining a model, and a documentation landing page.
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted in the Introduction `here <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. Once armed with this knowledge, you can find sources for each of these models and their documentation at the locations listed below. 
 
 **SEPIO Core-IM**:
  * **repository**: https://github.com/sepio-framework/sepio-linkml
@@ -47,7 +20,7 @@ Below we list where each model resides, the specific location of the 'model sour
  * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
  * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
 
-**GKS Domain Entity IMS**: 
+**GKS Domain Entity Models**: 
  * **repository**: https://github.com/ga4gh/gks-common/
  * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
  * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
@@ -63,9 +36,9 @@ Below we list where each model resides, the specific location of the 'model sour
  * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
 
 **Implementation Schema**:
- * **repository**: distributed (like in repos associated with implementing projects)
- * **model source**: n/a (will be specific to each implementing project)
- * **documentation**: distributed (specific to each implementing project)
+ * **repository**: not under VA control - these are distributed acorss implementation repositories
+ * **model source**:  will be specific to each implementing project
+ * **documentation**: not under VA control - distributed across implementation websites and documents
 
 
 Where do I Start?
@@ -161,6 +134,43 @@ Note that the decision tree above focuses on getting you to a **Statement** Prof
 -----------------
 
 **Attic:**
+
+-------
+
+Models and Dependencies
+#######################
+
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications (**Figure 1**). It is important to understand this hierarchy of models and their dependencies before beginning to use or contribute to the VA-Spec. 
+
+.. _va-model-layers:
+
+.. figure:: images/va-model-layers.png
+
+   VA Ecosystem Models and Dependencies
+
+   **Legend**  Models in the VA-Spec ecosystem that support generation of VA Standard Profile Schema representing the final product of the VA-Specification.  Arrows on the left describe processes through which downstream models are generated from foundational ones. Arrows on the right describe the propagation of requirements upstream, from implementation models to inform Core-IM model expansion/refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons at the left of each.
+
+
+* The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant knowledge, or Study Results reporting cureated sets of variant data. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
+
+* The **GKS Core-IM** is extracted as a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec. It is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The GKS Core-IM may pull in additional content from the SEPIO Core-IM to support new data and use cases, as profiles are expanded and profiles for new knwoeldge types are created. 
+
+* **GKS Domain Entity IMs** are defined to extend the GKS Core-IM with classes representing the biological and clinical entities that Variant Annotations are about (Genes, Conditions, Therapeutic Procedures). These will serve as subjects, objects, and qualifiers of VA Statements.
+
+* **VA Standard Profile IMs** are the Standard Models produced by the modeling framework for implementation by the GA4GH community. Separate profiles are generated for different kinds of VA Statements and Study Results - through specializations of the GKS Core-IM. They are defined as conceptual information models in a bespoke yaml format, from which formal json schema are automatically derived.
+  
+* **VA Standard Profile JSON Schema**: formal schema intended for application in data systems, which are derived automatically from the Standard Profile yaml source files by a Metaschema Processor tools. These are the final product of the VA Specification Framework.
+
+* **Implementation schema**: concrete schema that are actually implemented in application data systems.   Implementations may directly implement VA Standard JSON schema directly, translate it into different schema languages (eg. graphql, ShEX), and/or make application-specific changes/additions to the standard schema to support local implementation needs. 
+
+While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
+
+
+-------
+
+This document provides an overview of models in the VA ecosystem and their depdenencies, links to resources for accessing and contributing to these models in teh VA-Spec ecosystem, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
+
+Below we list specific locations for accessing the source-of-truth for each of these models, and their documentation.
 
 Evolution of SEPIO and GKS Core Information Models is driven by bottom-up requirements arising from implementations developing profiles for working data applications.  These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling pricniples they espouse. 
 
