@@ -27,7 +27,7 @@ VA Standard Development and Dependencies
 ########################################
 While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_ is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as descrived below. 
 
-.. _va-model-layers:
+.. _va-model-dependencies:
 
 .. figure:: images/va-model-dependencies.png
 
@@ -35,7 +35,7 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/s
 
    **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right    describe the propagation of           requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
-Below we describe each model in this ecosystem and how it is geenrated, using creation of a simple Varaint Pathogenicity Statement Profile as an example. 
+Below we describe each model in this ecosystem and how it is generated, using ClinGen's definition of a simple Varaint Pathogenicity Statement Profile to support ClinVar SCV data as an example. 
 
 * The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
 
@@ -44,10 +44,23 @@ Below we describe each model in this ecosystem and how it is geenrated, using cr
 .. image:: images/core-im-from-sepio.png
   :width: 700
 
+.. _core-im-from-sepio:
+
+.. figure:: images/core-im-from-sepio.png
+
+   Extraction of the Core-IM from the SEPIO Model
+
+   **Legend** Classes and attributes needed for ClinGen's Variant Pathogneicity Profile are identified and extracted into the GKS Core-IM subset (which will include additional elements needed to support other implementation profiles being created by other Driver Projects sich as VICC and MAVEdb)
+
 * **GKS Domain Entity Models** represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers of VA Statements (Genes, Conditions, Therapeutic Procedures). These classes ``EXTEND`` the GKS Core-IM to support VA Profile definitions. 
 
-.. image:: images/domain-entities-from-core-im
-  :width: 700
+.. _domain-entities-from-core-im:
+
+.. figure:: images/domain-entities-from-core-im.png
+
+   Extension of Core-IM with Domain Entity Classes
+
+   **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <>`_. Minimal draft models for a Gene         class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
 
 * **VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SOPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
 
@@ -72,12 +85,15 @@ Emergence and Evolution of VA Standards
 As noted, VA Standard development is implementation-driven, beginning with the definition of a Draft Implementation Profile to meet the needs of a particular driver project application. Emergence of a consensus Standard Profile requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
 
 **Align and Refine Models**
+
 While aspiring to use the SEPIO and GKS Core IMs, Draft Implementation Models may include features that are not consistent with these foundational models. Once an initial implementation profile is drafted, implementers work with the VA Team to identify such inconsistencies, and refine data models to bring them into alignment. This may involve reworking the implementation profile to more fully adopt Core-IM modeling patterns, or adding new features to core models to support requirements surfaced by the implementation profile. Notably, any implementation-specific features not ultimately supported by the GKS Core-IM can be captured in a compliant way by using the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element.
 
 **Publish as a GA4GH Standard Profile**
+
 Once alignment is complete, a draft of the Standard Profile is circulated for community review. Concerns and feedback are discussed and resolved, and any final changes are propagated to the relevant models. The model is then published as an official VA Standard Profile for a particular Statement or Study Result type.
 
 **Evolve Profile to Support New Requirements**
+
 A given Standard Profile will evolve as existing implementations expand coverage to new data types, or new implementations provide novel requirements to support their use case. For example, the Variant Pathogenicity Profile will evolve as ClinGen expands the ClinVar data it wants the profile to cover, and as other Driver Projects such AGHA/Shariant adopt the standard and need it to support their implementation. 
 
 Implementing the VA-Spec
