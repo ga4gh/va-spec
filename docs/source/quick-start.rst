@@ -8,7 +8,17 @@ This document provide links to resources for accessing and contributing to these
 Models and Links
 ################
 
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted in the Introduction `here <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. Once armed with this knowledge, you can find sources for each of these models and their documentation at the locations listed below. 
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted below and described in detail in the `Introduction <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. 
+
+.. _va-model-dependencies:
+
+.. figure:: images/va-model-dependencies.png
+
+   VA Ecosystem Models and Dependencies
+
+   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of             requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+
+**Sources for each of these models and their documentation can be accessed at the locations listed below:**
 
 **SEPIO Core-IM**:
  * **repository**: https://github.com/sepio-framework/sepio-linkml
