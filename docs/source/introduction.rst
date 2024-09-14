@@ -41,7 +41,7 @@ Below we describe each model in this ecosystem and how it is geenrated, using cr
 
 * The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The VA Team ``EXTRACT`` a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec, for inclusion in the GKS core model.
 
-.. image:: images/core-im-from-sepio
+.. image:: images/core-im-from-sepio.jpg
   :width: 700
 
 * **GKS Domain Entity Models** represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers of VA Statements (Genes, Conditions, Therapeutic Procedures). These classes ``EXTEND`` the GKS Core-IM to support VA Profile definitions. 
