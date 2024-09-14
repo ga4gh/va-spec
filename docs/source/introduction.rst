@@ -51,17 +51,17 @@ Below we describe each model in this ecosystem and how it is geenrated, using cr
 
 * **VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SOPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
 
-.. image:: images/standard-rpofiles-from-core-im
+.. image:: images/standard-profile-from-core-im
   :width: 700
 
 * **VA Standard Profile JSON Schema** are the final product of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated translormation to json schema by Metaschema Processor tools. 
 
-.. image:: images/json-schema-from-standard-profiles
+.. image:: images/schema-from-standard-profile
   :width: 700
 
-* **Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT``  a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
+* **Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
 
-.. image:: images/implementation-schema-from-standard-profiles
+.. image:: images/implementation-from-standard-profile
   :width: 700
 
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
