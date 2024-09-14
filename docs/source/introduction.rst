@@ -35,7 +35,7 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/s
 
 * The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
 
-* The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. It is ``EXTRACTED``as a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec.
+* The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. It is ``EXTRACTED`` as a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec.
 
 .. image:: images/core-im-from-sepio
   :width: 700
@@ -55,7 +55,7 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/s
 .. image:: images/json-schema-from-standard-profiles
   :width: 700
 
-* **Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects **implement**  a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
+* **Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT``  a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
 
 .. image:: images/implementation-schema-from-standard-profiles
   :width: 700
@@ -65,16 +65,16 @@ While the SEPIO and GKS Core models are the basis for deriving downstream Standa
 
 Emergence and Evolution of VA Standards
 ###############################################
-As noted, VA Standard development is implementation driven, beginning with the definition of a Draft Implementation Profile to meet the needs of a particular driver project application. Emergence f a consensus standard requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
+As noted, VA Standard development is implementation-driven, beginning with the definition of a Draft Implementation Profile to meet the needs of a particular driver project application. Emergence of a consensus Standard Profile requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
 
 **Align and Refine Models**
-While aspiring to use the SEPIO and GKS Core IMs, these draft implementation models may include features that are not consistent with these foundational models. Once an initial implementation profile is drafted,  implementers work with the VA Team to identify such inconsistencies, and refine data models to bring them into alignment. This may involve reworking the draft implementation profile to more fully adopt Core-IM modeling patterns, or adding new features to these standard models to support requirements surfaced by the implementation profile. Any implementation-specific features not ultimately supported by the GKS Core-IM can be captured in a compliant way by using the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element.
+While aspiring to use the SEPIO and GKS Core IMs, Draft Implementation Models may include features that are not consistent with these foundational models. Once an initial implementation profile is drafted, implementers work with the VA Team to identify such inconsistencies, and refine data models to bring them into alignment. This may involve reworking the implementation profile to more fully adopt Core-IM modeling patterns, or adding new features to core models to support requirements surfaced by the implementation profile. Notably, any implementation-specific features not ultimately supported by the GKS Core-IM can be captured in a compliant way by using the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element.
 
 **Publish as a GA4GH Standard Profile**
-Once alignment is complete, a draft of the 'Standard' Profile is ready circulated for community review.  Concerns and feedback are discussed and resolved, and any final changes have been propagated to the relevant models. The profile is then published as an official VA Standard Profile for that particular Statement or Study Result type.
+Once alignment is complete, a draft of the Standard Profile is circulated for community review. Concerns and feedback are discussed and resolved, and any final changes are propagated to the relevant models. The model is then published as an official VA Standard Profile for a particular Statement or Study Result type.
 
 **Evolve Profile to Support New Requirements**
-Standard Profiles will evolve as existing implementations expand coverage of the initial draft, or additional implementations provide new requirements to cover their knowledge sources. e.g. the Variant Pathogenicity Profile will evolve as ClinGen expands the ClinVar data it needs the profile to cover, and other Driver Projects such AGHA/Shariant adopt the standard and need it to support their implementations. 
+A given Standard Profile will evolve as existing implementations expand coverage to new data types, or new implementations provide novel requirements to support their use case. For example, the Variant Pathogenicity Profile will evolve as ClinGen expands the ClinVar data it wants the profile to cover, and as other Driver Projects such AGHA/Shariant adopt the standard and need it to support their implementation. 
 
 
 
