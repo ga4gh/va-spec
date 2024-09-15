@@ -72,15 +72,15 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
 **5. VA Standard Profile JSON Schema** are the final, machine readable products of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated transformation to JSON schema by GKS Metaschema Processor tools. 
 
-.. _schema-from-standard-profile:
+.. _schema-from-yaml-profile:
 
-.. figure:: images/schema-from-standard-profile.png
+.. figure:: images/schema-from-yaml-profile.png
 
    Formalization of YAML Source profiles into JSON Schema specifications 
 
    **Legend** A JSON Schema specification of the Standard Variant Pathogenicity Statement Profile are automatically derived from source YAML by GKS Metaschema Processor Tools
 
-**Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
+**Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. Such local changes break from the VA Standard, which requires data to be transformed back to compliant form for sharing over GA4GH APIs.
 
 .. _implementation-from-standard-profile:
 
@@ -88,7 +88,7 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    Implementation of VA Profiles in Data Exchange Systems
 
-   **Legend** The GK-Pilot Project adopts the Standard Variant Pathogenicity Statement Profile as is, as a JSON Schema Implementation Model that supports exchange between ClinGen and VICC data systems
+   **Legend** ClinGen systems may translate the standard JSON schema into a GraphQL specification, and may make a handful of application-specific changes (red) (e.g. flattening classes and adding a few new custom properties) - meet local system needs.
 
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
