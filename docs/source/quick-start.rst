@@ -46,7 +46,7 @@ Models and Links
  * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
 
 **Implementation Schema**:
- * **repository**: not under VA control - these are distributed acorss implementation repositories
+ * **repository**: not under VA control - these are distributed across implementation repositories
  * **model source**:  will be specific to each implementing project
  * **documentation**: not under VA control - distributed across implementation websites and documents
 
