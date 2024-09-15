@@ -1,10 +1,8 @@
 Profiling Methodology
 !!!!!!!!!!!!!!!!!!!!!
 
-``WORK IN PROGRESS``
+``WORK IN PROGRESS: PLEASE COME BACK SOON`` 
 
-
-`
 Modes of Use
 ############
 
