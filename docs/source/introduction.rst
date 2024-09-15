@@ -41,9 +41,6 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
 * The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The VA Team ``EXTRACT`` a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec, for inclusion in the GKS core model.
 
-.. image:: images/core-im-from-sepio.png
-  :width: 700
-
 .. _core-im-from-sepio:
 
 .. figure:: images/core-im-from-sepio.png
@@ -62,10 +59,15 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <>`_. Minimal draft models for a Gene         class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
 
-* **VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SOPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
+* **VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
 
-.. image:: images/standard-profile-from-core-im
-  :width: 700
+.. _standard-profile-from-core-im:
+
+.. figure:: images/standard-profile-from-core-im.png
+
+   Profiling of the Core-IM into a Draft Variant Pathogenicity Statement Profile
+
+   **Legend** A draft of a Variant Pathogenicity Statement Profile is created thorugh the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. Examples of specializations are shown in blue in the zoomed Variant Pathogenicity Statement class, including definition        definition of this Statemetn subclass itself, binding of``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
 
 * **VA Standard Profile JSON Schema** are the final product of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated translormation to json schema by Metaschema Processor tools. 
 
