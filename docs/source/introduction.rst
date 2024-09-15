@@ -93,8 +93,8 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
 
-Emergence and Evolution of VA Standards
-###############################################
+Establishing and Evolving VA Standards
+######################################
 As noted, VA Standard development is implementation-driven, beginning with the definition of a Draft Implementation Profile to meet the needs of a particular driver project application. Emergence of a consensus Standard Profile requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
 
 **Align and Refine Models**
@@ -112,4 +112,20 @@ A given Standard Profile will evolve as existing implementations expand coverage
 Implementing the VA-Spec
 ########################
 
-The VA Modeling Framework offers many modes for engaging with the VA-Specification. Some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop profiles for entirely new types of Statements**. The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And this `Profiling Methodology guide <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_  explains in detail the specific tasks and conventions involved in building VA Profiles.  
+The VA Modeling Framework offers many modes for engaging with the VA-Specification. Some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop entirely new profiles for additional types of Statements**.
+
+The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And this `Profiling Methodology guide <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_  explains in detail the specific tasks and conventions involved in building VA Profiles.  
+
+
+----------
+
+Implementing the VA-Spec
+########################
+
+The VA Modeling Framework offers many modes for engaging with the VA-Specification:
+* some users will want to **adopt established standard profiles out-of-the-box**
+* others may want to **extend or refine an existing standard profile** for their application or use case
+* others may want to **develop entirely new profiles for additional types of Statements**
+
+The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And this `Profiling Methodology guide <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_  explains in detail the specific tasks and conventions involved in building VA Profiles.  
+
