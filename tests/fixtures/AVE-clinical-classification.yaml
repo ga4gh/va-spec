@@ -1,35 +1,32 @@
 type: AssayVariantEffectClinicalClassificationStatement
 subjectVariant:
   id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
-  type: VariationDescriptor
-  variation:
-    id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
-    type: Allele
-    location:
-      id: 
-      type: SequenceLocation
-      sequence_id: ga4gh:SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
-      interval:
-        type: SequenceInterval
-        start:
-          type: Number
-          value: 10
-        end:
-          type: Number
-          value: 11
-    state:
-      type: LiteralSequenceExpression
-      sequence: T
-  expressions:
-  - type: Expression
-    syntax: hgvs.p
-    value: NP_000305.3:p.Arg11Thr
-    syntax_version: 
-  vrs_ref_allele_seq: R
+  type: CategoricalVariant
+  members:
+    - id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+      type: Allele
+      location:
+        type: SequenceLocation
+        sequenceReference:
+          refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+          type: SequenceReference
+        start: 10
+        end: 11
+        sequence: R
+      state:
+        type: LiteralSequenceExpression
+        sequence: T
+      expressions:
+        - syntax: hgvs.p
+          value: NP_000305.3:p.Arg11Thr
 predicate: hasAssayVariantEffectFor
 objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
 subjectClassification: BS3_Supporting
 specifiedBy:
   type: Method
-  subtype: Variant Interpretation Guideline
-  reportedIn: https://pubmed.ncbi.nlm.nih.gov/34793697/
+  subtype:
+    code: NA
+    system: Variant Interpretation Guideline
+  reportedIn:
+    - type: Document
+      pmid: 34793697

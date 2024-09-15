@@ -38,13 +38,12 @@ $defs:
         # TODO we may need to model this more specifically as a DomainEntity subtype
         extends: object
         oneOf:
-          - type: string
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
         description: >-
           The assay that is evaluated for the variant effect. (e.g growth in
           haploid cell culture protein stability in fluorescence assay)
-      classification:
+      subjectClassification:
         extends: classification
         description: >-
           The functional classification of the variant effect in the assay.
@@ -91,7 +90,6 @@ $defs:
         # TODO we may need to model this more specifically as a DomainEntity subtype
         extends: object
         oneOf:
-          - type: string
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
         description: >-
@@ -118,7 +116,7 @@ $defs:
       - subjectVariant
       - predicate
       - objectAssay
-      - classification
+      - subjectClassification
 
   AssayVariantEffectMeasurementStudyResult:
     inherits: gks.core-im:StudyResult

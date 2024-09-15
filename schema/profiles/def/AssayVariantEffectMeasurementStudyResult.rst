@@ -33,15 +33,15 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - 0..m
       - Alternative name(s) for the Entity.
    *  - extensions
-      - :ref:`Extension`
+      - `Extension </ga4gh/schema/gks-common/1.x/data-types/json/Extension>`_
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - contributions
-      - :ref:`Contribution`
+      - `Contribution <../core-im/core.json#/$defs/Contribution>`_
       - 0..m
       - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
    *  - reportedIn
-      - :ref:`Document` | :ref:`IRI`
+      - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
       - 0..m
       - A document in which the the Information Entity is reported.
    *  - dateAuthored
@@ -49,15 +49,15 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
    *  - recordMetadata
-      - :ref:`RecordMetadata`
+      - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - componentResult
-      - :ref:`StudyResult`
+      - `StudyResult <../core-im/core.json#/$defs/StudyResult>`_
       - 0..m
       - Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population) .
    *  - studyGroup
-      - :ref:`StudyGroup`
+      - `StudyGroup <../core-im/core.json#/$defs/StudyGroup>`_
       - 0..1
       - A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult.
    *  - ancillaryResults
@@ -73,7 +73,7 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - 1..1
       - MUST be "AssayVariantEffectMeasurementStudyResult".
    *  - focusVariant
-      - :ref:`MolecularVariation` | :ref:`IRI`
+      - `MolecularVariation </ga4gh/schema/vrs/2.x/json/MolecularVariation>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
       - 0..1
       - The human mapped representation of the variant that is the subject of the Statement.
    *  - score
@@ -81,10 +81,10 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - 0..1
       - The score of the variant effect in the assay.
    *  - specifiedBy
-      - :ref:`Method` | :ref:`IRI`
+      - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
       - 0..1
       - The assay that was used to measure the variant effect with all the various properties
    *  - sourceDataSet
-      - :ref:`DataSet`
+      - `DataSet <../core-im/core.json#/$defs/DataSet>`_
       - 0..m
       - The full data set that this measurement is a part of

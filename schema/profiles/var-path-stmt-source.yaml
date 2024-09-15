@@ -25,7 +25,7 @@ $defs:
         default: "VariantPathogenicityStatement"
         description: MUST be "VariantPathogenicityStatement".
       subjectVariant:
-        extends: subject
+        extends: subject 
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
         - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
