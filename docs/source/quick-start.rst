@@ -11,7 +11,7 @@ It is **critical that developers understand these models and their dependencies*
 
 .. figure:: images/va-model-dependencies.png
 
-   VA Ecosystem Models and Dependencies
+   Ecosystem of VA Models and Dependencies
 
    **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
@@ -115,6 +115,8 @@ GKS Github Repository Landscape and Links
 #########################################
 
 The diagram below describes the interactions between different repositories where models and specifications supporting the VA-Spec are housed. It is important to understand these relationships and dependencies as you begin to adopt or contribute to the VA-Specification. 
+
+.. important:: One important feature to note is that the **GKS Core-IM**, along with **GKS Data Types** and **Domain Entities** that may be used by multiple GKS models, are hosued in a shared **gks-commons repository**, from which they are imported into downstream specifications.
 
 .. _gks-github-ecosystem:
 
