@@ -13,7 +13,7 @@ Consult the pages on this site for information about the specification and how t
  * `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_: Specific instructions and resoruces for creating or refining profiles of the Core-IM to build new Statement models.
  * `Modeling Foundations <https://va-ga4gh.readthedocs.io/en/latest/modeling-foundations.html>`_: An overview of the modeling standareds and principles that underpin VA-Spec information models.
  * `Reference Implementation <https://va-ga4gh.readthedocs.io/en/latest/reference-implementation.html>`_: Documentation about code libraries that facilitate implementation of the VA-Spec.
- * `Examples <<https://va-ga4gh.readthedocs.io/en/latest/examples/index.html> `_: a set of examples illustrating the representation of data using VA Standard Profiles. 
+ * `Examples <https://va-ga4gh.readthedocs.io/en/latest/examples/index.html>`_: a set of examples illustrating the representation of data using VA Standard Profiles. 
  * `FAQ <https://va-ga4gh.readthedocs.io/en/latest/faq.html>`_: Answers to commonly asked questions that provide deeper insight into specific aspects of the VA-Spec.
 
 .. toctree::
