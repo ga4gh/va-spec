@@ -58,7 +58,7 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    Extension of Core-IM with Domain Entity Classes
 
-   **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <>`_. Minimal draft models for a Gene         class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
+   **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <>`_. Minimal draft models for a Gene class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
 
 **4. VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
 
@@ -68,14 +68,19 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    Profiling of the Core-IM into a Draft Variant Pathogenicity Statement Profile
 
-   **Legend** A draft of a Variant Pathogenicity Statement Profile is created thorugh the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. Examples of specializations are shown in blue in the zoomed Variant Pathogenicity Statement class, including definition        definition of this Statemetn subclass itself, binding of``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
+   **Legend** A draft of a Variant Pathogenicity Statement Profile is created thorugh the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. Examples of specializations are shown in BLUE in the zoomed Variant Pathogenicity Statement class, including definition definition of this Statemetn subclass itself, binding of``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
 
-**5. VA Standard Profile JSON Schema** are the final product of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated translormation to json schema by Metaschema Processor tools. 
+**5. VA Standard Profile JSON Schema** are the final, amchine readable products of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated transformation to JSON schema by GKS Metaschema Processor tools. 
 
-.. image:: images/schema-from-standard-profile
-  :width: 700
+.. _schema-from-standard-profile:
 
-**6. Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
+.. figure:: images/schema-from-standard-profile.png
+
+   Formalization of YAML Source profiles into JSON Schema specifications 
+
+   **Legend** A JSON Schema specification of the Standard Variant Pathogenicity Statement Profile are automatically derived from source YAML by GKS Metaschema Processor Tools
+
+**Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
 
 .. image:: images/implementation-from-standard-profile
   :width: 700
