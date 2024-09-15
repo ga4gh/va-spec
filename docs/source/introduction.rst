@@ -32,7 +32,7 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/l
 
    VA Ecosystem Models and Dependencies
 
-   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right    describe the propagation of           requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right    describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
 Below we describe each model in this ecosystem and how it is generated, using ClinGen's definition of a simple Varaint Pathogenicity Statement Profile to support ClinVar SCV data as an example. 
 |
@@ -82,8 +82,13 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
 **Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
 
-.. image:: images/implementation-from-standard-profile
-  :width: 700
+.. _implementation-from-standard-profile:
+
+.. figure:: images/implementation-from-standard-profile.png
+
+   Implementation of VA Profiles in Data Exchange Systems
+
+   **Legend** The GK-Pilot Project adopts the Standard Variant Pathogenicity Statement Profile as is, as a JSON Schema Implementation Model that supports exchange between ClinGen and VICC data systems
 
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
