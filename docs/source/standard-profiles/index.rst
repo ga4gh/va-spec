@@ -14,7 +14,8 @@ Separate, derived, machine-readable **JSON schema** for eahc Profile can be foun
 Web **documentation** about each Standard Profile can be found in the pages linked below. 
 
 .. toctree::
+   :maxdepth: 8
    :titlesonly:
 
-   statement-profiles/index
+   statement-profiles
    study-result-profiles
