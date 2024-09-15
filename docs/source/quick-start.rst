@@ -23,7 +23,7 @@ Models and Links
 
 .. _gks-github-ecosystem:
 
-.. figure:: gks-github-ecosystem.png
+.. figure:: images/gks-github-ecosystem.png
 
    Ecosystem of GKS Specification Github Repositories
 
