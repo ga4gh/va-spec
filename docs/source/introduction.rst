@@ -80,13 +80,13 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    **Legend** A JSON Schema specification of the Standard Variant Pathogenicity Statement Profile are automatically derived from source YAML by GKS Metaschema Processor Tools
 
-**Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. Such local changes break from the VA Standard, which requires data to be transformed back to compliant form for sharing over GA4GH APIs.
+**6. Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. Such local changes break from the VA Standard, which requires data to be transformed back to compliant form for sharing over GA4GH APIs.
 
 .. _implementation-from-standard-profile:
 
 .. figure:: images/implementation-from-standard-profile.png
 
-   Implementation of Standard JSON Schema with System-Specific Changes
+   Implementation of Standard JSON Schema by ClinGen, with System-Specific Changes
 
    **Legend** ClinGen systems may translate the standard **JSON schema** into a **GraphQL** specification, and may make a handful of application-specific changes (red) to meet local system needs (e.g. flattening classes and adding a few new custom properties).
 
