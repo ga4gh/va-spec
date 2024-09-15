@@ -22,10 +22,9 @@ The VA-Spec modeling framework is comprised of the following components:
 
 This modeling framework has allowed for implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and delivers schema that have proven out in working applications.
 
-
 VA Standard Development and Dependencies
 ########################################
-While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/index.html>`_ is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as descrived below. 
+While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as descrived below. 
 
 .. _va-model-dependencies:
 
@@ -34,12 +33,15 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/s
    VA Ecosystem Models and Dependencies
 
    **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right    describe the propagation of           requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+|
 
 Below we describe each model in this ecosystem and how it is generated, using ClinGen's definition of a simple Varaint Pathogenicity Statement Profile to support ClinVar SCV data as an example. 
+|
 
-* The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. 
+The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. More information can be found `here <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_. 
+|
 
-* The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The VA Team ``EXTRACT`` a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec, for inclusion in the GKS core model.
+The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The VA Team ``EXTRACT`` a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec, for inclusion in the GKS core model.
 
 .. _core-im-from-sepio:
 
@@ -48,8 +50,9 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
    Extraction of the Core-IM from the SEPIO Model
 
    **Legend** Classes and attributes needed for ClinGen's Variant Pathogneicity Profile are identified and extracted into the GKS Core-IM subset (which will include additional elements needed to support other implementation profiles being created by other Driver Projects sich as VICC and MAVEdb)
+|
 
-* **GKS Domain Entity Models** represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers of VA Statements (Genes, Conditions, Therapeutic Procedures). These classes ``EXTEND`` the GKS Core-IM to support VA Profile definitions. 
+**GKS Domain Entity Models** represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers of VA Statements (Genes, Conditions, Therapeutic Procedures). These classes ``EXTEND`` the GKS Core-IM to support VA Profile definitions. 
 
 .. _domain-entities-from-core-im:
 
@@ -58,8 +61,9 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
    Extension of Core-IM with Domain Entity Classes
 
    **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <>`_. Minimal draft models for a Gene         class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
+|
 
-* **VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
+**VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
 
 .. _standard-profile-from-core-im:
 
@@ -68,16 +72,20 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
    Profiling of the Core-IM into a Draft Variant Pathogenicity Statement Profile
 
    **Legend** A draft of a Variant Pathogenicity Statement Profile is created thorugh the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. Examples of specializations are shown in blue in the zoomed Variant Pathogenicity Statement class, including definition        definition of this Statemetn subclass itself, binding of``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
+|
 
-* **VA Standard Profile JSON Schema** are the final product of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated translormation to json schema by Metaschema Processor tools. 
+**VA Standard Profile JSON Schema** are the final product of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated translormation to json schema by Metaschema Processor tools. 
 
 .. image:: images/schema-from-standard-profile
   :width: 700
 
-* **Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
+|
+**Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
 
 .. image:: images/implementation-from-standard-profile
   :width: 700
+
+|
 
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
