@@ -22,7 +22,6 @@ Consult the pages on this site for information about the specification and how t
    :caption: Site Map
 
    introduction
-   overview
    quick-start
    core-information-model/index
    standard-profiles/index
