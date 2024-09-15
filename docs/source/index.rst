@@ -7,7 +7,7 @@ Readers may wish to view a `data example <https://va-ga4gh.readthedocs.io/en/sta
 	
 Consult the pages on this site for information about the specification and how to use it:
  * `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_: An entry point for understanding the VA-Spec, providing a high-level overview, concrete examples, and links to more detailed content.
- * `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start-guide.html>`_: Resources to help implementers begin working with the VA-Spec, defining specific modes of use.
+ * `Quick Start Guide <https://va-ga4gh.readthedocs.io/en/latest/quick-start-guide.html>`_: Resources to help implementers begin working with the VA-Spec, defining specific modes of use and points of entry.
  * `Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: Detailed descriptions of the classes and attributes in the foundational Core-IM.
  * `Standard Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: Detailed descriptions and implementation guidance for the Statement and Study Result Profiles provided as standards for representing variant knowledge. 
  * `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_: Specific instructions and resoruces for creating or refining profiles of the Core-IM to build new Statement models.
