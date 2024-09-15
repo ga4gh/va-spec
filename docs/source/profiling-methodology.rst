@@ -11,12 +11,13 @@ In practice, application of the VA-Spec to represent actual data requires a 'Pro
 
 .. _statement_profiling
 
-.. figure:: images/statement-profiling.png
+.. figure:: images/statement-profiling.PNG
 
    Profiling of the GKS Core-IM
 
 
 Profiling Tasks supported by the methodology include:
+
 .. list-table::
    :class: clean-wrap
    :header-rows: 1
@@ -36,7 +37,7 @@ Profiling Tasks supported by the methodology include:
    *  - Constrain values of Core IM attributes to take specific domain entities or data types as values
       - Restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
    *  - Define value sets that get bound to attributes taking coded values
-      - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_). 
+      - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ terms from the GENO Ontology). 
 
 
 The Profiles that result from these activities process represent custom, domain-specific information models that can be implemented as formal schema for a particular use case or application.  
