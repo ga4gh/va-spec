@@ -1,6 +1,8 @@
 Standard Profiles
 !!!!!!!!!!!!!!!!!
 
+``PREREQUISITES:`` `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_,  `Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_
+
 **VA Standard Profiles** define the structure and semantics of the Standard Models that will be used by the GA4GH community. 
 
 They are built as **specializations of the Statement or Study Result classes** in the Core-IM, that supports a specific type of knowledge about molecular variation.  
