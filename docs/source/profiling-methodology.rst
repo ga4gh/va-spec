@@ -7,7 +7,11 @@ Profiling Methodology
 
 Profiling Overview
 *******************
-In practice, application of the VA-Spec to represent actual data requires a 'Profiling' process, in which the generic GKS Core-IM is specialized represent types of Statements or Study Results. For example, the figure below shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements. Note that these profiles exhibit very different levels of complexity, to support the specific evidence and provenance requirements for each type of Statement.   
+In practice, application of the VA-Spec to represent actual data requires a 'Profiling' process, in which the generic GKS Core-IM is specialized represent types of Statements or Study Results. 
+
+For example, the figure below shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements. 
+
+Note that these profiles exhibit very different levels of complexity, to support the specific evidence and provenance requirements for each type of Statement.   
 
 .. _statement_profiling
 
