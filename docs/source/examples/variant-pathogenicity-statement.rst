@@ -333,5 +333,4 @@ Variant Pathogeniity Statement Profile
     "scv_id": "SCV000886574",
     "scv_ver": 2
   }
-}
-````
+
