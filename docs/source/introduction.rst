@@ -37,10 +37,10 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/l
 Below we describe each model in this ecosystem and how it is generated, using ClinGen's definition of a simple Varaint Pathogenicity Statement Profile to support ClinVar SCV data as an example. 
 |
 
-The **SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. More information can be found `here <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_. 
+**The SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. More information can be found `here <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_. 
 |
 
-The **GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The VA Team ``EXTRACT`` a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec, for inclusion in the GKS core model.
+**The GKS Core-IM** is the basis for the profiling process that generates Statement or Study Result profiles for specific types of variant annotations. The VA Team ``EXTRACT`` a hand-selected subset of the SEPIO Core-IM, chosen specifically to support profiles drafted by early Driver Project implementations of the VA-Spec, for inclusion in the GKS core model.
 
 .. _core-im-from-sepio:
 
@@ -51,7 +51,6 @@ The **GKS Core-IM** is the basis for the profiling process that generates Statem
    **Legend** Classes and attributes needed for ClinGen's Variant Pathogneicity Profile are identified and extracted into the GKS Core-IM subset (which will include additional elements needed to support other implementation profiles being created by other Driver Projects sich as VICC and MAVEdb)
 
 **GKS Domain Entity Models** represent the biological and clinical entities that Variant Annotations are about, and serve as subjects, objects, and qualifiers of VA Statements (Genes, Conditions, Therapeutic Procedures). These classes ``EXTEND`` the GKS Core-IM to support VA Profile definitions. 
-
 .. _domain-entities-from-core-im:
 
 .. figure:: images/domain-entities-from-core-im.png
