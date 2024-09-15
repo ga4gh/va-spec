@@ -116,7 +116,7 @@ GKS Github Repository Landscape and Links
 
 The diagram below describes the interactions between different repositories where models and specifications supporting the VA-Spec are housed. It is important to understand these relationships and dependencies as you begin to adopt or contribute to the VA-Specification. 
 
-.. important:: One important feature to note is that the **GKS Core-IM**, along with **GKS Data Types** and **Domain Entities** that may be used by multiple GKS models, are hosued in a shared **gks-commons repository**, from which they are imported into downstream specifications.
+.. important:: One feature to note is that the **GKS Core-IM**, along with **GKS Data Types** and **Domain Entities** that may be used by multiple GKS models, are hosued in a shared **gks-commons repository**, from which they are imported into downstream specifications.
 
 .. _gks-github-ecosystem:
 
