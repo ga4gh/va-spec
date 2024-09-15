@@ -58,7 +58,7 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    Extension of Core-IM with Domain Entity Classes
 
-   **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <>`_. Minimal draft models for a Gene class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
+   **Legend** The **Variant Pathogenicity Profile** requires representations of **Variations** that serve as the subjects of these statements, **Conditions** that serve as the objects, and **Genes** which may provide qualifying context.  Variations adopt the `GA4GH VRS specification <https://vrs.ga4gh.org/en/latest/index.html>`_. Minimal draft models for a Gene class and a small hierarchy of Condition classes are defined and submitted to the GKS-Commons specification, where they are available for broader re-use in other Profiles. 
 
 **4. VA Standard Profile IMs** define the structure and semantics of the Standard Models that will be used by the GA4GH community. Separate yaml-based are defined for different kinds of VA Statements and Study Results. Profile definition is implementation-driven, beginning Draft Implementation Profiles which **select** and ``SPECIALIZE`` elements from the GKS Core-IM with profile-specific constraints, based on the needs of a particular application. 
 
@@ -68,7 +68,7 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
    Profiling of the Core-IM into a Draft Variant Pathogenicity Statement Profile
 
-   **Legend** A draft of a Variant Pathogenicity Statement Profile is created through the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. Examples of specializations are shown in BLUE in the zoomed Variant Pathogenicity Statement class, including definition of this Statement subclass itself, binding of ``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
+   **Legend** A draft of a Variant Pathogenicity Statement Profile is created through the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. GKS Core_IM elements usedin the profile are hihglighted in ``RED`. Examples of specializations are shown in BLUE in the zoomed Variant Pathogenicity Statement class, including definition of this Statement subclass itself, binding of *subject* and *object* attributes to specific Domain Entity classes, definition of a specific *qualifier* class to capture gene context, and definition and binding of the *predicate* attribute to a specific enumeration of permissible values. 
 
 **5. VA Standard Profile JSON Schema** are the final, machine readable products of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Standard Profile IMs, through the automated transformation to JSON schema by GKS Metaschema Processor tools. 
 
@@ -86,9 +86,9 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 
 .. figure:: images/implementation-from-standard-profile.png
 
-   Implementation of VA Profiles in Data Exchange Systems
+   Implementation of Standard JSON Schema with System-Specific Changes
 
-   **Legend** ClinGen systems may translate the standard JSON schema into a GraphQL specification, and may make a handful of application-specific changes (red) (e.g. flattening classes and adding a few new custom properties) - meet local system needs.
+   **Legend** ClinGen systems may translate the standard **JSON schema** into a **GraphQL** specification, and may make a handful of application-specific changes (red) to meet local system needs (e.g. flattening classes and adding a few new custom properties).
 
 While the SEPIO and GKS Core models are the basis for deriving downstream Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core modeling principles they espouse. 
 
