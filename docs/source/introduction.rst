@@ -75,7 +75,7 @@ Below we describe each model in this ecosystem and how it is generated, using Cl
 .. image:: images/schema-from-standard-profile
   :width: 700
 
-**Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
+**6. Implementation Schema** are concrete schema that are actually implemented in data systems. When Driver Projects ``IMPLEMENT`` a Standard JSON schema, they may use it as is, translate it into different schema languages (eg. graphql, ShEX), and/or refine it with application-specific additions to support local implementation needs. 
 
 .. image:: images/implementation-from-standard-profile
   :width: 700
