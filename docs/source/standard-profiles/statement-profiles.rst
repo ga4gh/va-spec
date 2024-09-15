@@ -9,7 +9,7 @@ Variant Pathogenicity Statement
 
 .. include::  ../../../schema/profiles/def/VariantPathogenicityStatement.rst
 
-An example of data structured using this Standard Profile can be found 'here <https://va-ga4gh.readthedocs.io/en/stable/examples/variant-pathogenicity-statement.html>`_
+An example of data structured using this Standard Profile can be found `here <https://va-ga4gh.readthedocs.io/en/stable/examples/variant-pathogenicity-statement.html>`_
 
 Variant Oncogenicity Statement
 ##############################
