@@ -9,7 +9,7 @@ Each Profile is authored as a yaml-based information model, from which web docum
 
 The editable **yaml source files** in which profile models are defined can be found `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles>`_. 
 
-Separate, derived, machine-readable **JSON schema** for eahc Profile can be found `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_.
+Derived machine-readable **JSON schema** for eacc Profile can be found `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_.
 
 Web **documentation** about each Standard Profile can be found in the pages linked below. 
 
