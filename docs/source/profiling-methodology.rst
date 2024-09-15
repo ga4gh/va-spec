@@ -20,7 +20,7 @@ Note that these profiles exhibit very different levels of complexity, to support
    Profiling of the GKS Core-IM
 
 
-Profiling Tasks supported by the methodology include:
+**Profiling Tasks supported by the methodology include:**
 
 .. list-table::
    :class: clean-wrap
