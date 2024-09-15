@@ -3,12 +3,9 @@ Quick Start Guide
 
 ``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
-This document provide links to resources for accessing and contributing to these models in thh VA-Spec ecosystem, and a decision tree to help newcomers engage with the VA-Spec at the appropriate level for their data and use case.
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted below and described in detail in the `Introduction <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. 
 
-Models and Links
-################
-
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted below and described in detail in the `Introduction <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. 
+It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. 
 
 .. _va-model-dependencies:
 
@@ -18,57 +15,20 @@ Models and Links
 
    **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
-**Sources for each of these models and their documentation can be accessed at the locations listed below, along with a diagram of the current GKS Github Repository Ecosystem**
-
-
-.. _gks-github-ecosystem:
-
-.. figure:: images/gks-github-ecosystem.png
-
-   Ecosystem of GKS Specification Github Repositories
-
-**Repository Links:**
-
-**SEPIO Core-IM**:
- * **repository**: https://github.com/sepio-framework/sepio-linkml
- * **model source**: https://github.com/sepio-framework/sepio-linkml/blob/main/src/sepio_linkml/schema/sepio_linkml.yaml
- * **documentation**: https://sepio-framework.github.io/sepio-linkml/
-
-**GKS Core-IM**: 
- * **repository**: https://github.com/ga4gh/gks-common/
- * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
-
-**GKS Domain Entity Models**: 
- * **repository**: https://github.com/ga4gh/gks-common/
- * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
-
-**VA Standard Profile IMs**:
- * **repository**: https://github.com/ga4gh/va-spec
- * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
-
-**VA Standard Profile JSON Schema**: 
- * **repository**: https://github.com/ga4gh/va-spec
- * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json (do not edit directly, these are automatically generated from standard profile source yaml files via metaschema processor tooling)
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
-
-**Implementation Schema**:
- * **repository**: not under VA control - these are distributed across implementation repositories
- * **model source**:  will be specific to each implementing project
- * **documentation**: not under VA control - distributed across implementation websites and documents
+An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided in at the end of this page.  
 
 
 Where do I Start?
 #################
 As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standard Profiles yet exists for the type of knowledge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
 
-The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.   
+The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements.
 
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
- * Blue nodes present a ``DECISION`` to be made. Red nodes describe a terminal ``ACTION`` to be taken. 
- * Each node is numbered and maps to additional guidance and resources provided in the text below the tree. 
+ * Blue nodes present a  **Decision** to be made. Red nodes describe a terminal **Aciton** to be taken. 
+ * Guidance to help you answer Decision nodes or act on Action nodes is provided below the tree, organized by node number.
+
+.. note:: The tree is focused on development and use of **Statement** Profiles, used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification). But the same workflow applies to **Study Result** Profiles, which are used to capture collections of data about a particular variant from a particular study or analysis (e.g. cohort allele frequency data from gnomad). 
 
 .. image:: images/quick-start-decision-tree.png
   :width: 1000
@@ -149,3 +109,50 @@ The **decision tree** below is designed to help newcomers find the right entry p
 
 
 Note that the decision tree above focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
+
+
+GKS Github Repository Landscape and Links
+#########################################
+
+The diagram below describes the interactions between different repositories where models and specifications supporting the VA-Spec are housed. It is important to understand these relationships and dependencies as you begin to adopt or contribute to the VA-Specification. 
+
+.. _gks-github-ecosystem:
+
+.. figure:: images/gks-github-ecosystem.png
+
+   Ecosystem of GKS Specification Github Repositories
+
+**Model and Repository Links:**
+
+**SEPIO Core-IM**:
+ * **repository**: https://github.com/sepio-framework/sepio-linkml
+ * **model source**: https://github.com/sepio-framework/sepio-linkml/blob/main/src/sepio_linkml/schema/sepio_linkml.yaml
+ * **documentation**: https://sepio-framework.github.io/sepio-linkml/
+
+**GKS Core-IM**: 
+ * **repository**: https://github.com/ga4gh/gks-common/
+ * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
+
+**GKS Domain Entity Models**: 
+ * **repository**: https://github.com/ga4gh/gks-common/
+ * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
+
+**VA Standard Profile IMs**:
+ * **repository**: https://github.com/ga4gh/va-spec
+ * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
+
+**VA Standard Profile JSON Schema**: 
+ * **repository**: https://github.com/ga4gh/va-spec
+ * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json (do not edit directly, these are automatically generated from standard profile source yaml files via metaschema processor tooling)
+ * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
+
+**Implementation Schema**:
+ * **repository**: not under VA control - these are distributed across implementation repositories
+ * **model source**:  will be specific to each implementing project
+ * **documentation**: not under VA control - distributed across implementation websites and documents
+
+
+
