@@ -16,9 +16,18 @@ Models and Links
 
    VA Ecosystem Models and Dependencies
 
-   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of             requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
-**Sources for each of these models and their documentation can be accessed at the locations listed below:**
+**Sources for each of these models and their documentation can be accessed at the locations listed below, along with a diagram of the current GKS Github Repository Ecosystem**
+
+
+.. _gks-github-ecosystem:
+
+.. figure:: gks-github-ecosystem.png
+
+   Ecosystem of GKS Specification Github Repositories
+
+**Repository Links:**
 
 **SEPIO Core-IM**:
  * **repository**: https://github.com/sepio-framework/sepio-linkml
