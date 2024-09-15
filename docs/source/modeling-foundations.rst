@@ -1,6 +1,8 @@
 Modeling Foundations
 !!!!!!!!!!!!!!!!!!!!
 
+``WORK IN PROGRESS: PLEASE COME BACK SOON``
+
 This document describes modeling standards, patterns, and principles adopted by the VA Specification. 
 
 Variant Representation
