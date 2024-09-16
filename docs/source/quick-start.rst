@@ -33,6 +33,8 @@ The **decision tree** below is designed to help newcomers find the right entry p
 .. image:: images/quick-start-decision-tree.png
   :width: 1000
 
+.. image:: images/quick-start-decision-tree2.png
+  :width: 1000
 
 **Node Guidance and Resources:**
 
