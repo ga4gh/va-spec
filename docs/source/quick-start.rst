@@ -15,7 +15,7 @@ It is **critical that developers understand these models and their dependencies*
 
    **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
-An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided in at the end of this page.  
+An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the end of this page.  
 
 
 Where do I Start?
@@ -30,30 +30,27 @@ The **decision tree** below is designed to help newcomers find the right entry p
 
 .. note:: The tree is focused on development and use of **Statement** Profiles, used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification). But the same workflow applies to **Study Result** Profiles, which are used to capture collections of data about a particular variant from a particular study or analysis (e.g. cohort allele frequency data from gnomad). 
 
-.. image:: images/quick-start-decision-tree.png
-  :width: 1000
-
 .. image:: images/quick-start-decision-tree2.png
   :width: 1000
 
 **Node Guidance and Resources:**
 
-*If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on Slack here, in the issue tracker here, or on our monthly community calls here.*
+*If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on* `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_ *, though our* `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_ *, or in our* `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
 #. ``DECISION``: **Does a Statement Profile exist for my use case?**
-    #. Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
+    * Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
 
 #. ``DECISION``: **Does the existing Statement Profile cover all my data and requirements?**
-    #. Use the documentation for the existing profile `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_ to map your data onto the classes and attributes it provides. Note any data that is not accommodated by the existing model. 
+    * Use the documentation for the existing profile `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_ to map your data onto the classes and attributes it provides. Note any data that is not accommodated by the existing model. 
 
 #. ``DECISION``: **Does the GKS Core-IM contain elements needed to extend the Profile for my data?**
-    #. Look at the generic `GKS Core-IM <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ to identify elements that might support your orphan data.
+ #. Look at the generic `GKS Core-IM <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ to identify elements that might support your orphan data.
 
 #. ``DECISION``: **Does upstream SEPIO Core-IM contain elements needed to define a Statement Profile for my data?**
-    #. Look at the `SEPIO Core-IM <https://sepio-framework.github.io/sepio-linkml/>`_ to identify elements that might support your orphan data.
+  #. Look at the `SEPIO Core-IM <https://sepio-framework.github.io/sepio-linkml/>`_ to identify elements that might support your orphan data.
 	
 #. ``DECISION``: **Do I have the time and will to formally extend/refine the profile?**
-    #. If you need the Profile to fully support the orphan data, but the GKS and SEPIO Core-IMs do not have the elements you need, extending the Statement Profile will require working with SEPIO and VA teams to extend these upstream models, and then pulling these new elements into the Profile. Please reach out to us for help. 
+   #. If you need the Profile to fully support the orphan data, but the GKS and SEPIO Core-IMs do not have the elements you need, extending the Statement Profile will require working with SEPIO and VA teams to extend these upstream models, and then pulling these new elements into the Profile. Please reach out to us for help. 
     #. While changes to these core models will require a bit more work, the close relationship between SEPIO and GKS developers will enable efficient coordination of effort and propagation of new modeling elements across these standards. 
 
 #. ``ACTION``: **Formally extend/refine the Statement Profile to address my requirements**
