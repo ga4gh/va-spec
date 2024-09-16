@@ -35,7 +35,7 @@ The **decision tree** below is designed to help newcomers find the right entry p
 
 **Node Guidance and Resources:**
 
-*If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on* `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_ *, though our* `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_ *, or in our* `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
+If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, though our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
 #. ``DECISION``: **Does a Statement Profile exist for my use case?**
     * Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
