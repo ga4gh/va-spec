@@ -3,6 +3,10 @@ Quick Start Guide
 
 ``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
+
+VA-Spec Models and Dependencies
+###############################
+
 `VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted below and described in detail in the `Introduction <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. 
 
 It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. 
@@ -13,22 +17,21 @@ It is **critical that developers understand these models and their dependencies*
 
    Ecosystem of VA Models and Dependencies
 
-   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+   **Legend** A hierarchy of models support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
-An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the end of this page.  
+An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the `end of this page <https://va-ga4gh.readthedocs.io/en/latest/quick-start.html#github-repositories-and-links>`_.  
 
 Where do I Start?
 #################
 
-New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or a model implicit in a data collection form or set of data examples. As a modeling framework, there are many ways that an adopter may engage with the Specification. Some may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing Standard Profile insufficient - and wish to refine or extend it to meet their needs. And others may discover that no Standard Profile exists for the type of knowledge they want to represent, and collaborate with the VA team to derive a new Profile from the GKS Core-IM.
+New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are many ways these adopters may engage with the VA-Spec as a Modeling Framework. Some may simply want to implement an existing Standard Profile out-of-the-box for their data. Others may find an existing Standard Profile insufficient - and wish to refine or extend it to meet their needs. And others may discover that no Standard Profile exists for the type of knowledge they want to represent, and collaborate with the VA team to derive a new Profile from the GKS Core-IM.
 
-The **decision tree** below is designed to help adopters navigate these options, and find the right entry point for engagement with the VA Framework based on their data and requirements. To use it, simply: 
-
+The **decision tree** below is designed to help adopters navigate these options, and find the right entry point for engagement with the VA Framework based on their data and requirements.
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
  * Blue nodes present a **DECISION** to be made. Green nodes describe a terminal **ACTION** to be taken. 
  * Guidance to help you make Decisions or perform Actions is provided below the tree, organized by node number.
 
-The workflow and guidance provided is the same whether you are in search of **Statement** Profiles, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or **Study Result** Profiles, which are used to capture collections of data about a variant from a particular study or analysis dataset (e.g. the gnomAD cohort allele frequency dataset). 
+The workflow and guidance provided is the same for **Statement** Profiles, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or **Study Result** Profiles, which are used to capture collections of data about a variant from a particular study or analysis dataset (e.g. the gnomAD cohort allele frequency dataset). 
 
 .. _quick-start-decision-tree:
 
