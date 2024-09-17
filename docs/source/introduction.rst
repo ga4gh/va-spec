@@ -98,13 +98,13 @@ Establishing and Evolving VA Standards
 ######################################
 As noted, VA Standard development begins with the definition of a **Draft Implementation Profile** to meet the needs of a particular driver project application. Emergence of a consensus Standard Profile requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
 
-**1. Align and Refine Models**
+**1. Align and Refine Models:**
 While aspiring to use the SEPIO and GKS Core IMs were possible, Draft Implementation Models may include features that are not consistent with these foundational models. Once an initial implementation profile is drafted, implementers work with the VA Team to identify such inconsistencies, and refine data models to bring them into alignment. This may involve reworking the implementation model to more fully adopt Core-IM modeling patterns, or adding new features to core models to support requirements surfaced by the implementation. Notably, any implementation-specific features not ultimately supported by the GKS Core-IM or Standard Profile can be captured in application data using the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element.
 
-**2. Publish as a GA4GH Standard Profile**
+**2. Publish as a GA4GH Standard Profile:**
 Once alignment is complete, a draft of the Standard Profile is circulated for community review. Concerns and feedback are discussed and resolved, and any final changes are propagated to the relevant models. The model is implemented and tested in working systems, followed by possible rounds of review and iteration.  Once stable, it is released as an official VA Standard Profile for a particular Statement or Study Result type. This is  typically reflected in the maturity level of the Profiled Statement or Study Result class being raised to 'Trial Use' - to indicate its adoption by two or more implementations. 
 
-**3. Evolve Profile to Support New Requirements**
+**3. Evolve Profile to Support New Requirements:**
 A given Standard Profile will evolve as existing implementations expand coverage to new data types, and as new implementations provide novel requirements to support their use case. For example, the Variant Pathogenicity Statement Profile will evolve as ClinGen expands the ClinVar data it wants the Profile to cover, and as other Driver Projects such AGHA/Shariant adopt the Standard and need it to support their implementation. Evolving a Standard through refinement or addition of content will proceed through a similar community-driven and implementation-tested process.
 
 Implementing the VA-Spec
