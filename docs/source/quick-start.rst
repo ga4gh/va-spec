@@ -13,10 +13,9 @@ It is **critical that developers understand these models and their dependencies*
 
    Ecosystem of VA Models and Dependencies
 
-   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe ``PROCESSES`` through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to inform upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+   **Legend** A hierarchy of models and standards support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
 
 An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the end of this page.  
-
 
 Where do I Start?
 #################
@@ -37,7 +36,7 @@ The workflow and guidance provided is the same whether you are in search of **St
 
    Decision Tree to guide Engagement of Adopters with the VA-Spec
 
-  **Legend**  The path on the **left** guides users in **adopting or extending an existing Standard Profile**. The path on the **right** guides users in **creating an entirely new Standard Profile**. While these Profiles are informed by the GKS and SEPIO core models, they are initiated as draft implementation models based on application-specific requirements, which provide a starting point to evolve into VA community standards.   
+   **Legend** The path on the **left** guides users in adopting or extending an existing Standard Profile. The path on the **right** guides users in creating an entirely new Standard Profile.
 
 **Node Guidance and Resources:**
 
