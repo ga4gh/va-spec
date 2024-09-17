@@ -174,7 +174,7 @@
             "isDiagnosticExclusionCriterionFor"
          ]
       },
-      "objectDisease": {
+      "objectCondition": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
@@ -209,7 +209,7 @@
       }
    },
    "required": [
-      "objectDisease",
+      "objectCondition",
       "predicate",
       "subjectVariant",
       "type"

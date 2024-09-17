@@ -1,6 +1,6 @@
 **Computational Definition**
 
-A StudyResult that reports measures related to the frequency of an Allele in a cohort
+A StudyResult that reports a variant effect score from a functional assay.
 
 **Information Model**
 
@@ -36,14 +36,14 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy
-      - :ref:`Method` | :ref:`IRI`
-      - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity 
    *  - contributions
       - :ref:`Contribution`
       - 0..m
       - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
+   *  - reportedIn
+      - :ref:`Document` | :ref:`IRI`
+      - 0..m
+      - A document in which the the Information Entity is reported.
    *  - dateAuthored
       - string
       - 0..1
@@ -52,10 +52,6 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - :ref:`RecordMetadata`
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
-   *  - sourceDataSet
-      - :ref:`DataSet`
-      - 0..m
-      - A larger DataSet from which the content of the StudyResult was derived.
    *  - componentResult
       - :ref:`StudyResult`
       - 0..m
@@ -84,7 +80,11 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - number
       - 0..1
       - The score of the variant effect in the assay.
-   *  - reportedIn
-      - :ref:`Document` | :ref:`IRI`
-      - 0..m
+   *  - specifiedBy
+      - :ref:`Method` | :ref:`IRI`
+      - 0..1
       - The assay that was used to measure the variant effect with all the various properties
+   *  - sourceDataSet
+      - :ref:`DataSet`
+      - 0..m
+      - The full data set that this measurement is a part of

@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A Statement reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.
+A statement that assigns a clinical strength of evidence to a variant effect from a functional assay.
 
 **Information Model**
 
-Some VariantDiagnosticStudyStatement attributes are inherited from :ref:`gks.core-im:Statement`.
+Some AssayVariantEffectClinicalClassificationStatement attributes are inherited from :ref:`gks.core-im:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -36,10 +36,6 @@ Some VariantDiagnosticStudyStatement attributes are inherited from :ref:`gks.cor
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy
-      - :ref:`Method` | :ref:`IRI`
-      - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity 
    *  - contributions
       - :ref:`Contribution`
       - 0..m
@@ -76,10 +72,6 @@ Some VariantDiagnosticStudyStatement attributes are inherited from :ref:`gks.cor
       - string
       - 0..1
       - A natural-language expression of what a Statement asserts to be true.
-   *  - classification
-      - :ref:`Coding` | :ref:`IRI`
-      - 0..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
    *  - hasEvidenceLines
       - :ref:`EvidenceLine`
       - 0..m
@@ -87,28 +79,24 @@ Some VariantDiagnosticStudyStatement attributes are inherited from :ref:`gks.cor
    *  - type
       - string
       - 1..1
-      - MUST be "VariantDiagnosticStudyStatement".
+      - MUST be "AssayVariantEffectClinicalClassificationStatement".
    *  - subjectVariant
-      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`IRI`
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
-      - A variant that is the subject of the Statement.
+      - A protein or genomic contextual or canonical molecular variant.
    *  - predicate
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
-      - :ref:`Condition` | :ref:`IRI`
+   *  - objectAssay
+      - string | :ref:`IRI` | :ref:`Coding`
       - 1..1
-      - The disease that is evaluated for diagnosis.
-   *  - alleleOriginQualifier
-      - string
+      - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
+   *  - subjectClassification
+      - :ref:`Coding` | :ref:`IRI`
       - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
-   *  - allelePrevalenceQualifier
-      - string
+      - The clinical strength of evidence of the variant effect in the assay.
+   *  - specifiedBy
+      - :ref:`Method` | :ref:`IRI`
       - 0..1
-      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
-   *  - geneContextQualifier
-      - :ref:`Gene`
-      - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Statement.
+      - The method that specifies the clinical strength of evidence of the variant effect in the assay.

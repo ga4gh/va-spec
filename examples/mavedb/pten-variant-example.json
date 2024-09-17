@@ -93,7 +93,7 @@
             },
             "predicate": "hasAssayVariantEffectFor",
             "objectAssay": "https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml",
-            "subjectClassification": "normal",
+            "classification": "normal",
             "specifiedBy": {
                 "type": "Method",
                 "subtype": "Variant Interpretation Guideline",
@@ -141,7 +141,7 @@
             },
             "predicate": "hasAssayVariantEffectFor",
             "objectAssay": "https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml",
-            "subjectClassification": "BS3_Supporting",
+            "classification": "BS3_Supporting",
             "specifiedBy": {
                 "type": "Method",
                 "subtype": "Variant Interpretation Guideline",

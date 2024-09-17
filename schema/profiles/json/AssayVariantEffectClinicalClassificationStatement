@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/AssayVariantEffectClassificationStatement",
-   "title": "AssayVariantEffectClassificationStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/AssayVariantEffectClinicalClassificationStatement",
+   "title": "AssayVariantEffectClinicalClassificationStatement",
    "maturity": "draft",
    "type": "object",
-   "description": "TODO @alanrubin will fill out a description",
+   "description": "A statement that assigns a clinical strength of evidence to a variant effect from a functional assay.",
    "properties": {
       "id": {
          "type": "string",
@@ -122,9 +122,9 @@
       },
       "type": {
          "type": "string",
-         "const": "AssayVariantEffectClassificationStatement",
-         "default": "AssayVariantEffectClassificationStatement",
-         "description": "MUST be \"AssayVariantEffectClassificationStatement\"."
+         "const": "AssayVariantEffectClinicalClassificationStatement",
+         "default": "AssayVariantEffectClinicalClassificationStatement",
+         "description": "MUST be \"AssayVariantEffectClinicalClassificationStatement\"."
       },
       "subjectVariant": {
          "oneOf": [
@@ -164,7 +164,7 @@
          "description": "The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)",
          "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
-      "classification": {
+      "subjectClassification": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
@@ -173,12 +173,15 @@
                "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
             }
          ],
-         "description": "The classification of the variant effect in the assay.",
+         "description": "The clinical strength of evidence of the variant effect in the assay.",
          "$comment": "Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.",
          "enum": [
-            "normal",
-            "indeterminate",
-            "abnormal"
+            "PS3_Strong",
+            "PS3_Moderate",
+            "PS3_Supporting",
+            "BS3_Strong",
+            "BS3_Moderate",
+            "BS3_Supporting"
          ]
       },
       "specifiedBy": {
@@ -190,7 +193,7 @@
                "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
             }
          ],
-         "description": "The method that specifies the classification of the variant effect in the assay.",
+         "description": "The method that specifies the clinical strength of evidence of the variant effect in the assay.",
          "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
       }
    },

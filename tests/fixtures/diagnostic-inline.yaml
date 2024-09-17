@@ -71,7 +71,7 @@ subjectVariant:
         code: SO:0001583
         system: http://www.sequenceontology.org/browser/current_release/term/
         label: missense_variant
-objectDisease:
+objectCondition:
   id: civic.did:156
   type: Disease
   label: Thyroid Gland Papillary Carcinoma
