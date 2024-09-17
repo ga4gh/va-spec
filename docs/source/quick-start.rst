@@ -24,7 +24,7 @@ An overview of the interactions between repositories housing these models, along
 Where do I Start?
 #################
 
-New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are many ways these adopters may engage with the VA-Spec as a Modeling Framework. Some may simply want to implement an existing Standard Profile out-of-the-box for their data. Others may find an existing Standard Profile insufficient - and wish to refine or extend it to meet their needs. And others may discover that no Standard Profile exists for the type of knowledge they want to represent, and collaborate with the VA team to derive a new Profile from the GKS Core-IM.
+New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are many ways these adopters may engage with the VA-Spec as a Modeling Framework. Some may simply want to **adopt an existing Standard Profile**  out-of-the-box for their data. Others may find an existing Standard insufficient - and wish to refine or **extend an existing Profile** to meet their needs. And others may discover that no Profile yet exists for the type of knowledge they want to represent, and collaborate with the VA team to **define a new Standard Profile** from the GKS Core-IM.
 
 The DECISION TREE below is designed to help adopters navigate these options, and find the right entry point for engagement with the VA Framework based on their data and requirements.
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
