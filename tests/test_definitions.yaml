@@ -17,9 +17,9 @@ tests:
     definition: VariantPrognosticStudyStatement
   - test_file: cohort-allele-freq-test.yaml
     definition: CohortAlleleFrequencyStudyResult
-  # - test_file: AVE-functional-classification.yaml
-  #   definition: AssayVariantEffectFunctionalClassificationStatement
-  # - test_file: AVE-clinical-classification.yaml
-  #   definition: AssayVariantEffectClinicalClassificationStatement
-  # - test_file: AVE-functional-study-result.yaml
-  #   definition: AssayVariantEffectMeasurementStudyResult
+  - test_file: AVE-functional-classification.yaml
+    definition: AssayVariantEffectFunctionalClassificationStatement
+  - test_file: AVE-clinical-classification.yaml
+    definition: AssayVariantEffectClinicalClassificationStatement
+  - test_file: AVE-functional-study-result.yaml
+    definition: AssayVariantEffectMeasurementStudyResult

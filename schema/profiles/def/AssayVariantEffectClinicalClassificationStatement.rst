@@ -89,12 +89,12 @@ Some AssayVariantEffectClinicalClassificationStatement attributes are inherited 
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
    *  - objectAssay
-      - string | :ref:`IRI` | :ref:`Coding`
+      - :ref:`IRI` | :ref:`Coding`
       - 1..1
       - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
    *  - subjectClassification
       - :ref:`Coding` | :ref:`IRI`
-      - 0..1
+      - 1..1
       - The clinical strength of evidence of the variant effect in the assay.
    *  - specifiedBy
       - :ref:`Method` | :ref:`IRI`

@@ -22,7 +22,7 @@ $defs:
         default: "CohortAlleleFrequencyStudyResult"
         description: MUST be "CohortAlleleFrequencyStudyResult".
       sourceDataSet:
-        extends: sourceDataSet
+        extends: sourceDataSet 
         description: The dataset from which the CohortAlleleFrequencyStudyResult was reported.
         additionalProperties: false
       focusAllele:
