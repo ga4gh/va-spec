@@ -20,50 +20,49 @@ An overview of the interactions between repositories housing these models, along
 
 Where do I Start?
 #################
-As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Standard Profiles yet exists for the type of knowledge they need to represent, and collaborate with the VA team to derive a new profile from the Core-IM.
+As a modeling framework, there are many ways that users may engage with the VA-Spec. Some users may simply want to adopt an existing Standard Profile out-of-the-box for their data. Others may find an existing profile insufficient and wish to refine or extend it to meet their needs. And others may discover that no Profile exists for the type of knowledge they want to represent, and collaborate with the VA team to derive a new Standard Profile from the Core-IM.
 
-The **decision tree** below is designed to help newcomers find the right entry point for engagement with the VA Framework, based on their data and project requirements. It focuses on getting you to a **Statement** Profile for your data,  but the same workflow and recommendations apply for **Study Result** Profiles.
+The **decision tree** below is designed to help newcomers navigate these options, and find the right entry point for engagement with the VA Framework based on their data and requirements. While it focuses on development and use of **Statement** Profiles, the same workflow and recommendations apply for **Study Result** Profiles.
 
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
  * Blue nodes present a  **Decision** to be made. Red nodes describe a terminal **Aciton** to be taken. 
  * Guidance to help you answer Decision nodes or act on Action nodes is provided below the tree, organized by node number.
 
-.. note:: The tree is focused on development and use of **Statement** Profiles, used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification). But the same workflow applies to **Study Result** Profiles, which are used to capture collections of data about a particular variant from a particular study or analysis (e.g. cohort allele frequency data from gnomad). 
+.. note:: The tree is focused on development and use of **Statement** Profiles, used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification). But the same workflow and recommendations apply to **Study Result** Profiles, which are used to capture collections of data about a variant from a particular study or analysis dataset (e.g. the gnomAD cohort allele frequency dataset). 
 
 .. image:: images/quick-start-decision-tree2.png
   :width: 1000
 
 **Node Guidance and Resources:**
 
-If you get stuck or have questions at any point in the process,  reach out to the VA Team for help - on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, though our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
+.. note:: If you get stuck or have questions at any point in the process, reach out to the VA Team for help - on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, though our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
 #. ``DECISION``: **Does a Statement Profile exist for my use case?**
-    * Explore documentation about existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you need to represent.
+    * Explore existing Statement Profiles `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to see if any cover the type of Statement you want to represent.
 
 #. ``DECISION``: **Does the existing Statement Profile cover all my data and requirements?**
-    * Use the documentation for the existing profile `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_ to map your data onto the classes and attributes it provides. Note any data that is not accommodated by the existing model. 
+    * Use the documentation for the Profile (e.g. `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) to map your data or model onto the classes and attributes the Profile  provides, noting any data that is not accommodated. 
 
-#. ``DECISION``: **Does the GKS Core-IM contain elements needed to extend the Profile for my data?**
-    * Look at the generic `GKS Core-IM <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ to identify elements that might support your orphan data.
+#. ``DECISION``: **Does the GKS Core-IM contain elements needed to extend the existing Profile for my 'orphan' data?**
+    * Explore the `GKS Core-IM <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_ to identify elements that might support your 'orphan' data (i.e. data items that are not supported by the existing Profile).
 
-#. ``DECISION``: **Does upstream SEPIO Core-IM contain elements needed to define a Statement Profile for my data?**
-    * Look at the `SEPIO Core-IM <https://sepio-framework.github.io/sepio-linkml/>`_ to identify elements that might support your orphan data.
+#. ``DECISION``: **Does upstream SEPIO Core-IM contain elements needed to define a Statement Profile for my orphan data?**
+    * Explore the `SEPIO Core-IM <https://sepio-framework.github.io/sepio-linkml/>`_ to identify elements that might support your orphan data.
 	
 #. ``DECISION``: **Do I have the time and will to formally extend/refine the profile?**
-     * If you need the Profile to fully support the orphan data, but the GKS and SEPIO Core-IMs do not have the elements you need, extending the Statement Profile will require working with SEPIO and VA teams to extend these upstream models, and then pulling these new elements into the Profile. Please reach out to us for help. 
-     * While changes to these core models will require a bit more work, the close relationship between SEPIO and GKS developers will enable efficient coordination of effort and propagation of new modeling elements across these standards. 
+     * Consider if you need the Profile to fully support all your data,given your use case, and the option ot use `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element. IF you do, extending the Statement Profile will require working with SEPIO and VA teams to extend these upstream models, and then pulling these new elements into the Profile.
+     * While changes to these core models will require a bit more work, the close relationship between SEPIO and GKS developers will enable efficient coordination of effort and propagation of new modeling elements across these standards. Please reach out to us for help. 
 
-#. ``ACTION``: **Formally extend/refine the Statement Profile to address my requirements**
-    * If you decide you want to work with the VA team to enhance the Profile to better support your data, start by adding proposed elements into the existing Statement Profile. 
-    * You may file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your needs, make a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_ on the Profile proposing model updates, or reach out for help via the communication channels listed above.  
-    * The VA Team will coordinate discussions with other implementers to ensure the proposed changes are amenable to implementation needs and aligned with broader VA modeling principles. 
-    * We will also coordinate discussions with SEPIO developers to propagate requested changes from the Profile upstream to GKS and SEPIO Core IMs. 
+#. ``ACTION``: **Formally extend/refine the Statement Profile to support my orphan data and requirements**
+    * If you decide you want to work with the VA team to enhance the Standard Profile to better support your data, make a concrete proposal for the changes or additions you need.
+    * To do this, you may file a `Github Issue <https://github.com/ga4gh/va-spec/issues>`_ describing your proposed enhancements, or create them in a branch of the Profile and submit as a `Pull Request <https://github.com/ga4gh/va-spec/pulls>`_.  
+    * The VA Team will coordinate discussions with other implementers and standards to ensure the proposed changes are amenable to implementation needs and aligned with broader VA modeling principles, and any changes made are propagated upstream to GKS and SEPIO Core IMs. 
 	
 #. ``ACTION``: **Adopt the Statement Profile as is**
-    * If the existing profile covers the data you need it to, you can find its json schema specification `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ for implementation in your system.
+    * If the existing profile sufficiently supports your data and requirements, you can find its json schema specification `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ for implementation in your system.
 
 #. ``ACTION``: **Extend the Statement Profile using these GKS Core-IM elements**
-    * Add the new Core-IM elements to the existing Profile, following the Profiling Methodology Guidance `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ to specialize them for your data as needed.
+    * Add the new Core-IM elements to the existing Profile, following the Profiling Methodology `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ to specialize them for your data as needed.
 
 #. ``ACTION``: **Pull required elements from the SEPIO Core-IM into the GKS Core-IM, and build Statement Profile**
     * Contact the VA team for help pulling these into the GKS Core-IM.
@@ -107,10 +106,10 @@ If you get stuck or have questions at any point in the process,  reach out to th
     * We will also coordinate discussions with SEPIO developers to add new elements to these models as appropriate, ensuring compliance with these upstream standards.  
 
 
-GKS Github Repository Landscape and Links
-#########################################
+Github Repositories and Links
+##############################
 
-The diagram below describes the interactions between different repositories where models and specifications supporting the VA-Spec are housed - including where models from a given specification are imported (via Github submodules) and extended by another. It is important to understand these relationships and dependencies as you begin to adopt or contribute to the VA-Specification. 
+The diagram below describes the interactions between different repositories where specifications supporting the VA-Spec are housed - including where data models are imported (via Github submodules) and extended by another. It is important to understand these relationships and dependencies before you begin contributing to the VA Profiles. 
 
 .. _gks-github-ecosystem:
 
