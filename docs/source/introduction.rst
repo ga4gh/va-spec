@@ -115,9 +115,4 @@ Implementing the VA-Spec
 
 The VA Modeling Framework offers many modes for engaging with the VA-Specification. Some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop entirely new profiles for additional types of Statements**.
 
-The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And the `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ explains in detail the specific tasks and conventions involved in building VA Profiles.  
-
-VA Spec Modeling Principles
-###########################
-
-``COMING SOON`` - for now, see `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-foundations.html>`_.
+The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And the `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ explains in detail the specific tasks and conventions involved in building VA Profiles.
