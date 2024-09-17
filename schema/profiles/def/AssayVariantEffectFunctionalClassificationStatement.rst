@@ -33,15 +33,15 @@ Some AssayVariantEffectFunctionalClassificationStatement attributes are inherite
       - 0..m
       - Alternative name(s) for the Entity.
    *  - extensions
-      - `Extension </ga4gh/schema/gks-common/1.x/data-types/json/Extension>`_
+      - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - contributions
-      - `Contribution <../core-im/core.json#/$defs/Contribution>`_
+      - :ref:`Contribution`
       - 0..m
       - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
    *  - reportedIn
-      - `Document <../core-im/core.json#/$defs/Document>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`Document` | :ref:`IRI`
       - 0..m
       - A document in which the the Information Entity is reported.
    *  - dateAuthored
@@ -49,11 +49,11 @@ Some AssayVariantEffectFunctionalClassificationStatement attributes are inherite
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
    *  - derivedFrom
-      - `InformationEntity <../core-im/core.json#/$defs/InformationEntity>`_
+      - :ref:`InformationEntity`
       - 0..m
       - Another Information Entity from which this Information Entity is derived, in whole or in part.
    *  - recordMetadata
-      - `RecordMetadata <../core-im/core.json#/$defs/RecordMetadata>`_
+      - :ref:`RecordMetadata`
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - direction
@@ -61,7 +61,7 @@ Some AssayVariantEffectFunctionalClassificationStatement attributes are inherite
       - 0..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
    *  - strength
-      - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`Coding` | :ref:`IRI`
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.
    *  - score
@@ -73,7 +73,7 @@ Some AssayVariantEffectFunctionalClassificationStatement attributes are inherite
       - 0..1
       - A natural-language expression of what a Statement asserts to be true.
    *  - hasEvidenceLines
-      - `EvidenceLine <../core-im/core.json#/$defs/EvidenceLine>`_
+      - :ref:`EvidenceLine`
       - 0..m
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
    *  - type
@@ -81,7 +81,7 @@ Some AssayVariantEffectFunctionalClassificationStatement attributes are inherite
       - 1..1
       - MUST be "AssayVariantEffectFunctionalClassificationStatement".
    *  - subjectVariant
-      - `MolecularVariation </ga4gh/schema/vrs/2.x/json/MolecularVariation>`_ | `CategoricalVariant </ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
       - A protein or genomic contextual or canonical molecular variant.
    *  - predicate
@@ -89,14 +89,14 @@ Some AssayVariantEffectFunctionalClassificationStatement attributes are inherite
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
    *  - objectAssay
-      - `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_ | `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_
+      - :ref:`IRI` | :ref:`Coding`
       - 1..1
       - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
    *  - subjectClassification
-      - `Coding </ga4gh/schema/gks-common/1.x/data-types/json/Coding>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`Coding` | :ref:`IRI`
       - 1..1
       - The functional classification of the variant effect in the assay.
    *  - specifiedBy
-      - `Method <../core-im/core.json#/$defs/Method>`_ | `IRI </ga4gh/schema/gks-common/1.x/data-types/json/IRI>`_
+      - :ref:`Method` | :ref:`IRI`
       - 0..1
       - The method that specifies the functional classification of the variant effect in the assay.
