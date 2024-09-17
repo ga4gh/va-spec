@@ -31,7 +31,7 @@ The DECISION TREE below is designed to help adopters navigate these options, and
  * **Blue** nodes present a **DECISION** to be made. **Green** nodes describe a terminal **ACTION** to be taken. 
  * Guidance to help you make Decisions or perform Actions is provided below the tree, organized by node number.
 
-The workflow and guidance provided is the same for `Statement Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html>`_, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or `Study Result Profiles <https://va-ga4gh.readthedocs.io/en/latest/study-result-profiles/statement-profiles.html>`_, which are used to capture collections of data about a variant from a particular study or analysis dataset (e.g. the gnomAD cohort allele frequency dataset). 
+The workflow and guidance provided is the same for `Statement Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html>`_, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or `Study Result Profiles <https://va-ga4gh.readthedocs.io/en/latest/study-result-profiles/statement-profiles.html>`_, which are used to capture collections of data about a single variant from a particular study or analysis dataset (e.g. from the gnomAD cohort allele frequency dataset). 
 
 .. _quick-start-decision-tree:
 
