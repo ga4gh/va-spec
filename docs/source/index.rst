@@ -16,6 +16,8 @@ Consult the pages on this site for information about the specification and how t
  * `Examples <https://va-ga4gh.readthedocs.io/en/latest/examples/index.html>`_: a set of examples illustrating the representation of data using VA Standard Profiles. 
  * `FAQ <https://va-ga4gh.readthedocs.io/en/latest/faq.html>`_: Answers to commonly asked questions that provide deeper insight into specific aspects of the VA-Spec.
 
+If you have questions at any point, please reach out to the VA Team for help - on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, though our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
+
 .. toctree::
    :maxdepth: 8
    :includehidden:
