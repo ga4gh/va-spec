@@ -4,8 +4,8 @@ Quick Start Guide
 ``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
 
-VA-Spec Models and Dependencies
-###############################
+Models and Dependencies
+#######################
 
 `VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted below and described in detail in the `Introduction <https://va-ga4gh.readthedocs.io/en/stable/introduction.html#va-standards-development-and-dependencies>`_. 
 
@@ -28,14 +28,14 @@ New adopters will come to the VA-Spec with some requirements or representation o
 
 The DECISION TREE below is designed to help adopters navigate these options, and find the right entry point for engagement with the VA Framework based on their data and requirements.
  * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
- * Blue nodes present a **DECISION** to be made. Green nodes describe a terminal **ACTION** to be taken. 
+ * **Blue** nodes present a **DECISION** to be made. **Green** nodes describe a terminal **ACTION** to be taken. 
  * Guidance to help you make Decisions or perform Actions is provided below the tree, organized by node number.
 
-The workflow and guidance provided is the same for **Statement** Profiles, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or **Study Result** Profiles, which are used to capture collections of data about a variant from a particular study or analysis dataset (e.g. the gnomAD cohort allele frequency dataset). 
+The workflow and guidance provided is the same for `Statement Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html>`_, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or `Study Result Profiles <https://va-ga4gh.readthedocs.io/en/latest/study-result-profiles/statement-profiles.html>`_, which are used to capture collections of data about a variant from a particular study or analysis dataset (e.g. the gnomAD cohort allele frequency dataset). 
 
 .. _quick-start-decision-tree:
 
-.. figure:: images/quick-start-decision-tree.png
+.. figure:: images/quick-start-decision-tree2.png
 
    Decision Tree to guide Engagement of Adopters with the VA-Spec
 
