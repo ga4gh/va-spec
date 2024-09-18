@@ -18,7 +18,7 @@ Consult the pages on this site for information about the specification and how t
 If you have questions at any point, please reach out to the VA Team for help - on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, though our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 1
    :includehidden:
    :caption: Site Map
 
