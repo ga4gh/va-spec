@@ -18,9 +18,9 @@ VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Sp
 Core Information Model
 @@@@@@@@@@@@@@@@@@@@@@
 
-The **GKS Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/core-im-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. 
+The **GKS Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/core-im-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. This Core-IM is the foundation on which Profiles for specific types of Statements and Study Results about molecular variation are built.  
 
-The Core-IM is the foundation on which Profiles for specific types of Statements and Study Results about molecular variation are built.  Below we provide an overview of the Core-IM **Class Hierarchy**, the **Statement** and **Study Result** data structures that can be built from these classes, and features that allow explicit representation of Statement and Study Result **Semantics**. 
+Below we provide an overview of the Core-IM **class hierarchy**, the Statement and Study Result **data structures** that can be built from these classes, and features that allow explicit representation of Statement and Study Result **semantics**. 
 
 Class Hierarchy
 $$$$$$$$$$$$$$$
@@ -35,7 +35,6 @@ A hierarchical view of the Core-IM is illustrated below, and detailed class and 
 
    **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic Core-IM. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures. This if described separately `here <https://github.com/ga4gh/va-spec/edit/1.x/docs/source/core-information-model/entities/domain-entities/index.rst>`_. 
 
-As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_, and `"How does the VA-Spec use SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
 
 Statement Data Structures
 $$$$$$$$$$$$$$$$$$$$$$$$$
@@ -50,9 +49,9 @@ The Core-IM supports knowlege representation using a Statement-centric approach,
    **Legend** A class-level view of the 'associative' structure that Core-IM Statements take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in the previous figure). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure:
-* A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it.
-* Each **Evidence Line** may then be linked to one or more **Evidence Items** - pieces of information used to build an evidence-based argument. 
-* Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
+ * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it.
+ * Each **Evidence Line** may then be linked to one or more **Evidence Items** - pieces of information used to build an evidence-based argument. 
+ * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
 
 This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
 
@@ -70,9 +69,9 @@ This model supports two **"Modes of Use**" for Statements, which differ in what 
 
 .. figure:: images/core-im-statement-semantics.png
 
-   Explicit Semantics of Core-IM Statements
+   Statement Modes of Use 
 
-   **Legend** Explicit semantics in **Assertion Mode** vs **Proposition Assessment Mode**, for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
+   **Assertion Mode** vs **Proposition Assessment Mode** semantics for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
 
 Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. 
 
@@ -116,7 +115,10 @@ While the majority of applications of the VA-Spec deal in knowledge statements, 
 
 For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_.
 
+------------
 
+
+As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_, and `"How does the VA-Spec use SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
 
 
 
