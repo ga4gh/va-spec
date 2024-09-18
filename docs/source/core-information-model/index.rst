@@ -3,9 +3,9 @@ Core Information Model
 
 ``PREREQUISITES:`` `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
 
-The **Core Information Model (Core-IM)** is a domain-agnostic model for representing statements of knowledge, and the foundation on which profiles for specific types of Statements and Study Results are built. 
+The **Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. In the VA-Spec, the Core-IM is the foundation on which Profiles for specific types of Statements and Study Results are built. 
 
-A hierarchical view of this model is illustrated below, along with links to separate pages outlining details of each class. More information about the standards, patterns, and principles employed by the Core-IM can be found on the `Modeling Foundations <https://va-ga4gh.readthedocs.io/en/stable/modeling-foundations.html>`_ page. 
+A hierarchical view of this core model is illustrated below, along with links to separate pages outlining details of each class. More information about the standards, patterns, and principles employed by the Core-IM can be found on the `Modeling Foundations <https://va-ga4gh.readthedocs.io/en/stable/modeling-foundations.html>`_ page. 
 
 .. core-im-class-hierarchy:
 
