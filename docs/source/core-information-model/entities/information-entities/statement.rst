@@ -7,13 +7,15 @@ Statement
 .. include::  ../../../../../schema/core-im/def/Statement.rst
 
 
-**Statement Data Structures**
+Data Structure
+##############
 
 The Core-IM supports a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
 
 .. core-im-statement-data-structure:
 
 .. figure:: ../../../images/core-im-statement-data-structure.png
+  :width: 700
 
    Core-IM Classes and Relationships in Statement Data Structures
 
@@ -23,7 +25,10 @@ In this structure, a **Statement** object roots a central axis where it is linke
 
 A simple data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
 
-**Implementation Guidance**
+Implementation Guidance
+#######################
+
+**1. Statement Semantics**
 
 Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes. An assessment of the Proposition's  validity can be captured using ``direction``, ``strength``, and ``score`` attributes. 
 
@@ -34,14 +39,15 @@ Statements put forth a Proposition that expresses some possible fact about the w
 * The ``score`` attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.
 
 
-The model supports two "modes of use" for Statements, which differ in what they say about their proposition, and can be distinguished by whether ``direction`` and ``strength`` or ``score`` attributes are populated. 
+The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
-* In **"Assertion Mode"** a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"), and ``strength``, and ``score`` attributes are not populated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
+#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not indicated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
 
-* In **"Proposition Assessment Mode"** a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The ``direction`` and ``strength`` or ``score`` attributes are populated, which allows for Statements to report that "there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'", or "we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.   
+#. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The ``direction`` and ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *very strong* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'", or "we have *high confidence* that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
 
 
-Use of the ``Statement.qualifier`` attribute:
+
+**2. Use of the** ``Statement.qualifier`` **attribute:**
 
 * This attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. 
 * Qualifiers can also add information that quantifies aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Statement profiles may define more than one qualifier, as needed to capture different types of qualifying information. 
