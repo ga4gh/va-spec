@@ -20,7 +20,7 @@ What types of variants are supported?
 #####################################
   
 Variants are the subjects of the knowledge statements that the VA-Spec was built to support. We define the notion of 'variant' broadly
-to cover the diversity of variation concepts that are annotated with knowledge in different  curtaion efforts and knowledgebases. 
+to cover the diversity of variation concepts that are annotated with knowledge in different curtaion efforts and knowledgebases. 
 
 **Variant Definition**: Alternative forms of a genetic sequence, or of its molecular manifestation in a biological system (also referred to as a 'molecular variations'). 
 This definition covers:
@@ -45,6 +45,8 @@ This definition covers:
             e.g. the set of discrete varaints in ClinGen 'canonical allele' CA127512 (`link <http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA127512>`_)
      * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
             e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
+
+The VA-Spec adopts the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to support representation of these diverse kinds of molecular variation.
 
 What kinds of variant knowledge are supported?
 ##############################################
