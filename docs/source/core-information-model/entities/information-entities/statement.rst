@@ -38,16 +38,18 @@ Statements put forth a Proposition that expresses some possible fact about the w
 
 * The ``score`` attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.
 
-
+** 2. Statement 'Modes of Use'**
 The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
 #. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
 
 #. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.  
 
-Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
+Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact. 
 
-**2. Use of the** ``Statement.qualifier`` **attribute:**
+For an example of each mode of use, see `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-foundations.html#statement-semantics>`_.
+
+**3. Use of the** ``Statement.qualifier`` **attribute:**
 
 * This attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. 
 * Qualifiers can also add information that quantifies aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Statement profiles may define more than one qualifier, as needed to capture different types of qualifying information. 
