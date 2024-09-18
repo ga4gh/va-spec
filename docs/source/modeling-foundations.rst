@@ -22,14 +22,14 @@ The **Core Information Model (Core-IM)** is a domain-agnostic model that support
 
 In the VA-Spec, the Core-IM is the foundation on which Profiles for specific types of Statements and Study Results about molecular variation are built.  Below we provide an overview of the Core-IM **Class Hierarchy**, the **Statement** and **Study Result** data structures that can be built from it, and features of the model that allow explicit representation of **Statement Semantics**. 
 
-CLass Hierarchy
+Class Hierarchy
 $$$$$$$$$$$$$$$
 
 A hierarchical view of the Core-IM is illustrated below, and detailed class and attribute definitions and implementation guidance can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_.  
 
 .. core-im-class-hierarchy:
 
-.. figure:: ../images/core-im-class-hierarchy.png
+.. figure:: images/core-im-class-hierarchy.png
 
    Core-IM Class Hierarchy
 
@@ -69,7 +69,7 @@ This model supports two "modes of use" for Statements, which differ in what they
 
    **Legend** Explicit semantics in **Assertion Mode** vs **Proposition Assessment Mode**, for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
 
-Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Prposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
+Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
 
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
