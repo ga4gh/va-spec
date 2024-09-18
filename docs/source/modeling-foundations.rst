@@ -43,8 +43,9 @@ The Core-IM supports Statement-centric approach, where each discrete assertion o
 
 .. figure:: images/core-im-statement-data-structure.png
 
-Core-IM Class Relationships in Statement Data Structures
-**Legend** A class-level view of the 'associative' structure that VA Statements takes (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in the previous figure). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+   Core-IM Classes and Relationships in Statement Data Structures
+
+   **Legend** A class-level view of the 'associative' structure that Core-IM Statements take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in the previous figure). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure, a Statement object roots a central axis, where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) contributing to such an argument. Surrounding the axis are classes that describe the provenance of these core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A full data example illustrating the structure of a Variant Pathogenicity Statement can be found here (``TO DO``).
 
@@ -65,9 +66,13 @@ This basic model supports two "modes of use" for Statements: an 'Assertion Mode'
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-``COMING SOON``
+.. core-im-study-result-data-structure:
 
-.. note::  **Study Result Profiles**: While the majority of applications are focused on creating **Statement** profiles, the modeling framework supports profiling of other Core-IM classes, including **Study Results** and **Evidence Lines**. For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata. More information on these types of profiles can be found `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html#profiling-methodology>`_.
+.. figure:: images/core-im-study-result-data-structure.png
+
+   Core-IM Classes and Relationships in Study Result Data Structures
+
+   **Legend** A class-level view of the 'associative' structure that Core-IM Study Results take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted above). Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result repoorting data from the gnomAD dataset about a particular variant.
 
 
 Standard Profiles
