@@ -50,7 +50,7 @@ The Core-IM supports knowlege representation using a Statement-centric approach,
 
 In this structure:
  * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it.
- * Each **Evidence Line** may then be linked to one or more **Evidence Items** - pieces of information used to build an evidence-based argument. 
+ * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument. 
  * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
 
 This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
