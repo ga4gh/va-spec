@@ -11,7 +11,7 @@ To appreciate modeling and development choices made for the VA-Spec, it helps to
 
      * **‘structured data object’**: an organized, computable representation of knowledge, in any format or syntax.
      * **‘central statement of knowledge’**: the single primary statement about a molecular variation is at the core of an annotation.
-     * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or alterations in gene expression or location (see `Variant`_). 
+     * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or alterations in gene expression or location (see `What types of variants are supported?`_). 
      * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
 
 The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
