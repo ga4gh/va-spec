@@ -65,6 +65,8 @@ This basic model supports two "modes of use" for Statements: an 'Assertion Mode'
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+The Core-IM also supports Study Result rooted data structures, where curated collections of data about a particular variant from a particular study or analysis can be captured and described in a self-contained ``StudyResult`` object, which roots a data structure like that in the figure below. 
+
 .. core-im-study-result-data-structure:
 
 .. figure:: images/core-im-study-result-data-structure.png
