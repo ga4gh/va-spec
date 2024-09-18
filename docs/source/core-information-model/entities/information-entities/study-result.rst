@@ -16,7 +16,7 @@ The Core-IM supports Study Result rooted data structures, where curated collecti
 
    Core-IM Classes and Relationships in Study Result Data Structures
 
-   **Legend** A class-level view of the 'associative' structure that Core-IM Study Results take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted above). Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result repoorting data from the gnomAD dataset about a particular variant.
+   **Legend** A class-level view of the 'associative' structure that Core-IM Study Result data takes (as opposed to a 'hierarchical' view of Core-IM classes). Italicized text under class names illustrate the kind of information each class reports in the case of a Cohort Allele Frequency Study Result derived from the gnomAD dataset.
 
 **Implementation Guidance**
 
