@@ -5,6 +5,19 @@ Study Result
 
 .. include::  ../../../../../schema/core-im/def/StudyResult.rst
 
+
+**Statement Data Structures**
+
+The Core-IM supports Study Result rooted data structures, where curated collections of data about a particular variant from a particular study or analysis can be captured and described in a self-contained ``StudyResult`` object, which roots a data structure like that in the figure below. 
+
+.. core-im-study-result-data-structure:
+
+.. figure:: ../../../images/core-im-study-result-data-structure.png
+
+   Core-IM Classes and Relationships in Study Result Data Structures
+
+   **Legend** A class-level view of the 'associative' structure that Core-IM Study Results take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted above). Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result repoorting data from the gnomAD dataset about a particular variant.
+
 **Implementation Guidance**
 
 StudyResults provide a useful way to capture a subset of items from a study dataset that are used as evidence in generating higher order knowledge assertions about the entity that is the focus of the study result. 
