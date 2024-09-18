@@ -54,7 +54,7 @@ Every Statement object in the Core-IM puts forth a **Proposition** - a possible 
 
 .. core-im-statement-semantics:
 
-.. figure:: images/core-im-statement-semantics.PNG
+.. figure:: images/core-im-statement-semantics.png
 
 Explicit Semantics of Core-IM Statements
 
