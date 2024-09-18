@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/var-study-stmt-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-connect.2024-09.1/profiles/var-study-stmt-source.yaml"
 title: VA Spec Variant Study Statement Standard Profiles
 strict: true
 
@@ -30,9 +30,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/vrs/2.0.0-connect.2024-09.1/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.0.0-connect.2024-09.1/core/json/CategoricalVariant"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -42,8 +42,8 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: The disease that is evaluated for diagnosis.
       alleleOriginQualifier:
         description: >-
@@ -66,7 +66,7 @@ $defs:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the
           diagnostic association  in the Statement.
-        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+        $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Gene"
     required:
     - subjectVariant
     - predicate
@@ -90,9 +90,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/vrs/2.0.0-connect.2024-09.1/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.0.0-connect.2024-09.1/core/json/CategoricalVariant"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -103,8 +103,8 @@ $defs:
       objectTumorType:
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: >-
           The tumor type for which the variant impact is evaluated.
       alleleOriginQualifier:
@@ -128,7 +128,7 @@ $defs:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the oncogenic
           role  in the Statement.
-        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+        $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Gene"
     required:
       - subjectVariant
       - predicate
@@ -152,9 +152,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/vrs/2.0.0-connect.2024-09.1/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.0.0-connect.2024-09.1/core/json/CategoricalVariant"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -164,8 +164,8 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: The disease that is evaluated for outcome.
       alleleOriginQualifier:
         type: string
@@ -188,7 +188,7 @@ $defs:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the
           prognostic association  in the Statement.
-        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+        $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Gene"
     required:
       - subjectVariant
       - predicate
@@ -212,9 +212,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/vrs/2.0.0-connect.2024-09.1/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.0.0-connect.2024-09.1/core/json/CategoricalVariant"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -226,12 +226,12 @@ $defs:
           is intended to respond to.
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/TherapeuticProcedure"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/TherapeuticProcedure"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
       conditionQualifier:
         oneOf:
-        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in
@@ -257,7 +257,7 @@ $defs:
         description: >
           Reports a gene impacted by the variant, which may contribute to the therapeutic
           sensitivity or resistance reported in the Statement.
-        $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+        $ref: "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Gene"
     required:
     - subjectVariant
     - predicate
