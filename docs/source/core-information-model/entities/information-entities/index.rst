@@ -9,7 +9,7 @@ Information Entity
 
 .. toctree::
    :titlesonly:
-   :maxdepth: 1
+   :maxdepth: 0
 
    method
    document
