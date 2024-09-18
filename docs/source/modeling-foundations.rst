@@ -37,8 +37,8 @@ A hierarchical view of the Core-IM is illustrated below, and detailed class and 
 
 As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_, and `"How does the VA-Spec use SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
 
-Statement Structure
-$$$$$$$$$$$$$$$$$$$
+Statement Data Structures
+$$$$$$$$$$$$$$$$$$$$$$$$$
 The Core-IM supports knowlege representation using a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained ``Statement`` object which roots a data structure like that in the figure below. 
 
 .. core-im-statement-data-structure:
@@ -71,10 +71,10 @@ This model supports two "modes of use" for Statements, which differ in what they
 
 Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
 
-Study Result Representation
-@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Study Result Data Structures
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-The Core-IM also supports Study Result rooted data structures, where curated collections of data about a particular variant from a particular study or analysis can be captured and described in a self-contained ``StudyResult`` object, which roots a data structure like that in the figure below. 
+Another primary focus of the Core-IM is supporting representation and profiling of the **Study Results**. Here, curated collections of data about a particular variant from a particular study or analysis can be captured and described in a self-contained ``StudyResult`` object, which roots a data structure like that in the figure below. 
 
 .. core-im-study-result-data-structure:
 
@@ -84,6 +84,14 @@ The Core-IM also supports Study Result rooted data structures, where curated col
 
    **Legend** A class-level view of the 'associative' structure that Core-IM Study Results take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted above). Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result repoorting data from the gnomAD dataset about a particular variant.
 
+
+
+Study Result Semantics
+$$$$$$$$$$$$$$$$$$$$$$
+
+
+``COMING SOON``
+
 --------------
 
 
@@ -91,8 +99,6 @@ The Core-IM also supports Study Result rooted data structures, where curated col
 
 ``COMING SOON``
 
-
-**Types of Profiles**
 
 **Statement Profiles**
 
@@ -102,6 +108,7 @@ The Core-IM also supports Study Result rooted data structures, where curated col
 While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
 
 For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_.
+
 
 
 
