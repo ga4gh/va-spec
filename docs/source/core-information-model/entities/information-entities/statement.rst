@@ -7,6 +7,20 @@ Statement
 .. include::  ../../../../../schema/core-im/def/Statement.rst
 
 
+**Statement Data Structures**
+
+The Core-IM supports Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
+
+.. core-im-statement-data-structure:
+
+.. figure:: ../../../images/core-im-statement-data-structure.png
+
+   Core-IM Classes and Relationships in Statement Data Structures
+
+   **Legend** A class-level view of the 'associative' structure that Core-IM Statements take (as opposed to the 'hierarchical' structure of Core-IM classes). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+
+In this structure, a Statement object roots a central axis, where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) contributing to such an argument. Surrounding the axis are classes that describe the provenance of these core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A full data example illustrating the structure of a Variant Pathogenicity Statement can be found `here<https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
+
 
 **Implementation Guidance**
 
