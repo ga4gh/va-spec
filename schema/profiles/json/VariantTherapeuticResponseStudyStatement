@@ -186,7 +186,7 @@
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
          "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
-      "diseaseQualifier": {
+      "conditionQualifier": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
@@ -220,7 +220,7 @@
       }
    },
    "required": [
-      "diseaseQualifier",
+      "conditionQualifier",
       "objectTherapeutic",
       "predicate",
       "subjectVariant",

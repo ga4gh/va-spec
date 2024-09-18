@@ -100,7 +100,7 @@ Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref
       - :ref:`TherapeuticProcedure` | :ref:`IRI`
       - 1..1
       - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
-   *  - diseaseQualifier
+   *  - conditionQualifier
       - :ref:`Condition` | :ref:`IRI`
       - 1..1
       - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements.

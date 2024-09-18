@@ -39,7 +39,7 @@ $defs:
         enum:
         - isDiagnosticInclusionCriterionFor
         - isDiagnosticExclusionCriterionFor
-      objectDisease:
+      objectCondition:
         extends: object
         oneOf:
         - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
@@ -70,7 +70,7 @@ $defs:
     required:
     - subjectVariant
     - predicate
-    - objectDisease
+    - objectCondition
 
   # Variant Oncogenicity Study Statement
   VariantOncogenicityStudyStatement:
@@ -161,7 +161,7 @@ $defs:
         enum:
         - associatedWithBetterOutcomeFor
         - associatedWithWorseOutcomeFor
-      objectDisease:
+      objectCondition:
         extends: object
         oneOf:
         - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
@@ -192,7 +192,7 @@ $defs:
     required:
       - subjectVariant
       - predicate
-      - objectDisease
+      - objectCondition
 
   # Variant Therapeutic Response Study Statement
   VariantTherapeuticResponseStudyStatement:
@@ -228,7 +228,7 @@ $defs:
         oneOf:
         - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/TherapeuticProcedure"
         - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-      diseaseQualifier:
+      conditionQualifier:
         oneOf:
         - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
         - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
@@ -262,4 +262,4 @@ $defs:
     - subjectVariant
     - predicate
     - objectTherapeutic
-    - diseaseQualifier
+    - conditionQualifier

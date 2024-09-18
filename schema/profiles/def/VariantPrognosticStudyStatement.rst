@@ -96,7 +96,7 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks.cor
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectDisease
+   *  - objectCondition
       - :ref:`Condition` | :ref:`IRI`
       - 1..1
       - The disease that is evaluated for outcome.

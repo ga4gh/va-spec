@@ -27,6 +27,10 @@ RecordMetadata
 
 .. include::  ../../../schema/core-im/def/RecordMetadata.rst
 
+ConceptMapping
+**************
+
+.. include::  ../../../schema/data-types/def/ConceptMapping.rst
 
 Simple Data Types
 ###################

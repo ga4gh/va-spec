@@ -15,9 +15,6 @@ To appreciate modeling and development choices made for the VA-Spec, it helps to
      * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
 
 The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
-
-.. image:: images/annotation-definition.PNG
-  :width: 700
   
 What types of variants are supported?
 #####################################
@@ -62,33 +59,27 @@ reporting **case-level observations** about a variant to other standards (e.g. P
 
 What is the SEPIO framework?
 #############################
-The foundational SEPIO Core-IM is a doamin-agnostic model for describing the scientific knowledge assertions of any kind. As shown in Figure XXX, each knowledge assertion is captured in a self-contained ``Statement`` object, where the semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s). Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
+The SEPIO Modeling Framework is a suite of models, methods, and tools to enable the creation of interoperable schema for representing scientific assertions, and the evidence and provenance supporting them. SEPIO was first developed as an ontology by the Monarch Initiative to support standardized RDF representations of evidence and provenance across integrated genotype-phenotype datasets (the Scientific Evidence and Provenance Information Ontology). The ontological model has since been abstracted into a generic Core Information Model (IM) that can be implemented in any language or format. 
+The Core IM is domain-agnostic, and able to represent assertions and their evidence and provenance of any kind.  Application of SEPIO to a specific data set or use case requires defining a ‘Profile’ that extends/customizes the generic core model for a specific domain or application.
 
-.. _sepio-class-diagram-w-statement:
+The components of the SEPIO Framework include: 
 
-.. figure:: images/sepio-class-diagram-w-statement.PNG
+#. **A Domain Analysis Model (DAM)**: an informal description of the domain we are modeling (scientific assertions and their evidence/provenance)
+#. **A Core Information Model (IM)**:  defines data structures that can represent information about this domain (for any type of assertion and evidence).
+#. **A 'Profiling' Methodology**:  Implementations extend the core model with domain-specific content to define a “SEPIO Profile” - a custom schema for a particular application or use case.
+#. **Ontology Support**: An ontological representation of the core model that can be used if desired to produce linked data with ontology-based semantics.
 
-   Statement-Centric SEPIO Data Strucutres 
+The framework approach addresses challenges posed by the diversity of types, levels of complexity, and use cases for evidence and provenance across knowledge domains and application - which means there is no ‘one-size-fits-all’ solution. The framework allows custom models built on a common semantic foundation can provide a base level of understanding and interoperability, without restricting expressivity. While this approach may not always support out-of-the-box interoperability across all communities of use, it can significantly lower barriers to aggregating, harmonizing, and operating across disparate data.
 
-   **Legend** (A) Explicit Statement Semantics (B) SEPIO Data Strucutre:  The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') - 
-   which may be linked to one or more **Evidence Lines** representing disctrete arguments for or against it. 
-   Each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) 
-   contributing to such an argument. Surrounding the central axis are classes that describe the provenance of these
-   core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods**
-   that specify their creation, and **Documents** that describe them. This core structure allows precise tracking of provenance
-   at the level of a Statement and each supporting Evidence Lines and Items.
+See the `SEPIO Framework website <https://sepio-framework.github.io/sepio-linkml/about/>`_ for more information about this foundational standard on which the VA Specification is built. 
 
-
-.. note::  While the majority of applications are focused on representing knowledge **Statements**, SEPIO data structures can be built
-           around other classes as their central focus. For exapmle, implementations have defined profiles focused on describing and
-           tracking the provenance of **Evidence Line** or **Study Reuslt** objects, where the same modeling patterns and principles are applied (see here).
-
-  
 How does the VA Spec use the SEPIO framework?
 #############################################
 
+coming soon . . . 
 
   
 Why was the VA-Spec built as a modeling framework? 
 ##################################################
 
+coming soon . . . 
