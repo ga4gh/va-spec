@@ -56,9 +56,9 @@ Every Statement object in the Core-IM puts forth a **Proposition** - a possible 
 
 .. figure:: images/core-im-statement-semantics.png
 
-Explicit Semantics of Core-IM Statements
+   Explicit Semantics of Core-IM Statements
 
-**Legend** Explicit Statement Semantics are supported by the Core-IM. (a) Model: the Statement model for a Variant Pathogenicity Profile, showing only attributes used to represent the semantics of what a statement reports to be true. (b) Data: a json data example of a Variant Pathogenicity Statement instance, noting elements holding the Statement's proposition and those assessing it's strength and direction. (c) Semantics: the  plain-language meaning of what the statement data structure reports to be true. 
+   **Legend** Explicit Statement Semantics are supported by the Core-IM. (a) Model: the Statement model for a Variant Pathogenicity Profile, showing only attributes used to represent the semantics of what a statement reports to be true. (b) Data: a json data example of a Variant Pathogenicity Statement instance, noting elements holding the Statement's proposition and those assessing it's strength and direction. (c) Semantics: the  plain-language meaning of what the statement data structure reports to be true. 
 
 This basic model supports two "modes of use" for Statements: an 'Assertion Mode' which support simple assertions of knowledge, and a 'Proposition Assessment Mode' allowing nuanced representations of the state of evidence surrounding a possible fact. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
 
@@ -75,22 +75,20 @@ The Core-IM also supports Study Result rooted data structures, where curated col
 
    **Legend** A class-level view of the 'associative' structure that Core-IM Study Results take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted above). Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result repoorting data from the gnomAD dataset about a particular variant.
 
+--------------
 
-Standard Profiles
-#################
+
+**Standard Profiles**
 
 ``COMING SOON``
 
 
-Types of Profiles
-#################
+**Types of Profiles**
 
-Statement Profiles
-@@@@@@@@@@@@@@@@@@
+**Statement Profiles**
 
 
-Study Result Profiles
-@@@@@@@@@@@@@@@@@@@@@
+**Study Result Profiles**
 
 While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
 
