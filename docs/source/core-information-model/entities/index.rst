@@ -10,7 +10,7 @@ Entity
 
 .. toctree::
    :titlesonly:
-   :maxdepth: 2
+   :maxdepth: 1
 
    information-entities/index
    activities/index
