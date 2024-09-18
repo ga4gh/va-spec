@@ -15,18 +15,21 @@ To represent molecular variations that are subjects of VA Statements, the VA-Spe
 
 VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Spec reference implementation will incorporate VRS tools for identifier generation, normalization, and validation. See linked documentation above for more information about these specifications.  
 
-VA Statement Representation
-@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Core Information Model
+@@@@@@@@@@@@@@@@@@@@@@
 
-The **Core Information Model (Core-IM)** is a domain-agnostic model for representing statements of knowledge, and the foundation on which Statement-specific VA profiles are built. Below we provide an overview of the Core-IM **Class Hierarchy**, the **Statement Structures** these classes are used to construct, and features of the model that allow explicit representation of **Statement Semantics**. 
+The **Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version of the Core-IM was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/core-im-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. 
 
-Core-IM Class Hierarchy
-$$$$$$$$$$$$$$$$$$$$$$$
-The initial version of the Core-IM was derived from the SEPIO Core Information Model, through selection of elements needed to support initial VA implementation use cases. A hierarchical view of this model is illustrated in **Figure 1**.
+In the VA-Spec, the Core-IM is the foundation on which Profiles for specific types of Statements and Study Results about molecular variation are built.  Below we provide an overview of the Core-IM **Class Hierarchy**, the **Statement** and **Study Result** data structures that can be built from it, and features of the model that allow explicit representation of **Statement Semantics**. 
+
+CLass Hierarchy
+$$$$$$$$$$$$$$$
+
+A hierarchical view of the Core-IM is illustrated below, and detailed class and attribute definitions and implementation guidance can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_.  
 
 .. core-im-class-hierarchy:
 
-.. figure:: images/core-im-class-hierarchy.png
+.. figure:: ../images/core-im-class-hierarchy.png
 
    Core-IM Class Hierarchy
 
@@ -34,9 +37,9 @@ The initial version of the Core-IM was derived from the SEPIO Core Information M
 
 As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_, and `"How does the VA-Spec use SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
 
-Core-IM Statement Structure
-$$$$$$$$$$$$$$$$$$$$$$$$$$$
-The Core-IM supports Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
+Statement Structure
+$$$$$$$$$$$$$$$$$$$
+The Core-IM supports knowlege representation using a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained ``Statement`` object which roots a data structure like that in the figure below. 
 
 .. core-im-statement-data-structure:
 
@@ -46,11 +49,17 @@ The Core-IM supports Statement-centric approach, where each discrete assertion o
 
    **Legend** A class-level view of the 'associative' structure that Core-IM Statements take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in the previous figure). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
-In this structure, a Statement object roots a central axis, where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**) contributing to such an argument. Surrounding the axis are classes that describe the provenance of these core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A full data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
+In this structure, a **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used to build as evidence such an argument (i.e. **Evidence Items**). Surrounding this Statement-EvidenceLine-EvidenceItem axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
 
-Core-IM Statement Semantics
-$$$$$$$$$$$$$$$$$$$$$$$$$$$
-Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, and ``object`` attributes, and optional ``qualifier`` slot(s) (**Figure 3**). Additional ``direction`` and ``strength`` attributes can report whether the Statement reports the Proposition to be true or false, and the strength of evidence supporting this claim. 
+Statement Semantics
+$$$$$$$$$$$$$$$$$$$
+Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, and ``object`` attributes, and optional ``qualifier`` attribute(s). An assessment of the Proposition's validity can be captured using ``direction``, ``strength``, and ``score`` attributes - which indicate whether the Proposition is reported to be true or false, and the level of confidence or evidence supporting this claim. For details, see `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html>`_. 
+
+This model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
+
+#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
+
+#. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
 
 .. core-im-statement-semantics:
 
@@ -58,9 +67,9 @@ Every Statement object in the Core-IM puts forth a **Proposition** - a possible 
 
    Explicit Semantics of Core-IM Statements
 
-   **Legend** Explicit Statement Semantics are supported by the Core-IM. (a) Model: the Statement model for a Variant Pathogenicity Profile, showing only attributes used to represent the semantics of what a statement reports to be true. (b) Data: a json data example of a Variant Pathogenicity Statement instance, noting elements holding the Statement's proposition and those assessing it's strength and direction. (c) Semantics: the  plain-language meaning of what the statement data structure reports to be true. 
+   **Legend** Explicit semantics in **Assertion Mode** vs **Proposition Assessment Mode**, for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
 
-This basic model supports two "modes of use" for Statements: an 'Assertion Mode' which support simple assertions of knowledge, and a 'Proposition Assessment Mode' allowing nuanced representations of the state of evidence surrounding a possible fact. Implementations can choose the mode that best fits their data. Details are provided in the ``Statement`` class page `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html#implementation-guidance>`_. 
+Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Prposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
 
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
