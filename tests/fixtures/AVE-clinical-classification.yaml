@@ -1,0 +1,35 @@
+type: AssayVariantEffectClinicalClassificationStatement
+subjectVariant:
+  type: CategoricalVariant
+  constraints:
+    - type: DefiningContextConstraint
+      definingContext:
+        id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+        type: Allele
+        location:
+          type: SequenceLocation
+          sequenceReference:
+            refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+            type: SequenceReference
+          start: 10
+          end: 11
+          sequence: R
+        state:
+          type: LiteralSequenceExpression
+          sequence: T
+        expressions:
+          - syntax: hgvs.p
+            value: NP_000305.3:p.Arg11Thr
+      relations:
+        - codon_translation
+predicate: hasAssayVariantEffectFor
+objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+subjectClassification: BS3_Supporting
+specifiedBy:
+  type: Method
+  subtype:
+    code: NA
+    system: Variant Interpretation Guideline
+  reportedIn:
+    - type: Document
+      pmid: 34793697

@@ -1,0 +1,37 @@
+type: AssayVariantEffectMeasurementStudyResult
+focusVariant:
+  id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+  type: Allele
+  location:
+    type: SequenceLocation
+    sequenceReference:
+      refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+      type: SequenceReference
+    start: 10
+    end: 11
+    sequence: R
+  state:
+    type: LiteralSequenceExpression
+    sequence: T
+  expressions:
+    - syntax: hgvs.p
+      value: NP_000305.3:p.Arg11Thr
+score: 1.29395467005388
+specifiedBy:
+  type: Method
+  subtype:
+    code: NA
+    system: Experimental Protocol
+  reportedIn:
+  - type: Document
+    pmid: 29785012
+sourceDataSet:
+  - type: DataSet
+    subtype:
+      code: NA
+      system: variant effect data set
+    license: CC0
+    reportedIn:
+      - type: Document
+        urls:
+          - https://mavedb.org/score-sets/urn:mavedb:00000013-a-1

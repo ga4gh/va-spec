@@ -23,7 +23,7 @@ $defs:
       results.
     properties:
       type:
-        extends: type
+        extends: type 
         const: "VariantDiagnosticStudyStatement"
         default: "VariantDiagnosticStudyStatement"
         description: MUST be "VariantDiagnosticStudyStatement".
