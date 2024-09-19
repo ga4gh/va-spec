@@ -3,14 +3,13 @@
 Variant Pathogenicity Statement Example
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
- **Description:** 
-
+**Description:** 
  * A subset of data from the `ClinVar SCV000886574.2 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000666644.9/>`_, which reports that *"NM_000277.3(PAH):c.1285C>A is likely pathogenic for Phenylketonuria"*.
  * It uses early draft of the  :ref:`Standard Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-profile>`, which was defined to support ClinGen's representation of ClinVar data. 
 
 **Data**:
 
-.. code-block:: yaml
+.. code-block:: json
 
   {
   "SCV000886574.2": {
@@ -20,8 +19,8 @@ Variant Pathogenicity Statement Example
     "statementText": "NM_000277.3(PAH):c.1285C>A likely pathogenic for Phenylketonuria",
 
     # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition 
-    # that "NM_000277.3(PAH):c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
-    "subjectVariation": {            # A minimal version of the subject Variation. A full version is below.
+    # that "NM_000277.3:c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
+    "subjectVariation": {        # A minimal version of the subject Variation. A full version is below.
       "id": "clinvar:551555",       
       "type": "CategoricalVariant",
       "label": "NM_000277.3(PAH):c.1285C>A (p.Gln429Lys)"
