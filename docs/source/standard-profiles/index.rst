@@ -3,7 +3,7 @@
 Standard Profiles
 !!!!!!!!!!!!!!!!!
 
-``PREREQUISITES:`` `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_,  `Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_
+``PREREQUISITES:`` :ref:`Introduction <introduction>`,  :ref:`Core Information Model <core-im>`
 
 **VA Standard Profiles** are the end produce of the VA Modeling Framework, providing standard models that will be used by the GA4GH community to store and exchange variant data. 
 

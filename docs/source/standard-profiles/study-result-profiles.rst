@@ -4,7 +4,7 @@
 Study Result Profiles
 !!!!!!!!!!!!!!!!!!!!!
 
-In the **GKS-Core-IM**, the ``StudyResult`` class (`link <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html#>`_) is used to capture collections of data about a single variant from a particular study or analysis (e.g. from the gnomAD allele frequency dataset) - and provide provenance information and other supporting metadata.
+In the **GKS-Core-IM**, the ``StudyResult`` class (:ref:`link <StudyResult>`) is used to capture collections of data about a single variant from a particular study or analysis (e.g. from the gnomAD allele frequency dataset) - and provide provenance information and other supporting metadata.
 
 **Study Result Profiles** are defined as specializations of this Core-IM ``StudyResult`` class, to provide a concrete schema for representing a particular type of data from a variant study or analysis (e.g. cohort allele frequency data.
 

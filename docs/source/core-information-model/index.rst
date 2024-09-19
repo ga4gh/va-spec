@@ -1,4 +1,4 @@
-.. _core-information-model:
+.. _core-im:
 
 Core Information Model
 !!!!!!!!!!!!!!!!!!!!!!

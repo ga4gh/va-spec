@@ -48,6 +48,8 @@ In this structure:
 
 This structure allows tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found :ref:`here<variant-pathogenicity-statement-example>`.
 
+.. statement-semantics:
+
 Statement Semantics
 $$$$$$$$$$$$$$$$$$$
 Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). 

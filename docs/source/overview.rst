@@ -12,9 +12,9 @@ This modeling framework has allowed for **implementation-driven development** th
 
 **VA-Spec Components:**
 
-#. **A Generic Core Information Model (Core IM)**. A foundational, domain-agnostic conceptual model, built from SEPIO elements pertinent to VA use cases. *Provides a base on which VA Statement Profiles are built for the GA4GH Community*. (`LINK <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_)
-#. **Standard VA Profiles**: A set of standard models that extend the Core IM to represent specific Statement types, formalized as json-schema specifications. *Provides GA4GH community with recommended standards for out-of-the-box interoperability, and example of how to apply the modeling framework to create new Profiles.* (`LINK <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_)
-#. **A Modeling Framework**:  A methodology with implementation support and tooling to facilitate extension and de novo development of Profiles. *Allows community-driven development and testing of models for specific annotation types and use cases*.  (`LINK <https://va-ga4gh.readthedocs.io/en/stable/implementation-guidance.html#profiling-methodology>`_)
+#. **A Generic Core Information Model (Core IM)**. A foundational, domain-agnostic conceptual model, built from SEPIO elements pertinent to VA use cases. *Provides a base on which VA Statement Profiles are built for the GA4GH Community*. (:ref:`LINK <core-im>`)
+#. **Standard VA Profiles**: A set of standard models that extend the Core IM to represent specific Statement types, formalized as json-schema specifications. *Provides GA4GH community with recommended standards for out-of-the-box interoperability, and example of how to apply the modeling framework to create new Profiles.* (:ref:`LINK <standard-profiles>`)
+#. **A Modeling Framework**:  A methodology with implementation support and tooling to facilitate extension and de novo development of Profiles. *Allows community-driven development and testing of models for specific annotation types and use cases*.  (:ref:`LINK <profiling-methodology>`)
 #. **Reference Implementation(s)**. A library of software and services that demonstrate the creation, validation, and exchange of compliant data using VA Profiles. *Provides a working example of code that can be adopted and/or extended by adopters.* (`IN PROGRESS`) 
 
 
@@ -23,7 +23,7 @@ This modeling framework has allowed for **implementation-driven development** th
 
 The Variant Annotation Specification (VA-Spec) provides standard models for unambiguous representation of knowledge about molecular variation, along with supporting evidence and provenance information.
 
- * It defines a `set of information models <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ to represent different kinds of statements made about variants - built as distinct **"profiles"** that extend a common `core information model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_. 
+ * It defines a :ref:`set of information models <standard-profiles>` to represent different kinds of statements made about variants - built as distinct **"profiles"** that extend a common :ref:`core information model <core-im>`. 
  * It provides machine-readable `json-schema specifications <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ of these models, to enable sharing and validation of data through APIs and other exchange mechanisms. 
  * It offers a `modeling framework <https://github.com/ga4gh/va-spec/blob/1.x/docs/source/implementation-guidance.rst#profiling-methodology>`_ through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features. 
  * It is based on the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - applying SEPIO's established models, conventions, and profiling methodology to produce these resources.
@@ -181,7 +181,7 @@ A framework that allows custom models built on a common semantic foundation can 
 While this approach may not always support out-of-the-box interoperability across all communities of use, it can significantly lower barriers to aggregating, harmonizing, and operating across disparate data.
 
 
-The ultimate product of the VA-Spec is a set of `standard models <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ for representing diverse types of variant knowledge.
+The ultimate product of the VA-Spec is a set of :ref:`standard models <standard-profiles>` for representing diverse types of variant knowledge.
 
 
 

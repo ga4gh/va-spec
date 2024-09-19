@@ -12,19 +12,21 @@ VA Framework Components
 
 The VA-Spec provides a :ref:`SEPIO-based Modeling Framework<what-is-the-sepio-framework>` that includes the following components:
 
-#. `A Foundational Core Information Model (Core-IM) <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This 'GKS Core-IM', which is based on the SEPIO Information Model, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built.  
+#. :ref:`A Foundational Core Information Model (Core-IM) <core-im>`: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This 'GKS Core-IM', which is based on the SEPIO Information Model, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built.  
 
-#. `Standard VA Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_: A set of models built as 'Profiles' of the Core-IM Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. a `Variant Pathogenicity Statement <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_) Profile. These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
+#. :ref:`Standard VA Profiles <standard-profiles>`: A set of models built as 'Profiles' of the Core-IM Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. a :ref:`Variant Pathogenicity Statement <variant-pathogenicity-statement>`) Profile. These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
 
-#. `A Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/modeling-framework.html>`_:  A set of defined processes, conventions, and tooling support to guide VA and community developers in executing the Profiling process. This approach allows adopters to  build profiles for new statement types, or extend existing profiles for their data or use case - supporting a distributed approach to VA standards development.
+#. :ref:`A Profiling Methodology <profiling-methodology>`:  A set of defined processes, conventions, and tooling support to guide VA and community developers in executing the Profiling process. This approach allows adopters to  build profiles for new statement types, or extend existing profiles for their data or use case - supporting a distributed approach to VA standards development.
 
-#. `A Python Reference Implementation <https://va-ga4gh.readthedocs.io/en/latest/reference-implementation.html>`_:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. These resources provide a working example of code that can be adopted and/or extended by adopters. ``COMING SOON``
+#. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. These resources provide a working example of code that can be adopted and/or extended by adopters. ``COMING SOON``
 
 This modeling framework has allowed for distributed, implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and produces standards that have been proven out in working applications.
 
+.. _va-standard-development-and-dependencies:
+
 VA Standard Development and Dependencies
 ########################################
-While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html>`_ is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as described below. 
+While development of :ref:`VA Standard Profiles <standard-profiles>` is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as described below. 
 
 .. _va-model-dependencies:
 
@@ -36,7 +38,7 @@ While development of `VA Standard Profiles <https://va-ga4gh.readthedocs.io/en/l
 
 Below we describe each model in this ecosystem and how it is developed, using **ClinGen's** definition of a **Variant Pathogenicity Statement Profile** to support ClinVar SCV data as an illustrative example. 
 
-**1. The SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. More information can be found `here <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_. 
+**1. The SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. More information can be found :ref:`here <what-is-the-sepio-framework>`. 
 
 **2. The GKS Core-IM** is the basis for the VA Profiling process that generates Statement and Study Result Profiles for specific types of annotations. The VA Team ``EXTRACTED`` a hand-selected subset of the SEPIO model for inclusion in the GKS Core-IM, which were chosen specifically to support **Draft Implementation Profiles** created by early adopters of the VA-Spec (including ClinGen's Pathogenicity Statement profile).
 
@@ -69,7 +71,7 @@ Below we describe each model in this ecosystem and how it is developed, using **
 
    **Legend** A draft of a Variant Pathogenicity Statement Profile is created through the profiling process whereby elements needed to support the ClinVar data and ClinGen's implementation requirements. GKS Core_IM elements used in the profile are highlighted in BLUE. Examples of specializations are shown in RED in the zoomed Variant Pathogenicity Statement class, including definition of this Statement subclass itself, binding of *subject* and *object* attributes to specific Domain Entity classes, definition of a specific *qualifier* class to capture gene context, and definition and binding of the *predicate* attribute to a specific enumeration of permissible values. 
 
-**Importantly**, a final VA Standard Profile is not established until the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see `below <https://va-ga4gh.readthedocs.io/en/latest/introduction.html#establishing-and-evolving-va-standards>`_).
+**Importantly**, a final VA Standard Profile is not established until the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`below <establishing-and-evolving-va-standard>`).
 
 **5. VA Standard Profile JSON Schema** are the final, machine readable products of the VA modeling framework, intended for implementation in working data systems.  They ``FORMALIZE`` the yaml-based Profile definitions, through automated transformation to JSON schema by `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_ tools. 
 
@@ -93,13 +95,14 @@ Below we describe each model in this ecosystem and how it is developed, using **
 
 While the SEPIO and GKS Core models are the basis for deriving Standard Profiles, the evolution of these foundational core models is driven by bottom-up requirements arising from implementation models for working data applications. These requirements flow upstream to inform extension or refinement of the GKS Core-IM, and ultimately the SEPIO Core-IM - ensuring tight alignment across these models, and adherence to core principles they espouse. 
 
+.. _establishing-and-evolving-va-standard:
 
 Establishing and Evolving VA Standards
 ######################################
 As noted, VA Standard development begins with the definition of a **Draft Implementation Profile** to meet the needs of a particular driver project application. Emergence of a consensus Standard Profile requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
 
 **1. Align and Refine Models:**
-While aspiring to use the SEPIO and GKS Core IMs were possible, Draft Implementation Models may include features that are not consistent with these foundational models. Once an initial implementation profile is drafted, implementers work with the VA Team to identify such inconsistencies, and refine data models to bring them into alignment. This may involve reworking the implementation model to more fully adopt Core-IM modeling patterns, or adding new features to core models to support requirements surfaced by the implementation. Notably, any implementation-specific features not ultimately supported by the GKS Core-IM or Standard Profile can be captured in application data using the `Extension <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/data-types.html#extension>`_ element.
+While aspiring to use the SEPIO and GKS Core IMs were possible, Draft Implementation Models may include features that are not consistent with these foundational models. Once an initial implementation profile is drafted, implementers work with the VA Team to identify such inconsistencies, and refine data models to bring them into alignment. This may involve reworking the implementation model to more fully adopt Core-IM modeling patterns, or adding new features to core models to support requirements surfaced by the implementation. Notably, any implementation-specific features not ultimately supported by the GKS Core-IM or Standard Profile can be captured in application data using the :ref:`Extension <Extension>` element.
 
 **2. Publish as a GA4GH Standard Profile:**
 Once alignment is complete, a draft of the Standard Profile is circulated for community review. Concerns and feedback are discussed and resolved, and any final changes are propagated to the relevant models. The model is implemented and tested in working systems, followed by possible rounds of review and iteration.  Once stable, it is released as an official VA Standard Profile for a particular Statement or Study Result type. This is  typically reflected in the maturity level of the Profiled Statement or Study Result class being raised to 'Trial Use' - to indicate its adoption by two or more implementations. 
@@ -112,4 +115,4 @@ Implementing the VA-Spec
 
 The VA Modeling Framework offers many modes for engaging with the VA-Specification. Some users will want to **adopt established standard profiles out-of-the-box**, others may want to **extend or refine an existing standard profile** for their use case, while others may want to **develop entirely new profiles for additional types of Statements**.
 
-The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And the `Profiling Methodology <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_ explains in detail the specific tasks and conventions involved in building VA Profiles.
+The Quick Start Guide provides more information on these **modes of use**, and a **decision tree** to help adopters identify their best entry point into the VA Framework. And the :ref:`Profiling Methodology <profiling-methodology>` explains in detail the specific tasks and conventions involved in building VA Profiles.

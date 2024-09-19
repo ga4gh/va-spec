@@ -3,7 +3,7 @@
 Statement Profiles
 !!!!!!!!!!!!!!!!!!
 
-In the **GKS-Core-IM**, each discrete assertion of knowledge is captured in a self-contained ``Statement`` object which roots a `data structure <https://va-ga4gh.readthedocs.io/en/latest/modeling-foundations.html#core-im-statement-structure>`_ supporting rich and flexible descriptions of the evidence and provenance supporting this knowledge.
+In the **GKS-Core-IM**, each discrete assertion of knowledge is captured in a self-contained ``Statement`` object which roots a :ref:`data structure <core-im-statement-data-structure>` supporting rich and flexible descriptions of the evidence and provenance supporting this knowledge.
 
 **Statement Profiles** are defined as specializations of this Core-IM ``Statement`` class, to provide a concrete schema for representing a particular type of Variant knowledge (e.g. variant pathogenicity classifications).
 
