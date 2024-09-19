@@ -3,9 +3,9 @@
 Modeling Foundations
 !!!!!!!!!!!!!!!!!!!!
 
-``WORK IN PROGRESS: PLEASE COME BACK SOON``
+``PREREQUISITES:`` :ref:`Introduction<introduction>`, :ref:`Data Example<variant-pathogenicity-statement-example>`, :ref:`Core Information Model<core-information-model>`
 
-This document describes modeling standards, patterns, and principles adopted by the VA Specification. 
+This document describes modeling standards, patterns, and principles employed by the VA Specification. 
 
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
@@ -16,73 +16,70 @@ To represent molecular variations that are subjects of VA Statements, the VA-Spe
 #. The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts. Categorical variations are intensionally defined sets of variations, based on criteria that must be met for inclusion in a given category. Examples include `BRAF V600 mutations <https://civicdb.org/molecular-profiles/17/summary>`_ and `EGFR exon 19 deletions <https://civicdb.org/molecular-profiles/133/summary>`_. 
 
 VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Spec reference implementation will incorporate VRS tools for identifier generation, normalization, and validation. See linked documentation above for more information about these specifications.  
+Statement Representation
+@@@@@@@@@@@@@@@@@@@@@@@@
 
-Core Information Model
-@@@@@@@@@@@@@@@@@@@@@@
+In the VA-Spec data, each assertion of knowledge about a variant is captured in a self-contained **Statement** object. The :ref:`GKS Core-IM<core-information-model>` provides a rich and powerful model where:
 
-The **GKS Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/core-im-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. This Core-IM is the foundation on which Profiles for specific types of Statements and Study Results about molecular variation are built.  
+ * the :ref:`Statement class<Statement>` roots a larger data structure supporting clear and precise tracking of the evidence and provenance information
+ * the semantics of what is assessed or reported to be true in a Statement is explicitly structured in terms of a subject, predicate, object, and qualifier(s) (the statement’s ‘Proposition’)
+ * Statements can report a more nuanced assessment of the state of confidence or evidence surrounding this Proposition
 
-Below we provide an overview of the Core-IM **class hierarchy**, the Statement and Study Result **data structures** that can be built from these classes, and features that allow explicit representation of Statement and Study Result **semantics**. 
+These features of the Core-IM Statement model are described below. 
 
-Class Hierarchy
-$$$$$$$$$$$$$$$
+Statement Data Structure
+$$$$$$$$$$$$$$$$$$$$$$$$
 
-A hierarchical view of the Core-IM is illustrated below, and detailed class and attribute definitions and implementation guidance can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_.  
-
-.. core-im-class-hierarchy:
-
-.. figure:: images/core-im-class-hierarchy.png
-
-   Core-IM Class Hierarchy
-
-   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic Core-IM. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures. This if described separately `here <https://github.com/ga4gh/va-spec/edit/1.x/docs/source/core-information-model/entities/domain-entities/index.rst>`_. 
-
-
-Statement Data Structures
-$$$$$$$$$$$$$$$$$$$$$$$$$
-The Core-IM supports knowlege representation using a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained ``Statement`` object which roots a data structure like that in the figure below. 
+In VA-Spec data, Statement objects support a larger data structure that enables clear and precise tracking of the evidence and provenance information.
 
 .. core-im-statement-data-structure:
 
 .. figure:: images/core-im-statement-data-structure.png
 
-   Core-IM Classes and Relationships in Statement Data Structures
+   Statement Data Structure
 
-   **Legend** A class-level view of the 'associative' structure that Core-IM Statements take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted in the previous figure). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+   **Legend** A class-level view of the Statement-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report, in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure:
  * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it.
  * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument. 
  * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
 
-This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
+This structure allows tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found :ref:`here<variant-pathogenicity-statement-example>`.
 
 Statement Semantics
 $$$$$$$$$$$$$$$$$$$
-Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, and ``object`` attributes, and optional ``qualifier`` attribute(s). An assessment of the Proposition's validity can be captured using ``direction``, ``strength``, and ``score`` attributes - which indicate whether the Proposition is reported to be true or false, and the level of confidence or evidence supporting this claim. For details, see `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/statement.html>`_. 
+Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). An assessment of the Proposition's validity can be captured using ``direction`` and ``strength`` (DS) attributes - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting behind claim. 
 
-This model supports two **"Modes of Use**" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
+This "SPOQ-DS" model supports two **"Modes of Use**" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
-#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
+#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The ``strength` attribute is not populated, and ``direction`` is assumed to be true/supports if not otherwise indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
 
-#. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
+#. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength`` attributes are populated, which allows for more nuanced Statements reporting things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
 
 .. core-im-statement-semantics:
 
 .. figure:: images/core-im-statement-semantics.png
 
-   Statement Modes of Use 
+   Statement Semantics in Two Modes of Use 
 
    **Assertion Mode** vs **Proposition Assessment Mode** semantics for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
 
-Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. 
+Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength`` attributes, and thus could be use to support either Mode of Use. 
 
-Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging **Proposition Assessment Mode** only if they wish to provide **nuanced representations** of the state of evidence or confidence surrounding a possible fact.
+Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging ``direction`` and ``strength`` attributes only if they wish to describe the state of evidence or confidence surrounding a possible fact.
 
-Study Result Data Structures
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Study Result Representation
+@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-Another primary focus of the Core-IM is supporting representation and profiling of the **Study Results**. Here, curated collections of data about a particular variant from a particular study or analysis can be captured and described in a self-contained ``StudyResult`` object, which roots a data structure like that in the figure below. 
+Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Study Result class<StudyResult>` to support this use case.
+
+Like the Statement class, it roots a larger data structure supporting clear and precise tracking of the evidence and provenance information, and provides explicit semantics linking a variant to specific data and study context. These features of the Core-IM Study Result model are described below. 
+
+Study Result Data Structure
+$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+In VA-Spec data, a Study Result roots the data structure below:
 
 .. core-im-study-result-data-structure:
 
@@ -90,37 +87,11 @@ Another primary focus of the Core-IM is supporting representation and profiling 
 
    Core-IM Classes and Relationships in Study Result Data Structures
 
-   **Legend** A class-level view of the 'associative' structure that Core-IM Study Results take (as opposed to the 'hierarchical' structure of Core-IM class definitions that is depicted above). Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result repoorting data from the gnomAD dataset about a particular variant.
-
+   **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result reporting data from the gnomAD dataset about a particular variant.
 
 
 Study Result Semantics
 $$$$$$$$$$$$$$$$$$$$$$
-
-
-``COMING SOON``
-
---------------
-
-
-**Standard Profiles**
-
-``COMING SOON``
-
-
-**Statement Profiles**
-
-
-**Study Result Profiles**
-
-While the majority of applications of the VA-Spec deal in knowledge statements, and use **Statement** Profiles, the modeling framework supports  profiling of other Core-IM classes such as **Study Result**.  Study Results are used when the information captured represents data items a study or dataset pertaining to some variant of interest, as  opposed to a broader statement of knowledge (e.g, one that may be concluded from interpretation of such data).  
-
-For example, the `CohortAlleleFrequencyStudyResult <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/study-result-profiles.html#cohort-allele-frequency-study-result>`_ profile specializes the StudyResult class to represent select data from statistical analyses of allele frequencies in different human populations along with methodological and quality metadata.  More information on the StudyResult class and how it can be profiled can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/information-entities/study-result.html>`_  and `here <https://va-ga4gh.readthedocs.io/en/latest/profiling-methodology.html>`_.
-
-------------
-
-
-As VA implementations evolve and new VA profiles are created, more content from SEPIO will be added to support new requirements. The VA-Spec team has partnered with SEPIO developers to ensure coordinated evolution of these two standards.  For more information, see `"What is the SEPIO Framework?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#what-is-the-sepio-framework>`_, and `"How does the VA-Spec use SEPIO?" <https://va-ga4gh.readthedocs.io/en/latest/faq.html#how-does-the-va-spec-use-the-sepio-framework>`_ FAQs.
 
 
 
