@@ -6,17 +6,22 @@ Study Result
 .. include::  ../../../../../schema/core-im/def/StudyResult.rst
 
 
-**Statement Data Structures**
+**Study Result Data Structure**
 
-The Core-IM supports Study Result rooted data structures, where curated collections of data about a particular variant from a particular study or analysis can be captured and described in a self-contained ``StudyResult`` object, which roots a data structure like that in the figure below. 
+Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`Study Result <StudyResult>` class is defined to support this use case.
+
+Like the Statement class, it roots a larger data structure supporting clear and precise tracking of the evidence and provenance information.
 
 .. core-im-study-result-data-structure:
 
 .. figure:: ../../../images/core-im-study-result-data-structure.png
 
-   Core-IM Classes and Relationships in Study Result Data Structures
+   Study Result Data Structure
 
-   **Legend** A class-level view of the 'associative' structure that Core-IM Study Result data takes (as opposed to a 'hierarchical' view of Core-IM classes). Italicized text under class names illustrate the kind of information each class reports in the case of a Cohort Allele Frequency Study Result derived from the gnomAD dataset.
+   **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result reporting data from the gnomAD dataset about a particular variant.
+
+In this structure, the data items collected in the **Study Result** can be linked to the larger **Data Set** or sets from which they came, and a description of the **Study Group** from which the data was collected. And as with Statements, clear and precise provenance information about the Study Result and DataSet can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
+
 
 **Implementation Guidance**
 
