@@ -4,8 +4,8 @@ Variant Pathogenicity Statement Example
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Description:** 
- * A subset of data from the `ClinVar SCV000886574.2 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000666644.9/>`_, which reports that *"NM_000277.3(PAH):c.1285C>A is likely pathogenic for Phenylketonuria"*.
- * It uses early draft of the  :ref:`Standard Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-profile>`, which was defined to support ClinGen's representation of ClinVar data. 
+ * The example below includes a subset of data from the `ClinVar SCV000886574.2 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000666644.9/>`_, which reports that *"NM_000277.3:c.1285C>A is likely pathogenic for Phenylketonuria"*.
+ * It uses early draft of the  :ref:`Standard Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-profile>`, which was defined to support ClinGen's ingest and restructuring of ClinVar data. 
 
 **Data**:
 
