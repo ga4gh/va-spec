@@ -1,3 +1,5 @@
+.. _modeling-foundations:
+
 Modeling Foundations
 !!!!!!!!!!!!!!!!!!!!
 

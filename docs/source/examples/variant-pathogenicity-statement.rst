@@ -1,3 +1,5 @@
+.. _variant-pathogenicity-statement:
+
 Variant Pathogeniity Statement Profile
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
