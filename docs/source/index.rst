@@ -34,10 +34,6 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
 
 --------
 
-   :caption: Full Site Map
-
-:caption: Full Site Map
-
 **Full Site Map:**
 
 .. toctree::
