@@ -39,7 +39,7 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks.cor
    *  - specifiedBy
       - :ref:`Method` | :ref:`IRI`
       - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity 
+      - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       - :ref:`Contribution`
       - 0..m

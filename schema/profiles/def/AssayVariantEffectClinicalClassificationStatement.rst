@@ -92,7 +92,7 @@ Some AssayVariantEffectClinicalClassificationStatement attributes are inherited 
       - :ref:`IRI` | :ref:`Coding`
       - 1..1
       - The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)
-   *  - subjectClassification
+   *  - classification
       - :ref:`Coding` | :ref:`IRI`
       - 1..1
       - The clinical strength of evidence of the variant effect in the assay.
