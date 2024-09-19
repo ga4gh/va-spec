@@ -7,7 +7,7 @@ Statement
 .. include::  ../../../../../schema/core-im/def/Statement.rst
 
 
-**Data Structure**
+**DATA STRUCTURE**
 
 The Core-IM supports a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
 
@@ -30,7 +30,7 @@ A simple data example illustrating the structure for a Variant Pathogenicity Sta
 
 ---------
 
-**Implementation Guidance**
+**IMPLEMENTATION GUIDANCE**
 
 **1. Statement Semantics**
 
