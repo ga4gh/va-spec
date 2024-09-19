@@ -1,3 +1,5 @@
+.. _examples:
+
 Data Examples
 !!!!!!!!!!!!!
 

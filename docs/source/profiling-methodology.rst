@@ -1,3 +1,5 @@
+.. _profiling-methodology:
+
 Profiling Methodology
 !!!!!!!!!!!!!!!!!!!!!
 

@@ -1,7 +1,9 @@
+.. _core-im:
+
 Core Information Model
 !!!!!!!!!!!!!!!!!!!!!!
 
-``PREREQUISITES:`` `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
+``PREREQUISITES:`` :ref:`Introduction <introduction>`
 
 The **Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. In the VA-Spec, the Core-IM is the foundation on which Profiles for specific types of Statements and Study Results are built. 
 
@@ -16,7 +18,8 @@ A hierarchical view of this core model is illustrated below, along with links to
    **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic Core-IM. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures. This if described separately `here <https://github.com/ga4gh/va-spec/edit/1.x/docs/source/core-information-model/entities/domain-entities/index.rst>`_. 
 
 .. toctree::
-    :maxdepth: 1
+   :hidden:
+   :maxdepth: 1
 
-    entities/index
-    data-types
+   entities/index
+   data-types
