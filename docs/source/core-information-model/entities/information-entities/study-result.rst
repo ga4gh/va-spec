@@ -6,7 +6,7 @@ Study Result
 .. include::  ../../../../../schema/core-im/def/StudyResult.rst
 
 
-**STUDY RESULT DATA STRUCTURE**
+**DATA STRUCTURE**
 
 Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`Study Result <StudyResult>` class is defined to support this use case.
 
