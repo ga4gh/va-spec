@@ -18,7 +18,7 @@ A hierarchical view of this core model is illustrated below, followed by links t
    **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic Core-IM. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures. This if described separately `here <https://github.com/ga4gh/va-spec/edit/1.x/docs/source/core-information-model/entities/domain-entities/index.rst>`_. 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
    :caption: Core-IM Classes and Data Types
 
    entities/index
