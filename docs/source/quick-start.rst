@@ -3,8 +3,7 @@
 Quick Start Guide
 !!!!!!!!!!!!!!!!!
 
-``PREREQUISITES``: `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_
-
+``PREREQUISITES``: :ref:`Introduction<introduction>`
 
 Models and Dependencies
 #######################
