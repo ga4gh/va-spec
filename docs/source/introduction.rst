@@ -9,8 +9,8 @@ The **GA4GH Variant Annotation Specification (VA-Spec)** was developed by a part
 
 The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers and major public initiatives — as an open specification to standardize the exchange of knowledge in :ref:`Variant Annotations<what-is-a-variant-annotation>`. It provides a set of :ref:`Standard Models<standard-profiles>` for exchanging specific kinds of :ref:`Statements<Statement>` and :ref:`Study Results<StudyResult>` about genetic variation, and a :ref:`Modeling Framework<<profiling-methodology>` supporting community-driven development of these standards as Profiles of a foundational :ref:`Core Information Model<core-information-model>`. It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent :ref:`diverse kinds of variation<what-types-of-variants-are-supported>` as annotation subjects. And it supports :ref:`diverse kinds of variant knowledge<what-kinds-of-variant-knowledge-are-supported>`, leaving case-level variant information to other standards. 
 
-VA Framework Components
-#######################
+Modeling Framework Components
+#############################
 
 The VA-Spec provides a :ref:`SEPIO-based Modeling Framework<what-is-the-sepio-framework>` that includes the following components:
 
@@ -26,8 +26,8 @@ This modeling framework has allowed for distributed, implementation-driven devel
 
 .. _va-standard-development-and-dependencies:
 
-VA Standard Development and Dependencies
-########################################
+VA Model Development and Dependencies
+#####################################
 While development of :ref:`VA Standard Profiles <standard-profiles>` is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as described below. 
 
 .. _va-model-dependencies:
