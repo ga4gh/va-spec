@@ -22,8 +22,8 @@ Statement Representation
 
 In the VA-Spec data, each assertion of knowledge about a variant is captured in a self-contained **Statement** object. The :ref:`GKS Core-IM<core-information-model>` provides a rich and powerful model where:
 
- * the :ref:`Statement class<Statement>` roots a larger data structure supporting clear and precise tracking of the evidence and provenance information
- * the semantics of what is assessed or reported to be true in a Statement is explicitly structured in terms of a subject, predicate, object, and qualifier(s) (the statement’s ‘Proposition’)
+ * the :ref:`Statement <Statement>` class roots a larger data structure supporting clear and precise tracking of the evidence and provenance information
+ * the semantics of what is assessed or reported to be true in a Statement (i.e. its 'Proposition') are explicitly structured in terms of subject, predicate, object, and qualifier attributes
  * Statements can report a more nuanced assessment of the state of confidence or evidence surrounding this Proposition
 
 These features of the Core-IM Statement model are described below. 
@@ -31,7 +31,7 @@ These features of the Core-IM Statement model are described below.
 Statement Data Structure
 $$$$$$$$$$$$$$$$$$$$$$$$
 
-In VA-Spec data, Statement objects support a larger data structure that enables clear and precise tracking of the evidence and provenance information.
+In VA-Spec data, a Statement object roots the larger data structure below.
 
 .. core-im-statement-data-structure:
 
@@ -50,11 +50,13 @@ This structure allows tracking of provenance information at the level of a State
 
 Statement Semantics
 $$$$$$$$$$$$$$$$$$$
-Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). An assessment of the Proposition's validity can be captured using ``direction`` and ``strength`` (DS) attributes - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting behind claim. 
+Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). 
+
+An assessment of the Proposition's validity can be captured using ``direction`` and ``strength``  (DS) attributes - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting behind claim. 
 
 This "SPOQ-DS" model supports two **"Modes of Use**" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
-#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The ``strength` attribute is not populated, and ``direction`` is assumed to be true/supports if not otherwise indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
+#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The ``strength`` attribute is not populated, and ``direction`` is assumed to be true/supports if not otherwise indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
 
 #. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength`` attributes are populated, which allows for more nuanced Statements reporting things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
 
@@ -73,14 +75,14 @@ Implementations should choose the mode that best fits their data and use case wh
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Study Result class<StudyResult>` to support this use case.
+Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Study Result <StudyResult>` class to support this use case.
 
 Like the Statement class, it roots a larger data structure supporting clear and precise tracking of the evidence and provenance information, and provides explicit semantics linking a variant to specific data and study context. These features of the Core-IM Study Result model are described below. 
 
 Study Result Data Structure
 $$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-In VA-Spec data, a Study Result roots the data structure below:
+In VA-Spec data, a Study Result object roots the data structure below:
 
 .. core-im-study-result-data-structure:
 
@@ -90,6 +92,7 @@ In VA-Spec data, a Study Result roots the data structure below:
 
    **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result reporting data from the gnomAD dataset about a particular variant.
 
+In this structure, the data items collected in the **Study Result** can be linked to the larger **Data Set** or sets from which they came, and a description of the **Study Group** from which the data was collected. And as with Statements, clear and precise provenance information about the Study Result and DataSet can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
 Study Result Semantics
 $$$$$$$$$$$$$$$$$$$$$$
