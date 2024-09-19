@@ -7,8 +7,8 @@ The end product of the **VA-Spec Modeling Framework** is a set of **Standard Pro
 
 Here we provide a diverse set of **annotated examples of VA-Spec data**, to illustrate the **modeling patterns and principles** employed across Standard Profiles to represent variation knowledge. 
 
+**Examples:**
   .. toctree::
    :titlesonly:
-   :caption: Examples
 
    variant-pathogenicity-statement
