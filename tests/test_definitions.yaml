@@ -5,21 +5,21 @@ tests:
     definition: Allele
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     definition: VariantPathogenicityStatement
-  # - test_file: VA-ClinVar-SCV-Example-002.yaml
-  #   definition: VariantPathogenicityStatement
-  # - test_file: therapeuticAgent.yaml
-  #   definition: TherapeuticAgent
-  # - test_file: tr-statement-inline.yaml
-  #   definition: VariantTherapeuticResponseStudyStatement
-  # - test_file: diagnostic-inline.yaml
-  #   definition: VariantDiagnosticStudyStatement
-  # - test_file: prognostic-inline.yaml
-  #   definition: VariantPrognosticStudyStatement
+  - test_file: VA-ClinVar-SCV-Example-002.yaml
+    definition: VariantPathogenicityStatement
+  - test_file: therapeuticAgent.yaml
+    definition: TherapeuticAgent
+  - test_file: tr-statement-inline.yaml
+    definition: VariantTherapeuticResponseStudyStatement
+  - test_file: diagnostic-inline.yaml
+    definition: VariantDiagnosticStudyStatement
+  - test_file: prognostic-inline.yaml
+    definition: VariantPrognosticStudyStatement
   - test_file: cohort-allele-freq-test.yaml
     definition: CohortAlleleFrequencyStudyResult
-  # - test_file: AVE-functional-classification.yaml
-  #   definition: AssayVariantEffectFunctionalClassificationStatement
-  # - test_file: AVE-clinicalffectClini-classification.yaml
-  #   definition: AssayVariantEcalClassificationStatement
+  - test_file: AVE-functional-classification.yaml
+    definition: AssayVariantEffectFunctionalClassificationStatement
+  - test_file: AVE-clinical-classification.yaml
+    definition: AssayVariantEffectClinicalClassificationStatement
   - test_file: AVE-functional-study-result.yaml
     definition: AssayVariantEffectMeasurementStudyResult

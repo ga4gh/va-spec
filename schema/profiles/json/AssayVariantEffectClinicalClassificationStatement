@@ -161,7 +161,7 @@
          "description": "The assay that is evaluated for the variant effect. (e.g growth in haploid cell culture protein stability in fluorescence assay)",
          "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
-      "subjectClassification": {
+      "classification": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/Coding"
@@ -195,9 +195,9 @@
       }
    },
    "required": [
+      "classification",
       "objectAssay",
       "predicate",
-      "subjectClassification",
       "subjectVariant",
       "type"
    ],

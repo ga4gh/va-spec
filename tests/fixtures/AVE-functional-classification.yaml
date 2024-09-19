@@ -24,7 +24,7 @@ subjectVariant:
         - codon_translation
 predicate: hasAssayVariantEffectFor
 objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-subjectClassification: normal
+classification: normal
 specifiedBy:
   type: Method
   subtype:

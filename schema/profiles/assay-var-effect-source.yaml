@@ -43,7 +43,7 @@ $defs:
         description: >-
           The assay that is evaluated for the variant effect. (e.g growth in
           haploid cell culture protein stability in fluorescence assay)
-      subjectClassification:
+      classification:
         extends: classification
         description: >-
           The functional classification of the variant effect in the assay.
@@ -61,7 +61,7 @@ $defs:
       - subjectVariant
       - predicate
       - objectAssay
-      - subjectClassification
+      - classification
 
   AssayVariantEffectClinicalClassificationStatement:
     inherits: gks.core-im:Statement
@@ -95,7 +95,7 @@ $defs:
         description: >-
           The assay that is evaluated for the variant effect. (e.g growth in
           haploid cell culture protein stability in fluorescence assay)
-      subjectClassification:
+      classification:
         extends: classification
         description: >-
           The clinical strength of evidence of the variant effect in the assay.
@@ -116,7 +116,7 @@ $defs:
       - subjectVariant
       - predicate
       - objectAssay
-      - subjectClassification
+      - classification
 
   AssayVariantEffectMeasurementStudyResult:
     inherits: gks.core-im:StudyResult
