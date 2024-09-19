@@ -1,7 +1,7 @@
-.. _variant-pathogenicity-statement:
+.. _variant-pathogenicity-statement-example:
 
-Variant Pathogenicity Statement Profile
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Variant Pathogenicity Statement Example
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
   The data example below represents a subset of data from the **ClinVar SCV000886574.2** record `here <https://www.ncbi.nlm.nih.gov/clinvar/RCV000666644.8/>`_, which states that the NC_000011.10:108345797:AAAA:AAAAAA is likely pathogenic for Ataxia-telangiectasia syndrome.
   
