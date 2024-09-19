@@ -54,6 +54,8 @@ This definition covers:
 
 The VA-Spec adopts the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to support representation of these diverse kinds of molecular variation.
 
+.. _what-kinds-of-variant-knowledge-are-supported:
+
 What kinds of variant knowledge are supported?
 ##############################################
 
@@ -64,6 +66,7 @@ reporting **case-level observations** about a variant to other standards (e.g. P
  * **Clinical Knolwedge Statements**  ``IN-SCOPE``: e.g. Pathogenicity Classification, Therapeutic Response Classification, Diagnostic Classification, Prognostic Classification, Phenotypic Feature Association
  * **Case-Level Knowledge Statement**  ``OUT-OF-SCOPE``:  e.g. observation of a variant in a patient, disease causality of an observed variant in a patient, origin of an observed variant in a patient, clonality of a variant in a patient - these kinds of information are not covered by the VA-Spec.
 
+.. _what-is-the-sepio-framework:
 
 What is the SEPIO framework?
 #############################
@@ -81,12 +84,16 @@ The framework approach addresses challenges posed by the diversity of types, lev
 
 See the `SEPIO Framework website <https://sepio-framework.github.io/sepio-linkml/about/>`_ for more information about this foundational standard on which the VA Specification is built. 
 
-How does the VA Spec use the SEPIO framework?
+.. _how-does-the-va-spec-use-the-sepio-framework:
+
+How does the VA-Spec use the SEPIO framework?
 #############################################
 
 coming soon . . . 
 
-  
+
+.. _why-was-the-va-spec-built-as-a-modeling-framework:
+
 Why was the VA-Spec built as a modeling framework? 
 ##################################################
 
