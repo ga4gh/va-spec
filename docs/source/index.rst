@@ -5,7 +5,7 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
 	
 Consult the pages on this site for information about the specification and how to use it. 
 
-Readers may wish to review this annotated :ref:`data example <variant-pathogenicity-statement>`, to see an end product of the modeling framework before diving in to the documentation. 
+Readers may wish to review this annotated :ref:`data example <variant-pathogenicity-statement-example>`, to see an end product of the modeling framework before diving in to the documentation. 
 
 * :ref:`Introduction <introduction>`
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
