@@ -30,6 +30,7 @@ Variant Therapeutic Response Study Statement
 
 .. include::  ../../../schema/profiles/def/VariantTherapeuticResponseStudyStatement.rst
 
+.. _variant-diagnostic-statement-profile:
 
 Variant Diagnostic Study Statement
 ##################################
