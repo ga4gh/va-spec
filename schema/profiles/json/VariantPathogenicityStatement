@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantPathogenicityStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-connect.2024-09.1/profiles/json/VariantPathogenicityStatement",
    "title": "VariantPathogenicityStatement",
    "type": "object",
    "maturity": "draft",

@@ -12,7 +12,7 @@ va_spec_path = schema_root_path / 'va-spec'
 test_path = root_path / 'tests'
 fixtures_path = test_path / 'fixtures'
 
-ga4gh_re = re.compile(r'.*\/ga4gh\/schema\/([\w\-\.]+)\/[\w\.]+\/(.*)$')
+ga4gh_re = re.compile(r'.*\/ga4gh\/schema\/([\w\-\.]+)\/[\w\-\.]+\/(.*)$')
 
 def retrieve_rel_ref(ga4gh_ref: str):
     ga4gh_match = ga4gh_re.match(ga4gh_ref)
