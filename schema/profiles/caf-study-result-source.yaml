@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf-study-result-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-connect.2024-09.1/profiles/caf-study-result-source.yaml"
 title: VA Spec Cohort Allele Frequency (population frequency) Study Result Standard Profile
 strict: true
 
@@ -28,7 +28,7 @@ $defs:
       focusAllele:
         extends: focus
         oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
+        - $ref: "/ga4gh/schema/vrs/2.0.0-connect.2024-09.1/json/Allele"
         - type: string
           format: uri-reference
           description: The Allele for which frequency results are reported.

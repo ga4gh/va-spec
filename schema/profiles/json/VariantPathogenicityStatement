@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantPathogenicityStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-connect.2024-09.1/profiles/json/VariantPathogenicityStatement",
    "title": "VariantPathogenicityStatement",
    "type": "object",
    "maturity": "draft",
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Extension"
+            "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -39,10 +39,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Method"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/core-im/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity ",
@@ -52,7 +52,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Contribution"
+            "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/core-im/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -63,10 +63,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/Document"
+                  "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/core-im/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+                  "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
                }
             ]
          },
@@ -82,12 +82,12 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/InformationEntity"
+            "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/core-im/json/InformationEntity"
          },
          "description": "Another Information Entity from which this Information Entity is derived, in whole or in part."
       },
       "recordMetadata": {
-         "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/RecordMetadata",
+         "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/core-im/json/RecordMetadata",
          "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).",
          "$comment": "This attribute holds a structured RecordMetadata object, which can be used to capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status."
       },
@@ -106,10 +106,10 @@
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject,' 'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction', 'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low').",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
             }
          ]
       },
@@ -126,10 +126,10 @@
       "classification": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/Coding"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
             }
          ],
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.",
@@ -139,7 +139,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core-im/1.x/core-im/json/EvidenceLine"
+            "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/core-im/json/EvidenceLine"
          },
          "description": "An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).",
          "$comment": "Evidence Lines result from the interpretation of one or more pieces of information to build an argument for or against a particular Proposition. These arguments have direction (supporting / disputing) and strength (e.g. strong, moderate, weak) relative to the Proposition they are evaluated against. For example, ExaC allele counts and frequency calculations for the BRCA2 c.8023A>G variant in different populations may be collectively assessed to provide an argument of 'moderate' strength in 'support of ' a proposition that the variant is pathogenicity for breast cancer. Evidence Lines are useful in cases where a data provider wants to describe in detail how information was assessed as evidence to generate and score different arguments for or against a Statement's proposition. Evidence Lines can be omitted if such information is not available or needed."
@@ -153,13 +153,13 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-connect.2024-09.1/core/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
+               "$ref": "/ga4gh/schema/vrs/2.0.0-connect.2024-09.1/json/Variation"
             }
          ],
          "description": "A variant that is the subject of the Statement.",
@@ -174,10 +174,10 @@
       "objectCondition": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Condition"
             }
          ],
          "description": "The Condition for which the variant impact is stated.",
@@ -196,7 +196,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+            "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/Coding"
          },
          "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify."
       },
@@ -204,10 +204,10 @@
          "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/data-types/json/IRI"
             },
             {
-               "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+               "$ref": "/ga4gh/schema/gks-common/1.0.0-connect.2024-09.1/domain-entities/json/Gene"
             }
          ]
       }
