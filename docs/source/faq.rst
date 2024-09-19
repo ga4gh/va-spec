@@ -3,7 +3,9 @@
 FAQ
 !!!
 
-  
+
+.. _what-is-a-variant-annotation:
+
 What is a Variant Annotation?
 #############################
 To appreciate modeling and development choices made for the VA-Spec, it helps to understand how we define and distinguish the elements that comprise a Variant Annotation.
@@ -17,7 +19,9 @@ To appreciate modeling and development choices made for the VA-Spec, it helps to
      * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
 
 The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
-  
+
+.. _what-types-of-variants-are-supported:
+
 What types of variants are supported?
 #####################################
   
