@@ -88,7 +88,7 @@ In VA-Spec data, a Study Result object roots the data structure below:
 
 .. figure:: images/core-im-study-result-data-structure.png
 
-   Core-IM Classes and Relationships in Study Result Data Structures
+   Study Result Data Structure
 
    **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result reporting data from the gnomAD dataset about a particular variant.
 
