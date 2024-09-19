@@ -1,9 +1,9 @@
 GA4GH Variant Annotation Specification
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-The **Variant Annotation Specification (VA-Spec)** is a standard developed by the **Global Alliance for Genomics and Health (GA4GH)** to facilitate sharing of biological and clinical knowledge about genetic variants. It provides a set of **Standard Models** for exchanging specific kinds of **Statements** and **Study Results** about **Variation**, and a **Modeling Framework** supporting community-driven development of these standards as **Profiles** of a foundational **Core Information Model**. 
+The **Variant Annotation Specification (VA-Spec)** is a standard developed by the **Global Alliance for Genomics and Health (GA4GH)** to facilitate sharing of biological and clinical knowledge about genetic variation. It provides a set of **Standard Models** for exchanging specific kinds of **Statements** and **Study Results** about **Variation**, and a **Modeling Framework** supporting community-driven development of these standards as **Profiles** of a foundational **Core Information Model**. 
 	
-Consult the pages on this site for information about the specification and how to use it. Readers may wish to view a :ref:`data example <variant-pathogenicity-statement>` before reviewing the documentation. 
+Consult the pages on this site for information about the specification and how to use it. Readers may wish to review this annotated :ref:`data example <variant-pathogenicity-statement>`, to see an end product of the modeling framework before diving in to the documentation. 
 
 * :ref:`Introduction <introduction>`
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
@@ -24,11 +24,10 @@ Consult the pages on this site for information about the specification and how t
 * :ref:`FAQ <faq>`
    Answers to commonly asked questions that provide deeper insight into specific aspects of the VA-Spec.
 
-If you have questions at any point, please reach out to the VA Team for help - on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, though our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
+If you have questions or feedback, please reach out to the VA Team on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, through our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
    
    introduction
    quick-start
