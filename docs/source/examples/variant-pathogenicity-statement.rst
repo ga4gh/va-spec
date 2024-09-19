@@ -49,7 +49,7 @@ Variant Pathogenicity Statement Example
     ],
 
     # The 'direction' and 'strength' (DS) attributes report an assessment of the SPOQ Proposition
-    # as being 'likely supported'.
+    # above as being 'likely supported'.
     "direction": "supports",
     "strength": {
       "code": "cg000102",
@@ -57,16 +57,16 @@ Variant Pathogenicity Statement Example
       "system": "https://dataexchange.clinicalgenome.org/codes/"
     },
 
-    # The 'classification' attribute reports a single, familiar term of art in the domain summarizing 
-    # the outcome of the Proposition assessment - here reporting the variant to be 'Likely Pathogenic'.
+    # The 'classification' attribute reports a single, established term of art in the domain summarizing 
+    # the outcome of the Proposition assessment above - here reporting the variant 'Likely Pathogenic'.
     "classification": {
       "code": "cg000007",
       "label": "Likely pathogenic",
       "system": "https://dataexchange.clinicalgenome.org/codes/"
     },
 
-    # A list of 'Method' objects each describing a method, protocol, or guideline followed in generating
-    # the knowledge expressed in the Statement, or evidence supporting this knowledge.
+    # A list of 'Method' objects each describing a method, protocol, or guideline followed to generate
+    # the knowledge reported in the Statement, or evidence supporting this knowledge.
     "specifiedBy": {
       "label": "ClinGen PAH ACMG Specifications v1",
       "reportedIn": {
@@ -76,8 +76,8 @@ Variant Pathogenicity Statement Example
       "type": "Method"
     },
 
-    # A list of 'Document' objects describing extenral narrative or data documents that report the 
-    # information expressed in this Statement
+    # A list of 'Document' objects describing external publications or data documents that report the 
+    # information expressed in this Statement.
     "reportedIn": [
       {
         "type": "Document",
@@ -95,7 +95,7 @@ Variant Pathogenicity Statement Example
       }
     ],
 
-    # A list of 'Contribution' objects each describe when a particular type of actvity that was
+    # A list of 'Contribution' objects that each describe a particular actvity that was
     # performed by some Agent to contribute to the Statement.
     "contributions": [
       {
@@ -145,8 +145,8 @@ Variant Pathogenicity Statement Example
       }
     ],
 
-    # A list of simple key-value 'Extension' objects used to define custom/local attributes not
-    # supported by the standard specification.
+    # A list of key-value 'Extension' objects used to define custom/local attributes for 
+    # data not supported by the standard model.
     "extensions": [
       {
         "name": "localKey",
@@ -173,7 +173,8 @@ Variant Pathogenicity Statement Example
     "scv_ver": 2
   },
 
-  # A full CatVRS and VRS-based representation of the subject Variant of the Statement above
+  # A full CatVRS and VRS-based representation of the Variant that is the subject
+  # of the Statement above
   "clinvar:551555": {
       "id": "clinvar:551555",         
       "type": "CategoricalVariant",
