@@ -44,6 +44,7 @@ Statements put forth a Proposition that expresses some possible fact about the w
 * The ``score`` attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.
 
 **2. Statement 'Modes of Use'**
+
 The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
 #. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
