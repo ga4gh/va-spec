@@ -9,6 +9,8 @@ In the **GKS-Core-IM**, each discrete assertion of knowledge is captured in a se
 
 Below are the **Standard Statement Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by Driver Project implementations.
 
+.. _variant-pathogenicity-statement-profile:
+
 Variant Pathogenicity Statement
 ###############################
 
