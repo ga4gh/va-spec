@@ -7,8 +7,8 @@ Profiling Methodology
 
 --------------
 
-Profiling Overview
-##################
+Overview
+########
 In practice, application of the VA-Spec to represent actual data requires a 'Profiling' process, in which the generic GKS Core-IM is specialized represent types of Statements or Study Results. 
 
 For example, the figure below shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements. 
@@ -57,11 +57,17 @@ The figure below shows a more detailed view of how a Variant Pathogenicity State
 
    **Legend** A Variant Pathogenicity Statement Profile is created through the profiling process whereby elements needed to support the ClinVar data. Examples of profiling specializations are shown in BLUE in the zoomed Variant Pathogenicity Statement class, including definition of this Statement subclass itself, binding of ``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
 
-The actual Statement Profile that results from this process is described `here <https://va-ga4gh.readthedocs.io/en/stable/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_, and an example of ClinVar data structured using this profile is `here <https://va-ga4gh.readthedocs.io/en/stable/examples/variant-pathogenicity-statement.html>`_ 
+The actual Statement Profile that results from this process is described `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_, and an example of ClinVar data structured using this profile is `here <https://va-ga4gh.readthedocs.io/en/stable/examples/variant-pathogenicity-statement.html>`_         
 
 
-Profiling Methodology Instructions
-##################################
+:ref:`here <statement-profiles>` 
+
+:ref:`here <statement-profiles#variant-pathogenicity-statement>` 
+
+:ref:`here <variant-pathogenicity-statement>` 
+
+Guidance
+########
 
 ``COMING SOON``
 
