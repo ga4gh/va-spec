@@ -62,7 +62,7 @@ The actual Statement Profile that results from this process is described `here <
 
 :ref:`here <statement-profiles>` 
 
-:ref:`here <statement-profiles#variant-pathogenicity-statement>` 
+:ref:`here <variant-pathogenicity-statement-profile>` 
 
 :ref:`here <variant-pathogenicity-statement>` 
 
