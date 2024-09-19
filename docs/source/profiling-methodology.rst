@@ -57,23 +57,14 @@ The figure below shows a more detailed view of how a Variant Pathogenicity State
 
    **Legend** A Variant Pathogenicity Statement Profile is created through the profiling process whereby elements needed to support the ClinVar data. Examples of profiling specializations are shown in BLUE in the zoomed Variant Pathogenicity Statement class, including definition of this Statement subclass itself, binding of ``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values. 
 
-The actual Statement Profile that results from this process is described `here <https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/statement-profiles.html#variant-pathogenicity-statement>`_, and an example of ClinVar data structured using this profile is `here <https://va-ga4gh.readthedocs.io/en/stable/examples/variant-pathogenicity-statement.html>`_         
-
-
-:ref:`here <statement-profiles>` 
-
-:ref:`here <variant-pathogenicity-statement-profile>` 
-
-:ref:`here <variant-diagnostic-statement-profile>` 
-
-:ref:`here <variant-pathogenicity-statement-example>` 
+The actual Statement Profile that results from this process is described :ref:`here <statement-profiles>`, and an example of ClinVar data structured using this profile is :ref:`here <variant-pathogenicity-statement-example>`.         
 
 Guidance
 ########
 
-``COMING SOON``
-
 The initial version of this methodology is informally specified as human-readable instructions, conventions, and examples.
+
+``COMING SOON``
 
 Future work will provide templates and tooling that help implement and validate the methodology and its outputs.
 
