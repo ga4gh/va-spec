@@ -5,7 +5,7 @@ Modeling Foundations
 
 ``PREREQUISITES:`` :ref:`Introduction<introduction>`, :ref:`Data Example<variant-pathogenicity-statement-example>`, :ref:`Core Information Model<core-information-model>`
 
-This document describes modeling standards, patterns, and principles employed by the VA Specification. 
+This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and statements of knowledge about them. 
 
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
@@ -16,6 +16,7 @@ To represent molecular variations that are subjects of VA Statements, the VA-Spe
 #. The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts. Categorical variations are intensionally defined sets of variations, based on criteria that must be met for inclusion in a given category. Examples include `BRAF V600 mutations <https://civicdb.org/molecular-profiles/17/summary>`_ and `EGFR exon 19 deletions <https://civicdb.org/molecular-profiles/133/summary>`_. 
 
 VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Spec reference implementation will incorporate VRS tools for identifier generation, normalization, and validation. See linked documentation above for more information about these specifications.  
+
 Statement Representation
 @@@@@@@@@@@@@@@@@@@@@@@@
 
