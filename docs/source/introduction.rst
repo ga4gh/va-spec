@@ -14,13 +14,13 @@ Modeling Framework Components
 
 The VA-Spec provides a :ref:`SEPIO-based Modeling Framework<what-is-the-sepio-framework>` that includes the following components:
 
-#. :ref:`A Foundational Core Information Model (Core-IM) <core-im>`: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. This 'GKS Core-IM', which is based on the SEPIO Information Model, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built.  
+#. :ref:`A Foundational Core Information Model (Core-IM) <core-im>`: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. *This 'GKS Core-IM', which is based on the SEPIO Information Model, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.  
 
-#. :ref:`Standard VA Profiles <standard-profiles>`: A set of models built as 'Profiles' of the Core-IM Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. a :ref:`Variant Pathogenicity Statement <variant-pathogenicity-statement>`) Profile. These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community. 
+#. :ref:`Standard VA Profiles <standard-profiles>`: A set of models built as 'Profiles' of the Core-IM Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. a :ref:`Variant Pathogenicity Statement <variant-pathogenicity-statement>`) Profile. *These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community*.
 
-#. :ref:`A Profiling Methodology <profiling-methodology>`:  A set of defined processes, conventions, and tooling support to guide VA and community developers in executing the Profiling process. This approach allows adopters to  build profiles for new statement types, or extend existing profiles for their data or use case - supporting a distributed approach to VA standards development.
+#. :ref:`A Profiling Methodology <profiling-methodology>`:  A set of defined processes, conventions, and tooling support to guide VA and community developers in executing the Profiling process. *This approach allows adopters to  build profiles for new statement types, or extend existing profiles for their data or use case - supporting a distributed approach to VA standards development*.
 
-#. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. These resources provide a working example of code that can be adopted and/or extended by adopters. ``COMING SOON``
+#. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. *These resources provide a working example of code that can be adopted and/or extended by adopters*. ``COMING SOON``
 
 This modeling framework has allowed for distributed, implementation-driven development that reduces bottlenecks imposed by centralized approaches, leverages the expertise of diverse adopters, and produces standards that have been proven out in working applications.
 
