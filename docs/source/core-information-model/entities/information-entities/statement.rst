@@ -7,9 +7,7 @@ Statement
 .. include::  ../../../../../schema/core-im/def/Statement.rst
 
 
-.. toctree::
-   :titlesonly:
-   :caption: Data Structure
+**Data Structure**
 
 The Core-IM supports a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
 
@@ -20,14 +18,19 @@ The Core-IM supports a Statement-centric approach, where each discrete assertion
 
    Core-IM Classes and Relationships in Statement Data Structures
 
-   **Legend** A class-level view of the 'associative' structure that Core-IM Statements take (as opposed to the 'hierarchical' structure of Core-IM classes). Italicized text under class names illustrate the kind of information each class may report in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+   **Legend** A class-level view of the Statement-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report, in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
-In this structure, a **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it, and each Evidence Line may then be linked to one or more pieces of information used to build as evidence such an argument (i.e. **Evidence Items**). Surrounding this Statement-EvidenceLine-EvidenceItem axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. This structure allows precise tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item.
 
-A simple data example illustrating the structure of a Variant Pathogenicity Statement can be found `here <https://va-ga4gh.readthedocs.io/en/latest/examples/variant-pathogenicity-statement.html>`_.
+In this structure:
+ * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it.
+ * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument. 
+ * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
 
-Implementation Guidance
-#######################
+A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found :ref:`here<variant-pathogenicity-statement-example>`.
+
+---------
+
+**Implementation Guidance**
 
 **1. Statement Semantics**
 
@@ -39,7 +42,7 @@ Statements put forth a Proposition that expresses some possible fact about the w
 
 * The ``score`` attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.
 
-** 2. Statement 'Modes of Use'**
+**2. Statement 'Modes of Use'**
 The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
 #. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
@@ -50,7 +53,7 @@ Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile
 
 For an example of each mode of use, see `here <https://va-ga4gh.readthedocs.io/en/latest/modeling-foundations.html#statement-semantics>`_.
 
-**3. Use of the** ``Statement.qualifier`` **attribute:**
+**3. Use of the** ``Statement.qualifier`` **Attribute:**
 
 * This attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. 
 * Qualifiers can also add information that quantifies aspects of a Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype is observed to manifest. Statement profiles may define more than one qualifier, as needed to capture different types of qualifying information. 
