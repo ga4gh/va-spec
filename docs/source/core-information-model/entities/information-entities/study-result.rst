@@ -5,6 +5,7 @@ Study Result
 
 .. include::  ../../../../../schema/core-im/def/StudyResult.rst
 
+---------
 
 **DATA STRUCTURE**
 
@@ -26,6 +27,7 @@ In this structure:
  * The **Study Result** and **Data Set** can be linked to a description of the **Study Group** from which the data was collected.
  * As with Statements, clear and precise provenance information about the Study Result, Data Items, and Data Set can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
+------------
 
 **IMPLEMETNATION GUIDANCE**
 
