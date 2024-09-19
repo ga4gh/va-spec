@@ -20,9 +20,9 @@ Variant Pathogenicity Statement Example
     "statementText": "NM_000277.3(PAH):c.1285C>A likely pathogenic for Phenylketonuria",
 
     # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition 
-    # "NM_000277.3(PAH):c.1285C>A is causal for Phenylketonuria" - which is assessed in this Statement.
-    "subjectVariation": {              
-      "id": "clinvar:551555",         # A minimal version of the subject Variation. Full version is below.
+    # that "NM_000277.3(PAH):c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
+    "subjectVariation": {            # A minimal version of the subject Variation. A full version is below.
+      "id": "clinvar:551555",       
       "type": "CategoricalVariant",
       "label": "NM_000277.3(PAH):c.1285C>A (p.Gln429Lys)"
     },
