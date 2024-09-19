@@ -9,7 +9,7 @@ Variant Pathogenicity Statement Example
 
 **Data**:
 
-.. code-block:: 
+.. code-block:: yaml
 
   {
   "SCV000886574.2": {
