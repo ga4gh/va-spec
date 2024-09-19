@@ -5,9 +5,9 @@ Standard Profiles
 
 ``PREREQUISITES:`` `Introduction <https://va-ga4gh.readthedocs.io/en/latest/introduction.html>`_,  `Core Information Model <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html>`_
 
-**VA Standard Profiles** define the structure and semantics of the standard models that will be used by the GA4GH community to store and exchange variant data. 
+**VA Standard Profiles** are the end produce of the VA Modeling Framework, providing standard models that will be used by the GA4GH community to store and exchange variant data. 
 
-They are built as **specializations of the Statement or Study Result classes** in the Core-IM, that support a specific type of knowledge about molecular variation.  
+They are built as **specializations of the Statement or Study Result classes** in the Core-IM, that support a specific type of knowledge about genetic variation.  
 
 **Statement Profiles** used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification).  **Study Result Profiles** are used to capture collections of data about a single variant from a particular study or analysis dataset (e.g. from the gnomAD cohort allele frequency dataset).
 
@@ -20,7 +20,7 @@ Derived machine-readable **JSON schema** for each Profile can be found `here <ht
 Web **documentation** about each Standard Profile can be found in the pages linked below. 
 
 .. toctree::
-   :maxdepth: 8
+   :maxdepth: 4
    :titlesonly:
 
    statement-profiles
