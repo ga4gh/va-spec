@@ -7,8 +7,9 @@ Statement
 .. include::  ../../../../../schema/core-im/def/Statement.rst
 
 
-Data Structure
-##############
+.. toctree::
+   :titlesonly:
+   :caption: Data Structure
 
 The Core-IM supports a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
 
