@@ -16,7 +16,7 @@ The VA-Spec provides a :ref:`SEPIO-based Modeling Framework<what-is-the-sepio-fr
 
 #. :ref:`A Foundational Core Information Model (Core-IM) <core-im>`: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. *This 'GKS Core-IM', which is based on the SEPIO Information Model, establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.  
 
-#. :ref:`Standard VA Profiles <standard-profiles>`: A set of models built as 'Profiles' of the Core-IM Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. a :ref:`Variant Pathogenicity Statement <variant-pathogenicity-statement>`) Profile. *These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community*.
+#. :ref:`VA Standard Profiles <standard-profiles>`: A set of models built as 'Profiles' of the Core-IM Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. a :ref:`Variant Pathogenicity Statement <variant-pathogenicity-statement>`) Profile. *These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community*.
 
 #. :ref:`A Profiling Methodology <profiling-methodology>`:  A set of defined processes, conventions, and tooling support to guide VA and community developers in executing the Profiling process. *This approach allows adopters to  build profiles for new statement types, or extend existing profiles for their data or use case - supporting a distributed approach to VA standards development*.
 
@@ -26,7 +26,7 @@ This modeling framework has allowed for distributed, implementation-driven devel
 
 .. _va-standard-development-and-dependencies:
 
-VA Model Development and Dependencies
+Model Development & Dependencies
 #####################################
 While development of :ref:`VA Standard Profiles <standard-profiles>` is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as described below. 
 
@@ -99,8 +99,8 @@ While the SEPIO and GKS Core models are the basis for deriving Standard Profiles
 
 .. _establishing-and-evolving-va-standard:
 
-Establishing and Evolving VA Standards
-######################################
+Establishing VA Standards
+#########################
 As noted, VA Standard development begins with the definition of a **Draft Implementation Profile** to meet the needs of a particular driver project application. Emergence of a consensus Standard Profile requires negotiation across developers of SEPIO, VA, and Implementation models, through the following processes:
 
 **1. Align and Refine Models:**
