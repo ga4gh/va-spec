@@ -34,7 +34,7 @@ While development of :ref:`VA Standard Profiles <standard-profiles>` is grounded
 
    VA Models and Dependencies
 
-   **Legend** A hierarchy of models support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are biolt on more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream model expansion and refinement.
+   **Legend** A hierarchy of models support generation of the Standard Profiles that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are built on more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream model expansion and refinement.
 
 
 Below we describe each model in this hierarchy and how it is developed. Examples are based on **ClinGen's** definition of a **Variant Pathogenicity Statement Profile** to support ClinVar data. 
