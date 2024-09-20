@@ -5,9 +5,7 @@ Introduction
 
 ``PREREQUISITES``: None
 
-The **GA4GH Variant Annotation Specification (VA-Spec)** was developed by a partnership among national information resource providers and major public initiatives — as an open specification to standardize the exchange of knowledge in :ref:`Variant Annotations<what-is-a-variant-annotation>`. It provides a set of **Standard Models** for exchanging specific kinds of **Statements** and **Study Results** about genetic variation, and a **Modeling Framework** supporting community-driven development of these standards as **Profiles** of a foundational **Core Information Model**. It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent :ref:`diverse kinds of variation<what-types-of-variants-are-supported>` as annotation subjects. And it supports :ref:`diverse kinds of variant knowledge<what-kinds-of-variant-knowledge-are-supported>`, leaving case-level variant information to other standards. 
-
-The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers and major public initiatives — as an open specification to standardize the exchange of knowledge in :ref:`Variant Annotations<what-is-a-variant-annotation>`. It provides a set of :ref:`Standard Models<standard-profiles>` for exchanging specific kinds of :ref:`Statements<Statement>` and :ref:`Study Results<StudyResult>` about genetic variation, and a :ref:`Modeling Framework<<profiling-methodology>` supporting community-driven development of these standards as Profiles of a foundational :ref:`Core Information Model<core-information-model>`. It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent :ref:`diverse kinds of variation<what-types-of-variants-are-supported>` as annotation subjects. And it supports :ref:`diverse kinds of variant knowledge<what-kinds-of-variant-knowledge-are-supported>`, leaving case-level variant information to other standards. 
+The GA4GH Variant Annotation Specification (VA-Spec) was developed by a partnership among national information resource providers and major public initiatives — as an open specification to standardize the exchange of knowledge in :ref:`Variant Annotations<what-is-a-variant-annotation>`. It provides a set of :ref:`Standard Models<standard-profiles>` for exchanging specific kinds of :ref:`Statements<Statement>` and :ref:`Study Results<StudyResult>` about genetic variation, and a :ref:`Modeling Framework<profiling-methodology>` supporting community-driven development of these standards as :ref:`Profiles<standard-profiles>` of a foundational :ref:`Core Information Model<core-information-model>`. It leverages the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to represent :ref:`diverse kinds of variation<what-types-of-variants-are-supported>` as annotation subjects. And it supports :ref:`diverse kinds of variant knowledge<what-kinds-of-variant-knowledge-are-supported>`, leaving case-level variant information to other standards. 
 
 Modeling Framework Components
 #############################
@@ -27,18 +25,18 @@ This modeling framework has allowed for distributed, implementation-driven devel
 .. _va-standard-development-and-dependencies:
 
 Model Development & Dependencies
-#####################################
+#################################
 While development of :ref:`VA Standard Profiles <standard-profiles>` is grounded in foundational SEPIO and GKS core models, it is ultimately driven by bottom-up implementation requirements. Accordingly, development tasks unfold across a stack of interdependent models and specifications, as described below. 
 
 .. _va-model-dependencies:
 
 .. figure:: images/va-model-dependencies.png
 
-   VA Ecosystem Models and Dependencies
+   VA Models and Dependencies
 
-   **Legend** A hierarchy of models support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+   **Legend** A hierarchy of models support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are biolt on more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream model expansion and refinement.
 
-Below we describe each model in this ecosystem and how it is developed, using **ClinGen's** definition of a **Variant Pathogenicity Statement Profile** to support ClinVar SCV data as an illustrative example. 
+Below we describe each model in this hierarchy and how it is developed. Examples are based on **ClinGen's** definition of a **Variant Pathogenicity Statement Profile** to support ClinVar data. 
 
 **1. The SEPIO Core-IM** provides foundational representation of domain-agnostic concepts describing the knowledge generation process, and artifacts it produces, and relationships between them. It is part of a larger modeling Framework that includes a Profiling Methodology for deriving models specialized for particular types of Statements reporting variant *knowledge*, or Study Results reporting created *related collections of variant data*. It is written in a yaml format and not formalized as a json schema, as it is not intended to be directly implemented in data. More information can be found :ref:`here <what-is-the-sepio-framework>`. 
 
