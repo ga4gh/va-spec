@@ -18,7 +18,7 @@ It is **critical that developers understand these models and their dependencies*
 
    Ecosystem of VA Models and Dependencies
 
-   **Legend** A hierarchy of models support generation of the Standard Profile Schema that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are generated from more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream Core-IM expansion and refinement. The format of each model (e.g. 'YAML', 'JSON') is indicated by icons on each.
+   **Legend** A hierarchy of models support generation of the Standard Profiles that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are built on more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream model expansion and refinement.
 
 An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the :ref:`end of this page <github-repositories-and-links>`.  
 
