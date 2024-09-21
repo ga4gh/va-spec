@@ -20,19 +20,22 @@ Models and Dependencies
 
    **Legend** A hierarchy of models support generation of the Standard Profiles that are the final product of the VA-Specification. Arrows on the left describe PROCESSES through which downstream models are built on more foundational ones. Arrows on the right describe the propagation of requirements from implementation models to INFORM upstream model expansion and refinement.
 
-An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the :ref:`end of this page <github-repositories-and-links>`.  
+An overview of the interactions between repositories housing these models, along with links to source models and documentation, is provided at the :ref:`Github Repositories appendix<github-repositories>`.  
 
 Where do I Start?
 #################
 
-
-New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are many ways these adopters may engage with the VA-Spec as a Modeling Framework:
+Adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are **many ways these adopters may engage with the VA-Spec** as a Modeling Framework:
 
  * Some may simply want to **adopt an existing Standard Profile**  out-of-the-box for their data.
  * Some may find an existing Standard insufficient - and wish to refine or **extend an existing Profile** to meet their needs. 
  * Some may discover that no Profile yet exists for the type of knowledge they want to represent, and collaborate with the VA team to **define a new Standard Profile** from the GKS Core-IM.
 
-The **Descision Tree** below is designed to help adopters decide among and execute these options. Simply follow the tree downward, choosing the appropriate path based on your data and project requirements. **Blue** nodes present a **DECISION** to be made. **Green** nodes describe a terminal **ACTION** to be taken.  Guidance to help you make Decisions or perform Actions is provided below the tree, organized by node number.
+The **Descision Tree** below is designed to help adopters decide among and execute these options.
+
+ * Follow the tree downward, choosing the appropriate path based on your data and project requirements.
+ * Blue nodes present a **DECISION** to be made. Green nodes describe a terminal **ACTION** to be taken.  
+ * Guidance to help you make decisions or perform actions is provided below the tree, organized by node number.
 
 .. _quick-start-decision-tree:
 
@@ -116,66 +119,11 @@ Note that the workflow and guidance provided is the same for :ref:`Statement Pro
     * The VA Team will coordinate discussions with other implementers to ensure the proposed changes are amenable to implementation needs and aligned with broader VA modeling principles. 
     * We will also coordinate discussions with SEPIO developers to add new elements to these models as appropriate, ensuring compliance with these upstream standards.  
 
-.. important:: While this workflow suggests a top-down approach for defining Standard Profiles on top of foundational core models, the process is very much **driven by implementation requirements** in a bottom-up manner. New Standards begin as **Draft Implementation Profiles**, which are informed by Core-IM elements, but ultimately based on the needs of their specific application.  These draft profiless are evolved into VA Standards as the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`here <establishing-and-evolving-va-standards>`).
-
-.. _github-repositories-and-links:
-
-Github Repositories and Links
-##############################
-
-The diagram below describes the interactions between different repositories where specifications supporting the VA-Spec are housed - including where data models are imported (via Github submodules) and extended by another. It is important to understand these relationships and dependencies before you begin contributing to the VA Profiles. 
-
-.. _gks-github-ecosystem:
-
-.. figure:: images/gks-github-ecosystem.png
-
-   Ecosystem of GKS Specification Github Repositories (as of September 2024)
-
-.. important:: One feature to note is that the **GKS Core-IM**, along with **GKS Data Types** and **Domain Entities** that may be used by multiple GKS models, are housed in a shared **gks-commons repository**, from which they are imported into downstream specifications.
-
-The imports described above support the creation of VA-Spec Profiles built from content from more foundational models, as illustrated in the figure below.
-
-.. _va-model-import-hierarchy:
-
-.. figure:: images/va-model-import-hierarchy.png
-
-   Hierarchy of GKS data model imports used to build VA Standard Profiles. 
-
-  **Legend** The VA-Spec uses Github submodules to import more foundational models.  **Cat-VRS** and **VRS** are imported to provide models for representing different kinds of molecular variation. **GKS-Commons** provides shared classes and data types that are shared across many GKS models. Information about the content of each of these models can be found in relevant sections of the VA-Spec documentation. 
+.. important:: While this workflow suggests a top-down approach for defining Standard Profiles on top of foundational core models, the process is very much **driven by implementation requirements** in a bottom-up manner. New Standards begin as **Draft Implementation Profiles**, which are informed by Core-IM elements, but ultimately based on the needs of their specific application. These draft profiless are evolved into VA Standards as the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`here <establishing-and-evolving-va-standards>`).
 
 
-
-**Model and Repository Links:**
-
-**SEPIO Core-IM**:
- * **repository**: https://github.com/sepio-framework/sepio-linkml
- * **model source**: https://github.com/sepio-framework/sepio-linkml/blob/main/src/sepio_linkml/schema/sepio_linkml.yaml
- * **documentation**: https://sepio-framework.github.io/sepio-linkml/
-
-**GKS Core-IM**: 
- * **repository**: https://github.com/ga4gh/gks-common/
- * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/core-im/core-im-source.yaml
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/index.html
-
-**GKS Domain Entity Models**: 
- * **repository**: https://github.com/ga4gh/gks-common/
- * **model source**: https://github.com/ga4gh/gks-common/blob/1.x/schema/domain-entities/domain-entities-source.yaml
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/core-information-model/entities/domain-entities/index.html
-
-**VA Standard Profile IMs**:
- * **repository**: https://github.com/ga4gh/va-spec
- * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
-
-**VA Standard Profile JSON Schema**: 
- * **repository**: https://github.com/ga4gh/va-spec
- * **model source**: https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json (do not edit directly, these are automatically generated from standard profile source yaml files via metaschema processor tooling)
- * **documentation**: https://va-ga4gh.readthedocs.io/en/latest/standard-profiles/index.html
-
-**Implementation Schema**:
- * **repository**: not under VA control - these are distributed across implementation repositories
- * **model source**:  will be specific to each implementing project
- * **documentation**: not under VA control - distributed across implementation websites and documents
-
-
+.. important:: 
+ * While this workflow suggests a top-down approach for defining Standard Profiles on top of foundational core models, the process is very much **driven by implementation requirements** in a bottom-up manner. 
+ * New Standards begin as **Draft Implementation Profiles**, which are informed by Core-IM elements, but ultimately based on the needs of their specific application.  
+ * These draft profiless are evolved into VA Standards as the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`here <establishing-and-evolving-va-standards>`).
 
