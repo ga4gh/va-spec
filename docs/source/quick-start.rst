@@ -8,9 +8,9 @@ Quick Start Guide
 Models and Dependencies
 #######################
 
-`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a stack of dependent models and specifications, as depicted below and described in detail in the :ref:`Introduction <va-standard-development-and-dependencies>`. 
+`VA Standard Profile schema <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ represent the final output of modeling efforts that unfold across a hierarchy of dependent models and specifications, as depicted below and described in detail in the :ref:`Introduction <va-standard-development-and-dependencies>`. 
 
-It is **critical that developers understand these models and their dependencies** before beginning to use or contribute to the VA-Spec. 
+.. important::  It is **critical that developers understand this ecosystem of models and their dependencies** before beginning to use or contribute to the VA-Spec. 
 
 .. _va-model-dependencies:
 
@@ -25,14 +25,14 @@ An overview of the interactions between repositories housing these models, along
 Where do I Start?
 #################
 
-New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are many ways these adopters may engage with the VA-Spec as a Modeling Framework. Some may simply want to **adopt an existing Standard Profile**  out-of-the-box for their data. Others may find an existing Standard insufficient - and wish to refine or **extend an existing Profile** to meet their needs. And others may discover that no Profile yet exists for the type of knowledge they want to represent, and collaborate with the VA team to **define a new Standard Profile** from the GKS Core-IM.
 
-The DECISION TREE below is designed to help adopters navigate these options, and find the right entry point for engagement with the VA Framework based on their data and requirements.
- * Follow the tree downward, choosing the appropriate path based on your data and project requirements. 
- * **Blue** nodes present a **DECISION** to be made. **Green** nodes describe a terminal **ACTION** to be taken. 
- * Guidance to help you make Decisions or perform Actions is provided below the tree, organized by node number.
+New adopters will come to the VA-Spec with some requirements or representation of variant knowledge - be it an explicit model, or models implicit in data collection forms or data examples. There are many ways these adopters may engage with the VA-Spec as a Modeling Framework:
 
-The workflow and guidance provided is the same for :ref:`Statement Profiles <statement-profiles>`, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or :ref:`Study Result Profiles <statement-profiles>`, which are used to capture collections of data about a single variant from a particular study or analysis dataset (e.g. from the gnomAD cohort allele frequency dataset). 
+ * Some may simply want to **adopt an existing Standard Profile**  out-of-the-box for their data.
+ * Some may find an existing Standard insufficient - and wish to refine or **extend an existing Profile** to meet their needs. 
+ * Some may discover that no Profile yet exists for the type of knowledge they want to represent, and collaborate with the VA team to **define a new Standard Profile** from the GKS Core-IM.
+
+The **Descision Tree** below is designed to help adopters decide among and execute these options. Simply follow the tree downward, choosing the appropriate path based on your data and project requirements. **Blue** nodes present a **DECISION** to be made. **Green** nodes describe a terminal **ACTION** to be taken.  Guidance to help you make Decisions or perform Actions is provided below the tree, organized by node number.
 
 .. _quick-start-decision-tree:
 
@@ -43,6 +43,7 @@ The workflow and guidance provided is the same for :ref:`Statement Profiles <sta
    **Legend** The path on the **left** guides users in adopting or extending an existing Standard Profile. The path on the **right** guides users in creating an entirely new Standard Profile.
 
 **Node Guidance and Resources:**
+Note that the workflow and guidance provided is the same for :ref:`Statement Profiles <statement-profiles>`, which are used to represent discrete assertions of variant knowledge (e.g. a pathogenicity classification), or :ref:`Study Result Profiles <statement-profiles>`, which are used to capture collections of data about a single variant from a particular study or analysis dataset (e.g. from the gnomAD cohort allele frequency dataset). 
 
 #. ``DECISION``: **Does a Standard Statement or Study Result Profile exist for my use case?**
     * Explore existing Standard Profiles :ref:`here <standard-profiles>` to see if any cover the type of Statement or Study Result you want to represent.
