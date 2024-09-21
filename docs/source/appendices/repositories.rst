@@ -3,10 +3,9 @@
 Github Repositories
 !!!!!!!!!!!!!!!!!!!
 
+**Repository Interactions**
+
 The diagram below describes the interactions between different repositories where specifications supporting the VA-Spec are housed - including where data models are imported (via Github submodules) and extended by another. 
-
-One feature to note is that the **GKS Core-IM**, along with **GKS Data Types** and **Domain Entities** that may be used by multiple GKS models, are housed in a shared **gks-commons repository**, from which they are imported into downstream specifications.
-
 
 .. _gks-github-ecosystem:
 
@@ -14,7 +13,12 @@ One feature to note is that the **GKS Core-IM**, along with **GKS Data Types** a
 
    Ecosystem of GKS Specification Github Repositories (as of September 2024)
 
+
+One feature to note is that the **GKS Core-IM**, along with **GKS Data Types** and **Domain Entities** that may be used by multiple GKS models, are housed in a shared **gks-commons repository**, from which they are imported into downstream specifications.
+
 ------------
+
+**Imports Hierarchy**
 
 The imports described above support the creation of VA-Spec Profiles built from content from more foundational models, as illustrated in the figure below.
 
@@ -26,6 +30,7 @@ The imports described above support the creation of VA-Spec Profiles built from 
 
   **Legend** The VA-Spec uses Github submodules to import more foundational models.  **Cat-VRS** and **VRS** are imported to provide models for representing different kinds of molecular variation. **GKS-Commons** provides shared classes and data types that are shared across many GKS models. Information about the content of each of these models can be found in relevant sections of the VA-Spec documentation. 
 
+--------------
 
 **Model and Repository Links:**
 
