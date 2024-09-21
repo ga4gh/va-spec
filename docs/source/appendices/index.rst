@@ -5,5 +5,5 @@ Appendices
 .. toctree::
    :maxdepth: 2
 
-   github-repositories
+   repositories
    modeling-foundations
