@@ -15,16 +15,12 @@ Variant Pathogenicity Statement Example
   "SCV000886574.2": {
     "id": "SCV000886574.2",
     "type": "VariantPathogenicityStatement",
-    "description": "The c.1285C>A (p.Gln429Lys) variant in PAH is reported in a patient with mild PKU (Phe level 720). BH4 cofactor deficiency was excluded. It was detected with a known pathogenic variant, EX6-96A>G (VarID 590). (PMID: 26503515, 28982351) This variant has a low frequency in gnomAD and ExAC (MAF=0.00002), and absent in 1000G. Computational evidence is conflicting. In summary, this variant meets criteria to be classified as likely pathogenic for PAH. PAH-specific ACMG/AMP criteria applied: PM2, PP4_Moderate, PM3...",
     "statementText": "NM_000277.3(PAH):c.1285C>A likely pathogenic for Phenylketonuria",
+    "description": "The c.1285C>A (p.Gln429Lys) variant in PAH is reported in a patient with mild PKU (Phe level 720). BH4 cofactor deficiency was excluded. It was detected with a known pathogenic variant, EX6-96A>G (VarID 590). (PMID: 26503515, 28982351) This variant has a low frequency in gnomAD and ExAC (MAF=0.00002), and absent in 1000G. Computational evidence is conflicting. In summary, this variant meets criteria to be classified as likely pathogenic for PAH. PAH-specific ACMG/AMP criteria applied: PM2, PP4_Moderate, PM3...",
 
     # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition 
     # that "NM_000277.3:c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
-    "subjectVariation": {        # A minimal version of the subject Variation. A full version is below.
-      "id": "clinvar:551555",       
-      "type": "CategoricalVariant",
-      "label": "NM_000277.3(PAH):c.1285C>A (p.Gln429Lys)"
-    },
+    "subjectVariation": "clinvar:551555",     # full VRS representation of this variant is below
     "predicate": "isCausalFor",
     "objectCondition": {
       "id": "clinvarTrait:3795",
