@@ -48,7 +48,7 @@ In this structure:
 
 This structure allows tracking of provenance information at the level of a Statement and each supporting Evidence Line and Item. A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found :ref:`here<variant-pathogenicity-statement-example>`.
 
-.. statement-semantics:
+.. _statement-semantics:
 
 Statement Semantics
 $$$$$$$$$$$$$$$$$$$
