@@ -12,9 +12,9 @@ Modeling Framework Components
 
 The VA-Spec provides a :ref:`SEPIO-based Modeling Framework<what-is-the-sepio-framework>` that includes the following components:
 
-#. :ref:`A Foundational Core Information Model (Core-IM) <core-im>`: A domain-agnostic model for describing knowledge statements of any kind, and the evidence and provenance supporting them. The Core-IM establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.  
+#. :ref:`A Foundational Core Information Model (Core-IM) <core-im>`: A domain-agnostic model for describing knowledge of any kind, and the evidence and provenance supporting it. The Core-IM establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.  
 
-#. :ref:`VA Standard Profiles <standard-profiles>`: A set of models built as Profiles of core Statement or Study Result classes, each supporting a specific types of knowledge about molecular variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community*.
+#. :ref:`VA Standard Profiles <standard-profiles>`: A set of models built as Profiles of core Statement or Study Result classes, each supporting a specific types of knowledge about genetic variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community*.
 
 #. :ref:`A Profiling Methodology <profiling-methodology>`:  Formal processes, conventions, and tooling to support VA and implementation developers in defining Profiles and maturing them into Standards. *This approach allows anyone to build profiles for new statement types, or extend existing profiles for their data or use case - supporting a distributed approach to VA standards development*.
 
