@@ -19,7 +19,7 @@ An example of data structured using this Standard Profile can be found `here <ht
 .. include::  ../../../schema/profiles/def/VariantPathogenicityStatement.rst
 
 
-Variant Oncogenicity Statement
+Variant Oncogenicity Study Statement
 ##############################
 
 .. include::  ../../../schema/profiles/def/VariantOncogenicityStudyStatement.rst
