@@ -31,11 +31,7 @@ Adopters will come to the VA-Spec with some requirements or representation of va
  * Some may find an existing Standard insufficient - and wish to refine or **extend an existing Profile** to meet their needs. 
  * Some may discover that no Profile yet exists for the type of knowledge they want to represent, and collaborate with the VA team to **define a new Standard Profile** from the GKS Core-IM.
 
-The **Descision Tree** below is designed to help adopters decide among and execute these options.
-
- * Follow the tree downward, choosing the appropriate path based on your data and project requirements.
- * Blue nodes present a **DECISION** to be made. Green nodes describe a terminal **ACTION** to be taken.  
- * Guidance to help you make decisions or perform actions is provided below the tree, organized by node number.
+The **Descision Tree** below is designed to help adopters decide among and execute these options. Follow the tree downward, choosing the appropriate path based on your data and project requirements.Blue nodes present a **DECISION** to be made. Green nodes describe a terminal **ACTION** to be taken. Guidance to help you make decisions or perform actions is provided below the tree, organized by node number.
 
 .. _quick-start-decision-tree:
 
