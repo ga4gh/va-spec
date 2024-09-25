@@ -11,11 +11,11 @@ What is a Variant Annotation?
 To appreciate modeling and development choices made for the VA-Spec, it helps to understand how we define and distinguish the elements that comprise a Variant Annotation.
 
 **Definition**:  
-   “A **structured data object** that holds a **central statement of knowledge** about a **molecular variation**, along with **evidence and provenance metadata** supporting it.
+   “A **structured data object** that holds a **central statement of knowledge** about a **genetic variation**, along with **evidence and provenance metadata** supporting it.
 
      * **‘structured data object’**: an organized, computable representation of knowledge, in any format or syntax.
-     * **‘central statement of knowledge’**: the single primary statement about a molecular variation is at the core of an annotation.
-     * **‘molecular variation’**: defined broadly to cover sequence changes, epigenetic modifications, or alterations in gene expression or location (see `What types of variants are supported?`_). 
+     * **‘central statement of knowledge’**: the single primary statement about a genetic variation is at the core of an annotation.
+     * **‘genetic variation’**: defined broadly to cover sequence changes, epigenetic modifications, or alterations in gene expression or location (see `What types of variants are supported?`_). 
      * **‘evidence and provenance metadata’**: describes how the central knowledge statement was generated, including when, by whom, and using what methods and evidence information.
 
 The VA-Spec model was  defined to *explcitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
@@ -28,7 +28,7 @@ What types of variants are supported?
 Variants are the subjects of the knowledge statements that the VA-Spec was built to support. We define the notion of 'variant' broadly
 to cover the diversity of variation concepts that are annotated with knowledge in different curtaion efforts and knowledgebases. 
 
-**Variant Definition**: Alternative forms of a genetic sequence, or of its molecular manifestation in a biological system (also referred to as a 'molecular variations'). 
+**Variant Definition**: Alternative forms of a genetic sequence, or of its molecular manifestation in a biological system. 
 This definition covers:
 
     **Sequence variations** in a genome, transcript, or protein.
@@ -52,7 +52,7 @@ This definition covers:
      * **Categorical Variation**: rule-based classes of variation defined by specific membership criteria.  
             e.g. ‘deletions spanning EGFR exon 4’ (`link <https://civicdb.org/variants/252/summary>`_), ‘TSC1 loss-of-function muts.’ (`link <https://civicdb.org/variants/125/summary>`_)
 
-The VA-Spec adopts the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to support representation of these diverse kinds of molecular variation.
+The VA-Spec adopts the GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `Cat-VRS <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_ specifications to support representation of these diverse kinds of genetic variation.
 
 .. _what-kinds-of-variant-knowledge-are-supported:
 
