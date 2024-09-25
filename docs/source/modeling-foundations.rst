@@ -9,7 +9,7 @@ This document describes modeling standards, patterns, and principles employed by
 
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
-To represent molecular variations that are subjects of VA Statements, the VA-Spec adopts two complementary GKS standards:
+To represent genetic variations that are subjects of VA Statements, the VA-Spec adopts two complementary GKS standards:
 
 #. The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers. VRS variants represent discrete instances of sequence variation in a specified context (reference, location, state) - e.g. the NM_005228.5(EGFR):c.2232_2250del(p.Lys745fs) variant `here <https://www.ncbi.nlm.nih.gov/clinvar/variation/177787/>`_. This includes single continuous alleles, haplotypes, genotypes, and copy number changes.
 
