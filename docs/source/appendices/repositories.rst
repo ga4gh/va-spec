@@ -28,7 +28,7 @@ The imports described above support the creation of VA-Spec Profiles built from 
 
    Hierarchy of GKS data model imports used to build VA Standard Profiles. 
 
-  **Legend** The VA-Spec uses Github submodules to import more foundational models.  **Cat-VRS** and **VRS** are imported to provide models for representing different kinds of molecular variation. **GKS-Commons** provides shared classes and data types that are shared across many GKS models. Information about the content of each of these models can be found in relevant sections of the VA-Spec documentation. 
+  **Legend** The VA-Spec uses Github submodules to import more foundational models.  **Cat-VRS** and **VRS** are imported to provide models for representing different kinds of genetic variation. **GKS-Commons** provides shared classes and data types that are shared across many GKS models. Information about the content of each of these models can be found in relevant sections of the VA-Spec documentation. 
 
 --------------
 
