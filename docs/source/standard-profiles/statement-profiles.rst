@@ -7,7 +7,7 @@ In the **GKS-Core-IM**, each discrete assertion of knowledge is captured in a se
 
 **Statement Profiles** are defined as specializations of this Core-IM ``Statement`` class, to provide a concrete schema for representing a particular type of Variant knowledge (e.g. variant pathogenicity classifications).
 
-Below are the **Standard Statement Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by Driver Project implementations.
+Below are the **Standard Statement Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by Driver Project implementations. **JSON Schema** for each Profile can be found `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_. 
 
 .. _variant-pathogenicity-statement-profile:
 
