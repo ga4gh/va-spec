@@ -1,0 +1,288 @@
+{
+  "SCV004619066.1": {
+    "contributions": [
+      {
+        "activity": {
+          "code": "CRO_0000105",
+          "label": "submitter role",
+          "system": "http://purl.obolibrary.org/obo/"
+        },
+        "agent": {
+          "id": "clinvar.submitter:500031",
+          "label": "Invitae",
+          "type": "Agent"
+        },
+        "date": "2024-02-28",
+        "label": "Last Updated",
+        "type": "Contribution"
+      },
+      {
+        "activity": {
+          "code": "CRO_0000105",
+          "label": "submitter role",
+          "system": "http://purl.obolibrary.org/obo/"
+        },
+        "agent": {
+          "id": "clinvar.submitter:500031",
+          "label": "Invitae",
+          "type": "Agent"
+        },
+        "date": "2024-02-28",
+        "label": "First in Clinvar",
+        "type": "Contribution"
+      },
+      {
+        "activity": {
+          "code": "CRO_0000001",
+          "label": "author role",
+          "system": "http://purl.obolibrary.org/obo/"
+        },
+        "agent": {
+          "id": "clinvar.submitter:500031",
+          "label": "Invitae",
+          "type": "Agent"
+        },
+        "date": "2023-08-30",
+        "label": "Last Evaluated",
+        "type": "Contribution"
+      }
+    ],
+    "direction": "refutes",
+    "extensions": [
+      {
+        "name": "alleleOrigin",
+        "value": "germline"
+      },
+      {
+        "name": "localKey",
+        "value": "12203278|MedGen:CN517202"
+      },
+      {
+        "name": "methodCategory",
+        "value": "clinical testing"
+      },
+      {
+        "name": "reviewStatus",
+        "value": "criteria provided, single submitter"
+      },
+      {
+        "name": "submittedClassification",
+        "value": "Likely benign"
+      }
+    ],
+    "geneContextQualifier": [
+      {
+        "code": "92345",
+        "label": "NAF1",
+        "system": "https://www.ncbi.nlm.nih.gov/gene/"
+      }
+    ],
+    "id": "SCV004619066.1",
+    "objectCondition": {
+      "label": "None"
+    },
+    "predicate": "isCausalFor",
+    "scv_id": "SCV004619066",
+    "scv_ver": 1,
+    "specifiedBy": {
+      "label": "Invitae Variant Classification Sherloc (09022015)",
+      "reportedIn": {
+        "pmid": "28492532",
+        "type": "Document",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/28492532"
+      },
+      "type": "Method"
+    },
+    "strength": {
+      "code": "cg000102",
+      "label": "likely",
+      "system": "https://dataexchange.clinicalgenome.org/codes/"
+    },
+    "classification": {
+      "code": "cg000002",
+      "label": "Likely benign",
+      "system": "https://dataexchange.clinicalgenome.org/codes/"
+    },
+    "subjectVariation": {
+      "constraints": [
+        {
+          "definingContext": {
+            "digest": "42OcqCY5zhfOjSVrLTp_Xg8ok-laIPu5",
+            "expressions": [
+              {
+                "syntax": "spdi",
+                "value": "NC_000004.12:163128947:A:G"
+              },
+              {
+                "syntax": "hgvs.g",
+                "value": "NC_000004.12:g.163128948A>G"
+              },
+              {
+                "syntax": "gnomad",
+                "value": "4-163128948-A-G"
+              }
+            ],
+            "id": "ga4gh:VA.42OcqCY5zhfOjSVrLTp_Xg8ok-laIPu5",
+            "label": "NC_000004.12:163128947:A:G",
+            "location": {
+              "digest": "HQz3e3ZeHcZDyLrCMG-TM61ahOyNT6kp",
+              "end": 163128948,
+              "id": "ga4gh:SL.HQz3e3ZeHcZDyLrCMG-TM61ahOyNT6kp",
+              "sequenceReference": {
+                "extensions": [
+                  {
+                    "name": "assembly",
+                    "value": "GRCh38"
+                  },
+                  {
+                    "name": "chromosome",
+                    "value": "4"
+                  }
+                ],
+                "id": "NC_000004.12",
+                "refgetAccession": "SQ.HxuclGHh0XCDuF8x6yQrpHUBL7ZntAHc",
+                "residueAlphabet": "na",
+                "type": "SequenceReference"
+              },
+              "start": 163128947,
+              "type": "SequenceLocation"
+            },
+            "state": {
+              "sequence": "G",
+              "type": "LiteralSequenceExpression"
+            },
+            "type": "Allele"
+          },
+          "relations": [
+            "sequence_liftover",
+            "transcript_projection"
+          ],
+          "type": "DefiningContextConstraint"
+        }
+      ],
+      "extensions": [
+        {
+          "name": "cytogeneticLocation",
+          "value": "4q32.2"
+        },
+        {
+          "name": "subclassType",
+          "value": "SimpleAllele"
+        },
+        {
+          "name": "catVarSubType",
+          "value": "CanonicalAllele"
+        },
+        {
+          "name": "variationType",
+          "value": "single nucleotide variant"
+        },
+        {
+          "name": "hgvsList",
+          "value": [
+            {
+              "nucleotideExpression": {
+                "syntax": "hgvs.g",
+                "value": "NC_000004.12:g.163128948A>G"
+              },
+              "nucleotideType": "genomic, top-level"
+            },
+            {
+              "maneSelect": true,
+              "molecularConsequence": [
+                {
+                  "code": "SO:0001819",
+                  "label": "synonymous_variant",
+                  "system": "http://purl.obolibrary.org/obo/"
+                }
+              ],
+              "nucleotideExpression": {
+                "syntax": "hgvs.c",
+                "value": "NM_138386.3:c.1434T>C"
+              },
+              "nucleotideType": "coding",
+              "proteinExpression": {
+                "syntax": "hgvs.p",
+                "value": "NP_612395.2:p.Pro478="
+              }
+            },
+            {
+              "molecularConsequence": [
+                {
+                  "code": "SO:0001627",
+                  "label": "intron_variant",
+                  "system": "http://purl.obolibrary.org/obo/"
+                }
+              ],
+              "nucleotideExpression": {
+                "syntax": "hgvs.c",
+                "value": "NM_001128931.2:c.1034-1833T>C"
+              },
+              "nucleotideType": "coding"
+            },
+            {
+              "nucleotideExpression": {
+                "syntax": "hgvs.g",
+                "value": "NC_000004.11:g.164050100A>G"
+              },
+              "nucleotideType": "genomic, top-level"
+            }
+          ]
+        }
+      ],
+      "id": "clinvar:2961812",
+      "label": "NM_138386.3(NAF1):c.1434T>C (p.Pro478=)",
+      "members": [
+        {
+          "digest": "42OcqCY5zhfOjSVrLTp_Xg8ok-laIPu5",
+          "expressions": [
+            {
+              "syntax": "spdi",
+              "value": "NC_000004.12:163128947:A:G"
+            },
+            {
+              "syntax": "hgvs.g",
+              "value": "NC_000004.12:g.163128948A>G"
+            },
+            {
+              "syntax": "gnomad",
+              "value": "4-163128948-A-G"
+            }
+          ],
+          "id": "ga4gh:VA.42OcqCY5zhfOjSVrLTp_Xg8ok-laIPu5",
+          "label": "NC_000004.12:163128947:A:G",
+          "location": {
+            "digest": "HQz3e3ZeHcZDyLrCMG-TM61ahOyNT6kp",
+            "end": 163128948,
+            "id": "ga4gh:SL.HQz3e3ZeHcZDyLrCMG-TM61ahOyNT6kp",
+            "sequenceReference": {
+              "extensions": [
+                {
+                  "name": "assembly",
+                  "value": "GRCh38"
+                },
+                {
+                  "name": "chromosome",
+                  "value": "4"
+                }
+              ],
+              "id": "NC_000004.12",
+              "refgetAccession": "SQ.HxuclGHh0XCDuF8x6yQrpHUBL7ZntAHc",
+              "residueAlphabet": "na",
+              "type": "SequenceReference"
+            },
+            "start": 163128947,
+            "type": "SequenceLocation"
+          },
+          "state": {
+            "sequence": "G",
+            "type": "LiteralSequenceExpression"
+          },
+          "type": "Allele"
+        }
+      ],
+      "type": "CategoricalVariant"
+    },
+    "type": "VariantPathogenicityStatement"
+  }
+}
