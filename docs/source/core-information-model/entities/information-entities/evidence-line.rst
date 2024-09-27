@@ -10,12 +10,12 @@ Evidence Line
 **1. Meaning and Utility of Evidence Lines**
 
 * Evidence Lines are used to capture one or more pieces of information (i.e. **evidence items**) that are assessed together as an argument for or against some **target proposition** - and report the **direction** (supports or disputes) and **strength** (e.g. strong, moderate, weak) that the argument is determined to make. 
-* For example, the allele count and frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of **moderate strength** that **supports** a target proposition that the variant is pathogenic for Breast Cancer. 
+* For example, the allele count and frequency calculations for the BRCA2 c.8023A>G variant in the gnomAD database are evidence items that may be collectively assessed to build an EvidenceLine making argument of moderate strength that supports a target proposition that the variant is pathogenic for Breast Cancer. 
 
 .. image:: ../../../images/evidence-line-semantics.png
   :width: 700
 
-* In an EvidenceLine instance, the `targetProposition` attribute captures the 'possible fact' that the evidence is assessed against. The `evidenceItems` attribute the information assessed as evidence. And the `directionOfEvidenceProvided` and `strengthOfEvidenceProvided` attributes report the outcome of this assessment - whether the evidence line supports or disputes the target proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc). 
+* In an EvidenceLine instance, the ``targetProposition`` attribute captures the 'possible fact' that the evidence is assessed against. The ``evidenceItems`` attribute the information assessed as evidence. And the ``directionOfEvidenceProvided`` and ``strengthOfEvidenceProvided`` attributes report the outcome of this assessment - whether the evidence line supports or disputes the target proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc). 
 
 **2. Evidence Line Scope**
 
