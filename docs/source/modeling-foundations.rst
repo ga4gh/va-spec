@@ -7,6 +7,8 @@ Modeling Foundations
 
 This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and statements of knowledge about them. 
 
+After a brief overview of standards used to represent genetic variation, it focuses on data structures that can be built around three central classes which are the basis of VA Profiles: (1) Statements; (2) Study Results; and (3) Evidence Lines. 
+
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
 To represent genetic variations that are subjects of VA Statements, the VA-Spec adopts two complementary GKS standards:
@@ -101,3 +103,18 @@ $$$$$$$$$$$$$$$$$$$$$$
 
 
 
+
+
+Evidence Line Representation
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+
+
+Evidence Line Structure
+#######################
+
+
+
+Evidence Line Semantics
+########################
