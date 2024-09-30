@@ -146,9 +146,9 @@
       },
       "type": {
          "type": "string",
-         "const": "VariantOncogenicityStatement",
-         "default": "VariantOncogenicityStatement",
-         "description": "MUST be \"VariantOncogenicityStatement\"."
+         "const": "VariantOncogenicityStudyStatement",
+         "default": "VariantOncogenicityStudyStatement",
+         "description": "MUST be \"VariantOncogenicityStudyStatement\"."
       },
       "subjectVariant": {
          "oneOf": [

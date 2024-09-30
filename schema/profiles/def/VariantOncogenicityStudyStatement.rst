@@ -87,7 +87,7 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`gks.c
    *  - type
       - string
       - 1..1
-      - MUST be "VariantOncogenicityStatement".
+      - MUST be "VariantOncogenicityStudyStatement".
    *  - subjectVariant
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1

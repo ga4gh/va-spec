@@ -23,7 +23,7 @@ $defs:
       results.
     properties:
       type:
-        extends: type 
+        extends: type
         const: "VariantDiagnosticStudyStatement"
         default: "VariantDiagnosticStudyStatement"
         description: MUST be "VariantDiagnosticStudyStatement".
@@ -84,9 +84,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "VariantOncogenicityStatement"
-        default: "VariantOncogenicityStatement"
-        description: MUST be "VariantOncogenicityStatement".
+        const: "VariantOncogenicityStudyStatement"
+        default: "VariantOncogenicityStudyStatement"
+        description: MUST be "VariantOncogenicityStudyStatement".
       subjectVariant:
         extends: subject
         oneOf:
