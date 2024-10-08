@@ -35,13 +35,15 @@ A simple data example illustrating the structure for a Variant Pathogenicity Sta
 
 **1. Statement Semantics**
 
-Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes. An assessment of the Proposition's  validity can be captured using ``direction``, ``strength``, and ``score`` attributes. 
+Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (**SPOQ**). An assessment of the Proposition's  validity can optionally be captured using ``direction``, ``strength``, and/or ``score`` attributes (**DS**). 
 
 * The ``direction`` attribute is used to indicate whether the Statement's Proposition is **supported** by the agent's assessment (when evidence favors its validity), is **disputed** by the agent's assessment (when evidence argues against its validity), or remains **neutral** (when conflicting or insufficient evidence exists to assert one direction or the other). Values come from an enumerated set of strings defined in the model {'supports', 'disputes', 'neutral'}.
 
 * The ``strength`` attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a **level of confidence** that the Proposition is true or false, or as a **level of evidence** that supports or disputes it. Data creators can define the permissible values for the strength attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low'). Values in the data are representied using instnaces of a ``Coding`` object.
 
-* The ``score`` attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.
+* The ``score`` attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score. It can be used in addition to or as an alternative to the qualitiative 'strength' attribute.
+
+This **'SPOQ-DS'** pattern is used to explicitly represent the semantics of the central piece of knowledge reported in any Statement, which is supported by evidence and provenance information provided in additional attributes and classes. 
 
 **2. Statement 'Modes of Use'**
 
