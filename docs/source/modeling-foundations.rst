@@ -108,28 +108,44 @@ $$$$$$$$$$$$$$$$$$$$$$
 Evidence Line Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-Some users of the VA-Spec want to represent curated lines of evidence that describe how a particular set of information (e.g. specific data from a published study, or subset of data items from a dataset) is interpreted as evidence as suporting or disputing a possible fact that they ultimately want to be able to assert about a variant. For example, that some set of allele frequency data items from gnomAD represents a *moderate* argument *supporting* the pathogenicity of a particular variant for a particular disease.  Many organizations 'pre-curate' such arguments so that they can be tracked and efficeiently and transparently combined to assert a final conclusion once sufficient evidence exists - e.g. that a vriant is definitively pathogenic for some condition. 
+Some users of the VA-Spec want to represent curated lines of evidence that describe how a particular set of information (e.g. specific data from a published study, or subset of data items from a dataset) is interpreted as evidence as supoprting or disputing a possible fact that they ultimately want to be able to assert about a variant. 
 
-The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Evidence Line <EvidenceLine>` class to support this use case.
+For example, that some set of allele frequency data items from gnomAD represents a *moderate* argument *supporting* the pathogenicity of a particular variant for a particular disease.  Many organizations 'pre-curate' such arguments so that they can be tracked and efficiently and transparently combined to assert a final conclusion once sufficient evidence exists - e.g. that a variant is definitively pathogenic for some condition. 
 
-Like the Statement class, it roots a larger data structure supporting clear and precise tracking of provenance information, and provides explicit semantics about nature of the argument being reported. These features of the Core-IM Study Result model are described below. 
-
+The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Evidence Line <EvidenceLine>` class to support this use case. Like the Statement class, it roots a larger data structure supporting clear and precise tracking of provenance information, and provides explicit semantics about nature of the argument being reported. These features of the Core-IM Evidence Line model are described below. 
 
 Evidence Line Structure
-#######################
+$$$$$$$$$$$$$$$$$$$$$$$
 
 In VA-Spec data, an Evidence Line object can root the data structure below:
 
-.. core-im-evidence-line-data-structure:
+.. core-im-evidence-line-structure:
 
-.. figure:: images/core-im-evidence-line-data-structure.png
+.. figure:: images/core-im-evidence-line-structure.png
 
    Evidence Line Data Structure
 
-   **Legend** A class-level view of the Evidence Line-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on Cohort Allele Frequency data from gnomAD.
+   **Legend** A class-level view of the Evidence Line-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
 
-In this structure, the Evidence Items contributing to the **Evidence Line** can be collected and tied to an assessment of the direction and strength of support provided for or against a particular 'Target Proposition' (the possible fact towards which the evidence is assessed). And as with Statements, clear and precise provenance information about the Evidence Line and Evidence Items can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
+In this structure, the Evidence Items contributing to the **Evidence Line** can be grouped and tied to an assessment of the direction and strength of support provided for or against a particular 'Target Proposition' (the possible fact towards which the evidence is assessed). And as with Statements, clear and precise provenance information about the Evidence Line and Evidence Items can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
 
 Evidence Line Semantics
-########################
+$$$$$$$$$$$$$$$$$$$$$$$
+
+Evidence Lines represent a type of information that always sits between foundational evidence and a final assertion of purported fact, in the process of generating scientific knowledge.  Here, they express the idea that a particular collection of evidence items was interpreted to provide  a particular strength and direction of support for or against the possible fact expressed in this asserted Statement. Is is through the collective assessment of one or more lines of evidence that hypothesis and conjecture become cemented as scientific fact. 
+
+The attributes defined in the Evidence Line class are carefully crafted to express these core elements of an Evidence Line:
+
+* The ``targetProposition`` attribute reports the 'possible fact' that the evidence is assessed against.
+* The ``evidenceItems`` attribute captures the information that was assessed as evidence
+* The ``directionOfEvidenceProvided`` and ``strengthOfEvidenceProvided`` attributes report the outcome of this assessment - whether the evidence line *supports* or *disputes* the target proposition, and *how strongly*. 
+* Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who did it, when, using what guidelines, etc). 
+
+The diagram below highlights key Evidence Line attributes, and provides an example of how this class structures data to report that the allele count and frequency data in a particular cohort allele frequency study result provides *moderate* evidence *supporting* the Pathogenicity of  BRCA2 c.8023A>G.
+
+.. core-im-evidence-line-semantics:
+
+.. figure:: images/evidence-line-semantics.png
+
+   Semantic Meaning of Evidence Lines 
