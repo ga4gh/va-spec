@@ -15,7 +15,7 @@ Evidence Line
 .. image:: ../../../images/evidence-line-semantics.png
   :width: 700
 
-* In an EvidenceLine instance, the ``targetProposition`` attribute captures the 'possible fact' that the evidence is assessed against. The ``evidenceItems`` attribute the information assessed as evidence. And the ``directionOfEvidenceProvided`` and ``strengthOfEvidenceProvided`` attributes report the outcome of this assessment - whether the evidence line supports or disputes the target proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc). 
+* In an EvidenceLine instance, the ``targetProposition`` attribute reports the 'possible fact' that the evidence is assessed against. The ``evidenceItems`` attribute captures the information assessed as evidence. And the ``directionOfEvidenceProvided`` and ``strengthOfEvidenceProvided`` attributes report the outcome of this assessment - whether the evidence line supports or disputes the target proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc). 
 
 **2. Evidence Line Scope**
 
