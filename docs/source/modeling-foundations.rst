@@ -108,7 +108,7 @@ $$$$$$$$$$$$$$$$$$$$$$
 Evidence Line Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-Some users of the VA-Spec want to represent curated lines of evidence that describe how a particular set of information (e.g. specific data from a published study, or subset of data items from a dataset) is interpreted as evidence as supoprting or disputing a possible fact that they ultimately want to be able to assert about a variant. 
+Some users of the VA-Spec want to represent curated lines of evidence that describe how a particular set of information (e.g. specific data from a published study, or subset of data items from a dataset) is interpreted as evidence supoprting or disputing a possible fact that they ultimately want to be able to assert about a variant. 
 
 For example, that some set of allele frequency data items from gnomAD represents a *moderate* argument *supporting* the pathogenicity of a particular variant for a particular disease.  Many organizations 'pre-curate' such arguments so that they can be tracked and efficiently and transparently combined to assert a final conclusion once sufficient evidence exists - e.g. that a variant is definitively pathogenic for some condition. 
 
