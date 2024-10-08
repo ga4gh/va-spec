@@ -121,7 +121,7 @@ In VA-Spec data, an Evidence Line object can root the data structure below:
 
 .. core-im-evidence-line-structure:
 
-.. figure:: images/core-im-evidence-line-structure.png
+.. figure:: images/evidence-line-structure.png
 
    Evidence Line Data Structure
 
@@ -148,4 +148,4 @@ The diagram below highlights key Evidence Line attributes, and provides an examp
 
 .. figure:: images/evidence-line-semantics.png
 
-   Semantic Meaning of Evidence Lines 
+   Semantic Meaning of Evidence Lines.
