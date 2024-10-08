@@ -81,7 +81,7 @@ Study Result Representation
 
 Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Study Result <StudyResult>` class to support this use case.
 
-Like the Statement class, it roots a larger data structure supporting clear and precise tracking of the evidence and provenance information, and provides explicit semantics linking a variant to specific data and study context. These features of the Core-IM Study Result model are described below. 
+Like the Statement class, it roots a larger data structure supporting clear and precise tracking of evidence and provenance information, and provides explicit semantics linking a variant to specific data and study context. These features of the Core-IM Study Result model are described below. 
 
 Study Result Data Structure
 $$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -94,7 +94,7 @@ In VA-Spec data, a Study Result object roots the data structure below:
 
    Study Result Data Structure
 
-   **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result reporting data from the gnomAD dataset about a particular variant.
+   **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 
 In this structure, the data items collected in the **Study Result** can be linked to the larger **Data Set** or sets from which they came, and a description of the **Study Group** from which the data was collected. And as with Statements, clear and precise provenance information about the Study Result and DataSet can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
@@ -108,12 +108,27 @@ $$$$$$$$$$$$$$$$$$$$$$
 Evidence Line Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
+Some users of the VA-Spec want to represent curated lines of evidence that describe how a particular set of information (e.g. specific data from a published study, or subset of data items from a dataset) is interpreted as evidence as suporting or disputing a possible fact that they ultimately want to be able to assert about a variant. For example, that some set of allele frequency data items from gnomAD represents a *moderate* argument *supporting* the pathogenicity of a particular variant for a particular disease.  Many organizations 'pre-curate' such arguments so that they can be tracked and efficeiently and transparently combined to assert a final conclusion once sufficient evidence exists - e.g. that a vriant is definitively pathogenic for some condition. 
 
+The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Evidence Line <EvidenceLine>` class to support this use case.
+
+Like the Statement class, it roots a larger data structure supporting clear and precise tracking of provenance information, and provides explicit semantics about nature of the argument being reported. These features of the Core-IM Study Result model are described below. 
 
 
 Evidence Line Structure
 #######################
 
+In VA-Spec data, an Evidence Line object can root the data structure below:
+
+.. core-im-evidence-line-data-structure:
+
+.. figure:: images/core-im-evidence-line-data-structure.png
+
+   Evidence Line Data Structure
+
+   **Legend** A class-level view of the Evidence Line-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on Cohort Allele Frequency data from gnomAD.
+
+In this structure, the Evidence Items contributing to the **Evidence Line** can be collected and tied to an assessment of the direction and strength of support provided for or against a particular 'Target Proposition' (the possible fact towards which the evidence is assessed). And as with Statements, clear and precise provenance information about the Evidence Line and Evidence Items can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
 
 Evidence Line Semantics
