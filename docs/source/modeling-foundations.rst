@@ -25,7 +25,7 @@ Statement Representation
 In the VA-Spec data, each assertion of knowledge about a variant is captured in a self-contained **Statement** object. The :ref:`GKS Core-IM<core-information-model>` provides a rich and powerful model where:
 
  * the :ref:`Statement <Statement>` class roots a larger data structure supporting clear and precise tracking of the evidence and provenance information
- * the semantics of what is assessed or reported to be true in a Statement (i.e. its 'Proposition') are explicitly structured in terms of subject, predicate, object, and qualifier attributes
+ * the semantics of what is assessed or reported to be true in a Statement (i.e. its 'Proposition') are explicitly structured in terms of subject, predicate, object, and qualifier attributes (SPOQ)
  * Statements can report a more nuanced assessment of the state of confidence or evidence surrounding this Proposition
 
 These features of the Core-IM Statement model are described below. 
@@ -54,15 +54,15 @@ This structure allows tracking of provenance information at the level of a State
 
 Statement Semantics
 $$$$$$$$$$$$$$$$$$$
-Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). 
+Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (**SPOQ**). 
 
-An assessment of the Proposition's validity can be captured using ``direction`` and ``strength``  (DS) attributes - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting behind claim. 
+An assessment of the Proposition's validity can be captured using ``direction``, ``strength``, and ``score`` attributes (**DS**)  - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting behind claim. 
 
-This "SPOQ-DS" model supports two **"Modes of Use**" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
+This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
-#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The ``strength`` attribute is not populated, and ``direction`` is assumed to be true/supports if not otherwise indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
+#. In **"Assertion Mode"**, a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The ``strength``/``score`` attributes are not populated, and ``direction`` is assumed to be true/supports if not otherwise indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.
 
-#. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength`` attributes are populated, which allows for more nuanced Statements reporting things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
+#. In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which is not necessarily being asserted as true. The ``direction`` and ``strength``/``score`` attributes are populated, which allows for more nuanced Statements reporting things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.   
 
 .. core-im-statement-semantics:
 
@@ -72,9 +72,9 @@ This "SPOQ-DS" model supports two **"Modes of Use**" for Statements, which diffe
 
    **Assertion Mode** vs **Proposition Assessment Mode** semantics for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
 
-Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength`` attributes, and thus could be use to support either Mode of Use. 
+Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength``/``score`` attributes, and thus could be use to support either Mode of Use. 
 
-Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging ``direction`` and ``strength`` attributes only if they wish to describe the state of evidence or confidence surrounding a possible fact.
+Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging ``direction`` and ``strength``/``score`` attributes only if they wish to describe the state of evidence or confidence surrounding a possible fact.
 
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
