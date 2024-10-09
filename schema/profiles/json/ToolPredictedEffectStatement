@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/VariantPathogenicityStatement",
-   "title": "VariantPathogenicityStatement",
-   "type": "object",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/json/ToolPredictedEffectStatement",
+   "title": "ToolPredictedEffectStatement",
    "maturity": "draft",
-   "description": "A Statement describing the role of a variant in causing an inherited condition.",
+   "type": "object",
+   "description": "A prediction about a variant made by a tool",
    "properties": {
       "id": {
          "type": "string",
@@ -91,6 +91,29 @@
          "description": "Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).",
          "$comment": "This attribute holds a structured RecordMetadata object, which can be used to capture when, how, and by whom a record serialization was generated or modified; what upstream resources it was derived or retrieved from; and record-level administrative information such as versioning and lifecycle status."
       },
+      "subject": {
+         "oneOf": [
+            {
+               "type": "object"
+            }
+         ],
+         "description": "The Entity about which the Statement is made.",
+         "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+      },
+      "predicate": {
+         "type": "string",
+         "description": "The relationship declared to hold between the subject and the object of the Statement.",
+         "$comment": "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845)."
+      },
+      "object": {
+         "oneOf": [
+            {
+               "type": "object"
+            }
+         ],
+         "description": "An Entity or concept that is related to the subject of a Statement via its predicate.",
+         "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
+      },
       "direction": {
          "description": "A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.",
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction', 'strength', and 'score' attributes. The 'direction' attribute is used to indicate whether the Statement's Proposition is *supported* by the agent's assessment (when evidence favors its validity), is *disputed* by the agent's assessment (when evidence argues against its validity), or remains *neutral* (when conflicting or insufficient evidence exists to assert one direction or the other). (Enumerated values = 'supports', 'disputes', 'neutral').",
@@ -146,76 +169,15 @@
       },
       "type": {
          "type": "string",
-         "const": "VariantPathogenicityStatement",
-         "default": "VariantPathogenicityStatement",
-         "description": "MUST be \"VariantPathogenicityStatement\"."
-      },
-      "subjectVariant": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-            },
-            {
-               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
-            }
-         ],
-         "description": "A variant that is the subject of the Statement.",
-         "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
-      },
-      "predicate": {
-         "type": "string",
-         "description": "The relationship declared to hold between the subject and the object of the Statement.",
-         "$comment": "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain - ideally using terms from community ontologies or terminologies. For example, in a  'Variant Pathogenicity Statement' Profile, the predicate value set might include terms from the GENO ontology defining  'pathogenic for condition', 'benign for condition', and 'uncertain significance for condition' relationships (GENO:0000840, GENO:0000843, GENO:0000845).",
-         "const": "isCausalFor"
-      },
-      "objectCondition": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
-            }
-         ],
-         "description": "The Condition for which the variant impact is stated.",
-         "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
-      },
-      "penetranceQualifier": {
-         "type": "string",
-         "enum": [
-            "high",
-            "low",
-            "risk allele"
-         ],
-         "description": "Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition."
-      },
-      "modeOfInheritanceQualifier": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
-         },
-         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify."
-      },
-      "geneContextQualifier": {
-         "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
-            }
-         ]
+         "const": "ToolPredictedEffectStatement",
+         "default": "ToolPredictedEffectStatement",
+         "description": "MUST be \"ToolPredictedEffectStatement\"."
       }
    },
    "required": [
-      "objectCondition",
+      "object",
       "predicate",
-      "subjectVariant",
+      "subject",
       "type"
    ],
    "additionalProperties": false

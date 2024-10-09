@@ -1,0 +1,122 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/assay-var-effect-source.yaml"
+title: VA Spec Molecular Consequence statement result Profiles
+strict: true
+
+imports:
+  catvrs.core: ../cat-vrs/core/cat-vrs-core-source.yaml
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+  gks.data-types: ../data-types/data-types-source.yaml
+  gks.domain-entities: ../domain-entities/domain-entities-source.yaml
+
+$defs:
+  MolecularConsequenceStatement:
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: >-
+      A statement describing the effect of a variant on a downstream molecule.
+    properties:
+      type:
+        extends: type
+        const: "MolecularConsequenceStatement"
+        default: "MolecularConsequenceStatement"
+        description: MUST be "MolecularConsequenceStatement".
+      subjectVariant:
+        extends: subject 
+        oneOf:
+        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+        - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
+        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        const: hasConsequenceFor
+      objectMolecule:
+        description: The molecule affected by the variant (cDNA reference sequence preferred).
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/SequenceReference"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+      geneQualifier:
+        # TODO: Should SA or VA be used to describe more gene-related info like strand, cDNA start/stop, etc.  
+        # TODO: geneDistanceQualifier:
+        description: The gene affected by the variant.
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+      consequenceTermsQualifier:
+        description: Terms describing the effect of the variant on the molecule
+        $ref: "#/$defs/ConsequenceTerm"
+      molecularChangeQualifier:
+        description: The sequence change caused by the variant on the downstream transcript or protein molecule.
+        type: array
+        ordered: false
+        items:
+          oneOf:
+            - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
+            - $ref: "/ga4gh/schema/vrs/2.x/json/Expression"
+    required:
+      - subjectVariant
+      - predicate
+      - objectMolecule
+
+  ToolPredictedEffectStatement:
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: A prediction about a variant made by a tool
+    properties:
+      type:
+        extends: type
+        const: "ToolPredictedEffectStatement"
+        default: "ToolPredictedEffectStatement"
+        description: MUST be "ToolPredictedEffectStatement".
+
+
+  ConsequenceTerm:
+    description: "Types of effects of a variant on a downstream molecule"
+    type: string
+    maturity: draft
+    oneOf:
+      - "TranscriptAblation"
+      - "SpliceAcceptorVariant"
+      - "SpliceDonorVariant"
+      - "StopGained"
+      - "FrameshiftVariant"
+      - "StopLost"
+      - "StartLost"
+      - "TranscriptAmplification"
+      - "FeatureElongation"
+      - "FeatureTruncation"
+      - "InframeInsertion"
+      - "InframeDeletion"
+      - "MissenseVariant"
+      - "ProteinAlteringVariant"
+      - "SpliceDonorFifthBaseVariant"
+      - "SpliceRegionVariant"
+      - "SpliceDonorRegionVariant"
+      - "SplicePolypyrimidineTractVariant"
+      - "IncompleteTerminalCodonVariant"
+      - "StartRetainedVariant"
+      - "StopRetainedVariant"
+      - "SynonymousVariant"
+      - "CodingSequenceVariant"
+      - "MatureMiRNAVariant"
+      - "FivePrimeUTRVariant"
+      - "ThreePrimeUTRVariant"
+      - "NonCodingTranscriptExonVariant"
+      - "IntronVariant"
+      - "NMDTranscriptVariant"
+      - "NonCodingTranscriptVariant"
+      - "CodingTranscriptVariant"
+      - "UpstreamGeneVariant"
+      - "DownstreamGeneVariant"
+      - "TFBSAblation"
+      - "TFBSAmplification"
+      - "TFBindingSiteVariant"
+      - "RegulatoryRegionAblation"
+      - "RegulatoryRegionAmplification"
+      - "RegulatoryRegionVariant"
+      - "IntergenicVariant"
+      - "SequenceVariant"

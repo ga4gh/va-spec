@@ -1,10 +1,10 @@
 **Computational Definition**
 
-A Statement describing the role of a variant in causing an inherited condition.
+A statement describing the effect of a variant on a downstream molecule.
 
 **Information Model**
 
-Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-im:Statement`.
+Some MolecularConsequenceStatement attributes are inherited from :ref:`gks.core-im:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -60,6 +60,10 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-
       - :ref:`RecordMetadata`
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
+   *  - object
+      - object
+      - 1..1
+      - An Entity or concept that is related to the subject of a Statement via its predicate.
    *  - direction
       - string
       - 0..1
@@ -87,7 +91,7 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-
    *  - type
       - string
       - 1..1
-      - MUST be "VariantPathogenicityStatement".
+      - MUST be "MolecularConsequenceStatement".
    *  - subjectVariant
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`IRI`
       - 1..1
@@ -96,19 +100,19 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks.core-
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
-      - :ref:`Condition` | :ref:`IRI`
+   *  - objectMolecule
+      - :ref:`SequenceReference` | :ref:`IRI`
       - 1..1
-      - The :ref:`Condition` for which the variant impact is stated.
-   *  - penetranceQualifier
-      - string
-      - 0..1
-      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
-   *  - modeOfInheritanceQualifier
-      - :ref:`Coding`
-      - 0..m
-      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
-   *  - geneContextQualifier
+      - The molecule affected by the variant (cDNA reference sequence preferred).
+   *  - geneQualifier
       - :ref:`Gene` | :ref:`IRI`
       - 0..1
-      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+      - The gene affected by the variant.
+   *  - consequenceTermsQualifier
+      - :ref:`ConsequenceTerm`
+      - 1..m
+      - Terms describing the effect of the variant on the molecule
+   *  - molecularChangeQualifier
+      - :ref:`Allele` | :ref:`Expression`
+      - 0..m
+      - The sequence change caused by the variant on the downstream transcript or protein reference sequence.
