@@ -137,10 +137,11 @@ Evidence Lines represent a type of information that always sits between foundati
 
 The attributes defined in the Evidence Line class are carefully crafted to express these core elements of an Evidence Line:
 
+* The ``evidenceItems`` attribute captures the information that was assessed as evidence.
 * The ``targetProposition`` attribute reports the 'possible fact' that the evidence is assessed against.
-* The ``evidenceItems`` attribute captures the information that was assessed as evidence
 * The ``directionOfEvidenceProvided`` and ``strengthOfEvidenceProvided`` attributes report the outcome of this assessment - whether the evidence line *supports* or *disputes* the target proposition, and *how strongly*. 
-* Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who did it, when, using what guidelines, etc). 
+
+Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who did it, when, using what guidelines, etc). 
 
 The diagram below highlights key Evidence Line attributes, and provides an example of how this class structures data to report that the allele count and frequency data in a particular cohort allele frequency study result provides *moderate* evidence *supporting* the Pathogenicity of  BRCA2 c.8023A>G.
 
