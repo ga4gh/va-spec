@@ -1,7 +1,7 @@
 .. _TherapeuticProcedure:
 
 Therapeutic Procedure
-!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!
 
 .. include::  ../../../../../../schema/domain-entities/def/TherapeuticProcedure.rst  
 

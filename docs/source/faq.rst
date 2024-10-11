@@ -1,8 +1,5 @@
-.. _faq:
-
 FAQ
 !!!
-
 
 .. _what-is-a-variant-annotation:
 

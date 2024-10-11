@@ -7,7 +7,6 @@ imports:
   catvrs.core: ../cat-vrs/core/cat-vrs-core-source.yaml
   vrs: ../vrs/vrs-source.yaml
   gks.core-im: ../core-im/core-im-source.yaml
-  gks.data-types: ../data-types/data-types-source.yaml
   gks.domain-entities: ../domain-entities/domain-entities-source.yaml
 
 $defs:
@@ -29,7 +28,7 @@ $defs:
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
         - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
         description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
@@ -38,7 +37,7 @@ $defs:
         extends: object
         oneOf:
         - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
-        - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+        - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
         description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:
         type: string
@@ -54,7 +53,7 @@ $defs:
         type: array
         ordered: false
         items:
-          $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+          $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/Coding"
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
           Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
@@ -64,7 +63,7 @@ $defs:
           (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
         oneOf:
           - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Gene"
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
     required:
     - subjectVariant
     - predicate

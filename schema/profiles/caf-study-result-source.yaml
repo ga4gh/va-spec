@@ -6,7 +6,6 @@ strict: true
 imports:
   vrs: ../vrs/vrs-source.yaml
   gks.core-im: ../core-im/core-im-source.yaml
-  gks.data-types: ../data-types/data-types-source.yaml
 
 $defs:
   CohortAlleleFrequencyStudyResult:
