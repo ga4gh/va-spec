@@ -11,13 +11,13 @@ Complex Data Types
 Coding
 ******
 
-.. include::  ../../../schema/data-types/def/Coding.rst
+.. include::  ../../../schema/core-im/def/Coding.rst
 
 .. _Extension:
 
 Extension
 *********
-.. include::  ../../../schema/data-types/def/Extension.rst
+.. include::  ../../../schema/core-im/def/Extension.rst
 
 
 .. _RecordMetadata:
@@ -30,7 +30,7 @@ RecordMetadata
 ConceptMapping
 **************
 
-.. include::  ../../../schema/data-types/def/ConceptMapping.rst
+.. include::  ../../../schema/core-im/def/ConceptMapping.rst
 
 Simple Data Types
 ###################
@@ -40,7 +40,7 @@ Simple Data Types
 Code
 ****
 
-.. include::  ../../../schema/data-types/def/Code.rst
+.. include::  ../../../schema/core-im/def/Code.rst
 
 
 .. _IRI:
@@ -48,4 +48,4 @@ Code
 IRI
 ***
 
-.. include::  ../../../schema/data-types/def/IRI.rst
+.. include::  ../../../schema/core-im/def/IRI.rst

@@ -18,6 +18,6 @@ Cohort Allele Frequency Study Result
 
 
 Assay Variant Effect Measurement Study Result
-############################################
+#############################################
 
 .. include::  ../../../schema/profiles/def/AssayVariantEffectMeasurementStudyResult.rst

@@ -31,7 +31,7 @@ An example of data structured using this Standard Profile can be found `here <ht
 
 
 Variant Oncogenicity Study Statement
-##############################
+####################################
 
 .. include::  ../../../schema/profiles/def/VariantOncogenicityStudyStatement.rst
 

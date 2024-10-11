@@ -7,7 +7,6 @@ imports:
   catvrs.core: ../cat-vrs/core/cat-vrs-core-source.yaml
   vrs: ../vrs/vrs-source.yaml
   gks.core-im: ../core-im/core-im-source.yaml
-  gks.data-types: ../data-types/data-types-source.yaml
 
 $defs:
   # MaveDB work in progress
@@ -28,7 +27,7 @@ $defs:
         oneOf:
           - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
           - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
         description: A protein or genomic contextual or canonical molecular variant.
       predicate:
         extends: predicate
@@ -38,8 +37,8 @@ $defs:
         # TODO we may need to model this more specifically as a DomainEntity subtype
         extends: object
         oneOf:
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/Coding"
         description: >-
           The assay that is evaluated for the variant effect. (e.g growth in
           haploid cell culture protein stability in fluorescence assay)
@@ -80,7 +79,7 @@ $defs:
         oneOf:
           - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
           - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
         description: A protein or genomic contextual or canonical molecular variant.
       predicate:
         extends: predicate
@@ -90,8 +89,8 @@ $defs:
         # TODO we may need to model this more specifically as a DomainEntity subtype
         extends: object
         oneOf:
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/Coding"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/Coding"
         description: >-
           The assay that is evaluated for the variant effect. (e.g growth in
           haploid cell culture protein stability in fluorescence assay)
@@ -134,7 +133,7 @@ $defs:
         extends: focus
         oneOf:
           - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
-          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
         description: The human mapped representation of the variant that is the subject of the Statement.
         # derivedFrom:
         #   #this is the actual assayed variant (e.g. yeast, non-reference, pre-spliced trx, anything you can possibly dream of)
