@@ -1,0 +1,229 @@
+# Updated version of the initial MAVE Assay Variant Effect Profile drafts defined here (https://github.com/ga4gh/va-spec/blob/1.x/schema/profiles/assay-var-effect-source.yaml),
+# that reflects outcomes of October 2024 modeling calls, and to ensure the Profiles can accommodate data from additional implementations/use cases (e.g. CIViC)
+# Still a work in progress with lots still to be settled.
+
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/variant-functional-impact-source.yaml"   # Proposing more informative and broadly applicable name for the standard profile
+title: VA Spec Variant Functional Impact Statement, Study Result, and Evidence Line Profiles
+strict: true
+
+imports:
+  catvrs.core: ../cat-vrs/core/cat-vrs-core-source.yaml
+  vrs: ../vrs/vrs-source.yaml
+  gks.core-im: ../core-im/core-im-source.yaml
+
+$defs:
+  VariantFunctionalImpactStudyStatement:         # Profile name here reflects a preference for "functional impact" over "variant effect" - as more informative and broadly applicable. This terminology is used throughout, but can be changed if we settle on something else. 
+    inherits: gks.core-im:Statement
+    maturity: draft
+    type: object
+    description: >-        # Reworked definition so it better fits with use cases beyond MAVE (e.g. CIViC Functional Impact data)
+      A statement reporting a conclusion from a single assay or study about the functional
+      impact of a variant on a sequence feature (typically a gene or gene product) - based
+      on interpretation of the results of the assay or study.
+    properties:
+      type:
+        extends: type
+        const: "VariantFunctionalImpactStudyStatement"
+        default: "VariantFunctionalImpactStudyStatement"
+        description: MUST be "VariantFunctionalImpactStudyStatement".
+      subjectVariant:
+        extends: subject
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+        description: A protein or genomic contextual or canonical molecular variant.
+      predicate:          # Updated the enum predicate to represent a relationship between the subject variant and impacted sequence feature 
+        extends: predicate
+        description: >-
+          A term representing the relationship asserted to hold between the subject Variant
+          and object Sequence Feature 
+        const: hasFunctionalImpact                
+      objectSequenceFeature:
+        extends: object
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+          - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/SequenceFeature"    # https://github.com/ga4gh/gks-common/pull/77 proposes adding this Domain Entity to the gks commons spec.
+        description: >-
+          The sequence feature that is affected by the subject variant (typically a gene
+          or gene product)
+      assayContextQualifier:           # Added a qualifier to indicate the assay context in which the impact reported in the SPO is determined/constrained to hold
+        description: >-
+          The assay in which the reported variant functional impact was determined - 
+          providing a specific context in which this effect is asserted to hold.
+        $comment: >-
+          Alt def: The assay in which the reported variant functional impact was determined - 
+          which constrains the context in which this effect is asserted to hold. 
+        oneOf:
+          - type: string
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+      impactTypeQualifier:           # Added a qualifier allowing more specific types of impacts to be reported, so the profile supports implementations like CIViC, ClinGen)
+        description: >-
+          A term describing a specific type of functional impact that the variant is determined
+          to have on the indicated sequence feature (e.g. decreased activity, dominant negative,
+          neomorphic, reduced Ca2+ binding activity)
+        $comment: >-
+          Implementers may use a set of terms to use here that reflect the specific types of
+          functional impact(s) measured by the assay(s) employed. It is recommended that terms
+          are drawn from established terminologies where possible.
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/Coding"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+      classification:
+        extends: classification
+        description: >-
+          A term or phrase summarizing the impact reported in the Statement, providing
+          a familiar functional classification of the subject variant.
+        enum:    # TO DO: harmonize values here across MAVE and CIViC enums (proposal: normal function, abnormal function, indeterminate function, increased activity, decreased activity, novel activity, dominant negative activity)
+          # MAVE values
+          - normal
+          - indeterminate
+          - abnormal
+          # CIViC values
+          - gain of function
+          - loss of function
+          - unaltered function
+          - neomorphic
+          - dominant negative
+          - unknown      
+          
+      # TO DO: determine if supportingMethods and/or specifiedBy attributes are both needed here, and how to populate them
+      supportingMethods: 
+        extends: supportingMethods
+        description: >-
+          Specific methods or assays that directly or indirectly supported determination of 
+          the variant's functional impact. 
+        $comment: >-
+          These may include assays that generate biological data (e.g growth in haploid cell
+          culture protein stability in fluorescence assay), analysis methods used to generate
+          functional scores, or curation and interpretation guidelines that inform the final
+          functional classification.          
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          The method that specifies how the functional classification is ultimately assigned to
+          the variant, based on interpretation of data from the supporting assay. May include
+          information about thresholds applied on assay variant effect scores to derive the 
+          final classification.
+    required:
+      - subjectVariant
+      - predicate
+      - objectSequenceFeature
+
+  FunctionalEvidenceForPathogenicityEvidenceLine:    # TO DO: Determine if we want to define Evidence Line Profiles at this level of granularity (based on both the type of target proposition, and the type of evidence items)
+    inherits: gks.core-im:EvidenceLine
+    maturity: draft
+    type: object
+    description: >-
+      An Evidence Line that describes the strength and direction of evidence provided by variant 
+      functional assay results for the pathogenicity of a particular Variant. 
+    properties:
+      type:
+        extends: type
+        const: "FunctionalEvidenceForPathogenicityEvidenceLine"
+        default: "FunctionalEvidenceForPathogenicityEvidenceLine"
+        description: MUST be "FunctionalEvidenceForPathogenicityEvidenceLine".
+      hasEvidenceItems:
+        extends: hasEvidenceItems
+        type: array
+        ordered: false
+        items:
+          $ref: "#/$defs/VariantFunctionalImpactStudyResult"
+        description: >-
+          A functional impact study result that was interpreted as evidence relevant to
+          the possible pathogenicity of a variant. 
+      directionOfEvidenceProvided:
+        extends: directionOfEvidenceProvided
+        description: >-
+          The direction of support that the Evidence Line is determined to provide toward its target
+          proposition concerning that pathogenicity of a particular variant. (supports, disputes, neutral)
+      strengthOfEvidenceProvided:    # TO DO: the core im strengthOfEvidenceProvided property takes an IRI or Coding, not an enum. Allow for enums in the core im for now?
+        extends: strengthOfEvidenceProvided
+        type: string
+        enum:
+          - PS3_Strong
+          - PS3_Moderate
+          - PS3_Supporting
+          - BS3_Strong
+          - BS3_Moderate
+          - BS3_Supporting
+        description: >-
+          The strength of support that an Evidence Line is determined to provide for or against
+          the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
+          indicated by the directionOfEvidenceProvided.
+      targetProposition:          # TO DO: add Proposition class and targetProposition attribute to the core IM to support their use here. 
+        extends: targetProposition
+        $ref: "#/$defs/VariantPathogenicityProposition"
+        description: >-
+          The possible fact toward which the strength and direction of evidence provided by
+          functional assay data was evaluated (here, a proposition that the assessed variant
+          may be pathogenic for a particular disease).      
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          A method that specifies how functional assay results are to be evaluated and weighed as evidence
+          for or against the pathogenicity of the assessed variant.
+
+      # TO DO: decide which if any attributes should be *required* in this profile. 
+
+  VariantFunctionalImpactStudyResult:            # Name reflects preference toward 'functional impact' over 'variant effect' - and provides consistency with profile names above. 
+    inherits: gks.core-im:StudyResult
+    maturity: draft
+    type: object
+    description: >-
+      A StudyResult that reports a functional impact score from a variant functional assay.
+    properties:
+      type:
+        extends: type
+        const: "VariantFunctionalImpactStudyResult"
+        default: "VariantFunctionalImpactStudyResult"
+        description: MUST be "VariantFunctionalImpactStudyResult".
+      focusVariant:
+        extends: focus
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+        description: The genetic variant for which functional impact score is generated.
+      functionalImpactScore:         # Proposed a more descriptive name than just 'score' here
+        type: number
+        description: The score of the variant effect in the assay.
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          The assay that was performed to generate the reported functional impact score.
+        extends: specifiedBy
+      sourceDataSet:
+        extends: sourceDataset
+        description: >-
+          The full data set that provided the reported the functional impact score. 
+
+  VariantPathogenicityProposition:
+    extends: Proposition
+    maturity: draft
+    type: object
+    description: >-
+      A proposition describing the role of a variant in causing an inherited condition.
+    properties:
+      type:
+        extends: type
+        const: VariantPathogenicityProposition
+        default: VariantPathogenicityProposition
+        description: Must be "VariantPathogenicityProposition"
+      subjectVariant:
+        extends: subject 
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/core/json/CategoricalVariant"
+          - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      objectCondition:
+        extends: object
+        oneOf:
+        - $ref: "/ga4gh/schema/gks-common/1.x/domain-entities/json/Condition"
+        - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
+        description: The :ref:`Condition` for which the variant impact is stated.
+     # TO DO: decide if we want to include the qualifiers defined on the VarPathStatement class in the VarPathProposition
