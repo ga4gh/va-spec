@@ -48,7 +48,7 @@ $defs:
         description: >-
           The sequence feature that is affected by the subject variant (typically a gene
           or gene product)
-      assayContextQualifier:           # Added a qualifier to indicate the assay context in which the impact reported in the SPO is determined/constrained to hold
+      studyContextQualifier:           # Added a qualifier to indicate the assay context in which the impact reported in the SPO is determined/constrained to hold
         description: >-
           The assay in which the reported variant functional impact was determined - 
           providing a specific context in which this effect is asserted to hold.
@@ -56,7 +56,7 @@ $defs:
           Alt def: The assay in which the reported variant functional impact was determined - 
           which constrains the context in which this effect is asserted to hold. 
         oneOf:
-          - type: string
+          - type: string                        # Don't think this is the right way to specify that the value can be a string or IRI
           - $ref: "/ga4gh/schema/gks-common/1.x/core-im/json/IRI"
       impactTypeQualifier:           # Added a qualifier allowing more specific types of impacts to be reported, so the profile supports implementations like CIViC, ClinGen)
         description: >-
@@ -138,7 +138,8 @@ $defs:
         description: >-
           The direction of support that the Evidence Line is determined to provide toward its target
           proposition concerning that pathogenicity of a particular variant. (supports, disputes, neutral)
-      strengthOfEvidenceProvided:    # TO DO: the core im strengthOfEvidenceProvided property takes an IRI or Coding, not an enum. Allow for enums in the core im for now?
+          
+      strengthOfEvidenceProvided:           # TO DO: the core im strengthOfEvidenceProvided property takes an IRI or Coding, not an enum. Allow for enums in the core im for now?
         extends: strengthOfEvidenceProvided
         type: string
         enum:
@@ -152,6 +153,7 @@ $defs:
           The strength of support that an Evidence Line is determined to provide for or against
           the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
           indicated by the directionOfEvidenceProvided.
+          
       targetProposition:          # TO DO: add Proposition class and targetProposition attribute to the core IM to support their use here. 
         extends: targetProposition
         $ref: "#/$defs/VariantPathogenicityProposition"
