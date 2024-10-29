@@ -41,7 +41,7 @@ In VA-Spec data, a Statement object roots the larger data structure below.
 
    Statement Data Structure
 
-   **Legend** A class-level view of the Statement-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report, in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+   **Legend** A class-level view of the Statement-based structures supported in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report, in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure:
  * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against it.
@@ -70,7 +70,7 @@ This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which d
 
   Statement Semantics in Two Modes of Use 
 
-  **Legend**  Assertion Mode vs Proposition Assessment Mode semantics for a Variant Pathogenicity Statement. **Left Panels**: Abridged versions of the data models for each mode of use, showing attributes reporting central claim it puts forth (most attributes describing evidence and provenance information are omitted). **Center Panels**:  An example of a Variant Pathogenicity Statement instance. **Right Panels**: Plain language meaning of what structured data in the example reports to be true. 
+  **Legend**  Assertion Mode vs Proposition Assessment Mode semantics for a Variant Pathogenicity Statement. **Left Panels**: Abridged versions of the data models for each mode of use, showing attributes reporting central claim each puts forth (most attributes describing evidence and provenance information are omitted). **Center Panels**:  An example of a Variant Pathogenicity Statement instance. **Right Panels**: Plain language meaning of what structured data in the example reports to be true. 
 
 Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength``/``score`` attributes, and thus could be use to support either Mode of Use. 
 
@@ -94,7 +94,7 @@ In VA-Spec data, a Study Result object roots the data structure below:
 
    Study Result Data Structure
 
-   **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
+   **Legend** A class-level view of the Study Result-based structures supported in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 
 In this structure, the data items collected in the **Study Result** can be linked to the larger **Data Set** or sets from which they came, and a description of the **Study Group** from which the data was collected. And as with Statements, clear and precise provenance information about the Study Result and DataSet can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
@@ -144,7 +144,7 @@ In VA-Spec data, an Evidence Line object can root the data structure below:
 
    Evidence Line Data Structure
 
-   **Legend** A class-level view of the Evidence Line-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
+   **Legend** A class-level view of the Evidence Line-based structures supported in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
 
 In this structure, the Evidence Items contributing to the **Evidence Line** can be grouped and tied to an assessment of the direction and strength of support provided for or against a particular 'Target Proposition' (the possible fact towards which the evidence is assessed). And as with Statements, clear and precise provenance information about the Evidence Line and Evidence Items can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
 
@@ -170,4 +170,4 @@ The diagram below highlights key Evidence Line attributes, and provides an examp
 
   Semantic Meaning of Evidence Lines.
 
-  **Legend**  Semantics of a Pathogenicity Evidence Line. **Left**: An abridged version of a Pathogenicity Evidence Line profile model, showing only attributes reporting central claim it puts forth (attributes describing provenance information are omitted). **Center**:  An example of a Pathogenicity Evidence Line instance. **Right**: Plain language meaning of structured data in the example. 
+  **Legend**  Semantics of a Pathogenicity Evidence Line. **Left**: An abridged version of a Pathogenicity Evidence Line profile model, showing only attributes reporting the central claim it puts forth (attributes describing provenance information are omitted). **Center**:  An example of a Pathogenicity Evidence Line instance. **Right**: Plain language meaning of the structured data in the example. 
