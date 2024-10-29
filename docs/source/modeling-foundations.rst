@@ -120,7 +120,7 @@ The diagram below highlights these key attributes, and provides an example of ho
 
   Semantic Meaning of Study Results. 
 
-  **Legend** Study Result Model, Example, and Meaning. **Left**: An abridged version of a Cohort Allele Frequency (CAF) Study Result data model, showing only attributes reporting the central claim it puts forth (attributes providing evidence and provenance information are omitted). **Center**: An example of a CAF Study Result instance. **Right**: Plain language meaning of structured data in the example. 
+  **Legend** Semantics of a Cohort Allele Frequency Study Result. **Left**: An abridged version of a Cohort Allele Frequency (CAF) Study Result profile model, showing only attributes reporting the central claim it puts forth (attributes providing evidence and provenance information are omitted). **Center**: An example of a CAF Study Result instance. **Right**: Plain language meaning of structured data in the example. 
 
 
 
@@ -170,4 +170,4 @@ The diagram below highlights key Evidence Line attributes, and provides an examp
 
   Semantic Meaning of Evidence Lines.
 
-  **Legend**  Evidence Line Model, Example, and Meaning. **Left**: An abridged version of a Pathogenicity Evidence Line data model, showing only attributes reporting central claim it puts forth (attributes describing provenance information are omitted). **Center**:  An example of a Pathogenicity Evidence Line instance. **Right**: Plain language meaning of structured data in the example. 
+  **Legend**  Semantics of a Pathogenicity Evidence Line. **Left**: An abridged version of a Pathogenicity Evidence Line profile model, showing only attributes reporting central claim it puts forth (attributes describing provenance information are omitted). **Center**:  An example of a Pathogenicity Evidence Line instance. **Right**: Plain language meaning of structured data in the example. 
