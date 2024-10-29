@@ -101,7 +101,23 @@ In this structure, the data items collected in the **Study Result** can be linke
 Study Result Semantics
 $$$$$$$$$$$$$$$$$$$$$$
 
+Study Results simply report a collection of one or more data items from a particular study, that are presented together because they are about a common 'focus' (e.g. a particular variant), and typically produced by a common process or methodology. 
 
+Key attributes expressing core StudyREsult semantics include:
+
+* A ``focus`` attribute that captures the entity that the data items are about
+* A set of one or more data-type specific attributes created during the profile process, that capture the specific data items that are about this focus.
+* A ``studyGroup`` attribute that reports information about the group of subjects that were interrogated to produce this data. 
+
+Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who created the data, when, using what methodsd, the larger data set that selected items came from, etc). 
+
+The diagram below highlights these key attributes, and provides an example of how this class structures data to report allele count and frequency data about a particular variant in an east asian population from the gnomad dataset.
+
+.. core-im-study-result-semantics:
+
+.. figure:: images/study-result-semantics.png
+
+   Semantic Meaning of Study Results.
 
 
 
@@ -133,7 +149,7 @@ In this structure, the Evidence Items contributing to the **Evidence Line** can 
 Evidence Line Semantics
 $$$$$$$$$$$$$$$$$$$$$$$
 
-Evidence Lines represent a type of information that always sits between foundational evidence and a final assertion of purported fact, in the process of generating scientific knowledge.  Here, they express the idea that a particular collection of evidence items was interpreted to provide  a particular strength and direction of support for or against the possible fact expressed in this asserted Statement. Is is through the collective assessment of one or more lines of evidence that hypothesis and conjecture become cemented as scientific fact. 
+Evidence Lines represent a type of information that sits between foundational evidence and a final assertion of purported fact, in the process of generating scientific knowledge.  Here, they express the idea that a particular collection of evidence items was interpreted to provide  a particular strength and direction of support for or against the possible fact expressed in this asserted Statement. Is is through the collective assessment of one or more lines of evidence that hypothesis and conjecture become cemented as scientific fact. 
 
 The attributes defined in the Evidence Line class are carefully crafted to express these core elements of an Evidence Line:
 
