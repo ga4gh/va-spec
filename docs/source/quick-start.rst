@@ -118,11 +118,8 @@ Note that the workflow and guidance provided is the same for :ref:`Statement Pro
     * The VA Team will coordinate discussions with other implementers to ensure the proposed changes are amenable to implementation needs and aligned with broader VA modeling principles. 
     * We will also coordinate discussions with SEPIO developers to add new elements to these models as appropriate, ensuring compliance with these upstream standards.  
 
-.. important:: While this workflow suggests a top-down approach for defining Standard Profiles on top of foundational core models, the process is very much **driven by implementation requirements** in a bottom-up manner. New Standards begin as **Draft Implementation Profiles**, which are informed by Core-IM elements, but ultimately based on the needs of their specific application. These draft profiless are evolved into VA Standards as the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`here <establishing-and-evolving-va-standards>`).
-
-
 .. important:: 
  * While this workflow suggests a top-down approach for defining Standard Profiles on top of foundational core models, the process is very much **driven by implementation requirements** in a bottom-up manner. 
  * New Standards begin as **Draft Implementation Profiles**, which are informed by Core-IM elements, but ultimately based on the needs of their specific application.  
- * These draft profiless are evolved into VA Standards as the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`here <establishing-and-evolving-va-standards>`).
+ * These draft profiles are evolved into VA Standards as the VA Team works with implementers and standards developers to align initial implementation models with foundational core models and principles (see :ref:`here <establishing-and-evolving-va-standards>`).
 
