@@ -5,9 +5,9 @@ Modeling Foundations
 
 ``PREREQUISITES:`` :ref:`Introduction<introduction>`, :ref:`Data Example<variant-pathogenicity-statement-example>`, :ref:`Core Information Model<core-information-model>`
 
-This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and statements of knowledge about them. 
+This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and knowledge about them. 
 
-After a brief overview of standards used to represent genetic variation, it focuses on data structures that can be built around three central classes which are the basis of VA Profiles: (1) Statements; (2) Study Results; and (3) Evidence Lines. 
+After a brief overview of standards used to represent genetic variation, it focuses on data structures that can be built around three key classes which are the basis of VA Profiles: (1) Statements; (2) Study Results; and (3) Evidence Lines. 
 
 Variant Representation
 @@@@@@@@@@@@@@@@@@@@@@
@@ -66,7 +66,7 @@ This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which d
 
 .. core-im-statement-semantics:
 
-.. figure:: images/core-im-statement-semantics.png
+.. figure:: images/statement-semantics.png
 
    Statement Semantics in Two Modes of Use 
 
@@ -81,7 +81,7 @@ Implementations should choose the mode that best fits their data and use case wh
 Study Result Representation
 @@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Study Result <StudyResult>` class to support this use case.
+Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order statements of knowledge. The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Study Result <StudyResult>` class to support this use case.
 
 Like the Statement class, it roots a larger data structure supporting clear and precise tracking of evidence and provenance information, and provides explicit semantics linking a variant to specific data and study context. These features of the Core-IM Study Result model are described below. 
 
@@ -131,7 +131,7 @@ Evidence Line Representation
 
 Some users of the VA-Spec want to represent curated lines of evidence that describe how a particular set of information (e.g. specific data from a published study, or subset of data items from a dataset) is interpreted as evidence supoprting or disputing a possible fact that they ultimately want to be able to assert about a variant. 
 
-For example, that some set of allele frequency data items from gnomAD represents a *moderate* argument *supporting* the pathogenicity of a particular variant for a particular disease.  Many organizations 'pre-curate' such arguments so that they can be tracked and efficiently and transparently combined to assert a final conclusion once sufficient evidence exists - e.g. that a variant is definitively pathogenic for some condition. 
+For example, that some set of allele frequency data items from gnomAD represents a *moderate* argument *supporting* the pathogenicity of a particular variant for a particular disease.  Many organizations 'pre-curate' such arguments so that they can be tracked and efficiently combined to support assertions once sufficient evidence exists - e.g. that a variant is definitively pathogenic for the disease. 
 
 The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Evidence Line <EvidenceLine>` class to support this use case. Like the Statement class, it roots a larger data structure supporting clear and precise tracking of provenance information, and provides explicit semantics about nature of the argument being reported. These features of the Core-IM Evidence Line model are described below. 
 
