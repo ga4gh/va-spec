@@ -68,11 +68,9 @@ This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which d
 
 .. figure:: images/statement-semantics.png
 
-   Statement Semantics in Two Modes of Use 
+  Statement Semantics in Two Modes of Use 
 
-  **Legend**  Left: An abridged version of a Variant Pathogenicity Statement data models for each mode of use, showing attributes reporting central claim it puts forth (most attributes describing evidence and provenance information are omitted). Center:  An example of a Variant Pathogenicity Statement instance. Right: Plain language meaning of structured data in the example. 
-
-   **Assertion Mode** vs **Proposition Assessment Mode** semantics for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
+  **Legend**  Assertion Mode vs Proposition Assessment Mode semantics for a Variant Pathogenicity Statement. **Left Panels**: Abridged versions of the data models for each mode of use, showing attributes reporting central claim it puts forth (most attributes describing evidence and provenance information are omitted). **Center Panels**:  An example of a Variant Pathogenicity Statement instance. **Right Panels**: Plain language meaning of what structured data in the example reports to be true. 
 
 Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength``/``score`` attributes, and thus could be use to support either Mode of Use. 
 
@@ -122,7 +120,7 @@ The diagram below highlights these key attributes, and provides an example of ho
 
   Semantic Meaning of Study Results. 
 
-  **Legend**  Left: An abridged version of a Cohort Allele Frequency (CAF) Study Result data model, showing only attributes reporting the central claim it puts forth (attributes providing evidence and provenance information are omitted). Center: An example of a CAF Study Result instance. Right: Plain language meaning of structured data in the example. 
+  **Legend** Study Result Model, Example, and Meaning. **Left**: An abridged version of a Cohort Allele Frequency (CAF) Study Result data model, showing only attributes reporting the central claim it puts forth (attributes providing evidence and provenance information are omitted). **Center**: An example of a CAF Study Result instance. **Right**: Plain language meaning of structured data in the example. 
 
 
 
@@ -170,6 +168,6 @@ The diagram below highlights key Evidence Line attributes, and provides an examp
 
 .. figure:: images/evidence-line-semantics.png
 
-   Semantic Meaning of Evidence Lines.
+  Semantic Meaning of Evidence Lines.
 
-  **Legend**  Left: An abridged version of a Pathogenicity Evidence Line data model, showing only attributes reporting central claim it puts forth (attributes describing provenance information are omitted). Center:  An example of a Pathogenicity Evidence Line instance. Right: Plain language meaning of structured data in the example. 
+  **Legend**  Evidence Line Model, Example, and Meaning. **Left**: An abridged version of a Pathogenicity Evidence Line data model, showing only attributes reporting central claim it puts forth (attributes describing provenance information are omitted). **Center**:  An example of a Pathogenicity Evidence Line instance. **Right**: Plain language meaning of structured data in the example. 
