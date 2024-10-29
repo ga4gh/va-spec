@@ -70,6 +70,8 @@ This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which d
 
    Statement Semantics in Two Modes of Use 
 
+  **Legend**  Left: An abridged version of a Variant Pathogenicity Statement data models for each mode of use, showing attributes reporting central claim it puts forth (most attributes describing evidence and provenance information are omitted). Center:  An example of a Variant Pathogenicity Statement instance. Right: Plain language meaning of structured data in the example. 
+
    **Assertion Mode** vs **Proposition Assessment Mode** semantics for a Variant Pathogenicity Statement. For each mode, left panels show the **Model** attributes used to represent statement semantics; center panels show **Data** examples of statement instances; and right panels report the plain-language **Meaning** of what each statement data structure reports to be true. 
 
 Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength``/``score`` attributes, and thus could be use to support either Mode of Use. 
@@ -103,21 +105,24 @@ $$$$$$$$$$$$$$$$$$$$$$
 
 Study Results simply report a collection of one or more data items from a particular study, that are presented together because they are about a common 'focus' (e.g. a particular variant), and typically produced by a common process or methodology. 
 
-Key attributes expressing core StudyREsult semantics include:
+Key attributes expressing core StudyResult semantics include:
 
-* A ``focus`` attribute that captures the entity that the data items are about
+* A ``focus`` attribute that captures the entity of interest that the data items are about
 * A set of one or more data-type specific attributes created during the profile process, that capture the specific data items that are about this focus.
 * A ``studyGroup`` attribute that reports information about the group of subjects that were interrogated to produce this data. 
+* A ``sourceDataSet`` attribute that reports the larger data set from which selected data items came.
 
-Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who created the data, when, using what methodsd, the larger data set that selected items came from, etc). 
+Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who created the data, when, using what methodsd, etc). 
 
-The diagram below highlights these key attributes, and provides an example of how this class structures data to report allele count and frequency data about a particular variant in an east asian population from the gnomad dataset.
+The diagram below highlights these key attributes, and provides an example of how this class structures allele count and frequency data about a particular variant in an east asian population from a gnomad study dataset.
 
 .. core-im-study-result-semantics:
 
 .. figure:: images/study-result-semantics.png
 
-   Semantic Meaning of Study Results.
+  Semantic Meaning of Study Results. 
+
+  **Legend**  Left: An abridged version of a Cohort Allele Frequency (CAF) Study Result data model, showing only attributes reporting the central claim it puts forth (attributes providing evidence and provenance information are omitted). Center: An example of a CAF Study Result instance. Right: Plain language meaning of structured data in the example. 
 
 
 
@@ -166,3 +171,5 @@ The diagram below highlights key Evidence Line attributes, and provides an examp
 .. figure:: images/evidence-line-semantics.png
 
    Semantic Meaning of Evidence Lines.
+
+  **Legend**  Left: An abridged version of a Pathogenicity Evidence Line data model, showing only attributes reporting central claim it puts forth (attributes describing provenance information are omitted). Center:  An example of a Pathogenicity Evidence Line instance. Right: Plain language meaning of structured data in the example. 
