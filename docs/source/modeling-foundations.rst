@@ -133,8 +133,8 @@ For example, that some set of allele frequency data items from gnomAD represents
 
 The :ref:`GKS Core-IM<core-information-model>` defines the :ref:`Evidence Line <EvidenceLine>` class to support this use case. Like the Statement class, it roots a larger data structure supporting clear and precise tracking of provenance information, and provides explicit semantics about nature of the argument being reported. These features of the Core-IM Evidence Line model are described below. 
 
-Evidence Line Structure
-$$$$$$$$$$$$$$$$$$$$$$$
+Evidence Line Data Structure
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
 In VA-Spec data, an Evidence Line object can root the data structure below:
 
