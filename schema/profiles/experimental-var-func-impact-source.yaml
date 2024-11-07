@@ -69,7 +69,7 @@ $defs:
           are drawn from established terminologies where possible.
           
         # TO DO: I feel like it would be good to try and standardize the values used here by defining an enum based on early adopter needs, and growing from there. 
-        # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Applciation/community specific terms these adopters want to use can be captured in the 'classification' slot.
+        # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Application/community-specific terms these adopters want to use can be captured in the 'classification' slot.
         # But we should consider if this is the best approach.
         type: string                 
         enum:
@@ -90,7 +90,7 @@ $defs:
           (e.g. to mirror established community conventions or reflect language on the data providers
           website or documentation). e.g. CIViC docs/web site uses terms like 'unaltered function',
           'gain of function', 'neomorphic', and 'unknown', which could be reropted here. 
-        type: string         # Idea here is to make it as easy and flexible possible to add values here for now - since the idea is to support community/application specific terms orf art.  If we want to standradize or fomralize these later, we can.          
+        type: string         # Idea here is to make it as easy and flexible possible to add values here for now - since the idea is to support community/application specific terms orf art.  If we want to standradize or fomralize these later, we can.  Note that in the core model, the classification attribute takes a MappableConcept - so the string label for the term would be wrapped in this object.  
       specifiedBy:
         extends: specifiedBy
         description: >-
@@ -114,7 +114,7 @@ $defs:
     properties:
       type:
         extends: type
-        const: "pathogenicityEvidenceLine"
+        const: "PathogenicityEvidenceLine"
         default: "PathogenicityEvidenceLine"
         description: MUST be "PathogenicityEvidenceLine".
       hasEvidenceItems:
@@ -133,9 +133,9 @@ $defs:
           Variant Pathogenicity Proposition (i.e. does the evidence line support or dispute the
           pathogenicity of the assessed variant, or remain neutral)
 
-      strengthOfEvidenceProvided:           # TO DO: Ensure that ten enum below covers terms needed for initial adopters. Merge https://github.com/ga4gh/gks-common/pull/78 which updates the core IM to allow this property to take a string. Think about if we need the PS/BS codes here - as this bakes in direction, and is duplicative as the 'specifiedBy' attribute reports the ACMG criterion applied. 
+      strengthOfEvidenceProvided:           # TO DO: Ensure that the enum below covers terms needed for initial adopters. Merge https://github.com/ga4gh/gks-core/pull/78 which updates the core IM to allow this property to take a string so we can define the enum here. Think about if we need the 'PS'/'BS' parts of enum value labels - as this bakes in direction, and is duplicative as the 'specifiedBy' attribute reports the ACMG criterion applied. 
         extends: strengthOfEvidenceProvided
-        type: string
+        type: string                       # Note that in the core model, the data type for this attribute was changed to be a MappableConcept. How then can we define a set of allowable values?  Do we even want to do this in the base profile at all (maybe this constraint goes in a Community Profile)?
         enum:
           - PS3_Strong
           - PS3_Moderate
