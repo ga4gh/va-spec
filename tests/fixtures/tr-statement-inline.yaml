@@ -24,8 +24,8 @@ subjectVariant:
     treating patients that failed to respond to earlier generation TKI therapies.
   label: EGFR L858R
   constraints:
-    - type: DefiningContextConstraint
-      definingContext: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
+    - type: DefiningAlleleConstraint
+      allele: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
   members:
     - vrs.json#/ga4gh:VA.7jX7fHgVEqx4C4jMRyZOH0ZBHnLn7_gJ
     - vrs.json#/ga4gh:VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
@@ -75,7 +75,7 @@ subjectVariant:
         label: missense_variant
 objectTherapeutic:
   id: civic.tid:146
-  type: TherapeuticAgent
+  conceptType: Drug
   label: Afatinib
   mappings:
     - coding:
@@ -92,7 +92,7 @@ objectTherapeutic:
     - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
 conditionQualifier:
   id: civic.did:30
-  type: Disease
+  conceptType: Disease
   label: Lung Adenocarcinoma
   mappings:
     - coding:
@@ -102,7 +102,7 @@ conditionQualifier:
 alleleOriginQualifier: somatic
 geneContextQualifier:
   id: civic.gid:19
-  type: Gene
+  conceptType: Gene
   label: EGFR
   description: "EGFR is widely recognized for its importance in cancer. Amplification
     and mutations have been shown to be driving events in many cancer types. Its

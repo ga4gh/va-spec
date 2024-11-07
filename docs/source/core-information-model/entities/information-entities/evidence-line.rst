@@ -3,7 +3,7 @@
 Evidence Line
 !!!!!!!!!!!!!
 
-.. include::  ../../../../../schema/core-im/def/EvidenceLine.rst  
+.. include::  ../../../../../schema/gks-core/def/EvidenceLine.rst  
 
 **IMPLEMENTATION GUIDANCE**
 

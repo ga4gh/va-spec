@@ -3,7 +3,7 @@
 Activity
 !!!!!!!!
 
-.. include::  ../../../../../schema/core-im/def/Activity.rst  
+.. include::  ../../../../../schema/gks-core/def/Activity.rst  
 
 Subclasses
 

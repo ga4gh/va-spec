@@ -4,4 +4,4 @@ Data Set
 !!!!!!!!
 
 
-.. include::  ../../../../../schema/core-im/def/DataSet.rst
+.. include::  ../../../../../schema/gks-core/def/DataSet.rst

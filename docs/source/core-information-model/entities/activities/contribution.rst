@@ -3,4 +3,4 @@
 Contribution
 !!!!!!!!!!!!
 
-.. include::  ../../../../../schema/core-im/def/Contribution.rst
+.. include::  ../../../../../schema/gks-core/def/Contribution.rst

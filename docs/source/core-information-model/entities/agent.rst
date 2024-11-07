@@ -3,4 +3,4 @@
 Agent
 !!!!!
 
-.. include::  ../../../../schema/core-im/def/Agent.rst
+.. include::  ../../../../schema/gks-core/def/Agent.rst

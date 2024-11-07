@@ -3,4 +3,4 @@
 Study Group
 !!!!!!!!!!!
 
-.. include::  ../../../../schema/core-im/def/StudyGroup.rst
+.. include::  ../../../../schema/gks-core/def/StudyGroup.rst

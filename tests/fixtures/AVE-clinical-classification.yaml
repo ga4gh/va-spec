@@ -2,8 +2,8 @@ type: AssayVariantEffectClinicalClassificationStatement
 subjectVariant:
   type: CategoricalVariant
   constraints:
-    - type: DefiningContextConstraint
-      definingContext:
+    - type: DefiningAlleleConstraint
+      allele:
         id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
         type: Allele
         location:
@@ -21,7 +21,8 @@ subjectVariant:
           - syntax: hgvs.p
             value: NP_000305.3:p.Arg11Thr
       relations:
-        - codon_translation
+        - translates_from
+        - translates_from_reading_frame
 predicate: hasAssayVariantEffectFor
 objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
 classification: BS3_Supporting

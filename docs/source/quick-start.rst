@@ -54,7 +54,7 @@ Note that the workflow and guidance provided is the same for :ref:`Statement Pro
     * Use the documentation for the Profile (e.g. :ref:`here <variant-pathogenicity-statement-profile>`) to map your data or model onto the classes and attributes the Profile  provides, noting any data that is not accommodated. 
 
 #. ``DECISION``: **Does the GKS Core-IM contain elements needed to extend the existing Profile for any 'orphan' data?**
-    * Explore the :ref:`GKS Core-IM <core-im>` to identify elements that might support your 'orphan' data (i.e. data items that are not supported by the existing Profile).
+    * Explore the :ref:`GKS Core-IM <gks-core>` to identify elements that might support your 'orphan' data (i.e. data items that are not supported by the existing Profile).
 
 #. ``DECISION``: **Does upstream SEPIO Core-IM contain elements needed to extend the Profile for any orphan data??**
     * Explore the `SEPIO Core-IM <https://sepio-framework.github.io/sepio-linkml/>`_ to identify elements that might support your orphan data.
@@ -87,7 +87,7 @@ Note that the workflow and guidance provided is the same for :ref:`Statement Pro
 #. ``DECISION``: **Does the GKS Core-IM contain elements needed to define a new Profile for my data?**
     * If none of the existing Standard Profiles matches your data, you will have to help us create one!
     * You can follow the Profiling Methodology Guidance :ref:`here <profiling-methodology>`.
-    * An initial step is to look at the generic :ref:`GKS Core-IM <core-im>` to identify elements needed to support your data, and note any gaps that may exist. 
+    * An initial step is to look at the generic :ref:`GKS Core-IM <gks-core>` to identify elements needed to support your data, and note any gaps that may exist. 
 
 #. ``DECISION``: **Does the upstream SEPIO Core-IM contain elements  needed to define a new Profile for my data??**
     * If the GKS Core-IM does not support all of your data, look to the upstream `SEPIO Core-IM <https://sepio-framework.github.io/sepio-linkml/>`_ from which it was derived. 

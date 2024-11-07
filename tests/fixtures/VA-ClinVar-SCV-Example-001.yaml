@@ -4,8 +4,8 @@ subjectVariant:
   id: clinvar/208366
   type: CategoricalVariant
   constraints:
-    - type: DefiningContextConstraint
-      definingContext:
+    - type: DefiningAlleleConstraint
+      allele: 
         id: ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
         digest: Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
         type: Allele
@@ -30,12 +30,12 @@ subjectVariant:
           - syntax: spdi
             value: NC_000001.11:40819438:CTCCTCCT:CTCCT
       relations:
-        - sequence_liftover
-        - transcript_projection
+        - liftover_to
+        - transcribes_to
   label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
 objectCondition:
   id: clinvar.trait/939
-  type: Disease
+  conceptType: Disease
   label: Autosomal dominant nonsyndromic hearing loss 2A
   mappings:
   - coding:

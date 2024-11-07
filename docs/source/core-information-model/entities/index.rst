@@ -3,7 +3,7 @@
 Entity
 !!!!!!
 
-.. include::  ../../../../schema/core-im/def/Entity.rst
+.. include::  ../../../../schema/gks-core/def/Entity.rst
 
 
 **Subclasses**
