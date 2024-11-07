@@ -1,75 +1,16 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/pathogenicity-statement-source.yaml"
-title: Variant Pathogenicity Statement Standard Profile
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/pathogenicity-evidenceline-profile-source.yaml"
+title: Variant Pathogenicity EvidenceLine Standard Profile
 strict: true
 
 imports:
-  va-spec: ./shared-concept-source.yaml
+  domain-entities: ./domain-entities-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  # Variant Pathogenicity Statement
-  VariantPathogenicityStatement:
-    type: object
-    maturity: draft
-    inherits: gks-core:Statement
-    description: >-
-      A Statement describing the role of a variant in causing an inherited condition.
-    properties:
-      type:
-        extends: type
-        const: "VariantPathogenicityStatement"
-        default: "VariantPathogenicityStatement"
-        description: MUST be "VariantPathogenicityStatement".
-      subjectVariant:
-        extends: subject 
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Statement.
-      predicate:
-        extends: predicate
-        const: isCausalFor
-      objectCondition:
-        extends: object 
-        oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: The :ref:`Condition` for which the variant impact is stated.
-      penetranceQualifier:
-        type: string
-        enum:
-          - high
-          - low
-          - risk allele
-        description: >-
-          Reports the penetrance of the pathogenic effect - i.e. the extent to which the
-          variant impact is expressed by individuals carrying it as a measure of the
-          proportion of carriers exhibiting the condition.
-      modeOfInheritanceQualifier:
-        type: array
-        ordered: false
-        items:
-          $ref: "/ga4gh/schema/gks-core/1.x/json/Coding"
-        description: >-
-          Reports a pattern of inheritance expected for the pathogenic effect of the variant.
-          Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
-      geneContextQualifier:
-        description: >-
-          Reports the gene through which the pathogenic effect asserted for the variant is mediated
-          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
-        oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-    required:
-    - subjectVariant
-    - predicate
-    - objectCondition
-
-# LB: for this to build we will need to modify gks-core:EvidenceLine to have `heritableProperties`
+  # Pathogenicity Evidence Line
   PathogenicityEvidenceLine:    
     inherits: gks-core:EvidenceLine
     maturity: trial use

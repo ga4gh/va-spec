@@ -1,14 +1,14 @@
-.. warning:: This data class is at a **draft** maturity level and may change
-    significantly in future releases. Maturity levels are described in
+.. note:: This data class is at a **trial use** maturity level and may change
+     in future releases. Maturity levels are described in
     the :ref:`maturity-model`.
 
 **Computational Definition**
 
-A StudyResult that reports measures related to the frequency of an Allele in a cohort
+An Evidence Line that describes the strength and direction of support provided by one or more  evidence items for or against the pathogenicity of a variant for a particular disease. 
 
 **Information Model**
 
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-core:StudyResult`.
+Some PathogenicityEvidenceLine attributes are inherited from :ref:`gks-core:EvidenceLine`.
 
 .. list-table::
    :class: clean-wrap
@@ -52,11 +52,6 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-co
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy
-      - 
-      - :ref:`Method` | :ref:`iriReference`
-      - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       - 
                         .. raw:: html
@@ -78,70 +73,54 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-co
       - string
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
+   *  - derivedFrom
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`InformationEntity`
+      - 0..m
+      - Another Information Entity from which this Information Entity is derived, in whole or in part.
    *  - recordMetadata
       - 
       - :ref:`RecordMetadata`
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
-   *  - ancillaryResults
+   *  - scoreOfEvidenceProvided
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
+      - number
       - 0..1
-      - 
-   *  - qualityMeasures
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 
+      - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - type
       - 
       - string
       - 1..1
-      - MUST be "CohortAlleleFrequencyStudyResult".
-   *  - sourceDataSet
+      - MUST be "PathogenicityEvidenceLine".
+   *  - hasEvidenceItems
       - 
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`DataSet`
+      - :ref:`InformationEntity`
       - 0..m
-      - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
-   *  - focusAllele
+      - An Information Entity (e.g. a Functional Impact Study Statement) that was assessed as evidence in determining the possible pathogenicity of a variant. 
+   *  - directionOfEvidenceProvided
       - 
-      - :ref:`Allele` | string
-      - 1..1
-      - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
-   *  - focusAlleleCount
+      - string
+      - 0..1
+      - The direction of support that the Evidence Line is determined to provide for its target Variant Pathogenicity Proposition (i.e. does the evidence line support or dispute the pathogenicity of the assessed variant, or remain neutral)
+   *  - strengthOfEvidenceProvided
       - 
-      - integer
-      - 1..1
-      - The number of occurrences of the focusAllele in the cohort.
-   *  - locusAlleleCount
+      - string
+      - 0..1
+      - The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.
+   *  - targetProposition
       - 
-      - integer
-      - 1..1
-      - The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as "allele number")
-   *  - focusAlleleFrequency
+      - :ref:`VariantPathogenicityProposition`
+      - 0..1
+      - The possible fact toward which the strength and direction of evidence provided by functional assay data was evaluated (here, a proposition that the assessed variant may be pathogenic for a particular disease).      
+   *  - specifiedBy
       - 
-      - number
-      - 1..1
-      - The frequency of the focusAllele in the cohort.
-   *  - cohort
-      - 
-      - :ref:`StudyGroup`
-      - 1..1
-      - The cohort from which the frequency was derived.
-   *  - subCohortFrequency
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`CohortAlleleFrequencyStudyResult`
-      - 0..m
-      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+      - :ref:`Method` | :ref:`iriReference`
+      - 0..1
+      - A method that specifies how evidence items used in the Evidence Line are to be evaluated and weighed as evidence for or against the pathogenicity of the assessed variant.

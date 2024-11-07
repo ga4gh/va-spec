@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Statement reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.
+A Statement reporting a conclusion from a single study about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures - based on interpretation of the study's results.
 
 **Information Model**
 
-Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`gks-core:Statement`.
+Some VariantTherapeuticResponseStudyStatement attributes are inherited from :ref:`gks-core:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -128,7 +128,7 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`gks-c
       - 
       - string
       - 1..1
-      - MUST be "VariantOncogenicityStudyStatement".
+      - MUST be "VariantTherapeuticResponseStudyStatement".
    *  - subjectVariant
       - 
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
@@ -139,11 +139,16 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`gks-c
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectTumorType
+   *  - objectTherapeutic
       - 
-      - :ref:`Condition` | :ref:`MappableConcept`
+      - :ref:`Therapeutic` | :ref:`iriReference`
       - 1..1
-      - The tumor type for which the variant impact is evaluated.
+      - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
+   *  - conditionQualifier
+      - 
+      - :ref:`Condition` | :ref:`iriReference`
+      - 1..1
+      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements.
    *  - alleleOriginQualifier
       - 
       - string
@@ -158,4 +163,5 @@ Some VariantOncogenicityStudyStatement attributes are inherited from :ref:`gks-c
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the oncogenic role  in the Statement.
+      - Reports a gene impacted by the variant, which may contribute to the therapeutic sensitivity or resistance reported in the Statement.
+

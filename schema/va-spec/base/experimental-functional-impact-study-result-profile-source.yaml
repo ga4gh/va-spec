@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/exp-func-impact-study-result-source.yaml"  
-title: Experimental Variant Functional Impact Statement
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/experimental-functional-impact-study-result-profile-source.yaml"  
+title: Experimental Variant Functional Impact Study Result Standard Profile
 strict: true
 
 imports:

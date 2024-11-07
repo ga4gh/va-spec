@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A StudyResult that reports measures related to the frequency of an Allele in a cohort
+A Statement describing the role of a variant in causing an inherited condition.
 
 **Information Model**
 
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-core:StudyResult`.
+Some VariantPathogenicityStatement attributes are inherited from :ref:`gks-core:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -78,70 +78,87 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-co
       - string
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
+   *  - derivedFrom
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`InformationEntity`
+      - 0..m
+      - Another Information Entity from which this Information Entity is derived, in whole or in part.
    *  - recordMetadata
       - 
       - :ref:`RecordMetadata`
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
-   *  - ancillaryResults
+   *  - direction
+      - 
+      - string
+      - 0..1
+      - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
+   *  - strength
+      - 
+      - :ref:`MappableConcept`
+      - 0..1
+      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.
+   *  - score
+      - 
+      - number
+      - 0..1
+      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.
+   *  - statementText
+      - 
+      - string
+      - 0..1
+      - A natural-language expression of what a Statement asserts to be true.
+   *  - classification
+      - 
+      - :ref:`MappableConcept`
+      - 0..1
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
+   *  - hasEvidenceLines
       - 
                         .. raw:: html
 
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 
-   *  - qualityMeasures
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`EvidenceLine`
+      - 0..m
+      - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
    *  - type
       - 
       - string
       - 1..1
-      - MUST be "CohortAlleleFrequencyStudyResult".
-   *  - sourceDataSet
+      - MUST be "VariantPathogenicityStatement".
+   *  - subjectVariant
+      - 
+      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - 1..1
+      - A variant that is the subject of the Statement.
+   *  - predicate
+      - 
+      - string
+      - 1..1
+      - The relationship declared to hold between the subject and the object of the Statement.
+   *  - objectCondition
+      - 
+      - :ref:`Condition` | :ref:`iriReference`
+      - 1..1
+      - The :ref:`Condition` for which the variant impact is stated.
+   *  - penetranceQualifier
+      - 
+      - string
+      - 0..1
+      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
+   *  - modeOfInheritanceQualifier
       - 
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`DataSet`
+      - :ref:`Coding`
       - 0..m
-      - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
-   *  - focusAllele
+      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
+   *  - geneContextQualifier
       - 
-      - :ref:`Allele` | string
-      - 1..1
-      - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
-   *  - focusAlleleCount
-      - 
-      - integer
-      - 1..1
-      - The number of occurrences of the focusAllele in the cohort.
-   *  - locusAlleleCount
-      - 
-      - integer
-      - 1..1
-      - The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as "allele number")
-   *  - focusAlleleFrequency
-      - 
-      - number
-      - 1..1
-      - The frequency of the focusAllele in the cohort.
-   *  - cohort
-      - 
-      - :ref:`StudyGroup`
-      - 1..1
-      - The cohort from which the frequency was derived.
-   *  - subCohortFrequency
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`CohortAlleleFrequencyStudyResult`
-      - 0..m
-      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).

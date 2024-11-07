@@ -1,10 +1,10 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/therapeutic-response-study-statement-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/therapeutic-response-study-statement-profile-source.yaml"
 title: Variant Therapeutic Response Study Statement Standard Profile
 strict: true
 
 imports:
-  va-spec: ./shared-concept-source.yaml
+  domain-entities: ./domain-entities-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
