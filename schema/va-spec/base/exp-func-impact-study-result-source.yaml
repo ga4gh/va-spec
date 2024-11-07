@@ -1,0 +1,40 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/exp-func-impact-study-result-source.yaml"  
+title: Experimental Variant Functional Impact Statement
+strict: true
+
+imports:
+  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
+  gks-core: ../../gks-core/gks-core-source.yaml
+
+$defs:
+   ExperimentalVariantFunctionalImpactStudyResult:  
+    inherits: gks-core:StudyResult
+    maturity: trial use
+    type: object
+    description: >-
+      A StudyResult that reports a functional impact score from a variant functional assay or study.
+    properties:
+      type:
+        extends: type
+        const: "ExperimentalVariantFunctionalImpactStudyResult"
+        default: "ExperimentalVariantFunctionalImpactStudyResult"
+        description: MUST be "ExperimentalVariantFunctionalImpactStudyResult".
+      focusVariant:
+        extends: focus
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: The genetic variant for which a functional impact score is generated.
+      functionalImpactScore:
+        type: number
+        description: The score of the variant impact measured in the assay or study.
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          The assay that was performed to generate the reported functional impact score.
+      sourceDataSet:
+        extends: sourceDataSet
+        description: >-
+          The full data set that provided the reported the functional impact score. 

@@ -68,3 +68,92 @@ $defs:
     - subjectVariant
     - predicate
     - objectCondition
+
+# LB: for this to build we will need to modify gks-core:EvidenceLine to have `heritableProperties`
+  PathogenicityEvidenceLine:    
+    inherits: gks-core:EvidenceLine
+    maturity: trial use
+    type: object
+    description: >-
+      An Evidence Line that describes the strength and direction of support provided by one or more 
+      evidence items for or against the pathogenicity of a variant for a particular disease. 
+    properties:
+      type:
+        extends: type
+        const: "pathogenicityEvidenceLine"
+        default: "PathogenicityEvidenceLine"
+        description: MUST be "PathogenicityEvidenceLine".
+      hasEvidenceItems:
+        extends: hasEvidenceItems
+        type: array
+        ordered: false
+        items:
+          $ref: "/ga4gh/schema/gks-core/1.x/json/InformationEntity"
+        description: >-
+          An Information Entity (e.g. a Functional Impact Study Statement) that was assessed as
+          evidence in determining the possible pathogenicity of a variant. 
+      directionOfEvidenceProvided:
+        extends: directionOfEvidenceProvided
+        description: >-
+          The direction of support that the Evidence Line is determined to provide for its target
+          Variant Pathogenicity Proposition (i.e. does the evidence line support or dispute the
+          pathogenicity of the assessed variant, or remain neutral)
+      strengthOfEvidenceProvided:           # TO DO: Ensure that ten enum below covers terms needed for initial adopters. Merge https://github.com/ga4gh/gks-common/pull/78 which updates the core IM to allow this property to take a string. Think about if we need the PS/BS codes here - as this bakes in direction, and is duplicative as the 'specifiedBy' attribute reports the ACMG criterion applied. 
+        extends: strengthOfEvidenceProvided
+        type: string
+        enum:
+          - PS3_Strong
+          - PS3_Moderate
+          - PS3_Supporting
+          - BS3_Strong
+          - BS3_Moderate
+          - BS3_Supporting
+        description: >-
+          The strength of support that an Evidence Line is determined to provide for or against
+          the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
+          indicated by the directionOfEvidenceProvided attribute.
+      targetProposition:          # TO DO: Merge https://github.com/ga4gh/gks-common/pull/78 adding Proposition class and targetProposition attribute to the core IM to support their use here. 
+        extends: targetProposition
+        $ref: "#/$defs/VariantPathogenicityProposition"
+        description: >-
+          The possible fact toward which the strength and direction of evidence provided by
+          functional assay data was evaluated (here, a proposition that the assessed variant
+          may be pathogenic for a particular disease).      
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          A method that specifies how evidence items used in the Evidence Line are to be evaluated
+          and weighed as evidence for or against the pathogenicity of the assessed variant.
+    # required:        # TO DO: decide which if any attributes should be *required* in this profile. 
+
+  # Variant Pathogenicity Proposition
+  VariantPathogenicityProposition:
+    inherits: gks-core:Proposition
+    maturity: trial use
+    type: object
+    description: >-
+      A proposition describing the role of a variant in causing an inherited condition.
+    properties:
+      type:
+        extends: type
+        const: VariantPathogenicityProposition
+        default: VariantPathogenicityProposition
+        description: Must be "VariantPathogenicityProposition"
+      subjectVariant:
+        extends: subject 
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      objectCondition:
+        extends: object
+        oneOf:
+          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: The :ref:`Condition` for which the variant impact is stated.
+
+     # TO DO: decide if we want to include the qualifiers defined on the VarPathStatement class in the VarPathProposition

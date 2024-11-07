@@ -1,16 +1,15 @@
 
-.. warning:: This data class is at a **draft** maturity level and may change
-    significantly in future releases. Maturity levels are described in 
-    the :ref:`maturity-model`.
+.. note:: This data class is at a **trial use** maturity level and may change
+    in future releases. Maturity levels are described in the :ref:`maturity-model`.
                       
                     
 **Computational Definition**
 
-A Statement reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.
+A statement reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).
 
 **Information Model**
 
-Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks-core:Statement`.
+Some ExperimentalVariantFunctionalImpactStudyStatement attributes are inherited from :ref:`gks-core:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -42,10 +41,6 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks-cor
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy
-      - :ref:`Method` | :ref:`iriReference`
-      - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       - :ref:`Contribution`
       - 0..m
@@ -82,10 +77,6 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks-cor
       - string
       - 0..1
       - A natural-language expression of what a Statement asserts to be true.
-   *  - classification
-      - :ref:`MappableConcept`
-      - 0..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
    *  - hasEvidenceLines
       - :ref:`EvidenceLine`
       - 0..m
@@ -93,28 +84,32 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks-cor
    *  - type
       - string
       - 1..1
-      - MUST be "VariantPrognosticStudyStatement".
+      - MUST be "ExperimentalVariantFunctionalImpactStudyStatement".
    *  - subjectVariant
-      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
-      - A variant that is the subject of the Statement.
+      - A protein or genomic contextual or canonical molecular variant.
    *  - predicate
       - string
       - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
-      - :ref:`Condition` | :ref:`iriReference`
+      - The relationship this Statement describes between the subject Variant and object Sequence Feature whose function it may alter.
+   *  - objectSequenceFeature
+      - :ref:`iriReference` | :ref:`MappableConcept`
       - 1..1
-      - The disease that is evaluated for outcome.
-   *  - alleleOriginQualifier
+      - The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is assessed.
+   *  - studyContextQualifier
+      - :ref:`Document` | :ref:`iriReference`
+      - 1..1
+      - The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.
+   *  - impactTypeQualifier
       - string
       - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
-   *  - allelePrevalenceQualifier
+      - A term describing a specific type of functional impact that the variant is determined to have on the indicated sequence feature (e.g. decreased activity, dominant negative, neomorphic, reduced Ca2+ binding activity).
+   *  - classification
       - string
       - 0..1
-      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
-   *  - geneContextQualifier
-      - :ref:`MappableConcept`
+      - An term or phrase summarizing the impact reported in the Statement, providing a functional classification of the subject variant that is familiar for a community of use.
+   *  - specifiedBy
+      - :ref:`Method` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Statement.
+      - The method that specifies how the functional classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the  final classification.
