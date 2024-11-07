@@ -11,13 +11,13 @@ Complex Data Types
 Coding
 ******
 
-.. include::  ../../../schema/core-im/def/Coding.rst
+.. include::  ../../../schema/gks-core/def/Coding.rst
 
 .. _Extension:
 
 Extension
 *********
-.. include::  ../../../schema/core-im/def/Extension.rst
+.. include::  ../../../schema/gks-core/def/Extension.rst
 
 
 .. _RecordMetadata:
@@ -25,27 +25,42 @@ Extension
 RecordMetadata
 **************
 
-.. include::  ../../../schema/core-im/def/RecordMetadata.rst
+.. include::  ../../../schema/gks-core/def/RecordMetadata.rst
 
 ConceptMapping
 **************
 
-.. include::  ../../../schema/core-im/def/ConceptMapping.rst
+.. include::  ../../../schema/gks-core/def/ConceptMapping.rst
 
 Simple Data Types
 ###################
 
-.. _Code:
+.. _code:
 
-Code
+code
 ****
 
-.. include::  ../../../schema/core-im/def/Code.rst
+.. include::  ../../../schema/gks-core/def/code.rst
 
 
-.. _IRI:
+.. _iriReference:
 
-IRI
-***
+iriReference
+************
 
-.. include::  ../../../schema/core-im/def/IRI.rst
+.. include::  ../../../schema/gks-core/def/iriReference.rst
+
+.. _date:
+
+date
+****
+
+.. include::  ../../../schema/gks-core/def/date.rst
+
+
+.. _datetime:
+
+datetime
+********
+
+.. include::  ../../../schema/gks-core/def/datetime.rst

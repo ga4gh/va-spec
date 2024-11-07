@@ -3,7 +3,7 @@
 Study Result
 !!!!!!!!!!!!
 
-.. include::  ../../../../../schema/core-im/def/StudyResult.rst
+.. include::  ../../../../../schema/gks-core/def/StudyResult.rst
 
 ---------
 
@@ -13,9 +13,9 @@ Many users of the VA-Spec provide curated collections of data about a particular
 
 Like the Statement class, it roots a larger data structure supporting clear and precise tracking of the evidence and provenance information.
 
-.. core-im-study-result-data-structure:
+.. gks-core-study-result-data-structure:
 
-.. figure:: ../../../images/core-im-study-result-data-structure.png
+.. figure:: ../../../images/gks-core-study-result-data-structure.png
 
    Study Result Data Structure
 
@@ -41,4 +41,4 @@ In this structure:
 **2. Use of the** ``StudyResult.dataItems`` **attribute:**
 
 * The model specifies use of a key-value based ``DataItem`` object to capture the meaning and value of each type of data item captured in a given StudyResult. But in practice, profiles for specific StudyResult types may choose to define one or more specializations of the generic ``dataItems`` attribute as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different data items. 
-* For example, a **CohortAlleleFrequencyStudyResult** profile may define a named ``focusAlleleFrequency`` attribute that is required, and a named ``focusAlleleCount`` attribute that is optional - both of which conceptually specialize the core-im ``dataItems'`` property. Under this approach, the core ``dataItems`` attribute acts as a placeholder to seed such specializations, but is not used directly in StudyResult profiles. 
+* For example, a **CohortAlleleFrequencyStudyResult** profile may define a named ``focusAlleleFrequency`` attribute that is required, and a named ``focusAlleleCount`` attribute that is optional - both of which conceptually specialize the gks-core ``dataItems'`` property. Under this approach, the core ``dataItems`` attribute acts as a placeholder to seed such specializations, but is not used directly in StudyResult profiles. 

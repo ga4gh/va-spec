@@ -4,7 +4,7 @@ Statement
 !!!!!!!!!
 
 
-.. include::  ../../../../../schema/core-im/def/Statement.rst
+.. include::  ../../../../../schema/gks-core/def/Statement.rst
 
 ----------
 
@@ -12,9 +12,9 @@ Statement
 
 The Core-IM supports a Statement-centric approach, where each discrete assertion of knowledge is captured in a self-contained **Statement** object which roots a data structure like that in the figure below. 
 
-.. core-im-statement-data-structure:
+.. gks-core-statement-data-structure:
 
-.. figure:: ../../../images/core-im-statement-data-structure.png
+.. figure:: ../../../images/gks-core-statement-data-structure.png
   :width: 700
 
    Core-IM Classes and Relationships in Statement Data Structures

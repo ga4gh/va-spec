@@ -1,7 +1,7 @@
-all: va-profiles
+all: va-base
 
-va-profiles:
-	(cd profiles; make all)
+va-base:
+	(cd va-spec/base; make all)
 
 clean:
-	(cd profiles; make clean)
+	(cd va-spec/base; make clean)

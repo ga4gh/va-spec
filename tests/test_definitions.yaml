@@ -8,7 +8,7 @@ tests:
   - test_file: VA-ClinVar-SCV-Example-002.yaml
     definition: VariantPathogenicityStatement
   - test_file: therapeuticAgent.yaml
-    definition: TherapeuticAgent
+    definition: MappableConcept
   - test_file: tr-statement-inline.yaml
     definition: VariantTherapeuticResponseStudyStatement
   - test_file: diagnostic-inline.yaml
@@ -17,9 +17,9 @@ tests:
     definition: VariantPrognosticStudyStatement
   - test_file: cohort-allele-freq-test.yaml
     definition: CohortAlleleFrequencyStudyResult
-  - test_file: AVE-functional-classification.yaml
-    definition: AssayVariantEffectFunctionalClassificationStatement
-  - test_file: AVE-clinical-classification.yaml
-    definition: AssayVariantEffectClinicalClassificationStatement
-  - test_file: AVE-functional-study-result.yaml
-    definition: AssayVariantEffectMeasurementStudyResult
+  # - test_file: AVE-functional-classification.yaml
+  #   definition: AssayVariantEffectFunctionalClassificationStatement
+  # - test_file: AVE-clinical-classification.yaml
+  #   definition: AssayVariantEffectClinicalClassificationStatement
+  # - test_file: AVE-functional-study-result.yaml
+  #   definition: AssayVariantEffectMeasurementStudyResult

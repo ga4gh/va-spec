@@ -3,7 +3,7 @@
 Standard Profiles
 !!!!!!!!!!!!!!!!!
 
-``PREREQUISITES:`` :ref:`Introduction <introduction>`,  :ref:`Core Information Model <core-im>`
+``PREREQUISITES:`` :ref:`Introduction <introduction>`,  :ref:`Core Information Model <gks-core>`
 
 **VA Standard Profiles** are the end product of the VA Modeling Framework, providing standard models that will be used by the GA4GH community to store and exchange variant data. They are built as specializations of the :ref:`Statement<Statement>`, :ref:`Study Result<StudyResult>`, or :ref:`EvidenceLine<EvidenceLine>` classes in the Core-IM, each supporting a specific type of knowledge about genetic variation.  
 

@@ -1,5 +1,5 @@
 id: civic.tid:146
-type: TherapeuticAgent
+conceptType: Drug
 label: Afatinib
 mappings:
   - coding:

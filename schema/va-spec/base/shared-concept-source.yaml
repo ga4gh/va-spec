@@ -1,0 +1,73 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/shared-concept-source.yaml"
+title: VA Spec Shared Concept Data Structures
+strict: true
+
+imports:
+  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
+  gks-core: ../../gks-core/gks-core-source.yaml
+
+$defs:
+  # Condition data structure for consolidating the different forms of conditions, individual vs co-occurring traits
+  Condition:
+    maturity: draft
+    description: >-
+      A set of trais (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents
+      the object of a Variant Pathogenicity statement.
+    oneOf:
+      - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      - $ref: "#/$defs/TraitSet"
+
+  # TraitSet data structure to provide support for co-occuring traits (i.e. diseases, phenotypes, etc.)
+  TraitSet:
+    type: object
+    maturity: draft
+    inherits: gks-core:Element
+    description: >-
+      A set of traits that are co-occurring in the context of a Variant Pathogenicity statement.
+    properties:
+      type:
+        type: string
+        description: The type of the set of traits.
+      traits:
+        type: array
+        ordered: false
+        items:
+          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        description: >-
+          A list of traits that are co-occurring in the context of a
+          Variant Pathogenicity statement.
+        minItems: 2
+
+  # Therapeutic
+  Therapeutic:
+    maturity: draft
+    description: >-
+      A group of therapies (TherapyGroup) or a single therapy (Drug, etc.) that represents
+      the object of a Therapeutic Response study statement.
+    oneOf:
+      - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      - $ref: "#/$defs/TherapyGroup"
+
+  # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
+  TherapyGroup:
+    type: object
+    maturity: draft
+    inherits: gks-core:Element
+    description: >-
+      A group of therapies that are applied together in the context of a Therapeutic Response study statement.
+    properties:
+      type:
+        type: string
+        description: The type of the therapy group.
+      therapies:
+        type: array
+        ordered: false
+        items:
+          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        description: >-
+          A list of therapies that are applied together in the context of a
+          Therapeutic Response study statement.
+        minItems: 2
+  

@@ -4,4 +4,4 @@ Document
 !!!!!!!!
 
 
-.. include::  ../../../../../schema/core-im/def/Document.rst
+.. include::  ../../../../../schema/gks-core/def/Document.rst

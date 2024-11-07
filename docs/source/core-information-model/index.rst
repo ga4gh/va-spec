@@ -1,17 +1,17 @@
-.. _core-im:
+.. _gks-core:
 
 Core Information Model
 !!!!!!!!!!!!!!!!!!!!!!
 
 ``PREREQUISITES:`` :ref:`Introduction <introduction>`
 
-The **GKS Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/core-im-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. This Core-IM is the foundation on which Profiles for specific types of Statements and Study Results are built.  
+The **GKS Core Information Model (Core-IM)** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/gks-core-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. This Core-IM is the foundation on which Profiles for specific types of Statements and Study Results are built.  
 
 A hierarchical view of this core model is illustrated below, followed by links to detailed information about each class. More about the modeling standards, patterns, and principles employed by the Core-IM can be found on the :ref:`Modeling Foundations page<modeling-foundations>`. 
 
-.. core-im-class-hierarchy:
+.. gks-core-class-hierarchy:
 
-.. figure:: ../images/core-im-class-hierarchy.png
+.. figure:: ../images/gks-core-class-hierarchy.png
 
    Core-IM Class Hierarchy
 

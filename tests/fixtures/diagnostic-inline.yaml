@@ -24,8 +24,8 @@ subjectVariant:
     ineffective without supplementary treatment.
   label: BRAF V600E
   constraints:
-    - type: "DefiningContextConstraint"
-      definingContext: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+    - type: "DefiningAlleleConstraint"
+      allele: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
   members:
     - vrs.json#/ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
   alternativeLabels:
@@ -73,7 +73,7 @@ subjectVariant:
         label: missense_variant
 objectCondition:
   id: civic.did:156
-  type: Disease
+  conceptType: Disease
   label: Thyroid Gland Papillary Carcinoma
   mappings:
     - coding:
@@ -83,7 +83,7 @@ objectCondition:
 alleleOriginQualifier: somatic
 geneContextQualifier:
   id: civic.gid:5
-  type: Gene
+  conceptType: Gene
   label: BRAF
   description: "BRAF mutations are found to be recurrent in many cancer types. Of
     these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
