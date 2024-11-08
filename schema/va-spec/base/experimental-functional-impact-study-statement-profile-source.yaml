@@ -87,7 +87,6 @@ $defs:
           (e.g. to mirror established community conventions or reflect language on the data providers
           website or documentation). e.g. CIViC docs/web site uses terms like 'unaltered function',
           'gain of function', 'neomorphic', and 'unknown', which could be reropted here. 
-        type: string         # Idea here is to make it as easy and flexible possible to add values here for now - since the idea is to support community/application specific terms orf art.  If we want to standradize or fomralize these later, we can.          
       specifiedBy:
         extends: specifiedBy
         description: >-

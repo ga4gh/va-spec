@@ -1,4 +1,4 @@
-type: AssayVariantEffectFunctionalClassificationStatement
+type: ExperimentalVariantFunctionalImpactStudyStatement
 subjectVariant:
   type: CategoricalVariant
   constraints:
@@ -23,14 +23,23 @@ subjectVariant:
       relations:
         - translates_from
         - translates_from_reading_frame
-predicate: hasAssayVariantEffectFor
-objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-classification: normal
+predicate: impactsFunctionOf
+objectSequenceFeature:
+  id: clinvar-gene:5728
+  conceptType: Gene
+  label: PTEN
+  mappings:
+    - coding:
+        system: https://identifiers.org/ncbigene
+        code: '5728'
+      relation: exactMatch
+studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+classification: 
+  label: normal
 specifiedBy:
   type: Method
   subtype:
-    code: NA
-    system: Variant Interpretation Guideline
+    label: Variant Interpretation Guideline
   reportedIn:
     - type: Document
       pmid: 29785012

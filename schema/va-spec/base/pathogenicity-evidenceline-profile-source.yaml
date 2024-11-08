@@ -13,7 +13,7 @@ $defs:
   # Pathogenicity Evidence Line
   PathogenicityEvidenceLine:    
     inherits: gks-core:EvidenceLine
-    maturity: trial use
+    maturity: draft
     type: object
     description: >-
       An Evidence Line that describes the strength and direction of support provided by one or more 
@@ -21,7 +21,7 @@ $defs:
     properties:
       type:
         extends: type
-        const: "pathogenicityEvidenceLine"
+        const: "PathogenicityEvidenceLine"
         default: "PathogenicityEvidenceLine"
         description: MUST be "PathogenicityEvidenceLine".
       hasEvidenceItems:
@@ -53,7 +53,7 @@ $defs:
           The strength of support that an Evidence Line is determined to provide for or against
           the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
           indicated by the directionOfEvidenceProvided attribute.
-      targetProposition:          # TO DO: Merge https://github.com/ga4gh/gks-common/pull/78 adding Proposition class and targetProposition attribute to the core IM to support their use here. 
+      targetProposition:
         extends: targetProposition
         $ref: "#/$defs/VariantPathogenicityProposition"
         description: >-
@@ -96,5 +96,34 @@ $defs:
           - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: The :ref:`Condition` for which the variant impact is stated.
+      penetranceQualifier:
+        type: string
+        enum:
+          - high
+          - low
+          - risk allele
+        description: >-
+          Reports the penetrance of the pathogenic effect - i.e. the extent to which the
+          variant impact is expressed by individuals carrying it as a measure of the
+          proportion of carriers exhibiting the condition. 
+      modeOfInheritanceQualifier:
+        type: array
+        ordered: false
+        items:
+          $ref: "/ga4gh/schema/gks-core/1.x/json/Coding"
+        description: >-
+          Reports a pattern of inheritance expected for the pathogenic effect of the variant.
+          Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
+      geneContextQualifier:
+        description: >-
+          Reports the gene through which the pathogenic effect asserted for the variant is mediated
+          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"  
+    required:
+      - subjectVariant
+      - predicate
+      - objectCondition
 
      # TO DO: decide if we want to include the qualifiers defined on the VarPathStatement class in the VarPathProposition

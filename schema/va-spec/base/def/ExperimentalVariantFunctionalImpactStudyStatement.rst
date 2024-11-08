@@ -146,7 +146,7 @@ Some ExperimentalVariantFunctionalImpactStudyStatement attributes are inherited 
       - A term describing a specific type of functional impact that the variant is determined to have on the indicated sequence feature (e.g. decreased activity, dominant negative, neomorphic, reduced Ca2+ binding activity).
    *  - classification
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
       - An term or phrase summarizing the impact reported in the Statement, providing a functional classification of the subject variant that is familiar for a community of use.
    *  - specifiedBy

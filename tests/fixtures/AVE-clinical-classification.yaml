@@ -1,36 +1,60 @@
-type: AssayVariantEffectClinicalClassificationStatement
-subjectVariant:
-  type: CategoricalVariant
-  constraints:
-    - type: DefiningAlleleConstraint
-      allele:
-        id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
-        type: Allele
-        location:
-          type: SequenceLocation
-          sequenceReference:
-            refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
-            type: SequenceReference
-          start: 10
-          end: 11
-          sequence: R
-        state:
-          type: LiteralSequenceExpression
-          sequence: T
-        expressions:
-          - syntax: hgvs.p
-            value: NP_000305.3:p.Arg11Thr
-      relations:
-        - translates_from
-        - translates_from_reading_frame
-predicate: hasAssayVariantEffectFor
-objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-classification: BS3_Supporting
+type: PathogenicityEvidenceLine
+targetProposition:
+  type: VariantPathogenicityProposition
+  subjectVariant:
+    # LB: Alex, please verify the following... I am using a Cat-VRS: ProteinSequenceConsequence
+    #     I want to review this because there's nothing in this object to tell you that
+    #     It looks identical to the CanonicalAllele except for the data constraints on
+    #     which relations are allowed. 
+    #     I think it makes sense for some Recipes to have a more specific object type or subtype property
+    #     maybe something like recipeType: ProteinSequenceConsequence? (recipe is a bit non-computational computationally speaking)
+    #       categoryType or categorySubtype seems better - the focus is on the category portion of CategoricalVariant.
+    #     
+    #     I recognize that computational validation will work fine without this
+    #     but I would imagine it may make debugging validation failures much easier
+    #     if the categoryType or recipeType was stated explicitly in the object.
+    type: CategoricalVariant
+    # subtype: ProteinSequenceConsequence  or categoryType: ProteinSequenceConsequence
+    constraints:
+      - type: DefiningAlleleConstraint
+        allele:
+          id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+          type: Allele
+          location:
+            type: SequenceLocation
+            sequenceReference:
+              refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+              type: SequenceReference
+            start: 10
+            end: 11
+            sequence: R
+          state:
+            type: LiteralSequenceExpression
+            sequence: T
+          expressions:
+            - syntax: hgvs.p
+              value: NP_000305.3:p.Arg11Thr
+        relations:
+          - translates_from
+          - translates_from_reading_frame
+  predicate: isCausalFor
+  objectCondition:
+    type: Condition
+    label: Unspecified
+  geneContextQualifier:
+    conceptType: Gene
+    label: PTEN
+# LB: the following objectAssay was in the original test example. I assume it should be dropped, please verify.
+# objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+
+# LB: strengthOfEvidenceProvided is illogically specified in PathogenicityEvidenceLine 
+#     to conflict with the underlying datatype of MappableConcept 
+# strengthOfEvidenceProvided: 
+#   label: BS3_Supporting
 specifiedBy:
   type: Method
   subtype:
-    code: NA
-    system: Variant Interpretation Guideline
+    label: Variant Interpretation Guideline
   reportedIn:
     - type: Document
       pmid: 34793697

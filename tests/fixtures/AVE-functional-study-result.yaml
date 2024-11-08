@@ -1,4 +1,4 @@
-type: AssayVariantEffectMeasurementStudyResult
+type: ExperimentalVariantFunctionalImpactStudyResult
 focusVariant:
   id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
   type: Allele
@@ -16,20 +16,18 @@ focusVariant:
   expressions:
     - syntax: hgvs.p
       value: NP_000305.3:p.Arg11Thr
-score: 1.29395467005388
+functionalImpactScore: 1.29395467005388
 specifiedBy:
   type: Method
   subtype:
-    code: NA
-    system: Experimental Protocol
+    label: Experimental Protocol
   reportedIn:
   - type: Document
     pmid: 29785012
 sourceDataSet:
   - type: DataSet
     subtype:
-      code: NA
-      system: variant effect data set
+      label: variant effect data set
     license: CC0
     reportedIn:
       - type: Document

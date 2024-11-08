@@ -77,3 +77,21 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`gks-cor
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
       - The :ref:`Condition` for which the variant impact is stated.
+   *  - penetranceQualifier
+      - 
+      - string
+      - 0..1
+      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition. 
+   *  - modeOfInheritanceQualifier
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`Coding`
+      - 0..m
+      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
+   *  - geneContextQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
