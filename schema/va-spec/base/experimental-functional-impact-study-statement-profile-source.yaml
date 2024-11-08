@@ -11,7 +11,7 @@ imports:
 $defs:
   ExperimentalVariantFunctionalImpactStudyStatement:
     inherits: gks-core:Statement
-    maturity: trial use
+    maturity: draft
     type: object
     description: >-
       A statement reporting a conclusion from a single assay or study about the functional

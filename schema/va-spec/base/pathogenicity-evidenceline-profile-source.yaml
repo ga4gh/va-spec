@@ -70,7 +70,7 @@ $defs:
   # Variant Pathogenicity Proposition
   VariantPathogenicityProposition:
     inherits: gks-core:Proposition
-    maturity: trial use
+    maturity: draft
     type: object
     description: >-
       A proposition describing the role of a variant in causing an inherited condition.

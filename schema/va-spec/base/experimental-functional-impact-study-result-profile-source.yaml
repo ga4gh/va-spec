@@ -11,7 +11,7 @@ imports:
 $defs:
    ExperimentalVariantFunctionalImpactStudyResult:  
     inherits: gks-core:StudyResult
-    maturity: trial use
+    maturity: draft
     type: object
     description: >-
       A StudyResult that reports a functional impact score from a variant functional assay or study.
