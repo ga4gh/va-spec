@@ -39,7 +39,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-          - $ref: "/ga4gh/schema/gks-core/1.x/MappableConcept"      # See https://github.com/ga4gh/gks-common/pull/77
+          - $ref: "/ga4gh/schema/gks-core/1.x/MappableConcept"      # See https://github.com/ga4gh/gks-common/pull/77 - proposes a SequenceFeature domain entity class
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact 
           of the subject variant is assessed.
@@ -65,22 +65,22 @@ $defs:
           functional impact(s) measured by the assay(s) employed. It is recommended that terms
           are drawn from established terminologies where possible.
           
-        # TO DO: I feel like it would be good to try and standardize the values used here by defining an enum based on early adopter needs, and growing from there. 
-        # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Applciation/community specific terms these adopters want to use can be captured in the 'classification' slot.
-        # But we should consider if this is the best approach.
+        # Matt: At some point we should standardize to a set of permissible values. We could do this from the outset, based on early adopter needs, and growing from there. Or leave unconstrained initially and constrain later.
+        # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Note that application/community specific terms these adopters want to use can be captured in the 'classification' slot.
+        # Note also that if there is a way to constrain permissible values when using the MappableConcept pattern, we could do that instead of an enum here. 
         type: string                 
         enum:
-          - increased activity              # maps to CIViC 'gain of function'
-          - decreased activity              # maps to CIViC 'loss of function'
-          - novel activity                  # maps to CIViC 'neomorphic'
-          - dominant negative activity      # maps to CIViC 'dominant negative'
+          - increased activity/function              # maps to CIViC 'gain of function'
+          - decreased activity/function              # maps to CIViC 'loss of function'
+          - novel activity/function                  # maps to CIViC 'neomorphic'
+          - dominant negative activity/function      # maps to CIViC 'dominant negative'
 
-      classification:
+      classification:        # this attribute now inherits the data type of 'MappableConcept' from  the Core model (rather than simpler 'string' that was originally used)  Consider need for a MappableConcept.  Consider what tyeps of values would go in this attribute for a FI Statement. And what it would look like if there is no 'code' available. 
         extends: classification
         description: >-
           An term or phrase summarizing the impact reported in the Statement, providing
           a functional classification of the subject variant that is familiar for a community of use.
-        $comment: >-
+        $comment: >-                               # Matt: update $comment here to reflect outcome of discussion / decisions about what would go here in a FI Statement instance. 
           This is an optional attribute that can be used by data providers to provide a particular
           community of users a functional impact classification in familiar terms,
           that summarizes/complements the smeantics broken out in the SPOQ attributes of the Statement
