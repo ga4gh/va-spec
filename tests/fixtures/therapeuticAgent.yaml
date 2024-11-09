@@ -10,7 +10,9 @@ mappings:
       code: '1430438'
       system: https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=
     relation: exactMatch
-alternativeLabels:
-  - BIBW2992
-  - BIBW 2992
-  - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"
+extensions:
+  - name: aliases
+    value:
+      - BIBW2992
+      - BIBW 2992
+      - "(2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide"

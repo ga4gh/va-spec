@@ -14,13 +14,19 @@ objectCondition:
 predicate: isCausalFor
 direction: supports
 strength:
-  code: cg000022
   label: Likely (ACMG 2015)
-  system: https://dataexchange.clinicalgenome.org/codes/
+  mappings:
+    - coding:
+        code: cg000022
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch
 classification:
-  code: cg000002
   label: Likely Pathogenic (ACMG 2015)
-  system: https://dataexchange.clinicalgenome.org/codes/
+  mappings:
+    - coding:
+        code: cg000002
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch
 description: 'The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed
   in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030,
   LMM unpublished data SCV000967428.1). This variant segregated with hearing loss
@@ -40,9 +46,12 @@ contributions:
       label: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2020-05-04'
   activityType:
-    code: cg000010
     label: submitted
-    system: https://dataexchange.clinicalgenome.org/codes/
+    mappings:
+      - coding:
+          code: cg000010
+          system: https://dataexchange.clinicalgenome.org/codes/
+        relation: exactMatch
 - type: Contribution
   contributor:
     - id: clinvar.submitter/506744
@@ -50,9 +59,12 @@ contributions:
       label: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2019-11-26'
   activityType:
-    code: cg000011
     label: evaluated
-    system: https://dataexchange.clinicalgenome.org/codes/
+    mappings:
+      - coding:
+          code: cg000011
+          system: https://dataexchange.clinicalgenome.org/codes/
+        relation: exactMatch
   extensions:
     - name: clinvarActivityLabel
       value: last evaluated

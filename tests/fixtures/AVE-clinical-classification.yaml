@@ -39,7 +39,7 @@ targetProposition:
           - translates_from_reading_frame
   predicate: isCausalFor
   objectCondition:
-    type: Condition
+    conceptType: Condition
     label: Unspecified
   geneContextQualifier:
     conceptType: Gene
