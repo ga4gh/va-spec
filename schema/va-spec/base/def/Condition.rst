@@ -1,7 +1,3 @@
-.. warning:: This data class is at a **draft** maturity level and may change
-    significantly in future releases. Maturity levels are described in
-    the :ref:`maturity-model`.
-
 **Computational Definition**
 
 A set of trais (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.
@@ -16,7 +12,6 @@ A set of trais (TraitSet) or a single trait (Disease, Phenotype, etc.) that repr
    :widths: auto
 
    *  - Field
-      - Flags
       - Type
       - Limits
       - Description
