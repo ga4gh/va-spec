@@ -11,6 +11,18 @@
       {
          "properties": {
             "classification": {
+               "properties": {
+                  "label": {
+                     "type": "string",
+                     "enum": [
+                        "pathogenic",
+                        "likely pathogenic",
+                        "uncertain significance",
+                        "likely benign",
+                        "benign"
+                     ]
+                  }
+               },
                "description": "The ACMG 2015 classification of the variant's pathogenicity."
             }
          }

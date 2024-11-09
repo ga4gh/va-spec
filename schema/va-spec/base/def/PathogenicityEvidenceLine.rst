@@ -67,13 +67,13 @@ Some PathogenicityEvidenceLine attributes are inherited from :ref:`gks-core:Evid
    *  - hasEvidenceItems
       - :ref:`InformationEntity`
       - 0..m
-      - An Information Entity that was assessed as evidence in determining the possible  pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Reuslt)
+      - An Information Entity that was assessed as evidence in determining the possible  pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Result).
    *  - directionOfEvidenceProvided
       - string
       - 0..1
-      - The direction of support that the Evidence Line is determined to provide for its target Variant Pathogenicity Proposition, based on assessment of its evidence items (i.e. does the  evidence line support or dispute the possible pathogenicity of the subject variant, or remain neutral)
+      - The direction of support that the Evidence Line is determined to provide for its target Variant Pathogenicity Proposition, based on assessment of its evidence items (i.e. does the  evidence line support or dispute the possible pathogenicity of the subject variant, or  remain neutral)
    *  - strengthOfEvidenceProvided
-      - string
+      - {'$ref': '/ga4gh/schema/gks-core/1.x/json/MappableConcept'}
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.
    *  - targetProposition

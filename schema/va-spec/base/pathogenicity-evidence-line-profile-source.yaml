@@ -32,23 +32,18 @@ $defs:
           $ref: "/ga4gh/schema/gks-core/1.x/json/InformationEntity"
         description: >-
           An Information Entity that was assessed as evidence in determining the possible 
-          pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Reuslt)
+          pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Result).
       directionOfEvidenceProvided:
         extends: directionOfEvidenceProvided
         description: >-
           The direction of support that the Evidence Line is determined to provide for its target
           Variant Pathogenicity Proposition, based on assessment of its evidence items (i.e. does the 
-          evidence line support or dispute the possible pathogenicity of the subject variant, or remain neutral)
-      strengthOfEvidenceProvided:           # Matt: These ACMG-based values should likely go into a community profile instead of the base profile. Do we add any value constraints in the base profile? And in the AMCF community profile, think about if we need the PS/BS prefixes on values here - as this bakes in direction, and is duplicative as the 'specifiedBy' attribute reports the ACMG criterion applied. 
+          evidence line support or dispute the possible pathogenicity of the subject variant, or 
+          remain neutral)
+      strengthOfEvidenceProvided: 
         extends: strengthOfEvidenceProvided
-        type: string
-        enum:
-          - PS3_Strong
-          - PS3_Moderate
-          - PS3_Supporting
-          - BS3_Strong
-          - BS3_Moderate
-          - BS3_Supporting
+        type: 
+          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against
           the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
@@ -60,12 +55,11 @@ $defs:
           The possible fact toward which the strength and direction of evidence provided by
           functional assay data was evaluated (here, a proposition that the assessed variant
           may be pathogenic for a particular disease).      
-      specifiedBy:                   # Matt: Note that in an ACMG community profile, we should consider if/how to ensure values here are one of the ACMG criteria (e.g. PS4, BS3, ...), or the full ACMG Guidelines.
+      specifiedBy:
         extends: specifiedBy
         description: >-
           A method that specifies how evidence items used in the Evidence Line are to be evaluated
           and weighed as evidence for or against the pathogenicity of the assessed variant.
-    # required:        # Matt: decide which if any attributes should be *required* in this profile. None are required in the Core model Evidence Line class. IMO we should not require any here either - as Evidence Lines can be used to report collections of evidence items absent a strength/direction assessment, or strength/direction assessments absent a collection of evidence items, or both.
 
   # Variant Pathogenicity Proposition
   VariantPathogenicityProposition:

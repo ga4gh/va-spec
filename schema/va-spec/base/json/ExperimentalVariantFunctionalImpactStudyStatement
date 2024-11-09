@@ -169,10 +169,10 @@
          "$comment": "Implementers may use a set of terms to use here that reflect the specific types of functional impact(s) measured by the assay(s) employed. It is recommended that terms are drawn from established terminologies where possible.",
          "type": "string",
          "enum": [
-            "increased activity",
-            "decreased activity",
-            "novel activity",
-            "dominant negative activity"
+            "increased activity/function",
+            "decreased activity/function",
+            "novel activity/function",
+            "dominant negative activity/function"
          ]
       },
       "classification": {

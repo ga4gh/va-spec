@@ -95,7 +95,7 @@
          "items": {
             "$ref": "/ga4gh/schema/gks-core/1.x/json/InformationEntity"
          },
-         "description": "An Information Entity (e.g. a Functional Impact Study Statement) that was assessed as evidence in determining the possible pathogenicity of a variant. ",
+         "description": "An Information Entity that was assessed as evidence in determining the possible  pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Result).",
          "$comment": "A given Evidence Line may be supported by one or many individual evidence items. What matters is that all evidence items in a given Evidence Line get collectively assessed and assigned direction and strength as a single argument for or against a target proposition.\nDifferent types and scales of information entity can serve as evidence (experimental measurements or observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data about BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the support it may offer for a target proposition (e.g. the prospect of the variant\u2019s pathogenicity)."
       },
       "directionOfEvidenceProvided": {
@@ -105,21 +105,15 @@
             "neutral",
             "disputes"
          ],
-         "description": "The direction of support that the Evidence Line is determined to provide for its target Variant Pathogenicity Proposition (i.e. does the evidence line support or dispute the pathogenicity of the assessed variant, or remain neutral)"
+         "description": "The direction of support that the Evidence Line is determined to provide for its target Variant Pathogenicity Proposition, based on assessment of its evidence items (i.e. does the  evidence line support or dispute the possible pathogenicity of the subject variant, or  remain neutral)"
       },
       "strengthOfEvidenceProvided": {
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.",
          "$comment": "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided.",
-         "type": "string",
-         "enum": [
-            "PS3_Strong",
-            "PS3_Moderate",
-            "PS3_Supporting",
-            "BS3_Strong",
-            "BS3_Moderate",
-            "BS3_Supporting"
-         ]
+         "type": {
+            "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         }
       },
       "targetProposition": {
          "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition",

@@ -18,14 +18,15 @@ $defs:
     - $ref: "/ga4gh/schema/va-spec/1.x/base/VariantPathogenicityStatement"
     - properties:
         classification:
-          # this is a MappableConcept but we would ideally like to specify a value set with meta characteristics to validate with some consistency
-          # type: string
-          # enum:
-          #   - pathogenic
-          #   - likely pathogenic
-          #   - uncertain significance
-          #   - likely benign
-          #   - benign
+          properties:
+            label:
+              type: string
+              enum:
+                - pathogenic
+                - likely pathogenic
+                - uncertain significance
+                - likely benign
+                - benign
           description: >-
             The ACMG 2015 classification of the variant's pathogenicity.
       
