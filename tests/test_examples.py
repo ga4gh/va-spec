@@ -9,8 +9,8 @@ def test_examples():
     for test in test_spec['tests']:
         with open(fixtures_path / test['test_file']) as datafile:
             data = yaml.safe_load(datafile)
-            
-        class_validator = validator[test['definition']]
+        test_cls_name = f"{test['namespace']}:{test['definition']}"
+        class_validator = validator[test_cls_name]
 
         try:
             assert class_validator.validate(data) is None

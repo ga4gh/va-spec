@@ -14,14 +14,14 @@ objectCondition:
 predicate: isCausalFor
 direction: supports
 strength:
-  label: Likely (ACMG 2015)
+  label: likely
   mappings:
     - coding:
         code: cg000022
         system: https://dataexchange.clinicalgenome.org/codes/
       relation: exactMatch
 classification:
-  label: Likely Pathogenic (ACMG 2015)
+  label: likely pathogenic
   mappings:
     - coding:
         code: cg000002
