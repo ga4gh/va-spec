@@ -1,0 +1,13 @@
+.. _acmg-2015:
+
+ACMG/AMP 2015 Community Profiles
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Below are the **ACMG/AMP 2015 Community Profiles**.
+
+.. _acmg-2015-statement-profile:
+
+Variant Pathogenicity Statement (ACMG 2015)
+###########################################
+
+.. include::  ../def/va-spec.acmg-2015/VariantPathogenicityStatement.rst

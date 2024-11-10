@@ -15,8 +15,8 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
    Resources to help implementers begin working with the VA-Spec.
 * :ref:`Core Information Model (Core-IM) <gks-core>`
    Detailed descriptions and implementation guidance for the classes and attributes in the foundational Core-IM.
-* :ref:`Standard Profiles <standard-profiles>`
-   Detailed descriptions and implementation guidance for Statement and Study Result Profiles provided as standards for representing variant knowledge. 
+* :ref:`Base Profiles <base-profiles>`
+   Detailed descriptions and implementation guidance for Statement and Study Result Profiles for representing variant knowledge. 
 * :ref:`Profiling Methodology <profiling-methodology>`
    Instructions and resources for creating or expanding Statement and Study Result Profiles through the SEPIO profiling process.
 * :ref:`Modeling Foundations <modeling-foundations>`
@@ -40,7 +40,8 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    introduction
    quick-start
    core-information-model/index
-   standard-profiles/index
+   base-profiles/index
+   community-profiles/index
    profiling-methodology
    modeling-foundations
    reference-implementation
