@@ -25,32 +25,27 @@ Below are the **Standard Statement Profiles** currently defined as part of the V
 Variant Pathogenicity Statement
 ###############################
 
-An example of data structured using this Standard Profile can be found `here <https://va-ga4gh.readthedocs.io/en/stable/examples/variant-pathogenicity-statement.html>`_.
-
-.. include::  ../../../schema/profiles/def/VariantPathogenicityStatement.rst
-
+.. include::  ../def/va-spec/VariantPathogenicityStatement.rst
 
 Variant Oncogenicity Study Statement
 ####################################
 
-.. include::  ../../../schema/profiles/def/VariantOncogenicityStudyStatement.rst
-
+.. include::  ../def/va-spec/VariantOncogenicityStudyStatement.rst
 
 Variant Therapeutic Response Study Statement
 #############################################
 
-.. include::  ../../../schema/profiles/def/VariantTherapeuticResponseStudyStatement.rst
+.. include::  ../def/va-spec/VariantTherapeuticResponseStudyStatement.rst
 
 .. _variant-diagnostic-statement-profile:
 
 Variant Diagnostic Study Statement
 ##################################
 
-.. include::  ../../../schema/profiles/def/VariantDiagnosticStudyStatement.rst
-
+.. include::  ../def/va-spec/VariantDiagnosticStudyStatement.rst
 
 Variant Prognostic Study Statement
 ##################################
 
-.. include::  ../../../schema/profiles/def/VariantPrognosticStudyStatement.rst
+.. include::  ../def/va-spec/VariantPrognosticStudyStatement.rst
 
