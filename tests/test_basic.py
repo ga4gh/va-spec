@@ -9,4 +9,4 @@ with open(fixtures_path / 'allele.yaml') as f:
 
 
 def test_allele_validation():
-    assert validator['Allele'].validate(allele) is None
+    assert validator['vrs:Allele'].validate(allele) is None

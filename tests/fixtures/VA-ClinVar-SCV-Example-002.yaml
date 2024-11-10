@@ -14,13 +14,19 @@ objectCondition:
 predicate: isCausalFor
 direction: supports
 strength:
-  code: cg000022
-  label: Likely (ACMG 2015)
-  system: https://dataexchange.clinicalgenome.org/codes/
+  label: likely
+  mappings:
+    - coding:
+        code: cg000022
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch
 classification:
-  code: cg000002
-  label: Likely Pathogenic (ACMG 2015)
-  system: https://dataexchange.clinicalgenome.org/codes/
+  label: likely pathogenic
+  mappings:
+    - coding:
+        code: cg000002
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch
 description: 'The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed
   in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030,
   LMM unpublished data SCV000967428.1). This variant segregated with hearing loss

@@ -1,21 +1,30 @@
 tests:
   - test_file: allele.yaml
+    namespace: vrs
     definition: Allele
   - test_file: allele2.yaml
+    namespace: vrs
     definition: Allele
   - test_file: VA-ClinVar-SCV-Example-001.yaml
+    namespace: va-spec.base
     definition: VariantPathogenicityStatement
   - test_file: VA-ClinVar-SCV-Example-002.yaml
+    namespace: va-spec.base
     definition: VariantPathogenicityStatement
   - test_file: therapeuticAgent.yaml
+    namespace: gks-core
     definition: MappableConcept
   - test_file: tr-statement-inline.yaml
+    namespace: va-spec.base
     definition: VariantTherapeuticResponseStudyStatement
   - test_file: diagnostic-inline.yaml
+    namespace: va-spec.base
     definition: VariantDiagnosticStudyStatement
   - test_file: prognostic-inline.yaml
+    namespace: va-spec.base
     definition: VariantPrognosticStudyStatement
   - test_file: cohort-allele-freq-test.yaml
+    namespace: va-spec.base
     definition: CohortAlleleFrequencyStudyResult
   # - test_file: AVE-functional-classification.yaml
   #   definition: AssayVariantEffectFunctionalClassificationStatement

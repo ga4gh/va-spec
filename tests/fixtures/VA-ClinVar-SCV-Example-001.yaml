@@ -45,13 +45,19 @@ objectCondition:
 predicate: isCausalFor
 direction: supports
 strength:
-  code: cg000021
-  label: Definitive (ACMG 2015)
-  system: https://dataexchange.clinicalgenome.org/codes/
+  label: definitive
+  mappings:
+    - coding:
+        code: cg000021
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch
 classification:
-  code: cg000001
-  label: Pathogenic (ACMG 2015)
-  system: https://dataexchange.clinicalgenome.org/codes/
+  label: pathogenic
+  mappings:
+    - coding:
+        code: cg000001
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch
 penetranceQualifier: high
 contributions:
 - type: Contribution

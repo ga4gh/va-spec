@@ -34,10 +34,13 @@ for schema_path in paths:
     content = json.loads(schema_path.read_text())
     schema_uri = schema_path.as_uri()
     content['id'] = schema_uri
+    schema_idx = schema_path.parts.index('schema')
+    schema_ns = '.'.join(schema_path.parts[schema_idx+1:-2])
+    schema_ns_name = f'{schema_ns}:{schema_path.name}'
     schema_resource = Resource(contents=content, specification=DRAFT202012)
-    js_def[schema_path.stem] = content
+    js_def[schema_ns_name] = content
     js_registry = js_registry.with_resources([
-        (schema_path.name, schema_resource),
+        (schema_ns_name, schema_resource),
         (schema_uri, schema_resource)
     ])
 
