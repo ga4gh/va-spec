@@ -6,17 +6,11 @@
 
 A Statement describing the role of a variant in causing an inherited condition.
 
-**Information Model**
+**Profile Conditions**
 
+This class adds the following conditions to the :ref:`variant-pathogenicity-statement-profile`:
 
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-   *  - Field
-      - Flags
-      - Type
-      - Limits
-      - Description
+- `VariantPathogenicityStatement.classification` is additionally defined as 
+  *The ACMG 2015 classification of the variant's pathogenicity*.
+    - `.classification.label` is constrained to values `pathogenic`, `likely pathogenic`,
+      `uncertain significance`, `likely benign`, and `benign`.
