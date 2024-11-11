@@ -11,7 +11,7 @@ A hierarchical view of this core model is illustrated below, followed by links t
 
 .. gks-core-class-hierarchy:
 
-.. figure:: ../images/gks-core-class-hierarchy.png
+.. figure:: ../images/core-im-class-hierarchy.png
 
    Core-IM Class Hierarchy
 
