@@ -14,7 +14,7 @@ The Core-IM supports a Statement-centric approach, where each discrete assertion
 
 .. gks-core-statement-data-structure:
 
-.. figure:: ../../../images/gks-core-statement-data-structure.png
+.. figure:: ../../../images/core-im-statement-data-structure.png
   :width: 700
 
    Core-IM Classes and Relationships in Statement Data Structures
