@@ -15,7 +15,7 @@ Like the Statement class, it roots a larger data structure supporting clear and 
 
 .. gks-core-study-result-data-structure:
 
-.. figure:: ../../../images/gks-core-study-result-data-structure.png
+.. figure:: ../../../images/core-im-study-result-data-structure.png
 
    Study Result Data Structure
 
