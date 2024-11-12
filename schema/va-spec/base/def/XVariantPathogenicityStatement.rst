@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-An Evidence Line that describes the strength and direction of support provided by one or more  evidence items for or against the pathogenicity of a variant for a particular disease. 
+A Statement describing the role of a variant in causing an inherited condition.
 
 **Information Model**
 
-Some PathogenicityEvidenceLine attributes are inherited from :ref:`gks-core:EvidenceLine`.
+Some XVariantPathogenicityStatement attributes are inherited from :ref:`gks-core:Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -52,6 +52,11 @@ Some PathogenicityEvidenceLine attributes are inherited from :ref:`gks-core:Evid
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
+   *  - specifiedBy
+      - 
+      - :ref:`Method` | :ref:`iriReference`
+      - 0..1
+      - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       - 
                         .. raw:: html
@@ -86,41 +91,46 @@ Some PathogenicityEvidenceLine attributes are inherited from :ref:`gks-core:Evid
       - :ref:`RecordMetadata`
       - 0..1
       - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
-   *  - scoreOfEvidenceProvided
+   *  - direction
+      - 
+      - string
+      - 0..1
+      - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
+   *  - strength
+      - 
+      - :ref:`MappableConcept`
+      - 0..1
+      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.
+   *  - score
       - 
       - number
       - 0..1
-      - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
-   *  - type
+      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.
+   *  - statementText
       - 
       - string
-      - 1..1
-      - MUST be "PathogenicityEvidenceLine".
-   *  - hasEvidenceItems
+      - 0..1
+      - A natural-language expression of what a Statement asserts to be true.
+   *  - classification
+      - 
+      - :ref:`MappableConcept`
+      - 0..1
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
+   *  - hasEvidenceLines
       - 
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`InformationEntity`
+      - :ref:`EvidenceLine`
       - 0..m
-      - An Information Entity that was assessed as evidence in determining the possible  pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Result).
-   *  - directionOfEvidenceProvided
+      - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
+   *  - type
       - 
       - string
-      - 0..1
-      - The direction of support that the Evidence Line is determined to provide for its target Variant Pathogenicity Proposition, based on assessment of its evidence items (i.e. does the  evidence line support or dispute the possible pathogenicity of the subject variant, or  remain neutral)
-   *  - strengthOfEvidenceProvided
+      - 1..1
+      - MUST be "VariantPathogenicityStatement".
+   *  - proposition
       - 
-      - {'$ref': '/ga4gh/schema/gks-core/1.x/json/MappableConcept'}
-      - 0..1
-      - The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.
-   *  - targetProposition
-      - 
-      - :ref:`VariantPathogenicityProposition`
-      - 0..1
-      - The possible fact toward which the strength and direction of evidence provided by functional assay data was evaluated (here, a proposition that the assessed variant may be pathogenic for a particular disease).      
-   *  - specifiedBy
-      - 
-      - :ref:`Method` | :ref:`iriReference`
-      - 0..1
-      - A method that specifies how evidence items used in the Evidence Line are to be evaluated and weighed as evidence for or against the pathogenicity of the assessed variant.
+      - :ref:`XVariantPathogenicityProposition`
+      - 1..1
+      - The proposition that the subject variant is associated with the object disease.

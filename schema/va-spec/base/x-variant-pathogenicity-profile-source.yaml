@@ -1,0 +1,142 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/x-variant-pathogenicity-profile-source.yaml"
+title: Variant Pathogenicity Base Profiles
+strict: true
+
+imports:
+  domain-entities: ./domain-entities-source.yaml
+  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
+  gks-core: ../../gks-core/gks-core-source.yaml
+
+$defs:
+  # Pathogenicity Evidence Line
+  XVariantPathogenicityEvidenceLine:    
+    inherits: gks-core:EvidenceLine
+    maturity: draft
+    type: object
+    description: >-
+      An Evidence Line that describes the strength and direction of support provided by one or more 
+      evidence items for or against the pathogenicity of a variant for a particular disease. 
+    properties:
+      type:
+        extends: type
+        const: "VariantPathogenicityEvidenceLine"
+        default: "VariantPathogenicityEvidenceLine"
+        description: MUST be "VariantPathogenicityEvidenceLine".
+      hasEvidenceItems:
+        extends: hasEvidenceItems
+        type: array
+        ordered: false
+        items:
+          $ref: "/ga4gh/schema/gks-core/1.x/json/InformationEntity"
+        description: >-
+          An Information Entity that was assessed as evidence in determining the possible 
+          pathogenicity of a variant (e.g. a Functional Impact Study Statement or Study Result).
+      directionOfEvidenceProvided:
+        extends: directionOfEvidenceProvided
+        description: >-
+          The direction of support that the Evidence Line is determined to provide for its target
+          Variant Pathogenicity Proposition, based on assessment of its evidence items (i.e. does the 
+          evidence line support or dispute the possible pathogenicity of the subject variant, or 
+          remain neutral)
+      strengthOfEvidenceProvided: 
+        extends: strengthOfEvidenceProvided
+        type: 
+          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        description: >-
+          The strength of support that an Evidence Line is determined to provide for or against
+          the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
+          indicated by the directionOfEvidenceProvided attribute.
+      targetProposition:
+        extends: targetProposition
+        $ref: "#/$defs/XVariantPathogenicityProposition"
+        description: >-
+          The possible fact toward which the strength and direction of evidence provided by
+          functional assay data was evaluated (here, a proposition that the assessed variant
+          may be pathogenic for a particular disease).      
+      specifiedBy:
+        extends: specifiedBy
+        description: >-
+          A method that specifies how evidence items used in the Evidence Line are to be evaluated
+          and weighed as evidence for or against the pathogenicity of the assessed variant.
+
+  # Variant Pathogenicity Proposition
+  XVariantPathogenicityProposition:
+    inherits: gks-core:Proposition
+    maturity: draft
+    type: object
+    description: >-
+      A proposition describing the role of a variant in causing an inherited condition.
+    properties:
+      type:
+        extends: type
+        const: VariantPathogenicityProposition
+        default: VariantPathogenicityProposition
+        description: Must be "VariantPathogenicityProposition"
+      subjectVariant:
+        extends: subject 
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: A variant that is the subject of the Statement.
+      predicate:
+        extends: predicate
+        const: isCausalFor
+      objectCondition:
+        extends: object
+        oneOf:
+          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: The :ref:`Condition` for which the variant impact is stated.
+      penetranceQualifier:
+        type: string
+        enum:
+          - high
+          - low
+          - risk allele
+        description: >-
+          Reports the penetrance of the pathogenic effect - i.e. the extent to which the
+          variant impact is expressed by individuals carrying it as a measure of the
+          proportion of carriers exhibiting the condition. 
+      modeOfInheritanceQualifier:
+        type: array
+        ordered: false
+        items:
+          $ref: "/ga4gh/schema/gks-core/1.x/json/Coding"
+        description: >-
+          Reports a pattern of inheritance expected for the pathogenic effect of the variant.
+          Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
+      geneContextQualifier:
+        description: >-
+          Reports the gene through which the pathogenic effect asserted for the variant is mediated
+          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"  
+    required:
+      - subjectVariant
+      - predicate
+      - objectCondition
+
+  # Variant Pathogenicity Statement
+  XVariantPathogenicityStatement:
+    type: object
+    maturity: draft
+    inherits: gks-core:Statement
+    description: >-
+      A Statement describing the role of a variant in causing an inherited condition.
+    properties:
+      type:
+        extends: type
+        const: "VariantPathogenicityStatement"
+        default: "VariantPathogenicityStatement"
+        description: MUST be "VariantPathogenicityStatement".
+      proposition:
+        extends: proposition
+        $ref: "#/$defs/XVariantPathogenicityProposition"
+        description: >-
+          The proposition that the subject variant is associated with the object disease.
+    required:
+      - proposition

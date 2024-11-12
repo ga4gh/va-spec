@@ -4,9 +4,7 @@ title: Variant Dx Study Statement Standard Profile
 strict: true
 
 imports:
-  domain-entities: ./domain-entities-source.yaml
-  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
-  vrs: ../../vrs/vrs-source.yaml
+  va-dx-prop: ./diagnostic-study-proposition-profile-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
   
 $defs:
@@ -26,47 +24,11 @@ $defs:
         const: "VariantDiagnosticStudyStatement"
         default: "VariantDiagnosticStudyStatement"
         description: MUST be "VariantDiagnosticStudyStatement".
-      subjectVariant:
-        extends: subject
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Statement.
-      predicate:
-        extends: predicate
-        enum:
-        - isDiagnosticInclusionCriterionFor
-        - isDiagnosticExclusionCriterionFor
-      objectCondition:
-        extends: object
-        oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: The disease that is evaluated for diagnosis.
-      alleleOriginQualifier:
+      proposition:
+        extends: proposition
+        $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticStudyProposition"
         description: >-
-          Reports whether the statement should be interpreted in the context of an inherited
-          (germline) variant, an acquired (somatic) mutation, or both (combined).
-        type: string
-        enum:
-        - germline
-        - somatic
-        - combined
-      allelePrevalenceQualifier:
-        description: >-
-          Reports whether the statement should be interpreted in the context of the variant
-          being rare or common.
-        type: string
-        enum:
-        - rare
-        - common
-      geneContextQualifier:
-        description: >-
-          Reports a gene impacted by the variant, which may contribute to the
-          diagnostic association  in the Statement.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          The proposition for which the study provides evidence - that the subject variant
+          is associated with the object disease.          
     required:
-    - subjectVariant
-    - predicate
-    - objectCondition
+    - proposition

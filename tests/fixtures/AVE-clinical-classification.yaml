@@ -1,4 +1,4 @@
-type: PathogenicityEvidenceLine
+type: VariantPathogenicityEvidenceLine
 targetProposition:
   type: VariantPathogenicityProposition
   subjectVariant:

@@ -6,10 +6,10 @@ tests:
     namespace: vrs
     definition: Allele
   - test_file: VA-ClinVar-SCV-Example-001.yaml
-    namespace: va-spec.acmg-2015
+    namespace: va-spec.base
     definition: VariantPathogenicityStatement
   - test_file: VA-ClinVar-SCV-Example-002.yaml
-    namespace: va-spec.acmg-2015
+    namespace: va-spec.base
     definition: VariantPathogenicityStatement
   - test_file: therapeuticAgent.yaml
     namespace: gks-core
@@ -31,7 +31,7 @@ tests:
     definition: ExperimentalVariantFunctionalImpactStudyStatement
   - test_file: AVE-clinical-classification.yaml
     namespace: va-spec.base
-    definition: PathogenicityEvidenceLine
+    definition: VariantPathogenicityEvidenceLine
   - test_file: AVE-functional-study-result.yaml
     namespace: va-spec.base
     definition: ExperimentalVariantFunctionalImpactStudyResult

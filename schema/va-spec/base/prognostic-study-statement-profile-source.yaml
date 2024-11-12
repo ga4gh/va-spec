@@ -4,9 +4,7 @@ title: Variant Prognostic Study Statement Standard Profile
 strict: true
 
 imports:
-  domain-entities: ./domain-entities-source.yaml
-  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
-  vrs: ../../vrs/vrs-source.yaml
+  va-prog-prop: ./prognostic-study-proposition-profile-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
@@ -25,47 +23,11 @@ $defs:
         const: "VariantPrognosticStudyStatement"
         default: "VariantPrognosticStudyStatement"
         description: MUST be "VariantPrognosticStudyStatement".
-      subjectVariant:
-        extends: subject
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Statement.
-      predicate:
-        extends: predicate
-        enum:
-        - associatedWithBetterOutcomeFor
-        - associatedWithWorseOutcomeFor
-      objectCondition:
-        extends: object
-        oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: The disease that is evaluated for outcome.
-      alleleOriginQualifier:
-        type: string
+      proposition:
+        extends: proposition
+        $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticStudyProposition"
         description: >-
-          Reports whether the statement should be interpreted in the context of an inherited
-          (germline) variant, an acquired (somatic) mutation, or both (combined).
-        enum:
-        - germline
-        - somatic
-        - combined
-      allelePrevalenceQualifier:
-        type: string
-        description: >-
-          Reports whether the statement should be interpreted in the context of the variant
-          being rare or common.
-        enum:
-        - rare
-        - common
-      geneContextQualifier:
-        description: >-
-          Reports a gene impacted by the variant, which may contribute to the
-          prognostic association  in the Statement.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          The proposition for which the study provides evidence - that the subject variant
+          is associated with the object disease outcome.
     required:
-      - subjectVariant
-      - predicate
-      - objectCondition
+      - proposition

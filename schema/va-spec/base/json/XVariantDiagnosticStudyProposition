@@ -1,0 +1,115 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/XVariantDiagnosticStudyProposition",
+   "title": "XVariantDiagnosticStudyProposition",
+   "type": "object",
+   "maturity": "draft",
+   "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.",
+         "$comment": "Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to re-use an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "alternativeLabels": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+         "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "propositionText": {
+         "type": "string",
+         "description": "A natural-language expression of the Proposition's meaning. e.g. \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\"."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"VariantDiagnosticStudyProposition\".",
+         "$comment": "MUST be the label of a concrete class from the data model.",
+         "const": "VariantDiagnosticStudyProposition",
+         "default": "VariantDiagnosticStudyProposition"
+      },
+      "subjectVariant": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
+            }
+         ],
+         "description": "A variant that is the subject of the Proposition.",
+         "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+      },
+      "predicate": {
+         "type": "string",
+         "description": "The relationship declared to hold between the subject and the object of the Statement.",
+         "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
+         "enum": [
+            "isDiagnosticInclusionCriterionFor",
+            "isDiagnosticExclusionCriterionFor"
+         ]
+      },
+      "objectCondition": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Condition"
+            }
+         ],
+         "description": "The disease that is evaluated for diagnosis.",
+         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
+      },
+      "alleleOriginQualifier": {
+         "description": "Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+         "type": "string",
+         "enum": [
+            "germline",
+            "somatic",
+            "combined"
+         ]
+      },
+      "allelePrevalenceQualifier": {
+         "description": "Reports whether the proposition should be interpreted in the context of the variant being rare or common.",
+         "type": "string",
+         "enum": [
+            "rare",
+            "common"
+         ]
+      },
+      "geneContextQualifier": {
+         "description": "Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Proposition.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      }
+   },
+   "required": [
+      "objectCondition",
+      "predicate",
+      "subjectVariant",
+      "type"
+   ],
+   "additionalProperties": false
+}

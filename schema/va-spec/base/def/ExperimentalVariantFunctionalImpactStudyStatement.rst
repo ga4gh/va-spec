@@ -52,6 +52,11 @@ Some ExperimentalVariantFunctionalImpactStudyStatement attributes are inherited 
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
+   *  - specifiedBy
+      - 
+      - :ref:`Method` | :ref:`iriReference`
+      - 0..1
+      - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       - 
                         .. raw:: html
@@ -106,6 +111,11 @@ Some ExperimentalVariantFunctionalImpactStudyStatement attributes are inherited 
       - string
       - 0..1
       - A natural-language expression of what a Statement asserts to be true.
+   *  - classification
+      - 
+      - :ref:`MappableConcept`
+      - 0..1
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
    *  - hasEvidenceLines
       - 
                         .. raw:: html
@@ -119,38 +129,8 @@ Some ExperimentalVariantFunctionalImpactStudyStatement attributes are inherited 
       - string
       - 1..1
       - MUST be "ExperimentalVariantFunctionalImpactStudyStatement".
-   *  - subjectVariant
+   *  - proposition
       - 
-      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - :ref:`ExperimentalVariantFunctionalImpactStudyProposition`
       - 1..1
-      - A protein or genomic contextual or canonical molecular variant.
-   *  - predicate
-      - 
-      - string
-      - 1..1
-      - The relationship this Statement describes between the subject Variant and object Sequence Feature whose function it may alter.
-   *  - objectSequenceFeature
-      - 
-      - :ref:`iriReference` | :ref:`MappableConcept`
-      - 1..1
-      - The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is assessed.
-   *  - studyContextQualifier
-      - 
-      - :ref:`Document` | :ref:`iriReference`
-      - 1..1
-      - The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.
-   *  - impactTypeQualifier
-      - 
-      - string
-      - 0..1
-      - A term describing a specific type of functional impact that the variant is determined to have on the indicated sequence feature (e.g. decreased activity, dominant negative, neomorphic, reduced Ca2+ binding activity).
-   *  - classification
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - An term or phrase summarizing the impact reported in the Statement, providing a functional classification of the subject variant that is familiar for a community of use.
-   *  - specifiedBy
-      - 
-      - :ref:`Method` | :ref:`iriReference`
-      - 0..1
-      - The method that specifies how the functional classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the  final classification.
+      - The proposition for which the study provides evidence - that the subject variant impacts the function of the object sequence feature.

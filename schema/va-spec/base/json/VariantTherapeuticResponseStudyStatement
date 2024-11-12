@@ -136,80 +136,14 @@
          "default": "VariantTherapeuticResponseStudyStatement",
          "description": "MUST be \"VariantTherapeuticResponseStudyStatement\"."
       },
-      "subjectVariant": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-            },
-            {
-               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
-            }
-         ],
-         "description": "A variant that is the subject of the Statement.",
-         "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
-      },
-      "predicate": {
-         "type": "string",
-         "description": "The relationship declared to hold between the subject and the object of the Statement.",
-         "$comment": "When applied to represent a particular type of Statement (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "enum": [
-            "predictsSensitivityTo",
-            "predictsResistanceTo"
-         ]
-      },
-      "objectTherapeutic": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-            },
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Therapeutic"
-            }
-         ],
-         "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
-         "$comment": "The object of a Statement can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
-      },
-      "conditionQualifier": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-            },
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-            }
-         ],
-         "description": "Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements."
-      },
-      "alleleOriginQualifier": {
-         "type": "string",
-         "description": "Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
-         "enum": [
-            "germline",
-            "somatic",
-            "combined"
-         ]
-      },
-      "allelePrevalenceQualifier": {
-         "type": "string",
-         "description": "Reports whether the statement should be interpreted in the context of the variant being rare or common.",
-         "enum": [
-            "rare",
-            "common"
-         ]
-      },
-      "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the therapeutic sensitivity or resistance reported in the Statement. ",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      "proposition": {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantTherapeuticResponseStudyProposition",
+         "description": "Reports the conclusion of the study, which is that the subject variant is associated with therapeutic sensitivity or resistance to the object therapeutic.",
+         "$comment": "This attribute supports an alternate modeling pattern, which encapsulates the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the 'subject', 'predicate', 'object', and 'qualifier' properties defined in the Statement object itself.          "
       }
    },
    "required": [
-      "conditionQualifier",
-      "objectTherapeutic",
-      "predicate",
-      "subjectVariant",
+      "proposition",
       "type"
    ],
    "additionalProperties": false

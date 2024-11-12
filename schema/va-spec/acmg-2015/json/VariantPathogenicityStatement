@@ -6,7 +6,7 @@
    "description": "A Statement describing the role of a variant in causing an inherited condition.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityStatement"
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/Statement"
       },
       {
          "properties": {

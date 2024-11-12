@@ -59,7 +59,8 @@
                "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
             }
          ],
-         "description": "A variant that is the subject of the Statement."
+         "description": "A variant that is the subject of the Statement.",
+         "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "predicate": {
          "type": "string",
@@ -77,7 +78,7 @@
             }
          ],
          "description": "The Condition for which the variant impact is stated.",
-         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein.      "
+         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
       "penetranceQualifier": {
          "type": "string",

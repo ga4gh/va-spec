@@ -129,33 +129,8 @@ Some VariantPrognosticStudyStatement attributes are inherited from :ref:`gks-cor
       - string
       - 1..1
       - MUST be "VariantPrognosticStudyStatement".
-   *  - subjectVariant
+   *  - proposition
       - 
-      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - :ref:`VariantPrognosticStudyProposition`
       - 1..1
-      - A variant that is the subject of the Statement.
-   *  - predicate
-      - 
-      - string
-      - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
-      - 
-      - :ref:`Condition` | :ref:`iriReference`
-      - 1..1
-      - The disease that is evaluated for outcome.
-   *  - alleleOriginQualifier
-      - 
-      - string
-      - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
-   *  - allelePrevalenceQualifier
-      - 
-      - string
-      - 0..1
-      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
-   *  - geneContextQualifier
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Statement.
+      - The proposition for which the study provides evidence - that the subject variant is associated with the object disease outcome.

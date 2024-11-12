@@ -4,7 +4,6 @@ title: Experimental Variant Functional Impact Study Result Standard Profile
 strict: true
 
 imports:
-  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
