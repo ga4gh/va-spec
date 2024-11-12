@@ -111,11 +111,6 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks-core:
       - string
       - 0..1
       - A natural-language expression of what a Statement asserts to be true.
-   *  - classification
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
    *  - hasEvidenceLines
       - 
                         .. raw:: html
@@ -134,3 +129,8 @@ Some VariantPathogenicityStatement attributes are inherited from :ref:`gks-core:
       - :ref:`VariantPathogenicityProposition`
       - 1..1
       - The proposition that the subject variant is associated with the object disease.
+   *  - classification
+      - 
+      - :ref:`MappableConcept`
+      - 1..1
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.

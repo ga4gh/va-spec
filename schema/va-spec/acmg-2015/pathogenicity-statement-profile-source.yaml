@@ -4,28 +4,30 @@ title: ACMG 2015 Variant Pathogenicity Statement Standard Profile
 strict: true
 
 imports:
-  va-spec: ../base/pathogenicity-statement-profile-source.yaml
+  va-spec: ../base/pathogenicity-evidence-line-profile-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  VariantPathogenicityStatement:
+  VariantPathogenicityFunctionalImpactEvidenceLine:
     maturity: draft
     description: >-
-      A Statement describing the role of a variant in causing an inherited condition.
+      An Evidence Line providing information about the functional impact of a variant on a gene or gene product.
     allOf:
-    - $ref: "/ga4gh/schema/gks-core/1.x/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.x/base/VariantPathogenicityEvidenceLine"
     - properties:
-        classification:
-          properties:
-            label:
-              type: string
-              enum:
-                - pathogenic
-                - likely pathogenic
-                - uncertain significance
-                - likely benign
-                - benign
+        strengthOfEvidenceProvided:           # TO DO: Ensure that the enum below covers terms needed for initial adopters. Merge https://github.com/ga4gh/gks-core/pull/78 which updates the core IM to allow this property to take a string so we can define the enum here. Think about if we need the 'PS'/'BS' parts of enum value labels - as this bakes in direction, and is duplicative as the 'specifiedBy' attribute reports the ACMG criterion applied. 
+          extends: strengthOfEvidenceProvided
+          type: string                       # Note that in the core model, the data type for this attribute was changed to be a MappableConcept. How then can we define a set of allowable values?  Do we even want to do this in the base profile at all (maybe this constraint goes in a Community Profile)?
+          enum:
+            - PS3_Strong
+            - PS3_Moderate
+            - PS3_Supporting
+            - BS3_Strong
+            - BS3_Moderate
+            - BS3_Supporting
           description: >-
-            The ACMG 2015 classification of the variant's pathogenicity.
+            The strength of support that an Evidence Line is determined to provide for or against
+            the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
+            indicated by the directionOfEvidenceProvided attribute.            

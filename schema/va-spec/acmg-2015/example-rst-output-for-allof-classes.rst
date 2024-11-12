@@ -6,8 +6,9 @@
 
 A Statement describing the role of a variant in causing an inherited condition.
 
-**Information Model**
+**Profile Conditions**
 
+This class adds the following conditions to the :ref:`variant-pathogenicity-evidence-line-profile`:
 
 - `VariantPathogenicityStatement.classification` is additionally defined as 
   *The ACMG 2015 classification of the variant's pathogenicity*.

@@ -26,5 +26,17 @@ $defs:
         $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
         description: >-
           The proposition that the subject variant is associated with the object disease.
+      classification:
+        extends: classification
+        properties:
+            label:
+              type: string
+              enum:
+                - pathogenic
+                - likely pathogenic
+                - uncertain significance
+                - likely benign
+                - benign
     required:
       - proposition
+      - classification

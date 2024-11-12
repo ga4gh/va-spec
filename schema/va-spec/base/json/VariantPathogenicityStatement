@@ -116,11 +116,6 @@
          "description": "A natural-language expression of what a Statement asserts to be true.",
          "$comment": "This attribute captures what a Statement says as human readable free text. e.g. that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or that \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\". This optional attribute can be used instead of, or as a complement to, a structured representation of Statement semantics that uses the subject-predicate-object-qualifier pattern."
       },
-      "classification": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
-         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.",
-         "$comment": "Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification."
-      },
       "hasEvidenceLines": {
          "type": "array",
          "ordered": false,
@@ -140,9 +135,27 @@
          "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition",
          "description": "The proposition that the subject variant is associated with the object disease.",
          "$comment": "This attribute supports an alternate modeling pattern, which encapsulates the structured semantics of the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of using the 'subject', 'predicate', 'object', and 'qualifier' properties defined in the Statement object itself.          "
+      },
+      "classification": {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
+         "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.",
+         "$comment": "Permissible values for this attribute are  typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.",
+         "properties": {
+            "label": {
+               "type": "string",
+               "enum": [
+                  "pathogenic",
+                  "likely pathogenic",
+                  "uncertain significance",
+                  "likely benign",
+                  "benign"
+               ]
+            }
+         }
       }
    },
    "required": [
+      "classification",
       "proposition",
       "type"
    ],
