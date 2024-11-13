@@ -1,9 +1,7 @@
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
+    levels are described in the :ref:`maturity-model`.
 
-.. warning:: This data class is at a **draft** maturity level and may change
-    significantly in future releases. Maturity levels are described in 
-    the :ref:`maturity-model`.
-                      
-                    
 **Computational Definition**
 
 A group of therapies (TherapyGroup) or a single therapy (Drug, etc.) that represents the object of a Therapeutic Response study statement.
@@ -18,6 +16,7 @@ A group of therapies (TherapyGroup) or a single therapy (Drug, etc.) that repres
    :widths: auto
 
    *  - Field
+      - Flags
       - Type
       - Limits
       - Description

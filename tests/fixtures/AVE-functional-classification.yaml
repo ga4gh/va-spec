@@ -1,36 +1,47 @@
-type: AssayVariantEffectFunctionalClassificationStatement
-subjectVariant:
-  type: CategoricalVariant
-  constraints:
-    - type: DefiningAlleleConstraint
-      allele:
-        id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
-        type: Allele
-        location:
-          type: SequenceLocation
-          sequenceReference:
-            refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
-            type: SequenceReference
-          start: 10
-          end: 11
-          sequence: R
-        state:
-          type: LiteralSequenceExpression
-          sequence: T
-        expressions:
-          - syntax: hgvs.p
-            value: NP_000305.3:p.Arg11Thr
-      relations:
-        - translates_from
-        - translates_from_reading_frame
-predicate: hasAssayVariantEffectFor
-objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-classification: normal
+type: Statement
+proposition:
+  type: ExperimentalVariantFunctionalImpactStudyProposition
+  subjectVariant:
+    type: CategoricalVariant
+    constraints:
+      - type: DefiningAlleleConstraint
+        allele:
+          id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+          type: Allele
+          location:
+            type: SequenceLocation
+            sequenceReference:
+              refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+              type: SequenceReference
+            start: 10
+            end: 11
+            sequence: R
+          state:
+            type: LiteralSequenceExpression
+            sequence: T
+          expressions:
+            - syntax: hgvs.p
+              value: NP_000305.3:p.Arg11Thr
+        relations:
+          - translates_from
+          - translates_from_reading_frame
+  predicate: impactsFunctionOf
+  objectSequenceFeature:
+    id: clinvar-gene:5728
+    conceptType: Gene
+    label: PTEN
+    mappings:
+      - coding:
+          system: https://identifiers.org/ncbigene
+          code: '5728'
+        relation: exactMatch
+  studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+classification: 
+  label: normal
 specifiedBy:
   type: Method
   subtype:
-    code: NA
-    system: Variant Interpretation Guideline
+    label: Variant Interpretation Guideline
   reportedIn:
     - type: Document
       pmid: 29785012

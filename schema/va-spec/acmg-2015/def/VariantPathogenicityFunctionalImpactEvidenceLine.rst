@@ -1,9 +1,7 @@
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
+    levels are described in the :ref:`maturity-model`.
 
-.. warning:: This data class is at a **draft** maturity level and may change
-    significantly in future releases. Maturity levels are described in 
-    the :ref:`maturity-model`.
-                      
-                    
 **Computational Definition**
 
 An Evidence Line providing information about the functional impact of a variant on a gene or gene product.
@@ -18,6 +16,7 @@ An Evidence Line providing information about the functional impact of a variant 
    :widths: auto
 
    *  - Field
+      - Flags
       - Type
       - Limits
       - Description
