@@ -1,18 +1,18 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/therapeutic-response-study-statement-source.yaml"
-title: Variant Therapeutic Response Study Statement Standard Profile
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/therapeutic-response-study-proposition-profile-source.yaml"
+title: Variant Therapeutic Response Study Proposition Standard Profile
 strict: true
 
 imports:
-  va-spec: ./shared-concept-source.yaml
+  domain-entities: ./domain-entities-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  # Variant Therapeutic Response Study Statement
-  VariantTherapeuticResponseStudyStatement:
-    inherits: gks-core:Statement
+  # Variant Therapeutic Response Study Proposition
+  VariantTherapeuticResponseStudyProposition:
+    inherits: gks-core:Proposition
     maturity: draft
     type: object
     description: >-
@@ -22,9 +22,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "VariantTherapeuticResponseStudyStatement"
-        default: "VariantTherapeuticResponseStudyStatement"
-        description: MUST be "VariantTherapeuticResponseStudyStatement".
+        const: "VariantTherapeuticResponseStudyProposition"
+        default: "VariantTherapeuticResponseStudyProposition"
+        description: MUST be "VariantTherapeuticResponseStudyProposition".
       subjectVariant:
         extends: subject
         oneOf:

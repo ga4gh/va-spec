@@ -30,10 +30,6 @@ Some TraitSet attributes are inherited from :ref:`gks-core:Element`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - type
-      - string
-      - 0..1
-      - The type of the set of traits.
    *  - traits
       - :ref:`MappableConcept`
       - 2..m

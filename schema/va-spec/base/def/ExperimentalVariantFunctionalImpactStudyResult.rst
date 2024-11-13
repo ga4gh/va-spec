@@ -6,11 +6,11 @@
                     
 **Computational Definition**
 
-A StudyResult that reports a variant effect score from a functional assay.
+A StudyResult that reports a functional impact score from a variant functional assay or study.
 
 **Information Model**
 
-Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref:`gks-core:StudyResult`.
+Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited from :ref:`gks-core:StudyResult`.
 
 .. list-table::
    :class: clean-wrap
@@ -51,7 +51,7 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
       - 0..m
       - A document in which the the Information Entity is reported.
    *  - dateAuthored
-      - string
+      - :ref:`datetime`
       - 0..1
       - Indicates when the information content expressed in the Information Entity was generated.
    *  - recordMetadata
@@ -77,20 +77,20 @@ Some AssayVariantEffectMeasurementStudyResult attributes are inherited from :ref
    *  - type
       - string
       - 1..1
-      - MUST be "AssayVariantEffectMeasurementStudyResult".
+      - MUST be "ExperimentalVariantFunctionalImpactStudyResult".
    *  - focusVariant
       - :ref:`MolecularVariation` | :ref:`iriReference`
       - 0..1
-      - The human mapped representation of the variant that is the subject of the Statement.
-   *  - score
+      - The genetic variant for which a functional impact score is generated.
+   *  - functionalImpactScore
       - number
       - 0..1
-      - The score of the variant effect in the assay.
+      - The score of the variant impact measured in the assay or study.
    *  - specifiedBy
       - :ref:`Method` | :ref:`iriReference`
       - 0..1
-      - The assay that was used to measure the variant effect with all the various properties
+      - The assay that was performed to generate the reported functional impact score.
    *  - sourceDataSet
       - :ref:`DataSet`
       - 0..m
-      - The full data set that this measurement is a part of
+      - The full data set that provided the reported the functional impact score. 

@@ -1,11 +1,9 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/shared-concept-source.yaml"
-title: VA Spec Shared Concept Data Structures
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/domain-entities-source.yaml"
+title: VA Spec Shared Domain Entity Data Structures
 strict: true
 
 imports:
-  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
-  vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
@@ -27,9 +25,6 @@ $defs:
     description: >-
       A set of traits that are co-occurring in the context of a Variant Pathogenicity statement.
     properties:
-      type:
-        type: string
-        description: The type of the set of traits.
       traits:
         type: array
         ordered: false
@@ -58,7 +53,7 @@ $defs:
     description: >-
       A group of therapies that are applied together in the context of a Therapeutic Response study statement.
     properties:
-      type:
+      groupType:
         type: string
         description: The type of the therapy group.
       therapies:
