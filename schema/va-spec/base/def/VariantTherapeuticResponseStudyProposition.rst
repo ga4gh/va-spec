@@ -8,7 +8,7 @@ A Statement reporting a conclusion from a single study about the role of a varia
 
 **Information Model**
 
-Some VariantTherapeuticResponseStudyProposition attributes are inherited from :ref:`gks-core:Proposition`.
+Some VariantTherapeuticResponseStudyProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap

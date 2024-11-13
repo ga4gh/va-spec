@@ -8,7 +8,7 @@ A proposition describing the role of a variant in causing an inherited condition
 
 **Information Model**
 
-Some VariantPathogenicityProposition attributes are inherited from :ref:`gks-core:Proposition`.
+Some VariantPathogenicityProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap

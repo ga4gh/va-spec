@@ -85,7 +85,7 @@
          "$comment": "The attribute is required in order to explicitly specify an assay or study context in which the reported impact was observed. It's value can be a Document object, or an IRI  pointing to a document that describes the assay/study. This may be a publication, a database record, or a bespoke document.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"

@@ -4,7 +4,7 @@ Statement
 !!!!!!!!!
 
 
-.. include::  ../../../../../schema/gks-core/def/Statement.rst
+.. include::  ../../../def/va-spec/Statement.rst
 
 ----------
 

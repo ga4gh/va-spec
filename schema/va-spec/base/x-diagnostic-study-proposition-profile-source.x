@@ -1,30 +1,32 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/prognostic-study-proposition-profile-source.yaml"
-title: Variant Prognostic Study Proposition Standard Profile
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/diagnostic-study-proposition-profile-source.yaml"
+title: Variant Dx Study Proposition Standard Profile
 strict: true
 
 imports:
+  va-spec: ./va-spec-source.yaml
   domain-entities: ./domain-entities-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
-
+  
 $defs:
-  # Variant Prognostic Study Proposition
-  VariantPrognosticStudyProposition:
-    inherits: gks-core:Proposition
+  # Variant Diagnostic Study Proposition
+  VariantDiagnosticStudyProposition:
+    inherits: va-spec:Proposition
     type: object
     maturity: draft
     description: >-
       A Proposition reporting a conclusion from a single study about whether a variant
-      is associated with an improved or worse outcome for a disease - based on
-      interpretation of the study's results.
+      is associated with a disease (a diagnostic inclusion criterion), or absence of a
+      disease (diagnostic exclusion criterion) - based on interpretation of the study's
+      results.
     properties:
       type:
         extends: type
-        const: "VariantPrognosticStudyProposition"
-        default: "VariantPrognosticStudyProposition"
-        description: MUST be "VariantPrognosticStudyProposition".
+        const: "VariantDiagnosticStudyProposition"
+        default: "VariantDiagnosticStudyProposition"
+        description: MUST be "VariantDiagnosticStudyProposition".
       subjectVariant:
         extends: subject
         oneOf:
@@ -35,37 +37,37 @@ $defs:
       predicate:
         extends: predicate
         enum:
-        - associatedWithBetterOutcomeFor
-        - associatedWithWorseOutcomeFor
+        - isDiagnosticInclusionCriterionFor
+        - isDiagnosticExclusionCriterionFor
       objectCondition:
         extends: object
         oneOf:
         - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
         - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: The disease that is evaluated for outcome.
+        description: The disease that is evaluated for diagnosis.
       alleleOriginQualifier:
-        type: string
         description: >-
           Reports whether the proposition should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
+        type: string
         enum:
         - germline
         - somatic
         - combined
       allelePrevalenceQualifier:
-        type: string
         description: >-
           Reports whether the proposition should be interpreted in the context of the variant
           being rare or common.
+        type: string
         enum:
         - rare
         - common
       geneContextQualifier:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the
-          prognostic association  in the Proposition.
+          diagnostic association  in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
-      - subjectVariant
-      - predicate
-      - objectCondition
+    - subjectVariant
+    - predicate
+    - objectCondition

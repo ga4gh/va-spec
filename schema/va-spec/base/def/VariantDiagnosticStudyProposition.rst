@@ -8,7 +8,7 @@ A Proposition reporting a conclusion from a single study about whether a variant
 
 **Information Model**
 
-Some VariantDiagnosticStudyProposition attributes are inherited from :ref:`gks-core:Proposition`.
+Some VariantDiagnosticStudyProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap

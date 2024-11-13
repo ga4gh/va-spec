@@ -6,7 +6,7 @@
    "description": "An Evidence Line providing information about the functional impact of a variant on a gene or gene product.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
       },
       {
          "properties": {
@@ -15,13 +15,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
-               "type": "string",
-               "enum": [
-                  "Strong",
-                  "Moderate",
-                  "Supporting"
-               ],
-               "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.            "
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.    "
             },
             "specifiedBy": {
                "description": "The ACMG criterion that was applied to interpret the functional impact of the variant on the gene or gene product.",
@@ -30,7 +24,9 @@
                      "type": "string",
                      "enum": [
                         "ACMG 2015 PS3 Criterion",
-                        "ACMG 2015 BS3 Criterion"
+                        "ACMG 2015 BS3 Criterion",
+                        "Not Provided",
+                        "ACMG 2015 Functional Impact Evidence BS3/PS3 Criterion"
                      ]
                   }
                }
@@ -39,6 +35,7 @@
       }
    ],
    "required": [
+      "directionOfEvidenceProvided",
       "strengthOfEvidenceProvided",
       "specifiedBy"
    ]

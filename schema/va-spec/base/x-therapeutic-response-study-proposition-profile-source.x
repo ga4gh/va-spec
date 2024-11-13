@@ -4,6 +4,7 @@ title: Variant Therapeutic Response Study Proposition Standard Profile
 strict: true
 
 imports:
+  va-spec: ./va-spec-source.yaml
   domain-entities: ./domain-entities-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
@@ -12,7 +13,7 @@ imports:
 $defs:
   # Variant Therapeutic Response Study Proposition
   VariantTherapeuticResponseStudyProposition:
-    inherits: gks-core:Proposition
+    inherits: va-spec:Proposition
     maturity: draft
     type: object
     description: >-

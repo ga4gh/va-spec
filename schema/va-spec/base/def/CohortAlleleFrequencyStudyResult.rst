@@ -8,7 +8,7 @@ A StudyResult that reports measures related to the frequency of an Allele in a c
 
 **Information Model**
 
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-core:StudyResult`.
+Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-spec:StudyResult`.
 
 .. list-table::
    :class: clean-wrap

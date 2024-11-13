@@ -1,5 +1,5 @@
 id: civic.eid:80
-type: VariantDiagnosticStudyStatement
+type: Statement
 description: https://civicdb.org/evidence/80/summary
 direction: supports
 strength:

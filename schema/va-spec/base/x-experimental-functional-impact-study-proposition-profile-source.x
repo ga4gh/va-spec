@@ -4,13 +4,14 @@ title: Experimental Variant Functional Impact Study Proposition
 strict: true
 
 imports:
+  va-spec: ./va-spec-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
   ExperimentalVariantFunctionalImpactStudyProposition:
-    inherits: gks-core:Proposition
+    inherits: va-spec:Proposition
     maturity: draft
     type: object
     description: >-
@@ -39,7 +40,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-          - $ref: "/ga4gh/schema/gks-core/1.x/MappableConcept"      # See https://github.com/ga4gh/gks-common/pull/77 - proposes a SequenceFeature domain entity class
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"      # See https://github.com/ga4gh/gks-common/pull/77 - proposes a SequenceFeature domain entity class
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact 
           of the subject variant is assessed.
@@ -53,7 +54,7 @@ $defs:
           pointing to a document that describes the assay/study. This may be a publication, a
           database record, or a bespoke document.
         oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/Document"
+          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Document"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
       impactTypeQualifier:           # This qualifier allows more specific types of impacts to be reported - so the profile supports implementations like CIViC, ClinGen, and I think even some MAVE data.
         description: >-

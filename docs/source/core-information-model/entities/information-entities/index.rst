@@ -3,7 +3,7 @@
 Information Entity
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../../../../../schema/gks-core/def/InformationEntity.rst  
+.. include::  ../../../def/va-spec/InformationEntity.rst  
 
 **Subclasses**
 

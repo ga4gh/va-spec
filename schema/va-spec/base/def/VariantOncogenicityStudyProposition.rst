@@ -8,7 +8,7 @@ A Proposition reporting a conclusion from a single study that supports or refute
 
 **Information Model**
 
-Some VariantOncogenicityStudyProposition attributes are inherited from :ref:`gks-core:Proposition`.
+Some VariantOncogenicityStudyProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap

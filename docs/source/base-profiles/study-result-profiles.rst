@@ -14,10 +14,10 @@ Cohort Allele Frequency Study Result
 ####################################
 
 
-.. include::  ../../../schema/profiles/def/CohortAlleleFrequencyStudyResult.rst
+.. include::  ../def/va-spec/CohortAlleleFrequencyStudyResult.rst
 
 
-Assay Variant Effect Measurement Study Result
-#############################################
+Experimental Variant Functional Impact Study Result
+###################################################
 
-.. include::  ../../../schema/profiles/def/AssayVariantEffectMeasurementStudyResult.rst
+.. include::  ../def/va-spec/ExperimentalVariantFunctionalImpactStudyResult.rst

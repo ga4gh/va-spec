@@ -38,10 +38,9 @@ proposition:
   studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
 classification: 
   label: normal
+direction: neutral
 specifiedBy:
   type: Method
+  label: MAVE 2024 Functional Classification
   subtype:
-    label: Variant Interpretation Guideline
-  reportedIn:
-    - type: Document
-      pmid: 29785012
+    label: MAVE 2024 Functional Classification

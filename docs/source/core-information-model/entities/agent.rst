@@ -3,4 +3,4 @@
 Agent
 !!!!!
 
-.. include::  ../../../../schema/gks-core/def/Agent.rst
+.. include::  ../../def/va-spec/Agent.rst

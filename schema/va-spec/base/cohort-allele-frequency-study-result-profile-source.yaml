@@ -1,15 +1,16 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/cohort-allele-frequency-study-result-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/2-cohort-allele-frequency-study-result-profile-source.yaml"
 title: Cohort Allele Frequency Study Result Standard Profile
 strict: true
 
 imports:
+  va-spec: ./va-spec-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
   CohortAlleleFrequencyStudyResult:
-    inherits: gks-core:StudyResult
+    inherits: va-spec:StudyResult
     maturity: draft
     type: object
     description: >-

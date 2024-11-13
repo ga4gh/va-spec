@@ -3,7 +3,7 @@
 Study Result
 !!!!!!!!!!!!
 
-.. include::  ../../../../../schema/gks-core/def/StudyResult.rst
+.. include::  ../../../def/va-spec/StudyResult.rst
 
 ---------
 

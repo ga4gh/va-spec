@@ -6,7 +6,7 @@
    "description": "A statement reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/Statement"
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Statement"
       },
       {
          "properties": {

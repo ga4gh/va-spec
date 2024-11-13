@@ -47,14 +47,12 @@ targetProposition:
 # LB: the following objectAssay was in the original test example. I assume it should be dropped, please verify.
 # objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
 
-# LB: strengthOfEvidenceProvided is illogically specified in PathogenicityEvidenceLine 
-#     to conflict with the underlying datatype of MappableConcept 
-# strengthOfEvidenceProvided: 
-#   label: BS3_Supporting
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided: 
+  label: Supporting
 specifiedBy:
   type: Method
+  label: ACMG 2015 PS3 Criterion
   subtype:
-    label: Variant Interpretation Guideline
-  reportedIn:
-    - type: Document
-      pmid: 34793697
+    label: ACMG 2015 Functional Impact Evidence BS3/PS3 Criterion
+

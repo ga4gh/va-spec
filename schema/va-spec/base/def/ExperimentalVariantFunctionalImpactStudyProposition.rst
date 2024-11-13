@@ -8,7 +8,7 @@ A proposition reporting a conclusion from a single assay or study about the func
 
 **Information Model**
 
-Some ExperimentalVariantFunctionalImpactStudyProposition attributes are inherited from :ref:`gks-core:Proposition`.
+Some ExperimentalVariantFunctionalImpactStudyProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
