@@ -1,0 +1,20 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/ccv-2022/json/VariantOncogenicityStudyStatement",
+   "title": "VariantOncogenicityStudyStatement",
+   "maturity": "draft",
+   "description": "A statement reporting a conclusion from a single study about whether a variant is associated with oncogenicity (positive or negative) - based on interpretation of the study's results.",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/Statement"
+      },
+      {
+         "properties": {
+            "proposition": {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityStudyProposition",
+               "description": "The proposition for which the study provides evidence - that the subject variant is associated with the object oncogenicity."
+            }
+         }
+      }
+   ]
+}

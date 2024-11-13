@@ -1,0 +1,45 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/acmg-2015/pathogenicity-statement-profile-source.yaml"
+title: Variant Pathogenicity Statement Standard Profile
+strict: true
+
+imports:
+  va-base: ../base/pathogenicity-proposition-profile-source.yaml
+  gks-core: ../../gks-core/gks-core-source.yaml
+
+$defs:
+  # Variant Pathogenicity Statement
+  VariantPathogenicityStatement:
+    maturity: draft
+    description: >-
+      A Statement describing the role of a variant in causing an inherited condition.
+    allOf:
+    - $ref: "/ga4gh/schema/gks-core/1.x/json/Statement"
+    - properties:
+        proposition:
+          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+          description: >-
+            The proposition that the subject variant is associated with the object disease.
+        classification:
+          properties:
+              label:
+                type: string
+                enum:
+                  - pathogenic
+                  - likely pathogenic
+                  - uncertain significance
+                  - likely benign
+                  - benign
+        specifiedBy: 
+          extends: specifiedBy
+          description: >-
+            The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the final classification.  
+          properties:
+            label:
+              type: string
+              enum:
+                - ACMG 2015 Variant Pathogenicity Interpretation Guidelines
+      required:
+        - proposition
+        - classification
+        - specifiedBy

@@ -1,0 +1,20 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/aac-2017/json/VariantPrognosticStudyStatement",
+   "title": "VariantPrognosticStudyStatement",
+   "maturity": "draft",
+   "description": "A statement reporting a conclusion from a single study about whether a variant is associated with a disease prognosis - based on interpretation of the study's results.",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/Statement"
+      },
+      {
+         "properties": {
+            "proposition": {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticStudyProposition",
+               "description": "The proposition for which the study provides evidence - that the subject variant is associated with the object condition."
+            }
+         }
+      }
+   ]
+}

@@ -1,0 +1,45 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine",
+   "title": "VariantPathogenicityFunctionalImpactEvidenceLine",
+   "maturity": "draft",
+   "description": "An Evidence Line providing information about the functional impact of a variant on a gene or gene product.",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/EvidenceLine"
+      },
+      {
+         "properties": {
+            "targetProposition": {
+               "description": "The proposition for which the evidence line provides support - that the subject variant impacts the function of the object sequence feature.",
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+            },
+            "strengthOfEvidenceProvided": {
+               "type": "string",
+               "enum": [
+                  "Strong",
+                  "Moderate",
+                  "Supporting"
+               ],
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.            "
+            },
+            "specifiedBy": {
+               "description": "The ACMG criterion that was applied to interpret the functional impact of the variant on the gene or gene product.",
+               "properties": {
+                  "label": {
+                     "type": "string",
+                     "enum": [
+                        "ACMG 2015 PS3 Criterion",
+                        "ACMG 2015 BS3 Criterion"
+                     ]
+                  }
+               }
+            }
+         }
+      }
+   ],
+   "required": [
+      "strengthOfEvidenceProvided",
+      "specifiedBy"
+   ]
+}

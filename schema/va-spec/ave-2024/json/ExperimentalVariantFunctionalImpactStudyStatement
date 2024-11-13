@@ -1,0 +1,28 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/ave-2024/json/ExperimentalVariantFunctionalImpactStudyStatement",
+   "title": "ExperimentalVariantFunctionalImpactStudyStatement",
+   "maturity": "draft",
+   "description": "A statement reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/Statement"
+      },
+      {
+         "properties": {
+            "proposition": {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactStudyProposition",
+               "description": "The proposition for which the study provides evidence - that the subject variant impacts the function of the object sequence feature."
+            },
+            "classification": {
+               "extends": "classification",
+               "description": "An term or phrase summarizing the impact reported in the Statement, providing a functional classification of the subject variant that is familiar for a community of use.",
+               "$comment": "This is an optional attribute that can be used by data providers to provide a particular community of users a functional impact classification in familiar terms, that summarizes/complements the smeantics broken out in the SPOQ attributes of the Statement (e.g. to mirror established community conventions or reflect language on the data providers website or documentation). e.g. CIViC docs/web site uses terms like 'unaltered function', 'gain of function', 'neomorphic', and 'unknown', which could be reropted here. "
+            },
+            "specifiedBy": {
+               "description": "The method that specifies how the functional classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the  final classification."
+            }
+         }
+      }
+   ]
+}
