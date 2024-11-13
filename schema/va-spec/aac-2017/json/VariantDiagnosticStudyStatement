@@ -11,7 +11,7 @@
       {
          "properties": {
             "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticStudyProposition",
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition",
                "description": "The proposition for which the study provides evidence - that the subject variant is associated with the object condition."
             }
          }

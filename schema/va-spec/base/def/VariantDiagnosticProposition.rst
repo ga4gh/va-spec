@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Proposition reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.
+A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.
 
 **Information Model**
 
-Some VariantPrognosticStudyProposition attributes are inherited from :ref:`Proposition`.
+Some VariantDiagnosticProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -61,7 +61,7 @@ Some VariantPrognosticStudyProposition attributes are inherited from :ref:`Propo
       - 
       - string
       - 1..1
-      - MUST be "VariantPrognosticStudyProposition".
+      - MUST be "VariantDiagnosticProposition".
    *  - subjectVariant
       - 
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
@@ -76,7 +76,7 @@ Some VariantPrognosticStudyProposition attributes are inherited from :ref:`Propo
       - 
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - The disease that is evaluated for outcome.
+      - The disease that is evaluated for diagnosis.
    *  - alleleOriginQualifier
       - 
       - string
@@ -91,4 +91,4 @@ Some VariantPrognosticStudyProposition attributes are inherited from :ref:`Propo
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Proposition.

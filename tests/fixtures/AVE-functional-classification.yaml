@@ -1,6 +1,6 @@
 type: Statement
 proposition:
-  type: ExperimentalVariantFunctionalImpactStudyProposition
+  type: ExperimentalVariantFunctionalImpactProposition
   subjectVariant:
     type: CategoricalVariant
     constraints:
@@ -36,11 +36,13 @@ proposition:
           code: '5728'
         relation: exactMatch
   studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+  impactTypeQualifier:
+    label: decreased activity/function
 classification: 
   label: normal
 direction: neutral
 specifiedBy:
-  type: Method
-  label: MAVE 2024 Functional Classification
-  subtype:
+  - type: Method
     label: MAVE 2024 Functional Classification
+    subtype:
+      label: MAVE 2024 Functional Classification

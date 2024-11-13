@@ -25,39 +25,15 @@ $defs:
             The strength of support that an Evidence Line is determined to provide for or against
             the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
             indicated by the directionOfEvidenceProvided attribute.    
-          # properties:
-          #   label:
-          #     type: string
-          #     enum:
-          #       # LB: Met strengths: I think we can presume that if any of the following 3 values is used then the criterion is met.
-          #       - Strong
-          #       - Moderate
-          #       - Supporting 
+          properties:
+            label:
+              type: string
+              enum:
+                - Strong
+                - Moderate
+                - Supporting 
 
-          #       # # LB: I think this may be the BEST solution since folks need to report on the criteria that were not met.
-          #       # - Not Met   
-
-          #       # # LB: folks need a way out if they cannot make a strength call. This is a way to say "I don't know" or "I am not making a call"
-          #       # - Uncertain
-          #       # - Not Provided
-          #       # - Insufficient (not met?)
         specifiedBy:
-        # LB: I really think this should be one method for evaluating function impact data in the
-        #     context of a given varpathProp. The directionOfEvidence will determine whether or not
-        #     the Benign BS3 or Pathogenic PS3 criteria are met. Being so specific about which
-        #     code was used is overly precise and may cause more challenges than benefits.
-
-        #     However, if this is the ONLY place for consumers to get the actual ACMG code used, then
-        #     we need to think about how all the other ACMG Evidence Lines will report the codes used
-        #     in the same way. Automating the extraction of "met" vs "not met" codes is expected by consuming systems.
-
-        #     Terminololgy and Value Sets are needed for this attribute IMO. Conflating acmg criterion codes
-        #     with the identity of a method could be problematic - I think. But I do see the correlation.
-        #     The method is an entity to describe the process, not the result. Using method to define the
-        #     outcome of a process that evaluates all func impact data related to a variant for acmg 2015 
-        #     guidelines can either dispute, support or be neutral to the proposition. Separating the
-        #     sole method used for this evidence line from the direction is important. And adding a qualifier
-        #     to summarize the final outcome of the method is also important (i.e. classificationOfEvidenceProvided?)
           description: >-
             The ACMG criterion that was applied to interpret the functional impact of the variant
             on the gene or gene product.
@@ -65,11 +41,19 @@ $defs:
             label:
               type: string
               enum:
-                - ACMG 2015 PS3 Criterion
-                - ACMG 2015 BS3 Criterion
-                - Not Provided
-                - ACMG 2015 Functional Impact Evidence BS3/PS3 Criterion
+                - ACMG 2015 PS3/BS3 Criterion Evaluation
+        evidenceOutcome:
+          description: >-
+            (outcomes) The ACMG 2015 criterion that was met or not met by the evidence line.
+          properties:
+            label:
+              type: string
+              enum:
+                - BS3_met_moderate
+                - PS3_met_strong
+                - All not met
+
     required:
-      - directionOfEvidenceProvided  # LB: default to 'neutral' when things are uncertain?
-      - strengthOfEvidenceProvided
+      - directionOfEvidenceProvided 
+      # conditional requirements are possible -- maybe a future thing?
       - specifiedBy

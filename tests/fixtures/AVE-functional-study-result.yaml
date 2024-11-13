@@ -18,12 +18,12 @@ focusVariant:
       value: NP_000305.3:p.Arg11Thr
 functionalImpactScore: 1.29395467005388
 specifiedBy:
-  type: Method
-  subtype:
-    label: Experimental Protocol
-  reportedIn:
-  - type: Document
-    pmid: 29785012
+  - type: Method
+    subtype:
+      label: Experimental Protocol
+    reportedIn:
+    - type: Document
+      pmid: 29785012
 sourceDataSet:
   - type: DataSet
     subtype:

@@ -124,8 +124,11 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - The score of the variant impact measured in the assay or study.
    *  - specifiedBy
       - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`Method` | :ref:`iriReference`
-      - 0..1
+      - 0..m
       - The assay that was performed to generate the reported functional impact score.
    *  - sourceDataSet
       - 

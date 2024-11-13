@@ -10,10 +10,6 @@
       },
       {
          "properties": {
-            "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactStudyProposition",
-               "description": "The proposition for which the study provides evidence - that the subject variant impacts the function of the object sequence feature."
-            },
             "classification": {
                "extends": "classification",
                "description": "An term or phrase summarizing the impact reported in the Statement, providing a functional classification of the subject variant that is familiar for a community of use.",

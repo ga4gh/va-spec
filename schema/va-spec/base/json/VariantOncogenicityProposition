@@ -1,7 +1,7 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityStudyProposition",
-   "title": "VariantOncogenicityStudyProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition",
+   "title": "VariantOncogenicityProposition",
    "maturity": "draft",
    "type": "object",
    "description": "A Proposition reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.",
@@ -42,10 +42,10 @@
       },
       "type": {
          "type": "string",
-         "description": "MUST be \"VariantOncogenicityStudyProposition\".",
+         "description": "MUST be \"VariantOncogenicityProposition\".",
          "$comment": "MUST be the label of a concrete class from the data model.",
-         "const": "VariantOncogenicityStudyProposition",
-         "default": "VariantOncogenicityStudyProposition"
+         "const": "VariantOncogenicityProposition",
+         "default": "VariantOncogenicityProposition"
       },
       "subjectVariant": {
          "oneOf": [

@@ -44,15 +44,10 @@ targetProposition:
   geneContextQualifier:
     conceptType: Gene
     label: PTEN
-# LB: the following objectAssay was in the original test example. I assume it should be dropped, please verify.
-# objectAssay: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided: 
   label: Supporting
 specifiedBy:
-  type: Method
-  label: ACMG 2015 PS3 Criterion
-  subtype:
-    label: ACMG 2015 Functional Impact Evidence BS3/PS3 Criterion
+  - type: Method
+    label: ACMG 2015 PS3 Criterion
 

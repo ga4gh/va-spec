@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactStudyProposition",
-   "title": "ExperimentalVariantFunctionalImpactStudyProposition",
-   "maturity": "draft",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition",
+   "title": "VariantPrognosticProposition",
    "type": "object",
-   "description": "A proposition reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).",
+   "maturity": "draft",
+   "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.",
    "properties": {
       "id": {
          "type": "string",
@@ -42,10 +42,10 @@
       },
       "type": {
          "type": "string",
-         "description": "MUST be \"ExperimentalVariantFunctionalImpactStudyProposition\".",
+         "description": "MUST be \"VariantPrognosticProposition\".",
          "$comment": "MUST be the label of a concrete class from the data model.",
-         "const": "ExperimentalVariantFunctionalImpactStudyProposition",
-         "default": "ExperimentalVariantFunctionalImpactStudyProposition"
+         "const": "VariantPrognosticProposition",
+         "default": "VariantPrognosticProposition"
       },
       "subjectVariant": {
          "oneOf": [
@@ -56,58 +56,58 @@
                "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.x/json/Variation"
             }
          ],
-         "description": "A protein or genomic contextual or canonical molecular variant.",
+         "description": "A variant that is the subject of the Proposition.",
          "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship this Proposition describes between the subject Variant and object Sequence Feature whose function it may alter.",
+         "description": "The relationship declared to hold between the subject and the object of the Statement.",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "const": "impactsFunctionOf"
+         "enum": [
+            "associatedWithBetterOutcomeFor",
+            "associatedWithWorseOutcomeFor"
+         ]
       },
-      "objectSequenceFeature": {
+      "objectCondition": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Condition"
             }
          ],
-         "description": "The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is assessed.",
+         "description": "The disease that is evaluated for outcome.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
-      "studyContextQualifier": {
-         "description": "The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.",
-         "$comment": "The attribute is required in order to explicitly specify an assay or study context in which the reported impact was observed. It's value can be a Document object, or an IRI  pointing to a document that describes the assay/study. This may be a publication, a database record, or a bespoke document.",
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-            }
+      "alleleOriginQualifier": {
+         "type": "string",
+         "description": "Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+         "enum": [
+            "germline",
+            "somatic",
+            "combined"
          ]
       },
-      "impactTypeQualifier": {
-         "description": "A term describing a specific type of functional impact that the variant is determined to have on the indicated sequence feature (e.g. decreased activity, dominant negative, neomorphic, reduced Ca2+ binding activity).",
-         "$comment": "Implementers may use a set of terms to use here that reflect the specific types of functional impact(s) measured by the assay(s) employed. It is recommended that terms are drawn from established terminologies where possible.",
+      "allelePrevalenceQualifier": {
          "type": "string",
+         "description": "Reports whether the proposition should be interpreted in the context of the variant being rare or common.",
          "enum": [
-            "increased activity/function",
-            "decreased activity/function",
-            "novel activity/function",
-            "dominant negative activity/function"
+            "rare",
+            "common"
          ]
+      },
+      "geneContextQualifier": {
+         "description": "Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Proposition.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       }
    },
    "required": [
-      "objectSequenceFeature",
+      "objectCondition",
       "predicate",
-      "studyContextQualifier",
       "subjectVariant",
       "type"
    ],

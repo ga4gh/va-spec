@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.
+A Statement reporting a conclusion from a single study about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures - based on interpretation of the study's results.
 
 **Information Model**
 
-Some VariantDiagnosticStudyProposition attributes are inherited from :ref:`Proposition`.
+Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -61,34 +61,40 @@ Some VariantDiagnosticStudyProposition attributes are inherited from :ref:`Propo
       - 
       - string
       - 1..1
-      - MUST be "VariantDiagnosticStudyProposition".
+      - MUST be "VariantTherapeuticResponseProposition".
    *  - subjectVariant
       - 
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
-      - A variant that is the subject of the Proposition.
+      - A variant that is the subject of the Statement.
    *  - predicate
       - 
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
+   *  - objectTherapeutic
+      - 
+      - :ref:`Therapeutic` | :ref:`iriReference`
+      - 1..1
+      - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
+   *  - conditionQualifier
       - 
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - The disease that is evaluated for diagnosis.
+      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements.
    *  - alleleOriginQualifier
       - 
       - string
       - 0..1
-      - Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
+      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
    *  - allelePrevalenceQualifier
       - 
       - string
       - 0..1
-      - Reports whether the proposition should be interpreted in the context of the variant being rare or common.
+      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
    *  - geneContextQualifier
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the therapeutic sensitivity or resistance reported in the Statement.
+

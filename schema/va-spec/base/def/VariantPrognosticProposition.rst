@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Proposition reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.
+A Proposition reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.
 
 **Information Model**
 
-Some VariantOncogenicityStudyProposition attributes are inherited from :ref:`Proposition`.
+Some VariantPrognosticProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -61,7 +61,7 @@ Some VariantOncogenicityStudyProposition attributes are inherited from :ref:`Pro
       - 
       - string
       - 1..1
-      - MUST be "VariantOncogenicityStudyProposition".
+      - MUST be "VariantPrognosticProposition".
    *  - subjectVariant
       - 
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
@@ -72,11 +72,11 @@ Some VariantOncogenicityStudyProposition attributes are inherited from :ref:`Pro
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectTumorType
+   *  - objectCondition
       - 
-      - :ref:`Condition` | :ref:`MappableConcept`
+      - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - The tumor type for which the variant impact is evaluated.
+      - The disease that is evaluated for outcome.
    *  - alleleOriginQualifier
       - 
       - string
@@ -91,4 +91,4 @@ Some VariantOncogenicityStudyProposition attributes are inherited from :ref:`Pro
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the oncogenic role  in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Proposition.

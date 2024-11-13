@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticStudyProposition",
-   "title": "VariantPrognosticStudyProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition",
+   "title": "VariantDiagnosticProposition",
    "type": "object",
    "maturity": "draft",
-   "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.",
+   "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.",
    "properties": {
       "id": {
          "type": "string",
@@ -42,10 +42,10 @@
       },
       "type": {
          "type": "string",
-         "description": "MUST be \"VariantPrognosticStudyProposition\".",
+         "description": "MUST be \"VariantDiagnosticProposition\".",
          "$comment": "MUST be the label of a concrete class from the data model.",
-         "const": "VariantPrognosticStudyProposition",
-         "default": "VariantPrognosticStudyProposition"
+         "const": "VariantDiagnosticProposition",
+         "default": "VariantDiagnosticProposition"
       },
       "subjectVariant": {
          "oneOf": [
@@ -67,8 +67,8 @@
          "description": "The relationship declared to hold between the subject and the object of the Statement.",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
          "enum": [
-            "associatedWithBetterOutcomeFor",
-            "associatedWithWorseOutcomeFor"
+            "isDiagnosticInclusionCriterionFor",
+            "isDiagnosticExclusionCriterionFor"
          ]
       },
       "objectCondition": {
@@ -80,12 +80,12 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Condition"
             }
          ],
-         "description": "The disease that is evaluated for outcome.",
+         "description": "The disease that is evaluated for diagnosis.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
       "alleleOriginQualifier": {
-         "type": "string",
          "description": "Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
+         "type": "string",
          "enum": [
             "germline",
             "somatic",
@@ -93,15 +93,15 @@
          ]
       },
       "allelePrevalenceQualifier": {
-         "type": "string",
          "description": "Reports whether the proposition should be interpreted in the context of the variant being rare or common.",
+         "type": "string",
          "enum": [
             "rare",
             "common"
          ]
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Proposition.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Proposition.",
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       }
    },

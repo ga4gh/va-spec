@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Statement reporting a conclusion from a single study about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures - based on interpretation of the study's results.
+A Proposition reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.
 
 **Information Model**
 
-Some VariantTherapeuticResponseStudyProposition attributes are inherited from :ref:`Proposition`.
+Some VariantOncogenicityProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -61,40 +61,34 @@ Some VariantTherapeuticResponseStudyProposition attributes are inherited from :r
       - 
       - string
       - 1..1
-      - MUST be "VariantTherapeuticResponseStudyProposition".
+      - MUST be "VariantOncogenicityProposition".
    *  - subjectVariant
       - 
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
-      - A variant that is the subject of the Statement.
+      - A variant that is the subject of the Proposition.
    *  - predicate
       - 
       - string
       - 1..1
       - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectTherapeutic
+   *  - objectTumorType
       - 
-      - :ref:`Therapeutic` | :ref:`iriReference`
+      - :ref:`Condition` | :ref:`MappableConcept`
       - 1..1
-      - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
-   *  - conditionQualifier
-      - 
-      - :ref:`Condition` | :ref:`iriReference`
-      - 1..1
-      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements.
+      - The tumor type for which the variant impact is evaluated.
    *  - alleleOriginQualifier
       - 
       - string
       - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
+      - Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
    *  - allelePrevalenceQualifier
       - 
       - string
       - 0..1
-      - Reports whether the statement should be interpreted in the context of the variant being rare or common.
+      - Reports whether the proposition should be interpreted in the context of the variant being rare or common.
    *  - geneContextQualifier
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the therapeutic sensitivity or resistance reported in the Statement.
-
+      - Reports a gene impacted by the variant, which may contribute to the oncogenic role  in the Proposition.

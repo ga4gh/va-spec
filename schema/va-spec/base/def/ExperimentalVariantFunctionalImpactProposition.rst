@@ -8,7 +8,7 @@ A proposition reporting a conclusion from a single assay or study about the func
 
 **Information Model**
 
-Some ExperimentalVariantFunctionalImpactStudyProposition attributes are inherited from :ref:`Proposition`.
+Some ExperimentalVariantFunctionalImpactProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -61,7 +61,7 @@ Some ExperimentalVariantFunctionalImpactStudyProposition attributes are inherite
       - 
       - string
       - 1..1
-      - MUST be "ExperimentalVariantFunctionalImpactStudyProposition".
+      - MUST be "ExperimentalVariantFunctionalImpactProposition".
    *  - subjectVariant
       - 
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
@@ -84,6 +84,6 @@ Some ExperimentalVariantFunctionalImpactStudyProposition attributes are inherite
       - The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.
    *  - impactTypeQualifier
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
       - A term describing a specific type of functional impact that the variant is determined to have on the indicated sequence feature (e.g. decreased activity, dominant negative, neomorphic, reduced Ca2+ binding activity).

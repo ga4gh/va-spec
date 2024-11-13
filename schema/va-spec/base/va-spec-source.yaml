@@ -25,9 +25,12 @@ $defs:
       carry the same information content, and thus concretize the same Information Entity).
     heritableProperties:
       specifiedBy:
-        oneOf:
-        - $ref: "#/$defs/Method"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: "#/$defs/Method"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
           A specification that describes all or part of the process that led to creation of the
           Information Entity
@@ -227,8 +230,12 @@ $defs:
       or describe the overall level of confidence/evidence for or against them; (2) by Evidence Lines that
       report the direction and strength of an evidence-based argument for the Proposition.
     oneOf:
-      - $ref: "#/$defs/ExperimentalVariantFunctionalImpactStudyProposition"
+      - $ref: "#/$defs/ExperimentalVariantFunctionalImpactProposition"
       - $ref: "#/$defs/VariantPathogenicityProposition"
+      - $ref: "#/$defs/VariantDiagnosticProposition"
+      - $ref: "#/$defs/VariantPrognosticProposition"
+      - $ref: "#/$defs/VariantOncogenicityProposition"
+      - $ref: "#/$defs/VariantTherapeuticResponseProposition"
     heritableProperties:
       propositionText:
         type: string
@@ -821,8 +828,8 @@ $defs:
 
   # proposition concrete profiles section
 
-  # Variant Functional Impact Study Proposition
-  ExperimentalVariantFunctionalImpactStudyProposition:
+  # Variant Functional Impact Proposition
+  ExperimentalVariantFunctionalImpactProposition:
     inherits: Proposition
     maturity: draft
     type: object
@@ -832,9 +839,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "ExperimentalVariantFunctionalImpactStudyProposition"
-        default: "ExperimentalVariantFunctionalImpactStudyProposition"
-        description: MUST be "ExperimentalVariantFunctionalImpactStudyProposition".
+        const: "ExperimentalVariantFunctionalImpactProposition"
+        default: "ExperimentalVariantFunctionalImpactProposition"
+        description: MUST be "ExperimentalVariantFunctionalImpactProposition".
       subjectVariant:
         extends: subject
         oneOf:
@@ -852,7 +859,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"      # See https://github.com/ga4gh/gks-common/pull/77 - proposes a SequenceFeature domain entity class
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"      
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact 
           of the subject variant is assessed.
@@ -877,24 +884,26 @@ $defs:
           Implementers may use a set of terms to use here that reflect the specific types of
           functional impact(s) measured by the assay(s) employed. It is recommended that terms
           are drawn from established terminologies where possible.
+
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
           
-        # Matt: At some point we should standardize to a set of permissible values. We could do this from the outset, based on early adopter needs, and growing from there. Or leave unconstrained initially and constrain later.
-        # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Note that application/community specific terms these adopters want to use can be captured in the 'classification' slot.
-        # Note also that if there is a way to constrain permissible values when using the MappableConcept pattern, we could do that instead of an enum here. 
-        type: string                 
-        enum:
-          - increased activity/function              # maps to CIViC 'gain of function'
-          - decreased activity/function              # maps to CIViC 'loss of function'
-          - novel activity/function                  # maps to CIViC 'neomorphic'
-          - dominant negative activity/function      # maps to CIViC 'dominant negative'
+        # # Matt: At some point we should standardize to a set of permissible values. We could do this from the outset, based on early adopter needs, and growing from there. Or leave unconstrained initially and constrain later.
+        # # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Note that application/community specific terms these adopters want to use can be captured in the 'classification' slot.
+        # # Note also that if there is a way to constrain permissible values when using the MappableConcept pattern, we could do that instead of an enum here. 
+        # type: string                 
+        # enum:
+        #   - increased activity/function              # maps to CIViC 'gain of function'
+        #   - decreased activity/function              # maps to CIViC 'loss of function'
+        #   - novel activity/function                  # maps to CIViC 'neomorphic'
+        #   - dominant negative activity/function      # maps to CIViC 'dominant negative'
     required:
       - subjectVariant
       - predicate
       - objectSequenceFeature
       - studyContextQualifier
 
-  # Variant Diagnostic Study Proposition
-  VariantDiagnosticStudyProposition:
+  # Variant Diagnostic Proposition
+  VariantDiagnosticProposition:
     inherits: Proposition
     type: object
     maturity: draft
@@ -906,9 +915,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "VariantDiagnosticStudyProposition"
-        default: "VariantDiagnosticStudyProposition"
-        description: MUST be "VariantDiagnosticStudyProposition".
+        const: "VariantDiagnosticProposition"
+        default: "VariantDiagnosticProposition"
+        description: MUST be "VariantDiagnosticProposition".
       subjectVariant:
         extends: subject
         oneOf:
@@ -954,8 +963,8 @@ $defs:
     - predicate
     - objectCondition
 
-  # Variant Oncogenicity Study Proposition
-  VariantOncogenicityStudyProposition:
+  # Variant Oncogenicity Proposition
+  VariantOncogenicityProposition:
     inherits: Proposition
     maturity: draft
     type: object
@@ -966,9 +975,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "VariantOncogenicityStudyProposition"
-        default: "VariantOncogenicityStudyProposition"
-        description: MUST be "VariantOncogenicityStudyProposition".
+        const: "VariantOncogenicityProposition"
+        default: "VariantOncogenicityProposition"
+        description: MUST be "VariantOncogenicityProposition".
       subjectVariant:
         extends: subject
         oneOf:
@@ -1075,8 +1084,8 @@ $defs:
       - predicate
       - objectCondition
 
-  # Variant Prognostic Study Proposition
-  VariantPrognosticStudyProposition:
+  # Variant Prognostic Proposition
+  VariantPrognosticProposition:
     inherits: Proposition
     type: object
     maturity: draft
@@ -1087,9 +1096,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "VariantPrognosticStudyProposition"
-        default: "VariantPrognosticStudyProposition"
-        description: MUST be "VariantPrognosticStudyProposition".
+        const: "VariantPrognosticProposition"
+        default: "VariantPrognosticProposition"
+        description: MUST be "VariantPrognosticProposition".
       subjectVariant:
         extends: subject
         oneOf:
@@ -1135,8 +1144,8 @@ $defs:
       - predicate
       - objectCondition
 
-  # Variant Therapeutic Response Study Proposition
-  VariantTherapeuticResponseStudyProposition:
+  # Variant Therapeutic Response Proposition
+  VariantTherapeuticResponseProposition:
     inherits: Proposition
     maturity: draft
     type: object
@@ -1147,9 +1156,9 @@ $defs:
     properties:
       type:
         extends: type
-        const: "VariantTherapeuticResponseStudyProposition"
-        default: "VariantTherapeuticResponseStudyProposition"
-        description: MUST be "VariantTherapeuticResponseStudyProposition".
+        const: "VariantTherapeuticResponseProposition"
+        default: "VariantTherapeuticResponseProposition"
+        description: MUST be "VariantTherapeuticResponseProposition".
       subjectVariant:
         extends: subject
         oneOf:

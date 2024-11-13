@@ -15,7 +15,17 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
-               "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.    "
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.    ",
+               "properties": {
+                  "label": {
+                     "type": "string",
+                     "enum": [
+                        "Strong",
+                        "Moderate",
+                        "Supporting"
+                     ]
+                  }
+               }
             },
             "specifiedBy": {
                "description": "The ACMG criterion that was applied to interpret the functional impact of the variant on the gene or gene product.",
@@ -23,10 +33,20 @@
                   "label": {
                      "type": "string",
                      "enum": [
-                        "ACMG 2015 PS3 Criterion",
-                        "ACMG 2015 BS3 Criterion",
-                        "Not Provided",
-                        "ACMG 2015 Functional Impact Evidence BS3/PS3 Criterion"
+                        "ACMG 2015 PS3/BS3 Criterion Evaluation"
+                     ]
+                  }
+               }
+            },
+            "evidenceOutcome": {
+               "description": "(outcomes) The ACMG 2015 criterion that was met or not met by the evidence line.",
+               "properties": {
+                  "label": {
+                     "type": "string",
+                     "enum": [
+                        "BS3_met_moderate",
+                        "PS3_met_strong",
+                        "All not met"
                      ]
                   }
                }
@@ -36,7 +56,6 @@
    ],
    "required": [
       "directionOfEvidenceProvided",
-      "strengthOfEvidenceProvided",
       "specifiedBy"
    ]
 }
