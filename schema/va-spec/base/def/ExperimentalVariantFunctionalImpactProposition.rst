@@ -79,6 +79,6 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is assessed.
    *  - studyContextQualifier
       - 
-      - object
+      - :ref:`iriReference` | object
       - 1..1
       - The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.

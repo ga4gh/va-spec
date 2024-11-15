@@ -83,8 +83,15 @@
       "studyContextQualifier": {
          "description": "The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.",
          "$comment": "The attribute is required in order to explicitly specify an assay or study context in which the reported impact was observed. It's value can be a Document object, or an IRI  pointing to a document that describes the assay/study. This may be a publication, a database record, or a bespoke document.",
-         "additionalProperties": true,
-         "type": "object"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            },
+            {
+               "type": "object",
+               "additionalProperties": true
+            }
+         ]
       }
    },
    "required": [

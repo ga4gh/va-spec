@@ -874,8 +874,11 @@ $defs:
           which the reported impact was observed. It's value can be a Document object, or an IRI 
           pointing to a document that describes the assay/study. This may be a publication, a
           database record, or a bespoke document.
-        additionalProperties: true
-        type: object
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - type: object
+            additionalProperties: true
+
       # impactTypeQualifier:           
       #   description: >-
       #     A term describing a specific type of functional impact that the variant is determined

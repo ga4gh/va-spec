@@ -37,8 +37,7 @@ proposition:
           system: https://identifiers.org/ncbigene
           code: '5728'
         relation: exactMatch
-  studyContextQualifier: 
-    document: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+  studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
   # impactTypeQualifier:
   #   label: decreased activity/function
 classification: 
