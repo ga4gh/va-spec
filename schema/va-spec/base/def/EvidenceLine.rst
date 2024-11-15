@@ -54,11 +54,8 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - specifiedBy
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`Method` | :ref:`iriReference`
-      - 0..m
+      - 0..1
       - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       - 
@@ -115,7 +112,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
    *  - directionOfEvidenceProvided
       - 
       - string
-      - 0..1
+      - 1..1
       - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)
    *  - strengthOfEvidenceProvided
       - 
@@ -127,3 +124,8 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - number
       - 0..1
       - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
+   *  - evidenceOutcome
+      - 
+      - :ref:`MappableConcept`
+      - 0..1
+      - A term indicating the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.

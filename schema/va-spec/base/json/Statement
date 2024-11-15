@@ -38,18 +38,14 @@
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "specifiedBy": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-               }
-            ]
-         },
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            }
+         ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
          "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
       },

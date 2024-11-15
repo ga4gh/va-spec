@@ -46,8 +46,13 @@ targetProposition:
     label: PTEN
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided: 
+  id: supporting
   label: Supporting
 specifiedBy:
-  - type: Method
-    label: ACMG 2015 PS3 Criterion
+  type: Method
+  id: PS3
+  label: ACMG 2015 PS3 Criterion
+evidenceOutcome: 
+  id: PS3_met_supporting
+  label: ACMG 2015 PS3 Supporting Criterion Met
 

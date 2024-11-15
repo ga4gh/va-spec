@@ -15,8 +15,16 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
-               "description": "The strength of support that an Evidence Line is determined to provide for or against the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.    ",
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposition or the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.     *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
                "properties": {
+                  "id": {
+                     "type": "string",
+                     "enum": [
+                        "strong",
+                        "moderate",
+                        "supporting"
+                     ]
+                  },
                   "label": {
                      "type": "string",
                      "enum": [
@@ -28,25 +36,32 @@
                }
             },
             "specifiedBy": {
-               "description": "The ACMG criterion that was applied to interpret the functional impact of the variant on the gene or gene product.",
+               "description": "The ACMG criterion method that was applied to interpret the functional impact of the variant on the gene or gene product.",
                "properties": {
-                  "label": {
+                  "id": {
+                     "description": "The ACMG 2015 criterion code that was applied to interpret the functional impact of the variant on the gene or gene product. Must be one of the following values: BS3 or PS3. Conditional requirement: * If directionOfEvidenceProvided is 'supports' then the value must be 'PS3'. * If directionOfEvidenceProvided is 'disputes' then the value must be 'BS3'.",
                      "type": "string",
                      "enum": [
-                        "ACMG 2015 PS3/BS3 Criterion Evaluation"
+                        "PS3",
+                        "BS3"
                      ]
                   }
                }
             },
             "evidenceOutcome": {
-               "description": "(outcomes) The ACMG 2015 criterion that was met or not met by the evidence line.",
+               "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. 'specifiedBy' is required and assumed to have a single method, BS3 or PS3. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.",
                "properties": {
-                  "label": {
+                  "id": {
                      "type": "string",
                      "enum": [
-                        "BS3_met_moderate",
                         "PS3_met_strong",
-                        "All not met"
+                        "PS3_met_moderate",
+                        "PS3_met_supporting",
+                        "PS3_not_met",
+                        "BS3_met_strong",
+                        "BS3_met_moderate",
+                        "BS3_met_supporting",
+                        "BS3_not_met"
                      ]
                   }
                }

@@ -42,7 +42,7 @@ classification:
   label: normal
 direction: neutral
 specifiedBy:
-  - type: Method
+  type: Method
+  label: MAVE 2024 Functional Classification
+  subtype:
     label: MAVE 2024 Functional Classification
-    subtype:
-      label: MAVE 2024 Functional Classification

@@ -16,12 +16,12 @@ $defs:
     allOf:
     - $ref: "/ga4gh/schema/gks-core/1.x/json/Statement"
     - properties:
-        # proposition:
-        #   description: >-
-        #     The proposition for which the study provides evidence - that the subject variant
-        #     impacts the function of the object sequence feature.
-        #   allOf:
-        #     - $ref: "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition"
+        proposition:
+          description: >-
+            The proposition for which the study provides evidence - that the subject variant
+            impacts the function of the object sequence feature.
+          allOf:
+            - $ref: "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition"
         #     - properties:
         #         impactTypeQualifier:           # This qualifier allows more specific types of impacts to be reported - so the profile supports implementations like CIViC, ClinGen, and I think even some MAVE data.
         #           properties:
@@ -32,8 +32,7 @@ $defs:
         #                 - decreased activity/function              # maps to CIViC 'loss of function'
         #                 - novel activity/function                  # maps to CIViC 'neomorphic'
         #                 - dominant negative activity/function      # maps to CIViC 'dominant negative'
-        classification:        # this attribute now inherits the data type of 'MappableConcept' from  the Core model (rather than simpler 'string' that was originally used)  Consider need for a MappableConcept.  Consider what tyeps of values would go in this attribute for a FI Statement. And what it would look like if there is no 'code' available. 
-          extends: classification
+        classification:       
           description: >-
             An term or phrase summarizing the impact reported in the Statement, providing
             a functional classification of the subject variant that is familiar for a community of use.

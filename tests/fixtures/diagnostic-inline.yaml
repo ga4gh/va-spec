@@ -1,6 +1,7 @@
 id: civic.eid:80
 type: Statement
 description: https://civicdb.org/evidence/80/summary
+
 direction: supports
 strength:
   id: civic.evidenceLevel:B
@@ -11,6 +12,7 @@ strength:
         label: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
+
 proposition:
   type: VariantDiagnosticProposition
   predicate: isDiagnosticInclusionCriterionFor
@@ -131,17 +133,17 @@ proposition:
         or NSCLC may be effectively treated with combinations that include inhibitors of
         receptor tyrosine kinase."
 specifiedBy:
-  - id: civic.methods:2019
-    label: CIViC Curation SOP (2019)
-    reportedIn:
-      - id: pmid:31779674
-        type: Document
-        label: Danos et al., 2019, Genome Med.
-        title: Standard operating procedure for curation and clinical interpretation of
-          variants in cancer
-        doi: 10.1186/s13073-019-0687-x
-        pmid: 31779674
-    type: Method
+  id: civic.methods:2019
+  label: CIViC Curation SOP (2019)
+  reportedIn:
+    - id: pmid:31779674
+      type: Document
+      label: Danos et al., 2019, Genome Med.
+      title: Standard operating procedure for curation and clinical interpretation of
+        variants in cancer
+      doi: 10.1186/s13073-019-0687-x
+      pmid: 31779674
+  type: Method
 reportedIn:
   - id: civic.source:94
     type: Document

@@ -11,7 +11,6 @@
       {
          "properties": {
             "classification": {
-               "extends": "classification",
                "description": "An term or phrase summarizing the impact reported in the Statement, providing a functional classification of the subject variant that is familiar for a community of use.",
                "$comment": "This is an optional attribute that can be used by data providers to provide a particular community of users a functional impact classification in familiar terms, that summarizes/complements the smeantics broken out in the SPOQ attributes of the Statement (e.g. to mirror established community conventions or reflect language on the data providers website or documentation). e.g. CIViC docs/web site uses terms like 'unaltered function', 'gain of function', 'neomorphic', and 'unknown', which could be reropted here. "
             },
