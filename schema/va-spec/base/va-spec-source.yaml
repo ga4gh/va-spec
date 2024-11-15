@@ -874,6 +874,7 @@ $defs:
           which the reported impact was observed. It's value can be a Document object, or an IRI 
           pointing to a document that describes the assay/study. This may be a publication, a
           database record, or a bespoke document.
+        additionalProperties: true
         type: object
       # impactTypeQualifier:           
       #   description: >-

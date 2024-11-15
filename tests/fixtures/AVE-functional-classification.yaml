@@ -1,4 +1,5 @@
 type: Statement
+# statementType: ExperimentalFunctionalImpactStatement    LB: I think this is pretty important to include...
 proposition:
   type: ExperimentalVariantFunctionalImpactProposition
   subjectVariant:
@@ -29,16 +30,20 @@ proposition:
   objectSequenceFeature:
     id: clinvar-gene:5728
     conceptType: Gene
+    primaryCode: PTEN
     label: PTEN
     mappings:
       - coding:
           system: https://identifiers.org/ncbigene
           code: '5728'
         relation: exactMatch
-  studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-  impactTypeQualifier:
-    label: decreased activity/function
+  studyContextQualifier: 
+    document: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
+  # impactTypeQualifier:
+  #   label: decreased activity/function
 classification: 
+  conceptType: ExperimentalFunctionalImpactClassification
+  primaryCode: normal
   label: normal
 direction: neutral
 specifiedBy:
