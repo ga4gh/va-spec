@@ -1,0 +1,44 @@
+type: EvidenceLine
+targetProposition:
+  type: VariantOncogenicityProposition
+  subjectVariant:
+    type: CategoricalVariant
+    constraints:
+      - type: DefiningAlleleConstraint
+        allele:
+          id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+          type: Allele
+          location:
+            type: SequenceLocation
+            sequenceReference:
+              refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+              type: SequenceReference
+            start: 10
+            end: 11
+            sequence: R
+          state:
+            type: LiteralSequenceExpression
+            sequence: T
+          expressions:
+            - syntax: hgvs.p
+              value: NP_000305.3:p.Arg11Thr
+        relations:
+          - translates_from
+          - translates_from_reading_frame
+  predicate: isOncogenicFor
+  objectTumorType:
+    conceptType: TumorType
+    label: Unspecified
+  geneContextQualifier:
+    conceptType: Gene
+    label: EGFR
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided: 
+  primaryCode: supporting
+specifiedBy:
+  type: Method
+  id: OS2
+  label: Clingen/CGC/VICC 2022 OS3 Criterion
+evidenceOutcome: 
+  primaryCode: OS2_met_supporting
+

@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A statement reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).
+An Evidence Line providing information about the functional impact of a variant on a gene or gene product.
 
 **Information Model**
 

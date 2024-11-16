@@ -2,19 +2,7 @@ type: EvidenceLine
 targetProposition:
   type: VariantPathogenicityProposition
   subjectVariant:
-    # LB: Alex, please verify the following... I am using a Cat-VRS: ProteinSequenceConsequence
-    #     I want to review this because there's nothing in this object to tell you that
-    #     It looks identical to the CanonicalAllele except for the data constraints on
-    #     which relations are allowed. 
-    #     I think it makes sense for some Recipes to have a more specific object type or subtype property
-    #     maybe something like recipeType: ProteinSequenceConsequence? (recipe is a bit non-computational computationally speaking)
-    #       categoryType or categorySubtype seems better - the focus is on the category portion of CategoricalVariant.
-    #     
-    #     I recognize that computational validation will work fine without this
-    #     but I would imagine it may make debugging validation failures much easier
-    #     if the categoryType or recipeType was stated explicitly in the object.
     type: CategoricalVariant
-    # subtype: ProteinSequenceConsequence  or categoryType: ProteinSequenceConsequence
     constraints:
       - type: DefiningAlleleConstraint
         allele:
@@ -39,20 +27,19 @@ targetProposition:
           - translates_from_reading_frame
   predicate: isCausalFor
   objectCondition:
-    conceptType: Condition
+    conceptType: Disease
     label: Unspecified
   geneContextQualifier:
     conceptType: Gene
     label: PTEN
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided: 
-  id: supporting
-  label: Supporting
+  primaryCode: supporting
 specifiedBy:
   type: Method
   id: PS3
   label: ACMG 2015 PS3 Criterion
 evidenceOutcome: 
-  id: PS3_met_supporting
+  primaryCode: PS3_met_supporting
   label: ACMG 2015 PS3 Supporting Criterion Met
 

@@ -32,12 +32,15 @@ tests:
   - test_file: cohort-allele-freq-test.yaml
     namespace: va-spec.base
     definition: CohortAlleleFrequencyStudyResult
-  - test_file: AVE-functional-classification.yaml
-    namespace: va-spec.ave-2024
-    definition: ExperimentalVariantFunctionalImpactStudyStatement
-  - test_file: AVE-clinical-classification.yaml
+  - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.acmg-2015
     definition: VariantPathogenicityFunctionalImpactEvidenceLine
-  - test_file: AVE-functional-study-result.yaml
+  # - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
+  #   namespace: va-spec.ccv-2022
+  #   definition: VariantOncogenicityFunctionalImpactEvidenceLine
+  - test_file: Exp-Var-Func-Impact-Statement-01.yaml
+    namespace: va-spec.base
+    definition: Statement
+  - test_file: Exp-Var-Func-Impact-Study-Result-01.yaml
     namespace: va-spec.base
     definition: ExperimentalVariantFunctionalImpactStudyResult

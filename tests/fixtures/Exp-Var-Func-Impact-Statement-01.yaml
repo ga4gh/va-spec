@@ -1,5 +1,4 @@
 type: Statement
-# statementType: ExperimentalFunctionalImpactStatement    LB: I think this is pretty important to include...
 proposition:
   type: ExperimentalVariantFunctionalImpactProposition
   subjectVariant:
@@ -40,8 +39,7 @@ proposition:
   studyContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
   # impactTypeQualifier:
   #   label: decreased activity/function
-classification: 
-  conceptType: ExperimentalFunctionalImpactClassification
+classification:
   primaryCode: normal
   label: normal
 direction: neutral
