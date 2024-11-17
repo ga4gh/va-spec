@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Proposition reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.
+A proposition describing the role of a variant in causing a tumor type.
 
 **Information Model**
 
@@ -69,21 +69,21 @@ Some VariantOncogenicityProposition attributes are inherited from :ref:`SubjectV
       - The relationship declared to hold between the subject and the object of the Statement.
    *  - objectTumorType
       - 
-      - :ref:`Condition` | :ref:`MappableConcept`
+      - :ref:`Condition` | :ref:`iriReference`
       - 1..1
       - The tumor type for which the variant impact is evaluated.
-   *  - alleleOriginQualifier
+   *  - variantOriginQualifier
       - 
       - string
       - 0..1
-      - Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
-   *  - allelePrevalenceQualifier
+      - Reports whether the proposition should be interpreted in the context of a heritable (germline) variant, an acquired (somatic) mutation, or more nuanced origin.
+   *  - variantPrevalenceQualifier
       - 
       - string
       - 0..1
-      - Reports whether the proposition should be interpreted in the context of the variant being rare or common.
+      - Reports whether the proposition should be interpreted in the context of the variant being rare, common, or some other expressed form of background population prevalence.
    *  - geneContextQualifier
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the oncogenic role  in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the oncogenic role in the Proposition.

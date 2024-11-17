@@ -38,7 +38,7 @@ strengthOfEvidenceProvided:
 specifiedBy:
   type: Method
   id: OS2
-  label: Clingen/CGC/VICC 2022 OS3 Criterion
+  label: Clingen/CGC/VICC 2022 OS2 Criterion
 evidenceOutcome: 
-  primaryCode: OS2_met_supporting
+  primaryCode: OS2_supporting
 

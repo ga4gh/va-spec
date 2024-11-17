@@ -4,7 +4,7 @@
    "title": "VariantOncogenicityProposition",
    "maturity": "draft",
    "type": "object",
-   "description": "A Proposition reporting a conclusion from a single study that supports or refutes a variant's effect on oncogenesis for a specific tumor type - based on interpretation of the study's results.",
+   "description": "A proposition describing the role of a variant in causing a tumor type.",
    "properties": {
       "id": {
          "type": "string",
@@ -64,14 +64,13 @@
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
          "enum": [
             "isOncogenicFor",
-            "isProtectiveFor",
-            "isPredisposingFor"
+            "isProtectiveAgainst"
          ]
       },
       "objectTumorType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Condition"
@@ -80,25 +79,18 @@
          "description": "The tumor type for which the variant impact is evaluated.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
       },
-      "alleleOriginQualifier": {
+      "variantOriginQualifier": {
          "type": "string",
-         "description": "Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
-         "enum": [
-            "germline",
-            "somatic",
-            "combined"
-         ]
+         "description": "Reports whether the proposition should be interpreted in the context of a heritable (germline) variant, an acquired (somatic) mutation, or more nuanced origin.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
-      "allelePrevalenceQualifier": {
+      "variantPrevalenceQualifier": {
          "type": "string",
-         "description": "Reports whether the proposition should be interpreted in the context of the variant being rare or common.",
-         "enum": [
-            "rare",
-            "common"
-         ]
+         "description": "Reports whether the proposition should be interpreted in the context of the variant being rare, common, or some other expressed form of background population prevalence.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the oncogenic role  in the Proposition.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the oncogenic role in the Proposition.",
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       }
    },

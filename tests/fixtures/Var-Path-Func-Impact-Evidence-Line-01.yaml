@@ -40,6 +40,6 @@ specifiedBy:
   id: PS3
   label: ACMG 2015 PS3 Criterion
 evidenceOutcome: 
-  primaryCode: PS3_met_supporting
+  primaryCode: PS3_supporting
   label: ACMG 2015 PS3 Supporting Criterion Met
 
