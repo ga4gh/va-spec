@@ -973,9 +973,8 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A Proposition reporting a conclusion from a single study that supports or refutes a
-      variant's effect on oncogenesis for a specific tumor type - based on interpretation
-      of the study's results.
+      A proposition describing the role of a variant in causing or predisposing to a tumor
+      type.
     properties:
       type:
         extends: type
@@ -993,36 +992,30 @@ $defs:
         extends: predicate
         enum:
         - isOncogenicFor
-        - isProtectiveFor
-        - isPredisposingFor
+        - isProtectiveAgainst
       objectTumorType:
         extends: object
         oneOf:
         - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
           The tumor type for which the variant impact is evaluated.
-      alleleOriginQualifier:
+      variantOriginQualifier:
         type: string
         description: >-
-          Reports whether the proposition should be interpreted in the context of an inherited
-          (germline) variant, an acquired (somatic) mutation, or both (combined).
-        enum:
-        - germline
-        - somatic
-        - combined
-      allelePrevalenceQualifier:
+          Reports whether the proposition should be interpreted in the context of a heritable
+          (germline) variant, an acquired (somatic) mutation, or more nuanced origin.
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      variantPrevalenceQualifier:
         type: string
         description: >-
           Reports whether the proposition should be interpreted in the context of the variant
-          being rare or common.
-        enum:
-        - rare
-        - common
+          being rare, common, or some other expressed form of background population prevalence.
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       geneContextQualifier:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the oncogenic
-          role  in the Proposition.
+          role in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
       - subjectVariant
@@ -1035,7 +1028,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A proposition describing the role of a variant in causing an inherited condition.
+      A proposition describing the role of a variant in causing a heritable condition.
     properties:
       type:
         extends: type
