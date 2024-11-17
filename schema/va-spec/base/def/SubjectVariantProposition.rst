@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.
+A :ref:`Proposition` that has a variant as the subject.
 
 **Information Model**
 
-Some Agent attributes are inherited from :ref:`gks-core:Entity`.
+Some SubjectVariantProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -26,6 +26,11 @@ Some Agent attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
+   *  - type
+      - 
+      - string
+      - 1..1
+      - The name of the class that is instantiated by a data object representing the Entity.
    *  - label
       - 
       - string
@@ -52,18 +57,18 @@ Some Agent attributes are inherited from :ref:`gks-core:Entity`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - type
+   *  - predicate
       - 
       - string
       - 1..1
-      - MUST be "Agent".
-   *  - name
+      - The relationship declared to hold between the subject and the object of the Statement.
+   *  - object
       - 
-      - string
-      - 0..1
-      - The given name of the Agent.
-   *  - subtype
+      - object
+      - 1..1
+      - An Entity or concept that is related to the subject of a Proposition via its predicate.
+   *  - subjectVariant
       - 
-      - string
-      - 0..1
-      - A specific type of agent the Agent object represents. Must be one of {person, organization, software}.
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - 1..1
+      - A variant that is the subject of the Proposition.

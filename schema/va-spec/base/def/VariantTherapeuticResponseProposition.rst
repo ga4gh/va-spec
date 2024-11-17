@@ -1,6 +1,6 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
-    levels are described in the :ref:`maturity-model`.
+.. warning:: This data class is at a **draft** maturity level and may change
+    significantly in future releases. Maturity levels are described in
+    the :ref:`maturity-model`.
 
 **Computational Definition**
 
@@ -8,7 +8,7 @@ A Statement reporting a conclusion from a single study about the role of a varia
 
 **Information Model**
 
-Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`Proposition`.
+Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`SubjectVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -52,21 +52,16 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`P
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - propositionText
+   *  - subjectVariant
       - 
-      - string
-      - 0..1
-      - A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for Breast Cancer".
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - 1..1
+      - A variant that is the subject of the Proposition.
    *  - type
       - 
       - string
       - 1..1
       - MUST be "VariantTherapeuticResponseProposition".
-   *  - subjectVariant
-      - 
-      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`iriReference`
-      - 1..1
-      - A variant that is the subject of the Statement.
    *  - predicate
       - 
       - string

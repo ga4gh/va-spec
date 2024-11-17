@@ -1,6 +1,6 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
-    levels are described in the :ref:`maturity-model`.
+.. warning:: This data class is at a **draft** maturity level and may change
+    significantly in future releases. Maturity levels are described in
+    the :ref:`maturity-model`.
 
 **Computational Definition**
 
@@ -57,11 +57,6 @@ Some Proposition attributes are inherited from :ref:`gks-core:Entity`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - propositionText
-      - 
-      - string
-      - 0..1
-      - A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for Breast Cancer".
    *  - subject
       - 
       - object
