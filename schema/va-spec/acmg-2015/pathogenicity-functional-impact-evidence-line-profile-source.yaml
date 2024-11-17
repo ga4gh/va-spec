@@ -57,13 +57,13 @@ $defs:
             primaryCode:
               type: string
               enum:
-                - PS3_met_strong
-                - PS3_met_moderate
-                - PS3_met_supporting
+                - PS3
+                - PS3_moderate
+                - PS3_supporting
                 - PS3_not_met
-                - BS3_met_strong
-                - BS3_met_moderate
-                - BS3_met_supporting
+                - BS3
+                - BS3_moderate
+                - BS3_supporting
                 - BS3_not_met
     required:
       - directionOfEvidenceProvided 
