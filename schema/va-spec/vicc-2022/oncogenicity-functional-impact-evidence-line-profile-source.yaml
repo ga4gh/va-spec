@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/acmg-2015/pathogenicity-functional-impact--profile-source.yaml"
-title: ACMG 2015 Variant Pathogenicity Functional Impact Evidence Line Profile
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/ccv-2022/oncogenicity-functional-impact--profile-source.yaml"
+title: Clingen/CGC/VICC 2022 Variant Oncogenicity Functional Impact Evidence Line Profile
 strict: true
 
 imports:
@@ -8,7 +8,7 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  VariantPathogenicityFunctionalImpactEvidenceLine:
+  VariantOncogenicityFunctionalImpactEvidenceLine:
     maturity: draft
     description: >-
       An Evidence Line providing information about the functional impact of a variant on a gene or gene product.
@@ -19,11 +19,11 @@ $defs:
           description: >-
             The proposition for which the evidence line provides support - that the subject variant
             impacts the function of the object sequence feature.
-          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"          
+          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"          
         strengthOfEvidenceProvided:           
           description: >-
             The strength of support that an Evidence Line is determined to provide for or against the
-            proposition or the pathogenicity of the assessed variant. Strength is evaluated relative to
+            proposition or the oncogenicity of the assessed variant. Strength is evaluated relative to
             the direction indicated by the directionOfEvidenceProvided attribute.    
             *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes',
             then this attribute is required. If it is 'none', then this attribute is not allowed.
@@ -36,20 +36,20 @@ $defs:
                 - supporting
         specifiedBy:
           description: >-
-            The ACMG criterion method that was applied to interpret the functional impact of the variant
+            The Clingen/CGC/VICC-2022 criterion method that was applied to interpret the functional impact of the variant
             on the gene or gene product.
           properties:
             primaryCode:
               description: >-
-                The ACMG 2015 criterion code that was applied to interpret the functional impact of the variant
-                on the gene or gene product. Must be one of the following values: BS3 or PS3.
+                The Clingen/CGC/VICC 2022 criterion code that was applied to interpret the functional impact of the variant
+                on the gene or gene product. Must be one of the following values: SBS2 or OS2.
                 Conditional requirement:
-                * If directionOfEvidenceProvided is 'supports' then the value must be 'PS3'.
-                * If directionOfEvidenceProvided is 'disputes' then the value must be 'BS3'.
+                * If directionOfEvidenceProvided is 'supports' then the value must be 'OS2'.
+                * If directionOfEvidenceProvided is 'disputes' then the value must be 'SBS2'.
               type: string
               enum:
-                - PS3
-                - BS3
+                - OS2
+                - SBS2
         evidenceOutcome:
           description: >-
             The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. 'specifiedBy' is required and assumed to have a single method, BS3 or PS3. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.
@@ -57,14 +57,14 @@ $defs:
             primaryCode:
               type: string
               enum:
-                - PS3
-                - PS3_moderate
-                - PS3_supporting
-                - PS3_not_met
-                - BS3
-                - BS3_moderate
-                - BS3_supporting
-                - BS3_not_met
+                - OS2
+                - OS2_moderate
+                - OS2_supporting
+                - OS2_not_met
+                - SBS2
+                - SBS2_moderate
+                - SBS2_supporting
+                - SBS2_not_met
     required:
       - directionOfEvidenceProvided 
       - specifiedBy
