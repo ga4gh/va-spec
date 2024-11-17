@@ -226,19 +226,7 @@ $defs:
       Propositions may be used in two contexts; (1) by Statements that assert them to be true or false,
       or describe the overall level of confidence/evidence for or against them; (2) by Evidence Lines that
       report the direction and strength of an evidence-based argument for the Proposition.
-    oneOf:
-      - $ref: "#/$defs/ExperimentalVariantFunctionalImpactProposition"
-      - $ref: "#/$defs/VariantPathogenicityProposition"
-      - $ref: "#/$defs/VariantDiagnosticProposition"
-      - $ref: "#/$defs/VariantPrognosticProposition"
-      - $ref: "#/$defs/VariantOncogenicityProposition"
-      - $ref: "#/$defs/VariantTherapeuticResponseProposition"
     heritableProperties:
-      propositionText:
-        type: string
-        description: >-
-         A natural-language expression of the Proposition's meaning. e.g. "BRCA2 c.8023A>G is pathogenic for
-         Breast Cancer".
       subject:
         oneOf:
         - type: object
@@ -291,6 +279,28 @@ $defs:
       - subject
       - predicate
       - object        
+
+  SubjectVariantProposition:
+    inherits: Proposition
+    maturity: draft
+    description: >-
+      A :ref:`Proposition` that has a variant as the subject.
+    oneOf:
+      - $ref: "#/$defs/ExperimentalVariantFunctionalImpactProposition"
+      - $ref: "#/$defs/VariantPathogenicityProposition"
+      - $ref: "#/$defs/VariantDiagnosticProposition"
+      - $ref: "#/$defs/VariantPrognosticProposition"
+      - $ref: "#/$defs/VariantOncogenicityProposition"
+      - $ref: "#/$defs/VariantTherapeuticResponseProposition"
+    heritableProperties:
+      subjectVariant:
+        extends: subject
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: A variant that is the subject of the Proposition.
+
 
   # concrete core classes section -- Method, Contribution, Document, Agent, Statement, EvidenceLine, DataSet, StudyGroup
   Method:
@@ -832,7 +842,7 @@ $defs:
 
   # Variant Functional Impact Proposition
   ExperimentalVariantFunctionalImpactProposition:
-    inherits: Proposition
+    inherits: SubjectVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -844,13 +854,6 @@ $defs:
         const: "ExperimentalVariantFunctionalImpactProposition"
         default: "ExperimentalVariantFunctionalImpactProposition"
         description: MUST be "ExperimentalVariantFunctionalImpactProposition".
-      subjectVariant:
-        extends: subject
-        oneOf:
-          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
-          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A protein or genomic contextual or canonical molecular variant.
       predicate:  
         extends: predicate
         description: >-
@@ -878,37 +881,14 @@ $defs:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
           - type: object
             additionalProperties: true
-
-      # impactTypeQualifier:           
-      #   description: >-
-      #     A term describing a specific type of functional impact that the variant is determined
-      #     to have on the indicated sequence feature (e.g. decreased activity, dominant negative,
-      #     neomorphic, reduced Ca2+ binding activity).
-      #   $comment: >-
-      #     Implementers may use a set of terms to use here that reflect the specific types of
-      #     functional impact(s) measured by the assay(s) employed. It is recommended that terms
-      #     are drawn from established terminologies where possible.
-
-      #   $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-          
-      #   # # Matt: At some point we should standardize to a set of permissible values. We could do this from the outset, based on early adopter needs, and growing from there. Or leave unconstrained initially and constrain later.
-      #   # # I seeded an initial proposal that covers specific impact types used in MAVE and CIViC. Note that application/community specific terms these adopters want to use can be captured in the 'classification' slot.
-      #   # # Note also that if there is a way to constrain permissible values when using the MappableConcept pattern, we could do that instead of an enum here. 
-      #   # type: string                 
-      #   # enum:
-      #   #   - increased activity/function              # maps to CIViC 'gain of function'
-      #   #   - decreased activity/function              # maps to CIViC 'loss of function'
-      #   #   - novel activity/function                  # maps to CIViC 'neomorphic'
-      #   #   - dominant negative activity/function      # maps to CIViC 'dominant negative'
     required:
-      - subjectVariant
       - predicate
       - objectSequenceFeature
       - studyContextQualifier
 
   # Variant Diagnostic Proposition
   VariantDiagnosticProposition:
-    inherits: Proposition
+    inherits: SubjectVariantProposition
     type: object
     maturity: draft
     description: >-
@@ -922,13 +902,6 @@ $defs:
         const: "VariantDiagnosticProposition"
         default: "VariantDiagnosticProposition"
         description: MUST be "VariantDiagnosticProposition".
-      subjectVariant:
-        extends: subject
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Proposition.
       predicate:
         extends: predicate
         enum:
@@ -963,13 +936,12 @@ $defs:
           diagnostic association  in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
-    - subjectVariant
     - predicate
     - objectCondition
 
   # Variant Oncogenicity Proposition
   VariantOncogenicityProposition:
-    inherits: Proposition
+    inherits: SubjectVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -982,13 +954,6 @@ $defs:
         const: "VariantOncogenicityProposition"
         default: "VariantOncogenicityProposition"
         description: MUST be "VariantOncogenicityProposition".
-      subjectVariant:
-        extends: subject
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Proposition.
       predicate:
         extends: predicate
         enum:
@@ -1025,13 +990,12 @@ $defs:
           role  in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
-      - subjectVariant
       - predicate
       - objectTumorType
 
   # Variant Pathogenicity Proposition
   VariantPathogenicityProposition:
-    inherits: Proposition
+    inherits: SubjectVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -1042,13 +1006,6 @@ $defs:
         const: VariantPathogenicityProposition
         default: VariantPathogenicityProposition
         description: Must be "VariantPathogenicityProposition"
-      subjectVariant:
-        extends: subject 
-        oneOf:
-          - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
         const: isCausalFor
@@ -1084,13 +1041,12 @@ $defs:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"  
     required:
-      - subjectVariant
       - predicate
       - objectCondition
 
   # Variant Prognostic Proposition
   VariantPrognosticProposition:
-    inherits: Proposition
+    inherits: SubjectVariantProposition
     type: object
     maturity: draft
     description: >-
@@ -1103,13 +1059,6 @@ $defs:
         const: "VariantPrognosticProposition"
         default: "VariantPrognosticProposition"
         description: MUST be "VariantPrognosticProposition".
-      subjectVariant:
-        extends: subject
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Proposition.
       predicate:
         extends: predicate
         enum:
@@ -1144,13 +1093,12 @@ $defs:
           prognostic association  in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
-      - subjectVariant
       - predicate
       - objectCondition
 
   # Variant Therapeutic Response Proposition
   VariantTherapeuticResponseProposition:
-    inherits: Proposition
+    inherits: SubjectVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -1163,13 +1111,6 @@ $defs:
         const: "VariantTherapeuticResponseProposition"
         default: "VariantTherapeuticResponseProposition"
         description: MUST be "VariantTherapeuticResponseProposition".
-      subjectVariant:
-        extends: subject
-        oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Variation"
-        - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-        description: A variant that is the subject of the Statement.
       predicate:
         extends: predicate
         enum:
@@ -1213,7 +1154,6 @@ $defs:
           sensitivity or resistance reported in the Statement.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
-    - subjectVariant
     - predicate
     - objectTherapeutic
     - conditionQualifier

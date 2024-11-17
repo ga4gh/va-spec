@@ -36,17 +36,6 @@
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
-      "propositionText": {
-         "type": "string",
-         "description": "A natural-language expression of the Proposition's meaning. e.g. \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\"."
-      },
-      "type": {
-         "type": "string",
-         "description": "MUST be \"ExperimentalVariantFunctionalImpactProposition\".",
-         "$comment": "MUST be the label of a concrete class from the data model.",
-         "const": "ExperimentalVariantFunctionalImpactProposition",
-         "default": "ExperimentalVariantFunctionalImpactProposition"
-      },
       "subjectVariant": {
          "oneOf": [
             {
@@ -59,8 +48,15 @@
                "$ref": "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
             }
          ],
-         "description": "A protein or genomic contextual or canonical molecular variant.",
+         "description": "A variant that is the subject of the Proposition.",
          "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"ExperimentalVariantFunctionalImpactProposition\".",
+         "$comment": "MUST be the label of a concrete class from the data model.",
+         "const": "ExperimentalVariantFunctionalImpactProposition",
+         "default": "ExperimentalVariantFunctionalImpactProposition"
       },
       "predicate": {
          "type": "string",
