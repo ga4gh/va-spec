@@ -1,6 +1,6 @@
-.. note:: This data class is at a **trial use** maturity level and may change
-     in future releases. Maturity levels are described in
-    the :ref:`maturity-model`.
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
+    levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
 
@@ -52,32 +52,6 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - contributions
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Contribution`
-      - 0..m
-      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
-   *  - reportedIn
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Document` | :ref:`iriReference`
-      - 0..m
-      - A document in which the the Information Entity is reported.
-   *  - dateAuthored
-      - 
-      - :ref:`datetime`
-      - 0..1
-      - Indicates when the information content expressed in the Information Entity was generated.
-   *  - recordMetadata
-      - 
-      - :ref:`RecordMetadata`
-      - 0..1
-      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - componentResult
       - 
                         .. raw:: html
@@ -129,9 +103,6 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - The assay that was performed to generate the reported functional impact score.
    *  - sourceDataSet
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`DataSet`
-      - 0..m
+      - 0..1
       - The full data set that provided the reported the functional impact score. 

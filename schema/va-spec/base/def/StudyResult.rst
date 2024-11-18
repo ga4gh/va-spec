@@ -1,6 +1,6 @@
-.. warning:: This data class is at a **draft** maturity level and may change
-    significantly in future releases. Maturity levels are described in
-    the :ref:`maturity-model`.
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
+    levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
 
@@ -62,32 +62,6 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - :ref:`Method` | :ref:`iriReference`
       - 0..1
       - A specification that describes all or part of the process that led to creation of the Information Entity
-   *  - contributions
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Contribution`
-      - 0..m
-      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
-   *  - reportedIn
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Document` | :ref:`iriReference`
-      - 0..m
-      - A document in which the the Information Entity is reported.
-   *  - dateAuthored
-      - 
-      - :ref:`datetime`
-      - 0..1
-      - Indicates when the information content expressed in the Information Entity was generated.
-   *  - recordMetadata
-      - 
-      - :ref:`RecordMetadata`
-      - 0..1
-      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
    *  - focus
       - 
       - :ref:`Entity` | :ref:`MappableConcept` | :ref:`iriReference`
@@ -95,11 +69,8 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - sourceDataSet
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`DataSet`
-      - 0..m
+      - 0..1
       - A larger DataSet from which the content of the StudyResult was derived.
    *  - componentResult
       - 
