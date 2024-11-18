@@ -27,6 +27,7 @@ def retrieve_rel_ref(ga4gh_ref: str):
 js_registry = Registry(retrieve=retrieve_rel_ref)
 js_def = dict()
 validator = dict()
+coverage = dict()
 
 paths = list(schema_root_path.glob('*/json/*'))+list(va_spec_path.glob('*/json/*'))
 
@@ -44,5 +45,36 @@ for schema_path in paths:
         (schema_uri, schema_resource)
     ])
 
-for cls in js_def:
+def init_coverage(cls, p, c):
+    if coverage[cls].get(p, None) is False:
+        return
+    elif 'oneOf' in c:
+        for element in c['oneOf']:
+            init_coverage(cls, p, element)
+    elif 'anyOf' in c:
+        for element in c['anyOf']:
+            init_coverage(cls, p, element)
+    elif '$ref' in c and c['$ref'].endswith('iriReference'):
+        return
+    elif '$ref' in c:
+        coverage[cls][p] = False
+    elif 'type' not in c:
+        raise ValueError(f'{cls}.{p} has no type')
+    elif isinstance(c['type'], list):
+        coverage[cls][p] = False
+    elif c['type'] in ['integer', 'string', 'number', 'boolean', 'array']:
+        coverage[cls][p] = False
+    elif c['type'] == 'object' and c.get('additionalProperties', None) is True:
+        coverage[cls][p] = False
+    else:
+        raise ValueError(f'{cls}.{p}: {c['type']} not handled')
+
+for cls, cls_def in js_def.items():
     validator[cls] = Draft202012Validator(js_def[cls], registry=js_registry)
+    coverage[cls] = dict()
+    if 'properties' not in cls_def:
+        continue
+    for prop, prop_def in cls_def['properties'].items():
+        if prop_def.get('maturity', '') == 'draft':
+            continue
+        init_coverage(cls, prop, prop_def)
