@@ -64,7 +64,7 @@ Some Activity attributes are inherited from :ref:`gks-core:Entity`.
       - A specific type of activity the Activity instance represents.
    *  - date
       - 
-      - _Not Specified_
+      - :ref:`date`
       - 0..1
       - The date that the Activity was completed.
    *  - performedBy

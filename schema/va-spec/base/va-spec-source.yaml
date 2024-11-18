@@ -99,13 +99,13 @@ $defs:
           a model does not define Activity subclasses for this purpose. Implementers can define
           their own set of data set type codes/terms, to match the needs of the domain or application.
       date:
-        $refs: "/ga4gh/schema/gks-core/1.x/json/date"
+        $ref: "/ga4gh/schema/gks-core/1.x/json/date"
         description: >-
           The date that the Activity was completed.
         $comment: >-
           By convention, populate this attribute with the date the activity was completed (e.g.
-          in cases where the activity spans multiple days). The date SHOULD be formatted as a date
-          string in ISO format "YYYY-MM-DD".
+          in cases where the activity spans multiple days). The date MUST be formatted as a date
+          string in ISO8601 format "YYYY-MM-DD".
       performedBy:
         type: array
         ordered: false
@@ -534,15 +534,6 @@ $defs:
           'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength',
           and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a
           quantitative assessment based on a numerical score.
-      statementText:
-        type: string
-        description: A natural-language expression of what a Statement asserts to be true.
-        $comment: >-
-          This attribute captures what a Statement says as human readable free text. e.g. that
-          "BRCA2 c.8023A>G is pathogenic for Breast Cancer", or that "there is moderate evidence
-          supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer". This optional attribute
-          can be used instead of, or as a complement to, a structured representation of Statement
-          semantics that uses the subject-predicate-object-qualifier pattern.
       classification:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
