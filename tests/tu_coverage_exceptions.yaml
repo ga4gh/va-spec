@@ -1,0 +1,8 @@
+exceptions:
+  ExperimentalVariantFunctionalImpactStudyResult:
+    # Entity
+    - description
+    - id
+    - label
+    - extensions
+    

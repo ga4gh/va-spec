@@ -25,7 +25,7 @@ specifiedBy:
   - type: Document
     pmid: 29785012
 sourceDataSet:
-  - type: DataSet
+    type: DataSet
     subtype:
       label: variant effect data set
     license: CC0
