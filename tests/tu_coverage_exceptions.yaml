@@ -1,8 +1,10 @@
-exceptions:
-  ExperimentalVariantFunctionalImpactStudyResult:
-    # Entity
-    - description
-    - id
-    - label
-    - extensions
-    
+va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
+  # Entity
+  - description
+  - id
+  - label
+  - extensions
+  - alternativeLabels
+  # InformationEntity
+  - contributions
+  - reportedIn

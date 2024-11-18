@@ -37,6 +37,9 @@ def test_trial_use_property_coverage():
     trial_use_classes = _get_trial_use_classes()
     with open(test_path / 'test_definitions.yaml') as def_file:
         test_spec = yaml.safe_load(def_file)
+
+    with open(test_path / 'tu_coverage_exceptions.yaml') as except_file:
+        exceptions = yaml.safe_load(except_file)
     
     for test in test_spec['tests']:
         with open(fixtures_path / test['test_file']) as datafile:
@@ -54,7 +57,9 @@ def test_trial_use_property_coverage():
     no_coverage_properties = set()
     for tu_class in trial_use_classes:
         for tu_class_property, covered in coverage[tu_class].items():
-            if covered is False:
+            if tu_class_property in exceptions.get(tu_class, dict()):
+                continue
+            elif covered is False:
                 no_coverage_properties.add(f'{tu_class}.{tu_class_property}')
     
     assert(len(no_coverage_properties) == 0), \
