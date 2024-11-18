@@ -24,7 +24,6 @@ $defs:
       sourceDataSet:
         extends: sourceDataSet 
         description: The dataset from which the CohortAlleleFrequencyStudyResult was reported.
-        additionalProperties: false
       focusAllele:
         extends: focus
         oneOf:
@@ -44,10 +43,11 @@ $defs:
         type: number
         description: The frequency of the focusAllele in the cohort.
       cohort:
-        extends: studyGroup
+        $ref: StudyGroup
         description: The cohort from which the frequency was derived.
       subCohortFrequency:
-        extends: componentResult
+        type: array
+        ordered: false
         description: >-
           A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
           This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts.

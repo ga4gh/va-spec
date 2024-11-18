@@ -62,6 +62,22 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - :ref:`Method` | :ref:`iriReference`
       - 0..1
       - A specification that describes all or part of the process that led to creation of the Information Entity
+   *  - contributions
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`Contribution`
+      - 0..m
+      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
+   *  - reportedIn
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`Document` | :ref:`iriReference`
+      - 0..m
+      - A document in which the the Information Entity is reported.
    *  - focus
       - 
       - :ref:`Entity` | :ref:`MappableConcept` | :ref:`iriReference`
@@ -72,32 +88,3 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - :ref:`DataSet`
       - 0..1
       - A larger DataSet from which the content of the StudyResult was derived.
-   *  - componentResult
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`StudyResult`
-      - 0..m
-      - Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population) .
-   *  - studyGroup
-      - 
-      - :ref:`StudyGroup`
-      - 0..1
-      - A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult.
-   *  - ancillaryResults
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 
-   *  - qualityMeasures
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 

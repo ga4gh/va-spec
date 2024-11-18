@@ -36,31 +36,29 @@
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
-      "componentResult": {
+      "contributions": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyResult"
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
          },
-         "description": "Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results full study population) .",
-         "$comment": "This attribute allows data creators to break down a StudyResult into finer-grained StudyResult instances with a narrower scope. For example, a StudyResult about the frequency of an allele in a global population of individuals can be broken down into separate 'component' Results about distinct subpopulations of individuals in the source data (e.g. frequency of the allele in asian vs african subpopulations, or male vs female subgroups)."
+         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+         "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
       },
-      "studyGroup": {
-         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyGroup",
-         "description": "A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the data captured in the StudyResult.",
-         "$comment": "For example, in a StudyResult holding allele frequency data, this attribute points to a StudyGroup object that describes characteristics of the population that the frequency data was generated from (e.g. 'East Asian', 'Female')."
-      },
-      "ancillaryResults": {
-         "maturity": "draft",
-         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
-         "type": "object",
-         "additionalProperties": true
-      },
-      "qualityMeasures": {
-         "maturity": "draft",
-         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
-         "type": "object",
-         "additionalProperties": true
+      "reportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               }
+            ]
+         },
+         "description": "A document in which the the Information Entity is reported."
       },
       "type": {
          "type": "string",

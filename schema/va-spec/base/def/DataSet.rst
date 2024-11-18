@@ -57,6 +57,22 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
       - :ref:`Method` | :ref:`iriReference`
       - 0..1
       - A specification that describes all or part of the process that led to creation of the Information Entity
+   *  - contributions
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`Contribution`
+      - 0..m
+      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
+   *  - reportedIn
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`Document` | :ref:`iriReference`
+      - 0..m
+      - A document in which the the Information Entity is reported.
    *  - type
       - 
       - string

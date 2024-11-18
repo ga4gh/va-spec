@@ -49,6 +49,30 @@
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
          "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
       },
+      "contributions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
+         },
+         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+         "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
+      },
+      "reportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               }
+            ]
+         },
+         "description": "A document in which the the Information Entity is reported."
+      },
       "type": {
          "type": "string",
          "description": "Must be \"Document\"",
