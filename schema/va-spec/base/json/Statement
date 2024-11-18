@@ -161,11 +161,6 @@
          "description": "A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.",
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score."
       },
-      "statementText": {
-         "type": "string",
-         "description": "A natural-language expression of what a Statement asserts to be true.",
-         "$comment": "This attribute captures what a Statement says as human readable free text. e.g. that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", or that \"there is moderate evidence supporting the pathogenicity of BRCA2 c.8023A>G for Breast Cancer\". This optional attribute can be used instead of, or as a complement to, a structured representation of Statement semantics that uses the subject-predicate-object-qualifier pattern."
-      },
       "classification": {
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.",

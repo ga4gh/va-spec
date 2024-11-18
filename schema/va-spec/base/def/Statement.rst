@@ -116,11 +116,6 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
       - number
       - 0..1
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.
-   *  - statementText
-      - 
-      - string
-      - 0..1
-      - A natural-language expression of what a Statement asserts to be true.
    *  - classification
       - 
       - :ref:`MappableConcept`

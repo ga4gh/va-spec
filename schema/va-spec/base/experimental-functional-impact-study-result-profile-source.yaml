@@ -11,7 +11,7 @@ imports:
 $defs:
   ExperimentalVariantFunctionalImpactStudyResult:  
     inherits: va-spec:StudyResult
-    maturity: draft
+    maturity: trial use
     type: object
     description: >-
       A StudyResult that reports a functional impact score from a variant functional assay or study.
