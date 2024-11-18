@@ -48,17 +48,29 @@
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
          "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
       },
-      "ancillaryResults": {
-         "maturity": "draft",
-         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
-         "type": "object",
-         "additionalProperties": true
+      "contributions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
+         },
+         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+         "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
       },
-      "qualityMeasures": {
-         "maturity": "draft",
-         "$comment": "This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.",
-         "type": "object",
-         "additionalProperties": true
+      "reportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               }
+            ]
+         },
+         "description": "A document in which the the Information Entity is reported."
       },
       "type": {
          "type": "string",
@@ -70,8 +82,7 @@
       "sourceDataSet": {
          "$ref": "/ga4gh/schema/va-spec/1.x/base/json/DataSet",
          "description": "The dataset from which the CohortAlleleFrequencyStudyResult was reported.",
-         "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance.",
-         "additionalProperties": false
+         "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       },
       "focusAllele": {
          "oneOf": [
@@ -101,17 +112,15 @@
       },
       "cohort": {
          "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyGroup",
-         "description": "The cohort from which the frequency was derived.",
-         "$comment": "For example, in a StudyResult holding allele frequency data, this attribute points to a StudyGroup object that describes characteristics of the population that the frequency data was generated from (e.g. 'East Asian', 'Female')."
+         "description": "The cohort from which the frequency was derived."
       },
       "subCohortFrequency": {
          "type": "array",
          "ordered": false,
+         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.",
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/base/json/CohortAlleleFrequencyStudyResult"
-         },
-         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.",
-         "$comment": "This attribute allows data creators to break down a StudyResult into finer-grained StudyResult instances with a narrower scope. For example, a StudyResult about the frequency of an allele in a global population of individuals can be broken down into separate 'component' Results about distinct subpopulations of individuals in the source data (e.g. frequency of the allele in asian vs african subpopulations, or male vs female subgroups)."
+         }
       }
    },
    "required": [
