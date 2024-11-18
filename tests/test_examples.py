@@ -3,7 +3,7 @@ import yaml
 from config import validator, js_def, coverage
 
 def _get_trial_use_classes():
-    return set([x for x in js_def if x.startswith('va_spec') and js_def[x]['maturity'] == 'trial use'])
+    return set([x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] == 'trial use'])
 
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:
@@ -55,7 +55,7 @@ def test_trial_use_property_coverage():
     for tu_class in trial_use_classes:
         for tu_class_property, covered in coverage[tu_class].items():
             if covered is False:
-                no_coverage_properties.add(tu_class_property)
+                no_coverage_properties.add(f'{tu_class}.{tu_class_property}')
     
-    assert(len(no_coverage_properties) == 0, 
-           f"The following properties lack test coverage: {no_coverage_properties}")
+    assert(len(no_coverage_properties) == 0), \
+       f"The following properties lack test coverage: {no_coverage_properties}"
