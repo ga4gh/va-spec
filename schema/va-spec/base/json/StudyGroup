@@ -1,0 +1,72 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/StudyGroup",
+   "title": "StudyGroup",
+   "type": "object",
+   "maturity": "draft",
+   "description": "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings.",
+   "$comment": "A Study Group may include all participants in a given study, or specific subsets that are designated based on shared roles or characteristics.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.",
+         "$comment": "Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to re-use an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "alternativeLabels": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+         "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "type": {
+         "type": "string",
+         "description": "Must be \"StudyGroup\"",
+         "$comment": "MUST be the label of a concrete class from the data model.",
+         "const": "StudyGroup",
+         "default": "StudyGroup"
+      },
+      "memberCount": {
+         "type": "integer",
+         "description": "The total number of individual members in the StudyGroup."
+      },
+      "isSubsetOf": {
+         "type": "array",
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyGroup"
+         },
+         "ordered": false,
+         "description": "A larger StudyGroup of which this StudyGroup represents a subset."
+      },
+      "characteristics": {
+         "type": "array",
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Characteristic"
+         },
+         "ordered": false,
+         "description": "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group."
+      }
+   },
+   "required": [
+      "type"
+   ],
+   "additionalProperties": false
+}

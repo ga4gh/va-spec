@@ -3,4 +3,4 @@
 Characteristic
 !!!!!!!!!!!!!!
 
-.. include::  ../../../../schema/gks-core/def/Characteristic.rst
+.. include::  ../../def/va-spec/Characteristic.rst

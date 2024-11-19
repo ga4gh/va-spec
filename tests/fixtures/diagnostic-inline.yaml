@@ -1,6 +1,7 @@
 id: civic.eid:80
-type: VariantDiagnosticStudyStatement
+type: Statement
 description: https://civicdb.org/evidence/80/summary
+
 direction: supports
 strength:
   id: civic.evidenceLevel:B
@@ -11,8 +12,9 @@ strength:
         label: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
+
 proposition:
-  type: VariantDiagnosticStudyProposition
+  type: VariantDiagnosticProposition
   predicate: isDiagnosticInclusionCriterionFor
   subjectVariant:
     id: civic.mpid:12

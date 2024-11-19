@@ -4,7 +4,7 @@ title: ACMG 2015 Variant Pathogenicity Functional Impact Evidence Line Profile
 strict: true
 
 imports:
-  va-base: ../base/pathogenicity-proposition-profile-source.yaml
+  va-spec: ../base/va-spec-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
@@ -19,27 +19,52 @@ $defs:
           description: >-
             The proposition for which the evidence line provides support - that the subject variant
             impacts the function of the object sequence feature.
-          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
-        strengthOfEvidenceProvided:           # TO DO: Ensure that the enum below covers terms needed for initial adopters. Merge https://github.com/ga4gh/gks-core/pull/78 which updates the core IM to allow this property to take a string so we can define the enum here. Think about if we need the 'PS'/'BS' parts of enum value labels - as this bakes in direction, and is duplicative as the 'specifiedBy' attribute reports the ACMG criterion applied. 
-          type: string                       
-          enum:
-            - Strong
-            - Moderate
-            - Supporting
+          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"          
+        strengthOfEvidenceProvided:           
           description: >-
-            The strength of support that an Evidence Line is determined to provide for or against
-            the pathogenicity of the assessed variant. Strength is evaluated relative to the direction
-            indicated by the directionOfEvidenceProvided attribute.            
-        specifiedBy:
-          description: >-
-            The ACMG criterion that was applied to interpret the functional impact of the variant
-            on the gene or gene product.
+            The strength of support that an Evidence Line is determined to provide for or against the
+            proposition or the pathogenicity of the assessed variant. Strength is evaluated relative to
+            the direction indicated by the directionOfEvidenceProvided attribute.    
+            *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes',
+            then this attribute is required. If it is 'none', then this attribute is not allowed.
           properties:
-            label:
+            primaryCode:
               type: string
               enum:
-                - ACMG 2015 PS3 Criterion
-                - ACMG 2015 BS3 Criterion
+                - strong
+                - moderate
+                - supporting
+        specifiedBy:
+          description: >-
+            The ACMG criterion method that was applied to interpret the functional impact of the variant
+            on the gene or gene product.
+          properties:
+            primaryCode:
+              description: >-
+                The ACMG 2015 criterion code that was applied to interpret the functional impact of the variant
+                on the gene or gene product. Must be one of the following values: BS3 or PS3.
+                Conditional requirement:
+                * If directionOfEvidenceProvided is 'supports' then the value must be 'PS3'.
+                * If directionOfEvidenceProvided is 'disputes' then the value must be 'BS3'.
+              type: string
+              enum:
+                - PS3
+                - BS3
+        evidenceOutcome:
+          description: >-
+            The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. 'specifiedBy' is required and assumed to have a single method, BS3 or PS3. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.
+          properties:
+            primaryCode:
+              type: string
+              enum:
+                - PS3
+                - PS3_moderate
+                - PS3_supporting
+                - PS3_not_met
+                - BS3
+                - BS3_moderate
+                - BS3_supporting
+                - BS3_not_met
     required:
-      - strengthOfEvidenceProvided
+      - directionOfEvidenceProvided 
       - specifiedBy

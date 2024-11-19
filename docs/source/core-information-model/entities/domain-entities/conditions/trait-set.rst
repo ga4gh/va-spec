@@ -3,7 +3,7 @@
 Trait Set
 !!!!!!!!!
 
-.. include::  ../../../../../../schema/domain-entities/def/TraitSet.rst
+.. include::  ../../../../def/va-spec/TraitSet.rst
 
 
 

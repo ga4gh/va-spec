@@ -4,4 +4,4 @@ Document
 !!!!!!!!
 
 
-.. include::  ../../../../../schema/gks-core/def/Document.rst
+.. include::  ../../../def/va-spec/Document.rst

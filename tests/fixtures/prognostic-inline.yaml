@@ -12,7 +12,7 @@ strength:
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
 proposition:    
-  type: VariantPrognosticStudyProposition  
+  type: VariantPrognosticProposition  
   predicate: associatedWithWorseOutcomeFor
   subjectVariant:
     id: civic.mpid:12

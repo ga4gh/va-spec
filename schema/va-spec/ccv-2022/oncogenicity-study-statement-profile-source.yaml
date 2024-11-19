@@ -4,7 +4,7 @@ title: Clingen/CCG/VICC 2022 Variant Oncogenicity Study Statement
 strict: true
 
 imports:
-  va-base: ../base/oncogenicity-study-proposition-profile-source.yaml
+  va-spec: ../base/va-spec-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
@@ -18,7 +18,7 @@ $defs:
     - $ref: "/ga4gh/schema/gks-core/1.x/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityStudyProposition"
+          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"
           description: >-
             The proposition for which the study provides evidence - that the subject variant
             is associated with the object oncogenicity.

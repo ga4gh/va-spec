@@ -15,7 +15,7 @@ strength:
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
 proposition:
-  type: VariantTherapeuticResponseStudyProposition
+  type: VariantTherapeuticResponseProposition
   predicate: predictsSensitivityTo
   subjectVariant:
     id: civic.mpid:33

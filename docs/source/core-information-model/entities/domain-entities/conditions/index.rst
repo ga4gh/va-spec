@@ -3,7 +3,7 @@
 Condition
 !!!!!!!!!
 
-  .. include::  ../../../../../../schema/domain-entities/def/Condition.rst
+  .. include::  ../../../../def/va-spec/Condition.rst
 
 
 **Subclasses**

@@ -1,0 +1,162 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine",
+   "title": "EvidenceLine",
+   "type": "object",
+   "maturity": "draft",
+   "description": "An independent, evidence-based argument that may support or refute the validity of a specific proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target proposition.",
+   "$comment": "Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are assessed together as an argument for or against some 'target proposition' - to report the direction (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to make. For example, the various allele counts and population frequency calculations for the BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that the variant is pathogenic for Breast Cancer.\nEvidence Lines are flexible with respect to the granularity of arguments they support, and the scope of evidence items they can collectively assess. Narrow scoping will bucket available evidence into many, fine-grained Evidence Lines that make the most atomic independently meaningful arguments possible. The ACMG Variant Pathogenicity Interpretation Guidelines are an example of a fairly fine-grained evidence interpretation framework. Broader scoping approaches may organize the same available evidence into fewer Evidence Lines that build and assess less atomic arguments based on a wider and more diverse set of evidence items. For example, CIViC curators assess the strength and direction of evidence items at the level of *all information reported in a publication for a specific study* - which can encompass many different results and evidence types that under more fine-grained interpretation approaches might be split apart and assessed as separate lines of evidence.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.",
+         "$comment": "Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to re-use an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context."
+      },
+      "label": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "alternativeLabels": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+         "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            }
+         ],
+         "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
+         "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
+         },
+         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
+         "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
+      },
+      "reportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               }
+            ]
+         },
+         "description": "A document in which the the Information Entity is reported."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"EvidenceLine\".",
+         "$comment": "MUST be the label of a concrete class from the data model.",
+         "const": "EvidenceLine",
+         "default": "EvidenceLine"
+      },
+      "targetProposition": {
+         "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantTherapeuticResponseProposition"
+            }
+         ]
+      },
+      "hasEvidenceItems": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/DataSet"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Statement"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyResult"
+               }
+            ]
+         },
+         "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.",
+         "$comment": "A given Evidence Line may be supported by one or many individual evidence items. What matters is that all evidence items in a given Evidence Line get collectively assessed and assigned direction and strength as a single argument for or against a target proposition.\nDifferent types and scales of information entity can serve as evidence (experimental measurements or observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data about BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the support it may offer for a target proposition (e.g. the prospect of the variant\u2019s pathogenicity)."
+      },
+      "directionOfEvidenceProvided": {
+         "type": "string",
+         "enum": [
+            "supports",
+            "neutral",
+            "disputes"
+         ],
+         "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)"
+      },
+      "strengthOfEvidenceProvided": {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
+         "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.",
+         "$comment": "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided."
+      },
+      "scoreOfEvidenceProvided": {
+         "type": "number",
+         "description": "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value."
+      },
+      "evidenceOutcome": {
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
+         "description": "A term indicating the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition."
+      }
+   },
+   "required": [
+      "directionOfEvidenceProvided",
+      "type"
+   ],
+   "additionalProperties": false
+}

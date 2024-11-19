@@ -4,7 +4,7 @@ title: Variant Pathogenicity Statement Standard Profile
 strict: true
 
 imports:
-  va-base: ../base/pathogenicity-proposition-profile-source.yaml
+  va-spec: ../base/va-spec-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
@@ -20,26 +20,38 @@ $defs:
           $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
           description: >-
             The proposition that the subject variant is associated with the object disease.
-        classification:
-          properties:
-              label:
-                type: string
-                enum:
-                  - pathogenic
-                  - likely pathogenic
-                  - uncertain significance
-                  - likely benign
-                  - benign
-        specifiedBy: 
-          extends: specifiedBy
-          description: >-
-            The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the final classification.  
-          properties:
-            label:
-              type: string
-              enum:
-                - ACMG 2015 Variant Pathogenicity Interpretation Guidelines
-      required:
-        - proposition
-        - classification
-        - specifiedBy
+        # NOTE: The acmg 2015 guidelines are "guidelines" and allow for groups to embellish or extend them. 
+        #       For example, the VCEPs will create there supplemental methods, while labs will approxmately
+        #       follow the guidelines.  This is why the specifiedBy should NOT be required.
+        #       The classifications can also be extended to include items like "pathogenic, low penetrance" 
+        #       "established risk allele", "likely risk allele" or "uncertain risk allele".
+        #       We should build a VarPathStatement that works in the spirit of a "guideline"
+        #       and can be specialized a dozen different ways? without necessarily being so strict at this level.
+        #       
+        # For now I would suggest we be minimalistic in our requirements. Attempt to provide guidance but allow for flexibility.
+        #   We will learn how to tighten up the requirements as we get feedback from implementors and users.
+        #
+
+        # classification:
+        #   properties:
+        #       label:
+        #         type: string
+        #         enum:
+        #           - pathogenic
+        #           - likely pathogenic
+        #           - uncertain significance
+        #           - likely benign
+        #           - benign
+        # specifiedBy: 
+        #   extends: specifiedBy
+        #   description: >-
+        #     The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the final classification.  
+        #   properties:
+        #     label:
+        #       type: string
+        #       enum:
+        #         - ACMG 2015 Variant Pathogenicity Interpretation Guidelines
+      # required:
+      #   - proposition
+        # - classification
+        # - specifiedBy

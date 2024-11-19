@@ -3,4 +3,4 @@
 Method
 !!!!!!
 
-.. include::  ../../../../../schema/gks-core/def/Method.rst
+.. include::  ../../../def/va-spec/Method.rst

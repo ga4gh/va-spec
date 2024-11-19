@@ -8,7 +8,7 @@ A StudyResult that reports measures related to the frequency of an Allele in a c
 
 **Information Model**
 
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-core:StudyResult`.
+Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-spec:StudyResult`.
 
 .. list-table::
    :class: clean-wrap
@@ -73,32 +73,6 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-co
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - dateAuthored
-      - 
-      - :ref:`datetime`
-      - 0..1
-      - Indicates when the information content expressed in the Information Entity was generated.
-   *  - recordMetadata
-      - 
-      - :ref:`RecordMetadata`
-      - 0..1
-      - Provenance metadata about a specific concrete record of information as encoded/serialized in a particular data set or object (as opposed to provenance about the abstract information content the encoding carries).
-   *  - ancillaryResults
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 
-   *  - qualityMeasures
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - object
-      - 0..1
-      - 
    *  - type
       - 
       - string
@@ -106,11 +80,8 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`gks-co
       - MUST be "CohortAlleleFrequencyStudyResult".
    *  - sourceDataSet
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`DataSet`
-      - 0..m
+      - 0..1
       - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
    *  - focusAllele
       - 

@@ -15,7 +15,7 @@ id: gnomad4:1-10120-T-G
 type: CohortAlleleFrequencyStudyResult
 label: Overall Cohort Allele Frequency for 1-10120-T-G
 sourceDataSet:
-- id: gnomad4.1.0
+  id: gnomad4.1.0
   type: DataSet
   label: gnomAD v4.1.0
   version: 4.1.0
@@ -31,11 +31,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.remaining
   type: CohortAlleleFrequencyStudyResult
   label: Remaining individuals Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 468
@@ -50,11 +45,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.amr
   type: CohortAlleleFrequencyStudyResult
   label: Admixed American Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 2282
@@ -69,11 +59,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.fin
   type: CohortAlleleFrequencyStudyResult
   label: Finnish Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 1112
@@ -88,11 +73,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.ami
   type: CohortAlleleFrequencyStudyResult
   label: Amish Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 190
@@ -107,11 +87,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.eas
   type: CohortAlleleFrequencyStudyResult
   label: East Asian Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 872
@@ -126,11 +101,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.mid
   type: CohortAlleleFrequencyStudyResult
   label: Middle Eastern Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 32
@@ -145,11 +115,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.sas
   type: CohortAlleleFrequencyStudyResult
   label: South Asian Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 716
@@ -164,11 +129,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.asj
   type: CohortAlleleFrequencyStudyResult
   label: Ashkenazi Jewish Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 1076
@@ -183,11 +143,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.afr
   type: CohortAlleleFrequencyStudyResult
   label: African/African-American Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 8666
@@ -202,11 +157,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.nfe
   type: CohortAlleleFrequencyStudyResult
   label: Non-Finnish European Ancestry Group Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 18672
@@ -221,11 +171,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.XX
   type: CohortAlleleFrequencyStudyResult
   label: XX Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 18952
@@ -240,11 +185,6 @@ subCohortFrequency:
 - id: gnomad4:1-10120-T-G.XY
   type: CohortAlleleFrequencyStudyResult
   label: XY Allele Frequency for 1-10120-T-G
-  sourceDataSet:
-  - id: gnomad4.1.0
-    type: DataSet
-    label: gnomAD v4.1.0
-    version: 4.1.0
   focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
   focusAlleleCount: 0
   locusAlleleCount: 15134

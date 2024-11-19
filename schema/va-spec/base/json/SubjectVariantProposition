@@ -1,0 +1,27 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/SubjectVariantProposition",
+   "title": "SubjectVariantProposition",
+   "maturity": "draft",
+   "description": "A Proposition that has a variant as the subject.",
+   "oneOf": [
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition"
+      },
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition"
+      },
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"
+      },
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+      },
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition"
+      },
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantTherapeuticResponseProposition"
+      }
+   ]
+}

@@ -3,8 +3,6 @@
 Domain Entity
 !!!!!!!!!!!!!
 
-.. include::  ../../../../../schema/core-im/def/DomainEntity.rst
-
 .. core-im-class-hierarchy:
 
 
