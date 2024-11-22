@@ -7,7 +7,7 @@ import re
 
 root_path = Path(__file__).parents[1]
 schema_root_path = root_path / 'schema'
-va_spec_path = schema_root_path / 'va-spec'
+va_schemas_path = schema_root_path / 'va-spec'
 
 test_path = root_path / 'tests'
 fixtures_path = test_path / 'fixtures'
@@ -29,7 +29,7 @@ js_def = dict()
 validator = dict()
 coverage = dict()
 
-paths = list(schema_root_path.glob('*/json/*'))+list(va_spec_path.glob('*/json/*'))
+paths = list(schema_root_path.glob('*/json/*'))+list(va_schemas_path.glob('*/json/*'))
 
 for schema_path in paths:
     content = json.loads(schema_path.read_text())
