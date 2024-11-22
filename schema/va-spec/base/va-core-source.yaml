@@ -13,7 +13,7 @@ $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
   InformationEntity:
     inherits: gks-core:Entity
-    maturity: draft
+    maturity: trial use
     description: >-
       An abstract (non-physical) entity that is about something - representing the underlying
       'information content' conveyed by physical or digital information artifacts like books, web pages,
@@ -123,7 +123,7 @@ $defs:
 
   StudyResult:
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       A collection of data items from a single study that pertain to a particular subject or
       experimental unit in the study, along with optional provenance information describing
