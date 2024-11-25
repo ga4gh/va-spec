@@ -1,3 +1,11 @@
+va-spec.base:ExperimentalVariantFunctionalImpactProposition:
+  # Entity
+  - label
+  - extensions
+  - id
+  - description
+  - alternativeLabels
+
 va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   # Entity
   - description

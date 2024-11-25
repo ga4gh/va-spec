@@ -773,7 +773,7 @@ $defs:
   # Variant Functional Impact Proposition
   ExperimentalVariantFunctionalImpactProposition:
     inherits: SubjectVariantProposition
-    maturity: draft
+    maturity: trial use
     type: object
     description: >-
       A proposition reporting a conclusion from a single assay or study about the functional
@@ -787,9 +787,10 @@ $defs:
       predicate:  
         extends: predicate
         description: >-
-          The relationship this Proposition describes between the subject Variant
-          and object Sequence Feature whose function it may alter.
-        const: impactsFunctionOf                
+          The relationship this Proposition describes between the subject variant
+          and object sequence feature whose function it may alter.
+        type: string
+        default: impactsFunctionOf
       objectSequenceFeature:
         extends: object
         oneOf:

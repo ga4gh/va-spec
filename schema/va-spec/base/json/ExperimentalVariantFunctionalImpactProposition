@@ -2,7 +2,7 @@
    "$schema": "https://json-schema.org/draft/2020-12/schema",
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition",
    "title": "ExperimentalVariantFunctionalImpactProposition",
-   "maturity": "draft",
+   "maturity": "trial use",
    "type": "object",
    "description": "A proposition reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).",
    "properties": {
@@ -60,9 +60,9 @@
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship this Proposition describes between the subject Variant and object Sequence Feature whose function it may alter.",
+         "description": "The relationship this Proposition describes between the subject variant and object sequence feature whose function it may alter.",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "const": "impactsFunctionOf"
+         "default": "impactsFunctionOf"
       },
       "objectSequenceFeature": {
          "oneOf": [

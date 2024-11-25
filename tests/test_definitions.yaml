@@ -21,6 +21,11 @@ tests:
     namespace: va-spec.base
     definition: Method
 
+  # test propositions
+  - test_file: EVFI-proposition.yaml
+    namespace: va-spec.base
+    definition: ExperimentalVariantFunctionalImpactProposition
+
   # test ACMG 2015 Statements and domain entities
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     namespace: va-spec.acmg-2015
