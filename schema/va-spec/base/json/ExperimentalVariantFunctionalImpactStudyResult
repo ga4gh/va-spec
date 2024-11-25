@@ -102,6 +102,7 @@
       }
    },
    "required": [
+      "focusVariant",
       "type"
    ],
    "additionalProperties": false

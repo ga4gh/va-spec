@@ -81,7 +81,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
    *  - focus
       - 
       - :ref:`Entity` | :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
+      - 1..1
       - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - sourceDataSet
       - 

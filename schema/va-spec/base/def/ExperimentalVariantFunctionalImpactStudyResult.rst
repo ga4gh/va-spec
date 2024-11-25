@@ -76,7 +76,7 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
    *  - focusVariant
       - 
       - :ref:`MolecularVariation` | :ref:`iriReference`
-      - 0..1
+      - 1..1
       - The genetic variant for which a functional impact score is generated.
    *  - functionalImpactScore
       - 
