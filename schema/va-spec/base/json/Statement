@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Statement",
    "title": "Statement",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.",
    "$comment": "The model supports two \"modes of use\" for Statements, which differ in what they say about their SPOQ proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.\nA Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that \"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.",
    "properties": {

@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -95,6 +95,6 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
       - The version of the DataSet, as assigned by its creator.
    *  - license
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
       - A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)

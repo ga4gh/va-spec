@@ -4,7 +4,7 @@ title: Variant Pathogenicity Statement Standard Profile
 strict: true
 
 imports:
-  va-spec: ../base/va-spec-source.yaml
+  va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
@@ -17,7 +17,7 @@ $defs:
     - $ref: "/ga4gh/schema/gks-core/1.x/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-core/1.x/base/json/VariantPathogenicityProposition"
           description: >-
             The proposition that the subject variant is associated with the object disease.
         # NOTE: The acmg 2015 guidelines are "guidelines" and allow for groups to embellish or extend them. 

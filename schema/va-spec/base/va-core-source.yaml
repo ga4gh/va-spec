@@ -185,7 +185,7 @@ $defs:
 
   Proposition:
     inherits: gks-core:Entity
-    maturity: draft
+    maturity: trial use
     description: >-
       The abstract entity representing a possible fact that may be put forth as true, or subjected to
       an evidence-based assessment, by a Statement. As abstract entities, their identity and existence
@@ -249,7 +249,7 @@ $defs:
 
   SubjectVariantProposition:
     inherits: Proposition
-    maturity: draft
+    maturity: trial use
     description: >-
       A :ref:`Proposition` that has a variant as the subject.
     oneOf:
@@ -414,7 +414,7 @@ $defs:
   Statement:
     type: object
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used
       to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment
@@ -542,7 +542,7 @@ $defs:
   EvidenceLine:
     type: object
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       An independent, evidence-based argument that may support or refute the validity of a specific proposition.
       The strength and direction of this argument is based on an interpretation of one or more pieces of
@@ -629,7 +629,7 @@ $defs:
   DataSet:
     type: object
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
@@ -672,7 +672,7 @@ $defs:
           revisions that add or modify content, but don’t change the identity of the resource. Use this
           attribute in cases where version is not reflected in an identifier associated with the data set.
       license:
-        type: string
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           A specific license that dictates legal permissions for how a data set can be used
           (by whom, where, for what purposes, with what additional requirements, etc.)
