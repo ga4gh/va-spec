@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -81,7 +81,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
    *  - focus
       - 
       - :ref:`Entity` | :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
+      - 1..1
       - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - sourceDataSet
       - 

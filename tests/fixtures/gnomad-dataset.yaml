@@ -1,0 +1,10 @@
+id: gnomad4.1.0
+type: DataSet
+label: gnomAD v4.1.0
+alternativeLabels:
+  - gnomAD 4
+version: 4.1.0
+license:
+  label: Creative Commons Zero Public Domain Dedication
+  primaryCode: CC0
+releaseDate: "2024-04-19"

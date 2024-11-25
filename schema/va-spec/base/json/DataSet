@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/DataSet",
    "title": "DataSet",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
    "$comment": "Instances of this class represent a specific version of a given dataset. Examples include the gnomAD version 3.1.2 dataset carrying allele population frequencies, or a specific version of a VCF file that describes variations observed in a particular patient and various annotations made on them, or a SIFT dataset of computational predictions functional impact for a set of variants.",
    "properties": {
@@ -37,26 +37,18 @@
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
-      "specifiedBy": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-            }
-         ],
-         "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
-         "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
+      "type": {
+         "type": "string",
+         "description": "MUST be \"DataSet\".",
+         "$comment": "MUST be the label of a concrete class from the data model.",
+         "const": "DataSet",
+         "default": "DataSet"
       },
-      "contributions": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
-         },
-         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
-         "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
+      "subtype": {
+         "maturity": "draft",
+         "$comment": "This attribute can be used to report a specific type for the DataSet, in cases where a model does not define DataSet subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
+         "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')"
       },
       "reportedIn": {
          "type": "array",
@@ -71,19 +63,7 @@
                }
             ]
          },
-         "description": "A document in which the the Information Entity is reported."
-      },
-      "type": {
-         "type": "string",
-         "description": "MUST be \"DataSet\".",
-         "$comment": "MUST be the label of a concrete class from the data model.",
-         "const": "DataSet",
-         "default": "DataSet"
-      },
-      "subtype": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
-         "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')",
-         "$comment": "This attribute can be used to report a specific type for the DataSet, in cases where a model does not define DataSet subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application."
+         "description": "A document in which the the Method is reported."
       },
       "releaseDate": {
          "$ref": "/ga4gh/schema/gks-core/1.x/json/date",
@@ -96,7 +76,7 @@
          "$comment": "This property can capture version information for resources such as data sets and documents that get published and released as a unit for community use. These may go through rounds of revisions that add or modify content, but don\u2019t change the identity of the resource. Use this attribute in cases where version is not reflected in an identifier associated with the data set."
       },
       "license": {
-         "type": "string",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
          "$comment": "Where possible, provide a URL pointing to the license or a description of it (e.g. \"https://creativecommons.org/licenses/by/4.0/\"). Otherwise, provide a free-text name or description of the license (e.g. \"CC-BY\")."
       }

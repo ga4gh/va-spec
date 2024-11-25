@@ -8,7 +8,7 @@ A StudyResult that reports measures related to the frequency of an Allele in a c
 
 **Information Model**
 
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-spec:StudyResult`.
+Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-core:StudyResult`.
 
 .. list-table::
    :class: clean-wrap
@@ -85,9 +85,9 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-spe
       - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
    *  - focusAllele
       - 
-      - :ref:`Allele` | string
+      - :ref:`Allele` | :ref:`iriReference`
       - 1..1
-      - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
+      - The Allele for which frequency results are reported.
    *  - focusAlleleCount
       - 
       - integer
@@ -97,7 +97,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-spe
       - 
       - integer
       - 1..1
-      - The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as "allele number")
+      - The number of occurrences of all alleles at the locus in the cohort.
    *  - focusAlleleFrequency
       - 
       - number
@@ -115,4 +115,20 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-spe
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`CohortAlleleFrequencyStudyResult`
       - 0..m
-      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description  of different ancestry groups and sexes among those ancestry groups.
+   *  - ancillaryResults
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - object
+      - 0..1
+      - 
+   *  - qualityMeasures
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - object
+      - 0..1
+      - 

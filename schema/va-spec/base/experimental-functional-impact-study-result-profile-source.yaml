@@ -4,13 +4,13 @@ title: Experimental Variant Functional Impact Study Result Standard Profile
 strict: true
 
 imports:
-  va-spec: ./va-spec-source.yaml
+  va-core: ./va-core-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
   ExperimentalVariantFunctionalImpactStudyResult:  
-    inherits: va-spec:StudyResult
+    inherits: va-core:StudyResult
     maturity: trial use
     type: object
     description: >-

@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Statement",
    "title": "Statement",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.",
    "$comment": "The model supports two \"modes of use\" for Statements, which differ in what they say about their SPOQ proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.\nA Statement describes the overall state of evidence and/or confidence surrounding the SPOQ proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report that \"there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic for Breast Cancer'\", or \"we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is false\").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as curators continue to collect evidence and work toward a conclusive assertion.",
    "properties": {
@@ -121,8 +121,9 @@
       },
       "score": {
          "type": "number",
-         "description": "A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.",
-         "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score."
+         "maturity": "draft",
+         "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional 'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength', and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based on a numerical score.",
+         "description": "A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it."
       },
       "classification": {
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
@@ -133,7 +134,14 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
+            "anyOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               }
+            ]
          },
          "description": "An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).",
          "$comment": "Evidence Lines result from the interpretation of one or more pieces of information to build an argument for or against a particular Proposition. These arguments have direction (supporting / disputing) and strength (e.g. strong, moderate, weak) relative to the Proposition they are evaluated against. For example, ExaC allele counts and frequency calculations for the BRCA2 c.8023A>G variant in different populations may be collectively assessed to provide an argument of 'moderate' strength in 'support of ' a proposition that the variant is pathogenicity for breast cancer. Evidence Lines are useful in cases where a data provider wants to describe in detail how information was assessed as evidence to generate and score different arguments for or against a Statement's proposition. Evidence Lines can be omitted if such information is not available or needed."

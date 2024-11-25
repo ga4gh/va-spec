@@ -5,6 +5,8 @@ from config import validator, js_def, coverage
 def _get_trial_use_classes():
     return set([x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] == 'trial use'])
 
+va_abstract_classes = {'va-spec.base:SubjectVariantProposition'}
+
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:
         test_spec = yaml.safe_load(def_file)
@@ -31,7 +33,7 @@ def test_trial_use_class_coverage():
         test_cls_name = f"{test['namespace']}:{test['definition']}"
         tested_classes.add(test_cls_name)
 
-    assert len(trial_use_classes - tested_classes) == 0
+    assert len(trial_use_classes - tested_classes - va_abstract_classes) == 0
 
 def test_trial_use_property_coverage():
     trial_use_classes = _get_trial_use_classes()

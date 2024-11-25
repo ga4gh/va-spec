@@ -87,15 +87,13 @@
       "focusAllele": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/vrs/2.x/json/Allele"
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
             },
             {
-               "type": "string",
-               "format": "uri-reference",
-               "description": "The Allele for which frequency results are reported."
+               "$ref": "/ga4gh/schema/vrs/2.x/json/Allele"
             }
          ],
-         "description": "The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.",
+         "description": "The Allele for which frequency results are reported.",
          "$comment": "The 'focus' of a StudyResult is the what anchors selection of all data items and provenance information that it contains. This focus may be a single participant or subject of a study (e.g. one patient in a clinical study, or one allele in a population frequency analysis). It may be a study group defined as an experimental unit in the study (e.g. a specific treatment arm of a clinical study). Or it may be a variable defined as a unit of analysis in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with clinical outcomes)."
       },
       "focusAlleleCount": {
@@ -104,7 +102,7 @@
       },
       "locusAlleleCount": {
          "type": "integer",
-         "description": "The number of occurrences of all alleles at the locus in the cohort (sometimes referred to as \"allele number\")"
+         "description": "The number of occurrences of all alleles at the locus in the cohort."
       },
       "focusAlleleFrequency": {
          "type": "number",
@@ -117,10 +115,22 @@
       "subCohortFrequency": {
          "type": "array",
          "ordered": false,
-         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.",
+         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description  of different ancestry groups and sexes among those ancestry groups.",
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/base/json/CohortAlleleFrequencyStudyResult"
          }
+      },
+      "ancillaryResults": {
+         "maturity": "draft",
+         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content  to be added.",
+         "type": "object",
+         "additionalProperties": true
+      },
+      "qualityMeasures": {
+         "maturity": "draft",
+         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content  to be added.",
+         "type": "object",
+         "additionalProperties": true
       }
    },
    "required": [

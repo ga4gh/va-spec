@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -8,7 +8,7 @@ A collection of related data items or records that are organized together in a c
 
 **Information Model**
 
-Some DataSet attributes are inherited from :ref:`InformationEntity`.
+Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
 
 .. list-table::
    :class: clean-wrap
@@ -52,27 +52,6 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy
-      - 
-      - :ref:`Method` | :ref:`iriReference`
-      - 0..1
-      - A specification that describes all or part of the process that led to creation of the Information Entity
-   *  - contributions
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Contribution`
-      - 0..m
-      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
-   *  - reportedIn
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Document` | :ref:`iriReference`
-      - 0..m
-      - A document in which the the Information Entity is reported.
    *  - type
       - 
       - string
@@ -80,9 +59,20 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
       - MUST be "DataSet".
    *  - subtype
       - 
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - :ref:`MappableConcept`
       - 0..1
       - A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')
+   *  - reportedIn
+      - 
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`Document` | :ref:`iriReference`
+      - 0..m
+      - A document in which the the Method is reported.
    *  - releaseDate
       - 
       - :ref:`date`
@@ -95,6 +85,6 @@ Some DataSet attributes are inherited from :ref:`InformationEntity`.
       - The version of the DataSet, as assigned by its creator.
    *  - license
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
       - A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)

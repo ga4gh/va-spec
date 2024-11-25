@@ -23,8 +23,7 @@ proposition:
             - syntax: hgvs.p
               value: NP_000305.3:p.Arg11Thr
         relations:
-          - translates_from
-          - translates_from_reading_frame
+          - primaryCode: translates_from
   predicate: impactsFunctionOf
   objectSequenceFeature:
     id: clinvar-gene:5728
@@ -46,5 +45,3 @@ direction: neutral
 specifiedBy:
   type: Method
   label: MAVE 2024 Functional Classification
-  subtype:
-    label: MAVE 2024 Functional Classification

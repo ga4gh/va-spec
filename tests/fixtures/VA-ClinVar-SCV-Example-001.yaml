@@ -32,8 +32,8 @@ proposition:
             - syntax: spdi
               value: NC_000001.11:40819438:CTCCTCCT:CTCCT
         relations:
-          - liftover_to
-          - transcribes_to
+          - primaryCode: liftover_to
+          - primaryCode: transcribes_to
     label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
   objectCondition:
     id: clinvar.trait/939

@@ -5,6 +5,50 @@ va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   - label
   - extensions
   - alternativeLabels
+
   # InformationEntity
   - contributions
   - reportedIn
+
+va-spec.base:EvidenceLine:
+  # Entity
+  - description
+  - extensions
+  - label
+  - alternativeLabels
+
+  # InformationEntity
+  - reportedIn
+  - contributions
+
+  # EvidenceLine
+  - hasEvidenceItems
+
+va-spec.base:Statement:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - label
+
+  # Statement
+  - hasEvidenceLines
+
+va-spec.base:DataSet:
+  # Entity
+  - extensions
+  - description
+
+va-spec.base:Document:
+  # Entity
+  - description
+  - extensions
+
+va-spec.base:Method:
+  # Entity
+  - alternativeLabels
+  - description
+  - extensions
+  
+  # InformationEntity
+  - specifiedBy
+  - contributions

@@ -13,7 +13,7 @@ $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
   InformationEntity:
     inherits: gks-core:Entity
-    maturity: draft
+    maturity: trial use
     description: >-
       An abstract (non-physical) entity that is about something - representing the underlying
       'information content' conveyed by physical or digital information artifacts like books, web pages,
@@ -123,7 +123,7 @@ $defs:
 
   StudyResult:
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       A collection of data items from a single study that pertain to a particular subject or
       experimental unit in the study, along with optional provenance information describing
@@ -160,42 +160,12 @@ $defs:
           In most cases, a StudyResult will be generated using data from one source dataset - but it is
           possible multiple datasets related to a single study contain data about a particular focus that
           get collected into a single StudyResult instance.
-      # componentResult:
-      #   type: array
-      #   ordered: false
-      #   items:
-      #     $ref: "#/$defs/StudyResult"
-      #   description: >-
-      #     Another StudyResult comprised of data items about the same focus as its parent Result, but based on a more narrowly
-      #     scoped analysis of the foundational data (e.g. an analysis based on data about a subset of the parent Results
-      #     full study population) .
-      #   $comment: >-
-      #     This attribute allows data creators to break down a StudyResult into finer-grained StudyResult instances with a
-      #     narrower scope. For example, a StudyResult about the frequency of an allele in a global population of individuals
-      #     can be broken down into separate 'component' Results about distinct subpopulations of individuals in the source data
-      #     (e.g. frequency of the allele in asian vs african subpopulations, or male vs female subgroups).
-      # studyGroup:
-      #   $ref: "#/$defs/StudyGroup"
-      #   description: >-
-      #     A description of a specific group or population of subjects interrogated in the ResearchStudy that produced the
-      #     data captured in the StudyResult.
-      #   $comment: >-
-      #     For example, in a StudyResult holding allele frequency data, this attribute points to a StudyGroup object that
-      #     describes characteristics of the population that the frequency data was generated from (e.g. 'East Asian', 'Female').
-      # ancillaryResults:
-      #   maturity: draft
-      #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-      #   type: object
-      #   additionalProperties: true
-      # qualityMeasures:
-      #   maturity: draft
-      #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-      #   type: object
-      #   additionalProperties: true
+    heritableRequired:
+      - focus
 
   Proposition:
     inherits: gks-core:Entity
-    maturity: draft
+    maturity: trial use
     description: >-
       The abstract entity representing a possible fact that may be put forth as true, or subjected to
       an evidence-based assessment, by a Statement. As abstract entities, their identity and existence
@@ -259,7 +229,7 @@ $defs:
 
   SubjectVariantProposition:
     inherits: Proposition
-    maturity: draft
+    maturity: trial use
     description: >-
       A :ref:`Proposition` that has a variant as the subject.
     oneOf:
@@ -282,8 +252,8 @@ $defs:
   # concrete core classes section -- Method, Contribution, Document, Agent, Statement, EvidenceLine, DataSet, StudyGroup
   Method:
     type: object
-    inherits: InformationEntity
-    maturity: draft
+    inherits: gks-core:Entity
+    maturity: trial use
     description: >-
       A set of instructions that specify how to achieve some objective.
     $comment: >-
@@ -297,6 +267,8 @@ $defs:
         description: MUST be "Method".
       subtype:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        maturity: draft
+        $comment: the utility of a Method subtype field is not yet proven, leaving in draft for now.
         description: >-
           A specific type of method that a Method instance represents (e.g. 'Variant Interpretation
           Guideline', or 'Experimental Protocol').
@@ -304,15 +276,24 @@ $defs:
           This attribute can be used to report a specific type for the Method, in cases where a model
           does not define Method subclasses for this purpose.  Implementers can define their own set
           of method type codes/terms, to match the needs of their application.
-      license:
-        type: string
-        description: >-
-          A specific license that dictates legal permissions for how a method can be used (by whom,
-          where, for what purposes, with what additional requirements, etc.).
-        $comment: >-
-          Where possible, provide a URL pointing to the license or a description of it (e.g.
-          "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a free-text name or
-          description of the license (e.g. "CC-BY").
+            reportedIn:
+      reportedIn:
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: "#/$defs/Document"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: A document in which the the Method is reported.
+      # license:
+      #   type: string
+      #   description: >-
+      #     A specific license that dictates legal permissions for how a method can be used (by whom,
+      #     where, for what purposes, with what additional requirements, etc.).
+      #   $comment: >-
+      #     Where possible, provide a URL pointing to the license or a description of it (e.g.
+      #     "https://creativecommons.org/licenses/by/4.0/"). Otherwise, provide a free-text name or
+      #     description of the license (e.g. "CC-BY").
 
   Contribution:
     type: object
@@ -347,15 +328,15 @@ $defs:
 
   Document:
     type: object
-    inherits: InformationEntity
-    maturity: draft
+    inherits: gks-core:Entity
+    maturity: trial use
     description: >-
       A collection of information, usually in a text-based or graphic human-readable form, intended
       to be read and understood together as a whole.
     $comment: >-
-      As an abstract InformationEntity, a Document instance is defined by the informational content
-      it conveys, not a particular physical concretization of this information. A single Document
-      instance can simultaneously be concretized in different languages, formats, and physical mediums.
+      This is currently specified as an Entity, instead of an InformationEntity. This may be reopened for
+      discussion when use cases demonstrate the need to treat Documents in the same way that information
+      inside Documents is treated.
     properties:
       type:
         extends: type
@@ -363,6 +344,10 @@ $defs:
         default: Document
         description: Must be "Document"
       subtype:
+        maturity: draft
+        $comment: >-
+          The need for subtype is not yet clear, though the content that could be added to this
+          leaving this field in draft is obvious. Leaving in draft until this sees regular use.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           A specific type of document that a Document instance represents (e.g.  'publication',
@@ -424,7 +409,7 @@ $defs:
   Statement:
     type: object
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used
       to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment
@@ -499,6 +484,8 @@ $defs:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       score:
         type: number
+        maturity: draft
+        $comment: Marking this property draft until we resolve ga4gh/va-spec#xxx.
         description: >-
           A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated
           (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation,
@@ -528,7 +515,9 @@ $defs:
         type: array
         ordered: false
         items:
-          $ref: "#/$defs/EvidenceLine"
+          anyOf:
+            - $ref: "#/$defs/EvidenceLine"
+            - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
           An evidence-based argument that supports or disputes the validity of the proposition that a
           Statement assesses or puts forth as true. The strength and direction of this argument (whether
@@ -552,7 +541,7 @@ $defs:
   EvidenceLine:
     type: object
     inherits: InformationEntity
-    maturity: draft
+    maturity: trial use
     description: >-
       An independent, evidence-based argument that may support or refute the validity of a specific proposition.
       The strength and direction of this argument is based on an interpretation of one or more pieces of
@@ -593,7 +582,11 @@ $defs:
         type: array
         ordered: false
         items:
-          $ref: "#/$defs/InformationEntity"
+          anyOf:
+            - $ref: "#/$defs/StudyResult"
+            - $ref: "#/$defs/Statement"
+            - $ref: "#/$defs/EvidenceLine"
+            - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
           An individual piece of information that was evaluated as evidence in building the argument represented
           by an Evidence Line.
@@ -638,8 +631,8 @@ $defs:
 
   DataSet:
     type: object
-    inherits: InformationEntity
-    maturity: draft
+    inherits: gks-core:Entity
+    maturity: trial use
     description: >-
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
@@ -656,6 +649,8 @@ $defs:
         default: DataSet
         description: MUST be "DataSet".
       subtype:
+        maturity: draft
+        $comment: the need for a DataSet subtype is not yet clear. Leaving in draft until then.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           A specific type of data set the DataSet instance represents (e.g. a
@@ -666,6 +661,14 @@ $defs:
           in cases where a model does not define DataSet subclasses for this purpose.
           Implementers can define their own set of data set type codes/terms, to match
           the needs of the domain or application.
+      reportedIn:
+        type: array
+        ordered: false
+        items:
+          oneOf:
+          - $ref: "#/$defs/Document"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        description: A document in which the the Method is reported.
       releaseDate:
         $ref: "/ga4gh/schema/gks-core/1.x/json/date"
         description: Indicates the date a version of a DataSet was formally released.
@@ -682,7 +685,7 @@ $defs:
           revisions that add or modify content, but don’t change the identity of the resource. Use this
           attribute in cases where version is not reflected in an identifier associated with the data set.
       license:
-        type: string
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           A specific license that dictates legal permissions for how a data set can be used
           (by whom, where, for what purposes, with what additional requirements, etc.)

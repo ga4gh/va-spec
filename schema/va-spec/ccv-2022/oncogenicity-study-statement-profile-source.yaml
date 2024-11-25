@@ -4,7 +4,7 @@ title: Clingen/CCG/VICC 2022 Variant Oncogenicity Study Statement
 strict: true
 
 imports:
-  va-spec: ../base/va-spec-source.yaml
+  va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
