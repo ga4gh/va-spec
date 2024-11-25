@@ -267,8 +267,6 @@ $defs:
         description: MUST be "Method".
       subtype:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-        maturity: draft
-        $comment: the utility of a Method subtype field is not yet proven, leaving in draft for now.
         description: >-
           A specific type of method that a Method instance represents (e.g. 'Variant Interpretation
           Guideline', or 'Experimental Protocol').
@@ -697,7 +695,7 @@ $defs:
   StudyGroup:
     type: object
     inherits: gks-core:Entity
-    maturity: draft
+    maturity: trial use
     description: >-
       A collection of individuals or specimens from the same taxonomic class, selected for analysis in a
       scientific study based on their exhibiting one or more common characteristics  (e.g. species, race,
@@ -713,60 +711,19 @@ $defs:
         default: StudyGroup
         description: Must be "StudyGroup"
       memberCount:
+        maturity: draft
+        $comment: this is draft until we see utility in real-world datasets
         type: integer
         description: The total number of individual members in the StudyGroup.
-      isSubsetOf:
-        type: array
-        items:
-          $ref: "#/$defs/StudyGroup"
-        ordered: false
-        description: A larger StudyGroup of which this StudyGroup represents a subset.
       characteristics:
         type: array
         items:
-          $ref: "#/$defs/Characteristic"
+          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         ordered: false
         description: >-
           A feature or role shared by all members of the StudyGroup, representing a criterion for
           membership in the group.
-
-  # general-purpose data classes section -- RecordMetadata, Characteristic
-
-  Characteristic:
-    type: object
-    inherits: gks-core:Element
-    maturity: draft
-    description: >-
-      An object holding a name-value pair used to describe a trait or role of an individual
-      member of a StudyGroup.
-    $comment: >-
-      This flexible key-value like object is where specific inclusion or exclusion criteria for
-      membership in a StudyGroup are formally defined. It should be used to capture characteristics
-      that inhere in individual members of the StudyGroup (e.g. inherent traits like their sex, race,
-      or age, or roles assigned to them in a particular context such as being a control in a study).
-    properties:
-      name:
-        type: string
-        description: >-
-          The type of the trait  or role described by the trait (e.g. 'ethnicity', 'sex', 'age',
-          'disease status').
-      value:
-        type: string
-        description: >-
-          The specific value(s) that the indicated traitor role holds in all population members
-          (e.g. 'east asian', 'female', 'adolescent', 'cancer').
-      valueOperator:
-        type: boolean
-        description: >-
-          An operation that defines how to logically interpret a set of more than one Characteristic
-          values ('AND', 'OR', 'NOT')
-        $comment: >-
-          An 'AND' operator indicates that an individual exhibits all of the characteristic values listed.
-          An 'OR' operator indicates the individual exhibits one or more of the characteristic values listed.
-          A 'NOT' indicates that the individual does not exhibit the characteristic value or values listed.
-    required:
-      - name
-      - value
+        $comment: We should evaluate this for use with boolean operators before going normative
 
   # proposition concrete profiles section
 

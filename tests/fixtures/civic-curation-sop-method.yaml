@@ -9,3 +9,5 @@ reportedIn:
     doi: 10.1186/s13073-019-0687-x
     pmid: 31779674
 type: Method
+subtype:
+  primaryCode: variant curation standard operating procedure

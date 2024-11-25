@@ -40,8 +40,8 @@ subCohortFrequency:
     label: Remaining individuals Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Remaining individuals
+    - conceptType: genetic ancestry
+      primaryCode: Remaining individuals
 - id: gnomad4:1-10120-T-G.amr
   type: CohortAlleleFrequencyStudyResult
   label: Admixed American Ancestry Group Allele Frequency for 1-10120-T-G
@@ -54,8 +54,8 @@ subCohortFrequency:
     label: Admixed American Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Admixed American
+    - conceptType: genetic ancestry
+      primaryCode: Admixed American
 - id: gnomad4:1-10120-T-G.fin
   type: CohortAlleleFrequencyStudyResult
   label: Finnish Ancestry Group Allele Frequency for 1-10120-T-G
@@ -68,8 +68,8 @@ subCohortFrequency:
     label: Finnish Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Finnish
+    - conceptType: genetic ancestry
+      primaryCode: Finnish
 - id: gnomad4:1-10120-T-G.ami
   type: CohortAlleleFrequencyStudyResult
   label: Amish Ancestry Group Allele Frequency for 1-10120-T-G
@@ -82,8 +82,8 @@ subCohortFrequency:
     label: Amish Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Amish
+    - conceptType: genetic ancestry
+      primaryCode: Amish
 - id: gnomad4:1-10120-T-G.eas
   type: CohortAlleleFrequencyStudyResult
   label: East Asian Ancestry Group Allele Frequency for 1-10120-T-G
@@ -96,8 +96,8 @@ subCohortFrequency:
     label: East Asian Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: East Asian
+    - conceptType: genetic ancestry
+      primaryCode: East Asian
 - id: gnomad4:1-10120-T-G.mid
   type: CohortAlleleFrequencyStudyResult
   label: Middle Eastern Ancestry Group Allele Frequency for 1-10120-T-G
@@ -110,8 +110,8 @@ subCohortFrequency:
     label: Middle Eastern Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Middle Eastern
+    - conceptType: genetic ancestry
+      primaryCode: Middle Eastern
 - id: gnomad4:1-10120-T-G.sas
   type: CohortAlleleFrequencyStudyResult
   label: South Asian Ancestry Group Allele Frequency for 1-10120-T-G
@@ -124,8 +124,8 @@ subCohortFrequency:
     label: South Asian Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: South Asian
+    - conceptType: genetic ancestry
+      primaryCode: South Asian
 - id: gnomad4:1-10120-T-G.asj
   type: CohortAlleleFrequencyStudyResult
   label: Ashkenazi Jewish Ancestry Group Allele Frequency for 1-10120-T-G
@@ -138,8 +138,8 @@ subCohortFrequency:
     label: Ashkenazi Jewish Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Ashkenazi Jewish
+    - conceptType: genetic ancestry
+      primaryCode: Ashkenazi Jewish
 - id: gnomad4:1-10120-T-G.afr
   type: CohortAlleleFrequencyStudyResult
   label: African/African-American Ancestry Group Allele Frequency for 1-10120-T-G
@@ -152,8 +152,8 @@ subCohortFrequency:
     label: African/African-American Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: African/African-American
+    - conceptType: genetic ancestry
+      primaryCode: African/African-American
 - id: gnomad4:1-10120-T-G.nfe
   type: CohortAlleleFrequencyStudyResult
   label: Non-Finnish European Ancestry Group Allele Frequency for 1-10120-T-G
@@ -166,8 +166,8 @@ subCohortFrequency:
     label: Non-Finnish European Ancestry Group
     type: StudyGroup
     characteristics:
-    - name: genetic ancestry
-      value: Non-Finnish European
+    - conceptType: genetic ancestry
+      primaryCode: Non-Finnish European
 - id: gnomad4:1-10120-T-G.XX
   type: CohortAlleleFrequencyStudyResult
   label: XX Allele Frequency for 1-10120-T-G
@@ -180,8 +180,8 @@ subCohortFrequency:
     label: XX
     type: StudyGroup
     characteristics:
-    - name: biological sex
-      value: XX
+    - conceptType: biological sex
+      primaryCode: XX
 - id: gnomad4:1-10120-T-G.XY
   type: CohortAlleleFrequencyStudyResult
   label: XY Allele Frequency for 1-10120-T-G
@@ -194,6 +194,6 @@ subCohortFrequency:
     label: XY
     type: StudyGroup
     characteristics:
-    - name: biological sex
-      value: XY
+    - conceptType: biological sex
+      primaryCode: XY
 

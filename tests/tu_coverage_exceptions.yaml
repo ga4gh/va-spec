@@ -6,6 +6,12 @@ va-spec.base:ExperimentalVariantFunctionalImpactProposition:
   - description
   - alternativeLabels
 
+va-spec.base:StudyGroup:
+  # Entity
+  - description
+  - alternativeLabels
+  - extensions
+
 va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   # Entity
   - description

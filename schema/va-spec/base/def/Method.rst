@@ -59,9 +59,6 @@ Some Method attributes are inherited from :ref:`gks-core:Entity`.
       - MUST be "Method".
    *  - subtype
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - :ref:`MappableConcept`
       - 0..1
       - A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').

@@ -20,6 +20,9 @@ tests:
   - test_file: civic-curation-sop-method.yaml
     namespace: va-spec.base
     definition: Method
+  - test_file: adm-study-group.yaml
+    namespace: va-spec.base
+    definition: StudyGroup
 
   # test propositions
   - test_file: EVFI-proposition.yaml
