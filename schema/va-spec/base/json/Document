@@ -3,9 +3,9 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Document",
    "title": "Document",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.",
-   "$comment": "As an abstract InformationEntity, a Document instance is defined by the informational content it conveys, not a particular physical concretization of this information. A single Document instance can simultaneously be concretized in different languages, formats, and physical mediums.",
+   "$comment": "This is currently specified as an Entity, instead of an InformationEntity. This may be reopened for discussion when use cases demonstrate the need to treat Documents in the same way that information inside Documents is treated.",
    "properties": {
       "id": {
          "type": "string",
@@ -37,42 +37,6 @@
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
-      "specifiedBy": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-            }
-         ],
-         "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
-         "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
-      },
-      "contributions": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
-         },
-         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
-         "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
-      },
-      "reportedIn": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-               }
-            ]
-         },
-         "description": "A document in which the the Information Entity is reported."
-      },
       "type": {
          "type": "string",
          "description": "Must be \"Document\"",
@@ -81,9 +45,10 @@
          "default": "Document"
       },
       "subtype": {
+         "maturity": "draft",
+         "$comment": "This attribute can be used to report a specific type for the Document, in cases where a model does not define Document subclasses for this purpose.  Implementers can define their own set of document type codes/terms, to match the needs of their application.",
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
-         "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')",
-         "$comment": "This attribute can be used to report a specific type for the Document, in cases where a model does not define Document subclasses for this purpose.  Implementers can define their own set of document type codes/terms, to match the needs of their application."
+         "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')"
       },
       "title": {
          "type": "string",

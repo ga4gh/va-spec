@@ -20,15 +20,15 @@ functionalImpactScore: 1.29395467005388
 specifiedBy:
   type: Method
   subtype:
-    label: Experimental Protocol
+    label: Experimental protocol
   reportedIn:
   - type: Document
     pmid: 29785012
 sourceDataSet:
     type: DataSet
-    subtype:
-      label: variant effect data set
-    license: CC0
+    label: variant effect data set
+    license:
+      primaryCode: "CC0"
     reportedIn:
       - type: Document
         urls:

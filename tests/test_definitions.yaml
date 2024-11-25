@@ -7,6 +7,20 @@ tests:
     namespace: vrs
     definition: Allele
 
+  # test core data types from VA
+  - test_file: gnomad-dataset.yaml
+    namespace: va-spec.base
+    definition: DataSet
+  - test_file: exp-func-effect-dataset.yaml
+    namespace: va-spec.base
+    definition: DataSet
+  - test_file: civic-curation-sop-document.yaml
+    namespace: va-spec.base
+    definition: Document
+  - test_file: civic-curation-sop-method.yaml
+    namespace: va-spec.base
+    definition: Method
+
   # test ACMG 2015 Statements and domain entities
   - test_file: VA-ClinVar-SCV-Example-001.yaml
     namespace: va-spec.acmg-2015
@@ -14,6 +28,9 @@ tests:
   - test_file: VA-ClinVar-SCV-Example-002.yaml
     namespace: va-spec.acmg-2015
     definition: VariantPathogenicityStatement
+  - test_file: VA-CLinVar-SCV-Example-001.yaml
+    namespace: va-spec.base
+    definition: Statement
 
   # test AMP/ASCO/CAP 2017 Statements and domain entities
   - test_file: therapeuticAgent.yaml
@@ -21,23 +38,31 @@ tests:
     definition: MappableConcept
   - test_file: tr-statement-inline.yaml
     namespace: va-spec.aac-2017
-    definition: VariantTherapeuticResponseStudyStatement  
+    definition: VariantTherapeuticResponseStudyStatement
+  - test_file: tr-statement-inline.yaml
+    namespace: va-spec.base
+    definition: Statement 
   - test_file: diagnostic-inline.yaml
     namespace: va-spec.aac-2017
     definition: VariantDiagnosticStudyStatement
   - test_file: prognostic-inline.yaml
     namespace: va-spec.aac-2017
     definition: VariantPrognosticStudyStatement
-
   - test_file: cohort-allele-freq-test.yaml
     namespace: va-spec.base
     definition: CohortAlleleFrequencyStudyResult
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.acmg-2015
     definition: VariantPathogenicityFunctionalImpactEvidenceLine
+  - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
+    namespace: va-spec.base
+    definition: EvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec.ccv-2022
     definition: VariantOncogenicityFunctionalImpactEvidenceLine
+  - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
+    namespace: va-spec.base
+    definition: EvidenceLine
   - test_file: Exp-Var-Func-Impact-Statement-01.yaml
     namespace: va-spec.base
     definition: Statement

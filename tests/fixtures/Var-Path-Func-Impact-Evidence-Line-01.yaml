@@ -1,3 +1,4 @@
+id: evLine01
 type: EvidenceLine
 targetProposition:
   type: VariantPathogenicityProposition

@@ -35,6 +35,7 @@ targetProposition:
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided: 
   primaryCode: supporting
+scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
   id: OS2
