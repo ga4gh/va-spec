@@ -3,6 +3,7 @@ targetProposition:
   type: VariantOncogenicityProposition
   subjectVariant:
     type: CategoricalVariant
+    label: EGFR R11T
     constraints:
       - type: DefiningAlleleConstraint
         allele:
@@ -26,11 +27,12 @@ targetProposition:
           - primaryCode: translates_from
   predicate: isOncogenicFor
   objectTumorType:
-    conceptType: TumorType
-    label: Unspecified
+    primaryCode: ncit:C4872
+    label: Breast Carcinoma
   geneContextQualifier:
     conceptType: Gene
     label: EGFR
+    primaryCode: ncbigene:1956
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided: 
   primaryCode: supporting
