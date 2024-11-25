@@ -8,7 +8,7 @@ A StudyResult that reports a functional impact score from a variant functional a
 
 **Information Model**
 
-Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited from :ref:`va-spec:StudyResult`.
+Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited from :ref:`va-core:StudyResult`.
 
 .. list-table::
    :class: clean-wrap

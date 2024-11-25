@@ -4,13 +4,13 @@ title: Cohort Allele Frequency Study Result Standard Profile
 strict: true
 
 imports:
-  va-spec: ./va-spec-source.yaml
+  va-core: ./va-core-source.yaml
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
   CohortAlleleFrequencyStudyResult:
-    inherits: va-spec:StudyResult
+    inherits: va-core:StudyResult
     maturity: draft
     type: object
     description: >-
@@ -26,19 +26,17 @@ $defs:
         description: The dataset from which the CohortAlleleFrequencyStudyResult was reported.
       focusAllele:
         extends: focus
+        description: The Allele for which frequency results are reported.
         oneOf:
         - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
-        - type: string
-          format: uri-reference
-          description: The Allele for which frequency results are reported.
+        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
       focusAlleleCount:
         type: integer
         description: The number of occurrences of the focusAllele in the cohort.
       locusAlleleCount:
         type: integer
         description: >-
-          The number of occurrences of all alleles at the locus in the cohort
-          (sometimes referred to as "allele number")
+          The number of occurrences of all alleles at the locus in the cohort.
       focusAlleleFrequency:
         type: number
         description: The frequency of the focusAllele in the cohort.
@@ -50,10 +48,24 @@ $defs:
         ordered: false
         description: >-
           A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
-          This creates a recursive relationship and subcohorts can be further subdivided into more subcohorts.
-          This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+          Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description 
+          of different ancestry groups and sexes among those ancestry groups.
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
+      ancillaryResults:
+        maturity: draft
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content 
+          to be added.
+        type: object
+        additionalProperties: true
+      qualityMeasures:
+        maturity: draft
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content 
+          to be added.
+        type: object
+        additionalProperties: true
     required:
     - focusAllele
     - focusAlleleCount

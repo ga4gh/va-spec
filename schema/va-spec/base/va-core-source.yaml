@@ -182,16 +182,6 @@ $defs:
       #   $comment: >-
       #     For example, in a StudyResult holding allele frequency data, this attribute points to a StudyGroup object that
       #     describes characteristics of the population that the frequency data was generated from (e.g. 'East Asian', 'Female').
-      # ancillaryResults:
-      #   maturity: draft
-      #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-      #   type: object
-      #   additionalProperties: true
-      # qualityMeasures:
-      #   maturity: draft
-      #   $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
-      #   type: object
-      #   additionalProperties: true
 
   Proposition:
     inherits: gks-core:Entity
