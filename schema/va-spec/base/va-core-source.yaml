@@ -15,14 +15,13 @@ $defs:
     inherits: gks-core:Entity
     maturity: trial use
     description: >-
-      An abstract (non-physical) entity that is about something - representing the underlying
-      'information content' conveyed by physical or digital information artifacts like books, web pages,
-      data tables, or photographs.
+      An abstract (non-physical) entity that represents 'information content' carried by physical or
+      digital information artifacts such as books, web pages, data sets, or images.
     $comment: >-
       As abstract, non-physical entities, Information Entities represent information independent of any
       specific language, format, or physical/digital medium. They can be simultaneously concretized in
       many distinct physical artifacts (e.g. all physical copies of the first edition of "War and Peace"
-      carry the same information content, and thus concretize the same Information Entity).
+      carry the same information content, and thus concretize the same underlying Information Entity).
     heritableProperties:
       specifiedBy:
         oneOf:
@@ -32,10 +31,11 @@ $defs:
           A specification that describes all or part of the process that led to creation of the
           Information Entity
         $comment: >-
-          Examples - a specific experimental protocol or data analysis specification
-          that describe how data were generated, or an evidence interpretation guideline that
-          describes steps taken to interpret data in making a variant pathogenicity classification.
-          Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific
+          Examples: a specific experimental protocol or data analysis specification
+          that describes how data were generated; an evidence interpretation guideline that
+          describes steps taken to interpret data in making a variant pathogenicity classification; a 
+          method for using electron microscopy to image cell membrane proteins.
+          Note that this attribute captures a specific *instance* of a specification or method (e.g. the specific
           electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting
           a *type* of method applied (e.g. 'Transmission Electron Microscopy').
       contributions:
@@ -95,7 +95,7 @@ $defs:
         description: >-
           A specific type of activity the Activity instance represents.
         $comment: >-
-          This attribute can be used to report a specific type for the Activity, in cases where
+          This attribute can be used to report a specific type for the Activity in cases where
           a model does not define Activity subclasses for this purpose. Implementers can define
           their own set of data set type codes/terms, to match the needs of the domain or application.
       date:
@@ -112,7 +112,7 @@ $defs:
         items:
           $ref: "#/$defs/Agent"
         description: >-
-          An Agent who participated in executing the Activity.
+          A list of Agent(s) who participated in executing the Activity.
       specifiedBy:
         type: array
         ordered: false
@@ -131,10 +131,17 @@ $defs:
     $comment: >-
       StudyResults provide a useful way to capture a subset of items from a study dataset that
       are used as evidence in generating higher order knowledge assertions about the entity that
-      is the focus of the study result. For example, a subset of allele frequency data items
-      about a particular variant of interest in the complete gnomAD dataset can be reported in a
-      StudyResult object, along with relevant provenance information, so they can be referenced
-      as evidence for a higher-order assertion about the variant's pathogenicity.
+      is the focus of the study result. For example, a set of allele frequency data items
+      about a particular variant of interest selected from the complete gnomAD dataset can be reported 
+      in a StudyResult object, along with relevant provenance information, so they can be referenced 
+      together as evidence for a higher-order assertion about the variant's pathogenicity.
+    $comment: >-
+      Note that a 'dataItem' attribute, which would hold an array of data selected for inclusion in the
+      StudyResult, is not included in this version of the StudyResult class. Profiles that extend this core
+      class can define data type specific attributes to capture such information (e.g.'focusAlleleCount',
+      'focusAlleleFrequency', and 'locuslAlleleCount' attributes in a CohortAlleleFrequencyStudyResult profile).
+      But technical limitations in our current profiling framework tooling forced us to omit a core 'dataItems
+      attribute that these specialized attributes would conceptually extend. 
     heritableProperties:
       focus:
         oneOf:
@@ -142,8 +149,9 @@ $defs:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
-          The specific subject or experimental unit in a Study that data in the StudyResult object is about -
-          e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
+          The specific participant, subject or experimental unit in a Study that data included in the
+          StudyResult object is about - e.g. a particular variant in a population allele frequency
+          dataset like ExAC or gnomAD.
         $comment: >-
           The 'focus' of a StudyResult is the what anchors selection of all data items and provenance
           information that it contains. This focus may be a single participant or subject of a study
@@ -155,7 +163,7 @@ $defs:
       sourceDataSet:
         $ref: "#/$defs/DataSet"
         description: >-
-          A larger DataSet from which the content of the StudyResult was derived.
+          A larger DataSet from which the data included in the StudyResult was taken or derived.
         $comment: >-
           In most cases, a StudyResult will be generated using data from one source dataset - but it is
           possible multiple datasets related to a single study contain data about a particular focus that
@@ -167,26 +175,30 @@ $defs:
     inherits: gks-core:Entity
     maturity: trial use
     description: >-
-      The abstract entity representing a possible fact that may be put forth as true, or subjected to
-      an evidence-based assessment, by a Statement. As abstract entities, their identity and existence
-      are independent of space and time, and whether they are ever asserted to be true by some agent.
-      Propositions may be used in two contexts; (1) by Statements that assert them to be true or false,
-      or describe the overall level of confidence/evidence for or against them; (2) by Evidence Lines that
-      report the direction and strength of an evidence-based argument for the Proposition.
+      An abstract entity representing a possible fact that may be true or false. As abstract entities,
+      Propositions capture a 'sharable' piece of meaning whose identify and existence is independent of
+      space and time, or whether it is ever asserted to be true by some agent.
+    $comment: >-
+      Propositions are taken to represent the semantic content of sentences or lexical entities formulated
+      in a natural language. As abstract entities, Propositions capture a 'sharable' piece of meaning that
+      are used in two specific contexts on the VA model.  In Statements, a Proposition  encapsulate the
+      meaning of what is put forth as true or false, or otherwise subjected to an assessment of the level
+      of evidence supporting it.  In Evidence Lines, a Proposition captures the possible fact that a set
+      of evidence items is evaluated as an argument for or against.
     heritableProperties:
       subject:
         oneOf:
         - type: object
         description: The Entity or concept about which the Proposition is made.
         $comment: >-
-          While the Core Information Model is domain-agnostic, and supports Statements about any type of
-          Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular
-          variation. But data creators may want to make statements about other entities or concepts that
-          represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some
+          In profiles for most VA-Spec implementations, the subject will be a some type of genetic 
+          variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of
+          Entity. Some data providers may want to make statements about other entities or concepts that
+          represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some
           disease is one type of evidence that may support the pathogenicity of a variant that affects that gene).
       predicate:
         type: string
-        description: The relationship declared to hold between the subject and the object of the Statement.
+        description: The relationship declared to hold between the subject and the object of the Proposition.
         $comment: >-
           When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value
           set of predicates for the relationships relevant in the domain.
@@ -195,9 +207,9 @@ $defs:
         - type: object
         description: An Entity or concept that is related to the subject of a Proposition via its predicate.
         $comment: >-
-          The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic
-          Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on
-          gene or protein.
+          The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a
+          genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene.
+          
       #  Note that the `qualifier` property below is a *placeholder* that should not be inherited or used
       #  directly in derived Statement profiles. This attribute is meant to be specialized into more specific properties
       #  that are defined to capture a specific kind of qualifying information relevant to a particular
@@ -315,15 +327,15 @@ $defs:
         description: >-
           The agent that made the contribution.
         $comment: >-
-          Note that this must be a single agent (which can be a Person, or an Organization).
+          Note that this MUST be a single agent (which can be a Person, or an Organization).
           If multiple Agents contributed to an entity, a separate Contribution instances MUST be
-          created for each.
+          created to describe each.
       activityType:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           The specific type of activity performed or role played by an agent in making the contribution
           (e.g. for a publication, agents may contribute as a primary author, editor, figure designer,
-          data generator, etc. . Values of this property may be framed as activities or as contribution
+          data generator, etc.). Values of this property may be framed as activities, or as contribution
           roles (e.g. using terms from the Contribution Role Ontology (CRO)).
 
   Document:
@@ -412,24 +424,29 @@ $defs:
     maturity: trial use
     description: >-
       A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used
-      to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment
-      of the level of confidence or evidence supporting a particular proposition.
+      to put forth a possible fact (i.e. a 'Proposition') as true or false, or to provide a more nuanced assessment
+      of the level of confidence or evidence supporting a particular Proposition.
     $comment: >-
-      Primary assertions of knowledge about some subject entity are captured in self-contained Statement
-      objects. Organization of assertions into discrete Statement objects allows clear and precise tracking of the evidence
-      and provenance that supports each. Statement semantics are explicitly captured using 'subject', 'predicate', and
-      'object' attributes, and optional 'qualifier' slot(s). This 'SPOQ' pattern is used to structure the meaning of the
-      Statement's "proposition" - the 'possible fact' it assesses or reports to be true.
+    	Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Organization of
+      assertions into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each. 
+      Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of
+      this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
+      Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of
+      the Proposition’s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).
     $comment: >-
-      The model supports two "modes of use" for Statements, which differ in what they say about their SPOQ proposition, and
+      The model supports two "modes of use" for Statements, which differ in what they say about their SPOQ Proposition, and
       can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.
-
-      A Statement describes the overall state of evidence and/or confidence surrounding the SPOQ
-      proposition - which may or may not be true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for
-      Statements to report that "there is very strong evidence supporting the proposition that 'BRCA2 c.8023A>G is pathogenic
-      for Breast Cancer'", or "we have high confidence that the proposition 'BRCA2 c.8023A>G is pathogenic for Breast Cancer' is
-      false").  This mode is used in curation projects to track the evolving state of support for propositions of interest, as
-      curators continue to collect evidence and work toward a conclusive assertion.
+      
+      In “Assertion Mode”, a Statement simply reports an SPOQ proposition to be true or false (e.g. that “BRCA2 c.8023A>G is pathogenic
+      for Breast Cancer”). The 'strength' and 'score' attributes are not populated, and 'direction' is assumed true/supports if not otherwise
+      indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or
+      evidence level assessments.
+      
+     In “Proposition Assessment Mode”, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition - 
+     which is not necessarily being asserted as true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements
+     to report things like “there is weak evidence supporting the proposition that ‘BRCA2 c.8023A>G is causal for Breast Cancer’”, or “we have
+     high confidence that the proposition ‘PAH:c.1285C>A is causal for Phenylketonuria is false”). This mode is used in projects to track the
+     evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.
     properties:
       type:
         extends: type
@@ -439,11 +456,14 @@ $defs:
       proposition:
         $ref: "#/$defs/Proposition"
         description:  >-
-          A possible fact that the Statement assesses or puts forth as true.
+          A possible fact that the Statement may put forth as true or false, or may assess the overall level of confidence/evidence 
+          that exists for or against it.
         $comment: >-
-          This attribute supports an alternate modeling pattern, which encapsulates the structured semantics of
-          the possible fact asserted or evaluated by a Statement in a separate 'Proposition' object - instead of
-          using the 'subject', 'predicate', 'object', and 'qualifier' properties defined in the Statement object itself.          
+          Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of
+          this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
+          Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An 
+          assessment of the Proposition’s validity can optionally be captured using the Statement's direction, strength, and/or
+          score attributes (DS).        
       direction:
         description: >-
           A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the
@@ -451,13 +471,10 @@ $defs:
         $comment: >-
           Statements put forth a Proposition that expresses some possible fact about the world, and may provide an
           assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated
-          evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and
-          optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using
-          'direction', 'strength', and 'score' attributes. The 'direction' attribute is used to indicate whether the
-          Statement's Proposition is *supported* by the agent's assessment (when evidence favors its validity), is
-          *disputed* by the agent's assessment (when evidence argues against its validity), or remains *neutral*
-          (when conflicting or insufficient evidence exists to assert one direction or the other).
-          (Enumerated values = 'supports', 'disputes', 'neutral').
+          evidence) using its 'direction', 'strength', and 'score' attributes. The 'direction' attribute is used to
+          indicate whether the Statement's Proposition is *supported* by the agent's assessment (when evidence favors
+          its validity), is *disputed* by the agent's assessment (when evidence argues against its validity), or
+          remains *neutral* (when conflicting or insufficient evidence exists to assert one direction or the other).
         type: string
         enum:
           - supports
@@ -472,15 +489,13 @@ $defs:
         $comment: >-
           Statements put forth a Proposition that expresses some possible fact about the world, and may provide
           an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated
-          evidence). The semantics of the Proposition are captured in the 'subject,' 'predicate', 'object', and
-          optional 'qualifier' attributes. An assessment of the Proposition's validity can be captured using 'direction',
-          'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this
-          assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition
-          is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the
-          permissible values for the 'strength' attribute to indicate which of these facets is being assessed
-          (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose
-          values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs
-          'medium' vs 'low').
+          evidence) using 'direction', 'strength', and 'score' attributes. The 'strength' attribute is used to report
+          the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence*
+          that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. 
+          Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets
+          is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - 
+          or they can choose values that don't commit to one or the other if they don't want to make the distinction
+          (e.g. 'high' vs 'medium' vs 'low').
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       score:
         type: number
@@ -488,24 +503,21 @@ $defs:
         $comment: Marking this property draft until we resolve ga4gh/va-spec#xxx.
         description: >-
           A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated
-          (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation,
+          (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation,
           a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of
-          evidence* they believe supports or disputes it.
+          evidence* they believe supports or disputes it. Instructions for how to interpret the menaing of a given score
+          may be gleaned from the method or document referenced in 'specifiedBy' attribute. 
         $comment: >-
-          Statements put forth a Proposition that expresses some possible fact about the world, and may provide an
-          assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated
-          evidence). The semantics of the Proposition are captured in the 'subject', 'predicate', 'object', and optional
-          'qualifier' attributes. The assessment of the Proposition's validity are captured in 'direction', 'strength',
-          and 'score' attributes.  The 'score' attribute serves the same purpose as 'strength', but allows for a
-          quantitative assessment based on a numerical score.
+          The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
+          on a numerical score.
       classification:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
-          assessments of a Statement's proposition, in terms of a classification of
+          assessments of a Statement's Proposition, in terms of a classification of
           its subject.
         $comment: >-
-          Permissible values for this attribute are  typically selected to be succinct and familiar in
+          Permissible values for this attribute are typically selected to be succinct and familiar in
           the target community of practice - and can be provided to report of a statement's conclusion
           in user-friendly terms. For example, in a Statement assessing the proposition that
           "BRCA2 c.8023A>G is pathogenic for Breast Cancer", and reporting a direction of 'supports'
@@ -533,7 +545,7 @@ $defs:
           for breast cancer.
           Evidence Lines are useful in cases where a data provider wants to describe in detail how information
           was assessed as evidence to generate and score different arguments for or against a Statement's
-          proposition. Evidence Lines can be omitted if such information is not available or needed.
+          Proposition. Evidence Lines can be omitted if such information is not available or needed.
     required:
       - proposition
       - direction
@@ -543,16 +555,16 @@ $defs:
     inherits: InformationEntity
     maturity: trial use
     description: >-
-      An independent, evidence-based argument that may support or refute the validity of a specific proposition.
+      An independent, evidence-based argument that may support or refute the validity of a specific Proposition.
       The strength and direction of this argument is based on an interpretation of one or more pieces of
-      information as evidence for or against the target proposition.
+      information as evidence for or against the target Proposition.
     $comment: >-
       Evidence Lines are used to capture various pieces of information (i.e. 'evidence items') that are
       assessed together as an argument for or against some 'target proposition' - to report the direction
       (supports or disputes) and strength (e.g. strong, moderate, weak) that the argument is determined to
       make. For example, the various allele counts and population frequency calculations for the
       BRCA2 c.8023A>G variant in the ExAC database are evidence items that may be collectively assessed to
-      build an EvidenceLine making argument of 'moderate' strength that 'supports' a target proposition that
+      build an EvidenceLine making argument of 'moderate' strength that 'supports' a target Proposition that
       the variant is pathogenic for Breast Cancer.
 
       Evidence Lines are flexible with respect to the granularity of arguments they support, and the
@@ -593,13 +605,13 @@ $defs:
         $comment: >-
           A given Evidence Line may be supported by one or many individual evidence items. What matters is that all
           evidence items in a given Evidence Line get collectively assessed and assigned direction and strength as
-          a single argument for or against a target proposition.
+          a single argument for or against a target Proposition.
 
           Different types and scales of information entity can serve as evidence (experimental measurements or
           observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do
           we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data
           about BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the support it may offer for a
-          target proposition (e.g. the prospect of the variant’s pathogenicity).
+          target Proposition (e.g. the prospect of the variant’s pathogenicity).
       directionOfEvidenceProvided:
         type: string
         enum: [ "supports", "neutral", "disputes" ]
@@ -624,7 +636,7 @@ $defs:
       evidenceOutcome:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
-          A term indicating the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
+          A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
           the direction and strength of support it provides for or against the target Proposition.
     required:
       - directionOfEvidenceProvided
@@ -817,8 +829,8 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A proposition reporting a conclusion from a single assay or study about the functional
-      impact of a variant on a sequence feature (typically a gene or gene product).
+      A Proposition describing the impact of a variant on the function sequence feature
+      (typically a gene or gene product).
     properties:
       type:
         extends: type
@@ -828,7 +840,7 @@ $defs:
       predicate:  
         extends: predicate
         description: >-
-          The relationship this Proposition describes between the subject Variant
+          The relationship the Proposition describes between the subject Variant
           and object Sequence Feature whose function it may alter.
         const: impactsFunctionOf                
       objectSequenceFeature:
@@ -838,10 +850,10 @@ $defs:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"      
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact 
-          of the subject variant is assessed.
+          of the subject variant is reported.
       experimentalContextQualifier:
         description: >-
-          The assay in which the reported variant functional impact was determined - 
+          An assay in which the reported variant functional impact was determined - 
           providing a specific experimental context in which this effect is asserted to hold.
         anyOf:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
@@ -862,10 +874,8 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A Proposition reporting a conclusion from a single study about whether a variant
-      is associated with a disease (a diagnostic inclusion criterion), or absence of a
-      disease (diagnostic exclusion criterion) - based on interpretation of the study's
-      results.
+      A Proposition about whether a variant is associated with a disease (a diagnostic inclusion
+      criterion), or absence of a disease (diagnostic exclusion criterion).
     properties:
       type:
         extends: type
@@ -885,7 +895,7 @@ $defs:
         description: The disease that is evaluated for diagnosis.
       alleleOriginQualifier:
         description: >-
-          Reports whether the proposition should be interpreted in the context of an inherited
+          Reports whether the Proposition should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         type: string
         enum:
@@ -894,7 +904,7 @@ $defs:
         - combined
       allelePrevalenceQualifier:
         description: >-
-          Reports whether the proposition should be interpreted in the context of the variant
+          Reports whether the Proposition should be interpreted in the context of the variant
           being rare or common.
         type: string
         enum:
@@ -902,8 +912,8 @@ $defs:
         - common
       geneContextQualifier:
         description: >-
-          Reports a gene impacted by the variant, which may contribute to the
-          diagnostic association  in the Proposition.
+          Reports a gene impacted by the variant, which may contribute to a
+          diagnostic association described in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
     - predicate
@@ -1012,9 +1022,7 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A Proposition reporting a conclusion from a single study about whether a variant
-      is associated with an improved or worse outcome for a disease - based on
-      interpretation of the study's results.
+      A Proposition about whether a variant is associated with an improved or worse outcome for a disease.
     properties:
       type:
         extends: type
@@ -1035,7 +1043,7 @@ $defs:
       alleleOriginQualifier:
         type: string
         description: >-
-          Reports whether the proposition should be interpreted in the context of an inherited
+          Reports whether the Proposition should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or both (combined).
         enum:
         - germline
@@ -1044,7 +1052,7 @@ $defs:
       allelePrevalenceQualifier:
         type: string
         description: >-
-          Reports whether the proposition should be interpreted in the context of the variant
+          Reports whether the Proposition should be interpreted in the context of the variant
           being rare or common.
         enum:
         - rare
@@ -1052,7 +1060,7 @@ $defs:
       geneContextQualifier:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the
-          prognostic association  in the Proposition.
+          prognostic association described in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
       - predicate
@@ -1064,9 +1072,8 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A Statement reporting a conclusion from a single study about the role of a variant
-      in modulating the response of a neoplasm to drug administration or other therapeutic
-      procedures - based on interpretation of the study's results.
+      A Proposition about the role of a variant in modulating the response of a neoplasm to drug
+      administration or other therapeutic procedures.
     properties:
       type:
         extends: type
@@ -1092,7 +1099,7 @@ $defs:
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in
-          therapeutic response statements.
+          therapeutic response propositions.
       alleleOriginQualifier:
         type: string
         description: >-
@@ -1113,7 +1120,7 @@ $defs:
       geneContextQualifier:
         description: >
           Reports a gene impacted by the variant, which may contribute to the therapeutic
-          sensitivity or resistance reported in the Statement.
+          sensitivity or resistance described in the Proposition.
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
     - predicate
