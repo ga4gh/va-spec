@@ -28,7 +28,7 @@ tests:
   - test_file: VA-ClinVar-SCV-Example-002.yaml
     namespace: va-spec.acmg-2015
     definition: VariantPathogenicityStatement
-  - test_file: VA-CLinVar-SCV-Example-001.yaml
+  - test_file: VA-ClinVar-SCV-Example-001.yaml
     namespace: va-spec.base
     definition: Statement
 
