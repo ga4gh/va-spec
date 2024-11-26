@@ -24,6 +24,16 @@ va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   - contributions
   - reportedIn
 
+va-spec.base:CohortAlleleFrequencyStudyResult:
+  # Entity
+  - description
+  - extensions
+  - alternativeLabels
+
+  # InformationEntity
+  - contributions
+  - reportedIn
+
 va-spec.base:EvidenceLine:
   # Entity
   - description

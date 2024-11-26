@@ -144,4 +144,5 @@ specifiedBy:
   subtype:
     primaryCode: variant interpretation guideline
   reportedIn: 
-    - https://pubmed.ncbi.nlm.nih.gov/29785012/
+    type: Document
+    pmid: 29785012

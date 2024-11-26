@@ -51,18 +51,14 @@
          "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')"
       },
       "reportedIn": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "oneOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
-               },
-               {
-                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
-               }
-            ]
-         },
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            }
+         ],
          "description": "A document in which the the Method is reported."
       },
       "releaseDate": {

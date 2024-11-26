@@ -274,12 +274,8 @@ $defs:
           This attribute can be used to report a specific type for the Method, in cases where a model
           does not define Method subclasses for this purpose.  Implementers can define their own set
           of method type codes/terms, to match the needs of their application.
-            reportedIn:
       reportedIn:
-        type: array
-        ordered: false
-        items:
-          oneOf:
+        oneOf:
           - $ref: "#/$defs/Document"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: A document in which the the Method is reported.
@@ -660,10 +656,7 @@ $defs:
           Implementers can define their own set of data set type codes/terms, to match
           the needs of the domain or application.
       reportedIn:
-        type: array
-        ordered: false
-        items:
-          oneOf:
+        oneOf:
           - $ref: "#/$defs/Document"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: A document in which the the Method is reported.

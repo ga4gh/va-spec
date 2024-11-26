@@ -11,7 +11,7 @@ imports:
 $defs:
   CohortAlleleFrequencyStudyResult:
     inherits: va-core:StudyResult
-    maturity: draft
+    maturity: trial use
     type: object
     description: >-
       A StudyResult that reports measures related to the frequency of an Allele in a cohort

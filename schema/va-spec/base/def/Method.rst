@@ -64,9 +64,6 @@ Some Method attributes are inherited from :ref:`gks-core:Entity`.
       - A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').
    *  - reportedIn
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`Document` | :ref:`iriReference`
-      - 0..m
+      - 0..1
       - A document in which the the Method is reported.
