@@ -457,7 +457,7 @@ $defs:
         $ref: "#/$defs/Proposition"
         description:  >-
           A possible fact that the Statement may put forth as true or false, or may assess the overall level of confidence/evidence 
-          that exists for or against it.
+          for or against it.
         $comment: >-
           Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of
           this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
