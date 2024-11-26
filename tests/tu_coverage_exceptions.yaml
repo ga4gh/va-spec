@@ -18,6 +18,12 @@ va-spec.base:VariantPrognosticProposition:
   - alternativeLabels
   - description
 
+va-spec.base:VariantDiagnosticProposition:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+
 va-spec.base:VariantOncogenicityProposition:
   # Entity
   - extensions

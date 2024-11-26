@@ -790,7 +790,7 @@ $defs:
   VariantDiagnosticProposition:
     inherits: ClinicalVariantProposition
     type: object
-    maturity: draft
+    maturity: trial use
     description: >-
       A Proposition reporting a conclusion from a single study about whether a variant
       is associated with a disease (a diagnostic inclusion criterion), or absence of a

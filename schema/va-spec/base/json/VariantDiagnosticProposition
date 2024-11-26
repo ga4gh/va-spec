@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition",
    "title": "VariantDiagnosticProposition",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.",
    "properties": {
       "id": {
