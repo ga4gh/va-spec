@@ -40,6 +40,9 @@ tests:
   - test_file: var-diagnostic-proposition.yaml
     namespace: va-spec.base
     definition: VariantDiagnosticProposition
+  - test_file: var-therap-resp-prop.yaml
+    namespace: va-spec.base
+    definition: VariantTherapeuticResponseProposition
 
   # test ACMG 2015 Statements and domain entities
   - test_file: VA-ClinVar-SCV-Example-001.yaml

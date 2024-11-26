@@ -915,7 +915,7 @@ $defs:
   # Variant Therapeutic Response Proposition
   VariantTherapeuticResponseProposition:
     inherits: ClinicalVariantProposition
-    maturity: draft
+    maturity: trial use
     type: object
     description: >-
       A Statement reporting a conclusion from a single study about the role of a variant

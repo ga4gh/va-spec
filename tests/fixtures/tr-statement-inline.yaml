@@ -20,15 +20,15 @@ proposition:
   subjectVariant:
     id: civic.mpid:33
     type: CategoricalVariant
-    # description: >-
-    #   EGFR L858R has long been recognized as a functionally significant mutation in cancer,
-    #   and is one of the most prevalent single mutations in lung cancer. Best described in
-    #   non-small cell lung cancer (NSCLC), the mutation seems to confer sensitivity to first
-    #   and second generation TKI's like gefitinib and neratinib. NSCLC patients with this
-    #   mutation treated with TKI's show increased overall and progression-free survival, as
-    #   compared to chemotherapy alone. Third generation TKI's are currently in clinical trials
-    #   that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in
-    #   treating patients that failed to respond to earlier generation TKI therapies.
+    description: >-
+      EGFR L858R has long been recognized as a functionally significant mutation in cancer,
+      and is one of the most prevalent single mutations in lung cancer. Best described in
+      non-small cell lung cancer (NSCLC), the mutation seems to confer sensitivity to first
+      and second generation TKI's like gefitinib and neratinib. NSCLC patients with this
+      mutation treated with TKI's show increased overall and progression-free survival, as
+      compared to chemotherapy alone. Third generation TKI's are currently in clinical trials
+      that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in
+      treating patients that failed to respond to earlier generation TKI therapies.
     label: EGFR L858R
     constraints:
       - type: DefiningAlleleConstraint
@@ -102,7 +102,9 @@ proposition:
           code: DOID:3910
           system: https://www.disease-ontology.org/
         relation: exactMatch
-  alleleOriginQualifier: somatic
+  alleleOriginQualifier: 
+    primaryCode: GENO:0000882
+    label: somatic allele origin
   geneContextQualifier:
     id: civic.gid:19
     conceptType: Gene
