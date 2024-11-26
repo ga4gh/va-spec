@@ -23,7 +23,7 @@ $defs:
     maturity: draft
     inherits: gks-core:Element
     description: >-
-      A set of traits that are co-occurring in the context of a Variant Pathogenicity statement.
+      A set of conditions (diseases, phenotypes, traits) that are co-occurring.
     properties:
       traits:
         type: array
@@ -31,16 +31,14 @@ $defs:
         items:
           $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
-          A list of traits that are co-occurring in the context of a
-          Variant Pathogenicity statement.
+          A list of conditions (diseases, phenotypes, traits) that are co-occurring.
         minItems: 2
 
   # Therapeutic
   Therapeutic:
     maturity: draft
     description: >-
-      A group of therapies (TherapyGroup) or a single therapy (Drug, etc.) that represents
-      the object of a Therapeutic Response study statement.
+      A group of therapies (TherapyGroup) or a single therapy (drug, procedure, behavioral intervention, etc.).
     oneOf:
       - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       - $ref: "#/$defs/TherapyGroup"
@@ -51,7 +49,7 @@ $defs:
     maturity: draft
     inherits: gks-core:Element
     description: >-
-      A group of therapies that are applied together in the context of a Therapeutic Response study statement.
+      A group of therapies that are applied together to treat a condition.
     properties:
       groupType:
         type: string
@@ -62,7 +60,6 @@ $defs:
         items:
           $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
-          A list of therapies that are applied together in the context of a
-          Therapeutic Response study statement.
+          A list of therapies that are applied together to treat a condition.
         minItems: 2
   
