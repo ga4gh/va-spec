@@ -19,7 +19,9 @@ $defs:
         proposition:
           $ref: "/ga4gh/schema/va-core/1.x/base/json/VariantPathogenicityProposition"
           description: >-
-            The proposition that the subject variant is associated with the object disease.
+            A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement. 
+            A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
+            level of confidence/evidence supporting this claim.        
         # NOTE: The acmg 2015 guidelines are "guidelines" and allow for groups to embellish or extend them. 
         #       For example, the VCEPs will create there supplemental methods, while labs will approxmately
         #       follow the guidelines.  This is why the specifiedBy should NOT be required.
@@ -45,7 +47,7 @@ $defs:
         # specifiedBy: 
         #   extends: specifiedBy
         #   description: >-
-        #     The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of data from the supporting assay. May include information about thresholds applied on assay variant effect scores to derive the final classification.  
+        #     The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of evidence. May include information about thresholds applied on assay variant effect scores to derive the final classification.  
         #   properties:
         #     label:
         #       type: string

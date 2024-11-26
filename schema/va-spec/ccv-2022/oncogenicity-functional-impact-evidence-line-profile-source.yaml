@@ -11,14 +11,15 @@ $defs:
   VariantOncogenicityFunctionalImpactEvidenceLine:
     maturity: draft
     description: >-
-      An Evidence Line providing information about the functional impact of a variant on a gene or gene product.
+      An Evidence Line that describes how information about the functional impact of a variant on a gene or 
+      gene product was interpreted as evidence for or against the variant's oncogenicity. 
     allOf:
     - $ref: "/ga4gh/schema/gks-core/1.x/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
-            The proposition for which the evidence line provides support - that the subject variant
-            impacts the function of the object sequence feature.
+            A Variant Oncoogenicity Proposition against which functional impact information was assessed,
+            in determining the strength and direction of support this information provides as evidence.
           $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"          
         strengthOfEvidenceProvided:           
           description: >-
@@ -36,8 +37,8 @@ $defs:
                 - supporting
         specifiedBy:
           description: >-
-            The Clingen/CGC/VICC-2022 criterion method that was applied to interpret the functional impact of the variant
-            on the gene or gene product.
+            The Clingen/CGC/VICC-2022 criterion that was applied to interpret variant functional impact information 
+            as evidence for or against the assessed variant's oncogenicity. 
           properties:
             primaryCode:
               description: >-
@@ -52,7 +53,10 @@ $defs:
                 - SBS2
         evidenceOutcome:
           description: >-
-            The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. 'specifiedBy' is required and assumed to have a single method, BS3 or PS3. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.
+            The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. 
+            The 'specifiedBy' attribute is required and assumed to have a single method, OS2 or SBS2. if 'directionOfEvidenceProvided' 'none',
+            then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with
+            the strength of evidence provided.
           properties:
             primaryCode:
               type: string
