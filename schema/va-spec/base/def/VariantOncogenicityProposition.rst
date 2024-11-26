@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -8,7 +8,7 @@ A proposition describing the role of a variant in causing a tumor type.
 
 **Information Model**
 
-Some VariantOncogenicityProposition attributes are inherited from :ref:`SubjectVariantProposition`.
+Some VariantOncogenicityProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -57,6 +57,16 @@ Some VariantOncogenicityProposition attributes are inherited from :ref:`SubjectV
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
       - A variant that is the subject of the Proposition.
+   *  - geneContextQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+   *  - alleleOriginQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
    *  - type
       - 
       - string
@@ -72,18 +82,3 @@ Some VariantOncogenicityProposition attributes are inherited from :ref:`SubjectV
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
       - The tumor type for which the variant impact is evaluated.
-   *  - variantOriginQualifier
-      - 
-      - string
-      - 0..1
-      - Reports whether the proposition should be interpreted in the context of a heritable (germline) variant, an acquired (somatic) mutation, or more nuanced origin.
-   *  - variantPrevalenceQualifier
-      - 
-      - string
-      - 0..1
-      - Reports whether the proposition should be interpreted in the context of the variant being rare, common, or some other expressed form of background population prevalence.
-   *  - geneContextQualifier
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the oncogenic role in the Proposition.

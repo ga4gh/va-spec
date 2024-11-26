@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A proposition describing the role of a variant in causing a heritable condition.
+A proposition for use in describing the effect of variants in human subjects.
 
 **Information Model**
 
-Some VariantPathogenicityProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -26,6 +26,11 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
+   *  - type
+      - 
+      - string
+      - 1..1
+      - The name of the class that is instantiated by a data object representing the Entity.
    *  - label
       - 
       - string
@@ -52,6 +57,16 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
+   *  - predicate
+      - 
+      - string
+      - 1..1
+      - The relationship declared to hold between the subject and the object of the Statement.
+   *  - object
+      - 
+      - object
+      - 1..1
+      - An Entity or concept that is related to the subject of a Proposition via its predicate.
    *  - subjectVariant
       - 
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
@@ -67,28 +82,3 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
-   *  - type
-      - 
-      - string
-      - 1..1
-      - Must be "VariantPathogenicityProposition"
-   *  - predicate
-      - 
-      - string
-      - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
-      - 
-      - :ref:`Condition` | :ref:`iriReference`
-      - 1..1
-      - The :ref:`Condition` for which the variant impact is stated.
-   *  - penetranceQualifier
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition. 
-   *  - modeOfInheritanceQualifier
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended to specify.
