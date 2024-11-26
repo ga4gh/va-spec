@@ -11,7 +11,7 @@ $defs:
   Condition:
     maturity: draft
     description: >-
-      A set of trais (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents
+      A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents
       the object of a Variant Pathogenicity statement.
     oneOf:
       - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
