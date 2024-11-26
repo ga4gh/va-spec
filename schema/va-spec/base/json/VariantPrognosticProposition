@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition",
    "title": "VariantPrognosticProposition",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.",
    "properties": {
       "id": {

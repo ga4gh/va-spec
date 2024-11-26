@@ -886,7 +886,7 @@ $defs:
   VariantPrognosticProposition:
     inherits: ClinicalVariantProposition
     type: object
-    maturity: draft
+    maturity: trial use
     description: >-
       A Proposition reporting a conclusion from a single study about whether a variant
       is associated with an improved or worse outcome for a disease - based on
