@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Statement reporting a conclusion from a single study about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures - based on interpretation of the study's results.
+A Proposition about the role of a variant in modulating the response of a neoplasm to drug administration or other therapeutic procedures.
 
 **Information Model**
 
@@ -61,12 +61,12 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
    *  - type
       - 
       - string
@@ -76,7 +76,7 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - 
       - string
       - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
+      - The relationship declared to hold between the subject and the object of the Proposition.
    *  - objectTherapeutic
       - 
       - :ref:`Therapeutic` | :ref:`iriReference`
@@ -86,4 +86,4 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - 
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response statements.
+      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions. 

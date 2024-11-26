@@ -4,7 +4,7 @@
    "title": "VariantDiagnosticProposition",
    "type": "object",
    "maturity": "trial use",
-   "description": "A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.",
+   "description": "A Proposition about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion).",
    "properties": {
       "id": {
          "type": "string",
@@ -49,10 +49,10 @@
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
-         "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic  variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "geneContextQualifier": {
-         "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
+         "description": "Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
@@ -63,7 +63,7 @@
          ]
       },
       "alleleOriginQualifier": {
-         "description": "Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.",
+         "description": "Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
@@ -82,7 +82,7 @@
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship declared to hold between the subject and the object of the Statement.",
+         "description": "The relationship declared to hold between the subject and the object of the Proposition.",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
          "enum": [
             "isDiagnosticInclusionCriterionFor",
@@ -99,7 +99,7 @@
             }
          ],
          "description": "The disease that is evaluated for diagnosis.",
-         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
+         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       }
    },
    "required": [

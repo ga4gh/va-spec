@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Proposition reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.
+A Proposition about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion).
 
 **Information Model**
 
@@ -61,12 +61,12 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`ClinicalVa
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
    *  - type
       - 
       - string
@@ -76,7 +76,7 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`ClinicalVa
       - 
       - string
       - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
+      - The relationship declared to hold between the subject and the object of the Proposition.
    *  - objectCondition
       - 
       - :ref:`Condition` | :ref:`iriReference`

@@ -61,7 +61,7 @@ Some SubjectVariantProposition attributes are inherited from :ref:`Proposition`.
       - 
       - string
       - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
+      - The relationship declared to hold between the subject and the object of the Proposition.
    *  - object
       - 
       - object

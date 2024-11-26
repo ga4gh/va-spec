@@ -12,7 +12,7 @@
          "properties": {
             "proposition": {
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition",
-               "description": "The proposition that the subject variant is associated with the object disease."
+               "description": "A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement.  A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.        "
             }
          }
       }

@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Condition",
    "title": "Condition",
    "maturity": "draft",
-   "description": "A set of trais (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.",
+   "description": "A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.",
    "oneOf": [
       {
          "$ref": "/ga4gh/schema/va-spec/1.x/base/json/TraitSet"

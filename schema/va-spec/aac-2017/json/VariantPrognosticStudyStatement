@@ -12,7 +12,7 @@
          "properties": {
             "proposition": {
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition",
-               "description": "The proposition for which the study provides evidence - that the subject variant is associated with the object condition."
+               "description": "A proposition about a prognostic association between a variant and condition, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it,  may be assessed and reported by the Statement. "
             }
          }
       }

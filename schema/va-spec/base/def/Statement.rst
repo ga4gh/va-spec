@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to simply put forth a possible fact (i.e. a 'proposition') as true, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular proposition.
+A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to put forth a possible fact (i.e. a 'Proposition') as true or false, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular Proposition.
 
 **Information Model**
 
@@ -82,7 +82,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
       - 
       - :ref:`Proposition`
       - 1..1
-      - A possible fact that the Statement assesses or puts forth as true.
+      - A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim. 
    *  - direction
       - 
       - string
@@ -100,12 +100,12 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - number
       - 0..1
-      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it.
+      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the menaing of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute. 
    *  - classification
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's proposition, in terms of a classification of its subject.
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
    *  - hasEvidenceLines
       - 
                         .. raw:: html

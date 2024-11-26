@@ -82,9 +82,9 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - 
       - :ref:`Entity` | :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
-      - The specific subject or experimental unit in a Study that data in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
+      - The specific participant, subject or experimental unit in a Study that data included in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - sourceDataSet
       - 
       - :ref:`DataSet`
       - 0..1
-      - A larger DataSet from which the content of the StudyResult was derived.
+      - A larger DataSet from which the data included in the StudyResult was taken or derived.

@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A set of trais (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.
+A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.
 
 **Information Model**
 

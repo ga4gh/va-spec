@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A proposition reporting a conclusion from a single assay or study about the functional impact of a variant on a sequence feature (typically a gene or gene product).
+A Proposition describing the impact of a variant on the function sequence feature (typically a gene or gene product).
 
 **Information Model**
 
@@ -66,14 +66,14 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - 
       - string
       - 1..1
-      - The relationship this Proposition describes between the subject variant and object sequence feature whose function it may alter.
+      - The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter.
    *  - objectSequenceFeature
       - 
       - :ref:`iriReference` | :ref:`MappableConcept`
       - 1..1
-      - The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is assessed.
+      - The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is reported.
    *  - experimentalContextQualifier
       - 
       - :ref:`iriReference` | :ref:`Document` | object
       - 1..1
-      - The assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.
+      - An assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.

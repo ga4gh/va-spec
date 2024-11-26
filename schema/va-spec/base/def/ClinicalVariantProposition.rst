@@ -61,7 +61,7 @@ Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVaria
       - 
       - string
       - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
+      - The relationship declared to hold between the subject and the object of the Proposition.
    *  - object
       - 
       - object
@@ -76,9 +76,9 @@ Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVaria
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.

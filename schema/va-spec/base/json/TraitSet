@@ -4,7 +4,7 @@
    "title": "TraitSet",
    "type": "object",
    "maturity": "draft",
-   "description": "A set of traits that are co-occurring in the context of a Variant Pathogenicity statement.",
+   "description": "A set of conditions (diseases, phenotypes, traits) that are co-occurring.",
    "properties": {
       "id": {
          "type": "string",
@@ -25,7 +25,7 @@
          "items": {
             "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
          },
-         "description": "A list of traits that are co-occurring in the context of a Variant Pathogenicity statement.",
+         "description": "A list of conditions (diseases, phenotypes, traits) that are co-occurring.",
          "minItems": 2
       }
    },

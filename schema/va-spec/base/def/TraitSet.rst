@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A set of traits that are co-occurring in the context of a Variant Pathogenicity statement.
+A set of conditions (diseases, phenotypes, traits) that are co-occurring.
 
 **Information Model**
 
@@ -41,4 +41,4 @@ Some TraitSet attributes are inherited from :ref:`gks-core:Element`.
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`MappableConcept`
       - 2..m
-      - A list of traits that are co-occurring in the context of a Variant Pathogenicity statement.
+      - A list of conditions (diseases, phenotypes, traits) that are co-occurring.

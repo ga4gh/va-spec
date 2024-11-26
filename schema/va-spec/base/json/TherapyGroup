@@ -4,7 +4,7 @@
    "title": "TherapyGroup",
    "type": "object",
    "maturity": "draft",
-   "description": "A group of therapies that are applied together in the context of a Therapeutic Response study statement.",
+   "description": "A group of therapies that are applied together to treat a condition.",
    "properties": {
       "id": {
          "type": "string",
@@ -29,7 +29,7 @@
          "items": {
             "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
          },
-         "description": "A list of therapies that are applied together in the context of a Therapeutic Response study statement.",
+         "description": "A list of therapies that are applied together to treat a condition.",
          "minItems": 2
       }
    },

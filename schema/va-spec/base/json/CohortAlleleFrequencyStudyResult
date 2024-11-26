@@ -46,7 +46,7 @@
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
-         "$comment": "Examples - a specific experimental protocol or data analysis specification that describe how data were generated, or an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification. Note that this attribute captures specific *instances* of specifications/methods (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
+         "$comment": "Examples: a specific experimental protocol or data analysis specification that describes how data were generated; an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification; a  method for using electron microscopy to image cell membrane proteins. Note that this attribute captures a specific *instance* of a specification or method (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
       },
       "contributions": {
          "type": "array",

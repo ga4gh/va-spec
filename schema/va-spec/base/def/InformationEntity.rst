@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-An abstract (non-physical) entity that is about something - representing the underlying 'information content' conveyed by physical or digital information artifacts like books, web pages, data tables, or photographs.
+An abstract (non-physical) entity that represents 'information content' carried by physical or digital information artifacts such as books, web pages, data sets, or images.
 
 **Information Model**
 

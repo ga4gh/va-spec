@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Therapeutic",
    "title": "Therapeutic",
    "maturity": "draft",
-   "description": "A group of therapies (TherapyGroup) or a single therapy (Drug, etc.) that represents the object of a Therapeutic Response study statement.",
+   "description": "A group of therapies (TherapyGroup) or a single therapy (drug, procedure, behavioral intervention, etc.).",
    "oneOf": [
       {
          "$ref": "/ga4gh/schema/va-spec/1.x/base/json/TherapyGroup"

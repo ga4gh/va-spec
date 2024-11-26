@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A group of therapies (TherapyGroup) or a single therapy (Drug, etc.) that represents the object of a Therapeutic Response study statement.
+A group of therapies (TherapyGroup) or a single therapy (drug, procedure, behavioral intervention, etc.).
 
 **Information Model**
 
