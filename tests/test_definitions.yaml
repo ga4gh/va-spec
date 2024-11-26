@@ -31,6 +31,9 @@ tests:
   - test_file: var-path-proposition.yaml
     namespace: va-spec.base
     definition: VariantPathogenicityProposition
+  - test_file: var-onco-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantOncogenicityProposition
 
   # test ACMG 2015 Statements and domain entities
   - test_file: VA-ClinVar-SCV-Example-001.yaml
