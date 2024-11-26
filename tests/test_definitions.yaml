@@ -20,6 +20,29 @@ tests:
   - test_file: civic-curation-sop-method.yaml
     namespace: va-spec.base
     definition: Method
+  - test_file: adm-study-group.yaml
+    namespace: va-spec.base
+    definition: StudyGroup
+
+  # test propositions
+  - test_file: EVFI-proposition.yaml
+    namespace: va-spec.base
+    definition: ExperimentalVariantFunctionalImpactProposition
+  - test_file: var-path-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantPathogenicityProposition
+  - test_file: var-onco-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantOncogenicityProposition
+  - test_file: var-prognostic-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantPrognosticProposition
+  - test_file: var-diagnostic-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantDiagnosticProposition
+  - test_file: var-therap-resp-prop.yaml
+    namespace: va-spec.base
+    definition: VariantTherapeuticResponseProposition
 
   # test ACMG 2015 Statements and domain entities
   - test_file: VA-ClinVar-SCV-Example-001.yaml

@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.
+A proposition for use in describing the effect of variants in human subjects.
 
 **Information Model**
 
-Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
+Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -26,6 +26,11 @@ Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
+   *  - type
+      - 
+      - string
+      - 1..1
+      - The name of the class that is instantiated by a data object representing the Entity.
    *  - label
       - 
       - string
@@ -52,36 +57,28 @@ Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - type
+   *  - predicate
       - 
       - string
       - 1..1
-      - MUST be "DataSet".
-   *  - subtype
+      - The relationship declared to hold between the subject and the object of the Statement.
+   *  - object
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - :ref:`MappableConcept`
-      - 0..1
-      - A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')
-   *  - reportedIn
+      - object
+      - 1..1
+      - An Entity or concept that is related to the subject of a Proposition via its predicate.
+   *  - subjectVariant
       - 
-      - :ref:`Document` | :ref:`iriReference`
-      - 0..1
-      - A document in which the the Method is reported.
-   *  - releaseDate
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - 1..1
+      - A variant that is the subject of the Proposition.
+   *  - geneContextQualifier
       - 
-      - :ref:`date`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Indicates the date a version of a DataSet was formally released.
-   *  - version
+      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+   *  - alleleOriginQualifier
       - 
-      - string
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - The version of the DataSet, as assigned by its creator.
-   *  - license
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)
+      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.

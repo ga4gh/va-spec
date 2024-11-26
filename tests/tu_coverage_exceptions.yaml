@@ -1,8 +1,63 @@
+va-spec.base:ExperimentalVariantFunctionalImpactProposition:
+  # Entity
+  - label
+  - extensions
+  - id
+  - description
+  - alternativeLabels
+
+va-spec.base:VariantPathogenicityProposition:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+
+va-spec.base:VariantPrognosticProposition:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+
+va-spec.base:VariantDiagnosticProposition:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+
+va-spec.base:VariantTherapeuticResponseProposition:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+
+va-spec.base:VariantOncogenicityProposition:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+  - label
+
+va-spec.base:StudyGroup:
+  # Entity
+  - description
+  - alternativeLabels
+  - extensions
+
 va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   # Entity
   - description
   - id
   - label
+  - extensions
+  - alternativeLabels
+
+  # InformationEntity
+  - contributions
+  - reportedIn
+
+va-spec.base:CohortAlleleFrequencyStudyResult:
+  # Entity
+  - description
   - extensions
   - alternativeLabels
 

@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/StudyGroup",
    "title": "StudyGroup",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific study based on their exhibiting one or more common characteristics  (e.g. species, race, age, gender, disease state, income). May be referred to as a 'cohort' or 'population' in specific research settings.",
    "$comment": "A Study Group may include all participants in a given study, or specific subsets that are designated based on shared roles or characteristics.",
    "properties": {
@@ -45,24 +45,19 @@
          "default": "StudyGroup"
       },
       "memberCount": {
+         "maturity": "draft",
+         "$comment": "this is draft until we see utility in real-world datasets",
          "type": "integer",
          "description": "The total number of individual members in the StudyGroup."
-      },
-      "isSubsetOf": {
-         "type": "array",
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyGroup"
-         },
-         "ordered": false,
-         "description": "A larger StudyGroup of which this StudyGroup represents a subset."
       },
       "characteristics": {
          "type": "array",
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Characteristic"
+            "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
          },
          "ordered": false,
-         "description": "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group."
+         "description": "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.",
+         "$comment": "We should evaluate this for use with boolean operators before going normative"
       }
    },
    "required": [

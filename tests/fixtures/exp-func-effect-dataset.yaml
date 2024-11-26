@@ -3,6 +3,6 @@ label: variant effect data set
 license:
   primaryCode: "CC0"
 reportedIn:
-  - type: Document
-    urls:
-      - https://mavedb.org/score-sets/urn:mavedb:00000013-a-1
+  type: Document
+  urls:
+    - https://mavedb.org/score-sets/urn:mavedb:00000013-a-1

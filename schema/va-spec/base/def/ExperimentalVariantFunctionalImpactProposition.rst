@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -66,7 +66,7 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - 
       - string
       - 1..1
-      - The relationship this Proposition describes between the subject Variant and object Sequence Feature whose function it may alter.
+      - The relationship this Proposition describes between the subject variant and object sequence feature whose function it may alter.
    *  - objectSequenceFeature
       - 
       - :ref:`iriReference` | :ref:`MappableConcept`
