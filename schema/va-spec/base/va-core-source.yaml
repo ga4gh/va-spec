@@ -719,6 +719,26 @@ $defs:
         $comment: We should evaluate this for use with boolean operators before going normative
 
   # proposition concrete profiles section
+  ClinicalVariantProposition:
+    inherits: SubjectVariantProposition
+    maturity: trial use
+    description: >-
+      A proposition for use in describing the effect of variants in human subjects.
+    heritableProperties:
+      geneContextQualifier:
+        description: >-
+          Reports the gene through which the pathogenic effect asserted for the variant is mediated
+          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+      alleleOriginQualifier:
+        description: >-
+          Reports whether the statement should be interpreted in the context of an inherited
+          (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+        oneOf:
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
 
   # Variant Functional Impact Proposition
   ExperimentalVariantFunctionalImpactProposition:
@@ -768,7 +788,7 @@ $defs:
 
   # Variant Diagnostic Proposition
   VariantDiagnosticProposition:
-    inherits: SubjectVariantProposition
+    inherits: ClinicalVariantProposition
     type: object
     maturity: draft
     description: >-
@@ -790,38 +810,16 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: The disease that is evaluated for diagnosis.
-      alleleOriginQualifier:
-        description: >-
-          Reports whether the proposition should be interpreted in the context of an inherited
-          (germline) variant, an acquired (somatic) mutation, or both (combined).
-        type: string
-        enum:
-        - germline
-        - somatic
-        - combined
-      allelePrevalenceQualifier:
-        description: >-
-          Reports whether the proposition should be interpreted in the context of the variant
-          being rare or common.
-        type: string
-        enum:
-        - rare
-        - common
-      geneContextQualifier:
-        description: >-
-          Reports a gene impacted by the variant, which may contribute to the
-          diagnostic association  in the Proposition.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
     - predicate
     - objectCondition
 
   # Variant Oncogenicity Proposition
   VariantOncogenicityProposition:
-    inherits: SubjectVariantProposition
+    inherits: ClinicalVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -834,9 +832,7 @@ $defs:
         description: MUST be "VariantOncogenicityProposition".
       predicate:
         extends: predicate
-        enum:
-        - isOncogenicFor
-        - isProtectiveAgainst
+        default: isCausalFor
       objectTumorType:
         extends: object
         oneOf:
@@ -844,30 +840,13 @@ $defs:
         - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
           The tumor type for which the variant impact is evaluated.
-      variantOriginQualifier:
-        type: string
-        description: >-
-          Reports whether the proposition should be interpreted in the context of a heritable
-          (germline) variant, an acquired (somatic) mutation, or more nuanced origin.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-      variantPrevalenceQualifier:
-        type: string
-        description: >-
-          Reports whether the proposition should be interpreted in the context of the variant
-          being rare, common, or some other expressed form of background population prevalence.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-      geneContextQualifier:
-        description: >-
-          Reports a gene impacted by the variant, which may contribute to the oncogenic
-          role in the Proposition.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
       - predicate
       - objectTumorType
 
   # Variant Pathogenicity Proposition
   VariantPathogenicityProposition:
-    inherits: SubjectVariantProposition
+    inherits: ClinicalVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -880,7 +859,7 @@ $defs:
         description: Must be "VariantPathogenicityProposition"
       predicate:
         extends: predicate
-        const: isCausalFor
+        default: isCausalFor
       objectCondition:
         extends: object
         oneOf:
@@ -888,37 +867,24 @@ $defs:
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:
-        type: string
-        enum:
-          - high
-          - low
-          - risk allele
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition. 
       modeOfInheritanceQualifier:
-        type: array
-        ordered: false
-        items:
-          $ref: "/ga4gh/schema/gks-core/1.x/json/Coding"
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
-          Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
-      geneContextQualifier:
-        description: >-
-          Reports the gene through which the pathogenic effect asserted for the variant is mediated
-          (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
-        oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"  
+          HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended
+          to specify.
     required:
       - predicate
       - objectCondition
 
   # Variant Prognostic Proposition
   VariantPrognosticProposition:
-    inherits: SubjectVariantProposition
+    inherits: ClinicalVariantProposition
     type: object
     maturity: draft
     description: >-
@@ -934,43 +900,21 @@ $defs:
       predicate:
         extends: predicate
         enum:
-        - associatedWithBetterOutcomeFor
-        - associatedWithWorseOutcomeFor
+          - associatedWithBetterOutcomeFor
+          - associatedWithWorseOutcomeFor
       objectCondition:
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: The disease that is evaluated for outcome.
-      alleleOriginQualifier:
-        type: string
-        description: >-
-          Reports whether the proposition should be interpreted in the context of an inherited
-          (germline) variant, an acquired (somatic) mutation, or both (combined).
-        enum:
-        - germline
-        - somatic
-        - combined
-      allelePrevalenceQualifier:
-        type: string
-        description: >-
-          Reports whether the proposition should be interpreted in the context of the variant
-          being rare or common.
-        enum:
-        - rare
-        - common
-      geneContextQualifier:
-        description: >-
-          Reports a gene impacted by the variant, which may contribute to the
-          prognostic association  in the Proposition.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
       - predicate
       - objectCondition
 
   # Variant Therapeutic Response Proposition
   VariantTherapeuticResponseProposition:
-    inherits: SubjectVariantProposition
+    inherits: ClinicalVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -997,34 +941,12 @@ $defs:
         - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
       conditionQualifier:
         oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
+          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in
           therapeutic response statements.
-      alleleOriginQualifier:
-        type: string
-        description: >-
-          Reports whether the statement should be interpreted in the context of an inherited
-          (germline) variant, an acquired (somatic) mutation, or both (combined).
-        enum:
-          - germline
-          - somatic
-          - combined
-      allelePrevalenceQualifier:
-        type: string
-        description: >-
-          Reports whether the statement should be interpreted in the context of the variant
-          being rare or common.
-        enum:
-          - rare
-          - common
-      geneContextQualifier:
-        description: >
-          Reports a gene impacted by the variant, which may contribute to the therapeutic
-          sensitivity or resistance reported in the Statement.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
     required:
     - predicate
     - objectTherapeutic

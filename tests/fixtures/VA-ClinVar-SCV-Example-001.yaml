@@ -45,17 +45,18 @@ proposition:
         system: https://www.ncbi.nlm.nih.gov/medgen/
       relation: exactMatch
   predicate: isCausalFor
-  penetranceQualifier: high
+  penetranceQualifier:
+    primaryCode: high
 direction: supports
 strength:
-  label: definitive
+  primaryCode: definitive
   mappings:
     - coding:
         code: cg000021
         system: https://dataexchange.clinicalgenome.org/codes/
       relation: exactMatch
 classification:
-  label: pathogenic
+  primaryCode: pathogenic
   mappings:
     - coding:
         code: cg000001

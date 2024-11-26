@@ -51,6 +51,28 @@
          "description": "A variant that is the subject of the Proposition.",
          "$comment": "While the Core Information Model is domain-agnostic, and supports Statements about any type of Entity, for most VA-Spec implementations the subject will be a some type of genetic or molecular variation. But data creators may want to make statements about other entities or concepts that represent evidence for a Statement about variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
+      "geneContextQualifier": {
+         "description": "Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            }
+         ]
+      },
+      "alleleOriginQualifier": {
+         "description": "Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            }
+         ]
+      },
       "type": {
          "type": "string",
          "description": "MUST be \"VariantPrognosticProposition\".",
@@ -78,27 +100,6 @@
          ],
          "description": "The disease that is evaluated for outcome.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject, e.g. for Genetic Variation subjects the object is often a disease, drug, gene, molecular consequence, functional impact on gene or protein."
-      },
-      "alleleOriginQualifier": {
-         "type": "string",
-         "description": "Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).",
-         "enum": [
-            "germline",
-            "somatic",
-            "combined"
-         ]
-      },
-      "allelePrevalenceQualifier": {
-         "type": "string",
-         "description": "Reports whether the proposition should be interpreted in the context of the variant being rare or common.",
-         "enum": [
-            "rare",
-            "common"
-         ]
-      },
-      "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the prognostic association  in the Proposition.",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       }
    },
    "required": [

@@ -8,7 +8,7 @@ A proposition describing the role of a variant in causing a heritable condition.
 
 **Information Model**
 
-Some VariantPathogenicityProposition attributes are inherited from :ref:`SubjectVariantProposition`.
+Some VariantPathogenicityProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -57,6 +57,16 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Subject
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
       - A variant that is the subject of the Proposition.
+   *  - geneContextQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+   *  - alleleOriginQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
    *  - type
       - 
       - string
@@ -74,19 +84,11 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Subject
       - The :ref:`Condition` for which the variant impact is stated.
    *  - penetranceQualifier
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
       - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition. 
    *  - modeOfInheritanceQualifier
       - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Coding`
-      - 0..m
-      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Use HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) to specify.
-   *  - geneContextQualifier
-      - 
-      - :ref:`MappableConcept` | :ref:`iriReference`
+      - :ref:`MappableConcept`
       - 0..1
-      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended to specify.

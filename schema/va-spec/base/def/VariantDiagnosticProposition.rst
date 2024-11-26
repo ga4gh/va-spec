@@ -8,7 +8,7 @@ A Proposition reporting a conclusion from a single study about whether a variant
 
 **Information Model**
 
-Some VariantDiagnosticProposition attributes are inherited from :ref:`SubjectVariantProposition`.
+Some VariantDiagnosticProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -57,6 +57,16 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`SubjectVar
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
       - A variant that is the subject of the Proposition.
+   *  - geneContextQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports the gene through which the pathogenic effect asserted for the variant is mediated (i.e. it is the variant's impact on this gene that is responsible for causing the condition).
+   *  - alleleOriginQualifier
+      - 
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
    *  - type
       - 
       - string
@@ -72,18 +82,3 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`SubjectVar
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
       - The disease that is evaluated for diagnosis.
-   *  - alleleOriginQualifier
-      - 
-      - string
-      - 0..1
-      - Reports whether the proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or both (combined).
-   *  - allelePrevalenceQualifier
-      - 
-      - string
-      - 0..1
-      - Reports whether the proposition should be interpreted in the context of the variant being rare or common.
-   *  - geneContextQualifier
-      - 
-      - :ref:`MappableConcept`
-      - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the diagnostic association  in the Proposition.

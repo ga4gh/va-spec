@@ -1,14 +1,14 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
 
-A Proposition reporting a conclusion from a single study about whether a variant is associated with an improved or worse outcome for a disease - based on interpretation of the study's results.
+A proposition for use in describing the effect of variants in human subjects.
 
 **Information Model**
 
-Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -26,6 +26,11 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
+   *  - type
+      - 
+      - string
+      - 1..1
+      - The name of the class that is instantiated by a data object representing the Entity.
    *  - label
       - 
       - string
@@ -52,6 +57,16 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
+   *  - predicate
+      - 
+      - string
+      - 1..1
+      - The relationship declared to hold between the subject and the object of the Statement.
+   *  - object
+      - 
+      - object
+      - 1..1
+      - An Entity or concept that is related to the subject of a Proposition via its predicate.
    *  - subjectVariant
       - 
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
@@ -67,18 +82,3 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - Reports whether the statement should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
-   *  - type
-      - 
-      - string
-      - 1..1
-      - MUST be "VariantPrognosticProposition".
-   *  - predicate
-      - 
-      - string
-      - 1..1
-      - The relationship declared to hold between the subject and the object of the Statement.
-   *  - objectCondition
-      - 
-      - :ref:`Condition` | :ref:`iriReference`
-      - 1..1
-      - The disease that is evaluated for outcome.
