@@ -46,6 +46,7 @@ objectCondition:
 predicate: isCausalFor
 penetranceQualifier:
   label: high penetrance
+  primaryCode: high
 alleleOriginQualifier:
   primaryCode: GENO:0000888
   label: germline allele origin
