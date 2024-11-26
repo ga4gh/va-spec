@@ -847,7 +847,7 @@ $defs:
   # Variant Pathogenicity Proposition
   VariantPathogenicityProposition:
     inherits: ClinicalVariantProposition
-    maturity: draft
+    maturity: trial use
     type: object
     description: >-
       A proposition describing the role of a variant in causing a heritable condition.
