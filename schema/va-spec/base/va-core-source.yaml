@@ -267,8 +267,6 @@ $defs:
         description: MUST be "Method".
       subtype:
         $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-        maturity: draft
-        $comment: the utility of a Method subtype field is not yet proven, leaving in draft for now.
         description: >-
           A specific type of method that a Method instance represents (e.g. 'Variant Interpretation
           Guideline', or 'Experimental Protocol').
@@ -276,12 +274,8 @@ $defs:
           This attribute can be used to report a specific type for the Method, in cases where a model
           does not define Method subclasses for this purpose.  Implementers can define their own set
           of method type codes/terms, to match the needs of their application.
-            reportedIn:
       reportedIn:
-        type: array
-        ordered: false
-        items:
-          oneOf:
+        oneOf:
           - $ref: "#/$defs/Document"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: A document in which the the Method is reported.
@@ -662,10 +656,7 @@ $defs:
           Implementers can define their own set of data set type codes/terms, to match
           the needs of the domain or application.
       reportedIn:
-        type: array
-        ordered: false
-        items:
-          oneOf:
+        oneOf:
           - $ref: "#/$defs/Document"
           - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
         description: A document in which the the Method is reported.
@@ -697,7 +688,7 @@ $defs:
   StudyGroup:
     type: object
     inherits: gks-core:Entity
-    maturity: draft
+    maturity: trial use
     description: >-
       A collection of individuals or specimens from the same taxonomic class, selected for analysis in a
       scientific study based on their exhibiting one or more common characteristics  (e.g. species, race,
@@ -713,108 +704,26 @@ $defs:
         default: StudyGroup
         description: Must be "StudyGroup"
       memberCount:
+        maturity: draft
+        $comment: this is draft until we see utility in real-world datasets
         type: integer
         description: The total number of individual members in the StudyGroup.
-      isSubsetOf:
-        type: array
-        items:
-          $ref: "#/$defs/StudyGroup"
-        ordered: false
-        description: A larger StudyGroup of which this StudyGroup represents a subset.
       characteristics:
         type: array
         items:
-          $ref: "#/$defs/Characteristic"
+          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         ordered: false
         description: >-
           A feature or role shared by all members of the StudyGroup, representing a criterion for
           membership in the group.
-
-  # general-purpose data classes section -- RecordMetadata, Characteristic
-  # RecordMetadata:
-  #   type: object
-  #   inherits: gks-core:Element
-  #   maturity: draft
-  #   description: >-
-  #     A reusable structure that encapsulates provenance metadata about a serialized data record or
-  #     object in a particular dataset (as opposed to provenance about the real world entity this
-  #     record or object represents).
-  #   $comment: >-
-  #     Record-level metadata applies to a specific concrete encoding/serialization of information
-  #     (e.g as a record in a specific data/knowlegebase, or an online digital resource).
-  #     A RecordMetadata object can capture when, how, and by whom a specific record serialization was
-  #     generated or modified; what upstream resources it was derived or retrieved from; and record-level
-  #     administrative information such as versioning and lifecycle status. RecordMetadata objects should
-  #     not be used to describe provenance of the abstract information content or knowledge captured in a
-  #     data record or object - other properties in the model are defined to support this use case.
-  #   properties:
-  #     recordIdentifier:
-  #       type: string
-  #       description: >-
-  #         The identifier of the data record or object described in this RecordMetadata object.
-  #     recordVersion:
-  #       type: string
-  #       description: The version number of the record-level artifact the object describes.
-  #     derivedFrom:
-  #       type: string
-  #       description: >-
-  #         Another data record from which the record described here was derived, through a data
-  #         ingest and/or transformation process. Value should be a string representing the identifier
-  #         of the source record.
-  #     dateRecordCreated:
-  #       $ref: "/ga4gh/schema/gks-core/1.x/json/datetime"
-  #       description: The date the record was initially created.
-  #     contributions:
-  #       type: array
-  #       ordered: false
-  #       items:
-  #         $ref: "#/$defs/Contribution"
-  #       description: >-
-  #         Describes specific contributions made by an human or software agent to the creation,
-  #         modification, or administrative management of a data record or object.
-
-  Characteristic:
-    type: object
-    inherits: gks-core:Element
-    maturity: draft
-    description: >-
-      An object holding a name-value pair used to describe a trait or role of an individual
-      member of a StudyGroup.
-    $comment: >-
-      This flexible key-value like object is where specific inclusion or exclusion criteria for
-      membership in a StudyGroup are formally defined. It should be used to capture characteristics
-      that inhere in individual members of the StudyGroup (e.g. inherent traits like their sex, race,
-      or age, or roles assigned to them in a particular context such as being a control in a study).
-    properties:
-      name:
-        type: string
-        description: >-
-          The type of the trait  or role described by the trait (e.g. 'ethnicity', 'sex', 'age',
-          'disease status').
-      value:
-        type: string
-        description: >-
-          The specific value(s) that the indicated traitor role holds in all population members
-          (e.g. 'east asian', 'female', 'adolescent', 'cancer').
-      valueOperator:
-        type: boolean
-        description: >-
-          An operation that defines how to logically interpret a set of more than one Characteristic
-          values ('AND', 'OR', 'NOT')
-        $comment: >-
-          An 'AND' operator indicates that an individual exhibits all of the characteristic values listed.
-          An 'OR' operator indicates the individual exhibits one or more of the characteristic values listed.
-          A 'NOT' indicates that the individual does not exhibit the characteristic value or values listed.
-    required:
-      - name
-      - value
+        $comment: We should evaluate this for use with boolean operators before going normative
 
   # proposition concrete profiles section
 
   # Variant Functional Impact Proposition
   ExperimentalVariantFunctionalImpactProposition:
     inherits: SubjectVariantProposition
-    maturity: draft
+    maturity: trial use
     type: object
     description: >-
       A proposition reporting a conclusion from a single assay or study about the functional
@@ -828,9 +737,10 @@ $defs:
       predicate:  
         extends: predicate
         description: >-
-          The relationship this Proposition describes between the subject Variant
-          and object Sequence Feature whose function it may alter.
-        const: impactsFunctionOf                
+          The relationship this Proposition describes between the subject variant
+          and object sequence feature whose function it may alter.
+        type: string
+        default: impactsFunctionOf
       objectSequenceFeature:
         extends: object
         oneOf:

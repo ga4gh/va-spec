@@ -35,13 +35,114 @@ proposition:
           system: https://identifiers.org/ncbigene
           code: '5728'
         relation: exactMatch
-  experimentalContextQualifier: https://github.com/ave-dcd/mave_vocabulary/blob/main/examples/Matreyek_2018.yml
-  # impactTypeQualifier:
-  #   label: decreased activity/function
+  experimentalContextQualifier: 
+    title: PTEN VAMP-seq
+    abstract: >-
+      Determining the pathogenicity of genetic variants is a critical challenge, and functional assessment is often the 
+      only option. Experimentally characterizing millions of possible missense variants in thousands of clinically 
+      important genes requires generalizable, scalable assays. We describe variant abundance by massively parallel 
+      sequencing (VAMP-seq), which measures the effects of thousands of missense variants of a protein on intracellular 
+      abundance simultaneously. We apply VAMP-seq to quantify the abundance of 7,801 single-amino-acid variants of PTEN and 
+      TPMT, proteins in which functional variants are clinically actionable. We identify 1,138 PTEN and 777 TPMT variants 
+      that result in low protein abundance, and may be pathogenic or alter drug metabolism, respectively. We observe 
+      selection for low-abundance PTEN variants in cancer, and show that p.Pro38Ser, which accounts for ~10% of PTEN 
+      missense variants in melanoma, functions via a dominant-negative mechanism. Finally, we demonstrate that VAMP-seq is 
+      applicable to other genes, highlighting its generalizability.
+    document:
+      title: >-
+        Multiplex assessment of protein variant abundance by massively parallel 
+        sequencing
+      system:
+        Nature Genetics
+      date: "2018-05-21"
+      ref: https://doi.org/10.1038/s41588-018-0122-z
+    datasets:
+      - system: MaveDB
+        accession: urn:mavedb:00000013-a
+        ref: https://mavedb.org/#/experiments/urn:mavedb:00000013-a
+        description: processed scores, including scores for each replicate experiment
+      - system: BioProject
+        accession: PRJNA428380
+        ref: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA428380
+        description: raw sequencing data
+    variantLibrary:
+      scope:
+        type: coding
+      targetSequences:
+        - sequence: "ATGACAGCCATCATCAAAGAGATCGTTAGCAGAAACAAAAGGAGATATCAAGAGGATGGA\
+            TTCGACTTAGACTTGACCTATATTTATCCAAACATTATTGCTATGGGATTTCCTGCAGAA\
+            AGACTTGAAGGCGTATACAGGAACAATATTGATGATGTAGTAAGGTTTTTGGATTCAAAG\
+            CATAAAAACCATTACAAGATATACAATCTTTGTGCTGAAAGACATTATGACACCGCCAAA\
+            TTTAATTGCAGAGTTGCACAATATCCTTTTGAAGACCATAACCCACCACAGCTAGAACTT\
+            ATCAAACCCTTTTGTGAAGATCTTGACCAATGGCTAAGTGAAGATGACAATCATGTTGCA\
+            GCAATTCACTGTAAAGCTGGAAAGGGACGAACTGGTGTAATGATATGTGCATATTTATTA\
+            CATCGGGGCAAATTTTTAAAGGCACAAGAGGCCCTAGATTTCTATGGGGAAGTAAGGACC\
+            AGAGACAAAAAGGGAGTAACTATTCCCAGTCAGAGGCGCTATGTGTATTATTATAGCTAC\
+            CTGTTAAAGAATCATCTGGATTATAGACCAGTGGCACTGTTGTTTCACAAGATGATGTTT\
+            GAAACTATTCCAATGTTCAGTGGCGGAACTTGCAATCCTCAGTTTGTGGTCTGCCAGCTA\
+            AAGGTGAAGATATATTCCTCCAATTCAGGACCCACACGACGGGAAGACAAGTTCATGTAC\
+            TTTGAGTTCCCTCAGCCGTTACCTGTGTGTGGTGATATCAAAGTAGAGTTCTTCCACAAA\
+            CAGAACAAGATGCTAAAAAAGGACAAAATGTTTCACTTTTGGGTAAATACATTCTTCATA\
+            CCAGGACCAGAGGAAACCTCAGAAAAAGTAGAAAATGGAAGTCTATGTGATCAAGAAATC\
+            GATAGCATTTGCAGTATAGAGCGTGCAGATAATGACAAGGAATATCTAGTACTTACTTTA\
+            ACAAAAAATGATCTTGACAAAGCAAATAAAGACAAAGCCAACCGATACTTTTCTCCAAAT\
+            TTTAAGGTGAAGCTGTACTTCACAAAAACAGTAGAGGAGCCGTCAAATCCAGAGGCTAGC\
+            AGTTCAACTTCTGTAACACCAGATGTTAGTGACAATGAACCTGATCATTATAGATATTCT\
+            GACACCACTGACTCTGATCCAGAGAATGAACCTTTTGATGAAGATCAGCATACACAAATT\
+            ACAAAAGTCTGA"
+          sequenceAlphabet: DNA
+      generationMethod:
+        type: in-vitro construct library
+        system: oligo-directed mutagenic PCR
+        integration: extra-local construct insertion
+        description: Integration using Tet-on landing pad system
+      deliveryMethod:
+        type: chemical or heat shock transformation
+    phenotypicAssay:
+      dimensionality:
+        type: single-dimensional data
+      replication:
+        type: biological and technical
+        description: 8 biological replicate experiments were performed from three
+          different transfections (4, 3, and 1 experimental replicate for these
+          transfections). Technical replicates were performed as part of QC, but
+          the technical replicates were collapsed and analyzed as one experiment
+          after passing.
+      method:
+        type: flow cytometry assay
+        description: VAMP-seq
+      relevance:
+        - system: https://www.omim.org/
+          code: "601728"
+          label: PHOSPHATASE AND TENSIN HOMOLOG; PTEN
+        - system: https://www.omim.org/
+          code: "158350"
+          label: COWDEN SYNDROME 1; CWS1
+        - system: https://mondo.monarchinitiative.org/
+          code: MONDO:0017623
+          label: PTEN hamartoma tumor syndrome
+        - system: https://mondo.monarchinitiative.org/
+          code: MONDO:0017623
+          label: Cowden syndrome 1
+      modelSystem:
+        type: immortalized human cells
+        description: HEK 293T TetBxb1BFP
+        codings:
+          - system: https://www.ebi.ac.uk/ols/ontologies/clo
+            code: CLO:0037372
+            label: HEK293T cell
+          - system: https://www.ncbi.nlm.nih.gov/taxonomy
+            code: NCBI:txid9606
+            label: Homo sapiens
+      profilingStrategy: barcode sequencing
+      sequencingReadType: single-segment (short read)
 classification:
   primaryCode: normal
-  label: normal
-direction: neutral
+direction: disputes
 specifiedBy:
   type: Method
-  label: MAVE 2024 Functional Classification
+  subtype:
+    primaryCode: variant interpretation guideline
+  reportedIn: 
+    type: Document
+    pmid: 29785012

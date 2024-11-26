@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -59,22 +59,17 @@ Some StudyGroup attributes are inherited from :ref:`gks-core:Entity`.
       - Must be "StudyGroup"
    *  - memberCount
       - 
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - integer
       - 0..1
       - The total number of individual members in the StudyGroup.
-   *  - isSubsetOf
-      - 
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`StudyGroup`
-      - 0..m
-      - A larger StudyGroup of which this StudyGroup represents a subset.
    *  - characteristics
       - 
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Characteristic`
+      - :ref:`MappableConcept`
       - 0..m
       - A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.

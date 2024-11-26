@@ -1,8 +1,32 @@
+va-spec.base:ExperimentalVariantFunctionalImpactProposition:
+  # Entity
+  - label
+  - extensions
+  - id
+  - description
+  - alternativeLabels
+
+va-spec.base:StudyGroup:
+  # Entity
+  - description
+  - alternativeLabels
+  - extensions
+
 va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   # Entity
   - description
   - id
   - label
+  - extensions
+  - alternativeLabels
+
+  # InformationEntity
+  - contributions
+  - reportedIn
+
+va-spec.base:CohortAlleleFrequencyStudyResult:
+  # Entity
+  - description
   - extensions
   - alternativeLabels
 
