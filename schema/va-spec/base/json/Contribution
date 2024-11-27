@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Contribution",
    "title": "Contribution",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "An action taken by an agent in contributing to the creation, modification, assessment, or deprecation of a particular entity (e.g. a Statement, EvidenceLine, DataSet, Publication, etc.)",
    "properties": {
       "id": {
@@ -36,24 +36,6 @@
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
-      "subtype": {
-         "description": "A specific type of activity the Activity instance represents.",
-         "$comment": "This attribute can be used to report a specific type for the Activity in cases where a model does not define Activity subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
-      },
-      "date": {
-         "description": "The date that the Activity was completed.",
-         "$comment": "By convention, populate this attribute with the date the activity was completed (e.g. in cases where the activity spans multiple days). The date MUST be formatted as a date string in ISO8601 format \"YYYY-MM-DD\".",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/date"
-      },
-      "specifiedBy": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Method"
-         },
-         "description": "A method that was followed in performing an Activity, that describes how it was executed."
-      },
       "type": {
          "type": "string",
          "description": "MUST be \"Contribution\".",
@@ -62,19 +44,17 @@
          "default": "Contribution"
       },
       "contributor": {
-         "type": "array",
-         "ordered": false,
-         "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Agent"
-         },
-         "description": "The agent that made the contribution.",
-         "minItems": 1,
-         "maxItems": 1,
-         "$comment": "Note that this MUST be a single agent (which can be a Person, or an Organization). If multiple Agents contributed to an entity, a separate Contribution instances MUST be created to describe each."
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Agent",
+         "description": "The agent that made the contribution."
       },
       "activityType": {
          "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).",
          "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
+      },
+      "date": {
+         "description": "The date that the Activity was completed.",
+         "$comment": "By convention, populate this attribute with the date the activity was completed (e.g. in cases where the activity spans multiple days). The date MUST be formatted as a date string in ISO8601 format \"YYYY-MM-DD\".",
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/date"
       }
    },
    "required": [

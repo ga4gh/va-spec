@@ -23,6 +23,12 @@ tests:
   - test_file: adm-study-group.yaml
     namespace: va-spec.base
     definition: StudyGroup
+  - test_file: contribution.yaml
+    namespace: va-spec.base
+    definition: Contribution
+  - test_file: agent.yaml
+    namespace: va-spec.base
+    definition: Agent
 
   # test domain entities
   - test_file: traitset.yaml
