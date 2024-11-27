@@ -1,0 +1,8 @@
+id: civic.theragroup:e1090
+therapies:
+  - primaryCode: ncit:C1005
+    label: Arsenic Trioxide
+  - primaryCode: C900
+    label: Tretinoin
+groupType:
+  primaryCode: combination

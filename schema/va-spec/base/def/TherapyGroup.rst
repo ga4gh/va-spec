@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -36,7 +36,7 @@ Some TherapyGroup attributes are inherited from :ref:`gks-core:Element`.
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - groupType
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
       - The type of the therapy group.
    *  - therapies

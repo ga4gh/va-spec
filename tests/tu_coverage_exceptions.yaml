@@ -111,3 +111,7 @@ va-spec.base:Method:
 va-spec.base:TraitSet:
   # Element
   - extensions
+
+va-spec.base:TherapyGroup:
+  # Element
+  - extensions

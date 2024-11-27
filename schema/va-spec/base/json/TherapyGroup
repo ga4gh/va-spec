@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/TherapyGroup",
    "title": "TherapyGroup",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A group of therapies that are applied together to treat a condition.",
    "properties": {
       "id": {
@@ -20,7 +20,7 @@
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "groupType": {
-         "type": "string",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "The type of the therapy group."
       },
       "therapies": {

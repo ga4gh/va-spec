@@ -28,6 +28,9 @@ tests:
   - test_file: traitset.yaml
     namespace: va-spec.base
     definition: TraitSet
+  - test_file: therapy-group.yaml
+    namespace: va-spec.base
+    definition: TherapyGroup
 
   # test propositions
   - test_file: EVFI-proposition.yaml

@@ -46,13 +46,13 @@ $defs:
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
   TherapyGroup:
     type: object
-    maturity: draft
+    maturity: trial use
     inherits: gks-core:Element
     description: >-
       A group of therapies that are applied together to treat a condition.
     properties:
       groupType:
-        type: string
+        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
         description: The type of the therapy group.
       therapies:
         type: array
