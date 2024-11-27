@@ -46,6 +46,7 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    modeling-foundations
    reference-implementation
    examples/index
+   appendices/index
    faq
 
 
