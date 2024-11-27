@@ -94,7 +94,6 @@
       }
    },
    "required": [
-      "experimentalContextQualifier",
       "objectSequenceFeature",
       "predicate",
       "subjectVariant",
