@@ -1,12 +1,12 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Condition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/Condition",
    "title": "Condition",
    "maturity": "trial use",
    "description": "A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.",
    "oneOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/TraitSet"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/TraitSet"
       },
       {
          "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
