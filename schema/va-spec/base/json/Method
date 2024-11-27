@@ -45,9 +45,9 @@
          "default": "Method"
       },
       "subtype": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').",
-         "$comment": "This attribute can be used to report a specific type for the Method, in cases where a model does not define Method subclasses for this purpose.  Implementers can define their own set of method type codes/terms, to match the needs of their application."
+         "$comment": "This attribute can be used to report a specific type for the Method, in cases where a model does not define Method subclasses for this purpose.  Implementers can define their own set of method type codes/terms, to match the needs of their application.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
       "reportedIn": {
          "oneOf": [

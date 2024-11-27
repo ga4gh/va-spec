@@ -37,14 +37,14 @@
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "subtype": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "A specific type of activity the Activity instance represents.",
-         "$comment": "This attribute can be used to report a specific type for the Activity in cases where a model does not define Activity subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application."
+         "$comment": "This attribute can be used to report a specific type for the Activity in cases where a model does not define Activity subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
       "date": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/date",
          "description": "The date that the Activity was completed.",
-         "$comment": "By convention, populate this attribute with the date the activity was completed (e.g. in cases where the activity spans multiple days). The date MUST be formatted as a date string in ISO8601 format \"YYYY-MM-DD\"."
+         "$comment": "By convention, populate this attribute with the date the activity was completed (e.g. in cases where the activity spans multiple days). The date MUST be formatted as a date string in ISO8601 format \"YYYY-MM-DD\".",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/date"
       },
       "specifiedBy": {
          "type": "array",
@@ -73,8 +73,8 @@
          "$comment": "Note that this MUST be a single agent (which can be a Person, or an Organization). If multiple Agents contributed to an entity, a separate Contribution instances MUST be created to describe each."
       },
       "activityType": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
-         "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO))."
+         "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       }
    },
    "required": [

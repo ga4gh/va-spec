@@ -9,6 +9,11 @@ imports:
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
+namespaces:
+  gks.core: /ga4gh/schema/gks-core/1.x/json/
+  vrs: /ga4gh/schema/vrs/2.x/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.x/json/
+
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
   InformationEntity:
@@ -26,7 +31,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: "#/$defs/Method"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        - $refCurie: gks.core:iriReference
         description: >-
           A specification that describes all or part of the process that led to creation of the
           Information Entity
@@ -55,10 +60,10 @@ $defs:
         items:
           oneOf:
           - $ref: "#/$defs/Document"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:iriReference
         description: A document in which the the Information Entity is reported.
       # dateAuthored:
-      #   $ref: "/ga4gh/schema/gks-core/1.x/json/datetime"
+      #   $refCurie: gks.core:datetime
       #   description: Indicates when the information content expressed in the Information Entity was generated.
       #   $comment: >-
       #     The term 'authored' is used in the model to refer to the generation of abstract 'information content', as
@@ -91,7 +96,7 @@ $defs:
       Activities may use, generate, modify, move, or destroy one or more entities.
     heritableProperties:
       subtype:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A specific type of activity the Activity instance represents.
         $comment: >-
@@ -99,7 +104,7 @@ $defs:
           a model does not define Activity subclasses for this purpose. Implementers can define
           their own set of data set type codes/terms, to match the needs of the domain or application.
       date:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/date"
+        $refCurie: gks.core:date
         description: >-
           The date that the Activity was completed.
         $comment: >-
@@ -145,9 +150,9 @@ $defs:
     heritableProperties:
       focus:
         oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/Entity"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           The specific participant, subject or experimental unit in a Study that data included in the
           StudyResult object is about - e.g. a particular variant in a population allele frequency
@@ -255,9 +260,9 @@ $defs:
       subjectVariant:
         extends: subject
         oneOf:
-          - $ref: "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
-          - $ref: "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: vrs:MolecularVariation
+          - $refCurie: cat-vrs:CategoricalVariant
+          - $refCurie: gks.core:iriReference
         description: A variant that is the subject of the Proposition.
 
 
@@ -278,7 +283,7 @@ $defs:
         default: Method
         description: MUST be "Method".
       subtype:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A specific type of method that a Method instance represents (e.g. 'Variant Interpretation
           Guideline', or 'Experimental Protocol').
@@ -289,7 +294,7 @@ $defs:
       reportedIn:
         oneOf:
           - $ref: "#/$defs/Document"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:iriReference
         description: A document in which the the Method is reported.
       # license:
       #   type: string
@@ -325,7 +330,7 @@ $defs:
           If multiple Agents contributed to an entity, a separate Contribution instances MUST be
           created to describe each.
       activityType:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           The specific type of activity performed or role played by an agent in making the contribution
           (e.g. for a publication, agents may contribute as a primary author, editor, figure designer,
@@ -354,7 +359,7 @@ $defs:
         $comment: >-
           The need for subtype is not yet clear, though the content that could be added to this
           leaving this field in draft is obvious. Leaving in draft until this sees regular use.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A specific type of document that a Document instance represents (e.g.  'publication',
           'patent', 'pathology report')
@@ -492,7 +497,7 @@ $defs:
           is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - 
           or they can choose values that don't commit to one or the other if they don't want to make the distinction
           (e.g. 'high' vs 'medium' vs 'low').
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
       score:
         type: number
         maturity: draft
@@ -507,7 +512,7 @@ $defs:
           The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
           on a numerical score.
       classification:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's Proposition, in terms of a classification of
@@ -525,7 +530,7 @@ $defs:
         items:
           anyOf:
             - $ref: "#/$defs/EvidenceLine"
-            - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            - $refCurie: gks.core:iriReference
         description: >-
           An evidence-based argument that supports or disputes the validity of the proposition that a
           Statement assesses or puts forth as true. The strength and direction of this argument (whether
@@ -594,7 +599,7 @@ $defs:
             - $ref: "#/$defs/StudyResult"
             - $ref: "#/$defs/Statement"
             - $ref: "#/$defs/EvidenceLine"
-            - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+            - $refCurie: gks.core:iriReference
         description: >-
           An individual piece of information that was evaluated as evidence in building the argument represented
           by an Evidence Line.
@@ -615,7 +620,7 @@ $defs:
           The direction of support that the Evidence Line is determined to provide toward its target Proposition
           (supports, disputes, neutral)
       strengthOfEvidenceProvided:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against its target Proposition,
           evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
@@ -630,7 +635,7 @@ $defs:
           against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided
           value.
       evidenceOutcome:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
           the direction and strength of support it provides for or against the target Proposition.
@@ -659,7 +664,7 @@ $defs:
       subtype:
         maturity: draft
         $comment: the need for a DataSet subtype is not yet clear. Leaving in draft until then.
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A specific type of data set the DataSet instance represents (e.g. a
           'clinical data set', a 'sequencing data set', a 'gene expression data set',
@@ -672,10 +677,10 @@ $defs:
       reportedIn:
         oneOf:
           - $ref: "#/$defs/Document"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:iriReference
         description: A document in which the the Method is reported.
       releaseDate:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/date"
+        $refCurie: gks.core:date
         description: Indicates the date a version of a DataSet was formally released.
         $comment: >-
           This attribute may apply to version and distribution-level DataSet representations.
@@ -690,7 +695,7 @@ $defs:
           revisions that add or modify content, but don’t change the identity of the resource. Use this
           attribute in cases where version is not reflected in an identifier associated with the data set.
       license:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           A specific license that dictates legal permissions for how a data set can be used
           (by whom, where, for what purposes, with what additional requirements, etc.)
@@ -725,7 +730,7 @@ $defs:
       characteristics:
         type: array
         items:
-          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          $refCurie: gks.core:MappableConcept
         ordered: false
         description: >-
           A feature or role shared by all members of the StudyGroup, representing a criterion for
@@ -744,15 +749,15 @@ $defs:
           Reports a gene impacted by the variant, which may contribute to the association 
           described in the Proposition.
         oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
       alleleOriginQualifier:
         description: >-
           Reports whether the Proposition should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
         oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
 
   # Variant Functional Impact Proposition
   ExperimentalVariantFunctionalImpactProposition:
@@ -777,8 +782,8 @@ $defs:
       objectSequenceFeature:
         extends: object
         oneOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"      
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept      
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact 
           of the subject variant is reported.
@@ -787,7 +792,7 @@ $defs:
           An assay in which the reported variant functional impact was determined - 
           providing a specific experimental context in which this effect is asserted to hold.
         anyOf:
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $refCurie: gks.core:iriReference
           - $ref: "#/$defs/Document"
           - type: object
             additionalProperties: true
@@ -820,8 +825,8 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: Condition
+          - $refCurie: gks.core:iriReference
         description: The disease that is evaluated for diagnosis.
     required:
       - predicate
@@ -846,8 +851,8 @@ $defs:
       objectTumorType:
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        - $ref: Condition
+        - $refCurie: gks.core:iriReference
         description: >-
           The tumor type for which the variant impact is evaluated.
     required:
@@ -873,17 +878,17 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: Condition
+          - $refCurie: gks.core:iriReference
         description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition. 
       modeOfInheritanceQualifier:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
           HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended
@@ -913,8 +918,8 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: Condition
+          - $refCurie: gks.core:iriReference
         description: The disease that is evaluated for outcome.
     required:
       - predicate
@@ -944,12 +949,12 @@ $defs:
           is intended to respond to.
         extends: object
         oneOf:
-        - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Therapeutic"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        - $ref: Therapeutic
+        - $refCurie: gks.core:iriReference
       conditionQualifier:
         oneOf:
-          - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Condition"
-          - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+          - $ref: Condition
+          - $refCurie: gks.core:iriReference
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in

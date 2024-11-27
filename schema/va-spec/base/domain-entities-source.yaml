@@ -6,6 +6,9 @@ strict: true
 imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
+namespaces:
+  gks.core: /ga4gh/schema/gks-core/1.x/json/
+
 $defs:
   # Condition data structure for consolidating the different forms of conditions, individual vs co-occurring traits
   Condition:
@@ -14,7 +17,7 @@ $defs:
       A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents
       the object of a Variant Pathogenicity statement.
     oneOf:
-      - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      - $refCurie: gks.core:MappableConcept
       - $ref: "#/$defs/TraitSet"
 
   # TraitSet data structure to provide support for co-occuring traits (i.e. diseases, phenotypes, etc.)
@@ -29,7 +32,7 @@ $defs:
         type: array
         ordered: false
         items:
-          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          $refCurie: gks.core:MappableConcept
         description: >-
           A list of conditions (diseases, phenotypes, traits) that are co-occurring.
         minItems: 2
@@ -40,7 +43,7 @@ $defs:
     description: >-
       A group of therapies (TherapyGroup) or a single therapy (drug, procedure, behavioral intervention, etc.).
     oneOf:
-      - $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      - $refCurie: gks.core:MappableConcept
       - $ref: "#/$defs/TherapyGroup"
 
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
@@ -52,13 +55,13 @@ $defs:
       A group of therapies that are applied together to treat a condition.
     properties:
       groupType:
-        $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+        $refCurie: gks.core:MappableConcept
         description: The type of the therapy group.
       therapies:
         type: array
         ordered: false
         items:
-          $ref: "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+          $refCurie: gks.core:MappableConcept
         description: >-
           A list of therapies that are applied together to treat a condition.
         minItems: 2
