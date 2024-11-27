@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/va-spec-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/va-spec-source.yaml"
 title: VA Specification Core classes
 strict: true
 
@@ -10,9 +10,9 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.x/json/
-  vrs: /ga4gh/schema/vrs/2.x/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.x/json/
+  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.2/json/
+  vrs: /ga4gh/schema/vrs/2.0.0-ballot.2024-11.1/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-ballot.2024-11.1/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition

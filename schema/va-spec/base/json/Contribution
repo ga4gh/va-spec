@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Contribution",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Contribution",
    "title": "Contribution",
    "type": "object",
    "maturity": "draft",
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -39,18 +39,18 @@
       "subtype": {
          "description": "A specific type of activity the Activity instance represents.",
          "$comment": "This attribute can be used to report a specific type for the Activity in cases where a model does not define Activity subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
       },
       "date": {
          "description": "The date that the Activity was completed.",
          "$comment": "By convention, populate this attribute with the date the activity was completed (e.g. in cases where the activity spans multiple days). The date MUST be formatted as a date string in ISO8601 format \"YYYY-MM-DD\".",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/date"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/date"
       },
       "specifiedBy": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Method"
          },
          "description": "A method that was followed in performing an Activity, that describes how it was executed."
       },
@@ -65,7 +65,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Agent"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/json/Agent"
          },
          "description": "The agent that made the contribution.",
          "minItems": 1,
@@ -74,7 +74,7 @@
       },
       "activityType": {
          "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
       }
    },
    "required": [

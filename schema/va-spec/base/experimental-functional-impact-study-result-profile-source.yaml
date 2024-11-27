@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/experimental-functional-impact-study-result-profile-source.yaml"  
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.1/base/experimental-functional-impact-study-result-profile-source.yaml"  
 title: Experimental Variant Functional Impact Study Result Standard Profile
 strict: true
 
@@ -9,8 +9,8 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.x/json/
-  vrs: /ga4gh/schema/vrs/2.x/json/
+  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.2/json/
+  vrs: /ga4gh/schema/vrs/2.0.0-ballot.2024-11.1/json/
 
 $defs:
   ExperimentalVariantFunctionalImpactStudyResult:  
