@@ -3,7 +3,7 @@
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/TraitSet",
    "title": "TraitSet",
    "type": "object",
-   "maturity": "draft",
+   "maturity": "trial use",
    "description": "A set of conditions (diseases, phenotypes, traits) that are co-occurring.",
    "properties": {
       "id": {
