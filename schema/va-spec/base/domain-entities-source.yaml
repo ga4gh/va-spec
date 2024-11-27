@@ -9,7 +9,7 @@ imports:
 $defs:
   # Condition data structure for consolidating the different forms of conditions, individual vs co-occurring traits
   Condition:
-    maturity: draft
+    maturity: trial use
     description: >-
       A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents
       the object of a Variant Pathogenicity statement.
@@ -36,7 +36,7 @@ $defs:
 
   # Therapeutic
   Therapeutic:
-    maturity: draft
+    maturity: trial use
     description: >-
       A group of therapies (TherapyGroup) or a single therapy (drug, procedure, behavioral intervention, etc.).
     oneOf:

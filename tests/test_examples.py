@@ -5,7 +5,7 @@ from config import validator, js_def, coverage
 def _get_trial_use_classes():
     return set([x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] == 'trial use'])
 
-va_abstract_classes = {'va-spec.base:SubjectVariantProposition'}
+va_abstract_classes = {'va-spec.base:SubjectVariantProposition', 'va-spec.base:Condition', 'va-spec.base:Therapeutic'}
 
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:
