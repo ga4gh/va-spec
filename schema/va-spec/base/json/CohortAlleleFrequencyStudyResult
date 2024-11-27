@@ -90,7 +90,7 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0-ballot.2024-11.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.0.0-ballot.2024-11.2/json/Allele"
             }
          ],
          "description": "The Allele for which frequency results are reported.",
