@@ -8,6 +8,11 @@ imports:
   vrs: ../../vrs/vrs-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
+namespaces:
+  gks.core: /ga4gh/schema/gks-core/1.x/json/
+  vrs: /ga4gh/schema/vrs/2.x/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.x/json/
+
 $defs:
   CohortAlleleFrequencyStudyResult:
     inherits: va-core:StudyResult
@@ -28,8 +33,8 @@ $defs:
         extends: focus
         description: The Allele for which frequency results are reported.
         oneOf:
-        - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
-        - $ref: "/ga4gh/schema/gks-core/1.x/json/iriReference"
+        - $refCurie: vrs:Allele
+        - $refCurie: gks.core:iriReference
       focusAlleleCount:
         type: integer
         description: The number of occurrences of the focusAllele in the cohort.

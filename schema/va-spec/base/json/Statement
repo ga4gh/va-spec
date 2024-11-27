@@ -126,9 +126,9 @@
          "description": "A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the menaing of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute. "
       },
       "classification": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.",
-         "$comment": "Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification."
+         "$comment": "Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
       "hasEvidenceLines": {
          "type": "array",

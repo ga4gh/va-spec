@@ -20,8 +20,8 @@
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
       },
       "groupType": {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept",
-         "description": "The type of the therapy group."
+         "description": "The type of the therapy group.",
+         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
       "therapies": {
          "type": "array",
