@@ -24,6 +24,11 @@ tests:
     namespace: va-spec.base
     definition: StudyGroup
 
+  # test domain entities
+  - test_file: traitset.yaml
+    namespace: va-spec.base
+    definition: TraitSet
+
   # test propositions
   - test_file: EVFI-proposition.yaml
     namespace: va-spec.base

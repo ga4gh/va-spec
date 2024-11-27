@@ -107,3 +107,7 @@ va-spec.base:Method:
   # InformationEntity
   - specifiedBy
   - contributions
+
+va-spec.base:TraitSet:
+  # Element
+  - extensions

@@ -20,7 +20,7 @@ $defs:
   # TraitSet data structure to provide support for co-occuring traits (i.e. diseases, phenotypes, etc.)
   TraitSet:
     type: object
-    maturity: draft
+    maturity: trial use
     inherits: gks-core:Element
     description: >-
       A set of conditions (diseases, phenotypes, traits) that are co-occurring.
