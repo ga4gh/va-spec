@@ -2,7 +2,7 @@
 
 **Official Documentaation:** https://va-ga4gh.readthedocs.io/en/latest
 
- **VA-Spec v1 release coming in September 2024 - stay tuned!**
+ **VA-Spec 1.0.0 Trial Use Review November 2024 - join in [here](https://github.com/ga4gh/va-spec/discussions/234)!**
 
 -----
 
