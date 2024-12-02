@@ -27,7 +27,7 @@ In this structure:
  * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument. 
  * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
 
-A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found :ref:`here<variant-pathogenicity-statement-example>`.
+A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found `here <https://github.com/ga4gh/va-spec/blob/mbrush-ballot-doc-proposition-updates/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_.
 
 ---------
 
