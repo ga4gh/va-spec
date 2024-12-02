@@ -14,10 +14,10 @@ The Core model supports a Statement-centric approach, where each discrete assert
 
 .. gks-core-statement-data-structure:
 
-.. figure:: ../../../images/core-im-statement-data-structure.png
+.. figure:: ../../../images/core-im-statement-proposition-data-structure.png
   :width: 700
 
-   Core-IM Classes and Relationships in Statement Data Structures
+   Core Model Classes and Relationships in Statement Data Structures
 
    **Legend** A class-level view of the Statement-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report, in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
