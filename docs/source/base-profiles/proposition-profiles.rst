@@ -3,8 +3,6 @@
 Proposition Profiles
 !!!!!!!!!!!!!!!!!!!!
 
-
-
 **Proposition Utility**
 	
 Propositions are abstract representations of possible facts about a domain of discourse, e.g. *"HRAS:c.173C>T causes Costello Syndrome"*.  A proposition itself makes no claim as to whether the sentiment it expresses is true or not - its job is simply to convey the sharable meaning of a possible fact in a structured data object.  
@@ -28,9 +26,9 @@ The structured example below illustrates how such a scenario may be represented 
    targetProposition:
      - id: VarPathProposition001
        type: VariantPathogenicityProposition
-       subject: HRAS:c.173C>T
+       subjectVariant: HRAS:c.173C>T
        predicate: isCausalFor
-       object: Costello Syndrome
+       objectConditon: Costello Syndrome
    evidenceItems:
      - id: FunctionalImpactStudyResult001     # strudy result details omitted for space
    directionOfEvidenceProvided: supports
@@ -43,9 +41,9 @@ The structured example below illustrates how such a scenario may be represented 
    targetProposition:
      - id: VarPathProposition001
        type: VariantPathogenicityProposition
-       subject: HRAS:c.173C>T
+       subjectVariant: HRAS:c.173C>T
        predicate: isCausalFor
-       object: Costello Syndrome
+       objectConditon: Costello Syndrome
    evidenceItems:
      - id:alleleCohortFrequencyStudyResult001     # study result details omitted for space
    directionOfEvidenceProvided: supports
@@ -58,9 +56,9 @@ The structured example below illustrates how such a scenario may be represented 
    proposition:
      - id: VarPathProposition001
        type: VariantPathogenicityProposition
-       subject: HRAS:c.173C>T
+       subjectVariant: HRAS:c.173C>T
        predicate: isCausalFor
-       object: Costello Syndrome
+       objectConditon: Costello Syndrome
    direction: supports
    strength: definitive
    classification: pathogenic
@@ -71,16 +69,16 @@ The structured example below illustrates how such a scenario may be represented 
 	
 **Proposition Profiles**
 	
-Proposition Profiles are defined as specializations of the core ``Proposition`` class, to explicitly represent particular types of possible facts that may be true in a domain of discourse. For example, a ``VariantPathogenicityProposition`` profile defines a model for describing causal relationships between genetic variants and specific diseases. Providing explicit and detailed representations of such propositions is critical for reporting and understanding exactly what a VA ``Statement`` may assert, or a VA ``Evidence Line`` may assess and score evidence against. 
+Proposition Profiles are defined as specializations of the core ``Proposition`` class, to explicitly represent particular types of possible facts that may be true in a domain of discourse. In the example abpve, a ``VariantPathogenicityProposition`` profile defines a model for describing causal relationships between genetic variants and specific diseases. Providing explicit and detailed representations of such propositions is critical for reporting and understanding exactly what a VA ``Statement`` may assert, or a VA ``Evidence Line`` may assess and score evidence against. 
 
-The semantics of a Proposition are captured in ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). Proposition profiles constrain the types of values that can be captured in these SPO attributes, and may define any number of specialized qualifier attributes that extend the SPO "triple" with additional detail or context.  For example, if an SPO triple asserts that *"VariantX - is causal for - DiseaseY"*, a ``geneContextQualifier`` can be used to indicate a specific gene as mediating this causal relationship, and an ``alleleOriginQualifier`` can be used to indicate the fact holds specifically for variants of germline origin:
+The semantics of a Proposition are captured in ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). Proposition profiles constrain the types of values that can be captured in these SPO attributes, and may define any number of specialized qualifier attributes that extend the SPO "triple" with additional detail or context.  For example, if an SPO triple asserts that *"VariantX - is causal for - DiseaseY"*, a ``geneContextQualifier`` can be used to indicate a specific GeenZ as mediating this causal relationship, and an ``alleleOriginQualifier`` can be used to indicate that the fact holds specifically for variants of germline origin:
 
 .. code-block:: yaml
 
   subject: VariantX
   predicate: isCausalFor
   object: DiseaseY
-  geneContextQualifier: HRAS
+  geneContextQualifier: GeneZ
   alleleOriginQualifier: germline
 	
 Proposition profiles defined in this way are used within the context of generic ``Statement`` or ``EvidenceLine`` classes from the core model, to provide domain specific semantics for the respective assessments that these core classes provide. This avoids the need to profile/specialize ``Statement`` or ``EvidenceLine`` classes for many use cases.  However, these classes may be profiled as needed to add community specific constraints on direct attributes of the Statement or Evidence Line classes (see :ref: `Community Profiles <community-profiles>`).
