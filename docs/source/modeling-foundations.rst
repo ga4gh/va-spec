@@ -3,8 +3,6 @@
 Modeling Foundations
 !!!!!!!!!!!!!!!!!!!!
 
-``PREREQUISITES:`` :ref:`Introduction<introduction>`, :ref:`Data Example<variant-pathogenicity-statement-example>`, :ref:`Core Information Model<core-information-model>`
-
 This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and knowledge about them. 
 
 After a brief overview of standards used to represent genetic variation, it focuses on data structures that can be built around three key classes which are the basis of VA Profiles: (1) Statements; (2) Study Results; and (3) Evidence Lines. 
@@ -22,13 +20,13 @@ VRS and Cat-VRS models are directly imported for use in VA schema, and the VA-Sp
 Statement Representation
 @@@@@@@@@@@@@@@@@@@@@@@@
 
-In the VA-Spec data, each assertion of knowledge about a variant is captured in a self-contained **Statement** object. The :ref:`GKS Core-IM<core-information-model>` provides a rich and powerful model where:
+In the VA-Spec data, each assertion of knowledge about a variant is captured in a self-contained **Statement** object. The :ref:`VA Core-Model <core-information-model>` provides a rich and powerful structure where:
 
  * the :ref:`Statement <Statement>` class roots a larger data structure supporting clear and precise tracking of the evidence and provenance information
- * the semantics of what is assessed or reported to be true in a Statement (i.e. its 'Proposition') are explicitly structured in terms of subject, predicate, object, and qualifier attributes (SPOQ)
+ * the semantics of what is assessed or reported to be true in a Statement are explicitly structured in a Proposition object, in terms of subject, predicate, object, and qualifier attributes (SPOQ)
  * Statements can report a more nuanced assessment of the state of confidence or evidence surrounding this Proposition
 
-These features of the Core-IM Statement model are described below. 
+These features of the CoreM  odelStatement model are described below. 
 
 Statement Data Structure
 $$$$$$$$$$$$$$$$$$$$$$$$
@@ -37,7 +35,7 @@ In VA-Spec data, a Statement object roots the larger data structure below.
 
 .. core-im-statement-data-structure:
 
-.. figure:: images/core-im-statement-data-structure.png
+.. figure:: images/core-im-statement-proposition-data-structure.png
 
    Statement Data Structure
 
@@ -54,9 +52,9 @@ This structure allows tracking of provenance information at the level of a State
 
 Statement Semantics
 $$$$$$$$$$$$$$$$$$$
-Every Statement object in the Core-IM puts forth a **Proposition** - a possible fact it assesses or reports to be true. The semantics of this Proposition are explicitly captured using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (**SPOQ**). 
+Every Statement object puts forth a **Proposition** - a possible fact it assesses or reports to be true - the semantics of which explicitly captured in a ``Proposition`` object using ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (**SPOQ**). 
 
-An assessment of the Proposition's validity can be captured using ``direction``, ``strength``, and ``score`` attributes (**DS**)  - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting behind claim. 
+An assessment of this Proposition's validity can be captured using ``direction``, ``strength``, and ``score`` attributes (**DS**)  - which indicate whether the Proposition is reported to be true or false, and the amount of confidence or evidence supporting this claim. 
 
 This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which differ in what they say about their Proposition, and can be distinguished by how the ``direction`` and ``strength`` or ``score`` attributes are populated. 
 
@@ -66,13 +64,11 @@ This **"SPOQ-DS"** model supports two **"Modes of Use**" for Statements, which d
 
 .. core-im-statement-semantics:
 
-.. figure:: images/statement-semantics.png
+.. figure:: images/statement-proposition-semantics.png
 
   Statement Semantics in Two Modes of Use 
 
   **Legend**  Assertion Mode vs Proposition Assessment Mode semantics for a Variant Pathogenicity Statement. **Left Panels**: Abridged versions of the data models for each mode of use, showing attributes reporting central claim each puts forth (most attributes describing evidence and provenance information are omitted). **Center Panels**:  An example of a Variant Pathogenicity Statement instance. **Right Panels**: Plain language meaning of what structured data in the example reports to be true. 
-
-Note that many VA Standard Profiles, including the :ref:`Variant Pathogenicity Statement Profile<variant-pathogenicity-statement>`, contain the ``direction`` and ``strength``/``score`` attributes, and thus could be use to support either Mode of Use. 
 
 Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging ``direction`` and ``strength``/``score`` attributes only if they wish to describe the state of evidence or confidence surrounding a possible fact.
 
