@@ -10,7 +10,7 @@ Statement
 
 **DATA STRUCTURE**
 
-The Core model supports a Statement-centric approach, where each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object that roots a data structure like that in the figure below. 
+In VA Models, each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object that roots a data structure that supports rich and flexible descriptions of the evidence and provenance supporting this knowledge: 
 
 .. gks-core-statement-data-structure:
 
@@ -65,3 +65,16 @@ For a diagrammed example of each mode of use, see :ref:`here <statement-semantic
 * The Core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Proposition. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. 
 * For example, a VariantPathogenicityProposition profile may define a named ``alleleOriginQualifier`` attribute that is required, and a named ``geneContextQualifier`` attribute that is optional - both of which conceptually specialize the Core ``qualifier`` property. Under this approach, the core ``qualifier`` acts as a placeholder to seed such specializations, but is not used directly in Proposition profiles.
 * In practice, the core ``qualifier`` attribute SHOULD be conceptually extended in Proposition profiles to indicate specific types of qualifying information that is being provided (e.g.``diseaseContextQualifier``, or ``penetranceQualifier``). The ``qualifier`` attribute in the core model acts as a placeholder to seed such specializations, but it, or the ``Qualifier`` class, SHOULD NOT be used directly in a Proposition profile. 
+
+
+**4. Detailed Statement Model Data Structures**
+
+The Statement Data Structure diagram below includes all attributes available in the initial trial use release, which may be used in Statement Profiles to represent source data.
+
+.. _statement-data-structure:
+
+.. figure:: ../../../images/detailed-statement-data-structure.png
+
+   Detailed Statement Data Structure
+
+   **Legend** A view of the core data structure rooted by the Statement class, which can be leveraged in defining Statement Profiles. Note that specific subtypes of InformtionEntity are listed at the bottom of this Class, but not shown for space.  See Core Model class pages for details. 
