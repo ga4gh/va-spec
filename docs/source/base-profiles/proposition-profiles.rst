@@ -87,32 +87,38 @@ Proposition profiles defined in this way are used within the context of generic 
 
 Below are the **Base Proposition Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by Driver Project implementations. **JSON Schema** for each Profile can be found `here <https://github.com/ga4gh/va-spec/tree/mbrush-ballot-doc-proposition-updates/schema/va-spec/base/json>`_. 
 
-.. _variant-pathogenicity-proposition-profile:
+.. _variant-pathogenicity-proposition:
 
 Variant Pathogenicity Proposition
 #################################
 
 .. include::  ../def/va-spec/VariantPathogenicityProposition.rst
 
+.. _variant-oncogenicity-proposition:
+
 Variant Oncogenicity Proposition
 #################################
 
-.. include::  ../def/va-spec/VariantOncogenicityStudyProposition.rst
+.. include::  ../def/va-spec/VariantOncogenicityProposition.rst
+
+.. _variant-therapeutic-response-proposition:
 
 Variant Therapeutic Response Proposition
 ########################################
 
-.. include::  ../def/va-spec/VariantTherapeuticResponseStudyProposition.rst
+.. include::  ../def/va-spec/VariantTherapeuticResponseProposition.rst
 
-.. _variant-diagnostic-statement-profile:
+.. _variant-diagnostic-proposition:
 
 Variant Diagnostic Proposition
 ##############################
 
-.. include::  ../def/va-spec/VariantDiagnosticStudyProposition.rst
+.. include::  ../def/va-spec/VariantDiagnosticProposition.rst
+
+.. _variant-prognostic-proposition:
 
 Variant Prognostic Proposition
 ##############################
 
-.. include::  ../def/va-spec/VariantPrognosticStudyProposition.rst
+.. include::  ../def/va-spec/VariantPrognosticProposition.rst
 

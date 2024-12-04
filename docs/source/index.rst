@@ -41,7 +41,6 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    quick-start
    core-information-model/index
    base-profiles/index
-   community-profiles/index
    profiling-methodology
    modeling-foundations
    reference-implementation
