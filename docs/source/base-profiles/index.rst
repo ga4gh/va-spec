@@ -23,5 +23,5 @@ All VA Profiles are authored as yaml-based information models, from which web do
    :maxdepth: 4
    :titlesonly:
 
-   statement-profiles
+   proposition-profiles
    study-result-profiles
