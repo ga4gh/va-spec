@@ -122,3 +122,10 @@ Variant Prognostic Proposition
 
 .. include::  ../def/va-spec/VariantPrognosticProposition.rst
 
+.. _experimental-variant-functional-impact-proposition:
+
+Experimental Variant Functional Impact Proposition
+##################################################
+
+.. include::  ../def/va-spec/ExperimentalVariantFunctionalImpactProposition.rst
+ 
