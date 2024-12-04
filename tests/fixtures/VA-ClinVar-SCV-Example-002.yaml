@@ -62,8 +62,6 @@ contributions:
   date: '2019-11-26'
   activityType:
     label: evaluated
-    alternativeLabels:
-      - last evaluated
     mappings:
       - coding:
           code: cg000011
