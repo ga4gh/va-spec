@@ -1,8 +1,6 @@
 # VA-spec
 
-**Official Documentaation:** https://va-ga4gh.readthedocs.io/en/latest
-
- **VA-Spec v1 release coming in September 2024 - stay tuned!**
+**Official Documentation:** https://va-ga4gh.readthedocs.io/en/latest
 
 -----
 
