@@ -3,8 +3,28 @@
 Data Types
 !!!!!!!!!!
 
-Complex Data Types
-###################
+General Purpose Data Types
+##########################
+
+.. _Extension:
+
+Extension
+*********
+.. include::  ../def/gks-core/Extension.rst
+
+.. _MappableConcept:
+
+MappableConcept
+***************
+
+.. include::  ../def/gks-core/MappableConcept.rst
+
+.. _ConceptMapping:
+
+ConceptMapping
+**************
+
+.. include::  ../def/gks-core/ConceptMapping.rst
 
 .. _Coding:
 
@@ -13,27 +33,9 @@ Coding
 
 .. include::  ../def/gks-core/Coding.rst
 
-.. _Extension:
 
-Extension
-*********
-.. include::  ../def/gks-core/Extension.rst
-
-
-.. _RecordMetadata:
-
-RecordMetadata
-**************
-
-.. include::  ../def/va-spec/RecordMetadata.rst
-
-ConceptMapping
-**************
-
-.. include::  ../def/gks-core/ConceptMapping.rst
-
-Simple Data Types
-###################
+Primitive Data Types
+####################
 
 .. _code:
 
