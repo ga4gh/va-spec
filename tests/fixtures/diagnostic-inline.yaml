@@ -1,18 +1,18 @@
 id: civic.eid:80
 type: Statement
-description: https://civicdb.org/evidence/80/summary
-
+description: Thyroid nodule with BRAF V600E mutation is highly correlated with papillary
+  thyroid cancer.
 direction: supports
 strength:
-  id: civic.evidenceLevel:B
-  label: Clinical evidence
+  label: civic.evidence_level:B
+  conceptType: clinical cohort evidence
+  primaryCode: e000005
   mappings:
     - coding:
         code: e000005
         label: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
-
 proposition:
   type: VariantDiagnosticProposition
   predicate: isDiagnosticInclusionCriterionFor
@@ -36,11 +36,8 @@ proposition:
       - type: "DefiningAlleleConstraint"
         allele: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
     members:
-      - vrs.json#/ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
-    alternativeLabels:
-      - VAL600GLU
-      - V640E
-      - VAL640GLU
+      - vrs.json#/ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe  # NM_004333.4:c.1799T>A
+      - vrs.json#/ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R  # NC_000007.13:g.140453136A>T
     mappings:
       - coding:
           code: CA123643
@@ -63,6 +60,11 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/snp/
         relation: relatedMatch
     extensions:
+      - name: aliases
+        value:
+          - VAL600GLU
+          - V640E
+          - VAL640GLU
       - name: CIViC representative coordinate
         value:
           chromosome: '7'
@@ -84,10 +86,16 @@ proposition:
     id: civic.did:156
     conceptType: Disease
     label: Thyroid Gland Papillary Carcinoma
+    extensions:
+      - name: vicc_normalizer_data
+        value:
+          id: ncit:C4035
+          label: Thyroid Gland Papillary Carcinoma
+          mondo_id: mondo:0005075
     mappings:
       - coding:
           code: DOID:3969
-          system: https://www.disease-ontology.org/
+          system: http://purl.obolibrary.org/obo/doid.owl
         relation: exactMatch
   alleleOriginQualifier: somatic
   geneContextQualifier:
@@ -100,6 +108,10 @@ proposition:
         system: https://www.ncbi.nlm.nih.gov/gene/
       relation: exactMatch
     extensions:
+      - name: vicc_normalizer_data
+        value:
+          id: hgnc:1097
+          label: BRAF
       - name: aliases
         value:
           - B-RAF1
@@ -111,29 +123,29 @@ proposition:
           - RAFB1
       - name: description
         value: "BRAF mutations are found to be recurrent in many cancer types. Of
-        these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
-        V600E has been determined to be an activating mutation, and cells that harbor it,
-        along with other V600 mutations are sensitive to the BRAF inhibitor dabrafenib. It
-        is also common to use MEK inhibition as a substitute for BRAF inhibitors, and the
-        MEK inhibitor trametinib has seen some success in BRAF mutant melanomas. BRAF
-        mutations have also been correlated with poor prognosis in many cancer types,
-        although there is at least one study that questions this conclusion in papillary
-        thyroid cancer. Oncogenic BRAF mutations are divided into three categories that
-        determine their sensitivity to inhibitors. Class 1 BRAF mutations (V600) are
-        RAS-independent, signal as monomers and are sensitive to current RAF monomer
-        inhibitors. Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A,
-        G469V, G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
-        constitutive dimers and are resistant to vemurafenib. Such mutants may be
-        sensitive to novel RAF dimer inhibitors or MEK inhibitors. Class 3 BRAF mutations
-        (D287H, V459L, G466V, G466E, G466A, S467L, G469E, N581S, N581I, D594N, D594G,
-        D594A, D594H, F595L, G596D, and G596R) with low or absent kinase activity are
-        RAS-dependent and they activate ERK by increasing their binding to activated RAS
-        and wild-type CRAF. Class 3 BRAF mutations coexist with mutations in RAS or NF1
-        in melanoma may be treated with MEK inhibitors. In epithelial tumors such as CRC
-        or NSCLC may be effectively treated with combinations that include inhibitors of
-        receptor tyrosine kinase."
+          these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
+          V600E has been determined to be an activating mutation, and cells that harbor it,
+          along with other V600 mutations are sensitive to the BRAF inhibitor dabrafenib. It
+          is also common to use MEK inhibition as a substitute for BRAF inhibitors, and the
+          MEK inhibitor trametinib has seen some success in BRAF mutant melanomas. BRAF
+          mutations have also been correlated with poor prognosis in many cancer types,
+          although there is at least one study that questions this conclusion in papillary
+          thyroid cancer. Oncogenic BRAF mutations are divided into three categories that
+          determine their sensitivity to inhibitors. Class 1 BRAF mutations (V600) are
+          RAS-independent, signal as monomers and are sensitive to current RAF monomer
+          inhibitors. Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A,
+          G469V, G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+          constitutive dimers and are resistant to vemurafenib. Such mutants may be
+          sensitive to novel RAF dimer inhibitors or MEK inhibitors. Class 3 BRAF mutations
+          (D287H, V459L, G466V, G466E, G466A, S467L, G469E, N581S, N581I, D594N, D594G,
+          D594A, D594H, F595L, G596D, and G596R) with low or absent kinase activity are
+          RAS-dependent and they activate ERK by increasing their binding to activated RAS
+          and wild-type CRAF. Class 3 BRAF mutations coexist with mutations in RAS or NF1
+          in melanoma may be treated with MEK inhibitors. In epithelial tumors such as CRC
+          or NSCLC may be effectively treated with combinations that include inhibitors of
+          receptor tyrosine kinase."
 specifiedBy:
-  id: civic.methods:2019
+  id: civic.method:2019
   label: CIViC Curation SOP (2019)
   reportedIn:
     id: pmid:31779674
@@ -144,6 +156,8 @@ specifiedBy:
     doi: 10.1186/s13073-019-0687-x
     pmid: 31779674
   type: Method
+  subtype:
+    primaryCode: variant curation standard operating procedure
 reportedIn:
   - id: civic.source:94
     type: Document

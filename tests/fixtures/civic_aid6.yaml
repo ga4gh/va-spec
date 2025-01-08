@@ -1,0 +1,539 @@
+id: civic.aid:6
+type: Statement
+description: L858R is among the most common sensitizing EGFR mutations in NSCLC,
+  and is assessed via DNA mutational analysis, including Sanger sequencing and next
+  generation sequencing methods. Tyrosine kinase inhibitor afatinib is FDA approved
+  as a first line systemic therapy in NSCLC with sensitizing EGFR mutation
+  (civic.EID:2997).
+extensions:
+- name: evidence_ids
+  value:
+    - civic.eid:2997
+    - civic.eid:2629
+    - civic.eid:982
+    - civic.eid:968
+    - civic.eid:883
+    - civic.eid:879
+specifiedBy:
+  id: civic.method:2019
+  label: CIViC Curation SOP (2019)
+  reportedIn:
+    doi: 10.1186/s13073-019-0687-x
+    label: Danos et al., 2019, Genome Med.
+    pmid: 31779674
+    title:
+      Standard operating procedure for curation and clinical interpretation
+      of variants in cancer
+    type: Document
+  type: Method
+proposition:
+  alleleOriginQualifier:
+    label: somatic
+  conditionQualifier:
+    conceptType: Disease
+    extensions:
+      - name: vicc_normalizer_data
+        value:
+          id: ncit:C2926
+          label: Lung Non-Small Cell Carcinoma
+          mondo_id: mondo:0005233
+    id: civic.did:8
+    label: Lung Non-small Cell Carcinoma
+    mappings:
+      - coding:
+          code: DOID:3908
+          system: http://purl.obolibrary.org/obo/doid.owl
+        relation: exactMatch
+  geneContextQualifier:
+    conceptType: Gene
+    extensions:
+      - name: vicc_normalizer_data
+        value:
+          id: hgnc:3236
+          label: EGFR
+      - name: aliases
+        value:
+          - EGFR
+          - ERBB
+          - ERBB1
+          - ERRP
+          - HER1
+          - NISBD2
+          - PIG61
+          - mENA
+      - name: description
+        value:
+          EGFR is widely recognized for its importance in cancer. Amplification
+          and mutations have been shown to be driving events in many cancer types.
+          Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+          cancers has spurred many research and drug development efforts. Tyrosine
+          kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+          gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+          to these drugs, particularly the variant T790M, which has been functionally
+          characterized as a resistance marker for both of these drugs. The later
+          generation TKI's have seen some success in treating these resistant cases,
+          and targeted sequencing of the EGFR locus has become a common practice in
+          treatment of non-small cell lung cancer. Overproduction of ligands is another
+          possible mechanism of activation of EGFR. ERBB ligands include EGF, TGF-a,
+          AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information please
+          refer to the respective ligand section).
+    id: civic.gid:19
+    label: EGFR
+    mappings:
+      - coding:
+          code: ncbigene:1956
+          system: https://www.ncbi.nlm.nih.gov/gene/
+        relation: exactMatch
+  objectTherapeutic:
+    conceptType: Therapy
+    extensions:
+      - name: vicc_normalizer_data
+        value:
+          id: rxcui:1430438
+          label: afatinib
+      - name: regulatory_approval
+        value:
+          approval_rating: FDA
+          has_indications:
+            - conceptType: Disease
+              id: hemonc:642
+              label: Non-small cell lung cancer
+              mappings:
+                - coding:
+                    code: ncit:C2926
+                    system: http://purl.obolibrary.org/obo/ncit.owl
+                  relation: relatedMatch
+            - conceptType: Disease
+              id: hemonc:25316
+              label: Non-small cell lung cancer squamous
+      - name: aliases
+        value:
+          - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+          - BIBW 2992
+          - BIBW2992
+          - BIBW-2992
+    id: civic.tid:146
+    label: Afatinib
+    mappings:
+      - coding:
+          code: ncit:C66940
+          system: http://purl.obolibrary.org/obo/ncit.owl
+        relation: exactMatch
+  predicate: predictsSensitivityTo
+  subjectVariant:
+    constraints:
+      - allele:
+          digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+          expressions:
+            - syntax: hgvs.p
+              value: NP_005219.2:p.Leu858Arg
+          id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+          label: L858R
+          location:
+            digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+            end: 858
+            id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+            sequence: L
+            sequenceReference:
+              refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+              type: SequenceReference
+            start: 857
+            type: SequenceLocation
+          state:
+            sequence: R
+            type: LiteralSequenceExpression
+          type: Allele
+        type: DefiningAlleleConstraint
+    description:
+      EGFR L858R has long been recognized as a functionally significant
+      mutation in cancer, and is one of the most prevalent single mutations in lung
+      cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+      seems to confer sensitivity to first and second generation TKI's like gefitinib
+      and neratinib. NSCLC patients with this mutation treated with TKI's show increased
+      overall and progression-free survival, as compared to chemotherapy alone.
+      Third generation TKI's are currently in clinical trials that specifically
+      focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+      patients that failed to respond to earlier generation TKI therapies.
+    extensions:
+      - name: aliases
+        value:
+          - LEU858ARG
+          - LEU813ARG
+          - L813R
+      - name: CIViC Molecular Profile Score
+        value: 379.0
+      - name: CIViC representative coordinate
+        value:
+          chromosome: "7"
+          ensembl_version: 75
+          reference_bases: T
+          reference_build: GRCh37
+          representative_transcript: ENST00000275493.2
+          start: 55259515
+          stop: 55259515
+          type: coordinates
+          variant_bases: G
+      - name: Variant types
+        value:
+          - code: SO:0001583
+            label: missense_variant
+            system: http://www.sequenceontology.org/browser/current_svn/term/
+    id: civic.mpid:33
+    label: EGFR L858R
+    mappings:
+      - coding:
+          code: "33"
+          system: https://civicdb.org/variants/
+        relation: exactMatch
+      - coding:
+          code: CA126713
+          system: https://reg.clinicalgenome.org/
+        relation: relatedMatch
+      - coding:
+          code: "16609"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          code: "376282"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          code: "376280"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          code: rs121434568
+          system: https://www.ncbi.nlm.nih.gov/snp/
+        relation: relatedMatch
+    members:
+      - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+        expressions:
+          - syntax: hgvs.g
+            value: NC_000007.13:g.55259515T>G
+        extensions:
+          - name: mane_genes
+            value:
+              - hgnc_id: 3236
+                ncbi_gene_id: 1956
+                symbol: EGFR
+        id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+        label: NC_000007.13:g.55259515T>G
+        location:
+          digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+          end: 55191822
+          id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+          sequence: T
+          sequenceReference:
+            refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+            type: SequenceReference
+          start: 55191821
+          type: SequenceLocation
+        state:
+          sequence: G
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+        expressions:
+          - syntax: hgvs.c
+            value: NM_005228.4:c.2573T>G
+        id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+        label: NM_005228.4:c.2573T>G
+        location:
+          digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+          end: 2834
+          id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+          sequence: T
+          sequenceReference:
+            refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+            type: SequenceReference
+          start: 2833
+          type: SequenceLocation
+        state:
+          sequence: G
+          type: LiteralSequenceExpression
+        type: Allele
+    type: CategoricalVariant
+  type: VariantTherapeuticResponseProposition
+direction: supports
+classification:
+  conceptType: Guideline
+  mappings:
+  - coding:
+      code: IA
+      system: AMP/ASCO/CAP
+      systemVersion: "2017"
+    relation: exactMatch
+  primaryCode: IA
+hasEvidenceLines:
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          Afatinib, an irreversible inhibitor of the ErbB family of tyrosine
+          kinases has been approved in the US for the first-line treatment of patients
+          with metastatic non-small-cell lung cancer (NSCLC) who have tumours with EGFR
+          exon 19 deletions or exon 21 (L858R) substitution mutations as detected by
+          a US FDA-approved test
+        direction: supports
+        id: civic.eid:2997
+        proposition:
+          alleleOriginQualifier:
+            label: somatic
+          conditionQualifier:
+            conceptType: Disease
+            extensions:
+              - name: vicc_normalizer_data
+                value:
+                  id: ncit:C2926
+                  label: Lung Non-Small Cell Carcinoma
+                  mondo_id: mondo:0005233
+            id: civic.did:8
+            label: Lung Non-small Cell Carcinoma
+            mappings:
+              - coding:
+                  code: DOID:3908
+                  system: http://purl.obolibrary.org/obo/doid.owl
+                relation: exactMatch
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: vicc_normalizer_data
+                value:
+                  id: hgnc:3236
+                  label: EGFR
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like
+                  breast cancers has spurred many research and drug development efforts.
+                  Tyrosine kinase inhibitors have shown efficacy in EGFR amplfied tumors,
+                  most notably gefitinib and erlotinib. Mutations in EGFR have been shown
+                  to confer resistance to these drugs, particularly the variant T790M,
+                  which has been functionally characterized as a resistance marker for
+                  both of these drugs. The later generation TKI's have seen some success
+                  in treating these resistant cases, and targeted sequencing of the EGFR
+                  locus has become a common practice in treatment of non-small cell lung
+                  cancer. Overproduction of ligands is another possible mechanism of activation
+                  of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR
+                  and NRG1-4 (for detailed information please refer to the respective
+                  ligand section).
+            id: civic.gid:19
+            label: EGFR
+            mappings:
+              - coding:
+                  code: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: vicc_normalizer_data
+                value:
+                  id: rxcui:1430438
+                  label: afatinib
+              - name: regulatory_approval
+                value:
+                  approval_rating: FDA
+                  has_indications:
+                    - conceptType: Disease
+                      id: hemonc:642
+                      label: Non-small cell lung cancer
+                      mappings:
+                        - coding:
+                            code: ncit:C2926
+                            system: http://purl.obolibrary.org/obo/ncit.owl
+                          relation: relatedMatch
+                    - conceptType: Disease
+                      id: hemonc:25316
+                      label: Non-small cell lung cancer squamous
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW2992
+                  - BIBW-2992
+            id: civic.tid:146
+            label: Afatinib
+            mappings:
+              - coding:
+                  code: ncit:C66940
+                  system: http://purl.obolibrary.org/obo/ncit.owl
+                relation: exactMatch
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  label: L858R
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations
+              in lung cancer. Best described in non-small cell lung cancer (NSCLC),
+              the mutation seems to confer sensitivity to first and second generation
+              TKI's like gefitinib and neratinib. NSCLC patients with this mutation
+              treated with TKI's show increased overall and progression-free survival,
+              as compared to chemotherapy alone. Third generation TKI's are currently
+              in clinical trials that specifically focus on mutant forms of EGFR, a
+              few of which have shown efficacy in treating patients that failed to respond
+              to earlier generation TKI therapies.
+            extensions:
+              - name: aliases
+                value:
+                  - LEU858ARG
+                  - LEU813ARG
+                  - L813R
+              - name: CIViC Molecular Profile Score
+                value: 379.0
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: Variant types
+                value:
+                  - code: SO:0001583
+                    label: missense_variant
+                    system: http://www.sequenceontology.org/browser/current_svn/term/
+            id: civic.mpid:33
+            label: EGFR L858R
+            mappings:
+              - coding:
+                  code: "33"
+                  system: https://civicdb.org/variants/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  system: https://reg.clinicalgenome.org/
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                extensions:
+                  - name: mane_genes
+                    value:
+                      - hgnc_id: 3236
+                        ncbi_gene_id: 1956
+                        symbol: EGFR
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                label: NC_000007.13:g.55259515T>G
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                label: NM_005228.4:c.2573T>G
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.source:1725
+            label: Dungo et al., 2013
+            pmid: 23982599
+            title: "Afatinib: first global approval."
+            type: Document
+        specifiedBy:
+          id: civic.method:2019
+          label: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            label: Danos et al., 2019, Genome Med.
+            pmid: 31779674
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          subtype:
+            primaryCode: variant curation standard operating procedure
+          type: Method
+        strength:
+          label: civic.evidence_level:A
+          conceptType: authoritative evidence
+          primaryCode: e000001
+          mappings:
+            - coding:
+                code: e000001
+                label: authoritative evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+    type: EvidenceLine

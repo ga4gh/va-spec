@@ -61,7 +61,7 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
@@ -86,4 +86,4 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - 
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions. 
+      - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions.

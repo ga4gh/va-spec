@@ -38,7 +38,7 @@ $defs:
         $comment: >-
           Examples: a specific experimental protocol or data analysis specification
           that describes how data were generated; an evidence interpretation guideline that
-          describes steps taken to interpret data in making a variant pathogenicity classification; a 
+          describes steps taken to interpret data in making a variant pathogenicity classification; a
           method for using electron microscopy to image cell membrane proteins.
           Note that this attribute captures a specific *instance* of a specification or method (e.g. the specific
           electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting
@@ -99,8 +99,8 @@ $defs:
       StudyResults provide a useful way to capture a subset of items from a study dataset that
       are used as evidence in generating higher order knowledge assertions about the entity that
       is the focus of the study result. For example, a set of allele frequency data items
-      about a particular variant of interest selected from the complete gnomAD dataset can be reported 
-      in a StudyResult object, along with relevant provenance information, so they can be referenced 
+      about a particular variant of interest selected from the complete gnomAD dataset can be reported
+      in a StudyResult object, along with relevant provenance information, so they can be referenced
       together as evidence for a higher-order assertion about the variant's pathogenicity.
     $comment: >-
       Note that a 'dataItem' attribute, which would hold an array of data selected for inclusion in the
@@ -108,7 +108,7 @@ $defs:
       class can define data type specific attributes to capture such information (e.g.'focusAlleleCount',
       'focusAlleleFrequency', and 'locuslAlleleCount' attributes in a CohortAlleleFrequencyStudyResult profile).
       But technical limitations in our current profiling framework tooling forced us to omit a core 'dataItems
-      attribute that these specialized attributes would conceptually extend. 
+      attribute that these specialized attributes would conceptually extend.
     heritableProperties:
       focus:
         oneOf:
@@ -158,7 +158,7 @@ $defs:
         - type: object
         description: The Entity or concept about which the Proposition is made.
         $comment: >-
-          In profiles for most VA-Spec implementations, the subject will be a some type of genetic 
+          In profiles for most VA-Spec implementations, the subject will be a some type of genetic
           variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of
           Entity. Some data providers may want to make statements about other entities or concepts that
           represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some
@@ -176,7 +176,7 @@ $defs:
         $comment: >-
           The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a
           genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene.
-          
+
       #  Note that the `qualifier` property below is a *placeholder* that should not be inherited or used
       #  directly in derived Statement profiles. This attribute is meant to be specialized into more specific properties
       #  that are defined to capture a specific kind of qualifying information relevant to a particular
@@ -200,11 +200,11 @@ $defs:
       #         Statement - e.g. for a Statement triple asserting that a 'Variant X'- causes - 'Phenotype Y', a qualifier can
       #         be used to add frequency/penetrance information that quantifies the percentage of carriers in which the phenotype
       #         is observed to manifest. Statement profiles may define more than one qualifier, as needed to capture different
-      #         types of qualifying information.       
+      #         types of qualifying information.
     heritableRequired:
       - subject
       - predicate
-      - object        
+      - object
 
   SubjectVariantProposition:
     inherits: Proposition
@@ -388,22 +388,22 @@ $defs:
       of the level of confidence or evidence supporting a particular Proposition.
     $comment: >-
       Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Organization of
-      assertions into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each. 
+      assertions into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
       Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of
       this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
       Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of
       the Proposition’s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).
-      
+
     $comment: >-
       The model supports two "modes of use" for Statements, which differ in what they say about their SPOQ Proposition, and
       can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.
-      
+
       In “Assertion Mode”, a Statement simply reports an SPOQ proposition to be true or false (e.g. that “BRCA2 c.8023A>G is pathogenic
       for Breast Cancer”). The 'strength' and 'score' attributes are not populated, and 'direction' is assumed true/supports if not otherwise
       indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or
       evidence level assessments.
-      
-      In “Proposition Assessment Mode”, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition - 
+
+      In “Proposition Assessment Mode”, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition -
       which is not necessarily being asserted as true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements
       to report things like “there is weak evidence supporting the proposition that ‘BRCA2 c.8023A>G is causal for Breast Cancer’”, or “we have
       high confidence that the proposition ‘PAH:c.1285C>A is causal for Phenylketonuria is false”). This mode is used in projects to track the
@@ -419,13 +419,13 @@ $defs:
         $ref: "#/$defs/Proposition"
         description:  >-
           A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being
-          true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim. 
+          true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
         $comment: >-
           Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of
           this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
-          Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An 
+          Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An
           assessment of the Proposition’s validity can optionally be captured using the Statement's direction, strength, and/or
-          score attributes (DS).        
+          score attributes (DS).
       direction:
         description: >-
           A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the
@@ -453,9 +453,9 @@ $defs:
           an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated
           evidence) using 'direction', 'strength', and 'score' attributes. The 'strength' attribute is used to report
           the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence*
-          that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. 
+          that the Proposition is true or false, or as a *level of evidence* that supports or disputes it.
           Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets
-          is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - 
+          is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') -
           or they can choose values that don't commit to one or the other if they don't want to make the distinction
           (e.g. 'high' vs 'medium' vs 'low').
         $refCurie: gks.core:MappableConcept
@@ -468,7 +468,7 @@ $defs:
           (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation,
           a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of
           evidence* they believe supports or disputes it. Instructions for how to interpret the menaing of a given score
-          may be gleaned from the method or document referenced in 'specifiedBy' attribute. 
+          may be gleaned from the method or document referenced in 'specifiedBy' attribute.
         $comment: >-
           The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
           on a numerical score.
@@ -544,7 +544,7 @@ $defs:
         extends: type
         const: EvidenceLine
         default: EvidenceLine
-        description: MUST be "EvidenceLine".    
+        description: MUST be "EvidenceLine".
       targetProposition:
         $ref: "#/$defs/Proposition"
         description: >-
@@ -557,7 +557,6 @@ $defs:
         ordered: false
         items:
           anyOf:
-            - $ref: "#/$defs/StudyResult"
             - $ref: "#/$defs/Statement"
             - $ref: "#/$defs/EvidenceLine"
             - $refCurie: gks.core:iriReference
@@ -707,7 +706,7 @@ $defs:
     heritableProperties:
       geneContextQualifier:
         description: >-
-          Reports a gene impacted by the variant, which may contribute to the association 
+          Reports a gene impacted by the variant, which may contribute to the association
           described in the Proposition.
         oneOf:
           - $refCurie: gks.core:MappableConcept
@@ -734,23 +733,23 @@ $defs:
         const: "ExperimentalVariantFunctionalImpactProposition"
         default: "ExperimentalVariantFunctionalImpactProposition"
         description: MUST be "ExperimentalVariantFunctionalImpactProposition".
-      predicate:  
+      predicate:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
           and object sequence feature whose function it may alter.
-        default: impactsFunctionOf                
+        default: impactsFunctionOf
       objectSequenceFeature:
         extends: object
         oneOf:
           - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept      
+          - $refCurie: gks.core:MappableConcept
         description: >-
-          The sequence feature (typically a gene or gene product) on whose function the impact 
+          The sequence feature (typically a gene or gene product) on whose function the impact
           of the subject variant is reported.
       experimentalContextQualifier:
         description: >-
-          An assay in which the reported variant functional impact was determined - 
+          An assay in which the reported variant functional impact was determined -
           providing a specific experimental context in which this effect is asserted to hold.
         anyOf:
           - $refCurie: gks.core:iriReference
@@ -758,7 +757,7 @@ $defs:
           - type: object
             additionalProperties: true
             $comment: >-
-              It is expected that non-Document objects will conform to externally-maintained 
+              It is expected that non-Document objects will conform to externally-maintained
               community schemas for representing experimental context data.
     required:
       - predicate
@@ -847,7 +846,7 @@ $defs:
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
-          proportion of carriers exhibiting the condition. 
+          proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-
@@ -919,7 +918,7 @@ $defs:
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in
-          therapeutic response propositions. 
+          therapeutic response propositions.
     required:
     - predicate
     - objectTherapeutic

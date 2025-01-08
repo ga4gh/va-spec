@@ -6,13 +6,13 @@
    "description": "An Evidence Line that describes how information about the functional impact of a variant on a gene or  gene product was interpreted as evidence for or against the variant's pathogenicity. ",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/EvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "description": "A Variant Pathogenicity Proposition against which functional impact information was assessed, in determining the strength and direction of support this information provides as evidence.",
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/VariantPathogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
                "description": "The strength of support that an Evidence Line is determined to provide for or against the proposition or the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.     *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",

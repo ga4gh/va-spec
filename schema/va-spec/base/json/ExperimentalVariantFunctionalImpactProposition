@@ -49,7 +49,7 @@
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
-         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic  variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "type": {
          "type": "string",
@@ -73,11 +73,11 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
             }
          ],
-         "description": "The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is reported.",
+         "description": "The sequence feature (typically a gene or gene product) on whose function the impact of the subject variant is reported.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       },
       "experimentalContextQualifier": {
-         "description": "An assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.",
+         "description": "An assay in which the reported variant functional impact was determined - providing a specific experimental context in which this effect is asserted to hold.",
          "anyOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
@@ -88,7 +88,7 @@
             {
                "type": "object",
                "additionalProperties": true,
-               "$comment": "It is expected that non-Document objects will conform to externally-maintained  community schemas for representing experimental context data."
+               "$comment": "It is expected that non-Document objects will conform to externally-maintained community schemas for representing experimental context data."
             }
          ]
       }

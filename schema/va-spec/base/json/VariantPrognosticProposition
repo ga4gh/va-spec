@@ -49,10 +49,10 @@
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
-         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic  variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"

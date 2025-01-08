@@ -82,7 +82,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
       - 
       - :ref:`Proposition`
       - 1..1
-      - A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim. 
+      - A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
    *  - direction
       - 
       - string
@@ -100,7 +100,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - number
       - 0..1
-      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the menaing of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute. 
+      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the menaing of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
    *  - classification
       - 
       - :ref:`MappableConcept`

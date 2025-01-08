@@ -88,7 +88,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`StudyResult` | :ref:`Statement` | :ref:`EvidenceLine` | :ref:`iriReference`
+      - :ref:`Statement` | :ref:`EvidenceLine` | :ref:`iriReference`
       - 0..m
       - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
    *  - directionOfEvidenceProvided
