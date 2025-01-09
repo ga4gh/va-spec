@@ -11,15 +11,15 @@ subjectVariant:
           sequenceReference:
             refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
             type: SequenceReference
-          start: 10
-          end: 11
-          sequence: R
+          start: 66
+          end: 67
+          sequence: I
         state:
           type: LiteralSequenceExpression
-          sequence: T
+          sequence: K
         expressions:
           - syntax: hgvs.p
-            value: NP_000305.3:p.Arg11Thr
+            value: NP_000305.3:p.Ile67Lys
       relations:
         - primaryCode: translates_from
 predicate: impactsFunctionOf
