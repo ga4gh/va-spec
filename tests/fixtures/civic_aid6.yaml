@@ -280,12 +280,6 @@ hasEvidenceLines:
             label: somatic
           conditionQualifier:
             conceptType: Disease
-            extensions:
-              - name: vicc_normalizer_data
-                value:
-                  id: ncit:C2926
-                  label: Lung Non-Small Cell Carcinoma
-                  mondo_id: mondo:0005233
             id: civic.did:8
             label: Lung Non-small Cell Carcinoma
             mappings:
@@ -293,6 +287,21 @@ hasEvidenceLines:
                   code: DOID:3908
                   system: http://purl.obolibrary.org/obo/doid.owl
                 relation: exactMatch
+              - coding:
+                  code: ncit:C2926
+                  system: http://purl.obolibrary.org/obo/ncit.owl
+                  label: Lung Non-Small Cell Carcinoma
+                relation: exactMatch
+                extensions:
+                  - name: from_vicc_normalizer
+                    value: True
+              - coding:
+                  code: mondo:0005233
+                  system: http://purl.obolibrary.org/obo/mondo.owl
+                relation: exactMatch
+                extensions:
+                  - name: from_vicc_normalizer
+                    value: True
           geneContextQualifier:
             conceptType: Gene
             extensions:
