@@ -551,7 +551,7 @@ hasEvidenceLines:
           type: Method
         strength:
           label: civic.evidence_level:A
-          conceptType: authoritative evidence
+          conceptType: Evidence Strength
           primaryCode: e000001
           mappings:
             - coding:
