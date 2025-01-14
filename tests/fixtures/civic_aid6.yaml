@@ -5,15 +5,6 @@ description: L858R is among the most common sensitizing EGFR mutations in NSCLC,
   generation sequencing methods. Tyrosine kinase inhibitor afatinib is FDA approved
   as a first line systemic therapy in NSCLC with sensitizing EGFR mutation
   (civic.EID:2997).
-extensions:
-- name: evidence_ids
-  value:
-    - civic.eid:2997
-    - civic.eid:2629
-    - civic.eid:982
-    - civic.eid:968
-    - civic.eid:883
-    - civic.eid:879
 specifiedBy:
   id: civic.method:2019
   label: CIViC Curation SOP (2019)
@@ -568,5 +559,85 @@ hasEvidenceLines:
                 label: authoritative evidence
                 system: https://go.osu.edu/evidence-codes
               relation: exactMatch
+        type: Statement
+    type: EvidenceLine
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          "In an in vitro study using NCI-H1666 cells (wildtype EGFR) and NCI-H3255 cells (EGFR-L858R), inhibition of cell growth was used as an assay to determine sensitivity to irreversible tyrosine kinase inhibitor (TKI) drugs. Cells with an EGFR L858R mutation demonstrated an improved response to afatinib (IC50: 0.7nM vs. 60nM) compared to wildtype EGFR cells."
+        direction: supports
+        id: civic.eid:2629
+        proposition:
+          alleleOriginQualifier:
+            label: somatic
+          conditionQualifier: conditions.json#/civic.did:8
+          objectTherapeutic: therapies.json#/civic.tid:146
+          subjectVariant: variants.json#/civic.mpid:33
+          predicate: predictsSensitivityTo
+          type: VariantTherapeuticResponseProposition
+        type: Statement
+    type: EvidenceLine
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          "Afatinib is an irreversible covalent inhibitor of EGFR (second generation). This Phase III clinical trial (LUX-Lung 6; NCT01121393) was performed in Asian patients with EGFR mutant advanced NSCLC. 364 eligible patients with EGFR mutations were assigned to afatinib (n=242) or gemcitabine and cisplatin (n=122) treatment. The trial observed significantly longer median progression-free survival with afatinib vs. gemcitabine and cisplatin treatment (11.0 vs. 5.6 months). Afatinib/Chemotherapy group compositions: 51.2/50.8 % del 19; 38/37.7 % Leu858Arg; 10.8/11.5 % Uncommon."
+        direction: supports
+        id: civic.eid:982
+        proposition:
+          alleleOriginQualifier:
+            label: somatic
+          conditionQualifier: conditions.json#/civic.did:30
+          objectTherapeutic: therapies.json#/civic.tid:146
+          subjectVariant: variants.json#/civic.mpid:33
+          predicate: predictsSensitivityTo
+          type: VariantTherapeuticResponseProposition
+        type: Statement
+    type: EvidenceLine
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          Cells harboring L858R were sensitive to afatinib. This study performed drug response assays using five human NSCLC cell lines with various combinations of EGFR mutations. In order to directly compare the sensitivity of multiple EGFR mutations to EGFR-TKIs the authors also generated multiple EGFR transduced Ba/F3 stable cell lines and evaluated sensitivity to EGFR-TKIs by MTS assay.
+        direction: supports
+        id: civic.eid:968
+        proposition:
+          alleleOriginQualifier:
+            label: somatic
+          conditionQualifier: conditions.json#/civic.did:8
+          objectTherapeutic: therapies.json#/civic.tid:146
+          subjectVariant: variants.json#/civic.mpid:33
+          predicate: predictsSensitivityTo
+          type: VariantTherapeuticResponseProposition
+        type: Statement
+    type: EvidenceLine
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          In a phase 2 study of patients with lung adenocarcinoma (stage IIIb with pleural effusion or stage IV) and EGFR mutations, treated with afatinib were assessed by objective response. 129 patients were treated with afatinib. 66% of the 106 patients with two common activating EGFR mutations (deletion 19 or L858R) had an objective response compared to 39% of 23 patients with less common mutations.
+        direction: supports
+        id: civic.eid:883
+        proposition:
+          alleleOriginQualifier:
+            label: somatic
+          conditionQualifier: conditions.json#/civic.did:30
+          objectTherapeutic: therapies.json#/civic.tid:146
+          subjectVariant: variants.json#/civic.mpid:33
+          predicate: predictsSensitivityTo
+          type: VariantTherapeuticResponseProposition
+        type: Statement
+    type: EvidenceLine
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          A phase III clinical trial (NCT00949650) found that median progression free survival among patients with exon 19 deletions or L858R EGFR mutations (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR, 0.47; 95% CI, 0.34 to 0.65; P = 0.001).
+        direction: supports
+        id: civic.eid:879
+        proposition:
+          alleleOriginQualifier:
+            label: somatic
+          conditionQualifier: conditions.json#/civic.did:30
+          objectTherapeutic: therapies.json#/civic.tid:146
+          subjectVariant: variants.json#/civic.mpid:33
+          predicate: predictsSensitivityTo
+          type: VariantTherapeuticResponseProposition
         type: Statement
     type: EvidenceLine
