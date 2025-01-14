@@ -31,12 +31,6 @@ proposition:
     label: somatic
   conditionQualifier:
     conceptType: Disease
-    extensions:
-      - name: vicc_normalizer_data
-        value:
-          id: ncit:C2926
-          label: Lung Non-Small Cell Carcinoma
-          mondo_id: mondo:0005233
     id: civic.did:8
     label: Lung Non-small Cell Carcinoma
     mappings:
@@ -44,13 +38,24 @@ proposition:
           code: DOID:3908
           system: http://purl.obolibrary.org/obo/doid.owl
         relation: exactMatch
+      - coding:
+          label: Lung Non-Small Cell Carcinoma
+          code: ncit:C2926
+          system: http://purl.obolibrary.org/obo/ncit.owl
+        relation: exactMatch
+        extensions:
+          - name: from_vicc_normalizer
+            value: True
+      - coding:
+          code: mondo:0005233
+          system: http://purl.obolibrary.org/obo/mondo.owl
+        relation: exactMatch
+        extensions:
+          - name: from_vicc_normalizer
+            value: True
   geneContextQualifier:
     conceptType: Gene
     extensions:
-      - name: vicc_normalizer_data
-        value:
-          id: hgnc:3236
-          label: EGFR
       - name: aliases
         value:
           - EGFR
@@ -81,16 +86,20 @@ proposition:
     label: EGFR
     mappings:
       - coding:
+          label: EGFR
+          code: hgnc:3236
+          system:	https://www.genenames.org
+        relation: exactMatch
+        extensions:
+          - name: from_vicc_normalizer
+            value: True
+      - coding:
           code: ncbigene:1956
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
   objectTherapeutic:
     conceptType: Therapy
     extensions:
-      - name: vicc_normalizer_data
-        value:
-          id: rxcui:1430438
-          label: afatinib
       - name: regulatory_approval
         value:
           approval_rating: FDA
@@ -115,6 +124,13 @@ proposition:
     id: civic.tid:146
     label: Afatinib
     mappings:
+      - coding:
+          label: afatinib
+          code: rxcui:1430438
+          system: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
+        extensions:
+          - name: from_vicc_normalizer
+            value: True
       - coding:
           code: ncit:C66940
           system: http://purl.obolibrary.org/obo/ncit.owl
@@ -305,10 +321,6 @@ hasEvidenceLines:
           geneContextQualifier:
             conceptType: Gene
             extensions:
-              - name: vicc_normalizer_data
-                value:
-                  id: hgnc:3236
-                  label: EGFR
               - name: aliases
                 value:
                   - EGFR
@@ -340,16 +352,20 @@ hasEvidenceLines:
             label: EGFR
             mappings:
               - coding:
+                  label: EGFR
+                  code: hgnc:3236
+                  system:	https://www.genenames.org
+                relation: exactMatch
+                extensions:
+                  - name: from_vicc_normalizer
+                    value: True
+              - coding:
                   code: ncbigene:1956
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
           objectTherapeutic:
             conceptType: Therapy
             extensions:
-              - name: vicc_normalizer_data
-                value:
-                  id: rxcui:1430438
-                  label: afatinib
               - name: regulatory_approval
                 value:
                   approval_rating: FDA
@@ -374,6 +390,13 @@ hasEvidenceLines:
             id: civic.tid:146
             label: Afatinib
             mappings:
+              - coding:
+                  label: afatinib
+                  code: rxcui:1430438
+                  system: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
+                extensions:
+                  - name: from_vicc_normalizer
+                    value: True
               - coding:
                   code: ncit:C66940
                   system: http://purl.obolibrary.org/obo/ncit.owl
