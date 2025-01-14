@@ -6,6 +6,9 @@ tests:
   - test_file: allele2.yaml
     namespace: vrs
     definition: Allele
+  - test_file: civic_fusion.yaml
+    namespace: cat-vrs
+    definition: CategoricalVariant
 
   # test core data types from VA
   - test_file: gnomad-dataset.yaml
