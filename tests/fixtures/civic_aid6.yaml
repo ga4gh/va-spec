@@ -21,8 +21,7 @@ specifiedBy:
     doi: 10.1186/s13073-019-0687-x
     label: Danos et al., 2019, Genome Med.
     pmid: 31779674
-    title:
-      Standard operating procedure for curation and clinical interpretation
+    title: Standard operating procedure for curation and clinical interpretation
       of variants in cancer
     type: Document
   type: Method
@@ -88,7 +87,7 @@ proposition:
       - coding:
           label: EGFR
           code: hgnc:3236
-          system:	https://www.genenames.org
+          system: https://www.genenames.org
         relation: exactMatch
         extensions:
           - name: from_vicc_normalizer
@@ -274,11 +273,11 @@ direction: supports
 classification:
   conceptType: Guideline
   mappings:
-  - coding:
-      code: IA
-      system: AMP/ASCO/CAP
-      systemVersion: "2017"
-    relation: exactMatch
+    - coding:
+        code: IA
+        system: AMP/ASCO/CAP
+        systemVersion: "2017"
+      relation: exactMatch
   primaryCode: IA
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
@@ -354,7 +353,7 @@ hasEvidenceLines:
               - coding:
                   label: EGFR
                   code: hgnc:3236
-                  system:	https://www.genenames.org
+                  system: https://www.genenames.org
                 relation: exactMatch
                 extensions:
                   - name: from_vicc_normalizer
