@@ -127,6 +127,7 @@ proposition:
           label: afatinib
           code: rxcui:1430438
           system: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
+        relation: exactMatch
         extensions:
           - name: from_vicc_normalizer
             value: True
@@ -393,6 +394,7 @@ hasEvidenceLines:
                   label: afatinib
                   code: rxcui:1430438
                   system: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
+                relation: exactMatch
                 extensions:
                   - name: from_vicc_normalizer
                     value: True
