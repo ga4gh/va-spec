@@ -4,3 +4,5 @@ label: BCR::ABL1 Fusion AND ABL1 T315I
 extensions:
   - name: CIViC Molecular Profile Score
     value: 149.0
+  - name: vicc_normalizer_failure
+    value: True
