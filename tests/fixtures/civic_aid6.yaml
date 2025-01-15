@@ -271,13 +271,10 @@ proposition:
   type: VariantTherapeuticResponseProposition
 direction: supports
 classification:
-  mappings:
-    - coding:
-        code: Tier I
-        system: https://doi.org/10.1016/j.jmoldx.2016.10.002
-        systemVersion: "2017"
-      relation: exactMatch
-  primaryCode: TIER_I_LEVEL_A
+  primaryCode: Tier I
+  extensions: 
+    - name: civic_code
+      value: TIER_I_LEVEL_A
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     hasEvidenceItems:
