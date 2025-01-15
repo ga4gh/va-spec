@@ -38,7 +38,7 @@ proposition:
           - name: from_vicc_normalizer
             value: True
       - coding:
-          code: mondo:0005233
+          code: MONDO:0005233
           system: http://purl.obolibrary.org/obo/mondo.owl
         relation: exactMatch
         extensions:
@@ -78,14 +78,14 @@ proposition:
     mappings:
       - coding:
           label: EGFR
-          code: hgnc:3236
+          code: HGNC:3236
           system: https://www.genenames.org
         relation: exactMatch
         extensions:
           - name: from_vicc_normalizer
             value: True
       - coding:
-          code: ncbigene:1956
+          code: "1956"
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
   objectTherapeutic:
@@ -117,14 +117,14 @@ proposition:
     mappings:
       - coding:
           label: afatinib
-          code: rxcui:1430438
+          code: "1430438"
           system: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
         relation: exactMatch
         extensions:
           - name: from_vicc_normalizer
             value: True
       - coding:
-          code: ncit:C66940
+          code: C66940
           system: http://purl.obolibrary.org/obo/ncit.owl
         relation: exactMatch
   predicate: predictsSensitivityTo
@@ -152,7 +152,7 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         type: DefiningAlleleConstraint
-        relations: 
+        relations:
           - primaryCode: translates_from
     description:
       EGFR L858R has long been recognized as a functionally significant
@@ -272,7 +272,7 @@ proposition:
 direction: supports
 classification:
   primaryCode: Tier I
-  extensions: 
+  extensions:
     - name: civic_code
       value: TIER_I_LEVEL_A
 hasEvidenceLines:
@@ -300,7 +300,7 @@ hasEvidenceLines:
                   system: http://purl.obolibrary.org/obo/doid.owl
                 relation: exactMatch
               - coding:
-                  code: ncit:C2926
+                  code: C2926
                   system: http://purl.obolibrary.org/obo/ncit.owl
                   label: Lung Non-Small Cell Carcinoma
                 relation: exactMatch
@@ -308,7 +308,7 @@ hasEvidenceLines:
                   - name: from_vicc_normalizer
                     value: True
               - coding:
-                  code: mondo:0005233
+                  code: MONDO:0005233
                   system: http://purl.obolibrary.org/obo/mondo.owl
                 relation: exactMatch
                 extensions:
@@ -349,14 +349,14 @@ hasEvidenceLines:
             mappings:
               - coding:
                   label: EGFR
-                  code: hgnc:3236
+                  code: HGNC:3236
                   system: https://www.genenames.org
                 relation: exactMatch
                 extensions:
                   - name: from_vicc_normalizer
                     value: True
               - coding:
-                  code: ncbigene:1956
+                  code: "1956"
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
           objectTherapeutic:
@@ -371,7 +371,7 @@ hasEvidenceLines:
                       label: Non-small cell lung cancer
                       mappings:
                         - coding:
-                            code: ncit:C2926
+                            code: C2926
                             system: http://purl.obolibrary.org/obo/ncit.owl
                           relation: relatedMatch
                     - conceptType: Disease
@@ -388,14 +388,14 @@ hasEvidenceLines:
             mappings:
               - coding:
                   label: afatinib
-                  code: rxcui:1430438
+                  code: "1430438"
                   system: https://www.nlm.nih.gov/research/umls/rxnorm/index.html
                 relation: exactMatch
                 extensions:
                   - name: from_vicc_normalizer
                     value: True
               - coding:
-                  code: ncit:C66940
+                  code: C66940
                   system: http://purl.obolibrary.org/obo/ncit.owl
                 relation: exactMatch
           predicate: predictsSensitivityTo
