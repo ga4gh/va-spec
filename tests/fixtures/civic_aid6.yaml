@@ -19,7 +19,7 @@ specifiedBy:
   type: Method
 proposition:
   alleleOriginQualifier:
-    label: somatic
+    primaryCode: somatic
   conditionQualifier:
     conceptType: Disease
     id: civic.did:8
@@ -31,7 +31,7 @@ proposition:
         relation: exactMatch
       - coding:
           label: Lung Non-Small Cell Carcinoma
-          code: ncit:C2926
+          code: C2926
           system: http://purl.obolibrary.org/obo/ncit.owl
         relation: exactMatch
         extensions:
@@ -100,7 +100,7 @@ proposition:
               label: Non-small cell lung cancer
               mappings:
                 - coding:
-                    code: ncit:C2926
+                    code: C2926
                     system: http://purl.obolibrary.org/obo/ncit.owl
                   relation: relatedMatch
             - conceptType: Disease
@@ -152,6 +152,8 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         type: DefiningAlleleConstraint
+        relations: 
+          - primaryCode: translates_from
     description:
       EGFR L858R has long been recognized as a functionally significant
       mutation in cancer, and is one of the most prevalent single mutations in lung
@@ -236,6 +238,7 @@ proposition:
           id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
           sequence: T
           sequenceReference:
+            # moleculeType would be nice to have
             refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
             type: SequenceReference
           start: 55191821
@@ -555,9 +558,8 @@ hasEvidenceLines:
             primaryCode: variant curation standard operating procedure
           type: Method
         strength:
-          label: civic.evidence_level:A
-          conceptType: Evidence Strength
-          primaryCode: e000001
+          id: civic.evidence_level:A
+          primaryCode: A
           mappings:
             - coding:
                 code: e000001
