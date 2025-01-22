@@ -1,0 +1,107 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/assay-var-effect-source.yaml"
+title: VA Spec Molecular Consequence statement result Profiles
+strict: true
+
+imports:
+  va-core: ./va-core-source.yaml
+  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
+  gks-core: ../../gks-core/gks-core-source.yaml
+
+$defs:
+  MolecularConsequenceStudyResult:
+    inherits: va-core:StudyResult
+    maturity: draft
+    type: object
+    description: >-
+      A study result describing the effect of a variant on a downstream molecule.
+    properties:
+      type:
+        extends: type
+        const: "MolecularConsequenceStatement"
+        default: "MolecularConsequenceStatement"
+        description: MUST be "MolecularConsequenceStatement".
+      focusVariant:
+        extends: focus 
+        oneOf: 
+          - $refCurie: gks.core:iriReference
+          - $refCurie: vrs:Allele
+        description: The variant for which this annotation applies to.
+      objectMolecule:
+        description: The molecule affected by the variant (cDNA reference sequence preferred).
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/SequenceReference"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+      gene:
+        description: The gene affected by the variant. The objectMolecule should be a transcript or protein for this gene.
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+      geneDistance:
+        description: The distance to the affected gene (for variants upstream and downstream of a gene).
+        type: number
+      consequenceTermsQualifier:
+        description: Terms describing the effect of the variant on the molecule
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+      molecularChangeQualifier:
+        description: The sequence change caused by the variant on the downstream transcript or protein molecule.
+        type: array
+        ordered: false
+        items:
+          oneOf:
+            - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
+            - $ref: "/ga4gh/schema/vrs/2.x/json/Expression"
+    required:
+      - subjectVariant
+      - predicate
+      - objectMolecule
+
+  InSilicoVariantEffectPredictionStudyResult:
+      inherits: va-core:StudyResult
+      maturity: draft
+      type: object
+      description: >-
+        A StudyResult that reports a variant effect score from a functional assay.
+      properties:
+        type:
+          extends: type
+          const: "InSilicoVariantEffectPredictionStudyResult"
+          default: "InSilicoVariantEffectPredictionStudyResult"
+          description: MUST be "InSilicoVariantEffectPredictionStudyResult".
+        label:
+          type: string
+          description: A primary name for the score
+        focusVariant:
+          extends: focus
+          oneOf: 
+            - $refCurie: gks.core:iriReference
+            - $refCurie: vrs:Allele
+          description: The variant for which this annotation applies to.
+        transcripts:
+          type: array
+          ordered: false
+          items:
+            oneOf:
+              - $refCurie: gks.core:iriReference
+              - $refCurie: vrs:SequenceReference
+          description: Transcripts for which this score is applicable
+        score:
+          type: number
+          description: The score of the variant effect.
+        categoricalImpact:
+          type: string
+          description: The label assigned to the score (e.g., damaging).
+        ancillaryResults:
+          type: object
+          description: Dictionary of any normalized or ancillary scores
+        specifiedBy:
+          description: >-
+            The assay that was used to measure the variant effect with all the various properties
+          extends: specifiedBy
+        sourceDataSet:
+          description: >-
+            The full data set that this measurement is a part of
+          extends: sourceDataSet
