@@ -15,7 +15,7 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A study result describing the effect of a variant on a downstream molecule.
+      A study result describing the effect of a variant on a downstream transcript and protein.
     properties:
       type:
         extends: type
@@ -27,12 +27,31 @@ $defs:
         oneOf: 
           - $refCurie: gks.core:iriReference
           - $refCurie: vrs:Allele
-        description: The variant for which this annotation applies to.
-      objectMolecule:
-        description: The molecule affected by the variant (cDNA reference sequence preferred).
+        description: The variant which this annotation applies to.
+      transcriptMolecule:
+        description: The transcript affected by the variant.
         oneOf:
           - $ref: "/ga4gh/schema/vrs/2.x/json/SequenceReference"
           - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+      transcriptVariant:
+        description: The sequence change caused by the variant on the downstream transcript.
+        type: array
+        ordered: false
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Expression"
+      proteinMolecule:
+        description: The protein affected by the variant
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/SequenceReference"
+          - $ref: "/ga4gh/schema/gks-common/1.x/data-types/json/IRI"
+      proteinVariant:
+        description: The sequence change caused by the variant on the downstream protein
+        type: array
+        ordered: false
+        oneOf:
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
+          - $ref: "/ga4gh/schema/vrs/2.x/json/Expression"
       gene:
         description: The gene affected by the variant. The objectMolecule should be a transcript or protein for this gene.
         oneOf:
@@ -41,19 +60,13 @@ $defs:
       geneDistance:
         description: The distance to the affected gene (for variants upstream and downstream of a gene).
         type: number
-      consequenceTermsQualifier:
-        description: Terms describing the effect of the variant on the molecule
-        oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
-      molecularChangeQualifier:
-        description: The sequence change caused by the variant on the downstream transcript or protein molecule.
+      consequenceTerms:
         type: array
-        ordered: false
+        description: Terms describing the effect of the variant on the molecule
         items:
           oneOf:
-            - $ref: "/ga4gh/schema/vrs/2.x/json/Allele"
-            - $ref: "/ga4gh/schema/vrs/2.x/json/Expression"
+            - $refCurie: gks.core:MappableConcept
+            - $refCurie: gks.core:iriReference
     required:
       - subjectVariant
       - predicate
@@ -93,7 +106,7 @@ $defs:
           description: The score of the variant effect.
         categoricalImpact:
           type: string
-          description: The label assigned to the score (e.g., damaging).
+          description: The qualitative term used to classify the predicted impact (e.g., damaging).
         ancillaryResults:
           type: object
           description: Dictionary of any normalized or ancillary scores

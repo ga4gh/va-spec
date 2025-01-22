@@ -1,0 +1,265 @@
+// Made using a subset of data from:
+// https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2
+
+{
+    // We nested GKS objects (Allele, MolecularConsequenceStudyResult, and
+    // InSilicoVariantEffectPredictionStudyResult) in a JSON dictionary for compact IRI referencing.
+    // The dictionary is not part of the spec, we will need to decide on the format of the overall
+    // "package" for the GKS objects.
+
+    "input_variant": {
+        "type": "Allele",
+        "location": {
+            "type": "SequenceLocation",
+            "start": 12253784,
+            "end": 12253785,
+            "sequenceReference": {
+                "refgetAccession": "SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO",
+                "residueAlphabet": "na",
+                "id": "NC_000001.11"
+            },
+            "sequence": "G"
+        },
+        "state": {
+            "type": "LiteralSequenceExpression",
+            "sequence": "A"
+        }
+    },
+    "missense_mol_con_1": {
+        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "focusVariant": "#/input_variant",
+        "transcriptMolecule": {
+            "refgetAccession": "SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThkZ",
+            "residueAlphabet": "na",
+            "id": "ENST00000366667.6"
+        },
+        "transcriptVariant": {
+            "location": {
+                "type": "SequenceLocation",
+                "start": 869,
+                "end": 870,
+                "sequenceReference": "#/missense_mol_con_1/transcriptMolecule", // IRI reference to the transcriptMolecule
+                "sequence": "C"
+            },
+            "state": {
+                "type": "LiteralSequenceExpression",
+                "sequence": "T"
+            },
+            "expressions": [
+                {
+                    "syntax": "hgvs.c",
+                    "value": "ENST00000366667.6:c.803C>T"
+                }            
+            ]
+        },
+        "proteinMolecule": {
+            "refgetAccession": "SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgzM",
+            "residueAlphabet": "na",
+            "id": "ENSP00000505981.1"
+        },
+        "proteinVariant": {
+            "location": {
+                "type": "SequenceLocation",
+                "start": 267,
+                "end": 268,
+                "sequenceReference": "#/missense_mol_con_1/proteinMolecule", // IRI reference to the protein molecule
+                "sequence": "Ala"
+            },
+            "state": {
+                "type": "LiteralSequenceExpression",
+                "sequence": "Val"
+            },
+            "expressions": [
+                {
+                    "syntax": "hgvs.c",
+                    "value": "ENSP00000505981.1:p.Ala268Val"
+                }            
+            ]
+        },
+        "gene": {
+            "primaryCode": "hgnc:HGNC:333",
+            "label": "AGT",
+            "mappings": [
+                {
+                    "coding": {
+                        "system": "Ensembl-Gene", 
+                        "code": "ENSG00000135744"
+                    },
+                    "relation": "exactMatch" 
+                }
+            ]
+        },
+        "consequenceTerms": [
+            {
+                "primaryCode": "missense_variant"
+            }
+        ]
+    },
+    "missense_mol_con_2": {
+        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "focusVariant": "#/input_variant",
+        "transcriptMolecule": {
+            "refgetAccession": "SQ.YTUyYjBiZjgzYjVkNGJjYWY4OGY3NDJjY",
+            "residueAlphabet": "na",
+            "id": "ENST00000679684.1"
+        },
+        "transcriptVariant": {
+            "location": {
+                "type": "SequenceLocation",
+                "start": 802,
+                "end": 803,
+                "sequenceReference": "#/missense_mol_con_2/transcriptMolecule", // IRI reference to the transcriptMolecule
+                "sequence": "C"
+            },
+            "state": {
+                "type": "LiteralSequenceExpression",
+                "sequence": "T"
+            },
+            "expressions": [
+                {
+                    "syntax": "hgvs.c",
+                    "value": "ENST00000679684.1:c.803C>T"
+                }            
+            ]
+        },
+        "proteinMolecule": {
+            "refgetAccession": "SQ.NDZmNWM1MDdlOTNkNTllYTdjZGUyNzYyN",
+            "residueAlphabet": "na",
+            "id": "ENSP00000505981.1"
+        },
+        "proteinVariant": {
+            "location": {
+                "type": "SequenceLocation",
+                "start": 267,
+                "end": 268,
+                "sequenceReference": "#/missense_mol_con_2/proteinMolecule",
+                "sequence": "Ala"
+            },
+            "state": {
+                "type": "LiteralSequenceExpression",
+                "sequence": "Val"
+            },
+            "expressions": [
+                {
+                    "syntax": "hgvs.c",
+                    "value": "ENSP00000505981.1:p.Ala268Val"
+                }            
+            ]
+        },
+        "gene": {
+            "primaryCode": "hgnc:HGNC:333",
+            "label": "AGT",
+            "mappings": [
+                {
+                    "coding": {
+                        "system": "Ensembl-Gene", 
+                        "code": "ENSG00000135744"
+                    },
+                    "relation": "exactMatch" 
+                }
+            ]
+        },
+        "consequenceTerms": [
+            {
+                "primaryCode": "missense_variant"
+            }
+        ]
+    },
+    "cadd_score": {
+        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "label": "CADD Score",
+        "focusVariant": "#/input_variant",
+        "transcripts": [
+            // IRI references to the transcript molecules from the molecular consequence study result
+            "#/missense_mol_con_1/transcriptMolecule",
+            "#/missense_mol_con_2/transcriptMolecule"
+        ],
+        "score": 1.136748,
+        "ancillaryResults": {
+            "phredScore": 11.7
+        },
+        "specifiedBy": {
+            "type": "Method",
+            "subtype": "Algorithmic Output",
+            "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/38183205/"
+        },
+        "sourceDataSet": {
+            "type": "DataSet",
+            "subtype": "CADD",
+            "version": "1.7",
+            "license": "commercial",
+            "reportedIn": "https://krishna.gs.washington.edu/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz"
+        }
+    },
+    "sift_score": {
+        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "label": "SIFT Score",
+        "focusVariant": "#/input_variant",
+        "transcripts": [
+            "#/missense_mol_con_1/transcriptMolecule",
+            "#/missense_mol_con_2/transcriptMolecule"
+        ],
+        "score": 0.06,
+        "categoricalImpact": "tolerated",
+        "specifiedBy": {
+            "type": "Method",
+            "subtype": "Algorithmic Output",
+            "reportedIn": "SIFT LINK"
+        },
+        "sourceDataSet": {
+            "type": "DataSet",
+            "subtype": "SIFT",
+            "version": "1",
+            "license": "GNU",
+            "reportedIn": "SIFT DOWNLOAD"
+        }
+    },
+    "spliceai_donor_gain_score": {
+        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "label": "SpliceAI Donor Gain Score",
+        "focusVariant": "#/input_variant",
+        "transcripts": [
+            "#/missense_mol_con_1/transcriptMolecule"
+        ],
+        "score": 0.91,
+        "ancillaryResults": {
+            "deltaPosition": -2
+        },
+        "specifiedBy": {
+            "type": "Method",
+            "subtype": "Algorithmic Output",
+            "reportedIn": "https://www.cell.com/action/showPdf?pii=S0092-8674%2818%2931629-5"
+        },
+        "sourceDataSet": {
+            "type": "DataSet",
+            "subtype": "SpliceAI",
+            "version": "1.3.1",
+            "license": "commercial",
+            "reportedIn": "SpliceAI DOWNLOAD"
+        }
+    },
+    "spliceai_donor_loss_score": {
+        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "label": "SpliceAI Donor Loss Score",
+        "focusVariant": "#/input_variant",
+        "transcripts": [
+            "#/missense_mol_con_1/transcriptMolecule"
+        ],
+        "score": 0.08,
+        "ancillaryResults": {
+            "deltaPosition": -31
+        },
+        "specifiedBy": {
+            "type": "Method",
+            "subtype": "Algorithmic Output",
+            "reportedIn": "https://www.cell.com/action/showPdf?pii=S0092-8674%2818%2931629-5"
+        },
+        "sourceDataSet": {
+            "type": "DataSet",
+            "subtype": "SpliceAI",
+            "version": "1.3.1",
+            "license": "commercial",
+            "reportedIn": "SpliceAI DOWNLOAD"
+        }
+    }
+}
