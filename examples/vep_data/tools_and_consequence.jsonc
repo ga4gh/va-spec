@@ -4,7 +4,7 @@
 {
     // We nested GKS objects (Allele, MolecularConsequenceStudyResult, and
     // InSilicoVariantEffectPredictionStudyResult) in a JSON dictionary for compact IRI referencing.
-    // The dictionary is not part of the spec, we will need to decide on the format of the overall
+    // The dictionary is not part of the spec; we will need to decide on the format of the overall
     // "package" for the GKS objects.
 
     "input_variant": {
@@ -26,7 +26,7 @@
         }
     },
     "missense_mol_con_1": {
-        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "type": "MolecularConsequencePredictionResult",
         "focusVariant": "#/input_variant",
         "transcriptMolecule": {
             "refgetAccession": "SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThkZ",
@@ -38,8 +38,8 @@
                 "type": "SequenceLocation",
                 "start": 869,
                 "end": 870,
-                "sequenceReference": "#/missense_mol_con_1/transcriptMolecule", // IRI reference to the transcriptMolecule
                 "sequence": "C"
+                // The sequence reference is implied by the transcript molecule
             },
             "state": {
                 "type": "LiteralSequenceExpression",
@@ -62,8 +62,8 @@
                 "type": "SequenceLocation",
                 "start": 267,
                 "end": 268,
-                "sequenceReference": "#/missense_mol_con_1/proteinMolecule", // IRI reference to the protein molecule
                 "sequence": "Ala"
+                // The sequence reference is implied by the protein molecule
             },
             "state": {
                 "type": "LiteralSequenceExpression",
@@ -91,12 +91,13 @@
         },
         "consequenceTerms": [
             {
-                "primaryCode": "missense_variant"
+                "primaryCode": "", // Use an SO term? e.g., SO:0001818
+                "name": "missense_variant" // double check label vs name
             }
         ]
     },
     "missense_mol_con_2": {
-        "type": "InSilicoVariantEffectPredictionStudyResult",
+        "type": "MolecularConsequencePredictionResult",
         "focusVariant": "#/input_variant",
         "transcriptMolecule": {
             "refgetAccession": "SQ.YTUyYjBiZjgzYjVkNGJjYWY4OGY3NDJjY",
@@ -108,7 +109,6 @@
                 "type": "SequenceLocation",
                 "start": 802,
                 "end": 803,
-                "sequenceReference": "#/missense_mol_con_2/transcriptMolecule", // IRI reference to the transcriptMolecule
                 "sequence": "C"
             },
             "state": {
@@ -132,7 +132,6 @@
                 "type": "SequenceLocation",
                 "start": 267,
                 "end": 268,
-                "sequenceReference": "#/missense_mol_con_2/proteinMolecule",
                 "sequence": "Ala"
             },
             "state": {
@@ -165,6 +164,20 @@
             }
         ]
     },
+    "regulatory_consequence_1": {
+        // Taken from https://rest.ensembl.org/vep/human/hgvs/NC_000009.12:g.128322495A%3EG?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2
+        "type": "RegulatoryFeatureConsequencePredictionResult",
+        "focusVariant": "#/input_variant",
+        "regulatoryFeature": {
+            "primaryCode": "ENSR9_93TX7D",
+            "label": "Promoter" // We could make this an SO term
+        },
+        "consequenceTerms": [
+            {
+                "primaryCode": "regulatory_region_variant"
+            }
+        ]
+    },
     "cadd_score": {
         "type": "InSilicoVariantEffectPredictionStudyResult",
         "label": "CADD Score",
@@ -174,6 +187,7 @@
             "#/missense_mol_con_1/transcriptMolecule",
             "#/missense_mol_con_2/transcriptMolecule"
         ],
+        "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
         "score": 1.136748,
         "ancillaryResults": {
             "phredScore": 11.7
@@ -221,9 +235,9 @@
         "transcripts": [
             "#/missense_mol_con_1/transcriptMolecule"
         ],
-        "score": 0.91,
+        "score": 0,
         "ancillaryResults": {
-            "deltaPosition": -2
+            "deltaPosition": -29
         },
         "specifiedBy": {
             "type": "Method",
@@ -245,9 +259,9 @@
         "transcripts": [
             "#/missense_mol_con_1/transcriptMolecule"
         ],
-        "score": 0.08,
+        "score": 0,
         "ancillaryResults": {
-            "deltaPosition": -31
+            "deltaPosition": -26
         },
         "specifiedBy": {
             "type": "Method",
