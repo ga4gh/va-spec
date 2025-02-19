@@ -76,7 +76,7 @@ Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVaria
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`

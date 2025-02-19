@@ -61,7 +61,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
@@ -86,7 +86,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition. 
+      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
    *  - modeOfInheritanceQualifier
       - 
       - :ref:`MappableConcept`
