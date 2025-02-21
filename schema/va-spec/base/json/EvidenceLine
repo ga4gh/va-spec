@@ -109,6 +109,9 @@
          "items": {
             "anyOf": [
                {
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyResult"
+               },
+               {
                   "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Statement"
                },
                {
