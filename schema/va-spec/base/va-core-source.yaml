@@ -147,6 +147,9 @@ $defs:
       'focusAlleleFrequency', and 'locuslAlleleCount' attributes in a CohortAlleleFrequencyStudyResult profile).
       But technical limitations in our current profiling framework tooling forced us to omit a core 'dataItems
       attribute that these specialized attributes would conceptually extend.
+    oneOf:
+      - "/ga4gh/schema/va-spec/1.x/base/json/CohortAlleleFrequencyStudyResult"
+      - "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactStudyResult"
     heritableProperties:
       focus:
         oneOf:
