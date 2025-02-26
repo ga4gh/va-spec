@@ -27,7 +27,7 @@ objectSequenceFeature:
   id: clinvar-gene:5728
   conceptType: Gene
   primaryCode: PTEN
-  label: PTEN
+  name: PTEN
   mappings:
     - coding:
         system: https://identifiers.org/ncbigene

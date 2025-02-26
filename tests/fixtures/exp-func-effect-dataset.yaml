@@ -1,5 +1,5 @@
 type: DataSet
-label: variant effect data set
+name: variant effect data set
 license:
   primaryCode: "CC0"
 reportedIn:

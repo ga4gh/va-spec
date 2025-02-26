@@ -7,7 +7,7 @@ proposition:
     type: CategoricalVariant
     constraints:
       - type: DefiningAlleleConstraint
-        allele: 
+        allele:
           id: ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
           digest: Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
           type: Allele
@@ -19,7 +19,7 @@ proposition:
               id: NC_000001.11
               type: SequenceReference
               refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
-              label: NC_000001.11
+              name: NC_000001.11
             start: 40819438
             end: 40819446
           state:
@@ -34,11 +34,11 @@ proposition:
         relations:
           - primaryCode: liftover_to
           - primaryCode: transcribes_to
-    label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
+    name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
   objectCondition:
     id: clinvar.trait/939
     conceptType: Disease
-    label: Autosomal dominant nonsyndromic hearing loss 2A
+    name: Autosomal dominant nonsyndromic hearing loss 2A
     mappings:
     - coding:
         code: C2677637
@@ -70,7 +70,7 @@ contributions:
       name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
   date: '2018-06-12'
   activityType:
-    label: submitted
+    name: submitted
     mappings:
       - coding:
           code: cg000010
@@ -83,7 +83,7 @@ contributions:
       name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
   date: '2015-08-20'
   activityType:
-    label: evaluated
+    name: evaluated
     mappings:
       - coding:
           code: cg000011
@@ -99,4 +99,4 @@ extensions:
   value: no assertion criteria provided
 - name: clinvarSubmittedClassification
   value: Pathogenic
-  
+

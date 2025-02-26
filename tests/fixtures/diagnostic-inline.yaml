@@ -5,11 +5,11 @@ description: https://civicdb.org/evidence/80/summary
 direction: supports
 strength:
   id: civic.evidenceLevel:B
-  label: Clinical evidence
+  name: Clinical evidence
   mappings:
     - coding:
         code: e000005
-        label: clinical cohort evidence
+        name: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
 
@@ -31,13 +31,13 @@ proposition:
       vemurafenib, and a number of combination therapies have been successful in treating
       V600E mutations. However, cetuximab and panitumumab have been largely shown to be
       ineffective without supplementary treatment.
-    label: BRAF V600E
+    name: BRAF V600E
     constraints:
       - type: "DefiningAlleleConstraint"
         allele: vrs.json#/ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
     members:
       - vrs.json#/ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
-    alternativeLabels:
+    aliases:
       - VAL600GLU
       - V640E
       - VAL640GLU
@@ -79,11 +79,11 @@ proposition:
         value:
           code: SO:0001583
           system: http://www.sequenceontology.org/browser/current_release/term/
-          label: missense_variant
+          name: missense_variant
   objectCondition:
     id: civic.did:156
     conceptType: Disease
-    label: Thyroid Gland Papillary Carcinoma
+    name: Thyroid Gland Papillary Carcinoma
     mappings:
       - coding:
           code: DOID:3969
@@ -93,7 +93,7 @@ proposition:
   geneContextQualifier:
     id: civic.gid:5
     conceptType: Gene
-    label: BRAF
+    name: BRAF
     mappings:
     - coding:
         code: ncbigene:673
@@ -134,11 +134,11 @@ proposition:
         receptor tyrosine kinase."
 specifiedBy:
   id: civic.methods:2019
-  label: CIViC Curation SOP (2019)
+  name: CIViC Curation SOP (2019)
   reportedIn:
     id: pmid:31779674
     type: Document
-    label: Danos et al., 2019, Genome Med.
+    name: Danos et al., 2019, Genome Med.
     title: Standard operating procedure for curation and clinical interpretation of
       variants in cancer
     doi: 10.1186/s13073-019-0687-x
@@ -147,7 +147,7 @@ specifiedBy:
 reportedIn:
   - id: civic.source:94
     type: Document
-    label: Crescenzi et al., 2014
+    name: Crescenzi et al., 2014
     title: Immunohistochemistry for BRAF(V600E) antibody VE1 performed in core needle
       biopsy samples identifies mutated papillary thyroid cancers.
     pmid: 24570209

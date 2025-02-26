@@ -1,6 +1,6 @@
 id: VTRProp724
 type: VariantTherapeuticResponseProposition
-label: EGFR L858R predicts sensitivity to Afatinib in Lung Adenocarcinoma
+name: EGFR L858R predicts sensitivity to Afatinib in Lung Adenocarcinoma
 predicate: predictsSensitivityTo
 subjectVariant:
   id: civic.mpid:33
@@ -14,7 +14,7 @@ subjectVariant:
     compared to chemotherapy alone. Third generation TKI's are currently in clinical trials
     that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in
     treating patients that failed to respond to earlier generation TKI therapies.
-  label: EGFR L858R
+  name: EGFR L858R
   constraints:
     - type: DefiningAlleleConstraint
       allele: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
@@ -23,7 +23,7 @@ subjectVariant:
     - vrs.json#/ga4gh:VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
     - vrs.json#/ga4gh:VA.zpv3dW34z8jioKL-NtbGc0fa9clsgAZT
     - vrs.json#/ga4gh:VA.BJOtfUhZMooMJUO4FjxHXTEimrKXtF0i
-  alternativeLabels:
+  aliases:
     - LEU858ARG
     - rs121434568
   mappings:
@@ -64,11 +64,11 @@ subjectVariant:
       value:
         code: SO:0001583
         system: http://www.sequenceontology.org/browser/current_release/term/
-        label: missense_variant
+        name: missense_variant
 objectTherapeutic:
   id: civic.tid:146
   conceptType: Drug
-  label: Afatinib
+  name: Afatinib
   primaryCode: ncit:C66940
   mappings:
     - coding:
@@ -78,19 +78,19 @@ objectTherapeutic:
 conditionQualifier:
   id: civic.did:30
   conceptType: Disease
-  label: Lung Adenocarcinoma
+  name: Lung Adenocarcinoma
   mappings:
     - coding:
         code: DOID:3910
         system: https://www.disease-ontology.org/
       relation: exactMatch
-alleleOriginQualifier: 
+alleleOriginQualifier:
   primaryCode: GENO:0000882
-  label: somatic allele origin
+  name: somatic allele origin
 geneContextQualifier:
   id: civic.gid:19
   conceptType: Gene
-  label: EGFR
+  name: EGFR
   mappings:
   - coding:
       code: ncbigene:1956

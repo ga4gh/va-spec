@@ -7,7 +7,7 @@ proposition:
   objectCondition:
     id: clinvarTrait:9544 # This ID syntax is clinvar.trait/9544 in example 1. Both OK.
     conceptType: Disease
-    label: Nonsyndromic genetic hearing loss
+    name: Nonsyndromic genetic hearing loss
     mappings:
       - coding:
           system: https://www.ncbi.nlm.nih.gov/medgen/
@@ -16,14 +16,14 @@ proposition:
   predicate: isCausalFor
 direction: supports
 strength:
-  label: likely
+  name: likely
   mappings:
     - coding:
         code: cg000022
         system: https://dataexchange.clinicalgenome.org/codes/
       relation: exactMatch
 classification:
-  label: likely pathogenic
+  name: likely pathogenic
   mappings:
     - coding:
         code: cg000002
@@ -48,7 +48,7 @@ contributions:
       name: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2020-05-04'
   activityType:
-    label: submitted
+    name: submitted
     mappings:
       - coding:
           code: cg000010
@@ -61,7 +61,7 @@ contributions:
       name: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2019-11-26'
   activityType:
-    label: evaluated
+    name: evaluated
     mappings:
       - coding:
           code: cg000011
@@ -73,13 +73,13 @@ contributions:
 specifiedBy:
   id: hearing_loss_acmg_specifications_v1_2018.pdf
   type: Method
-  label: ClinGen HL ACMG Specifications v1
+  name: ClinGen HL ACMG Specifications v1
   reportedIn:
     id: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
     urls:
     - https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
     type: Document
-    label: ClinGen HL ACMG Specifications v1
+    name: ClinGen HL ACMG Specifications v1
 extensions:
 - name: clinvarMethodCategory
   value: curation

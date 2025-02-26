@@ -1,9 +1,9 @@
 id: VarOncoProp052
 type: VariantDiagnosticProposition
-label: EGFR R11T is a diagnostic inclusion criterion for Breast Cancer
+name: EGFR R11T is a diagnostic inclusion criterion for Breast Cancer
 subjectVariant:
   type: CategoricalVariant
-  label: EGFR R11T
+  name: EGFR R11T
   constraints:
     - type: DefiningAlleleConstraint
       allele:
@@ -28,11 +28,11 @@ subjectVariant:
 predicate: isDiagnosticInclusionCriterionFor
 objectCondition:
   primaryCode: ncit:C4872
-  label: Breast Carcinoma
+  name: Breast Carcinoma
 geneContextQualifier:
   conceptType: Gene
-  label: EGFR
+  name: EGFR
   primaryCode: ncbigene:1956
 alleleOriginQualifier:
   primaryCode: GENO:0000882
-  label: somatic allele origin
+  name: somatic allele origin

@@ -7,11 +7,11 @@ description: A phase III clinical trial (NCT00949650) found that median progress
 direction: supports
 strength:
   id: civic.evidenceLevel:B
-  label: Clinical evidence
+  name: Clinical evidence
   mappings:
     - coding:
         code: e000005
-        label: clinical cohort evidence
+        name: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
 proposition:
@@ -29,7 +29,7 @@ proposition:
       compared to chemotherapy alone. Third generation TKI's are currently in clinical trials
       that specifically focus on mutant forms of EGFR, a few of which have shown efficacy in
       treating patients that failed to respond to earlier generation TKI therapies.
-    label: EGFR L858R
+    name: EGFR L858R
     constraints:
       - type: DefiningAlleleConstraint
         allele: vrs.json#/ga4gh:VA.kgjrhgf84CEndyLjKdAO0RxN-e3pJjxA
@@ -38,7 +38,7 @@ proposition:
       - vrs.json#/ga4gh:VA.3_FsKSUHEdurPIw5gqpw6g0_Ga0TEXQh
       - vrs.json#/ga4gh:VA.zpv3dW34z8jioKL-NtbGc0fa9clsgAZT
       - vrs.json#/ga4gh:VA.BJOtfUhZMooMJUO4FjxHXTEimrKXtF0i
-    # alternativeLabels:
+    # aliases:
     #   - LEU858ARG
     #   - rs121434568
     mappings:
@@ -79,11 +79,11 @@ proposition:
         value:
           code: SO:0001583
           system: http://www.sequenceontology.org/browser/current_release/term/
-          label: missense_variant
+          name: missense_variant
   objectTherapeutic:
     id: civic.tid:146
     conceptType: Drug
-    label: Afatinib
+    name: Afatinib
     mappings:
       - coding:
           code: C66940
@@ -96,19 +96,19 @@ proposition:
   conditionQualifier:
     id: civic.did:30
     conceptType: Disease
-    label: Lung Adenocarcinoma
+    name: Lung Adenocarcinoma
     mappings:
       - coding:
           code: DOID:3910
           system: https://www.disease-ontology.org/
         relation: exactMatch
-  alleleOriginQualifier: 
+  alleleOriginQualifier:
     primaryCode: GENO:0000882
-    label: somatic allele origin
+    name: somatic allele origin
   geneContextQualifier:
     id: civic.gid:19
     conceptType: Gene
-    label: EGFR
+    name: EGFR
     mappings:
     - coding:
         code: ncbigene:1956
@@ -141,11 +141,11 @@ proposition:
         NRG1-4 (for detailed information please refer to the respective ligand section)."
 specifiedBy:
   id: civic.methods:2019
-  label: CIViC Curation SOP (2019)
+  name: CIViC Curation SOP (2019)
   reportedIn:
     id: pmid:31779674
     type: Document
-    label: Danos et al., 2019, Genome Med.
+    name: Danos et al., 2019, Genome Med.
     title: Standard operating procedure for curation and clinical interpretation of
       variants in cancer
     doi: 10.1186/s13073-019-0687-x
@@ -154,7 +154,7 @@ specifiedBy:
 reportedIn:
   - id: civic.source:592
     type: Document
-    label: Sequist et al., 2013, J. Clin. Oncol.
+    name: Sequist et al., 2013, J. Clin. Oncol.
     title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
       with metastatic lung adenocarcinoma with EGFR mutations.
     pmid: 23816960

@@ -9,7 +9,7 @@ location:
     id: NC_000001.11
     type: SequenceReference
     refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
-    label: NC_000001.11
+    name: NC_000001.11
   start: 40819438
   end: 40819446
 state:

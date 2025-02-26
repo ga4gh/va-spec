@@ -15,7 +15,7 @@
          "type": "string",
          "description": "A free-text description of the Entity."
       },
-      "alternativeLabels": {
+      "aliases": {
          "type": "array",
          "ordered": false,
          "items": {
@@ -27,7 +27,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -35,7 +35,7 @@
       "type": {
          "type": "string",
          "description": "MUST be \"Agent\".",
-         "$comment": "MUST be the label of a concrete class from the data model.",
+         "$comment": "MUST be the name of a concrete class from the data model.",
          "const": "Agent",
          "default": "Agent"
       },
@@ -45,7 +45,7 @@
       },
       "subtype": {
          "description": "A specific type of agent the Agent object represents. Recommended subtypes include codes for `person`, `organization`, or `software`.",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
       }
    },
    "required": [

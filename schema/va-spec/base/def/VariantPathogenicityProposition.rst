@@ -26,7 +26,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
-   *  - label
+   *  - name
       - 
       - string
       - 0..1
@@ -36,7 +36,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 
@@ -61,7 +61,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
@@ -86,7 +86,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - 
       - :ref:`MappableConcept`
       - 0..1
-      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition. 
+      - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
    *  - modeOfInheritanceQualifier
       - 
       - :ref:`MappableConcept`

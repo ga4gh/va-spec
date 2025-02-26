@@ -31,7 +31,7 @@ Some Agent attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 
