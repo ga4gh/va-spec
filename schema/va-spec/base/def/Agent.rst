@@ -1,5 +1,5 @@
-.. warning:: This data class is at a **draft** maturity level and may \
-    change significantly in future releases. Maturity \
+.. note:: This data class is at a **trial use** maturity level and may \
+    change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -26,11 +26,6 @@ Some Agent attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
-   *  - label
-      - 
-      - string
-      - 0..1
-      - A primary name for the entity.
    *  - description
       - 
       - string
@@ -64,6 +59,6 @@ Some Agent attributes are inherited from :ref:`gks-core:Entity`.
       - The given name of the Agent.
    *  - subtype
       - 
-      - string
+      - :ref:`MappableConcept`
       - 0..1
-      - A specific type of agent the Agent object represents. Must be one of {person, organization, software}.
+      - A specific type of agent the Agent object represents. Recommended subtypes include codes for `person`, `organization`, or `software`.

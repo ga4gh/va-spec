@@ -65,9 +65,9 @@ classification:
 contributions:
 - type: Contribution
   contributor:
-    - id: clinvar.submitter/500139
+      id: clinvar.submitter/500139
       type: Agent
-      label: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+      name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
   date: '2018-06-12'
   activityType:
     label: submitted
@@ -78,9 +78,9 @@ contributions:
         relation: exactMatch
 - type: Contribution
   contributor:
-    - id: clinvar.submitter/500139
+      id: clinvar.submitter/500139
       type: Agent
-      label: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+      name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
   date: '2015-08-20'
   activityType:
     label: evaluated

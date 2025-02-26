@@ -1,0 +1,15 @@
+id: c500139.2018.06.12
+type: Contribution
+contributor:
+    id: clinvar.submitter/500139
+    type: Agent
+    name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+date: '2018-06-12'
+activityType:
+  primaryCode: cg000010
+  label: submitted
+  mappings:
+    - coding:
+        code: cg000010
+        system: https://dataexchange.clinicalgenome.org/codes/
+      relation: exactMatch

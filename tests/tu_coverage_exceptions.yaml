@@ -115,3 +115,16 @@ va-spec.base:TraitSet:
 va-spec.base:TherapyGroup:
   # Element
   - extensions
+
+va-spec.base:Contribution:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description
+  - label
+
+va-spec.base:Agent:
+  # Entity
+  - extensions
+  - alternativeLabels
+  - description

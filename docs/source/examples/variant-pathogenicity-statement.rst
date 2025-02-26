@@ -5,7 +5,7 @@ Variant Pathogenicity Statement Example
 
 **Description:** 
  * The example below includes a subset of data from the `ClinVar SCV000886574.2 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000666644.9/>`_, which reports that *"NM_000277.3:c.1285C>A is likely pathogenic for Phenylketonuria"*.
- * It uses early draft of the  :ref:`Standard Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-profile>`, which was defined to support ClinGen's ingest and restructuring of ClinVar data. 
+ * It applies the trial use version of the  :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>` in a :ref:`Statement <statement>`, which is used support ClinGen's ingest and restructuring of ClinVar data. 
 
 **Data**:
 
@@ -14,51 +14,68 @@ Variant Pathogenicity Statement Example
   {
   "SCV000886574.2": {
     "id": "SCV000886574.2",
-    "type": "VariantPathogenicityStatement",
+    "type": "Statement",
     "statementText": "NM_000277.3(PAH):c.1285C>A likely pathogenic for Phenylketonuria",
     "description": "The c.1285C>A (p.Gln429Lys) variant in PAH is reported in a patient with mild PKU (Phe level 720). BH4 cofactor deficiency was excluded. It was detected with a known pathogenic variant, EX6-96A>G (VarID 590). (PMID: 26503515, 28982351) This variant has a low frequency in gnomAD and ExAC (MAF=0.00002), and absent in 1000G. Computational evidence is conflicting. In summary, this variant meets criteria to be classified as likely pathogenic for PAH. PAH-specific ACMG/AMP criteria applied: PM2, PP4_Moderate, PM3...",
 
-    # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition 
-    # that "NM_000277.3:c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
-    "subjectVariation": "clinvar:551555",     # full VRS representation of this variant is below
-    "predicate": "isCausalFor",
-    "objectCondition": {
-      "id": "clinvarTrait:3795",
-      "type": "Disease",
-      "label": "Phenylketonuria",
-      "mappings": [
+    "proposition": {
+
+      # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition 
+      # that "NM_000277.3:c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
+      "subjectVariation": "clinvar:551555",     # full VRS representation of this variant is below
+      "predicate": "isCausalFor",
+      "objectCondition": {
+        "id": "clinvarTrait:3795",
+        "conceptType": "Disease",
+        "label": "Phenylketonuria",
+        "mappings": [
+          {
+            "coding": {
+              "code": "C0031485",
+              "system": "https://www.ncbi.nlm.nih.gov/medgen/"
+            },
+            "relation": "exactMatch"
+          }
+        ]
+      },
+      "geneContextQualifier": [
         {
-          "coding": {
-            "code": "C0031485",
-            "system": "https://www.ncbi.nlm.nih.gov/medgen/"
-          },
-          "relation": "exactMatch"
+          "code": "5053",
+          "label": "PAH",
+          "system": "https://www.ncbi.nlm.nih.gov/gene/"
         }
       ]
     },
-    "geneContextQualifier": [
-      {
-        "code": "5053",
-        "label": "PAH",
-        "system": "https://www.ncbi.nlm.nih.gov/gene/"
-      }
-    ],
 
     # The 'direction' and 'strength' (DS) attributes report an assessment of the SPOQ Proposition
     # above as being 'likely supported'.
     "direction": "supports",
     "strength": {
-      "code": "cg000102",
-      "label": "likely",
-      "system": "https://dataexchange.clinicalgenome.org/codes/"
-    },
+      "primaryCode": "likely",
+      "mappings": [
+        {
+          "coding": {
+            "code": "cg000021",
+            "system": "https://dataexchange.clinicalgenome.org/codes/"
+          },
+          "relation": "exactMatch"
+        }
+      ]
+    }
 
     # The 'classification' attribute reports a single, established term of art in the domain summarizing 
     # the outcome of the Proposition assessment above - here reporting the variant 'Likely Pathogenic'.
     "classification": {
-      "code": "cg000007",
-      "label": "Likely pathogenic",
-      "system": "https://dataexchange.clinicalgenome.org/codes/"
+      "primaryCode": "Likely pathogenic",
+      "mappings": [
+        {
+          "coding": {
+            "code": "cg000007",
+            "system": "https://dataexchange.clinicalgenome.org/codes/"
+          },
+          "relation": "exactMatch"
+        }
+      ]
     },
 
     # A list of 'Method' objects each describing a method, protocol, or guideline followed to generate
@@ -96,11 +113,18 @@ Variant Pathogenicity Statement Example
     "contributions": [
       {
         "activityType": {
-          "code": "CRO_0000105",
-          "label": "submitter role",
-          "system": "http://purl.obolibrary.org/obo/"
+          "label" : "submitted",
+          "mappings": [
+            {
+              "coding": {
+                "code": "cg000010",
+                "system": "https://dataexchange.clinicalgenome.org/codes/"
+              },
+              "relation": "exactMatch"
+            }
+          ]
         },
-        "agent": {
+        "contributor": {
           "id": "clinvar.submitter:506558",
           "label": "ClinGen PAH Variant Curation Expert Panel",
           "type": "Agent"
@@ -111,11 +135,18 @@ Variant Pathogenicity Statement Example
       },
       {
         "activityType": {
-          "code": "CRO_0000105",
-          "label": "submitter role",
-          "system": "http://purl.obolibrary.org/obo/"
+          "label": "submitted",
+          "mappings": [
+            {
+              "coding": {
+                "code": "cg000010",
+                "system": "https://dataexchange.clinicalgenome.org/codes/"
+              },
+              "relation": "exactMatch"
+            }
+          ]
         },
-        "agent": {
+        "contributor": {
           "id": "clinvar.submitter:506558",
           "label": "ClinGen PAH Variant Curation Expert Panel",
           "type": "Agent"
@@ -126,11 +157,18 @@ Variant Pathogenicity Statement Example
       },
       {
         "activityType": {
-          "code": "CRO_0000001",
-          "label": "author role",
-          "system": "http://purl.obolibrary.org/obo/"
+          "label": "evaluated",
+          "mappings": [
+            {
+              "coding": {
+                "code": "cg000011",
+                "system": "https://dataexchange.clinicalgenome.org/codes/"
+              },
+              "relation": "exactMatch"
+            }
+          ]
         },
-        "agent": {
+        "contributor": {
           "id": "clinvar.submitter:506558",
           "label": "ClinGen PAH Variant Curation Expert Panel",
           "type": "Agent"
@@ -226,59 +264,57 @@ Variant Pathogenicity Statement Example
       ],
       "constraints": [
         {
-          "definingContext": {
-            "digest": "bBPSn0F2gLXDsCHSkEVyqIjhOvGgA7Un",
-            "expressions": [
-              {
-                "syntax": "spdi",
-                "value": "NC_000012.12:102840429:G:T"
-              },
-              {
-                "syntax": "hgvs.g",
-                "value": "NC_000012.12:g.102840430G>T"
-              },
-              {
-                "syntax": "gnomad",
-                "value": "12-102840430-G-T"
-              }
-            ],
-            "id": "ga4gh:VA.bBPSn0F2gLXDsCHSkEVyqIjhOvGgA7Un",
-            "label": "NC_000012.12:102840429:G:T",
-            "location": {
-              "digest": "kuFVPaLnyTpa1osSCKWdFHHPWxyMV705",
-              "end": 102840430,
-              "id": "ga4gh:SL.kuFVPaLnyTpa1osSCKWdFHHPWxyMV705",
-              "sequenceReference": {
-                "extensions": [
-                  {
-                    "name": "assembly",
-                    "value": "GRCh38"
-                  },
-                  {
-                    "name": "chromosome",
-                    "value": "12"
-                  }
-                ],
-                "id": "NC_000012.12",
-                "refgetAccession": "SQ.6wlJpONE3oNb4D69ULmEXhqyDZ4vwNfl",
-                "residueAlphabet": "na",
-                "type": "SequenceReference"
-              },
-              "start": 102840429,
-              "type": "SequenceLocation"
+          "digest": "bBPSn0F2gLXDsCHSkEVyqIjhOvGgA7Un",
+          "expressions": [
+            {
+              "syntax": "spdi",
+              "value": "NC_000012.12:102840429:G:T"
             },
-            "state": {
-              "sequence": "T",
-              "type": "LiteralSequenceExpression"
+            {
+              "syntax": "hgvs.g",
+              "value": "NC_000012.12:g.102840430G>T"
             },
-            "type": "Allele"
-          },
-          "relations": [
-            "sequence_liftover",
-            "transcript_projection"
+            {
+              "syntax": "gnomad",
+              "value": "12-102840430-G-T"
+            }
           ],
-          "type": "DefiningContextConstraint"
-        }
+          "id": "ga4gh:VA.bBPSn0F2gLXDsCHSkEVyqIjhOvGgA7Un",
+          "label": "NC_000012.12:102840429:G:T",
+          "location": {
+            "digest": "kuFVPaLnyTpa1osSCKWdFHHPWxyMV705",
+            "end": 102840430,
+            "id": "ga4gh:SL.kuFVPaLnyTpa1osSCKWdFHHPWxyMV705",
+            "sequenceReference": {
+              "extensions": [
+                {
+                  "name": "assembly",
+                  "value": "GRCh38"
+                },
+                {
+                  "name": "chromosome",
+                  "value": "12"
+                }
+              ],
+              "id": "NC_000012.12",
+              "refgetAccession": "SQ.6wlJpONE3oNb4D69ULmEXhqyDZ4vwNfl",
+              "residueAlphabet": "na",
+              "type": "SequenceReference"
+            },
+            "start": 102840429,
+            "type": "SequenceLocation"
+          },
+          "state": {
+            "sequence": "T",
+            "type": "LiteralSequenceExpression"
+          },
+          "type": "Allele"
+        },
+        "relations": [
+          "sequence_liftover",
+          "transcript_projection"
+        ],
+        "type": "DefiningAlleleConstraint"
       ],
       "extensions": [
         {
