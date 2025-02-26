@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/aac-2017/json/VariantTherapeuticResponseStudyStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/aac-2017/json/VariantTherapeuticResponseStudyStatement",
    "title": "VariantTherapeuticResponseStudyStatement",
    "maturity": "draft",
    "description": "A statement reporting a conclusion from a single study about whether a variant is associated with a therapeutic response (positive or negative) - based on interpretation of the study's results.",
@@ -12,7 +12,7 @@
          "properties": {
             "proposition": {
                "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantTherapeuticResponseProposition",
-               "description": "A proposition about the therapeutic response associated with a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it,  may be assessed and reported by the Statement. "
+               "description": "A proposition about the therapeutic response associated with a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             }
          }
       }
