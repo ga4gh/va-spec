@@ -7,9 +7,9 @@
 # PART I: LB/AW schema as of 5-24-24 - with MHB comments
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/caf-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/profiles/caf/caf-source.yaml"
 title: Cohort Allele Frequency                     # In the standard profile we should name this 'Cohort Allele Frequency Study Result' (include 'Study Result' in the schema name so that it is clear what Core class is being extended here. This should be standard practice for Standard Profiles.)
-strict: true                                       # What does "strict: true" mean here?  I don't see this in other profiles. 
+strict: true                                       # What does "strict: true" mean here?  I don't see this in other profiles.
 imports:
   va.core: ../../core-im/core-im-source.yaml
   gks.core: ../../../gks-common/core-source.yaml
@@ -24,7 +24,7 @@ $defs:
     maturity: draft
     type: object
     inherits: va.core:InformationEntity            # I think this should inherit from the StudyResult class, not InformationEntity, if this is meant to be a StudyResult-like object.
-    description: >                                 
+    description: >
       A measure of the frequency of an Allele in a cohort.
     properties:
       derivedFrom:                                 # I would prefer to exolicitly use/reference the DataSet class here, rather than imply use of it. The question then becomes how to do this to let us indicate what subset of properties from the core DataSet class are possible to use in this profile. Also, the StudyRestuls property to capture a soruce dataset is called `sourceDataSet` - which extends InformationEntity.derivedFrom.
@@ -45,20 +45,20 @@ $defs:
           - $refCurie: vrs:Allele
           - type: string
             format: uri-reference
-      focusAlleleCount:                           # Make it so that this "extends" the core-im StudyResult.dataItem attribute - see comment above. Note however that some adjustment to the core-im StudyResult.dataItems model may be needed to make the specialization here valid (e.g. make the value oneOf DataItem or string or number, or split into separate data-type specific attributes). And a 'multiplies' keyword/functionality would have to be added to the metaschema processer, per the proposal here: https://github.com/ga4gh/va-spec/issues/134#issuecomment-2163480970 
+      focusAlleleCount:                           # Make it so that this "extends" the core-im StudyResult.dataItem attribute - see comment above. Note however that some adjustment to the core-im StudyResult.dataItems model may be needed to make the specialization here valid (e.g. make the value oneOf DataItem or string or number, or split into separate data-type specific attributes). And a 'multiplies' keyword/functionality would have to be added to the metaschema processer, per the proposal here: https://github.com/ga4gh/va-spec/issues/134#issuecomment-2163480970
         type: integer
       locusAlleleCount:                           # Make it so that this "extends" the core-im StudyResult.dataItem attribute, per the rationale above.
         type: integer
       alleleFrequency:                            # Make it so that this "extends" the StudyResult.dataItem attribute, per the rationale above.
         type: number
       cohort:                                     # The core-im property to use/extend here would be 'StudyResult.studyGroup', which takes a StudyGroup object.
-        type: object    
+        type: object
         properties:                               # The untyped/anonymous object defined by these properties is consistent with what is defined in the core-im 'StudyGroup' class. I think we should explicitly reference/use this core-im class here.
           id:
             type: string
           label:
             type: string
-          characteristics:     
+          characteristics:
             type: array
             items:
               type: object
@@ -100,7 +100,7 @@ $defs:
 # PART II: Version of LB/AW schema as of 5-24-24 that integrates changes proposed in MHB comments above.
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/caf-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/profiles/caf/caf-source.yaml"
 title: Cohort Allele Frequency Study Result       # In the standard profile we should name this 'Cohort Allele Frequency Study Result'
 strict: true
 imports:
@@ -113,11 +113,11 @@ namespaces:
   vrs: ../../../vrs/vrs.json#/$defs/
 
 $defs:
-  CohortAlleleFrequencyStudyResult:              # In the 'standard' profile we should name this 'CohortAlleleFrequencyStudyResult'                
+  CohortAlleleFrequencyStudyResult:              # In the 'standard' profile we should name this 'CohortAlleleFrequencyStudyResult'
     maturity: draft
     type: object
     inherits: va.core:StudyResult                # I think this should inherit from the StudyResult class, not InformationEntity, if this is meant to be a StudyResult-like object.
-    description: >-                               # Updated description below 
+    description: >-                               # Updated description below
       A StudyResult that reports measures related to the frequency of an Allele in a cohort
     properties:
       sourceDataSet:
@@ -140,7 +140,7 @@ $defs:
         type: number
         multiplies: dataItem
       cohortStudyGroup:                          # Made it so that this property (or extend) extends 'StudyResult.studyGroup'
-        $ref: "#/$defs/Cohort                    # COhort inherits from / specializes the core-im StudyGroup class (see below) 
+        $ref: "#/$defs/Cohort                    # COhort inherits from / specializes the core-im StudyGroup class (see below)
         extends: studyGroup
       ancillaryResults:                          # Propose to keep this as is for now - t.b.d. if we want to declare this to extend an 'ancillaryResults' property defined in the core-im - see https://github.com/ga4gh/va-spec/issues/144.
         maturity: draft
@@ -157,18 +157,18 @@ $defs:
         ordered: false
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
-        extends: componentResult 
+        extends: componentResult
     required: [focusAllele, focusAlleleCount, locusAlleleCount, alleleFrequency, studyGroup]
     additionalProperties: false
 
   DataSet:                                      # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.
     maturity: draft
     type: object
-    inherits: va.core:DataSet                  
+    inherits: va.core:DataSet
     description: >-
       A collection of related data items or records that are organized together in a common format
       or structure, to enable their computational manipulation as a unit.
-    properties:                              
+    properties:
       id:
         type: string
       type:
@@ -179,33 +179,33 @@ $defs:
         type: string
     additionalProperties: false
 
-  Cohort:                                       
+  Cohort:
     maturity: draft
     type: object
-    inherits: va.core:StudyGroup        
+    inherits: va.core:StudyGroup
     description: >-
-      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific 
-      study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin, 
+      A collection of individuals or specimens from the same taxonomic class, selected for analysis in a scientific
+      study based on their exhibiting one or more common characteristics  (e.g. ethnicity, race, country of origin,
       clinical history, age, gender, geographic location, income, etc.)
-    properties:                                 # The untyped/anonymous object defined with these properties is consistent with what is defined in the core-im StudyGroup class. 
+    properties:                                 # The untyped/anonymous object defined with these properties is consistent with what is defined in the core-im StudyGroup class.
       id:
         type: string
       label:
         type: string
-      characteristics:     
+      characteristics:
         type: array
         items:
           $ref: "#/$defs/Characteristic"        # Actually use the Characteristic class here, rather than imply use of it.
     required:
       - id
-      
+
   Characteristic:                               # Don't need to define this class here if we dont have an overwrites functionality - just use the core-im DataSet class with all of its properties. Unless we want to change/refine any of the characteristics/constraints of these properties.
     maturity: draft
     type: object
-    inherits: va.core:Characteristic   
+    inherits: va.core:Characteristic
     description: >-
-      An object holding a name-value pair used to describe any characteristic of an individual member of a 
-      Study Group (e.g. name = sex, value = female) 
+      An object holding a name-value pair used to describe any characteristic of an individual member of a
+      Study Group (e.g. name = sex, value = female)
     properties:
       name:
         type: string

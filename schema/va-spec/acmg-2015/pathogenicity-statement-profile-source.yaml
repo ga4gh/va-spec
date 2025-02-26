@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/acmg-2015/pathogenicity-statement-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/acmg-2015/pathogenicity-statement-profile-source.yaml"
 title: Variant Pathogenicity Statement Standard Profile
 strict: true
 
@@ -14,22 +14,22 @@ $defs:
     description: >-
       A Statement describing the role of a variant in causing an inherited condition.
     allOf:
-    - $ref: "/ga4gh/schema/gks-core/1.x/json/Statement"
+    - $ref: "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Statement"
     - properties:
         proposition:
           $ref: "/ga4gh/schema/va-core/1.x/base/json/VariantPathogenicityProposition"
           description: >-
-            A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement. 
+            A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement.
             A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
-            level of confidence/evidence supporting this claim.        
-        # NOTE: The acmg 2015 guidelines are "guidelines" and allow for groups to embellish or extend them. 
+            level of confidence/evidence supporting this claim.
+        # NOTE: The acmg 2015 guidelines are "guidelines" and allow for groups to embellish or extend them.
         #       For example, the VCEPs will create there supplemental methods, while labs will approxmately
         #       follow the guidelines.  This is why the specifiedBy should NOT be required.
-        #       The classifications can also be extended to include items like "pathogenic, low penetrance" 
+        #       The classifications can also be extended to include items like "pathogenic, low penetrance"
         #       "established risk allele", "likely risk allele" or "uncertain risk allele".
         #       We should build a VarPathStatement that works in the spirit of a "guideline"
         #       and can be specialized a dozen different ways? without necessarily being so strict at this level.
-        #       
+        #
         # For now I would suggest we be minimalistic in our requirements. Attempt to provide guidance but allow for flexibility.
         #   We will learn how to tighten up the requirements as we get feedback from implementors and users.
         #
@@ -44,10 +44,10 @@ $defs:
         #           - uncertain significance
         #           - likely benign
         #           - benign
-        # specifiedBy: 
+        # specifiedBy:
         #   extends: specifiedBy
         #   description: >-
-        #     The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of evidence. May include information about thresholds applied on assay variant effect scores to derive the final classification.  
+        #     The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of evidence. May include information about thresholds applied on assay variant effect scores to derive the final classification.
         #   properties:
         #     label:
         #       type: string

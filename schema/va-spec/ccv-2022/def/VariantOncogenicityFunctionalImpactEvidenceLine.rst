@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-An Evidence Line that describes how information about the functional impact of a variant on a gene or  gene product was interpreted as evidence for or against the variant's oncogenicity. 
+An Evidence Line that describes how information about the functional impact of a variant on a gene or gene product was interpreted as evidence for or against the variant's oncogenicity.
 
 **Information Model**
 
