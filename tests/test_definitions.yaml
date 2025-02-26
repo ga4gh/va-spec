@@ -1,5 +1,5 @@
 tests:
-  # test basic variants for sanity 
+  # test basic variants for sanity
   - test_file: allele.yaml
     namespace: vrs
     definition: Allele
@@ -78,7 +78,7 @@ tests:
     definition: VariantTherapeuticResponseStudyStatement
   - test_file: tr-statement-inline.yaml
     namespace: va-spec.base
-    definition: Statement 
+    definition: Statement
   - test_file: diagnostic-inline.yaml
     namespace: va-spec.aac-2017
     definition: VariantDiagnosticStudyStatement

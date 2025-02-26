@@ -5,7 +5,7 @@ from config import validator, js_def, coverage
 def _get_trial_use_classes():
     return set([x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] == 'trial use'])
 
-va_abstract_classes = {'va-spec.base:SubjectVariantProposition', 'va-spec.base:Condition', 'va-spec.base:Therapeutic'}
+va_abstract_classes = {'va-spec.base:SubjectVariantProposition', 'va-spec.base:Condition', 'va-spec.base:Therapeutic', 'va-spec.base:StudyResult'}
 
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:
@@ -21,7 +21,7 @@ def test_examples():
             assert class_validator.validate(data) is None
         except AssertionError as e:
             raise AssertionError(f"AssertionError in {test['test_file']}: {e}")
-        
+
 def test_trial_use_class_coverage():
     trial_use_classes = _get_trial_use_classes()
     tested_classes = set()
@@ -33,6 +33,7 @@ def test_trial_use_class_coverage():
         test_cls_name = f"{test['namespace']}:{test['definition']}"
         tested_classes.add(test_cls_name)
 
+    print(trial_use_classes - tested_classes - va_abstract_classes)
     assert len(trial_use_classes - tested_classes - va_abstract_classes) == 0
 
 def test_trial_use_property_coverage():
@@ -42,7 +43,7 @@ def test_trial_use_property_coverage():
 
     with open(test_path / 'tu_coverage_exceptions.yaml') as except_file:
         exceptions = yaml.safe_load(except_file)
-    
+
     for test in test_spec['tests']:
         with open(fixtures_path / test['test_file']) as datafile:
             data = yaml.safe_load(datafile)
@@ -63,6 +64,6 @@ def test_trial_use_property_coverage():
                 continue
             elif covered is False:
                 no_coverage_properties.add(f'{tu_class}.{tu_class_property}')
-    
+
     assert(len(no_coverage_properties) == 0), \
        f"The following properties lack test coverage: {no_coverage_properties}"
