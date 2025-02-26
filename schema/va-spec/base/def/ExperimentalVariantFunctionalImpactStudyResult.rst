@@ -92,4 +92,4 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - 
       - :ref:`DataSet`
       - 0..1
-      - The full data set that provided the reported the functional impact score. 
+      - The full data set that provided the reported the functional impact score.

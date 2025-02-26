@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/ExperimentalVariantFunctionalImpactStudyResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/ExperimentalVariantFunctionalImpactStudyResult",
    "title": "ExperimentalVariantFunctionalImpactStudyResult",
    "maturity": "trial use",
    "type": "object",
@@ -40,7 +40,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -54,7 +54,7 @@
                   "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
                },
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Document"
                }
             ]
          },
@@ -89,15 +89,15 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Method"
             }
          ],
          "description": "The assay that was performed to generate the reported functional impact score.",
          "$comment": "Examples: a specific experimental protocol or data analysis specification that describes how data were generated; an evidence interpretation guideline that describes steps taken to interpret data in making a variant pathogenicity classification; a method for using electron microscopy to image cell membrane proteins. Note that this attribute captures a specific *instance* of a specification or method (e.g. the specific electron microscopy method described in https://doi.org/10.1002/cpz1.1045) - as opposed to reporting a *type* of method applied (e.g. 'Transmission Electron Microscopy')."
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/DataSet",
-         "description": "The full data set that provided the reported the functional impact score. ",
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/DataSet",
+         "description": "The full data set that provided the reported the functional impact score.",
          "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       }
    },
