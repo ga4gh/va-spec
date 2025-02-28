@@ -19,7 +19,6 @@ Note that these are minimally specified models at present, which will be evolved
 .. toctree::
    :titlesonly:
 
-   gene
    conditions/index
-   therapeutic-procedures/index
+   therapeutics/index
  
