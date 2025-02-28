@@ -296,14 +296,15 @@ $defs:
           data generator, etc.). Values of this property may be framed as activities, or as contribution
           roles (e.g. using terms from the Contribution Role Ontology (CRO)).
       date:
-        $refCurie: gks.core:date
+        $refCurie: gks.core:datetime
         description: >-
-          The date that the Activity was completed.
+          When the contributing activity was completed. 
         $comment: >-
-          By convention, populate this attribute with the date the activity was completed (e.g.
-          in cases where the activity spans multiple days). The date MUST be formatted as a date
-          string in ISO8601 format "YYYY-MM-DD".
-
+          Populate this attribute with the date and time the activity was completed. MUST use ISO8601 format 
+          ("YYYY-MM-DDTHH:MM:SS"), e.g. "2024-02-25T09:25:00". In cases where a date alone is sufficient, 
+          the "THH:MM:SS" portion of the datetime string MAY be omitted (e.g. "2024-02-25").  Specifying a
+          time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC), 
+          e.g. "2024-02-25T09:25:00-5:00" for the US eastern time zone.
   Document:
     type: object
     inherits: gks-core:Entity
