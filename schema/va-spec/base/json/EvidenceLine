@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/EvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine",
    "title": "EvidenceLine",
    "type": "object",
    "maturity": "trial use",
@@ -40,7 +40,7 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
@@ -53,7 +53,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -64,7 +64,7 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
@@ -84,22 +84,22 @@
          "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/ExperimentalVariantFunctionalImpactProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantDiagnosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantOncogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantPrognosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantTherapeuticResponseProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantTherapeuticResponseProposition"
             }
          ]
       },
@@ -109,13 +109,13 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/StudyResult"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyResult"
                },
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Statement"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Statement"
                },
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/EvidenceLine"
+                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
