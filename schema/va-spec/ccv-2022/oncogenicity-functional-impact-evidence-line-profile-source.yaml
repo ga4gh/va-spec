@@ -4,7 +4,7 @@ title: Clingen/CGC/VICC 2022 Variant Oncogenicity Functional Impact Evidence Lin
 strict: true
 
 imports:
-  va-base: ../base/va-core-source.yaml
+  va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:

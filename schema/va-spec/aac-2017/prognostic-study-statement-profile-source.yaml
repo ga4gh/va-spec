@@ -4,7 +4,7 @@ title: AAC 2017 Variant Prognostic Study Statement
 strict: true
 
 imports:
-  va-base: ../base/va-core-source.yaml
+  va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
