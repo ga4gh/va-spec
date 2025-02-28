@@ -7,7 +7,7 @@ contributor:
 date: '2018-06-12'
 activityType:
   primaryCode: cg000010
-  label: submitted
+  name: submitted
   mappings:
     - coding:
         code: cg000010

@@ -26,7 +26,7 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
-   *  - label
+   *  - name
       - 
       - string
       - 0..1
@@ -36,7 +36,7 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 
@@ -71,9 +71,9 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - 
       - :ref:`iriReference` | :ref:`MappableConcept`
       - 1..1
-      - The sequence feature (typically a gene or gene product) on whose function the impact  of the subject variant is reported.
+      - The sequence feature (typically a gene or gene product) on whose function the impact of the subject variant is reported.
    *  - experimentalContextQualifier
       - 
       - :ref:`iriReference` | :ref:`Document` | object
       - 0..1
-      - An assay in which the reported variant functional impact was determined -  providing a specific experimental context in which this effect is asserted to hold.
+      - An assay in which the reported variant functional impact was determined - providing a specific experimental context in which this effect is asserted to hold.

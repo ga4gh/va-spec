@@ -31,7 +31,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - string
       - 1..1
       - The name of the class that is instantiated by a data object representing the Entity.
-   *  - label
+   *  - name
       - 
       - string
       - 0..1
@@ -41,7 +41,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 

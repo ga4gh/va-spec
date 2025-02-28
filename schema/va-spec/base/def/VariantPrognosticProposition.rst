@@ -26,7 +26,7 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
-   *  - label
+   *  - name
       - 
       - string
       - 0..1
@@ -36,7 +36,7 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 
@@ -61,7 +61,7 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`

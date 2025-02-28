@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/2-cohort-allele-frequency-study-result-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/2-cohort-allele-frequency-study-result-profile-source.yaml"
 title: Cohort Allele Frequency Study Result Standard Profile
 strict: true
 
@@ -9,9 +9,9 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.2/json/
-  vrs: /ga4gh/schema/vrs/2.0.0-ballot.2024-11.2/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-ballot.2024-11.2/json/
+  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/
+  vrs: /ga4gh/schema/vrs/2.0.0-snapshot.2025-02.2/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02.1/json/
 
 $defs:
   CohortAlleleFrequencyStudyResult:
@@ -27,7 +27,7 @@ $defs:
         default: "CohortAlleleFrequencyStudyResult"
         description: MUST be "CohortAlleleFrequencyStudyResult".
       sourceDataSet:
-        extends: sourceDataSet 
+        extends: sourceDataSet
         description: The dataset from which the CohortAlleleFrequencyStudyResult was reported.
       focusAllele:
         extends: focus
@@ -53,21 +53,21 @@ $defs:
         ordered: false
         description: >-
           A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described.
-          Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description 
+          Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description
           of different ancestry groups and sexes among those ancestry groups.
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
       ancillaryResults:
         maturity: draft
         $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content 
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
           to be added.
         type: object
         additionalProperties: true
       qualityMeasures:
         maturity: draft
         $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content 
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
           to be added.
         type: object
         additionalProperties: true

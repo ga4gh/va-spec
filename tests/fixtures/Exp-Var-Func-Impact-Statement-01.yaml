@@ -29,28 +29,28 @@ proposition:
     id: clinvar-gene:5728
     conceptType: Gene
     primaryCode: PTEN
-    label: PTEN
+    name: PTEN
     mappings:
       - coding:
           system: https://identifiers.org/ncbigene
           code: '5728'
         relation: exactMatch
-  experimentalContextQualifier: 
+  experimentalContextQualifier:
     title: PTEN VAMP-seq
     abstract: >-
-      Determining the pathogenicity of genetic variants is a critical challenge, and functional assessment is often the 
-      only option. Experimentally characterizing millions of possible missense variants in thousands of clinically 
-      important genes requires generalizable, scalable assays. We describe variant abundance by massively parallel 
-      sequencing (VAMP-seq), which measures the effects of thousands of missense variants of a protein on intracellular 
-      abundance simultaneously. We apply VAMP-seq to quantify the abundance of 7,801 single-amino-acid variants of PTEN and 
-      TPMT, proteins in which functional variants are clinically actionable. We identify 1,138 PTEN and 777 TPMT variants 
-      that result in low protein abundance, and may be pathogenic or alter drug metabolism, respectively. We observe 
-      selection for low-abundance PTEN variants in cancer, and show that p.Pro38Ser, which accounts for ~10% of PTEN 
-      missense variants in melanoma, functions via a dominant-negative mechanism. Finally, we demonstrate that VAMP-seq is 
+      Determining the pathogenicity of genetic variants is a critical challenge, and functional assessment is often the
+      only option. Experimentally characterizing millions of possible missense variants in thousands of clinically
+      important genes requires generalizable, scalable assays. We describe variant abundance by massively parallel
+      sequencing (VAMP-seq), which measures the effects of thousands of missense variants of a protein on intracellular
+      abundance simultaneously. We apply VAMP-seq to quantify the abundance of 7,801 single-amino-acid variants of PTEN and
+      TPMT, proteins in which functional variants are clinically actionable. We identify 1,138 PTEN and 777 TPMT variants
+      that result in low protein abundance, and may be pathogenic or alter drug metabolism, respectively. We observe
+      selection for low-abundance PTEN variants in cancer, and show that p.Pro38Ser, which accounts for ~10% of PTEN
+      missense variants in melanoma, functions via a dominant-negative mechanism. Finally, we demonstrate that VAMP-seq is
       applicable to other genes, highlighting its generalizability.
     document:
       title: >-
-        Multiplex assessment of protein variant abundance by massively parallel 
+        Multiplex assessment of protein variant abundance by massively parallel
         sequencing
       system:
         Nature Genetics
@@ -114,26 +114,26 @@ proposition:
       relevance:
         - system: https://www.omim.org/
           code: "601728"
-          label: PHOSPHATASE AND TENSIN HOMOLOG; PTEN
+          name: PHOSPHATASE AND TENSIN HOMOLOG; PTEN
         - system: https://www.omim.org/
           code: "158350"
-          label: COWDEN SYNDROME 1; CWS1
+          name: COWDEN SYNDROME 1; CWS1
         - system: https://mondo.monarchinitiative.org/
           code: MONDO:0017623
-          label: PTEN hamartoma tumor syndrome
+          name: PTEN hamartoma tumor syndrome
         - system: https://mondo.monarchinitiative.org/
           code: MONDO:0017623
-          label: Cowden syndrome 1
+          name: Cowden syndrome 1
       modelSystem:
         type: immortalized human cells
         description: HEK 293T TetBxb1BFP
         codings:
           - system: https://www.ebi.ac.uk/ols/ontologies/clo
             code: CLO:0037372
-            label: HEK293T cell
+            name: HEK293T cell
           - system: https://www.ncbi.nlm.nih.gov/taxonomy
             code: NCBI:txid9606
-            label: Homo sapiens
+            name: Homo sapiens
       profilingStrategy: barcode sequencing
       sequencingReadType: single-segment (short read)
 classification:
@@ -143,6 +143,6 @@ specifiedBy:
   type: Method
   subtype:
     primaryCode: variant interpretation guideline
-  reportedIn: 
+  reportedIn:
     type: Document
     pmid: 29785012

@@ -26,7 +26,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-cor
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
-   *  - label
+   *  - name
       - 
       - string
       - 0..1
@@ -36,7 +36,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-cor
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 
@@ -115,7 +115,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`va-cor
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`CohortAlleleFrequencyStudyResult`
       - 0..m
-      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description  of different ancestry groups and sexes among those ancestry groups.
+      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
    *  - ancillaryResults
       - 
                         .. raw:: html

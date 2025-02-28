@@ -1,6 +1,6 @@
 # --- partial extract from gnomad with minor updates to meet newer schema standardization alignment ---
 # 1. gnomad uses v1.3 of VRS so focusAllele was modified as follows
-#    focusAllele: 
+#    focusAllele:
 #      _id: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
 #      type: Allele
 #    changed to
@@ -13,18 +13,18 @@
 
 id: gnomad4:1-10120-T-G
 type: CohortAlleleFrequencyStudyResult
-label: Overall Cohort Allele Frequency for 1-10120-T-G
+name: Overall Cohort Allele Frequency for 1-10120-T-G
 sourceDataSet:
   id: gnomad4.1.0
   type: DataSet
-  label: gnomAD v4.1.0
+  name: gnomAD v4.1.0
   version: 4.1.0
 specifiedBy:
   type: Method
-  label: gnomAD methods
+  name: gnomAD methods
   reportedIn:
     type: Document
-    label: gnomAD help documentation
+    name: gnomAD help documentation
     urls:
       - "https://gnomad.broadinstitute.org/help"
 focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
@@ -33,173 +33,173 @@ locusAlleleCount: 34086
 focusAlleleFrequency: 0
 cohort:
   id: ALL
-  label: Overall
+  name: Overall
   type: StudyGroup
 subCohortFrequency:
   - id: gnomad4:1-10120-T-G.remaining
     type: CohortAlleleFrequencyStudyResult
-    label: Remaining individuals Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Remaining individuals Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 468
     focusAlleleFrequency: 0
     cohort:
       id: remaining
-      label: Remaining individuals Ancestry Group
+      name: Remaining individuals Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Remaining individuals
   - id: gnomad4:1-10120-T-G.amr
     type: CohortAlleleFrequencyStudyResult
-    label: Admixed American Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Admixed American Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 2282
     focusAlleleFrequency: 0
     cohort:
       id: amr
-      label: Admixed American Ancestry Group
+      name: Admixed American Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Admixed American
   - id: gnomad4:1-10120-T-G.fin
     type: CohortAlleleFrequencyStudyResult
-    label: Finnish Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Finnish Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 1112
     focusAlleleFrequency: 0
     cohort:
       id: fin
-      label: Finnish Ancestry Group
+      name: Finnish Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Finnish
   - id: gnomad4:1-10120-T-G.ami
     type: CohortAlleleFrequencyStudyResult
-    label: Amish Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Amish Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 190
     focusAlleleFrequency: 0
     cohort:
       id: ami
-      label: Amish Ancestry Group
+      name: Amish Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Amish
   - id: gnomad4:1-10120-T-G.eas
     type: CohortAlleleFrequencyStudyResult
-    label: East Asian Ancestry Group Allele Frequency for 1-10120-T-G
+    name: East Asian Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 872
     focusAlleleFrequency: 0
     cohort:
       id: eas
-      label: East Asian Ancestry Group
+      name: East Asian Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: East Asian
   - id: gnomad4:1-10120-T-G.mid
     type: CohortAlleleFrequencyStudyResult
-    label: Middle Eastern Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Middle Eastern Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 32
     focusAlleleFrequency: 0
     cohort:
       id: mid
-      label: Middle Eastern Ancestry Group
+      name: Middle Eastern Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Middle Eastern
   - id: gnomad4:1-10120-T-G.sas
     type: CohortAlleleFrequencyStudyResult
-    label: South Asian Ancestry Group Allele Frequency for 1-10120-T-G
+    name: South Asian Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 716
     focusAlleleFrequency: 0
     cohort:
       id: sas
-      label: South Asian Ancestry Group
+      name: South Asian Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: South Asian
   - id: gnomad4:1-10120-T-G.asj
     type: CohortAlleleFrequencyStudyResult
-    label: Ashkenazi Jewish Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Ashkenazi Jewish Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 1076
     focusAlleleFrequency: 0
     cohort:
       id: asj
-      label: Ashkenazi Jewish Ancestry Group
+      name: Ashkenazi Jewish Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Ashkenazi Jewish
   - id: gnomad4:1-10120-T-G.afr
     type: CohortAlleleFrequencyStudyResult
-    label: African/African-American Ancestry Group Allele Frequency for 1-10120-T-G
+    name: African/African-American Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 8666
     focusAlleleFrequency: 0
     cohort:
       id: afr
-      label: African/African-American Ancestry Group
+      name: African/African-American Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: African/African-American
   - id: gnomad4:1-10120-T-G.nfe
     type: CohortAlleleFrequencyStudyResult
-    label: Non-Finnish European Ancestry Group Allele Frequency for 1-10120-T-G
+    name: Non-Finnish European Ancestry Group Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 18672
     focusAlleleFrequency: 0
     cohort:
       id: nfe
-      label: Non-Finnish European Ancestry Group
+      name: Non-Finnish European Ancestry Group
       type: StudyGroup
       characteristics:
       - conceptType: genetic ancestry
         primaryCode: Non-Finnish European
   - id: gnomad4:1-10120-T-G.XX
     type: CohortAlleleFrequencyStudyResult
-    label: XX Allele Frequency for 1-10120-T-G
+    name: XX Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 18952
     focusAlleleFrequency: 0
     cohort:
       id: XX
-      label: XX
+      name: XX
       type: StudyGroup
       characteristics:
       - conceptType: biological sex
         primaryCode: XX
   - id: gnomad4:1-10120-T-G.XY
     type: CohortAlleleFrequencyStudyResult
-    label: XY Allele Frequency for 1-10120-T-G
+    name: XY Allele Frequency for 1-10120-T-G
     focusAllele: ga4gh:VA.XTZZHRCS2lIZuST7_LnLSHwro5uYYtVF
     focusAlleleCount: 0
     locusAlleleCount: 15134
     focusAlleleFrequency: 0
     cohort:
       id: XY
-      label: XY
+      name: XY
       type: StudyGroup
       characteristics:
       - conceptType: biological sex

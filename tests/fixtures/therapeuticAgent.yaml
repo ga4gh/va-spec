@@ -1,6 +1,6 @@
 id: civic.tid:146
 conceptType: Drug
-label: Afatinib
+name: Afatinib
 mappings:
   - coding:
       code: C66940

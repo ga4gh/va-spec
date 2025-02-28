@@ -1,55 +1,55 @@
 va-spec.base:ExperimentalVariantFunctionalImpactProposition:
   # Entity
-  - label
+  - name
   - extensions
   - id
   - description
-  - alternativeLabels
+  - aliases
 
 va-spec.base:VariantPathogenicityProposition:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description
 
 va-spec.base:VariantPrognosticProposition:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description
 
 va-spec.base:VariantDiagnosticProposition:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description
 
 va-spec.base:VariantTherapeuticResponseProposition:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description
 
 va-spec.base:VariantOncogenicityProposition:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description
-  - label
+  - name
 
 va-spec.base:StudyGroup:
   # Entity
   - description
-  - alternativeLabels
+  - aliases
   - extensions
 
 va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   # Entity
   - description
   - id
-  - label
+  - name
   - extensions
-  - alternativeLabels
+  - aliases
 
   # InformationEntity
   - contributions
@@ -59,7 +59,7 @@ va-spec.base:CohortAlleleFrequencyStudyResult:
   # Entity
   - description
   - extensions
-  - alternativeLabels
+  - aliases
 
   # InformationEntity
   - contributions
@@ -69,8 +69,8 @@ va-spec.base:EvidenceLine:
   # Entity
   - description
   - extensions
-  - label
-  - alternativeLabels
+  - name
+  - aliases
 
   # InformationEntity
   - reportedIn
@@ -82,8 +82,8 @@ va-spec.base:EvidenceLine:
 va-spec.base:Statement:
   # Entity
   - extensions
-  - alternativeLabels
-  - label
+  - aliases
+  - name
 
   # Statement
   - hasEvidenceLines
@@ -100,10 +100,10 @@ va-spec.base:Document:
 
 va-spec.base:Method:
   # Entity
-  - alternativeLabels
+  - aliases
   - description
   - extensions
-  
+
   # InformationEntity
   - specifiedBy
   - contributions
@@ -119,12 +119,12 @@ va-spec.base:TherapyGroup:
 va-spec.base:Contribution:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description
-  - label
+  - name
 
 va-spec.base:Agent:
   # Entity
   - extensions
-  - alternativeLabels
+  - aliases
   - description

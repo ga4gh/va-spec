@@ -28,18 +28,18 @@ targetProposition:
   predicate: isCausalFor
   objectCondition:
     conceptType: Disease
-    label: Unspecified
+    name: Unspecified
   geneContextQualifier:
     conceptType: Gene
-    label: PTEN
+    name: PTEN
 directionOfEvidenceProvided: supports
-strengthOfEvidenceProvided: 
+strengthOfEvidenceProvided:
   primaryCode: supporting
 specifiedBy:
   type: Method
   id: PS3
-  label: ACMG 2015 PS3 Criterion
-evidenceOutcome: 
+  name: ACMG 2015 PS3 Criterion
+evidenceOutcome:
   primaryCode: PS3_supporting
-  label: ACMG 2015 PS3 Supporting Criterion Met
+  name: ACMG 2015 PS3 Supporting Criterion Met
 

@@ -1,6 +1,6 @@
 id: traitset001
 traits:
   - primaryCode: HP:0025769
-    label: Disordered formal thought process
+    name: Disordered formal thought process
   - primaryCode: HP:0033051
-    label: Impaired executive functioning
+    name: Impaired executive functioning

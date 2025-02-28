@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/VariantOncogenicityProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantOncogenicityProposition",
    "title": "VariantOncogenicityProposition",
    "maturity": "trial use",
    "type": "object",
@@ -11,7 +11,7 @@
          "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.",
          "$comment": "Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to re-use an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context."
       },
-      "label": {
+      "name": {
          "type": "string",
          "description": "A primary name for the entity."
       },
@@ -19,7 +19,7 @@
          "type": "string",
          "description": "A free-text description of the Entity."
       },
-      "alternativeLabels": {
+      "aliases": {
          "type": "array",
          "ordered": false,
          "items": {
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -39,26 +39,26 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-ballot.2024-11.2/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02.1/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0-ballot.2024-11.2/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.0.0-snapshot.2025-02.2/json/MolecularVariation"
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
-         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic  variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.",
+         "description": "Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
             }
          ]
       },
@@ -66,17 +66,17 @@
          "description": "Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
             }
          ]
       },
       "type": {
          "type": "string",
          "description": "MUST be \"VariantOncogenicityProposition\".",
-         "$comment": "MUST be the label of a concrete class from the data model.",
+         "$comment": "MUST be the name of a concrete class from the data model.",
          "const": "VariantOncogenicityProposition",
          "default": "VariantOncogenicityProposition"
       },
@@ -89,10 +89,10 @@
       "objectTumorType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2024-11.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2024-11.2/base/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Condition"
             }
          ],
          "description": "The tumor type for which the variant impact is evaluated.",

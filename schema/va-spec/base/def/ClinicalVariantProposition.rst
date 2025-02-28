@@ -31,7 +31,7 @@ Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVaria
       - string
       - 1..1
       - The name of the class that is instantiated by a data object representing the Entity.
-   *  - label
+   *  - name
       - 
       - string
       - 0..1
@@ -41,7 +41,7 @@ Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVaria
       - string
       - 0..1
       - A free-text description of the Entity.
-   *  - alternativeLabels
+   *  - aliases
       - 
                         .. raw:: html
 
@@ -76,7 +76,7 @@ Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVaria
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association  described in the Proposition.
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
    *  - alleleOriginQualifier
       - 
       - :ref:`MappableConcept` | :ref:`iriReference`

@@ -1,12 +1,12 @@
 id: VarPathProp022
-label: Variant pathogenicity proposition example
+name: Variant pathogenicity proposition example
 type: VariantPathogenicityProposition
 subjectVariant:
   id: clinvar/208366
   type: CategoricalVariant
   constraints:
     - type: DefiningAlleleConstraint
-      allele: 
+      allele:
         id: ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
         digest: Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
         type: Allele
@@ -18,7 +18,7 @@ subjectVariant:
             id: NC_000001.11
             type: SequenceReference
             refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
-            label: NC_000001.11
+            name: NC_000001.11
           start: 40819438
           end: 40819446
         state:
@@ -33,11 +33,11 @@ subjectVariant:
       relations:
         - primaryCode: liftover_to
         - primaryCode: transcribes_to
-  label: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
+  name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
 objectCondition:
   id: clinvar.trait/939
   conceptType: Disease
-  label: Autosomal dominant nonsyndromic hearing loss 2A
+  name: Autosomal dominant nonsyndromic hearing loss 2A
   mappings:
   - coding:
       code: C2677637
@@ -45,14 +45,14 @@ objectCondition:
     relation: exactMatch
 predicate: isCausalFor
 penetranceQualifier:
-  label: high penetrance
+  name: high penetrance
   primaryCode: high
 alleleOriginQualifier:
   primaryCode: GENO:0000888
-  label: germline allele origin
+  name: germline allele origin
 modeOfInheritanceQualifier:
   primaryCode: HP:0000006
-  label: Autosomal dominant inheritance
+  name: Autosomal dominant inheritance
 geneContextQualifier:
   primaryCode: ncbigene:9132
-  label: KCNQ4
+  name: KCNQ4

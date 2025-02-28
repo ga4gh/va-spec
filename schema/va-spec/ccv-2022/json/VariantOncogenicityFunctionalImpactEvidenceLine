@@ -1,21 +1,21 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/ccv-2022/json/VariantOncogenicityFunctionalImpactEvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/ccv-2022/json/VariantOncogenicityFunctionalImpactEvidenceLine",
    "title": "VariantOncogenicityFunctionalImpactEvidenceLine",
    "maturity": "draft",
-   "description": "An Evidence Line that describes how information about the functional impact of a variant on a gene or  gene product was interpreted as evidence for or against the variant's oncogenicity. ",
+   "description": "An Evidence Line that describes how information about the functional impact of a variant on a gene or gene product was interpreted as evidence for or against the variant's oncogenicity.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/EvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "description": "A Variant Oncoogenicity Proposition against which functional impact information was assessed, in determining the strength and direction of support this information provides as evidence.",
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantOncogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
-               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposition or the oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute.     *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposition or the oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
                "properties": {
                   "primaryCode": {
                      "type": "string",
@@ -28,7 +28,7 @@
                }
             },
             "specifiedBy": {
-               "description": "The Clingen/CGC/VICC-2022 criterion that was applied to interpret variant functional impact information  as evidence for or against the assessed variant's oncogenicity. ",
+               "description": "The Clingen/CGC/VICC-2022 criterion that was applied to interpret variant functional impact information as evidence for or against the assessed variant's oncogenicity.",
                "properties": {
                   "primaryCode": {
                      "description": "The Clingen/CGC/VICC 2022 criterion code that was applied to interpret the functional impact of the variant on the gene or gene product. Must be one of the following values: SBS2 or OS2. Conditional requirement: * If directionOfEvidenceProvided is 'supports' then the value must be 'OS2'. * If directionOfEvidenceProvided is 'disputes' then the value must be 'SBS2'.",
@@ -41,7 +41,7 @@
                }
             },
             "evidenceOutcome": {
-               "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values.  The 'specifiedBy' attribute is required and assumed to have a single method, OS2 or SBS2. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.",
+               "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. The 'specifiedBy' attribute is required and assumed to have a single method, OS2 or SBS2. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.",
                "properties": {
                   "primaryCode": {
                      "type": "string",
