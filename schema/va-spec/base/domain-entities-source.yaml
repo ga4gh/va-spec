@@ -19,10 +19,13 @@ $defs:
       At present, individual conditions are represented using a MappableConcept that captures a code or name for the 
       condition, along with optional mappings and metadata about the code system. Groups of conditions are represented
       using the ConditionSet class, which are collections of 2 or more conditions, each represented as a MappableConcept.
+      By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with 
+      a conceptType = "Absent". Additionally, either the 'name' or 'primaryCoding' attribute of a MappableConcept must
+      be populated.  The name or code may simple reiterate the conceptType (e.g. 'condition absent'), or report a more specific
+      nature or reason for the absence of a condition (e.g. 'Data Missing in Source', 'Condition Unknown', 'All Mendelian Diseases').
     oneOf:
       - $refCurie: gks.core:MappableConcept
       - $ref: "#/$defs/ConditionSet"
-
   # ConditionSet data structure to provide support for co-occuring or substitute conditions.
   ConditionSet:
     type: object
