@@ -299,10 +299,3 @@ $defs
           A single term or phrase summarizing the outcome of the pathogenicity assessment for the variant.
         range:
           pathogenicityClassificationEnum  # pathogenic, likely_pathogenic, benign, likely_benign, uncertain_significance
-
-
-
-
-
-
-

@@ -3,7 +3,7 @@
 Information Entity
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../../../def/va-spec/InformationEntity.rst  
+.. include::  ../../../def/va-spec/InformationEntity.rst
 
 **Subclasses**
 

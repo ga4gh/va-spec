@@ -37,7 +37,7 @@ For example::
 To aid comprehension, the Text Styles section source looks like this::
 
     .. _text-styles-target:
-    
+
     Text Styles
     !!!!!!!!!!!
 
@@ -75,4 +75,3 @@ A cheat sheet for making references, links, and literals in sphinx.
 
   * ````literal```` renders as ``literal``
   * e.g., todo
-

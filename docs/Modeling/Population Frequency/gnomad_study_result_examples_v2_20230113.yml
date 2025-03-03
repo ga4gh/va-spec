@@ -1,6 +1,6 @@
 # Source data: https://gnomad.broadinstitute.org/variant/1-55505485-G-A
 # Note that I condensed the data a bit by making all Codings into simple enums
-# Illustrates two types of Study Result objects: 
+# Illustrates two types of Study Result objects:
    # 1. Popmax Allele Filtering Frequency Study Reuslts: holds the calculated Popmax Filtering AF for the variant, along with some provenance metadata
    # 2. Population Allele Frequency Study Result: holds more foundational allele count and frequency data for specified populations/subpopulations in the gnomAD dataset
 
@@ -10,7 +10,7 @@
     ## Does not define formal subclasses for each result type - rather, uses the Core IM StudyResult class as is and moves domain specific semantics into subtype fields. Specifically:
     #### - indicates result type in the StudyResult.subtype field
     #### - captures data items comprising a Result in DataItem objects where the type of the data is indicated in the 'subtype' field ((e.g subtype: allele count)
-    ## Uses string enums rather than Codings for all coded values for now (to keep example as concise as possible - may decide to use Codings for some/all of these)  
+    ## Uses string enums rather than Codings for all coded values for now (to keep example as concise as possible - may decide to use Codings for some/all of these)
 
 ### Result Type: Popmax Allele Filtering Frequency Study Result Example (for variation 1-55505485-G-A)
 
@@ -22,9 +22,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -32,7 +32,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -49,7 +49,7 @@
     - id: cg-data:001
       type: DataItem
       subtype: Popmax Basis Populations   # I made this up - not actually sure which specific population(s) were the basis for this score
-      value: 
+      value:
         - AFR
         - NFE
         - SAS
@@ -57,15 +57,15 @@
     - id: cg-data:001
       type: DataItem
       subtype: Popmax Excluded Populations
-      value: 
+      value:
         - FIN
         - AMI
         - ASJ
         - SAS
         - OTH
 
-## NOTE: Another way we might capture populations on which the popmax calculation were based is in the definition of the StudyPopulation itself (instead of in data items), e.g: 
-  studyPopulation: 
+## NOTE: Another way we might capture populations on which the popmax calculation were based is in the definition of the StudyPopulation itself (instead of in data items), e.g:
+  studyPopulation:
     id: cg-data:pop009
     type: StudyPopulation
     label: gnomad global
@@ -77,7 +77,7 @@
           - NFE
           - SAS
           - EAS
-## . . . this is logical as the 'Study' in this case is simply the analysis performed to generate Popmax values for each variant - and the relevant population used in this calculation for the 1-55505485-G-A variant are those indicated above 
+## . . . this is logical as the 'Study' in this case is simply the analysis performed to generate Popmax values for each variant - and the relevant population used in this calculation for the 1-55505485-G-A variant are those indicated above
 
 
 ######---------------------------------------------------------------------------------------------------######
@@ -92,9 +92,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -102,7 +102,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -147,9 +147,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -157,7 +157,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -188,7 +188,7 @@
       subtype: Max Coverage Depth Exomes
       value: 52.4
 
-	  
+
 #### Example 3: 1-55505485-G-A frequency data for the Non-Finnish European (NFE) subset of the global population, exome and genome
 - id: cg-data:study_result_003
   type: StudyResult
@@ -197,9 +197,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1  
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop002
     type: StudyPopulation
     label: gnomad Non-Finnish European
@@ -208,7 +208,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: Non-Finnish European
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -239,7 +239,7 @@
       type: DataItem
       subtype: Max Coverage Depth Exomes
       value: 52.4               # These coverage metadata may not be right - as this value is across the global exome population . . . reomove from this Result (but user an still trace back to it by following population subset hierarchy back to assessment of global population for this variant)
-    - id: cg-data:305  
+    - id: cg-data:305
       type: DataItem
       subtype: Max Coverage Depth Genomes
       value: 35.9
@@ -252,9 +252,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2
-      version: 2.1.1  
-  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37) 
-  studyPopulation: 
+      version: 2.1.1
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
+  studyPopulation:
     id: cg-data:pop003
     type: StudyPopulation
     label: gnomad North-western European
@@ -263,7 +263,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: North-western European
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -294,7 +294,7 @@
       type: DataItem
       subtype: Max Coverage Depth Exomes
       value: 52.4               # These coverage metadata may not be right - as this value is across the global exome population . . . reomove from this Result (but user an still trace back to it by following population subset hierarchy back to assessment of global population for this variant)
-    - id: cg-data:405  
+    - id: cg-data:405
       type: DataItem
       subtype: Max Coverage Depth Genomes
       value: 35.9
@@ -307,9 +307,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1  
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop004
     type: StudyPopulation
     label: gnomad Non-Finnish European, female
@@ -321,7 +321,7 @@
       - name: biological sex
         description: genetically defined biological sex of the individual (e.g. XX, XY, XXY, etc).
         value: XX
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -352,7 +352,7 @@
       type: DataItem
       subtype: Max Coverage Depth Exomes
       value: 52.4               # These coverage metadata may not be right - as this value is across the global exome population . . . reomove from this Result (but user an still trace back to it by following population subset hierarchy back to assessment of global population for this variant)
-    - id: cg-data:505  
+    - id: cg-data:505
       type: DataItem
       subtype: Max Coverage Depth Genomes
       value: 35.9
@@ -364,7 +364,7 @@
 
 ## Approach 2: Features
     ## Separate, stand-alone StudyResult objects for each discrete population in which we want to describe variation data.
-    ## Defines formal subclasses for each result type (e.g. "PopulationAlleleFrequencyStudyResult) - which permits us add new attrbutes to the class. 
+    ## Defines formal subclasses for each result type (e.g. "PopulationAlleleFrequencyStudyResult) - which permits us add new attrbutes to the class.
     ## Captures data items comprising a Result using new/dedicated attributes defined in the StudyResult subclass (e.g. alleleCount: 125535)
     ## Uses string enums rather than Codings for all coded values for now (to keep example as concise as possible - may decide to use Codings for some/all of these).
 
@@ -377,9 +377,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -387,7 +387,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -397,20 +397,20 @@
   methodTypes:                # This is one way we might indicate whether the reported frequency data is based on genomes and/or exomes
     - Exome Sequencing
   popmaxFilterAlleleFrequency: 0.01937
-  popmaxBasisPopulations: 
+  popmaxBasisPopulations:
     - AFR
     - NFE
     - SAS
     - EAS
-  popmaxExcludedPopulations: 
+  popmaxExcludedPopulations:
     - FIN
     - AMI
     - ASJ
     - SAS
     - OTH
 
-## NOTE: Another way we might capture populations on which the popmax calculation were based is in the definition of the StudyPopulation itself (instead of in data items), e.g: 
-  studyPopulation: 
+## NOTE: Another way we might capture populations on which the popmax calculation were based is in the definition of the StudyPopulation itself (instead of in data items), e.g:
+  studyPopulation:
     id: cg-data:pop009
     type: StudyPopulation
     label: gnomad global
@@ -422,7 +422,7 @@
           - NFE
           - SAS
           - EAS
-## . . . this is logical as the 'Study' in this case is simply the analysis performed to generate Popmax values for each variant - and the relevant population used in this calculation for the 1-55505485-G-A variant are those indicated above 
+## . . . this is logical as the 'Study' in this case is simply the analysis performed to generate Popmax values for each variant - and the relevant population used in this calculation for the 1-55505485-G-A variant are those indicated above
 
 
 ######---------------------------------------------------------------------------------------------------######
@@ -436,9 +436,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -446,7 +446,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -471,9 +471,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -481,7 +481,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -496,7 +496,7 @@
   homozygousIndividualCount: 2
   maxCoverageDepthExomes: 52.4   # This DataItem is a piece of metadata about the items above
 
-	  
+
 #### Example 3: 1-55505485-G-A frequency data for the Non-Finnish European (NFE) subset of the global population, exome and genome
 - id: cg-data:study_result_003
   type: Population Allele Frequency Study Result    # Formal subtyping of the Core IM class
@@ -504,9 +504,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1  
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop002
     type: StudyPopulation
     label: gnomad Non-Finnish European
@@ -515,7 +515,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: Non-Finnish European
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -530,9 +530,9 @@
   alleleFrequency: 0.0002588
   homozygousIndividualCount: 0
   maxCoverageDepthExomes: 52.4   # The coverage metadata may not be right - as this value is across the global exome population . . . reomove from this Result (but user an still trace back to it by following population subset hierarchy back to assessment of global population for this variant)
-  maxCoverageDepthGenomes: 35.9   
-  
-  
+  maxCoverageDepthGenomes: 35.9
+
+
 
 #### Example 4: 1-55505485-G-A frequency data for the Non-western European subset of the NFE population, exome and genome
 - id: cg-data:study_result_004
@@ -541,9 +541,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2
-      version: 2.1.1  
-  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37) 
-  studyPopulation: 
+      version: 2.1.1
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
+  studyPopulation:
     id: cg-data:pop003
     type: StudyPopulation
     label: gnomad North-western European
@@ -552,7 +552,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: North-western European
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -567,7 +567,7 @@
   alleleFrequency: 0.001180
   homozygousIndividualCount: 0
   maxCoverageDepthExomes: 52.4   # The coverage metadata may not be right - as this value is across the global exome population . . . reomove from this Result (but user an still trace back to it by following population subset hierarchy back to assessment of global population for this variant)
-  maxCoverageDepthGenomes: 35.9   
+  maxCoverageDepthGenomes: 35.9
 
 
 #### Example 5: 1-55505485-G-A frequency data for the female Non-Finnish European (NFE) subset of the global population, exome and genome
@@ -577,9 +577,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1  
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 1-55505485-G-A (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop004
     type: StudyPopulation
     label: gnomad Non-Finnish European, female
@@ -591,7 +591,7 @@
       - name: biological sex
         description: genetically defined biological sex of the individual (e.g. XX, XY, XXY, etc).
         value: XX
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -606,7 +606,7 @@
   alleleFrequency: 0.0001254
   homozygousIndividualCount: 0
   maxCoverageDepthExomes: 52.4   # The coverage metadata may not be right - as this value is across the global exome population . . . reomove from this Result (but user an still trace back to it by following population subset hierarchy back to assessment of global population for this variant)
-  maxCoverageDepthGenomes: 35.9   
+  maxCoverageDepthGenomes: 35.9
 
 
 

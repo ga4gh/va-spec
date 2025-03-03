@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/acmg-2015/pathogenicity-functional-impact--profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/acmg-2015/pathogenicity-functional-impact--profile-source.yaml"
 title: ACMG 2015 Variant Pathogenicity Functional Impact Evidence Line Profile
 strict: true
 
@@ -14,13 +14,13 @@ $defs:
       An Evidence Line that describes how information about the functional impact of a variant on a gene or
       gene product was interpreted as evidence for or against the variant's pathogenicity.
     allOf:
-    - $ref: "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
             A Variant Pathogenicity Proposition against which functional impact information was assessed,
             in determining the strength and direction of support this information provides as evidence.
-          $ref: "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02/base/json/VariantPathogenicityProposition"
         strengthOfEvidenceProvided:
           description: >-
             The strength of support that an Evidence Line is determined to provide for or against the

@@ -22,22 +22,22 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - Limits
       - Description
    *  - id
-      - 
+      -
       - string
       - 0..1
       - The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
    *  - name
-      - 
+      -
       - string
       - 0..1
       - A primary name for the entity.
    *  - description
-      - 
+      -
       - string
       - 0..1
       - A free-text description of the Entity.
    *  - aliases
-      - 
+      -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
@@ -45,7 +45,7 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - 0..m
       - Alternative name(s) for the Entity.
    *  - extensions
-      - 
+      -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
@@ -53,27 +53,27 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - subjectVariant
-      - 
+      -
       - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
       - 1..1
       - A variant that is the subject of the Proposition.
    *  - type
-      - 
+      -
       - string
       - 1..1
       - MUST be "ExperimentalVariantFunctionalImpactProposition".
    *  - predicate
-      - 
+      -
       - string
       - 1..1
       - The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter.
    *  - objectSequenceFeature
-      - 
+      -
       - :ref:`iriReference` | :ref:`MappableConcept`
       - 1..1
       - The sequence feature (typically a gene or gene product) on whose function the impact of the subject variant is reported.
    *  - experimentalContextQualifier
-      - 
+      -
       - :ref:`iriReference` | :ref:`Document` | object
       - 0..1
       - An assay in which the reported variant functional impact was determined - providing a specific experimental context in which this effect is asserted to hold.

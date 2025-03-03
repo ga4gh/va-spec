@@ -1,8 +1,8 @@
 {
     "records": [
 
-# Record 1 (under lab fake 1) is an example of a variant classified using modified ACMG criteria. If a lab’s application of the ACMG code differs to that of standard ACMG, then we provide an explain field. 
-        { 
+# Record 1 (under lab fake 1) is an example of a variant classified using modified ACMG criteria. If a lab’s application of the ACMG code differs to that of standard ACMG, then we provide an explain field.
+        {
             "data": {   # MHB: This object seems to hold the outcomes of criterion assessments for every ACMG criterion. Were all explicitly evaluated - i.e. NM means evaluated and not met.  Or could NM mean not ever evaluated? Perhaps where no explanation, it was not even evaluated? (SEPIO: level 1 evidence lines and items.  PM2 is met is the assertion EI , and the strength and direction (supporting path, moderate) is on the EL. Will we need way to explicitly capture/distinguish criteria not evaluated from those evaluated and not met?)
                 "ba1": {
                     "value": "NM",
@@ -110,7 +110,7 @@
                     "value": "(hidden)"
                 },
                 "c_hgvs": {
-                    "value": "NM_004360.3(CDH1):c.1913G>A" 
+                    "value": "NM_004360.3(CDH1):c.1913G>A"
                 },
                 "p_hgvs": {
                     "value": "p.W638*"
@@ -184,12 +184,12 @@
                 "last_edited": 1569914189.583867
             },
             "id": "fake1/unit_1/hg19_NM_004360_3_CDH1_c_1913G_A"
-        },     
- 
+        },
+
 ----------------------------------------------------
- 
+
 # Record 2 (under lab fake 2) is an example of a variant classified using standard ACMG. This particular record is representative of a lab that can export more granular evidence than others as they use software that Shariant was built on.
-        
+
 		{
             " data ": {
                 " age ": {  # what is this?
@@ -230,7 +230,7 @@
                 },
                 " bs4 ": {
                     " note ": " PubMed: 26586665 ",  # is this a pub where evidence supporting this criteria being met was found?
-                    " value ": " BS "  
+                    " value ": " BS "
                 },
                 " pm1 ": {
                     " value ": " NM "
@@ -311,7 +311,7 @@
                 " literature ": {  # what is significance of all of these pubs?  any relevant pub?  those holding interpreted evidence?
                     " value ": " Richards(2015)Genet Med, Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology. \ nPubMed: 25741868 \ n \ nNykamp(2017)Genet Med, Sherloc: a comprehensive refinement of the ACMG - AMP variant classification criteria. \ nPubMed: 28492532 \ n \ nBodian(2014)PLoS One, Germline variation in cancer - susceptibility genes in a healthy, ancestrally diverse cohort: implications for individual genome sequencing. \ nPubMed: 24728327 \ n \ nAmendola(2015)Genome Res, Actionable exomic incidental findings in 6503 participants: challenges of variant classification. \ nPubMed: 25637381 \ n \ nJohnston(2012)Am J Hum Genet, Secondary variants in individuals undergoing exome sequencing: screening of 572 individuals identifies high - penetrance mutations in cancer - susceptibility genes. \ nPubMed: 22703879 \ n \ nBorg(2010)Hum Mutat, Characterization of BRCA1 and BRCA2 deleterious mutations and variants of unknown clinical significance in unilateral and bilateral breast cancer: the WECARE study. \ nPubMed: 20104584 \ n \ nMazoyer(1996)Nat Genet, A polymorphic stop codon in BRCA2. \ nPubMed: 8896551 \ n \ ngene, BRCA1 - and BRCA2 - Associated Hereditary Breast and Ovarian Cancer \ nNCBIBookShelf: NBK1247 \ n \ nOffit(2003)J Natl Cancer Inst, Shared genetic susceptibility to breast cancer, brain tumors, and Fanconi anemia. \ nPubMed: 14559878 \ n \ nWu(2005)Cancer Res, Functional evaluation and cancer risk assessment of BRCA2 unclassified variants. \ nPubMed: 15695382 \ n \ nKuznetsov(2008)Nat Med, Mouse embryonic stem cell - based functional assay to evaluate mutations in BRCA2. \ nPubMed: 18607349 \ n \ nPetrucelli(1993)BRCA1 - and BRCA2 - Associated Hereditary Breast and Ovarian Cancer \ nPubMed: 20301425 \ n \ nHowlett(2002)Science, Biallelic inactivation of BRCA2 in Fanconi anemia. \ nPubMed: 12065746 \ n \ nFarrugia(2008)Cancer Res, Functional assays for classification of BRCA2 variants of uncertain significance. \ nPubMed: 18451181 \ n \ nLindor(2012)Hum Mutat, A review of a multifactorial probability - based model for classification of BRCA1 and BRCA2 variants of uncertain significance(VUS). \ nPubMed: 21990134 \ n \ nReid(2005)J Med Genet, Biallelic BRCA2 mutations are associated with multiple malignancies in childhood including familial Wilms tumour. \ nPubMed: 15689453 \ n \ nBergthorsson(2001)J Med Genet, BRCA1 and BRCA2 mutation status and cancer family history of Danish women affected with multifocal or bilateral breast cancer at a young age. \ nPubMed: 11389159 \ n \ nCapanu(2011)Genet Epidemiol, Assessment of rare BRCA1 and BRCA2 variants of unknown significance using hierarchical modeling. \ nPubMed: 21520273 \ n \ nRudd(2006)Genome Res, Variants in the GH - IGF axis confer susceptibility to lung cancer. \ nPubMed: 16741161 \ n \ nClaes(2003)Genes Chromosomes Cancer, Differentiating pathogenic mutations from polymorphic alterations in the splice sites of BRCA1 and BRCA2. \ nPubMed: 12759930 \ n \ nHadjisavvas(2004)Cancer Genet Cytogenet, Hereditary breast and ovarian cancer in Cyprus: identification of a founder BRCA2 mutation. \ nPubMed: 15172753 \ n \ nWagner(1999)Hum Mol Genet, Global sequence diversity of BRCA2: analysis of 71 breast cancer families and 95 control individuals of worldwide populations. \ nPubMed: 9971877 \ n \ nde Garibay(2014)Hum Mutat, Capillary electrophoresis analysis of conventional splicing assays: IARC analytical and clinical classification of 31 BRCA2 genetic variants. \ nPubMed: 24123850 \ n \ nMeeks(2016)J Natl Cancer Inst, BRCA2 Polymorphic Stop Codon K3326X and the Risk of Breast, Prostate, and Ovarian Cancers. \ nPubMed: 26586665 \ n \ nMurphy(2002)Cancer Res, Evaluation of candidate genes MAP2K4, MADH4, ACVR1B, and BRCA2 in familial pancreatic cancer: deleterious BRCA2 mutations in 17 % . \ nPubMed: 12097290 \ n \ nJohnson(2007)Hum Mol Genet, Counting potentially functional variants in BRCA1, BRCA2 and ATM predicts breast cancer susceptibility. \ nPubMed: 17341484 \ n \ nMartin(2005)Oncogene, Increased prevalence of the BRCA2 polymorphic stop codon K3326X among individuals with familial pancreatic cancer. \ nPubMed: 15806175 \ n \ nAkbari(2011)Hum Genet, Mutations in Fanconi anemia genes and the risk of esophageal cancer. \ nPubMed: 21279724 \ n \ nMichailidou(2013)Nat Genet, Large - scale genotyping identifies 41 new loci associated with breast cancer risk. \ nPubMed: 23535729 \ n \ nJensen(2013)Yale J Biol Med, BRCA2: one small step for DNA repair, one giant protein purified. \ nPubMed: 24348212 \ n \ nThompson(2015)Sci Rep, Reevaluation of the BRCA2 truncating allele c.9976A > T(p.Lys3326Ter)in a familial breast cancer context. \ nPubMed: 26455428 "
                 },
-                
+
                 # sequenceing data suggests this is an interpretation FOR A PATIENT. (SEPIO - so would we want a patientQualifier on the statement? Semantics of the statemetn become "Variat X is pathogenic for Disease Y in Patient X". And this sequencing data is all evidence that the pateint has the variant to begin with?)
                 " read_depth ": {
                     " value ": " 376 "
@@ -480,7 +480,7 @@
             },
             " id ": " fake2 / unit_1 / vc2959 "
         }
-		
+
 
 
 
@@ -611,7 +611,7 @@
                     "value": "(hidden)"
                 },
                 "c_hgvs": {
-                    "value": "NM_004360.3(CDH1):c.1913G>A" 
+                    "value": "NM_004360.3(CDH1):c.1913G>A"
                 },
                 "p_hgvs": {
                     "value": "p.W638*"
@@ -685,7 +685,7 @@
                 "last_edited": 1569914189.583867
             },
             "id": "fake1/unit_1/hg19_NM_004360_3_CDH1_c_1913G_A"
-        }, 
+        },
 		{
             " data ": {
                 " age ": {

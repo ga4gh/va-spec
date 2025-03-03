@@ -25,8 +25,8 @@
     },
     "qualifiers": {
       "penetrance": {
-        // in reality we will not include "penetrance" if it is "not specified", 
-        // leaving it here to show that "penetrance" is an available "qualifier" 
+        // in reality we will not include "penetrance" if it is "not specified",
+        // leaving it here to show that "penetrance" is an available "qualifier"
         // for VarPath statements
         "label": "not specified"
       }

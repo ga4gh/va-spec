@@ -15,13 +15,13 @@ acmg-2015-clean:
 	(cd va-spec/acmg-2015; make clean)
 
 aac-2017-all:
-	(cd va-spec/aac-2017; make all)	
+	(cd va-spec/aac-2017; make all)
 
 aac-2017-clean:
 	(cd va-spec/aac-2017; make clean)
 
 ccv-2022-all:
-	(cd va-spec/ccv-2022; make all)	
+	(cd va-spec/ccv-2022; make all)
 
 ccv-2022-clean:
 	(cd va-spec/ccv-2022; make clean)
