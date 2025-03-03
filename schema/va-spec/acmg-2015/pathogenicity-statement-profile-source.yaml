@@ -17,7 +17,7 @@ $defs:
     - $ref: "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-core/1.0.0-snapshot.2025-02/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
           description: >-
             A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement.
             A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the

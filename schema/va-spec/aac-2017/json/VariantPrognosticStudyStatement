@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/aac-2017/json/VariantPrognosticStudyStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/aac-2017/json/VariantPrognosticStudyStatement",
    "title": "VariantPrognosticStudyStatement",
    "maturity": "draft",
    "description": "A statement reporting a conclusion from a single study about whether a variant is associated with a disease prognosis - based on interpretation of the study's results.",
