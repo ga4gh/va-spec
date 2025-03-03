@@ -32,18 +32,16 @@
                }
             },
             "specifiedBy": {
-               "description": "The ACMG criterion that was applied to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.",
+               "description": "The guidelines that were followed to interpret variant functional impact information  as evidence for or against the assessed variant's pathogenicity. ",
                "properties": {
-                  "primaryCoding": {
-                     "description": "The ACMG 2015 criterion code that was applied to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.  Must be one of the following values: BS3 or PS3. Conditional requirement: * If directionOfEvidenceProvided is 'supports' then the value must be 'PS3'. * If directionOfEvidenceProvided is 'disputes' then the value must be 'BS3'.",
-                     "code": {
-                        "enum": [
-                           "PS3",
-                           "BS3"
-                        ]
-                     },
-                     "system": {
-                        "const": "ga4gh-gks-term:path-functional-impact-specifiedBy"
+                  "reportedIn": {
+                     "properties": {
+                        "pmid": {
+                           "const": "25741868"
+                        },
+                        "name": {
+                           "const": "ACMG Guidelines, 2015"
+                        }
                      }
                   }
                }
