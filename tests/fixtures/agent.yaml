@@ -2,4 +2,6 @@ id: clinvar.submitter/500139
 type: Agent
 name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
 subtype:
-  primaryCode: organization
+  primaryCoding:
+    code: organization
+    system: ga4gh-gks-term:agent-subtype

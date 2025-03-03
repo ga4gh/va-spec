@@ -31,28 +31,50 @@ subjectVariant:
           - syntax: spdi
             value: NC_000001.11:40819438:CTCCTCCT:CTCCT
       relations:
-        - primaryCode: liftover_to
-        - primaryCode: transcribes_to
+        - primaryCoding:
+            code: liftover_to
+            system: ga4gh-gks-term:allele-relation
+        - primaryCoding:
+            code: transcribed_to
+            system: http://www.sequenceontology.org
+            iris:
+              - http://www.sequenceontology.org/browser/current_release/term/transcribed_to
   name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
-objectCondition:
+objectCondition: 
   id: clinvar.trait/939
   conceptType: Disease
   name: Autosomal dominant nonsyndromic hearing loss 2A
-  mappings:
-  - coding:
-      code: C2677637
-      system: https://www.ncbi.nlm.nih.gov/medgen/
-    relation: exactMatch
+  primaryCoding:
+    code: C2677637
+    system: https://www.ncbi.nlm.nih.gov/medgen/
+    iris:
+      - https://identifiers.org/medgen:C2677637
+      - https://www.ncbi.nlm.nih.gov/medgen/C2677637
 predicate: isCausalFor
 penetranceQualifier:
   name: high penetrance
-  primaryCode: high
+  primaryCoding:
+    code: high
+    system: ga4gh-gks-term:penetrance-qualifier
 alleleOriginQualifier:
-  primaryCode: GENO:0000888
+  primaryCoding:
+    code: GENO:0000888
+    system: https://github.com/monarch-initiative/GENO-ontology/
+    iris:
+      - http://purl.obolibrary.org/obo/GENO_0000888
   name: germline allele origin
 modeOfInheritanceQualifier:
-  primaryCode: HP:0000006
+  primaryCoding:
+    code: HP:0000006
+    system: http://human-phenotype-ontology.github.io/
+    iris:
+      - https://hpo.jax.org/browse/term/HP:0000118
+      - https://www.ebi.ac.uk/ols4/ontologies/hp/classes?obo_id=HP%3A0000118
   name: Autosomal dominant inheritance
 geneContextQualifier:
-  primaryCode: ncbigene:9132
+  primaryCoding:
+    code: ncbigene:9132
+    system: https://identifiers.org/ncbigene/
+    iris:
+      - http://identifiers.org/ncbigene/9132
   name: KCNQ4

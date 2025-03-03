@@ -23,18 +23,21 @@ proposition:
             - syntax: hgvs.p
               value: NP_000305.3:p.Arg11Thr
         relations:
-          - primaryCode: translates_from
+          - primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+              iris:
+                - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: impactsFunctionOf
   objectSequenceFeature:
     id: clinvar-gene:5728
     conceptType: Gene
-    primaryCode: PTEN
+    primaryCoding:
+      code: ncbigene:5728
+      system: https://identifiers.org/ncbigene
+      iris:
+        - https://identifiers.org/ncbigene:5728
     name: PTEN
-    mappings:
-      - coding:
-          system: https://identifiers.org/ncbigene
-          code: '5728'
-        relation: exactMatch
   experimentalContextQualifier:
     title: PTEN VAMP-seq
     abstract: >-
@@ -137,12 +140,14 @@ proposition:
       profilingStrategy: barcode sequencing
       sequencingReadType: single-segment (short read)
 classification:
-  primaryCode: normal
+  primaryCoding:
+    code: normal
+    system: ga4gh-gks-term:experimental-var-func-impact-classification
 direction: disputes
 specifiedBy:
   type: Method
   subtype:
-    primaryCode: variant interpretation guideline
+    name: variant interpretation guideline
   reportedIn:
     type: Document
     pmid: 29785012

@@ -24,7 +24,11 @@ targetProposition:
             - syntax: hgvs.p
               value: NP_000305.3:p.Arg11Thr
         relations:
-          - primaryCode: translates_from
+          - primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+              iris:
+                - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isCausalFor
   objectCondition:
     conceptType: Disease
@@ -34,11 +38,15 @@ targetProposition:
     name: PTEN
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided:
-  primaryCode: supporting
+  primaryCoding:
+    code: supporting
+    system: ga4gh-gks-term:path-functional-impact-strengthOfEvidenceProvided
 specifiedBy:
   type: Method
   id: PS3
   name: ACMG 2015 PS3 Criterion
 evidenceOutcome:
-  primaryCode: PS3_supporting
+  primaryCoding:
+    code: PS3_supporting
+    system: ga4gh-gks-term:path-functional-impact-evidenceOutcome
   name: ACMG 2015 PS3 Supporting Criterion Met

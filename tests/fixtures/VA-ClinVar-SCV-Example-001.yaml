@@ -5,6 +5,7 @@ proposition:
   subjectVariant:
     id: clinvar/208366
     type: CategoricalVariant
+    name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
     constraints:
       - type: DefiningAlleleConstraint
         allele:
@@ -32,31 +33,43 @@ proposition:
             - syntax: spdi
               value: NC_000001.11:40819438:CTCCTCCT:CTCCT
         relations:
-          - primaryCode: liftover_to
-          - primaryCode: transcribes_to
-    name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
+          - primaryCoding:
+              code: liftover_to
+              system: ga4gh-gks-term:allele-relation
+          - primaryCoding:
+              code: transcribed_to
+              system: https://www.sequenceontology.org/
+              iris:
+                - http://www.sequenceontology.org/browser/current_release/term/transcribed_to
+  predicate: isCausalFor
   objectCondition:
     id: clinvar.trait/939
     conceptType: Disease
     name: Autosomal dominant nonsyndromic hearing loss 2A
-    mappings:
-    - coding:
-        code: C2677637
-        system: https://www.ncbi.nlm.nih.gov/medgen/
-      relation: exactMatch
-  predicate: isCausalFor
+    primaryCoding:
+      code: C2677637
+      system: https://www.ncbi.nlm.nih.gov/medgen/
+      iris:
+        - http://identifiers.org/medgen/C2677637
   penetranceQualifier:
-    primaryCode: high
+    primaryCoding:
+      code: high
+      system: ga4gh-gks-term:pathogenicity-penetrance-qualifier
+    name: high
 direction: supports
 strength:
-  primaryCode: definitive
+  primaryCoding:
+    code: definitive
+    system: ga4gh-gks-term:pathogenicity-strength
   mappings:
     - coding:
         code: cg000021
         system: https://dataexchange.clinicalgenome.org/codes/
       relation: exactMatch
 classification:
-  primaryCode: pathogenic
+  primaryCoding:
+    code: pathogenic
+    system: ga4gh-gks-term:pathogenicity-classification
   mappings:
     - coding:
         code: cg000001
