@@ -738,6 +738,8 @@ $defs:
         description: >-
           Reports whether the Proposition should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+          Consider using terms or codes from community terminologies here, e.g. terms from the
+          'allele origin' branch of the GENO ontology such as GENO:0000882 (somatic allele origin).
         oneOf:
           - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
@@ -869,13 +871,14 @@ $defs:
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
-          proportion of carriers exhibiting the condition.
+          proportion of carriers exhibiting the condition. 
       modeOfInheritanceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
-          HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended
-          to specify.
+          Consider using terms or codes from community terminologies here - e.g. terms from the
+          'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006
+          (autosomal dominant inheritance).
     required:
       - predicate
       - objectCondition
