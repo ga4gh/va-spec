@@ -9,7 +9,7 @@ Data Types
 code
 ****
 
-.. include::  ../def/gks-core/code.rst
+.. include::  ../def/gks-core/Code.rst
 
 
 .. _iriReference:
