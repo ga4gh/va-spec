@@ -4,4 +4,4 @@ Proposition
 !!!!!!!!!!!
 
 
-.. include::  ../../../def/va-spec/Proposition.rst
+.. include::  ../../def/va-spec/Proposition.rst
