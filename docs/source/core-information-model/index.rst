@@ -21,4 +21,6 @@ A hierarchical view of this core model is illustrated below, followed by links t
    :caption: VA Core Model Classes and Data Types
 
    entities/index
+   element/index
    data-types
+   domain-entities
