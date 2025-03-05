@@ -3,37 +3,6 @@
 Data Types
 !!!!!!!!!!
 
-Complex Data Types
-###################
-
-.. _Coding:
-
-Coding
-******
-
-.. include::  ../def/gks-core/Coding.rst
-
-.. _Extension:
-
-Extension
-*********
-.. include::  ../def/gks-core/Extension.rst
-
-
-.. _RecordMetadata:
-
-RecordMetadata
-**************
-
-.. include::  ../def/va-spec/RecordMetadata.rst
-
-ConceptMapping
-**************
-
-.. include::  ../def/gks-core/ConceptMapping.rst
-
-Simple Data Types
-###################
 
 .. _code:
 
