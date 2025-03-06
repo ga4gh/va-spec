@@ -3,16 +3,14 @@
 Domain Entities
 !!!!!!!!!!!!!!!
 
-"Domain Entities" are entities in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease ‘Lung Cancer’, not ‘patient123’s lung cancer’; or the drug ‘Erlotinib’, not a particular dose given to patient123).
+**Domain Entities** are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease ‘Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
 
-The VA-Spec does not define detailed models for specific types of domain entities - as this is the remit of other standards development organizations. The VA-Spec does incorporate established standard models where they exist (e.g. the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_ to represent genetic variation). 
-
-For other types of domain entities, it uses the ``MappableConcept`` element to capture a simple code or name for the entity from an existing terminology or code system, along with optional mappings and metadata about the code system. For example, below the ``conditionQualifier`` attribute holds a ``MappableConcept`` object for Lung Adenocarcinoma as defined by the code "civic.did:30", and with a mapping to the ontology term "MONDO:0005061".
+The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where a suitable standard model exists, e.g. the `GA4GH VRS model <https://vrs.ga4gh.org/en/latest/index.html>`_ for representing genetic variation), it can be incorporated into the VA-Spec.  But for all other domain entity types (Diseses, Genes, Therapies), the VA-Spec simply uses a :ref:`Mappable Concept <mappable-concept>` object to capture a code for the entity from an existing terminology or code system (e.g. in the representation below of the disease 'Lung Adenocarcinoma' as the value of a ``conditionQualifier`` attribute).
 
 .. parsed-literal::
 
       "conditionQualifier": 
-       {                            
+      {                            
         "conceptType": "Condition",
         "primaryCoding": 
         {
@@ -34,10 +32,10 @@ For other types of domain entities, it uses the ``MappableConcept`` element to c
             "relation": "exactMatch"
            }
          ]
-       }
+      }
 
                                                                                                                                                                                                                              
-Note that VA-Spec does define minimal structures to represent **sets** of Conditions or Therapies - but these are simply lists of ``MappableConcepts``, as described below.                                                                                                                                                                                                                       
+Note that the one exception to this policy is the definition of minimal class structures to represent **sets** of Conditions or Therapies - but these are simply lists of ``MappableConcepts``, as described below.                                                                                                                                                                                                                       
                                                                                                                                                                                                                             
 .. _Variation:
         
