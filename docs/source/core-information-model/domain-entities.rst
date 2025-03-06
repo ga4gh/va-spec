@@ -2,11 +2,11 @@
 
 Domain Entities
 !!!!!!!!!!!!!!!
+"Domain Entities" are entities in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular clinical instances (e.g. the disease ‘Lung Cancer’, not ‘patient123’s lung cancer’; or the drug ‘Erlotinib’, not a particular dose given to a patient).
 
-"Domain Entities" are entities in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular clinical instances (e.g. the disease ‘Lung Cancer’, not ‘patient123’s lung cancer’; or the drug ‘Erlotinib’, not a particular dose given to a patient). 
+The VA-Spec does not define detailed models for specific types of domain entities - as this is the remit of other standards development organizations. The VA-Spec does incorporate established standard models where they exist (e.g. the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_ to represent genetic variation). For other types of domain entities, it uses the ``MappableConcept`` element to capture a simple code or name for the entity from an existing terminology or code system, along with optional mappings and metadata about the code system. 
 
-The VA-Spec does not define detailed models for specific types of domain entities - as this is the remit of other standards development organizations. VA-Spec does incorporate established standard models where they exist (e.g. the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_ to represent genetic variation). For other types of domain entities, it uses the ``MappableConcept`` element to capture a simple code or name for the entity from an existing terminology or code system, along with optional mappings and metadata about the code system. 
-                                                                                                                                                                                                                              For example, below the ``conditionQualifier`` attribute holds a ``MappableConcept`` object for Lung Adenocarcinoma as defined by the code "civic.did:30", and with a mapping to the ontology term "MONDO:0005061".
+For example, below the ``conditionQualifier`` attribute holds a ``MappableConcept`` object for Lung Adenocarcinoma as defined by the code "civic.did:30", and with a mapping to the ontology term "MONDO:0005061".
 
 .. parsed-literal::
 
@@ -67,7 +67,7 @@ using the ``ConditionSet`` class, as described below.
         
 **Implementation Guidance:**
         
-**Representing 'Absent' Conditions**: By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated. The name or code may simple reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
+By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated. The name or code may simply reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
 
         
 .. _ConditionSet:
@@ -77,7 +77,7 @@ Condition Set
 
 Groups of conditions are represented using the ConditionSet class, which are collections of 2 or more conditions, each represented as a MappableConcept.
         
-.. include::  ../../../../def/va-spec/TraitSet.rst
+.. include::  ../../def/va-spec/TraitSet.rst
 
         
 .. _Therapeutic:
@@ -85,7 +85,7 @@ Groups of conditions are represented using the ConditionSet class, which are col
 Therapeutic
 !!!!!!!!!!!
 
-.. include::  ../../../../def/va-spec/TherapyGroup.rst                                                                                                                                                                                                          
+.. include::  ../../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
 At present, individual therapies are represented using a ``MappableConcept`` object that captures a code or name for the therapy, along with optional mappings and metadata about the code system.  Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
 
                      
@@ -110,5 +110,5 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
         
 **Information Model:**
 
- At present, individual genes are represented as using a MappableConcept that captures a code or name for the gene, along with optional mappings and metadata about the code system. 
+At present, individual genes are represented as using a MappableConcept that captures a code or name for the gene, along with optional mappings and metadata about the code system. 
 
