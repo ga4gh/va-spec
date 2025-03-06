@@ -45,7 +45,7 @@ The structured example below illustrates how such a scenario may be represented 
        predicate: isCausalFor
        objectConditon: Costello Syndrome
    evidenceItems:
-     - id:alleleCohortFrequencyStudyResult001     # study result details omitted for space
+     - id:alleleCohortFrequencyStudyResult001     # full StudyResult object omitted for space
    directionOfEvidenceProvided: supports
    strengthOfEvidenceProvided: moderate
    specifiedBy: PM2
@@ -128,4 +128,7 @@ Experimental Variant Functional Impact Proposition
 ##################################################
 
 .. include::  ../def/va-spec/ExperimentalVariantFunctionalImpactProposition.rst
+
+
+
  
