@@ -108,14 +108,14 @@ Some EvidenceLine attributes are inherited from :ref:`EvidenceLine` and :ref:`In
       - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
    *  - directionOfEvidenceProvided
       - 
-      - string
+      - string (enum: 'supports' | 'disputes' | 'none')
       - 1..1
-      - The direction of support that the Evidence Line is determined to provide toward its target Proposition. A permissible value enum of {'supports', 'disputes','none'} constrains the value of this attribute. 
+      - The direction of support that the Evidence Line is determined to provide toward its target Proposition. 
    *  - strengthOfEvidenceProvided
       - 
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` (nested enum: 'strong' | 'moderate' | 'supporting')
       - 0..1
-      - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. The following enumeration constrains the nested `MappableConcept.primaryCoding`>`Coding.code` attribute when capturing evidnece strength:  {'strong', 'moderate','supporting'}. *Conditional requirement*: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.
+      - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. The indicated enumeration constrains the nested `MappableConcept.primaryCoding > Coding.code` attribute when capturing evidnece strength. *Conditional requirement*: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.
    *  - scoreOfEvidenceProvided
       - 
       - number
@@ -123,6 +123,6 @@ Some EvidenceLine attributes are inherited from :ref:`EvidenceLine` and :ref:`In
       - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - evidenceOutcome
       - 
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` (nested enum: PS3 | PS3_moderate | PS3_supporting | PS3_not_met | BS3 | BS3_moderate | BS3_supporting | BS3_not_met)
       - 0..1
-      - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition. The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values, along with the specific ACMG criterion code used in these assessments. The following enumeration constrains the nested `MappableConcept.primaryCoding`>`Coding.code` attribute when capturing evidence outcomes: {PS3, PS3_moderate, PS3_supporting, PS3_not_met, BS3, BS3_moderate, BS3_supporting, BS3_not_met}. Note that if 'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for the relevant criterion, along with the strength of evidence provided. (e.g. 'PS3_moderate').
+      - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition. The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values, along with the specific ACMG criterion code used in these assessments. The indicated enumeration constrains the nested `MappableConcept.primaryCoding > Coding.code` attribute when capturing evidence outcomes. Note that if 'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for the relevant criterion, along with the strength of evidence provided. (e.g. 'PS3_moderate').
