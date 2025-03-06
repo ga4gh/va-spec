@@ -1,6 +1,6 @@
-.. _MappableConcept:
+.. _mappable-concept:
 
 Mappable Concept
 ****************
 
-.. include::  ../def/gks-core/MappableConcept.rst
+.. include::  ../../../../schema/gks-core/def/MappableConcept.rst
