@@ -13,18 +13,18 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
 * :ref:`VA Core Model <gks-core>`
    Detailed descriptions and implementation guidance for the classes and attributes in the foundational VA Core Model.
-* :ref:`Base Profiles <base-profiles>`
-   Detailed descriptions and implementation guidance for Statement and Study Result Profiles for representing variant knowledge. 
-* :ref:`Profiling Methodology <profiling-methodology>`
-   Instructions and resources for creating or expanding Statement and Study Result Profiles through the SEPIO profiling process.
 * :ref:`Modeling Foundations <modeling-foundations>`
    An overview of the modeling patterns and principles that underpin VA-Spec information models.
+* :ref:`VA Standard Profiles <va-standard-profiles>`
+   Profiles defined for specific types of Statements, Evidence Lines, Propositions, and Study Results, provided as computable json schema.
+* :ref:`Community Profile Sets <community-profile-sets>`
+   Sets of VA Standard Profiles that align with terminological conventions of a particular community guideline for generating variant knowledge.
 * :ref:`Reference Implementation <reference-implementation>`
    Documentation about code libraries that facilitate implementation of the VA-Spec.
 * :ref:`Examples <examples>`
    A set of examples illustrating representation of data using VA Standard Profiles. 
-* :ref:`FAQ <faq>`
-   Answers to commonly asked questions that provide deeper insight into specific aspects of the VA-Spec.
+* :ref:`Appendices <appendices>`
+   A collection of pages about miscellaneous aspects of the VA-Spec.
 
 If you have questions or feedback, please reach out to the VA Team on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, through our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
@@ -37,7 +37,7 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
 
    introduction
    core-information-model/index
-   modeling-foundations-and-structures
+   modeling-foundations
    va-standard-profiles/index
    community-profile-sets/index
    reference-implementation
