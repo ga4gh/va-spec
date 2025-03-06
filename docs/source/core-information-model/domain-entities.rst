@@ -57,11 +57,7 @@ To represent genetic variations that are subjects of VA Statements, the VA-Spec 
 Condition
 @@@@@@@@@
 
-**Computational Definition:**  
-        
-A single condition (disease, phenotype, or trait), or a set of conditions (CondiotonSet).
-
-**Information Model:**
+.. include::  ../def/va-spec/Condition.rst
         
 At present, individual conditions are represented using a ``MappableConcept`` object that captures a code or name for the condition, along with optional mappings and metadata about the code system. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
         
