@@ -14,7 +14,7 @@ $defs:
   Condition:
     maturity: trial use
     description: >-
-      A single condition (disease, phenotype, or trait), or a set of conditions (CondiotonSet).
+      A single condition (disease, phenotype, or trait), or a set of conditions (ConditionSet).
     $comment: >-
       At present, individual conditions are represented using a MappableConcept that captures a code or name for the 
       condition, along with optional mappings and metadata about the code system. Groups of conditions are represented
