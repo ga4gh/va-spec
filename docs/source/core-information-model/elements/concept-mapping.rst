@@ -1,6 +1,6 @@
-.. _ConceptMapping:
+.. _concept-mapping:
 
-ConceptMapping
+Concept Mapping
 **************
 
-.. include::  ../def/gks-core/ConceptMapping.rst
+.. include::  ../../../../schema/gks-core/def/ConceptMapping.rst
