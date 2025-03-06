@@ -27,3 +27,32 @@ This Profile Set includes VA standard Profiles that support representation data 
 Here, the **Variant Pathogenicity Statement** profile can represent final classifications of a variant, and the **Experimental Variant Pathogenicity Functional Impact Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
 
 As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
+
+
+.. _ccv-2022:
+
+CCV-2022 Community Profile Set
+##############################
+
+This Profile Set includes VA standard Profiles that support representation data generated using CCV-based oncogenicity guidelines or terminologies.
+
+ #. :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022`
+ #. :ref:`Experimental Variant Oncogenicity Functional Impact Evidence Line (CCV 2022)<experimental-variant-oncogenicity-functional-impact-evidence-line-ccv-2022>`
+
+Here, the **Variant Oncogenicity Statement** profile can represent final classifications of a variant, and the **Experimental Variant Oncogenicity Functional Impact Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
+
+As additional CCV-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
+
+
+.. _aac-2017:
+
+AAC-2017 Community Profile Set
+###############################
+
+This Profile Set includes VA standard Profiles that support representation data generated using AAC-based interpretation guidelines or terminologies.
+
+ #. :ref:`Variant Therapeutic Response Statement (AAC 2017)<variant-therapeutic-response-statement-aac-2017`
+ #. :ref:`Variant Diagnostic Statement (AAC 2017)<variant-diagnostic-statement-aac-2017`
+ #. :ref:`Variant Prognostic Statement (AAC 2017)<variant-prognostic-statement-aac-2017`
+
+As any AAC-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
