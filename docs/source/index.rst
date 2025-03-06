@@ -39,7 +39,7 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    core-information-model/index
    modeling-foundation-and-structures
    va-standard-profiles/index
-   communiity-profile-sets/index
+   community-profile-sets
    base-profiles/index
    community-profiles/index
    profiling-methodology
