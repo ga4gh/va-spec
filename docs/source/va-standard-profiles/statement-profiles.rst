@@ -3,7 +3,7 @@
 Statement Profiles
 !!!!!!!!!!!!!!!!!!
 
-Statement Profiles specialize the genreic core ``Statement`` class to support a specific type of knowledge. The Statement profiles included in v1 of the VA-Spec are defined to align with curation and terminological conventions of established community guidelines in a given knowledge domain - such as the ACMG 2015 Variant Interpretation Guidelines for pathogenicity classifications (`link <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_), or the AMP/ASCO/CA (AAC) guidleines for clinical interpretation of genetic variants (`link <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_). 
+Statement Profiles specialize the core ``Statement`` class to support a specific type of knowledge. The Statement profiles included in v1 of the VA-Spec are named and defined to align with curation and terminological conventions of established community guidelines in a given knowledge domain - such as the `ACMG 2015 Variant Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_ for pathogenicity classifications, or the `AMP/ASCO/CAP (AAC) Guidleines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_ for clinical interpretation of genetic variants. 
 
 .. _variant-pathogenicity-statement-acmg-2015:
 
@@ -22,7 +22,7 @@ curation and terminological conventions of the ACMG 2015 Variant Interpretation 
 
 **Information Model**
 
-Some Variant Pathogenicity Statement attributes are inherited from  :ref:`Statement`.and :ref:`InformationEntity`.
+Some Variant Pathogenicity Statement attributes are inherited from  :ref:`Statement` and :ref:`InformationEntity`.
 
 .. list-table::
    :class: clean-wrap
@@ -159,8 +159,8 @@ Variant Therapeutic Response Statement (AAC 2017)
 
 .. _variant-diagnostic-statement-aac-2017:
 
-Variant Diagnostic Statement AAC 2017
-#####################################
+Variant Diagnostic Statement (AAC 2017)
+#######################################
 
 .. note:: This data class is at a **draft** maturity level and may \
     change in future releases. Maturity \
