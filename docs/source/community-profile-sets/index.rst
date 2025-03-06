@@ -19,25 +19,10 @@ For example, the **ACMG 2015 Community Profile Set** includes standard Statement
 
 ACMG-2015 Community Profile Set
 ###############################
+The ACMG 2015 Profile Set includes VA standard Profiles that support representation data generated using ACMG-based pathogenicity interpretation guidelines or terminologies.
 
-**Description:**
-
- - The ACMG 2015 Profile Set includes VA standard Profiles that support representation data generated using ACMG-based pathogenicity interpretation guidelines or terminologies.
- - At present, this set includes only a **Variant Pathogenicity Statement** profile for representing final classifications of a variant, and an **Experimental Variant Functional Impact Evidence Line** profile for describing how functional data is interpreted as evidence for these classifications. 
- - As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these profiles will be added to this community profile set. 
-
-**Profiles Included:**
-
- - :ref:`Variant Pathogenicity Statement (ACMG 2015)<variant-pathogenicity-statement-acmg-2015>`
- - :ref:`Experimental Variant Pathogenicity Functional Impact Evidence Line (ACMG 2015)<experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>`
-
-
--------------
-
- The ACMG 2015 Profile Set includes VA standard Profiles that support representation data generated using ACMG-based pathogenicity interpretation guidelines or terminologies.
-
- #. :ref:`Variant Pathogenicity Statement (ACMG 2015)<variant-pathogenicity-statement-acmg-2015>`:  for representing final classifications of a variant 
- #. :ref:`Experimental Variant Pathogenicity Functional Impact Evidence Line (ACMG 2015)<experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>`: for describing how functional data is interpreted as evidence for these classifications
+ #. :ref:`Variant Pathogenicity Statement (ACMG 2015)<variant-pathogenicity-statement-acmg-2015>` (for representing the final classification of a variant)
+ #. :ref:`Experimental Variant Pathogenicity Functional Impact Evidence Line (ACMG 2015)<experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>` (for describing how functional data is interpreted as evidence for such classifications)
 
 As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these profiles will be added to this community profile set. 
 
