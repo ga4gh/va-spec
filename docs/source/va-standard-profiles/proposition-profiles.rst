@@ -1,4 +1,4 @@
-.. _proiposition-profiles:
+.. _proposition-profiles:
 
 Proposition Profiles
 !!!!!!!!!!!!!!!!!!!!
