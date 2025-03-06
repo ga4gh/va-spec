@@ -2,4 +2,5 @@
 
 Extension
 *********
-.. include::  ../def/gks-core/Extension.rst
+
+.. include::  ../../../../schema/gks-core/def/Extension.rst
