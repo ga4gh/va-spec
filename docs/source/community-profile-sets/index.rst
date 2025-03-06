@@ -21,7 +21,9 @@ Version 1 of the VA-Spec includes the following Community Profile Sets below
 ACMG-2015 Community Profile Set
 ###############################
 
-**Community Guideline:** `American College of Medical Genetics and Genomics 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
+**Community Guideline:** 
+ 
+ - `American College of Medical Genetics and Genomics 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
 
 **Included Profiles**:
 
@@ -30,7 +32,7 @@ ACMG-2015 Community Profile Set
 
 **Implementation Notes:**
 
-  - This Profile Set supports representation data generated using ACMG-based guidelines or terminologies.
+  - This Profile Set supports data generated using ACMG-based guidelines or terminologies.
   - The **Statement** profile can represent final classifications of a variant, and the **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
   - As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
 
@@ -40,25 +42,35 @@ ACMG-2015 Community Profile Set
 CCV-2022 Community Profile Set
 ##############################
 
-This Profile Set includes VA standard Profiles that support representation data generated using CCV-based oncogenicity guidelines or terminologies.
+**Community Guideline:**  
 
- #. :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022>`
- #. :ref:`Experimental Variant Oncogenicity Functional Impact Evidence Line (CCV 2022)<experimental-variant-oncogenicity-functional-impact-evidence-line-ccv-2022>`
+ - ClinGen/CGC/VICC 2022 oncogenicity interpretation guidelines
 
-Here, the **Variant Oncogenicity Statement** profile can represent final classifications of a variant, and the **Experimental Variant Oncogenicity Functional Impact Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
+**Included Profiles**:
+ - :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022>`
+ - :ref:`Experimental Variant Oncogenicity Functional Impact Evidence Line (CCV 2022)<experimental-variant-oncogenicity-functional-impact-evidence-line-ccv-2022>`
 
-As additional CCV-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
+**Implementation Notes:**
+ - This Profile Set includes VA Standard Profiles that support data generated using CCV-based oncogenicity guidelines or terminologies.
+ - Here, the **Variant Oncogenicity Statement** profile can represent final classifications of a variant, and the **Experimental Variant Oncogenicity Functional Impact Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
+ - As additional CCV-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
 
 
 .. _aac-2017:
 
 AAC-2017 Community Profile Set
 ###############################
-https://pubmed.ncbi.nlm.nih.gov/25741868/
-This Profile Set includes VA standard Profiles that support representation data generated using AAC-based interpretation guidelines or terminologies.
 
- #. :ref:`Variant Therapeutic Response Statement (AAC 2017)<variant-therapeutic-response-statement-aac-2017>`
- #. :ref:`Variant Diagnostic Statement (AAC 2017)<variant-diagnostic-statement-aac-2017>`
- #. :ref:`Variant Prognostic Statement (AAC 2017)<variant-prognostic-statement-aac-2017>`
+**Community Guideline:**  
+ 
+ - `AMP/ASCO/CAP 2017 clinical interpretation guidleines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_
 
-As new AAC-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
+**Included Profiles**:
+
+  - :ref:`Variant Therapeutic Response Statement (AAC 2017)<variant-therapeutic-response-statement-aac-2017>`
+  - :ref:`Variant Diagnostic Statement (AAC 2017)<variant-diagnostic-statement-aac-2017>`
+  - :ref:`Variant Prognostic Statement (AAC 2017)<variant-prognostic-statement-aac-2017>`
+
+**Implementation Notes:**
+ - This Profile Set includes VA Standard Profiles that support data generated using AAC-based interpretation guidelines or terminologies.
+ - As new AAC-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
