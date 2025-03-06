@@ -195,8 +195,8 @@ Experimental Variant Functional Impact Statement
 
 .. note::  A VA Standard Profile for this type of Statement is not explicitly defined in the VA-Spec, \
     because there are no established community guidelines or terminologies in this domain to guide \
-    additional constraints on the values of core Statement attributes. \
-    Instead, implementations such as the Atals of Variant Effects can use the generic core ``Statement`` \
-    class and constrain its ``proposition`` attribute to take an ``Experimental Variant Functional Impact \ 
-    Proposition``, then apply any additional constraints over other core attruibutes to define an \
-    implementation schema for this type of Statement. 
+    additional constraints on the values of core Statement attributes. Instead, implementations such as \
+    the Atals of Variant Effects can use the generic core ``Statement`` class and constrain its \
+    ``proposition`` attribute to take an ``Experimental Variant Functional Impact Proposition``, then \
+    apply any additional constraints over other core attruibutes to define an implementation schema for \
+    this type of Statement. 
