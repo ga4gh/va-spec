@@ -11,10 +11,8 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
 
 * :ref:`Introduction <introduction>`
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
-* :ref:`Quick Start Guide <quick-start-guide>`
-   Resources to help implementers begin working with the VA-Spec.
-* :ref:`Core Information Model (Core-IM) <gks-core>`
-   Detailed descriptions and implementation guidance for the classes and attributes in the foundational Core-IM.
+* :ref:`VA Core Model <gks-core>`
+   Detailed descriptions and implementation guidance for the classes and attributes in the foundational VA Core Model.
 * :ref:`Base Profiles <base-profiles>`
    Detailed descriptions and implementation guidance for Statement and Study Result Profiles for representing variant knowledge. 
 * :ref:`Profiling Methodology <profiling-methodology>`
@@ -38,12 +36,14 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    :maxdepth: 4
 
    introduction
-   quick-start
    core-information-model/index
+   modeling-foundation-and-structures
+   va-standard-profiles/index
+   communiity-profile-sets/index
    base-profiles/index
    community-profiles/index
    profiling-methodology
-   modeling-foundations
+
    reference-implementation
    examples/index
    appendices/index
