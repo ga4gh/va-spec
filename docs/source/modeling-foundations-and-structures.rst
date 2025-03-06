@@ -1,7 +1,7 @@
-.. _modeling-foundations:
+.. _modeling-foundations-and-structures:
 
-Modeling Foundations
-!!!!!!!!!!!!!!!!!!!!
+Modeling Foundations and Structures
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ``PREREQUISITES:`` :ref:`Introduction<introduction>`, :ref:`Data Example<variant-pathogenicity-statement-example>`, :ref:`Core Information Model<core-information-model>`
 
