@@ -92,7 +92,7 @@ Below are the **Base Proposition Profiles** currently defined as part of the VA-
 Variant Pathogenicity Proposition
 #################################
 
-.. include::  ../def/va-spec/schema/va-spec/base/def/VariantPathogenicityProposition.rst
+.. include::  ../def/va-spec/VariantPathogenicityProposition.rst
 
 .. _variant-oncogenicity-proposition:
 
