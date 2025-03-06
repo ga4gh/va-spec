@@ -2,6 +2,7 @@
 
 Domain Entities
 !!!!!!!!!!!!!!!
+
 "Domain Entities" are entities in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular clinical instances (e.g. the disease ‘Lung Cancer’, not ‘patient123’s lung cancer’; or the drug ‘Erlotinib’, not a particular dose given to a patient).
 
 The VA-Spec does not define detailed models for specific types of domain entities - as this is the remit of other standards development organizations. The VA-Spec does incorporate established standard models where they exist (e.g. the `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_ to represent genetic variation). For other types of domain entities, it uses the ``MappableConcept`` element to capture a simple code or name for the entity from an existing terminology or code system, along with optional mappings and metadata about the code system. 
@@ -42,7 +43,7 @@ Finaly, note that VA-Spec does define minimal structures to represent **sets** o
 .. _Variation:
         
 Variation
-!!!!!!!!!
+@@@@@@@@@
 
 To represent genetic variations that are subjects of VA Statements, the VA-Spec imports two complementary GKS standards:
 
@@ -54,7 +55,7 @@ To represent genetic variations that are subjects of VA Statements, the VA-Spec 
 .. _Condition:
         
 Condition
-!!!!!!!!!
+@@@@@@@@@
 
 **Computational Definition:**  
         
@@ -72,7 +73,7 @@ By convention, cases where no condition is given by the data provider SHOULD be 
 .. _ConditionSet:
         
 Condition Set
-!!!!!!!!!!!!!
+@@@@@@@@@@@@@
 
 Groups of conditions are represented using the ConditionSet class, which are collections of 2 or more conditions, each represented as a MappableConcept.
         
@@ -91,7 +92,7 @@ At present, individual therapies are represented using a ``MappableConcept`` obj
 .. _TherapyGroup:
         
 Therapy Group
-!!!!!!!!!!!!!
+@@@@@@@@@@@@@
 
 Groups of therapies are represented using the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.
 
@@ -101,7 +102,7 @@ Groups of therapies are represented using the TherapyGroup class, which are coll
 .. _Gene:
                      
 Gene
-!!!!
+@@@@
 
 **Computational Definition:** 
 
