@@ -70,9 +70,7 @@ By convention, cases where no condition is given by the data provider SHOULD be 
         
 Condition Set
 @@@@@@@@@@@@@
-
-Groups of conditions are represented using the ConditionSet class, which are collections of 2 or more conditions, each represented as a MappableConcept.
-        
+       
 .. include::  ../def/va-spec/TraitSet.rst
 
         
@@ -89,8 +87,6 @@ At present, individual therapies are represented using a ``MappableConcept`` obj
         
 Therapy Group
 @@@@@@@@@@@@@
-
-Groups of therapies are represented using the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.
 
 .. include::  ../def/va-spec/TherapyGroup.rst
         
