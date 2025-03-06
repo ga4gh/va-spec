@@ -5,9 +5,12 @@ Domain Entities
 
 **Domain Entities** are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease ‘Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
 
-The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where a suitable standard model exists, e.g. the `GA4GH VRS model <https://vrs.ga4gh.org/en/latest/index.html>`_ for representing genetic variation), it can be incorporated into the VA-Spec.  But for all other domain entity types (Diseses, Genes, Therapies), the VA-Spec simply uses a :ref:`Mappable Concept <mappable-concept>` object to capture a code for the entity from an existing terminology or code system (e.g. in the representation below of the disease 'Lung Adenocarcinoma' as the value of a ``conditionQualifier`` attribute).
+The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where a suitable standard exists, it can be incorporated into the VA-Spec as we have done with the `VRS model <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <<https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation.  But for all other domain entity types (Diseses, Genes, Therapies), the VA-Spec simply uses a :ref:`Mappable Concept <mappable-concept>` object to capture a code for the entity from an existing terminology or code system (e.g. in the representation below of the disease 'Lung Adenocarcinoma' as the value of a ``conditionQualifier`` attribute). Future versions of the VA-Spec may incorporate richer community models for other doamin entity types as they develop.
 
 .. parsed-literal::
+
+      # A Concept Mapping used to capture the concept of 'Lung Adenocarcinoma' using the primary code "civic.did:30", 
+      # along with a mapping to the ontology term "MONDO:0005061"
 
       "conditionQualifier": 
       {                            
