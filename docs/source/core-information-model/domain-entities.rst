@@ -62,8 +62,7 @@ A single condition (disease, phenotype, or trait), or a set of conditions (Condi
 
 **Information Model:**
         
-At present, individual conditions are represented using a ``MappableConcept`` object that captures a code or name for the condition, along with optional mappings and metadata about the code system. Sets of conditions are represented
-using the ``ConditionSet`` class, as described below.
+At present, individual conditions are represented using a ``MappableConcept`` object that captures a code or name for the condition, along with optional mappings and metadata about the code system. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
         
 **Implementation Guidance:**
         
@@ -77,7 +76,7 @@ Condition Set
 
 Groups of conditions are represented using the ConditionSet class, which are collections of 2 or more conditions, each represented as a MappableConcept.
         
-.. include::  ../../def/va-spec/TraitSet.rst
+.. include::  ../def/va-spec/TraitSet.rst
 
         
 .. _Therapeutic:
@@ -85,7 +84,7 @@ Groups of conditions are represented using the ConditionSet class, which are col
 Therapeutic
 !!!!!!!!!!!
 
-.. include::  ../../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
+.. include::  ../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
 At present, individual therapies are represented using a ``MappableConcept`` object that captures a code or name for the therapy, along with optional mappings and metadata about the code system.  Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
 
                      
@@ -96,7 +95,7 @@ Therapy Group
 
 Groups of therapies are represented using the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.
 
-.. include::  ../../../../def/va-spec/TherapyGroup.rst
+.. include::  ../def/va-spec/TherapyGroup.rst
         
 
 .. _Gene:
