@@ -79,7 +79,7 @@ Groups of conditions are represented using the ConditionSet class, which are col
 .. _Therapeutic:
         
 Therapeutic
-!!!!!!!!!!!
+@@@@@@@@@@@
 
 .. include::  ../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
 At present, individual therapies are represented using a ``MappableConcept`` object that captures a code or name for the therapy, along with optional mappings and metadata about the code system.  Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
