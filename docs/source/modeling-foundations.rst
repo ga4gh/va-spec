@@ -1,9 +1,7 @@
-.. _modeling-foundations-and-structures:
+.. _modeling-foundations:
 
 Modeling Foundations and Structures
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-``PREREQUISITES:`` :ref:`Introduction<introduction>`, :ref:`Data Example<variant-pathogenicity-statement-example>`, :ref:`Core Information Model<core-information-model>`
 
 This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and knowledge about them. 
 
