@@ -13,11 +13,11 @@ Mappable Concept
 
  -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
  - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
- - For example, ``civic.did:30``, ``MONDO:005061``, and ``C3512`` are all possible primary codes for representing the concept of 'lung adenocarcinoma' within a primary Coding.
+ - For example, the following are all possible primary codes for representing the concept of 'lung adenocarcinoma' within a primary Coding.
 
-     - ``civic.did:30`` is a local code defined by the data provider (CIViC)
-     - ``MONDO:005061`` is namespaced CURIE from a community ontology (MONDO)
-     - ``C3512`` is a code without a namespace from the NCI Thesaurus.  
+     - ``civic.did:30``:  a local code defined by the data provider (CIViC)
+     - ``MONDO:005061``: a namespaced CURIE from a community ontology (MONDO)
+     - ``C3512``:  a code without a namespace from the NCI Thesaurus.  
 - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
 
 2. Populating the ``name`` attribute
@@ -48,7 +48,7 @@ Mappable Concept
            systemVersion: 2025-02-04
            iris: 
              - http://purl.obolibrary.org/obo/MONDO_0005061 
-         relation: exactMatch                                # required  (must be provided in any ConceptMapping). Permissible values come from the 'mapping relation' branch of the skos ontology, which includes 5 possible mapping relations: relatedMatch, closeMatch, exactMatch, broaderMatch, narrowerMatch.  Refer to documentation/definitions here (https://www.ebi.ac.uk/ols4/ontologies/skos/properties/http%253A%252F%252Fwww.w3.org%252F2004%252F02%252Fskos%252Fcore%2523mappingRelation?lang=en), and chose the term that best fits. Use the root skos 'mappingRelation' term if unsure which to choose.
+         relation: exactMatch                                # required  (must be provided in any ConceptMapping). Permissible values come from the 'mapping relation' branch of the skos ontology.
 
        - coding:                                             # Coding for the NCIT Code as obtained from the original source NCIT Browser at https://ncithesaurus.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C3512
            code: C3512                                       # The NCIT browser/source doesn't natively use a curie-like representation
