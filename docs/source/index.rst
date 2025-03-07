@@ -17,7 +17,7 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
    Profiles defined for specific types of Statements, Evidence Lines, Propositions, and Study Results, provided as computable json schema.
 * :ref:`Community Profile Sets <community-profile-sets>`
    Sets of VA Standard Profiles that align with terminological conventions of a particular community guideline for generating variant knowledge.
-* :ref:`Reference Implementation <reference-implementation>`
+* :ref:`Implementations <implementations>`
    Documentation about code libraries that facilitate implementation of the VA-Spec.
 * :ref:`Modeling Foundations <modeling-foundations>`
    An overview of the modeling patterns and principles that underpin VA-Spec information models.
@@ -39,7 +39,7 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    core-information-model/index
    va-standard-profiles/index
    community-profile-sets/index
-   reference-implementation
+   rimplementations
    modeling-foundations
    examples/index
    appendices/index
