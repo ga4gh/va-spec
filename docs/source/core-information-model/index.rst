@@ -1,8 +1,7 @@
-.. va-core:
+.. va-core-model:
 
 VA Core Model
 !!!!!!!!!!!!!
-
 
 The **VA Core Model** is a domain-agnostic model that supports explicit representation of scientific knowledge, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/gks-core-diagram/>`_, through selection of elements needed to support initial VA implementation use cases. This Core-IM is the foundation on which Profiles for specific types of Statements and Study Results are built.  
 
