@@ -24,7 +24,7 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
 * :ref:`Examples <examples>`
    A set of examples illustrating representation of data using VA Standard Profiles. 
 * :ref:`Appendices <appendices>`
-   A collection of pages about miscellaneous aspects of the VA-Spec.
+   A collection of pages with additional information on various aspects of the VA-Spec.
 
 If you have questions or feedback, please reach out to the VA Team on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, through our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
@@ -43,8 +43,6 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    modeling-foundations
    examples/index
    appendices/index
-   profiling-methodology
-   faq
 
 
 
