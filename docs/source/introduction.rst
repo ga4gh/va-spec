@@ -9,7 +9,7 @@ The GA4GH Variant Annotation Specification (VA-Spec) defines a set of standard s
 VA-Spec v1 Components
 #####################
 
-The vi release of the VA-Spec includes the following components:
+The v1 release of VA-Spec includes the following components:
 
 #. :ref:`A Foundational VA Core Model <va-core-model>`: A domain-agnostic model for describing knowledge of any kind, and the evidence and provenance supporting it. The Core-IM establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.  
 
