@@ -5,7 +5,7 @@ Domain Entities
 
 **Domain Entities** are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease ‘Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
 
-The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where suitable standards exist they can be incorporated into the VA-Spec, as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. But for all other domain entity types (Diseses, Genes, Therapies), the VA-Spec currently uses a :ref:`Mappable Concept <mappable-concept>` object to capture a code for the entity from an existing terminology system (e.g. the representation of  'Lung Adenocarcinoma' in the example below). Future versions of the VA-Spec may incorporate richer models for other doamin entity types as suitable community standards emerge.
+The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where suitable standards exist they can be incorporated into the VA-Spec, as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. But for all other domain entity types, the VA-Spec currently uses a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` object to represent the entity using a code from an existing terminology system  (e.g. the representation of 'Lung Adenocarcinoma' in the example below). 
 
 .. parsed-literal::
 
@@ -38,7 +38,10 @@ The VA-Spec does not define specific models for representing such domain entitie
       }
 
                                                                                                                                                                                                                              
-Note that the one exception to this policy is the definition of minimal class structures to represent **sets** of Conditions or Therapies - but these are simply lists of ``MappableConcepts``, as described below.                                                                                                                                                                                                                       
+
+Below we detail how different types of Domain Entities relevant to variant knowledge are currently represented in the VA-Spec.                                                                                                  
+
+Future versions of the VA-Spec may incorporate richer models for other doamin entity types as suitable community standards emerge.
                                                                                                                                                                                                                             
 .. _Variation:
         
@@ -59,7 +62,7 @@ Condition
 
 .. include::  ../def/va-spec/Condition.rst
         
-At present, individual conditions are represented using a ``MappableConcept`` object that captures a code or name for the condition, along with optional mappings and metadata about the code system. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
+At present, the VA-Spec includes a ``Condition`` schema for representing individual conditions, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>  or a :ref:`Mappable Concept <mappable-concept>`. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
         
 **Implementation Guidance:**
         
@@ -80,7 +83,8 @@ Therapeutic
 @@@@@@@@@@@
 
 .. include::  ../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
-At present, individual therapies are represented using a ``MappableConcept`` object that captures a code or name for the therapy, along with optional mappings and metadata about the code system.  Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
+At present, the VA-Spec incldues  a ``Therapeutic`` schema for representing individual therapies, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>  or a :ref:`Mappable Concept <mappable-concept>`. 
+Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
 
                      
 .. _TherapyGroup:
@@ -102,7 +106,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
         
 **Information Model:**
 
-At present, individual genes are represented as using a MappableConcept that captures a code or name for the gene, along with optional mappings and metadata about the code system. 
+At present, the VA-Spec does not define a specific schema for describing Genes. Individual genes are referenced in data using an :ref:`IRI Reference <iriReference>  or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system (e.g. as shown `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_).
 
 
 -----------
