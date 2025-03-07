@@ -9,7 +9,7 @@ Mappable Concept
 
 **IMPLEMENTATION GUIDANCE**
 
-1. Selecting a ``primaryCoding``
+1.  Selecting a ``primaryCoding``
 
  -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
  - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
@@ -20,15 +20,19 @@ Mappable Concept
      - ``C3512``:  a code without a namespace from the NCI Thesaurus.  
 - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
 
-2. Populating the ``name`` attribute
+2.  Populating the ``name`` attribute
  - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.  
  - Use ``MappableConcept.name`` in cases where there is no code used by the data provider's system  for the concept. 
  - When there is a code, the name associated with it should be captured within the Coding that holds the code, rather than in this ``name`` attribute.
 
-3. An Annotated Data Example: Representation of the Condition concept 'Lung Adenocarcinoma' in a dataset provided by the CIViC Knowledgebase, which includes three mappings to exact matches in community terminologies. 
+3.  An Annotated Data Example: 
+
 
 .. code-block:: yaml
-
+   
+   # Representation of the Condition concept 'Lung Adenocarcinoma' in a dataset provided by the CIViC Knowledgebase,
+   # which includes three mappings to exact matches in community terminologies. 
+   
    conditionQualifier:
        conceptType: Condition                               # optional. a term describing the high level category of concept the MappableConcept object represents
        id: null                                             # optional. id is optional.  can be used if data provider wants / feels it is necessary to give the MappableConcept object itself a unique internal/local identifier for tracking the object in the message / system.                           
