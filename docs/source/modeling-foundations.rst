@@ -1,7 +1,7 @@
 .. _modeling-foundations:
 
-Modeling Foundations and Structures
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Modeling Foundations
+!!!!!!!!!!!!!!!!!!!!
 
 This document describes modeling standards, patterns, and principles employed by the VA Specification for representing genetic variation and knowledge about them. 
 
