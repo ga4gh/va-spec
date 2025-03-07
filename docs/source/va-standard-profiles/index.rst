@@ -9,7 +9,7 @@ VA Standard Profiles
 
  * :ref:`Evidence Line Profiles<evidence-line-profiles>` are used to describe how some collection of information are interpreted as evidence supporting or disputing a possible fact that may ultimately be asserted about a variant (e.g. how results from a allele frequency analysis are interpreted to support the allele’s pathogenicity).
 
- * :ref:`Proposition Profiles<proposition-profiles>` are used only within a Statement and Evidence Line profiles - where they encapsulate the semantics of the possible fact that is asserted or evaluated in a Statement, or against which evidence is assessed in an Evidence Line (e.g. a Pathogenicity Proposition captures the abstract meaning of the claim put forth as true in a Pathogenicity Statwment)
+ * :ref:`Proposition Profiles<proposition-profiles>` are used only within Statement and Evidence Line profiles - where they encapsulate the semantics of the possible fact that is asserted or evaluated in a Statement, or against which evidence is assessed in an Evidence Line (e.g. a Pathogenicity Proposition captures the abstract meaning of the claim put forth as true in a Pathogenicity Statwment)
 
  * :ref:`Study Result Profiles<study-result-profiles>` are used to capture collections of **data items** about a single variant, from a particular study or analysis dataset (e.g. from the gnomAD cohort allele frequency dataset).
 
