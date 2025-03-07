@@ -64,9 +64,12 @@ Condition
         
 At present, the VA-Spec includes a ``Condition`` schema for representing individual conditions, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>`  or a :ref:`Mappable Concept <mappable-concept>`. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
         
-**Implementation Guidance:**
-        
-By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated. The name or code may simply reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
+**IMPLEMENTATION GUIDANCE:**
+
+**1. Indicating when no condition is provided.**
+
+    - By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated.
+    - The name or code may simply reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
 
         
 .. _ConditionSet:
@@ -81,12 +84,12 @@ Condition Set
 
 1. Populating the ``membershipOperator`` attribute:
 
-- The membershipOperator ‘AND’ should be used when the Conditions listed are considered as co-occurring together in a single patient/subject. 
-- The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that manfiest only one of the conditions in the set. 
+   - The membershipOperator ‘AND’ should be used when the Conditions listed are considered as co-occurring together in a single patient/subject. 
+   - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that manfiest only one of the conditions in the set. 
 
-    - Conclusions about this condition are determined based on an aggregate statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to make a conclusion about each condition individually.
-    - In such cases, it would be misleading to create separate statements about each condition on its own. 
- - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
+       - Conclusions about this condition are determined based on an aggregate statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to make a conclusion about each condition individually.
+       - In such cases, it would be misleading to create separate statements about each condition on its own. 
+    - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
 
 .. _Therapeutic:
         
@@ -111,10 +114,10 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 
 1. Populating the ``membershipOperator`` attribute:
 
-- The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
-- The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually.
- - Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
- - Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.
+   - The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
+   - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually.
+    - Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
+    - Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.
 
 
 .. _Gene:
