@@ -1,4 +1,4 @@
-.. va-core-model:
+.. _va-core-model:
 
 VA Core Model
 !!!!!!!!!!!!!
