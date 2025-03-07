@@ -3,11 +3,15 @@
 Introduction
 !!!!!!!!!!!!
 
+
+Overview
+########
+
 The GA4GH Variant Annotation Specification (VA-Spec) defines a set of standard schema to represent different types of knowledge about genetic variants. Each schema is built as a "profile" that extends a common, domain-agnostic :ref:`VA Core Model <va-core-model>`. The initial v1 release of the VA-Spec is focused on supporting specific types of variant knowledge provided by implementing Driver Projects and organizational members, including `ClinGen <https://clinicalgenome.org/>`_, `VICC <https://cancervariants.org/index.html>`_, and the `Atlas of  Variant Effects Alliance <https://www.varianteffect.org/>`_. The specification includes machine-readable JSON Schema specifications that support sharing and validation between these projects, along with a python reference implementation. It build on several more foundational standards, including the `SEPIO Model <https://github.com/sepio-framework/sepio-linkml>`_, and GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_  and `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ schema. Future VA-Spec releases will include a modeling framework to support community-based authoring of profiles for new knowledge types and use cases. 
 
 
-VA-Spec v1 Components
-#####################
+Components
+##########
 
 The v1 release of VA-Spec includes the following components:
 
