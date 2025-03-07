@@ -13,7 +13,7 @@ Mappable Concept
 
  -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
  - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
- - For example, the following are all possible primary codes for representing the concept of 'lung adenocarcinoma' within a primary Coding.
+ - For example, the following are all possible primary codes can could be used to represent 'lung adenocarcinoma' within a primary Coding.
 
      - ``civic.did:30``:  a local code defined by the data provider (CIViC)
      - ``MONDO:005061``: a namespaced CURIE from a community ontology (MONDO)
