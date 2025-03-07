@@ -13,14 +13,14 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
 * :ref:`VA Core Model <gks-core>`
    Detailed descriptions and implementation guidance for the classes and attributes in the foundational VA Core Model.
-* :ref:`Modeling Foundations <modeling-foundations>`
-   An overview of the modeling patterns and principles that underpin VA-Spec information models.
 * :ref:`VA Standard Profiles <va-standard-profiles>`
    Profiles defined for specific types of Statements, Evidence Lines, Propositions, and Study Results, provided as computable json schema.
 * :ref:`Community Profile Sets <community-profile-sets>`
    Sets of VA Standard Profiles that align with terminological conventions of a particular community guideline for generating variant knowledge.
 * :ref:`Reference Implementation <reference-implementation>`
    Documentation about code libraries that facilitate implementation of the VA-Spec.
+* :ref:`Modeling Foundations <modeling-foundations>`
+   An overview of the modeling patterns and principles that underpin VA-Spec information models.
 * :ref:`Examples <examples>`
    A set of examples illustrating representation of data using VA Standard Profiles. 
 * :ref:`Appendices <appendices>`
@@ -37,10 +37,10 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
 
    introduction
    core-information-model/index
-   modeling-foundations
    va-standard-profiles/index
    community-profile-sets/index
    reference-implementation
+   modeling-foundations
    examples/index
    appendices/index
    profiling-methodology
