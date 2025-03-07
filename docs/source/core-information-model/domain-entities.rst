@@ -9,8 +9,8 @@ The VA-Spec does not define specific models for representing such domain entitie
 
 .. parsed-literal::
 
-      # A Concept Mapping used to capture the concept of 'Lung Adenocarcinoma' using the primary code "civic.did:30", 
-      # along with a mapping to the ontology term "MONDO:0005061"
+      # A Concept Mapping used to capture the concept of 'Lung Adenocarcinoma' using the primary code 
+      # "civic.did:30", along with a mapping to the ontology term "MONDO:0005061"
 
       "conditionQualifier": 
       {                            
