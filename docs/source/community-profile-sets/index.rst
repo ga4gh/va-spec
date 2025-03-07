@@ -9,7 +9,7 @@ Many **VA Standard Profiles** are aligned with the curation and terminological c
 
 For example, the **ACMG-2015 Community Profile Set** includes standard Statement and Evidence Line profiles that support representation of the ACMG-based variant interpretation process, and use ACMG-based terminology in constraining certain data (e.g. evidence strength terms, interpretation criterion codes).
 
-Version 1 of the VA-Spec includes the Community Profile Sets below - which including only a few profiles needed to support ClinGen and VICC's initial small-scale implementations.   
+Version 1 of the VA-Spec includes the Community Profile Sets below. At present each includes only a few profiles that are needed to support ClinGen and VICC's initial small-scale implementations.   
 
 
 .. _acmg-2015:
