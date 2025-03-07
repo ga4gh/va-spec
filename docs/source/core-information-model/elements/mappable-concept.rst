@@ -18,7 +18,8 @@ Mappable Concept
      - ``civic.did:30``:  a local code defined by the data provider (CIViC)
      - ``MONDO:005061``: a namespaced CURIE from a community ontology (MONDO)
      - ``C3512``:  a code without a namespace from the NCI Thesaurus.  
-- In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
+
+ - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
 
 2.  Populating the ``name`` attribute
  - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.  
