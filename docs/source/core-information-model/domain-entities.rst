@@ -62,7 +62,7 @@ Condition
 
 .. include::  ../def/va-spec/Condition.rst
         
-At present, the VA-Spec includes a ``Condition`` schema for representing individual conditions, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>  or a :ref:`Mappable Concept <mappable-concept>`. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
+At present, the VA-Spec includes a ``Condition`` schema for representing individual conditions, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>`  or a :ref:`Mappable Concept <mappable-concept>`. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
         
 **Implementation Guidance:**
         
@@ -83,7 +83,7 @@ Therapeutic
 @@@@@@@@@@@
 
 .. include::  ../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
-At present, the VA-Spec incldues  a ``Therapeutic`` schema for representing individual therapies, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>  or a :ref:`Mappable Concept <mappable-concept>`. 
+At present, the VA-Spec incldues  a ``Therapeutic`` schema for representing individual therapies, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>`  or a :ref:`Mappable Concept <mappable-concept>`. 
 Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
 
                      
