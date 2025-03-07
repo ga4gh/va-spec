@@ -20,6 +20,8 @@ The v1 release of VA-Spec includes the following components:
 #. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using GA4GH Profiles. *These resources provide a working example of code that can be adopted and/or extended by adopters*.
 
 
+Readers may wish to review this :ref:`annotated data example <variant-pathogenicity-statement-example>`, to explore an end product of the VA-Spec, before diving in to the full documentation. 
+
 Development & Implementation
 ############################
 
