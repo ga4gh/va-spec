@@ -89,7 +89,7 @@ Condition Set
 
        - Conclusions about this condition are determined based on an aggregate statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to make a conclusion about each condition individually.
        - In such cases, it would be misleading to create separate statements about each condition on its own. 
-    - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
+       - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
 
 .. _Therapeutic:
         
