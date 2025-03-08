@@ -43,9 +43,7 @@ The example below shows a Mappable Concept used to capture the domain entity 'Lu
       }
 
                                                                                                                                                                                                                             
-Below we detail how different types of Domain Entities relevant to variant knowledge are currently represented in the VA-Spec.                                                                                                  
-
-Future versions of the VA-Spec may incorporate richer models for other doamin entity types as suitable community standards emerge.
+Below we detail how different types of Domain Entities relevant to variant knowledge are currently represented in the VA-Spec. Future versions of the VA-Spec may incorporate richer models for other doamin entity types as suitable community standards emerge.
                                                                                                                                                                                                                             
 .. _Variation:
         
