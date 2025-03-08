@@ -3,17 +3,19 @@
 Domain Entities
 !!!!!!!!!!!!!!!
 
-Overview
-@@@@@@@@
+Domain Entities are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease 'Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
 
-**Domain Entities** are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease ‘Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
+The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. 
 
-The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where suitable standards exist they can be incorporated into the VA-Spec, as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. But for all other domain entity types, the VA-Spec currently uses a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` object to represent the entity using a code from an existing terminology system  (e.g. the representation of 'Lung Adenocarcinoma' in the example below). 
+Where suitable standards exist, they are incorporated into the VA-Spec, as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. 
+
+But for all other domain entity types, the VA-Spec currently uses a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which wraps a code for the entity from an existing terminology system with metadata and mappings about the code and code system.
+
+At present, most Domain Entities are represented as :ref:`Mappable Concepts <mappable-concept>`, or collections of Mappable Concepts. 
+
+Below is an example of a Mappable Concept used to capture the Domain Entity 'Lung Adenocarcinoma', using the primary code "civic.did:30", along with a mapping to the ontology term "MONDO:0005061"
 
 .. parsed-literal::
-
-      # A Concept Mapping used to capture the concept of 'Lung Adenocarcinoma' using the primary code 
-      # "civic.did:30", along with a mapping to the ontology term "MONDO:0005061"
 
       "conditionQualifier": 
       {                            
