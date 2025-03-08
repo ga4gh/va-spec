@@ -3,6 +3,9 @@
 Domain Entities
 !!!!!!!!!!!!!!!
 
+Overview
+@@@@@@@@
+
 **Domain Entities** are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease ‘Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
 
 The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. Where suitable standards exist they can be incorporated into the VA-Spec, as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. But for all other domain entity types, the VA-Spec currently uses a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` object to represent the entity using a code from an existing terminology system  (e.g. the representation of 'Lung Adenocarcinoma' in the example below). 
@@ -37,8 +40,7 @@ The VA-Spec does not define specific models for representing such domain entitie
          ]
       }
 
-                                                                                                                                                                                                                             
-
+                                                                                                                                                                                                                            
 Below we detail how different types of Domain Entities relevant to variant knowledge are currently represented in the VA-Spec.                                                                                                  
 
 Future versions of the VA-Spec may incorporate richer models for other doamin entity types as suitable community standards emerge.
