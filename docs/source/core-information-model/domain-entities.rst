@@ -13,7 +13,7 @@ But for all other domain entity types, the VA-Spec currently uses a simple :ref:
 
 At present, most Domain Entities are represented as :ref:`Mappable Concepts <mappable-concept>`, or collections of Mappable Concepts. 
 
-Below is an example of a Mappable Concept used to capture the Domain Entity 'Lung Adenocarcinoma', using the primary code "civic.did:30", along with a mapping to the ontology term "MONDO:0005061"
+The example below shows a Mappable Concept used to capture the domain entity 'Lung Adenocarcinoma', using the primary code ``civic.did:30``, along with a mapping to the ontology term ``MONDO:0005061``.
 
 .. parsed-literal::
 
