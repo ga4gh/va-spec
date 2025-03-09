@@ -10,13 +10,14 @@ Statement Profiles specialize the core ``Statement`` class to support a specific
 Variant Pathogenicity Statement (ACMG 2015)
 ###########################################
 
-**Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
-
 .. note:: This data class is at a **draft** maturity level and may \
     change in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
+
+**Artifacts**
+
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
 
 **Computational Definition**
 
