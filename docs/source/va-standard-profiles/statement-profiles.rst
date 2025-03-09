@@ -94,7 +94,7 @@ Some Variant Pathogenicity Statement attributes are inherited from  :ref:`Statem
       - MUST be "Statement".
    *  - proposition
       - 
-      - :ref:`VariantPathogenicityProposition`
+      - :ref:`Variant Pathogenicity Proposition`
       - 1..1
       - A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim. 
    *  - direction
