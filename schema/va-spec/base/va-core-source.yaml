@@ -138,6 +138,25 @@ $defs:
           In most cases, a StudyResult will be generated using data from one source dataset - but it is
           possible multiple datasets related to a single study contain data about a particular focus that
           get collected into a single StudyResult instance.
+      ancillaryResults:
+        maturity: draft
+        description: >-
+          The data collected here are considered broader information derived form the more fundamental data
+          captured in the main body of the StudyResult (e.g. a grpMaxFAF95 calculation, or
+          homozygote/heterozygote calls derived from analyzing raw allele count data).
+        type: array
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          to be added.
+        type: object
+        additionalProperties: true
+      qualityMeasures:
+        maturity: draft
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          to be added.
+        type: object
+        additionalProperties: true
     heritableRequired:
       - focus
 
@@ -971,20 +990,6 @@ $defs:
           of different ancestry groups and sexes among those ancestry groups.
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
-      ancillaryResults:
-        maturity: draft
-        $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
-          to be added.
-        type: object
-        additionalProperties: true
-      qualityMeasures:
-        maturity: draft
-        $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
-          to be added.
-        type: object
-        additionalProperties: true
     required:
     - focusAllele
     - focusAlleleCount

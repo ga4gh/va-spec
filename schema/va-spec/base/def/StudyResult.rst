@@ -88,3 +88,19 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - :ref:`DataSet`
       - 0..1
       - A larger DataSet from which the data included in the StudyResult was taken or derived.
+   *  - ancillaryResults
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - object
+      - 0..1
+      - The data collected here are considered broader information derived form the more fundamental data captured in the main body of the StudyResult (e.g. a grpMaxFAF95 calculation, or  homozygote/heterozygote calls derived from analyzing raw allele count data).
+   *  - qualityMeasures
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - object
+      - 0..1
+      -

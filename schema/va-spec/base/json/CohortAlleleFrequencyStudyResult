@@ -72,6 +72,19 @@
          },
          "description": "A document in which the the Information Entity is reported."
       },
+      "ancillaryResults": {
+         "maturity": "draft",
+         "description": "The data collected here are considered broader information derived form the more fundamental data captured in the main body of the StudyResult (e.g. a grpMaxFAF95 calculation, or  homozygote/heterozygote calls derived from analyzing raw allele count data).",
+         "type": "object",
+         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
+         "additionalProperties": true
+      },
+      "qualityMeasures": {
+         "maturity": "draft",
+         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
+         "type": "object",
+         "additionalProperties": true
+      },
       "type": {
          "type": "string",
          "description": "MUST be \"CohortAlleleFrequencyStudyResult\".",
@@ -119,18 +132,6 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/base/json/CohortAlleleFrequencyStudyResult"
          }
-      },
-      "ancillaryResults": {
-         "maturity": "draft",
-         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
-         "type": "object",
-         "additionalProperties": true
-      },
-      "qualityMeasures": {
-         "maturity": "draft",
-         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
-         "type": "object",
-         "additionalProperties": true
       }
    },
    "required": [
