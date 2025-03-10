@@ -66,7 +66,7 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept. Consider using terms or codes from community terminologies here, e.g. terms from the 'allele origin' branch of the GENO ontology such as GENO:0000882 (somatic allele origin).
    *  - type
       -
       - string

@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A set of traits (TraitSet) or a single trait (Disease, Phenotype, etc.) that represents the object of a Variant Pathogenicity statement.
+A single condition (disease, phenotype, or trait), or a set of conditions (ConditionSet).
 
 **Information Model**
 

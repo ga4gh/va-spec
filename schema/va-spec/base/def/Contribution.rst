@@ -69,6 +69,6 @@ Some Contribution attributes are inherited from :ref:`gks-core:Entity`.
       - The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).
    *  - date
       -
-      - :ref:`date`
+      - :ref:`datetime`
       - 0..1
-      - The date that the Activity was completed.
+      - When the contributing activity was completed.

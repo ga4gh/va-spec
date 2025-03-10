@@ -168,10 +168,10 @@
     # GK Pilot Representation (using Mappings)
     {
       "condition": {
-        "id": "clinvarTrait:64585",
-        "type": "TraitSet",
+        "id": "clinvarTraitSet:64585",
+        "type": "ConditionSet",
         "label": "Global developmental delay, Clinodactyly of the 5th finger, Abnormality of brain morphology",
-        "traits": [   Three traits, each represented as a nested Condition (Disease or Phenotype)
+        "conditions": [   Three traits, each represented as a nested Condition (Disease or Phenotype)
         # Condition object for Global developmental delay, with two Mappings (the clinvar id is the object's logical id)
           {
             "id": "clinvarTrait:17050",

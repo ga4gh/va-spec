@@ -8,5 +8,4 @@ therapies:
       code: C900
       system: ncit
     name: Tretinoin
-groupType:
-  name: combination
+membershipOperator: AND

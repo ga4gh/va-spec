@@ -95,7 +95,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - object
       - 0..1
-      - The data collected here are considered broader information derived form the more fundamental data captured in the main body of the StudyResult (e.g. a grpMaxFAF95 calculation, or  homozygote/heterozygote calls derived from analyzing raw allele count data).
+      - An object in which implementers can define custom fields to capture additional results derived from analysis of primary data items captured in standard attributes in the main body of the Study Result. e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or homozygote/heterozygote calls derived from analyzing raw allele count data.
    *  - qualityMeasures
       -
                         .. raw:: html
@@ -103,4 +103,4 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
       - object
       - 0..1
-      -
+      - An object in which implementers can define custom fields to capture metadata about the quality/provenance of the primary data items captured in standard attributes in the main body of the Study Result. e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.

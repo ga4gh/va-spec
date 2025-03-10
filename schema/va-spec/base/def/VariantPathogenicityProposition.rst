@@ -66,7 +66,7 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+      - Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept. Consider using terms or codes from community terminologies here, e.g. terms from the 'allele origin' branch of the GENO ontology such as GENO:0000882 (somatic allele origin).
    *  - type
       -
       - string
@@ -91,4 +91,4 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       -
       - :ref:`MappableConcept`
       - 0..1
-      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended to specify.
+      - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Consider using terms or codes from community terminologies here - e.g. terms from the 'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006 (autosomal dominant inheritance).

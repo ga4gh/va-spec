@@ -53,6 +53,7 @@
       },
       "geneContextQualifier": {
          "description": "Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.",
+         "$comment": "This is not a required field, and should be used when information about the gene context of the subject variant is known, relevant, and not apparent from the representation of the variant itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context, but not neessary for complex variants like gene fusions, whose Cat-VRS representations reference specific transcripts and/or genes that provide a built-in gene context.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/MappableConcept"
@@ -63,7 +64,7 @@
          ]
       },
       "alleleOriginQualifier": {
-         "description": "Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.",
+         "description": "Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept. Consider using terms or codes from community terminologies here, e.g. terms from the 'allele origin' branch of the GENO ontology such as GENO:0000882 (somatic allele origin).",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/MappableConcept"

@@ -143,7 +143,7 @@ $defs:
         description: >-
           An object in which implementers can define custom fields to capture additional results derived from
           analysis of primary data items captured in standard attributes in the main body of the Study Result.
-          e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or 
+          e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or
           homozygote/heterozygote calls derived from analyzing raw allele count data.
         $comment: >-
           This field is left at draft maturity, as it is different from most GKS objects by allowing any content
@@ -321,12 +321,12 @@ $defs:
       date:
         $refCurie: gks.core:datetime
         description: >-
-          When the contributing activity was completed. 
+          When the contributing activity was completed.
         $comment: >-
-          Populate this attribute with the date and time the activity was completed. MUST use ISO8601 format 
-          ("YYYY-MM-DDTHH:MM:SS"), e.g. "2024-02-25T09:25:00". In cases where a date alone is sufficient, 
+          Populate this attribute with the date and time the activity was completed. MUST use ISO8601 format
+          ("YYYY-MM-DDTHH:MM:SS"), e.g. "2024-02-25T09:25:00". In cases where a date alone is sufficient,
           the "THH:MM:SS" portion of the datetime string MAY be omitted (e.g. "2024-02-25").  Specifying a
-          time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC), 
+          time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC),
           e.g. "2024-02-25T09:25:00-5:00" for the US eastern time zone.
   Document:
     type: object
@@ -740,8 +740,8 @@ $defs:
           This is not a required field, and should be used when information about the gene context of
           the subject variant is known, relevant, and not apparent from the representation of the variant
           itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context,
-          but not neessary for complex variants like gene fusions, whose Cat-VRS representations reference 
-          specific transcripts and/or genes that provide a built-in gene context. 
+          but not neessary for complex variants like gene fusions, whose Cat-VRS representations reference
+          specific transcripts and/or genes that provide a built-in gene context.
         oneOf:
           - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
@@ -882,7 +882,7 @@ $defs:
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
-          proportion of carriers exhibiting the condition. 
+          proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-

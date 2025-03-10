@@ -31,9 +31,9 @@ tests:
     definition: Agent
 
   # test domain entities
-  - test_file: traitset.yaml
+  - test_file: conditionset.yaml
     namespace: va-spec.base
-    definition: TraitSet
+    definition: ConditionSet
   - test_file: therapy-group.yaml
     namespace: va-spec.base
     definition: TherapyGroup
