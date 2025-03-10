@@ -736,6 +736,12 @@ $defs:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the association
           described in the Proposition.
+        $comment: >-
+          This is not a required field, and should be used when information about the gene context of
+          the subject variant is known, relevant, and not apparent from the representation of the variant
+          itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context,
+          but not neessary for complex variants like gene fusions, whose Cat-VRS representations reference 
+          specific transcripts and/or genes that provide a built-in gene context. 
         oneOf:
           - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
