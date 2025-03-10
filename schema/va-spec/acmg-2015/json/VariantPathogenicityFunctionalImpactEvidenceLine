@@ -32,19 +32,22 @@
                }
             },
             "specifiedBy": {
-               "description": "The guidelines that were followed to interpret variant functional impact information  as evidence for or against the assessed variant's pathogenicity. ",
+               "description": "The guidelines that were followed to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.",
                "properties": {
                   "reportedIn": {
                      "properties": {
                         "pmid": {
-                           "const": "25741868"
+                           "const": 25741868
                         },
                         "name": {
                            "const": "ACMG Guidelines, 2015"
                         }
                      }
                   }
-               }
+               },
+               "required": [
+                  "reportedIn"
+               ]
             },
             "evidenceOutcome": {
                "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. The 'specifiedBy' attribute is required and assumed to have a single method, BS3 or PS3. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.",

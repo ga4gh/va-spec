@@ -45,9 +45,11 @@ $defs:
             reportedIn:
                properties:
                   pmid:
-                    const: "25741868"
+                    const: 25741868
                   name:
                     const: "ACMG Guidelines, 2015"
+          required:
+            - reportedIn
         evidenceOutcome:
           description: >-
             The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values.
