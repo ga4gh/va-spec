@@ -138,6 +138,29 @@ $defs:
           In most cases, a StudyResult will be generated using data from one source dataset - but it is
           possible multiple datasets related to a single study contain data about a particular focus that
           get collected into a single StudyResult instance.
+      ancillaryResults:
+        maturity: draft
+        description: >-
+          An object in which implementers can define custom fields to capture additional results derived from
+          analysis of primary data items captured in standard attributes in the main body of the Study Result.
+          e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or 
+          homozygote/heterozygote calls derived from analyzing raw allele count data.
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          to be added.
+        type: object
+        additionalProperties: true
+      qualityMeasures:
+        maturity: draft
+        description: >-
+          An object in which implementers can define custom fields to capture metadata about the quality/provenance
+          of the primary data items captured in standard attributes in the main body of the Study Result.
+          e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          to be added.
+        type: object
+        additionalProperties: true
     heritableRequired:
       - focus
 
@@ -974,20 +997,6 @@ $defs:
           of different ancestry groups and sexes among those ancestry groups.
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
-      ancillaryResults:
-        maturity: draft
-        $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
-          to be added.
-        type: object
-        additionalProperties: true
-      qualityMeasures:
-        maturity: draft
-        $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
-          to be added.
-        type: object
-        additionalProperties: true
     required:
     - focusAllele
     - focusAlleleCount
