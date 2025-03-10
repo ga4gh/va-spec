@@ -1,6 +1,9 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/acmg-2015/pathogenicity-statement-profile-source.yaml"
 title: Variant Pathogenicity Statement Profile (ACMG 2015)
+description: >-
+  Profile defined to align with terminology and conventions from the American College of Medical Genetics
+  and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
 strict: true
 
 imports:
