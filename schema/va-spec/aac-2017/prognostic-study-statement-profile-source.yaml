@@ -1,6 +1,10 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
 $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/aac-2017/prognostic-study-statement-profile-source.yaml"
-title: AAC 2017 Variant Prognostic Study Statement
+title: Variant Prognostic Study Statement Profile (AAC 2017)
+description: >-
+  Profile defined to align with terminology and conventions from the Association for Molecular Pathology (AMP),
+  American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for the
+  interpretation and reporting of sequence variants in cancer. 
 strict: true
 
 imports:
