@@ -3,13 +3,13 @@
 Community Profile Sets
 !!!!!!!!!!!!!!!!!!!!!!
 
-Many **VA Standard Profiles** are aligned with the curation and terminological conventions of an established community guideline for generating variant knowledge. 
+Many **VA Standard Profiles** are aligned with the terminologies and curation conventions defined in standard community guidelines for generating variant knowledge. 
 
-**VA Community Profile Sets** are collections of standard profiles that all align with a given guidleine, and can be used together by implementers who wish to follow this standard in defining the strucutre and semantics of their data. 
+**VA Community Profile Sets** are collections of Standard Profiles that all align with a particular guidleine, and can be used together by implementers who wish to follow this standard in the strucutre and semantics of their data. 
 
-For example, the **ACMG-2015 Community Profile Set** includes standard Statement and Evidence Line profiles that support representation of the ACMG-based variant interpretation process, and use ACMG-based terminology in constraining certain data (e.g. evidence strength terms, interpretation criterion codes).
+For example, profiles in the **ACMG-2015 Community Profile Set** use ACMG's criterion codes (e.g. ``PS3``, ``BS3``), criterion assessment outcomes (``met``, ``not met``), evidence strengths (e.g. ``strong``, ``supporting``, ``moderate``), and classification outcomes (e.g. ``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``) in enumerations that constrain the values of specific attributes.
 
-Version 1 of the VA-Spec includes the Community Profile Sets below. At present each includes only a few profiles that are needed to support ClinGen and VICC's initial small-scale implementations.   
+Version 1 of the VA-Spec includes the Community Profile Sets described below. At present each set includes only a few profiles as needed to support ClinGen's and VICC's initial small-scale implementations.   
 
 
 .. _acmg-2015:
@@ -17,9 +17,11 @@ Version 1 of the VA-Spec includes the Community Profile Sets below. At present e
 ACMG-2015 Community Profile Set
 ###############################
 
+A set of profiles defined to align with terminology and conventions from the American College of Medical Genetics and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
+
 **Community Guideline:** 
  
- - `American College of Medical Genetics and Genomics 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
+ - `American College of Medical Genetics and Genomics 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868>`_
 
 **Included Profiles**:
 
@@ -28,8 +30,9 @@ ACMG-2015 Community Profile Set
 
 **Implementation Notes:**
 
-  - This Profile Set supports data generated using ACMG-based guidelines or terminologies. The **Statement** profile can represent final classifications of a variant, and the **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
-  - As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
+ - This Profile Set supports data generated using ACMG-based guidelines or terminologies. 
+ - The **Statement** profile can represent final classifications of a variant, and the **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
+ - As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
 
 
 .. _ccv-2022:
@@ -37,16 +40,19 @@ ACMG-2015 Community Profile Set
 CCV-2022 Community Profile Set
 ##############################
 
+A set of profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen), Cancer Genomics Consortium (CGC),and Variant Interpretation for Cancer Consortium (VICC) 2022 community guidelines for cancer variant interpretation. 
+
 **Community Guideline:**  
 
- - `ClinGen/CGC/VICC 2022 oncogenicity interpretation guidelines <https://clinicalgenome.org/docs/standards-for-the-classification-of-pathogenicity-of-somatic-variants-in-cancer-oncogenicity-joint-recommendations-of-clinical/>`_
+ - `ClinGen/CGC/VICC (CCV) 2022 oncogenicity interpretation guidelines <https://clinicalgenome.org/docs/standards-for-the-classification-of-pathogenicity-of-somatic-variants-in-cancer-oncogenicity-joint-recommendations-of-clinical/>`_
 
 **Included Profiles**:
  - :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022>`
  - :ref:`Experimental Variant Oncogenicity Functional Impact Evidence Line (CCV 2022)<experimental-variant-oncogenicity-functional-impact-evidence-line-ccv-2022>`
 
 **Implementation Notes:**
- - This Profile Set includes VA Standard Profiles that support data generated using CCV-based oncogenicity guidelines or terminologies. The **Statement** profile can represent final classifications of a variant, and the **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
+ - This Profile Set includes VA Standard Profiles that support data generated using CCV-based oncogenicity guidelines or terminologies. 
+ - The **Statement** profile can represent final classifications of a variant, and the **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications. 
  - As additional CCV-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set. 
 
 
@@ -55,9 +61,11 @@ CCV-2022 Community Profile Set
 AAC-2017 Community Profile Set
 ###############################
 
+A set of profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP), American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for the interpretation and reporting of sequence variants in cancer. 
+
 **Community Guideline:**  
  
- - `AMP/ASCO/CAP 2017 clinical interpretation guidleines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_
+ - `AMP/ASCO/CAP (AAC) 2017 clinical interpretation guidleines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
 
 **Included Profiles**:
 
