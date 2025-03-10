@@ -1,4 +1,4 @@
-.. reference_implementation_:
+.. _reference_implementation:
 
 Reference Implementation
 !!!!!!!!!!!!!!!!!!!!!!!!
