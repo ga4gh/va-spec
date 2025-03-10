@@ -15,46 +15,59 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
-               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposition or the pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. *Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'directionOfEvidenceProvided' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength. Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
                "properties": {
-                  "primaryCode": {
-                     "type": "string",
-                     "enum": [
-                        "strong",
-                        "moderate",
-                        "supporting"
-                     ]
+                  "primaryCoding": {
+                     "code": {
+                        "enum": [
+                           "strong",
+                           "moderate",
+                           "supporting"
+                        ]
+                     },
+                     "system": {
+                        "const": "ga4gh-gks-term:path-functional-impact-strengthOfEvidenceProvided"
+                     }
                   }
                }
             },
             "specifiedBy": {
-               "description": "The ACMG criterion that was applied to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.",
+               "description": "The guidelines that were followed to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.",
                "properties": {
-                  "primaryCode": {
-                     "description": "The ACMG 2015 criterion code that was applied to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.  Must be one of the following values: BS3 or PS3. Conditional requirement: * If directionOfEvidenceProvided is 'supports' then the value must be 'PS3'. * If directionOfEvidenceProvided is 'disputes' then the value must be 'BS3'.",
-                     "type": "string",
-                     "enum": [
-                        "PS3",
-                        "BS3"
-                     ]
+                  "reportedIn": {
+                     "properties": {
+                        "pmid": {
+                           "const": 25741868
+                        },
+                        "name": {
+                           "const": "ACMG Guidelines, 2015"
+                        }
+                     }
                   }
-               }
+               },
+               "required": [
+                  "reportedIn"
+               ]
             },
             "evidenceOutcome": {
-               "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided', 'strengthOfEvidenceProvided' and 'specifiedBy' values. The 'specifiedBy' attribute is required and assumed to have a single method, BS3 or PS3. if 'directionOfEvidenceProvided' 'none', then the outcome is 'not met'. If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' along with the strength of evidence provided.",
+               "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values, along with the specific ACMG criterion code used in these assessments. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute to capture evidence outcomes. Note that if 'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for the relevant criterion, along with the strength of evidence provided. (e.g. 'PS3_moderate').",
                "properties": {
-                  "primaryCode": {
-                     "type": "string",
-                     "enum": [
-                        "PS3",
-                        "PS3_moderate",
-                        "PS3_supporting",
-                        "PS3_not_met",
-                        "BS3",
-                        "BS3_moderate",
-                        "BS3_supporting",
-                        "BS3_not_met"
-                     ]
+                  "primaryCoding": {
+                     "code": {
+                        "enum": [
+                           "PS3",
+                           "PS3_moderate",
+                           "PS3_supporting",
+                           "PS3_not_met",
+                           "BS3",
+                           "BS3_moderate",
+                           "BS3_supporting",
+                           "BS3_not_met"
+                        ]
+                     },
+                     "system": {
+                        "const": "ga4gh-gks-term:path-functional-impact-evidenceOutcome"
+                     }
                   }
                }
             }

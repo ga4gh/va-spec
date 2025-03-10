@@ -3,4 +3,4 @@ name: Admixed American Ancestry Group
 type: StudyGroup
 characteristics:
 - conceptType: genetic ancestry
-  primaryCode: Admixed American
+  name: Admixed American

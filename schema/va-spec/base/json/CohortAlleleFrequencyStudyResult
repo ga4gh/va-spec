@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -42,7 +42,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
@@ -66,11 +66,25 @@
                   "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
                }
             ]
          },
          "description": "A document in which the the Information Entity is reported."
+      },
+      "ancillaryResults": {
+         "maturity": "draft",
+         "description": "An object in which implementers can define custom fields to capture additional results derived from analysis of primary data items captured in standard attributes in the main body of the Study Result. e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or homozygote/heterozygote calls derived from analyzing raw allele count data.",
+         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
+         "type": "object",
+         "additionalProperties": true
+      },
+      "qualityMeasures": {
+         "maturity": "draft",
+         "description": "An object in which implementers can define custom fields to capture metadata about the quality/provenance of the primary data items captured in standard attributes in the main body of the Study Result. e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.",
+         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
+         "type": "object",
+         "additionalProperties": true
       },
       "type": {
          "type": "string",
@@ -87,10 +101,10 @@
       "focusAllele": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0-snapshot.2025-02.2/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.0.0-snapshot.2025-02.3/json/Allele"
             }
          ],
          "description": "The Allele for which frequency results are reported.",
@@ -119,18 +133,6 @@
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.x/base/json/CohortAlleleFrequencyStudyResult"
          }
-      },
-      "ancillaryResults": {
-         "maturity": "draft",
-         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
-         "type": "object",
-         "additionalProperties": true
-      },
-      "qualityMeasures": {
-         "maturity": "draft",
-         "$comment": "This field is left at draft maturity, as it is different from most GKS objects by allowing any content to be added.",
-         "type": "object",
-         "additionalProperties": true
       }
    },
    "required": [

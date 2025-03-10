@@ -32,7 +32,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -43,7 +43,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
@@ -67,7 +67,7 @@
                   "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
                }
             ]
          },
@@ -117,7 +117,7 @@
       "strength": {
          "description": "A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.",
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence) using 'direction', 'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low').",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/MappableConcept"
       },
       "score": {
          "type": "number",
@@ -128,7 +128,7 @@
       "classification": {
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.",
          "$comment": "Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/MappableConcept"
       },
       "hasEvidenceLines": {
          "type": "array",
@@ -139,7 +139,7 @@
                   "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
                }
             ]
          },

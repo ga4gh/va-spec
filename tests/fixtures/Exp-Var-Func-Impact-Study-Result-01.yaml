@@ -28,7 +28,11 @@ sourceDataSet:
     type: DataSet
     name: variant effect data set
     license:
-      primaryCode: "CC0"
+      primaryCoding:
+        code: CC0
+        system: https://spdx.org/licenses/
+        iris:
+          - https://spdx.org/licenses/CC0-1.0.html
     reportedIn:
       type: Document
       urls:

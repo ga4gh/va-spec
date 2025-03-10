@@ -8,7 +8,7 @@ i copied content from that page below, and made a copy of the image in the va-sp
 But the figure is not rendering the same here. Maybe there is a config setting to change or something so
 that this formatting can be applied in the va-spec docs?
 
--------------------  
+-------------------
 
 
 .. _vr-schema-diagram:
@@ -29,7 +29,3 @@ that this formatting can be applied in the va-spec docs?
    Location, and Sequence). Conceptual inheritance relationships between
    classes is indicated by connecting lines.  [`source
    <https://app.diagrams.net/#G1Qimkvi-Fnd1hhuixbd6aU4Se6zr5Nc1h>`__]
-
-
-
-

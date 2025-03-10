@@ -3,7 +3,7 @@
 Phenotype
 !!!!!!!!!
 
-We defer to the adopters to use the phenotype naming authority of their choice 
+We defer to the adopters to use the phenotype naming authority of their choice
 (e.g. HPO, etc.) to share a representation of a Phenotype concept using
 the :ref:`MappableConcept` data object.
 

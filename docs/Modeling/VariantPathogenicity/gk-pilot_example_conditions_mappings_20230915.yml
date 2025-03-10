@@ -1,14 +1,14 @@
-# Hand-rolled data examples comparing the gk-pilot model of Conditions (with Mappings) with the VA-Core IM model of GeneticConditions (with CodeableConcepts) 
+# Hand-rolled data examples comparing the gk-pilot model of Conditions (with Mappings) with the VA-Core IM model of GeneticConditions (with CodeableConcepts)
 # The first examples shows a simple disease with a clinvar logical id (trait) and mappings to three ontologies
 # The second examples shows a composed condition with a clinvar logical id (trait set) and mappings to two ontologies
 
 # Note that this document explores two orthogonal concerns that may best be separated for simplicity of assessing them:
 # 1. the gk-pilot vs VA model of a Condition
 # 2. The gk-pilot 'Mapping' class vs VA/FHIR CodeableConcept class as ways to represent coded concepts and their mappings.
-# 
+#
 
-# Both the 'Mapping' and 'CodeableConcept' approaches would work in the context of a gk-pilot or VA Condition model of a genetic condition.  
-# They are compared below for a simple disease (only one component), and a complex disease (a TraitSet with multiple disease/phenotype components). 
+# Both the 'Mapping' and 'CodeableConcept' approaches would work in the context of a gk-pilot or VA Condition model of a genetic condition.
+# They are compared below for a simple disease (only one component), and a complex disease (a TraitSet with multiple disease/phenotype components).
 
 
 
@@ -37,13 +37,13 @@
             "code": "CN043648",
             "label": "Nonsyndromic genetic hearing loss",
             "relation": "exactMatch"
-          },          
+          },
           {
             "system": "http://www.orpha.net/ORDO/Orphanet_",
             "code": "87884",
             "label": "Nonsyndromic genetic hearing loss",
             "relation": "exactMatch"
-          }  
+          }
         ]
       }
     }
@@ -74,9 +74,9 @@
                 "system": "http://www.orpha.net/ORDO/Orphanet_",
                 "code": "87884",
                 "label": "Nonsyndromic genetic hearing loss",
-                "mappingType": "exactMatch"          
+                "mappingType": "exactMatch"
               },
-            "text": "Nonsyndromic genetic hearing loss",              
+            "text": "Nonsyndromic genetic hearing loss",
             ]
           }
         ]
@@ -93,7 +93,7 @@
         "label": "Nonsyndromic genetic hearing loss",
         "traits": [         # replaced gk-pilot.mappings property with 'traits', which holds one or more CodeableConcepts representing a Disease or Phenotype that characterizes the Condition
           {
-            "text": "Nonsyndromic genetic hearing loss", 
+            "text": "Nonsyndromic genetic hearing loss",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/medgen/",
@@ -114,10 +114,10 @@
                 "code": "87884",
                 "label": "Nonsyndromic genetic hearing loss",
                 "mappingType": "exactMatch"
-              },             
+              },
             ]
           }
-        ]        
+        ]
       }
     }
 
@@ -140,13 +140,13 @@
                     "code": "0019497",
                     "label": "nonsyndromic genetic hearing loss",
                     "mappingType": "exactMatch"
-                  },          
+                  },
                   {
                     "system": "http://www.orpha.net/ORDO/Orphanet_",
                     "code": "87884",
                     "label": "Nonsyndromic genetic hearing loss",
                     "mappingType": "exactMatch"
-                  }   
+                  }
                 ]
               }
             ]
@@ -154,8 +154,8 @@
     }
 
 # --------------------------------------------------------------------------- #
-    
-# Complex/Composed Condition 
+
+# Complex/Composed Condition
 # https://www.ncbi.nlm.nih.gov/clinvar/RCV001270062.1/
 # https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=clinvar&rettype=clinvarset&id=RCV001270062
 # Three co-occurring phenotypes (one 'Disease', two 'Findings')
@@ -168,10 +168,10 @@
     # GK Pilot Representation (using Mappings)
     {
       "condition": {
-        "id": "clinvarTrait:64585",
-        "type": "TraitSet",
+        "id": "clinvarTraitSet:64585",
+        "type": "ConditionSet",
         "label": "Global developmental delay, Clinodactyly of the 5th finger, Abnormality of brain morphology",
-        "traits": [   Three traits, each represented as a nested Condition (Disease or Phenotype)
+        "conditions": [   Three traits, each represented as a nested Condition (Disease or Phenotype)
         # Condition object for Global developmental delay, with two Mappings (the clinvar id is the object's logical id)
           {
             "id": "clinvarTrait:17050",
@@ -189,9 +189,9 @@
                 "code": "C0557874",
                 "label": "Global developmental delay",
                 "relation": "exactMatch"
-              }              
+              }
             ]
-          },          
+          },
         # Condition object for Clinodactyly of the 5th finger, with two Mappings (the clinvar id is the object's logical id)
           {
             "id": "clinvarTrait:18093",
@@ -209,9 +209,9 @@
                 "code": "C1850049",
                 "label": "Clinodactyly of the 5th finger",
                 "relation": "exactMatch"
-              }              
+              }
             ]
-          },            
+          },
         # Condition object for Abnormality of brain morphology, with two Mappings (the clinvar id is the object's logical id)
           {
             "id": "clinvarTrait:30325",
@@ -229,28 +229,28 @@
                 "code": "C4021085",
                 "label": "Abnormality of brain morphology",
                 "relation": "exactMatch"
-              }              
+              }
             ]
-          }            
+          }
         ],
-       # Mappings for the full TraitSet concept (there are none - this is an ad hoc phenotype collection)       
+       # Mappings for the full TraitSet concept (there are none - this is an ad hoc phenotype collection)
         "mappings": [ ]
       }
     }
 
 
     # VA Core (using CodeableConcepts with added 'primaryCoding' and 'mappingType' properties)
-    
+
     {
       "object": {
         "id": "clinvarTrait:64585",
         "type": "Condition",
         "label": "Global developmental delay, Clinodactyly of the 5th finger, Abnormality of brain morphology",
         "diseases": [           # Three component diseases, each represented using a CodeableConcept
-        
+
         # CodeableConcept for Global developmental delay, with three Codings
           {
-            "text": "Global developmental delay", 
+            "text": "Global developmental delay",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
@@ -269,12 +269,12 @@
                 "code": "C0557874",
                 "label": "Global developmental delay",
                 "mappingType": "exactMatch",
-              }             
+              }
             ]
           },
         # CodeableConcept for Clinodactyly of the 5th finger, with three Codings
           {
-            "text": "Clinodactyly of the 5th finger", 
+            "text": "Clinodactyly of the 5th finger",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
@@ -293,12 +293,12 @@
                 "code": "C1850049",
                 "label": "Clinodactyly of the 5th finger",
                 "mappingType": "exactMatch",
-              }             
+              }
             ]
-          },   
+          },
         # CodeableConcept for Abnormality of brain morphology, with three Codings
           {
-            "text": "Abnormality of brain morphology", 
+            "text": "Abnormality of brain morphology",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
@@ -317,12 +317,12 @@
                 "code": "C4021085",
                 "label": "Abnormality of brain morphology",
                 "mappingType": "exactMatch",
-              }             
+              }
             ]
-          }          
+          }
         ]
       }
-    }    
+    }
 
 
 
@@ -336,7 +336,7 @@
         "traits": [   Three traits, each represented as a CodeableConcept for a Disease or Phenotype
         # CodeableConcept for Global developmental delay, with three Codings
           {
-            "text": "Global developmental delay", 
+            "text": "Global developmental delay",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
@@ -355,12 +355,12 @@
                 "code": "C0557874",
                 "label": "Global developmental delay",
                 "mappingType": "exactMatch",
-              }             
+              }
             ]
-          },         
-        # CodeableConcept for Clinodactyly of the 5th finger, with three Codings 
+          },
+        # CodeableConcept for Clinodactyly of the 5th finger, with three Codings
           {
-            "text": "Clinodactyly of the 5th finger", 
+            "text": "Clinodactyly of the 5th finger",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
@@ -379,12 +379,12 @@
                 "code": "C1850049",
                 "label": "Clinodactyly of the 5th finger",
                 "mappingType": "exactMatch",
-              }             
+              }
             ]
-          },             
-         # CodeableConcept for Abnormality of brain morphology, with three Codings 
+          },
+         # CodeableConcept for Abnormality of brain morphology, with three Codings
           {
-            "text": "Abnormality of brain morphology", 
+            "text": "Abnormality of brain morphology",
             "coding": [
               {
                 "system": "https://www.ncbi.nlm.nih.gov/clinvar/trait/",
@@ -403,11 +403,11 @@
                 "code": "C4021085",
                 "label": "Abnormality of brain morphology",
                 "mappingType": "exactMatch",
-              }             
+              }
             ]
-          }               
+          }
         ],
-       # Mappings for the full TraitSet concept (there are none - this is an ad hoc phenotype collection)       
+       # Mappings for the full TraitSet concept (there are none - this is an ad hoc phenotype collection)
         "mappings": [ ]
       }
     }
@@ -424,26 +424,26 @@ GK-Pilot Schema
 					description: string
 					type: string
 					aliases: string
-					mappings: Mapping 
-				
+					mappings: Mapping
+
 				Condition > Disease:
 					type: string   [Disease]
-				
+
 				Condition > Phenotype:
 					type: string   [Phenotype]
-			
+
 				Condition > TraitSet:
 					type: string   [TraitSet]
 					traits: Disease | Phenotype
-	
-				
+
+
 				Mapping:
 					id: string
 					label: string
 					description: string
 					coding: Coding
 					relation: enum
-				
+
 				Coding:
 					code: string [0..1]
 					system: url [0..1]
@@ -459,11 +459,11 @@ VA-Core IM Models/Schema
 					phenotypes: CodeableConcept [0..m]
 					modeOfInheritance:  CodeableConcept [0..1]
 					genes: Gene [0..m]
-	
+
 				CodeableConcept:
 					text: string {0..1]
 					coding: Coding [0..m]
-					
+
 				Coding:
 					code: string [0..1]
 					label: string [0..1]

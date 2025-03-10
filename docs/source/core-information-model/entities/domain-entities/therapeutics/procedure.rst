@@ -3,7 +3,7 @@
 Procedure
 !!!!!!!!!
 
-We defer to the adopters to use the procedure naming authority of their choice 
+We defer to the adopters to use the procedure naming authority of their choice
 (e.g. NCIT, etc.) to share a representation of a Procedure concept using
 the :ref:`MappableConcept` data object.
 

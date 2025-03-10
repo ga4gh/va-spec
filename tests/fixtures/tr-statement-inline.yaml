@@ -103,7 +103,11 @@ proposition:
           system: https://www.disease-ontology.org/
         relation: exactMatch
   alleleOriginQualifier:
-    primaryCode: GENO:0000882
+    primaryCoding:
+      code: GENO:0000882
+      system: https://github.com/monarch-initiative/GENO-ontology/
+      iris:
+        - http://purl.obolibrary.org/obo/GENO_0000882
     name: somatic allele origin
   geneContextQualifier:
     id: civic.gid:19

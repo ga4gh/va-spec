@@ -69,7 +69,11 @@ objectTherapeutic:
   id: civic.tid:146
   conceptType: Drug
   name: Afatinib
-  primaryCode: ncit:C66940
+  primaryCoding:
+    code: ncit:C66940
+    system: https://evsexplore.semantics.cancer.gov/evsexplore/welcome?terminology=ncit
+    iris:
+      - https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C66940
   mappings:
     - coding:
         code: '1430438'
@@ -85,7 +89,11 @@ conditionQualifier:
         system: https://www.disease-ontology.org/
       relation: exactMatch
 alleleOriginQualifier:
-  primaryCode: GENO:0000882
+  primaryCoding:
+    code: GENO:0000882
+    system: https://github.com/monarch-initiative/GENO-ontology/
+    iris:
+      - http://purl.obolibrary.org/obo/GENO_0000882
   name: somatic allele origin
 geneContextQualifier:
   id: civic.gid:19
