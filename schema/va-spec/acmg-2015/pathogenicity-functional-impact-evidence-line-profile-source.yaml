@@ -56,7 +56,7 @@ $defs:
             The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values,
             along with the specific ACMG criterion code used in these assessments. The indicated enumeration constrains the
             nested MappableConcept.primaryCoding > Coding.code attribute to capture evidence outcomes. Note that if
-            'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion
+           'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion
             (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for
             the relevant criterion, along with the strength of evidence provided. (e.g. 'PS3_moderate').
           properties:

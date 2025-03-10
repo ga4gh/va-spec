@@ -882,7 +882,7 @@ $defs:
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
-          proportion of carriers exhibiting the condition.
+          proportion of carriers exhibiting the condition. 
       modeOfInheritanceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-
