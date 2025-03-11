@@ -5,11 +5,11 @@ Community Profile Sets
 
 Many **VA Standard Profiles** are aligned with the terminologies and curation conventions defined in standard community guidelines for generating variant knowledge. 
 
-**VA Community Profile Sets** are collections of Standard Profiles that all align with a particular guidleine, and can be used together by implementers who wish to follow this standard in the strucutre and semantics of their data. 
+**VA Community Profile Sets** are collections of VA Standard Profiles that all align with a particular guidleine, and can be used together by implementers who wish to follow this standard in how they represent their data. 
 
-For example, profiles in the **ACMG-2015 Community Profile Set** use ACMG's criterion codes (e.g. ``PS3``, ``BS3``), criterion assessment outcomes (``met``, ``not met``), evidence strengths (e.g. ``strong``, ``supporting``, ``moderate``), and classification outcomes (e.g. ``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``) in enumerations that constrain the values of specific attributes.
+For example, profiles in the **ACMG-2015 Community Profile Set** define enumerations based on ACMG criterion codes (``PS3``, ``BS3``), criterion assessment outcomes (``met``, ``not met``), evidence strengths (``strong``, ``supporting``, ``moderate``), and classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``), in constraining the values of specific attributes to align with this guideline.
 
-Version 1 of the VA-Spec includes the Community Profile Sets described below. At present each set includes only a few profiles as needed to support ClinGen's and VICC's initial small-scale implementations.   
+Version 1 of the VA-Spec includes the three Community Profile Sets described below  - each of which contains only a few profiles to suuport to support ClinGen's and VICC's initial small-scale implementations. The number of profiles in each set will grow as these adopters expand the scope of their implementations. 
 
 
 .. _acmg-2015:
