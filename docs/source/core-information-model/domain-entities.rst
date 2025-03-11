@@ -49,14 +49,23 @@ Future versions of the VA-Spec may incorporate richer models for other Domain En
 Variation
 @@@@@@@@@
 
-To represent genetic variations that are subjects of VA Statements, the VA-Spec imports two complementary GKS standards:
+**Computational Definition**:
 
-#. The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers. VRS variants represent discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes.
+Variation subjects of VA knowledge may be discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes; or intensionally defined categories or sets of variations, based on criteria that must be met for inclusion in a given set, e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions". 
 
-#. The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts. Categorical variations are intensionally defined sets of variations, based on criteria that must be met for inclusion in a given category, e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions". 
+A representation of the state of one or more biomolecules (from VRS), or a representation of a categorically-defined domain for variation, in which individual Constraintual variation instances may be members of the domain (from Cat-VRS).
+
+**Information Model**:
+
+To represent these diverse types of variation, the VA-Spec imports two complementary GKS standards:
+
+  - The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers.
+
+  - The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts.
 
 **Examples**:
- - `An allele as a VRS object <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/allele.yaml>`_
+  - `A discrete allele as a VRS object <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/allele.yaml>`_
+  - `A canonical allele as a Cat-VRS object <https://github.com/ga4gh/cat-vrs/blob/1.x/examples/canonicalAllele-ex1.yaml>`_
         
 .. _Condition:
         
