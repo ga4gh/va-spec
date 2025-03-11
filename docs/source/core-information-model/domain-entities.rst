@@ -51,9 +51,7 @@ Variation
 
 **Computational Definition**
 
-Variation subjects of VA knowledge may be discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes; or intensionally defined categories or sets of variations, based on criteria that must be met for inclusion in a given set, e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions". 
-
-A representation of the state of one or more biomolecules (from VRS), or a representation of a categorically-defined domain for variation, in which individual Constraintual variation instances may be members of the domain (from Cat-VRS).
+Variation subjects of VA knowledge may be discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes; or intensionally defined categories or sets of variations, based on criteria that must be met for inclusion in a given set (e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions"). 
 
 **Information Model**
 
