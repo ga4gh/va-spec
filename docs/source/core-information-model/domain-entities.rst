@@ -9,9 +9,7 @@ The VA-Spec does not define detailed models for representing such domain entitie
 
 Where suitable standards exist they are incorporated into the VA-Spec - as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. 
 
-At present, the VA-Spec represents all other Domain Entity types using a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which bundles an established code for the entity with metadata and mappings for the code and code system. 
-
-The example below shows a Mappable Concept used to capture the domain entity 'Lung Adenocarcinoma', using the primary code ``civic.did:30``, along with a mapping to the ontology term ``MONDO:0005061``.
+Version 1 of the VA-Spec represents all other Domain Entity types using a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which bundles an established code for the entity with metadata and mappings for the code and code system. The example below shows a Mappable Concept used to capture the domain entity 'Lung Adenocarcinoma', using the primary code ``civic.did:30``, along with a mapping to the ontology term ``MONDO:0005061``.
 
 .. parsed-literal::
 
@@ -126,7 +124,7 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 
 **Implementation Guidance:**
 
-- **Populating the ``membershipOperator`` attribute**:
+- Populating the ``membershipOperator`` attribute:
 
    - The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
    - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually.
@@ -147,8 +145,8 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system 
 
-**Examples**
-- `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_).
+**Examples**: 
+ - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_).
 
 
 -----------
