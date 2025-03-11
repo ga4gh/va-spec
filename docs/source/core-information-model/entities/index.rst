@@ -16,5 +16,4 @@ Entity
    activities/index
    agent
    study-group
-   characteristic
-   domain-entities/index
+   proposition
