@@ -5,34 +5,11 @@ Mappable Concept
 
 .. include::  ../../../../schema/gks-core/def/MappableConcept.rst
 
+**Data Examples**
 
+- Representation of the Condition 'Lung Adenocarcinoma' using a CIViC code in the ``primaryCoding``, with three mappings to exact matches in external terminologies. 
 
-**IMPLEMENTATION GUIDANCE**
-
-1.  Selecting a ``primaryCoding``
-
- -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
- - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
- - For example, the following are all possible primary codes can could be used to represent 'lung adenocarcinoma' within a primary Coding.
-
-     - ``civic.did:30``:  a local code defined by the data provider (CIViC)
-     - ``MONDO:005061``: a namespaced CURIE from a community ontology (MONDO)
-     - ``C3512``:  a code without a namespace from the NCI Thesaurus.  
-
- - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
-
-2.  Populating the ``name`` attribute
- - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.  
- - Use ``MappableConcept.name`` in cases where there is no code used by the data provider's system  for the concept. 
- - When there is a code, the name associated with it should be captured within the Coding that holds the code, rather than in this ``name`` attribute.
-
-3.  An Annotated Data Example: 
-
-
-.. code-block:: yaml
-   
-   # Representation of the Condition concept 'Lung Adenocarcinoma' in a dataset provided by the CIViC Knowledgebase,
-   # which includes three mappings to exact matches in community terminologies. 
+.. code-block:: yaml 
    
    conditionQualifier:
        conceptType: Condition                               # optional. a term describing the high level category of concept the MappableConcept object represents
@@ -71,4 +48,24 @@ Mappable Concept
              - https://id.nlm.nih.gov/mesh/C538231
          relation: exactMatch
 
-4. Another example illustrating a MappableConcept representing a Gene can be found `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_.
+- Another example illustrating a MappableConcept representing a Gene can be found `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_.
+
+
+**IMPLEMENTATION GUIDANCE**
+
+ - **Selecting a ``primaryCoding``**
+
+    -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
+    - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
+    - For example, the following are all possible primary codes can could be used to represent 'lung adenocarcinoma' within a primary Coding.
+
+        - ``civic.did:30``:  a local code defined by the data provider (CIViC)
+        - ``MONDO:005061``: a namespaced CURIE from a community ontology (MONDO)
+        - ``C3512``:  a code without a namespace from the NCI Thesaurus.  
+
+ - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
+
+ - **Populating the ``name`` attribute**
+    - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.  
+    - Use ``MappableConcept.name`` in cases where there is no code used by the data provider's system  for the concept. 
+    - When there is a code, the name associated with it should be captured within the Coding that holds the code, rather than in this ``name`` attribute.
