@@ -85,7 +85,7 @@ Proposition profiles defined in this way are used within the context of generic 
 
 ---------
 
-Below are the **VA Standard Proposition Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by Driver Project implementations. **JSON Schema** for each Profile can be found `here <https://github.com/ga4gh/va-spec/tree/1.x/schema/va-spec/base/json>`_.
+Below are the **VA Standard Proposition Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by Driver Project implementations. **JSON Schema** for each Profile can be found `here <https://github.com/ga4gh/va-spec/tree/1.0.0-snapshot.2025-02/schema/va-spec/base/json>`_.
 
 .. _variant-pathogenicity-proposition:
 

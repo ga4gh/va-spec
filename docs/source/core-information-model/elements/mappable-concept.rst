@@ -48,7 +48,7 @@ Mappable Concept
              - https://id.nlm.nih.gov/mesh/C538231
          relation: exactMatch
 
-- Another example illustrating a MappableConcept representing a Gene can be found `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_.
+- Another example illustrating a MappableConcept representing a Gene can be found `here <https://github.com/ga4gh/gks-core/blob/1.0.0-snapshot.2025-02/examples/mappable-concept-gene.yaml>`_.
 
 **Implementation Guidance**
 
