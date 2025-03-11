@@ -1,7 +1,7 @@
-.. _github-repositories:
+.. _repository-organization:
 
-Github Repositories
-!!!!!!!!!!!!!!!!!!!
+File and Repository Organization
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Repository Interactions**
 
