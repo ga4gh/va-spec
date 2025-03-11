@@ -52,8 +52,7 @@ Mappable Concept
 
 **Implementation Guidance:**
 
- - Selecting a ``primaryCoding``
-
+ - Selecting a ``primaryCoding`` value
     -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
     - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
     - For example, the following are all possible primary codes can could be used to represent 'lung adenocarcinoma' within a primary Coding.
