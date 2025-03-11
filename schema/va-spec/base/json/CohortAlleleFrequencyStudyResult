@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -42,7 +42,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
@@ -66,7 +66,7 @@
                   "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
+                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
                }
             ]
          },
@@ -101,10 +101,10 @@
       "focusAllele": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.3/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0-snapshot.2025-02.3/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.x/json/Allele"
             }
          ],
          "description": "The Allele for which frequency results are reported.",
