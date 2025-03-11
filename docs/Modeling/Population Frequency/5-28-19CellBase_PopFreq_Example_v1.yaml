@@ -1,5 +1,5 @@
 
-## EXAMPLE 1 
+## EXAMPLE 1
 
   ##SOURCE DATA: A ClinGen record showing the frequency data for the 'NC_000006.12 131851228 C' allele in a Non-Finnish European population form the GENIUS T2D dataset http://dataexchange.clinicalgenome.org/interpretation/entities/details/details.html#CGEX:AllFreq034
 
@@ -23,7 +23,7 @@
       "population": {
         "id": "GNOMAD:nfe",
         "label": "Non-Finnish European"
-       }  
+       }
       ],
       "@context": "http://dataexchange.clinicalgenome.org/interpretation/json/context"
     }
@@ -31,60 +31,60 @@
 
   ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent this ClinGen annotation in a json/yaml message
 
-annotations: [  
+annotations: [
     # A given message may contain several annotations. This example contains just one.
-  - id: va:annotation001        
+  - id: va:annotation001
     type: Variant Annotation
-    
+
     ## This 'entities' object holds the 'complete' representations of all entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
     ## Here we include only the alleles in the entities block, and inline the Population inside the statement, to illustrate what both patterns would look like.
-    entities: [	
-    
-      # Alleles 
+    entities: [
+
+      # Alleles
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF       ## a genomic variant, roughly in vmc format, from http://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_caid?caid=CA123287
-        type: vmc:Allele, 
-        structuralType: SO:0001483 (SNV)     
+        type: vmc:Allele,
+        structuralType: SO:0001483 (SNV)
         label: NC_000006.12 131851228 C
-        locationId: 
+        locationId:
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
             sequenceId: ncbi:NC_000006.12  (Homo sapiens chromosome 6, GRCh38.p12 Primary Assembly)
-            interval: 
+            interval:
               - start: 131851228
-                end: 131851228   
-        state: C      
+                end: 131851228
+        state: C
         ]
-    
+
     ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a Non-Finnish European population.
-    primaryStatement:   
+    primaryStatement:
       - id: va:statement001
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000006.12 131851228 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData001
             type: CohortFrequency Study Data
             count: 1198
             totalCount: 7344
             homozygousCount: 113
-            heterozygousCount: 972           
-        populationQualifier: 
+            heterozygousCount: 972
+        populationQualifier:
           - id: va:Population001 (GENIUS T2D Non-Finnish European)
             type: va:HumanPopulation
             label: "GENIUS T2D Non-Finnish European"
             memberCount: 3672
             parentStudy: "GENIUS T2D"
-            characteristic: 
+            characteristic:
               - name: ethnicity
                 value: "GNOMAD:nfe"
         statedBy: ClinGen
         date: 20140508
-      
+
 
 
 ##------------------------------------------------------------------------------------##
 
 
-## EXAMPLE 2 
+## EXAMPLE 2
 
   ##SOURCE DATA: A Cellbase record showing the frequency data for the NC_000019.9 g.45411941T>C allele in one population from gnomAD (but implicit in the data are two additional alleles (the refs for these alts) http://bioinfo.hpc.cam.ac.uk/cellbase/webservices/rest/v4/hsapiens/genomic/variant/19:45411941:T:C/annotation?include=populationFrequencies
 
@@ -104,71 +104,71 @@ annotations: [
 
   ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent the Cellbase annotations in a json/yaml message. Here we create separate statements for frequency data about the ref allele, and place it in the message as a supporting statement for the alt. But the ref allele population frequency could alteratively/additionally be captured in an entirely independent annotation.
 
-annotations: [  
+annotations: [
     # A given message may contain several annotations. This example message contains two CohortFrequency Annotations.
-  - id: va:annotation001        
+  - id: va:annotation001
     type: Variant Annotation
-    
+
     ## This 'entities' object holds the 'complete' representations of all entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
     ## Here we include only the alleles in the entities block, and inline the Population inside the statement, to illustrate what both patterns would look like.
-    entities: [	
-    
-      # Alleles 
+    entities: [
+
+      # Alleles
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
         type: vmc:Allele
-        structuralType: SO:0001483 (SNV)     
-        label: NC_000019.9 45411941 C   
-        locationId: 
+        structuralType: SO:0001483 (SNV)
+        label: NC_000019.9 45411941 C
+        locationId:
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
             sequenceId: ncbi:NC_000019.9  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
-            interval: 
+            interval:
               - start: 45411941
-                end: 45411941   
+                end: 45411941
         state: C
 
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA          ## a genomic variant, roughly in vmc format
         type: vmc:Allele
-        structuralType: SO:0001483 (SNV)     
-        label: NC_000019.9 45411941 T   
-        locationId: 
+        structuralType: SO:0001483 (SNV)
+        label: NC_000019.9 45411941 T
+        locationId:
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
             sequenceId: ncbi:NC_000019.9  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
-            interval: 
+            interval:
               - start: 45411941
-                end: 45411941   
-        state: T 
+                end: 45411941
+        state: T
         ]
-    
+
     ## The is the core statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
-    primaryStatement:   
+    primaryStatement:
       - id: va:statement001
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData001
             frequency: 0.20852435
             homozygousFrequency: 0.04497584
-            heterozygousFrequency: 0.32709703 
+            heterozygousFrequency: 0.32709703
         populationQualifier:
           - id: va:Population001
             type: va:HumanPopulation
             label: "gnomAD Exomes FIN"
             parentStudy: "GNOMAD EXOMES"
-            characteristic: 
+            characteristic:
               - name: ethnicity
                 value: "FIN"
         statedBy: CellBase
         date: 20140508
-      
-      
+
+
     ## The ref allele frequency is captured in a different statement - here in a supporting statement in the va:annotation001 annotation, as opposed to an entirely separate annotation, because it is only captured as context for interpreting the alt allele frequency.
-    supportingStatement:   
+    supportingStatement:
       - id: va:statement002
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKAR4ABA (NC_000019.9 45411941 T)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData002
             frequency: 0.79147565
             homzygousFrequency: 0.6279271
@@ -177,26 +177,26 @@ annotations: [
             type: va:HumanPopulation
             label: "gnomAD Exomes FIN"
             parentStudy: "GNOMAD EXOMES"
-            characteristic: 
+            characteristic:
               - name: ethnicity
                 value: "FIN"
         statedBy: CellBase
         date: 20140508
-      
-        
+
+
 
 ##------------------------------------------------------------------------------------##
 
 
-## EXAMPLE 3 
+## EXAMPLE 3
 
   ##SOURCE DATA: gnomAD data showing the frequency data for the NC_000019.9:g.45411941T>C allele in several populations. No API/data dump for this record AFAIK, but data displayed at https://gnomad.broadinstitute.org/variant/19-45411941-T-C.
 
 
 ##Allele frequency is shown for several different populations based on four features: ethnicity (9), sex (2), disease status (5), sequenced material (2).  The cross-products resulting from applicaiton of these classificaiton features gives a total of 180 'populations' in which the frequency of each variant is defined. Shown in the data example below are the following populations:
-   ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES 
+   ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES
    ## 2. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
-   ## 3. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: GENOMES ONLY 
+   ## 3. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: GENOMES ONLY
    ## 4. ethnicity: AFR, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
    ## 5. ethnicity: AFR, sex: MALE, disease_status: ALL, sequenced_material: EXOMES ONLY
    ## 6. ethnicity: AFR, sex: ALL, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
@@ -204,40 +204,40 @@ annotations: [
 
 
 
-  ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent the gnomAD annotations in a json/yaml message. 
+  ##TRANSFORMED DATA: One possible GA4GH-VA Annotation Structure to represent the gnomAD annotations in a json/yaml message.
   ## As opposed to the annotation-centric message structures above, here we use a variant-centric message structure that pulls out the subject allele at the beginning of the message, and references it from each statement about it in the data.
 
 
 ## This 'entities' object holds the 'complete' representations of  entities referenced by identifier in the data below (avoids message bloat from dulicated inline representations).
 ## Here we include only the alleles in the entities block, and inline the Population inside the statement, to illustrate what both patterns would look like.
-entities: [	    
-  # Alleles 
+entities: [
+  # Alleles
   - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
     type: vmc:Allele
-    structuralType: SO:0001483 (SNV)     
-    label: NC_000019.9 45411941 C   
-    locationId: 
+    structuralType: SO:0001483 (SNV)
+    label: NC_000019.9 45411941 C
+    locationId:
       - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
         sequenceId: ncbi:NC_000019.9  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
-        interval: 
+        interval:
           - start: 45411941
-            end: 45411941   
+            end: 45411941
         state: C
-  ]   
+  ]
 
-statements: [  
-      ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES   
+statements: [
+      ## 1. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES + GENOMES
       - id: va:statement001
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData001
             sourceMaterial: EXOMES and GENOMES
             totalCount: 200920
             count: 28637
             frequency: 0.1425
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population001
             type: va:Population
             memberType: individual organism
@@ -249,23 +249,23 @@ statements: [
                 - name: sex
                   value: ALL
                 - name: disease status
-                  value: ALL  
+                  value: ALL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
 
       ## 2. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
       - id: va:statement002
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData002
             sourceMaterial: EXOMES
-            totalCount: 169692 
+            totalCount: 169692
             count: 23502
             frequency: 0.1385
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population002
             type: va:HumanPopulation
             parentStudy: gnomAD Exomes
@@ -275,23 +275,23 @@ statements: [
                 - name: sex
                   value: ALL
                 - name: disease status
-                  value: ALL  
+                  value: ALL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
-        
+
       ## 3. ethnicity: ALL, sex: ALL, disease_status: ALL, sequenced_material: GENOMES ONLY
       - id: va:statement003
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData003
             sourceMaterial: GENOMES
-            totalCount: 31228 
+            totalCount: 31228
             count: 5135
             frequency: 0.1644
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population003
             type: va:Population
             memberType: individual organism
@@ -304,24 +304,24 @@ statements: [
                 - name: sex
                   value: ALL
                 - name: disease status
-                  value: ALL  
+                  value: ALL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
 
       ## 4. ethnicity: AFR, sex: ALL, disease_status: ALL, sequenced_material: EXOMES ONLY
       - id: va:statement004
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData004
             sourceMaterial: EXOMES
-            totalVariationCount: 9082 
+            totalVariationCount: 9082
             count: 2033
             frequency: 0.2238
             homozygousCount: 211
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population004
             type: va:Population
             memberType: individual organism
@@ -334,24 +334,24 @@ statements: [
                 - name: sex
                   value: ALL
                 - name: disease status
-                  value: ALL  
+                  value: ALL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
 
       ## 5. ethnicity: AFR, sex: MALE, disease_status: ALL, sequenced_material: EXOMES ONLY
       - id: va:statement005
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData005
             sourceMaterial: EXOMES
-            totalCount: 3554 
-            count: 75 
+            totalCount: 3554
+            count: 75
             frequency: 0.2181
             homozygousCount: 76
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population005
             type: va:Population
             memberType: individual organism
@@ -364,24 +364,24 @@ statements: [
                 - name: sex
                   value: MALE
                 - name: disease status
-                  value: ALL  
+                  value: ALL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
 
       ## 6. ethnicity: AFR, sex: ALL, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
       - id: va:statement006
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData006
             sourceMaterial: EXOMES
-            totalCount: 3290 
+            totalCount: 3290
             count: 752
             frequency: 0.2286
             homozygousCount: 78
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population006
             type: va:Population
             memberType: individual organism
@@ -394,25 +394,25 @@ statements: [
                 - name: sex
                   value: ALL
                 - name: disease status
-                  value: CONTROL  
+                  value: CONTROL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
-        
+
       ## 7. ethnicity: AFR, sex: MALE, disease_status: CONTROLS, sequenced_material: EXOMES ONLY
       ## Note I left the StudyData attribute names in this example more verbose, as per the previous iteration, to compare with more concise labels above
       - id: va:statement007
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (NC_000019.9 45411941 C)
         predicate: is_described_by
-        descriptor:  
+        descriptor:
           - id: va:StudyData007
             sourceMaterial: EXOMES
-            totalVariationCount: 1444   
+            totalVariationCount: 1444
             variationCount: 309
             variationFrequency: 0.2140
             homozygousIndividualCount: 31
-        populationQualifier: 
+        populationQualifier:
           - id: va:Population007
             type: va:Population
             memberType: individual organism
@@ -425,7 +425,7 @@ statements: [
                 - name: sex
                   value: MALE
                 - name: disease status
-                  value: CONTROL  
+                  value: CONTROL
              ]
         statedBy: gnomAD Consortium
         date: 20140508
@@ -492,63 +492,63 @@ statements: [
 
 
 # Removed second annotaiton in NFE pop form CellBase example
-- id: va:annotation002        
+- id: va:annotation002
     type: Variant Annotation
-    
+
     ## This 'entities' object holds the complete representations of all entities referenced by identifier in the data below (so we dont bloat the message with duplicated representeations each time the entity is referenced).
-    entities: [	
-    
+    entities: [
+
       # Alleles
       - id: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF          ## a genomic variant, roughly in vmc format
         type: vmc:Allele
-        structuralType: SO:0001483 (SNV)     
+        structuralType: SO:0001483 (SNV)
         label: CM000681.2 45411941 C
-        locationId: 
+        locationId:
           - id: vmc:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
             sequenceId: ncbi:CM000681.2  (Homo sapiens chromosome 19, GRCh38.p12 Primary Assembly)
-            interval: 
+            interval:
               - start: 45411941
-                end: 45411941   
-    
+                end: 45411941
+
       # Populations
       - id: va:Population002
         type: va:HumanPopulation
         label: "gnomAD Exomes NFE"
         parentStudy: "GNOMAD EXOMES"
-      
+
         ]
-    
+
     ## The is the core primary statement made in the va:annotation002 annotation, about the population frequency of the subject variant in an NFE population.
-    primaryStatement:   
+    primaryStatement:
       - id: va:statement003
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
         predicate: was_observed_in
         descriptor: va:Population002
-        quantifier:  
+        quantifier:
           - id: va:StudyData003
             alleleFreq: 0.15029128,
             hetGenotypeFreq: 0.26085907,
             homGenotypeFreq: 0.019861752
-           
+
         statedBy: CellBase
-        date: 20140508 
-    
+        date: 20140508
+
     ## The is a supporting statement in the va:annotation001 annotation, about the population frequency of the **ref** for the subject variant in an NFE population.
-    supportingStatement:   
+    supportingStatement:
       - id: va:statement003
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
         predicate: was_observed_in
         descriptor: va:Population002
-        quantifier:  
+        quantifier:
           - id: va:StudyData003
             alleleFreq: 0.84970874,
             homGenotypeFreq: 0.71927917,
             hetGenotypeFreq: 0.26085907,
 
         statedBy: CellBase
-        date: 20140508 
+        date: 20140508
 
 
 
@@ -556,13 +556,13 @@ statements: [
 ##----------------------------------------------------------------------------
 
     ## The is the core primary statement made in the va:annotation001 annotation, about the population frequency of the subject variant in a FIN population.
-    primaryStatement:   
+    primaryStatement:
       - id: va:statement001
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
         predicate: was_observed_in
         descriptor: va:Population001
-        quantifier:  
+        quantifier:
           - id: va:StudyData001
             refAlleleFreq: 0.79147565
             altAlleleFreq: 0.20852435
@@ -571,18 +571,18 @@ statements: [
             altHomGenotypeFreq: 0.04497584
             refAlleleSeq: "T"
             altAlleleSeq: "C"
-           
+
         statedBy: CellBase
         date: 20140508
-        
+
     ## The is the core primary statement made in the va:annotation002 annotation, about the population frequency of the subject variant in an NFE population.
-    primaryStatement:   
+    primaryStatement:
       - id: va:statement002
-        type: PopulationFrequencyStatement  
+        type: PopulationFrequencyStatement
         subject: vmc:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF (CM000681.2 45411941 C)
         predicate: was_observed_in
         descriptor: va:Population002
-        quantifier:  
+        quantifier:
           - id: va:StudyData002
             refAlleleFreq: 0.84970874,
             altAlleleFreq: 0.15029128,
@@ -591,6 +591,6 @@ statements: [
             altHomGenotypeFreq: 0.019861752
             refAlleleSeq: "T"
             altAlleleSeq: "C"
-           
+
         statedBy: CellBase
-        date: 20140508 
+        date: 20140508

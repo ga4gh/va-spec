@@ -2,7 +2,7 @@
 # here with MHB comments concerning core-im alignment
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/profiles/pathogenicity/var-pathogenicity-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-pathogenicity-source.yaml"
 title: Variant Pathogenicity Definitions
 imports:
   va.core: ../../core-im/core-im-source.yaml

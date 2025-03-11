@@ -26,7 +26,7 @@
 														"basic" - THIS TRANSCRIPT IS PART OF THE GENCODE BASIC SET - OFTEN WANT TO FILTER ON THE MORE VALIDATED GENOCDE BASIC SUBSET OF ALL TRANSCRIPTS ENSEMBL CREATES
 												],
 												"sequenceOntologyTerms": [
-														{ 
+														{
 																"accession": "SO:0001632",  # THE OBJECT/DESCRIPTOR (MOLECULAR CONSEQUENCE)
 																"name": "downstream_variant"
 														}
@@ -43,12 +43,12 @@
 												],
 												"sequenceOntologyTerms": [
 														{
-																"accession": "SO:0001632",  
+																"accession": "SO:0001632",
 																"name": "downstream_variant"
 														}
 												]
 										},
-										{  # MOLECCONSEQ#3 - FOR THE FIRST OF SEVERAL TRANSCRIPTS IN THE APOE GENE - MUCH RICHER ANNOTATION BECAUSE THE VARIANT IS WITHIN A GENE AND HITS CODING SEQUENCE. 
+										{  # MOLECCONSEQ#3 - FOR THE FIRST OF SEVERAL TRANSCRIPTS IN THE APOE GENE - MUCH RICHER ANNOTATION BECAUSE THE VARIANT IS WITHIN A GENE AND HITS CODING SEQUENCE.
 												"geneName": "APOE",
 												"ensemblGeneId": "ENSG00000130203",
 												"ensemblTranscriptId": "ENST00000252486", # THE RELEVANT TRANSCRIPT IS A QUALIFIER FOR THIS MC ANNOTAITON WHERE THE GENOME-LEVEL VARIANT ROOTING THIS DOCUMENT IS THE SUBEJCT
@@ -72,7 +72,7 @@
 														"position": 130, # COULD MODEL THIS AS AN AFFECTED FEATURE ANNOTATION (AT THE PROTEIN LEVEL) - FEATURE OBJECT HAS A UNIPROT ID (SEE A FEW LINES DOWN), AND A POSITION (130)
 														"reference": "CYS",  # COULD MODEL THIS AS A NEW TYPE OF VA (SEQUENCE CHANGE ANNOTATION) OR COULD THE VR MODEL CAPTURE THIS INFO (AND WE COULD INCLUDE WITH ROOT VARIANT)
 														"alternate": "ARG",
-														"uniprotVariantId": "VAR_000652", # HOW DO WE WANT TO PACKAGE VARIANTS THAT ARE EQUIV TO OR DERIVED FROM THE ROOT SUBJECT VARIANT? IF NOT AS THE SUBJECT OF THE ANNOTATION? 
+														"uniprotVariantId": "VAR_000652", # HOW DO WE WANT TO PACKAGE VARIANTS THAT ARE EQUIV TO OR DERIVED FROM THE ROOT SUBJECT VARIANT? IF NOT AS THE SUBJECT OF THE ANNOTATION?
 														"functionalDescription": "In HLPP3; form E3**, form E4, form E4/3 and some forms E5-type; only form E3** is disease-linked; dbSNP:rs429358.",  # RELEVNACE OF THIS???
 														"substitutionScores": [ # MODEL THESE AS PREDICTED FUNCTIONAL IMPACT ANNOTATIONS.
 																{
@@ -148,7 +148,7 @@
 																}
 														]
 												},
-												"sequenceOntologyTerms": [ # WHAT IF THERE ARE MORE THAN ONE SO TERMS THAT APPLY . . . CAN WE GROUP THEM AND CONSIDER IT A SINGLE POST-COMPOSED ANNOTATION? 
+												"sequenceOntologyTerms": [ # WHAT IF THERE ARE MORE THAN ONE SO TERMS THAT APPLY . . . CAN WE GROUP THEM AND CONSIDER IT A SINGLE POST-COMPOSED ANNOTATION?
 														{
 																"accession": "SO:0001583",
 																"name": "missense_variant"

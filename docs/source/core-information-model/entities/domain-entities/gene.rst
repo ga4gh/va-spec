@@ -3,7 +3,7 @@
 Gene
 !!!!
 
-We defer to the adopters to use the gene naming authority of their choice 
+We defer to the adopters to use the gene naming authority of their choice
 (e.g. HGNC, ENTREZ-GENE, etc.) to share a representation of a Gene entity using
 the MappableConcept data object.
 

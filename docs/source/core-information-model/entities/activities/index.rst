@@ -3,7 +3,7 @@
 Activity
 !!!!!!!!
 
-.. include::  ../../../def/va-spec/Activity.rst  
+.. include::  ../../../def/va-spec/Activity.rst
 
 Subclasses
 

@@ -32,4 +32,3 @@ The VA team is preparing an initial release, with formal documentation available
   - [GA4GH VA Slack channel](https://ga4gh.slack.com/archives/CBGR3P1GR)
 
  *Contact beatrice.amos@ga4gh.org for access to the documents/systems above*
-

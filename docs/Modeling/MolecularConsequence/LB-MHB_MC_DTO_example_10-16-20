@@ -2,19 +2,19 @@
 
 // In this example I avoid inlining referenced objects in most places, and instead reference and create them further down in the message.  But of course we can choose to inline any of these referenced objects in our serialization.
 
-// The Variant use in this example is intronic variant, resulting in splicing alteration: 
+// The Variant use in this example is intronic variant, resulting in splicing alteration:
    //ClinGen preferred label: NM_000546.5:c.672+1G>A (https://reg.genome.network/redmine/projects/registry/genboree_registry/by_caid?caid=CA339249)
    //ClinVar preferred label: NM_001126112.2(TP53):c.672+1G>A (https://www.ncbi.nlm.nih.gov/clinvar/variation/216078/)
 
-{   
+{
     "molecular-consequences" : [{  // Here, a single MC Statement, modeled using the recently proposed 'MCResult' approach
         "id" : "MCS:100",
         "type" : "MolecularConsequenceStatement",
         "description" : "This is intronic variant, resulting in splicing alteration.",
-        
+
      // Fields capturing primary statement semantics
-        "subject" : "vrs-vod:100",  
-        "predicate" : "has_molecular_consequence" 
+        "subject" : "vrs-vod:100",
+        "predicate" : "has_molecular_consequence"
         "object": {
             "id": "MCR:101",
             "type": "MolecularConsequenceResult",  // MHB: What type of thing is this object in our VA/SEPIO Framework?  Here I frame it as a specialization of 'StudyResult'. This is an exploratory core SEPIO class we that is used to group a subset of data from a single study that has a particular focus or perspective. We have used 'StudyResults' already to represent the Statement objects/descriptors for the PopFreq Statement, and Computational Functional Impact Statement. For more on 'Study Results', see here: https://docs.google.com/spreadsheets/d/1zQU-Yv7gB7IHKIOVsTh-74BwdtgB9KQpKcWkSHZOa-Q/edit#gid=2100974074&range=131:131
@@ -22,21 +22,21 @@
                 "code": "SO:0001568",
                 "label": "splicing variant",
                 "system": http://purl.obolibrary.org/obo/SO
-                }] 
+                }]
             "transcriptVariant": "vrs-vod:200",
             "transcriptSequence": "vrs-vod:500", // include transcript here, or hide it in the vod for the trancriptVariant? Are we referring to the Transcript as an abstract concept/ feature, or as a specific Sequence (in which case the VR object and VOD may be used)? Updates from VR group here?
             "proteinVariant": "vrs-vod:700" // Proposed on 10-21 call to include this
             "proteinSequence": "vrs-vod:600" // Proposed on 10-21 call to include this
-            }  
-        
-     // Fields capturing evidence and provenance (very minimal for this example - as no info about the specific supporting datasets is given)        
-        "authoredBy" : "agent:100",        
+            }
+
+     // Fields capturing evidence and provenance (very minimal for this example - as no info about the specific supporting datasets is given)
+        "authoredBy" : "agent:100",
         "dateAuthored" : "2019-10-15",
-    }    
+    }
     ]   // End of the array of MC Statement objects
-          
-                
-                
+
+
+
 // Entities referenced in the Statements above (Agents, VODs, Value Objects, ...)
 
     // Agents contributing to the Statement(s)
@@ -45,21 +45,21 @@
         "type" : "Agent",
         "label":"John Doe"
         }
-    ],    
+    ],
 
-    // Seven VODs wrapping the Domain Entity value objects referenced in the Statement above (or referenced in the VODs below). 
-    // Three for versions of the Allele (genomic, transcript and protein). Three for the reference sequences supporting these.  One for the affected gene. 
+    // Seven VODs wrapping the Domain Entity value objects referenced in the Statement above (or referenced in the VODs below).
+    // Three for versions of the Allele (genomic, transcript and protein). Three for the reference sequences supporting these.  One for the affected gene.
 
     "vrs-vods":[
-        {       
+        {
         // VOD#1:  Allele VOD for the genomic allele subject of the MC Statement (NC_000017.11:g.7674858C>T)
         "id": "vrs-vod:100",
         "type": "AlleleDescriptor",
-        "value_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this VOD.     
+        "value_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",  // The core value object wrapped by this VOD.
         "label": "NC_000017.11:g.7674858C>T",
-        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"], 
+        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "alternateLabel": ["TERT 'c.-124C > T", "C228T for chr5:g.1295228G>A"],
-        "expressionLabel" : [{ 
+        "expressionLabel" : [{
             "value" : "NC_000017.11:g.7674858C>T",
             "system" : "ghgvs"
             },{
@@ -69,7 +69,7 @@
             "value" : "NP_000123.1:Ala222Glu",
             "system" : "phgvs"
             },
-        ],         
+        ],
         "molecule_context": {
                 "code": "SO:0001026",
                 "label": "genome",
@@ -79,19 +79,19 @@
                 "code": "SO:0001483",
                 "label": "SNV",
                 "system": http://purl.obolibrary.org/obo/SO
-                }           
-        "extension" : [     //which of the following, if an, might make sense to include in the core Varaition VOD? 
-            {"name": "genes", "value": ["vrs-vod:300"]},  // MHB Question: Include gene in core Variaton VOD spec? Would we represent the gene using a VOD?   
-            {"name": "sequenceDto", "value" : "vrs-vod:400"}  // The reference sequence on which the wrapped genomic allele is defined. Also captured in the VR value object for the allele.  Need it here?    
+                }
+        "extension" : [     //which of the following, if an, might make sense to include in the core Varaition VOD?
+            {"name": "genes", "value": ["vrs-vod:300"]},  // MHB Question: Include gene in core Variaton VOD spec? Would we represent the gene using a VOD?
+            {"name": "sequenceDto", "value" : "vrs-vod:400"}  // The reference sequence on which the wrapped genomic allele is defined. Also captured in the VR value object for the allele.  Need it here?
             ]
         }
-        
+
         {
         // VOD#2: Allele VOD for the transcript-level variation referenced in the MCResult, providing more precise context for the consequence
         "id" : "vrs-vod:200",
         "type": "AlleleDescriptor",
         "vrs_id": "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",   // The core value object wrapped by this VOD.
-        "label" : "NC_000017.11(NM_000546.5):c.672+1G>A", 
+        "label" : "NC_000017.11(NM_000546.5):c.672+1G>A",
         "expressionLabel" : [{
             "system" : "ghgvs",
             "value" : "NC_000017.11:g.7674858C>T"
@@ -99,36 +99,36 @@
             "system" : "phgvs",
             "value" : "NP_000123.1:Ala222Glu"
             }
-          ],  
+          ],
         "molecule_context": {
                 "code": "SO:0000673",
                 "label": "transcript",
                 "system": http://purl.obolibrary.org/obo/SO
-                },                 
+                },
         "structural_type": {
                 "code": "SO:0001483",
                 "label": "SNV",
                 "system": http://purl.obolibrary.org/obo/SO
-                },        
-        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],          
+                },
+        "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "extension" : [
             {"name": "genes", "value": ["vrs-vod:300"]},  // MHB: Make 'genes' part of core VRS-VOD spec?
             {"name": "sequenceDescriptor", "value" : "vrs-vod:500"}  // The ref sequence on which the wrapped transcript variant is defined.
-          ]            
-        },    
+          ]
+        },
 
         {
-        // VOD #3: Sequence Feature VOD for the TP53 gene referenced in an extension field in the two varition VODs above 
-        //MHB: (assumes we want to represent conceptual features like a Gene as a VOD) 
+        // VOD #3: Sequence Feature VOD for the TP53 gene referenced in an extension field in the two varition VODs above
+        //MHB: (assumes we want to represent conceptual features like a Gene as a VOD)
         "id" : "vrs-vod:300",
         "type": "SequenceFeatureDescriptor",
-        "value_id": "hgnc:11998",  
+        "value_id": "hgnc:11998",
         "label" : "tumor protein p53",
         "xrefs" : ["entrez_gene:7157","Ensembl:ENSG00000141510","MIM:191170"],
         "alternateLabel": ["BRG1", "SMARCA4"],
         "symbol": "TP53",
         "strand": "minus"
-        },    
+        },
         {
          // VOD#4: Sequence VOD for the genomic variant's reference sequence (NC_000017.11)
         "id" : "vrs-vod:400",
@@ -160,14 +160,14 @@
                 },
         "extension" : [
             {"name": "genes", "value": [["entrez_gene:7157","hgnc:11998"], "text": "TP53"]}  //MHB: wouldnt we also reference the gene vod here?
-          ] 
-        } 
+          ]
+        }
         {
         // VOD#6: Allele VOD for the protein-level variation providing more precise context for the consequence
         "id" : "vrs-vod:600",
         "type": "AlleleDescriptor",
         "vrs_id": "ga4gh:VA.asmdgkri-Ag43_aBA4364sx",   // The core value object wrapped by this VOD.
-        "label" : "NP_000123.1:Ala222Glu", 
+        "label" : "NP_000123.1:Ala222Glu",
         "xrefs" : ["ClinGenAR:CA3392949", "clinvar:216078", "dbSNP: rs863224499"],
         "expressionLabel" : [
             {
@@ -178,12 +178,12 @@
             "system" : "chgvs",
             "value" : "NM_000546.5:c.672+1G>A"
             }
-          ],            
+          ],
         "extension" : [
             {"name": "genes", "value": ["vrs-vod:300"]},  // MHB: Make 'genes' part of core VRS-VOD spec?
             {"name": "sequenceDescriptor", "value" : "vrs-vod:700"}  // The ref sequence on which the wrapped transcript variant is defined.
-          ]            
-        }, 
+          ]
+        },
         {
         // VOD#7: Sequence VOD for the protein variant's reference sequence (NP_000123.1)
         "id" : "vrs-vod:700",
@@ -202,9 +202,9 @@
         }
     ]
 
- // Seven Value Objects wrapped by the VODs 
+ // Seven Value Objects wrapped by the VODs
     "vrs-objects":[
-    {   
+    {
      // Value Object #1: The subject genomic variation (NC_000017.11:g.7674858C>T)
         "_id" : "ga4gh:VA.C0OEtMYqCBfqfxG1XUH73Vn9ax-9x6gO",
         "type" : "Allele",
@@ -219,55 +219,42 @@
                 "type": "SimpleInterval"},
             "sequence_id": "ga4gh:SQ.rvra4fpLT_m155UmcSC-zA5ZK0wi-qoD"}  // This is the sequence wrapped by vrs-vod:400 ...
     },
-    {   
-     // Value Object #2: The transcript variation vrs object 
+    {
+     // Value Object #2: The transcript variation vrs object
         "_id" : "ga4gh:VA.rasgeaSDp_am223-azzwav-abT",
         "type" : "Allele",
         // ...rest of inlined object defining this variation
     },
-    {   
-     // Value Object #3: The gene sequence feature vrs object 
+    {
+     // Value Object #3: The gene sequence feature vrs object
         "_id" : "hgnc:11998",  // Placeholder until SA (or someone else) defines a proper computed value object id for genes
         "type" : "SequenceFeature".
     },
-    {   
+    {
      // Value Object #4: The vrs object for the reference sequence for the genomic variation
         "_id" : "ga4gh:SQ.asg-asdgw4QW-32qt4-3gga",
         "type" : "Sequence",
-        //... rest of inlined object defining the full vrs:Sequence 
-    }, 
-    {   
+        //... rest of inlined object defining the full vrs:Sequence
+    },
+    {
      // Value Object #5: The vrs object for the reference sequence for the transcript variation (NM_000546.5)
         "_id" : "ga4gh:SQ.n9ax-9x6gOC0OEt73VMYqCBfqfxG1XUH",
         "type" : "Sequence",
-        //... rest of inlined object defining the full vrs:Sequence 
+        //... rest of inlined object defining the full vrs:Sequence
     },
-    {   
+    {
      // Value Object #6: The protein variation vrs object (NP_000123.1:Ala222Glu)
         "_id" : "ga4gh:VA.ams9baAB_a34bdrsf",
         "type" : "Allele",
         // ...rest of inlined object defining this protein-level variation
     },
-    {   
+    {
      // Value Object #7: The vrs object for the reference sequence for the protein variation (NP_000123.1)
         "_id" : "ga4gh:SQ.asvf_amAH$Ip542_arch",
         "type" : "Sequence",
-        //... rest of inlined object defining the full vrs:Sequence 
+        //... rest of inlined object defining the full vrs:Sequence
     }
     ]
 
 
 }  // End of the message/document
-
-
-
-
-
-
-
-
-
-
-
-
-

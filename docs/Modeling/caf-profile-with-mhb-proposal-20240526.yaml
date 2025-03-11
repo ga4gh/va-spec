@@ -7,7 +7,7 @@
 # PART I: LB/AW schema as of 5-24-24 - with MHB comments
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/profiles/caf/caf-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/caf-source.yaml"
 title: Cohort Allele Frequency                     # In the standard profile we should name this 'Cohort Allele Frequency Study Result' (include 'Study Result' in the schema name so that it is clear what Core class is being extended here. This should be standard practice for Standard Profiles.)
 strict: true                                       # What does "strict: true" mean here?  I don't see this in other profiles.
 imports:
@@ -100,7 +100,7 @@ $defs:
 # PART II: Version of LB/AW schema as of 5-24-24 that integrates changes proposed in MHB comments above.
 
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/profiles/caf/caf-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/caf/caf-source.yaml"
 title: Cohort Allele Frequency Study Result       # In the standard profile we should name this 'Cohort Allele Frequency Study Result'
 strict: true
 imports:
@@ -218,7 +218,3 @@ $defs:
 
 
 # As general comment, most of the properties in the schema here do not have descriptions (here or in the derived json schema). It would be nice if the metaschema tooling could automatically pull in these descriptions form the core-im anytime a property 'extends' a core property - so that these don't have to be re-written (unless the developer wants to overwrite the core-im description in their profile).
-
-
-
-

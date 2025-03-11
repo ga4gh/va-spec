@@ -2,18 +2,18 @@ schema: ga4gh-_va_prototype
 comment: This is an exploratory mock-up of how the exemplar 'predictive' variant interpretation provided by the CliniGen somatic/MVLD WG might look like using a draft prototype of the GA4GH Variant Annotation model. The example is  based on the CIViC record here: https://civicdb.org/events/genes/19/summary/variants/34/summary/evidence/965/summary#evidence) (specifically evidence items 965 and 966 from this record).
 -> Section I presents the source example data provided by the MVLD, using native MVLD fields.
 -> Section II presents this same data modelled using the prototype GA4GH-VA model
--> Section III shows an 'enhanced' example that includes additional evidence information provided by the source CIViC record, to illustrate how SEPIO would represent this information as part of the GA4GH-VA model. 
+-> Section III shows an 'enhanced' example that includes additional evidence information provided by the source CIViC record, to illustrate how SEPIO would represent this information as part of the GA4GH-VA model.
 
 
 
 #SECTION 1: The example data provided by the MVLD, structured using native MVLD fields
 
 allele_descriptive:
-  - genomeVersion: GRCh38	
-    gene: EGFR	
+  - genomeVersion: GRCh38
+    gene: EGFR
     chromosome: 7
     dnaPosition: Chr7: 55181378
-    refseqTranscript: NM_005228.4:c.2369C>T	
+    refseqTranscript: NM_005228.4:c.2369C>T
     refseqProtein: NP_005219.2:p.Thr790Met
 
 allele_interpretive:
@@ -40,11 +40,11 @@ somatic_interpretive:
 variant:
   - alleleId: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
     locationId: VMC:GL_9Jht-lguk_jnBvG-wLJbjmBw5v_v7rQo
-    interval: 
+    interval:
       - start: 55181378
         end: 55181378
     sequenceId: REFSEQ:NC_000007.14 (Homo sapiens chromosome 7, GRCh38.p12 Primary Assembly)
-    labels: [NM_005228.4:c.2369C>T, NP_005219.2:p.Thr790Met]  # 'labels' is not part of VMC spec - I added here to capture names  of the variant. 
+    labels: [NM_005228.4:c.2369C>T, NP_005219.2:p.Thr790Met]  # 'labels' is not part of VMC spec - I added here to capture names  of the variant.
 
 
 #GA4GH-VA-based representation of annotations made on this variant. Key take home here is that each statement about the variant that is implicit in the MVLD structure is explicitly represented as a separate Annotation object, where the semantics of the statement are defined, and the evidence and provenance can be described (when provided). Note that if any of the simpler 'Variant Interpretive' statements are used as evidence  to support the more complex 'Somatic Interpretive' assertion, this can be explicitly represented using the SEPIO model. But in the example below these statements are just additional annotations with no specified relationship to the predictive interpretation.
@@ -53,76 +53,76 @@ annotations: [
 
 #Annotation representing the predictive somatic interpretation
   - id: Annotation001
-    type: TreatmentResponseAnnotation  
-    subject: 
+    type: TreatmentResponseAnnotation
+    subject:
         - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
           label: NM_005228.4:c.2369C>T
-    predicate: 
+    predicate:
         - id: RO:XXXXXXX # relation does not currently exist in the Relation Ontology, but may be added.
           label: confers_response_to
-    descriptor: 
+    descriptor:
         - id: CHEBI:90943
           label: Osimertinib
-    qualifier: 
+    qualifier:
         - id: UMLS:C0278506
           label: NSCLC
     evidenceSource: [
       - id: PMID:26720284
       - id: PMID:25923549
       ]
-    evidenceLevel: 
+    evidenceLevel:
       - id: SEPIO:XXXXXXX
         label: TierI-A
 
 #Annotation describing features affected by the variant (here, a gene)
   - id: Annotation002
-    type: AffectdFeatureAnnotation  
-    subject: 
+    type: AffectdFeatureAnnotation
+    subject:
       - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
         label: NM_005228.4:c.2369C>T)
-    predicate: 
+    predicate:
       - id: RO:0002525
         label:is_subsequence_of
-    descriptor: 
+    descriptor:
       - id: NCBIGene:1956
         label: human EGFR gene
 
 #Annotation describing the type of the variant (using the Sequence Ontology)
   - id: Annotation003
-    type: VariantTypeAnnotation 
-    subject: 
+    type: VariantTypeAnnotation
+    subject:
       -id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
         label: NM_005228.4:c.2369C>T
-    predicate: 
+    predicate:
       - id: RO:XXXXXXX  # relation does not currently exist in the Relation Ontology, but may be added.
-        label: variant_type 
+        label: variant_type
     descriptor:
       - id: SO:0001483
         label: SNV
 
 #Annotation describing a molecular consequence of the variant
   - identifier: Annotation004
-    type: MolecularConsequenceAnnotation  
-    subject: 
+    type: MolecularConsequenceAnnotation
+    subject:
       - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
         label: NM_005228.4:c.2369C>T
-    predicate: 
+    predicate:
       - id: RO:XXXXXXX
         label: has_consequence
-    descriptor: 
+    descriptor:
       - id: SO:0001583
         label: missense
 
-#Annotation describing a molecular consequence of the variant		
+#Annotation describing a molecular consequence of the variant
   - id: Annotation005
-    type: MolecularConsequenceAnnotation  
-    subject: 
+    type: MolecularConsequenceAnnotation
+    subject:
       - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
         label: NM_005228.4:c.2369C>T
-    predicate: 
-      - id: RO:XXXXXXX 
+    predicate:
+      - id: RO:XXXXXXX
         label: has_consequence
-    descriptor: 
+    descriptor:
       - id: SO:0001587
         label: stop gained
 ]
@@ -131,14 +131,14 @@ annotations: [
 #SECTION III: GA4GH-VA representation of an enhanced example of the MVLD 'predictive interpretation' that includes additional information provided by the CIViC record on which it is based. Includes three of the six Evidence Items captured in CIViC  (EID965, EID966, and EID963).
 
   - identifier: Annotation001
-    type: TreatmentResponseAnnotation  
-    subject: 
+    type: TreatmentResponseAnnotation
+    subject:
       - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
         label: NM_005228.4:c.2369C>T
-    predicate: 
+    predicate:
       - id: RO:XXXXXX
         label: confers_response_to
-    descriptor: 
+    descriptor:
       - id: CHEBI:90943
         label: Osimertinib
     qualifier:
@@ -153,12 +153,12 @@ annotations: [
     evidenceLevel:
       - id: SEPIO:XXXXXX
         label: TierI-A
-        
+
     evidenceLine: [
       - id: EvLn001
         type: ECO:0000180 (clinical study evidence)
-        evidenceStrength: 
-          - id: SEPIO:XXXXXXX  
+        evidenceStrength:
+          - id: SEPIO:XXXXXXX
             label: 4-star
         supportingReference: [
           - id: PMID:25923549
@@ -166,35 +166,35 @@ annotations: [
         contribution: [
           - id: Contrib001
             type: SEPIO:0000158 (contribution)
-            hasAgent: 
+            hasAgent:
               - id: CIVICUser:15
                 label: Malachi Griffith
-            role: 
+            role:
               - id: SEPIO:0000153
                 label: creator
             date: "2016-01-26T19:37:06.770Z"
-            agentFor: http://civicdb.org               
+            agentFor: http://civicdb.org
           - id: Contrib002
             type: SEPIO:0000158 (contribution)
-            hasAgent: 
+            hasAgent:
               - id: CIVICUser:3
                 label: Obi Griffith
-            role: 
+            role:
               - id: SEPIO:0000155
                 label: approver
             date: "2016-02-03T22:54:31.387Z"
-            agentFor: http://civicdb.org 
+            agentFor: http://civicdb.org
         ]
         evidenceItem: [
           - id: EI001
             type: SEPIO:0000173 (study finding)
             description: "This phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291). The overall objective tumor response rate was 51%. Among 127 patients with EGFR T790M who could be evaluated for response, the response rate was 61% (95% CI, 52 to 70). In contrast, among 61 patients without EGFR T790M, the response rate was 21% (95% CI, 12 to 34). The median progression-free survival was 9.6 months in EGFR T790M-positive patients and 2.8 months in EGFR T790M-negative patients."
         ]
-                
+
     - id: EvLn002
       type: ECO:0000180 (clinical study evidence)
       evidenceStrength:
-        - id: SEPIO:XXXXXXX  
+        - id: SEPIO:XXXXXXX
           label: 3-star"
       supportingReference: [
         - id: PMID:26720284
@@ -202,20 +202,20 @@ annotations: [
       contribution: [
         - id: Contrib003
           type: SEPIO:0000158 (contribution)
-          hasAgent: 
+          hasAgent:
             - id: CIVICUser:15
               label: Malachi Griffith
-          role: 
+          role:
             - id: SEPIO:0000153
               label: creator
           date: "2016-01-26T19:51:58.427Z"
-          agentFor: http://civicdb.org               
+          agentFor: http://civicdb.org
         - id: Contrib004
           type: SEPIO:0000158 (contribution)
-          hasAgent: 
-            - id: CIVICUser:61  
+          hasAgent:
+            - id: CIVICUser:61
               label: Kilannin Krysiak
-          role: 
+          role:
             - id: SEPIO:0000155
               label: approver
           date: "2016-02-11T21:39:47.552Z"
@@ -241,17 +241,17 @@ annotations: [
           hasAgent:
             - id: CIVICUser:15
               label: Malachi Griffith
-          role: 
-            - id: SEPIO:0000153 
+          role:
+            - id: SEPIO:0000153
               label: creator
           date: "2016-01-26T19:15:41.426Z"
-          agentFor: http://civicdb.org               
+          agentFor: http://civicdb.org
         - id: Contrib005
           type: SEPIO:0000158 (contribution)
-          hasAgent: 
-            - id: CIVICUser:6 
+          hasAgent:
+            - id: CIVICUser:6
               label: Kilannin Krysiak
-          role: 
+          role:
             - id: SEPIO:0000155
               label: approver
           date: "2016-01-26T19:15:41.426Z"
@@ -264,22 +264,22 @@ annotations: [
         ]
     ]
 
-    
+
 
 #SECTION IV: Representation of Evidence Line 1 from Section III where the study data is captured as structured objects, as opposed to only in free text of the description element. Illustrates how the GA4GH-VA / SEPIO model may support more structured/computable representation of data used as evidence. More detail than this is of course possible, including explicit representation of the study and methods/resources it applied, attribution of participating researchers, etc.
 
   - identifier: Statement001
-    type: TreatmentResponseInterpretation 
-    subject: 
+    type: TreatmentResponseInterpretation
+    subject:
       - id: cg:
         label: NM_005228.4:c.2369C>T
     subjectQualifier:
       - id: GENO:0000882
         label: somatic
-    predicate: 
+    predicate:
       - id: RO:XXXXXX
         label: confers_response_to
-    descriptor: 
+    descriptor:
       - id: CHEBI:90943
         label: Osimertinib
     statementQualifier:
@@ -287,7 +287,7 @@ annotations: [
         label: NSCLC
     evidenceLine: [
       - id: EvLn001
-        type: 
+        type:
           - id: ECO:0000180
             label: clinical study evidence
         evidenceItem: [
@@ -298,18 +298,18 @@ annotations: [
               - id: DataItem001
                 type: IAO:XXXXXXX (tumor response rate)
                 value: "61%"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort001
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: control arm role
                     size: "127"
                     independentVariable: [
                       - id: Var001
-                       variableType: 
+                       variableType:
                          - id: SO:0001059
                            label: sequence_alteration
-                       variableValue: 
+                       variableValue:
                          - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
                            label: NM_005228.4:c.2369C>T
                            negated: true
@@ -324,22 +324,22 @@ annotations: [
                             label: Osimertinib
                         ]
                     ]
-                    
+
               - id: DataItem002
                 type: IAO:XXXXXXX (tumor response rate)
                 value: "21%"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort002
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: experimental arm role
                     size: "61"
                     independentVariable: [
                       - id: Var001
-                       variableType: 
+                       variableType:
                          - id: SO:0001059
                            label: sequence_alteration
-                       variableValue: 
+                       variableValue:
                          - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
                            label: NM_005228.4:c.2369C>T
                     ]
@@ -354,91 +354,91 @@ annotations: [
                         ]
                     ]
         ]
-                 
+
               - id: DataItem003
                 type: IAO:XXXXXXX (progression-free survival time)
                 value: "9.6 months"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort001
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: experimetnal arm role
                     size: "61"
               - id: DataItem004
                 type: IAO:XXXXXXX (progression-free survival time)
                 value: "2.8 months"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort002
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: control arm role
-                    size: "61"              
+                    size: "61"
         ]
-    
-    
-    
+
+
+
     -----------------------------------------------------
-    
-    
+
+
      evidenceLine: [
       - id: EvLn001
-        type: 
+        type:
           - id: ECO:0000180
             label: clinical study evidence
         evidenceItem: [
           - id: EID001
             type: SEPIO:0000173 (study finding)
             description: "This phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291). The overall objective tumor response rate was 51%. Among 127 patients with EGFR T790M who could be evaluated for response, the response rate was 61% (95% CI, 52 to 70). In contrast, among 61 patients without EGFR T790M, the response rate was 21% (95% CI, 12 to 34). The median progression-free survival was 9.6 months in EGFR T790M-positive patients and 2.8 months in EGFR T790M-negative patients."
-            study: 
+            study:
                - id: NCT01802632
                  description: "phase I/II trial (NCT01802632) involved 253 non-small cell lung cancer patients with activating EGFR mutations, who had progressed on first generation tyrosine kinase inhibitor treatment, and were subsequently treated with Osimertinib (AZD9291)"
                  controlVariables: [
                    - id: Var001
-                     variableType: 
+                     variableType:
                        - id: SO:0001059
                          label: sequence_alteration
-                     variableValue: 
+                     variableValue:
                        - id: VMC:GA_xXBYkzzu1AH0HRbLeFESvllmAKUNN1MF
                          label: NM_005228.4:c.2369C>T
-               
-            
+
+
             studyData:
               - id: DataItem001
                 type: IAO:XXXXXXX (tumor response rate)
                 value: "61%"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort001
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: control arm role
                     size: "127"
                     control variable:
-                    independent variable: 
+                    independent variable:
               - id: DataItem002
                 type: IAO:XXXXXXX (tumor response rate)
                 value: "21%"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort002
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: experimental arm role
                     size: "61"
-                    
+
               - id: DataItem003
                 type: IAO:XXXXXXX (progression-free survival time)
                 value: "9.6 months"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort001
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: experimetnal arm role
                     size: "61"
               - id: DataItem004
                 type: IAO:XXXXXXX (progression-free survival time)
                 value: "2.8 months"
-                isAbout: 
+                isAbout:
                   - id: StudyCohort002
-                    role: 
+                    role:
                       - id: OBI:XXXXXXX
                         label: control arm role
-                    size: "61"              
+                    size: "61"

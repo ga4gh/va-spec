@@ -3,7 +3,7 @@
 Drug
 !!!!
 
-We defer to the adopters to use the drug naming authority of their choice 
+We defer to the adopters to use the drug naming authority of their choice
 (e.g. NCIT, RXNORM, etc.) to share a representation of a Drug concept using
 the :ref:`MappableConcept` data object.
 

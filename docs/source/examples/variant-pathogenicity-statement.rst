@@ -3,9 +3,9 @@
 Variant Pathogenicity Statement Example
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-**Description:** 
+**Description:**
  * The example below includes a subset of data from the `ClinVar SCV000886574.2 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000666644.9/>`_, which reports that *"NM_000277.3:c.1285C>A is likely pathogenic for Phenylketonuria"*.
- * It applies the trial use version of the  :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>` in a :ref:`Statement <statement>`, which is used support ClinGen's ingest and restructuring of ClinVar data. 
+ * It applies the trial use version of the  :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>` in a :ref:`Statement <statement>`, which is used support ClinGen's ingest and restructuring of ClinVar data.
 
 **Data**:
 
@@ -20,7 +20,7 @@ Variant Pathogenicity Statement Example
 
     "proposition": {
 
-      # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition 
+      # The 'subject', 'predicate', 'object', 'qualifier' (SPOQ) attributes below report the Proposition
       # that "NM_000277.3:c.1285C>A is causal for Phenylketonuria", which is assessed in this Statement.
       "subjectVariation": "clinvar:551555",     # full VRS representation of this variant is below
       "predicate": "isCausalFor",
@@ -63,7 +63,7 @@ Variant Pathogenicity Statement Example
       ]
     }
 
-    # The 'classification' attribute reports a single, established term of art in the domain summarizing 
+    # The 'classification' attribute reports a single, established term of art in the domain summarizing
     # the outcome of the Proposition assessment above - here reporting the variant 'Likely Pathogenic'.
     "classification": {
       "primaryCode": "Likely pathogenic",
@@ -89,7 +89,7 @@ Variant Pathogenicity Statement Example
       "type": "Method"
     },
 
-    # A list of 'Document' objects describing external publications or data documents that report the 
+    # A list of 'Document' objects describing external publications or data documents that report the
     # information expressed in this Statement.
     "reportedIn": [
       {
@@ -179,7 +179,7 @@ Variant Pathogenicity Statement Example
       }
     ],
 
-    # A list of key-value 'Extension' objects used to define custom/local attributes for 
+    # A list of key-value 'Extension' objects used to define custom/local attributes for
     # data not supported by the standard model.
     "extensions": [
       {
@@ -210,7 +210,7 @@ Variant Pathogenicity Statement Example
   # A full CatVRS and VRS-based representation of the Variant that is the subject
   # of the Statement above
   "clinvar:551555": {
-      "id": "clinvar:551555",         
+      "id": "clinvar:551555",
       "type": "CategoricalVariant",
       "label": "NM_000277.3(PAH):c.1285C>A (p.Gln429Lys)",
       "members": [

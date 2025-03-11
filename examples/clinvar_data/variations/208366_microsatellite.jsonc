@@ -1,24 +1,24 @@
 
-// -- version 2.0alpha1 - fully decorated clinvar variation (canonical variation) 
+// -- version 2.0alpha1 - fully decorated clinvar variation (canonical variation)
 
-// DISCLAIMER: While the data in the example below attempts represent a valid clinvar record, the ga4gh digests and 
+// DISCLAIMER: While the data in the example below attempts represent a valid clinvar record, the ga4gh digests and
 //.   identifiers are not accurate to the VRS 2.0 alpha spec because not all the tooling for generating the proper
 //    digests has been completed yet. Please do not presume these digests and ids are legitamite.
 
 /*
-    The structure below was chosen to show how to separate out the various 
+    The structure below was chosen to show how to separate out the various
     sub-components of the variation being demonstrated in this example
 
     record_metadata - contains metadata about the source system and process used to create all records.
     sequence_references - contains all unique sequence components referenced in locations
     locations - contains all unique sequence & canonical location components referenced in alleles
-    alleles   - contains all unique allele & canonical allele components that demonstrate how 
+    alleles   - contains all unique allele & canonical allele components that demonstrate how
                   clinvar variant 208366 can be fully represented.
 
-    We are applying ui-reference data types (json pointers) to reference relative components within this file       
+    We are applying ui-reference data types (json pointers) to reference relative components within this file
      (see https://json-schema.org/understanding-json-schema/reference/string.html#resource-identifiers )
 
-     Example: >> NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del) << 
+     Example: >> NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del) <<
      Link: https://www.ncbi.nlm.nih.gov/clinvar/variation/208366
      Elements:
         variation_id: 208366      <-- preferred variation identifier from author
@@ -41,7 +41,7 @@
             NM_004700.3:c.806_808delCCT
             NM_172163.3:c.803CCT[1]
             LRG_1378t1:c.803CCT[1]
-        genes 
+        genes
         symbol  entrez id                               omim id                              HI  TS  within #vars    all #vars
         KCNQ4   https://www.ncbi.nlm.nih.gov/gene/9132  http://www.omim.org/entry/603537	    -	-	292             312
 */
@@ -53,7 +53,7 @@
             "id": "clinvar_transformer",
             "version": "v1",
             "clinvarReleaseDate": "2023-07-22"
-        } 
+        }
     },
     "sequenceReferences": {
 
@@ -71,7 +71,7 @@
             "label": "NC_000001.11",
             // mappings as an array of Mapping concepts on all identifiable entities?
             // if this sequence was referenced multiple times it should be decorated in one and only one place...
-            // if there was a reason to have 2 different decorated representations of the same sequence (or location or allele) 
+            // if there was a reason to have 2 different decorated representations of the same sequence (or location or allele)
             // then you would need to use the "id" attribute as a differentiator and place the computed identifier in the "identifiers" element.
             "mappings": [{
                 "system": "https://www.ncbi.nlm.nih.gov/nuccore/",
@@ -119,7 +119,7 @@
             "recordMetadata": "#/recordMetadata/clingen_transform_v1"
         },
         // an incomplete example of another type of sequence (i.e. NM_004700.4)
-        // again, the key name is irrelevant and has no special meaning, it is simply used for referencing elsewhere 
+        // again, the key name is irrelevant and has no special meaning, it is simply used for referencing elsewhere
         "KCNQ4_maneselect": {
             "id": "ga4gh:SQR.BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
             "digest": "BPxYAcrVg1O8DphVJdOCfGLXHKjpol5N",
@@ -220,26 +220,26 @@
 
         /*
             What is 'ExternalVariation'?
-            we need an "ExternalVariation" class that allows for a dealing 
-            with variation that does not comply with VRS, yet is necessary 
+            we need an "ExternalVariation" class that allows for a dealing
+            with variation that does not comply with VRS, yet is necessary
             for sharing knowledge. There may be valid reasons why some variation
             does not comply with VRS. For example, VRS may not have certain
             variation types specified yet or the producing system may not have
-            the complete set of information to computationally define it based 
+            the complete set of information to computationally define it based
             on existing VRS standards.
 
             ClinVar Variation Transofrmation Policies and Notes
-            1.  all clinvar variation is versioned. and all are either canonical, 
+            1.  all clinvar variation is versioned. and all are either canonical,
                 contextual, or external variation.
 
-            2.  clinvar canonical spdi only occurs if the hgvs is GRCh38 
+            2.  clinvar canonical spdi only occurs if the hgvs is GRCh38
                 'genomic, top-level' hgvs and the var length is <= 50bp
 
             3.  clinvar variation is transformed to canonical if...
                 a.  they have at least one genomic, top-level location or hgvs
                     member (this would also occur if there is a canonical spdi)
-                b.  if it is an allele and the length is <= 1000bp. (unless we 
-                    can improve normalization performance considerably we need 
+                b.  if it is an allele and the length is <= 1000bp. (unless we
+                    can improve normalization performance considerably we need
                     to limit the size)
                 c.  if it is a cnv and there is no limit on length
 
@@ -255,7 +255,7 @@
             "id": "clinvar_208366.2023-04-10",
             "type": "CanonicalAllele",
             // if we put the clinvar variation id in the mappings do we still want "isVersionOf"?
-            "isVersionOf": "https://www.ncbi.nlm.nih.gov/clinvar/variation/208366/", 
+            "isVersionOf": "https://www.ncbi.nlm.nih.gov/clinvar/variation/208366/",
             "label": "NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)",
 
             /*
@@ -263,7 +263,7 @@
                 Mappings are meant to provide references to other authored concepts that are
                 either exact, close or related matches.
                 When using mappings on a canonical variant the presumption would be that an
-                    exactMatch when the 
+                    exactMatch when the
                     closeMatch is an authored concept that is the same concept as the exact, but not identical
                     relatedMatch is an authored concept that would be related but not truly the same concept
             */
@@ -349,9 +349,9 @@
                     ]
                 }
             ],
-            // to demonstrate a verbose inlined representation of 
-            // all genes associated to a clinvar variation.  
-            // We could put the gene(s) on each contextual variation, 
+            // to demonstrate a verbose inlined representation of
+            // all genes associated to a clinvar variation.
+            // We could put the gene(s) on each contextual variation,
             // but that is not useful in this message I think.
             "genes": [
                 {
@@ -394,7 +394,7 @@
                 {
                     "name": "cytogeneticLocation",
                     "value": "1p34.2" // could have put this under a specific context (sequenceLocation)
-                    // but thought it made sense at the clinvar variation level. 
+                    // but thought it made sense at the clinvar variation level.
                     // this makes it easier to find i think.
                 },
                 {

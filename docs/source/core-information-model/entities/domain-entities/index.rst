@@ -8,7 +8,7 @@ Domain Entity
 
 **Domain Entity Class Hierarchy**
 
-Note that these are minimally specified models at present, which will be evolved into more robust models with broad community input. 
+Note that these are minimally specified models at present, which will be evolved into more robust models with broad community input.
 
 .. figure:: ../../../images/domain-entity-class-hierarchy.png
 
@@ -21,4 +21,3 @@ Note that these are minimally specified models at present, which will be evolved
 
    conditions/index
    therapeutics/index
- 
