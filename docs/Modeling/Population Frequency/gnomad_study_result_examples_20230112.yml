@@ -3,7 +3,7 @@
 ## Note that I condensed the data a bit by making all Codings into simple enums
 
 
-## Approach 1: Separate, stand-alone StudyResult objects for each discrete population in which we want to describe the frequency of a particular variation 
+## Approach 1: Separate, stand-alone StudyResult objects for each discrete population in which we want to describe the frequency of a particular variation
 
 # StudyResult 1: 18-28667778-T-C frequency data for the global population
 - id: cg-data:study_result_001
@@ -13,9 +13,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1 exomes     # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1       
-  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37) 
-  studyPopulation: 
+      version: 2.1.1
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37)
+  studyPopulation:
     id: cg-data:pop001
     type: StudyPopulation
     label: gnomad global
@@ -24,7 +24,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: any
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -63,9 +63,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1  
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop002
     type: StudyPopulation
     label: gnomad Non-Finnish European
@@ -75,7 +75,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: Non-Finnish European
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -119,9 +119,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2
-      version: 2.1.1  
-  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37) 
-  studyPopulation: 
+      version: 2.1.1
+  focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37)
+  studyPopulation:
     id: cg-data:pop003
     type: StudyPopulation
     label: gnomad North-western European
@@ -131,7 +131,7 @@
       - name: ancestry
         description: genetic ancestry of the individual, as defined here: https://gnomad.broadinstitute.org/help/ancestry
         value: North-western European
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria
@@ -176,9 +176,9 @@
     - id: cg-data:100
       type: DataSet
       label: gnomAD v2.1.1      # If the data are from one of the named subsets gnomAD provides (e.g. gnomAD v2.1.1 non-cancer) - this would be a separate dataset instance called 'gnomAD v2.1.1 (non-cancer'), with its own identifier, and indicated to be part of the larger gnomAD 2.1.1 full dataset.
-      version: 2.1.1  
+      version: 2.1.1
   focus: ga4gh:VA.G0OEtRYqBBfrfzG1XUH73Vn9ax-9dcAo   # 18-28667778-T-C (GRCh37)
-  studyPopulation: 
+  studyPopulation:
     id: cg-data:pop002
     type: StudyPopulation
     label: gnomad Non-Finnish European
@@ -191,7 +191,7 @@
       - name: biological sex
         description: genetically defined biological sex of the individual (e.g. XX, XY, XXY, etc).
         value: XX
-  specifiedBy:           
+  specifiedBy:
     - id: cg-data:007
       type: Method
       subtype: Inclusion Criteria

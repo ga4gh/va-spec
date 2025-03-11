@@ -108,7 +108,7 @@ va-spec.base:Method:
   - specifiedBy
   - contributions
 
-va-spec.base:TraitSet:
+va-spec.base:ConditionSet:
   # Element
   - extensions
 

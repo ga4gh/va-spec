@@ -23,15 +23,31 @@ subjectVariant:
           - syntax: hgvs.p
             value: NP_000305.3:p.Arg11Thr
       relations:
-        - primaryCode: translates_from
+        - primaryCoding:
+            code: translation_of
+            system: http://www.sequenceontology.org
+            iris:
+              - http://www.sequenceontology.org/browser/current_release/term/translation_of
 predicate: isOncogenicFor
 objectTumorType:
-  primaryCode: ncit:C4872
+  primaryCoding:
+    code: ncit:C4872
+    system: https://www.ebi.ac.uk/ols4/ontologies/ncit
+    iris:
+      - http://purl.obolibrary.org/obo/NCIT_C4872
   name: Breast Carcinoma
 geneContextQualifier:
   conceptType: Gene
   name: EGFR
-  primaryCode: ncbigene:1956
+  primaryCoding:
+    code: ncbigene:1956
+    system: https://identifiers.org/ncbigene/
+    iris:
+      - http://identifiers.org/ncbigene/1956
 alleleOriginQualifier:
-  primaryCode: GENO:0000882
+  primaryCoding:
+    code: GENO:0000882
+    system: https://github.com/monarch-initiative/GENO-ontology/
+    iris:
+      - http://purl.obolibrary.org/obo/GENO_0000882
   name: somatic allele origin

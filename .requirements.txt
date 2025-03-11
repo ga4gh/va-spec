@@ -7,3 +7,4 @@ jsonschema
 referencing
 jupyterlab
 notebook
+pre-commit

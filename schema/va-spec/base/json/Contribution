@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Contribution",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.2/base/json/Contribution",
    "title": "Contribution",
    "type": "object",
    "maturity": "trial use",
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -44,17 +44,17 @@
          "default": "Contribution"
       },
       "contributor": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Agent",
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.2/base/json/Agent",
          "description": "The agent that made the contribution."
       },
       "activityType": {
          "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/MappableConcept"
       },
       "date": {
-         "description": "The date that the Activity was completed.",
-         "$comment": "By convention, populate this attribute with the date the activity was completed (e.g. in cases where the activity spans multiple days). The date MUST be formatted as a date string in ISO8601 format \"YYYY-MM-DD\".",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/date"
+         "description": "When the contributing activity was completed.",
+         "$comment": "Populate this attribute with the date and time the activity was completed. MUST use ISO8601 format (\"YYYY-MM-DDTHH:MM:SS\"), e.g. \"2024-02-25T09:25:00\". In cases where a date alone is sufficient, the \"THH:MM:SS\" portion of the datetime string MAY be omitted (e.g. \"2024-02-25\").  Specifying a time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC), e.g. \"2024-02-25T09:25:00-5:00\" for the US eastern time zone.",
+         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/datetime"
       }
    },
    "required": [

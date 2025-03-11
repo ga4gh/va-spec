@@ -10,7 +10,7 @@ Statement
 
 **DATA STRUCTURE**
 
-In VA Models, each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object that roots a data structure that supports rich and flexible descriptions of the evidence and provenance supporting this knowledge: 
+In VA Models, each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object that roots a data structure that supports rich and flexible descriptions of the evidence and provenance supporting this knowledge:
 
 .. gks-core-statement-data-structure:
 
@@ -24,8 +24,8 @@ In VA Models, each discrete assertion of knowledge about a variant is captured i
 
 In this structure:
  * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against the possible fact it puts forth, which is encapsualted in a separate **Proposition** object.
- * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument. 
- * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them. 
+ * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument.
+ * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
 
 A simple data example illustrating the structure for a Variant Pathogenicity Statement can be found `here <https://github.com/ga4gh/va-spec/blob/mbrush-ballot-doc-proposition-updates/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_.
 
@@ -35,36 +35,36 @@ A simple data example illustrating the structure for a Variant Pathogenicity Sta
 
 **1. Statement and Proposition Semantics**
 
-Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (e.g. a level of confidence that it is true, or indicator of the overall strength of evidence supporting it). The semantics of the Proposition are captured in  ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (**SPOQ**). An assessment of the Proposition's validity can be captured using ``direction``, ``strength``, and/or ``score`` attributes (**DS**). 
+Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (e.g. a level of confidence that it is true, or indicator of the overall strength of evidence supporting it). The semantics of the Proposition are captured in  ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (**SPOQ**). An assessment of the Proposition's validity can be captured using ``direction``, ``strength``, and/or ``score`` attributes (**DS**).
 
 * The ``direction`` attribute is used to indicate whether the Statement's Proposition is **supported** by the agent's assessment (when evidence favors its validity), is **disputed** by the agent's assessment (when evidence argues against its validity), or remains **neutral** (when conflicting or insufficient evidence exists to assert one direction or the other). Values come from an enumerated set of strings defined in the model {'supports', 'disputes', 'neutral'}.
 
-* The ``strength`` attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a **level of confidence** that the Proposition is true or false, or as a **strength of evidence** that supports or disputes it - depending on what  values of this attribute are used (e.g. 'high confidence', 'low confidence', etc. if confidence level is being assessed, or 'strong evidence', 'weak evidence', etc. if evidence strength is being assessed). ALternatively, data providers can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low'). 
+* The ``strength`` attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a **level of confidence** that the Proposition is true or false, or as a **strength of evidence** that supports or disputes it - depending on what  values of this attribute are used (e.g. 'high confidence', 'low confidence', etc. if confidence level is being assessed, or 'strong evidence', 'weak evidence', etc. if evidence strength is being assessed). ALternatively, data providers can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low').
 
 * The ``score`` attribute serves the same purpose as ``strength``, but allows for a quantitative assessment based on a numerical score, and can be used in addition to or as an alternative to the '`strength`' attribute.
 
-This **'SPOQ-DS'** Proposition pattern is used to explicitly represent the semantics of the central piece of knowledge reported in any Statement, which is supported by evidence and provenance information captured in other Statement attributes. 
+This **'SPOQ-DS'** Proposition pattern is used to explicitly represent the semantics of the central piece of knowledge reported in any Statement, which is supported by evidence and provenance information captured in other Statement attributes.
 
 **2. Statement 'Modes of Use'**
 
-The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated. 
+The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated.
 
 * In **"Assertion Mode"**, a Statement simply reports its SPOQ Proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by projects reporting conclusive assertions about a domain of discourse, but not providing overall confidence or evidence level assessments.
 
-* In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition which is not necessarily being asserted as true or false. The ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.  
+* In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition which is not necessarily being asserted as true or false. The ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.
 
 For a diagrammed example of each mode of use, see :ref:`here <statement-semantics>`.
 
-.. note::  Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact. 
+.. note::  Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
 
 
 **3. Use of the** ``Proposition.qualifier`` **Attribute:**
 
-* This attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'. 
-* Qualifiers can also add information that quantifies aspects of a Statement's Proposition - e.g.  an SPO triple reporting that a 'Variant X'- causes - 'Phenotype Y', can be quantified with frequency/penetrance information that indicates the percentage of carriers in which the phenotype manifests. Proposition profiles may define more than one qualifier, as needed to capture different types of qualifying information. 
-* The Core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Proposition. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers. 
+* This attribute allows representation of more complex, n-ary statements that may not be accommodated by a simple subject-predicate-object (SPO) triple. For example, if an SPO triple asserts that 'Variant X' - predicts sensitivity to - 'Treatment Y', a qualifier can be used to indicate that this applies in the context of a particular 'Disease Z'.
+* Qualifiers can also add information that quantifies aspects of a Statement's Proposition - e.g.  an SPO triple reporting that a 'Variant X'- causes - 'Phenotype Y', can be quantified with frequency/penetrance information that indicates the percentage of carriers in which the phenotype manifests. Proposition profiles may define more than one qualifier, as needed to capture different types of qualifying information.
+* The Core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Proposition. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers.
 * For example, a VariantPathogenicityProposition profile may define a named ``alleleOriginQualifier`` attribute that is required, and a named ``geneContextQualifier`` attribute that is optional - both of which conceptually specialize the Core ``qualifier`` property. Under this approach, the core ``qualifier`` acts as a placeholder to seed such specializations, but is not used directly in Proposition profiles.
-* In practice, the core ``qualifier`` attribute SHOULD be conceptually extended in Proposition profiles to indicate specific types of qualifying information that is being provided (e.g.``diseaseContextQualifier``, or ``penetranceQualifier``). The ``qualifier`` attribute in the core model acts as a placeholder to seed such specializations, but it, or the ``Qualifier`` class, SHOULD NOT be used directly in a Proposition profile. 
+* In practice, the core ``qualifier`` attribute SHOULD be conceptually extended in Proposition profiles to indicate specific types of qualifying information that is being provided (e.g.``diseaseContextQualifier``, or ``penetranceQualifier``). The ``qualifier`` attribute in the core model acts as a placeholder to seed such specializations, but it, or the ``Qualifier`` class, SHOULD NOT be used directly in a Proposition profile.
 
 
 **4. Detailed Statement Model Data Structures**
@@ -77,4 +77,4 @@ The Statement Data Structure diagram below includes all attributes available in 
 
    Detailed Statement Data Structure
 
-   **Legend** A view of the core data structure rooted by the Statement class, which can be leveraged in defining Statement Profiles. Note that specific subtypes of InformtionEntity are listed at the bottom of this Class, but not shown for space.  See Core Model class pages for details. 
+   **Legend** A view of the core data structure rooted by the Statement class, which can be leveraged in defining Statement Profiles. Note that specific subtypes of InformtionEntity are listed at the bottom of this Class, but not shown for space.  See Core Model class pages for details.

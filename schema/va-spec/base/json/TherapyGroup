@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/TherapyGroup",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.2/base/json/TherapyGroup",
    "title": "TherapyGroup",
    "type": "object",
    "maturity": "trial use",
-   "description": "A group of therapies that are applied together to treat a condition.",
+   "description": "A group of two or more therapies that are applied in combination to a single patient/subject, or applied individually to a differnet subset of participants in a research study.",
    "properties": {
       "id": {
          "type": "string",
@@ -14,23 +14,32 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
-      },
-      "groupType": {
-         "description": "The type of the therapy group.",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
       },
       "therapies": {
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/MappableConcept"
          },
-         "description": "A list of therapies that are applied together to treat a condition.",
+         "description": "A list of therapies that are applied to treat a condition.",
          "minItems": 2
+      },
+      "membershipOperator": {
+         "description": "The logical relationship between members of the group, that indicates how they were applied in treating participants in a study.  The value 'AND' indicates that all therapies in the group were applied in combination to a given patient or subject. The value 'OR' indicates that each therapy was applied individually to a distinct subset of participants in the cohort that was interrogated in a given study.",
+         "type": "string",
+         "enum": [
+            "AND",
+            "OR"
+         ],
+         "$comment": "The membershipOperator \u2018OR\u2019 should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually. Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments. Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.",
+         "required": [
+            "therapies",
+            "membershipOperator"
+         ]
       }
    },
    "required": [],

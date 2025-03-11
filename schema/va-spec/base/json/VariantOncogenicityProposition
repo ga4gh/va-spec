@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/VariantOncogenicityProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.2/base/json/VariantOncogenicityProposition",
    "title": "VariantOncogenicityProposition",
    "maturity": "trial use",
    "type": "object",
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -39,13 +39,13 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02.1/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02.3/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0-snapshot.2025-02.2/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.0.0-snapshot.2025-02.4/json/MolecularVariation"
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
@@ -53,23 +53,24 @@
       },
       "geneContextQualifier": {
          "description": "Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.",
+         "$comment": "This is not a required field, and should be used when information about the gene context of the subject variant is known, relevant, and not apparent from the representation of the variant itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context, but not neessary for complex variants like gene fusions, whose Cat-VRS representations reference specific transcripts and/or genes that provide a built-in gene context.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/iriReference"
             }
          ]
       },
       "alleleOriginQualifier": {
-         "description": "Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.",
+         "description": "Reports whether the Proposition should be interpreted in the context of an inherited (germline) variant, an acquired (somatic) mutation, or another more nuanced concept. Consider using terms or codes from community terminologies here, e.g. terms from the 'allele origin' branch of the GENO ontology such as GENO:0000882 (somatic allele origin).",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/iriReference"
             }
          ]
       },
@@ -89,10 +90,10 @@
       "objectTumorType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.2/base/json/Condition"
             }
          ],
          "description": "The tumor type for which the variant impact is evaluated.",
