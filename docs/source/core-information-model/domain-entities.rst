@@ -49,13 +49,13 @@ Future versions of the VA-Spec may incorporate richer models for other Domain En
 Variation
 @@@@@@@@@
 
-**Computational Definition**:
+**Computational Definition**
 
 Variation subjects of VA knowledge may be discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes; or intensionally defined categories or sets of variations, based on criteria that must be met for inclusion in a given set, e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions". 
 
 A representation of the state of one or more biomolecules (from VRS), or a representation of a categorically-defined domain for variation, in which individual Constraintual variation instances may be members of the domain (from Cat-VRS).
 
-**Information Model**:
+**Information Model**
 
 To represent these diverse types of variation, the VA-Spec imports two complementary GKS standards:
 
@@ -63,7 +63,7 @@ To represent these diverse types of variation, the VA-Spec imports two complemen
 
   - The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts.
 
-**Examples**:
+**Examples**
   - `A discrete allele as a VRS object <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/allele.yaml>`_
   - `A canonical allele as a Cat-VRS object <https://github.com/ga4gh/cat-vrs/blob/1.x/examples/canonicalAllele-ex1.yaml>`_
         
@@ -79,7 +79,7 @@ The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <
 **Examples**
  - `Nonsyndromic genetic hearing loss as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7>`_
 
-**Implementation Guidance:**
+**Implementation Guidance**
 
 - **Indicating when no condition is provided.**
 
@@ -115,7 +115,7 @@ Therapeutic
 .. include::  ../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
 The ``Therapeutic`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`. 
 
-**Examples**:
+**Examples**
   - `Afatinib as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapeuticAgent.yaml>`_
 
 .. _TherapyGroup:
@@ -127,10 +127,10 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 
 .. include::  ../def/va-spec/TherapyGroup.rst
 
-**Examples**:
+**Examples**
   - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapy-group.yaml>`_
 
-**Implementation Guidance:**
+**Implementation Guidance**
 
   - Populating the ``membershipOperator`` attribute:
     - The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
@@ -144,15 +144,15 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 Gene
 @@@@
 
-**Computational Definition:** 
+**Computational Definition** 
 
 A gene is a region (or regions) of genetic sequence that includes all of the elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions. (From SO:0000704)
         
-**Information Model:**
+**Information Model**
 
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system 
 
-**Examples**: 
+**Examples** 
   - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_
 
 
