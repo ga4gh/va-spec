@@ -3,15 +3,13 @@
 Domain Entities
 !!!!!!!!!!!!!!!
 
-Domain Entities are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts, as opposed to particular instances (e.g. the disease 'Lung Cancer’, not ‘patient X’s manifestation of lung cancer’).
+Domain Entities are the real world concepts in the domain of discourse that variant annotation data is about - e.g. **Genetic Variation**, and the **Conditions**, **Therapies**, or **Genes** to which they are related. They are considered to represent general types or concepts (e.g. the disease 'Lung Cancer’), as opposed to particular instances of these concepts (‘patient X’s manifestation of lung cancer’).
 
-The VA-Spec does not define specific models for representing such domain entities - as this is the remit of other standards development organizations. 
+The VA-Spec does not define detailed models for representing such domain entities - as this is the remit of other standards development organizations. 
 
-Where suitable standards exist, they are incorporated into the VA-Spec, as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. 
+Where suitable standards exist they are incorporated into the VA-Spec - as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation. 
 
-But for all other domain entity types, the VA-Spec currently uses a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which wraps a code for the entity from an existing terminology system with metadata and mappings about the code and code system.
-
-At present, most Domain Entities are represented as :ref:`Mappable Concepts <mappable-concept>`, or collections of Mappable Concepts. 
+At present, the VA-Spec represents all other Domain Entity types using a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which bundles an established code for the entity with metadata and mappings for the code and code system. 
 
 The example below shows a Mappable Concept used to capture the domain entity 'Lung Adenocarcinoma', using the primary code ``civic.did:30``, along with a mapping to the ontology term ``MONDO:0005061``.
 
@@ -42,9 +40,12 @@ The example below shows a Mappable Concept used to capture the domain entity 'Lu
          ]
       }
 
-                                                                                                                                                                                                                            
-Below we detail how different types of Domain Entities relevant to variant knowledge are currently represented in the VA-Spec. Future versions of the VA-Spec may incorporate richer models for other doamin entity types as suitable community standards emerge.
-                                                                                                                                                                                                                            
+Finally, where there is a need to represent collections of more than one Domain Entity, classes are defined to capture these as sets of Mappable Concepts (e.g. ``ConditionSet``, ``Therapy Group``). 
+
+Below we detail how different types of Domain Entities relevant to variant knowledge are currently represented in the VA-Spec. 
+
+Future versions of the VA-Spec may incorporate richer models for other Domain Entity types as suitable community standards emerge.
+
 .. _Variation:
         
 Variation
@@ -56,6 +57,8 @@ To represent genetic variations that are subjects of VA Statements, the VA-Spec 
 
 #. The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts. Categorical variations are intensionally defined sets of variations, based on criteria that must be met for inclusion in a given category, e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions". 
 
+**Examples**:
+ - `An allele as a VRS object <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/allele.yaml>`_
         
 .. _Condition:
         
@@ -64,27 +67,31 @@ Condition
 
 .. include::  ../def/va-spec/Condition.rst
         
-At present, the VA-Spec includes a ``Condition`` schema for representing individual conditions, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>`  or a :ref:`Mappable Concept <mappable-concept>`. Sets of conditions are represented using the ``ConditionSet`` class, as described below.
+The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`. 
         
 **IMPLEMENTATION GUIDANCE:**
 
-**1. Indicating when no condition is provided.**
+- **Indicating when no condition is provided.**
 
     - By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated.
     - The name or code may simply reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
 
+**Examples**
+ - `Nonsyndromic genetic hearing loss as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7>`_
         
 .. _ConditionSet:
         
 Condition Set
 @@@@@@@@@@@@@
        
-.. include::  ../def/va-spec/TraitSet.rst
+.. include::  ../def/va-spec/Condition.rst
 
+**Examples**
+ - `A set of two co-occurring phenotypes <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/traitset.yaml>`_
 
 **IMPLEMENTATION GUIDANCE**
 
-1. Populating the ``membershipOperator`` attribute:
+- **Populating the ``membershipOperator`` attribute**:
 
    - The membershipOperator ‘AND’ should be used when the Conditions listed are considered as co-occurring together in a single patient/subject. 
    - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that manfiest only one of the conditions in the set. 
@@ -93,16 +100,19 @@ Condition Set
        - In such cases, it would be misleading to create separate statements about each condition on its own. 
        - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
 
+
+
 .. _Therapeutic:
         
 Therapeutic
 @@@@@@@@@@@
 
 .. include::  ../def/va-spec/Therapeutic.rst                                                                                                                                                                                                          
-At present, the VA-Spec incldues  a ``Therapeutic`` schema for representing individual therapies, defined as ``oneOf`` an :ref:`IRI Reference <iriReference>`  or a :ref:`Mappable Concept <mappable-concept>`. 
-Groups of therapies are represented using the ``TherapyGroup`` class, as described below.
+The ``Therapeutic`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`. 
 
-                     
+**Examples**:
+ - `Afatinib as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapeuticAgent.yaml>`_
+
 .. _TherapyGroup:
         
 Therapy Group
@@ -112,9 +122,12 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 
 .. include::  ../def/va-spec/TherapyGroup.rst
 
+**Examples**:
+ - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapy-group.yaml>`_
+
 **IMPLEMENTATION GUIDANCE**
 
-1. Populating the ``membershipOperator`` attribute:
+- **Populating the ``membershipOperator`` attribute**:
 
    - The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
    - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually.
@@ -133,7 +146,10 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
         
 **Information Model:**
 
-At present, the VA-Spec does not define a specific schema for describing Genes. Individual genes are referenced in data using an :ref:`IRI Reference <iriReference>  or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system (e.g. as shown `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_).
+No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system 
+
+**Examples**
+- `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_).
 
 
 -----------
