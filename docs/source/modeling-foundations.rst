@@ -167,3 +167,11 @@ The diagram below highlights key Evidence Line attributes, and provides an examp
   Semantic Meaning of Evidence Lines.
 
   **Legend**  Semantics of a Pathogenicity Evidence Line. **Left**: An abridged version of a Pathogenicity Evidence Line profile model, showing only attributes reporting the central claim it puts forth (attributes describing provenance information are omitted). **Center**:  An example of a Pathogenicity Evidence Line instance. **Right**: Plain language meaning of the structured data in the example.
+
+
+Proposition Representation
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+
+Proposition Semantics
+$$$$$$$$$$$$$$$$$$$$$

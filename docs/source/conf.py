@@ -40,6 +40,8 @@ master_doc = 'index'
 # N.B. RTD ignores these values. :-/
 release = _get_git_tag()
 version = _parse_release_as_version(release)
+# Automatically use the RTD branch/tag as the GitHub version
+github_version = os.environ.get("READTHEDOCS_VERSION", "main")
 
 # -- Schema doc paths --------------------------------------------------------
 
@@ -90,3 +92,10 @@ html_css_files = ['theme_overrides.css']
 
 html_sidebars = { '**': ['globaltoc.html', 'relations.html',
                          'sourcelink.html', 'searchbox.html'] }
+html_context = {
+    "conf_py_path": "/docs/source/",
+    "display_github": True,
+    "github_user": "ga4gh",
+    "github_repo": "va-spec",
+    "github_version": github_version,
+}

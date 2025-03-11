@@ -4,7 +4,7 @@ title: Variant Oncogenicity Study Statement Profile (CCV 2022)
 description: >-
   Profile defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
   Cancer Genomics Consortium (CGC),and Variant Interpretation for Cancer Consortium (VICC) 2022 community
-  guidelines for cancer variant interpretation. 
+  guidelines for cancer variant interpretation.
 strict: true
 
 imports:
