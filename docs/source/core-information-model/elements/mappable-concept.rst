@@ -64,6 +64,6 @@ Mappable Concept
     - In all cases the source of the code should be reported in the ``Coding.system`` attribute.
 
  - Populating the ``name`` attribute
-    - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.
-    - Use ``MappableConcept.name`` in cases where there is no code used by the data provider's system  for the concept.
-    - When there is a code, the name associated with it should be captured within the Coding that holds the code, rather than in this ``name`` attribute.
+    - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.  
+    - Use ``MappableConcept.name`` in cases where there is no code used by the data provider's system  for the concept. 
+    - When there is a code, the name associated with it should be captured within the Coding that holds this primary code, rather than in the ``MappableConcept.name`` attribute.
