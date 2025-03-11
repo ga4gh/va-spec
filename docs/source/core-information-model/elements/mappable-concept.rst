@@ -50,10 +50,9 @@ Mappable Concept
 
 - Another example illustrating a MappableConcept representing a Gene can be found `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_.
 
+**Implementation Guidance:**
 
-**IMPLEMENTATION GUIDANCE**
-
- - **Selecting a ``primaryCoding``**
+ - Selecting a ``primaryCoding``
 
     -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
     - This may be an internal/local code or identifier that is used to reference the concept, or a public code (e.g from a community ontology) that the system adopts for internal use.  
@@ -63,9 +62,9 @@ Mappable Concept
         - ``MONDO:005061``: a namespaced CURIE from a community ontology (MONDO)
         - ``C3512``:  a code without a namespace from the NCI Thesaurus.  
 
- - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
+    - In all cases the source of the code should be reported in the ``Coding.system`` attribute. 
 
- - **Populating the ``name`` attribute**
+ - Populating the ``name`` attribute
     - Either a ``name`` or a ``primaryCoding`` is requried in every ``MappableConcept`` object.  
     - Use ``MappableConcept.name`` in cases where there is no code used by the data provider's system  for the concept. 
     - When there is a code, the name associated with it should be captured within the Coding that holds the code, rather than in this ``name`` attribute.
