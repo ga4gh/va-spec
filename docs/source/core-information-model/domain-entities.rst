@@ -89,8 +89,7 @@ Condition Set
 
 **Implementation Guidance:**
 
-- **Populating the ``membershipOperator`` attribute**:
-
+- Populating the ``membershipOperator`` attribute:
    - The membershipOperator ‘AND’ should be used when the Conditions listed are considered as co-occurring together in a single patient/subject. 
    - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that manfiest only one of the conditions in the set. 
 
@@ -146,7 +145,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system 
 
 **Examples**: 
- - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_).
+ - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_
 
 
 -----------
