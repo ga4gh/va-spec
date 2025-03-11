@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.1/base/va-spec-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-snapshot.2025-02.2/base/va-spec-source.yaml"
 title: VA Specification Core classes
 strict: true
 
@@ -10,9 +10,9 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.2/json/
-  vrs: /ga4gh/schema/vrs/2.0.0-snapshot.2025-02.2/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02.1/json/
+  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2025-02.4/json/
+  vrs: /ga4gh/schema/vrs/2.0.0-snapshot.2025-02.4/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02.3/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
@@ -138,6 +138,29 @@ $defs:
           In most cases, a StudyResult will be generated using data from one source dataset - but it is
           possible multiple datasets related to a single study contain data about a particular focus that
           get collected into a single StudyResult instance.
+      ancillaryResults:
+        maturity: draft
+        description: >-
+          An object in which implementers can define custom fields to capture additional results derived from
+          analysis of primary data items captured in standard attributes in the main body of the Study Result.
+          e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or
+          homozygote/heterozygote calls derived from analyzing raw allele count data.
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          to be added.
+        type: object
+        additionalProperties: true
+      qualityMeasures:
+        maturity: draft
+        description: >-
+          An object in which implementers can define custom fields to capture metadata about the quality/provenance
+          of the primary data items captured in standard attributes in the main body of the Study Result.
+          e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.
+        $comment: >-
+          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          to be added.
+        type: object
+        additionalProperties: true
     heritableRequired:
       - focus
 
@@ -296,14 +319,15 @@ $defs:
           data generator, etc.). Values of this property may be framed as activities, or as contribution
           roles (e.g. using terms from the Contribution Role Ontology (CRO)).
       date:
-        $refCurie: gks.core:date
+        $refCurie: gks.core:datetime
         description: >-
-          The date that the Activity was completed.
+          When the contributing activity was completed.
         $comment: >-
-          By convention, populate this attribute with the date the activity was completed (e.g.
-          in cases where the activity spans multiple days). The date MUST be formatted as a date
-          string in ISO8601 format "YYYY-MM-DD".
-
+          Populate this attribute with the date and time the activity was completed. MUST use ISO8601 format
+          ("YYYY-MM-DDTHH:MM:SS"), e.g. "2024-02-25T09:25:00". In cases where a date alone is sufficient,
+          the "THH:MM:SS" portion of the datetime string MAY be omitted (e.g. "2024-02-25").  Specifying a
+          time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC),
+          e.g. "2024-02-25T09:25:00-5:00" for the US eastern time zone.
   Document:
     type: object
     inherits: gks-core:Entity
@@ -712,6 +736,12 @@ $defs:
         description: >-
           Reports a gene impacted by the variant, which may contribute to the association
           described in the Proposition.
+        $comment: >-
+          This is not a required field, and should be used when information about the gene context of
+          the subject variant is known, relevant, and not apparent from the representation of the variant
+          itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context,
+          but not neessary for complex variants like gene fusions, whose Cat-VRS representations reference
+          specific transcripts and/or genes that provide a built-in gene context.
         oneOf:
           - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
@@ -719,6 +749,8 @@ $defs:
         description: >-
           Reports whether the Proposition should be interpreted in the context of an inherited
           (germline) variant, an acquired (somatic) mutation, or another more nuanced concept.
+          Consider using terms or codes from community terminologies here, e.g. terms from the
+          'allele origin' branch of the GENO ontology such as GENO:0000882 (somatic allele origin).
         oneOf:
           - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
@@ -855,8 +887,9 @@ $defs:
         $refCurie: gks.core:MappableConcept
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
-          HPO terms within the hierarchy of 'HP:0000005' (mode of inheritance) are recommended
-          to specify.
+          Consider using terms or codes from community terminologies here - e.g. terms from the
+          'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006
+          (autosomal dominant inheritance).
     required:
       - predicate
       - objectCondition
@@ -971,20 +1004,6 @@ $defs:
           of different ancestry groups and sexes among those ancestry groups.
         items:
           $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
-      ancillaryResults:
-        maturity: draft
-        $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
-          to be added.
-        type: object
-        additionalProperties: true
-      qualityMeasures:
-        maturity: draft
-        $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
-          to be added.
-        type: object
-        additionalProperties: true
     required:
     - focusAllele
     - focusAlleleCount

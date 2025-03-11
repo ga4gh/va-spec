@@ -6,5 +6,9 @@ aliases:
 version: 4.1.0
 license:
   name: Creative Commons Zero Public Domain Dedication
-  primaryCode: CC0
+  primaryCoding:
+    code: CC0
+    system: https://spdx.org/licenses/
+    iris:
+      - https://spdx.org/licenses/CC0-1.0.html
 releaseDate: "2024-04-19"

@@ -1,0 +1,17 @@
+id: traitset001
+conditions:
+  - primaryCoding:
+      code: HP:0025769
+      system: http://human-phenotype-ontology.github.io/
+      iris:
+        - https://hpo.jax.org/browse/term/HP:0025769
+        - https://www.ebi.ac.uk/ols4/ontologies/hp/classes?obo_id=HP%3A0025769
+    name: Disordered formal thought process
+  - primaryCoding:
+      code: HP:0033051
+      system: http://human-phenotype-ontology.github.io/
+      iris:
+        - https://hpo.jax.org/browse/term/HP:0033051
+        - https://www.ebi.ac.uk/ols4/ontologies/hp/classes?obo_id=HP%3A0033051
+    name: Impaired executive functioning
+membershipOperator: AND
