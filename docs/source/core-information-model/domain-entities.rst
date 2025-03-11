@@ -68,16 +68,16 @@ Condition
 .. include::  ../def/va-spec/Condition.rst
         
 The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`. 
-        
-**IMPLEMENTATION GUIDANCE:**
+
+**Examples**
+ - `Nonsyndromic genetic hearing loss as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7>`_
+
+**Implementation Guidance:**
 
 - **Indicating when no condition is provided.**
 
     - By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated.
     - The name or code may simply reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
-
-**Examples**
- - `Nonsyndromic genetic hearing loss as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7>`_
         
 .. _ConditionSet:
         
@@ -89,7 +89,7 @@ Condition Set
 **Examples**
  - `A set of two co-occurring phenotypes <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/traitset.yaml>`_
 
-**IMPLEMENTATION GUIDANCE**
+**Implementation Guidance:**
 
 - **Populating the ``membershipOperator`` attribute**:
 
@@ -99,7 +99,6 @@ Condition Set
        - Conclusions about this condition are determined based on an aggregate statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to make a conclusion about each condition individually.
        - In such cases, it would be misleading to create separate statements about each condition on its own. 
        - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
-
 
 
 .. _Therapeutic:
@@ -125,7 +124,7 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 **Examples**:
  - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapy-group.yaml>`_
 
-**IMPLEMENTATION GUIDANCE**
+**Implementation Guidance:**
 
 - **Populating the ``membershipOperator`` attribute**:
 
