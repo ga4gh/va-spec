@@ -50,7 +50,7 @@ Mappable Concept
 
 - Another example illustrating a MappableConcept representing a Gene can be found `here <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_.
 
-**Implementation Guidance:**
+**Implementation Guidance**
 
  - Selecting a ``primaryCoding`` value
     -  The ``primaryCoding`` is intended to hold a code that is considered the primary representation of the concept, as defined or used in the data provider's system.  
