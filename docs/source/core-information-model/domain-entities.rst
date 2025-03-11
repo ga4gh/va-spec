@@ -74,7 +74,7 @@ The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <
 
 - **Indicating when no condition is provided.**
 
-    - By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated.
+  - By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a ``conceptType = "Absent"``. Additionally, either the ``name`` or ``primaryCoding`` attribute of a MappableConcept must be populated.
     - The name or code may simply reiterate the conceptType (e.g. "Condition Absent"), or report a more specific nature or reason for the absence of a condition (e.g. "Data Missing in Source", "Condition Unknown", "All Mendelian Diseases").
         
 .. _ConditionSet:
@@ -85,13 +85,13 @@ Condition Set
 .. include::  ../def/va-spec/Condition.rst
 
 **Examples**
- - `A set of two co-occurring phenotypes <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/traitset.yaml>`_
+  - `A set of two co-occurring phenotypes <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/traitset.yaml>`_
 
 **Implementation Guidance:**
 
-- Populating the ``membershipOperator`` attribute:
-   - The membershipOperator ‘AND’ should be used when the Conditions listed are considered as co-occurring together in a single patient/subject. 
-   - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that manfiest only one of the conditions in the set. 
+  - Populating the ``membershipOperator`` attribute:
+     - The membershipOperator ‘AND’ should be used when the Conditions listed are considered as co-occurring together in a single patient/subject. 
+     - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that manfiest only one of the conditions in the set. 
 
        - Conclusions about this condition are determined based on an aggregate statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to make a conclusion about each condition individually.
        - In such cases, it would be misleading to create separate statements about each condition on its own. 
@@ -107,7 +107,7 @@ Therapeutic
 The ``Therapeutic`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`. 
 
 **Examples**:
- - `Afatinib as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapeuticAgent.yaml>`_
+  - `Afatinib as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapeuticAgent.yaml>`_
 
 .. _TherapyGroup:
         
@@ -119,16 +119,15 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 .. include::  ../def/va-spec/TherapyGroup.rst
 
 **Examples**:
- - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapy-group.yaml>`_
+  - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapy-group.yaml>`_
 
 **Implementation Guidance:**
 
-- Populating the ``membershipOperator`` attribute:
-
-   - The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
-   - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually.
-    - Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
-    - Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.
+  - Populating the ``membershipOperator`` attribute:
+    - The membershipOperator ‘AND’ should be used when all therapies in the group were applied in combination to a given patient or subject. 
+    - The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually.
+      - Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
+      - Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.
 
 
 .. _Gene:
@@ -145,7 +144,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system 
 
 **Examples**: 
- - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_
+  - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_
 
 
 -----------
