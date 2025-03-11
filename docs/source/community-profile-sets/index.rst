@@ -9,7 +9,7 @@ Many **VA Standard Profiles** are aligned with the terminologies and curation co
 
 For example, profiles in the **ACMG-2015 Community Profile Set** define enumerations based on ACMG criterion codes (``PS3``, ``BS3``), criterion assessment outcomes (``met``, ``not met``), evidence strengths (``strong``, ``supporting``, ``moderate``), and classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``), in constraining the values of specific attributes to align with this guideline.
 
-Version 1 of the VA-Spec includes the three Community Profile Sets described below  - each of which contains only a few profiles to suuport to support ClinGen's and VICC's initial small-scale implementations. The number of profiles in each set will grow as these adopters expand the scope of their implementations. 
+Version 1 of the VA-Spec includes the three Community Profile Sets described below  - each of which contains only a few profiles needed for ClinGen's and VICC's initial small-scale implementations. The number of profiles in each set will grow as these adopters expand the scope of their implementations. 
 
 
 .. _acmg-2015:
