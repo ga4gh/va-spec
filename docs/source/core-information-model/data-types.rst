@@ -3,46 +3,13 @@
 Data Types
 !!!!!!!!!!
 
-General Purpose Data Types
-##########################
-
-.. _Extension:
-
-Extension
-*********
-.. include::  ../def/gks-core/Extension.rst
-
-.. _MappableConcept:
-
-MappableConcept
-***************
-
-.. include::  ../def/gks-core/MappableConcept.rst
-
-.. _ConceptMapping:
-
-ConceptMapping
-**************
-
-.. include::  ../def/gks-core/ConceptMapping.rst
-
-.. _Coding:
-
-Coding
-******
-
-.. include::  ../def/gks-core/Coding.rst
-
-
-Primitive Data Types
-####################
 
 .. _code:
 
 code
 ****
 
-.. include::  ../def/gks-core/code.rst
+.. include::  ../def/gks-core/Code.rst
 
 
 .. _iriReference:

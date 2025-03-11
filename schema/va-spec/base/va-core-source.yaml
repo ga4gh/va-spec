@@ -10,9 +10,9 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.0.0-snapshot.2025-02/json/
-  vrs: /ga4gh/schema/vrs/2.0.0-snapshot.2025-02/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-snapshot.2025-02/json/
+  gks.core: /ga4gh/schema/gks-core/1.x/json/
+  vrs: /ga4gh/schema/vrs/2.x/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.x/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
@@ -882,7 +882,7 @@ $defs:
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
-          proportion of carriers exhibiting the condition. 
+          proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-
