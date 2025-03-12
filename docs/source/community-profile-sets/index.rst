@@ -17,7 +17,7 @@ Version 1 of the VA-Spec includes the three Community Profile Sets described bel
 ACMG-2015 Community Profile Set
 ###############################
 
-A set of profiles defined to align with terminology and conventions from the American College of Medical Genetics and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
+A set of profiles defined to align with terminology and conventions from the American College of Medical Genetics and Genomics (ACMG) 2015 guidelines for interpretation of sequence **variant pathogenicity**.
 
 **Community Guideline:**
 
@@ -40,7 +40,7 @@ A set of profiles defined to align with terminology and conventions from the Ame
 CCV-2022 Community Profile Set
 ##############################
 
-A set of profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen), Cancer Genomics Consortium (CGC),and Variant Interpretation for Cancer Consortium (VICC) 2022 community guidelines for cancer variant interpretation.
+A set of profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant Interpretation for Cancer Consortium (VICC) 2022 community guidelines for interpretation of **variant oncogenicity**. 
 
 **Community Guideline:**
 
@@ -61,7 +61,7 @@ A set of profiles defined to align with terminology and conventions from the Cli
 AAC-2017 Community Profile Set
 ###############################
 
-A set of profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP), American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for the interpretation and reporting of sequence variants in cancer.
+A set of profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP), American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for **clinical significance interpretation** of sequence variants in cancer. 
 
 **Community Guideline:**
 
