@@ -1,9 +1,9 @@
-.. _va-standard-profiles:
+.. _va-profiles:
 
-VA Standard Profiles
-!!!!!!!!!!!!!!!!!!!!
+VA Profiles
+!!!!!!!!!!!
 
-**VA Standard Profiles** are models that implementers can use to represent and exchange a specific type of variant knowledge in their data systems. They are defined as specializations of the :ref:`Statement<Statement>`, :ref:`EvidenceLine<EvidenceLine>`, :ref:`Proposition<Proposition>`, or :ref:`Study Result<StudyResult>` classes in the VA Core Model.
+**VA Profiles** are models that implementers can use to represent and exchange a specific type of variant knowledge in their data systems. They are defined as specializations of the :ref:`Statement<Statement>`, :ref:`EvidenceLine<EvidenceLine>`, :ref:`Proposition<Proposition>`, or :ref:`Study Result<StudyResult>` classes in the VA Core Model.
 
  * :ref:`Statement Profiles<statement-profiles>` support discrete assertions of **general knowledge** about a variant (e.g. a pathogenicity classification).
 
