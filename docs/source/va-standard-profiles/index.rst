@@ -26,8 +26,8 @@ The :ref:`data example here<variant-pathogenicity-statement-example>` illustrate
 
    - **Base Profiles**:  
 
-      - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-      - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
+     - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
+     - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 
    - **Community Profiles**:  
 
@@ -46,6 +46,11 @@ The :ref:`data example here<variant-pathogenicity-statement-example>` illustrate
   - Implementers who do not seek such alignment can build their own schema for Statements to report any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`. 
   - Starting with the core Statement class, simply bind its ``proposition`` attribute to the relevant Proposition class, and use other Statement attributes and core classes to represent additional information about the Statement (e.g. strength, provenance, source documents, etc).
   - The `data example here <https://github.com/ga4gh/va-spec/blob/1.x/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_ illustrates application of this approach to create non-ACMG-compliant representations of ClinVar pathogenicity data.  
+
+
+-----
+
+**Index:**
 
 .. toctree::
    :maxdepth: 4
