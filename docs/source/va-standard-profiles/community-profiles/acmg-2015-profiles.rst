@@ -29,6 +29,13 @@ This profile applies the following constraints on top of the core :ref:`Statemen
    :header-rows: 1
    :align: left
    :widths: auto
+
+
+   *  - Field
+      - Flags
+      - Type
+      - Limits
+      - Description
    *  - proposition
       -
       - :ref:`Variant Pathogenicity Proposition`
@@ -38,7 +45,7 @@ This profile applies the following constraints on top of the core :ref:`Statemen
       -
       - :ref:`MappableConcept` (nested enum: 'likely' | 'definitive')
       - 0..1
-      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept. 
+      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept. 
    *  - classification
       -
       - :ref:`MappableConcept`  (nested enum: 'pathogenic' | 'likely pathogenic' | 'benign' | 'likely benign' | 'VUS')
