@@ -15,7 +15,7 @@ At present, VA Profiles are built on four core classes:
 
  * :ref:`Proposition<Proposition>` Profiles are **used exclusively within Statement and Evidence Line objects** - where they encapsulate the **semantics of the possible fact** that may be asserted in a Statement, or against which evidence may be assessed in an Evidence Line (e.g. pathogenicity propositions capture a possible fact that some variant is causal for some disease).
 
- * :ref:`Study Result <StudyResult>` Profiles capture collections of **data items about a specific variant** from a particular study or analysis (e.g. functional impact data about the PTEN:c.35A>T(p.Asn12Ile) variant in the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_). Study Results are often used to describe data used as evidence to support higher order assertions such as pathogenicity classifications. 
+ * :ref:`Study Result <StudyResult>` Profiles capture collections of **data items about a specific variant** from a particular study or analysis (e.g. functional impact data about the PTEN:c.35A>T(p.Asn12Ile) variant in the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_). `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_  Study Results are often used to describe data used as evidence to support higher order assertions such as pathogenicity classifications. 
 
 The :ref:`data example here<variant-pathogenicity-statement-example>` illustrates how profiles of these different types maybe used together to represent a variant pathogenicity classification.
 
@@ -30,7 +30,7 @@ Representation of a particular type of Statement using VA-Spec does not require 
 
 .. note:: Representation of a particular type of Statement using VA-Spec does not require a Profile be specifically defined for it. The :ref:`Statement Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines. Implementers who do not seek such alignment can build their own schema for Statements to report any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`. Starting with the core Statement class, simply bind its ``proposition`` attribute to the relevant Proposition class, and use other Statement attributes and core classes to represent additional information about the Statement (e.g. strength, provenance, source documents, etc). 
 
-     The `data example here <https://github.com/ga4gh/va-spec/blob/1.x/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_ illustrates application of this approach to create non-ACMG-compliant representations of ClinVar pathogenicity data.  
+     The `data example here <https://github.com/ga4gh/va-spec/blob/1.x/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_ `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ illustrates application of this approach to create non-ACMG-compliant representations of ClinVar pathogenicity data.  
 
 .. toctree::
    :maxdepth: 4
