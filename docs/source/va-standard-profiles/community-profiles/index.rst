@@ -5,8 +5,11 @@ Community Profiles
 
 Community Profiles layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline. 
 
-For example, profiles aligned with the "ACMG 2015 Variant Interpretation Guidelines" define enumerations based on ACMG criterion codes (``PS3``, ``BS3``), criterion assessment outcomes (``met``, ``not met``), evidence strengths (``strong``, ``supporting``, ``moderate``), and classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``), in constraining the values of specific attributes to align with this guideline.
-  
+For example, profiles aligned with the "ACMG 2015 Variant Interpretation Guidelines" constrain the values of specific attributes by defining enumerations based on: 
+- ACMG criterion codes (``PS3``, ``BS3``)
+- ACMG criterion assessment outcomes (``met``, ``not met``)
+- ACMG evidence strengths (``strong``, ``supporting``, ``moderate``)
+- ACMG classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``)
 
 Version 1 of the VA-Spec includes Statement and Evidence Line community profiles aligned with three established varaint interpretation guidelines:
 
