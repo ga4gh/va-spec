@@ -54,11 +54,12 @@ A set of profiles defined to align with terminology and conventions from the Cli
 **Included Profiles**:
  - :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022>`
  - :ref:`Experimental Variant Oncogenicity Functional Impact Evidence Line (CCV 2022)<experimental-variant-oncogenicity-functional-impact-evidence-line-ccv-2022>`
- - :ref:`Variant Oncogenicity Proposition<variant-ontogenicity-proposition>`
+ - :ref:`Variant Oncogenicity Proposition<variant-oncogenicity-proposition>`
 
 **Implementation Notes:**
 
 This Profile Set includes VA Standard Profiles that support data generated using CCV-based oncogenicity guidelines or terminologies.
+
  - The **Statement** profile can represent final oncogenicity classifications of a variant.
  - The **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications.
  - The **Proposition** profile itself does not define any CCV-specific constraints, but is used to build **Statement** and **Evidence Line** structures that do. 
