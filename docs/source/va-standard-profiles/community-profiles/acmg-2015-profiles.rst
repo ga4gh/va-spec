@@ -5,11 +5,6 @@ ACMG 2015 Aligned Profiles
 
 The following profiles align with terminology and curation conventions from the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868>`_ 
 
-  - :ref:`Variant Pathogenicity Statement (ACMG 2015)<variant-pathogenicity-statement-acmg-2015>`
-  - :ref:`Experimental Variant Pathogenicity Functional Impact Evidence Line (ACMG 2015)<experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>`
-
------
-
 .. _variant-pathogenicity-statement-acmg-2015:
 
 Variant Pathogenicity Statement (ACMG 2015)
