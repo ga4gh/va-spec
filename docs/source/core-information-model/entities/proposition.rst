@@ -9,7 +9,7 @@ Proposition
 
 **Implementation Guidance:**
 
-**1. Proposition Utility:**
+**1. Understanding Proposition Utility:**
 
 Propositions are abstract representations of possible facts about a domain of discourse, e.g. *"HRAS:c.173C>T causes Costello Syndrome"*.  A proposition itself makes no claim as to whether the sentiment it expresses is true or not - its job is simply to convey the sharable meaning of a possible fact in a structured data object. Such propositions can then be referenced and reused by **Statements** and **Evidence Lines**, which make assertions about them. Specifically:
 
@@ -18,7 +18,7 @@ Propositions are abstract representations of possible facts about a domain of di
 
 -----
 
-**2. Structured Semantics:**
+**2. Structuring Proposition Semantics:**
 
 The semantics of a Proposition are captured in ``subject``, ``predicate``, ``object``, and optional ``qualifier`` attributes (SPOQ). Proposition profiles constrain the types of values that can be captured in these SPO attributes, and may define any number of specialized qualifier attributes that extend the SPO "triple" with additional detail or context.  For example, if an SPO triple asserts that *"VariantX - is causal for - DiseaseY"*, a ``geneContextQualifier`` can be used to indicate a specific GeenZ as mediating this causal relationship, and an ``alleleOriginQualifier`` can be used to indicate that the fact holds specifically for variants of germline origin:
 
