@@ -17,7 +17,7 @@ The v1 release of VA-Spec includes the following components:
 
 #. :ref:`A Foundational VA Core Model <va-core-model>`: A domain-agnostic model for describing knowledge of any kind, and the evidence and provenance supporting it. *The Core Model establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.
 
-#. :ref:`VA Profiles <va-profiles>`: A set of models built as Profiles of core Statement, Study Result, and Evidence Line classes, each supporting a specific types of knowledge about genetic variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These models are provided as machine-readable json schema, as recommended standards for validation and exchange of data by the GA4GH community*.
+#. :ref:`VA Profiles <va-profiles>`: A set of models built as specializations of core Statement, Study Result, and Evidence Line classes, each supporting a specific types of knowledge about genetic variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These profiles are provided as machine-readable json schema, as recommended standards for validation and exchange of data by the GA4GH community*.
 
 #. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using VA Profiles. *These resources provide a working example of code that can be adopted and/or extended by adopters*.
 
