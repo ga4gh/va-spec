@@ -14,7 +14,7 @@ For example, profiles aligned with the "ACMG 2015 Variant Interpretation Guideli
 
 Version 1 of the VA-Spec includes Statement and Evidence Line community profiles aligned with three established varaint interpretation guidelines:
 
- - the `ACMG 2015 Pathogenicity Interpretation Guidelines for pathogenicity classifications <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_ 
+ - the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_ 
  - the `ClinGen/CGC/VICC (CCV) 2022 Oncogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/35101336/>`_
  - the `AMP/ASCO/CAP (AAC) Guidleines for Clinical Interpretation of Genetic Variants <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_
 
