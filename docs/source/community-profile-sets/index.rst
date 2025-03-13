@@ -49,7 +49,7 @@ A set of profiles defined to align with terminology and conventions from the Cli
 
 **Community Guideline:**
 
- - `ClinGen/CGC/VICC (CCV) 2022 oncogenicity interpretation guidelines <https://clinicalgenome.org/docs/standards-for-the-classification-of-pathogenicity-of-somatic-variants-in-cancer-oncogenicity-joint-recommendations-of-clinical/>`_
+ - `ClinGen/CGC/VICC (CCV) 2022 oncogenicity interpretation guidelines <https://pubmed.ncbi.nlm.nih.gov/35101336/>`_
 
 **Included Profiles**:
  - :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022>`
