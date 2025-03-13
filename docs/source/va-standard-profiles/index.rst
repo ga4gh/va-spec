@@ -7,9 +7,6 @@ VA Profiles are extensions of generic VA Core Model classes that have been speci
 
 Profiles are provided as machine-readable JSON Schema, which can be used by implementers to structure, validate, and exchange variant data in their systems.  
 
-
-**Core Profiled Classes**:
-
 At present, VA Profiles are built on four core classes: 
 
  - :ref:`Statement<Statement>` Profiles support discrete assertions of general knowledge about a variant (e.g. a pathogenicity classification).
@@ -22,9 +19,8 @@ At present, VA Profiles are built on four core classes:
 
 The :ref:`data example here<variant-pathogenicity-statement-example>` illustrates how profiles of these different types maybe used together to represent a variant pathogenicity classification.
 
-**Base Profiles vs Community Profiles**
-
-In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
+.. note::  
+**Base Profiles vs Community Profiles**: In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
 
 - **Base Profiles**:  
     - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
@@ -36,15 +32,14 @@ In version 1.0 of the VA-Spec, we distinguish between two categories of profiles
     - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
 
-.. note:: Representation of a particular type of Statement using VA-Spec does not require a Profile be specifically defined for it. 
+**Implementation Notes:** 
 
-    The :ref:`Statement Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines. 
-
-    Implementers who do not seek such alignment can build their own schema for Statements to report any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`. 
-
-    Starting with the core Statement class, simply bind its ``proposition`` attribute to the relevant Proposition class, and use other Statement attributes and core classes to represent additional information about the Statement (e.g. strength, provenance, source documents, etc). 
-
-     The `data example here <https://github.com/ga4gh/va-spec/blob/1.x/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_ illustrates application of this approach to create non-ACMG-compliant representations of ClinVar pathogenicity data.  
+ #. Building Statement Models using Propositions: 
+    - Representation of a particular type of Statement using VA-Spec does not require a Profile be specifically defined for it. 
+    - The :ref:`Statement Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines. 
+    - Implementers who do not seek such alignment can build their own schema for Statements to report any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`. 
+    - Starting with the core Statement class, simply bind its ``proposition`` attribute to the relevant Proposition class, and use other Statement attributes and core classes to represent additional information about the Statement (e.g. strength, provenance, source documents, etc).
+    - The `data example here <https://github.com/ga4gh/va-spec/blob/1.x/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_ illustrates application of this approach to create non-ACMG-compliant representations of ClinVar pathogenicity data.  
 
 .. toctree::
    :maxdepth: 4
