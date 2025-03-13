@@ -15,7 +15,7 @@ Cohort Allele Frequency Study Result
 ####################################
 
 
-.. include::  ../def/va-spec/CohortAlleleFrequencyStudyResult.rst
+.. include::  ../../def/va-spec/CohortAlleleFrequencyStudyResult.rst
 
 
 .. _experimental-variant-functional-impact-study-result:
@@ -23,4 +23,4 @@ Cohort Allele Frequency Study Result
 Experimental Variant Functional Impact Study Result
 ###################################################
 
-.. include::  ../def/va-spec/ExperimentalVariantFunctionalImpactStudyResult.rst
+.. include::  ../../def/va-spec/ExperimentalVariantFunctionalImpactStudyResult.rst
