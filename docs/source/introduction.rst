@@ -19,8 +19,6 @@ The v1 release of VA-Spec includes the following components:
 
 #. :ref:`VA Profiles <va-profiles>`: A set of models built as Profiles of core Statement, Study Result, and Evidence Line classes, each supporting a specific types of knowledge about genetic variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These models are provided as machine-readable json schema, as recommended standards for validation and exchange of data by the GA4GH community*.
 
-#. :ref:`Community Profile Sets <community-profile-sets>`:  Collections of standard profiles that align with a particular established community guideline for variant knowledge creation. *These can be used together by implementers who wish to follow the terminological and curation conventions of a particular community in defining the strucutre and semantics of their data*.
-
 #. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using VA Profiles. *These resources provide a working example of code that can be adopted and/or extended by adopters*.
 
 
