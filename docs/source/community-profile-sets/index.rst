@@ -27,7 +27,7 @@ A set of profiles defined to align with terminology and conventions from the Ame
 
   - :ref:`Variant Pathogenicity Statement (ACMG 2015)<variant-pathogenicity-statement-acmg-2015>`
   - :ref:`Experimental Variant Pathogenicity Functional Impact Evidence Line (ACMG 2015)<experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>`
-  - :ref:`Variant Pathogenicity Proposition`<variant-pathogenicity-proposition>`
+  - :ref:`Variant Pathogenicity Proposition<variant-pathogenicity-proposition>`
 
 **Implementation Notes:**
 
@@ -54,7 +54,7 @@ A set of profiles defined to align with terminology and conventions from the Cli
 **Included Profiles**:
  - :ref:`Variant Oncogenicity Statement (CCV 2022)<variant-oncogenicity-statement-ccv-2022>`
  - :ref:`Experimental Variant Oncogenicity Functional Impact Evidence Line (CCV 2022)<experimental-variant-oncogenicity-functional-impact-evidence-line-ccv-2022>`
- - :ref:`Variant Oncogenicity Proposition`<variant-ontogenicity-proposition>`
+ - :ref:`Variant Oncogenicity Proposition<variant-ontogenicity-proposition>`
 
 **Implementation Notes:**
 
