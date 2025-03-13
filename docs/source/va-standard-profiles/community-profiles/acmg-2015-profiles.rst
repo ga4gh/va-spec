@@ -3,7 +3,8 @@
 ACMG 2015 Aligned Profiles
 @@@@@@@@@@@@@@@@@@@@@@@@@@
 
-The following profiles align with terminology and curation conventions from the `American College of Medical Genetics and Genomics (ACMB) 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868>`_ 
+The following profiles align with terminology and curation conventions from the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868>`_ 
+
   - :ref:`Variant Pathogenicity Statement (ACMG 2015)<variant-pathogenicity-statement-acmg-2015>`
   - :ref:`Experimental Variant Pathogenicity Functional Impact Evidence Line (ACMG 2015)<experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>`
 
@@ -134,8 +135,8 @@ Some Variant Pathogenicity Statement attributes are inherited from  :ref:`Statem
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/latest/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/latest/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
 
 -----
 
@@ -262,5 +263,5 @@ Some EvidenceLine attributes are inherited from :ref:`EvidenceLine` and :ref:`In
       - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition. The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values, along with the specific ACMG criterion code used in these assessments. The indicated enumeration constrains the nested `MappableConcept.primaryCoding > Coding.code` attribute when capturing evidence outcomes. Note that if 'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for the relevant criterion, along with the strength of evidence provided. (e.g. 'PS3_moderate').
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.x/schema/va-spec/acmg-2015/pathogenicity-functional-impact-evidence-line-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.x/schema/va-spec/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/latest/schema/va-spec/acmg-2015/pathogenicity-functional-impact-evidence-line-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/latest/schema/va-spec/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine>`_
