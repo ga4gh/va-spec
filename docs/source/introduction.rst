@@ -17,7 +17,7 @@ The v1 release of VA-Spec includes the following components:
 
 #. :ref:`A Foundational VA Core Model <va-core-model>`: A domain-agnostic model for describing knowledge of any kind, and the evidence and provenance supporting it. The Core-IM establishes a shared understanding of fundamental terms, concepts, and modeling patterns - and provides a foundation on which 'Standard VA Profiles' are built*.
 
-#. :ref:`VA Standard Profiles <va-standard-profiles>`: A set of models built as Profiles of core Statement or Study Result classes, each supporting a specific types of knowledge about genetic variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These models are provided as machine-readable json schema, as shared standards for validation and exchange of data by the GA4GH community*.
+#. :ref:`VA Profiles <va-profiles>`: A set of models built as Profiles of core Statement, Study Result, and Evidence Line classes, each supporting a specific types of knowledge about genetic variation (e.g. this :ref:`Pathogenicity Statement Profile <variant-pathogenicity-statement>`). *These models are provided as machine-readable json schema, as recommended standards for validation and exchange of data by the GA4GH community*.
 
 #. :ref:`Community Profile Sets <community-profile-sets>`:  Collections of standard profiles that all align with an established community guidleine for variant knowledge creation. *These can be used together by implementers who wish to follow this standard in defining the strucutre and semantics of their data*.
 
