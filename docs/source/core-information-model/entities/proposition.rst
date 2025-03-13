@@ -32,7 +32,9 @@ The semantics of a Proposition are captured in ``subject``, ``predicate``, ``obj
 
 -----
 
-**3. Data Example**
+.. _proposition-utility-example:
+
+**3. Proposition Utility Example**
 
 Variant pathogenicity classifications based on the 2015 ACMG Interpretation guidelines are a nice example of how a single proposition such as *"HRAS:c.173C>T is causal for Costello Syndrome"* can be used in Evidence Lines and Statements. This proposition may first be used as a **target** against which data is interpreted to build Evidence Lines, according to specific evaluation criteria (e.g. PM2 for allele frequency data, PM1 for functional impact data). As Evidence Lines supporting this proposition accumulate, it may subsequently be used in a **Statement** where it is asserted as true to classify the variant as 'pathogenic'.
 
