@@ -3,11 +3,11 @@
 VA Profiles
 !!!!!!!!!!!
 
-VA Profiles are extensions of generic VA Core Model classes that have been specialized to support a particular type of knowledge (e.g. a varaint pathogenicity classification).
+VA Profiles extend generic VA Core Model classes with specializions to support a particular type of knowledge (e.g. a varaint pathogenicity), or align with established community terminology and curation conventions (e.g. the ACMG-2015 Guidleines)
 
-Profiles are provided as machine-readable JSON Schema, which can be used by implementers to structure, validate, and exchange variant data in their systems.  
+Profiles are authored as YAML-based specifications, from which machine-readable JSON Schema are derived and used by implementers to structure, validate, and exchange variant data in their systems.  
 
-At present, VA Profiles are built on four core classes: 
+The VA-Spec currently supports profiles of four Core Model classes: 
 
  - :ref:`Statement<Statement>` Profiles support discrete assertions of general knowledge about a variant (e.g. a pathogenicity classification).
 
@@ -17,7 +17,7 @@ At present, VA Profiles are built on four core classes:
 
  - :ref:`Study Result <StudyResult>` Profiles capture collections of data items about a specific variant from a particular study or analysis (e.g. functional impact data about the PTEN:c.35A>T(p.Asn12Ile) variant in the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_). Study Results are often used to describe data used as evidence to support higher order assertions such as pathogenicity classifications. 
 
-The :ref:`data example here<variant-pathogenicity-statement-example>` illustrates how profiles of these different types maybe used together to represent a variant pathogenicity classification.
+The :ref:`data example here<variant-pathogenicity-statement-example>` illustrates how profiles of these different types can be used together to represent a variant pathogenicity classification.
 
 -----
 
@@ -32,7 +32,7 @@ The :ref:`data example here<variant-pathogenicity-statement-example>` illustrate
    - **Community Profiles**:  
 
      - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015). 
-     - These constraints are defined using a native JSON Schema composition approach, which does not result in creation of concrete subcalsses for each profile. 
+     - These constraints are defined using  a schema composition approach that leverages the JSON Schema allOf keyword, which does not result in creation of concrete subcalsses for each profile. 
      - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
 -----
