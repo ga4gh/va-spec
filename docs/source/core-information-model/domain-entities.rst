@@ -62,8 +62,8 @@ To represent these diverse types of variation, the VA-Spec imports two complemen
   - The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts.
 
 **Examples**
-  - `A discrete allele as a VRS object <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/allele.yaml>`_
-  - `A canonical allele as a Cat-VRS object <https://github.com/ga4gh/cat-vrs/blob/1.x/examples/canonicalAllele-ex1.yaml>`_
+  - `A discrete allele as a VRS object <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/allele.yaml>`_
+  - `A canonical allele as a Cat-VRS object <https://github.com/ga4gh/cat-vrs/blob/|github_version|/examples/canonicalAllele-ex1.yaml>`_
 
 .. _Condition:
 
@@ -75,7 +75,7 @@ Condition
 The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
 
 **Examples**
- - `Nonsyndromic genetic hearing loss as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7>`_
+ - `Nonsyndromic genetic hearing loss as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7>`_
 
 **Implementation Guidance**
 
@@ -92,7 +92,7 @@ Condition Set
 .. include::  ../def/va-spec/Condition.rst
 
 **Examples**
-  - `A set of two co-occurring phenotypes <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/traitset.yaml>`_
+  - `A set of two co-occurring phenotypes <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/traitset.yaml>`_
 
 **Implementation Guidance:**
 
@@ -114,7 +114,7 @@ Therapeutic
 The ``Therapeutic`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
 
 **Examples**
-  - `Afatinib as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapeuticAgent.yaml>`_
+  - `Afatinib as a Mappable Concept <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/therapeuticAgent.yaml>`_
 
 .. _TherapyGroup:
 
@@ -126,7 +126,7 @@ At present, the VA-Spec incldues  a ``TherapeyGroup`` schema for representing gr
 .. include::  ../def/va-spec/TherapyGroup.rst
 
 **Examples**
-  - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/therapy-group.yaml>`_
+  - `A combination treatment of Arsenic Trioxide and Tretinoin <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/therapy-group.yaml>`_
 
 **Implementation Guidance**
 
@@ -151,7 +151,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
 
 **Examples**
-  - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/1.x/examples/mappable-concept-gene.yaml>`_
+  - `BRCA2 gene as a Mappable Concept <https://github.com/ga4gh/gks-core/blob/|github_version|/examples/mappable-concept-gene.yaml>`_
 
 
 -----------

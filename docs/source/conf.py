@@ -40,9 +40,19 @@ master_doc = 'index'
 # N.B. RTD ignores these values. :-/
 release = _get_git_tag()
 version = _parse_release_as_version(release)
-# Automatically use the RTD branch/tag as the GitHub version
-# (note: READTHEDOCS_VERSION will return 'latest' and not the actual branch or tag name when building the latest version of the docs)
-github_version = os.environ.get("READTHEDOCS_VERSION_NAME", "1.x")
+
+# Detect if we are on ReadTheDocs
+on_rtd = os.environ.get('READTHEDOCS') == 'True'
+
+if on_rtd:
+    github_version = os.environ.get('READTHEDOCS_VERSION_NAME', '1.x')  # Default to '1.x' dev branch if not found
+else:
+    github_version = 'local'
+
+# Make GitHub version available as a substitution in .rst files
+rst_epilog = f"""
+.. |github_version| replace:: {github_version}
+"""
 
 # -- Schema doc paths --------------------------------------------------------
 

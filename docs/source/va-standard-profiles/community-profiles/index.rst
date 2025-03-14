@@ -31,10 +31,10 @@ These Community Profiles layer additional constraints on top of VA core classes 
     description: >-
       A Statement describing the role of a variant in causing an inherited condition.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.x/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/|github_version|/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/|github_version|/base/json/VariantPathogenicityProposition"
           description: >-
             A proposition about the pathogenicity of a varaint, the validity of which
             is assessed and reported by the Statement. A Statement can put forth the

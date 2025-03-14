@@ -1,17 +1,17 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/aac-2017/json/VariantDiagnosticStudyStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/aac-2017/json/VariantDiagnosticStudyStatement",
    "title": "VariantDiagnosticStudyStatement",
    "description": "A statement reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Statement"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Statement"
       },
       {
          "properties": {
             "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition",
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantDiagnosticProposition",
                "description": "A proposition about a diagnostic association between a variant and condition, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             }
          }

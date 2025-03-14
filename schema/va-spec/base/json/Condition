@@ -1,16 +1,16 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Condition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Condition",
    "title": "Condition",
    "maturity": "trial use",
    "description": "A single condition (disease, phenotype, or trait), or a set of conditions (ConditionSet).",
    "$comment": "At present, individual conditions are represented using a MappableConcept that captures a code or name for the condition, along with optional mappings and metadata about the code system. Groups of conditions are represented using the ConditionSet class, which are collections of 2 or more conditions, each represented as a MappableConcept. By convention, cases where no condition is given by the data provider SHOULD be specified using a MappableConcept with a conceptType = \"Absent\". Additionally, either the 'name' or 'primaryCoding' attribute of a MappableConcept must be populated.  The name or code may simple reiterate the conceptType (e.g. 'condition absent'), or report a more specific nature or reason for the absence of a condition (e.g. 'Data Missing in Source', 'Condition Unknown', 'All Mendelian Diseases').",
    "oneOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ConditionSet"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/ConditionSet"
       },
       {
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
       }
    ]
 }

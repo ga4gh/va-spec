@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/ExperimentalVariantFunctionalImpactProposition",
    "title": "ExperimentalVariantFunctionalImpactProposition",
    "maturity": "trial use",
    "type": "object",
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -39,13 +39,13 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.x/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-ballot.2025-03.1/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.x/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.0.0/json/MolecularVariation"
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
@@ -67,10 +67,10 @@
       "objectSequenceFeature": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             }
          ],
          "description": "The sequence feature (typically a gene or gene product) on whose function the impact of the subject variant is reported.",
@@ -80,10 +80,10 @@
          "description": "An assay in which the reported variant functional impact was determined - providing a specific experimental context in which this effect is asserted to hold.",
          "anyOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Document"
             },
             {
                "type": "object",

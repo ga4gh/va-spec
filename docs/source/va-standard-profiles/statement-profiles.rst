@@ -15,8 +15,8 @@ Variant Pathogenicity Statement (ACMG 2015)
     levels are described in the :ref:`maturity-model`.
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
 
 **Computational Definition**
 
@@ -201,4 +201,4 @@ Experimental Variant Functional Impact Statement
     the Atals of Variant Effects use the generic core ``Statement`` class and constrain its \
     ``proposition`` attribute to take an ``Experimental Variant Functional Impact Proposition``, then \
     apply any additional constraints over other core attruibutes to define an implementation schema for \
-    this type of Statement. See `here <https://github.com/ga4gh/va-spec/blob/1.0-docs-refactor/tests/fixtures/Exp-Var-Func-Impact-Statement-01.yaml>`_ for a data example.
+    this type of Statement. See `here <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/Exp-Var-Func-Impact-Statement-01.yaml>`_ for a data example.

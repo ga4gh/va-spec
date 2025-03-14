@@ -24,8 +24,8 @@ This modeling framework has allowed for **implementation-driven development** th
 The Variant Annotation Specification (VA-Spec) provides standard models for unambiguous representation of knowledge about genetic variation, along with supporting evidence and provenance information.
 
  * It defines a :ref:`set of information models <standard-profiles>` to represent different kinds of statements made about variants - built as distinct **"profiles"** that extend a common :ref:`core information model <gks-core>`.
- * It provides machine-readable `json-schema specifications <https://github.com/ga4gh/va-spec/tree/1.x/schema/profiles/json>`_ of these models, to enable sharing and validation of data through APIs and other exchange mechanisms.
- * It offers a `modeling framework <https://github.com/ga4gh/va-spec/blob/1.x/docs/source/implementation-guidance.rst#profiling-methodology>`_ through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features.
+ * It provides machine-readable `json-schema specifications <https://github.com/ga4gh/va-spec/tree/|github_version|/schema/profiles/json>`_ of these models, to enable sharing and validation of data through APIs and other exchange mechanisms.
+ * It offers a `modeling framework <https://github.com/ga4gh/va-spec/blob/|github_version|/docs/source/implementation-guidance.rst#profiling-methodology>`_ through which implementers can build profiles for **new statement types**, or **extend existing profiles** with additional features.
  * It is based on the `SEPIO Modeling Framework <https://sepio-framework.github.io/sepio-linkml/about/>`_ - applying SEPIO's established models, conventions, and profiling methodology to produce these resources.
 
 This document provides an **high-level introduction to VA-Spec principles, models, and processes**, and links out to separate pages for additional details.
