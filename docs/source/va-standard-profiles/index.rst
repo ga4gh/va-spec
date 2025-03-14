@@ -13,13 +13,15 @@ The VA-Spec currently supports profiles of four Core Model classes:
 
  - :ref:`Evidence Line<EvidenceLine>` Profiles describe how information is interpreted as evidence supporting or disputing a possible fact (Proposition) that may ultimately be asserted in a Statement about a variant (e.g. how data from an experimental functional impact analysis are interpreted to provide 'strong' evidence that 'supports' an assertion of the variant's pathogenicity).
 
- - :ref:`Proposition<Proposition>` Profiles are used exclusively within Statement and Evidence Line objects - where they encapsulate the semantics of the possible fact that may be asserted in a Statement, or against which evidence may be assessed in an Evidence Line (e.g. pathogenicity propositions capture a possible fact that some variant is causal for some disease).
-
  - :ref:`Study Result <StudyResult>` Profiles capture collections of data items about a specific variant from a particular study or analysis (e.g. functional impact data about the PTEN:c.35A>T(p.Asn12Ile) variant in the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_). Study Results are often used to describe data used as evidence to support higher order assertions such as pathogenicity classifications.
+
+ - :ref:`Proposition<Proposition>` Profiles are used exclusively within Statement and Evidence Line objects - where they encapsulate the semantics of the possible fact that may be asserted in a Statement, or against which evidence may be assessed in an Evidence Line (e.g. pathogenicity propositions capture a possible fact that some variant is causal for some disease).
 
 The :ref:`data example here<variant-pathogenicity-statement-example>` illustrates how profiles of these different types can be used together to represent a variant pathogenicity classification.
 
 -----
+
+.. _base-vs-community-profiling:
 
 **Base Profiles vs Community Profiles:**
    In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
@@ -32,7 +34,7 @@ The :ref:`data example here<variant-pathogenicity-statement-example>` illustrate
    - **Community Profiles**:
 
      - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
-     - These constraints are defined using  a schema composition approach that leverages the JSON Schema allOf keyword, which does not result in creation of concrete subcalsses for each profile.
+     - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subcalsses for each profile.
      - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
 -----
