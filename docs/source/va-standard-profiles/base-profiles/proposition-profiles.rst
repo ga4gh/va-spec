@@ -3,7 +3,7 @@
 Proposition Profiles
 !!!!!!!!!!!!!!!!!!!!
 
-Proposition Profiles are defined as specialized subclasses of the core ``Proposition`` class - each tailored to represent a specific type of possible fact that may be true in a domain of discourse. For example, the :ref:`VariantPathogenicityProposition<variant-pathogenicity-proposition-profile>` profile defines a model for describing causal relationships between genetic variants and specific diseases.
+Proposition Profiles are defined as concrete subclasses of the core :ref:`Proposition<Proposition>` class - each tailored to represent a specific type of possible fact that may be true in a domain of discourse. For example, the :ref:`VariantPathogenicityProposition<variant-pathogenicity-proposition-profile>` profile defines a model for describing causal relationships between genetic variants and specific diseases.
 
 Such Propositions are used within the context of generic ``Statement`` or ``EvidenceLine`` classes from the core model, to provide domain specific semantics for the respective assessments that these core classes provide (e.g. in the :ref:`example here<proposition-utility-example>`). This avoids the need to define Statement or Evidence Line profiles for many use cases. (The VA-Spec only defines Statement or Evidence Line profiles profiles to support strict alignment with terminological conventions of a particular community guideline, e.g. the :Ref:`ACMG 2015 Variant Pathogenicity Statement<variant-pathogenicity-statement-acmg-2015>` profile).
 
