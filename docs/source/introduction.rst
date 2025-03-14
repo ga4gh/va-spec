@@ -24,7 +24,35 @@ The v1 release of VA-Spec includes the following components:
 
 Readers may wish to review this :ref:`annotated data example <variant-pathogenicity-statement-example>`, to explore an end product of the VA-Spec, before diving in to the full documentation.
 
-Development & Implementation
-############################
+Development & Implementation 
+#############################
 
-TO DO
+The initial release of the :ref:`VA Core Model<va-core-model>` is a minimal subset of the broader SEPIO Core Information Model - selected specifically to support the requirements of early small-scale implementations led by ClinGen, VICC, and the Atlas of Variant Effects (AVE) Alliance. The v1.0 release includes only elements used to capture data in these implementations - directly or through an extension defined through the profiling process. 
+
+:ref:`VA Profiles<va-profiles>` extend core :ref:`Statement<Statement>`, :ref:`Study Result<StudyResult>`, and :ref:`Evidence Line<EvidenceLine>` classes to support the specific types of knowledge captured (e.g. a variant pathogenicity), and community guidelines followed (e.g. the ACMG-2015 Guidelines) in implementing data systems.  These three core classes are defined specifically to represent the levels at which curation tools and knowledgebases capture and report variant knowledge. Profiles are authored as YAML-based specifications, from which machine-readable JSON Schema are derived and used by implementers to structure, validate, and exchange variant data in their systems.  
+
+Initial implementations in ClinGen, VICC, and AVE projects required creation Profiles for the following types of knowledge in v1 of the VA-Spec: 
+
+**Statements**
+   - Variant Pathogenicity 
+   - Variant Oncogenicity
+   - Variant Diagnostic Associations
+   - Variant Prognostic Associations
+   - Variant Therapeutic Response Associations
+   - Experimental Variant Functional Impacts 
+
+**Study Results**
+   - Cohort Allele Frequency Studies
+   - Experimental Variant Functional Impact Studies
+
+**Evidence Line Profiles**
+   - Variant Functional Impact Evidence for Pathogenicity
+   -  Variant Functional Impact Evidence for Oncogenicity
+
+Furthermore, various 'flavors' of profiles for a given knowledge type can be defined, to align with different community guidelines and terminology standards. For example, v1of the VA-Spec provides :ref:`Community Profiles<community-profiles>` for the Statement types above that are specifically aligned with :ref:`ACMG<acmg-2015-profiles>`, :ref:`CCV<
+ccv-2022-profiles>`, and :ref:`AAC<aac-2017-profiles>` guidelines in the domains of variant pathogenicity, oncogenicity, and clinical interpretation of somatic variants, respectively. 
+
+Minimal profiles defined in these areas will expand in scope as the scale of data these projects aim to cover in their data sources grows. Here, new elements will be pulled in from the SEPIO Core IM, or created de novo - as driven by emerging needs of implementations.  The number and diversity of profile types defined in the VA-Spec will also expand, as new driver projects and use cases emerge.   Importantly, the level of maturity of models and specific elements within each are tracked according to the :ref:`GKS Maturity Model<gks-maturity-model>  - so adopters have a clear understanding of  the stability of elements they employ in their systems.  
+
+Community implementers are the engine that will drive this expansion - as VA models are only released after testing in real-world data systems. We strongly encourage community engagement through a variety of channels and mechanism, as described :ref:`here<how-to-contribute>`.  And the :ref:`Getting Started Guide<getting-started>` will walk newcomers through initial steps they can take to understand how the VA-Spec can support their data representation needs.
+
