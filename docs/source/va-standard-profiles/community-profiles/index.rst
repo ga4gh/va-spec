@@ -19,6 +19,7 @@ Version 1 of the VA-Spec includes **Statement** and **Evidence Line** community 
 -----
 
 **Auhtoring of Community Profiles**
+
 - Community Profiles are authored as YAML-based specifications that layer constraints on core classes using a schema composition approach that leverages the JSON Schema ``allOf`` keyword. 
 - For example, the :ref:`ACMG 2015 Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-acmg-2015>` below specifies that data must conform to the definition of the core :ref:`Statement<Statement>` class, *and* validate against the additionak constrants defined on ``proposition`` and ``classification`` properties.
 - Note that this approach defines a named subschema, but unlike the Base Profiling approach does not result in creation of concrete subcalsses for each profile.  
@@ -35,9 +36,10 @@ Version 1 of the VA-Spec includes **Statement** and **Evidence Line** community 
         proposition:
           $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
           description: >-
-            A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement.
-            A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
-            level of confidence/evidence supporting this claim.
+            A proposition about the pathogenicity of a varaint, the validity of which 
+            is assessed and reported by the Statement. A Statement can put forth the
+            proposition as being true, false, or uncertain, and may provide an assessment
+            of the level of confidence/evidence supporting this claim.
         classification:
           type: string
           enum:
