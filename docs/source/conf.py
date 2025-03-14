@@ -40,7 +40,7 @@ master_doc = 'index'
 # N.B. RTD ignores these values. :-/
 release = _get_git_tag()
 version = _parse_release_as_version(release)
-# Automatically use the RTD branch/tag as the GitHub version 
+# Automatically use the RTD branch/tag as the GitHub version
 # (note: READTHEDOCS_VERSION will return 'latest' and not the actual branch or tag name when building the latest version of the docs)
 github_version = os.environ.get("READTHEDOCS_VERSION_NAME", "1.x")
 

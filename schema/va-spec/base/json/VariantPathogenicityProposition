@@ -100,7 +100,7 @@
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       },
       "penetranceQualifier": {
-         "description": "Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition. ",
+         "description": "Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.",
          "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
       },
       "modeOfInheritanceQualifier": {

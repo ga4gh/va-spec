@@ -32,5 +32,5 @@ PRs must be approved by at least one project maintainer before they may
 be merged. PR titles must reflect the issue associated with the PR. For
 example, the associated PR title for
 [issue 250](https://github.com/ga4gh/va-spec/issues/250) would be
-`#250 Move ancillaryResults and qualityMeasures into the core StudyResult class`, 
+`#250 Move ancillaryResults and qualityMeasures into the core StudyResult class`,
 as seen in [PR #285](https://github.com/ga4gh/va-spec/pull/285).

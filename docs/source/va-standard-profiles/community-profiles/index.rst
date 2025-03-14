@@ -5,7 +5,7 @@ Community Profiles
 
 Version 1 of the VA-Spec includes **Statement** and **Evidence Line** Community Profiles aligned with three established varaint interpretation guidelines:
 
- - the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_ 
+ - the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
  - the `ClinGen/CGC/VICC (CCV) 2022 Oncogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/35101336/>`_
  - the `AMP/ASCO/CAP (AAC) Guidleines for Clinical Interpretation of Genetic Variants <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_
 
@@ -20,13 +20,13 @@ These Community Profiles layer additional constraints on top of VA core classes 
 
 **Auhtoring of Community Profiles**
 
-- Community Profiles are authored as YAML-based specifications that layer constraints on core classes using a schema composition approach that leverages the JSON Schema ``allOf`` keyword. 
+- Community Profiles are authored as YAML-based specifications that layer constraints on core classes using a schema composition approach that leverages the JSON Schema ``allOf`` keyword.
 - For example, the :ref:`ACMG 2015 Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-acmg-2015>` below specifies that data must conform to the definition of the core :ref:`Statement<Statement>` class, *and* validate against the additionak constrants defined on ``proposition`` and ``classification`` properties.
-- Note that this approach defines a named subschema, but unlike the Base Profiling approach does not result in creation of concrete subcalsses for each profile.  
+- Note that this approach defines a named subschema, but unlike the Base Profiling approach does not result in creation of concrete subcalsses for each profile.
 
 .. code-block:: yaml
 
-  VariantPathogenicityStatement:  
+  VariantPathogenicityStatement:
     maturity: draft
     description: >-
       A Statement describing the role of a variant in causing an inherited condition.
@@ -36,7 +36,7 @@ These Community Profiles layer additional constraints on top of VA core classes 
         proposition:
           $ref: "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
           description: >-
-            A proposition about the pathogenicity of a varaint, the validity of which 
+            A proposition about the pathogenicity of a varaint, the validity of which
             is assessed and reported by the Statement. A Statement can put forth the
             proposition as being true, false, or uncertain, and may provide an assessment
             of the level of confidence/evidence supporting this claim.
@@ -60,5 +60,3 @@ These Community Profiles layer additional constraints on top of VA core classes 
    acmg-2015-profiles
    ccv-2022-profiles
    aac-2017-profiles
-
-

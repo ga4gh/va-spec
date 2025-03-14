@@ -35,7 +35,7 @@ This Profile Set supports data generated using ACMG-based guidelines or terminol
 
  - The **Statement** profile in this set can represent final pathogenicity classifications of a variant.
  - The **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications.
- - The **Proposition** profile itself does not define any ACMG-specific constraints, but is used to build the **Statement** and **Evidence Line** structures that do. 
+ - The **Proposition** profile itself does not define any ACMG-specific constraints, but is used to build the **Statement** and **Evidence Line** structures that do.
 
 As additional ACMG-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set.
 
@@ -45,7 +45,7 @@ As additional ACMG-based Evidence Line profiles are created to describe interpre
 CCV-2022 Community Profile Set
 ##############################
 
-A set of profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant Interpretation for Cancer Consortium (VICC) 2022 community guidelines for interpretation of **variant oncogenicity**. 
+A set of profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant Interpretation for Cancer Consortium (VICC) 2022 community guidelines for interpretation of **variant oncogenicity**.
 
 **Community Guideline:**
 
@@ -62,7 +62,7 @@ This Profile Set includes VA Standard Profiles that support data generated using
 
  - The **Statement** profile can represent final oncogenicity classifications of a variant.
  - The **Evidence Line** profile can describe how functional data is interpreted as evidence for these classifications.
- - The **Proposition** profile itself does not define any CCV-specific constraints, but is used to build **Statement** and **Evidence Line** structures that do. 
+ - The **Proposition** profile itself does not define any CCV-specific constraints, but is used to build **Statement** and **Evidence Line** structures that do.
 
 As additional CCV-based Evidence Line profiles are created to describe interpretation of different evidence types, or Study Result profiles created to represent the foundational data used as evidence, these will be added to this community profile set.
 
@@ -72,7 +72,7 @@ As additional CCV-based Evidence Line profiles are created to describe interpret
 AAC-2017 Community Profile Set
 ###############################
 
-A set of profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP), American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for **clinical significance interpretation** of sequence variants in cancer. 
+A set of profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP), American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for **clinical significance interpretation** of sequence variants in cancer.
 
 **Community Guideline:**
 
@@ -92,6 +92,6 @@ A set of profiles defined to align with terminology and conventions from the Ass
 This Profile Set includes VA Standard Profiles that support data generated using AAC-based interpretation guidelines or terminologies.
 
  - The **Statement** profiles can represent final different types of clinical classifications of a variant.
- - The **Proposition** profiles themselves do not define any AAC-specific constraints, but are used to build the **Statement** structures that do. 
+ - The **Proposition** profiles themselves do not define any AAC-specific constraints, but are used to build the **Statement** structures that do.
 
 As any new AAC-based profiles are created to support emerging use cases, these will be added to this community profile set.
