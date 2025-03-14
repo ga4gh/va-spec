@@ -13,8 +13,6 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
    Detailed descriptions and implementation guidance for the classes and attributes in the foundational VA Core Model.
 * :ref:`VA Standard Profiles <va-standard-profiles>`
    Profiles defined for specific types of Statements, Evidence Lines, Propositions, and Study Results, provided as computable json schema.
-* :ref:`Community Profile Sets <community-profile-sets>`
-   Sets of VA Standard Profiles that align with terminological conventions of a particular community guideline for generating variant knowledge.
 * :ref:`A Reference Implementation <reference-implementation>`
    Documentation about code libraries that facilitate implementation of the VA-Spec.
 * :ref:`Modeling Foundations <modeling-foundations>`
@@ -36,7 +34,6 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    introduction
    core-information-model/index
    va-standard-profiles/index
-   community-profile-sets/index
    reference-implementation
    modeling-foundations
    examples/index
