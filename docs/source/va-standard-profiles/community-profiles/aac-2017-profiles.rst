@@ -14,8 +14,8 @@ Links to **Source YAML** and **JSON Schema** artifacts are provided following th
 Variant Therapeutic Response Statement (AAC 2017)
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.. note:: This data class is at a **draft** maturity level and may \
-    change in future releases. Maturity \
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -54,9 +54,12 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
+.. _tresp_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/therapeutic-response-study-statement-profile-source.yaml
+.. _tresp_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement
+
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/therapeutic-response-study-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement>`_
+ - `Source YAML <tresp_source_yaml_>`_
+ - `JSON Schema <tresp_json_schema_>`_
 
 -----
 
@@ -65,8 +68,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 Variant Diagnostic Statement (AAC 2017)
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.. note:: This data class is at a **draft** maturity level and may \
-    change in future releases. Maturity \
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -104,9 +107,12 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
+.. _diag_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/diagnostic-study-statement-profile-source.yaml
+.. _diag_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement
+
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/diagnostic-study-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement>`_
+ - `Source YAML <diag_source_yaml_>`_
+ - `JSON Schema <diag_json_schema_>`_
 
 -----
 
@@ -115,8 +121,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 Variant Prognostic Statement (AAC 2017)
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-.. note:: This data class is at a **draft** maturity level and may \
-    change in future releases. Maturity \
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -154,6 +160,9 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
+.. _prog_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml
+.. _prog_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantPrognostictudyStatement
+
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantPrognostictudyStatement>`_
+ - `Source YAML <prog_source_yaml_>`_
+ - `JSON Schema <prog_json_schema_>`_

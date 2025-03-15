@@ -15,7 +15,7 @@ In VA Models, each discrete assertion of knowledge about a variant is captured i
 .. gks-core-statement-data-structure:
 
 .. figure:: ../../../images/core-im-statement-proposition-data-structure.png
-  :width: 700
+   :width: 700
 
    Core Model Classes and Relationships in Statement Data Structures
 

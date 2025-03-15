@@ -18,4 +18,4 @@ MappableConcept may be used for other condition types if appropriate.
 
    disease
    phenotype
-   trait-set
+   condition-set

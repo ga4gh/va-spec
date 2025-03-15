@@ -13,8 +13,9 @@ Links to **Source YAML** and **JSON Schema** artifacts are provided following th
 
 Variant Oncogenicity Statement (CCV 2022)
 #########################################
-.. note:: This data class is at a **draft** maturity level and may \
-    change in future releases. Maturity \
+
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -53,9 +54,12 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
+.. _stmt_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/oncogenicity-statement-profile-source.yaml
+.. _stmt_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/json/VariantOncogenicityStatement
+
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/oncogenicity-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/json/VariantOncogenicityStatement>`_
+ - `Source YAML <stmt_source_yaml_>`_
+ - `JSON Schema <stmt_json_schema_>`_
 
 -----
 
@@ -64,8 +68,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 Experimental Variant Oncogenicity Functional Impact Evidence Line (ACMG 2015)
 ##############################################################################
 
-.. note:: This data class is at a **draft** maturity level and may \
-    change in future releases. Maturity \
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
@@ -104,7 +108,9 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.  *Conditional requirement*: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.
 
+.. _evln_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/oncogenicity-functional-impact-evidence-line-profile-source.yaml
+.. _evln_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/json/VariantOncogenicityFunctionalImpactEvidenceLine
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/oncogenicity-functional-impact-evidence-line-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/json/VariantOncogenicityFunctionalImpactEvidenceLine>`_
+ - `Source YAML <evln_source_yaml_>`_
+ - `JSON Schema <evln_json_schema_>`_

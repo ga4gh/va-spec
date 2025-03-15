@@ -4,7 +4,7 @@ Design Decisions
 !!!!!!!!!!!!!!!!
 
 Definition of 'Variant Annotation'
-###########################
+##################################
 To appreciate modeling and development choices made for the VA-Spec, it helps to understand how we define and distinguish the elements that comprise a Variant Annotation.
 
 **Definition**:  “A **structured data object** that holds a **central statement of knowledge** about a **genetic variation**, along with **evidence and provenance metadata** supporting it.
@@ -17,7 +17,7 @@ To appreciate modeling and development choices made for the VA-Spec, it helps to
 The VA-Spec model was  defined to *explicitly represent* and *clearly distinguish* these key types of information within a Variant Annotation - so that users can appreciate the significance and utility of the knowledge they provide.
 
 Scope of Variant Knowledge Supported
-################################
+####################################
 
 The VA-Spec supports statements of knowledge about the **biological** and **clinical** significance of these different types of variants, but leaves those
 reporting **case-level observations** about a variant to other standards (e.g. Phenopackets, HL7-Clinical Genomics IM, FHIR)
