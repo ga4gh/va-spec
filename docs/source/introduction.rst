@@ -27,7 +27,7 @@ Readers may wish to review this :ref:`annotated data example <variant-pathogenic
 Scope and Development
 #####################
 
-VA-Spec takes an implementation-driven approach to development of the models it provides - releasing only models and elements that have been requested or tested in real-world data systems. The initial release of the :ref:`VA Core Model<va-core-model>` contains a minimal subset of elements required to support early small-scale implementations led by ClinGen, VICC, and the Atlas of Variant Effects (AVE) Alliance. These elements represent a subset of the broader :ref:`SEPIO Core Information Model<what-is-sepio>` on which the VA Core Model is based. 
+VA-Spec takes an implementation-driven approach to development of the models it provides - releasing only models and elements that have been tested in real-world data systems. The initial release of the :ref:`VA Core Model<va-core-model>` contains a minimal subset of elements required to support early small-scale implementations led by ClinGen, VICC, and the Atlas of Variant Effects (AVE) Alliance. 
 
 :ref:`VA Profiles<va-profiles>` extend core :ref:`Statement<Statement>`, :ref:`Study Result<StudyResult>`, and :ref:`Evidence Line<EvidenceLine>` classes to support the specific types of knowledge captured (e.g. a variant pathogenicity), and community guidelines followed (e.g. the ACMG-2015 Guidelines) in implementing data systems. These three core classes are defined specifically to represent the levels at which curation tools and knowledgebases capture and report variant knowledge. Initial ClinGen, VICC, and AVE implementations required profiles to support the following types of variant-related knowledge: 
 
@@ -51,8 +51,8 @@ Notably, various 'flavors' of profiles for a given knowledge type can be defined
 
 The initial, minimal profiles in VA-Spec v1.0  will expand along three axes as the specification evolves:
 
- - **Existing Profile Coverage**: the scope and size of existing profiles will grow as current implementations work to include more diverse and complex data from their sources, and new adopters bring additional data requirements and use cases. New elements to support this expansion will be pulled into the VA Core Model as needed from the upstream SEPIO Core IM.  
- - **New Profile Types**: the number of different profile types defined in the VA-Spec will expand, as driver projects with use cases for new knowledge types emerge (e.g. new profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association knowledge) 
+ - **Existing Profile Coverage**: the scope and size of existing profiles will grow as current implementations work to include more diverse and complex data from their sources, and new adopters bring additional data requirements and use cases. New elements to support this expansion will be pulled into VA-Spec as needed from the :ref:`SEPIO Core Information Model<what-is-sepio>`, on which VA-Spec models are based.  
+ - **New Base Profile Types**: the number of different profile types defined in the VA-Spec will expand, as driver projects with use cases for new knowledge types emerge (e.g. new profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association knowledge) 
  - **New Community Profiles**: new flavors of existing profiles that support the conventions and terminologies of different community guidelines will be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the emerging update to these guidelines. 
 
 Importantly, the level of maturity of core and profile models, and the specific elements within each, are tracked according to the :ref:`GKS Maturity Model<gks-maturity-model>` - so adopters have a clear understanding of the stability and use of elements they employ in their systems.  
