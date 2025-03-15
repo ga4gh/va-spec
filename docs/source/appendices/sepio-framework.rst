@@ -15,3 +15,7 @@ The components of the SEPIO Framework include:
 The framework approach addresses challenges posed by the diversity of types, levels of complexity, and use cases for evidence and provenance across knowledge domains and application - which means there is no ‘one-size-fits-all’ solution. The framework allows custom models built on a common semantic foundation can provide a base level of understanding and interoperability, without restricting expressivity. While this approach may not always support out-of-the-box interoperability across all communities of use, it can significantly lower barriers to aggregating, harmonizing, and operating across disparate data.
 
 See the `SEPIO Framework website <https://sepio-framework.github.io/sepio-linkml/about/>`_ for more information about this foundational standard on which the VA Specification is built. 
+
+**Relationship to VA-Spec**
+
+To Do
