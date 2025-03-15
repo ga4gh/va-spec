@@ -55,8 +55,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/aac-2017/therapeutic-response-study-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/therapeutic-response-study-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement>`_
 
 -----
 
@@ -105,8 +105,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/aac-2017/diagnostic-study-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/diagnostic-study-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement>`_
 
 -----
 
@@ -155,5 +155,5 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/aac-2017/json/VariantPrognostictudyStatement>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantPrognostictudyStatement>`_

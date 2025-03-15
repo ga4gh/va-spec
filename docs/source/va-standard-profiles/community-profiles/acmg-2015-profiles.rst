@@ -53,8 +53,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-03/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/acmg-2015/json/VariantPathogenicityStatement>`_
 
 -----
 
@@ -106,5 +106,5 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
 
 
 **Artifacts**
- - `Source YAML <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-0/schema/va-spec/acmg-2015/pathogenicity-functional-impact-evidence-line-profile-source.yaml>`_
- - `JSON Schema <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot-2025-0/schema/va-spec/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine>`_
+ - `Source YAML <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/acmg-2015/pathogenicity-functional-impact-evidence-line-profile-source.yaml>`_
+ - `JSON Schema <https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine>`_
