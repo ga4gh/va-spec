@@ -40,7 +40,7 @@ $defs:
                   - moderate
                   - supporting
               system:
-                const: ga4gh-gks-term:path-functional-impact-strengthOfEvidenceProvided
+                const: ACMG Guidelines, 2015
         specifiedBy:
           description: >-
             The guidelines that were followed to interpret variant functional impact information
@@ -51,7 +51,7 @@ $defs:
                   pmid:
                     const: 25741868
                   name:
-                    const: "ACMG Guidelines, 2015"
+                    const: ACMG Guidelines, 2015
           required:
             - reportedIn
         evidenceOutcome:
@@ -75,7 +75,7 @@ $defs:
                   - BS3_supporting
                   - BS3_not_met
               system:
-                const: ga4gh-gks-term:path-functional-impact-evidenceOutcome
+                const: ACMG Guidelines, 2015
     required:
       - directionOfEvidenceProvided
       - specifiedBy

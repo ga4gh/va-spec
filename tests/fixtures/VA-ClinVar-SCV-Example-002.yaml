@@ -16,19 +16,13 @@ proposition:
   predicate: isCausalFor
 direction: supports
 strength:
-  name: likely
-  mappings:
-    - coding:
-        code: cg000022
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+  primaryCoding:
+    code: moderate
+    system: ACMG Guidelines, 2015
 classification:
-  name: likely pathogenic
-  mappings:
-    - coding:
-        code: cg000002
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+  primaryCoding:
+    code: likely pathogenic
+    system: ACMG Guidelines, 2015
 description: 'The c.806_808delCCT (p.Ser269del) variant in KCNQ4 has been observed
   in at least 4 probands with hearing loss (PS4_Supporting; PMID: 23399560, 23443030,
   LMM unpublished data SCV000967428.1). This variant segregated with hearing loss
@@ -49,11 +43,6 @@ contributions:
   date: '2020-05-04'
   activityType:
     name: submitted
-    mappings:
-      - coding:
-          code: cg000010
-          system: https://dataexchange.clinicalgenome.org/codes/
-        relation: exactMatch
 - type: Contribution
   contributor:
       id: clinvar.submitter/506744
@@ -62,11 +51,6 @@ contributions:
   date: '2019-11-26'
   activityType:
     name: evaluated
-    mappings:
-      - coding:
-          code: cg000011
-          system: https://dataexchange.clinicalgenome.org/codes/
-        relation: exactMatch
   extensions:
     - name: clinvarActivityLabel
       value: last evaluated
@@ -75,11 +59,16 @@ specifiedBy:
   type: Method
   name: ClinGen HL ACMG Specifications v1
   reportedIn:
-    id: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
-    urls:
-    - https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
     type: Document
-    name: ClinGen HL ACMG Specifications v1
+    pmid: 25741868
+    name: ACMG Guidelines, 2015
+#   # NOTE: we need to figure out how to have other ACMG guideline specifications be represented accurately
+#   reportedIn:
+#     id: https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
+#     urls:
+#     - https://submit.ncbi.nlm.nih.gov/ft/byid/vroiax8b/hearing_loss_acmg_specifications_v1_2018.pdf
+#     type: Document
+#     name: ClinGen HL ACMG Specifications v1
 extensions:
 - name: clinvarMethodCategory
   value: curation

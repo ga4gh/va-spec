@@ -41,25 +41,20 @@ $defs:
                   - moderate
                   - supporting
               system:
-                const: ga4gh-gks-term:onc-functional-impact-strengthOfEvidenceProvided
+                const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
         specifiedBy:
           description: >-
             The Clingen/CGC/VICC-2022 criterion that was applied to interpret variant functional impact information
             as evidence for or against the assessed variant's oncogenicity.
           properties:
-            primaryCoding:
-              description: >-
-                The Clingen/CGC/VICC 2022 criterion code that was applied to interpret the functional impact of the variant
-                on the gene or gene product. Must be one of the following values: SBS2 or OS2.
-                Conditional requirement:
-                * If directionOfEvidenceProvided is 'supports' then the value must be 'OS2'.
-                * If directionOfEvidenceProvided is 'disputes' then the value must be 'SBS2'.
-              code:
-                enum:
-                  - OS2
-                  - SBS2
-              system:
-                const
+            reportedIn:
+               properties:
+                  pmid:
+                    const: 35101336
+                  name:
+                    const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+          required:
+            - reportedIn
         evidenceOutcome:
           description: >-
             The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values,
@@ -81,7 +76,7 @@ $defs:
                   - SBS2_supporting
                   - SBS2_not_met
               system:
-                const: ga4gh-gks-term:onc-functional-impact-evidenceOutcome
+                const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     required:
       - directionOfEvidenceProvided
       - specifiedBy

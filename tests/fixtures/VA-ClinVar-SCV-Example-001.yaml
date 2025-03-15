@@ -59,22 +59,12 @@ proposition:
 direction: supports
 strength:
   primaryCoding:
-    code: definitive
-    system: ga4gh-gks-term:pathogenicity-strength
-  mappings:
-    - coding:
-        code: cg000021
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+    code: strong
+    system: ACMG Guidelines, 2015
 classification:
   primaryCoding:
     code: pathogenic
-    system: ga4gh-gks-term:pathogenicity-classification
-  mappings:
-    - coding:
-        code: cg000001
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+    system: ACMG Guidelines, 2015
 contributions:
 - type: Contribution
   contributor:
@@ -112,3 +102,9 @@ extensions:
   value: no assertion criteria provided
 - name: clinvarSubmittedClassification
   value: Pathogenic
+specifiedBy:
+  type: Method
+  reportedIn:
+    type: Document
+    pmid: 25741868
+    name: ACMG Guidelines, 2015

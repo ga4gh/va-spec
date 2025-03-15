@@ -25,38 +25,64 @@ $defs:
             A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement.
             A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
             level of confidence/evidence supporting this claim.
-        # NOTE: The acmg 2015 guidelines are "guidelines" and allow for groups to embellish or extend them.
-        #       For example, the VCEPs will create there supplemental methods, while labs will approxmately
-        #       follow the guidelines.  This is why the specifiedBy should NOT be required.
-        #       The classifications can also be extended to include items like "pathogenic, low penetrance"
-        #       "established risk allele", "likely risk allele" or "uncertain risk allele".
-        #       We should build a VarPathStatement that works in the spirit of a "guideline"
-        #       and can be specialized a dozen different ways? without necessarily being so strict at this level.
-        #
-        # For now I would suggest we be minimalistic in our requirements. Attempt to provide guidance but allow for flexibility.
-        #   We will learn how to tighten up the requirements as we get feedback from implementors and users.
-        #
-
-        # classification:
-        #   properties:
-        #       label:
-        #         type: string
-        #         enum:
-        #           - pathogenic
-        #           - likely pathogenic
-        #           - uncertain significance
-        #           - likely benign
-        #           - benign
-        # specifiedBy:
-        #   extends: specifiedBy
-        #   description: >-
-        #     The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on interpretation of evidence. May include information about thresholds applied on assay variant effect scores to derive the final classification.
-        #   properties:
-        #     label:
-        #       type: string
-        #       enum:
-        #         - ACMG 2015 Variant Pathogenicity Interpretation Guidelines
-      # required:
-      #   - proposition
-        # - classification
-        # - specifiedBy
+        strength:
+          description: >-
+            The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide
+            for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative
+            to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
+            MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+            Conditional requirement: if direction is either 'supports' or 'disputes', then this
+            attribute is required.  If it is 'neutral', then this attribute is not allowed.
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  - strong
+                  - moderate
+                  - weak
+              system:
+                const: ACMG Guidelines, 2015
+        classification:
+          description: >-
+            The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines.
+            These classifications should coincide with the direction and strength values as follows:
+            'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate,
+            'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance'
+            can be one of three possibilities... supports-weak, disputes-weak or neutral for
+            uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or
+            uncertain significance (favoring neither pathogenic nor benign).
+            The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be
+            applied based on whether the variant proposition was defined to have a 'penetrance' of
+            'low' or 'risk' respectively.
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  - pathogenic
+                  - pathogenic, low penetrance
+                  - established risk allele
+                  - likely pathogenic
+                  - likely pathogenic, low penetrance
+                  - likely risk allele
+                  - uncertain significance
+                  - uncertain risk allele
+                  - likely benign
+                  - benign
+              system:
+                const: ACMG Guidelines, 2015
+        specifiedBy:
+          description: >-
+            The method that specifies how the pathogenicity classification is ultimately assigned to the variant,
+            based on assessment of evidence.
+          properties:
+            reportedIn:
+               properties:
+                  pmid:
+                    const: 25741868
+                  name:
+                    const: ACMG Guidelines, 2015
+          required:
+            - reportedIn
+      required:
+        - classification
+        - specifiedBy

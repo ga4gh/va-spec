@@ -26,7 +26,7 @@
                         ]
                      },
                      "system": {
-                        "const": "ga4gh-gks-term:onc-functional-impact-strengthOfEvidenceProvided"
+                        "const": "ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022"
                      }
                   }
                }
@@ -34,17 +34,20 @@
             "specifiedBy": {
                "description": "The Clingen/CGC/VICC-2022 criterion that was applied to interpret variant functional impact information as evidence for or against the assessed variant's oncogenicity.",
                "properties": {
-                  "primaryCoding": {
-                     "description": "The Clingen/CGC/VICC 2022 criterion code that was applied to interpret the functional impact of the variant on the gene or gene product. Must be one of the following values: SBS2 or OS2. Conditional requirement: * If directionOfEvidenceProvided is 'supports' then the value must be 'OS2'. * If directionOfEvidenceProvided is 'disputes' then the value must be 'SBS2'.",
-                     "code": {
-                        "enum": [
-                           "OS2",
-                           "SBS2"
-                        ]
-                     },
-                     "system": "const"
+                  "reportedIn": {
+                     "properties": {
+                        "pmid": {
+                           "const": 35101336
+                        },
+                        "name": {
+                           "const": "ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022"
+                        }
+                     }
                   }
-               }
+               },
+               "required": [
+                  "reportedIn"
+               ]
             },
             "evidenceOutcome": {
                "description": "The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values, along with the specific criterion code used in these assessments. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute to capture evidence outcomes. Note that if 'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion (e.g. 'OS2_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for the relevant criterion, along with the strength of evidence provided. (e.g. 'OS2_moderate').",
@@ -63,7 +66,7 @@
                         ]
                      },
                      "system": {
-                        "const": "ga4gh-gks-term:onc-functional-impact-evidenceOutcome"
+                        "const": "ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022"
                      }
                   }
                }

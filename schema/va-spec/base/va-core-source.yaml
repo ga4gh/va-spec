@@ -328,6 +328,7 @@ $defs:
           the "THH:MM:SS" portion of the datetime string MAY be omitted (e.g. "2024-02-25").  Specifying a
           time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC),
           e.g. "2024-02-25T09:25:00-5:00" for the US eastern time zone.
+
   Document:
     type: object
     inherits: gks-core:Entity
