@@ -11,11 +11,11 @@ More about the modeling principles and patterns employed by the Core Model, and 
 
 .. gks-core-class-hierarchy:
 
-.. figure:: ../images/core-im-class-hierarchy.png
+.. figure:: ../images/core-model-class-hierarchy.png
 
    Core Class Hierarchy
 
-   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures. This if described separately `here <https://github.com/ga4gh/va-spec/edit/|github_version|/docs/source/core-information-model/entities/domain-entities/index.rst>`_.
+   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Classes in grey at the bottom represent complex data types used to capture related sets of data in the context of the primary classes in white. Note that classes for domain entities such Conditions and Therapies has been defined in the model :ref:`here <domain-entities>` but are not shown above. 
 
 .. toctree::
    :maxdepth: 4
