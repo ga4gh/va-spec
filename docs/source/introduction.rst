@@ -45,5 +45,4 @@ The initial, minimal profiles in VA-Spec v1.0  will expand along three axes as t
 
 Importantly, the level of maturity of core and profile models, and the specific elements within each, are tracked according to the :ref:`GKS Maturity Model<gks-maturity-model>` - so adopters have a clear understanding of the stability and use of elements they employ in their systems.  
 
-Community implementers are the engine that will drive this expansion - as VA models are only released after testing in real-world data systems. We strongly encourage community engagement through a variety of channels and mechanism, as described :ref:`here<how-to-contribute>`.  And the :ref:`Getting Started Guide<getting-started>` will walk newcomers through initial steps they can take to understand how the VA-Spec can support their data representation needs.
 
