@@ -3,4 +3,4 @@
 Contribution
 !!!!!!!!!!!!
 
-.. include::  ../../../def/va-spec/Contribution.rst
+.. include::  ../../def/va-spec/Contribution.rst
