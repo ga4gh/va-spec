@@ -9,6 +9,9 @@ Variant Pathogenicity Statement Example
 
 **Data**:
 
+.. note:: 
+    The example below is not yet up to date with the lates VA-Spec changes - up to date example will be provided by MArch 20 2025.
+
 .. code-block:: yaml
 
   {
