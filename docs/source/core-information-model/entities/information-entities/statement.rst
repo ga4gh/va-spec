@@ -23,7 +23,7 @@ In VA Models, each discrete assertion of knowledge about a variant is captured i
 
 
 In this structure:
- * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against the possible fact it puts forth, which is encapsualted in a separate **Proposition** object.
+ * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against the possible fact it puts forth, which is encapsulated in a separate **Proposition** object.
  * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument.
  * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
 
