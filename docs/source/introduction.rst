@@ -29,23 +29,11 @@ Scope and Development
 
 VA-Spec takes an implementation-driven approach to development of the models it provides - releasing only models and elements that have been tested in real-world data systems. The initial release of the :ref:`VA Core Model<va-core-model>` contains a minimal subset of elements required to support early small-scale implementations led by ClinGen, VICC, and the Atlas of Variant Effects (AVE) Alliance. 
 
-:ref:`VA Profiles<va-profiles>` extend core :ref:`Statement<Statement>`, :ref:`Study Result<StudyResult>`, and :ref:`Evidence Line<EvidenceLine>` classes to support the specific types of knowledge captured (e.g. a variant pathogenicity), and community guidelines followed (e.g. the ACMG-2015 Guidelines) in implementing data systems. These three core classes are defined specifically to represent the levels at which curation tools and knowledgebases capture and report variant knowledge. Initial ClinGen, VICC, and AVE implementations required profiles to support the following types of variant-related knowledge: 
+:ref:`VA Profiles<va-profiles>` extend core :ref:`Statement<Statement>`, :ref:`Study Result<StudyResult>`, and :ref:`Evidence Line<EvidenceLine>` classes to support the specific types of knowledge captured (e.g. a variant pathogenicity), and community guidelines followed (e.g. the ACMG-2015 Guidelines) in implementing data systems. These three core classes are defined specifically to represent the levels at which curation tools and knowledgebases capture and report variant knowledge. Initial ClinGen, VICC, and AVE implementations required the profiles for the following types of variant knowledge in version 1 of the VA-Spec: 
 
-**Statements**
-   - Variant Pathogenicity 
-   - Variant Oncogenicity
-   - Variant Diagnostic Associations
-   - Variant Prognostic Associations
-   - Variant Therapeutic Response Associations
-   - Experimental Variant Functional Impacts 
-
-**Study Results**
-   - Cohort Allele Frequency Data
-   - Experimental Variant Functional Impact Data
-
-**Evidence Line Profiles**
-   - Variant Functional Impact Evidence for Pathogenicity
-   - Variant Functional Impact Evidence for Oncogenicity
+- **Statement Profiles** for Pathogenicity and Pncogenicity classifications, Therapeutic Response, Diagnostic, and Prognostic clinical associations, and Experimental Functional Impacts
+- **Study Result Profiles** for Cohort Allele Frequency and Experimental Functioanl Impact analysis data.
+- **Evidence Line Profiles** describing experimental Functional Impact evidence for Pathogenicity and Oncogenicity classifications. 
 
 Notably, various 'flavors' of profiles for a given knowledge type can be defined to align with different community guidelines and terminology standards. For example, v1 of the VA-Spec provides several of these :ref:`"Community Profiles"<community-profiles>`, which are aligned with :ref:`ACMG<acmg-2015-profiles>`, :ref:`CCV<ccv-2022-profiles>`, and :ref:`AAC<aac-2017-profiles>` guidelines in the domains of variant pathogenicity, oncogenicity, and clinical interpretation of somatic variants, respectively. 
 
