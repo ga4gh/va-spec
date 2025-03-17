@@ -9,7 +9,7 @@ Variant Pathogenicity Statement Example
 
 **Data**:
 
-.. note:: 
+.. note::
     The example below illustrates many features of the VA-Spec models, but is not fully up to date with the latest VA-Spec changes. An up to date example will be provided by March 20 2025.
 
 .. code-block:: yaml

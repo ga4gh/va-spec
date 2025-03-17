@@ -15,7 +15,7 @@ More about the modeling principles and patterns employed by the Core Model, and 
 
    Core Class Hierarchy
 
-   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Classes in grey at the bottom represent complex data types used to capture related sets of data in the context of the primary classes in white. Note that classes for domain entities such Conditions and Therapies has been defined in the model :ref:`here <domain-entities>` but are not shown above. 
+   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Classes in grey at the bottom represent complex data types used to capture related sets of data in the context of the primary classes in white. Note that classes for domain entities such Conditions and Therapies has been defined in the model :ref:`here <domain-entities>` but are not shown above.
 
 .. toctree::
    :maxdepth: 4
