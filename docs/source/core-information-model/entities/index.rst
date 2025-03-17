@@ -13,7 +13,7 @@ Entity
    :maxdepth: 1
 
    information-entities/index
-   activities/index
+   contribution
    agent
    study-group
    proposition
