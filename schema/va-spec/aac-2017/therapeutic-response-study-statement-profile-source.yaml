@@ -27,3 +27,48 @@ $defs:
             A proposition about the therapeutic response associated with a variant, for which the study provides
             evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
             may be assessed and reported by the Statement.
+        strength:
+          description: >-
+            The strength of support that the Therapeutic Response statement is determined to provide
+            for or against the reported therapeutic response association of the assessed variant - based on the
+            AMP/ASCO/CAP (AAC) 2017 Guidleines.  The enumerated value set here is bound to the ‘code’ field in the
+            Coding object nested inside a MappableConcept. Conditional requirement: Strength is evaluated relative
+            to the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', 
+            then this attribute is required.  If it is 'neutral', then this attribute is not allowed.
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  -                 # TO DO: Kori/Alex to populate value set here, as appropriate
+                  -  
+                  -
+              system:
+                const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
+        classification:
+          description: >-
+            The classification of the variant's therapeutic response association, based on the AMP/ASCO/CAP (AAC) 2017 Guidleines.
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  -                # TO DO: Kori/Alex to populate value set here, as approriate
+                  - 
+                  -  
+              system:
+                const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
+        specifiedBy:
+          description: >-
+            The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
+            based on assessment of evidence.
+          properties:
+            reportedIn:
+               properties:
+                  pmid:
+                    const: 27993330
+                  name:
+                    const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
+          required:
+            - reportedIn
+      required:
+        -                          # TO DO: Kori/Alex to specify which, if any, attributes shoudl be required here
+
