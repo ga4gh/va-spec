@@ -29,36 +29,39 @@ $defs:
             may be assessed and reported by the Statement.
         strength:
           description: >-
-            The strength of support that the Therapeutic Response statement is determined to provide
-            for or against the reported therapeutic response association of the assessed variant - based on the
-            AMP/ASCO/CAP (AAC) 2017 Guidleines.  The enumerated value set here is bound to the ‘code’ field in the
-            Coding object nested inside a MappableConcept. Conditional requirement: Strength is evaluated relative
-            to the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', 
-            then this attribute is required.  If it is 'neutral', then this attribute is not allowed.
+            The strength of support that the Statement is determined to provide for or against the Therapeutic Response
+            Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC)
+            2017 Guidelines. Note that the enumerated value set here is bound to the ‘code’ field of the Coding object that
+            is nested inside a MappableConcept's primary coding. Conditional requirement: Strength is evaluated relative to
+            the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', the
+            'strength' attribute is required.  If the direction is 'neutral', then the 'strength' attribute is not allowed.
           properties:
             primaryCoding:
               code:
-                enum:
-                  -                 # TO DO: Kori/Alex to populate value set here, as appropriate
+                enum:              # TO DO: Kori/Alex to populate value set here, as appropriate
+                  -                
                   -  
                   -
               system:
                 const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
         classification:
           description: >-
-            The classification of the variant's therapeutic response association, based on the AMP/ASCO/CAP (AAC) 2017 Guidleines.
+            A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
+            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
+            enumerated value set here is bound to the ‘code’ field of the Coding object that is nested inside a MappableConcept's
+            primary coding.
           properties:
             primaryCoding:
               code:
-                enum:
-                  -                # TO DO: Kori/Alex to populate value set here, as approriate
+                enum:              # TO DO: Kori/Alex to populate value set here, as approriate
+                  -                
                   - 
                   -  
               system:
                 const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
         specifiedBy:
           description: >-
-            The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
+            A method that specifies how the therapeutic response classification was ultimately assigned to the variant,
             based on assessment of evidence.
           properties:
             reportedIn:
@@ -69,6 +72,6 @@ $defs:
                     const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
           required:
             - reportedIn
-      required:
-        -                          # TO DO: Kori/Alex to specify which, if any, attributes shoudl be required here
+      required:                   # TO DO: Kori/Alex to specify which, if any, attributes shoudl be required here
+        -                         
 
