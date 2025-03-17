@@ -45,13 +45,16 @@ $defs:
           description: >-
             The guidelines that were followed to interpret variant functional impact information
             as evidence for or against the assessed variant's pathogenicity.
-          properties:
-            reportedIn:
-               properties:
-                  pmid:
-                    const: 25741868
-                  name:
-                    const: ACMG Guidelines, 2015
+        # removing the strict requirement for 'reportedIn' to allow for other guidelines
+        # which may be specializations of ACMG Guidelines, 2015 (e.g. VCEP guidelines)
+        # we should revisit this decision before finalizing the constraint around `specifiedBy`
+        #   properties:
+        #     reportedIn:
+        #        properties:
+        #           pmid:
+        #             const: 25741868
+        #           name:
+        #             const: ACMG Guidelines, 2015
           required:
             - reportedIn
         evidenceOutcome:

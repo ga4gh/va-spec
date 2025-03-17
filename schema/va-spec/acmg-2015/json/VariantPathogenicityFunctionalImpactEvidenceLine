@@ -33,18 +33,6 @@
             },
             "specifiedBy": {
                "description": "The guidelines that were followed to interpret variant functional impact information as evidence for or against the assessed variant's pathogenicity.",
-               "properties": {
-                  "reportedIn": {
-                     "properties": {
-                        "pmid": {
-                           "const": 25741868
-                        },
-                        "name": {
-                           "const": "ACMG Guidelines, 2015"
-                        }
-                     }
-                  }
-               },
                "required": [
                   "reportedIn"
                ]

@@ -57,18 +57,6 @@
             },
             "specifiedBy": {
                "description": "The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on assessment of evidence.",
-               "properties": {
-                  "reportedIn": {
-                     "properties": {
-                        "pmid": {
-                           "const": 25741868
-                        },
-                        "name": {
-                           "const": "ACMG Guidelines, 2015"
-                        }
-                     }
-                  }
-               },
                "required": [
                   "reportedIn"
                ]

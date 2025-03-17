@@ -34,7 +34,7 @@ The :ref:`data example here<variant-pathogenicity-statement-example>` illustrate
    - **Community Profiles**:
 
      - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
-     - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subcalsses for each profile.
+     - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
      - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
 -----
