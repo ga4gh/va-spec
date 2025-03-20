@@ -17,7 +17,7 @@ strength:
 classification:
   name: worse outcome
   primaryCoding:
-    code: Tier I - Poor Outcome
+    code: Tier I - Adverse Response
     system: CIViC SOP AAC Guidelines, 2019
 proposition:
   type: VariantPrognosticProposition
