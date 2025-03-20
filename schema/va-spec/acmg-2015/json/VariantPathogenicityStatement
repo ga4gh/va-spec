@@ -35,44 +35,51 @@
             },
             "classification": {
                "description": "The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines. These classifications should coincide with the direction and strength values as follows: 'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate, 'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance' can be one of three possibilities... supports-weak, disputes-weak or neutral for uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or uncertain significance (favoring neither pathogenic nor benign). The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be applied based on whether the variant proposition was defined to have a 'penetrance' of 'low' or 'risk' respectively.",
-               "oneOf": [
-                  {
-                     "properties": {
-                        "primaryCoding": {
-                           "code": {
-                              "enum": [
-                                 "pathogenic",
-                                 "likely pathogenic",
-                                 "benign",
-                                 "likely benign",
-                                 "uncertain significance"
-                              ]
-                           },
-                           "system": {
-                              "const": "ACMG Guidelines, 2015"
-                           }
+               "properties": {
+                  "primaryCoding": {
+                     "allOf": [
+                        {
+                           "$ref": "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                        },
+                        {
+                           "oneOf": [
+                              {
+                                 "properties": {
+                                    "code": {
+                                       "enum": [
+                                          "pathogenic",
+                                          "likely pathogenic",
+                                          "benign",
+                                          "likely benign",
+                                          "uncertain significance"
+                                       ]
+                                    },
+                                    "system": {
+                                       "const": "ACMG Guidelines, 2015"
+                                    }
+                                 }
+                              },
+                              {
+                                 "properties": {
+                                    "code": {
+                                       "enum": [
+                                          "pathogenic, low penetrance",
+                                          "likely pathogenic, low penetrance",
+                                          "established risk allele",
+                                          "likely risk allele",
+                                          "uncertain risk allele"
+                                       ]
+                                    },
+                                    "system": {
+                                       "const": "ClinGen Low Penetrance and Risk Allele Recommendations, 2024"
+                                    }
+                                 }
+                              }
+                           ]
                         }
-                     }
-                  },
-                  {
-                     "properties": {
-                        "primaryCoding": {
-                           "code": {
-                              "enum": [
-                                 "pathogenic, low penetrance",
-                                 "likely pathogenic, low penetrance",
-                                 "established risk allele",
-                                 "likely risk allele",
-                                 "uncertain risk allele"
-                              ]
-                           },
-                           "system": {
-                              "const": "ClinGen Low Penetrance and Risk Allele Recommendations, 2024"
-                           }
-                        }
-                     }
+                     ]
                   }
-               ]
+               }
             },
             "specifiedBy": {
                "description": "The method that specifies how the pathogenicity classification is ultimately assigned to the variant, based on assessment of evidence."

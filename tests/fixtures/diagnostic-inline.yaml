@@ -17,7 +17,7 @@ strength:
 classification:
   name: oncogenic
   primaryCoding:
-    code: Tier I -  positive
+    code: Tier I - Reduced Response
     system: CIViC SOP AAC Guidelines, 2019
 proposition:
   type: VariantDiagnosticProposition
