@@ -39,8 +39,8 @@ $defs:
             primaryCoding:
               code:
                 enum:              # TO DO: Kori/Alex to populate value set here, as appropriate
-                  -                
-                  -  
+                  -
+                  -
                   -
               system:
                 const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
@@ -54,9 +54,9 @@ $defs:
             primaryCoding:
               code:
                 enum:              # TO DO: Kori/Alex to populate value set here, as approriate
-                  -                
-                  - 
-                  -  
+                  -
+                  -
+                  -
               system:
                 const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
         specifiedBy:
@@ -73,4 +73,4 @@ $defs:
           required:
             - reportedIn
       required:                   # TO DO: Kori/Alex to specify which, if any, attributes should be required here
-        -                         
+        -

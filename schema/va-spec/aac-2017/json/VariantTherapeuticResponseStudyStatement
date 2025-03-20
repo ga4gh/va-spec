@@ -13,8 +13,63 @@
             "proposition": {
                "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantTherapeuticResponseProposition",
                "description": "A proposition about the therapeutic response associated with a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
+            },
+            "strength": {
+               "description": "The strength of support that the Statement is determined to provide for or against the Therapeutic Response Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the \u2018code\u2019 field of the Coding object that is nested inside a MappableConcept's primary coding. Conditional requirement: Strength is evaluated relative to the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', the 'strength' attribute is required.  If the direction is 'neutral', then the 'strength' attribute is not allowed.",
+               "properties": {
+                  "primaryCoding": {
+                     "code": {
+                        "enum": [
+                           null,
+                           null,
+                           null
+                        ]
+                     },
+                     "system": {
+                        "const": "AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017"
+                     }
+                  }
+               }
+            },
+            "classification": {
+               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the \u2018code\u2019 field of the Coding object that is nested inside a MappableConcept's primary coding.",
+               "properties": {
+                  "primaryCoding": {
+                     "code": {
+                        "enum": [
+                           null,
+                           null,
+                           null
+                        ]
+                     },
+                     "system": {
+                        "const": "AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017"
+                     }
+                  }
+               }
+            },
+            "specifiedBy": {
+               "description": "A method that specifies how the therapeutic response classification was ultimately assigned to the variant, based on assessment of evidence.",
+               "properties": {
+                  "reportedIn": {
+                     "properties": {
+                        "pmid": {
+                           "const": 27993330
+                        },
+                        "name": {
+                           "const": "AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017"
+                        }
+                     }
+                  }
+               },
+               "required": [
+                  "reportedIn"
+               ]
             }
-         }
+         },
+         "required": [
+            null
+         ]
       }
    ]
 }

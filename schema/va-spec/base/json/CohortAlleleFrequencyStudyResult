@@ -104,7 +104,7 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
             }
          ],
          "description": "The Allele for which frequency results are reported.",

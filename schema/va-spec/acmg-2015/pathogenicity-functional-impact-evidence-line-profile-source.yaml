@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/acmg-2015/pathogenicity-functional-impact--profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/acmg-2015/pathogenicity-functional-impact--profile-source.yaml"
 title: Variant Pathogenicity Functional Impact Evidence Line Profile (ACMG 2015)
 description: >-
   Profile defined to align with terminology and conventions from the American College of Medical Genetics
@@ -17,13 +17,13 @@ $defs:
       An Evidence Line that describes how information about the functional impact of a variant on a gene or
       gene product was interpreted as evidence for or against the variant's pathogenicity.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
             A Variant Pathogenicity Proposition against which functional impact information was assessed,
             in determining the strength and direction of support this information provides as evidence.
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPathogenicityProposition"
         strengthOfEvidenceProvided:
           description: >-
             The strength of support that an Evidence Line is determined to provide for or against the proposed
@@ -36,6 +36,8 @@ $defs:
             primaryCoding:
               code:
                 enum:
+                  - stand alone
+                  - very strong
                   - strong
                   - moderate
                   - supporting
@@ -45,16 +47,6 @@ $defs:
           description: >-
             The guidelines that were followed to interpret variant functional impact information
             as evidence for or against the assessed variant's pathogenicity.
-        # removing the strict requirement for 'reportedIn' to allow for other guidelines
-        # which may be specializations of ACMG Guidelines, 2015 (e.g. VCEP guidelines)
-        # we should revisit this decision before finalizing the constraint around `specifiedBy`
-        #   properties:
-        #     reportedIn:
-        #        properties:
-        #           pmid:
-        #             const: 25741868
-        #           name:
-        #             const: ACMG Guidelines, 2015
           required:
             - reportedIn
         evidenceOutcome:

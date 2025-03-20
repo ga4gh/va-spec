@@ -37,9 +37,8 @@ $defs:
             primaryCoding:
               code:
                 enum:
-                  - strong
-                  - moderate
-                  - weak
+                  - definitive
+                  - likely
               system:
                 const: ACMG Guidelines, 2015
         classification:
