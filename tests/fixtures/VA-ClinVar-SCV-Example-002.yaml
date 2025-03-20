@@ -17,7 +17,7 @@ proposition:
 direction: supports
 strength:
   primaryCoding:
-    code: moderate
+    code: likely
     system: ACMG Guidelines, 2015
 classification:
   primaryCoding:

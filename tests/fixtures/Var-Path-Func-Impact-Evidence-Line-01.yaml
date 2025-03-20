@@ -40,7 +40,7 @@ directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided:
   primaryCoding:
     code: supporting
-    system: ga4gh-gks-term:path-functional-impact-strengthOfEvidenceProvided
+    system: ACMG Guidelines, 2015
 specifiedBy:
   type: Method
   id: PS3
@@ -52,5 +52,5 @@ specifiedBy:
 evidenceOutcome:
   primaryCoding:
     code: PS3_supporting
-    system: ga4gh-gks-term:path-functional-impact-evidenceOutcome
+    system: ACMG Guidelines, 2015
   name: ACMG 2015 PS3 Supporting Criterion Met

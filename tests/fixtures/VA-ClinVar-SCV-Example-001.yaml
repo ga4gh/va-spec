@@ -59,7 +59,7 @@ proposition:
 direction: supports
 strength:
   primaryCoding:
-    code: strong
+    code: definitive
     system: ACMG Guidelines, 2015
 classification:
   primaryCoding:

@@ -1,18 +1,24 @@
 id: civic.eid:80
 type: Statement
 description: https://civicdb.org/evidence/80/summary
-
 direction: supports
 strength:
   id: civic.evidenceLevel:B
   name: Clinical evidence
+  primaryCoding:
+    code: Level B
+    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
   mappings:
     - coding:
         code: e000005
         name: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
-
+classification:
+  name: oncogenic
+  primaryCoding:
+    code: Tier I -  positive
+    system: CIViC SOP AAC Guidelines, 2019
 proposition:
   type: VariantDiagnosticProposition
   predicate: isDiagnosticInclusionCriterionFor

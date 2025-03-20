@@ -1,74 +1,101 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/aac-2017/json/VariantPrognosticStudyStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/aac-2017/json/VariantPrognosticStudyStatement",
    "title": "VariantPrognosticStudyStatement",
    "description": "A statement reporting a conclusion from a single study about whether a variant is associated with a disease prognosis - based on interpretation of the study's results.",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Statement"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
       },
       {
          "properties": {
             "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantPrognosticProposition",
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPrognosticProposition",
                "description": "A proposition about a prognostic association between a variant and condition, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             },
             "strength": {
                "description": "The strength of support that the Statement is determined to provide for or against the Prognostic Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the \u2018code\u2019 field of the Coding object that is nested inside a MappableConcept's primary coding. Conditional requirement: Strength is evaluated relative to the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', the 'strength' attribute is required.  If the direction is 'neutral', then the 'strength' attribute is not allowed.",
-               "properties": {
-                  "primaryCoding": {
-                     "code": {
-                        "enum": [
-                           null,
-                           null,
-                           null
-                        ]
-                     },
-                     "system": {
-                        "const": "AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017"
-                     }
-                  }
-               }
-            },
-            "classification": {
-               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the \u2018code\u2019 field of the Coding object that is nested inside a MappableConcept's primary coding.",
-               "properties": {
-                  "primaryCoding": {
-                     "code": {
-                        "enum": [
-                           null,
-                           null,
-                           null
-                        ]
-                     },
-                     "system": {
-                        "const": "AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017"
-                     }
-                  }
-               }
-            },
-            "specifiedBy": {
-               "description": "A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of evidence.",
-               "properties": {
-                  "reportedIn": {
+               "oneOf": [
+                  {
                      "properties": {
-                        "pmid": {
-                           "const": 27993330
-                        },
-                        "name": {
-                           "const": "AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017"
+                        "primaryCoding": {
+                           "code": {
+                              "enum": [
+                                 "Level A",
+                                 "Level B",
+                                 "Level C",
+                                 "Level D"
+                              ]
+                           },
+                           "system": {
+                              "const": "AMP/ASCO/CAP (AAC) Guidelines, 2017"
+                           }
+                        }
+                     }
+                  },
+                  {
+                     "properties": {
+                        "primaryCoding": {
+                           "code": {
+                              "enum": [
+                                 "Level E"
+                              ]
+                           },
+                           "system": {
+                              "const": "CIViC SOP AAC Guidelines, 2019"
+                           }
                         }
                      }
                   }
-               },
-               "required": [
-                  "reportedIn"
                ]
+            },
+            "classification": {
+               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the \u2018code\u2019 field of the Coding object that is nested inside a MappableConcept's primary coding.",
+               "oneOf": [
+                  {
+                     "properties": {
+                        "primaryCoding": {
+                           "code": {
+                              "enum": [
+                                 "Tier I",
+                                 "Tier II",
+                                 "Tier III",
+                                 "Tier IV"
+                              ]
+                           },
+                           "system": {
+                              "const": "AMP/ASCO/CAP (AAC) Guidelines, 2017"
+                           }
+                        }
+                     }
+                  },
+                  {
+                     "properties": {
+                        "primaryCoding": {
+                           "code": {
+                              "enum": [
+                                 "Tier I - Better Outcome",
+                                 "Tier I - Poor Outcome",
+                                 "Tier II - Better Outcome",
+                                 "Tier II - Poor Outcome"
+                              ]
+                           },
+                           "system": {
+                              "const": "CIViC SOP AAC Guidelines, 2019"
+                           }
+                        }
+                     }
+                  }
+               ]
+            },
+            "specifiedBy": {
+               "description": "A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of evidence."
             }
          },
          "required": [
-            null
+            "classification",
+            "specifiedBy"
          ]
       }
    ]

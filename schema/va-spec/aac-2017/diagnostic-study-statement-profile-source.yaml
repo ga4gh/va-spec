@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/aac-2017/diagnositc-study-statement-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/aac-2017/diagnositc-study-statement-profile-source.yaml"
 title: Variant Diagnostic Study Statement Profile (AAC 2017)
 description: >-
   Profile defined to align with terminology and conventions from the Association for Molecular Pathology (AMP),
@@ -20,10 +20,10 @@ $defs:
       disease (diagnostic exclusion criterion) - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantDiagnosticProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantDiagnosticProposition"
           description: >-
             A proposition about a diagnostic association between a variant and condition, for which the study provides
             evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -36,42 +36,57 @@ $defs:
             is nested inside a MappableConcept's primary coding. Conditional requirement: Strength is evaluated relative to
             the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', the
             'strength' attribute is required.  If the direction is 'neutral', then the 'strength' attribute is not allowed.
-          properties:
-            primaryCoding:
-              code:
-                enum:              # TO DO: Kori/Alex to populate value set here, as appropriate
-                  -
-                  -
-                  -
-              system:
-                const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
+          oneOf:
+          - properties:
+              primaryCoding:
+                code:
+                  enum:
+                    - Level A
+                    - Level B
+                    - Level C
+                    - Level D
+                system:
+                  const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+          - properties:
+              primaryCoding:
+                code:
+                  enum:
+                    - Level E
+                system:
+                  const: CIViC SOP AAC Guidelines, 2019
         classification:
           description: >-
             A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
             the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
             enumerated value set here is bound to the ‘code’ field of the Coding object that is nested inside a MappableConcept's
             primary coding.
-          properties:
-            primaryCoding:
-              code:
-                enum:              # TO DO: Kori/Alex to populate value set here, as approriate
-                  -
-                  -
-                  -
-              system:
-                const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
+          oneOf:
+          - properties:
+              primaryCoding:
+                code:
+                  enum:
+                    - Tier I
+                    - Tier II
+                    - Tier III
+                    - Tier IV
+                system:
+                  const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+            required: [primaryCoding]
+          - properties:
+              primaryCoding:
+                code:
+                  enum:
+                    - Tier I - positive
+                    - Tier I - negative
+                    - Tier II - positive
+                    - Tier II - negative
+                system:
+                  const: CIViC SOP AAC Guidelines, 2019
+            required: [primaryCoding]
         specifiedBy:
           description: >-
             A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of
             evidence.
-          properties:
-            reportedIn:
-               properties:
-                  pmid:
-                    const: 27993330
-                  name:
-                    const: AMP/ASCO/CAP (AAC) Guidleines for the Interpretation and Reporting of Sequence Variants in Cancer, 2017
-          required:
-            - reportedIn
-      required:                   # TO DO: Kori/Alex to specify which, if any, attributes should be required here
-        -
+      required:
+        - classification
+        - specifiedBy

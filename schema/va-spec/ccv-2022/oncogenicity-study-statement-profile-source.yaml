@@ -39,9 +39,8 @@ $defs:
             primaryCoding:
               code:
                 enum:
-                  - strong
-                  - moderate
-                  - weak
+                  - definitive
+                  - likely
               system:
                 const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
         classification:
@@ -68,15 +67,6 @@ $defs:
           description: >-
             The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
             based on assessment of evidence.
-          properties:
-            reportedIn:
-               properties:
-                  pmid:
-                    const: 35101336
-                  name:
-                    const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-          required:
-            - reportedIn
       required:
         - classification
         - specifiedBy
