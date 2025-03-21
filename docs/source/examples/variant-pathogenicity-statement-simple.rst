@@ -1,7 +1,7 @@
-.. _variant-pathogenicity-statement-simple:
+.. _acmg-variant-pathogenicity-statement-simple:
 
-Variant Pathogenicity Statement, Simple
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ACMG Variant Pathogenicity Statement, Simple
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Description:**
 
