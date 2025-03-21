@@ -15,7 +15,7 @@
                "description": "A proposition about the oncogenicity of a varaint, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             },
             "strength": {
-               "description": "The strength of support that an CCV 2022 Oncogenicity statement is determined to provide for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength. Conditional requirement: if direction is either 'supports' or 'disputes', then this attribute is required.  If it is 'neutral', then this attribute is not allowed.",
+               "description": "The strength of support that an CCV 2022 Oncogenicity statement is determined to provide for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.",
                "properties": {
                   "primaryCoding": {
                      "code": {
@@ -31,7 +31,6 @@
                }
             },
             "classification": {
-               "description": "The classification of the variant's oncogenicity, based on the CCV 2022 guidelines. These classifications should coincide with the direction and strength values as follows: 'oncogenic' with supports-strong, 'likely oncogenic' with supports-moderate, 'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance' can be one of three possibilities... supports-weak, disputes-weak or neutral for uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or uncertain significance (favoring neither pathogenic nor benign).",
                "properties": {
                   "primaryCoding": {
                      "code": {
