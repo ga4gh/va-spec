@@ -21,7 +21,7 @@ The v1 release of VA-Spec includes the following components:
 
 #. :ref:`A Python Reference Implementation <reference-implementation>`:  Code libraries that demonstrate the creation, validation, and exchange of compliant data using VA Profiles. *These resources provide a working example of code that can be adopted and/or extended by adopters*.
 
-Readers may wish to review this :ref:`simple annotated data example <variant-pathogenicity-statement-simple>`, illustrating application of VA-Spec models, before diving in to the full documentation.  A :ref:`richer annotated example<variant-pathogenicity-statement-with-evidence>` illustrating more complex structures supported by VA-Spec models is also available.
+Readers may wish to review this :ref:`simple annotated data example <variant-pathogenicity-statement-simple>` illustrating application of VA-Spec models, before diving in to the full documentation.  A :ref:`richer annotated example<variant-pathogenicity-statement-with-evidence>` demonstrating more complex structures supported by VA-Spec models is also available.
 
 Scope and Development
 #####################
