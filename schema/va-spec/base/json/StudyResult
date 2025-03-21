@@ -1,16 +1,16 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/StudyResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/StudyResult",
    "title": "StudyResult",
    "maturity": "trial use",
    "description": "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated.",
    "$comment": "Note that a 'dataItem' attribute, which would hold an array of data selected for inclusion in the StudyResult, is not included in this version of the StudyResult class. Profiles that extend this core class can define data type specific attributes to capture such information (e.g.'focusAlleleCount', 'focusAlleleFrequency', and 'locuslAlleleCount' attributes in a CohortAlleleFrequencyStudyResult profile). But technical limitations in our current profiling framework tooling forced us to omit a core 'dataItems attribute that these specialized attributes would conceptually extend.",
    "oneOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/CohortAlleleFrequencyStudyResult"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/CohortAlleleFrequencyStudyResult"
       },
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/ExperimentalVariantFunctionalImpactStudyResult"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/ExperimentalVariantFunctionalImpactStudyResult"
       }
    ]
 }

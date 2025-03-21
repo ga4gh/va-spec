@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/va-spec-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/va-spec-source.yaml"
 title: VA Specification Core classes
 strict: true
 
@@ -11,8 +11,8 @@ imports:
 
 namespaces:
   gks.core: /ga4gh/schema/gks-core/1.0.0/json/
-  vrs: /ga4gh/schema/vrs/2.0.0/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-ballot.2025-03.1/json/
+  vrs: /ga4gh/schema/vrs/2.0.1/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.0.0-ballot.2025-03.2/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
@@ -726,7 +726,7 @@ $defs:
           membership in the group.
         $comment: We should evaluate this for use with boolean operators before going normative
 
-  # proposition concrete profiles section
+  # proposition profiles section
   ClinicalVariantProposition:
     inherits: SubjectVariantProposition
     maturity: trial use

@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/aac-2017/prognostic-study-statement-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/aac-2017/prognostic-study-statement-profile-source.yaml"
 title: Variant Prognostic Study Statement Profile (AAC 2017)
 description: >-
   Profile defined to align with terminology and conventions from the Association for Molecular Pathology (AMP),
@@ -19,11 +19,55 @@ $defs:
       is associated with a disease prognosis - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantPrognosticProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPrognosticProposition"
           description: >-
             A proposition about a prognostic association between a variant and condition, for which the study provides
             evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
             may be assessed and reported by the Statement.
+        strength:
+          description: >-
+            The strength of support that the Statement is determined to provide for or against the Prognostic Proposition
+            for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
+            Guidelines.
+          properties:
+            primaryCoding:
+              allOf:
+                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                - properties:
+                    code:
+                      enum:
+                        - Level A
+                        - Level B
+                        - Level C
+                        - Level D
+                    system:
+                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+        classification:
+          description: >-
+            A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
+            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
+            enumerated value set here is bound to the ‘code’ field of the Coding object that is nested inside a MappableConcept's
+            primary coding.
+          properties:
+            primaryCoding:
+              allOf:
+                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                - properties:
+                    code:
+                      enum:
+                        - Tier I
+                        - Tier II
+                        - Tier III
+                        - Tier IV
+                    system:
+                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+        specifiedBy:
+          description: >-
+            A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of
+            evidence.
+      required:
+        - classification
+        - specifiedBy

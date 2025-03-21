@@ -1,18 +1,18 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine",
    "title": "VariantPathogenicityFunctionalImpactEvidenceLine",
    "description": "An Evidence Line that describes how information about the functional impact of a variant on a gene or gene product was interpreted as evidence for or against the variant's pathogenicity.",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/EvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "description": "A Variant Pathogenicity Proposition against which functional impact information was assessed, in determining the strength and direction of support this information provides as evidence.",
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPathogenicityProposition"
             },
             "strengthOfEvidenceProvided": {
                "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'directionOfEvidenceProvided' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength. Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
@@ -20,6 +20,8 @@
                   "primaryCoding": {
                      "code": {
                         "enum": [
+                           "standalone",
+                           "very strong",
                            "strong",
                            "moderate",
                            "supporting"

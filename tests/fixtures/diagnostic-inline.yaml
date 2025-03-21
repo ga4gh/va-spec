@@ -1,18 +1,19 @@
 id: civic.eid:80
 type: Statement
 description: https://civicdb.org/evidence/80/summary
-
 direction: supports
 strength:
-  id: civic.evidenceLevel:B
+  # id: civic.evidenceLevel:B
   name: Clinical evidence
+  primaryCoding:
+    code: B
+    system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
   mappings:
     - coding:
         code: e000005
         name: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
-
 proposition:
   type: VariantDiagnosticProposition
   predicate: isDiagnosticInclusionCriterionFor

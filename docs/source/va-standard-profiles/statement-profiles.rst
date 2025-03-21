@@ -3,7 +3,7 @@
 Statement Profiles
 !!!!!!!!!!!!!!!!!!
 
-Statement Profiles specialize the core ``Statement`` class to support a specific type of knowledge. The Statement profiles included in v1 of the VA-Spec are named and defined to align with curation and terminological conventions of established community guidelines in a given knowledge domain - such as the `ACMG 2015 Variant Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_ for pathogenicity classifications, or the `AMP/ASCO/CAP (AAC) Guidleines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_ for clinical interpretation of genetic variants.
+Statement Profiles specialize the core ``Statement`` class to support a specific type of knowledge. The Statement profiles included in v1 of the VA-Spec are named and defined to align with curation and terminological conventions of established community guidelines in a given knowledge domain - such as the `ACMG 2015 Variant Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_ for pathogenicity classifications, or the `AMP/ASCO/CAP (AAC) Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_ for clinical interpretation of genetic variants.
 
 .. _variant-pathogenicity-statement-acmg-2015:
 

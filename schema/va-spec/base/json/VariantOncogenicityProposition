@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantOncogenicityProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantOncogenicityProposition",
    "title": "VariantOncogenicityProposition",
    "maturity": "trial use",
    "type": "object",
@@ -39,13 +39,13 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-ballot.2025-03.1/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-ballot.2025-03.2/json/CategoricalVariant"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.0/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/MolecularVariation"
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
@@ -93,7 +93,7 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Condition"
             }
          ],
          "description": "The tumor type for which the variant impact is evaluated.",

@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/ccv-2022/oncogenicity-study-statement-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/ccv-2022/oncogenicity-study-statement-profile-source.yaml"
 title: Variant Oncogenicity Study Statement Profile (CCV 2022)
 description: >-
   Profile defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
@@ -19,10 +19,10 @@ $defs:
       is associated with oncogenicity (positive or negative) - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.1/base/json/VariantOncogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantOncogenicityProposition"
           description: >-
             A proposition about the oncogenicity of a varaint, for which the study provides evidence.
             The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -33,26 +33,15 @@ $defs:
             for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative
             to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
             MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
-            Conditional requirement: if direction is either 'supports' or 'disputes', then this
-            attribute is required.  If it is 'neutral', then this attribute is not allowed.
           properties:
             primaryCoding:
               code:
                 enum:
-                  - strong
-                  - moderate
-                  - weak
+                  - definitive
+                  - likely
               system:
                 const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
         classification:
-          description: >-
-            The classification of the variant's oncogenicity, based on the CCV 2022 guidelines.
-            These classifications should coincide with the direction and strength values as follows:
-            'oncogenic' with supports-strong, 'likely oncogenic' with supports-moderate,
-            'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance'
-            can be one of three possibilities... supports-weak, disputes-weak or neutral for
-            uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or
-            uncertain significance (favoring neither pathogenic nor benign).
           properties:
             primaryCoding:
               code:
@@ -68,15 +57,6 @@ $defs:
           description: >-
             The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
             based on assessment of evidence.
-          properties:
-            reportedIn:
-               properties:
-                  pmid:
-                    const: 35101336
-                  name:
-                    const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-          required:
-            - reportedIn
       required:
         - classification
         - specifiedBy
