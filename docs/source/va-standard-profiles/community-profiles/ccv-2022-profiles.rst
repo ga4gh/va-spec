@@ -104,7 +104,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition. The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values, along with the specific ACMG criterion code used in these assessments. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept. Note that if 'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for the relevant criterion, along with the strength of evidence provided. (e.g. 'OS2_moderate').
    *  - strengthOfEvidenceProvided
       -
-      - :ref:`MappableConcept` (nested enum: strong | moderate | supporting)
+      - :ref:`MappableConcept` (nested enum: stand alone | very strong | strong | moderate | supporting)
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.  *Conditional requirement*: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.
 
