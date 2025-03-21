@@ -55,14 +55,14 @@ $defs:
               allOf:
                 - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
                 - properties:
-                      code:
-                        enum:
-                          - Tier I
-                          - Tier II
-                          - Tier III
-                          - Tier IV
-                      system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                    code:
+                      enum:
+                        - Tier I
+                        - Tier II
+                        - Tier III
+                        - Tier IV
+                    system:
+                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         specifiedBy:
           description: >-
             A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of

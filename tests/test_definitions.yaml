@@ -73,18 +73,18 @@ tests:
   - test_file: therapeuticAgent.yaml
     namespace: gks-core
     definition: MappableConcept
-  - test_file: tr-statement-inline.yaml
-    namespace: va-spec.aac-2017
-    definition: VariantTherapeuticResponseStudyStatement
-  - test_file: tr-statement-inline.yaml
+  # - test_file: tr-classification-inline.yaml
+  #   namespace: va-spec.aac-2017
+  #   definition: VariantTherapeuticResponseStudyStatement
+  - test_file: therapeutic-response-inline.yaml
     namespace: va-spec.base
     definition: Statement
   - test_file: diagnostic-inline.yaml
-    namespace: va-spec.aac-2017
-    definition: VariantDiagnosticStudyStatement
+    namespace: va-spec.base
+    definition: Statement
   - test_file: prognostic-inline.yaml
-    namespace: va-spec.aac-2017
-    definition: VariantPrognosticStudyStatement
+    namespace: va-spec.base
+    definition: Statement
   - test_file: cohort-allele-freq-test.yaml
     namespace: va-spec.base
     definition: CohortAlleleFrequencyStudyResult

@@ -726,7 +726,7 @@ $defs:
           membership in the group.
         $comment: We should evaluate this for use with boolean operators before going normative
 
-  # proposition concrete profiles section
+  # proposition profiles section
   ClinicalVariantProposition:
     inherits: SubjectVariantProposition
     maturity: trial use

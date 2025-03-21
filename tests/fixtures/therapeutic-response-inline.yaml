@@ -7,21 +7,16 @@ description: A phase III clinical trial (NCT00949650) found that median progress
 direction: supports
 strength:
   # id: civic.evidenceLevel:B
-  # name: Clinical evidence
+  name: Clinical evidence
   primaryCoding:
-    code: "Level B"
-    system: "AMP/ASCO/CAP (AAC) Guidelines, 2017"
+    code: B
+    system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
   mappings:
     - coding:
         code: e000005
         name: clinical cohort evidence
         system: https://go.osu.edu/evidence-codes
       relation: exactMatch
-classification:
-  name: confers sensitivity
-  primaryCoding:
-    code: Tier I - Sensitivity/Response
-    system: CIViC SOP AAC Guidelines, 2019
 proposition:
   type: VariantTherapeuticResponseProposition
   predicate: predictsSensitivityTo
@@ -139,18 +134,18 @@ proposition:
           - mENA
       - name: description
         value: "EGFR is widely recognized for its importance in cancer. Amplification
-        and mutations have been shown to be driving events in many cancer types. Its
-        role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
-        has spurred many research and drug development efforts. Tyrosine kinase inhibitors
-        have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
-        Mutations in EGFR have been shown to confer resistance to these drugs, particularly
-        the variant T790M, which has been functionally characterized as a resistance
-        marker for both of these drugs. The later generation TKI's have seen some
-        success in treating these resistant cases, and targeted sequencing of the
-        EGFR locus has become a common practice in treatment of non-small cell lung
-        cancer. \nOverproduction of ligands is another possible mechanism of activation
-        of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
-        NRG1-4 (for detailed information please refer to the respective ligand section)."
+          and mutations have been shown to be driving events in many cancer types. Its
+          role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
+          has spurred many research and drug development efforts. Tyrosine kinase inhibitors
+          have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
+          Mutations in EGFR have been shown to confer resistance to these drugs, particularly
+          the variant T790M, which has been functionally characterized as a resistance
+          marker for both of these drugs. The later generation TKI's have seen some
+          success in treating these resistant cases, and targeted sequencing of the
+          EGFR locus has become a common practice in treatment of non-small cell lung
+          cancer. \nOverproduction of ligands is another possible mechanism of activation
+          of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
+          NRG1-4 (for detailed information please refer to the respective ligand section)."
 specifiedBy:
   id: civic.methods:2019
   name: CIViC Curation SOP (2019)
