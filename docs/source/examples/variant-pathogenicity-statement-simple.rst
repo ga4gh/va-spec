@@ -1,14 +1,14 @@
 .. _variant-pathogenicity-statement-simple:
 
-Variant Pathogenicity Statement - Simple Example
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Variant Pathogenicity Statement, Simple
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Description:**
 
 * The simple Pathogenicity Statement below is based on data from the `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ - which reports that *"the KCNQ4 variant NM_004700.4:c.803CCT[1] is pathogenic for Autosomal dominant nonsyndromic hearing loss 2A"*. 
 * The example applies the trial use version of the  :ref:`Variant Pathogenicity Statement (ACMG 2015) Profile <variant-pathogenicity-statement-acmg-2015>`, which is used support ClinGen's ingest and restructuring of ClinVar data.
 * Note that it omits full representations of the ``CategoricalVariation`` that is the subject of the Statement - as this is a large structure that is the remit of the `CatVRS specification <https://github.com/ga4gh/cat-vrs>`_.
-* Comments in the yaml data are provided to help readers better understand the meaning of the data and rationale behind the modeling in the example.
+* Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
 
 **Data**:
 
@@ -19,47 +19,8 @@ Variant Pathogenicity Statement - Simple Example
   type: Statement              # Formal type in the model is 'Statement', but the data aligns with the "Variant Pathogenicity Statement (ACMG 2015)" Community Profile.  
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
-    type: VariantPathogenicityProposition
-    subjectVariant: clinvar/208366  
-  subjectVariant:              # 'subjectVariant' specializes the VA Core 'subject' attribute.
-    id: clinvar/208366         # this is a CatVRS 'Categorical Variant' rooted at NC_000001.11:g.40819441CCT[1], and covering transcript / protein variants derived from it. 
-    type: CategoricalVariant
-    name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
-    constraints:
-      - type: DefiningAlleleConstraint
-        allele:
-          id: ga4gh:VA.Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
-          digest: Ti7zPciQelW7jTfgg-uzjZpxosnGzROK
-          type: Allele
-          location:
-            id: ga4gh:VSL.5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr
-            digest: 5lPU1ZzNnkDe-9ltOWXvcp2td9sM9CHr
-            type: SequenceLocation
-            sequenceReference:
-              id: NC_000001.11
-              type: SequenceReference
-              refgetAccession: SQ.Ya6Rs7DHhDeg7YaOSg1EoNi3U_nQ9SvO
-              name: NC_000001.11
-            start: 40819438
-            end: 40819446
-          state:
-            repeatSubunitLength: 3
-            type: ReferenceLengthExpression
-            length: 5
-          expressions:
-            - syntax: hgvs.g
-              value: NC_000001.11:g.40819441CCT[1]
-            - syntax: spdi
-              value: NC_000001.11:40819438:CTCCTCCT:CTCCT
-        relations:
-          - primaryCoding:
-              code: liftover_to
-              system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
-              code: transcribed_to
-              system: https://www.sequenceontology.org/
-              iris:
-                - http://www.sequenceontology.org/browser/current_release/term/transcribed_to
+    type: VariantPathogenicityProposition 
+    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representtion is not shown here. 
     predicate: isCausalFor     # the predicate for this Statement profile is fixed at 'isCausalFor' 
     objectCondition:           # 'objectCondition' specialilzes the VA Core 'object' attribute.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
