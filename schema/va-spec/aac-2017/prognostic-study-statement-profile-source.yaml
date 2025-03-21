@@ -31,30 +31,20 @@ $defs:
           description: >-
             The strength of support that the Statement is determined to provide for or against the Prognostic Proposition
             for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
-            Guidelines. Note that the enumerated value set here is bound to the ‘code’ field of the Coding object that
-            is nested inside a MappableConcept's primary coding. Conditional requirement: Strength is evaluated relative to
-            the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', the
-            'strength' attribute is required.  If the direction is 'neutral', then the 'strength' attribute is not allowed.
+            Guidelines.
           properties:
             primaryCoding:
               allOf:
                 - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - oneOf:
-                  - properties:
-                        code:
-                          enum:
-                            - Level A
-                            - Level B
-                            - Level C
-                            - Level D
-                        system:
-                          const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-                  - properties:
-                        code:
-                          enum:
-                            - Level E
-                        system:
-                          const: CIViC SOP AAC Guidelines, 2019
+                - properties:
+                    code:
+                      enum:
+                        - Level A
+                        - Level B
+                        - Level C
+                        - Level D
+                    system:
+                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
           description: >-
             A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
@@ -65,29 +55,15 @@ $defs:
             primaryCoding:
               allOf:
                 - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - oneOf:
-                  - properties:
-                        code:
-                          enum:
-                            - Tier I
-                            - Tier II
-                            - Tier III
-                            - Tier IV
-                        system:
-                          const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-                  - properties:
-                        code:
-                          enum:
-                            - Tier I - Sensitivity/Response
-                            - Tier I - Resistance
-                            - Tier I - Adverse Response
-                            - Tier I - Reduced Response
-                            - Tier II - Sensitivity/Response
-                            - Tier II - Resistance
-                            - Tier II - Adverse Response
-                            - Tier II - Reduced Response
-                        system:
-                          const: CIViC SOP AAC Guidelines, 2019
+                - properties:
+                    code:
+                      enum:
+                        - Tier I
+                        - Tier II
+                        - Tier III
+                        - Tier IV
+                    system:
+                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         specifiedBy:
           description: >-
             A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of
