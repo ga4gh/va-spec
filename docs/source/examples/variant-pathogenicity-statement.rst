@@ -7,7 +7,7 @@ Variant Pathogenicity Statement - Simple Example
 
 * The simple Pathogenicity Statement below is based on data from the `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ - which reports that *"the KCNQ4 variant NM_004700.4:c.803CCT[1] is pathogenic for Autosomal dominant nonsyndromic hearing loss 2A"*. 
 * The example applies the trial use version of the  :ref:`Variant Pathogenicity Statement (ACMG 2015) Profile <variant-pathogenicity-statement-acmg-2015>`, which is used support ClinGen's ingest and restructuring of ClinVar data.
-* Note that it omits full representations of the ``CategoricalVariation` that is the subject of the Statement - as this is a large structure that is the remit of the `CatVRS specification` <https://github.com/ga4gh/cat-vrs>`_.
+* Note that it omits full representations of the ``CategoricalVariation`` that is the subject of the Statement - as this is a large structure that is the remit of the `CatVRS specification <https://github.com/ga4gh/cat-vrs>`_.
 * Comments in the yaml data are provided to help readers better understand the meaning of the data and rationale behind the modeling in the example.
 
 **Data**:
