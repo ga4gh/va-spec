@@ -14,3 +14,4 @@ Additional examples of real data from implementing systems can be found in the `
    :titlesonly:
 
    variant-pathogenicity-statement-simple
+   variant-pathogenicity-statement-with-evidence
