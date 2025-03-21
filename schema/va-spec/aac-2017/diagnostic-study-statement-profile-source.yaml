@@ -32,10 +32,7 @@ $defs:
           description: >-
             The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition
             for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
-            Guidelines. Note that the enumerated value set here is bound to the ‘code’ field of the Coding object that
-            is nested inside a MappableConcept's primary coding. Conditional requirement: Strength is evaluated relative to
-            the direction indicated by the 'direction' attribute. If direction is either 'supports' or 'disputes', the
-            'strength' attribute is required.  If the direction is 'neutral', then the 'strength' attribute is not allowed.
+            Guidelines.
           properties:
             primaryCoding:
               allOf:
@@ -59,9 +56,7 @@ $defs:
         classification:
           description: >-
             A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
-            enumerated value set here is bound to the ‘code’ field of the Coding object that is nested inside a MappableConcept's
-            primary coding.
+            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
           properties:
             primaryCoding:
               allOf:
