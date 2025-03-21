@@ -5,9 +5,9 @@ Variant Pathogenicity Statement, with Evidence
 
 **Description:**
 
-* The data below builds on the simple "ClinVar-GKS" example described :ref:`here <variant-pathogenicity-statement-simple>`, embellishing the `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ with additional evidence to demonstrate richer structures the :ref:`VariantPathogenicityStatement (ACMG 2015) profile<variant-pathogenicity-statement-acmg-2015> can support.
+* The data below builds on the simple ClinVar-GKS example described :ref:`here <variant-pathogenicity-statement-simple>`, embellishing is base `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
 * It stitches together several more atomic examples of Statements, Study Results, and Evidence Lines from the `test fixtures <https://github.com/ga4gh/va-spec/tree/1.0.0-ballot.2025-03/tests/fixtures>`_ directory, to reveal how these classes can be combined to build rich evidence and provenance structures for ACMG-based Pathogenicity classifications. 
-* The diagram below illustrates the high level structure of the data in this example, where a root **Pathogenicity Statement** is supported by **Evidence Lines** based on a **Cohort Allele Frequency Study Result** from `gnomAD<https://gnomad.broadinstitute.org/>`_, and a **Functional Impact Statement** from `MAVE DB<https://mavedb.org/>`_ (which itself is supported by a **Functional Impact Study Result**). 
+* The diagram below illustrates the high level structure of the data in this example, where a root **Pathogenicity Statement** is supported by **Evidence Lines** based on a **Cohort Allele Frequency Study Result** from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a **Functional Impact Statement** from `MAVE DB <https://mavedb.org/>`_ (which itself is supported by a **Functional Impact Study Result**). 
 			
 .. variant-pathogenicity-statement-with-evidence:
 
@@ -22,3 +22,295 @@ A few additional notes about this example:
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
 * It omits full representations of `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects that are subjects of Statements and Study Results in the data - as these are large structures that are the remit of other GKS Specifications.
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
+
+**Data**:
+
+.. code-block:: yaml
+
+ ex.Statement001:              # Based on the ClinVar record SCV000778434.1
+  id: ex:Statement001
+  type: Statement              # Formal type in the model is 'Statement', but the data aligns with the "Variant Pathogenicity Statement (ACMG 2015)" Community Profile.  
+  proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
+    id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
+    type: VariantPathogenicityProposition
+    subjectVariant: clinvar/208366   # 'subjectVariant' specializes the VA Core 'subject' attribute.  The full CatVRS-based representation of this particular variant is not included.
+    predicate: isCausalFor           # the predicate for this Statement profile is fixed at 'isCausalFor' 
+    objectCondition:                 # 'objectCondition' specialilzes the VA Core 'object' attribute.
+      id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
+      conceptType: Disease
+      name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
+      primaryCoding:           # holds a Coding object, where the concept is defined in the 'code' or 'name' field  
+        code: C2677637         # the code from the MedGen terminology for AD nonsyndromic hearing loss 2A
+        system: https://www.ncbi.nlm.nih.gov/medgen/
+        iris:
+          - http://identifiers.org/medgen/C2677637
+    penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
+      primaryCoding:
+        code: high 
+        system: ga4gh-gks-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec 
+      name: high
+  direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
+  strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
+    primaryCoding:
+      code: definitive         # the code here is a term based on language used in the ACMG guidleines, as ACMG does not provide a formal code system for this 
+      system: ACMG Guidelines, 2015
+  classification:              # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogneic'      
+    primaryCoding:
+      code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this 
+      system: ACMG Guidelines, 2015
+  contributions:               # a list of Contribution objects, each describing how an agent contributed to the Statement
+    - type: Contribution
+      contributor:             # reports who made this contribution
+        id: clinvar.submitter/500139
+        type: Agent
+        name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+      activityType:            # reports the type of contribution that was made (here an evaluation activity)
+        name: evaluated
+        mappings:
+          - coding:
+              code: cg000011
+              system: https://dataexchange.clinicalgenome.org/codes/
+            relation: exactMatch
+      date: '2015-08-20'       # reports when this contribution was performed     
+    - type: Contribution
+      contributor:
+        id: clinvar.submitter/500139
+        type: Agent
+        name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
+      activityType:
+        name: submitted
+        mappings:
+          - coding:
+              code: cg000010
+              system: https://dataexchange.clinicalgenome.org/codes/
+            relation: exactMatch
+      date: '2018-06-12'
+  specifiedBy:                 # holds a Method object describing guidelines followed in generating the knowledge reported in the Statement 
+    type: Method
+    reportedIn:                # a document that describes the Method (this is all we are given about this Method in the source data)
+      type: Document
+      pmid: 25741868
+      name: ACMG Guidelines, 2015
+      
+  hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement 
+  - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
+    type: EvidenceLine   
+    targetProposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
+    hasEvidenceItems:          # the information interpreted as evidence in building this Evidence Line
+    - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.              
+      type: CohortAlleleFrequencyStudyResult  
+      name: Overall Cohort Allele Frequency for 1-40819444_40819446-del
+      focusAllele: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz   # the 1-40819444_40819446-del variant that data inlcuded in this Result are about (the full VRS-based representation of the variant is not included)
+      focusAlleleFrequency: 0      
+      focusAlleleCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
+      locusAlleleCount: 34086  
+      sourceDataSet:           # the gnomAD dataset from which the data included in this Result were pulled. 
+        id: gnomad4.1.0
+        type: DataSet
+        name: gnomAD v4.1.0
+        version: 4.1.0
+      cohort:                  # a description of the cohort within the gnomad dataset interrogated in the analysis (here, the full gnomad population)
+        id: ALL
+        name: Overall
+        type: StudyGroup
+      specifiedBy:             # holds a Method object describing protocols and guidelines followed in generating the data reported in the Study Result
+        type: Method
+        name: gnomAD methods
+        reportedIn:            # a document that describes the Method (this is all we are given about this Method in the source data)
+          type: Document
+          name: gnomAD help documentation
+          urls:
+            - "https://gnomad.broadinstitute.org/help"      
+    directionOfEvidenceProvided: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
+    strengthOfEvidenceProvided:             
+      primaryCoding:
+        code: moderate        # reports that this supporting evidence is of 'moderate' strength
+        system: ACMG Guidelines, 2015
+    evidenceOutcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ... 
+      primaryCoding:
+        code: PM2_moderate    # ... here, that the evidence line provides moderate evidence for Pathogenicity, based on the ACMG PM2 criteria
+        system: ACMG Guidelines, 2015
+      name: ACMG 2015 PM2 Moderate Criterion Met
+    specifiedBy:              # holds a Method object describing guidelines followed in generating the evidence assessment in this Evidence Line
+      type: Method
+      id: PM2
+      name: ACMG 2015 PM2 Criterion
+      reportedIn:
+        type: Document
+        pmid: 25741868
+        name: ACMG Guidelines, 2015   
+    contributions:               # holds descriptions of contributions to this Evidence Line
+      - type: Contribution
+        contributor:             
+          id: curator001
+          type: Agent
+        activityType:            
+          name: evidence evaluation
+        date: '2018-03-11'       
+  - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
+    type:  VariantPathogenicityFunctionalImpactEvidenceLine
+    targetProposition: ex:Proposition001    
+    hasEvidenceItems: 
+      - id: ex:Statement002              # here the evidence item is another Statement about the functional impact of the variant   
+        type: Statement
+        proposition:
+          type: ExperimentalVariantFunctionalImpactProposition
+          subjectVariant: ex:catvar001   # the full Cat-VRS-based representation of the categorical variant subject of this Statement is not included)
+          predicate: impactsFunctionOf   # the predicate for this type of Statement is fixed at 'impactsFunctionOf'
+          objectSequenceFeature:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
+            id: clinvar-gene:5728
+            conceptType: Gene
+            primaryCoding:
+              code: ncbigene:5728
+              system: https://identifiers.org/ncbigene
+              iris:
+                - https://identifiers.org/ncbigene:5728
+            name: PTEN
+          experimentalContextQualifier: ex:Experiment001   # this qualifier is able to take a custom, data provider-defined object to describe the experiment in which the reported impact was determined. Full representtion of this object is provided at the end of the example.       
+          direction: supports           # indicates that the Statement supports the assessed impact Proposition above (i.e. says that the subject Variant does impact the function of the object Gene) 
+          classification:               # sumamrizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
+            primaryCoding:
+              code: abnormal            # indicates the variant version of the gene has abnormal function (consistent with the 'impactsFunctionOf' proposition being 'supported')
+              system: ga4gh-gks-term:experimental-var-func-impact-classification
+          specifiedBy:                  # a Method followed to produce the Statement, which is described by the publication indicated below
+            type: Method
+            subtype:
+              name: variant interpretation guideline
+            reportedIn:
+              type: Document
+              pmid: 29785012
+          hasEvidence:                  # reports evidence supporting the Impact Statement - specifically, experimental data on which the statement was based. Note that the Statement is connected directly to the evidence here, without an intervening EvidenceLine, because the data provider does not report evidence assessment details/metadata - only what information was used as evidence.
+            - id: ex:StudyResult002     # the evidence in this case is data captured in a Functional Impact Study Result
+              type: ExperimentalVariantFunctionalImpactStudyResult
+              focusVariant: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz   # the variant that data are about (a full VRS-based representation of the variant is not included)
+              functionalImpactScore: 1.29395467005388        # this is the only data item included right now in this StudyResult
+              specifiedBy:
+                type: Method
+                subtype:
+                  name: Experimental protocol
+                reportedIn:
+                  type: Document
+                  pmid: 29785012
+              sourceDataSet:
+                type: DataSet
+                name: variant effect data set
+                license:
+                  primaryCoding:
+                    code: CC0
+                    system: https://spdx.org/licenses/
+                    iris:
+                      - https://spdx.org/licenses/CC0-1.0.html
+                reportedIn:
+                  type: Document
+                  urls:
+                    - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
+    directionOfEvidenceProvided: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement 
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: strong                      # indicates that this line of evidence provides 'strong' support for the variant's Pathogencity
+        system: ACMG Guidelines, 2015
+    evidenceOutcome:
+      primaryCoding:
+        code: PS3_strong
+        system: ACMG Guidelines, 2015
+      name: ACMG 2015 PS3 Supporting Criterion Met
+    specifiedBy:
+      type: Method
+      id: PS3
+      name: ACMG 2015 PS3 Criterion
+      reportedIn:
+        type: Document
+        pmid: 25741868
+        name: ACMG Guidelines, 2015  
+    contributions:              
+      - type: Contribution
+        contributor:            
+          id: curator002
+          type: Agent
+        activityType:          
+          name: evidence evaluation
+        date: '2018-04-03'     
+  extensions:      # holds Extension objects which allow data providers to define key-value pairs for capturing additional info not supported by the VA model.
+  - name: clinvarMethodCategory   # here, Extensions are used to report clinvar-specific values that the data provider does not want to lose
+    value: literature only
+  - name: clinvarReviewStatus
+    value: no assertion criteria provided
+  - name: clinvarSubmittedClassification
+    value: Pathogenic
+
+
+ # An Experimental description providing qualifying context for the ExperimentalVariantFunctionalImpactStatement
+ # used as evidence for the Pathogneicity classification. Note that the structure of this object is defined by 
+ # data provider, and is not part of the VA-Spec standard. 
+        ex:Experiment001
+          title: PTEN VAMP-seq
+          document:
+            title: >-
+              Multiplex assessment of protein variant abundance by massively parallel
+              sequencing
+            system:
+              Nature Genetics
+            date: "2018-05-21"
+            ref: https://doi.org/10.1038/s41588-018-0122-z
+            datasets:
+              - system: MaveDB
+                accession: urn:mavedb:00000013-a
+                ref: https://mavedb.org/#/experiments/urn:mavedb:00000013-a
+                description: processed scores, including scores for each replicate experiment
+              - system: BioProject
+                accession: PRJNA428380
+                ref: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA428380
+                description: raw sequencing data
+            variantLibrary:
+              scope:
+                type: coding
+              targetSequences:
+                - sequence: "ATGACAGCCATCA..."        # full sequence is ~1200 nts,  ommitted for space
+                  sequenceAlphabet: DNA
+              generationMethod:
+                type: in-vitro construct library
+               system: oligo-directed mutagenic PCR
+                integration: extra-local construct insertion
+                description: Integration using Tet-on landing pad system
+              deliveryMethod:
+                type: chemical or heat shock transformation
+            phenotypicAssay:
+              dimensionality:
+                type: single-dimensional data
+              replication:
+                type: biological and technical
+                description: 8 biological replicate experiments were performed from three
+                  different transfections (4, 3, and 1 experimental replicate for these
+                  transfections). Technical replicates were performed as part of QC, but
+                  the technical replicates were collapsed and analyzed as one experiment
+                  after passing.
+              method:
+                type: flow cytometry assay
+                description: VAMP-seq
+              relevance:
+                - system: https://www.omim.org/
+                  code: "601728"
+                  name: PHOSPHATASE AND TENSIN HOMOLOG; PTEN
+                - system: https://www.omim.org/
+                  code: "158350"
+                  name: COWDEN SYNDROME 1; CWS1
+                - system: https://mondo.monarchinitiative.org/
+                  code: MONDO:0017623
+                  name: PTEN hamartoma tumor syndrome
+                - system: https://mondo.monarchinitiative.org/
+                  code: MONDO:0017623
+                  name: Cowden syndrome 1
+              modelSystem:
+                type: immortalized human cells
+                description: HEK 293T TetBxb1BFP
+                codings:
+                  - system: https://www.ebi.ac.uk/ols/ontologies/clo
+                    code: CLO:0037372
+                    name: HEK293T cell
+                  - system: https://www.ncbi.nlm.nih.gov/taxonomy
+                    code: NCBI:txid9606
+                    name: Homo sapiens
+              profilingStrategy: barcode sequencing
+              sequencingReadType: single-segment (short read)
+
+
