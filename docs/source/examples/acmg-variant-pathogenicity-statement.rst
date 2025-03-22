@@ -1,6 +1,6 @@
-.. _acmg-variant-pathogenicity-statement-simple:
+.. _acmg-variant-pathogenicity-statement-example:
 
-ACMG Variant Pathogenicity Statement, Simple
+ACMG Variant Pathogenicity Statement Example
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Description:**
