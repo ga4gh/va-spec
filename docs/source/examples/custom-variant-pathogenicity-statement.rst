@@ -5,10 +5,10 @@ Custom Variant Pathogenicity Statement Example
 
 **Building Custom Statement Models:**
   
-  * Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a Profile to be specifically defined for it.
-  * The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pusuing strict alignment with a particular community guidelines.
-  * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
- * For example, starting with the core Statement<Statement> class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and the permissive core Statement attributes will not impose community-specific constraints around representation of additional information about the Statement (e.g. strength, provenance, source documents, etc).
+* Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a Profile to be specifically defined for it.
+* The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pusuing strict alignment with a particular community guidelines.
+* Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
+* For example, starting with the core Statement<Statement> class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and the permissive core Statement attributes will not impose community-specific constraints around representation of additional information about the Statement (e.g. strength, provenance, source documents, etc).
   
 **Example Description:**
 
