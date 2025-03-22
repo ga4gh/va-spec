@@ -11,6 +11,6 @@ Additional examples of real data from implementing systems can be found in the `
   .. toctree::
    :titlesonly:
 
-   acmg-variant-pathogenicity-statement-simple
+   acmg-variant-pathogenicity-statement
    acmg-variant-pathogenicity-statement-with-evidence
-   custom-variant-pathogenicity-statement-simple
+   custom-variant-pathogenicity-statement
