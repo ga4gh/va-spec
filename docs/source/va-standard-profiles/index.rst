@@ -46,7 +46,7 @@ The :ref:`data example here<variant-pathogenicity-statement-example>` illustrate
   - Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not require a Profile be specifically defined for it.
   - The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
   - Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
-  - For example, starting with the core :ref:`Statement<Statement` class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and use other Statement attributes and core classes to represent additional information about the Statement (e.g. strength, provenance, source documents, etc).
+  - For example, starting with the core :ref:`Statement<Statement>` class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and use other Statement attributes and core classes to represent additional information about the Statement (e.g. strength, provenance, source documents, etc).
   - The `data example here <https://github.com/ga4gh/va-spec/blob/|github_version|/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_ illustrates application of this approach to create non-ACMG-compliant representations of ClinVar pathogenicity statements.
 
 
