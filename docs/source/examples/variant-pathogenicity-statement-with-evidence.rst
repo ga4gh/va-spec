@@ -1,7 +1,7 @@
-.. _variant-pathogenicity-statement-with-evidence:
+.. _acmg-variant-pathogenicity-statement-with-evidence:
 
-Variant Pathogenicity Statement, with Evidence
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ACMG Variant Pathogenicity Statement, with Evidence
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 **Description:**
 
