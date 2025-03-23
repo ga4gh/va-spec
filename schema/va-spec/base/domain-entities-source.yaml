@@ -55,7 +55,7 @@ $defs:
            - AND
            - OR
         $comment: >-
-          The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals
+          The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
           that manfiest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate
           statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to
           make a conclusion about each condition individually.  In such cases, it would be misleading to create separate statements
@@ -106,7 +106,7 @@ $defs:
            - AND
            - OR
         $comment: >-
-          The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals
+          The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
           that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical
           analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a
           conclusion about response to each therapy individually.
