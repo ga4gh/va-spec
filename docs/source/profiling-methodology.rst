@@ -3,26 +3,25 @@
 Profiling Methodology
 !!!!!!!!!!!!!!!!!!!!!
 
-``WORK IN PROGRESS: PLEASE COME BACK SOON``
-
---------------
 
 Overview
 ########
-In practice, application of the VA-Spec to represent actual data requires a 'Profiling' process, in which the generic GKS Core-IM is specialized represent types of Statements or Study Results.
+In practice, the schema used to represent actual data are 'profiles' which constrain and/or extend core Statement, Study Reuslt, and Evidence Line classes to support a specific type of variant knowledge. 
 
-For example, the figure below shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements.
+The VA-Spec defines a **Profiling Methodology** which specifies the types of specializations and extensions that are permitted. 
 
-Note that these profiles exhibit very different levels of complexity, to support the specific evidence and provenance requirements for each type of Statement.
+The diagram below illustrates the types of specializations defined in authoring a Varaint Pathogenicity Proposition and Statmenet profile, based here on temrinological conventions of the ACMG Variant Interpretation Guidelines. 
 
-.. _statement_profiling
+.. _profiling_example
 
-.. figure:: images/statement-profiling.PNG
+.. figure:: images/profiling-example.png
 
-   Profiling of the GKS Core-IM
+    Profiling Specializations defeind in Varint Pathogenicity profiles.
+
+   (A) Core Proposition and Statement classes and a subset of their attirbutes. (B) ACMG-based Variant Pathogenicity and Statement profiles derived from these core classes, with specializations highlighted in green. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
 
 
-**Profiling Tasks supported by the methodology include:**
+**Profiling operations supported by the methodology, and illustrated in the example above, include:**
 
 .. list-table::
    :class: clean-wrap
@@ -30,42 +29,18 @@ Note that these profiles exhibit very different levels of complexity, to support
    :align: left
    :widths: auto
 
-   *  - Profiling Task
+   *  - Profiling Operation
       - Example
-   *  - Select a subset of classes and attributes needed to represent the Statement/use case of interest
-      - Implementers may choose not to use the ``Evidence Line` class and related attributes in their profile.
-   *  - Define domain-specific subtypes of general purpose Core IM classes
-      - Specialize ``Statement`` -> ``VariantPathogenicityStatement``
-   *  - Specialize attributes to capture domain-specific information
-      - Specialize ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
-   *  - Define or import classes for domain entities that profiles Statements are about
-      - For a Variant Pathogenicity Statement profile, classes to represent the subject ``Variation`` and object ``Disease``
-   *  - Constrain values of Core IM attributes to take specific domain entities or data types as values
-      - Restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
-   *  - Define value sets that get bound to attributes taking coded values
-      - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ terms from the GENO Ontology).
+   *  - Defining domain-specific subtypes of general purpose Core IM classes
+      - Specialization of ``Proposition`` -> ``VariantPathogenicityProposition``
+   *  - Defining attributes to capture domain-specific information
+      -  Statement qualifiers ``geneContextQualifier`` and ``alleleoriginQualifier``
+   *  - Define or import classes for domain entities that profiles are about
+      - The Variant Pathogenicity Proposition profile, uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a ``Condition`` class defined in VA-Spec
+   *  - Constrain values of core attributes to take specific types as values
+      - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
+   *  - Define value sets and binding them to attributes taking coded values.
+      - Restricting nested fields in the MappableConcept object taken by ``VariantPathogenicityStatement.classification`` to a set of enumerated values based on ACMG Guideline temrinology.
+   *  - Refining cardinality of select attributes 
+      - Making ``Statement.classification`` a required field in the ACMG Varint Variant Pathogenicity Statment.
 
-
-The Profiles that result from these activities process represent custom, domain-specific information models that can be implemented as formal schema for a particular use case or application.
-
-The figure below shows a more detailed view of how a Variant Pathogenicity Statement Profile was generated by the ClinGen Driver Project to support representation of ClinVar data.
-.. _standard-profile-from-core-im:
-
-.. figure:: images/standard-profile-from-core-im.png
-
-   Profiling of the Core-IM into a Variant Pathogenicity Statement Profile
-
-   **Legend** A Variant Pathogenicity Statement Profile is created through the profiling process whereby elements needed to support the ClinVar data. Examples of profiling specializations are shown in BLUE in the zoomed Variant Pathogenicity Statement class, including definition of this Statement subclass itself, binding of ``subject`` and ``object`` attributes to specific Domain Entity classes, definition of a specific ``qualifier`` class to capture gene context, and definition and binding of the ``predicate`` attribute to a specific enumeration of permissible values.
-
-The actual Statement Profile that results from this process is described :ref:`here <statement-profiles>`, and an example of ClinVar data structured using this profile is :ref:`here <variant-pathogenicity-statement-example>`.
-
-Guidance
-########
-
-The initial version of this methodology is informally specified as human-readable instructions, conventions, and examples.
-
-``COMING SOON``
-
-Future work will provide templates and tooling that help implement and validate the methodology and its outputs.
-
-Stay tuned for more on this . . .
