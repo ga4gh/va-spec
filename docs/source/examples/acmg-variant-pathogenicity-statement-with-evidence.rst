@@ -18,7 +18,7 @@ Specifically, it stitches together several simpler **Statement**, **Study Result
    **Legend**: A root Pathogenicity Statement is supported by Evidence Lines based on a Cohort Allele Frequency Study Result from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a Functional Impact Statement from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a Functional Impact Study Result. Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. 
 	
 Such structures can represent the full details of how evidence is interpreted to build up support for higher order assertions of variant knowledge  - e.g. here how functional data from a study result supports a study-specific 
-conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, which is assessed as one argument supporting an ACMG-based pathogenicity
+conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, and assessed as one argument supporting an ACMG-based pathogenicity
 classification of the variant.
 
 A few additional notes about this example:
@@ -29,7 +29,7 @@ A few additional notes about this example:
 
 **Data**:
 
-.. note:: Comments in the example below will be easier to view in the source yaml file `here <https://github.com/ga4gh/va-spec/blob/1.0-docs-ballot-v2/examples/acmg-variant-pathogenicity-statement-with-evidence.yaml>`_, which affords the option of a wider browser window.
+.. note:: Comments in the example below will be easier to view in the `source yaml file here <https://github.com/ga4gh/va-spec/blob/1.0-docs-ballot-v2/examples/acmg-variant-pathogenicity-statement-with-evidence.yaml>`_, which affords the option of a wider browser window.
 
 .. code-block:: yaml
 
