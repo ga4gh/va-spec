@@ -15,14 +15,13 @@ Specifically, it stitches together several simpler **Statement**, **Study Result
 
    High Level Structure of the Data Example
 
-   **Legend**: A root Pathogenicity Statement is supported by Evidence Lines based on a Cohort Allele Frequency Study Result from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a Functional Impact Statement from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a Functional Impact Study Result. Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. 
+   **Legend** A root **Pathogenicity Statement** is supported by **Evidence Lines** based on a **Cohort Allele Frequency Study Result** from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a **Functional Impact Statement** from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a **Functional Impact Study Result**. Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. 
 	
 Such structures can represent the full details of how evidence is interpreted to build up support for higher order assertions of variant knowledge  - e.g. here how functional data from a study result supports a study-specific 
-conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, and assessed as one argument supporting an ACMG-based pathogenicity
+conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, which is assessed as one argument supporting an ACMG-based pathogenicity
 classification of the variant.
 
 A few additional notes about this example:
-
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
 * It omits full representations of `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects that are subjects of Statements and Study Results in the data - as these are large structures that are the remit of other GKS Specifications.
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
@@ -95,7 +94,6 @@ A few additional notes about this example:
       type: Document
       pmid: 25741868
       name: ACMG Guidelines, 2015
-      
   hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement 
   - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
     type: EvidenceLine   
@@ -170,7 +168,14 @@ A few additional notes about this example:
               iris:
                 - https://identifiers.org/ncbigene:5728
             name: PTEN
-          experimentalContextQualifier: ex:Experiment001   # this qualifier is able to take a custom, data provider-defined object to describe the experiment in which the reported impact was determined. Full representtion of this object is provided at the end of the example.       
+          experimentalContextQualifier:      # this qualifier is able to take a custom, data provider-defined object to describe the experiment in which the reported impact was determined. A condensed example is shown here, but an real and complete example can be found in the Exp-Var-Func-Impact-Statement-01.yaml test fixtures file.
+            title: KCNQ4 VAMP Seq Expt 001         
+            description: Multiplex assessment of KCNQ4 protein variant abundance by massively parallel sequencing
+            phenotypicAssay: flow cytometry
+            modelSystem: immortalized human cells
+            variantLibrarySystem: oligo-directed mutagenic PCR
+            profilingStrategy: barcode sequencing
+            sequencingReadType: single-segment (short read)
           direction: supports           # indicates that the Statement supports the assessed impact Proposition above (i.e. says that the subject Variant does impact the function of the object Gene) 
           classification:               # sumamrizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
             primaryCoding:
@@ -241,80 +246,3 @@ A few additional notes about this example:
     value: no assertion criteria provided
   - name: clinvarSubmittedClassification
     value: Pathogenic
-
-
- # An Experimental description providing qualifying context for the ExperimentalVariantFunctionalImpactStatement
- # used as evidence for the Pathogneicity classification. Note that the structure of this object is defined by 
- # data provider, and is not part of the VA-Spec standard. 
-        ex:Experiment001
-          title: PTEN VAMP-seq
-          document:
-            title: >-
-              Multiplex assessment of protein variant abundance by massively parallel
-              sequencing
-            system:
-              Nature Genetics
-            date: "2018-05-21"
-            ref: https://doi.org/10.1038/s41588-018-0122-z
-            datasets:
-              - system: MaveDB
-                accession: urn:mavedb:00000013-a
-                ref: https://mavedb.org/#/experiments/urn:mavedb:00000013-a
-                description: processed scores, including scores for each replicate experiment
-              - system: BioProject
-                accession: PRJNA428380
-                ref: https://www.ncbi.nlm.nih.gov/bioproject/PRJNA428380
-                description: raw sequencing data
-            variantLibrary:
-              scope:
-                type: coding
-              targetSequences:
-                - sequence: "ATGACAGCCATCA..."        # full sequence is ~1200 nts,  ommitted for space
-                  sequenceAlphabet: DNA
-              generationMethod:
-                type: in-vitro construct library
-               system: oligo-directed mutagenic PCR
-                integration: extra-local construct insertion
-                description: Integration using Tet-on landing pad system
-              deliveryMethod:
-                type: chemical or heat shock transformation
-            phenotypicAssay:
-              dimensionality:
-                type: single-dimensional data
-              replication:
-                type: biological and technical
-                description: 8 biological replicate experiments were performed from three
-                  different transfections (4, 3, and 1 experimental replicate for these
-                  transfections). Technical replicates were performed as part of QC, but
-                  the technical replicates were collapsed and analyzed as one experiment
-                  after passing.
-              method:
-                type: flow cytometry assay
-                description: VAMP-seq
-              relevance:
-                - system: https://www.omim.org/
-                  code: "601728"
-                  name: PHOSPHATASE AND TENSIN HOMOLOG; PTEN
-                - system: https://www.omim.org/
-                  code: "158350"
-                  name: COWDEN SYNDROME 1; CWS1
-                - system: https://mondo.monarchinitiative.org/
-                  code: MONDO:0017623
-                  name: PTEN hamartoma tumor syndrome
-                - system: https://mondo.monarchinitiative.org/
-                  code: MONDO:0017623
-                  name: Cowden syndrome 1
-              modelSystem:
-                type: immortalized human cells
-                description: HEK 293T TetBxb1BFP
-                codings:
-                  - system: https://www.ebi.ac.uk/ols/ontologies/clo
-                    code: CLO:0037372
-                    name: HEK293T cell
-                  - system: https://www.ncbi.nlm.nih.gov/taxonomy
-                    code: NCBI:txid9606
-                    name: Homo sapiens
-              profilingStrategy: barcode sequencing
-              sequencingReadType: single-segment (short read)
-
-
