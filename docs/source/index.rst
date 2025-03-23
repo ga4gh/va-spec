@@ -11,7 +11,7 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
 * :ref:`VA Core Model <va-core-model>`
    Detailed descriptions and implementation guidance for the classes and attributes in the foundational VA Core Model.
-* :ref:`VA Profiles <va-standard-profiles>`
+* :ref:`VA Profiles <va-profiles>`
    Profiles defined for specific types of Statements, Evidence Lines, Propositions, and Study Results, provided as computable json schema.
 * :ref:`A Reference Implementation <reference-implementation>`
    Documentation about code libraries provided to facilitate implementation of the VA-Spec.
