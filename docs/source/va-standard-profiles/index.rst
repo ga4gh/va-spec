@@ -60,4 +60,3 @@ The :ref:`data example here<variant-pathogenicity-statement-with-evidence>` illu
 
    base-profiles/index
    community-profiles/index
-   community-profiles/index
