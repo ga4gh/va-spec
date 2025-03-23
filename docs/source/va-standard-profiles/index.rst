@@ -9,13 +9,13 @@ Profiles are authored as YAML-based specifications, from which machine-readable 
 
 The VA-Spec currently supports profiles of four Core Model classes:
 
- - :ref:`Statement<Statement>` Profiles support assertions of general knowledge about a variant (e.g. classification of the **PTEN:c.35A>T(p.Asn12Ile)** variant as likely pathogenic in the `ClinVar knowledgebase <https://www.ncbi.nlm.nih.gov/clinvar/RCV001214844.7/>`_).
+ - :ref:`Statement Profiles <Statement>` support assertions of general knowledge about a variant (e.g. classification of the **PTEN:c.35A>T(p.Asn12Ile)** variant as likely pathogenic in the `ClinVar knowledgebase <https://www.ncbi.nlm.nih.gov/clinvar/RCV001214844.7/>`_).
 
- - :ref:`Evidence Line<EvidenceLine>` Profiles describe how information is interpreted as evidence supporting or disputing a possible fact (Proposition) that may ultimately be asserted as true in a Statement (e.g. how data from an experimental functional impact analysis are interpreted to provide strong evidence supporting  an assertion that **PTEN:c.35A>T(p.Asn12Ile)** is pathogenic).
+ - :ref:`Evidence Line Profiles <EvidenceLine>` describe how information is interpreted as evidence supporting or disputing a possible fact (Proposition) that may ultimately be asserted as true in a Statement (e.g. how data from an experimental functional impact analysis are interpreted to provide strong evidence supporting  an assertion that **PTEN:c.35A>T(p.Asn12Ile)** is pathogenic).
 
- - :ref:`Study Result <StudyResult>` Profiles capture collections of data items about a specific variant from a particular study or analysis (e.g. functional impact data about **PTEN:c.35A>T(p.Asn12Ile)** from the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_). Study Results are often used to describe data used as evidence to support higher order assertions such as pathogenicity, oncogenicity, diagnostic, or prognostic classifications.
+ - :ref:`Study Result Profiles <StudyResult>` capture collections of data items about a specific variant from a particular study or analysis (e.g. functional impact data about **PTEN:c.35A>T(p.Asn12Ile)** from the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_). Study Results are often used to describe data used as evidence to support higher order assertions such as pathogenicity, oncogenicity, diagnostic, or prognostic classifications.
 
- - :ref:`Proposition<Proposition>` Profiles are used exclusively within Statement and Evidence Line objects - where they encapsulate the semantics of the possible fact that may be asserted in a Statement, or against which evidence may be assessed in an Evidence Line (e.g. a proposition that **"PTEN:c.35A>T(p.Asn12Ile)** is causal for Hamartoma Tumor Syndrome").
+ - :ref:`Proposition Profiles <Proposition>` are used exclusively within Statement and Evidence Line objects - where they encapsulate the semantics of the possible fact that may be asserted in a Statement, or against which evidence may be assessed in an Evidence Line (e.g. a proposition that **"PTEN:c.35A>T(p.Asn12Ile)** is causal for Hamartoma Tumor Syndrome").
 
 The :ref:`data example here<variant-pathogenicity-statement-with-evidence>` illustrates how profiles of these different types can be used together to represent a variant pathogenicity classification.
 
