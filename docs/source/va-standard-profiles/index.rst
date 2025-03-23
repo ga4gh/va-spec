@@ -23,19 +23,19 @@ The :ref:`data example here<variant-pathogenicity-statement-with-evidence>` illu
 
 .. _base-vs-community-profiling:
 
-**Base Profiles vs Community Profiles:**
-   In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
+**Base Profiles vs Community Profiles:**  
+ In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
 
-   - **Base Profiles**:
+- **Base Profiles**:
 
-     - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-     - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
+  - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
+  - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 
-   - **Community Profiles**:
+- **Community Profiles**:
 
-     - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
-     - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
-     - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
+  - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
+  - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
+  - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
 -----
 
