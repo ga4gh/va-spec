@@ -15,9 +15,9 @@ The VA-Spec defines a **Profiling Methodology** which specifies the types of spe
 
 .. figure:: images/profiling-methodology.png
 
-   Profiling specializations defined in Variant Pathogenicity profiles.
+   Examples of specializations defined in Variant Pathogenicity profiles.
 
-   **Legend**: (**A**) Core Proposition and Statement classes and a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with specializations highlighted in green. Text in curly braces are enumeratons. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
+   (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumeratons. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
 
 Profiling Tasks
 ###############
