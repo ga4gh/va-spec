@@ -5,7 +5,7 @@ ACMG Variant Pathogenicity Statement Example (with Evidence)
 
 **Description:**
 
-The data below builds on the simple ClinVar-GKS example described :ref:`here <variant-pathogenicity-statement-example>`, embellishing its base `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
+The data below builds on the simple ClinVar-GKS example described :ref:`here <acmg-variant-pathogenicity-statement-example>`, embellishing its base ClinVar record with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
 
 Specifically, it stitches together several simpler **Statement**, **Study Result**, and **Evidence Line** data examples from the `test fixtures directory <https://github.com/ga4gh/va-spec/tree/1.0.0-ballot.2025-03/tests/fixtures>`_, to reveal how these objects can be combined to build the rich evidence and provenance structure below. 
 
