@@ -60,8 +60,7 @@ The example below illustrates how such a scenario may be represented using the V
        predicate: isCausalFor
        objectConditon: Costello Syndrome
        geneContextQualifier: HRAS
-   evidenceItems:
-     - id: FunctionalImpactStudyResult001     # study result details omitted for space
+   evidenceItems: FunctionalImpactStudyResult001       # full StudyResult object omitted for space
    directionOfEvidenceProvided: supports
    strengthOfEvidenceProvided: moderate
    specifiedBy: PM1
@@ -69,14 +68,8 @@ The example below illustrates how such a scenario may be represented using the V
    # As a target proposition in an EvidenceLine based on cohort allele frequency data, created at t1 by Curator 2
    id: EvidenceLine002
    type: EvidenceLine
-   targetProposition:
-     - id: VarPathProposition001
-       type: VariantPathogenicityProposition
-       subjectVariant: NM_005343.4:c.173C>T
-       predicate: isCausalFor
-       objectConditon: Costello Syndrome
-   evidenceItems:
-     - id:alleleCohortFrequencyStudyResult001     # full StudyResult object omitted for space
+   targetProposition: VarPathProposition001    # no need to duplicate an inlined representation, as this Proposition is already defiend in the message. 
+   evidenceItems: AlleleCohortFrequencyStudyResult001   # full StudyResult object omitted for space
    directionOfEvidenceProvided: supports
    strengthOfEvidenceProvided: moderate
    specifiedBy: PM2
@@ -84,12 +77,7 @@ The example below illustrates how such a scenario may be represented using the V
    # As an asserted proposition in a VariantPathogenicityStatement, created at t2 by Curator 3 who puts forth the proposition as true and classifies the variant as 'pathogenic' based on the Evidence Lines above
    id: Statement001
    type: Statement
-   proposition:
-     - id: VarPathProposition001
-       type: VariantPathogenicityProposition
-       subjectVariant: NM_005343.4:c.173C>T
-       predicate: isCausalFor
-       objectConditon: Costello Syndrome
+   proposition: VarPathProposition001          # no need to duplicate an inlined representation, as this Proposition is already defiend in the message. 
    direction: supports
    strength: definitive
    classification: pathogenic
