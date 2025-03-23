@@ -42,7 +42,7 @@
                }
             },
             "classification": {
-               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the \u2018code\u2019 field of the Coding object that is nested inside a MappableConcept's primary coding.",
+               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the enumerated value set here is bound to the `code` field of the Coding object that is nested inside a MappableConcept's primary coding.",
                "properties": {
                   "primaryCoding": {
                      "allOf": [
