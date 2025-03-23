@@ -22,7 +22,7 @@ $defs:
     - properties:
         targetProposition:
           description: >-
-            A Variant Oncoogenicity Proposition against which functional impact information was assessed,
+            A Variant Oncogenicity Proposition against which functional impact information was assessed,
             in determining the strength and direction of support this information provides as evidence.
           $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantOncogenicityProposition"
         strengthOfEvidenceProvided:

@@ -24,7 +24,7 @@ $defs:
         proposition:
           $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantOncogenicityProposition"
           description: >-
-            A proposition about the oncogenicity of a varaint, for which the study provides evidence.
+            A proposition about the oncogenicity of a variant, for which the study provides evidence.
             The validity of this proposition, and the level of confidence/evidence supporting it,
             may be assessed and reported by the Statement.
         strength:
