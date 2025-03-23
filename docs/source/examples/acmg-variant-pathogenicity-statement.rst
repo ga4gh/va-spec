@@ -12,6 +12,8 @@ ACMG Variant Pathogenicity Statement Example
 
 **Data**:
 
+.. note:: Comments in the example below will be easier to view in the `source yaml file here <https://github.com/ga4gh/va-spec/blob/1.0-docs-ballot-v2/examples/acmg-variant-pathogenicity-statement.yaml>`_, which affords the option of a wider browser window.
+
 .. code-block:: yaml
 
  SCV000778434.1:
