@@ -29,6 +29,8 @@ A few additional notes about this example:
 
 **Data**:
 
+.. note:: Comments in the example below will be easier to view in the source yaml file `here <https://github.com/ga4gh/va-spec/blob/1.0-docs-ballot-v2/examples/acmg-variant-pathogenicity-statement-with-evidence.yaml>`_, which affords the option of a wider browser window.
+
 .. code-block:: yaml
 
  ex.Statement001:              # Based on the ClinVar record SCV000778434.1
