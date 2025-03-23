@@ -45,5 +45,5 @@ Some TherapyGroup attributes are inherited from :ref:`gks-core:Element`.
    *  - membershipOperator
       -
       - string
-      - 0..1
+      - 1..1
       - The logical relationship between members of the group, that indicates how they were applied in treating participants in a study.  The value 'AND' indicates that all therapies in the group were applied in combination to a given patient or subject. The value 'OR' indicates that each therapy was applied individually to a distinct subset of participants in the cohort that was interrogated in a given study.

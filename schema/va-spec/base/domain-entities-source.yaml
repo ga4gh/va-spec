@@ -62,9 +62,9 @@ $defs:
           about each condition on its own.
           Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single
           cohort that is large enough support a statistically significant results about this grouping of related conditions.
-        required:
-          - conditions
-          - membershipOperator
+    required:
+      - conditions
+      - membershipOperator
   # Therapeutic
   Therapeutic:
     maturity: trial use
@@ -114,6 +114,6 @@ $defs:
           are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
           Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the
           individual therapies used in the study in a TherapyGroup.
-        required:
-          - therapies
-          - membershipOperator
+    required:
+      - therapies
+      - membershipOperator
