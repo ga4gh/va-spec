@@ -5,18 +5,21 @@ ACMG Variant Pathogenicity Statement Example (with Evidence)
 
 **Description:**
 
-* The data below builds on the simple ClinVar-GKS example described :ref:`here <variant-pathogenicity-statement-example>`, embellishing is base `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
-* It stitches together several more atomic examples of **Statement**, **Study Result**, and **Evidence Line** data from the `test fixtures <https://github.com/ga4gh/va-spec/tree/1.0.0-ballot.2025-03/tests/fixtures>`_ directory, to reveal how these classes can be combined to build rich evidence and provenance structures. 
-* The diagram below illustrates the high level structure of this example, where a root **Pathogenicity Statement** is supported by **Evidence Lines** based on a **Cohort Allele Frequency Study Result** from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a **Functional Impact Statement** from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a **Functional Impact Study Result**. 
-			
+The data below builds on the simple ClinVar-GKS example described :ref:`here <variant-pathogenicity-statement-example>`, embellishing its base `ClinVar SCV000778434.1 record <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
+
+Specifically, it stitches together several simpler **Statement**, **Study Result**, and **Evidence Line** data examples from the `test fixtures directory <https://github.com/ga4gh/va-spec/tree/1.0.0-ballot.2025-03/tests/fixtures>`_, to reveal how these objects can be combined to build the rich evidence and provenance structure below. 
+
 .. variant-pathogenicity-statement-with-evidence:
 
 .. figure:: ../images/variant-pathogenicity-statement-with-evidence.png
 
    High Level Structure of the Data Example
 
-   **Legend** Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. The narrative to the side illustrates how these evidence structures are interpreted to build up support for the root Pathogenicity Statement.
-
+   **Legend** A root **Pathogenicity Statement** is supported by **Evidence Lines** based on a **Cohort Allele Frequency Study Result** from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a **Functional Impact Statement** from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a **Functional Impact Study Result**. Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. 
+	
+Such structures can represent the full details of how evidence is interpreted to build up support for higher order assertions of variant knowledge  - e.g. here how functional data from a study result supports a study-specific 
+conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, which is assessed as one argument supporting an ACMG-based pathogenicity
+classification of the variant.
 
 A few additional notes about this example:
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
