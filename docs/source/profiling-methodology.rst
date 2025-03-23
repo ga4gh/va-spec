@@ -7,11 +7,9 @@ Profiling Methodology
 Overview
 ########
 
-In practice, VA-Spec schema used to represent actual data are 'Profiles' defined to constrain and/or extend core Statement, Study Result, and Evidence Line classes to support a specific type of variant knowledge. 
+In practice, VA-Spec schema used to represent actual data are **'Profiles'** defined to constrain and/or extend core Statement, Study Result, and Evidence Line classes to support a specific type of variant knowledge. 
 
-The VA-Spec defines a **Profiling Methodology** which specifies the types of specializations and extensions that are permitted. 
-
-The diagram below illustrates the types of specializations defined in authoring a Variant Pathogenicity Proposition and Statement profile, based here on terminological conventions of the ACMG Variant Interpretation Guidelines. 
+The VA-Spec defines a **Profiling Methodology** which specifies the types of specializations and extensions that are permitted in authoring profiles, as illustrated in the diagram and detailed in the 'Profiling Tasks` below. 
 
 .. _profiling-methodology
 
@@ -19,7 +17,7 @@ The diagram below illustrates the types of specializations defined in authoring 
 
     Profiling specializations defined in Variant Pathogenicity profiles.
 
-   (A) Core Proposition and Statement classes and a subset of their attributes. (B) ACMG-based Variant Pathogenicity and Statement profiles derived from these core classes, with specializations highlighted in green. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
+   (A) Core Proposition and Statement classes and a subset of their attributes. (B) ACMG-based Variant Pathogenicity and Statement profiles derived from these core classes, with specializations highlighted in green. Text in curly braces are enumeratons. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
 
 
 Profiling Tasks
