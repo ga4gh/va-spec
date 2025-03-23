@@ -5,7 +5,7 @@ VA Profiles
 
 VA Profiles extend generic VA Core Model classes with specializations to support a particular type of knowledge (e.g. a variant pathogenicity), and/or align with established community terminology and curation conventions (e.g. the ACMG-2015 Guidelines)
 
-Profiles are authored as YAML-based specifications, from which machine-readable JSON Schema are derived and used by implementers to structure, validate, and exchange variant data in their systems.
+A :ref:`Profiling Methodology <profiling-methodology>` specifies how profiles are authored as YAML-based specifications, from which machine-readable JSON Schema are derived and used by implementers to structure, validate, and exchange variant data in their systems.
 
 The VA-Spec currently supports profiles of four Core Model classes:
 
