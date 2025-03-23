@@ -15,13 +15,14 @@ Specifically, it stitches together several simpler **Statement**, **Study Result
 
    High Level Structure of the Data Example
 
-   **Legend** A root **Pathogenicity Statement** is supported by **Evidence Lines** based on a **Cohort Allele Frequency Study Result** from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a **Functional Impact Statement** from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a **Functional Impact Study Result**. Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. 
+   **Legend**: A root Pathogenicity Statement is supported by Evidence Lines based on a Cohort Allele Frequency Study Result from `gnomAD <https://gnomad.broadinstitute.org/>`_, and a Functional Impact Statement from `MAVE DB <https://mavedb.org/>`_, which itself is supported by a Functional Impact Study Result. Boxes represent objects comprising the central axis of the data, with italicized text indicating what each object reports to be true. 
 	
 Such structures can represent the full details of how evidence is interpreted to build up support for higher order assertions of variant knowledge  - e.g. here how functional data from a study result supports a study-specific 
-conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, which is assessed as one argument supporting an ACMG-based pathogenicity
+conclusion about the functional impact of a variant, which is interprted as 'strong' evidence 'supporting' for the variant's possible pathogenicity, and assessed as one argument supporting an ACMG-based pathogenicity
 classification of the variant.
 
 A few additional notes about this example:
+
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
 * It omits full representations of `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects that are subjects of Statements and Study Results in the data - as these are large structures that are the remit of other GKS Specifications.
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
