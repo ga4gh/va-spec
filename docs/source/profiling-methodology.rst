@@ -4,21 +4,21 @@ Profiling Methodology
 !!!!!!!!!!!!!!!!!!!!!
 
 
-Overview
-########
-In practice, the schema used to represent actual data are 'profiles' which constrain and/or extend core Statement, Study Reuslt, and Evidence Line classes to support a specific type of variant knowledge. 
+**Overview**
+
+In practice, the schema used to represent actual data are 'profiles' which constrain and/or extend core Statement, Study Result, and Evidence Line classes to support a specific type of variant knowledge. 
 
 The VA-Spec defines a **Profiling Methodology** which specifies the types of specializations and extensions that are permitted. 
 
-The diagram below illustrates the types of specializations defined in authoring a Varaint Pathogenicity Proposition and Statmenet profile, based here on temrinological conventions of the ACMG Variant Interpretation Guidelines. 
+The diagram below illustrates the types of specializations defined in authoring a Variant Pathogenicity Proposition and Statement profile, based here on terminological conventions of the ACMG Variant Interpretation Guidelines. 
 
-.. _profiling_example
+.. _profiling-methodology
 
-.. figure:: images/profiling-example.png
+.. figure:: images/profiling-methodology.png
 
-    Profiling Specializations defeind in Varint Pathogenicity profiles.
+    Profiling specializations defined in Variant Pathogenicity profiles.
 
-   (A) Core Proposition and Statement classes and a subset of their attirbutes. (B) ACMG-based Variant Pathogenicity and Statement profiles derived from these core classes, with specializations highlighted in green. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
+   (A) Core Proposition and Statement classes and a subset of their attributes. (B) ACMG-based Variant Pathogenicity and Statement profiles derived from these core classes, with specializations highlighted in green. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
 
 
 **Profiling operations supported by the methodology, and illustrated in the example above, include:**
@@ -42,5 +42,5 @@ The diagram below illustrates the types of specializations defined in authoring 
    *  - Define value sets and binding them to attributes taking coded values.
       - Restricting nested fields in the MappableConcept object taken by ``VariantPathogenicityStatement.classification`` to a set of enumerated values based on ACMG Guideline temrinology.
    *  - Refining cardinality of select attributes 
-      - Making ``Statement.classification`` a required field in the ACMG Varint Variant Pathogenicity Statment.
+      - Making ``Statement.classification`` a required field in the ACMG Varint Variant Pathogenicity Statement.
 
