@@ -89,7 +89,7 @@ The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <
 Condition Set
 @@@@@@@@@@@@@
 
-.. include::  ../def/va-spec/Condition.rst
+.. include::  ../def/va-spec/ConditionSet.rst
 
 **Examples**
   - A set of |two_co-occurring_phenotypes|
