@@ -45,5 +45,5 @@ Some ConditionSet attributes are inherited from :ref:`gks-core:Element`.
    *  - membershipOperator
       -
       - string
-      - 0..1
+      - 1..1
       - The logical relationship between members of the set, that indicates how they manifest in patients/research subjects. The value 'AND' indicates that all conditions in the set co-occur together in a given patient or subject. The value 'OR' indicates that only one condition in the set manifests in each participant interrogated in a given study.
