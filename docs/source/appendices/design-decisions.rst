@@ -38,7 +38,7 @@ Use of Propositions
 
 As noted above, **Proposition** objects are used to encapsulate the "SPOQ" semantics of possible facts that are asserted or evaluated in Statements, and against which evidence is evaluated in Evidence Lines.  The ``type`` of a given Statement or Evidence Line object is not directly declared in the data, but instead inferred from the ``type`` of the Proposition is holds.
 
-This design pattern provides re-usable Proposition objects that can be referenced and re-used in these contexts, so the model does not need to duplicate the definition of SPOQ semantics for different types of variant knowledge, or create parallel hierarchies of Statement and Proposition types. Proposition objects also provides an anchor around which all evidence around a given possible fact can be aggregated, across many possible Statements and Evidence Lines that use a given proposition - for a more comprehensive view of the support for or against this possible fact.
+This design pattern provides re-usable Proposition objects that can be referenced and re-used in these contexts (see :ref:`example here <proposition-utility-example>`), so the model does not need to duplicate  descriptions the definition of SPOQ semantics, or create parallel hierarchies of Statement and Proposition types. Proposition objects may also provide a focal point around which all evidence around a given possible fact can be aggregated, across many possible Statements and Evidence Lines that use a given proposition - for a more comprehensive view of the support for or against this possible fact.
 
 A trade-off of this design decision is the deeper nesting structure that results in the data itself, and more complicated deserialization logic needed to determine what type of Statement is being parsed.
 
@@ -53,11 +53,6 @@ The VA-Spec does not define detailed models for representing such domain entitie
 Where suitable standards exist they are incorporated into the VA-Spec - as we have done with the `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_ and `CatVRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ models for representing genetic variation.
 
 Version 1 of the VA-Spec represents all other Domain Entity types using a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which bundles an established code for the entity with metadata and mappings for the code and code system. Where there is a need to represent collections of more than one Domain Entity, classes are defined to capture these as sets of Mappable Concepts (e.g. ``ConditionSet``, ``Therapy Group``). More information and examples of Domain Entity representation can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/domain-entities.html>`_.
-
-
-Profiling Approach
-##################
-
 
 
 Profile Authoring Mechanisms

@@ -1,0 +1,32 @@
+therapeutic_reponse_study_statement_source_yaml = schema/va-spec/aac-2017/therapeutic-response-study-statement-profile-source.yaml
+therapeutic_reponse_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement
+diagnostic_study_statement_source_yaml = schema/va-spec/aac-2017/diagnostic-study-statement-profile-source.yaml
+diagnostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement
+prognostic_study_statement_source_yaml = schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml
+prognostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantPrognostictudyStatement
+
+oncogenicity_functional_impact_evidence_line_source_yaml = schema/va-spec/ccv-2022/oncogenicity-functional-impact-evidence-line-profile-source.yaml
+oncogenicity_functional_impact_evidence_line_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityFunctionalImpactEvidenceLine
+
+oncogenicity_study_statement_source_yaml = schema/va-spec/ccv-2022/oncogenicity-study-statement-profile-source.yaml
+oncogenicity_study_statement_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityStudyStatement
+
+pathogenicity_functional_impact_evidence_line_source_yaml = schema/va-spec/acmg-2015/pathogenicity-functional-impact-evidence-line-profile-source.yaml
+pathogenicity_functional_impact_evidence_line_json_schema = schema/va-spec/acmg-2015/json/VariantPathogenicityFunctionalImpactEvidenceLine
+
+pathogenicity_statement_source_yaml = schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml
+pathogenicity_statement_json_schema = schema/va-spec/acmg-2015/json/VariantPathogenicityStatement
+
+custom_pathogenicity_statement_example_source_yaml = examples/custom-variant-pathogenicity-statement.yaml
+simple_test_fixtures_example = tests/fixtures/VA-ClinVar-SCV-Example-001.yaml
+pathogenicity_statement_example_source_yaml = examples/acmg-variant-pathogenicity-statement.yaml
+acmg_pathogenicity_statement_with_evidence_example_source_yaml = examples/acmg-variant-pathogenicity-statement-with-evidence.yaml
+
+
+brca2_gene = examples/mappable-concept-gene.yaml
+arsenic_trioxide_&_tretinoin = tests/fixtures/therapy-group.yaml
+afatinib = tests/fixtures/therapeuticAgent.yaml
+two_co-occurring_phenotypes = tests/fixtures/traitset.yaml
+nonsyndromic_genetic_hearing_loss = tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7
+discrete_allele = tests/fixtures/allele.yaml
+canonical_allele = examples/canonicalAllele-ex1.yaml

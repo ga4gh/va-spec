@@ -41,23 +41,46 @@ master_doc = 'index'
 release = _get_git_tag()
 version = _parse_release_as_version(release)
 
-# Detect if we are on ReadTheDocs
-on_rtd = os.environ.get('READTHEDOCS') == 'True'
+# Get version info from ReadTheDocs
+on_rtd = os.environ.get("READTHEDOCS") == "True"
+github_version = os.environ.get("READTHEDOCS_VERSION_NAME", "main") if on_rtd else "1.x"
 
-if on_rtd:
-    github_version = os.environ.get('READTHEDOCS_VERSION_NAME', '1.x')  # Default to '1.x' dev branch if not found
-else:
-    github_version = 'local'
-
-# Make GitHub version available as a substitution in .rst files
-rst_epilog = f"""
-.. |github_version| replace:: {github_version}
-"""
-
-# -- Schema doc paths --------------------------------------------------------
-
+# Load static rst_epilog from file
 rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
-rst_epilog = open(rst_epilog_fn).read().format(release=release)
+with open(rst_epilog_fn, encoding="utf-8") as f:
+    static_epilog = f.read().format(release=release)
+
+# GitHub base URL
+github_user = "ga4gh"
+github_repo = "va-spec"
+github_base = f"https://github.com/{github_user}/{github_repo}/blob/{github_version}"
+
+# Path to the file with link mappings
+link_file_path = os.path.join(os.path.dirname(__file__), "github_links.txt")
+
+# Parse and build substitutions
+dynamic_links = []
+
+with open(link_file_path, encoding="utf-8") as f:
+    for line in f:
+        # Ignore blank lines or comments
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+
+        # Parse: substitution_name = path/to/file
+        if "=" in line:
+            label, filepath = [part.strip() for part in line.split("=", 1)]
+            url = f"{github_base}/{filepath}"
+            label_text = label.replace('_', ' ').title()
+            link = f".. |{label}| replace:: `{label_text} <{url}>`__"
+            dynamic_links.append(link)
+
+# Combine everything into dynamic_epilog
+dynamic_epilog = "\n".join(dynamic_links)
+
+# Combine both static and dynamic epilogs
+rst_epilog = static_epilog  + "\n" + dynamic_epilog
 
 # -- General configuration ---------------------------------------------------
 
