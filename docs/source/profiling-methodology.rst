@@ -17,12 +17,12 @@ The VA-Spec defines a **Profiling Methodology** which specifies the types of spe
 
    Examples of specializations defined in Variant Pathogenicity profiles.
 
-   (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumeratons. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`.
+   (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumerations, which in some cases are nested inside fields of a MappableConcept. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`.
 
 Profiling Tasks
 ###############
 
-Conceptually, profiling tasks supported by the VA-Spec, and illustrated in the example above, include:
+Profiling tasks supported by the VA-Spec, and illustrated in the example above, include:
 
 .. list-table::
    :class: clean-wrap
@@ -30,14 +30,14 @@ Conceptually, profiling tasks supported by the VA-Spec, and illustrated in the e
    :align: left
    :widths: auto
 
-   *  -     Profiling Task
-      -               Example
+   *  -      Profiling Task
+      -            Example
    *  - Define domain-specific subtypes of general purpose Core Model classes
       - Specialization of ``Proposition`` into ``VariantPathogenicityProposition``
    *  - Define new attributes to capture domain-specific information
       -  The Statement qualifiers ``geneContextQualifier`` and ``alleleoriginQualifier``
    *  - Define or import classes for domain entities that profiles are about
-      - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a ``Condition`` class defined in VA-Spec
+      - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a ``Condition`` class defined in the VA-Spec itself.
    *  - Constrain values of core attributes to take specific types as values
       - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
    *  - Define value sets and binding them to select attributes.
@@ -50,18 +50,18 @@ Profile Authoring
 
 Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring different categories of Profiles.
 
-**1. Inheritance-Based Profiling** (for defining "Base" Profiles):
+**Mechanism 1: Inheritance-Based Profiling** (for authoring "Base" Profiles)
 
 - **Description**: Specializes generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-- **Mechanism**: Relies on bespoke `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  functions  and tooling to implement class inheritance (``inherits``) and attribute extension (``extends``) not natively supported by JSON Schema.
-- **Application**: "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
+- **Mechanism**: Relies on bespoke `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  *inherits* and *extends* functions, and requisite tooling, to implement class inheritance and attribute extension which are not natively supported by JSON Schema.
+- **Application**: Used in authoring "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 - **Rationale**: Allows for the types of attribute extension and addition that are applied in these Base Profiles (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
 
  **Inheritance-Based Profiling Example**:
 
 .. code-block:: yaml
 
-  # From the source yaml file that authors the Variant Pathogenicity Proposition Base Profile
+  # From the source yaml file where the Variant Pathogenicity Proposition Base Profile is authored
 
   VariantPathogenicityProposition:
     inherits: ClinicalVariantProposition           # MSP inherits keyword
@@ -80,30 +80,31 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
         description: Reports the penetrance of the pathogenic effect...
 
 
-**2. Composition-Based Profiling** (for defining "Community" Profiles):
+**Mechanism 2: Composition-Based Profiling** (for authoring "Community" Profiles)
 
 - **Description**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take.
 - **Mechanism**:  Relies on schema composition using the native JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
-- **Application**: "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>` classes, which can leverage base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
+- **Application**: Used in authoring "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>` classes, which can leverage base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
 - **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running bespoke MSP tooling
 
  **Composition-Based Profiling Example**:
 
 .. code-block:: yaml
 
-  # From the source yaml file that authors the Variant Pathogenicity Statement AMCG 2015 Community Profile
+  # From the source yaml file where the Variant Pathogenicity Statement AMCG 2015 Community Profile is authored
 
   VariantPathogenicityStatement:
     description: A Statement describing the role of a variant in causing an inherited condition.
     # JSON Schema 'allOf' keyword used for schema composition
     allOf:
     - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
+    # list of property definitions that further constrain attributes in the base Statement class
     - properties:
-        # A constraint on the core Statement.proposition attribute requiring it to take a VariantPathogenicityProposition
+        # A constraint on the Statement.proposition attribute requiring it to take a VariantPathogenicityProposition
         proposition:
           $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPathogenicityProposition"
           description: A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
-        # A constraint on the code field nested within a MappableConcepts requiring the 'strength' attribute to take specific values.
+        # A constraint on the code field nested within a MappableConcept that requires the 'strength' attribute to take specific values.
         strength:
           description: The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide for or against the proposed pathogenicity of the assessed variant.
           properties:
@@ -116,6 +117,6 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
                 const: ACMG Guidelines, 2015
 
 
-We recognize that this approach involving different mechanisms and ad hoc tooling to support authoring different subsets of profiles is not ideal, but was a necessity given aailable technologies and bandwidth at this point in development.
+We recognize that this approach involving different mechanisms and ad hoc tooling to support authoring different subsets of profiles is not ideal, but was adopted given available technologies and bandwidth at this point in development.
 
-Future versions of the VA-Spec will adopt a single, coherent, and consistent technical approach to profile authoring, which will likely leverage the `LinkML Framework <https://linkml.io/>`_ of tools (in particular, `LinkML Map <https://linkml.io/linkml-map/>`_).
+Future versions of the VA-Spec will adopt a single, coherent, and consistent technical approach and tooling support for profile authoring, which will likely leverage the `LinkML Framework <https://linkml.io/>`_ (in particular, `LinkML Map <https://linkml.io/linkml-map/>`_).
