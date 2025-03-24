@@ -37,6 +37,8 @@ The :ref:`data example here <acmg-variant-pathogenicity-statement-with-evidence>
   - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
   - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
+More information about authoring of these profiles can be found in the :ref:`Profiling Methodology <prrofiling-methodology>` page. 
+
 -----
 
 **Implementation Notes:**
