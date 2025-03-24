@@ -72,7 +72,7 @@ Condition
 
 .. include::  ../def/va-spec/Condition.rst
 
-The ``Condition`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
+The **Condition** schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
 
 **Examples**
  - |nonsyndromic_genetic_hearing_loss| as a Mappable Concept
@@ -111,7 +111,8 @@ Therapeutic
 @@@@@@@@@@@
 
 .. include::  ../def/va-spec/Therapeutic.rst
-The ``Therapeutic`` schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
+
+The **Therapeutic** schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
 
 **Examples**
   - |afatinib| as a Mappable Concept
