@@ -55,7 +55,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 
 **Artifacts**
  - |pathogenicity_statement_source_yaml|
- - |pathogenicity_statement_json_schema|  
+ - |pathogenicity_statement_json_schema|
 
 -----
 

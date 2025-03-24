@@ -7,9 +7,9 @@ Profiling Methodology
 Overview
 ########
 
-In practice, VA-Spec schema used to represent actual data are **Profiles** defined to constrain and/or extend core Statement, Study Result, and Evidence Line classes to support a specific type of variant knowledge. 
+In practice, VA-Spec schema used to represent actual data are **Profiles** defined to constrain and/or extend core Statement, Study Result, and Evidence Line classes to support a specific type of variant knowledge.
 
-The VA-Spec defines a **Profiling Methodology** which specifies the types of specializations and extensions that are permitted in authoring profiles, as illustrated in the diagram and detailed in the 'Profiling Tasks` below. 
+The VA-Spec defines a **Profiling Methodology** which specifies the types of specializations and extensions that are permitted in authoring profiles, as illustrated in the diagram and detailed in the 'Profiling Tasks` below.
 
 .. _profiling-methodology
 
@@ -17,7 +17,7 @@ The VA-Spec defines a **Profiling Methodology** which specifies the types of spe
 
    Examples of specializations defined in Variant Pathogenicity profiles.
 
-   (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumeratons. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`. 
+   (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumeratons. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`.
 
 Profiling Tasks
 ###############
@@ -42,13 +42,13 @@ Conceptually, profiling tasks supported by the VA-Spec, and illustrated in the e
       - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
    *  - Define value sets and binding them to select attributes.
       - Restricting nested fields in the MappableConcept object taken by ``VariantPathogenicityStatement.classification`` to a set of enumerated values based on ACMG Guideline temrinology.
-   *  - Refine cardinality of select attributes 
+   *  - Refine cardinality of select attributes
       - Making ``Statement.classification`` a required field in the ACMG Variant Pathogenicity Statement.
 
 Profile Authoring
 #################
 
-Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring different categories of Profiles. 
+Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring different categories of Profiles.
 
 **1. Inheritance-Based Profiling** (for defining "Base" Profiles):
 
@@ -57,7 +57,7 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
 - **Application**: "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 - **Rationale**: Allows for the types of attribute extension and addition that are applied in these Base Profiles (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
 
- **Inheritance-Based Profiling Example**: 
+ **Inheritance-Based Profiling Example**:
 
 .. code-block:: yaml
 
@@ -77,7 +77,7 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
         description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:                         # Addition of new qualifier attribute
         $refCurie: gks.core:MappableConcept
-        description: Reports the penetrance of the pathogenic effect... 
+        description: Reports the penetrance of the pathogenic effect...
 
 
 **2. Composition-Based Profiling** (for defining "Community" Profiles):
@@ -87,7 +87,7 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
 - **Application**: "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <experimental-variant-pathogenicity-functional-impact-evidence-line-acmg-2015>` classes, which can leverage base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
 - **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running bespoke MSP tooling
 
- **Composition-Based Profiling Example**: 
+ **Composition-Based Profiling Example**:
 
 .. code-block:: yaml
 
@@ -100,12 +100,12 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
     - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
     - properties:
         # A constraint on the core Statement.proposition attribute requiring it to take a VariantPathogenicityProposition
-        proposition: 
+        proposition:
           $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPathogenicityProposition"
           description: A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
-        # A constraint on the code field nested within a MappableConcepts requiring the 'strength' attribute to take specific values. 
+        # A constraint on the code field nested within a MappableConcepts requiring the 'strength' attribute to take specific values.
         strength:
-          description: The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide for or against the proposed pathogenicity of the assessed variant. 
+          description: The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide for or against the proposed pathogenicity of the assessed variant.
           properties:
             primaryCoding:
               code:
@@ -116,6 +116,6 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
                 const: ACMG Guidelines, 2015
 
 
-We recognize that this approach involving different mechanisms and ad hoc tooling to support authoring different subsets of profiles is not ideal, but was a necessity given aailable technologies and bandwidth at this point in development. 
+We recognize that this approach involving different mechanisms and ad hoc tooling to support authoring different subsets of profiles is not ideal, but was a necessity given aailable technologies and bandwidth at this point in development.
 
 Future versions of the VA-Spec will adopt a single, coherent, and consistent technical approach to profile authoring, which will likely leverage the `LinkML Framework <https://linkml.io/>`_ of tools (in particular, `LinkML Map <https://linkml.io/linkml-map/>`_).

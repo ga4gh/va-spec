@@ -23,7 +23,7 @@ The :ref:`data example here<variant-pathogenicity-statement-with-evidence>` illu
 
 .. _base-vs-community-profiling:
 
-**Base Profiles vs Community Profiles:**  
+**Base Profiles vs Community Profiles:**
  In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
 
 - **Base Profiles**:
