@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Contribution",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Contribution",
    "title": "Contribution",
    "type": "object",
    "maturity": "trial use",
@@ -44,7 +44,7 @@
          "default": "Contribution"
       },
       "contributor": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Agent",
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Agent",
          "description": "The agent that made the contribution."
       },
       "activityType": {
