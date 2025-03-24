@@ -45,26 +45,19 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A proposition about the therapeutic response associated with a variant, in the context of a particular condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - strength
       -
-      - :ref:`MappableConcept` (nested enum: Level A | Level B | Level C | Level D)
+      - :ref:`MappableConcept` (nested enum:  | )
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum: Tier I | Tier II | Tier III | Tier IV)
-      - 1..1
+      - :ref:`MappableConcept`  (nested enum:  | |  | | )
+      - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
-   *  - specifiedBy
-      -
-      - :ref:`Method`
-      - 1..1
-      - A method that specifies how the therapeutic response classification was ultimately assigned to the variant, based on assessment of evidence.
-
-.. _tresp_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/therapeutic-response-study-statement-profile-source.yaml
-.. _tresp_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement
 
 **Artifacts**
- - `Source YAML <tresp_source_yaml_>`_
- - `JSON Schema <tresp_json_schema_>`_
+
+ - |therapeutic_reponse_study_statement_source_yaml|
+ - |therapeutic_reponse_study_statement_json_schema|
 
 -----
 
@@ -103,26 +96,19 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A proposition about a diagnostic association between a variant and condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - strength
       -
-      - :ref:`MappableConcept` (nested enum: Level A | Level B | Level C | Level D)
+      - :ref:`MappableConcept` (nested enum:  | )
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum: Tier I | Tier II | Tier III | Tier IV)
-      - 1..1
+      - :ref:`MappableConcept`  (nested enum:  | |  | | )
+      - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
-   *  - specifiedBy
-      -
-      - :ref:`Method`
-      - 1..1
-      - A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of evidence.
-
-.. _diag_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/diagnostic-study-statement-profile-source.yaml
-.. _diag_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement
 
 **Artifacts**
- - `Source YAML <diag_source_yaml_>`_
- - `JSON Schema <diag_json_schema_>`_
+
+ - |diagnostic_study_statement_source_yaml|
+ - |diagnostic_study_statement_json_schema|
 
 -----
 
@@ -161,23 +147,16 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A proposition about a prognostic association between a variant and condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - strength
       -
-      - :ref:`MappableConcept` (nested enum: Level A | Level B | Level C | Level D)
+      - :ref:`MappableConcept` (nested enum:  | )
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum: Tier I | Tier II | Tier III | Tier IV)
-      - 1..1
+      - :ref:`MappableConcept`  (nested enum:  | |  | | )
+      - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
-   *  - specifiedBy
-      -
-      - :ref:`Method`
-      - 1..1
-      - A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of evidence.
-
-.. _prog_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml
-.. _prog_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/aac-2017/json/VariantPrognostictudyStatement
 
 **Artifacts**
- - `Source YAML <prog_source_yaml_>`_
- - `JSON Schema <prog_json_schema_>`_
+
+ - |prognostic_study_statement_source_yaml|
+ - |prognostic_study_statement_json_schema|

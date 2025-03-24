@@ -54,12 +54,10 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
-.. _stmt_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/oncogenicity-statement-profile-source.yaml
-.. _stmt_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/json/VariantOncogenicityStatement
-
 **Artifacts**
- - `Source YAML <stmt_source_yaml_>`_
- - `JSON Schema <stmt_json_schema_>`_
+
+ - |oncogenicity_study_statement_source_yaml|
+ - |oncogenicity_study_statement_json_schema|
 
 -----
 
@@ -108,9 +106,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the directionOfEvidenceProvided attribute. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.  *Conditional requirement*: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.
 
-.. _evln_source_yaml: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/oncogenicity-functional-impact-evidence-line-profile-source.yaml
-.. _evln_json_schema: https://github.com/ga4gh/va-spec/blob/|github_version|/schema/va-spec/ccv-2022/json/VariantOncogenicityFunctionalImpactEvidenceLine
-
 **Artifacts**
- - `Source YAML <evln_source_yaml_>`_
- - `JSON Schema <evln_json_schema_>`_
+
+ - |oncogenicity_functional_impact_evidence_line_source_yaml|
+ - |oncogenicity_functional_impact_evidence_line_json_schema|

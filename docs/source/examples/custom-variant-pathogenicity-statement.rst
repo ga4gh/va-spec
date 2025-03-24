@@ -12,13 +12,13 @@ Custom Variant Pathogenicity Statement Example
   
 **Example Description:**
 
- * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this `simple test fixtures example <https://github.com/ga4gh/va-spec/blob/1.0.0-ballot.2025-03/tests/fixtures/VA-ClinVar-SCV-Example-001.yaml>`_, but does not coform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type. 
+ * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this |simple_test_fixtures_example|, but does not coform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type. 
  * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``classification``. 
  * Annotations in the example point out where the implementers preferred codes are used instead of ACMG-based terms. 
 
 **Data**:
 
-.. note:: Comments in the example below will be easier to view in the `source yaml file here <https://github.com/ga4gh/va-spec/blob/1.0-docs-ballot-v2/examples/custom-variant-pathogenicity-statement.yaml>`_, which affords the option of a wider browser window.
+.. note:: Comments in the example below will be easier to view in the |custom_pathogenicity_statement_example_source_yaml|, which affords the option of a wider browser window.
 
 .. code-block:: yaml
 
