@@ -1,5 +1,5 @@
-.. _core-class-hierarchies:
+.. _core-class-hierarchy:
 
 
-Core Class Hierarchies
-!!!!!!!!!!!!!!!!!!!!!!
+Core Class Hierarchy
+!!!!!!!!!!!!!!!!!!!!
