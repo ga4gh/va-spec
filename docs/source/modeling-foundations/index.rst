@@ -11,6 +11,7 @@ Modeling Foundations
    :maxdepth: 4
 
    core-class-hierarchy
-   supported-data-structures
+   data-structures
    profiles
-   domain-entities
+   domain-entity-representation
+   example-scenario
