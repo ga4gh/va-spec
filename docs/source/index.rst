@@ -34,8 +34,8 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
    :maxdepth: 4
 
    introduction
-   core-information-model/index
    modeling-foundations/index
+   core-information-model/index
    va-standard-profiles/index
    reference-implementation
    developer-guide
