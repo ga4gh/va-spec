@@ -62,3 +62,4 @@ More information about authoring of these profiles can be found in the :ref:`Pro
 
    base-profiles/index
    community-profiles/index
+   custom-profiles
