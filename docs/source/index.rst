@@ -9,16 +9,16 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
 
 * :ref:`Introduction <introduction>`
    An entry point for understanding the VA-Spec and how its components are developed, with links to more detailed content.
+* :ref:`Modeling Foundations <modeling-foundations>`
+   An overview of the models, design patterns, and development paradigms that underpin the VA-Spec.
 * :ref:`VA Core Model <va-core-model>`
-   Detailed descriptions and implementation guidance for the classes and attributes in the foundational VA Core Model.
+   Detailed descriptions and guidance for the classes and attributes in the VA Core Model.
 * :ref:`VA Profiles <va-profiles>`
-   Profiles defined for specific types of Statements, Evidence Lines, Propositions, and Study Results, provided as computable json schema.
+   Specialized models defined for specific types of Statements, Evidence Lines, Propositions, and Study Results.
 * :ref:`A Reference Implementation <reference-implementation>`
    Documentation about code libraries provided to facilitate implementation of the VA-Spec.
-* :ref:`Modeling Foundations <modeling-foundations>`
-   An overview of the modeling patterns and principles that underpin VA-Spec models.
-* :ref:`Profiling Methodology <profiling-methodology>`
-   An overview of profiling operations and authoring mechanisms supported by the VA-Spec.
+* :ref:`Developer Guide <developer-guide>`
+   Practical, developer-focused support for authoring and implementing VA Profiles in data systems. 
 * :ref:`Examples <examples>`
    A set of annotated examples illustrating representation of data using VA Profiles.
 * :ref:`Appendices <appendices>`
@@ -35,9 +35,9 @@ If you have questions or feedback, please reach out to the VA Team on `Slack <ht
 
    introduction
    core-information-model/index
+   modeling-foundations/index
    va-standard-profiles/index
    reference-implementation
-   modeling-foundations
-   profiling-methodology
+   developer-guide
    examples/index
    appendices/index
