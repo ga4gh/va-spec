@@ -24,7 +24,47 @@ The v1 release of VA-Spec includes the following components:
 Use Cases
 #########
 
-TO DO
+Currently, tools and systems that annotate variants with knowledge about their clinical or functional significance lack a consistent and unified exchange model, leading to challenges in data sharing and integration across platforms. The VA-Spec aims to address this gap by offering a comprehensive and extensible schema to support genomic data interpretation in research and clinical contexts.
+
+As an exchange format, VA-Spec schema serve to provide a common structure to use in passing interoperable data between distinct systems. They are not designed to support use cases around search, analysis, and persistent storage - which will likely require other models, from which data would be transformed into VA-Spec compliant forms for purposes of interoperable exchange. 
+
+In this role, VA-Spec is intended to complement other GA4GH exchange formats such as `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_  and `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`, which support interoperable representation of the variation concepts tha are the subjects of variant annotations.
+
+The table below describes some specific contexts in which VA-Spec is being implemented to support interoperable exchange of variant knowledge and evidence.
+
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: 20 40 40
+
+   *  - Project
+      - Description
+      - Implementation Status
+
+   *  - ClinVar Submission Utility
+      - Uses VA-Spec formatted data as input for tools that submit variant pathogenicity knowledge and evidence to the ClinVar database via its API.  
+      - Active implementation used by the VICC Driver Project to share assertion data from the CIViC platform with ClinVar.
+
+
+   *  - ClinVar GKS
+      - Will use VA-Spec to represent GKS-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
+      - Under development, with initial implementation in ClinGen Data pipelines planned for 2025 to support variant pathogenicity statements
+
+   *  - VICC MetaKB
+      - Using VA-Spec models to structure various types of clinical significance classifications and evidence in its community-facing data exchange APIs
+      - Active API implementation currently serving VA-Spec compliant data.
+
+   *  - MAVE DB
+      - Will use VA-Spec as a format in which to send multiplex-assay based functional impact data, classifications, and evidence interpretations to external curation platforms such as ClinGen and CIViC, where they will be used to support clinical variant interpretation.
+      - Under development, with initial implementation planned for 2025.
+
+   *  - Epic Variant Results & Tertiary Analysis
+      - Will use VA-Spec as a format in which to receive varant knowledge from disparate sources including ClinVar and CIViC, which will be used to drive interpretation and clinical decision support in Epic.​
+      - Under development, with initial implementation targeting variant pathogenicity and oncogenicity planned for 2025
+
+More details about specific implementations of the VA-Spec can be found on the :ref:`Implementations <implementations>` page.
 
 
 Scope and Development
@@ -34,7 +74,7 @@ VA-Spec takes an implementation-driven approach to development of the models it 
 
 :ref:`VA Profiles<va-profiles>` extend core :ref:`Statement<Statement>`, :ref:`Study Result<StudyResult>`, and :ref:`Evidence Line<EvidenceLine>` classes to support the specific types of knowledge captured (e.g. a variant pathogenicity), and community guidelines followed (e.g. the ACMG-2015 Guidelines) in implementing data systems. These three core classes are defined specifically to represent the levels at which curation tools and knowledgebases capture and report variant knowledge. Initial ClinGen, VICC, and AVE implementations required the profiles for the following types of variant knowledge in version 1 of the VA-Spec:
 
-- **Statement Profiles** for Pathogenicity and Pncogenicity classifications, Therapeutic Response, Diagnostic, and Prognostic clinical associations, and Experimental Functional Impacts
+- **Statement Profiles** for Pathogenicity and Oncogenicity classifications, Therapeutic Response, Diagnostic, and Prognostic clinical associations, and Experimental Functional Impacts
 - **Study Result Profiles** for Cohort Allele Frequency and Experimental Functioanl Impact analysis data.
 - **Evidence Line Profiles** describing experimental Functional Impact evidence for Pathogenicity and Oncogenicity classifications.
 
