@@ -28,7 +28,7 @@ Currently, tools and systems that annotate variants with knowledge about their c
 
 As an exchange format, VA-Spec schema serve to provide a common structure to use in passing interoperable data between distinct systems. They are not designed to support search, analysis, and persistent storage applications - which will likely require other models from which data would be transformed into VA-Spec compliant forms for purposes of interoperable exchange. 
 
-In this role, VA-Spec is intended to complement other GA4GH exchange formats such as `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_  and `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`, which support interoperable representation of the variation concepts tha are the subjects of variant annotations.
+In this role, VA-Spec is intended to complement other GA4GH exchange formats such as `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_  and `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_, which support interoperable representation of the variation concepts tha are the subjects of variant annotations.
 
 Application use cases for the VA-Spec as a representation and exchange foramt include:
  - **Data integration across genomic knowledgebases**: Supporting consistent representation of variant-related knowledge in public genomic knowledgebases (e.g., ClinVar, OncoKB) and repositories hosting more foundational data and study results (e.g., gnomAD, MaveDB), enabling easier cross-referencing and data sharing.
