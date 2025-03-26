@@ -34,8 +34,9 @@ The :ref:`data example here <acmg-variant-pathogenicity-statement-with-evidence>
 - **Community Profiles**:
 
   - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
-  - These constraints are defined using  a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
+  - These constraints are defined using a schema composition approach that leverages the JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile.
   - This constraint-based mechanism approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
+  - Notably, it is possible to define more than one Community Profile for a given knowledge type, each of which aligns with a different community guideline. For example, separate Pathogenicity community profiles may end up being defined to align with current ACMG 2015 Guidelines, and a forthcoming updated version of these guidelines.
 
 More information about authoring of these profiles can be found in the :ref:`Profiling Methodology <prrofiling-methodology>` page. 
 
