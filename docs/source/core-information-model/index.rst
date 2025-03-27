@@ -13,7 +13,7 @@ A hierarchical view of the VA Core Model is below. See the :ref:`Modeling Founda
 
    Core Class Hierarchy
 
-   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Classes outlined in blue represent the keystone classes that root most VA data structures. Minimal classes for domain entities such Conditions and Therapies has been defined in the model :ref:`here <domain-entities>` but are not shown above.
+   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Darker grey classes represent the 'keystone' classes that root most VA data structures. Minimal classes for domain entities such Conditions and Therapies has been defined in the model :ref:`here <domain-entities>` but are not shown above.
 
 Links below (or menu to the left) provide detailed information about the attributes of each class, and guidance for their use. 
 
