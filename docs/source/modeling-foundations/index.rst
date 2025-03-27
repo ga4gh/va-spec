@@ -10,7 +10,7 @@ Modeling Foundations
 .. toctree::
    :maxdepth: 4
 
-   core-class-hierarchy
+   core-classes
    data-structures
    profiles
    domain-entity-representation
