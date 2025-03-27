@@ -30,7 +30,7 @@ As an exchange format, VA-Spec schema serve to provide a common structure to use
 
 In this role, VA-Spec is intended to complement other GA4GH exchange formats such as `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_  and `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_, which support interoperable representation of the variation concepts tha are the subjects of variant annotations.
 
-Areas of application for the VA-Spec as a representation and exchange foramt include:
+Applications for the VA-Spec as a representation and exchange format include:
 
  - **Data integration across genomic knowledgebases**: Supporting consistent representation of variant-related knowledge in public genomic knowledgebases (e.g., ClinVar, OncoKB) and repositories hosting more foundational data and study results (e.g., gnomAD, MaveDB), enabling easier cross-referencing and data sharing.
  - **Evidence aggregation in curation and interpretation platforms**:  Facilitate import of diverse, standardized evidence from knowledgebases to support variant classification in research (e.g. ClinGen, CIViC) and clinical (e.g. Epic) contexts.
@@ -48,7 +48,7 @@ The table below describes **specific implementations in which VA-Spec supports t
       - Description
       - Implementation Status
    *  - ClinVar Submission Utility
-      - Uses VA-Spec formatted data as input for tools that submit variant pathogenicity knowledge and evidence to the ClinVar database via its API.  
+      - Uses VA-Spec as input format for submission tools that send variant pathogenicity classifications and evidence to the ClinVar database via its API.  
       - Active implementation used by the VICC Driver Project to share assertion data from the CIViC platform with ClinVar.
    *  - ClinVar GKS
       - Will use VA-Spec to represent GKS-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
@@ -57,7 +57,7 @@ The table below describes **specific implementations in which VA-Spec supports t
       - Using VA-Spec models to structure various types of clinical significance classifications and evidence in its community-facing data exchange APIs
       - Active API implementation currently serving VA-Spec compliant data.
    *  - MAVE DB
-      - Will use VA-Spec as a format in which to send multiplex-assay based functional impact data, classifications, and evidence interpretations to external curation platforms such as ClinGen and CIViC, where they will be used to support clinical variant interpretation.
+      - Will use VA-Spec as a format to send multiplex-assay based functional impact data, classifications, and evidence interpretations to external curation platforms such as ClinGen and CIViC, where they will be used to support clinical variant interpretation.
       - Under development, with initial implementation planned for 2025.
    *  - Epic Variant Results & Tertiary Analysis
       - Will use VA-Spec as a format in which to receive varant knowledge from disparate sources including ClinVar and CIViC, which will be used to drive interpretation and clinical decision support in Epic.​
@@ -87,8 +87,8 @@ The initial release includes the following :ref:`VA Profiles <va-profiles>` as J
 
 We anticipate that over time, the initial, minimal profiles in VA-Spec 1.0 will expand in different ways:
 
-- **Broader Coverage of Existing Profiles**: the scope and size of existing profiles will expand  as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
-- **Addition of New Base Profile Types**: the number of different profile types defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
+- **Broader Coverage of Existing Profiles**: the scope of existing profiles will expand as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
+- **Addition of New Base Profile Types**: the number and types of profiles defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
 - **Addition of New Community Profiles**: new flavors of existing community profiles that support alternate community guidelines in a given domain may be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the forthcoming update to these guidelines.
 
 
