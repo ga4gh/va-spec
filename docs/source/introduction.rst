@@ -78,17 +78,17 @@ While this limits the scope of the initial VA-Spec release, it ensures that all 
 
 Notably, the :ref:`SEPIO Information Model <sepio-framework>`, from which the VA Core Model was derived, contains a broader set of elements that may support data not covered by current VA-Spec.  These elements will be interoperable with and can be incorporated into the VA Core Model as new data and use cases emerge.
 
-The initial VA-Spec release includes the following Profiles:
+The initial release includes the following :ref:`VA Profiles <va-profiles>` as JSON schema for use by the GA4GH community:
 
-- **Statement Profiles** for Pathogenicity and Oncogenicity classifications, Therapeutic Response, Diagnostic, and Prognostic clinical associations, and Experimental Functional Impacts
+- **Statement Profiles** for Pathogenicity and Oncogenicity classifications, experimental Functional Impact classifications, and clinical Therapeutic Response, Diagnostic, and Prognostic associations
 - **Study Result Profiles** for Cohort Allele Frequency and Experimental Functional Impact analysis data.
 - **Evidence Line Profiles** describing experimental Functional Impact evidence for Pathogenicity and Oncogenicity classifications.
 
 We anticipate that over time, the initial, minimal profiles in VA-Spec 1.0 will expand in different ways:
 
- - **Broader Coverage of Existing Profiles**: the scope and size of existing profiles will expand  as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
- - **Addition of New Base Profile Types**: the number of different profile types defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
- - **Addition of New Community Profiles**: new flavors of existing community profiles that support alternate community guidelines in a given domain may be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the forthcoming update to these guidelines.
+- **Broader Coverage of Existing Profiles**: the scope and size of existing profiles will expand  as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
+- **Addition of New Base Profile Types**: the number of different profile types defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
+- **Addition of New Community Profiles**: new flavors of existing community profiles that support alternate community guidelines in a given domain may be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the forthcoming update to these guidelines.
 
 
 
