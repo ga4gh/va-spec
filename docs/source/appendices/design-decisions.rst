@@ -33,12 +33,14 @@ In the VA data, each assertion of knowledge about a variant is captured in a sel
 
 Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each. And as modular, self-contained structures, they can be re-used in different contexts in an annotation - as the primary statement being made, or a piece of evidence supporting such a statement. Finally, the consistent structured representation of semantics across all Statement types provides a framework for human and computational agents to identify what is being asserted as true, and what is accessory or supporting information.
 
+.. _use-of-propositions:
+
 Use of Propositions
 ###################
 
-As noted above, **Proposition** objects are used to encapsulate the "SPOQ" semantics of possible facts that are asserted or evaluated in Statements, and against which evidence is evaluated in Evidence Lines.  The ``type`` of a given Statement or Evidence Line object is not directly declared in the data, but instead inferred from the ``type`` of the Proposition is holds.
+As noted above, **Proposition** objects are used to encapsulate the "SPOQ" semantics of possible facts that are asserted or evaluated in Statements, and against which evidence is evaluated in Evidence Lines.  The ``type`` of a given Statement or Evidence Line object is not directly declared in the data, but instead inferred from the ``type`` of the Proposition is holds. This avoids the need to create parallel hierarchies of Statement and Proposition types.
 
-This design pattern provides re-usable Proposition objects that can be referenced and re-used in these contexts (see :ref:`example here <proposition-utility-example>`), so the model does not need to duplicate  descriptions the definition of SPOQ semantics, or create parallel hierarchies of Statement and Proposition types. Proposition objects may also provide a focal point around which all evidence around a given possible fact can be aggregated, across many possible Statements and Evidence Lines that use a given proposition - for a more comprehensive view of the support for or against this possible fact.
+This design pattern also provides re-usable Proposition objects that can be referenced and re-used in these contexts (see :ref:`example here <proposition-utility-example>`). This can avoid the need to duplicate SPOQ semantics in the data across Statements and Evidence Lines with the same proposition.  Proposition objects may also provide a focal point for aggregating evidence across different Statements and Evidence Lines that all assess the same proposition - to provide a comprehensive view of the support for or against this possible fact, or help identify undiscovered evidence that may be used to reach a conclusive interpretation of a variant of uncertain significance. 
 
 A trade-off of this design decision is the deeper nesting structure that results in the data itself, and more complicated deserialization logic needed to determine what type of Statement is being parsed.
 
