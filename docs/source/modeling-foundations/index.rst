@@ -3,8 +3,6 @@
 Modeling Foundations
 !!!!!!!!!!!!!!!!!!!!
 
-The **VA Core Model** is a domain-agnostic model for representing scientific knowledge about genetic variation, and the evidence and provenance supporting it. This model is the foundation on which more specialized models for representing specific types of Statements, Study Results, an Evidence Lines are built - through a process called 'Profiling'.
-
 This section provides a foundational understanding of key principles and patterns applied in the VA-Spec, which should be reviewed before digging deeper into the documentation. It introduces:
 
 1. The scope and utility of :ref:`Core Classes <core-classes>` in VA Models
