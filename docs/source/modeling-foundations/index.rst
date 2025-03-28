@@ -19,6 +19,7 @@ Finally, we provide a detailed :ref:`Example Scenario <example-scenrio>` that sh
    :maxdepth: 4
 
    core-classes
+   propositions
    data-structures
    profiles
    domain-entity-representation
