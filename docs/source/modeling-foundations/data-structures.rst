@@ -20,7 +20,7 @@ In VA-Spec, the :ref:`Statement Model <Statement>` and :ref:`its profiles <commu
 
 .. core-im-statement-data-structure:
 
-.. figure:: images/statement-proposition-data-structure.png
+.. figure:: ../images/statement-proposition-data-structure.png
 
    Statement Data Structure
 
@@ -46,7 +46,7 @@ In VA-Spec, the :ref:`Evidence Line Model <EvidenceLine>` and :ref:`its profiles
 
 .. core-im-evidence-line-structure:
 
-.. figure:: images/evidence-line-proposition-data-structure.png
+.. figure:: ../images/evidence-line-proposition-data-structure.png
 
    Evidence Line Data Structure
 
@@ -73,7 +73,7 @@ In VA-Spec, the :ref:`Study Result Model <StudyResult>` and :ref:`its profiles <
 
 .. core-im-study-result-data-structure:
 
-.. figure:: images/study-result-data-structure.png
+.. figure:: ../images/study-result-data-structure.png
 
    Study Result Data Structure
 
