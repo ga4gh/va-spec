@@ -42,7 +42,7 @@ More on the internal semantics of Statement objects can be found in the :ref:`St
 Evidence Line Structure
 #######################
 
-:ref:`Evidence Lines <EvidenceLine>` represent assessments of how a specific set of information is interpreted as an argument for or against some possible fact (their **"target proposition"**), which may ultimately be asserted as true or false in a Statement. 
+:ref:`Evidence Lines <EvidenceLine>` represent assessments of how a specific set of information is interpreted as an argument for or against some possible fact (their **target proposition**), which may ultimately be asserted as true or false in a Statement. 
 
 This assessment reports the **strength** and **direction** of evidence provided by the interpreted evidence. For example, an assessment that some set of gnomAD allele frequency data about the HRAS:c.173C>T variant provides **moderate** evidence **supporting** a proposition that it causes Costello Syndrome.
 
@@ -62,7 +62,7 @@ In this structure:
 
 * An **Evidence Line** roots a central axis where it is linked zero or more pieces of information (e.g. **Study Results**) that were used to build the arguemnt it represents.
 * The **Proposition** contained in the Evidence Line object encapsulates a structured representation of the possible fact toward which evidence is interpreted and scored (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide moderate support). 
-  * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the previous Statement diagram) - but otherwise should be provided. 
+   * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the previous Statement diagram) - but otherwise should be provided. 
 * As with Statements, classes surrounding this central axis are used to describe the provenance of the Evidence Lines and its Evidence Items.
 
 A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
