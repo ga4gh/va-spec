@@ -1,7 +1,7 @@
 .. _examples:
 
-Data Examples
-!!!!!!!!!!!!!
+Examples
+!!!!!!!!
 
 Here we provide a set of **hand-crafted data examples** that have been **annotated** to help readers better understand the **modeling structures and semantics** employed across VA Profiles.
 
