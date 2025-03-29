@@ -27,6 +27,8 @@ An important technical detail that is important for applying the VA-Spec is the 
 - These Statement and Evidence Line profiles are subschema, not formal subclasses, of their parent core class, and they do not get a specialized ``type``.  As noted above, their type must be inferred from that of Proposition they employ to specify the possible fact they assert or evaluate evidence against, respectively.
 
 
+.. _profile-authoring-mechanisms:
+
 Profile Authoring Mechanisms
 ############################
 
@@ -105,6 +107,8 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring these
 We recognize that this approach involving different mechanisms and ad hoc tooling to support authoring different subsets of profiles is not ideal, but was adopted given available technologies and bandwidth at this point in development.
 
 Future versions of the VA-Spec will adopt a single, coherent, and consistent technical approach and tooling support for profile authoring, which will likely leverage the `LinkML Framework <https://linkml.io/>`_ (in particular, `LinkML Map <https://linkml.io/linkml-map/>`_).
+
+.. _custom-profile-development:
 
 Custom Profile Development
 ##########################
