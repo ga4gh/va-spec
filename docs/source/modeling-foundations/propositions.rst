@@ -35,7 +35,7 @@ In an **Evidence Line**, a proposition captures the possible fact toward which e
 
 In VA-Spec data, Propositions are used only in the context of Statement and Evidence Line classes, and convey no knowledge on their own. 
 
-While propositions are *required* in Statements, they are *optional* in Evidence Lines - and can be omitted if the Evidence Line is attached to a Statement with the same proposition. For example, in the :ref:`data example here <<acmg-variant-pathogenicity-statement-example-with-evidence>` the root Statement asserts the same Proposition as that toward which its two Evidence Lines evaluate the support provided by population frequency and functional impact data. This ``Proposition001`` object is explicitly referenced in the Evidence Lines in the example, but omission of this reference is permissible, and would imply that the target Proposition here is the same as that in the root Statement,. 
+While propositions are *required* in Statements, they are *optional* in Evidence Lines - and can be omitted if the Evidence Line is attached to a Statement with the same proposition. For example, in the :ref:`data example here <<acmg-variant-pathogenicity-statement-example-with-evidence>` the root Statement asserts the same Proposition (``Proposition001``) as that toward which its two Evidence Lines evaluate the support provided by population frequency and functional impact data. This Proposition object is explicitly referenced in the Evidence Lines in the example, but omission of this reference is permissible, and would imply that the target Proposition here is the same as that in the root Statement,. 
 
 For more information, see the :ref:`Proposition <Proposition>` page, and related :ref:`Design Decision <use-of-propositions>`.
 
