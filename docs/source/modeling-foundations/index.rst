@@ -21,4 +21,3 @@ This section provides a foundational understanding of key principles and pattern
    data-structures
    propositions
    profiles
-

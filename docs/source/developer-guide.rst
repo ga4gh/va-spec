@@ -3,22 +3,22 @@
 Developer Guide
 !!!!!!!!!!!!!!!
 
-Documentation in previous sections aims to provide a more conceptual and academic understanding of the VA-Spec - describing its content, modeling principles, and utility for a diverse community of potential adopters. 
+Documentation in previous sections aims to provide a more conceptual and academic understanding of the VA-Spec - describing its content, modeling principles, and utility for a diverse community of potential adopters.
 
-While a conceptual understanding of the specification is important for a technical audience as well, here we provide guidance to support data engineers who will be defining VA schema and implementing them in data exchange systems. 
+While a conceptual understanding of the specification is important for a technical audience as well, here we provide guidance to support data engineers who will be defining VA schema and implementing them in data exchange systems.
 
 .. _base-vs-community-profiling:
 
 Base vs Community Profiles
 ##########################
 
-An important technical detail that is important for applying the VA-Spec is the distinction between what we call 'Base' and 'Community' Profiles. 
+An important technical detail that is important for applying the VA-Spec is the distinction between what we call 'Base' and 'Community' Profiles.
 
 **Base Profiles**:
 
 - These are :ref:`Proposition <proposition-profiles>` and :ref:`Study Result <study-result-profiles>` profiles authored as formal subclasses of core classes in the va-core-source-yaml file.
 - As detailed below, this mechanism for profile authoring allows for the kinds of attribute extension and addition that are needed in these Profile types (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
-- Proposition profile classes are used/referenced within Statement and Evidence Line 'Community' profiles - which are defined using a different mechanism. Here, the formal type of the Proposition is definitional for inferring the type of Statement or Evidence Line they support. 
+- Proposition profile classes are used/referenced within Statement and Evidence Line 'Community' profiles - which are defined using a different mechanism. Here, the formal type of the Proposition is definitional for inferring the type of Statement or Evidence Line they support.
 
 **Community Profiles**:
 
@@ -111,7 +111,7 @@ Custom Profile Development
 
 Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a VA Profile to be specifically defined for it.
 
-Custom Profiles are Statement or Evidence Line profiles that are created de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile . 
+Custom Profiles are Statement or Evidence Line profiles that are created de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile .
 
 This section describes why these are useful, and how to create them.
 
@@ -119,13 +119,13 @@ This section describes why these are useful, and how to create them.
 
 * The Statement and Evidence Line :ref:`Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
 * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
-* For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enuemrations in the exsitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data. 
+* For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enuemrations in the exsitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data.
 
 **The process is relatively straightforward:**
 
 #. Starting with the core :ref:`Statement<Statement` class
 #. Bind its ``proposition`` attribute to the :ref:`VariantPathogenicityProposition <variant-pathogenicity-proposition>`base profile class
-#. Use other base Statement attributes and core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enuemrations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above. 
+#. Use other base Statement attributes and core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enuemrations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above.
 
 This :ref:`simple data example <custom-varaint-pathogenicity-statement-example>` illustrates application of this approach to create a custom, non-ACMG-compliant representation of a pathogenicity statement.
 

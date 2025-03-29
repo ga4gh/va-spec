@@ -9,7 +9,7 @@ Overview
 
 Currently, tools and systems that annotate variants with knowledge about their clinical or functional significance lack a consistent and unified exchange model. This leads to challenges in data sharing and integration across platforms. The **GA4GH Variant Annotation Specification (VA-Spec)** aims to address this gap by offering a comprehensive and extensible schema to support genomic data interpretation in research and clinical contexts.
 
-VA-Spec defines a set of schema for representing different types of knowledge about genetic variants, to provide a common format for exchange between data systems. Each schema is built as a :ref:`"Profile" <va-profiles>` that extends a common, domain-agnostic :ref:`VA Core Model <va-core-model>`. The initial v1 release of the VA-Spec includes the Profiles described :ref:`here <va-profiles>`, which support specific types of variant knowledge produced by implementing Driver Projects and organizational members, including `ClinGen <https://clinicalgenome.org/>`_, `VICC <https://cancervariants.org/index.html>`_, and the `Atlas of  Variant Effects Alliance <https://www.varianteffect.org/>`_. These Profiles are specified as **machine-readable JSON schema** that support sharing and validation within and across these projects, along with a **Python reference implementation**. 
+VA-Spec defines a set of schema for representing different types of knowledge about genetic variants, to provide a common format for exchange between data systems. Each schema is built as a :ref:`"Profile" <va-profiles>` that extends a common, domain-agnostic :ref:`VA Core Model <va-core-model>`. The initial v1 release of the VA-Spec includes the Profiles described :ref:`here <va-profiles>`, which support specific types of variant knowledge produced by implementing Driver Projects and organizational members, including `ClinGen <https://clinicalgenome.org/>`_, `VICC <https://cancervariants.org/index.html>`_, and the `Atlas of  Variant Effects Alliance <https://www.varianteffect.org/>`_. These Profiles are specified as **machine-readable JSON schema** that support sharing and validation within and across these projects, along with a **Python reference implementation**.
 
 In defining its models, VA-Spec adopts and builds on several more **foundational standards**, including the `SEPIO Model <https://github.com/sepio-framework/sepio-linkml>`_, and GA4GH `VRS <https://vrs.ga4gh.org/en/latest/index.html>`_  and `Cat-VRS <https://cat-vrs.readthedocs.io/en/latest/index.html>`_ schema. Future VA-Spec releases will include tighter integration with these upstream models, a larger set of Profiles with broader coverage, and a **modeling framework** to support community-based authoring of Profiles for new knowledge types and use cases.
 
@@ -48,7 +48,7 @@ The table below describes **specific implementations in which VA-Spec supports t
       - Description
       - Implementation Status
    *  - ClinVar Submission Utility
-      - Uses VA-Spec as input format for submission tools that send variant pathogenicity classifications and evidence to the ClinVar database via its API.  
+      - Uses VA-Spec as input format for submission tools that send variant pathogenicity classifications and evidence to the ClinVar database via its API.
       - Active implementation used by the VICC Driver Project to share assertion data from the CIViC platform with ClinVar.
    *  - ClinVar GKS
       - Will use VA-Spec to represent GKS-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
@@ -78,6 +78,3 @@ We anticipate that over time, the minimal Profiles included in VA-Spec 1.0 will 
 - **Broader Coverage of Existing Profiles**: the scope of existing profiles will expand as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
 - **Addition of New Base Profile Types**: the number and types of profiles defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
 - **Addition of New Community Profiles**: new flavors of existing community profiles that support alternate community guidelines in a given domain may be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the forthcoming update to these guidelines.
-
-
-
