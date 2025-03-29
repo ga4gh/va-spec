@@ -104,10 +104,6 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring these
                 const: ACMG Guidelines, 2015
 
 
-We recognize that this approach involving different mechanisms and ad hoc tooling to support authoring different subsets of profiles is not ideal, but was adopted given available technologies and bandwidth at this point in development.
-
-Future versions of the VA-Spec will adopt a single, coherent, and consistent technical approach and tooling support for profile authoring, which will likely leverage the `LinkML Framework <https://linkml.io/>`_ (in particular, `LinkML Map <https://linkml.io/linkml-map/>`_).
-
 .. _custom-profile-development:
 
 Custom Profile Development
