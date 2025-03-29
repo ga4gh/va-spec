@@ -23,19 +23,19 @@ The :ref:`data example here <acmg-variant-pathogenicity-statement-with-evidence>
 
 .. _base-vs-community-profiling:
 
-**Base Profiles vs Community Profiles:**  In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
+In version 1.0 of the VA-Spec, we distinguish between two categories of profiles:
 
  **Base Profiles**:
 
-- Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-- This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
+  - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
+  - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 
  **Community Profiles**:
 
-- Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
-- These constraints are defined using a schema composition approach, which does not result in creation of concrete subclasses for each profile.
-- This approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
-- Notably, it is possible to define more than one Community Profile for a given knowledge type, each of which aligns with a different community guideline. For example, separate Pathogenicity community profiles may end up being defined to align with current ACMG 2015 Guidelines, and a forthcoming updated version of these guidelines.
+  - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
+  - These constraints are defined using a schema composition approach, which does not result in creation of concrete subclasses for each profile.
+  - This approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
+  - Notably, it is possible to define more than one Community Profile for a given knowledge type, each of which aligns with a different community guideline. For example, separate Pathogenicity community profiles may end up being defined to align with current ACMG 2015 Guidelines, and a forthcoming updated version of these guidelines.
 
 For technical guidance around how these types of profiles are authored and implemented, see the :ref:`Developer Guide <developer-guide>` section. 
 
