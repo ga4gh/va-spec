@@ -1,5 +1,7 @@
 .. _mappable-concept:
 
+.. _MappableConcept:
+
 Mappable Concept
 ****************
 

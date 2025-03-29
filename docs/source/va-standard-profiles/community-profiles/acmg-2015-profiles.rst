@@ -48,7 +48,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum: pathogenic | likely pathogenic | benign | likely benign | VUS)
+      - :ref:`MappableConcept`  (nested enum: pathogenic | likely pathogenic | benign | likely benign | uncertain significance)
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 

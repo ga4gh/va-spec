@@ -1,5 +1,7 @@
 .. _concept-mapping:
 
+.. _ConceptMapping:
+
 Concept Mapping
 ***************
 

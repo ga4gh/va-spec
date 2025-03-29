@@ -16,38 +16,8 @@ These Community Profiles layer additional constraints on top of VA core classes 
 - ACMG evidence strengths (``strong``, ``supporting``, ``moderate``)
 - ACMG classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``)
 
------
+See :ref:`here <acmg-variant-pathogencity-statement-example>` for a simple data example of an ACMG-aligned Variant Pathogenicity Statement.
 
-**Auhtoring of Community Profiles**
-
-- Community Profiles are authored as YAML-based specifications that layer constraints on core classes using a schema composition approach that leverages the JSON Schema ``allOf`` keyword.
-- For example, the :ref:`ACMG 2015 Variant Pathogenicity Statement Profile <variant-pathogenicity-statement-acmg-2015>` below specifies that data must conform to the definition of the core :ref:`Statement<Statement>` class, *and* validate against the additionak constrants defined on ``proposition`` and ``classification`` properties.
-- Note that this approach defines a named subschema, but unlike the Base Profiling approach does not result in creation of concrete subcalsses for each profile.
-
-.. code-block:: yaml
-
-  VariantPathogenicityStatement:
-    maturity: draft
-    description: >-
-      A Statement describing the role of a variant in causing an inherited condition.
-    allOf:
-    - $ref: "/ga4gh/schema/va-spec/|github_version|/base/json/Statement"
-    - properties:
-        proposition:
-          $ref: "/ga4gh/schema/va-spec/|github_version|/base/json/VariantPathogenicityProposition"
-          description: >-
-            A proposition about the pathogenicity of a varaint, the validity of which
-            is assessed and reported by the Statement. A Statement can put forth the
-            proposition as being true, false, or uncertain, and may provide an assessment
-            of the level of confidence/evidence supporting this claim.
-        classification:
-          type: string
-          enum:
-            - pathogenic
-            - likely pathogenic
-            - uncertain significance
-            - likely benign
-            - benign
 
 -----
 
