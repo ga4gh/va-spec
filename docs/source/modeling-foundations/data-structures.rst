@@ -16,7 +16,7 @@ Statement Structure
 
 :ref:`Statements <Statement>` represent *assertions* or *assessments* of general knowledge about a variant - e.g. an *assertion* that *'HRAS:c.173C>T is pathogenic for Costello Syndrome*, or an *assessment* that there is presently only moderate evidence supporting this possible fact.
 
-In VA-Spec, the :ref:`Statement <Statement>` class and its :ref:'profiles <community-profiles>` can support the general data structure below. 
+In VA-Spec, the :ref:`Statement <Statement>` class and its :ref:`profiles <community-profiles>` can support the general data structure below. 
 
 .. core-im-statement-data-structure:
 
