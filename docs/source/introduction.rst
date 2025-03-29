@@ -36,7 +36,7 @@ General use cases for the VA-Spec as a data representation and exchange format i
  - **Evidence aggregation in curation and interpretation platforms**:  Facilitate import of diverse, standardized evidence from knowledgebases to support variant classification in research (e.g. ClinGen, CIViC) and clinical (e.g. Epic) contexts.
  - **Interoperable modules for use with other standards**: Providing models for functional and clinical annotations that can be embedded within other schemas and tools, such as Beacon, Phenopackets, and FHIR - to ensure cohesive and comprehensive data exchange across systems.
 
-The table below describes **specific implementations in which VA-Spec supports these use cases**, by facilitating the interoperable exchange of variant knowledge and evidence.
+Specific implementations in which VA-Spec supports these use cases:
 
 .. list-table::
    :class: clean-wrap
