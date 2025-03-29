@@ -121,7 +121,7 @@ This section describes why these are useful, and how to create them.
 
 **Why they are useful:**
 
-* The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
+* The Statement and Evidence Line :ref:`Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
 * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
 * For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enuemrations in the exsitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data. 
 
