@@ -6,7 +6,7 @@ Evidence Line
 .. include::  ../../../def/va-spec/EvidenceLine.rst
 
 
-** DATA STRUCTURE**
+**DATA STRUCTURE**
 
 In VA-Spec, the :ref:`Evidence Line <EvidenceLine>` class and its :ref:`profiles <community-profiles>` can support the general data structure below. 
 
@@ -27,6 +27,8 @@ In this structure:
 * As with Statements, classes surrounding this central axis are used to describe the provenance of the Evidence Lines and its Evidence Items.
 
 A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
+
+-----
 
 **IMPLEMENTATION GUIDANCE**
 
