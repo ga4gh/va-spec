@@ -73,11 +73,7 @@ VA-Spec takes an implementation-driven development approach - releasing only sch
 
 While this approach limits the scope of the initial VA-Spec release, it ensures that all content has proven utility in actual implementation settings. Note however that the :ref:`SEPIO Information Model <sepio-framework>`, from which the VA Core Model was derived, contains a broader set of elements that may support data not covered by current VA-Spec. These SEPIO elements can be incorporated into the VA Core Model as needed to support emerging data and use cases.
 
-We anticipate that over time, the minimal Profiles included in VA-Spec 1.0 will expand in different ways:
-
-- **Broader Coverage of Existing Profiles**: the scope of existing profiles will expand as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
-- **Addition of New Base Profile Types**: the number and types of profiles defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
-- **Addition of New Community Profiles**: new flavors of existing community profiles that support alternate community guidelines in a given domain may be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the forthcoming update to these guidelines.
+We anticipate that over time, the minimal Profiles included in VA-Spec 1.0 will expand in different ways, as described in the :ref:`Future Directions <profile-expansion>` appendix.
 
 
 
