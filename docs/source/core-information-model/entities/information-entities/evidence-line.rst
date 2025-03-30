@@ -5,6 +5,29 @@ Evidence Line
 
 .. include::  ../../../def/va-spec/EvidenceLine.rst
 
+
+** DATA STRUCTURE**
+
+In VA-Spec, the :ref:`Evidence Line <EvidenceLine>` class and its :ref:`profiles <community-profiles>` can support the general data structure below. 
+
+.. core-im-evidence-line-structure:
+
+.. figure:: ../../../images/evidence-line-proposition-data-structure.png
+
+   Evidence Line Data Structure
+
+   **Legend** A class-level view of the Evidence Line-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
+
+In this structure:
+
+* An **Evidence Line** roots a central axis where it is linked zero or more pieces of information (e.g. **Study Results**) that were used to build the arguemnt it represents.
+* The **Proposition** contained in the Evidence Line object encapsulates a structured representation of the possible fact toward which evidence is interpreted and scored (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide moderate support). 
+
+ * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the previous Statement diagram) - but otherwise should be provided. 
+* As with Statements, classes surrounding this central axis are used to describe the provenance of the Evidence Lines and its Evidence Items.
+
+A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
+
 **IMPLEMENTATION GUIDANCE**
 
 **1. Attaching Evidence to Statements**
