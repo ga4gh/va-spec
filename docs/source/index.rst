@@ -1,7 +1,9 @@
 GA4GH Variant Annotation Specification
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-The **Variant Annotation Specification (VA-Spec)** is a standard developed by the **Global Alliance for Genomics and Health (GA4GH)** to facilitate sharing of biological and clinical knowledge about genetic variation. Docuemntation on this site describes the scope, content and utility of the specification, along with support  provided for its implementation.
+The **Variant Annotation Specification (VA-Spec)** is a standard developed by the **Global Alliance for Genomics and Health (GA4GH)** to facilitate sharing of biological and clinical knowledge about genetic variation. 
+
+Documentation on this site describes the scope, content and utility of the specification, along with support  provided for its implementation.
 
 .. list-table::
    :class: clean-wrap
@@ -28,7 +30,7 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
    *  - :ref:`Appendices <appendices>`
       - A collection of pages with additional information on various aspects of the VA-Spec.
 
-If you have questions or feedback, please reach out to the VA Team on `Slack <https://ga4gh.slack.com/archives/CBGR3P1GR>`_, through our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
+If you have questions or feedback, please reach out to the VA Team on `Slack <https://join.slack.com/share/enQtODY4OTQ2MDE0MDU3Ny0xM2I3M2ExYTk4Njg0ZDUyNTQ5NjVlMjU1ZTM2Njg1YjZmZGIwODJmYjNjNmJhNzRkMmI3Zjk5Y2RkNmU3MWRh>`_, through our `mailing list <https://groups.google.com/a/ga4gh.org/g/ga4gh-variant-annotation>`_, or in our `issue tracker <https://github.com/ga4gh/va-spec/issues>`_.
 
 --------
 
