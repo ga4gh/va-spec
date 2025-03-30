@@ -42,7 +42,7 @@ Specific implementations in which VA-Spec supports these use cases:
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: 20 40 40
+   :widths: 20 50 30
 
    *  - Project
       - Description
