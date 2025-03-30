@@ -9,23 +9,23 @@ Study Result
 
 **DATA STRUCTURE**
 
-Many users of the VA-Spec provide curated collections of data about a particular variant from a particular study or analysis, as opposed to higher order assertions of knowledge. The :ref:`Study Result <StudyResult>` class is defined to support this use case.
+In VA-Spec, the :ref:`Study Result <StudyResult>` class and its :ref:`profiles <study-result-profiles>` can support the general data structure below. 
 
-Like the Statement class, it roots a larger data structure supporting clear and precise tracking of the evidence and provenance information.
+.. core-im-study-result-data-structure:
 
-.. gks-core-study-result-data-structure:
-
-.. figure:: ../../../images/core-im-study-result-data-structure.png
+.. figure:: ../../../images/study-result-data-structure.png
 
    Study Result Data Structure
 
-   **Legend** A class-level view of the Study Result-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report in the case of a Cohort Allele Frequency study Result reporting data from the gnomAD dataset about a particular variant.
+   **Legend** A class-level view of the Study Result-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 
-In this structure:
- * A **Study Result** is linked to the set of **Data Items** it collects about the focus variant.
- * The **Data Items** can be linked to the larger **Data Set** or sets from which it came,
- * The **Study Result** and **Data Set** can be linked to a description of the **Study Group** from which the data was collected.
- * As with Statements, clear and precise provenance information about the Study Result, Data Items, and Data Set can be captured in supporting **Method**, **Document**, **Contribution**, **Agent**, and **Activity** objects.
+In this structure: 
+
+* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came, and a description of the **Study Group** from which the data was collected. 
+* Note that no **Proposition** object is used here, because Study Results represent more foundational data, and do not assert or assess evidence for possible facts about the domain. 
+* As with Statements and Evidence Lines, surrounding classes can be used to describe the provenance of the Study Result and its data items.
+
+A data example illustrating this structure for a Study Result interpreted as evidence for a Variant Pathogenicity Statement can be found :ref:`here <-variant-pathogenicity-statement-example-with-evidence>`.
 
 ------------
 
