@@ -8,7 +8,8 @@ Statement
 
 ----------
 
-**DATA STRUCTURE**
+Data Structure
+@@@@@@@@@@@@@@
 
 In VA Models, each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object that roots a data structure that supports rich and flexible descriptions of the evidence and provenance supporting this knowledge:
 
