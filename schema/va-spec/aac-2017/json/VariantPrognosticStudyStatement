@@ -69,8 +69,7 @@
                }
             },
             "specifiedBy": {
-               "description": "A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of evidence.",
-               "methodType": null
+               "description": "A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of evidence."
             }
          },
          "required": [

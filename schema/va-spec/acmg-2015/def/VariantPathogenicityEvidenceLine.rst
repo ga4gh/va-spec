@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-An Evidence Line that describes how information about the specific criterion evidence for  the variant was assessed as evidence for or against the variant's pathogenicity.
+An Evidence Line that describes how information about the specific criterion evidence for the variant was assessed as evidence for or against the variant's pathogenicity.
 
 **Information Model**
 

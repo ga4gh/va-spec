@@ -2,7 +2,7 @@
    "$schema": "https://json-schema.org/draft/2020-12/schema",
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/acmg-2015/json/VariantPathogenicityEvidenceLine",
    "title": "VariantPathogenicityEvidenceLine",
-   "description": "An Evidence Line that describes how information about the specific criterion evidence for  the variant was assessed as evidence for or against the variant's pathogenicity.",
+   "description": "An Evidence Line that describes how information about the specific criterion evidence for the variant was assessed as evidence for or against the variant's pathogenicity.",
    "maturity": "draft",
    "allOf": [
       {
