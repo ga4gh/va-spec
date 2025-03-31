@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-TODO
+A Study Result that reports measures related to the frequency of an variant across different tumor types.
 
 **Information Model**
 
@@ -98,32 +98,37 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       -
       - :ref:`DataSet`
       - 0..1
-      - TODO
+      - The dataset from which data in the Tumor Variant Frequency Study Result was taken.
    *  - focusVariant
       -
       - :ref:`Allele` | :ref:`iriReference` | :ref:`CategoricalVariant`
       - 1..1
-      - TODO
+      - The variant for which frequency data is reported in the Study Result
    *  - affectedTumorSamples
       -
       - integer
       - 1..1
-      -
+      - The number of tumor samples that contain the focus variant
    *  - totalTumorSamples
       -
       - integer
       - 1..1
-      - TODO
-   *  - cohort
+      - The total number of tumor samples included in the dataset
+   *  - affectedFrequencyCount
+      -
+      - integer
+      - 1..1
+      - The frequency of tumor samples that include the focus variant.
+   *  - sampleGroup
       -
       - :ref:`StudyGroup`
-      - 1..1
-      - TODO
-   *  - subCohortFrequency
+      - 0..1
+      - The set of samples about which the frequency data was generated.
+   *  - subGroupFrequency
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`TumorVariantFrequencyStudyResult`
       - 0..m
-      - TODO
+      - A list of Tumor Variant Frequency Study Result objects describing subsets of the sample group currently being described. Subgroups can be further subdivided into more subcohorts. This enables, for example, the description of frequency data within samples with a narrower categorical variant than the root focus variant, or samples with a specific tumors type

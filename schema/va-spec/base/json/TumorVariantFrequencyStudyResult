@@ -4,7 +4,7 @@
    "title": "TumorVariantFrequencyStudyResult",
    "maturity": "trial use",
    "type": "object",
-   "description": "TODO",
+   "description": "A Study Result that reports measures related to the frequency of an variant across different tumor types.",
    "properties": {
       "id": {
          "type": "string",
@@ -95,7 +95,7 @@
       },
       "sourceDataSet": {
          "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/DataSet",
-         "description": "TODO",
+         "description": "The dataset from which data in the Tumor Variant Frequency Study Result was taken.",
          "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       },
       "focusVariant": {
@@ -110,30 +110,36 @@
                "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
             }
          ],
-         "description": "TODO",
+         "description": "The variant for which frequency data is reported in the Study Result",
          "$comment": "The 'focus' of a StudyResult is the what anchors selection of all data items and provenance information that it contains. This focus may be a single participant or subject of a study (e.g. one patient in a clinical study, or one allele in a population frequency analysis). It may be a study group defined as an experimental unit in the study (e.g. a specific treatment arm of a clinical study). Or it may be a variable defined as a unit of analysis in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with clinical outcomes)."
       },
       "affectedTumorSamples": {
-         "type": "integer"
+         "type": "integer",
+         "description": "The number of tumor samples that contain the focus variant"
       },
       "totalTumorSamples": {
          "type": "integer",
-         "description": "TODO"
+         "description": "The total number of tumor samples included in the dataset"
       },
-      "cohort": {
+      "affectedFrequencyCount": {
+         "type": "integer",
+         "description": "The frequency of tumor samples that include the focus variant."
+      },
+      "sampleGroup": {
          "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/StudyGroup",
-         "description": "TODO"
+         "description": "The set of samples about which the frequency data was generated."
       },
-      "subCohortFrequency": {
+      "subGroupFrequency": {
          "type": "array",
          "ordered": false,
-         "description": "TODO",
+         "description": "A list of Tumor Variant Frequency Study Result objects describing subsets of the sample group currently being described. Subgroups can be further subdivided into more subcohorts. This enables, for example, the description of frequency data within samples with a narrower categorical variant than the root focus variant, or samples with a specific tumors type",
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/TumorVariantFrequencyStudyResult"
          }
       }
    },
    "required": [
+      "affectedFrequencyCount",
       "affectedTumorSamples",
       "cohort",
       "focusVariant",

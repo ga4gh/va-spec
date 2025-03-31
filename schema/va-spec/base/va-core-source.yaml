@@ -1017,7 +1017,8 @@ $defs:
     maturity: trial use
     type: object
     description: >-
-      TODO
+      A Study Result that reports measures related to the frequency of an variant across
+      different tumor types.
     properties:
       type:
         extends: type
@@ -1026,34 +1027,45 @@ $defs:
         description: MUST be "TumorVariantFrequencyStudyResult".
       sourceDataSet:
         extends: sourceDataSet
-        description: TODO
+        description: >-
+          The dataset from which data in the Tumor Variant Frequency Study Result was
+          taken.
       focusVariant:
         extends: focus
-        description: TODO
+        description: The variant for which frequency data is reported in the Study Result
         oneOf:
         - $refCurie: vrs:Allele
         - $refCurie: gks.core:iriReference
         - $refCurie: cat-vrs:CategoricalVariant
       affectedTumorSamples:
         type: integer
+        description: The number of tumor samples that contain the focus variant
       totalTumorSamples:
         type: integer
         description: >-
-          TODO
-      cohort:
+          The total number of tumor samples included in the dataset
+      affectedFrequencyCount:
+        type: integer
+        description: The frequency of tumor samples that include the focus variant.
+      sampleGroup:
         $ref: "#/$defs/StudyGroup"
-        description: TODO
-      subCohortFrequency:
+        description: The set of samples about which the frequency data was generated.
+      subGroupFrequency:
         type: array
         ordered: false
         description: >-
-          TODO
+          A list of Tumor Variant Frequency Study Result objects describing subsets of
+          the sample group currently being described. Subgroups can be further
+          subdivided into more subcohorts. This enables, for example, the description of
+          frequency data within samples with a narrower categorical variant than the
+          root focus variant, or samples with a specific tumors type
         items:
           $ref: "#/$defs/TumorVariantFrequencyStudyResult"
     required:
     - focusVariant
     - affectedTumorSamples
     - totalTumorSamples
+    - affectedFrequencyCount
     - cohort
 
 
