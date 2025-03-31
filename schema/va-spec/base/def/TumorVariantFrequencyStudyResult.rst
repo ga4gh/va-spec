@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A StudyResult that reports measures related to the frequency of an Allele in a cohort
+TODO
 
 **Information Model**
 
-Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyResult`.
+Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyResult`.
 
 .. list-table::
    :class: clean-wrap
@@ -93,42 +93,37 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyR
       -
       - string
       - 1..1
-      - MUST be "CohortAlleleFrequencyStudyResult".
+      - MUST be "TumorVariantFrequencyStudyResult".
    *  - sourceDataSet
       -
       - :ref:`DataSet`
       - 0..1
-      - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
-   *  - focusAllele
+      - TODO
+   *  - focusVariant
       -
-      - :ref:`Allele` | :ref:`iriReference`
+      - :ref:`Allele` | :ref:`iriReference` | :ref:`CategoricalVariant`
       - 1..1
-      - The Allele for which frequency results are reported.
-   *  - focusAlleleCount
-      -
-      - integer
-      - 1..1
-      - The number of occurrences of the focusAllele in the cohort.
-   *  - locusAlleleCount
+      - TODO
+   *  - affectedTumorSamples
       -
       - integer
       - 1..1
-      - The number of occurrences of all alleles at the locus in the cohort.
-   *  - focusAlleleFrequency
       -
-      - number
+   *  - totalTumorSamples
+      -
+      - integer
       - 1..1
-      - The frequency of the focusAllele in the cohort.
+      - TODO
    *  - cohort
       -
       - :ref:`StudyGroup`
       - 1..1
-      - The cohort from which the frequency was derived.
+      - TODO
    *  - subCohortFrequency
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`CohortAlleleFrequencyStudyResult`
+      - :ref:`TumorVariantFrequencyStudyResult`
       - 0..m
-      - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+      - TODO

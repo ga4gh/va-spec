@@ -983,7 +983,6 @@ $defs:
         oneOf:
         - $refCurie: vrs:Allele
         - $refCurie: gks.core:iriReference
-        - $refCurie: cat-vrs:CategoricalVariant
       focusAlleleCount:
         type: integer
         description: The number of occurrences of the focusAllele in the cohort.
@@ -1012,6 +1011,51 @@ $defs:
     - locusAlleleCount
     - focusAlleleFrequency
     - cohort
+
+  TumorVariantFrequencyStudyResult:
+    inherits: StudyResult
+    maturity: trial use
+    type: object
+    description: >-
+      TODO
+    properties:
+      type:
+        extends: type
+        const: "TumorVariantFrequencyStudyResult"
+        default: "TumorVariantFrequencyStudyResult"
+        description: MUST be "TumorVariantFrequencyStudyResult".
+      sourceDataSet:
+        extends: sourceDataSet
+        description: TODO
+      focusVariant:
+        extends: focus
+        description: TODO
+        oneOf:
+        - $refCurie: vrs:Allele
+        - $refCurie: gks.core:iriReference
+        - $refCurie: cat-vrs:CategoricalVariant
+      affectedTumorSamples:
+        type: integer
+      totalTumorSamples:
+        type: integer
+        description: >-
+          TODO
+      cohort:
+        $ref: "#/$defs/StudyGroup"
+        description: TODO
+      subCohortFrequency:
+        type: array
+        ordered: false
+        description: >-
+          TODO
+        items:
+          $ref: "#/$defs/TumorVariantFrequencyStudyResult"
+    required:
+    - focusVariant
+    - affectedTumorSamples
+    - totalTumorSamples
+    - cohort
+
 
   ExperimentalVariantFunctionalImpactStudyResult:
     inherits: StudyResult

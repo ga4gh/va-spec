@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/CohortAlleleFrequencyStudyResult",
-   "title": "CohortAlleleFrequencyStudyResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/TumorVariantFrequencyStudyResult",
+   "title": "TumorVariantFrequencyStudyResult",
    "maturity": "trial use",
    "type": "object",
-   "description": "A StudyResult that reports measures related to the frequency of an Allele in a cohort",
+   "description": "TODO",
    "properties": {
       "id": {
          "type": "string",
@@ -88,18 +88,21 @@
       },
       "type": {
          "type": "string",
-         "description": "MUST be \"CohortAlleleFrequencyStudyResult\".",
+         "description": "MUST be \"TumorVariantFrequencyStudyResult\".",
          "$comment": "MUST be the name of a concrete class from the data model.",
-         "const": "CohortAlleleFrequencyStudyResult",
-         "default": "CohortAlleleFrequencyStudyResult"
+         "const": "TumorVariantFrequencyStudyResult",
+         "default": "TumorVariantFrequencyStudyResult"
       },
       "sourceDataSet": {
          "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/DataSet",
-         "description": "The dataset from which the CohortAlleleFrequencyStudyResult was reported.",
+         "description": "TODO",
          "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       },
-      "focusAllele": {
+      "focusVariant": {
          "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/cat-vrs/1.0.0-ballot.2025-03.2/json/CategoricalVariant"
+            },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
@@ -107,40 +110,34 @@
                "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
             }
          ],
-         "description": "The Allele for which frequency results are reported.",
+         "description": "TODO",
          "$comment": "The 'focus' of a StudyResult is the what anchors selection of all data items and provenance information that it contains. This focus may be a single participant or subject of a study (e.g. one patient in a clinical study, or one allele in a population frequency analysis). It may be a study group defined as an experimental unit in the study (e.g. a specific treatment arm of a clinical study). Or it may be a variable defined as a unit of analysis in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with clinical outcomes)."
       },
-      "focusAlleleCount": {
-         "type": "integer",
-         "description": "The number of occurrences of the focusAllele in the cohort."
+      "affectedTumorSamples": {
+         "type": "integer"
       },
-      "locusAlleleCount": {
+      "totalTumorSamples": {
          "type": "integer",
-         "description": "The number of occurrences of all alleles at the locus in the cohort."
-      },
-      "focusAlleleFrequency": {
-         "type": "number",
-         "description": "The frequency of the focusAllele in the cohort."
+         "description": "TODO"
       },
       "cohort": {
          "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/StudyGroup",
-         "description": "The cohort from which the frequency was derived."
+         "description": "TODO"
       },
       "subCohortFrequency": {
          "type": "array",
          "ordered": false,
-         "description": "A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.",
+         "description": "TODO",
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/CohortAlleleFrequencyStudyResult"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/TumorVariantFrequencyStudyResult"
          }
       }
    },
    "required": [
+      "affectedTumorSamples",
       "cohort",
-      "focusAllele",
-      "focusAlleleCount",
-      "focusAlleleFrequency",
-      "locusAlleleCount",
+      "focusVariant",
+      "totalTumorSamples",
       "type"
    ],
    "additionalProperties": false
