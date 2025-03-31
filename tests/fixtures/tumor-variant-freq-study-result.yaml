@@ -28,9 +28,6 @@ subGroupFrequency:
     affectedTumorSamples: 17
     totalTumorSamples: 24592
     affectedFrequency: 0.0006912817176317501
-    sampleGroup:
-      name: cnsbrain
-      type: StudyGroup
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
@@ -54,18 +51,15 @@ subGroupFrequency:
         affectedFrequency: 0.058823529411764705
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
-      name: CIC R215
+      name: CIC R215Q
       type: CategoricalVariant
     affectedTumorSamples: 7
     totalTumorSamples: 24592
     affectedFrequency: 4.066363044892648e-05
-    sampleGroup:
-      name: cnsbrain
-      type: StudyGroup
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
-          name: CIC R215W
+          name: CIC R215Q
           type: CategoricalVariant
         sampleGroup:
           name: CNS/Brain
@@ -75,7 +69,7 @@ subGroupFrequency:
         affectedFrequency: 0.8571428571428571
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
-          name: CIC R215W
+          name: CIC R215Q
           type: CategoricalVariant
         sampleGroup:
           name: Bowel
@@ -85,18 +79,15 @@ subGroupFrequency:
         affectedFrequency: 0.14285714285714285
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
-      name: CIC R215
+      name: CIC R215R
       type: CategoricalVariant
     affectedTumorSamples: 1
     totalTumorSamples: 24592
     affectedFrequency: 4.066363044892648e-05
-    sampleGroup:
-      name: cnsbrain
-      type: StudyGroup
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
-          name: CIC R215W
+          name: CIC R215R
           type: CategoricalVariant
         sampleGroup:
           name: Skin

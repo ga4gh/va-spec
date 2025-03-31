@@ -122,7 +122,7 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
    *  - sampleGroup
       -
       - :ref:`StudyGroup`
-      - 1..1
+      - 0..1
       - The set of samples about which the frequency data was generated.
    *  - subGroupFrequency
       -
