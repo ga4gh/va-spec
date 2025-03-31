@@ -31,7 +31,7 @@ $defs:
             the 'directionOfEvidenceProvided' attribute. The indicated enumeration constrains the nested
             MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
             Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this
-            attribute is required. If it is 'none', then this attribute is not allowed.
+            attribute is required. If it is 'neutral', then this attribute is not allowed.
           properties:
             primaryCoding:
               code:
@@ -101,6 +101,13 @@ $defs:
                   the direction of evidence provided, and the strength of evidence provided.
               system:
                 const: ACMG Guidelines, 2015
+    - if:
+        properties:
+          directionOfEvidenceProvided:
+            enum: [supports, disputes]
+        required: [directionOfEvidenceProvided]
+      then:
+        required: [strengthOfEvidenceProvided]
     required:
       - directionOfEvidenceProvided
       - specifiedBy

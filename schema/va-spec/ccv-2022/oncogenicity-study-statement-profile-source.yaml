@@ -33,6 +33,8 @@ $defs:
             for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative
             to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
             MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+            Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this
+            attribute is required. If it is 'neutral', then this attribute is not allowed.
           properties:
             primaryCoding:
               code:

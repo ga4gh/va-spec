@@ -48,7 +48,7 @@ $defs:
             as evidence for or against the assessed variant's oncogenicity.
           methodType:
             description: >-
-              The type of method used to assess the variant based on the specified acmg criterion.
+              The type of method used to assess the variant based on the specified ccv criterion.
             type: string
             enum:
               - OVS1
@@ -86,6 +86,13 @@ $defs:
                 example: OS3_moderate, OS3_not_met, OVS1, SBVS1_not_met
               system:
                 const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    - if:
+        properties:
+          directionOfEvidenceProvided:
+            enum: [supports, disputes]
+        required: [directionOfEvidenceProvided]
+      then:
+        required: [strengthOfEvidenceProvided]
     required:
       - directionOfEvidenceProvided
       - specifiedBy
