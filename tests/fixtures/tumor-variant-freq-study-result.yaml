@@ -34,8 +34,12 @@ subGroupFrequency:
           name: CIC R215W
           type: CategoricalVariant
         sampleGroup:
-          name: CNS/Brain
+          id: remaining
+          name: CNS/Brain Tumor SubGroup
           type: StudyGroup
+          characteristics:
+            - conceptType: Disease
+              name: CNS/Brain Tumors
         affectedSampleCount: 16
         totalSampleCount: 17
         affectedFrequency: 0.9411764705882353
@@ -44,8 +48,12 @@ subGroupFrequency:
           name: CIC R215W
           type: CategoricalVariant
         sampleGroup:
-          name: Bowel
+          id: remaining
+          name: Bowel Tumor SubGroup
           type: StudyGroup
+          characteristics:
+            - conceptType: Disease
+              name: Bowel Tumors
         affectedSampleCount: 1
         totalSampleCount: 17
         affectedFrequency: 0.058823529411764705
@@ -62,8 +70,12 @@ subGroupFrequency:
           name: CIC R215Q
           type: CategoricalVariant
         sampleGroup:
-          name: CNS/Brain
+          id: remaining
+          name: CNS/Brain Tumor SubGroup
           type: StudyGroup
+          characteristics:
+            - conceptType: Disease
+              name: CNS/Brain Tumors
         affectedSampleCount: 6
         totalSampleCount: 7
         affectedFrequency: 0.8571428571428571
@@ -72,8 +84,12 @@ subGroupFrequency:
           name: CIC R215Q
           type: CategoricalVariant
         sampleGroup:
-          name: Bowel
+          id: remaining
+          name: Bowel Tumor SubGroup
           type: StudyGroup
+          characteristics:
+            - conceptType: Disease
+              name: Bowel Tumors
         affectedSampleCount: 1
         totalSampleCount: 7
         affectedFrequency: 0.14285714285714285
@@ -90,8 +106,12 @@ subGroupFrequency:
           name: CIC R215R
           type: CategoricalVariant
         sampleGroup:
-          name: Skin
+          id: remaining
+          name: Skin SubGroup
           type: StudyGroup
+          characteristics:
+            - conceptType: Disease
+              name: Skin Tumors
         affectedSampleCount: 1
         totalSampleCount: 1
         affectedFrequency: 100
