@@ -153,7 +153,7 @@ A few additional notes about this example:
           name: evidence evaluation
         date: '2018-03-11'
   - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
-    type:  VariantPathogenicityFunctionalImpactEvidenceLine
+    type:  VariantPathogenicityEvidenceLine
     targetProposition: ex:Proposition001
     hasEvidenceItems:
       - id: ex:Statement002              # here the evidence item is another Statement about the functional impact of the variant

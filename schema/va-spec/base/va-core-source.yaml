@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/va-spec-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/va-spec-source.yaml"
 title: VA Specification Core classes
 strict: true
 
@@ -270,8 +270,8 @@ $defs:
         const: Method
         default: Method
         description: MUST be "Method".
-      subtype:
-        $refCurie: gks.core:MappableConcept
+      methodType:
+        type: string
         description: >-
           A specific type of method that a Method instance represents (e.g. 'Variant Interpretation
           Guideline', or 'Experimental Protocol').
@@ -312,7 +312,7 @@ $defs:
         description: >-
           The agent that made the contribution.
       activityType:
-        $refCurie: gks.core:MappableConcept
+        type: string
         description: >-
           The specific type of activity performed or role played by an agent in making the contribution
           (e.g. for a publication, agents may contribute as a primary author, editor, figure designer,
@@ -346,12 +346,12 @@ $defs:
         const: Document
         default: Document
         description: Must be "Document"
-      subtype:
+      documentType:
         maturity: draft
         $comment: >-
           The need for subtype is not yet clear, though the content that could be added to this
           leaving this field in draft is obvious. Leaving in draft until this sees regular use.
-        $refCurie: gks.core:MappableConcept
+        type: string
         description: >-
           A specific type of document that a Document instance represents (e.g.  'publication',
           'patent', 'pathology report')
@@ -400,8 +400,8 @@ $defs:
         type: string
         extends: name
         description: The given name of the Agent.
-      subtype:
-        $refCurie: gks.core:MappableConcept
+      agentType:
+        type: string
         description: >-
           A specific type of agent the Agent object represents. Recommended subtypes
           include codes for `person`, `organization`, or `software`.
@@ -650,10 +650,10 @@ $defs:
         const: DataSet
         default: DataSet
         description: MUST be "DataSet".
-      subtype:
+      datasetType:
         maturity: draft
         $comment: the need for a DataSet subtype is not yet clear. Leaving in draft until then.
-        $refCurie: gks.core:MappableConcept
+        type: string
         description: >-
           A specific type of data set the DataSet instance represents (e.g. a
           'clinical data set', a 'sequencing data set', a 'gene expression data set',

@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Method",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Method",
    "title": "Method",
    "type": "object",
    "maturity": "trial use",
@@ -44,15 +44,15 @@
          "const": "Method",
          "default": "Method"
       },
-      "subtype": {
+      "methodType": {
+         "type": "string",
          "description": "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').",
-         "$comment": "This attribute can be used to report a specific type for the Method, in cases where a model does not define Method subclasses for this purpose.  Implementers can define their own set of method type codes/terms, to match the needs of their application.",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
+         "$comment": "This attribute can be used to report a specific type for the Method, in cases where a model does not define Method subclasses for this purpose.  Implementers can define their own set of method type codes/terms, to match the needs of their application."
       },
       "reportedIn": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Document"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
