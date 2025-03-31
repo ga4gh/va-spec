@@ -983,6 +983,7 @@ $defs:
         oneOf:
         - $refCurie: vrs:Allele
         - $refCurie: gks.core:iriReference
+        - $refCurie: cat-vrs:CategoricalVariant
       focusAlleleCount:
         type: integer
         description: The number of occurrences of the focusAllele in the cohort.
