@@ -64,7 +64,7 @@ Some Contribution attributes are inherited from :ref:`gks-core:Entity`.
       - The agent that made the contribution.
    *  - activityType
       -
-      - :ref:`MappableConcept`
+      - string
       - 0..1
       - The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).
    *  - date

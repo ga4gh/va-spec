@@ -57,9 +57,9 @@ Some Method attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 1..1
       - MUST be "Method".
-   *  - subtype
+   *  - methodType
       -
-      - :ref:`MappableConcept`
+      - string
       - 0..1
       - A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').
    *  - reportedIn

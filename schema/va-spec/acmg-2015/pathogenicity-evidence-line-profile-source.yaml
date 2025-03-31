@@ -1,6 +1,6 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/acmg-2015/pathogenicity-functional-impact--profile-source.yaml"
-title: Variant Pathogenicity Functional Impact Evidence Line Profile (ACMG 2015)
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/acmg-2015/pathogenicity-evidence-line-profile-source.yaml"
+title: Variant Pathogenicity Evidence Line Profile (ACMG 2015)
 description: >-
   Profile defined to align with terminology and conventions from the American College of Medical Genetics
   and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
@@ -11,19 +11,19 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  VariantPathogenicityFunctionalImpactEvidenceLine:
+  VariantPathogenicityEvidenceLine:
     maturity: draft
     description: >-
-      An Evidence Line that describes how information about the functional impact of a variant on a gene or
-      gene product was interpreted as evidence for or against the variant's pathogenicity.
+      An Evidence Line that describes how information about the specific criterion evidence for
+      the variant was assessed as evidence for or against the variant's pathogenicity.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
-            A Variant Pathogenicity Proposition against which functional impact information was assessed,
+            A Variant Pathogenicity Proposition against which specific information was assessed,
             in determining the strength and direction of support this information provides as evidence.
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantPathogenicityProposition"
         strengthOfEvidenceProvided:
           description: >-
             The strength of support that an Evidence Line is determined to provide for or against the proposed
@@ -45,9 +45,43 @@ $defs:
                 const: ACMG Guidelines, 2015
         specifiedBy:
           description: >-
-            The guidelines that were followed to interpret variant functional impact information
+            The guidelines that were followed to assess variant information
             as evidence for or against the assessed variant's pathogenicity.
+          methodType:
+            description: >-
+              The type of method used to assess the variant based on the specified acmg criterion.
+            type: string
+            enum:
+              - PVS1
+              - PS1
+              - PS2
+              - PS3
+              - PS4
+              - PM1
+              - PM2
+              - PM3
+              - PM4
+              - PM5
+              - PM6
+              - PP1
+              - PP2
+              - PP3
+              - PP4
+              - PP5
+              - BA1
+              - BS1
+              - BS2
+              - BS3
+              - BS4
+              - BP1
+              - BP2
+              - BP3
+              - BP4
+              - BP5
+              - BP6
+              - BP7
           required:
+            - methodType
             - reportedIn
         evidenceOutcome:
           description: >-
@@ -60,15 +94,11 @@ $defs:
           properties:
             primaryCoding:
               code:
-                enum:
-                  - PS3
-                  - PS3_moderate
-                  - PS3_supporting
-                  - PS3_not_met
-                  - BS3
-                  - BS3_moderate
-                  - BS3_supporting
-                  - BS3_not_met
+                pattern: '^((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?)$'
+                example: PS3_moderate, PS3_not_met, PVS1, BA1_not_met
+                description: >-
+                  The code for the evidence outcome, which is a combination of the ACMG criterion code,
+                  the direction of evidence provided, and the strength of evidence provided.
               system:
                 const: ACMG Guidelines, 2015
     required:

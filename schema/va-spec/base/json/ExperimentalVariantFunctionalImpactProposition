@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/ExperimentalVariantFunctionalImpactProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/ExperimentalVariantFunctionalImpactProposition",
    "title": "ExperimentalVariantFunctionalImpactProposition",
    "maturity": "trial use",
    "type": "object",
@@ -83,7 +83,7 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Document"
             },
             {
                "type": "object",
