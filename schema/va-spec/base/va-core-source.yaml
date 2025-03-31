@@ -1037,10 +1037,10 @@ $defs:
         - $refCurie: vrs:Allele
         - $refCurie: gks.core:iriReference
         - $refCurie: cat-vrs:CategoricalVariant
-      affectedTumorSamples:
+      affectedSampleCount:
         type: integer
         description: The number of tumor samples that contain the focus variant
-      totalTumorSamples:
+      totalSampleCount:
         type: integer
         description: >-
           The total number of tumor samples included in the dataset
@@ -1063,8 +1063,8 @@ $defs:
           $ref: "#/$defs/TumorVariantFrequencyStudyResult"
     required:
     - focusVariant
-    - affectedTumorSamples
-    - totalTumorSamples
+    - affectedSampleCount
+    - totalSampleCount
     - affectedFrequency
 
   ExperimentalVariantFunctionalImpactStudyResult:

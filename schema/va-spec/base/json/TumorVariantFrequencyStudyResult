@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/TumorVariantFrequencyStudyResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/TumorVariantFrequencyStudyResult",
    "title": "TumorVariantFrequencyStudyResult",
    "maturity": "trial use",
    "type": "object",
@@ -39,7 +39,7 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Method"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -52,7 +52,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -63,7 +63,7 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Document"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -94,7 +94,7 @@
          "default": "TumorVariantFrequencyStudyResult"
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/DataSet",
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/DataSet",
          "description": "The dataset from which data in the Tumor Variant Frequency Study Result was taken.",
          "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance."
       },
@@ -113,11 +113,11 @@
          "description": "The variant for which frequency data is reported in the Study Result",
          "$comment": "The 'focus' of a StudyResult is the what anchors selection of all data items and provenance information that it contains. This focus may be a single participant or subject of a study (e.g. one patient in a clinical study, or one allele in a population frequency analysis). It may be a study group defined as an experimental unit in the study (e.g. a specific treatment arm of a clinical study). Or it may be a variable defined as a unit of analysis in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with clinical outcomes)."
       },
-      "affectedTumorSamples": {
+      "affectedSampleCount": {
          "type": "integer",
          "description": "The number of tumor samples that contain the focus variant"
       },
-      "totalTumorSamples": {
+      "totalSampleCount": {
          "type": "integer",
          "description": "The total number of tumor samples included in the dataset"
       },
@@ -126,7 +126,7 @@
          "description": "The frequency of tumor samples that include the focus variant."
       },
       "sampleGroup": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/StudyGroup",
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/StudyGroup",
          "description": "The set of samples about which the frequency data was generated."
       },
       "subGroupFrequency": {
@@ -134,15 +134,15 @@
          "ordered": false,
          "description": "A list of Tumor Variant Frequency Study Result objects describing subsets of the sample group currently being described. Subgroups can be further subdivided into more subcohorts. This enables, for example, the description of frequency data within samples with a narrower categorical variant than the root focus variant, or samples with a specific tumors type",
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/TumorVariantFrequencyStudyResult"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/TumorVariantFrequencyStudyResult"
          }
       }
    },
    "required": [
       "affectedFrequency",
-      "affectedTumorSamples",
+      "affectedSampleCount",
       "focusVariant",
-      "totalTumorSamples",
+      "totalSampleCount",
       "type"
    ],
    "additionalProperties": false

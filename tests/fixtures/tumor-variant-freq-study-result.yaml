@@ -11,8 +11,8 @@ specifiedBy:
     type: Document
     doi: 10.1158/2159-8290.CD-17-0321
     name: Accelerating Discovery of Functional Mutant Alleles in Cancer
-affectedTumorSamples: 25
-totalTumorSamples: 24592
+affectedSampleCount: 25
+totalSampleCount: 24592
 affectedFrequency: 0.001016590761223162
 focusVariant:
   type: CategoricalVariant
@@ -25,8 +25,8 @@ subGroupFrequency:
     focusVariant:
       type: CategoricalVariant
       name: CIC R215W
-    affectedTumorSamples: 17
-    totalTumorSamples: 24592
+    affectedSampleCount: 17
+    totalSampleCount: 24592
     affectedFrequency: 0.0006912817176317501
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
@@ -36,8 +36,8 @@ subGroupFrequency:
         sampleGroup:
           name: CNS/Brain
           type: StudyGroup
-        affectedTumorSamples: 16
-        totalTumorSamples: 17
+        affectedSampleCount: 16
+        totalSampleCount: 17
         affectedFrequency: 0.9411764705882353
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
@@ -46,15 +46,15 @@ subGroupFrequency:
         sampleGroup:
           name: Bowel
           type: StudyGroup
-        affectedTumorSamples: 1
-        totalTumorSamples: 17
+        affectedSampleCount: 1
+        totalSampleCount: 17
         affectedFrequency: 0.058823529411764705
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
       name: CIC R215Q
       type: CategoricalVariant
-    affectedTumorSamples: 7
-    totalTumorSamples: 24592
+    affectedSampleCount: 7
+    totalSampleCount: 24592
     affectedFrequency: 4.066363044892648e-05
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
@@ -64,8 +64,8 @@ subGroupFrequency:
         sampleGroup:
           name: CNS/Brain
           type: StudyGroup
-        affectedTumorSamples: 6
-        totalTumorSamples: 7
+        affectedSampleCount: 6
+        totalSampleCount: 7
         affectedFrequency: 0.8571428571428571
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
@@ -74,15 +74,15 @@ subGroupFrequency:
         sampleGroup:
           name: Bowel
           type: StudyGroup
-        affectedTumorSamples: 1
-        totalTumorSamples: 7
+        affectedSampleCount: 1
+        totalSampleCount: 7
         affectedFrequency: 0.14285714285714285
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
       name: CIC R215R
       type: CategoricalVariant
-    affectedTumorSamples: 1
-    totalTumorSamples: 24592
+    affectedSampleCount: 1
+    totalSampleCount: 24592
     affectedFrequency: 4.066363044892648e-05
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
@@ -92,6 +92,6 @@ subGroupFrequency:
         sampleGroup:
           name: Skin
           type: StudyGroup
-        affectedTumorSamples: 1
-        totalTumorSamples: 1
+        affectedSampleCount: 1
+        totalSampleCount: 1
         affectedFrequency: 100

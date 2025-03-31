@@ -104,12 +104,12 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - :ref:`Allele` | :ref:`iriReference` | :ref:`CategoricalVariant`
       - 1..1
       - The variant for which frequency data is reported in the Study Result
-   *  - affectedTumorSamples
+   *  - affectedSampleCount
       -
       - integer
       - 1..1
       - The number of tumor samples that contain the focus variant
-   *  - totalTumorSamples
+   *  - totalSampleCount
       -
       - integer
       - 1..1
