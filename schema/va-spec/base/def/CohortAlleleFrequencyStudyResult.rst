@@ -101,7 +101,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
    *  - focusAllele
       -
-      - :ref:`Allele` | :ref:`iriReference`
+      - :ref:`Allele` | :ref:`iriReference` | :ref:`CategoricalVariant`
       - 1..1
       - The Allele for which frequency results are reported.
    *  - focusAlleleCount
