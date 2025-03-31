@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/DataSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/DataSet",
    "title": "DataSet",
    "type": "object",
    "maturity": "trial use",
@@ -44,16 +44,16 @@
          "const": "DataSet",
          "default": "DataSet"
       },
-      "subtype": {
+      "datasetType": {
          "maturity": "draft",
          "$comment": "This attribute can be used to report a specific type for the DataSet, in cases where a model does not define DataSet subclasses for this purpose. Implementers can define their own set of data set type codes/terms, to match the needs of the domain or application.",
-         "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
+         "type": "string",
+         "description": "A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')"
       },
       "reportedIn": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Document"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"

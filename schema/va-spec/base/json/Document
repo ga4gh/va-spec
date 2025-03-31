@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Document",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Document",
    "title": "Document",
    "type": "object",
    "maturity": "trial use",
@@ -44,11 +44,11 @@
          "const": "Document",
          "default": "Document"
       },
-      "subtype": {
+      "documentType": {
          "maturity": "draft",
          "$comment": "This attribute can be used to report a specific type for the Document, in cases where a model does not define Document subclasses for this purpose.  Implementers can define their own set of document type codes/terms, to match the needs of their application.",
-         "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
+         "type": "string",
+         "description": "A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')"
       },
       "title": {
          "type": "string",

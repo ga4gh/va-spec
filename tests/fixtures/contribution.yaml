@@ -5,13 +5,4 @@ contributor:
     type: Agent
     name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
 date: '2018-06-12'
-activityType:
-  primaryCoding:
-    code: cg000010
-    system: https://dataexchange.clinicalgenome.org/codes/
-  name: submitted
-  mappings:
-    - coding:
-        code: cg000010
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+activityType: submitted

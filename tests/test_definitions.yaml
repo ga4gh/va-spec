@@ -90,13 +90,13 @@ tests:
     definition: CohortAlleleFrequencyStudyResult
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.acmg-2015
-    definition: VariantPathogenicityFunctionalImpactEvidenceLine
+    definition: VariantPathogenicityEvidenceLine
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.base
     definition: EvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec.ccv-2022
-    definition: VariantOncogenicityFunctionalImpactEvidenceLine
+    definition: VariantOncogenicityEvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec.base
     definition: EvidenceLine
