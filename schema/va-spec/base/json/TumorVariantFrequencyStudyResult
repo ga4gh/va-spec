@@ -121,8 +121,8 @@
          "type": "integer",
          "description": "The total number of tumor samples included in the dataset"
       },
-      "affectedFrequencyCount": {
-         "type": "integer",
+      "affectedFrequency": {
+         "type": "number",
          "description": "The frequency of tumor samples that include the focus variant."
       },
       "sampleGroup": {
@@ -139,10 +139,10 @@
       }
    },
    "required": [
-      "affectedFrequencyCount",
+      "affectedFrequency",
       "affectedTumorSamples",
-      "cohort",
       "focusVariant",
+      "sampleGroup",
       "totalTumorSamples",
       "type"
    ],

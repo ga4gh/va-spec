@@ -88,6 +88,9 @@ tests:
   - test_file: cohort-allele-freq-test.yaml
     namespace: va-spec.base
     definition: CohortAlleleFrequencyStudyResult
+  - test_file: tumor-variant-freq-study-result.yaml
+    namespace: va-spec.base
+    definition: TumorVariantFrequencyStudyResult
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.acmg-2015
     definition: VariantPathogenicityFunctionalImpactEvidenceLine

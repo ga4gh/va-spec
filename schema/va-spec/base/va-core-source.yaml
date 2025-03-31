@@ -1044,8 +1044,8 @@ $defs:
         type: integer
         description: >-
           The total number of tumor samples included in the dataset
-      affectedFrequencyCount:
-        type: integer
+      affectedFrequency:
+        type: number
         description: The frequency of tumor samples that include the focus variant.
       sampleGroup:
         $ref: "#/$defs/StudyGroup"
@@ -1065,9 +1065,8 @@ $defs:
     - focusVariant
     - affectedTumorSamples
     - totalTumorSamples
-    - affectedFrequencyCount
-    - cohort
-
+    - affectedFrequency
+    - sampleGroup
 
   ExperimentalVariantFunctionalImpactStudyResult:
     inherits: StudyResult

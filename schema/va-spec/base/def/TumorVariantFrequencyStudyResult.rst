@@ -114,15 +114,15 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - integer
       - 1..1
       - The total number of tumor samples included in the dataset
-   *  - affectedFrequencyCount
+   *  - affectedFrequency
       -
-      - integer
+      - number
       - 1..1
       - The frequency of tumor samples that include the focus variant.
    *  - sampleGroup
       -
       - :ref:`StudyGroup`
-      - 0..1
+      - 1..1
       - The set of samples about which the frequency data was generated.
    *  - subGroupFrequency
       -
