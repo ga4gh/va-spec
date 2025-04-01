@@ -10,7 +10,7 @@ specifiedBy:
   reportedIn:
     type: Document
     doi: 10.1158/2159-8290.CD-17-0321
-    name: Accelerating Discovery of Functional Mutant Alleles in Cancer
+    title: Accelerating Discovery of Functional Mutant Alleles in Cancer
 affectedSampleCount: 25
 totalSampleCount: 24592
 affectedFrequency: 0.00101659
