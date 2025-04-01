@@ -97,12 +97,12 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
     description: A Statement describing the role of a variant in causing an inherited condition.
     # JSON Schema 'allOf' keyword used for schema composition
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Statement"
     # list of property definitions that further constrain attributes in the base Statement class
     - properties:
         # A constraint on the Statement.proposition attribute requiring it to take a VariantPathogenicityProposition
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantPathogenicityProposition"
           description: A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
         # A constraint on the code field nested within a MappableConcept that requires the 'strength' attribute to take specific values.
         strength:
