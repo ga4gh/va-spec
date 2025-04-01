@@ -41,8 +41,8 @@ subGroupFrequency:
             - conceptType: Disease
               name: CNS/Brain Tumors
         affectedSampleCount: 16
-        totalSampleCount: 17
-        affectedFrequency: 0.94117647
+        totalSampleCount: 658
+        affectedFrequency: 0.02431611
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
           name: CIC R215W
@@ -55,8 +55,8 @@ subGroupFrequency:
             - conceptType: Disease
               name: Bowel Tumors
         affectedSampleCount: 1
-        totalSampleCount: 17
-        affectedFrequency: 0.05882353
+        totalSampleCount: 1184
+        affectedFrequency: 0.00084459
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
       name: CIC R215Q
@@ -77,8 +77,8 @@ subGroupFrequency:
             - conceptType: Disease
               name: CNS/Brain Tumors
         affectedSampleCount: 6
-        totalSampleCount: 7
-        affectedFrequency: 0.85714286
+        totalSampleCount: 658
+        affectedFrequency: 0.00911854
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
           name: CIC R215Q
@@ -91,8 +91,8 @@ subGroupFrequency:
             - conceptType: Disease
               name: Bowel Tumors
         affectedSampleCount: 1
-        totalSampleCount: 7
-        affectedFrequency: 0.14285714
+        totalSampleCount: 1184
+        affectedFrequency: 0.00084459
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
       name: CIC R215R
@@ -113,5 +113,5 @@ subGroupFrequency:
             - conceptType: Disease
               name: Skin Tumors
         affectedSampleCount: 1
-        totalSampleCount: 1
-        affectedFrequency: 100
+        totalSampleCount: 359
+        affectedFrequency: 0.00278552
