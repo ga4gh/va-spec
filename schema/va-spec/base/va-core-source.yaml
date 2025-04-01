@@ -1014,7 +1014,7 @@ $defs:
 
   TumorVariantFrequencyStudyResult:
     inherits: StudyResult
-    maturity: trial use
+    maturity: draft
     type: object
     description: >-
       A Study Result that reports measures related to the frequency of an variant across
