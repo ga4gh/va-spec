@@ -13,7 +13,7 @@ specifiedBy:
     name: Accelerating Discovery of Functional Mutant Alleles in Cancer
 affectedSampleCount: 25
 totalSampleCount: 24592
-affectedFrequency: 0.001016590761223162
+affectedFrequency: 0.00101659
 focusVariant:
   type: CategoricalVariant
   name: CIC R215
@@ -27,7 +27,7 @@ subGroupFrequency:
       name: CIC R215W
     affectedSampleCount: 17
     totalSampleCount: 24592
-    affectedFrequency: 0.0006912817176317501
+    affectedFrequency: 0.00069128
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
@@ -42,7 +42,7 @@ subGroupFrequency:
               name: CNS/Brain Tumors
         affectedSampleCount: 16
         totalSampleCount: 17
-        affectedFrequency: 0.9411764705882353
+        affectedFrequency: 0.94117647
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
           name: CIC R215W
@@ -56,14 +56,14 @@ subGroupFrequency:
               name: Bowel Tumors
         affectedSampleCount: 1
         totalSampleCount: 17
-        affectedFrequency: 0.058823529411764705
+        affectedFrequency: 0.05882353
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
       name: CIC R215Q
       type: CategoricalVariant
     affectedSampleCount: 7
     totalSampleCount: 24592
-    affectedFrequency: 4.066363044892648e-05
+    affectedFrequency: 0.00028465
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
@@ -78,7 +78,7 @@ subGroupFrequency:
               name: CNS/Brain Tumors
         affectedSampleCount: 6
         totalSampleCount: 7
-        affectedFrequency: 0.8571428571428571
+        affectedFrequency: 0.85714286
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
           name: CIC R215Q
@@ -92,14 +92,14 @@ subGroupFrequency:
               name: Bowel Tumors
         affectedSampleCount: 1
         totalSampleCount: 7
-        affectedFrequency: 0.14285714285714285
+        affectedFrequency: 0.14285714
   - type: TumorVariantFrequencyStudyResult
     focusVariant:
       name: CIC R215R
       type: CategoricalVariant
     affectedSampleCount: 1
     totalSampleCount: 24592
-    affectedFrequency: 4.066363044892648e-05
+    affectedFrequency: 0.00004066
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
         focusVariant:
