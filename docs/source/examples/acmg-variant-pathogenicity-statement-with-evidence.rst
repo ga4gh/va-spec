@@ -23,9 +23,10 @@ classification of the variant.
 
 A few additional notes about this example:
 
-* Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
-* It omits full representations of `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects that are subjects of Statements and Study Results in the data - as these are large structures that are the remit of other GKS Specifications.
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
+* Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
+* Note that the variant subject of each Statement and Study Result objects is reported to be the same for simplicity (ex:Variant001, shown in the diagram as 'NM_004700.4:c.803CCT[1]').In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here`variant-congruence`.
+* The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKS Specifications.
 
 **Data**:
 
@@ -39,7 +40,7 @@ A few additional notes about this example:
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: clinvar/208366   # 'subjectVariant' specializes the VA Core 'subject' attribute.  The full CatVRS-based representation of this particular variant is not included.
+    subjectVariant: ex:Variant001    # 'subjectVariant' specializes the VA Core 'subject' attribute. The full representation of the NM_004700.4:c.803CCT[1] KCNQ4 variant is not included.
     predicate: isCausalFor           # the predicate for this Statement profile is fixed at 'isCausalFor'
     objectCondition:                 # 'objectCondition' specialilzes the VA Core 'object' attribute.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
@@ -106,7 +107,7 @@ A few additional notes about this example:
     - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.
       type: CohortAlleleFrequencyStudyResult
       name: Overall Cohort Allele Frequency for 1-40819444_40819446-del
-      focusAllele: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz   # the 1-40819444_40819446-del variant that data inlcuded in this Result are about (the full VRS-based representation of the variant is not included)
+      focusAllele: ex:Variant001  # the KCNQ4 variant that data inlcuded in this Result are about (the full representation of the variant is not included)
       focusAlleleFrequency: 0
       focusAlleleCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
       locusAlleleCount: 34086
@@ -161,17 +162,17 @@ A few additional notes about this example:
         type: Statement
         proposition:
           type: ExperimentalVariantFunctionalImpactProposition
-          subjectVariant: ex:protein-allele001   # the full VRS-based representation of the KCNQ4 p.Ser269del variant is not included
+          subjectVariant: ex:Variant001  # the full representation of the variant subject of this Statement is not included
           predicate: impactsFunctionOf   # the predicate for this type of Statement is fixed at 'impactsFunctionOf'
           objectSequenceFeature:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
-            id: clinvar-gene:5728
+            id: clinvar-gene:9132
             conceptType: Gene
             primaryCoding:
-              code: ncbigene:5728
+              code: ncbigene:9132
               system: https://identifiers.org/ncbigene
               iris:
-                - https://identifiers.org/ncbigene:5728
-            name: PTEN
+                - https://identifiers.org/ncbigene:9132
+            name: KCNQ4
           experimentalContextQualifier:      # this qualifier is able to take a custom, data provider-defined object to describe the experiment in which the reported impact was determined. A condensed example is shown here, but an real and complete example can be found in the Exp-Var-Func-Impact-Statement-01.yaml test fixtures file.
             title: KCNQ4 VAMP Seq Expt 001
             description: Multiplex assessment of KCNQ4 protein variant abundance by massively parallel sequencing
@@ -206,7 +207,7 @@ A few additional notes about this example:
           hasEvidenceItems:             # a Study Reuslt that captures the experimental data and scores on which the Funtional Impact Statement was based. 
             - id: ex:StudyResult002     # the evidence in this case is data captured in a Functional Impact Study Result
               type: ExperimentalVariantFunctionalImpactStudyResult
-              focusVariant: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz   # the variant that data are about (a full VRS-based representation of the variant is not included)
+              focusVariant: ex:Variant001   # the KCNQ4 variant that data are about (a full representation of the variant is not included)
               functionalImpactScore: 1.29395467005388        # this is the only data item included right now in this StudyResult
               specifiedBy:
                 type: Method
