@@ -66,7 +66,7 @@ In this structure:
    * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the previous Statement diagram) - but otherwise should be provided. 
 * As with Statements, classes surrounding this central axis are used to describe the provenance of the Evidence Lines and its Evidence Items.
 
-A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here<acmg-variant-pathogenicity-statement-example-with-evidence>`.
+A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 
 More on the internal semantics of Evidence Line objects can be found in the :ref:`Evidence Line Class <EvidenceLine>` page. More on Propositions in the :ref:`next section <propositions>`.
 
