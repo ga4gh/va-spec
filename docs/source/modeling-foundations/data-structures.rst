@@ -95,6 +95,6 @@ In this structure:
 * Note that no **Proposition** object is used here, because Study Results represent more foundational data, and do not assert or assess evidence for possible facts about the domain. 
 * As with Statements and Evidence Lines, surrounding classes can be used to describe the provenance of the Study Result and its data items.
 
-A data example illustrating this structure for a Study Result interpreted as evidence for a Variant Pathogenicity Statement can be found :ref:`here <-variant-pathogenicity-statement-example-with-evidence>`.
+A data example illustrating this structure for a Study Result interpreted as evidence for a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 
 More on the internal semantics of Study Result objects can be found in the :ref:`Study Result Class <StudyResult>` page.
