@@ -1,9 +1,7 @@
 GA4GH Variant Annotation Specification
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-The **Variant Annotation Specification (VA-Spec)** is a standard developed by the **Global Alliance for Genomics and Health (GA4GH)** to facilitate sharing of biological and clinical knowledge about genetic variation. 
-
-Documentation on this site describes the scope, content and utility of the specification, and provides support its implementation.
+The **Variant Annotation Specification (VA-Spec)** is a standard developed by the **Global Alliance for Genomics and Health (GA4GH)** to facilitate sharing of biological and clinical knowledge about genetic variation. It consists of a foundational domain-agnostic VA Core Model, Profiles derived from this core model that provide schema for specific types of variant knowledge, and a Python Reference Implementation. Documentation on this site describes the motivation, content, utility, and implementation guidance for the specification.
 
 .. list-table::
    :class: clean-wrap
