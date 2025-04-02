@@ -28,7 +28,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: 20 10 20 10 40
+   :widths: 20 7 20 7 46
 
 
    *  - Field
@@ -38,7 +38,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - Description
    *  - proposition
       -
-      - :ref:`Variant Pathogenicity Proposition`
+      - :ref:`variant-pathogenicity-proposition`
       - 1..1
       - A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
    *  - strength
@@ -80,7 +80,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: 20 10 20 10 40
+   :widths: 20 7 20 7 46
 
 
    *  - Field
