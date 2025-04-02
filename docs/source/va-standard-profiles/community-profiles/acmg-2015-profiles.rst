@@ -28,7 +28,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: auto
+   :widths: 20 10 20 10 40
 
 
    *  - Field
@@ -80,7 +80,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: auto
+   :widths: 20 10 20 10 40
 
 
    *  - Field
@@ -90,7 +90,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       - Description
    *  - targetProposition
       -
-      - :ref:`VariantPathogenicityProposition`
+      - :ref:`variant-pathogenicity-proposition`
       - 0..1
       - A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity. 
    *  - directionOfEvidenceProvided
