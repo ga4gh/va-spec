@@ -3,7 +3,7 @@ $id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/ccv-2022/onco
 title: Variant Oncogenicity Evidence Line Profile (CCV 2022)
 description: >-
   Profile defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
-  Cancer Genomics Consortium (CGC),and Variant Interpretation for Cancer Consortium (VICC) 2022 community
+  Cancer Genomics Consortium (CGC), and Variant Interpretation for Cancer Consortium (VICC) 2022 community
   guidelines for cancer variant interpretation.
 strict: true
 
@@ -15,22 +15,34 @@ $defs:
   VariantOncogenicityEvidenceLine:
     maturity: draft
     description: >-
-      An Evidence Line that describes how information about the specific evidence of
-      a variant was interpreted as evidence for or against the variant's oncogenicity.
+      An Evidence Line that describes how evidence for a variant was interpreted to determine if a specific 
+      CCV 2022 criterion code is met, and the strength that evidence this provides for or against the variant's 
+      oncogenicity.
     allOf:
     - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
-            A Variant Oncogenicity Proposition against which evidence information was assessed,
-            in determining the strength and direction of support this information provides as evidence.
+            A Variant Oncoogenicity Proposition against which a specific type of evidence was assessed, to 
+            determine the strength and direction of support this evidence provides for or against the 
+            proposition's validity.
           $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantOncogenicityProposition"
-        strengthOfEvidenceProvided:
+        directionOfEvidenceProvided:
+          type: string
+          enum: [ "supports", "neutral", "disputes" ]
           description: >-
+            The direction of support that the Evidence Line is determined to provide toward its target Proposition
+            (supports, disputes, neutral). For CCV-based assessments, if a oncogenicity criterion is 'met' in the 
+            Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes', 
+            and if a criteria is 'not met' the direction is 'none'.
+        strengthOfEvidenceProvided:
+          description: >-            
             The strength of support that an Evidence Line is determined to provide for or against the proposed
-            pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
-            the 'directionOfEvidenceProvided' attribute. The indicated enumeration constrains the nested
-            MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+            oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
+            the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose 
+            nested 'code' field is bound to an enumerated set of values. Conditional requirement: if 
+            `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required. 
+            If it is 'none', then this attribute is not allowed.
           properties:
             primaryCoding:
               code:
@@ -44,11 +56,15 @@ $defs:
                 const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
         specifiedBy:
           description: >-
-            The guidelines that were followed to assess the variant information
-            as evidence for or against the assessed variant's oncogenicity.
+            The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction
+            of support that it provides for or against a variant's oncogenicity. While the CCV Criteria themselves 
+            provide minimal guidance, typically a more detailed, gene- or cancer- specific rubric is followed 
+            to determine if a given criterion was met, and how strongly. 
           methodType:
             description: >-
-              The type of method used to assess the variant based on the specified acmg criterion.
+              A term representing the type of method used to assess evidence for or against the oncogenicity of a variant.
+              Method type is reported as the CCV Code that defines criteria against which evidence is assessed to determine
+              if it supports oncogenicity or benignity of a variant.
             type: string
             enum:
               - OVS1
@@ -73,12 +89,14 @@ $defs:
             - reportedIn
         evidenceOutcome:
           description: >-
-            The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values,
-            along with the specific criterion code used in these assessments. The indicated enumeration constrains the
-            nested MappableConcept.primaryCoding > Coding.code attribute to capture evidence outcomes. Note that if
-            'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion
-            (e.g. 'OS2_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for
-            the relevant criterion, along with the strength of evidence provided. (e.g. 'OS2_moderate').
+            The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 
+            'strengthOfEvidenceProvided' assessments, along with the specific CCV criterion used in these assessments.
+            Rules for constructing this string are as follows, and enforced by a regex constraint: 
+            (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion
+            code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); 
+            (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the
+            altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength);
+            (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met'). 
           properties:
             primaryCoding:
               code:
