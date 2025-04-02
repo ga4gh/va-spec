@@ -5,7 +5,7 @@ VA Core Model
 
 The **VA Core Model** is a domain-agnostic model for representing scientific knowledge about genetic variation, and the evidence and provenance supporting it. 
 
-A hierarchical view of the VA Core Model is below. See the :ref:`Modeling Foundations <modeling-foundations>` section for an overview of modeling principles and patterns that govern its us. 
+A hierarchical view of the VA Core Model is below. See the :ref:`Modeling Foundations <modeling-foundations>` section for an overview of modeling principles and patterns that govern its use. 
 
 .. core-class-hierarchy:
 
