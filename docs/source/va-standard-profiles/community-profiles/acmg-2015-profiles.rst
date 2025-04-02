@@ -70,7 +70,7 @@ Variant Pathogenicity Evidence Line (ACMG 2015)
 
 **Computational Definition**
 
-An Evidence Line that describes how evidence for a variant was interpreted to determine if a specific ACMG 2015 criterion code is met, and the strength that evidence this provides for or against the variant's pathogenicity. 
+An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quaity and abunance of the evidence.  
 
 **Information Model**
 
