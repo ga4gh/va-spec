@@ -995,6 +995,61 @@ $defs:
     - focusAlleleFrequency
     - cohort
 
+  TumorVariantFrequencyStudyResult:
+    inherits: StudyResult
+    maturity: draft
+    type: object
+    description: >-
+      A Study Result that reports measures related to the frequency of a variant in
+      a particular tumor type.
+    properties:
+      type:
+        extends: type
+        const: "TumorVariantFrequencyStudyResult"
+        default: "TumorVariantFrequencyStudyResult"
+        description: MUST be "TumorVariantFrequencyStudyResult".
+      sourceDataSet:
+        extends: sourceDataSet
+        description: >-
+          The dataset from which data in the Tumor Variant Frequency Study Result was
+          taken.
+      focusVariant:
+        extends: focus
+        description: The variant for which frequency data is reported in the Study Result.
+        oneOf:
+        - $refCurie: vrs:Allele
+        - $refCurie: gks.core:iriReference
+        - $refCurie: cat-vrs:CategoricalVariant
+      affectedSampleCount:
+        type: integer
+        description: The number of tumor samples in the sample group that contain the focus variant.
+      totalSampleCount:
+        type: integer
+        description: >-
+          The total number of tumor samples in the sample group.
+      affectedFrequency:
+        type: number
+        description: The frequency of tumor samples that include the focus variant in the sample group.
+      sampleGroup:
+        $ref: "#/$defs/StudyGroup"
+        description: The set of samples about which the frequency data was generated.
+      subGroupFrequency:
+        type: array
+        ordered: false
+        description: >-
+          A list of Tumor Variant Frequency Study Result objects describing variant frequency in
+          different subsets of larger sample group described in the root Study Result. Subgroups
+          can be further subdivided into more subgroups. This enables, for example, futher breakdown
+          of frequency measuers in sample groups with a narrower categorical variant than the root
+          focus variant, or sample groups with a more specific tumor type.
+        items:
+          $ref: "#/$defs/TumorVariantFrequencyStudyResult"
+    required:
+    - focusVariant
+    - affectedSampleCount
+    - totalSampleCount
+    - affectedFrequency
+
   ExperimentalVariantFunctionalImpactStudyResult:
     inherits: StudyResult
     maturity: trial use
