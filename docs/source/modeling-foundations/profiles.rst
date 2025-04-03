@@ -12,7 +12,7 @@ As noted, the VA-Spec provides Profiles for :ref:`Statement <Statement>`, :ref:`
 
 The profiling approach defined in v1.0 of the VA-Spec enumerates the types of specializations and extensions that are permitted in authoring profiles. Future versions of the VA-Spec will include a more formal specification and tooling support for executing these tasks and validating they were performed correctly. 
 
-The table below describes the different profiling tasks supported, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles, and illulstrated graphically in the figure that follows.
+The table below describes the different profiling tasks supported, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles, and illustrated graphically in the figure that follows.
 
 .. list-table::
    :class: clean-wrap
