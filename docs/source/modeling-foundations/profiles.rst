@@ -31,7 +31,7 @@ The table below describes the different profiling tasks supported, with examples
    *  - Define a new attribute to capture domain-specific information in a profiled class
       - The ``VariantPathogenicityProposition`` profile defines ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes.
    *  - Define value sets and binding them to select attributes.
-      - The ``ACMG 2015 Variant Pathogenicity Statement`` profile restricts its nested ``Method.methodType`` attribute to take an ACMG criterion code as its value.
+      - The ``ACMG 2015 Variant Pathogenicity Statement`` profile restricts its ``classification`` attribute to take values based on ACMG 2015 criterion codes and terminology.
    *  - Refine cardinality of select attributes
       - The ``ACMG 2015 Variant Pathogenicity Statement`` profile makes ``Statement.classification`` a required field.
 
