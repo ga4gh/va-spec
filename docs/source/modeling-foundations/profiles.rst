@@ -10,7 +10,7 @@ Profiling Tasks
 
 As noted, the VA-Spec provides Profiles for :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, and :ref:`Evidence Line <EvidenceLine>` representation that specialize these core classes to represent a specific type of variant knowledge (e.g. pathogenicity classification), and/or support conventions of a particular community guideline (e.g. ACMG 2015).
 
-The profiling approach defined in v1.0 of the VA-Spec specifies the types of constraints and extensions that are permitted in authoring profiles. The table below describes the different profiling tasks supported in this approach. 
+The profiling approach defined in v1.0 of the VA-Spec specifies the types of constraints and extensions that are permitted in authoring profiles. The table below describes the different profiling tasks supported in this approach. Examples are based on definition of ACMG-aligned Variant Pathogenicity profiles, and illulstrated graphically in the figure that follows.
 
 .. list-table::
    :class: clean-wrap
@@ -20,16 +20,16 @@ The profiling approach defined in v1.0 of the VA-Spec specifies the types of con
 
    *  -      Profiling Task
       -            Example
-   *  - Define a constrained, domain- or community-specific version of a Core Model class
+   *  - Define a domain- or community-specific version of a Core Model class
       - Specialization of the ``Proposition`` class to create the ``VariantPathogenicityProposition`` profile, constraint of ``Evidence Line`` class to create the ``ACMG Pathogenicity Evidence Line`` profile
-   *  - Define a new attribute to capture domain-specific information in a profiled class
-      - The Statement qualifiers ``geneContextQualifier`` and ``alleleoriginQualifier``
    *  - Import and reference classes for domain entities that VA knowledge artifacts are about
       - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a minimal ``Condition`` class defined in the VA-Spec itself.
    *  - Constrain attributes to take specific profiles, domain entities, or datatypes as values
       - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
+   *  - Define a new attribute to capture domain-specific information in a profiled class
+      - Creation ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes in a VariantPathogenicityProposition.
    *  - Define value sets and binding them to select attributes.
-      - Restricting the ``Method.methodType`` attribute to take an ACMG criterion code as its value in the ACMG 2015 Variant Pathogenicity Statement profile 
+      - Restricting the ``Method.methodType`` attribute to take an ACMG criterion code as its value in the ``ACMG 2015 Variant Pathogenicity Statement`` profile 
    *  - Refine cardinality of select attributes
       - Making ``Statement.classification`` a required field in the ``ACMG 2015 Variant Pathogenicity Statement`` Profile.
 
