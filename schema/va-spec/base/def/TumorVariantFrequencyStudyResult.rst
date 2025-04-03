@@ -1,10 +1,10 @@
-.. note:: This data class is at a **trial use** maturity level and may \
-    change in future releases. Maturity \
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
 
-A Study Result that reports measures related to the frequency of an variant across different tumor types.
+A Study Result that reports measures related to the frequency of a variant in a particular tumor type.
 
 **Information Model**
 
@@ -103,22 +103,22 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       -
       - :ref:`Allele` | :ref:`iriReference` | :ref:`CategoricalVariant`
       - 1..1
-      - The variant for which frequency data is reported in the Study Result
+      - The variant for which frequency data is reported in the Study Result.
    *  - affectedSampleCount
       -
       - integer
       - 1..1
-      - The number of tumor samples that contain the focus variant
+      - The number of tumor samples in the sample group that contain the focus variant.
    *  - totalSampleCount
       -
       - integer
       - 1..1
-      - The total number of tumor samples included in the dataset
+      - The total number of tumor samples in the sample group.
    *  - affectedFrequency
       -
       - number
       - 1..1
-      - The frequency of tumor samples that include the focus variant.
+      - The frequency of tumor samples that include the focus variant in the sample group.
    *  - sampleGroup
       -
       - :ref:`StudyGroup`
@@ -131,4 +131,4 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`TumorVariantFrequencyStudyResult`
       - 0..m
-      - A list of Tumor Variant Frequency Study Result objects describing subsets of the sample group currently being described. Subgroups can be further subdivided into more subcohorts. This enables, for example, the description of frequency data within samples with a narrower categorical variant than the root focus variant, or samples with a specific tumors type
+      - A list of Tumor Variant Frequency Study Result objects describing variant frequency in different subsets of larger sample group described in the root Study Result. Subgroups can be further subdivided into more subgroups. This enables, for example, further breakdown of frequency measures in sample groups with a narrower categorical variant than the root focus variant, or sample groups with a more specific tumor type.

@@ -102,7 +102,6 @@ $defs:
       about a particular variant of interest selected from the complete gnomAD dataset can be reported
       in a StudyResult object, along with relevant provenance information, so they can be referenced
       together as evidence for a higher-order assertion about the variant's pathogenicity.
-    $comment: >-
       Note that a 'dataItem' attribute, which would hold an array of data selected for inclusion in the
       StudyResult, is not included in this version of the StudyResult class. Profiles that extend this core
       class can define data type specific attributes to capture such information (e.g.'focusAlleleCount',
@@ -421,22 +420,6 @@ $defs:
       this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
       Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of
       the Proposition’s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).
-
-    $comment: >-
-      The model supports two "modes of use" for Statements, which differ in what they say about their SPOQ Proposition, and
-      can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.
-
-      In "Assertion Mode", a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic
-      for Breast Cancer"). The 'strength' and 'score' attributes are not populated, and 'direction' is assumed true/supports if not otherwise
-      indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or
-      evidence level assessments.
-
-      In "Proposition Assessment Mode", a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition -
-      which is not necessarily being asserted as true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements
-      to report things like "there is weak evidence supporting the proposition that `BRCA2 c.8023A>G is causal for Breast Cancer`", or "we have
-      high confidence that the proposition `PAH:c.1285C>A is causal for Phenylketonuria` is false"). This mode is used in projects to track the
-      evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.
-
     properties:
       type:
         extends: type
@@ -1017,8 +1000,8 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A Study Result that reports measures related to the frequency of an variant across
-      different tumor types.
+      A Study Result that reports measures related to the frequency of a variant in
+      a particular tumor type.
     properties:
       type:
         extends: type
@@ -1032,21 +1015,21 @@ $defs:
           taken.
       focusVariant:
         extends: focus
-        description: The variant for which frequency data is reported in the Study Result
+        description: The variant for which frequency data is reported in the Study Result.
         oneOf:
         - $refCurie: vrs:Allele
         - $refCurie: gks.core:iriReference
         - $refCurie: cat-vrs:CategoricalVariant
       affectedSampleCount:
         type: integer
-        description: The number of tumor samples that contain the focus variant
+        description: The number of tumor samples in the sample group that contain the focus variant.
       totalSampleCount:
         type: integer
         description: >-
-          The total number of tumor samples included in the dataset
+          The total number of tumor samples in the sample group.
       affectedFrequency:
         type: number
-        description: The frequency of tumor samples that include the focus variant.
+        description: The frequency of tumor samples that include the focus variant in the sample group.
       sampleGroup:
         $ref: "#/$defs/StudyGroup"
         description: The set of samples about which the frequency data was generated.
@@ -1054,11 +1037,11 @@ $defs:
         type: array
         ordered: false
         description: >-
-          A list of Tumor Variant Frequency Study Result objects describing subsets of
-          the sample group currently being described. Subgroups can be further
-          subdivided into more subcohorts. This enables, for example, the description of
-          frequency data within samples with a narrower categorical variant than the
-          root focus variant, or samples with a specific tumors type
+          A list of Tumor Variant Frequency Study Result objects describing variant frequency in
+          different subsets of larger sample group described in the root Study Result. Subgroups
+          can be further subdivided into more subgroups. This enables, for example, further breakdown
+          of frequency measures in sample groups with a narrower categorical variant than the root
+          focus variant, or sample groups with a more specific tumor type.
         items:
           $ref: "#/$defs/TumorVariantFrequencyStudyResult"
     required:
