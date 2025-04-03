@@ -16,7 +16,7 @@ The profiling approach defined in v1.0 of the VA-Spec specifies the types of con
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: auto
+   :widths: 40 60
 
    *  -      Profiling Task
       -            Example
