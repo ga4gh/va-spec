@@ -17,7 +17,7 @@ The VA-Spec currently supports profiles of four Core Model classes:
 
  - :ref:`Proposition Profiles <Proposition>` are used exclusively within Statement and Evidence Line objects - where they encapsulate the semantics of the possible fact that may be asserted in a Statement, or against which evidence may be assessed in an Evidence Line (e.g. a proposition that *"PTEN:c.35A>T(p.Asn12Ile)* is causal for Hamartoma Tumor Syndrome").
 
-The :ref:`data example here <acmg-variant-pathogenicity-statement-with-evidence>` illustrates how profiles of these different types can be used together to represent a variant pathogenicity classification.
+The :ref:`data example here <acmg-variant-pathogenicity-statement-example-with-evidence>` illustrates how profiles of these different types can be used together to represent a variant pathogenicity classification and the evidence supporting it.
 
 -----
 

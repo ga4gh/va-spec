@@ -36,13 +36,13 @@ General use cases for the VA-Spec as a data representation and exchange format i
  - **Evidence aggregation in curation and interpretation platforms**:  Facilitate import of diverse, standardized evidence from knowledgebases to support variant classification in research (e.g. ClinGen, CIViC) and clinical (e.g. Epic) contexts.
  - **Interoperable modules for use with other standards**: Providing models for functional and clinical annotations that can be embedded within other schemas and tools, such as Beacon, Phenopackets, and FHIR - to ensure cohesive and comprehensive data exchange across systems.
 
-The table below describes **specific implementations in which VA-Spec supports these use cases**, by facilitating the interoperable exchange of variant knowledge and evidence.
+Specific implementations in which VA-Spec supports these use cases:
 
 .. list-table::
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: 20 40 40
+   :widths: 20 50 30
 
    *  - Project
       - Description
@@ -69,12 +69,8 @@ More details about specific implementations of the VA-Spec can be found on the :
 Scope and Development
 #####################
 
-VA-Spec takes an implementation-driven development approach - releasing only schema that have been tested in real-world data systems.  Each :ref:`VA Profile <va-profiles>` released in v1.0 of the specification has been applied in at least two of the implementations described above. And each class released in the foundational :ref:`VA Core Model <va-core-model>` includes only attributes that have been used or specialized in a released or developing Profile. Annotation of elements in the Core Model and Profiles with maturity tags based on the :ref:`GKS Maturity Model<gks-maturity-model>` ensures that adopters have a clear understanding of the stability and use of models they employ in their systems.
+VA-Spec takes an implementation-driven development approach - releasing only schema that have been tested in real-world data systems.  Each :ref:`VA Profile <va-profiles>` released in v1.0 of the specification has been applied in at least two of the implementations described above. And each class released in the foundational :ref:`VA Core Model <va-core-model>` includes only attributes that have been used or specialized in a released or developing Profile. Annotation of elements in the Core Model and Profiles with maturity tags based on the `GKS Maturity Model <https://vrs.ga4gh.org/en/2.0/appendices/maturity_model.html>`_ ensures that adopters have a clear understanding of the stability and use of models they employ in their systems.
 
 While this approach limits the scope of the initial VA-Spec release, it ensures that all content has proven utility in actual implementation settings. Note however that the :ref:`SEPIO Information Model <sepio-framework>`, from which the VA Core Model was derived, contains a broader set of elements that may support data not covered by current VA-Spec. These SEPIO elements can be incorporated into the VA Core Model as needed to support emerging data and use cases.
 
-We anticipate that over time, the minimal Profiles included in VA-Spec 1.0 will expand in different ways:
-
-- **Broader Coverage of Existing Profiles**: the scope of existing profiles will expand as current implementations start to include more data from their sources, and new adopters bring additional data types and use cases.
-- **Addition of New Base Profile Types**: the number and types of profiles defined in the VA-Spec will expand, as new projects and use cases emerge (e.g. new base profiles to Molecular Consequence, Evolutionary Conservation, or Phenotype Association Propositions)
-- **Addition of New Community Profiles**: new flavors of existing community profiles that support alternate community guidelines in a given domain may be created - e.g. separate Variant Pathogenicity profiles that support AMCG-2015 and the forthcoming update to these guidelines.
+We anticipate that over time, the minimal Profiles included in VA-Spec 1.0 will expand in different ways, as described in the :ref:`Future Directions <profile-expansion>` appendix.

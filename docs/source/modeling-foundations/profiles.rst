@@ -8,32 +8,32 @@ Profiles
 Profiling Tasks
 ###############
 
-As noted, the VA-Spec provides Profiles for :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, and :ref:`Evidence Line <EvidenceLine>` representation that specialize these core classes to support a specific type of variant knowledge.
+As noted, the VA-Spec provides Profiles for :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, and :ref:`Evidence Line <EvidenceLine>` representation that specialize these core classes to represent a specific type of variant knowledge (e.g. pathogenicity classification), and/or support conventions of a particular community guideline (e.g. ACMG 2015).
 
-The profiling approach defined in v1.0 of the VA-Spec informally describe the types of constraints and extensions that are permitted in authoring profiles. The table below describes the specific tasks supported in this profiling approach.
+The profiling approach defined in v1.0 of the VA-Spec enumerates the types of specializations and extensions that are permitted in authoring profiles. Future versions of the VA-Spec will include a more formal specification and tooling support for executing these tasks and validating they were performed correctly.
+
+The table below describes the different profiling tasks supported, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles, and illustrated graphically in the figure that follows.
 
 .. list-table::
    :class: clean-wrap
    :header-rows: 1
    :align: left
-   :widths: auto
+   :widths: 40 60
 
    *  -      Profiling Task
       -            Example
-   *  - Define domain-specific subtypes of general purpose Core Model classes
-      - Specialization of ``Proposition`` into ``VariantPathogenicityProposition``
-   *  - Define new attributes to capture domain-specific information
-      -  The Statement qualifiers ``geneContextQualifier`` and ``alleleoriginQualifier``
-   *  - Define or import classes for domain entities that profiles are about
-      - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a ``Condition`` class defined in the VA-Spec itself.
-   *  - Constrain values of core attributes to take specific types as values
-      - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
+   *  - Define a domain- or community-specific version of a Core Model class
+      - Specialization of the ``Proposition`` class to create the ``VariantPathogenicityProposition`` profile
+   *  - Import and reference classes for domain entities that variant knowledge is about
+      - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a minimal ``Condition`` class defined in the VA-Spec itself.
+   *  - Constrain attributes to take a more specific type of value
+      - The ``VariantPathogenicityProposition`` profile restircts the ``object`` attribute to take a ``Condition`` as its value
+   *  - Define a new attribute to capture domain-specific information in a profiled class
+      - The ``VariantPathogenicityProposition`` profile defines ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes.
    *  - Define value sets and binding them to select attributes.
-      - Restricting nested fields in the MappableConcept object taken by ``VariantPathogenicityStatement.classification`` to a set of enumerated values based on ACMG Guideline temrinology.
+      - The ``ACMG 2015 Variant Pathogenicity Statement`` profile restricts its ``classification`` attribute to take values based on ACMG 2015 criterion codes and terminology.
    *  - Refine cardinality of select attributes
-      - Making ``Statement.classification`` a required field in the ACMG Variant Pathogenicity Statement.
-
-Future versions of the specification will include a more formal specification and tooling support for executing these tasks and validating they were performed correctly.
+      - The ``ACMG 2015 Variant Pathogenicity Statement`` profile makes ``Statement.classification`` a required field.
 
 Profiling Example
 #################
@@ -48,4 +48,4 @@ The diagram below illustrates at a conceptual level some of the profiling steps 
 
    (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumerations, which in some cases are nested inside fields of a MappableConcept. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`.
 
-This :ref:`simple data example <acmg-variant-pathogenicity-statement-example>` illustrates application of these profiles to structure a Pathogenicity Statement.
+This :ref:`data example <acmg-variant-pathogenicity-statement-example>` illustrates application of these two profiles to represent a simple Variant Pathogenicity Statement.

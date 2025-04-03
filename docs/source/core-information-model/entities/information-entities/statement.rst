@@ -10,24 +10,27 @@ Statement
 
 **DATA STRUCTURE**
 
-In VA Models, each discrete assertion of knowledge about a variant is captured in a self-contained **Statement** object that roots a data structure that supports rich and flexible descriptions of the evidence and provenance supporting this knowledge:
+:ref:`Statements <Statement>` represent *assertions* or *assessments* of general knowledge about a variant - e.g. an *assertion* that *'HRAS:c.173C>T is pathogenic for Costello Syndrome*, or an *assessment* that there is presently only moderate evidence supporting this possible fact.
 
-.. gks-core-statement-data-structure:
+In VA-Spec, the :ref:`Statement <Statement>` class and its :ref:`profiles <community-profiles>` can support the general data structure below.
 
-.. figure:: ../../../images/core-im-statement-proposition-data-structure.png
+.. statement-proposition-data-structure:
+
+.. figure:: ../../../images/statement-proposition-data-structure.png
    :width: 700
 
-   Core Model Classes and Relationships in Statement Data Structures
+   Statement Data Structure
 
-   **Legend** A class-level view of the Statement-based structures that manifest in VA-Spec data. Italicized text under class names illustrate the kind of information each class may report, in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
-
+   **Legend** A class-level view of the Statement-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure:
- * A **Statement** object roots a central axis where it is linked to one or more **Evidence Lines** representing discrete arguments for or against the possible fact it puts forth, which is encapsulated in a separate **Proposition** object.
- * Each **Evidence Line** may then be linked to one or more **Evidence Items** - specific **Information Entities** that were used to build an evidence-based argument.
- * Surrounding this central axis are classes that describe the provenance of these artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
 
-This |simple_test_fixtures_example| illustrates the structure for a Variant Pathogenicity Statement.
+* A **Statement** roots a central axis where it is linked to zero or more **Evidence Lines** representing discrete arguments for or against it.
+* Each Evidence Line may be linked to zero or more pieces of information (e.g. **Study Results**) that were used to build its evidence-based argument.
+* The **Proposition** contained in the Statement object encapsulates a structured representation of the possible fact that the Statement may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in supporting Evidence Lines.
+* Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
+
+A data example illustrating this structure for a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 
 ---------
 
@@ -65,16 +68,3 @@ For a diagrammed example of each mode of use, see :ref:`here <statement-semantic
 * The Core model specifies use of a key-value 'Qualifier' object to capture the meaning and value of each type of qualifying information relevant for a given type of Proposition. But in practice, profiles for specific Proposition types may choose to define one or more specializations of the generic 'qualifier' property as named attributes. This makes the data more succinct and parsable, and allows specific constraints to be applied and validated for different qualifiers.
 * For example, a VariantPathogenicityProposition profile may define a named ``alleleOriginQualifier`` attribute that is required, and a named ``geneContextQualifier`` attribute that is optional - both of which conceptually specialize the Core ``qualifier`` property. Under this approach, the core ``qualifier`` acts as a placeholder to seed such specializations, but is not used directly in Proposition profiles.
 * In practice, the core ``qualifier`` attribute SHOULD be conceptually extended in Proposition profiles to indicate specific types of qualifying information that is being provided (e.g.``diseaseContextQualifier``, or ``penetranceQualifier``). The ``qualifier`` attribute in the core model acts as a placeholder to seed such specializations, but it, or the ``Qualifier`` class, SHOULD NOT be used directly in a Proposition profile.
-
-
-**4. Detailed Statement Model Data Structures**
-
-The Statement Data Structure diagram below includes all attributes available in the initial trial use release, which may be used in Statement Profiles to represent source data.
-
-.. _statement-data-structure:
-
-.. figure:: ../../../images/detailed-statement-data-structure.png
-
-   Detailed Statement Data Structure
-
-   **Legend** A view of the core data structure rooted by the Statement class, which can be leveraged in defining Statement Profiles. Note that specific subtypes of InformtionEntity are listed at the bottom of this Class, but not shown for space.  See Core Model class pages for details.
