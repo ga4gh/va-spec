@@ -21,17 +21,17 @@ The profiling approach defined in v1.0 of the VA-Spec specifies the types of con
    *  -      Profiling Task
       -            Example
    *  - Define a domain- or community-specific version of a Core Model class
-      - Specialization of the ``Proposition`` class to create the ``VariantPathogenicityProposition`` profile, constraint of ``Evidence Line`` class to create the ``ACMG Pathogenicity Evidence Line`` profile
+      - Specialization of the ``Proposition`` class to create the ``VariantPathogenicityProposition`` profile
    *  - Import and reference classes for domain entities that VA knowledge artifacts are about
       - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a minimal ``Condition`` class defined in the VA-Spec itself.
    *  - Constrain attributes to take specific profiles, domain entities, or datatypes as values
       - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
    *  - Define a new attribute to capture domain-specific information in a profiled class
-      - Creation ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes in a VariantPathogenicityProposition.
+      - Creation ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes in a ``VariantPathogenicityProposition`` profile.
    *  - Define value sets and binding them to select attributes.
       - Restricting the ``Method.methodType`` attribute to take an ACMG criterion code as its value in the ``ACMG 2015 Variant Pathogenicity Statement`` profile 
    *  - Refine cardinality of select attributes
-      - Making ``Statement.classification`` a required field in the ``ACMG 2015 Variant Pathogenicity Statement`` Profile.
+      - Making ``Statement.classification`` a required field in the ``ACMG 2015 Variant Pathogenicity Statement`` profile.
 
 Future versions of the specification will include a more formal specification and tooling support for executing these tasks and validating they were performed correctly. 
 
