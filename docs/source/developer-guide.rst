@@ -3,7 +3,7 @@
 Developer Guide
 !!!!!!!!!!!!!!!
 
-Preceding documentation provides a more conceptual understanding of the VA-Spec for a broad audience - covering its content, modeling principles, and general utility. Here we provide guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems. 
+Preceding documentation provides a more conceptual understanding of the VA-Spec for a broad audience - covering its content, modeling principles, and general utility. Here we provide guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems.
 
 .. _profile-authoring-mechanisms:
 
@@ -46,11 +46,11 @@ As noted :ref:`here <va-profiles>`, version 1.0 of the VA-Spec makes a formal di
 
 **JSON Schema Composition-Based Authoring of Community Profiles**:
 
-- **Description**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take. 
+- **Description**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take.
 - **Mechanism**:  Relies on schema composition using the native JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile. Source files are organized in directories based on the community guideline they enforce (e.g. ACMG-2015, or AAC-2022).
 - **Application**: Used in authoring "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <evidence-line-acmg-2015>` classes, which embed corresponding base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
 - **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running bespoke Metaschema Processor tooling.
-- **Example**: 
+- **Example**:
 
 .. code-block:: yaml
 
@@ -60,12 +60,12 @@ As noted :ref:`here <va-profiles>`, version 1.0 of the VA-Spec makes a formal di
     description: A Statement describing the role of a variant in causing an inherited condition.
     # JSON Schema 'allOf' keyword used for schema composition
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Statement"
     # list of property definitions that further constrain attributes in the base Statement class
     - properties:
         # A constraint on the Statement.proposition attribute requiring it to take a VariantPathogenicityProposition
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.2/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantPathogenicityProposition"
           description: A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
         # A constraint on the code field nested within a MappableConcept that requires the 'strength' attribute to take specific values.
         strength:
@@ -87,7 +87,7 @@ Custom Profile Development
 
 Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a VA Profile to be specifically defined for it.
 
-Custom Profiles are Statement or Evidence Line profiles that are created de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile . 
+Custom Profiles are Statement or Evidence Line profiles that are created de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile .
 
 This section describes why these are useful, and how to create them.
 
@@ -95,13 +95,13 @@ This section describes why these are useful, and how to create them.
 
 * The Statement and Evidence Line :ref:`Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
 * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
-* For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enumerations in the exisitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data. 
+* For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enumerations in the exisitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data.
 
 **The process is relatively straightforward:**
 
 #. Starting with the core :ref:`Statement<Statement` class
 #. Bind its ``proposition`` attribute to the :ref:`VariantPathogenicityProposition <variant-pathogenicity-proposition>`base profile class
-#. Use other base Statement attributes and core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enumerations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above. 
+#. Use other base Statement attributes and core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enumerations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above.
 
 This :ref:`simple data example <custom-variant-pathogenicity-statement-example>` illustrates application of this approach to create a custom, non-ACMG-compliant representation of a pathogenicity statement.
 

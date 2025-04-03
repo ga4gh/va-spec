@@ -72,7 +72,7 @@ Variant Oncogenicity Evidence Line (CCV 2022)
 
 **Computational Definition**
 
-An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's oncogenicity. In the CCV Framework, evidence is assessed by determining if a specific criterion (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.  
+An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's oncogenicity. In the CCV Framework, evidence is assessed by determining if a specific criterion (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
 
 **Information Model**
 
@@ -118,7 +118,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       -
       - :ref:`MappableConcept` (nested enum, examples: OS2 | OS2_moderate | OS2_not_met | SBS2 | SBS2_moderate | SBS2_not_met)
       - 0..1
-      - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3) If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met'). 
+      - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3) If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met').
 
 
 **Artifacts**

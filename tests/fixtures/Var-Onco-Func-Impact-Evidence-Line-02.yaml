@@ -53,6 +53,7 @@ strengthOfEvidenceProvided:
 scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
+  methodType: OS2
   reportedIn:
     type: Document
     pmid: 35101336

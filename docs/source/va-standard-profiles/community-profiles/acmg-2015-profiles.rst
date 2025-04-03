@@ -70,7 +70,7 @@ Variant Pathogenicity Evidence Line (ACMG 2015)
 
 **Computational Definition**
 
-An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.  
+An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
 
 **Information Model**
 
@@ -92,7 +92,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       -
       - :ref:`variant-pathogenicity-proposition`
       - 0..1
-      - A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity. 
+      - A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
    *  - directionOfEvidenceProvided
       -
       - string (enum: supports | disputes | none)
@@ -107,7 +107,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       -
       - :ref:`Method`
       - 0..1
-      - The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel guidelines for ACMG interpretations). 
+      - The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel guidelines for ACMG interpretations).
    *  - methodType
       -
       - string (enum: PVS1 | PS1 | PS2 | PS3 | PS4 | PM1 | PM2 | PM3 | PM4 | PM5 | PM6 | PP1 | PP2 | PP3 | PP4 | PP5 | BA1 | BS1 | BS2 | BS3 | BS4 | BP1 | BP2 | BP3 | BP4 | BP5 | BP6 | BP7)

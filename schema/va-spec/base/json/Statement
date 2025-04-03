@@ -1,11 +1,11 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Statement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Statement",
    "title": "Statement",
    "type": "object",
    "maturity": "trial use",
    "description": "A claim of purported truth as made by a particular agent, on a particular occasion. Statements may be used to put forth a possible fact (i.e. a 'Proposition') as true or false, or to provide a more nuanced assessment of the level of confidence or evidence supporting a particular Proposition.",
-   "$comment": "The model supports two \"modes of use\" for Statements, which differ in what they say about their SPOQ Proposition, and can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.\nIn \"Assertion Mode\", a Statement simply reports an SPOQ proposition to be true or false (e.g. that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\"). The 'strength' and 'score' attributes are not populated, and 'direction' is assumed true/supports if not otherwise indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or evidence level assessments.\nIn \"Proposition Assessment Mode\", a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition - which is not necessarily being asserted as true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements to report things like \"there is weak evidence supporting the proposition that `BRCA2 c.8023A>G is causal for Breast Cancer`\", or \"we have high confidence that the proposition `PAH:c.1285C>A is causal for Phenylketonuria` is false\"). This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.",
+   "$comment": "Primary assertions of knowledge about some subject entity are captured in self-contained Statement objects. Organization of assertions into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each. Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition\u2019s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of the Proposition\u2019s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).",
    "properties": {
       "id": {
          "type": "string",
@@ -40,7 +40,7 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Method"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -53,7 +53,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -64,7 +64,7 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Document"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -85,22 +85,22 @@
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition\u2019s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of the Proposition\u2019s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/ExperimentalVariantFunctionalImpactProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantDiagnosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantDiagnosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantOncogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantOncogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantPathogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantPrognosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantPrognosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantTherapeuticResponseProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantTherapeuticResponseProposition"
             }
          ]
       },
@@ -136,7 +136,7 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/EvidenceLine"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/EvidenceLine"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"

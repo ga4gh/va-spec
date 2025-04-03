@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/ccv-2022/oncogenicity-study-statement-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/ccv-2022/oncogenicity-study-statement-profile-source.yaml"
 title: Variant Oncogenicity Study Statement Profile (CCV 2022)
 description: >-
   Profile defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
@@ -19,10 +19,10 @@ $defs:
       is associated with oncogenicity (positive or negative) - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/VariantOncogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantOncogenicityProposition"
           description: >-
             A proposition about the oncogenicity of a variant, for which the study provides evidence.
             The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -33,6 +33,8 @@ $defs:
             for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative
             to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
             MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+            Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this
+            attribute is required. If it is 'neutral', then this attribute is not allowed.
           properties:
             primaryCoding:
               code:

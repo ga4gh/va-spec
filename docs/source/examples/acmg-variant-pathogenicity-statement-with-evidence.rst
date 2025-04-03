@@ -95,9 +95,9 @@ A few additional notes about this example:
   specifiedBy:                 # holds a Method object describing guidelines followed in generating the knowledge reported in the Statement
     type: Method
     name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
-    reportedIn:                # a document that describes the Method 
+    reportedIn:                # a document that describes the Method
       type: Document
-      urls: 
+      urls:
         - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
   hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement
   - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
@@ -144,7 +144,7 @@ A few additional notes about this example:
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
       reportedIn:             # a document that describes the Method (this is all we are given about this Method in the source data)
         type: Document
-        urls: 
+        urls:
           - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
     contributions:            # holds descriptions of contributions to this Evidence Line
       - type: Contribution
@@ -193,18 +193,18 @@ A few additional notes about this example:
           reportedIn:
             type: Document
             pmid: 29785012
-        hasEvidenceLines:  
+        hasEvidenceLines:
           id: EvidenceLine003
           type: EvidenceLine
           directionOfEvidenceProvided: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
-          specifiedBy:          # a Method followed in assessing the direction and strength of evidence provided by the Functional Impact StudyResult for the Functional Impact Statement 
+          specifiedBy:          # a Method followed in assessing the direction and strength of evidence provided by the Functional Impact StudyResult for the Functional Impact Statement
             type: Method
-            name: MAVE bayesian threshhold propability method 001   
+            name: MAVE bayesian threshhold propability method 001
             reportedIn:
               type: Document
               urls:
                 - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
-          hasEvidenceItems:             # a Study Reuslt that captures the experimental data and scores on which the Funtional Impact Statement was based. 
+          hasEvidenceItems:             # a Study Reuslt that captures the experimental data and scores on which the Funtional Impact Statement was based.
             - id: ex:StudyResult002     # the evidence in this case is data captured in a Functional Impact Study Result
               type: ExperimentalVariantFunctionalImpactStudyResult
               focusVariant: ex:Variant001   # the KCNQ4 variant that data are about (a full representation of the variant is not included)
@@ -243,9 +243,9 @@ A few additional notes about this example:
       type: Method
       methodType: PS3
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
-      reportedIn:             
+      reportedIn:
         type: Document
-        urls: 
+        urls:
           - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
     contributions:
       - type: Contribution

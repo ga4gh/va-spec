@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/va-spec-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/va-spec-source.yaml"
 title: VA Specification Core classes
 strict: true
 
@@ -102,7 +102,6 @@ $defs:
       about a particular variant of interest selected from the complete gnomAD dataset can be reported
       in a StudyResult object, along with relevant provenance information, so they can be referenced
       together as evidence for a higher-order assertion about the variant's pathogenicity.
-    $comment: >-
       Note that a 'dataItem' attribute, which would hold an array of data selected for inclusion in the
       StudyResult, is not included in this version of the StudyResult class. Profiles that extend this core
       class can define data type specific attributes to capture such information (e.g.'focusAlleleCount',
@@ -270,8 +269,8 @@ $defs:
         const: Method
         default: Method
         description: MUST be "Method".
-      subtype:
-        $refCurie: gks.core:MappableConcept
+      methodType:
+        type: string
         description: >-
           A specific type of method that a Method instance represents (e.g. 'Variant Interpretation
           Guideline', or 'Experimental Protocol').
@@ -312,7 +311,7 @@ $defs:
         description: >-
           The agent that made the contribution.
       activityType:
-        $refCurie: gks.core:MappableConcept
+        type: string
         description: >-
           The specific type of activity performed or role played by an agent in making the contribution
           (e.g. for a publication, agents may contribute as a primary author, editor, figure designer,
@@ -346,12 +345,12 @@ $defs:
         const: Document
         default: Document
         description: Must be "Document"
-      subtype:
+      documentType:
         maturity: draft
         $comment: >-
           The need for subtype is not yet clear, though the content that could be added to this
           leaving this field in draft is obvious. Leaving in draft until this sees regular use.
-        $refCurie: gks.core:MappableConcept
+        type: string
         description: >-
           A specific type of document that a Document instance represents (e.g.  'publication',
           'patent', 'pathology report')
@@ -400,8 +399,8 @@ $defs:
         type: string
         extends: name
         description: The given name of the Agent.
-      subtype:
-        $refCurie: gks.core:MappableConcept
+      agentType:
+        type: string
         description: >-
           A specific type of agent the Agent object represents. Recommended subtypes
           include codes for `person`, `organization`, or `software`.
@@ -421,22 +420,6 @@ $defs:
       this proposition’s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the
       Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of
       the Proposition’s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).
-
-    $comment: >-
-      The model supports two "modes of use" for Statements, which differ in what they say about their SPOQ Proposition, and
-      can be distinguished by whether 'direction' and 'strength' or 'score' attributes are populated.
-
-      In "Assertion Mode", a Statement simply reports an SPOQ proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic
-      for Breast Cancer"). The 'strength' and 'score' attributes are not populated, and 'direction' is assumed true/supports if not otherwise
-      indicated. This mode is used by project reporting conclusive assertions about a domain of discourse, but not providing confidence or
-      evidence level assessments.
-
-      In "Proposition Assessment Mode", a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition -
-      which is not necessarily being asserted as true. The 'direction' and 'strength' or 'score' attributes are populated, which allows for Statements
-      to report things like "there is weak evidence supporting the proposition that `BRCA2 c.8023A>G is causal for Breast Cancer`", or "we have
-      high confidence that the proposition `PAH:c.1285C>A is causal for Phenylketonuria` is false"). This mode is used in projects to track the
-      evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.
-
     properties:
       type:
         extends: type
@@ -650,10 +633,10 @@ $defs:
         const: DataSet
         default: DataSet
         description: MUST be "DataSet".
-      subtype:
+      datasetType:
         maturity: draft
         $comment: the need for a DataSet subtype is not yet clear. Leaving in draft until then.
-        $refCurie: gks.core:MappableConcept
+        type: string
         description: >-
           A specific type of data set the DataSet instance represents (e.g. a
           'clinical data set', a 'sequencing data set', a 'gene expression data set',
@@ -1011,6 +994,61 @@ $defs:
     - locusAlleleCount
     - focusAlleleFrequency
     - cohort
+
+  TumorVariantFrequencyStudyResult:
+    inherits: StudyResult
+    maturity: draft
+    type: object
+    description: >-
+      A Study Result that reports measures related to the frequency of a variant in
+      a particular tumor type.
+    properties:
+      type:
+        extends: type
+        const: "TumorVariantFrequencyStudyResult"
+        default: "TumorVariantFrequencyStudyResult"
+        description: MUST be "TumorVariantFrequencyStudyResult".
+      sourceDataSet:
+        extends: sourceDataSet
+        description: >-
+          The dataset from which data in the Tumor Variant Frequency Study Result was
+          taken.
+      focusVariant:
+        extends: focus
+        description: The variant for which frequency data is reported in the Study Result.
+        oneOf:
+        - $refCurie: vrs:Allele
+        - $refCurie: gks.core:iriReference
+        - $refCurie: cat-vrs:CategoricalVariant
+      affectedSampleCount:
+        type: integer
+        description: The number of tumor samples in the sample group that contain the focus variant.
+      totalSampleCount:
+        type: integer
+        description: >-
+          The total number of tumor samples in the sample group.
+      affectedFrequency:
+        type: number
+        description: The frequency of tumor samples that include the focus variant in the sample group.
+      sampleGroup:
+        $ref: "#/$defs/StudyGroup"
+        description: The set of samples about which the frequency data was generated.
+      subGroupFrequency:
+        type: array
+        ordered: false
+        description: >-
+          A list of Tumor Variant Frequency Study Result objects describing variant frequency in
+          different subsets of larger sample group described in the root Study Result. Subgroups
+          can be further subdivided into more subgroups. This enables, for example, further breakdown
+          of frequency measures in sample groups with a narrower categorical variant than the root
+          focus variant, or sample groups with a more specific tumor type.
+        items:
+          $ref: "#/$defs/TumorVariantFrequencyStudyResult"
+    required:
+    - focusVariant
+    - affectedSampleCount
+    - totalSampleCount
+    - affectedFrequency
 
   ExperimentalVariantFunctionalImpactStudyResult:
     inherits: StudyResult

@@ -22,7 +22,7 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
    *  - :ref:`Reference Implementation <reference-implementation>`
       - Information about code libraries provided to facilitate implementation of the VA-Spec.
    *  - :ref:`Developer Guide <developer-guide>`
-      - Practical, developer-focused support for authoring and implementing VA Profiles in data systems. 
+      - Practical, developer-focused support for authoring and implementing VA Profiles in data systems.
    *  - :ref:`Examples <examples>`
       - A set of annotated data examples and exchange scenarios that demonstrate use of VA Models.
    *  - :ref:`Appendices <appendices>`

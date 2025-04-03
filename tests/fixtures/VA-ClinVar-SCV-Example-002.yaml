@@ -41,16 +41,14 @@ contributions:
       type: Agent
       name: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2020-05-04'
-  activityType:
-    name: submitted
+  activityType: submitted
 - type: Contribution
   contributor:
       id: clinvar.submitter/506744
       type: Agent
       name: ClinGen Hearing Loss Variant Curation Expert Panel
   date: '2019-11-26'
-  activityType:
-    name: evaluated
+  activityType: evaluated
   extensions:
     - name: clinvarActivityLabel
       value: last evaluated

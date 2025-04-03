@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Contribution",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Contribution",
    "title": "Contribution",
    "type": "object",
    "maturity": "trial use",
@@ -44,12 +44,12 @@
          "default": "Contribution"
       },
       "contributor": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.3/base/json/Agent",
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Agent",
          "description": "The agent that made the contribution."
       },
       "activityType": {
-         "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO)).",
-         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
+         "type": "string",
+         "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO))."
       },
       "date": {
          "description": "When the contributing activity was completed.",

@@ -9,7 +9,7 @@ Study Result
 
 **DATA STRUCTURE**
 
-In VA-Spec, the :ref:`Study Result <StudyResult>` class and its :ref:`profiles <study-result-profiles>` can support the general data structure below. 
+In VA-Spec, the :ref:`Study Result <StudyResult>` class and its :ref:`profiles <study-result-profiles>` can support the general data structure below.
 
 .. core-im-study-result-data-structure:
 
@@ -19,10 +19,10 @@ In VA-Spec, the :ref:`Study Result <StudyResult>` class and its :ref:`profiles <
 
    **Legend** A class-level view of the Study Result-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 
-In this structure: 
+In this structure:
 
-* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came, and a description of the **Study Group** from which the data was collected. 
-* Note that no **Proposition** object is used here, because Study Results represent more foundational data, and do not assert or assess evidence for possible facts about the domain. 
+* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came, and a description of the **Study Group** from which the data was collected.
+* Note that no **Proposition** object is used here, because Study Results represent more foundational data, and do not assert or assess evidence for possible facts about the domain.
 * As with Statements and Evidence Lines, surrounding classes can be used to describe the provenance of the Study Result and its data items.
 
 A data example illustrating this structure for a Study Result interpreted as evidence for a Variant Pathogenicity Statement can be found :ref:`here <-variant-pathogenicity-statement-example-with-evidence>`.

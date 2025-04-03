@@ -146,8 +146,7 @@ classification:
 direction: disputes
 specifiedBy:
   type: Method
-  subtype:
-    name: variant interpretation guideline
+  methodType: variant interpretation guideline
   reportedIn:
     type: Document
     pmid: 29785012
