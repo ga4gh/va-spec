@@ -14,24 +14,35 @@ $defs:
   VariantPathogenicityEvidenceLine:
     maturity: draft
     description: >-
-      An Evidence Line that describes how information about the specific criterion evidence for
-      the variant was assessed as evidence for or against the variant's pathogenicity.
+      An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst
+      a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion
+      (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
+      default strength based on the quality and abundance of evidence.
     allOf:
     - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
-            A Variant Pathogenicity Proposition against which specific information was assessed,
-            in determining the strength and direction of support this information provides as evidence.
+            A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
+            determine the strength and direction of support this evidence provides for or against the
+            proposition's validity.
           $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantPathogenicityProposition"
+        directionOfEvidenceProvided:
+          type: string
+          enum: [ "supports", "neutral", "disputes" ]
+          description: >-
+            The direction of support that the Evidence Line is determined to provide toward its target Proposition
+            (supports, disputes, neutral). For ACMG-based assessments, if a pathogenicity criterion is 'met' in the
+            Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes',
+            and if a criteria is 'not met' the direction is 'none'.
         strengthOfEvidenceProvided:
           description: >-
             The strength of support that an Evidence Line is determined to provide for or against the proposed
             pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
-            the 'directionOfEvidenceProvided' attribute. The indicated enumeration constrains the nested
-            MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
-            Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this
-            attribute is required. If it is 'neutral', then this attribute is not allowed.
+            the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose
+            nested 'code' field is bound to an enumerated set of values. Conditional requirement: if
+            `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required.
+            If it is 'none', then this attribute is not allowed.
           properties:
             primaryCoding:
               code:
@@ -45,11 +56,16 @@ $defs:
                 const: ACMG Guidelines, 2015
         specifiedBy:
           description: >-
-            The guidelines that were followed to assess variant information
-            as evidence for or against the assessed variant's pathogenicity.
+            The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction
+            of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves
+            provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to
+            determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel
+            guidelines for ACMG interpretations).
           methodType:
             description: >-
-              The type of method used to assess the variant based on the specified acmg criterion.
+              A term representing the type of method used to assess evidence for or against the pathogenicity of a variant.
+              Method type is reported as the ACMG Code that defines criteria against which evidence is assessed to determine
+              if it supports pathogenicity or benignity of a variant.
             type: string
             enum:
               - PVS1
@@ -85,20 +101,22 @@ $defs:
             - reportedIn
         evidenceOutcome:
           description: >-
-            The evidence outcome is a summary of the 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' values,
-            along with the specific ACMG criterion code used in these assessments. The indicated enumeration constrains the
-            nested MappableConcept.primaryCoding > Coding.code attribute to capture evidence outcomes. Note that if
-            'directionOfEvidenceProvided' is 'none', then the evidence outcome is 'not met' for the relevant criterion
-            (e.g. 'PS3_not_met'). If 'directionOfEvidenceProvided' is 'supports' or 'disputes', then the outcome is 'met' for
-            the relevant criterion, along with the strength of evidence provided. (e.g. 'PS3_moderate').
+            The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and
+            'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments.
+            Rules for constructing this string are as follows, and enforced by a regex constraint:
+            (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion
+            code (e.g. 'PM2' when the PM2 criteria is met with moderate strength);
+            (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the
+            altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength);
+            (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'PS3_not_met').
           properties:
             primaryCoding:
               code:
                 pattern: '^((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?)$'
-                example: PS3_moderate, PS3_not_met, PVS1, BA1_not_met
+                example: PS3, PS3_moderate, PS3_not_met, BP6, BP6_strong, BP6_not_met
                 description: >-
-                  The code for the evidence outcome, which is a combination of the ACMG criterion code,
-                  the direction of evidence provided, and the strength of evidence provided.
+                  The code for the evidence outcome, which is based on the ACMG criterion code, used,
+                  and the assessed direction and strength of evidence provided.
               system:
                 const: ACMG Guidelines, 2015
     - if:
