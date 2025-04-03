@@ -132,7 +132,7 @@
       "subGroupFrequency": {
          "type": "array",
          "ordered": false,
-         "description": "A list of Tumor Variant Frequency Study Result objects describing variant frequency in different subsets of larger sample group described in the root Study Result. Subgroups can be further subdivided into more subgroups. This enables, for example, futher breakdown of frequency measuers in sample groups with a narrower categorical variant than the root focus variant, or sample groups with a more specific tumor type.",
+         "description": "A list of Tumor Variant Frequency Study Result objects describing variant frequency in different subsets of larger sample group described in the root Study Result. Subgroups can be further subdivided into more subgroups. This enables, for example, further breakdown of frequency measures in sample groups with a narrower categorical variant than the root focus variant, or sample groups with a more specific tumor type.",
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/TumorVariantFrequencyStudyResult"
          }
