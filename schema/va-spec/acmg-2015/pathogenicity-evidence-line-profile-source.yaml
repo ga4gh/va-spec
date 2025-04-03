@@ -119,6 +119,13 @@ $defs:
                   and the assessed direction and strength of evidence provided.
               system:
                 const: ACMG Guidelines, 2015
+    - if:
+        properties:
+          directionOfEvidenceProvided:
+            enum: [supports, disputes]
+        required: [directionOfEvidenceProvided]
+      then:
+        required: [strengthOfEvidenceProvided]
     required:
       - directionOfEvidenceProvided
       - specifiedBy

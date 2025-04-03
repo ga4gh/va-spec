@@ -108,6 +108,13 @@ $defs:
                 example: OS3_moderate, OS3_not_met, OVS1, SBVS1_not_met
               system:
                 const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    - if:
+        properties:
+          directionOfEvidenceProvided:
+            enum: [supports, disputes]
+        required: [directionOfEvidenceProvided]
+      then:
+        required: [strengthOfEvidenceProvided]
     required:
       - directionOfEvidenceProvided
       - specifiedBy
