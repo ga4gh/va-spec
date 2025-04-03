@@ -4,7 +4,7 @@
    "title": "TumorVariantFrequencyStudyResult",
    "maturity": "draft",
    "type": "object",
-   "description": "A Study Result that reports measures related to the frequency of a variant in  a particular tumor type.",
+   "description": "A Study Result that reports measures related to the frequency of a variant in a particular tumor type.",
    "properties": {
       "id": {
          "type": "string",

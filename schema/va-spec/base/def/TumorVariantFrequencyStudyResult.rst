@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Study Result that reports measures related to the frequency of a variant in  a particular tumor type.
+A Study Result that reports measures related to the frequency of a variant in a particular tumor type.
 
 **Information Model**
 
