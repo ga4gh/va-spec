@@ -30,7 +30,8 @@ A few additional notes about this example:
 
 **Data**:
 
-.. note:: Comments in the example below will be easier to view in the |acmg_pathogenicity_statement_with_evidence_example_source_yaml|, which affords the option of a wider browser window.
+.. note:: Comments in the example below will be easier to view in the |acmg_pathogenicity_statement_with_evidence_example_source_yaml|, which affords the option of a wider browser window. 
+   We recommend opening this example side-by-side with the figure above, and tracking how the data reflects the diagrammed structure and semantics. 
 
 .. code-block:: yaml
 
