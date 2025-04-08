@@ -40,6 +40,11 @@ master_doc = 'index'
 # # N.B. RTD ignores these values. :-/
 # release = _get_git_tag()
 # version = _parse_release_as_version(release)
+print("RTD env:")
+print("READTHEDOCS              =", os.environ.get("READTHEDOCS"))
+print("READTHEDOCS_VERSION      =", os.environ.get("READTHEDOCS_VERSION"))
+print("READTHEDOCS_VERSION_NAME =", os.environ.get("READTHEDOCS_VERSION_NAME"))
+print("READTHEDOCS_VERSION_TYPE =", os.environ.get("READTHEDOCS_VERSION_TYPE"))
 
 # Get version info from ReadTheDocs
 rtd_version = os.environ.get("READTHEDOCS_VERSION_NAME")  # actual branch/tag (e.g., "main", "1.x")
