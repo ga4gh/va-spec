@@ -178,102 +178,314 @@
             }
         ]
     },
-    "cadd_score": {
-        "type": "InSilicoVariantEffectPredictionStudyResult",
-        "label": "CADD Score",
-        "focusVariant": "#/input_variant",
-        "transcripts": [
-            // IRI references to the transcript molecules from the molecular consequence study result
-            "#/missense_mol_con_1/transcriptMolecule",
-            "#/missense_mol_con_2/transcriptMolecule"
+    "cadd": {
+        "type": "InSilicoVariantEffectPredictionEvidenceLine",
+        "targetProposition": "iri",
+        "hasEvidenceItems": [
+            {
+                "type": "InSilicoVariantEffectScoreStudyResult",
+                "label": "CADD Score",
+                "focusVariant": "#/input_variant",
+                "transcripts": [
+                    // IRI references to the transcript molecules from the molecular consequence study result
+                    "#/missense_mol_con_1/transcriptMolecule",
+                    "#/missense_mol_con_2/transcriptMolecule"
+                ],
+                "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
+                "score": 1.136748,
+                "ancillaryResults": {
+                    "phredScore": 11.7
+                },
+                "specifiedBy": {
+                    "type": "Method",
+                    "methodType": "Algorithmic Output",
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "CADD v1.7: using protein language models, regulatory CNNs and other nucleotide-level scores to improve genome-wide variant predictions",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/38183205/"],
+                        "doi": "10.1093/nar/gkad989",
+                        "pmid": 38183205
+                    }
+                },
+                "sourceDataSet": {
+                    "type": "DataSet",
+                    "datasetType": "CADD",
+                    "version": "1.7",
+                    "releaseDate": "2024-01-05",
+                    "license": {
+                        "type": "In Silico Tool License",
+                        "primaryCoding": {
+                            "system": "https://els2.comotion.uw.edu/product/cadd-scores",
+                            "code": "CADD Scores Distribution License" 
+                        }
+                    },
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "CADD v1.7: using protein language models, regulatory CNNs and other nucleotide-level scores to improve genome-wide variant predictions",
+                        "urls": [
+                            "https://pubmed.ncbi.nlm.nih.gov/38183205/",
+                            "https://krishna.gs.washington.edu/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz" // This is the actual download link for the dataset
+                        ],
+                        "doi": "10.1093/nar/gkad989",
+                        "pmid": 38183205
+                    }
+                }
+            }
         ],
-        "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
-        "score": 1.136748,
-        "ancillaryResults": {
-            "phredScore": 11.7
+        "directionOfEvidenceProvided": "disputes",
+        "strengthOfEvidenceProvided": {
+            "conceptType": "CADD Strength of Evidence",
+            "primaryCoding": {
+                "system": "ACMG Guidelines, 2015",
+                "code": "moderate" 
+            }
         },
-        "specifiedBy": {
-            "type": "Method",
-            "subtype": "Algorithmic Output",
-            "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/38183205/"
+        "evidenceOutcome": {
+            // CADD Outcomes:
+                // Likely deleterious: Phred >= 30 
+                // Likely benign: Phred < 30
+            "conceptType": "CADD Outcome",
+            "primaryCode": "likely benign"
         },
-        "sourceDataSet": {
-            "type": "DataSet",
-            "subtype": "CADD",
-            "version": "1.7",
-            "license": "commercial",
-            "reportedIn": "https://krishna.gs.washington.edu/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz"
-        }
+        "focusVariant": "#/input_variant"
     },
-    "sift_score": {
-        "type": "InSilicoVariantEffectPredictionStudyResult",
-        "label": "SIFT Score",
-        "focusVariant": "#/input_variant",
-        "transcripts": [
-            "#/missense_mol_con_1/transcriptMolecule",
-            "#/missense_mol_con_2/transcriptMolecule"
+    "sift": {
+        "type": "InSilicoVariantEffectPredictionEvidenceLine",
+        "targetProposition": "iri",
+        "hasEvidenceItems": [
+            {
+                "transcripts": [
+                    // IRI references to the transcript molecules from the molecular consequence study result
+                    "#/missense_mol_con_1/transcriptMolecule",
+                    "#/missense_mol_con_2/transcriptMolecule"
+                ],
+                "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
+                "score": 0.06,
+                "specifiedBy": {
+                    "type": "Method",
+                    "methodType": "Algorithmic Output",
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "Predicting deleterious amino acid substitutions",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/11337480/"],
+                        "doi": "10.1101/gr.176601",
+                        "pmid": 11337480
+                    }
+                },
+                "sourceDataSet": {
+                    "type": "DataSet",
+                    "datasetType": "SIFT",
+                    "version": "6.2.1",
+                    "releaseDate": "2024-04-24",
+                    "license": {
+                        "type": "In Silico Tool License",
+                        "primaryCoding": {
+                            "system": "https://s3.amazonaws.com/sift-public/nsSNV/sift6.2.1.tar.gz",
+                            "code": "FHCRC Noncommercial License" 
+                        }
+                    },
+                   "reportedIn": {
+                        "type": "Document",
+                        "title": "Predicting deleterious amino acid substitutions",
+                        "urls": [
+                            "https://pubmed.ncbi.nlm.nih.gov/11337480/",
+                            "https://s3.amazonaws.com/sift-public/nsSNV/sift6.2.1.tar.gz"
+                        ],
+                        "doi": "10.1101/gr.176601",
+                        "pmid": 11337480
+                    }
+                }
+            }
         ],
-        "score": 0.06,
-        "categoricalImpact": "tolerated",
-        "specifiedBy": {
-            "type": "Method",
-            "subtype": "Algorithmic Output",
-            "reportedIn": "SIFT LINK"
+        "directionOfEvidenceProvided": "neutral",
+        "strengthOfEvidenceProvided": {
+            // Leaving this blank because 0.06 does not fall into any of the buckets in the ACMG paper. Thus direction is set to neutral...
+            // You'll notice this DOESN'T correspond to the categorical label SIFT provides. 
         },
-        "sourceDataSet": {
-            "type": "DataSet",
-            "subtype": "SIFT",
-            "version": "1",
-            "license": "GNU",
-            "reportedIn": "SIFT DOWNLOAD"
-        }
+        "evidenceOutcome": {
+            "conceptType": "SIFT Outcome",
+            "primaryCode": "tolerated"
+        },
+        "focusVariant": "#/input_variant"
     },
-    "spliceai_donor_gain_score": {
-        "type": "InSilicoVariantEffectPredictionStudyResult",
-        "label": "SpliceAI Donor Gain Score",
-        "focusVariant": "#/input_variant",
-        "transcripts": [
-            "#/missense_mol_con_1/transcriptMolecule"
+    "spliceAI": {
+        "type": "InSilicoVariantEffectPredictionEvidenceLine",
+        "targetProposition": "iri",
+        "hasEvidenceItems": [
+            {
+                "type": "InSilicoVariantEffectScoreStudyResult",
+                "label": "SpliceAI Donor Gain Score",
+                "focusVariant": "#/input_variant",
+                "transcripts": [
+                    // IRI references to the transcript molecules from the molecular consequence study result
+                    "#/missense_mol_con_1/transcriptMolecule",
+                    "#/missense_mol_con_2/transcriptMolecule"
+                ],
+                "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
+                "score": 0,
+                "ancillaryResults": {
+                    "deltaPosition": -29
+                },
+                "specifiedBy": {
+                    "type": "Method",
+                    "methodType": "Algorithmic Output",
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "Predicting Splicing from Primary Sequence with Deep Learning",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/30661751/"],
+                        "doi": "10.1016/j.cell.2018.12.015",
+                        "pmid": 30661751
+                    }
+                },
+                "sourceDataSet": {
+                    "type": "DataSet",
+                    "datasetType": "SpliceAI",
+                    "version": "1.3.1",
+                    "releaseDate": "2019-01-24",
+                    "license": {
+                        "type": "In Silico Tool License",
+                        "primaryCoding": {
+                            "system": "https://github.com/Illumina/SpliceAI/blob/master/LICENSE",
+                            "code": "CC BY NC 4.0" 
+                        }
+                    },
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "Predicting Splicing from Primary Sequence with Deep Learning",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/30661751/"],
+                        "doi": "10.1016/j.cell.2018.12.015",
+                        "pmid": 30661751
+                    }
+                }
+            },
+            {
+                "type": "InSilicoVariantEffectScoreStudyResult",
+                "label": "SpliceAI Donor Loss Score",
+                "focusVariant": "#/input_variant",
+                "transcripts": [
+                    // IRI references to the transcript molecules from the molecular consequence study result
+                    "#/missense_mol_con_1/transcriptMolecule",
+                    "#/missense_mol_con_2/transcriptMolecule"
+                ],
+                "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
+                "score": 0,
+                "ancillaryResults": {
+                    "deltaPosition": -26
+                },
+                "specifiedBy": {
+                    "type": "Method",
+                    "methodType": "Algorithmic Output",
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "Predicting Splicing from Primary Sequence with Deep Learning",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/30661751/"],
+                        "doi": "10.1016/j.cell.2018.12.015",
+                        "pmid": 30661751
+                    }
+                },
+                "sourceDataSet": {
+                    "type": "DataSet",
+                    "datasetType": "SpliceAI",
+                    "version": "1.3.1",
+                    "releaseDate": "2019-01-24",
+                    "license": {
+                        "type": "In Silico Tool License",
+                        "primaryCoding": {
+                            "system": "https://github.com/Illumina/SpliceAI/blob/master/LICENSE",
+                            "code": "CC BY NC 4.0" 
+                        }
+                    },
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "Predicting Splicing from Primary Sequence with Deep Learning",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/30661751/"],
+                        "doi": "10.1016/j.cell.2018.12.015",
+                        "pmid": 30661751
+                    }
+                }
+            }
         ],
-        "score": 0,
-        "ancillaryResults": {
-            "deltaPosition": -29
+        "directionOfEvidenceProvided": "disputes",
+        "strengthOfEvidenceProvided": {
+            // Leaving this blank because ACMG doesn't provide cutoffs for splice site predictors. For splice site predictors I can infer the direction from the outcome.
         },
-        "specifiedBy": {
-            "type": "Method",
-            "subtype": "Algorithmic Output",
-            "reportedIn": "https://www.cell.com/action/showPdf?pii=S0092-8674%2818%2931629-5"
+        "evidenceOutcome": {
+            // SpliceAI Outcomes
+                // Predicted splicing impact: score >= 0.2
+                // Unknown: score < 0.2 and > 0.1
+                // No splicing impact: score <= 0.1
+            "conceptType": "SpliceAI Outcome",
+            "primaryCode": "no splicing impact"
         },
-        "sourceDataSet": {
-            "type": "DataSet",
-            "subtype": "SpliceAI",
-            "version": "1.3.1",
-            "license": "commercial",
-            "reportedIn": "SpliceAI DOWNLOAD"
-        }
+        "focusVariant": "#/input_variant"
     },
-    "spliceai_donor_loss_score": {
-        "type": "InSilicoVariantEffectPredictionStudyResult",
-        "label": "SpliceAI Donor Loss Score",
-        "focusVariant": "#/input_variant",
-        "transcripts": [
-            "#/missense_mol_con_1/transcriptMolecule"
+    "revel": {
+        "type": "InSilicoVariantEffectPredictionEvidenceLine",
+        "targetProposition": "iri",
+        "hasEvidenceItems": [
+            {
+                "type": "InSilicoVariantEffectScoreStudyResult",
+                "label": "REVEL Score",
+                "focusVariant": "#/input_variant",
+                "transcripts": [
+                    // IRI references to the transcript molecules from the molecular consequence study result
+                    "#/missense_mol_con_1/transcriptMolecule",
+                    "#/missense_mol_con_2/transcriptMolecule"
+                ],
+                "regulatoryFeatures": [], // Tool scores can also be w.r.t. regulatory features
+                "score": 0.2203455,
+                "specifiedBy": {
+                    "type": "Method",
+                    "methodType": "Algorithmic Output",
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "REVEL: An Ensemble Method for Predicting the Pathogenicity of Rare Missense Variants",
+                        "urls": ["https://pubmed.ncbi.nlm.nih.gov/27666373/"],
+                        "doi": "10.1016/j.ajhg.2016.08.016",
+                        "pmid": 27666373
+                    }
+                },
+                "sourceDataSet": {
+                    "type": "DataSet",
+                    "datasetType": "REVEL",
+                    "version": "1.3",
+                    "releaseDate": "2024-01-05",
+                    "license": {
+                        "type": "In Silico Tool License",
+                        "primaryCoding": {
+                            "system": "ODbL",
+                            "code": "Open Database License" 
+                        }
+                    },
+                    "reportedIn": {
+                        "type": "Document",
+                        "title": "REVEL: An Ensemble Method for Predicting the Pathogenicity of Rare Missense Variants",
+                        "urls": [
+                            "https://pubmed.ncbi.nlm.nih.gov/27666373/",
+                            "https://sites.google.com/site/revelgenomics/downloads"
+                        ],
+                        "doi": "10.1016/j.ajhg.2016.08.016",
+                        "pmid": 27666373
+                    }
+                }
+            }
         ],
-        "score": 0,
-        "ancillaryResults": {
-            "deltaPosition": -26
+        "directionOfEvidenceProvided": "disputes",
+        "strengthOfEvidenceProvided": {
+            "conceptType": "REVEL Strength of Evidence",
+            "primaryCoding": {
+                "system": "ACMG Guidelines, 2015",
+                "code": "supporting" 
+            }
         },
-        "specifiedBy": {
-            "type": "Method",
-            "subtype": "Algorithmic Output",
-            "reportedIn": "https://www.cell.com/action/showPdf?pii=S0092-8674%2818%2931629-5"
+        "evidenceOutcome": {
+            // REVEL Outcomes:
+                // Pathogenic: score >= 0.644
+                // Neutral: score > 0.291 and < 0.644
+                // Benign: score <= 0.290
+            "conceptType": "REVEL Outcome",
+            "primaryCode": "benign"
         },
-        "sourceDataSet": {
-            "type": "DataSet",
-            "subtype": "SpliceAI",
-            "version": "1.3.1",
-            "license": "commercial",
-            "reportedIn": "SpliceAI DOWNLOAD"
-        }
+        "focusVariant": "#/input_variant"
     }
 }

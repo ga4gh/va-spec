@@ -1,0 +1,101 @@
+$schema: "https://json-schema.org/draft/2020-12/schema"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/assay-var-effect-source.yaml"
+title: VA Spec Molecular Consequence statement result Profiles
+strict: true
+
+imports:
+  va-core: ./va-core-source.yaml
+  cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
+  vrs: ../../vrs/vrs-source.yaml
+  gks-core: ../../gks-core/gks-core-source.yaml
+
+$defs:
+  InSilicoVariantEffectScoreStudyResult:
+      inherits: va-core:StudyResult
+      maturity: draft
+      type: object
+      description: >-
+        A StudyResult that reports a variant effect score from a functional assay.
+        Notes: Larry and Alex to discuss specifiedBy/sourceDataset/reportedIn to determine where everything will go
+      properties:
+        type:
+          extends: type
+          const: "InSilicoVariantEffectScoreStudyResult"
+          default: "InSilicoVariantEffectScoreStudyResult"
+          description: MUST be "InSilicoVariantEffectScoreStudyResult".
+        label:
+          type: string
+          description: A primary name for the score
+        focusVariant:
+          extends: focus
+          oneOf: 
+            - $refCurie: gks.core:iriReference
+            - $refCurie: vrs:Allele
+          description: The variant for which this annotation applies to.
+        transcripts:
+          type: array
+          ordered: false
+          items:
+            oneOf:
+              - $refCurie: gks.core:iriReference
+              - $refCurie: vrs:SequenceReference
+          description: Transcripts for which this score is applicable
+        score:
+          type: number
+          description: The score of the variant effect.
+        ancillaryResults:
+          type: object
+          description: Dictionary of any normalized or ancillary scores (e.g., the CADD Phred score)
+        sourceDataSet:
+          description: >-
+            The full data set that this measurement is a part of
+          extends: sourceDataSet
+
+  InSilicoVariantEffectPredictionEvidenceLine:
+      inherits: va-core:EvidenceLine
+      maturity: draft
+      type: object
+      description: >-
+        An EvidenceLine that reports a variant effect prediction from a functional assay.
+        What goes in targetProposition? Same proposition as the MaveDB proposition? We'd have info about experimental vs. computational in an Agent
+        Look at ExperimentalVariantFunctionalImpactProposition and adapt for in silico
+        Every evidence line in a tree of evidence lines should have the same targetProposition, so this might not even need a targetProposition
+      properties:
+        type:
+          extends: type
+          const: "InSilicoVariantEffectPredictionEvidenceLine"
+          default: "InSilicoVariantEffectPredictionEvidenceLine"
+          description: MUST be "InSilicoVariantEffectPredictionEvidenceLine".
+        targetProposition:
+          $ref: "#/$defs/Proposition"
+          description: >-
+            The possible fact against which evidence items contained in an Evidence Line were collectively evaluated. This
+            will likely be a statement of pathogenicity or oncogenicity.
+        hasEvidenceItems:
+          type: array
+          ordered: false
+          items:
+            anyOf:
+              - $ref: "#/$defs/InSilicoVariantEffectScoreStudyResult"
+              - $refCurie: gks.core:iriReference
+          description: >-
+            An individual piece of information that was evaluated as evidence in building the argument represented
+            by an Evidence Line. This should always be an InSilicoVariantEffectScoreStudyResult.
+        directionOfEvidenceProvided:
+          type: string
+          enum: [ "supports", "neutral", "disputes" ]
+          description: >-
+            The direction of support that the Evidence Line is determined to provide toward its target Proposition
+            (supports, disputes, neutral)
+        strengthOfEvidenceProvided:
+          $refCurie: gks.core:MappableConcept
+          description: >-
+            The strength of support that an Evidence Line is determined to provide for or against its target Proposition,
+            evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
+            Uses the following table: https://www.sciencedirect.com/science/article/pii/S000292972200461X#tbl2
+        evidenceOutcome:
+          $refCurie: gks.core:MappableConcept
+          description: >-
+            A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
+            the direction and strength of support it provides for or against the target Proposition.
+            For in silico tools, this will be equal to the categorical label the tool outputs (or what can be inferred from the paper)
