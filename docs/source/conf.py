@@ -43,7 +43,12 @@ version = _parse_release_as_version(release)
 
 # Get version info from ReadTheDocs
 on_rtd = os.environ.get("READTHEDOCS") == "True"
-github_version = os.environ.get("READTHEDOCS_VERSION_NAME", "main") if on_rtd else "1.x"
+rtd_version = os.environ.get("READTHEDOCS_VERSION")  # e.g., "latest", "stable", "1.2.0"
+rtd_version_name = os.environ.get("READTHEDOCS_VERSION_NAME")  # actual branch/tag (e.g., "main", "1.x")
+rtd_version_type = os.environ.get("READTHEDOCS_VERSION_TYPE")  # "branch", "tag", or "external"
+if on_rtd:
+    if rtd_version == "latest" and rtd_version_type == "branch":
+        rtd_version = rtd_version_name
 
 # Load static rst_epilog from file
 rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
@@ -53,7 +58,7 @@ with open(rst_epilog_fn, encoding="utf-8") as f:
 # GitHub base URL
 github_user = "ga4gh"
 github_repo = "va-spec"
-github_base = f"https://github.com/{github_user}/{github_repo}/blob/{github_version}"
+github_base = f"https://github.com/{github_user}/{github_repo}/blob/{rtd_version}"
 
 # Path to the file with link mappings
 link_file_path = os.path.join(os.path.dirname(__file__), "github_links.txt")
@@ -131,5 +136,5 @@ html_context = {
     "display_github": True,
     "github_user": "ga4gh",
     "github_repo": "va-spec",
-    "github_version": github_version,
+    "github_version": rtd_version,
 }
