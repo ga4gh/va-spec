@@ -57,9 +57,6 @@ $defs:
       type: object
       description: >-
         An EvidenceLine that reports a variant effect prediction from a functional assay.
-        What goes in targetProposition? Same proposition as the MaveDB proposition? We'd have info about experimental vs. computational in an Agent
-        Look at ExperimentalVariantFunctionalImpactProposition and adapt for in silico
-        Every evidence line in a tree of evidence lines should have the same targetProposition, so this might not even need a targetProposition
       properties:
         type:
           extends: type

@@ -2,7 +2,7 @@
 // https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2
 
 {
-    // We nested GKS objects (Allele, MolecularConsequenceStudyResult, and
+    // We nested GKS objects (Allele, MolecularConsequenceStudyResult, InSilicoToolPredictedImpactProposition, and
     // InSilicoVariantEffectPredictionStudyResult) in a JSON dictionary for compact IRI referencing.
     // The dictionary is not part of the spec; we will need to decide on the format of the overall
     // "package" for the GKS objects.
@@ -23,6 +23,56 @@
         "state": {
             "type": "LiteralSequenceExpression",
             "sequence": "A"
+        }
+    },
+    "insilico_tool_func_proposition": {
+        "type": "InSilicoToolPredictedImpactProposition",
+        "predicate": "isPredictiveFor",
+        "objectImpact": "functionalImpact",
+        "toolContextQualifier": {
+            "type": "Tool Context Qualifier",
+            "primaryCoding": "CADD,SIFT,REVEL",
+            "mappings": [
+                {
+                    "coding": {
+                        "system": "Tool List",
+                        "code": "CADD"
+                    },
+                    "relation": "exactMatch"
+                },
+                {
+                    "coding": {
+                        "system": "Tool List",
+                        "code": "SIFT"
+                    },
+                    "relation": "exactMatch"
+                },
+                {
+                    "coding": {
+                        "system": "Tool List",
+                        "code": "REVEL"
+                    },
+                    "relation": "exactMatch"
+                }
+            ]
+        }
+    },
+    "insilico_tool_splice_proposition": {
+        "type": "InSilicoToolPredictedImpactProposition",
+        "predicate": "isPredictiveFor",
+        "objectImpact": "spliceImpact",
+        "toolContextQualifier": {
+            "type": "Tool Context Qualifier",
+            "primaryCoding": "SpliceAI",
+            "mappings": [
+                {
+                    "coding": {
+                        "system": "Tool List",
+                        "code": "SpliceAI"
+                    },
+                    "relation": "exactMatch"
+                }
+            ]
         }
     },
     "missense_mol_con_1": {
@@ -180,7 +230,7 @@
     },
     "cadd": {
         "type": "InSilicoVariantEffectPredictionEvidenceLine",
-        "targetProposition": "iri",
+        "targetProposition": "#/insilico_tool_func_proposition",
         "hasEvidenceItems": [
             {
                 "type": "InSilicoVariantEffectScoreStudyResult",
@@ -251,7 +301,7 @@
     },
     "sift": {
         "type": "InSilicoVariantEffectPredictionEvidenceLine",
-        "targetProposition": "iri",
+        "targetProposition": "#/insilico_tool_func_proposition",
         "hasEvidenceItems": [
             {
                 "transcripts": [
@@ -310,7 +360,7 @@
     },
     "spliceAI": {
         "type": "InSilicoVariantEffectPredictionEvidenceLine",
-        "targetProposition": "iri",
+        "targetProposition": "#/insilico_tool_splice_proposition",
         "hasEvidenceItems": [
             {
                 "type": "InSilicoVariantEffectScoreStudyResult",
@@ -421,7 +471,7 @@
     },
     "revel": {
         "type": "InSilicoVariantEffectPredictionEvidenceLine",
-        "targetProposition": "iri",
+        "targetProposition": "#/insilico_tool_func_proposition",
         "hasEvidenceItems": [
             {
                 "type": "InSilicoVariantEffectScoreStudyResult",
