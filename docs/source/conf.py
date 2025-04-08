@@ -43,12 +43,7 @@ version = _parse_release_as_version(release)
 
 # Get version info from ReadTheDocs
 on_rtd = os.environ.get("READTHEDOCS") == "True"
-rtd_version = os.environ.get("READTHEDOCS_VERSION")  # e.g., "latest", "stable", "1.2.0"
-rtd_version_name = os.environ.get("READTHEDOCS_VERSION_NAME")  # actual branch/tag (e.g., "main", "1.x")
-rtd_version_type = os.environ.get("READTHEDOCS_VERSION_TYPE")  # "branch", "tag", or "external"
-if on_rtd:
-    if rtd_version == "latest" and rtd_version_type == "branch":
-        rtd_version = rtd_version_name
+rtd_version = os.environ.get("READTHEDOCS_VERSION_NAME")  # actual branch/tag (e.g., "main", "1.x")
 
 # Load static rst_epilog from file
 rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
