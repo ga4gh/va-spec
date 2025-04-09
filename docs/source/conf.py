@@ -4,31 +4,41 @@
 # list see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-# -- Path setup --------------------------------------------------------------
-
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
+# -- GIT branch and release info --------------------------------------------------------------
 import os
-import re
 import subprocess
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
 
-# def _get_git_tag():
-#     res = subprocess.run("git describe --tags --exact-match".split(), capture_output=True)
-#     if res.stderr.decode().startswith("fatal"):
-#         # if no exact tag, then get branch
-#         res = subprocess.run("git rev-parse --abbrev-ref HEAD".split(), capture_output=True)
-#     tag = res.stdout.decode().strip()
-#     return tag
+def get_git_branch_or_default(default="main"):
+    """
+    Returns the current Git branch name.
+    If in detached HEAD state, returns the provided default (e.g., 'main').
+    """
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+            capture_output=True,
+            check=True
+        )
+        branch = result.stdout.decode().strip()
+        return branch if branch != "HEAD" else default
+    except subprocess.CalledProcessError:
+        return default
 
-# def _parse_release_as_version(rls):
-#     m = re.match("^(\d+\.\d+)", rls)
-#     if m:
-#         return m.group(1)
-#     return rls
+def get_exact_git_tag():
+    """
+    Returns the exact tag for the current Git commit, if one exists.
+    Returns None if the commit is not tagged exactly.
+    """
+    try:
+        result = subprocess.run(
+            ["git", "describe", "--tags", "--exact-match"],
+            capture_output=True,
+            check=True
+        )
+        tag = result.stdout.decode().strip()
+        return tag if tag else None
+    except subprocess.CalledProcessError:
+        return None
 
 
 # -- Project information -----------------------------------------------------
@@ -37,27 +47,21 @@ project = 'GA4GH Variant Annotation Specification'
 copyright = '2024, GA4GH VA Contributors'
 author = 'Committers'
 master_doc = 'index'
-# # N.B. RTD ignores these values. :-/
-# release = _get_git_tag()
-# version = _parse_release_as_version(release)
-print("RTD env:")
-print("READTHEDOCS              =", os.environ.get("READTHEDOCS"))
-print("READTHEDOCS_VERSION      =", os.environ.get("READTHEDOCS_VERSION"))
-print("READTHEDOCS_VERSION_NAME =", os.environ.get("READTHEDOCS_VERSION_NAME"))
-print("READTHEDOCS_VERSION_TYPE =", os.environ.get("READTHEDOCS_VERSION_TYPE"))
-
-# Get version info from ReadTheDocs
-rtd_version = os.environ.get("READTHEDOCS_VERSION_NAME")  # actual branch/tag (e.g., "main", "1.x")
+# get the release from the git tag if available, otherwise use the branch name
+release = get_exact_git_tag()
+if release == None:
+    # If not on a tagged release, use the branch name
+    release = get_git_branch_or_default("1.0.0-ballot.2025-03")
 
 # Load static rst_epilog from file
 rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
 with open(rst_epilog_fn, encoding="utf-8") as f:
-    static_epilog = f.read().format(release=rtd_version)
+    static_epilog = f.read().format(release=release)
 
 # GitHub base URL
 github_user = "ga4gh"
 github_repo = "va-spec"
-github_base = f"https://github.com/{github_user}/{github_repo}/blob/{rtd_version}"
+github_base = f"https://github.com/{github_user}/{github_repo}/blob/{release}"
 
 # Path to the file with link mappings
 link_file_path = os.path.join(os.path.dirname(__file__), "github_links.txt")
@@ -135,5 +139,5 @@ html_context = {
     "display_github": True,
     "github_user": "ga4gh",
     "github_repo": "va-spec",
-    "github_version": rtd_version,
+    "github_version": release,
 }
