@@ -10,9 +10,7 @@ Preceding documentation provides a more conceptual understanding of the VA-Spec 
 Authoring Base vs Community Profiles
 #####################################
 
-Here we build on this :ref:`conceptual overview of the Profiling Approach <profiles>`, to describe the technical mechanisms used to define profile specilaizations. 
-
-As noted :ref:`here <va-profiles>`, version 1.0 of the VA-Spec makes a formal distinction between 'Base' and 'Community' Profiles, and relies on **distinct mechanisms** for authoring them.
+Here we build on this :ref:`conceptual overview of the Profiling Approach <profiles>`, to describe the technical mechanisms used to define profile specilaizations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
 
 .. _inheritance-based-profiling:
 
