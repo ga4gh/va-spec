@@ -26,12 +26,12 @@ The table below describes the different profiling tasks supported, with examples
       - Specialization of the ``Proposition`` class to create the ``VariantPathogenicityProposition`` profile
    *  - Import and reference classes for domain entities that variant knowledge is about
       - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a minimal ``Condition`` class defined in the VA-Spec itself.
-   *  - Constrain attributes to take a more specific type of value
-      - The ``VariantPathogenicityProposition`` profile restircts the ``object`` attribute to take a ``Condition`` as its value
-   *  - Define a new attribute to capture domain-specific information in a profiled class
-      - The ``VariantPathogenicityProposition`` profile defines ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes.
+   *  - Constrain attributes to take a more specific type of value (possible renaming them in the process)
+      - The ``VariantPathogenicityProposition`` profile renames the ``object`` attribute  to ``objectCondition``, and restricts it to take a ``Condition`` as its value
    *  - Define value sets and binding them to select attributes.
       - The ``ACMG 2015 Variant Pathogenicity Statement`` profile restricts its ``classification`` attribute to take values based on ACMG 2015 criterion codes and terminology.
+   *  - Define a new attribute to capture domain-specific information in a profiled class
+      - The ``VariantPathogenicityProposition`` profile defines ``geneContextQualifier`` and ``alleleoriginQualifier`` attributes.
    *  - Refine cardinality of select attributes
       - The ``ACMG 2015 Variant Pathogenicity Statement`` profile makes ``Statement.classification`` a required field.
 
