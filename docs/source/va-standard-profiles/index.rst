@@ -51,4 +51,3 @@ For technical guidance around how these types of profiles are authored and imple
 
    base-profiles/index
    community-profiles/index
-   custom-profiles
