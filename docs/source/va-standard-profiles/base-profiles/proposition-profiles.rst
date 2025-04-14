@@ -19,6 +19,12 @@ Variant Pathogenicity Proposition
 
 .. _variant-oncogenicity-proposition:
 
+**Use Cases and Implementations**
+
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NM_005343.4:c.173C>T is causal for Costello Syndrome"*. Optional ``qualifier`` attributes are able to add details like a **germline origin** and **HRAS gene context** for the subject Variant, and  **low penetrance** and **dominant mode of inheritance** as features of the object Condition. 
+
+This particular model was defined to support initial use cases of ClinVar GKS and MAVE-DB :ref:`implementations <implementations>` - where pathogenicity propositions are used in the context of :ref:`ACMG-aligned Statement and Evidence Line profiles <acmg-2015-profiles>` to represent the possible fact that is being asserted or evaluated.
+
 Variant Oncogenicity Proposition
 #################################
 
