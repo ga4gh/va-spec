@@ -87,7 +87,7 @@ Custom Profile Development
 
 Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a VA Profile to be specifically defined for it.
 
-Custom Profiles are Statement or Evidence Line profiles that are created de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile .
+Custom Profiles are Statement or Evidence Line models that are defined de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile.
 
 This section describes why these are useful, and how to create them.
 
@@ -97,11 +97,11 @@ This section describes why these are useful, and how to create them.
 * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
 * For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enumerations in the exisitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data.
 
-**The process is relatively straightforward:**
+**The process is straightforward** - e.g. to create a custom Statement profile for pathogenicity classification data not based strictly aligned with ACMG terminology:
 
-#. Starting with the core :ref:`Statement<Statement` class
+#. Start with the core :ref:`Statement<Statement>` class
 #. Bind its ``proposition`` attribute to the :ref:`VariantPathogenicityProposition <variant-pathogenicity-proposition>`base profile class
-#. Use other base Statement attributes and core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enumerations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above.
+#. Use other core Statement attributes and related core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enumerations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above.
 
 This :ref:`simple data example <custom-variant-pathogenicity-statement-example>` illustrates application of this approach to create a custom, non-ACMG-compliant representation of a pathogenicity statement.
 
