@@ -22,7 +22,7 @@ These initial profiles were developed to support the following implementations a
 
 The breadth and coverage of these early profiles will grow as these impleentations expand their scope, and additional implementers bring new use cases to the spec. 
 
-Profiles are authored by layering defining **ACMG-based constraints** on top of a core :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` class definitions - as described :ref:`here <profile-authoring-mechanisms>`. 
+Profiles are :ref:`authored<profile-authoring-mechanisms>` , and described below, as ACMG-based constraints on top of a core :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` class definitions. 
 
 .. _variant-pathogenicity-statement-acmg-2015:
 
