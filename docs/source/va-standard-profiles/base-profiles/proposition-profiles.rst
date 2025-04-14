@@ -21,9 +21,9 @@ Variant Pathogenicity Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions about causal relationships between **variants** and **conditions**, e.g.  *"NM_005343.4:c.173C>T is causal for Costello Syndrome"*. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions about causal relationships between **Variants** and **Conditions**, e.g.  *"NM_005343.4:c.173C>T is causal for Costello Syndrome"*. 
 
-Optional ``qualifier`` attributes are able to add details like a **"Germline" Origin** and **"HRAS" Gene Context** for the variant, and  **""Low" Penetrance** and **"Dominant" Mode of Inheritance** for the  condition. 
+Optional ``qualifier`` attributes are able to add details like a **"Germline" origin** and **"HRAS" gene context** for the Variant, and  **""Low" penetrance** and **"Dominant" mode of inheritance** for the Condition. 
 
 These semantics were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional adopters and use cases emerge. 
 
