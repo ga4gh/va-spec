@@ -20,9 +20,9 @@ These initial profiles were developed to support the following implementations a
    *  - MAVE DB
       - Will use VA-Spec as a format to send multiplex-assay based functional impact data, classifications, and evidence interpretations to external platforms where they can be used to support pathogenicity and oncogenicity interpretation.
 
-The breadth and coverage of these early profiles will grow as these impleentations expand their scope, and additional implementers bring new use cases to the spec. 
+The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec. 
 
-Links to **Source YAML** and **JSON Schema** artifacts are provided following the descriptions of each profile below.
+Links to Source YAML and JSON Schema artifacts are provided following the description of each profile below.
 
 .. _variant-pathogenicity-statement-acmg-2015:
 
