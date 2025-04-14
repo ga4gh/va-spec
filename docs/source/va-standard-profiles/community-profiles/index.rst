@@ -9,7 +9,7 @@ Version 1 of the VA-Spec includes **Statement** and **Evidence Line** Community 
  - the `ClinGen/CGC/VICC (CCV) 2022 Oncogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/35101336/>`_
  - the `AMP/ASCO/CAP (AAC) Guidelines for Clinical Interpretation of Genetic Variants <https://pubmed.ncbi.nlm.nih.gov/27993330>`_
 
-These Community Profiles layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline. For example, ACMG-based profiles define enumerations that incorporate ACMG terminology into value sets, including:
+These Community Profiles layer additional constraints on top of core class definitions to enforce alignment with terminology conventions of a specific community guideline. For example, ACMG-based profiles incorporate ACMG terminology into enuemrated value sets bound to core :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` attributes, including:
 
 - ACMG criterion codes (``PS3``, ``BS3``)
 - ACMG criterion assessment outcomes (``met``, ``not met``)
@@ -18,6 +18,7 @@ These Community Profiles layer additional constraints on top of VA core classes 
 
 See :ref:`here <acmg-variant-pathogencity-statement-example>` for a simple data example of an ACMG-aligned Variant Pathogenicity Statement.
 
+See :ref:`here <profile-authoring-mechanisms>` for a description of how constraints in Community Pofiles are authored.
 
 -----
 
