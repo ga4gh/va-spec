@@ -22,8 +22,6 @@ These initial profiles were developed to support the following implementations a
 
 The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec. 
 
-Links to Source YAML and JSON Schema artifacts are provided following the description of each profile below.
-
 .. _variant-pathogenicity-statement-acmg-2015:
 
 Variant Pathogenicity Statement (ACMG 2015)
