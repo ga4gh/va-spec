@@ -55,17 +55,17 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - Description
    *  - proposition
       -
-      - :ref:`Variant Therapeutic Response Proposition`
+      - :ref:`Variant Therapeutic Response Proposition <variant-therapeutic-response-proposition>`
       - 1..1
       - A proposition about the therapeutic response associated with a variant, in the context of a particular condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - strength
       -
-      - :ref:`MappableConcept` (nested enum:  | )
+      - :ref:`MappableConcept` (nested enum:  Level A | Level B | Level C | Level D)
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum:  | |  | | )
+      - :ref:`MappableConcept`  (nested enum: Tier I | Tier II | Tier III | Tier IV)
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
@@ -106,17 +106,17 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - Description
    *  - proposition
       -
-      - :ref:`Variant Diagnostic Proposition`
+      - :ref:`Variant Diagnostic Proposition <variant-diagnostic-proposition>`
       - 1..1
       - A proposition about a diagnostic association between a variant and condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - strength
       -
-      - :ref:`MappableConcept` (nested enum:  | )
+      - :ref:`MappableConcept` (nested enum:  Level A | Level B | Level C | Level D)
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum:  | |  | | )
+      - :ref:`MappableConcept` (nested enum:  Level A | Level B | Level C | Level D)
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
@@ -157,17 +157,17 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       - Description
    *  - proposition
       -
-      - :ref:`Variant Prognostic Proposition`
+      - :ref:`Variant Prognostic Proposition <variant-prognostic-proposition>`
       - 1..1
       - A proposition about a prognostic association between a variant and condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - strength
       -
-      - :ref:`MappableConcept` (nested enum:  | )
+      - :ref:`MappableConcept` (nested enum:  Level A | Level B | Level C | Level D)
       - 0..1
       - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
    *  - classification
       -
-      - :ref:`MappableConcept`  (nested enum:  | |  | | )
+      - :ref:`MappableConcept` (nested enum:  Level A | Level B | Level C | Level D)
       - 0..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
 
