@@ -804,7 +804,6 @@ $defs:
           The relationship the Proposition describes between the subject variant
           and object Condition. MUST be one of "isDiagnosticInclusionCriterionFor" or
           "isDiagnosticExclusionCriterionFor".
-        const: impactsFunctionOf
         enum:
         - isDiagnosticInclusionCriterionFor
         - isDiagnosticExclusionCriterionFor
