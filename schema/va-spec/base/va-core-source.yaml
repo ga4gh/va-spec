@@ -738,7 +738,7 @@ $defs:
          allele origin based on the type of tissue that was sequenced to identify the variant, and others use it more
          generally to specify a category of variant for which the proposition holds. The stated intent of this
          attribute is the latter. However, if an implementer is not sure about which is reported in their data, it
-         may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity. 
+         may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity.
         oneOf:
           - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
