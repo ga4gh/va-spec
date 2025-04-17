@@ -838,7 +838,7 @@ $defs:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
-          and object tumor type. MUST be "isCausalFor".        
+          and object tumor type. MUST be "isCausalFor".
         const: isCausalFor
         default: isCausalFor
       objectTumorType:
@@ -869,7 +869,7 @@ $defs:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
-          and object condition. MUST be "isCausalFor".        
+          and object condition. MUST be "isCausalFor".
         const: isCausalFor
         default: isCausalFor
       objectCondition:
@@ -946,7 +946,7 @@ $defs:
         description: >-
           The relationship the Proposition describes between the subject variant
           and object theapeutic. MUST be one of "predictsSensitivityTo" or
-          "predictsResistanceTo".        
+          "predictsResistanceTo".
         enum:
         - predictsSensitivityTo
         - predictsResistanceTo
