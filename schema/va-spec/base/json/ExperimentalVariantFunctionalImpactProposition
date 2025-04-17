@@ -60,8 +60,9 @@
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter.",
+         "description": "The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter. MUST be \"impactsFunctionOf\".",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
+         "const": "impactsFunctionOf",
          "default": "impactsFunctionOf"
       },
       "objectSequenceFeature": {

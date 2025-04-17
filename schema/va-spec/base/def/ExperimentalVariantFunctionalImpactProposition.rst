@@ -66,7 +66,7 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       -
       - string
       - 1..1
-      - The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter.
+      - The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter. MUST be "impactsFunctionOf".
    *  - objectSequenceFeature
       -
       - :ref:`iriReference` | :ref:`MappableConcept`
