@@ -60,10 +60,20 @@ Version 1 of the VA-Spec represents all other Domain Entity types using a simple
 Profile Authoring Mechanisms
 ############################
 
-At present, VA-Spec uses two distinct mechanisms for authoring specializations of Core Model Classes for representing specific types of Varaint knowledge (i.e. 'VA Profiles').
- #. A `Metaschema Processor (MSP)-based approach <https://github.com/ga4gh/gks-metaschema>`_ that special MSP functions like `inherits` and `extends` - and requires MSP tooling derive concrete subclasses of parent core classes. This mechanism is used for authoring 'Base Profiles' for Propositions and Study Results, which can be used/referenced within Statement and Evidence Line profiles.
- #. A `JSON Schema composition-based approach <https://json-schema.org/understanding-json-schema/reference/combining>`_ that uses the ``allOf`` keyword to extend core class definitions with additional constraints. This mechanism is used for authoring 'Community Profiles' for Statements and Evidence Lines, which constrain the values of certain attributes to align with terminologies and conventions from established community standards such as the ACMG-2015 Interpretation Guidelines. For more, see `here <https://va-ga4gh.readthedocs.io/en/latest/community-profile-sets/index.html>`_.
+In version 1.0 of the VA-Spec, we distinguish between two categories of profiles, whose specifications which employ distinct authoring mechanisms:
 
-This design decision was largely guided by the technical environment under which we had to implement the initial profiling process, and limitations this imposed. Metashcema Processor tooling, while not specifically suited to support profiling operations, were available and used in other GKS standards. And JSON Schema is a widely used language familiar to most developers, that has built in support for profiling tasks.
+ **VA Base Profiles**:
 
-We recognize that this patchwork approach is not ideal, and plan to evolve toward a more consistent profile authoring mechanism with integrated tooling support for community development (see :ref:`Future Plans <link-ml-profile-authoring-support>`).
+  - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
+  - This approach relies on bespoke `Metaschema Processor (MSP) tooling <https://github.com/ga4gh/gks-metaschema>`_ with functions to craft subclass definitions, and associated tooling to ferive formal json schema from them.
+  - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
+
+ **Community Profiles**:
+
+  - Layer additional constraints on top of VA core classes to enforce alignment with terminology conventions of a specific community guideline (e.g. ACMG 2015).
+  - These constraints are defined using a native json schema composition approach, which does not result in creation of concrete subclasses for each profile.
+  - This approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
+
+This design decision was largely guided to minimize the number of classes in the model while providing flexibility into specialize core models for diverse domains and community guidelines.   It also leverages the JSON Schema language which is widely used and familiar to most developers.
+
+For more information and technical guidance around how these types of profiles are authored and used, see the :ref:`Developer Guide <developer-guide>` section.

@@ -25,12 +25,13 @@ A few additional notes about this example:
 
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
-* Note that the variant subject of each Statement and Study Result objects is reported to be the same for simplicity (ex:Variant001, shown in the diagram as *NM_004700.4:c.803CCT[1]*).In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here<variant-congruence>`.
+* Note that the variant subject of each Statement and Study Result objects is reported as the same, generic variation for simplicity (ex:Variation001). In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here<variant-congruence>`.
 * The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKS Specifications.
 
 **Data**:
 
 .. note:: Comments in the example below will be easier to view in the |acmg_pathogenicity_statement_with_evidence_example_source_yaml|, which affords the option of a wider browser window.
+   We recommend opening this example side-by-side with the figure above, and tracking how the data reflects the diagrammed structure and semantics.
 
 .. code-block:: yaml
 
