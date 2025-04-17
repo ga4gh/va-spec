@@ -838,9 +838,9 @@ $defs:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
-          and object tumor type. MUST be "isCausalFor".
-        const: isCausalFor
-        default: isCausalFor
+          and object tumor type. MUST be "isOncogenicFor".
+        const: isOncogenicFor
+        default: isOncogenicFor
       objectTumorType:
         extends: object
         oneOf:

@@ -83,10 +83,10 @@
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship the Proposition describes between the subject variant and object tumor type. MUST be \"isCausalFor\".",
+         "description": "The relationship the Proposition describes between the subject variant and object tumor type. MUST be \"isOncogenicFor\".",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "const": "isCausalFor",
-         "default": "isCausalFor"
+         "const": "isOncogenicFor",
+         "default": "isOncogenicFor"
       },
       "objectTumorType": {
          "oneOf": [

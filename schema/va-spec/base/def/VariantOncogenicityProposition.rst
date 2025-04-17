@@ -76,7 +76,7 @@ Some VariantOncogenicityProposition attributes are inherited from :ref:`Clinical
       -
       - string
       - 1..1
-      - The relationship the Proposition describes between the subject variant and object tumor type. MUST be "isCausalFor".
+      - The relationship the Proposition describes between the subject variant and object tumor type. MUST be "isOncogenicFor".
    *  - objectTumorType
       -
       - :ref:`Condition` | :ref:`iriReference`
