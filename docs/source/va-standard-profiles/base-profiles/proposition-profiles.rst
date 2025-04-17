@@ -17,11 +17,16 @@ Variant Pathogenicity Proposition
 
 .. include::  ../../def/va-spec/VariantPathogenicityProposition.rst
 
-.. _variant-oncogenicity-proposition:
+
+Some VariantPathogenicityProposition attributes are inherited from :ref:`Proposition`.
+
+Some VariantPathogenicityProposition attributes are inherited from :ref:`Proposition <Proposition>`.
 
 **Proposition Semantics**
 
 The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NM_005343.4:c.173C>T is causal for Costello Syndrome"*. Optional ``qualifier`` attributes are able to support details like a **germline allele origin** and **HRAS gene context** for the variant, and  **low penetrance** and **dominant" mode of inheritance** for the condition. These semantics were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+
+.. _variant-oncogenicity-proposition:
 
 Variant Oncogenicity Proposition
 #################################
@@ -31,7 +36,7 @@ Variant Oncogenicity Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr is oncogenic for Breast Carcinoma"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant. These semantics were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr is causal for Breast Carcinoma"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant. These semantics were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
 
 .. _variant-therapeutic-response-proposition:
 
