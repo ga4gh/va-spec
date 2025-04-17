@@ -761,7 +761,8 @@ $defs:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
-          and object sequence feature whose function it may alter.
+          and object sequence feature whose function it may alter. MUST be "impactsFunctionOf".
+        const: impactsFunctionOf
         default: impactsFunctionOf
       objectSequenceFeature:
         extends: object
@@ -803,6 +804,10 @@ $defs:
         description: MUST be "VariantDiagnosticProposition".
       predicate:
         extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object Condition. MUST be one of "isDiagnosticInclusionCriterionFor" or
+          "isDiagnosticExclusionCriterionFor".
         enum:
         - isDiagnosticInclusionCriterionFor
         - isDiagnosticExclusionCriterionFor
@@ -831,7 +836,11 @@ $defs:
         description: MUST be "VariantOncogenicityProposition".
       predicate:
         extends: predicate
-        default: isCausalFor
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object tumor type. MUST be "isOncogenicFor".
+        const: isOncogenicFor
+        default: isOncogenicFor
       objectTumorType:
         extends: object
         oneOf:
@@ -858,6 +867,10 @@ $defs:
         description: Must be "VariantPathogenicityProposition"
       predicate:
         extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object condition. MUST be "isCausalFor".
+        const: isCausalFor
         default: isCausalFor
       objectCondition:
         extends: object
@@ -897,6 +910,10 @@ $defs:
         description: MUST be "VariantPrognosticProposition".
       predicate:
         extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object Condition. MUST be one of "associatedWithBetterOutcomeFor" or
+          "associatedWithWorseOutcomeFor".
         enum:
           - associatedWithBetterOutcomeFor
           - associatedWithWorseOutcomeFor
@@ -926,6 +943,10 @@ $defs:
         description: MUST be "VariantTherapeuticResponseProposition".
       predicate:
         extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object theapeutic. MUST be one of "predictsSensitivityTo" or
+          "predictsResistanceTo".
         enum:
         - predictsSensitivityTo
         - predictsResistanceTo
