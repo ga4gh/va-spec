@@ -1,6 +1,5 @@
 .. _Entity:
 .. _gks-core:Entity:
-.. _gks-core.Entity:
 
 Entity
 !!!!!!
