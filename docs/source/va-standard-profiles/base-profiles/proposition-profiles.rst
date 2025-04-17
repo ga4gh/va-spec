@@ -19,9 +19,9 @@ Variant Pathogenicity Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NM_005343.4:c.173C>T is causal for Costello Syndrome"*. Optional ``qualifier`` attributes are able to support details like a **germline allele origin** and **HRAS gene context** for the variant, and  **low penetrance** and **dominant" mode of inheritance** for the condition. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NM_005343.4:c.173C>T is causal for Costello Syndrome"*. Optional ``qualifier`` attributes are able to support details like a **germline allele origin** and **HRAS gene context** for the variant, and  **low penetrance** and **dominant" mode of inheritance** for the condition.
 
-These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 .. _variant-oncogenicity-proposition:
 
@@ -33,9 +33,9 @@ Variant Oncogenicity Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr is causal for Breast Carcinoma"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr is causal for Breast Carcinoma"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant.
 
-These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 .. _variant-therapeutic-response-proposition:
 
@@ -47,9 +47,9 @@ Variant Therapeutic Response Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR L858R predicts sensitivity to Afatinib"*. Here, a required ``conditionQualifierualifier`` captures the disease context in which the reported association holds (e.g. **Lung Adenocarcinoma**), and other optional qualifiers are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR L858R predicts sensitivity to Afatinib"*. Here, a required ``conditionQualifierualifier`` captures the disease context in which the reported association holds (e.g. **Lung Adenocarcinoma**), and other optional qualifiers are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant.
 
-These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 
 .. _variant-diagnostic-proposition:
@@ -61,9 +61,9 @@ Variant Diagnostic Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR R11T is a diagnostic inclusion criterion for Breast Cancer"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR R11T is a diagnostic inclusion criterion for Breast Cancer"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant.
 
-These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 
 .. _variant-prognostic-proposition:
@@ -75,9 +75,9 @@ Variant Prognostic Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR R11T associated with better outcomes for Breast Cancer"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR R11T associated with better outcomes for Breast Cancer"*. Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant.
 
-These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge. 
+These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 
 .. _experimental-variant-functional-impact-proposition:
@@ -89,6 +89,6 @@ Experimental Variant Functional Impact Proposition
 
 **Proposition Semantics**
 
-The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr impacts the function of the human PTEN gene"*. Here, an optional ``experimentalContextQualifier`` attribute can reference an assay or analysis that supported the reported impact, which can further inform interpretation of the proposed knowledge. 
+The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr impacts the function of the human PTEN gene"*. Here, an optional ``experimentalContextQualifier`` attribute can reference an assay or analysis that supported the reported impact, which can further inform interpretation of the proposed knowledge.
 
 These specific attributes were defined to support the needs of an early :ref:`MAVE-DB implementation <implementations>` of the VA-Spec, and will likely be refined and/or expanded as additional use cases emerge.

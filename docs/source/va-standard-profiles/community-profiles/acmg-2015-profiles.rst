@@ -5,7 +5,7 @@ ACMG 2015 Aligned Profiles
 
 The following profiles align with terminology and curation conventions from the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868>`_.
 
-These initial profiles were developed to support the following implementations and use cases: 
+These initial profiles were developed to support the following implementations and use cases:
 
 .. list-table::
    :class: clean-wrap
@@ -20,7 +20,7 @@ These initial profiles were developed to support the following implementations a
    *  - MAVE DB
       - Will use VA-Spec as a format to send multiplex-assay based functional impact data, classifications, and evidence interpretations to external platforms where they can be used to support pathogenicity and oncogenicity interpretation.
 
-The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec. 
+The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec.
 
 .. _variant-pathogenicity-statement-acmg-2015:
 
