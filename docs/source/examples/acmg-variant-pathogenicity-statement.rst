@@ -53,26 +53,14 @@ ACMG Variant Pathogenicity Statement Example
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:            # reports the type of contribution that was made (here an evaluation activity)
-        name: evaluated
-        mappings:
-          - coding:
-              code: cg000011
-              system: https://dataexchange.clinicalgenome.org/codes/
-            relation: exactMatch
+      activityType: evaluated  # reports the type of contribution that was made (here an evaluation activity)
       date: '2015-08-20'       # reports when this contribution was performed
     - type: Contribution
       contributor:
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:
-        name: submitted
-        mappings:
-          - coding:
-              code: cg000010
-              system: https://dataexchange.clinicalgenome.org/codes/
-            relation: exactMatch
+      activityType: submitted
       date: '2018-06-12'
   specifiedBy:                 # holds a Method object describing guidelines followed in generating the knowledge reported in the Statement
     type: Method
