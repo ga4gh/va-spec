@@ -10,13 +10,13 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
+  # In Silico Tool Study Result
   InSilicoVariantEffectScoreStudyResult:
       inherits: va-core:StudyResult
       maturity: draft
       type: object
       description: >-
-        A StudyResult that reports a variant effect score from a functional assay.
-        Notes: Larry and Alex to discuss specifiedBy/sourceDataset/reportedIn to determine where everything will go
+        A StudyResult that reports a variant effect score from a predictive algorithm.
       properties:
         type:
           extends: type
@@ -51,6 +51,7 @@ $defs:
             The full data set that this measurement is a part of
           extends: sourceDataSet
 
+  # In Silico Tool Evidence Line
   InSilicoVariantEffectPredictionEvidenceLine:
       inherits: va-core:EvidenceLine
       maturity: draft
@@ -84,15 +85,89 @@ $defs:
           description: >-
             The direction of support that the Evidence Line is determined to provide toward its target Proposition
             (supports, disputes, neutral)
-        strengthOfEvidenceProvided:
-          $refCurie: gks.core:MappableConcept
-          description: >-
-            The strength of support that an Evidence Line is determined to provide for or against its target Proposition,
-            evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
-            Uses the following table: https://www.sciencedirect.com/science/article/pii/S000292972200461X#tbl2
-        evidenceOutcome:
-          $refCurie: gks.core:MappableConcept
-          description: >-
-            A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
-            the direction and strength of support it provides for or against the target Proposition.
-            For in silico tools, this will be equal to the categorical label the tool outputs (or what can be inferred from the paper)
+
+  # In Silico Tool Proposition
+  InSilicoVariantEffectPredictionProposition:
+    inherits: SubjectVariantProposition
+    maturity: draft
+    type: object
+    description: >-
+      A Proposition describing the predicted impact of a variant based on variant effect predictors. 
+    properties:
+      type:
+        extends: type
+        const: "InSilicoToolPredictedImpactProposition"
+        default: "InSilicoToolPredictedImpactProposition"
+        description: MUST be "InSilicoToolPredictedImpactProposition".
+      predicate:
+        extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object impact.
+        default: impactsFunctionOf
+      objectTranscript:
+        extends: object
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: >-
+          The transcript on whose function the impact of the subject variant is reported.
+      toolContextQualifier:
+        description: >-
+          The tools that were used to evaluate this proposition.
+        anyOf:
+          - $refCurie: gks.core:iriReference
+          - $ref: "#/$defs/MappableConcept"
+          - type: object
+            additionalProperties: true
+    required:
+      - predicate
+      - objectImpact
+
+  # In Silico Tool Statement
+  InSilicoVariantEffectPredictionStatement:
+    type: object
+    inherits: Statement
+    maturity: draft
+    description: >-
+      An Statement asserting functional impact on a transcript based on the predictions of an in silico tool  
+    properties:
+      type:
+        extends: type
+        const: InSilicoVariantEffectPredictionStatement
+        default: InSilicoVariantEffectPredictionStatement
+        description: MUST be "InSilicoVariantEffectPredictionStatement".
+      proposition:
+        $ref: "#/$defs/Proposition"
+        description:  >-
+          The InSilicoVariantEffectPredictionProposition for which we are making the statement.
+      direction:
+        description: >-
+          A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the
+          Proposition it evaluates.
+        type: string
+        enum:
+          - supports
+          - neutral
+          - disputes
+      classification:
+        $refCurie: gks.core:MappableConcept
+        description: >-
+          A single term or phrase summarizing the outcome of direction and strength
+          assessments of a Statement's Proposition, in terms of a classification of
+          its subject.
+        $comment: >-
+          If an in silico tool provides its own classification along with the accompanying score (e.g., SIFT), 
+          the value will be stored here.
+      hasEvidenceLines:
+        type: array
+        ordered: false
+        items:
+          anyOf:
+            - $ref: "#/$defs/EvidenceLine"
+            - $refCurie: gks.core:iriReference
+        description: >-
+          InSilicoVariantEffectPredictionEvidenceLine objects that supportthe validity of this Statement.
+    required:
+      - proposition
+      - direction

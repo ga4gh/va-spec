@@ -783,44 +783,6 @@ $defs:
       - predicate
       - objectSequenceFeature
 
-  # In Silico Tool Proposition
-  InSilicoToolPredictedImpactProposition:
-    inherits: SubjectVariantProposition
-    maturity: draft
-    type: object
-    description: >-
-      A Proposition describing the predicted impact of a variant based on variant effect predictors. 
-    properties:
-      type:
-        extends: type
-        const: "InSilicoToolPredictedImpactProposition"
-        default: "InSilicoToolPredictedImpactProposition"
-        description: MUST be "InSilicoToolPredictedImpactProposition".
-      predicate:
-        extends: predicate
-        description: >-
-          The relationship the Proposition describes between the subject variant
-          and object impact.
-        default: isPredictiveFor
-      objectImpact:
-        extends: object
-        enum: 
-        - functionalImpact
-        - spliceImpact
-        description: >-
-          The type of impact the set of in silico tools is predictive for.
-      toolContextQualifier:
-        description: >-
-          The tools that were used to evaluate this proposition.
-        anyOf:
-          - $refCurie: gks.core:iriReference
-          - $ref: "#/$defs/MappableConcept"
-          - type: object
-            additionalProperties: true
-    required:
-      - predicate
-      - objectImpact
-
   # Variant Diagnostic Proposition
   VariantDiagnosticProposition:
     inherits: ClinicalVariantProposition
