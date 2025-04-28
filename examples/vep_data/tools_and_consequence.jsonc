@@ -25,10 +25,10 @@
             "sequence": "A"
         }
     },
-    "cadd_statement": {
+    "cadd_statement": {  // for tools that don't provide a classification, do we even need a statement?? Keeping direction as neutral
         "type": "InSilicoVariantEffectPredictionStatement",
         "proposition": "#/cadd_proposition",
-        "direction": "disputes",
+        "direction": "neutral",
         "hasEvidenceLines": [
             "#/cadd_evidence"
         ]
@@ -36,7 +36,7 @@
     "sift_statement": {
         "type": "InSilicoVariantEffectPredictionStatement",
         "proposition": "#/sift_proposition",
-        "direction": "neutral",
+        "direction": "disputes",
         "classification": "tolerated",
         "hasEvidenceLines": [
             "#/sift_evidence"
@@ -45,7 +45,7 @@
     "spliceAI_statement": {
         "type": "InSilicoVariantEffectPredictionStatement",
         "proposition": "#/spliceAI_proposition",
-        "direction": "disputes",
+        "direction": "neutral",
         "hasEvidenceLines": [
             "#/spliceAI_evidence"
         ]
@@ -53,7 +53,7 @@
     "revel_statement": {
         "type": "InSilicoVariantEffectPredictionStatement",
         "proposition": "#/revel_proposition",
-        "direction": "disputes",
+        "direction": "neutral",
         "hasEvidenceLines": [
             "#/revel_evidence"
         ]
@@ -130,24 +130,6 @@
             ]
         }
     },
-    "insilico_tool_splice_proposition": {
-        "type": "InSilicoToolPredictedImpactProposition",
-        "predicate": "isPredictiveFor",
-        "objectImpact": "spliceImpact",
-        "toolContextQualifier": {
-            "type": "Tool Context Qualifier",
-            "primaryCoding": "SpliceAI",
-            "mappings": [
-                {
-                    "coding": {
-                        "system": "Tool List",
-                        "code": "SpliceAI"
-                    },
-                    "relation": "exactMatch"
-                }
-            ]
-        }
-    },
     "cadd_evidence": {
         "type": "InSilicoVariantEffectPredictionEvidenceLine",
         "targetProposition": "#/cadd_proposition",
@@ -156,11 +138,6 @@
                 "type": "InSilicoVariantEffectScoreStudyResult",
                 "label": "CADD Score",
                 "focusVariant": "#/input_variant",
-                "transcripts": [
-                    // REMOVE
-                    "#/missense_mol_con_1/transcriptMolecule",
-                    "#/missense_mol_con_2/transcriptMolecule"
-                ],
                 "score": 1.136748,
                 "ancillaryResults": {
                     "phredScore": 11.7
@@ -201,7 +178,7 @@
                 }
             }
         ],
-        "directionOfEvidenceProvided": "supports",
+        "directionOfEvidenceProvided": "neutral",
         "focusVariant": "#/input_variant"
     },
     "sift_evidence": {
@@ -248,7 +225,7 @@
                 }
             }
         ],
-        "directionOfEvidenceProvided": "neutral",
+        "directionOfEvidenceProvided": "disputes",
         "focusVariant": "#/input_variant"
     },
     "spliceAI_evidence": {
@@ -336,7 +313,7 @@
                 }
             }
         ],
-        "directionOfEvidenceProvided": "disputes",
+        "directionOfEvidenceProvided": "neutral",
         "focusVariant": "#/input_variant"
     },
     "revel_evidence": {
@@ -384,7 +361,7 @@
                 }
             }
         ],
-        "directionOfEvidenceProvided": "disputes",
+        "directionOfEvidenceProvided": "neutral",
         "focusVariant": "#/input_variant"
     }
 }
