@@ -30,3 +30,6 @@ two_co-occurring_phenotypes = tests/fixtures/conditionset.yaml
 nonsyndromic_genetic_hearing_loss = tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7
 discrete_allele = tests/fixtures/allele.yaml
 canonical_allele = examples/canonicalAllele-ex1.yaml
+
+pathogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
+pathogenicity_proposition_json_schema = schema/va-spec/base/json/VariantPathogenicityProposition
