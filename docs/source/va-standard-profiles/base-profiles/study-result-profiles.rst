@@ -17,6 +17,10 @@ Cohort Allele Frequency Study Result
 
 .. include::  ../../def/va-spec/CohortAlleleFrequencyStudyResult.rst
 
+**Artifacts**
+ - |cohort_allele_frequency_study_result_source_yaml|
+ - |cohort_allele_frequency_study_result_json_schema|
+
 **Use Cases and Implementations**
 
 This Study Result profile was defined to support `gnomAD <https://gnomad.broadinstitute.org/>`_ data in an early implementation for the `GREGoR consortium <https://gregorconsortium.org/>`_. It proivides a format to represent and share the diverse types of allele frequency data, quality measures, and derived ancillary results this resource provides. The model may be generalized in the future to support broader use cases, as new requirements and implementers emerge.
@@ -29,6 +33,10 @@ Experimental Variant Functional Impact Study Result
 ###################################################
 
 .. include::  ../../def/va-spec/ExperimentalVariantFunctionalImpactStudyResult.rst
+
+**Artifacts**
+ - |experimental_variant_functional_impact_study_result_source_yaml|
+ - |experimental_variant_functional_impact_study_result_json_schema|
 
 **Use Cases and Implementations**
 
