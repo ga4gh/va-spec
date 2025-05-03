@@ -8,11 +8,9 @@ Profiles
 Profiling Tasks
 ###############
 
-As noted, the VA-Spec provides Profiles for :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, and :ref:`Evidence Line <EvidenceLine>` representation that specialize these core classes to represent a specific type of variant knowledge (e.g. pathogenicity classification), and/or support conventions of a particular community guideline (e.g. ACMG 2015).
+As noted, the VA-Spec provides :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, :ref:`Evidence Line <EvidenceLine>`, and :ref:`Proposition <Proposition>` Profiles that specialize these core classes to support a specific domain of variant knowledge (e.g. pathogenicity), and/or support conventions of a particular community guideline (e.g. ACMG-2015).
 
-The profiling approach defined in v1.0 of the VA-Spec enumerates the types of specializations and extensions that are permitted in authoring profiles. Future versions of the VA-Spec will include a more formal specification and tooling support for executing these tasks and validating they were performed correctly.
-
-The table below describes the different profiling tasks supported, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles, and illustrated graphically in the figure that follows.
+The table below describes the different profiling tasks supported in v1.0 of the VA-Spec, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles. These are illustrated graphically in the figure that follows. 
 
 .. list-table::
    :class: clean-wrap
@@ -49,3 +47,5 @@ The diagram below illustrates at a conceptual level some of the profiling steps 
    (**A**) Core Proposition and Statement classes, showing a subset of their attributes. (**B**) ACMG-based Variant Pathogenicity profiles derived from these core classes, with profiling specializations in green. Text in curly braces are enumerations, which in some cases are nested inside fields of a MappableConcept. The actual VA-Spec v1.0 schema for these profiles are :ref:`here <variant-pathogenicity-proposition>` and :ref:`here <variant-pathogenicity-statement-acmg-2015>`.
 
 This :ref:`data example <acmg-variant-pathogenicity-statement-example>` illustrates application of these two profiles to represent a simple Variant Pathogenicity Statement.
+
+Future versions of the VA-Spec will include a more formal specification and tooling support for executing these tasks and validating they were performed correctly.
