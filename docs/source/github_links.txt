@@ -33,3 +33,13 @@ canonical_allele = examples/canonicalAllele-ex1.yaml
 
 pathogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
 pathogenicity_proposition_json_schema = schema/va-spec/base/json/VariantPathogenicityProposition
+oncogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
+oncogenicity_proposition_json_schema = schema/va-spec/base/json/VariantOncogenicityProposition
+therapeutic_response_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
+therapeutic_response_proposition_json_schema = schema/va-spec/base/json/TherapeuticResponseProposition
+diagnostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
+diagnostic_proposition_json_schema = schema/va-spec/base/json/VariantDiagnosticProposition
+prognostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
+prognostic_proposition_json_schema = schema/va-spec/base/json/VariantPrognosticProposition
+experimental_variant_functional_impact_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml
+experimental_variant_functional_impact_proposition_json_schema = schema/va-spec/base/json/ExperimentalVariantFunctionalImpactProposition
