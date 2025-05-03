@@ -23,6 +23,11 @@ The ``subject``, ``predicate``, ``object`` attributes defined in this profile ca
 
 These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
+
+**Artifacts**
+ - |pathogenicity_proposition_source_yaml|
+ - |pathogenicity_proposition_json_schema|
+
 .. _variant-oncogenicity-proposition:
 
 Variant Oncogenicity Proposition
