@@ -32,4 +32,6 @@ To facilitate developer access to these key resources, we provide this central c
 
 -------
 
-JSON schema for **concrete VA Core classes** that can aslo be used to create and validate data are housed in the directory here: |core_class_json_schema_files|. This includes schema for **Statement** and **Evidence Line** classes that are the basis for constraint-based community profiles, and schema for **Method**, **Document**, **Data Set**, **Contribution**, and **Agent** classes that support provenance representations. 
+JSON schema for **concrete VA Core classes** that can aslo be used to create and validate data are housed in the directory here: |core_class_json_schema_files|. 
+
+This includes schema for **Statement** and **Evidence Line** classes that are the basis for constraint-based community profiles, as well as schema for **Method**, **Document**, **Data Set**, **Contribution**, and **Agent** classes that support provenance representations. 
