@@ -5,14 +5,14 @@ diagnostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantDia
 prognostic_study_statement_source_yaml = schema/va-spec/aac-2017/prognostic-study-statement-profile-source.yaml
 prognostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantPrognostictudyStatement
 
-oncogenicity_functional_impact_evidence_line_source_yaml = schema/va-spec/ccv-2022/oncogenicity-evidence-line-profile-source.yaml
-oncogenicity_functional_impact_evidence_line_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityEvidenceLine
+oncogenicity_evidence_line_source_yaml = schema/va-spec/ccv-2022/oncogenicity-evidence-line-profile-source.yaml
+oncogenicity_evidence_line_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityEvidenceLine
 
 oncogenicity_study_statement_source_yaml = schema/va-spec/ccv-2022/oncogenicity-study-statement-profile-source.yaml
 oncogenicity_study_statement_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityStudyStatement
 
-pathogenicity_functional_impact_evidence_line_source_yaml = schema/va-spec/acmg-2015/pathogenicity-evidence-line-profile-source.yaml
-pathogenicity_functional_impact_evidence_line_json_schema = schema/va-spec/acmg-2015/json/VariantPathogenicityEvidenceLine
+pathogenicity_evidence_line_source_yaml = schema/va-spec/acmg-2015/pathogenicity-evidence-line-profile-source.yaml
+pathogenicity_evidence_line_json_schema = schema/va-spec/acmg-2015/json/VariantPathogenicityEvidenceLine
 
 pathogenicity_statement_source_yaml = schema/va-spec/acmg-2015/pathogenicity-statement-profile-source.yaml
 pathogenicity_statement_json_schema = schema/va-spec/acmg-2015/json/VariantPathogenicityStatement
