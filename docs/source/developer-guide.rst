@@ -108,30 +108,4 @@ This section describes why these are useful, and how to create them.
 
 This :ref:`simple data example <custom-variant-pathogenicity-statement-example>` illustrates application of this approach to create a custom, non-ACMG-compliant representation of a pathogenicity statement.
 
-VA Profile JSON Schema Catalog
-##############################
 
-Here we provide a central catalog of links to all JSON schema files for all VA Profiles that can be used to create and validate data. 
-
-**Proposition Profiles:**
- - |pathogenicity_proposition_json_schema|
- - |oncogenicity_proposition_json_schema|
- - |therapeutic_response_proposition_json_schema|
- - |diagnostic_proposition_json_schema|
- - |prognostic_proposition_json_schema|
- - |experimental_variant_functional_impact_proposition_json_schema|
-
-**Statement Profiles:**
- - |pathogenicity_statement_json_schema|
- - |oncogenicity_study_statement_json_schema|
- - |therapeutic_reponse_study_statement_json_schema|
- - |diagnostic_study_statement_json_schema|
- - |prognostic_study_statement_json_schema|
-
-**Evidence Line Profiles:**
- - |pathogenicity_evidence_line_json_schema|
- - |oncogenicity_evidence_line_json_schema|
-
-**Study Result Profiles:**
- - |cohort_allele_frequency_study_result_json_schema|
- - |experimental_variant_functional_impact_study_result_json_schema|
