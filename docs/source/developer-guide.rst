@@ -3,14 +3,16 @@
 Developer Guide
 !!!!!!!!!!!!!!!
 
-Preceding documentation provides a more conceptual understanding of the VA-Spec for a broad audience - covering its content, modeling principles, and general utility. Here we provide guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems.
+Preceding documentation provides a more conceptual understanding of the VA-Spec for a broad audience - covering its content, modeling principles, and general utility. 
+
+Here we provide guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems.
 
 .. _profile-authoring-mechanisms:
 
 Authoring Base vs Community Profiles
 #####################################
 
-Here we build on this :ref:`conceptual overview of the Profiling Approach <profiles>`, to describe the technical mechanisms used to define profile specilaizations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
+Here we build on the :ref:`conceptual overview of the Profiling Approach <profiles>`, to describe the technical mechanisms used to define profile specilaizations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
 
 .. _inheritance-based-profiling:
 
@@ -100,16 +102,36 @@ This section describes why these are useful, and how to create them.
 **The process is straightforward** - e.g. to create a custom Statement profile for pathogenicity classification data not based strictly aligned with ACMG terminology:
 
 #. Start with the core :ref:`Statement<Statement>` class
-#. Bind its ``proposition`` attribute to the :ref:`VariantPathogenicityProposition <variant-pathogenicity-proposition>`base profile class
+#. Bind its ``proposition`` attribute to the :ref:`VariantPathogenicityProposition <variant-pathogenicity-proposition>` base profile class
 #. Use other core Statement attributes and related core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enumerations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above.
+#. Use the base Statement reference implementation to create and validate compliant data. 
 
 This :ref:`simple data example <custom-variant-pathogenicity-statement-example>` illustrates application of this approach to create a custom, non-ACMG-compliant representation of a pathogenicity statement.
 
+VA Profile JSON Schema Catalog
+##############################
 
+Here we provide a central catalog of links to all JSON schema files for all VA Profiles that can be used to create and validate data. 
 
+**Proposition Profiles:**
+ - |pathogenicity_proposition_json_schema|
+ - |oncogenicity_proposition_json_schema|
+ - |therapeutic_response_proposition_json_schema|
+ - |diagnostic_proposition_json_schema|
+ - |prognostic_proposition_json_schema|
+ - |experimental_variant_functional_impact_proposition_json_schema|
 
+**Statement Profiles:**
+ - |pathogenicity_statement_json_schema|
+ - |oncogenicity_study_statement_json_schema|
+ - |therapeutic_reponse_study_statement_json_schema|
+ - |diagnostic_study_statement_json_schema|
+ - |prognostic_study_statement_json_schema|
 
+**Evidence Line Profiles:**
+ - |pathogenicity_evidence_line_json_schema|
+ - |oncogenicity_evidence_line_json_schema|
 
-
-VA Profile Development
-######################
+**Study Result Profiles:**
+ - |cohort_allele_frequency_study_result_json_schema|
+ - |experimental_variant_functional_impact_study_result_json_schema|
