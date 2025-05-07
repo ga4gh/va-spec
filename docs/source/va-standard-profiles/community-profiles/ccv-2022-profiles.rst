@@ -143,5 +143,5 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
 
 **Artifacts**
 
- - |oncogenicity_functional_impact_evidence_line_source_yaml|
- - |oncogenicity_functional_impact_evidence_line_json_schema|
+ - |oncogenicity_evidence_line_source_yaml|
+ - |oncogenicity_evidence_line_json_schema|
