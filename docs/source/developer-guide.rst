@@ -19,7 +19,7 @@ For **Proposition** and **Study Result** Base Profiles, a subclassing mechanism 
 
 For **Statements** and **Evidence Lines**, any domain-specificity is specified in the **Propositions** these objects encapsulate, so there is no need to define fomral subclasses here. However, VA-Spec includes **Community Profiles** of these classes that constrain certain attribute values to align with the conventions of a particular community guideline - and here `schema composition <https://json-schema.org/understanding-json-schema/reference/combining>`_ is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating VA data.
 
-The diagrams below illustrate where subclassing- and composition-based mechanisms are applied to define each profile included in the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the models.
+The diagrams below illustrate where subclass- and composition-based mechanisms are applied to define each profile included in the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the models.
 
 ------
 
@@ -53,14 +53,14 @@ Finally, this :ref:`diagrammed data example <acmg-variant-pathogenicity-statemen
 Authoring Base vs Community Profiles
 #####################################
 
-Here we build on the :ref:`conceptual overview <profiles>` of the Profiling approach, to describe the technical mechanisms used to define profile specializations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
+Here we describe the technical mechanism and syntax used to define VA Profiles. As noted, version 1.0 of the VA-Spec makes a formal distinction between **Base** and **Community** Profiles, and relies on **distinct mechanisms** for authoring them.
 
 .. _subclass-based-profiling:
 
 **Subclass-Based Authoring of Base Profiles**:
 
-- **Description**: Specializes generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-- **Mechanism**: Relies on `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  ``inherits`` and ``extends`` keywords and requisite tooling to implement class inheritance and attribute extension which are not natively supported by JSON Schema.
+- **Mechanism**: Specializes generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
+- **Syntax**: Relies on `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  ``inherits`` and ``extends`` keywords and requisite tooling to implement class inheritance and attribute extension which are not natively supported by JSON Schema.
 - **Application**: Used in authoring "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 - **Rationale**: Allows for the types of attribute extension and addition that are applied in these Base Profiles (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
 - **Example**:
@@ -69,7 +69,7 @@ Here we build on the :ref:`conceptual overview <profiles>` of the Profiling appr
 
 .. code-block:: yaml
 
-  # From the source yaml file where the Variant Pathogenicity Proposition Base Profile is authored
+  # Syntax from the source yaml file where the Variant Pathogenicity Proposition Base Profile is authored
 
   VariantPathogenicityProposition:
     inherits: ClinicalVariantProposition           # MSP inherits keyword
@@ -91,17 +91,17 @@ Here we build on the :ref:`conceptual overview <profiles>` of the Profiling appr
 
 **Schema Composition-Based Authoring of Community Profiles**:
 
-- **Description**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take.
-- **Mechanism**:  Relies on schema composition using the native JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile. Source files are organized in directories based on the community guideline they enforce (e.g. ACMG-2015, or AAC-2022).
+- **Mechanism**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take.
+- **Syntax**:  Relies on schema composition using the native JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile. Source files are organized in directories based on the community guideline they enforce (e.g. ACMG-2015, or AAC-2022).
 - **Application**: Used in authoring "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <evidence-line-acmg-2015>` classes, which embed corresponding base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
-- **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running bespoke Metaschema Processor tooling.
+- **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running custom Metaschema Processor tooling.
 - **Example**:
 
 .. _composition-based-profiling-syntax:
 
 .. code-block:: yaml
 
-  # From the source yaml file where the AMCG 2015 Variant Pathogenicity Statement Community Profile is authored
+  # Syntax from the source yaml file where the AMCG 2015 Variant Pathogenicity Statement Community Profile is authored
 
   VariantPathogenicityStatement:
     description: A Statement describing the role of a variant in causing an inherited condition.
