@@ -3,58 +3,49 @@
 Developer Guide
 !!!!!!!!!!!!!!!
 
-Preceding documentation provides a more conceptual understanding of the VA-Spec for a broad audience - covering its content, modeling principles, and general utility. 
-
-Here we provide guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems.
+The preceding documentation provides a more conceptual understanding of the VA-Spec for a broad audience - covering its content, modeling principles, and general utility. This section provides more technical guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems.
 
 .. _profile-definition-mechanisms:
 
 Profile Definition Mechanisms
 #############################
 
-The narrative and diagrams below illustrate how two mechanisms are used to author Profiles as specializations of Core Model classes: 
+We have :Ref:`previously described <va-profiles>` two categories of profiles in the VA-Spec, which are authored using different mechanisms:
 
- #. a **Subclassing Approach** for defining **Proposition** and **Study Result** profiles as VA Base Classes
- #. a **Schema Composition Approach** for defining **Statement** and **Evidence Line** profiles as constraints on top of the core class definitions. 
+ #. Base Profiles use a **subclassing Mechanism** to define **Proposition** and **Study Result** profiles as VA base classes.
+ #. Community Profiles use a **schema-composition mechanism** to define **Statement** and **Evidence Line** profiles as constraints on top of core class definitions. 
 
+For **Proposition** and **Study Result** Base Profiles, a subclassing mechanism is required to rename/add additional qualifier and data item attributes used to collect domain-specific information in these profiles
 Subclassing is required to author the extensions needed for **Proposition** and **Study Result** profiles - specifically the qualifier and data item fields that get added to collect domain-specific information. We call these models **"Base Profiles"**.
 
-However, because all domain-specificity needed for defining **Statement** and **Evidence Line** models for specific types of knowledge is specified in the **Proposition** profiles they encapsulate, there is no need to define new classes here. If we want to constrain certain attribute values in a domain-specific **Statement** or **Evidence Line** object to align with the conventions of a particular community guideline - JSON Schema composition is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating data. It is used to author what we call **"Community Profiles"**.
+For **Statements** and **Evidence Lines**, any domain-specificity is specified in the **Propositions** these objects encapsulate, so there is no need to define fomral subclasses here. However, VA-Spec includes Community Profiles of these classes that constrain certain attribute values to align with the conventions of a particular community guideline - and here JSON Schema composition is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating VA data.
 
-Below we illustrate how these mechanisms are applied to define all Profiles in v1 of the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the schema.
+The diagrams below illustrate where subclassing and composition-based mechanisms are applied to define all Profiles included in v1 of the VA-Spec, as specializations of Core Model classes. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the models.
 
 ------
-
 
  
-.. figure:: /images/core-model-classes-mechanism.png
-
-   Core Model Classes
-
-   **Legend**: The **Core Data Model** consists of a subset of domain-agnostic classes and attributes from the SEPIO model. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gks-core, vrs, and cat-vrs models. Annotations in green above and below indicate the GKS specification in which each class or profile definition lives.  
+.. image:: /images/core-model-classes-mechanism.png
 
 
--------
+The **Core Data Model** consists of a set of domain-agnostic classes and attributes. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gks-core, vrs, and cat-vrs models, as indicated by annotations in green which indicate the GKS specification in which each is defined.  
 
-.. figure:: /images/base-profiles-mechanism.png
-
-   Base Profiles
-
-   **Legend**: The **Proposition** and **Study Result** Profiles above are defined as "VA Base Classes" using a subclassing mechanism. The authoring syntax for this mechanism is illustrated  :ref:`here <subclass-based-profiling-syntax>`, for the Variant Pathogenicity Proposition profile.  
 
 -------
 
-.. figure:: /images/community-profiles-mechanism.png
+.. image:: /images/base-profiles-mechanism.png
 
-   Community Profiles
+The **Proposition** and **Study Result** Profiles above are defined as "VA Base Classes" using a subclassing mechanism. The specific syntax for this authoring mechanism is illustrated in the Proposition profile example :ref:`here <subclass-based-profiling-syntax>`.  
 
-   **Legend**: The **Statement** and **EvidenceLine** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes* in the VA Model. The domain-specificity of these profiles is defined in the **Proposition** profiles they encapsulate, and constraints are added on top of this to restrict certain attribute values to align with terminological conventions of a particular community guideline (e.g. ACMG-2015). The authoring syntax for this mechanism is illustrated :ref:`here <composition-based-profiling-syntax>`, for the AMCG 2015 Variant Pathogenicity Statement Community profile. 
+-------
+
+.. image:: /images/community-profiles-mechanism.png
+
+The **Statement** and **EvidenceLine** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes* in the VA Model. The domain-specificity of these profiles is defined in the **Proposition** profiles they encapsulate, as diagrammed.  Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline (e.g. ACMG-2015, AAC-2017, CCV-2022). The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`. 
 
 ------
 
-Finally, the diagrammed data example :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence-diagram>` provides a nice way to visualize how Core Model classes and profiles defined using these different mechanisms are used together to represent real data. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). 
-
-A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``"type"``  that reflects this (e.g. ``"type": "CohortAlleleFrequencyStudyResult"``). But because Community Profiles are defined using schema composition, the formal ``"type"`` of these objects is that of the Core Model class on which they are built (e.g. ``"type": "Statement"``, ``"type": EvidenceLine``).
+Finally, this :ref:`diagrammed data example <acmg-variant-pathogenicity-statement-example-with-evidence-diagram>` provides a nice visualization of how Core Model classes and profiles defined using these different mechanisms are used together to represent real data. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). 
 
 -------
 
