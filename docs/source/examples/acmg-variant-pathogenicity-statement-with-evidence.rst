@@ -268,13 +268,13 @@ A few additional notes about this example:
 
 .. _acmg-variant-pathogenicity-statement-example-with-evidence-diagram:
 
-*Diagram*:
+**Diagram**:
 
- A subset of data from the example above is illustrated below. 
+A subset of data from the example above is illustrated below. 
  
-The diagram is meant to highlight the structure of the data in more detail, including encapsulation of Propositions in Statements and Evidence Lines, and the use of the same set of Core Model classes to capture provenance information about all primary knowledge artifacts(Statements, Evidence Lines, Study Results).
+The diagram is meant to highlight the structure of the data in more detail, including encapsulation of **Propositions** in **Statements** and **Evidence Lines**, and the use of the same set of Core Model classes to capture provenance information about all primary knowledge artifacts (**Statements**, **Evidence Lines**, **Study Results**).
 
-It is also meant to highlight how Core Model classes, Base Profiles, and Community Profiles - which are defined using the different mechanisms described :ref:`here <profile-definition-mechanisms>` - are used together to represent data. 
+It is also meant to highlight how schema for Core Model classes, Base Profiles, and Community Profiles - which are defined using the different mechanisms described :ref:`here <profile-definition-mechanisms>` - are used together in structured representations of real VA data. 
 
 .. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
 
