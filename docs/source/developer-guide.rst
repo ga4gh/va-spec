@@ -7,12 +7,62 @@ Preceding documentation provides a more conceptual understanding of the VA-Spec 
 
 Here we provide guidance to support modelers and data engineers who will be authoring VA Profiles, or implementing them in data exchange systems.
 
-.. _profile-authoring-mechanisms:
+.. _profile-definition-mechanisms:
+
+Profile Definition Mechanisms
+#############################
+
+The narrative and diagrams below illustrate how two mechanisms are used to author Profiles as specializations of Core Model classes: 
+ #. a **Subclassing Approach** for defining **Proposition** and **Study Result** profiles as VA Base Classes
+ #. a **Schema Composition Approach** for defining **Statement** and **Evidence Line** profiles as constraints on top of the core class definitions. 
+
+Subclassing is required to author the extensions needed for **Proposition** and **Study Result** profiles - specifically the qualifier and data item fields that get added to collect domain-specific information. We call these models "Base Profiles".
+
+However, because all domain-specificity needed for defining **Statement** and **Evidence Line** models for specific types of knowledge is specified in the **Proposition** profiles they encapsulate, there is no need to define new classes here. If we want to constrain certain attribute values in a domain-specific **Statement** or **Evidence Line** object to align with the conventions of a particular community guideline - JSON Schema composition is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating data. It is used to author what we call "Community Profiles".
+
+Below we illustrate how these mechanisms are applied to define all Profiles in v1 of the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the schema.
+
+------
+
+The syntax and structure for each Profile authoring mechanisms are described in the :ref:`next section <profile-authoring-syntax>`.
+ 
+.. figure:: /images/core-model-classes-mechanism.png
+
+   Core Model Classes
+
+   **Legend**: The **Core Data Model** consists of a subset of domain-agnostic classes and attributes from the SEPIO model. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gks-core, vrs, and cat-vrs models. Annotations in green above and below indicate the GKS specification in which each class or profile definition lives.  
+
+
+-------
+
+.. figure:: /images/base-profiles-mechanism.png
+
+   Base Profiles
+
+   **Legend**: The **Proposition** and **Study Result** Profiles above are defined as "VA Base Classes" using a subclassing mechanism. The authoring syntax for this mechanism is illustrated  :ref:`here <subclass-based-profiling-syntax>`, for the Variant Pathogenicity Proposition profile.  
+
+-------
+
+.. figure:: /images/community-profiles-mechanism.png
+
+   Community Profiles
+
+   **Legend**: The **Statement** and **EvidenceLine** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes* in the VA Model. The domain-specificity of these profiles is defined in the **Proposition** profiles they encapsulate, and constraints are added on top of this to restrict certain attribute values to align with terminological conventions of a particular community guideline (e.g. ACMG-2015). The authoring syntax for this mechanism is illustrated :ref:`here <composition-based-profiling-syntax>`, for the AMCG 2015 Variant Pathogenicity Statement Community profile. 
+
+------
+
+Finally, the diagrammed data example :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence-diagram>` provides a nice way to visualize how Core Model classes and profiles defined using these different mechanisms are used together to represent real data. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). 
+
+A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``"type"``  that reflects this (e.g. ``"type": "CohortAlleleFrequencyStudyResult"``). But because Community Profiles are defined using schema composition, the formal ``"type"`` of these objects is that of the Core Model class on which they are built (e.g. ``"type": "Statement"``, ``"type": EvidenceLine``).
+
+-------
+
+.. _profile-authoring-syntax:
 
 Authoring Base vs Community Profiles
 #####################################
 
-Here we build on the :ref:`conceptual overview of the Profiling Approach <profiles>`, to describe the technical mechanisms used to define profile specilaizations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
+Here we build on the :ref:`conceptual overview <profiles>` of the Profiling approach, to describe the technical mechanisms used to define profile specializations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
 
 .. _subclass-based-profiling:
 
@@ -48,7 +98,7 @@ Here we build on the :ref:`conceptual overview of the Profiling Approach <profil
 
 .. _composition-based-profiling:
 
-**JSON Schema Composition-Based Authoring of Community Profiles**:
+**Schema Composition-Based Authoring of Community Profiles**:
 
 - **Description**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take.
 - **Mechanism**:  Relies on schema composition using the native JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile. Source files are organized in directories based on the community guideline they enforce (e.g. ACMG-2015, or AAC-2022).
@@ -85,6 +135,7 @@ Here we build on the :ref:`conceptual overview of the Profiling Approach <profil
               system:
                 const: ACMG Guidelines, 2015
 
+------
 
 .. _custom-profile-development:
 
