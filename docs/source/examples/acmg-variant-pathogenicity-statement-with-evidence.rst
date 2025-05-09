@@ -278,7 +278,5 @@ It is also meant to highlight how schema for Core Model classes, Base Profiles, 
 
 .. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
 
-   Detailed Data Example Diagram
-
-   **Legend**: Diagrammatic representation of a subset of data from the example above. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values wrapped in complex data structures like Mappable Concepts and Codings.
+   **Legend**: Diagrammatic representation of a subset of the data example above. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
 
