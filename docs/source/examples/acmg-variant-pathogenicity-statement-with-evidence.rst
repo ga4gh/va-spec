@@ -25,7 +25,7 @@ A few additional notes about this example:
 
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
-* Note that the variant subject of each Statement and Study Result objects is reported as the same, generic variation for simplicity (ex:Variation001). In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here<variant-congruence>`.
+* Note that the variant subject of each Statement and Study Result objects is reported as the same, generic variation for simplicity (ex:Variant001). In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here<variant-congruence>`.
 * The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKS Specifications.
 
 **Data**:
@@ -268,13 +268,11 @@ A few additional notes about this example:
 
 .. _acmg-variant-pathogenicity-statement-example-with-evidence-diagram:
 
-**Diagram**:
+**Detailed Diagram**:
 
-A subset of data from the example above is illustrated below. 
- 
-The diagram is meant to highlight the structure of the data in more detail, including encapsulation of **Propositions** in **Statements** and **Evidence Lines**, and the use of the same set of Core Model classes (**Method**, **Document**, **Contribution**, **Agent**) to capture provenance information about all primary knowledge artifacts.
+The diagram shows a subset of data from the full json example. It provides a more detailed data structure overview that highights encapsulation of **Propositions** in **Statements** and **Evidence Lines** and the use of the same set of Core Model classes (**Method**, **Document**, **Contribution**, **Agent**) to capture provenance information about all primary knowledge artifacts.
 
-It is also meant to highlight how schema for **Core Model** classes, **Base Profiles**, and **Community Profiles** - which are defined using :ref:`different mechanisms <profile-definition-mechanisms>` - are used together in structured representations of real VA data.
+It also highlights the kind of schema that specifies each objects in the data - illustrating how **Core Model Classes**, **Base Profiles**, and **Community Profiles**  that rely on :ref:`different authoring mechanisms <profile-definition-mechanisms>` are used together in a structured data representation.
 
 .. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
 
