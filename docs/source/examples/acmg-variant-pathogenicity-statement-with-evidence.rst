@@ -263,3 +263,22 @@ A few additional notes about this example:
     value: no assertion criteria provided
   - name: clinvarSubmittedClassification
     value: Pathogenic
+
+------
+
+.. _acmg-variant-pathogenicity-statement-example-with-evidence-diagram:
+
+*Diagram*:
+
+ A subset of data from the example above is illustrated below. 
+ 
+The diagram is meant to highlight the structure of the data in more detail, including encapsulation of Propositions in Statements and Evidence Lines, and the use of the same set of Core Model classes to capture provenance information about all primary knowledge artifacts(Statements, Evidence Lines, Study Results).
+
+It is also meant to highlight how Core Model classes, Base Profiles, and Community Profiles - which are defined using the different mechanisms described :ref:`here <profile-definition-mechanisms>` - are used together to represent data. 
+
+.. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
+
+   Detailed Data Example Diagram
+
+   **Legend**: Diagrammatic representation of a subset of data from the example above. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values wrapped in complex data structures like Mappable Concepts and Codings.
+
