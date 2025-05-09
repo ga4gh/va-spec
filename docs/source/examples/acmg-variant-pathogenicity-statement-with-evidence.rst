@@ -274,7 +274,7 @@ A subset of data from the example above is illustrated below.
  
 The diagram is meant to highlight the structure of the data in more detail, including encapsulation of **Propositions** in **Statements** and **Evidence Lines**, and the use of the same set of Core Model classes to capture provenance information about all primary knowledge artifacts (**Statements**, **Evidence Lines**, **Study Results**).
 
-It is also meant to highlight how schema for Core Model classes, Base Profiles, and Community Profiles - which are defined using the different mechanisms described :ref:`here <profile-definition-mechanisms>` - are used together in structured representations of real VA data. 
+It is also meant to highlight how schema for Core Model classes, Base Profiles, and Community Profiles - which are defined using the different mechanisms described :ref:`here <profile-definition-mechanisms>` - are used together in structured representations of real VA data. A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``"type"``  that reflects this (e.g. ``"type": "Cohort Allele Frequency Study Result"``). But because Community Profiles are defined using schema composition, the formal ``"type"`` of these objects is that of the Core Model class on which they are built (e.g. ``"type": "Statement"``, ``"type": EvidenceLine``).
 
 .. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
 
