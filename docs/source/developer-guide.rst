@@ -13,18 +13,19 @@ Profile Definition Mechanisms
 #############################
 
 The narrative and diagrams below illustrate how two mechanisms are used to author Profiles as specializations of Core Model classes: 
+
  #. a **Subclassing Approach** for defining **Proposition** and **Study Result** profiles as VA Base Classes
  #. a **Schema Composition Approach** for defining **Statement** and **Evidence Line** profiles as constraints on top of the core class definitions. 
 
-Subclassing is required to author the extensions needed for **Proposition** and **Study Result** profiles - specifically the qualifier and data item fields that get added to collect domain-specific information. We call these models "Base Profiles".
+Subclassing is required to author the extensions needed for **Proposition** and **Study Result** profiles - specifically the qualifier and data item fields that get added to collect domain-specific information. We call these models **"Base Profiles"**.
 
-However, because all domain-specificity needed for defining **Statement** and **Evidence Line** models for specific types of knowledge is specified in the **Proposition** profiles they encapsulate, there is no need to define new classes here. If we want to constrain certain attribute values in a domain-specific **Statement** or **Evidence Line** object to align with the conventions of a particular community guideline - JSON Schema composition is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating data. It is used to author what we call "Community Profiles".
+However, because all domain-specificity needed for defining **Statement** and **Evidence Line** models for specific types of knowledge is specified in the **Proposition** profiles they encapsulate, there is no need to define new classes here. If we want to constrain certain attribute values in a domain-specific **Statement** or **Evidence Line** object to align with the conventions of a particular community guideline - JSON Schema composition is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating data. It is used to author what we call **"Community Profiles"**.
 
 Below we illustrate how these mechanisms are applied to define all Profiles in v1 of the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the schema.
 
 ------
 
-The syntax and structure for each Profile authoring mechanisms are described in the :ref:`next section <profile-authoring-syntax>`.
+
  
 .. figure:: /images/core-model-classes-mechanism.png
 
