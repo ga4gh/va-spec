@@ -14,15 +14,17 @@ Authoring Base vs Community Profiles
 
 Here we build on the :ref:`conceptual overview of the Profiling Approach <profiles>`, to describe the technical mechanisms used to define profile specilaizations. Version 1.0 of the VA-Spec makes a formal distinction between **'Base'** and **'Community'** Profiles, and relies on **distinct mechanisms** for authoring them.
 
-.. _inheritance-based-profiling:
+.. _subclass-based-profiling:
 
-**Inheritance-Based Authoring of Base Profiles**:
+**Subclass-Based Authoring of Base Profiles**:
 
 - **Description**: Specializes generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
 - **Mechanism**: Relies on bespoke `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  *inherits* and *extends* functions, and requisite tooling, to implement class inheritance and attribute extension which are not natively supported by JSON Schema.
 - **Application**: Used in authoring "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 - **Rationale**: Allows for the types of attribute extension and addition that are applied in these Base Profiles (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
 - **Example**:
+
+.. _subclass-based-profiling-syntax:
 
 .. code-block:: yaml
 
@@ -54,9 +56,11 @@ Here we build on the :ref:`conceptual overview of the Profiling Approach <profil
 - **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running bespoke Metaschema Processor tooling.
 - **Example**:
 
+.. _composition-based-profiling-syntax:
+
 .. code-block:: yaml
 
-  # From the source yaml file where the Variant Pathogenicity Statement AMCG 2015 Community Profile is authored
+  # From the source yaml file where the AMCG 2015 Variant Pathogenicity Statement Community Profile is authored
 
   VariantPathogenicityStatement:
     description: A Statement describing the role of a variant in causing an inherited condition.
