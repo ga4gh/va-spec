@@ -272,11 +272,14 @@ A few additional notes about this example:
 
 A subset of data from the example above is illustrated below. 
  
-The diagram is meant to highlight the structure of the data in more detail, including encapsulation of **Propositions** in **Statements** and **Evidence Lines**, and the use of the same set of Core Model classes to capture provenance information about all primary knowledge artifacts (**Statements**, **Evidence Lines**, **Study Results**).
+The diagram is meant to highlight the structure of the data in more detail, including encapsulation of **Propositions** in **Statements** and **Evidence Lines**, and the use of the same set of Core Model classes (**Method**, **Document**, **Contribution**, **Agent**) to capture provenance information about all primary knowledge artifacts.
 
-It is also meant to highlight how schema for Core Model classes, Base Profiles, and Community Profiles - which are defined using the different mechanisms described :ref:`here <profile-definition-mechanisms>` - are used together in structured representations of real VA data. A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``"type"``  that reflects this (e.g. ``"type": "Cohort Allele Frequency Study Result"``). But because Community Profiles are defined using schema composition, the formal ``"type"`` of these objects is that of the Core Model class on which they are built (e.g. ``"type": "Statement"``, ``"type": EvidenceLine``).
+It is also meant to highlight how schema for **Core Model** classes, **Base Profiles**, and **Community Profiles** - which are defined using :ref:`different mechanisms <profile-definition-mechanisms>` - are used together in structured representations of real VA data.
 
 .. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
 
-   **Legend**: Diagrammatic representation of a subset of the data example above. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
+  Detailed Data Example
 
+   **Legend**: Diagrammatic representation of a subset of data in the json example above. Styling conventions indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
+
+A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement``, ``EvidenceLine``).
