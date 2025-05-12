@@ -7,9 +7,9 @@ Introduction
 Overview
 ########
 
-Currently, tools and systems that annotate variants with knowledge about their clinical or functional significance lack a consistent and unified exchange model. This leads to challenges in data sharing and integration across platforms. 
+Currently, tools and systems that annotate variants with knowledge about their clinical or functional significance lack a consistent and unified exchange model. This leads to challenges in data sharing and integration across platforms.
 
-The **GA4GH Variant Annotation Specification (VA-Spec)** aims to address this gap by offering a set of extensible, shared schema to support variant knowledge exchange and application in research and clinical contexts. Each schema is built as a :ref:`"Profile" <va-profiles>` that extends a common, domain-agnostic :ref:`VA Core Model <va-core-model>` for a particular type of variant knowledge. 
+The **GA4GH Variant Annotation Specification (VA-Spec)** aims to address this gap by offering a set of extensible, shared schema to support variant knowledge exchange and application in research and clinical contexts. Each schema is built as a :ref:`"Profile" <va-profiles>` that extends a common, domain-agnostic :ref:`VA Core Model <va-core-model>` for a particular type of variant knowledge.
 
 The initial v1 release of the VA-Spec includes the Profiles described :ref:`here <va-profiles>`, which support variant knowledge produced by early adopter Driver Projects and organizational members including `ClinGen <https://clinicalgenome.org/>`_, `VICC <https://cancervariants.org/index.html>`_, and the `Atlas of  Variant Effects Alliance <https://www.varianteffect.org/>`_. These Profiles are specified as **machine-readable JSON schema** that support sharing and validation within and across these projects, along with a **Python reference implementation**.
 
@@ -71,7 +71,7 @@ More details about specific implementations of the VA-Spec can be found on the :
 Scope and Development
 #####################
 
-VA-Spec takes an implementation-driven development approach - releasing only schema that have been tested in real-world data systems.  Each :ref:`VA Profile <va-profiles>` released in v1.0 of the specification has been applied in at least two of the implementations described above, and each class released in the :ref:`VA Core Model <va-core-model>` includes only attributes that have been used or specialized in a VA Profile. 
+VA-Spec takes an implementation-driven development approach - releasing only schema that have been tested in real-world data systems.  Each :ref:`VA Profile <va-profiles>` released in v1.0 of the specification has been applied in at least two of the implementations described above, and each class released in the :ref:`VA Core Model <va-core-model>` includes only attributes that have been used or specialized in a VA Profile.
 
 While these requirements limit the coverage of the initial VA-Spec release, it ensures that all content has proven utility in actual implementation settings. Note however that the :ref:`SEPIO Information Model <sepio-framework>`, from which the VA Core Model was derived, contains a broader set of elements that may support data not covered by current VA-Spec. These SEPIO elements can be incorporated into the VA Core Model as needed to support emerging data and use cases.
 

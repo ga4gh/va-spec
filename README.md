@@ -1,6 +1,6 @@
 # VA-Spec
 
-The VA team is preparing a formal v1 release for Spring 2025.  
+The VA team is preparing a formal v1 release for Spring 2025.
 
 See official Documentation at https://va-ga4gh.readthedocs.io/en/latest.
 
