@@ -1,17 +1,17 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/ccv-2022/json/VariantOncogenicityStudyStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/ccv-2022/json/VariantOncogenicityStudyStatement",
    "title": "VariantOncogenicityStudyStatement",
    "description": "A statement reporting a conclusion from a single study about whether a variant is associated with oncogenicity (positive or negative) - based on interpretation of the study's results.",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/Statement"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Statement"
       },
       {
          "properties": {
             "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/VariantOncogenicityProposition",
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantOncogenicityProposition",
                "description": "A proposition about the oncogenicity of a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             },
             "strength": {

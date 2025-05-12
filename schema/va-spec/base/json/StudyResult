@@ -1,16 +1,16 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/StudyResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/StudyResult",
    "title": "StudyResult",
    "maturity": "trial use",
    "description": "A collection of data items from a single study that pertain to a particular subject or experimental unit in the study, along with optional provenance information describing how these data items were generated.",
    "$comment": "StudyResults provide a useful way to capture a subset of items from a study dataset that are used as evidence in generating higher order knowledge assertions about the entity that is the focus of the study result. For example, a set of allele frequency data items about a particular variant of interest selected from the complete gnomAD dataset can be reported in a StudyResult object, along with relevant provenance information, so they can be referenced together as evidence for a higher-order assertion about the variant's pathogenicity. Note that a 'dataItem' attribute, which would hold an array of data selected for inclusion in the StudyResult, is not included in this version of the StudyResult class. Profiles that extend this core class can define data type specific attributes to capture such information (e.g.'focusAlleleCount', 'focusAlleleFrequency', and 'locusAlleleCount' attributes in a CohortAlleleFrequencyStudyResult profile). But technical limitations in our current profiling framework tooling forced us to omit a core 'dataItems attribute that these specialized attributes would conceptually extend.",
    "oneOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/CohortAlleleFrequencyStudyResult"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/CohortAlleleFrequencyStudyResult"
       },
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.4/base/json/ExperimentalVariantFunctionalImpactStudyResult"
+         "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/ExperimentalVariantFunctionalImpactStudyResult"
       }
    ]
 }
