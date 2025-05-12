@@ -5,7 +5,7 @@ JSON Schema Catalog
 
 Formal JSON schema files for Base and Community Profiles are stored across different directories in the VA-Spec repository.
 
-To facilitate developer access to these key resources, we provide this central catalog of links for all VA Profile json schema files. 
+To facilitate developer access to these key resources, we provide this central catalog of links for all VA Profile json schema files.
 
 **Study Result Base Profiles:**
  - |cohort_allele_frequency_study_result_json_schema|
@@ -13,7 +13,7 @@ To facilitate developer access to these key resources, we provide this central c
 
 **Proposition Base Profiles:**
  - |pathogenicity_proposition_json_schema|
- - |oncogenicity_proposition_json_schema| 
+ - |oncogenicity_proposition_json_schema|
  - |therapeutic_response_proposition_json_schema|
  - |diagnostic_proposition_json_schema|
  - |prognostic_proposition_json_schema|
@@ -32,6 +32,6 @@ To facilitate developer access to these key resources, we provide this central c
 
 -------
 
-JSON schema for **concrete VA Core classes** that can aslo be used to create and validate data are housed in the directory here: |core_class_json_schema_files|. 
+JSON schema for **concrete VA Core classes** that can aslo be used to create and validate data are housed in the directory here: |core_class_json_schema_files|.
 
-This includes schema for **Statement** and **Evidence Line** classes that are the basis for constraint-based Community Profiles, as well as schema for **Method**, **Document**, **Data Set**, **Contribution**, and **Agent** classes that support provenance representations within all Profiles. 
+This includes schema for **Statement** and **Evidence Line** classes that are the basis for constraint-based Community Profiles, as well as schema for **Method**, **Document**, **Data Set**, **Contribution**, and **Agent** classes that support provenance representations within all Profiles.

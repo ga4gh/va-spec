@@ -10,7 +10,7 @@ Profiling Tasks
 
 As noted, the VA-Spec provides :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, :ref:`Evidence Line <EvidenceLine>`, and :ref:`Proposition <Proposition>` Profiles that specialize these core classes to support a specific domain of variant knowledge (e.g. pathogenicity), and/or support conventions of a particular community guideline (e.g. ACMG-2015).
 
-The table below describes the different profiling tasks supported in v1.0 of the VA-Spec, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles. These are illustrated graphically in the figure that follows. 
+The table below describes the different profiling tasks supported in v1.0 of the VA-Spec, with examples based on definition of ACMG-aligned Variant Pathogenicity profiles. These are illustrated graphically in the figure that follows.
 
 .. list-table::
    :class: clean-wrap

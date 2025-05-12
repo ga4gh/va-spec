@@ -11,7 +11,7 @@ As illustrated in the :ref:`Data Structures <data-structures>` section, the job 
 Propositions in Statements
 ##########################
 
-In a **Statement**, a given **Proposition** may be *asserted* to be true or false, or *assessed* to report the strength of existing evidence supporting it (e.g. "there is presently *moderate* evidence *supporting* the proposition that *'HRAS:c.173C>T causes Costello Syndrome'"*). 
+In a **Statement**, a given **Proposition** may be *asserted* to be true or false, or *assessed* to report the strength of existing evidence supporting it (e.g. "there is presently *moderate* evidence *supporting* the proposition that *'HRAS:c.173C>T causes Costello Syndrome'"*).
 
 An example of a **Proposition** as an *assessed* possible fact is illustrated below.
 
@@ -35,7 +35,7 @@ In an **Evidence Line**, a given **Proposition** captures the possible fact towa
 
 ----------
 
-In VA-Spec data, **Propositions** are used only in the context of a **Statement** or **Evidence Line**, as they convey no knowledge in the absence of the assessments these objects provide. 
+In VA-Spec data, **Propositions** are used only in the context of a **Statement** or **Evidence Line**, as they convey no knowledge in the absence of the assessments these objects provide.
 
 While **Propositions** are *required* in **Statements**, they are *optional* in **Evidence Lines** - and can be omitted if the **Evidence Line** is attached to a **Statement** with the same **Proposition**. For example, in the :ref:`data example here <<acmg-variant-pathogenicity-statement-example-with-evidence>` the root **Statement** asserts the same **Proposition** (``Proposition001``) toward which its two **Evidence Lines** evaluate the support provided by population frequency and functional impact data. This **Proposition** object is explicitly referenced in the **Evidence Lines** in the example, but omission of this reference is permissible, and would imply that the target **Proposition** here is the same as that in the root **Statement**.
 

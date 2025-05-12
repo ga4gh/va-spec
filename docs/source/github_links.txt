@@ -50,4 +50,3 @@ experimental_variant_functional_impact_study_result_source_yaml = schema/va-spec
 experimental_variant_functional_impact_study_result_json_schema = schema/va-spec/base/json/ExperimentalVariantFunctionalImpactStudyResult
 
 core_class_json_schema_files = schema/va-spec/base/json/
-

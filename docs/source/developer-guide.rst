@@ -13,7 +13,7 @@ Profile Definition Mechanisms
 We have :Ref:`previously described <va-profiles>` two categories of profiles in the VA-Spec, which are authored using different mechanisms:
 
  #. **Base Profiles**: use a **subclassing mechanism** to define **Proposition** and **Study Result** profiles as VA base classes.
- #. **Community Profiles**: use a **schema-composition mechanism** to define **Statement** and **Evidence Line** profiles as constraints on top of core class definitions. 
+ #. **Community Profiles**: use a **schema-composition mechanism** to define **Statement** and **Evidence Line** profiles as constraints on top of core class definitions.
 
 For **Proposition** and **Study Result** Base Profiles, a subclassing mechanism is required to rename and add additional attributes - including qualifier and data item fields used to collect domain-specific information in these profiles
 
@@ -23,28 +23,28 @@ The diagrams below illustrate where subclass- and composition-based mechanisms a
 
 ------
 
- 
+
 .. image:: /images/core-model-classes-mechanism.png
 
 
-The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gks-core, vrs, and cat-vrs models, as indicated by annotations in green which indicate the GKS specification in which each is defined.  
+The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gks-core, vrs, and cat-vrs models, as indicated by annotations in green which indicate the GKS specification in which each is defined.
 
 
 -------
 
 .. image:: /images/base-profiles-mechanism.png
 
-The **Proposition** and **Study Result** Base Profiles above are defined using a subclassing mechanism, creating formal "VA Base Classes" that extend the Core Data Model. The specific syntax for this authoring mechanism leverages features outside the native JSON Schema language, as illustrated in the Proposition profile example :ref:`here <subclass-based-profiling-syntax>`.  
+The **Proposition** and **Study Result** Base Profiles above are defined using a subclassing mechanism, creating formal "VA Base Classes" that extend the Core Data Model. The specific syntax for this authoring mechanism leverages features outside the native JSON Schema language, as illustrated in the Proposition profile example :ref:`here <subclass-based-profiling-syntax>`.
 
 -------
 
 .. image:: /images/community-profiles-mechanism.png
 
-The **Statement** and **Evidence Line** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes* in the VA Model. The domain-specificity of these profiles is defined in the **Proposition** profiles they encapsulate, as diagrammed.  Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline (e.g. ACMG-2015, AAC-2017, CCV-2022). The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`. 
+The **Statement** and **Evidence Line** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes* in the VA Model. The domain-specificity of these profiles is defined in the **Proposition** profiles they encapsulate, as diagrammed.  Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline (e.g. ACMG-2015, AAC-2017, CCV-2022). The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`.
 
 ------
 
-Finally, this :ref:`diagrammed data example <acmg-variant-pathogenicity-statement-example-with-evidence-diagram>` provides a nice visualization of how Core Model classes and profiles defined using these different mechanisms are used together to represent real data. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). 
+Finally, this :ref:`diagrammed data example <acmg-variant-pathogenicity-statement-example-with-evidence-diagram>` provides a nice visualization of how Core Model classes and profiles defined using these different mechanisms are used together to represent real data. Styling conventions in the diagram indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile).
 
 -------
 
@@ -150,8 +150,6 @@ This section describes why these are useful, and how to create them.
 #. Start with the core :ref:`Statement<Statement>` class
 #. Bind its ``proposition`` attribute to the :ref:`VariantPathogenicityProposition <variant-pathogenicity-proposition>` base profile class
 #. Use other core Statement attributes and related core classes to represent additional information about the Statement (e.g. strength, classification, methods, etc) - defining additional constraints or enumerations as desired using the :ref:`Composition-Based Profiling Mechanism <composition-based-profiling>` described above.
-#. Use the base Statement reference implementation to create and validate compliant data. 
+#. Use the base Statement reference implementation to create and validate compliant data.
 
 This :ref:`simple data example <custom-variant-pathogenicity-statement-example>` illustrates application of this approach to create a custom, non-ACMG-compliant representation of a pathogenicity statement.
-
-
