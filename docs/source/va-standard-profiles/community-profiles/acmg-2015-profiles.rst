@@ -137,5 +137,5 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
 
 **Artifacts**
 
- - |pathogenicity_functional_impact_evidence_line_source_yaml|
- - |pathogenicity_functional_impact_evidence_line_json_schema|
+ - |pathogenicity_evidence_line_source_yaml|
+ - |pathogenicity_evidence_line_json_schema|

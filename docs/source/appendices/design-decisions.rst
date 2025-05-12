@@ -74,6 +74,6 @@ In version 1.0 of the VA-Spec, we distinguish between two categories of profiles
   - These constraints are defined using a native json schema composition approach, which does not result in creation of concrete subclasses for each profile.
   - This approach is used to define :ref:`Statement<Statement>` and :ref:`Evidence Line<EvidenceLine>` profiles - which incorporate Propositions to specify the possible fact they assert to be true or evaluate evidence against, respectively.
 
-This design decision was largely guided to minimize the number of classes in the model while providing flexibility into specialize core models for diverse domains and community guidelines.   It also leverages the JSON Schema language which is widely used and familiar to most developers.
+This design decision was made to minimize the number of classes in the model while providing flexibility to specialize core models for diverse domains and community guidelines.  It also leverages the JSON Schema language which is widely used and familiar to most developers.
 
 For more information and technical guidance around how these types of profiles are authored and used, see the :ref:`Developer Guide <developer-guide>` section.
