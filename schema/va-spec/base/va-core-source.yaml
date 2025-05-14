@@ -519,6 +519,19 @@ $defs:
           Evidence Lines are useful in cases where a data provider wants to describe in detail how information
           was assessed as evidence to generate and score different arguments for or against a Statement's
           Proposition. Evidence Lines can be omitted if such information is not available or needed.
+    ancillaryInfo:
+      type: object
+      maturity: draft
+      description: >-
+        An object in which a data provider can define custom attributes to capture additional information about the 
+        entities represented by the subject, object, or qualifiers of the Proposition asserted or assessed by a Statement.
+        This information can aid in understanding the significance or utility of the primary knowledge a Statement reports. 
+        For example, ancillary info for a Molecular Consequence Statement may include other transcript- or protein-level
+        representations of the variant, transcript or protein molecules on which the consequence applies, genes affected
+        by the variant, or specific domains/motifs the variant overlaps - as such information provides biological context
+        for assessing the significance of the reported consequence. Note that ancillary information does not contribute to
+        the semantics of the Statement being made, nor does it represent evidence or provenance supporting it. It is truly
+        ancillary information that a data provider wishes to include alongside the central knowledge being reported.     
     required:
       - proposition
       - direction
