@@ -4,7 +4,7 @@ proposition:
   - type: MolecularConsequenceProposition
     subjectVariation: "#/my_subject_variant"
     predicate: hasMolecularConsequenceFor
-    objectSequence:
+    objectMolecule:
       id: ENST00000366667.6
       type: SequenceReference
       refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk    
