@@ -970,6 +970,63 @@ $defs:
     - objectTherapeutic
     - conditionQualifier
 
+
+  # Variant Molecular Consequence Proposition
+  VariantMolecularConsequenceProposition:
+    inherits: SubjectVariantProposition
+    maturity: draft
+    type: object
+    description: >-
+      A Proposition describing a type of consequence that a variant has on genomic, transcript, or polypeptide
+      sequence molecule - typically highlighting the type of sequence feature affected (e.g. 'intron variant',
+      splice-site variant), or an impact on the processing of the molecule along the path from gene to transcript
+      to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact 
+      downstream of a molecular consequence, on gene product function, are not in scope here. These are covered by
+      a Variant Functional Impact Proposition class.
+    properties:
+      type:
+        extends: type
+        const: "VariantMolecularConsequenceProposition"
+        default: "VariantMolecularConsequenceProposition"
+        description: MUST be "VariantMolecularConsequenceProposition".
+      subjectVariant:
+        extends: subjectVariant
+        oneOf:
+          - $refCurie: vrs:Allele
+          - $refCurie: gks.core:iriReference
+      predicate:
+        extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object sequence for which the molecular consequence applies.
+          MUST be "hasMolecularConsequenceFor".
+        const: hasMolecularConsequenceFor
+        default: hasMolecularConsequenceFor
+      objectSequence:
+        extends: object
+        description: >-
+          The sequence for which the reported molecular consequence applies. Typically a transcript sequence for
+          variants within a gene region (e.g. ENST00000366667.6), but may be a chromosome sequence for intergenic
+          variants (e.g. NC_000008.11). 
+        oneOf:
+          - $refCurie: vrs:SequenceReference
+          - $refCurie: gks.core:iriReference
+      consequenceTypeQualifiers:
+        type: array
+        description: >-
+          One or more terms representing the specific types of consequence the variant has on the sequence molecule or
+          region. These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 
+          'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant).
+        ordered: false
+        items:
+          oneOf:
+            - $refCurie: gks.core:MappableConcept
+            - $refCurie: gks.core:iriReference
+    required:
+      - predicate
+      - objectSequence
+      - consequenceTypeQualifiers
+
   CohortAlleleFrequencyStudyResult:
     inherits: StudyResult
     maturity: trial use
