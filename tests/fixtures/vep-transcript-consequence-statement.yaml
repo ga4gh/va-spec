@@ -1,5 +1,5 @@
 id: vep:ENST00000366667:c.803C>T
-type: MolecularConsequenceStatement
+type: Statement
 proposition:
   - type: MolecularConsequenceProposition
     subjectVariation: "#/my_subject_variant"
@@ -12,8 +12,8 @@ proposition:
     conseequenceTypeQualifiers:
       - name: missense_variant
         primaryCoding:
-          code: "SO:0001583"
-          system: "sequenceontology"
+          code: SO:0001583
+          system: sequenceontology
 direction: supports
 ancillaryInfo:    	
   transcriptVariant:
