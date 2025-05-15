@@ -1,5 +1,5 @@
 id: vep:NC_000024.10:g.56673840G>C
-type: MolecularConsequenceStatement
+type: Statement
 proposition:
   type: MolecularConsequenceProposition
 	subjectVariation: "#/my_focus_variant"
