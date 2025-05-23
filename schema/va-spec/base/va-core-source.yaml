@@ -136,7 +136,8 @@ $defs:
         $comment: >-
           In most cases, a StudyResult will be generated using data from one source dataset - but it is
           possible multiple datasets related to a single study contain data about a particular focus that
-          get collected into a single StudyResult instance.
+          get collected into a single StudyResult instance. If use cases for this arise we can make this attribute
+          take an array of DataSets. 
       ancillaryResults:
         maturity: draft
         description: >-
