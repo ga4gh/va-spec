@@ -990,11 +990,11 @@ $defs:
     maturity: draft
     type: object
     description: >-
-      A Proposition describing a type of consequence that a variant has on genomic, transcript, or polypeptide
-      sequence molecule - typically reporting the type of sequence feature affected (e.g. 'intron variant',
-      splice-site variant), or an impact on the processing of the molecule along the path from gene to transcript
-      to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact
-      on gene product function, which may occur downstream of a molecular consequence, are not in scope here.
+      A Proposition describing a type of consequence that a variant is predicted to have on genomic, transcript, 
+      or polypeptide sequence molecule - typically reporting the type of sequence feature affected (e.g. 'intron
+      variant', splice-site variant), or an impact on the processing of the molecule along the path from gene to
+      transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant
+      impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here.
       These are covered by a Variant Functional Impact Proposition class.
     properties:
       type:
