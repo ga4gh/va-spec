@@ -9,7 +9,7 @@ proposition:
       type: SequenceReference
       refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk    
       residueAlphabet: na
-    conseequenceTypeQualifiers:
+    consequenceTypeQualifiers:
       - name: missense_variant
         primaryCoding:
           code: SO:0001583
