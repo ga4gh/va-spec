@@ -2,17 +2,17 @@ id: vep:NC_000024.10:g.56673840G>C
 type: Statement
 proposition:
   type: MolecularConsequenceProposition
-	subjectVariation: "#/my_focus_variant"
-	predicate: hasMolecularConsequenceFor
-	objectMolecule:
-  	id: NC_000024.10             
+  subjectVariation: "#/my_focus_variant"
+  predicate: hasMolecularConsequenceFor
+  objectMolecule:
+    id: NC_000024.10             
     name: Homo sapiens chromosome Y, GRCh38.p14 Primary Assembly
     type: SequenceReference
-    refgetAccession: SQ.Z04NDAWITHJ9GNBShi789hjh79Ag       # temp value - replace with true refget accession
+    refgetAccession: SQ.Z04NDAWITHJ9GNBShi789hjh79Ag       # temp value - replace with true refget accession for this chromosome
     residueAlphabet: na
-	conseequenceTypeQualifiers:
+  conseequenceTypeQualifiers:
     - name: intergenic_variant
-    	primaryCoding:
+      primaryCoding:
         code: SO:0001628
         system: sequenceontology
 direction: supports
