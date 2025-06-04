@@ -57,12 +57,12 @@ Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 1..1
       - MUST be "DataSet".
-   *  - subtype
+   *  - datasetType
       -
                         .. raw:: html
 
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - :ref:`MappableConcept`
+      - string
       - 0..1
       - A specific type of data set the DataSet instance represents (e.g. a 'clinical data set', a 'sequencing data set', a 'gene expression data set', a 'genome annotation data set')
    *  - reportedIn

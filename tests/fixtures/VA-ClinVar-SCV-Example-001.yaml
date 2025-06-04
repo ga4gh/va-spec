@@ -60,21 +60,11 @@ direction: supports
 strength:
   primaryCoding:
     code: definitive
-    system: ga4gh-gks-term:pathogenicity-strength
-  mappings:
-    - coding:
-        code: cg000021
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+    system: ACMG Guidelines, 2015
 classification:
   primaryCoding:
     code: pathogenic
-    system: ga4gh-gks-term:pathogenicity-classification
-  mappings:
-    - coding:
-        code: cg000001
-        system: https://dataexchange.clinicalgenome.org/codes/
-      relation: exactMatch
+    system: ACMG Guidelines, 2015
 contributions:
 - type: Contribution
   contributor:
@@ -82,26 +72,14 @@ contributions:
       type: Agent
       name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
   date: '2018-06-12'
-  activityType:
-    name: submitted
-    mappings:
-      - coding:
-          code: cg000010
-          system: https://dataexchange.clinicalgenome.org/codes/
-        relation: exactMatch
+  activityType: submitted
 - type: Contribution
   contributor:
       id: clinvar.submitter/500139
       type: Agent
       name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
   date: '2015-08-20'
-  activityType:
-    name: evaluated
-    mappings:
-      - coding:
-          code: cg000011
-          system: https://dataexchange.clinicalgenome.org/codes/
-        relation: exactMatch
+  activityType: evaluated
   extensions:
     - name: clinvarActivityLabel
       value: last evaluated
@@ -112,3 +90,9 @@ extensions:
   value: no assertion criteria provided
 - name: clinvarSubmittedClassification
   value: Pathogenic
+specifiedBy:
+  type: Method
+  reportedIn:
+    type: Document
+    pmid: 25741868
+    name: ACMG Guidelines, 2015

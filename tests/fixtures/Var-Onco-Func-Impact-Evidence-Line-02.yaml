@@ -49,13 +49,16 @@ directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided:
   primaryCoding:
     code: supporting
-    system: ga4gh-gks-term:onc-functional-impact-strengthOfEvidence
+    system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
 scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
-  id: OS2
-  name: Clingen/CGC/VICC 2022 OS2 Criterion
+  methodType: OS2
+  reportedIn:
+    type: Document
+    pmid: 35101336
+    name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
 evidenceOutcome:
   primaryCoding:
     code: OS2_supporting
-    system: ga4gh-gks-term:onc-functional-impact-evidenceOutcome
+    system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022

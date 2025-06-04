@@ -73,30 +73,33 @@ tests:
   - test_file: therapeuticAgent.yaml
     namespace: gks-core
     definition: MappableConcept
-  - test_file: tr-statement-inline.yaml
-    namespace: va-spec.aac-2017
-    definition: VariantTherapeuticResponseStudyStatement
-  - test_file: tr-statement-inline.yaml
+  # - test_file: tr-classification-inline.yaml
+  #   namespace: va-spec.aac-2017
+  #   definition: VariantTherapeuticResponseStudyStatement
+  - test_file: therapeutic-response-inline.yaml
     namespace: va-spec.base
     definition: Statement
   - test_file: diagnostic-inline.yaml
-    namespace: va-spec.aac-2017
-    definition: VariantDiagnosticStudyStatement
+    namespace: va-spec.base
+    definition: Statement
   - test_file: prognostic-inline.yaml
-    namespace: va-spec.aac-2017
-    definition: VariantPrognosticStudyStatement
+    namespace: va-spec.base
+    definition: Statement
   - test_file: cohort-allele-freq-test.yaml
     namespace: va-spec.base
     definition: CohortAlleleFrequencyStudyResult
+  - test_file: tumor-variant-freq-study-result.yaml
+    namespace: va-spec.base
+    definition: TumorVariantFrequencyStudyResult
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.acmg-2015
-    definition: VariantPathogenicityFunctionalImpactEvidenceLine
+    definition: VariantPathogenicityEvidenceLine
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec.base
     definition: EvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec.ccv-2022
-    definition: VariantOncogenicityFunctionalImpactEvidenceLine
+    definition: VariantOncogenicityEvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec.base
     definition: EvidenceLine

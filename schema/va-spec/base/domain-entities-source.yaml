@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.x/base/domain-entities-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/domain-entities-source.yaml"
 title: VA Spec Shared Domain Entity Data Structures
 strict: true
 
@@ -7,7 +7,7 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.x/json/
+  gks.core: /ga4gh/schema/gks-core/1.0.0/json/
 
 $defs:
   # Condition data structure for consolidating the different forms of conditions, individual vs co-occurring traits
@@ -27,7 +27,7 @@ $defs:
       - $refCurie: gks.core:MappableConcept
       - $ref: "#/$defs/ConditionSet"
 
-  # ConditionSet data structure to provide support for co-occuring or substitute conditions.
+  # ConditionSet data structure to provide support for co-occurring or substitute conditions.
   ConditionSet:
     type: object
     maturity: trial use
@@ -35,7 +35,7 @@ $defs:
     description: >-
       A set of conditions (diseases, phenotypes, traits).
       A set of two or more conditions that co-occur in the same patient/subject, or are manifest
-      individually in a differnet subset of participants in a research study.
+      individually in a different subset of participants in a research study.
     properties:
       conditions:
         type: array
@@ -55,16 +55,16 @@ $defs:
            - AND
            - OR
         $comment: >-
-          The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals
+          The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
           that manfiest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate
           statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to
           make a conclusion about each condition individually.  In such cases, it would be misleading to create separate statements
           about each condition on its own.
           Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single
           cohort that is large enough support a statistically significant results about this grouping of related conditions.
-        required:
-          - conditions
-          - membershipOperator
+    required:
+      - conditions
+      - membershipOperator
   # Therapeutic
   Therapeutic:
     maturity: trial use
@@ -85,7 +85,7 @@ $defs:
     inherits: gks-core:Element
     description: >-
       A group of two or more therapies that are applied in combination to a single patient/subject, or applied
-      individually to a differnet subset of participants in a research study.
+      individually to a different subset of participants in a research study.
     properties:
       therapies:
         type: array
@@ -106,7 +106,7 @@ $defs:
            - AND
            - OR
         $comment: >-
-          The membershipOperator ‘OR’ should be used only in the specific scenario where a study is done on a cohort of individuals
+          The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
           that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical
           analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a
           conclusion about response to each therapy individually.
@@ -114,6 +114,6 @@ $defs:
           are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
           Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the
           individual therapies used in the study in a TherapyGroup.
-        required:
-          - therapies
-          - membershipOperator
+    required:
+      - therapies
+      - membershipOperator

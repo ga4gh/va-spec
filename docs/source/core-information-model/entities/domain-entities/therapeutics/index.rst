@@ -3,7 +3,7 @@
 Therapeutic
 !!!!!!!!!!!
 
-.. include::  ./../../../def/va-spec/Therapeutic.rst
+.. include::  ../../../../def/va-spec/Therapeutic.rst
 
 Therapeutic Types
 #################

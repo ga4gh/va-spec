@@ -19,8 +19,7 @@ focusVariant:
 functionalImpactScore: 1.29395467005388
 specifiedBy:
   type: Method
-  subtype:
-    name: Experimental protocol
+  methodType: Experimental protocol
   reportedIn:
     type: Document
     pmid: 29785012

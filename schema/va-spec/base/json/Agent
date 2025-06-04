@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Agent",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Agent",
    "title": "Agent",
    "type": "object",
    "maturity": "trial use",
@@ -27,7 +27,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -43,9 +43,9 @@
          "type": "string",
          "description": "The given name of the Agent."
       },
-      "subtype": {
-         "description": "A specific type of agent the Agent object represents. Recommended subtypes include codes for `person`, `organization`, or `software`.",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+      "agentType": {
+         "type": "string",
+         "description": "A specific type of agent the Agent object represents. Recommended subtypes include codes for `person`, `organization`, or `software`."
       }
    },
    "required": [

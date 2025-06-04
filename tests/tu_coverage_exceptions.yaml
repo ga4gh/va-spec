@@ -65,6 +65,16 @@ va-spec.base:CohortAlleleFrequencyStudyResult:
   - contributions
   - reportedIn
 
+va-spec.base:TumorVariantFrequencyStudyResult:
+  # Entity
+  - description
+  - extensions
+  - aliases
+
+  # InformationEntity
+  - contributions
+  - reportedIn
+
 va-spec.base:EvidenceLine:
   # Entity
   - description

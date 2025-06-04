@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/Method",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Method",
    "title": "Method",
    "type": "object",
    "maturity": "trial use",
@@ -32,7 +32,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -44,18 +44,18 @@
          "const": "Method",
          "default": "Method"
       },
-      "subtype": {
+      "methodType": {
+         "type": "string",
          "description": "A specific type of method that a Method instance represents (e.g. 'Variant Interpretation Guideline', or 'Experimental Protocol').",
-         "$comment": "This attribute can be used to report a specific type for the Method, in cases where a model does not define Method subclasses for this purpose.  Implementers can define their own set of method type codes/terms, to match the needs of their application.",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         "$comment": "This attribute can be used to report a specific type for the Method, in cases where a model does not define Method subclasses for this purpose.  Implementers can define their own set of method type codes/terms, to match the needs of their application."
       },
       "reportedIn": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Document"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             }
          ],
          "description": "A document in which the the Method is reported."

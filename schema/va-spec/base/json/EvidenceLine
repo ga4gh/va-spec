@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/EvidenceLine",
    "title": "EvidenceLine",
    "type": "object",
    "maturity": "trial use",
@@ -32,7 +32,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.x/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.0.0/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -40,10 +40,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity",
@@ -53,7 +53,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -64,10 +64,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
                }
             ]
          },
@@ -84,22 +84,22 @@
          "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/ExperimentalVariantFunctionalImpactProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantDiagnosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantDiagnosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantOncogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantOncogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantPathogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantPrognosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantPrognosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.x/base/json/VariantTherapeuticResponseProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantTherapeuticResponseProposition"
             }
          ]
       },
@@ -109,16 +109,16 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/StudyResult"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/StudyResult"
                },
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/Statement"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Statement"
                },
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.x/base/json/EvidenceLine"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/EvidenceLine"
                },
                {
-                  "$ref": "/ga4gh/schema/gks-core/1.x/json/iriReference"
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
                }
             ]
          },
@@ -137,7 +137,7 @@
       "strengthOfEvidenceProvided": {
          "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.",
          "$comment": "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided.",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
       },
       "scoreOfEvidenceProvided": {
          "type": "number",
@@ -145,7 +145,7 @@
       },
       "evidenceOutcome": {
          "description": "A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.",
-         "$ref": "/ga4gh/schema/gks-core/1.x/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
       }
    },
    "required": [

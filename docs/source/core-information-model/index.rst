@@ -3,19 +3,19 @@
 VA Core Model
 !!!!!!!!!!!!!
 
-The **VA Core Model** is a domain-agnostic model that supports explicit representation of scientific knowledge about genetic variation, and the evidence and provenance supporting it. The initial version was derived from the `SEPIO Core Information Model <https://sepio-framework.github.io/sepio-linkml/gks-core-diagram/>`_, through selection of elements needed to support current VA implementation use cases. The VA Core Model is the foundation on which more specialized models for representing specific types of Statements, Study Results, Evidence Lines, and Propositions are built - through a process called 'profiling'.
+The **VA Core Model** is a domain-agnostic model for representing scientific knowledge about genetic variation, and the evidence and provenance supporting it.
 
-A hierarchical view of the VA Core Model is illustrated below, followed by links to detailed information about each class.
+A hierarchical view of the VA Core Model is below. See the :ref:`Modeling Foundations <modeling-foundations>` section for an overview of modeling principles and patterns that govern its use.
 
-More about the modeling principles and patterns employed by the Core Model, and the types of data structures it supports, can be found on the :ref:`Modeling Foundations <modeling-foundations>` page.
+.. core-class-hierarchy:
 
-.. gks-core-class-hierarchy:
-
-.. figure:: ../images/core-im-class-hierarchy.png
+.. figure:: ../images/core-model-class-hierarchy.png
 
    Core Class Hierarchy
 
-   **Legend** Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Note that a hierarchy of Domain Entity classes has been defined to represent things like Genes, Conditions, and Therapeutic Procedures. This if described separately `here <https://github.com/ga4gh/va-spec/edit/1.x/docs/source/core-information-model/entities/domain-entities/index.rst>`_.
+   **Legend**: Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Classes in darker grey represent the key knowledge artifacts that root VA Profile data structures. Simple classes for representing :ref:`Domain Entities <domain-entities>` such Conditions and Therapies are defined in the VA Core Model, but are not shown here.
+
+Links below (or menu to the left) provide detailed information about the attributes of each class, and guidance for their use.
 
 .. toctree::
    :maxdepth: 4

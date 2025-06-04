@@ -76,7 +76,7 @@ A set of profiles defined to align with terminology and conventions from the Ass
 
 **Community Guideline:**
 
- - `AMP/ASCO/CAP (AAC) 2017 clinical interpretation guidleines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
+ - `AMP/ASCO/CAP (AAC) 2017 clinical interpretation guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
 
 **Included Profiles**:
 

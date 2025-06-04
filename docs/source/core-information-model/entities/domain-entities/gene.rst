@@ -9,4 +9,4 @@ the MappableConcept data object.
 
 NOTE: **conceptType** should be set to "Gene".
 
-.. include::  ../../../../def/gks-core/MappableConcept.rst
+.. include::  ../../../def/gks-core/MappableConcept.rst

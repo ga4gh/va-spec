@@ -57,12 +57,12 @@ Some Document attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 1..1
       - Must be "Document"
-   *  - subtype
+   *  - documentType
       -
                         .. raw:: html
 
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - :ref:`MappableConcept`
+      - string
       - 0..1
       - A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')
    *  - title

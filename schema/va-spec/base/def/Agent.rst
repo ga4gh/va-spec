@@ -57,8 +57,8 @@ Some Agent attributes are inherited from :ref:`gks-core:Entity`.
       - string
       - 0..1
       - The given name of the Agent.
-   *  - subtype
+   *  - agentType
       -
-      - :ref:`MappableConcept`
+      - string
       - 0..1
       - A specific type of agent the Agent object represents. Recommended subtypes include codes for `person`, `organization`, or `software`.
