@@ -377,7 +377,7 @@ $defs:
           A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>`_
           for the document.
       pmid:
-        type: integer
+        type: string
         description: >-
           A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_
           for the document.

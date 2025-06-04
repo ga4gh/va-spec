@@ -156,7 +156,7 @@ specifiedBy:
     title: Standard operating procedure for curation and clinical interpretation of
       variants in cancer
     doi: 10.1186/s13073-019-0687-x
-    pmid: 31779674
+    pmid: '31779674'
   type: Method
 reportedIn:
   - id: civic.source:592
@@ -164,4 +164,4 @@ reportedIn:
     name: Sequist et al., 2013, J. Clin. Oncol.
     title: Phase III study of afatinib or cisplatin plus pemetrexed in patients
       with metastatic lung adenocarcinoma with EGFR mutations.
-    pmid: 23816960
+    pmid: '23816960'

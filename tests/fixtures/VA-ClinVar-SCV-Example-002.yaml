@@ -58,7 +58,7 @@ specifiedBy:
   name: ClinGen HL ACMG Specifications v1
   reportedIn:
     type: Document
-    pmid: 25741868
+    pmid: '25741868'
     name: ACMG Guidelines, 2015
 #   # NOTE: we need to figure out how to have other ACMG guideline specifications be represented accurately
 #   reportedIn:

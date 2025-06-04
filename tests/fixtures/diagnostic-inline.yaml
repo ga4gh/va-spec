@@ -143,7 +143,7 @@ specifiedBy:
     title: Standard operating procedure for curation and clinical interpretation of
       variants in cancer
     doi: 10.1186/s13073-019-0687-x
-    pmid: 31779674
+    pmid: '31779674'
   type: Method
 reportedIn:
   - id: civic.source:94
@@ -151,4 +151,4 @@ reportedIn:
     name: Crescenzi et al., 2014
     title: Immunohistochemistry for BRAF(V600E) antibody VE1 performed in core needle
       biopsy samples identifies mutated papillary thyroid cancers.
-    pmid: 24570209
+    pmid: '24570209'

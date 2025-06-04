@@ -70,7 +70,7 @@
          "description": "A [Digital Object Identifier](https://www.doi.org/the-identifier/what-is-a-doi/) for the document."
       },
       "pmid": {
-         "type": "integer",
+         "type": "string",
          "description": "A [PubMed unique identifier](https://en.wikipedia.org/wiki/PubMed#PubMed_identifier) for the document."
       }
    },

@@ -22,7 +22,7 @@ specifiedBy:
   methodType: Experimental protocol
   reportedIn:
     type: Document
-    pmid: 29785012
+    pmid: '29785012'
 sourceDataSet:
     type: DataSet
     name: variant effect data set
