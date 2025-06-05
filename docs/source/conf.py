@@ -11,8 +11,16 @@ import subprocess
 def get_git_branch_or_default(default="main"):
     """
     Returns the current Git branch name.
-    If in detached HEAD state, returns the provided default (e.g., 'main').
+
+    In ReadTheDocs builds, uses environment variables to determine the branch.
+    Falls back to `git` when available, and to the provided default if needed.
     """
+    # Prefer ReadTheDocs-specific environment variable
+    rtd_branch = os.environ.get("READTHEDOCS_GIT_CLONE_BRANCH")
+    if rtd_branch:
+        return rtd_branch
+
+    # Fallback: try to use git
     try:
         result = subprocess.run(
             ["git", "rev-parse", "--abbrev-ref", "HEAD"],
