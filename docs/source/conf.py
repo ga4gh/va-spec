@@ -51,7 +51,7 @@ master_doc = 'index'
 release = get_exact_git_tag()
 if release == None:
     # If not on a tagged release, use the branch name
-    release = get_git_branch_or_default("1.0.0-ballot.2025-03")
+    release = get_git_branch_or_default("1.0")
 
 # Load static rst_epilog from file
 rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
