@@ -56,7 +56,7 @@ specifiedBy:
   methodType: OS2
   reportedIn:
     type: Document
-    pmid: 35101336
+    pmid: '35101336'
     name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
 evidenceOutcome:
   primaryCoding:

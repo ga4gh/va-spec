@@ -1,8 +1,8 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/acmg-2015/pathogenicity-evidence-line-profile-source.yaml"
-title: Variant Pathogenicity Evidence Line Profile (ACMG 2015)
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0/acmg-2015/profile-source.yaml"
+title: ACMG 2015 Variant Pathogenicity Profiles
 description: >-
-  Profile defined to align with terminology and conventions from the American College of Medical Genetics
+  Profiles defined to align with terminology and conventions from the American College of Medical Genetics
   and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
 strict: true
 
@@ -11,6 +11,80 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
+  # Variant Pathogenicity Statement
+  VariantPathogenicityStatement:
+    maturity: draft
+    description: >-
+      A Statement describing the role of a variant in causing an inherited condition.
+    allOf:
+    - $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/Statement"
+    - properties:
+        proposition:
+          $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/VariantPathogenicityProposition"
+          description: >-
+            A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
+            A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
+            level of confidence/evidence supporting this claim.
+        strength:
+          description: >-
+            The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide
+            for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative
+            to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
+            MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  - definitive
+                  - likely
+              system:
+                const: ACMG Guidelines, 2015
+          required: [primaryCoding]
+        classification:
+          description: >-
+            The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines.
+            These classifications should coincide with the direction and strength values as follows:
+            'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate,
+            'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance'
+            can be one of three possibilities... supports-weak, disputes-weak or neutral for
+            uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or
+            uncertain significance (favoring neither pathogenic nor benign).
+            The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be
+            applied based on whether the variant proposition was defined to have a 'penetrance' of
+            'low' or 'risk' respectively.
+          properties:
+            primaryCoding:
+              allOf:
+                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                - oneOf:
+                  - properties:
+                      code:
+                        enum:
+                          - pathogenic
+                          - likely pathogenic
+                          - benign
+                          - likely benign
+                          - uncertain significance
+                      system:
+                        const: ACMG Guidelines, 2015
+                  - properties:
+                      code:
+                        enum:
+                          - pathogenic, low penetrance
+                          - likely pathogenic, low penetrance
+                          - established risk allele
+                          - likely risk allele
+                          - uncertain risk allele
+                      system:
+                        const: ClinGen Low Penetrance and Risk Allele Recommendations, 2024
+        specifiedBy:
+          description: >-
+            The method that specifies how the pathogenicity classification is ultimately assigned to the variant,
+            based on assessment of evidence.
+      required:
+        - classification
+        - specifiedBy
+
   VariantPathogenicityEvidenceLine:
     maturity: draft
     description: >-
@@ -19,14 +93,14 @@ $defs:
       (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
             A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
             determine the strength and direction of support this evidence provides for or against the
             proposition's validity.
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/VariantPathogenicityProposition"
         directionOfEvidenceProvided:
           type: string
           enum: [ "supports", "neutral", "disputes" ]

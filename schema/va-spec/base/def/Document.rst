@@ -85,6 +85,6 @@ Some Document attributes are inherited from :ref:`gks-core:Entity`.
       - A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>`_ for the document.
    *  - pmid
       -
-      - integer
+      - string
       - 0..1
       - A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document.

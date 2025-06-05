@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/StudyGroup",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0/base/json/StudyGroup",
    "title": "StudyGroup",
    "type": "object",
    "maturity": "trial use",

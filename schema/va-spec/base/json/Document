@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/Document",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0/base/json/Document",
    "title": "Document",
    "type": "object",
    "maturity": "trial use",
@@ -70,7 +70,7 @@
          "description": "A [Digital Object Identifier](https://www.doi.org/the-identifier/what-is-a-doi/) for the document."
       },
       "pmid": {
-         "type": "integer",
+         "type": "string",
          "description": "A [PubMed unique identifier](https://en.wikipedia.org/wiki/PubMed#PubMed_identifier) for the document."
       }
    },

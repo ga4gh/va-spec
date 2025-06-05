@@ -1,9 +1,9 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/ccv-2022/oncogenicity-evidence-line-profile-source.yaml"
-title: Variant Oncogenicity Evidence Line Profile (CCV 2022)
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0/ccv-2022/profile-source.yaml"
+title: CCV 2022 Variant Oncogenicity Profiles
 description: >-
-  Profile defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
-  Cancer Genomics Consortium (CGC), and Variant Interpretation for Cancer Consortium (VICC) 2022 community
+  Profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
+  Cancer Genomics Consortium (CGC),and Variant Interpretation for Cancer Consortium (VICC) 2022 community
   guidelines for cancer variant interpretation.
 strict: true
 
@@ -12,6 +12,57 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
+  VariantOncogenicityStudyStatement:
+    maturity: draft
+    description: >-
+      A statement reporting a conclusion from a single study about whether a variant
+      is associated with oncogenicity (positive or negative) - based on interpretation of the study's
+      results.
+    allOf:
+    - $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/Statement"
+    - properties:
+        proposition:
+          $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/VariantOncogenicityProposition"
+          description: >-
+            A proposition about the oncogenicity of a variant, for which the study provides evidence.
+            The validity of this proposition, and the level of confidence/evidence supporting it,
+            may be assessed and reported by the Statement.
+        strength:
+          description: >-
+            The strength of support that an CCV 2022 Oncogenicity statement is determined to provide
+            for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative
+            to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
+            MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+            Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this
+            attribute is required. If it is 'neutral', then this attribute is not allowed.
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  - definitive
+                  - likely
+              system:
+                const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+        classification:
+          properties:
+            primaryCoding:
+              code:
+                enum:
+                  - oncogenic
+                  - likely oncogenic
+                  - uncertain significance
+                  - likely benign
+                  - benign
+              system:
+                const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+        specifiedBy:
+          description: >-
+            The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
+            based on assessment of evidence.
+      required:
+        - classification
+        - specifiedBy
+
   VariantOncogenicityEvidenceLine:
     maturity: draft
     description: >-
@@ -23,14 +74,14 @@ $defs:
       (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
             A Variant Oncoogenicity Proposition against which a specific type of evidence was assessed, to
             determine the strength and direction of support this evidence provides for or against the
             proposition's validity.
-          $ref: "/ga4gh/schema/va-spec/1.0.0-ballot.2025-03.5/base/json/VariantOncogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/VariantOncogenicityProposition"
         directionOfEvidenceProvided:
           type: string
           enum: [ "supports", "neutral", "disputes" ]
