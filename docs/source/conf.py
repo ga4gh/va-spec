@@ -10,17 +10,17 @@ import subprocess
 
 def get_git_branch_or_default(default="main"):
     """
-    Returns the current Git branch name.
-
-    In ReadTheDocs builds, uses environment variables to determine the branch.
-    Falls back to `git` when available, and to the provided default if needed.
+    Get the current git branch even in a ReadTheDocs detached state.
     """
-    # Prefer ReadTheDocs-specific environment variable
-    rtd_branch = os.environ.get("READTHEDOCS_GIT_CLONE_BRANCH")
-    if rtd_branch:
-        return rtd_branch
+    # RTD PRs or branch builds
+    if os.environ.get("READTHEDOCS") == "True":
+        version = os.environ.get("READTHEDOCS_VERSION")
+        version_type = os.environ.get("READTHEDOCS_VERSION_TYPE")
 
-    # Fallback: try to use git
+        if version_type in ("branch", "external"):  # external = PR
+            return version  # This is the branch name or PR ref
+
+    # Fallback: use git
     try:
         result = subprocess.run(
             ["git", "rev-parse", "--abbrev-ref", "HEAD"],
@@ -52,6 +52,11 @@ def get_exact_git_tag():
 # -- Project information -----------------------------------------------------
 
 print("*!*!*!*!* Branch detected:", get_git_branch_or_default())
+print("RTD env:", {
+    "READTHEDOCS": os.environ.get("READTHEDOCS"),
+    "READTHEDOCS_VERSION": os.environ.get("READTHEDOCS_VERSION"),
+    "READTHEDOCS_VERSION_TYPE": os.environ.get("READTHEDOCS_VERSION_TYPE"),
+})
 
 project = 'GA4GH Variant Annotation Specification'
 copyright = '2024, GA4GH VA Contributors'
