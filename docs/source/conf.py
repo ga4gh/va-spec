@@ -6,31 +6,73 @@
 
 # -- GIT branch and release info --------------------------------------------------------------
 import os
+import requests
 import subprocess
 
-def get_git_branch_or_default(default="main"):
+def get_rtd_branch_from_github(repo="ga4gh/va-spec", default="main"):
     """
-    Get the current git branch even in a ReadTheDocs detached state.
+    If on ReadTheDocs and building a PR, fetch the true source branch name from GitHub.
     """
-    # RTD PRs or branch builds
-    if os.environ.get("READTHEDOCS") == "True":
-        version = os.environ.get("READTHEDOCS_VERSION")
-        version_type = os.environ.get("READTHEDOCS_VERSION_TYPE")
+    if os.environ.get("READTHEDOCS") != "True":
+        # Fallback: use git
+        try:
+            result = subprocess.run(
+                ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+                capture_output=True,
+                check=True
+            )
+            branch = result.stdout.decode().strip()
+            return branch if branch != "HEAD" else default
+        except subprocess.CalledProcessError:
+            return default
 
-        if version_type in ("branch", "external"):  # external = PR
-            return version  # This is the branch name or PR ref
+    version_type = os.environ.get("READTHEDOCS_VERSION_TYPE")
+    pr_number = os.environ.get("READTHEDOCS_VERSION")
 
-    # Fallback: use git
+    if version_type != "external":
+        return pr_number  # for 'branch' builds, this is the branch name
+
+    token = os.environ.get("GITHUB_TOKEN")
+    headers = {"Authorization": f"token {token}"} if token else {}
+
     try:
-        result = subprocess.run(
-            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
-            capture_output=True,
-            check=True
+        response = requests.get(
+            f"https://api.github.com/repos/{repo}/pulls/{pr_number}",
+            headers=headers,
+            timeout=5
         )
-        branch = result.stdout.decode().strip()
-        return branch if branch != "HEAD" else default
-    except subprocess.CalledProcessError:
-        return default
+        if response.status_code == 200:
+            return response.json()["head"]["ref"]  # actual source branch name
+        else:
+            print(f"GitHub API error: {response.status_code}")
+    except Exception as e:
+        print(f"GitHub API exception: {e}")
+
+    return f"pull/{pr_number}"
+
+# def get_git_branch_or_default(default="main"):
+#     """
+#     Get the current git branch even in a ReadTheDocs detached state.
+#     """
+#     # RTD PRs or branch builds
+#     if os.environ.get("READTHEDOCS") == "True":
+#         version = os.environ.get("READTHEDOCS_VERSION")
+#         version_type = os.environ.get("READTHEDOCS_VERSION_TYPE")
+
+#         if version_type in ("branch", "external"):  # external = PR
+#             return version  # This is the branch name or PR ref
+
+#     # Fallback: use git
+#     try:
+#         result = subprocess.run(
+#             ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+#             capture_output=True,
+#             check=True
+#         )
+#         branch = result.stdout.decode().strip()
+#         return branch if branch != "HEAD" else default
+#     except subprocess.CalledProcessError:
+#         return default
 
 def get_exact_git_tag():
     """
@@ -51,7 +93,7 @@ def get_exact_git_tag():
 
 # -- Project information -----------------------------------------------------
 
-print("*!*!*!*!* Branch detected:", get_git_branch_or_default())
+print("*!*!*!*!* Branch detected:", get_rtd_branch_from_github())
 print("RTD env:", {
     "READTHEDOCS": os.environ.get("READTHEDOCS"),
     "READTHEDOCS_VERSION": os.environ.get("READTHEDOCS_VERSION"),
@@ -66,7 +108,7 @@ master_doc = 'index'
 release = get_exact_git_tag()
 if release == None:
     # If not on a tagged release, use the branch name
-    release = get_git_branch_or_default("1.0")
+    release = get_rtd_branch_from_github(default="1.0")
 
 # Load static rst_epilog from file
 rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
