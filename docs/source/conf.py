@@ -51,6 +51,8 @@ def get_exact_git_tag():
 
 # -- Project information -----------------------------------------------------
 
+print("*!*!*!*!* Branch detected:", get_git_branch_or_default())
+
 project = 'GA4GH Variant Annotation Specification'
 copyright = '2024, GA4GH VA Contributors'
 author = 'Committers'
