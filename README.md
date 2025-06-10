@@ -1,8 +1,6 @@
 # VA-Spec
 
-The VA team is preparing a formal v1 release for Spring 2025.
-
-See official Documentation at https://va-ga4gh.readthedocs.io/en/latest.
+See official Documentation at https://va-spec.ga4gh.org/en/latest.
 
 **Administrative / Project Management Resources**:
   - [Github Issue Tracker](https://github.com/ga4gh/va-spec/issues)
