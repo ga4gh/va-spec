@@ -1,5 +1,6 @@
 type: ExperimentalVariantFunctionalImpactProposition
 subjectVariant:
+  name: NP_000305.3:p.Arg11Thr
   type: CategoricalVariant
   constraints:
     - type: DefiningAlleleConstraint
