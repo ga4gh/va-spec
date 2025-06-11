@@ -13,5 +13,4 @@ Appendices
    design-decisions
    implementations
    variant-congruence
-   future-plans
    maturity_model
