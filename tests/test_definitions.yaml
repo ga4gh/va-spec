@@ -76,6 +76,9 @@ tests:
   # - test_file: tr-classification-inline.yaml
   #   namespace: va-spec.aac-2017
   #   definition: VariantTherapeuticResponseStudyStatement
+  - test_file: civic-assertion-therapeutic-response-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantTherapeuticResponseStudyStatement
   - test_file: therapeutic-response-inline.yaml
     namespace: va-spec.base
     definition: Statement
