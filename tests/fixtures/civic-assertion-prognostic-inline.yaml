@@ -1,0 +1,1104 @@
+id: civic.aid:20
+classification:
+  primaryCoding:
+    code: Tier I
+    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+contributions:
+  - activityType: endorsement.last_reviewed
+    contributor:
+      description:
+        The McDonnell Genome Institute (MGI) is a world leader in the fast-paced,
+        constantly changing field of genomics. A truly unique institution, we are
+        pushing the limits of academic research by creating, testing, and implementing
+        new approaches to the study of biology with the goal of understanding human
+        health and disease, as well as evolution and the biology of other organisms.
+      id: civic.organization:1
+      name: The McDonnell Genome Institute
+      type: Agent
+    date: "2024-04-27"
+    type: Contribution
+description: BRAF V600E was associated with worse prognosis in Phase II and III
+  colorectal cancer, with a stronger effect in MSI-Low or MSI-Stable tumors. In
+  metastatic CRC, V600E was associated with worse prognosis, and meta-analysis showed
+  BRAF mutation in CRC associated with multiple negative prognostic markers.
+direction: supports
+hasEvidenceLines:
+  - directionOfEvidenceProvided: supports
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: B
+        system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+      name: Clinical evidence
+      mappings:
+        - coding:
+            code: e000005
+            name: clinical cohort evidence
+            system: https://go.osu.edu/evidence-codes
+          relation: exactMatch
+    hasEvidenceItems:
+      - description:
+          V600E is associated with adverse pathological features of colorectal
+          cancer. This can be concluded as a marker of poor prognosis.
+        direction: supports
+        id: civic.eid:103
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types.
+                  Of these, the mutation of valine 600 to glutamic acid (V600E) is the
+                  most prevalent. V600E has been determined to be an activating mutation,
+                  and cells that harbor it, along with other V600 mutations are sensitive
+                  to the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have
+                  also been correlated with poor prognosis in many cancer types, although
+                  there is at least one study that questions this conclusion in papillary
+                  thyroid cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+                  constitutive dimers and are resistant to vemurafenib. Such mutants may
+                  be sensitive to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or
+                  NSCLC may be effectively treated with combinations that include inhibitors
+                  of receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:11
+            mappings:
+              - coding:
+                  code: DOID:9256
+                  id: DOID:9256
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Colorectal Cancer
+          predicate: associatedWithWorseOutcomeFor
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant
+              is correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective
+              when combined with the MEK inhibitor trametinib in colorectal cancer and
+              melanoma. However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib
+              resistance has been reported. Ipilimumab, regorafenib, vemurafenib, and
+              a number of combination therapies have been successful in treating V600E
+              mutations. However, cetuximab and panitumumab have been largely shown
+              to be ineffective without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantPrognosticProposition
+        reportedIn:
+          - id: civic.source:110
+            name: Chen et al., 2014
+            pmid: "24594804"
+            title:
+              "BRAFV600E mutation and its association with clinicopathological features
+              of colorectal cancer: a systematic review and meta-analysis."
+            type: Document
+          - https://civicdb.org/links/evidence/103
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+      - description:
+          Patients with completely resected colorectal adenocarcinoma (Stage
+          II-III) were treated with fluorouracil and leucovorin +/- ironotecan. Of the
+          1,307 FFPE samples tested, V600E was observed in 31 Stage II samples (7.6%)
+          and 72 Stage III samples (7.9%). V600E was prognostic for overall survival,
+          but not for relapse-free survival, in patients with stages II and III combined,
+          and in stage III alone. For all MSI low and stable tumors, BRAF V600E positive
+          samples had a hazard ratio (HR) of 2.19 (95% CI, 1.43 to 3.37, P=0.00034).
+          For all samples in the cohort (MSI-H and MSI-L) BRAF V600E positive samples
+          had a 1.66 HR (95% CI, 1.15 to 2.40, P=0.0069). The authors note prognostic
+          value for BRAF V600E, especially in non-MSI high tumors.
+        direction: supports
+        id: civic.eid:7156
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types.
+                  Of these, the mutation of valine 600 to glutamic acid (V600E) is the
+                  most prevalent. V600E has been determined to be an activating mutation,
+                  and cells that harbor it, along with other V600 mutations are sensitive
+                  to the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have
+                  also been correlated with poor prognosis in many cancer types, although
+                  there is at least one study that questions this conclusion in papillary
+                  thyroid cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+                  constitutive dimers and are resistant to vemurafenib. Such mutants may
+                  be sensitive to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or
+                  NSCLC may be effectively treated with combinations that include inhibitors
+                  of receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:11
+            mappings:
+              - coding:
+                  code: DOID:9256
+                  id: DOID:9256
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Colorectal Cancer
+          predicate: associatedWithWorseOutcomeFor
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant
+              is correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective
+              when combined with the MEK inhibitor trametinib in colorectal cancer and
+              melanoma. However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib
+              resistance has been reported. Ipilimumab, regorafenib, vemurafenib, and
+              a number of combination therapies have been successful in treating V600E
+              mutations. However, cetuximab and panitumumab have been largely shown
+              to be ineffective without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantPrognosticProposition
+        reportedIn:
+          - id: civic.source:2783
+            name: Roth et al., 2010
+            pmid: "20008640"
+            title:
+              "Prognostic role of KRAS and BRAF in stage II and III resected colon
+              cancer: results of the translational study on the PETACC-3, EORTC 40993,
+              SAKK 60-00 trial."
+            type: Document
+          - https://civicdb.org/links/evidence/7156
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+      - description:
+          The CRYSTAL Phase III Trial evaluated efficacy of irinotecan, fluorouracil,
+          and leucovorin (FOLFIRI) with or without Cetuximab for colorectal cancer patients
+          who presented with unresectable metastatic disease. BRAF mutation status (V600E)
+          was analyzed via LightMix BRAF V600E Kit. V600E mutations were detected in
+          60/999 tumor samples (6%), 59 of which were wild-type for KRAS. When comparing
+          patients with wildtype KRAS (n=625), BRAF V600E tumors had worse outcomes
+          relative to BRAF wildtype. For patients with BRAF V600E tumors (n=566), median
+          overall survival (OS) was 25.1 months with cetuximab and 21.6 months without
+          cetuximab. For patients with wildtype BRAF (n=59), median OS was 14.1 months
+          with cetuximab and 10.3 months without cetuximab.
+        direction: supports
+        id: civic.eid:7157
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types.
+                  Of these, the mutation of valine 600 to glutamic acid (V600E) is the
+                  most prevalent. V600E has been determined to be an activating mutation,
+                  and cells that harbor it, along with other V600 mutations are sensitive
+                  to the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have
+                  also been correlated with poor prognosis in many cancer types, although
+                  there is at least one study that questions this conclusion in papillary
+                  thyroid cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+                  constitutive dimers and are resistant to vemurafenib. Such mutants may
+                  be sensitive to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or
+                  NSCLC may be effectively treated with combinations that include inhibitors
+                  of receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:11
+            mappings:
+              - coding:
+                  code: DOID:9256
+                  id: DOID:9256
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Colorectal Cancer
+          predicate: associatedWithWorseOutcomeFor
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant
+              is correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective
+              when combined with the MEK inhibitor trametinib in colorectal cancer and
+              melanoma. However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib
+              resistance has been reported. Ipilimumab, regorafenib, vemurafenib, and
+              a number of combination therapies have been successful in treating V600E
+              mutations. However, cetuximab and panitumumab have been largely shown
+              to be ineffective without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantPrognosticProposition
+        reportedIn:
+          - id: civic.source:1931
+            name: Van Cutsem et al., 2011
+            pmid: "21502544"
+            title:
+              "Cetuximab plus irinotecan, fluorouracil, and leucovorin as first-line
+              treatment for metastatic colorectal cancer: updated analysis of overall
+              survival according to tumor KRAS and BRAF mutation status."
+            type: Document
+          - https://civicdb.org/links/evidence/7157
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+      - description:
+          In the Medical Research Council (MRC) COIN trial, ISRCTN27286448,
+          patients who presented with advanced colorectal cancer were randomly assigned
+          to chemotherapy (oxaliplatin and fluoropyrimidine; arm A), or chemotherapy
+          plus cetuximab (arm B). Median overall survival was found to differ by mutation,
+          regardless of treatment. Median overall survival was 8.8 months (IQR 4.5-27)
+          for patients with BRAF variants, 14.4 months (IQR 8.5-24.0) for patients with
+          KRAS variants, and 20.1 months (IQR 11.5-31.7) for wildtype patients. BRAF
+          mutations were found in 102/1291 samples (7.90%), and of these, 12 were D594G
+          and 90 V600E.
+        direction: supports
+        id: civic.eid:7158
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types.
+                  Of these, the mutation of valine 600 to glutamic acid (V600E) is the
+                  most prevalent. V600E has been determined to be an activating mutation,
+                  and cells that harbor it, along with other V600 mutations are sensitive
+                  to the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have
+                  also been correlated with poor prognosis in many cancer types, although
+                  there is at least one study that questions this conclusion in papillary
+                  thyroid cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+                  constitutive dimers and are resistant to vemurafenib. Such mutants may
+                  be sensitive to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or
+                  NSCLC may be effectively treated with combinations that include inhibitors
+                  of receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:11
+            mappings:
+              - coding:
+                  code: DOID:9256
+                  id: DOID:9256
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Colorectal Cancer
+          predicate: associatedWithWorseOutcomeFor
+          subjectVariant:
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 166.0
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: null
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140481403
+                  type: coordinates
+                  variant_bases: null
+            id: civic.mpid:395
+            name: BRAF Mutation
+            type: CategoricalVariant
+          type: VariantPrognosticProposition
+        reportedIn:
+          - id: civic.source:2784
+            name: Maughan et al., 2011
+            pmid: "21641636"
+            title:
+              "Addition of cetuximab to oxaliplatin-based first-line combination
+              chemotherapy for treatment of advanced colorectal cancer: results of the
+              randomised phase 3 MRC COIN trial."
+            type: Document
+          - https://civicdb.org/links/evidence/7158
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+      - description:
+          "A meta analysis was performed using data from 21 published studies\
+          \ (n = 9885 patients) to assess prognostic value of BRAF mutations in colorectal\
+          \ cancer. When evaluating 14 studies (n = 7778 patients), the odds ratio (OR)\
+          \ of a proximal lesion, which is associated with greater mortality in colon\
+          \ cancer, was increased for patients with BRAF mutations (OR 5.222, 95% CI\
+          \ 3.801\u20137.174, P < 0.001). When evaluating 4 studies (n = 1526 patients),\
+          \ the odds ratio of T4 tumors, which indicates tumor growth past bowel lining,\
+          \ was increased for patients with BRAF mutations (OR 1.761, 95% CI 1.164\u2013\
+          2.663, P = 0.007). When evaluating 8 studies (n = 2786 patients), the odds\
+          \ ratio of poor tumor differentiation was increased in patients with BRAF\
+          \ mutations (OR 3.816, 95% CI 2.714\u20135.365, P < 0.001). These results\
+          \ support that BRAF mutations indicate poor prognosis for patients with colorectal\
+          \ cancer."
+        direction: supports
+        id: civic.eid:7159
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types.
+                  Of these, the mutation of valine 600 to glutamic acid (V600E) is the
+                  most prevalent. V600E has been determined to be an activating mutation,
+                  and cells that harbor it, along with other V600 mutations are sensitive
+                  to the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have
+                  also been correlated with poor prognosis in many cancer types, although
+                  there is at least one study that questions this conclusion in papillary
+                  thyroid cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+                  constitutive dimers and are resistant to vemurafenib. Such mutants may
+                  be sensitive to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or
+                  NSCLC may be effectively treated with combinations that include inhibitors
+                  of receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:11
+            mappings:
+              - coding:
+                  code: DOID:9256
+                  id: DOID:9256
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Colorectal Cancer
+          predicate: associatedWithWorseOutcomeFor
+          subjectVariant:
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 166.0
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: null
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140481403
+                  type: coordinates
+                  variant_bases: null
+            id: civic.mpid:395
+            name: BRAF Mutation
+            type: CategoricalVariant
+          type: VariantPrognosticProposition
+        reportedIn:
+          - id: civic.source:2785
+            name: Clancy et al., 2013
+            pmid: "24112392"
+            title:
+              "BRAF mutation is associated with distinct clinicopathological characteristics
+              in colorectal cancer: a systematic review and meta-analysis."
+            type: Document
+          - https://civicdb.org/links/evidence/7159
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+      - description:
+          In a study of 908 patients with colorectal cancer, 45 patients
+          had BRAF V600E mutations and 589 patients were BRAF wild type.  BRAF V600E
+          mutations were more likely to be proximal tumors (68.9%, 20.7%; p<0.0001),
+          they were more likely to be poorly differentiated (17.7%, 1.9%; p<0.0001),
+          they were more likely to be mucinous carcinoma type (20.0%, 4.2%; p=0.0003),
+          they were more likely to have lymphatic invasion (77.6%, 49.9%; p=0.0003),
+          and they had a shorter survival time (31.1 mo, 41.6 mo; p=0.001).  The 3-year
+          survival rate was significantly poorer in the V600E group when compared to
+          the wild type group (63.8%, 87.9%; p<0.0001).
+        direction: supports
+        id: civic.eid:1552
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types.
+                  Of these, the mutation of valine 600 to glutamic acid (V600E) is the
+                  most prevalent. V600E has been determined to be an activating mutation,
+                  and cells that harbor it, along with other V600 mutations are sensitive
+                  to the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have
+                  also been correlated with poor prognosis in many cancer types, although
+                  there is at least one study that questions this conclusion in papillary
+                  thyroid cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as
+                  constitutive dimers and are resistant to vemurafenib. Such mutants may
+                  be sensitive to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or
+                  NSCLC may be effectively treated with combinations that include inhibitors
+                  of receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:11
+            mappings:
+              - coding:
+                  code: DOID:9256
+                  id: DOID:9256
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Colorectal Cancer
+          predicate: associatedWithWorseOutcomeFor
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant
+              is correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective
+              when combined with the MEK inhibitor trametinib in colorectal cancer and
+              melanoma. However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib
+              resistance has been reported. Ipilimumab, regorafenib, vemurafenib, and
+              a number of combination therapies have been successful in treating V600E
+              mutations. However, cetuximab and panitumumab have been largely shown
+              to be ineffective without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantPrognosticProposition
+        reportedIn:
+          - id: civic.source:1027
+            name: Amaki-Takao et al., 2016
+            pmid: "27404270"
+            title:
+              Colorectal Cancer with BRAF D594G Mutation Is Not Associated with Microsatellite
+              Instability or Poor Prognosis.
+            type: Document
+          - https://civicdb.org/links/evidence/1552
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+    type: EvidenceLine
+proposition:
+  alleleOriginQualifier:
+    extensions:
+      - name: civic_variant_origin
+        value: SOMATIC
+    name: somatic
+  geneContextQualifier:
+    conceptType: Gene
+    extensions:
+      - name: aliases
+        value:
+          - B-RAF1
+          - B-raf
+          - BRAF
+          - BRAF-1
+          - BRAF1
+          - NS7
+          - RAFB1
+      - name: description
+        value:
+          "BRAF mutations are found to be recurrent in many cancer types. Of
+          these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
+          V600E has been determined to be an activating mutation, and cells that harbor
+          it, along with other V600 mutations are sensitive to the BRAF inhibitor
+          dabrafenib. It is also common to use MEK inhibition as a substitute for
+          BRAF inhibitors, and the MEK inhibitor trametinib has seen some success
+          in BRAF mutant melanomas. BRAF mutations have also been correlated with
+          poor prognosis in many cancer types, although there is at least one study
+          that questions this conclusion in papillary thyroid cancer.
+
+
+          Oncogenic BRAF mutations are divided into three categories that determine
+          their sensitivity to inhibitors.
+
+          Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers and
+          are sensitive to current RAF monomer inhibitors.
+
+          Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+          G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+          dimers and are resistant to vemurafenib. Such mutants may be sensitive to
+          novel RAF dimer inhibitors or MEK inhibitors.
+
+          Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+          N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+          low or absent kinase activity are RAS-dependent and they activate ERK by
+          increasing their binding to activated RAS and wild-type CRAF. Class 3 BRAF
+          mutations coexist with mutations in RAS or NF1 in melanoma may be treated
+          with MEK inhibitors. In epithelial tumors such as CRC or NSCLC may be effectively
+          treated with combinations that include inhibitors of receptor tyrosine kinase."
+    id: civic.gid:5
+    mappings:
+      - coding:
+          code: "673"
+          id: ncbigene:673
+          system: https://www.ncbi.nlm.nih.gov/gene/
+        relation: exactMatch
+    name: BRAF
+  objectCondition:
+    conceptType: Disease
+    id: civic.did:11
+    mappings:
+      - coding:
+          code: DOID:9256
+          id: DOID:9256
+          system: https://disease-ontology.org/?id=
+        relation: exactMatch
+    name: Colorectal Cancer
+  predicate: associatedWithWorseOutcomeFor
+  subjectVariant:
+    aliases:
+      - VAL600GLU
+      - V640E
+      - VAL640GLU
+    description: BRAF V600E has been shown to be recurrent in many cancer types.
+      It is one of the most widely studied variants in cancer. This variant is correlated
+      with poor prognosis in certain cancer types, including colorectal cancer and
+      papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+      to be effective in clinical trials with an array of BRAF mutations and cancer
+      types. Dabrafenib has also shown to be effective when combined with the MEK
+      inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+      with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+      Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+      have been successful in treating V600E mutations. However, cetuximab and panitumumab
+      have been largely shown to be ineffective without supplementary treatment.
+    extensions:
+      - name: CIViC Molecular Profile Score
+        value: 1433.5
+      - name: expressions
+        value:
+          - syntax: hgvs.c
+            value: NM_004333.4:c.1799T>A
+          - syntax: hgvs.p
+            value: NP_004324.2:p.Val600Glu
+          - syntax: hgvs.g
+            value: NC_000007.13:g.140453136A>T
+          - syntax: hgvs.c
+            value: ENST00000288602.6:c.1799T>A
+      - name: CIViC representative coordinate
+        value:
+          chromosome: "7"
+          ensembl_version: 75
+          reference_bases: A
+          reference_build: GRCh37
+          representative_transcript: ENST00000288602.6
+          start: 140453136
+          stop: 140453136
+          type: coordinates
+          variant_bases: T
+    id: civic.mpid:12
+    mappings:
+      - coding:
+          code: rs113488022
+          system: https://www.ncbi.nlm.nih.gov/snp/
+        relation: relatedMatch
+    name: BRAF V600E
+    type: CategoricalVariant
+  type: VariantPrognosticProposition
+specifiedBy:
+  id: civic.method:2019
+  name: CIViC Curation SOP (2019)
+  reportedIn:
+    id: pmid:31779674
+    type: Document
+    name: Danos et al., 2019, Genome Med.
+    title:
+      Standard operating procedure for curation and clinical interpretation of
+      variants in cancer
+    doi: 10.1186/s13073-019-0687-x
+    pmid: "31779674"
+    aliases:
+      - CIViC curation SOP
+    urls:
+      - https://doi.org/10.1186/s13073-019-0687-x
+      - https://pubmed.ncbi.nlm.nih.gov/31779674/
+  type: Method
+  methodType: curation
+strength:
+  primaryCoding:
+    code: Level A
+    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+type: Statement
+reportedIn:
+  - https://civicdb.org/links/assertion/20
