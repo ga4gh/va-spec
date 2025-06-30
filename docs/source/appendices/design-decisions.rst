@@ -65,7 +65,7 @@ In version 1.0 of the VA-Spec, we distinguish between two categories of profiles
  **VA Base Profiles**:
 
   - Specialize generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-  - This approach relies on bespoke `Metaschema Processor (MSP) tooling <https://github.com/ga4gh/gks-metaschema>`_ with functions to craft subclass definitions, and associated tooling to ferive formal json schema from them.
+  - This approach relies on bespoke `Metaschema Processor (MSP) tooling <https://github.com/ga4gh/gks-metaschema>`_ with functions to craft subclass definitions, and associated tooling to derive formal json schema from them.
   - This Base Profiling approach is used to create :ref:`Proposition Profiles<proposition-profiles>` and :ref:`Study Result Profiles<study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 
  **Community Profiles**:

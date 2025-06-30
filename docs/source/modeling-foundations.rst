@@ -106,7 +106,7 @@ Key attributes expressing core StudyResult semantics include:
 * A ``studyGroup`` attribute that reports information about the group of subjects that were interrogated to produce this data.
 * A ``sourceDataSet`` attribute that reports the larger data set from which selected data items came.
 
-Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who created the data, when, using what methodsd, etc).
+Additional attributes allow provenance information about the evidence assessment process and the underlying evidence to be captured (who created the data, when, using what methods, etc).
 
 The diagram below highlights these key attributes, and provides an example of how this class structures allele count and frequency data about a particular variant in an east asian population from a gnomad study dataset.
 

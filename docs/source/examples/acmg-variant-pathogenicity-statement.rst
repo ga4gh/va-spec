@@ -22,9 +22,9 @@ ACMG Variant Pathogenicity Statement Example
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representtion is not shown here.
+    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representation is not shown here.
     predicate: isCausalFor     # the predicate for this Statement profile is fixed at 'isCausalFor'
-    objectCondition:           # 'objectCondition' specialilzes the VA Core 'object' attribute.
+    objectCondition:           # 'objectCondition' specializes the VA Core 'object' attribute.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
@@ -41,9 +41,9 @@ ACMG Variant Pathogenicity Statement Example
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
     primaryCoding:
-      code: definitive         # the code here is a term based on language used in the ACMG guidleines, as ACMG does not provide a formal code system for this
+      code: definitive         # the code here is a term based on language used in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
-  classification:              # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogneic'
+  classification:              # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
     primaryCoding:
       code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015

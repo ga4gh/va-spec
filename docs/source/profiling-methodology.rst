@@ -35,13 +35,13 @@ Profiling tasks supported by the VA-Spec, and illustrated in the example above, 
    *  - Define domain-specific subtypes of general purpose Core Model classes
       - Specialization of ``Proposition`` into ``VariantPathogenicityProposition``
    *  - Define new attributes to capture domain-specific information
-      -  The Statement qualifiers ``geneContextQualifier`` and ``alleleoriginQualifier``
+      -  The Statement qualifiers ``geneContextQualifier`` and ``alleleOriginQualifier``
    *  - Define or import classes for domain entities that profiles are about
       - The ``VariantPathogenicityProposition`` profile uses ``MolecularVariation`` and ``CategoricalVariation`` classes imported from VRS and CatVRS, and a ``Condition`` class defined in the VA-Spec itself.
    *  - Constrain values of core attributes to take specific types as values
       - Restricting the ``VariantPathogenicityStatement.object`` field to take a ``Condition`` as its value
    *  - Define value sets and binding them to select attributes.
-      - Restricting nested fields in the MappableConcept object taken by ``VariantPathogenicityStatement.classification`` to a set of enumerated values based on ACMG Guideline temrinology.
+      - Restricting nested fields in the MappableConcept object taken by ``VariantPathogenicityStatement.classification`` to a set of enumerated values based on ACMG Guideline terminology.
    *  - Refine cardinality of select attributes
       - Making ``Statement.classification`` a required field in the ACMG Variant Pathogenicity Statement.
 
