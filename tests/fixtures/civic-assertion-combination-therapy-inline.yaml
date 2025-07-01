@@ -31,15 +31,8 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: B
-        system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
-      name: Clinical evidence
-      mappings:
-        - coding:
-            code: e000005
-            name: clinical cohort evidence
-            system: https://go.osu.edu/evidence-codes
-          relation: exactMatch
+        code: Level B
+        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
     hasEvidenceItems:
       - description:
           Adjuvant dual treatment with BRAF inhibitor dabrafenib and MEK

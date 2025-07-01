@@ -26,15 +26,8 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: A
-        system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
-      name: Validated association
-      mappings:
-        - coding:
-            code: e000001
-            name: authoritative evidence
-            system: https://go.osu.edu/evidence-codes
-          relation: exactMatch
+        code: Level A
+        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
     hasEvidenceItems:
       - description:
           Afatinib, an irreversible inhibitor of the ErbB family of tyrosine
@@ -198,15 +191,8 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: B
-        system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
-      name: Clinical evidence
-      mappings:
-        - coding:
-            code: e000005
-            name: clinical cohort evidence
-            system: https://go.osu.edu/evidence-codes
-          relation: exactMatch
+        code: Level B
+        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
     hasEvidenceItems:
       - description:
           A phase III clinical trial (NCT00949650) found that median progression
@@ -696,15 +682,8 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: D
-        system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
-      name: Preclinical evidence
-      mappings:
-        - coding:
-            code: e000009
-            name: preclinical evidence
-            system: https://go.osu.edu/evidence-codes
-          relation: exactMatch
+        code: Level D
+        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
     hasEvidenceItems:
       - description:
           Cells harboring L858R were sensitive to afatinib. This study performed
