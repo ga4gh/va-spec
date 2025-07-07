@@ -1,0 +1,506 @@
+id: civic.aid:115
+classification:
+  primaryCoding:
+    code: Tier I
+    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+description: Diffuse astrocytoma, MYB- or MYBL1-altered is a rare, CNS WHO grade
+  1, diffusely infiltrative astroglial neoplasm with genetic alterations in MYB
+  or MYBL1 associated with epileptic seizures in children and adults. MYB and MYBL1
+  are closely related transcriptional transactivators that become upregulated when
+  structural rearrangements result in truncation of the C-terminal negative-regulatory
+  domain. Professional guidelines (WHO) list the presence of a structural MYB or
+  MYBL1 variant or a DNA methylation profile meeting the appropriate calibrated
+  score thresholds for diffuse astrocytoma, MYB- or MYBL1-altered as essential diagnostic
+  criteria for diffuse astrocytoma, MYB- or MYBL1-altered (WHO classification of
+  tumours series, 5th ed.; vol. 7).
+direction: supports
+hasEvidenceLines:
+  - directionOfEvidenceProvided: supports
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: Level B
+        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+    hasEvidenceItems:
+      - description:
+          "Histological, molecular, and clinical analysis of 26 histologically\
+          \ prototypical isomorphic diffuse gliomas with a specific DNA methylation\
+          \ profile distinct from other glial/glio-neuronal brain tumors and normal\
+          \ hemispheric tissue were found to be most closely related to pediatric MYB/MYBL1-altered\
+          \ diffuse astrocytomas and angiocentric gliomas. IDH1/2-wildtype status was\
+          \ verified by Sanger sequencing of 24 cases with sufficient DNA. Integrating\
+          \ copy number and RNA sequencing demonstrated MYBL1 (n=14) or MYB (n=6) alterations\
+          \ in 77% (20/26) of these tumors. Nine tumors had MYBL1 rearrangements (including\
+          \ one involving 5\u2019 of MYBL1) with various gene partners, including MMP16\
+          \ (n=3), RAD51B (n=1), MAML2 (n=1), ZFHX4 (n=1), TOX (n=1), RP11-586K2.1 (intergenic\
+          \ region) (n=1), and RP11492M23.2 (intergenic region) (n=1). These fusions\
+          \ resulted in a deletion of the C-terminal negative regulatory C-myb domain\
+          \ of MYBL1.  Copy number analysis revealed gain or loss involving MYBL1 in\
+          \ 10 tumors, including six with MYBL1 fusion and four without MYBL1 fusions\
+          \ detected. Increased MYBL1 expression was observed in 71% (10/14) of the\
+          \ tumors with MYBL1 alterations."
+        direction: supports
+        id: civic.eid:11780
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - A-MYB
+                  - AMYB
+                  - MYBL1
+            id: civic.gid:3731
+            mappings:
+              - coding:
+                  code: "4603"
+                  id: ncbigene:4603
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: MYBL1
+          objectCondition:
+            membershipOperator: AND
+            conditions:
+              - conceptType: Disease
+                id: civic.did:3481
+                name: Isomorphic Diffuse Glioma
+              - conceptType: Phenotype
+                id: civic.phenotype:2647
+                mappings:
+                  - coding:
+                      code: HP:0003596
+                      id: HP:0003596
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Middle age onset
+              - conceptType: Phenotype
+                id: civic.phenotype:2656
+                mappings:
+                  - coding:
+                      code: HP:0003621
+                      id: HP:0003621
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Juvenile onset
+              - conceptType: Phenotype
+                id: civic.phenotype:8120
+                mappings:
+                  - coding:
+                      code: HP:0011462
+                      id: HP:0011462
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Young adult onset
+          predicate: isDiagnosticInclusionCriterionFor
+          subjectVariant:
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 40.0
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: null
+                  ensembl_version: null
+                  reference_bases: null
+                  reference_build: null
+                  representative_transcript: null
+                  start: null
+                  stop: null
+                  type: coordinates
+                  variant_bases: null
+            id: civic.mpid:4878
+            name: MYBL1 Rearrangement
+            type: CategoricalVariant
+          type: VariantDiagnosticProposition
+        reportedIn:
+          - id: civic.source:4905
+            name: Wefers et al., 2020
+            pmid: "31563982"
+            title:
+              Isomorphic diffuse glioma is a morphologically and molecularly distinct
+              tumour entity with recurrent gene fusions of MYBL1 or MYB and a benign disease
+              course.
+            type: Document
+          - https://civicdb.org/links/evidence/11780
+        specifiedBy:
+          id: civic.method:2019
+          methodType: variant curation standard operating procedure
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+      - description:
+          Copy-number analysis was performed on 44 diffuse pediatric low-grade
+          gliomas (PLGGs) to identify recurrent alterations. The most significant event,
+          focal 8q13.1 gain, was observed in 28% (5/18) of diffuse astrocytoma grade
+          IIs (DA2). All five DA2 samples with 8q focal gains exhibited a common centromeric
+          breakpoint within MYBL1 after exon 9, resulting in partial duplication of
+          MYBL1 with truncation of its C-terminal negative-regulatory domain. Whole-genome
+          sequencing of a MYBL1-rearranged DA2 demonstrated MYBL1 tandem duplication
+          with the telomeric sequence located in MMP16. Truncated MYBL1 transcripts
+          identified in this tumor induced anchorage-independent growth in 3T3 cells
+          and tumor formation in nude mice. Truncated transcripts were also expressed
+          in two additional DA2s with MYBL1 partial duplication. A similar recurrent
+          deletion-truncation breakpoint was identified in two angiocentric gliomas
+          (AGs) in the related gene MYB on 6q23.3. The results define clinically relevant
+          molecular subclasses of diffuse PLGGs and highlight a potential role for the
+          MYB family in the biology of low-grade gliomas.
+        direction: supports
+        id: civic.eid:11781
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - A-MYB
+                  - AMYB
+                  - MYBL1
+            id: civic.gid:3731
+            mappings:
+              - coding:
+                  code: "4603"
+                  id: ncbigene:4603
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: MYBL1
+          objectCondition:
+            membershipOperator: AND
+            conditions:
+              - conceptType: Disease
+                id: civic.did:3387
+                mappings:
+                  - coding:
+                      code: DOID:0081279
+                      id: DOID:0081279
+                      system: https://disease-ontology.org/?id=
+                    relation: exactMatch
+                name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
+              - conceptType: Phenotype
+                id: civic.phenotype:8121
+                mappings:
+                  - coding:
+                      code: HP:0011463
+                      id: HP:0011463
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Childhood onset
+              - conceptType: Phenotype
+                id: civic.phenotype:2656
+                mappings:
+                  - coding:
+                      code: HP:0003621
+                      id: HP:0003621
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Juvenile onset
+          predicate: isDiagnosticInclusionCriterionFor
+          subjectVariant:
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 40.0
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: null
+                  ensembl_version: null
+                  reference_bases: null
+                  reference_build: null
+                  representative_transcript: null
+                  start: null
+                  stop: null
+                  type: coordinates
+                  variant_bases: null
+            id: civic.mpid:4878
+            name: MYBL1 Rearrangement
+            type: CategoricalVariant
+          type: VariantDiagnosticProposition
+        reportedIn:
+          - id: civic.source:4907
+            name: Ramkissoon et al., 2013
+            pmid: "23633565"
+            title:
+              Genomic analysis of diffuse pediatric low-grade gliomas identifies
+              recurrent oncogenic truncating rearrangements in the transcription factor
+              MYBL1.
+            type: Document
+          - https://civicdb.org/links/evidence/11781
+        specifiedBy:
+          id: civic.method:2019
+          methodType: variant curation standard operating procedure
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+    type: EvidenceLine
+  - directionOfEvidenceProvided: supports
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: Level C
+        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+    hasEvidenceItems:
+      - description:
+          Comprehensive molecular studies (through whole genome, whole exome,
+          transcriptome sequencing, genome-wide copy number analysis, clustering analysis
+          by DNA methylation profiling, mutation hotspot analysis by Sanger sequencing,
+          and FISH) were performed in a cohort of 91 low-grade neuroepithelial tumors
+          (LGNTs), including diffuse astrocytomas, angiocentric gliomas, gangliogliomas,
+          dysembryoplastic neuroepithelial tumors, oligodendrogliomas, and oligoastrocytomas.
+          Molecular alterations were detected in 31/32 (97%) of LGNTs with an astrocytic
+          morphology, including 17 diffuse astrocytomas and 15 angiocentric gliomas,
+          and no IDH mutations were detected in these tumors. MYB (n=5) or MYBL1 (n=2)
+          rearrangements were detected in 41% (7/17) of diffuse astrocytomas, while
+          the remaining tumors had alternations involving BRAF (n = 4), FGFR1/3 (n =
+          4), and others (n = 2). The gene partners involving MYB fusions in diffuse
+          astrocytomas included PCDHGA1, LOC154902, and MMP16, and the gene partners
+          involving MYBL1 included MMP16. In contrast, a MYB fusion (most frequently
+          MYB::QKI) characterized almost all angiocentric gliomas (14 of 15). Only one
+          other tumor across the series (an oligodendroglioma) had a MYB fusion (MYB::MAML2).
+          MYB/MYBL-altered LGNTs clustered together with methylation profiling. The
+          findings in LGNT with a predominantly astrocytic phenotype associating with
+          MYB/MYBL alterations suggest a role of MYB/MYBL in these tumor categories
+          with distinct characteristics.
+        direction: supports
+        id: civic.eid:11779
+        proposition:
+          alleleOriginQualifier:
+            name: SOMATIC
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - A-MYB
+                  - AMYB
+                  - MYBL1
+            id: civic.gid:3731
+            mappings:
+              - coding:
+                  code: "4603"
+                  id: ncbigene:4603
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: MYBL1
+          objectCondition:
+            membershipOperator: AND
+            conditions:
+              - conceptType: Disease
+                id: civic.did:3387
+                mappings:
+                  - coding:
+                      code: DOID:0081279
+                      id: DOID:0081279
+                      system: https://disease-ontology.org/?id=
+                    relation: exactMatch
+                name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
+              - conceptType: Phenotype
+                id: civic.phenotype:8121
+                mappings:
+                  - coding:
+                      code: HP:0011463
+                      id: HP:0011463
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Childhood onset
+              - conceptType: Phenotype
+                id: civic.phenotype:2656
+                mappings:
+                  - coding:
+                      code: HP:0003621
+                      id: HP:0003621
+                      system: https://hpo.jax.org/browse/term/
+                    relation: exactMatch
+                name: Juvenile onset
+          predicate: isDiagnosticInclusionCriterionFor
+          subjectVariant:
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 40.0
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: null
+                  ensembl_version: null
+                  reference_bases: null
+                  reference_build: null
+                  representative_transcript: null
+                  start: null
+                  stop: null
+                  type: coordinates
+                  variant_bases: null
+            id: civic.mpid:4878
+            name: MYBL1 Rearrangement
+            type: CategoricalVariant
+          type: VariantDiagnosticProposition
+        reportedIn:
+          - id: civic.source:4901
+            name: Qaddoumi et al., 2016
+            pmid: "26810070"
+            title:
+              "Genetic alterations in uncommon low-grade neuroepithelial tumors:
+              BRAF, FGFR1, and MYB mutations occur at high frequency and align with morphology."
+            type: Document
+          - https://civicdb.org/links/evidence/11779
+        specifiedBy:
+          id: civic.method:2019
+          methodType: variant curation standard operating procedure
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            doi: 10.1186/s13073-019-0687-x
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+          type: Method
+        strength:
+          name: Case study
+          primaryCoding:
+            code: C
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+          mappings:
+            - coding:
+                code: e000008
+                name: clinical case study evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+        type: Statement
+    type: EvidenceLine
+proposition:
+  alleleOriginQualifier:
+    name: SOMATIC
+  geneContextQualifier:
+    conceptType: Gene
+    extensions:
+      - name: aliases
+        value:
+          - A-MYB
+          - AMYB
+          - MYBL1
+    id: civic.gid:3731
+    mappings:
+      - coding:
+          code: "4603"
+          id: ncbigene:4603
+          system: https://www.ncbi.nlm.nih.gov/gene/
+        relation: exactMatch
+    name: MYBL1
+  objectCondition:
+    membershipOperator: AND
+    conditions:
+      - conceptType: Disease
+        id: civic.did:3387
+        mappings:
+          - coding:
+              code: DOID:0081279
+              id: DOID:0081279
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+        name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
+      - conceptType: Phenotype
+        id: civic.phenotype:8121
+        mappings:
+          - coding:
+              code: HP:0011463
+              id: HP:0011463
+              system: https://hpo.jax.org/browse/term/
+            relation: exactMatch
+        name: Childhood onset
+      - conceptType: Phenotype
+        id: civic.phenotype:2656
+        mappings:
+          - coding:
+              code: HP:0003621
+              id: HP:0003621
+              system: https://hpo.jax.org/browse/term/
+            relation: exactMatch
+        name: Juvenile onset
+      - conceptType: Phenotype
+        id: civic.phenotype:2643
+        mappings:
+          - coding:
+              code: HP:0003581
+              id: HP:0003581
+              system: https://hpo.jax.org/browse/term/
+            relation: exactMatch
+        name: Adult onset
+  predicate: isDiagnosticInclusionCriterionFor
+  subjectVariant:
+    extensions:
+      - name: CIViC Molecular Profile Score
+        value: 40.0
+      - name: CIViC representative coordinate
+        value:
+          chromosome: null
+          ensembl_version: null
+          reference_bases: null
+          reference_build: null
+          representative_transcript: null
+          start: null
+          stop: null
+          type: coordinates
+          variant_bases: null
+    id: civic.mpid:4878
+    name: MYBL1 Rearrangement
+    type: CategoricalVariant
+  type: VariantDiagnosticProposition
+specifiedBy:
+  id: civic.method:2019
+  methodType: variant curation standard operating procedure
+  name: CIViC Curation SOP (2019)
+  reportedIn:
+    doi: 10.1186/s13073-019-0687-x
+    name: Danos et al., 2019, Genome Med.
+    pmid: "31779674"
+    title: Standard operating procedure for curation and clinical interpretation
+      of variants in cancer
+    type: Document
+  type: Method
+strength:
+  mappings:
+    - coding:
+        code: A
+        name: Validated association
+        system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+      relation: exactMatch
+  primaryCoding:
+    code: Level A
+    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+type: Statement

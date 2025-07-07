@@ -82,6 +82,9 @@ tests:
   - test_file: civic-assertion-diagnostic-inline.yaml
     namespace: va-spec.aac-2017
     definition: VariantDiagnosticStudyStatement
+  - test_file: civic-assertion-diagnostic-phenotypes-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantDiagnosticStudyStatement
   - test_file: civic-assertion-prognostic-inline.yaml
     namespace: va-spec.aac-2017
     definition: VariantPrognosticStudyStatement
