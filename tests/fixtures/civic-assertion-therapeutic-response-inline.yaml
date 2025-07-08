@@ -187,13 +187,6 @@ hasEvidenceLines:
                 system: https://go.osu.edu/evidence-codes
               relation: exactMatch
         type: Statement
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    strengthOfEvidenceProvided:
-      primaryCoding:
-        code: Level B
-        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
-    hasEvidenceItems:
       - description:
           A phase III clinical trial (NCT00949650) found that median progression
           free survival among patients with exon 19 deletions or L858R EGFR mutations
@@ -678,13 +671,7 @@ hasEvidenceLines:
                 system: https://go.osu.edu/evidence-codes
               relation: exactMatch
         type: Statement
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    strengthOfEvidenceProvided:
-      primaryCoding:
-        code: Level D
-        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
-    hasEvidenceItems:
+
       - description:
           Cells harboring L858R were sensitive to afatinib. This study performed
           drug response assays using five human NSCLC cell lines with various combinations

@@ -18,7 +18,7 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: Level B
+        code: Level A
         system: AMP/ASCO/CAP (AAC) Guidelines, 2017
     hasEvidenceItems:
       - description:
@@ -269,13 +269,6 @@ hasEvidenceLines:
                 system: https://go.osu.edu/evidence-codes
               relation: exactMatch
         type: Statement
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    strengthOfEvidenceProvided:
-      primaryCoding:
-        code: Level C
-        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
-    hasEvidenceItems:
       - description:
           Comprehensive molecular studies (through whole genome, whole exome,
           transcriptome sequencing, genome-wide copy number analysis, clustering analysis

@@ -26,7 +26,7 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: Level B
+        code: Level C
         system: AMP/ASCO/CAP (AAC) Guidelines, 2017
     hasEvidenceItems:
       - description:
