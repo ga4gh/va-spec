@@ -53,7 +53,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:1909
-                  id: DOID:1909
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Melanoma
@@ -255,7 +254,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:1909
-                  id: DOID:1909
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Melanoma
@@ -455,7 +453,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:8923
-                  id: DOID:8923
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Skin Melanoma
@@ -656,7 +653,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:1909
-                  id: DOID:1909
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Melanoma
@@ -850,7 +846,6 @@ proposition:
     mappings:
       - coding:
           code: DOID:1909
-          id: DOID:1909
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Melanoma

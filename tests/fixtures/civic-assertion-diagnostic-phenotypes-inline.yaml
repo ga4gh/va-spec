@@ -70,7 +70,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0003596
-                      id: HP:0003596
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Middle age onset
@@ -79,7 +78,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0003621
-                      id: HP:0003621
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Juvenile onset
@@ -88,7 +86,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0011462
-                      id: HP:0011462
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Young adult onset
@@ -192,7 +189,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: DOID:0081279
-                      id: DOID:0081279
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
@@ -201,7 +197,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0011463
-                      id: HP:0011463
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Childhood onset
@@ -210,7 +205,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0003621
-                      id: HP:0003621
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Juvenile onset
@@ -319,7 +313,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: DOID:0081279
-                      id: DOID:0081279
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
@@ -328,7 +321,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0011463
-                      id: HP:0011463
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Childhood onset
@@ -337,7 +329,6 @@ hasEvidenceLines:
                 mappings:
                   - coding:
                       code: HP:0003621
-                      id: HP:0003621
                       system: https://hpo.jax.org/browse/term/
                     relation: exactMatch
                 name: Juvenile onset
@@ -423,7 +414,6 @@ proposition:
         mappings:
           - coding:
               code: DOID:0081279
-              id: DOID:0081279
               system: https://disease-ontology.org/?id=
             relation: exactMatch
         name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
@@ -432,7 +422,6 @@ proposition:
         mappings:
           - coding:
               code: HP:0011463
-              id: HP:0011463
               system: https://hpo.jax.org/browse/term/
             relation: exactMatch
         name: Childhood onset
@@ -450,7 +439,6 @@ proposition:
         mappings:
           - coding:
               code: HP:0003581
-              id: HP:0003581
               system: https://hpo.jax.org/browse/term/
             relation: exactMatch
         name: Adult onset

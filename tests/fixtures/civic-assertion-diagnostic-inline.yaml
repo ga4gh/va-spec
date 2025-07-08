@@ -71,7 +71,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:0080684
-                  id: DOID:0080684
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Diffuse Midline Glioma, H3 K27M-mutant
@@ -186,7 +185,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:0080684
-                  id: DOID:0080684
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Diffuse Midline Glioma, H3 K27M-mutant
@@ -295,7 +293,6 @@ proposition:
     mappings:
       - coding:
           code: DOID:0080684
-          id: DOID:0080684
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Diffuse Midline Glioma, H3 K27M-mutant

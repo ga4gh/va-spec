@@ -46,7 +46,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:3908
-                  id: DOID:3908
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Lung Non-small Cell Carcinoma
@@ -203,7 +202,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:3910
-                  id: DOID:3910
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Lung Adenocarcinoma
@@ -366,7 +364,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:3910
-                  id: DOID:3910
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Lung Adenocarcinoma
@@ -528,7 +525,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:3910
-                  id: DOID:3910
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Lung Adenocarcinoma
@@ -689,7 +685,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:3908
-                  id: DOID:3908
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Lung Non-small Cell Carcinoma
@@ -850,7 +845,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:3908
-                  id: DOID:3908
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Lung Non-small Cell Carcinoma
@@ -1006,7 +1000,6 @@ proposition:
     mappings:
       - coding:
           code: DOID:3908
-          id: DOID:3908
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Lung Non-small Cell Carcinoma

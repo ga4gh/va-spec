@@ -96,7 +96,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:9256
-                  id: DOID:9256
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Colorectal Cancer
@@ -261,7 +260,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:9256
-                  id: DOID:9256
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Colorectal Cancer
@@ -427,7 +425,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:9256
-                  id: DOID:9256
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Colorectal Cancer
@@ -592,7 +589,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:9256
-                  id: DOID:9256
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Colorectal Cancer
@@ -729,7 +725,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:9256
-                  id: DOID:9256
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Colorectal Cancer
@@ -861,7 +856,6 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: DOID:9256
-                  id: DOID:9256
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Colorectal Cancer
@@ -1015,7 +1009,6 @@ proposition:
     mappings:
       - coding:
           code: DOID:9256
-          id: DOID:9256
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Colorectal Cancer
