@@ -45,7 +45,7 @@ $defs:
           a *type* of method applied (e.g. 'Transmission Electron Microscopy').
       contributions:
         type: array
-        ordered: false
+        ordered: true
         items:
           $ref: "#/$defs/Contribution"
         description: >-
