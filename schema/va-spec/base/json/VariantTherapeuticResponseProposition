@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0/base/json/VariantTherapeuticResponseProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition",
    "title": "VariantTherapeuticResponseProposition",
    "maturity": "trial use",
    "type": "object",
@@ -96,7 +96,7 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/Therapeutic"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Therapeutic"
             }
          ],
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
@@ -108,7 +108,7 @@
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
             }
          ],
          "description": "Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions."
