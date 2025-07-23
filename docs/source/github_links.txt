@@ -1,9 +1,9 @@
-therapeutic_reponse_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L134
-therapeutic_reponse_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement
+therapeutic_response_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L134
+therapeutic_response_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantTherapeuticResponseStudyStatement
 diagnostic_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L15
-diagnostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantDiagnostictudyStatement
+diagnostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantDiagnosticStudyStatement
 prognostic_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L74
-prognostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantPrognostictudyStatement
+prognostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantPrognosticStudyStatement
 
 oncogenicity_evidence_line_source_yaml = schema/va-spec/ccv-2022/profile-source.yaml#L66
 oncogenicity_evidence_line_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityEvidenceLine
