@@ -62,7 +62,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       -
       - :ref:`variant-oncogenicity-proposition`
       - 1..1
-      - A proposition about the oncogenicity of a varaint, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
+      - A proposition about the oncogenicity of a variant, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
    *  - strength
       -
       - :ref:`MappableConcept` (nested enum: likely | definitive)
@@ -92,7 +92,7 @@ Variant Oncogenicity Evidence Line (CCV 2022)
 
 **Computational Definition**
 
-An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's oncogenicity. In the CCV Framework, evidence is assessed by determining if a specific criterion (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
+An Evidence Line that describes how a specific type of information was interpreted as evidence for or against a variant's oncogenicity. In the CCV Framework, evidence is assessed by determining if a specific criterion (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
 
 **Information Model**
 
@@ -113,7 +113,7 @@ This profile applies the following **constraints** on top of the core :ref:`Evid
       -
       - :ref:`variant-oncogenicity-proposition`
       - 0..1
-      - A Variant Oncoogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
+      - A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
    *  - directionOfEvidenceProvided
       -
       - string (enum: supports | disputes | none )

@@ -17,7 +17,7 @@ We have :Ref:`previously described <va-profiles>` two categories of profiles in 
 
 For **Proposition** and **Study Result** Base Profiles, a subclassing mechanism is required to rename and add additional attributes - including qualifier and data item fields used to collect domain-specific information in these profiles
 
-For **Statements** and **Evidence Lines**, any domain-specificity is specified in the **Propositions** these objects encapsulate, so there is no need to define fomral subclasses here. However, VA-Spec includes **Community Profiles** of these classes that constrain certain attribute values to align with the conventions of a particular community guideline - and here `schema composition <https://json-schema.org/understanding-json-schema/reference/combining>`_ is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating VA data.
+For **Statements** and **Evidence Lines**, any domain-specificity is specified in the **Propositions** these objects encapsulate, so there is no need to define formal subclasses here. However, VA-Spec includes **Community Profiles** of these classes that constrain certain attribute values to align with the conventions of a particular community guideline - and here `schema composition <https://json-schema.org/understanding-json-schema/reference/combining>`_ is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating VA data.
 
 The diagrams below illustrate where subclass- and composition-based mechanisms are applied to define each profile included in the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the models.
 
@@ -143,7 +143,7 @@ This section describes why these are useful, and how to create them.
 
 * The Statement and Evidence Line :ref:`Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
 * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
-* For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enumerations in the exisitng :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data.
+* For example, a project that aims to represent some of the messier data in ClinVar where values for key fields bound to ACMG-specific enumerations in the existing :ref:`Variant Pathogenicity Statement profile <variant-pathogenicity-statement-acmg-2015>` - and doesn't want to use :ref:`Extensions <Extension>` to capture this data - can define a custom Pathogenicity Statement Profile from core Statement and Evidence Line classes that applies constraints specific to its data.
 
 **The process is straightforward** - e.g. to create a custom Statement profile for pathogenicity classification data not based strictly aligned with ACMG terminology:
 

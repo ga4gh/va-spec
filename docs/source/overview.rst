@@ -40,16 +40,16 @@ The VA-Spec was built on top of the `SEPIO Modeling Framework <https://sepio-fra
 
 The SEPIO Core Information Model
 ********************************
-The foundational SEPIO Core-IM is a doamin-agnostic model for describing the scientific knowledge assertions of any kind. As shown in Figure XXX, each knowledge assertion is captured in a self-contained ``Statement`` object, where the semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s). Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
+The foundational SEPIO Core-IM is a domain-agnostic model for describing the scientific knowledge assertions of any kind. As shown in Figure XXX, each knowledge assertion is captured in a self-contained ``Statement`` object, where the semantics of what is asserted to be true is explicitly structured in terms of a subject, predicate, object, and qualifier(s). Organization of variant knowledge into discrete Statement objects allows clear and precise tracking of the evidence and provenance that supports each.
 
 .. _sepio-class-diagram-w-statement:
 
 .. figure:: images/sepio-class-diagram-w-statement.PNG
 
-   Statement-Centric SEPIO Data Strucutres
+   Statement-Centric SEPIO Data Structures
 
-   **Legend** (A) Explicit Statement Semantics (B) SEPIO Data Strucutre:  The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') -
-   which may be linked to one or more **Evidence Lines** representing disctrete arguments for or against it.
+   **Legend** (A) Explicit Statement Semantics (B) SEPIO Data Structure:  The central axis of SEPIO data structures is rooted at a **Statement** object (aka 'Assertion') -
+   which may be linked to one or more **Evidence Lines** representing discrete arguments for or against it.
    Each Evidence Line may then be linked to one or more pieces of information used as evidence (i.e. **Evidence Items**)
    contributing to such an argument. Surrounding the central axis are classes that describe the provenance of these
    core artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods**
@@ -58,12 +58,12 @@ The foundational SEPIO Core-IM is a doamin-agnostic model for describing the sci
 
 
 .. note::  While the majority of applications are focused on representing knowledge **Statements**, SEPIO data structures can be built
-           around other classes as their central focus. For exapmle, implementations have defined profiles focused on describing and
-           tracking the provenance of **Evidence Line** or **Study Reuslt** objects, where the same modeling patterns and principles are applied (see here).
+           around other classes as their central focus. For example, implementations have defined profiles focused on describing and
+           tracking the provenance of **Evidence Line** or **Study Result** objects, where the same modeling patterns and principles are applied (see here).
 
 The SEPIO Profiling Methodology
 *******************************
-In practice, application of SEPIO to represent actual data requires a 'Profiling' process, in which the gneeric Core-IM is specialized represent specific Statement types. For example, Figure XXX shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements. Note that these profiles exhibit very different levels of complexity, to support the specific evidence and provenance requirements for each type of Statement.
+In practice, application of SEPIO to represent actual data requires a 'Profiling' process, in which the generic Core-IM is specialized represent specific Statement types. For example, Figure XXX shows how the Core-IM could be specialized into profiles for Variant Pathogenicity, Molecular Consequence, and Therapeutic Response Statements. Note that these profiles exhibit very different levels of complexity, to support the specific evidence and provenance requirements for each type of Statement.
 
 FIGURE:
 
@@ -73,10 +73,10 @@ Legend:
 Profiling tasks may include:
  * Selecting a subset of classes and attributes needed to represent the Statement/use case of interest (e.g. a data creator may decide not to bring the ``Statement.hasEvidenceLines`` or the ``Evidence Line`` class into their profile).
  * Defining domain-specific subtypes of general purpose Core IM classes (e.g. ``Statement`` -> ``VariantPathogenicityStatement``).
- * Specializing certain attributes to capture domain-specific information (e.g. ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``).
+ * Specializing certain attributes to capture domain-specific information (e.g. ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleOriginQualifier``).
  * Defining or importing classes representing domain entities that a specific type of Statement is about (e.g. classes to represent a ``Variation``, ``Gene``, ``Disease``).
- * Constraining values of generic Core IM attributes to take specific domain entities or data types as values (e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances).
- * Defining domain-specific value sets that get bound to attributes taking coded values (e.g. binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ from the GENO Ontology)
+ * Constraining values of generic Core IM attributes to take specific domain entities or data types as values (e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take `Variation` instances).
+ * Defining domain-specific value sets that get bound to attributes taking coded values (e.g. binding ``VariantPathogenicityStatement.alleleOriginQualifier`` to take only `allele_origin terms <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ from the GENO Ontology)
 
 
 Profiling tasks may include:
@@ -85,13 +85,13 @@ Profiling tasks may include:
  * defining domain-specific subtypes of general purpose Core IM classes
      * e.g. ``Statement`` -> ``VariantPathogenicityStatement``
  * specializing certain attributes to capture domain-specific information
-     * e.g. ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
+     * e.g. ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleOriginQualifier``
  * defining or importing classes representing domain entities that a specific type of Statement is about
      * e.g. classes to represent a ``Variation``, ``Gene``, ``Disease``
  * constraining values of generic Core IM attributes to take specific domain entities or data types as values
-     * e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
+     * e.g. restricting the ``VariantPathogenicityStatement.subject`` field to only take `Variation` instances
  * defining domain-specific value sets that get bound to attributes taking coded values
-     * e.g. binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ terms from the GENO Ontology
+     * e.g. binding ``VariantPathogenicityStatement.alleleOriginQualifier`` to take only `allele_origin <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_ terms from the GENO Ontology
 
 The Profiles that result from this process represent custom, domain-specific information models that can be implemented as formal schema for a particular use case or application.
 
@@ -111,13 +111,13 @@ The Profiles that result from this process represent custom, domain-specific inf
    *  - Define domain-specific subtypes of general purpose Core IM classes
       - Specialize ``Statement`` -> ``VariantPathogenicityStatement``
    *  - Specialize attributes to capture domain-specific information
-      - Specialize ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleoriginQualifier``
+      - Specialize ``Statement.qualifier`` -> ``VariantPathogenicityStatement.alleleOriginQualifier``
    *  - Define or import classes for domain entities that profiles Statements are about
-      - For a Variant Pathogencity Statement profile, classes to represent the subject ``Variation`` and object ``Disease``
+      - For a Variant Pathogenicity Statement profile, classes to represent the subject ``Variation`` and object ``Disease``
    *  - Constrain values of Core IM attributes to take specific domain entities or data types as values
-      - Restricting the ``VariantPathogenicityStatement.subject`` field to only take ‘Variation’ instances
+      - Restricting the ``VariantPathogenicityStatement.subject`` field to only take `Variation` instances
    *  - Define value sets that get bound to attributes taking coded values
-      - Binding ``VariantPathogenicityStatement.alleleoriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_).
+      - Binding ``VariantPathogenicityStatement.alleleOriginQualifier`` to take only `allele_origin terms from the GENO Ontology <https://www.ebi.ac.uk/ols4/ontologies/geno/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FGENO_0000877>`_).
 
 
 
@@ -130,22 +130,22 @@ The Profiles that result from this process represent custom, domain-specific inf
 
 
 
-Figure XXX illulstrates coneptually how such 'Profiles' can be  dervied for representing variant knowledge, including a Variant Pathogenicity Statements, Molecular Consequence Statements, and Therapeutic REsponse Statements
+Figure XXX illustrates conceptually how such 'Profiles' can be  derived for representing variant knowledge, including a Variant Pathogenicity Statements, Molecular Consequence Statements, and Therapeutic Response Statements
 
 
 
 
-specializaton of its generic elements for a particular domain or application, through a process called 'Profiling'
+specialization of its generic elements for a particular domain or application, through a process called 'Profiling'
 
 
 
-Implementation of the SEPIO model requires specialization of its general purpose elements with domain-specific features adn constraints, to generate ‘VA Profiles’. Profiles are domain- or application- specific data models that constrain the core information model, and can extend it to support custom schema for a particular use case.  The VA-Spec provides a Profiling Methodology to guide adopters in this process (which is not unlike the FHIR Profiling paradigm widely used in the clinical data domain).  A developing draft of this methodology can be found here.  Work is ongoing to refine and formalize this with template and tooling support.
+Implementation of the SEPIO model requires specialization of its general purpose elements with domain-specific features adn constraints, to generate `VA Profiles`. Profiles are domain- or application- specific data models that constrain the core information model, and can extend it to support custom schema for a particular use case.  The VA-Spec provides a Profiling Methodology to guide adopters in this process (which is not unlike the FHIR Profiling paradigm widely used in the clinical data domain).  A developing draft of this methodology can be found here.  Work is ongoing to refine and formalize this with template and tooling support.
 
 
 
-is used to extend this generic core model with of domain-specific content, to derive custom schema for representing specific types of Statemetns and supporting evidence and provenance.
+is used to extend this generic core model with of domain-specific content, to derive custom schema for representing specific types of Statements and supporting evidence and provenance.
 It defines
-Figure XXX illulstrates coneptually how such 'Profiles' can be  dervied for representing variant knowledge, including a Variant Pathogenicity Statements, Molecular Consequence Statements, and Therapeutic REsponse Statements
+Figure XXX illustrates conceptually how such 'Profiles' can be  derived for representing variant knowledge, including a Variant Pathogenicity Statements, Molecular Consequence Statements, and Therapeutic REsponse Statements
 LEgend:
 
 
@@ -158,13 +158,13 @@ For more information,  see . . . .
 VA-Spec Implementation of the SEPIO Framework
 *********************************************
 
-Implementations extend this generic core model with of domain-specific content, to create custom schema called ‘SEPIO Profiles’
+Implementations extend this generic core model with of domain-specific content, to create custom schema called `SEPIO Profiles`
 
 
 VA-Spec as a SEPIO Implementation
 
 
-The VA Core IM was developed as a subset of of this full SEPIO model, where comprehensive requriemetns analysis acorss driver project and use cases helped identity a sthe classes and attributes used ot seed the inidial VA model.
+The VA Core IM was developed as a subset of of this full SEPIO model, where comprehensive requirements analysis across driver project and use cases helped identity a the classes and attributes used to seed the individual VA model.
 
 
 
@@ -176,7 +176,7 @@ We need to balance the need for flexibility and extensibility, with goal of inte
 To keep pace with community needs and leverage community resources, we should allow for distributed development of models for any type of Annotation (e.g. gene/sequence annotation).
 One way to support this is to ground the specification in a common domain-agnostic foundational model that can be extended to address the specific needs of different VA types, data sources, and use cases.
 
-Diversity of types, levels of complexity, and use cases for evidence and provenance across knowledge domains and application means there is no ‘one-size-fits-all’ solution
+Diversity of types, levels of complexity, and use cases for evidence and provenance across knowledge domains and application means there is no `one-size-fits-all` solution
 A framework that allows custom models built on a common semantic foundation can provide a base level of understanding and interoperability, without restricting expressivity.
 While this approach may not always support out-of-the-box interoperability across all communities of use, it can significantly lower barriers to aggregating, harmonizing, and operating across disparate data.
 
@@ -186,7 +186,7 @@ The ultimate product of the VA-Spec is a set of :ref:`standard models <standard-
 
 
 
-accommodates the diverse type of knwoledge and the diverse requrieemtns regarding tyep and level of detail for E/P
+accommodates the diverse type of knowledge and the diverse requirements regarding type and level of detail for E/P
 
 
 

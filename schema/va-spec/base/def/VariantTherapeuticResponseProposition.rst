@@ -76,7 +76,7 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       -
       - string
       - 1..1
-      - The relationship the Proposition describes between the subject variant and object theapeutic. MUST be one of "predictsSensitivityTo" or "predictsResistanceTo".
+      - The relationship the Proposition describes between the subject variant and object therapeutic. MUST be one of "predictsSensitivityTo" or "predictsResistanceTo".
    *  - objectTherapeutic
       -
       - :ref:`Therapeutic` | :ref:`iriReference`

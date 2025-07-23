@@ -55,7 +55,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
       -
       - :ref:`variant-pathogenicity-proposition`
       - 1..1
-      - A proposition about the pathogenicity of a varaint, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
+      - A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
    *  - strength
       -
       - :ref:`MappableConcept` (nested enum: likely | definitive)
@@ -85,7 +85,7 @@ Variant Pathogenicity Evidence Line (ACMG 2015)
 
 **Computational Definition**
 
-An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
+An Evidence Line that describes how a specific type of information was interpreted as evidence for or against a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
 
 **Information Model**
 

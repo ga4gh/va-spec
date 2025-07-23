@@ -6,13 +6,13 @@ Custom Variant Pathogenicity Statement Example
 **Building Custom Statement Models:**
 
 * Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a Profile to be specifically defined for it.
-* The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pusuing strict alignment with a particular community guidelines.
+* The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
 * Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
 * For example, starting with the core Statement<Statement> class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and the permissive core Statement attributes will not impose community-specific constraints around representation of additional information about the Statement (e.g. strength, provenance, source documents, etc).
 
 **Example Description:**
 
- * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this |simple_test_fixtures_example|, but does not coform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type.
+ * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this |simple_test_fixtures_example|, but does not conform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type.
  * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``classification``.
  * Annotations in the example point out where the implementers preferred codes are used instead of ACMG-based terms.
 
@@ -28,9 +28,9 @@ Custom Variant Pathogenicity Statement Example
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representtion is not shown here.
+    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representation is not shown here.
     predicate: isCausalFor     # the predicate for this Statement profile is fixed at 'isCausalFor'
-    objectCondition:           # 'objectCondition' specialilzes the VA Core 'object' attribute.
+    objectCondition:           # 'objectCondition' specializes the VA Core 'object' attribute.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
@@ -47,11 +47,11 @@ Custom Variant Pathogenicity Statement Example
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
     primaryCoding:
-      code: established        # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminolgoical conventions)
+      code: established        # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminological conventions)
       system: Implementer System 1
   classification:              # holds a MappableConcept reporting the final classification of the subject variant to be 'disease-causing'
     primaryCoding:
-      code: disease-causing    # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminolgoical conventions)
+      code: disease-causing    # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminological conventions)
       system: ACMG Guidelines, 2015
   contributions:               # a list of Contribution objects, each describing how an agent contributed to the Statement
     - type: Contribution

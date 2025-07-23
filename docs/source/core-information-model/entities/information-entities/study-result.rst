@@ -29,7 +29,7 @@ A data example illustrating this structure for a Study Result interpreted as evi
 
 ------------
 
-**IMPLEMETNATION GUIDANCE**
+**IMPLEMENTATION GUIDANCE**
 
 **1. Study Result Utility**
 
