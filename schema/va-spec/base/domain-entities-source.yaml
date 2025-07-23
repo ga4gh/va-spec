@@ -33,17 +33,21 @@ $defs:
     maturity: trial use
     inherits: gks-core:Element
     description: >-
-      A set of conditions (diseases, phenotypes, traits).
-      A set of two or more conditions that co-occur in the same patient/subject, or are manifest
-      individually in a different subset of participants in a research study.
+      A set of conditions (diseases, phenotypes, traits) that occur together or are
+      related, depending on the membership operator, and may manifest together in the
+      same patient or individually in a different subset of participants in a research
+      study.
     properties:
       conditions:
         type: array
         ordered: false
         items:
-          $refCurie: gks.core:MappableConcept
+          oneOf:
+            - $refCurie: gks.core:MappableConcept
+            - $ref: "#/$defs/ConditionSet"
         description: >-
-          A list of conditions (diseases, phenotypes, traits) that are co-occurring.
+          A list of conditions (diseases, phenotypes, traits) that are co-occurring or
+          related, depending on the membership operator.
         minItems: 2
       membershipOperator:
         description: >-

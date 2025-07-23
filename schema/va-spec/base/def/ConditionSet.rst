@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A set of conditions (diseases, phenotypes, traits). A set of two or more conditions that co-occur in the same patient/subject, or are manifest individually in a different subset of participants in a research study.
+A set of conditions (diseases, phenotypes, traits) that occur together or are related, depending on the membership operator, and may manifest together in the same patient or individually in a different subset of participants in a research study.
 
 **Information Model**
 
@@ -39,9 +39,9 @@ Some ConditionSet attributes are inherited from :ref:`gks-core:Element`.
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`ConditionSet`
       - 2..m
-      - A list of conditions (diseases, phenotypes, traits) that are co-occurring.
+      - A list of conditions (diseases, phenotypes, traits) that are co-occurring or related, depending on the membership operator.
    *  - membershipOperator
       -
       - string
