@@ -50,7 +50,7 @@
       },
       "contributions": {
          "type": "array",
-         "ordered": false,
+         "ordered": true,
          "items": {
             "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/Contribution"
          },
