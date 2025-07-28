@@ -56,7 +56,7 @@ As seen in the Statement diagram above, Evidence Lines may be linked to a Statem
 
 In this structure:
 
-* An **Evidence Line** roots a central axis where it is linked zero or more **Evidence Items** that were used to build the arguemnt it represents (here, a single **Study Result**).
+* An **Evidence Line** roots a central axis where it is linked zero or more **Evidence Items** that were used to build the argument it represents (here, a single **Study Result**).
 * The **Proposition** contained in the **Evidence Line** object encapsulates a structured representation of the *possible fact* toward which evidence is interpreted and scored - here, the possible fact that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide *moderate support*).
 
    * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the Statement diagram above) - but otherwise should be provided.

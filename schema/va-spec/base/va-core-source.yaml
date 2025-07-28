@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0/base/va-spec-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/va-spec-source.yaml"
 title: VA Specification Core classes
 strict: true
 
@@ -45,7 +45,7 @@ $defs:
           a *type* of method applied (e.g. 'Transmission Electron Microscopy').
       contributions:
         type: array
-        ordered: false
+        ordered: true
         items:
           $ref: "#/$defs/Contribution"
         description: >-
@@ -946,7 +946,7 @@ $defs:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
-          and object theapeutic. MUST be one of "predictsSensitivityTo" or
+          and object therapeutic. MUST be one of "predictsSensitivityTo" or
           "predictsResistanceTo".
         enum:
         - predictsSensitivityTo

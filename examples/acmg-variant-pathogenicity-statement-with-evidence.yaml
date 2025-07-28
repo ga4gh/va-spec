@@ -103,7 +103,7 @@
     specifiedBy:              # holds a Method object describing guidelines followed in generating the evidence assessment in this Evidence Line
       type: Method
       methodType: PM2
-      name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
+      name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines PM2 Criterion
       reportedIn:             # a document that describes the Method (this is all we are given about this Method in the source data)
         type: Document
         urls:
@@ -204,7 +204,7 @@
     specifiedBy:          # holds a Method object describing guidelines followed in assessing the evidence provided by the Functional Impact Statement for the root Pathogenicity Statement
       type: Method
       methodType: PS3
-      name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
+      name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines PS3 Criterion
       reportedIn:
         type: Document
         urls:

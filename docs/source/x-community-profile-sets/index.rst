@@ -3,9 +3,9 @@
 Community Profile Sets
 !!!!!!!!!!!!!!!!!!!!!!
 
-Many **VA Standard Profiles** are aligned with the terminologies and curation conventions defined in estalished community guidelines for generating variant knowledge.
+Many **VA Standard Profiles** are aligned with the terminologies and curation conventions defined in established community guidelines for generating variant knowledge.
 
-**VA Community Profile Sets** are collections of VA Standard Profiles that all align with a particular guidleine, and can be used together by implementers who wish to follow the terminological and curation conventions of a community in how they represent their data.
+**VA Community Profile Sets** are collections of VA Standard Profiles that all align with a particular guideline, and can be used together by implementers who wish to follow the terminological and curation conventions of a community in how they represent their data.
 
 For example, profiles in the **ACMG-2015 Community Profile Set** define enumerations based on ACMG criterion codes (``PS3``, ``BS3``), criterion assessment outcomes (``met``, ``not met``), evidence strengths (``strong``, ``supporting``, ``moderate``), and classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``), in constraining the values of specific attributes to align with this guideline.
 

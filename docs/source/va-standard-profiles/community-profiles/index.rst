@@ -3,7 +3,7 @@
 Community Profiles
 !!!!!!!!!!!!!!!!!!
 
-Version 1 of the VA-Spec includes **Statement** and **Evidence Line** Community Profiles aligned with three established varaint interpretation guidelines:
+Version 1 of the VA-Spec includes **Statement** and **Evidence Line** Community Profiles aligned with three established variant interpretation guidelines:
 
  - the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_
  - the `ClinGen/CGC/VICC (CCV) 2022 Oncogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/35101336/>`_

@@ -20,7 +20,7 @@ In VA-Spec, the :ref:`Evidence Line <EvidenceLine>` class and its :ref:`profiles
 
 In this structure:
 
-* An **Evidence Line** roots a central axis where it is linked zero or more pieces of information (e.g. **Study Results**) that were used to build the arguemnt it represents.
+* An **Evidence Line** roots a central axis where it is linked zero or more pieces of information (e.g. **Study Results**) that were used to build the argument it represents.
 * The **Proposition** contained in the Evidence Line object encapsulates a structured representation of the possible fact toward which evidence is interpreted and scored (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide moderate support).
 
   * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the previous Statement diagram) - but otherwise should be provided.
@@ -36,7 +36,7 @@ A data example illustrating this structure for Evidence Lines supporting a Varia
 
 The SEPIO-VA model can represent the fact that a piece of information (e.g. a Data Set, Study Result, or prior Statement) was used as **evidence** for or against a new Statement in one of two ways, depending on how much detail is provided/desired:
 
-* If the source data includes details about how the information was interpreted and applied as evidence (e.g. the direction and strength it provides for or against the target Statement, and provenance infroamtion about how this was assessed) - an ``EvidenceLine`` object is created to capture this detail (see below for more).
+* If the source data includes details about how the information was interpreted and applied as evidence (e.g. the direction and strength it provides for or against the target Statement, and provenance information about how this was assessed) - an ``EvidenceLine`` object is created to capture this detail (see below for more).
 * For simpler data that merely reports that some piece of information was used as evidence supporting a Statement,  a ``hasEvidence`` relation can be used to link the Statement directly to objects representing the information used as evidence (without the need to create an intervening ``EvidenceLine``).
 
 **2. Meaning and Utility of Evidence Lines**

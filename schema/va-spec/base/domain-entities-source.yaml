@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0/base/domain-entities-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/domain-entities-source.yaml"
 title: VA Spec Shared Domain Entity Data Structures
 strict: true
 
@@ -33,17 +33,21 @@ $defs:
     maturity: trial use
     inherits: gks-core:Element
     description: >-
-      A set of conditions (diseases, phenotypes, traits).
-      A set of two or more conditions that co-occur in the same patient/subject, or are manifest
-      individually in a different subset of participants in a research study.
+      A set of conditions (diseases, phenotypes, traits) that occur together or are
+      related, depending on the membership operator, and may manifest together in the
+      same patient or individually in a different subset of participants in a research
+      study.
     properties:
       conditions:
         type: array
         ordered: false
         items:
-          $refCurie: gks.core:MappableConcept
+          oneOf:
+            - $refCurie: gks.core:MappableConcept
+            - $ref: "#/$defs/ConditionSet"
         description: >-
-          A list of conditions (diseases, phenotypes, traits) that are co-occurring.
+          A list of conditions (diseases, phenotypes, traits) that are co-occurring or
+          related, depending on the membership operator.
         minItems: 2
       membershipOperator:
         description: >-
@@ -56,7 +60,7 @@ $defs:
            - OR
         $comment: >-
           The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
-          that manfiest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate
+          that manifest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate
           statistical analysis across all members of this mixed cohort – because the study does not provide the statistical power to
           make a conclusion about each condition individually.  In such cases, it would be misleading to create separate statements
           about each condition on its own.

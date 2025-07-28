@@ -57,9 +57,9 @@ Variant Therapeutic Response Proposition
  - |therapeutic_response_proposition_source_yaml|
  - |therapeutic_response_proposition_json_schema|
 
-**Therapeitic Response Proposition Semantics**
+**Therapeutic Response Proposition Semantics**
  - The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"EGFR L858R predicts sensitivity to Afatinib"*.
- - Here, a required ``conditionQualifierualifier`` captures the disease context in which the reported association holds (e.g. **Lung Adenocarcinoma**).
+ - Here, a required ``conditionQualifier`` captures the disease context in which the reported association holds (e.g. **Lung Adenocarcinoma**).
  - Other optional qualifiers are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant.
  - These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 

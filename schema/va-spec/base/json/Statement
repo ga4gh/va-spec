@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.0/base/json/Statement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/Statement",
    "title": "Statement",
    "type": "object",
    "maturity": "trial use",
@@ -40,7 +40,7 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Method"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -51,9 +51,9 @@
       },
       "contributions": {
          "type": "array",
-         "ordered": false,
+         "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.",
          "$comment": "This attribute holds one or more Contribution objects, which provide structured descriptions of a contribution made to the Information Entity by a particular agent."
@@ -64,7 +64,7 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Document"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -85,22 +85,22 @@
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition\u2019s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of the Proposition\u2019s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/ExperimentalVariantFunctionalImpactProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/VariantDiagnosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/VariantOncogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantOncogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/VariantPrognosticProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/VariantTherapeuticResponseProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
             }
          ]
       },
@@ -136,7 +136,7 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.0/base/json/EvidenceLine"
+                  "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
                },
                {
                   "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"

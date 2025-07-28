@@ -69,8 +69,8 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 
 **Artifacts**
 
- - |therapeutic_reponse_study_statement_source_yaml|
- - |therapeutic_reponse_study_statement_json_schema|
+ - |therapeutic_response_study_statement_source_yaml|
+ - |therapeutic_response_study_statement_json_schema|
 
 -----
 

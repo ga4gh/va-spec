@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.0/acmg-2015/profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.1/acmg-2015/profile-source.yaml"
 title: ACMG 2015 Variant Pathogenicity Profiles
 description: >-
   Profiles defined to align with terminology and conventions from the American College of Medical Genetics
@@ -17,10 +17,10 @@ $defs:
     description: >-
       A Statement describing the role of a variant in causing an inherited condition.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
           description: >-
             A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
             A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
@@ -88,19 +88,19 @@ $defs:
   VariantPathogenicityEvidenceLine:
     maturity: draft
     description: >-
-      An Evidence Line that describes how a specific type of information was interpreted as evidence for or againtst
+      An Evidence Line that describes how a specific type of information was interpreted as evidence for or against
       a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion
       (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
             A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
             determine the strength and direction of support this evidence provides for or against the
             proposition's validity.
-          $ref: "/ga4gh/schema/va-spec/1.0.0/base/json/VariantPathogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
         directionOfEvidenceProvided:
           type: string
           enum: [ "supports", "neutral", "disputes" ]

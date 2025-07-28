@@ -34,6 +34,9 @@ tests:
   - test_file: conditionset.yaml
     namespace: va-spec.base
     definition: ConditionSet
+  - test_file: conditionset-complex.yaml
+    namespace: va-spec.base
+    definition: ConditionSet
   - test_file: therapy-group.yaml
     namespace: va-spec.base
     definition: TherapyGroup
