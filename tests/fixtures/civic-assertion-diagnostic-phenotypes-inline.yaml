@@ -417,31 +417,33 @@ proposition:
               system: https://disease-ontology.org/?id=
             relation: exactMatch
         name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-      - conceptType: Phenotype
-        id: civic.phenotype:8121
-        mappings:
-          - coding:
-              code: HP:0011463
-              system: https://hpo.jax.org/browse/term/
-            relation: exactMatch
-        name: Childhood onset
-      - conceptType: Phenotype
-        id: civic.phenotype:2656
-        mappings:
-          - coding:
-              code: HP:0003621
-              id: HP:0003621
-              system: https://hpo.jax.org/browse/term/
-            relation: exactMatch
-        name: Juvenile onset
-      - conceptType: Phenotype
-        id: civic.phenotype:2643
-        mappings:
-          - coding:
-              code: HP:0003581
-              system: https://hpo.jax.org/browse/term/
-            relation: exactMatch
-        name: Adult onset
+      - conditions:
+          - conceptType: Phenotype
+            id: civic.phenotype:8121
+            mappings:
+              - coding:
+                  code: HP:0011463
+                  system: https://hpo.jax.org/browse/term/
+                relation: exactMatch
+            name: Childhood onset
+          - conceptType: Phenotype
+            id: civic.phenotype:2656
+            mappings:
+              - coding:
+                  code: HP:0003621
+                  id: HP:0003621
+                  system: https://hpo.jax.org/browse/term/
+                relation: exactMatch
+            name: Juvenile onset
+          - conceptType: Phenotype
+            id: civic.phenotype:2643
+            mappings:
+              - coding:
+                  code: HP:0003581
+                  system: https://hpo.jax.org/browse/term/
+                relation: exactMatch
+            name: Adult onset
+        membershipOperator: OR
   predicate: isDiagnosticInclusionCriterionFor
   subjectVariant:
     extensions:
