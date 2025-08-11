@@ -1,0 +1,27 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/MolecularConsequence",
+   "title": "MolecularConsequence",
+   "maturity": "draft",
+   "type": "object",
+   "description": "The molecular consequence of the variant on a transcript and/or protein molecule.",
+   "properties": {
+      "terms": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+               }
+            ]
+         },
+         "description": "One or more terms representing the specific types of consequence the variant has on transcript and/or protein molecules or regions. These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant)."
+      }
+   },
+   "required": [],
+   "additionalProperties": false
+}

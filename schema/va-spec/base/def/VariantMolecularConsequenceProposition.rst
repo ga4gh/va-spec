@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Proposition describing a type of consequence of a variant  on downstream molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition class.
+A Proposition describing a type of consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition class.
 
 **Information Model**
 
@@ -77,16 +77,16 @@ Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`
       - string
       - 1..1
       - The relationship the Proposition describes between the subject variant and object consequence terms for which the molecular consequence applies. MUST be "hasMolecularConsequence".
-   *  - objectTerms
+   *  - objectConsequence
+      -
+      - :ref:`MolecularConsequence` | :ref:`iriReference`
+      - 1..1
+      - The molecular consequence of the subject variant.
+   *  - molecularVariationContextQualifiers
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..m
-      - One or more terms representing the specific types of consequence the variant has on downstream molecules or regions. These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant).
-   *  - molecularVariationContextQualifiers
-      -
       - :ref:`Allele` | :ref:`Adjacency` | :ref:`iriReference`
-      - 1..1
-      - Sequence changes on downstream transcript, mRNA, or protein molecules. The relationship between the subject variant and object terms only holds in the context of molecules represented in this array.
+      - 0..m
+      - Sequence changes on transcript, mRNA, or protein molecules. The relationship between the subject variant and object terms only holds in the context of variations on molecules represented in this array.

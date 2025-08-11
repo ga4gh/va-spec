@@ -1,0 +1,31 @@
+// From: https://rest.ensembl.org/vep/human/hgvs/NC_000024.10:g.56673840G%3EC?content-type=application/json&hgvs=true
+{
+    "id": "NC_000024.10:g.56673840G\u003EC",
+    "intergenic_consequences": [
+        {
+            "impact": "MODIFIER",
+            "consequence_terms": [
+                "intergenic_variant"
+            ],
+            "variant_allele": "C"
+        }
+    ],
+    "end": 56673840,
+    "most_severe_consequence": "intergenic_variant",
+    "colocated_variants": [
+        {
+            "seq_region_name": "Y",
+            "id": "rs144601450",
+            "end": 56673840,
+            "strand": 1,
+            "allele_string": "G/C",
+            "start": 56673840
+        }
+    ],
+    "assembly_name": "GRCh38",
+    "input": "NC_000024.10:g.56673840G\u003EC",
+    "start": 56673840,
+    "allele_string": "G/C",
+    "seq_region_name": "Y",
+    "strand": 1
+}
