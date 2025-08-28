@@ -1,0 +1,32 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoPredictedImpact",
+   "title": "InSilicoPredictedImpact",
+   "maturity": "draft",
+   "type": "object",
+   "description": "The predicted impact of a variant on a transcript and/or protein molecule with respect to a given variant effect predictor.",
+   "properties": {
+        "score": {
+            "type": "number",
+            "description": "The numeric score for this predicted impact"
+        },
+        "categoricalImpact":{
+            "oneOf": [
+                {
+                    "$refCurie": "gks.core:iriReference"
+                },
+                {
+                    "$ref": "#/$defs/MappableConcept"
+                }
+            ],
+            "description": "The categorical impact of this prediction (e.g., tolerated or pathogenic)"
+        },
+        "ancillaryResults": {
+            "type": "object",
+            "description": "An object in which implementers can define custom fields to capture any additional scores or information output by the variant effect predictor. E.g., for an impact from CADD, this might be the PHRED-normalized score.",
+            "additionalProperties": true
+        }
+    },
+   "required": [],
+   "additionalProperties": false
+}

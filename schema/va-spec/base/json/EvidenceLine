@@ -103,6 +103,9 @@
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantEffectPredictionProposition"
             }
          ]
       },

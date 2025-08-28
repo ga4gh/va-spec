@@ -239,6 +239,7 @@ $defs:
       A :ref:`Proposition` that has a variant as the subject.
     oneOf:
       - $ref: "#/$defs/ExperimentalVariantFunctionalImpactProposition"
+      - $ref: "#/$defs/InSilicoVariantEffectPredictionProposition"
       - $ref: "#/$defs/VariantPathogenicityProposition"
       - $ref: "#/$defs/VariantDiagnosticProposition"
       - $ref: "#/$defs/VariantPrognosticProposition"
@@ -1135,3 +1136,78 @@ $defs:
         extends: sourceDataSet
         description: >-
           The full data set that provided the reported the functional impact score.
+
+  InSilicoVariantEffectPredictionProposition:
+    inherits: ClinicalVariantProposition
+    maturity: draft
+    type: object
+    description: >-
+      A Proposition describing the predicted impact of a variant based on an variant effect predictor. 
+    properties:
+      type:
+        extends: type
+        const: "InSilicoToolPredictedImpactProposition"
+        default: "InSilicoToolPredictedImpactProposition"
+        description: MUST be "InSilicoToolPredictedImpactProposition".
+      predicate:
+        extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object impact.
+        default: hasPredictedImpact
+      objectImpact:
+        extends: object
+        oneOf:
+          - $ref: "#/$defs/InSilicoPredictedImpact"
+          - $refCurie: gks.core:iriReference
+        description: >-
+          The predicted impact of the subject variant with respect to a certain variant effect predictor
+      molecularVariationContextQualifiers:
+        type: array
+        description: >-
+          Sequence changes on transcript, mRNA, or protein molecules. The relationship between the
+          subject variant and object terms only holds in the context of variations on molecules
+          represented in this array.
+        ordered: false
+        items:
+          oneOf:
+            - $refCurie: vrs:Allele
+            - $refCurie: vrs:Adjacency
+            - $refCurie: gks.core:iriReference
+      effectPredictorContextQualifier:
+        description: >-
+          The variant effect predictor that was used to evaluate this proposition. The relationship between the
+          subject variant and object impact only makes sense in the context of the effect predictor that
+          produced the impact.
+        anyOf:
+          - $refCurie: gks.core:iriReference
+          - $ref: "#/$defs/MappableConcept"
+    required:
+      - predicate
+      - objectImpact
+      - molecularVariationContextQualifiers
+      - effectPredictorContextQualifier
+
+InSilicoPredictedImpact:
+    maturity: draft
+    type: object
+    description: >-
+      The predicted impact of a variant on a transcript and/or protein molecule with respect to a given variant effect predictor
+    properties:
+      score:
+        type: number
+        description: >-
+          The numeric score for this predicted impact
+      categoricalImpact:
+        anyOf:
+          - $refCurie: gks.core:iriReference
+          - $ref: "#/$defs/MappableConcept"
+        description: >-
+          The categorical impact of this prediction (e.g., tolerated or pathogenic)
+      ancillaryResults:
+        type: object
+        description: >-
+          An object in which implementers can define custom fields to capture any additional scores or information 
+          output by the variant effect predictor. E.g., for an impact from CADD, this might be the PHRED-normalized
+          score.
+        additionalProperties: true
