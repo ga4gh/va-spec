@@ -1037,7 +1037,7 @@ $defs:
             - $refCurie: gks.core:iriReference
     required:
       - predicate
-      - objectSequence
+      - objectMolecule
       - consequenceTypeQualifiers
 
   CohortAlleleFrequencyStudyResult:
