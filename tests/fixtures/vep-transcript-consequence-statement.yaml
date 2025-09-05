@@ -7,6 +7,7 @@ proposition:
     objectMolecule:
       id: ENST00000366667.6
       type: SequenceReference
+	  moleculeType: mRNA
       refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk    
       residueAlphabet: na
     consequenceTypeQualifiers:
@@ -22,6 +23,7 @@ ancillaryInfo:
       type: SequenceLocation
       end: 870
       start: 869
+      sequenceReference: ENST00000366667.6  	  
     state:
       type: LiteralSequenceExpression
       sequence: T
@@ -29,27 +31,28 @@ ancillaryInfo:
       - syntax: hgvs.c
         value: ENST00000366667.6:c.803C>T
   proteinVariant:
-	  type: Allele
-	  location:
+    type: Allele
+    location:
   	  type: SequenceLocation
   	  start: 267
   	  end: 268
-	  state:
+      sequenceReference: ENSP00000505981.1
+	state:
   	  type: LiteralSequenceExpression
   	  sequence: V
 	  expressions:
-  	  - syntax: hgvs.p
+  	    - syntax: hgvs.p
     	  value: ENSP00000505981.1:p.Ala268Val
   proteinMolecule:
 	  id: ENSP00000505981.1
 	  type: SequenceReference
 	  refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz
 	  residueAlphabet: aa
- affectedGene:
+  affectedGene:
 	name: AGT
 	primaryCoding:
-    code: HGNC:333
-  	system: hgnc
+      code: HGNC:333
+  	  system: hgnc
 	mappings:
     - coding:
         code: ENSG00000135744
