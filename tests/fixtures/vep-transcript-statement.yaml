@@ -5,18 +5,19 @@ proposition:
   subjectVariation: "#/my_subject_variant"
   predicate: hasMolecularConsequenceFor
   objectMolecules:
-	  type: MoleculeSet
-	  molecules:
-	    - id: ENST00000366667.6
-          type: SequenceReference
-	      moleculeType: mRNA
-          refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
-          residueAlphabet: na
-	    - id: ENSP00000505981.1
-          type: SequenceReference
-	      moleculeType: protein
-          refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz   
-          residueAlphabet: aa
+    type: MoleculeSet
+    molecules:
+	  - id: ENST00000366667.6
+        type: SequenceReference
+	    moleculeType: mRNA
+        refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
+        residueAlphabet: na
+	  - id: ENSP00000505981.1
+        type: SequenceReference
+	    moleculeType: protein
+        refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz   
+        residueAlphabet: aa
+    membershipOperator: OR
   consequenceTypeQualifiers:
     - name: missense_variant
       primaryCoding:
