@@ -51,11 +51,11 @@ ancillaryInfo:
 	  expressions:
   	    - syntax: hgvs.p
     	  value: ENSP00000505981.1:p.Ala268Val
- affectedGene:
+  affectedGene:
 	name: AGT
 	primaryCoding:
-    code: HGNC:333
-  	system: hgnc
+      code: HGNC:333
+  	  system: hgnc
 	mappings:
     - coding:
         code: ENSG00000135744
