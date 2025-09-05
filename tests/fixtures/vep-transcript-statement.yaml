@@ -9,7 +9,7 @@ proposition:
 	  molecules:
 	    - id: ENST00000366667.6
           type: SequenceReference
-	      moleculeType: transcript
+	      moleculeType: mRNA
           refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
           residueAlphabet: na
 	    - id: ENSP00000505981.1
@@ -30,10 +30,7 @@ ancillaryInfo:
       type: SequenceLocation
       end: 870
       start: 869
-      sequenceReference:
-        id: ENST00000366667.6
-        refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
-        residueAlphabet: na	  	  
+      sequenceReference: ENST00000366667.6  	  
     state:
       type: LiteralSequenceExpression
       sequence: T
@@ -46,10 +43,7 @@ ancillaryInfo:
   	  type: SequenceLocation
   	  start: 267
   	  end: 268
-      sequenceReference:
-        id: ENSP00000505981.1
-        refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz
-        residueAlphabet: aa	  
+      sequenceReference: ENSP00000505981.1
 	state:
   	  type: LiteralSequenceExpression
   	  sequence: V
