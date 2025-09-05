@@ -520,9 +520,23 @@ $defs:
           Evidence Lines are useful in cases where a data provider wants to describe in detail how information
           was assessed as evidence to generate and score different arguments for or against a Statement's
           Proposition. Evidence Lines can be omitted if such information is not available or needed.
-    required:
-      - proposition
-      - direction
+      
+      ancillaryInfo:
+        type: object
+        maturity: draft
+        description: >-
+          An object in which a data provider can define custom attributes to capture additional information about the 
+          entities represented by the subject, object, or qualifiers of the Proposition asserted or assessed by a Statement.
+          This information can aid in understanding the significance or utility of the primary knowledge a Statement reports. 
+          For example, ancillary info for a Molecular Consequence Statement may include other transcript- or protein-level
+          representations of the variant, transcript or protein molecules on which the consequence applies, genes affected
+          by the variant, or specific domains/motifs the variant overlaps - as such information provides biological context
+          for assessing the significance of the reported consequence. Note that ancillary information does not contribute to
+          the semantics of the Statement being made, nor does it represent evidence or provenance supporting it. It is truly
+          ancillary information that a data provider wishes to include alongside the central knowledge being reported.       
+      required:
+        - proposition
+        - direction
 
   EvidenceLine:
     type: object
@@ -1106,18 +1120,19 @@ $defs:
         description: >-
           The full data set that provided the reported the functional impact score.
 
+# Alternate model that aligns with Matt's original proposal w.r.t. SPOQ pattern (object = affected molecule, and consequence terms as qualifiers)
+# But it does adopt some features of Mrinal's proposal. 
   VariantMolecularConsequenceProposition:
-    inherits: ClinicalVariantProposition
+    inherits: SubjectVariantProposition
     maturity: draft
     type: object
     description: >-
-      A Proposition describing a type of consequence of a variant on transcript and protein
-      molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant',
-      'splice-site variant'), or an impact on the processing of the molecule along the path from
-      gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that
-      annotations about variant impact on gene product function, which may occur downstream of a
-      molecular consequence, are not in scope here. These are covered by a Variant Functional Impact
-      Proposition class.
+      A Proposition describing a type of consequence that a variant is predicted to have on genomic, transcript, 
+      or polypeptide sequence molecule - typically reporting the type of sequence feature affected (e.g. 'intron
+      variant', splice-site variant), or an impact on the processing of the molecule along the path from gene to
+      transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant
+      impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here.
+      These are covered by a Variant Functional Impact Proposition class.
     properties:
       type:
         extends: type
@@ -1135,16 +1150,33 @@ $defs:
         extends: predicate
         description: >-
           The relationship the Proposition describes between the subject variant
-          and object consequence terms for which the molecular consequence applies.
-          MUST be "hasMolecularConsequence".
-        const: hasMolecularConsequence
-        default: hasMolecularConsequence
-      objectConsequence:
+          and object sequence molecule on which it has a molecular consequence.
+          MUST be "hasMolecularConsequenceFor".
+        const: hasMolecularConsequenceFor
+        default: hasMolecularConsequenceFor
+      objectMolecule:
         extends: object
+        description: >-
+          The sequence molecule for which the reported consequence applies. Typically a transcript sequence for
+          variants within a gene region (e.g. ENST00000366667.6), but may be a chromosome sequence for intergenic
+          variants (e.g. NC_000008.11). 
         oneOf:
-          - $ref: "#/$defs/MolecularConsequence"
+          - $refCurie: vrs:SequenceReference
           - $refCurie: gks.core:iriReference
-        description: The molecular consequence of the subject variant.
+          - $ref: MoleculeSet                     # This is analogous to a ConditionSet, or TherapySet, and defined in the domain-entities-source.yaml file
+      consequenceTypeQualifiers:
+        type: array
+        description: >-
+          One or more terms representing the specific types of consequence the variant has on a sequence molecule or
+          region. These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 
+          'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant).
+        ordered: false
+        items:
+          $refCurie: gks.core:MappableConcept
+
+      # Including this as one location where data providers mgiht capture the transcript and/or protien level manifestations of the subject variant
+      # However IMO the objectMolecule is sufficient to report the essential semantics of a molecular consequence annotation, and the 
+      # transcript/protein variants need not be part of the asserted proposition. Rather, they should be captured as 'ancillaryInfo' in the Statement. 
       molecularVariationContextQualifiers:
         type: array
         description: >-
@@ -1156,28 +1188,8 @@ $defs:
           oneOf:
             - $refCurie: vrs:Allele
             - $refCurie: vrs:Adjacency
-            - $refCurie: gks.core:iriReference
+            - $refCurie: gks.core:iriReference          
     required:
       - predicate
-      - objectConsequence
-      - molecularVariationContextQualifiers
-
-  MolecularConsequence:
-    maturity: draft
-    type: object
-    description: >-
-      The molecular consequence of the variant on a transcript and/or protein molecule.
-    properties:
-      terms:
-        type: array
-        ordered: false
-        items:
-          oneOf:
-            - $refCurie: gks.core:MappableConcept
-            - $refCurie: gks.core:iriReference
-        description: >-
-          One or more terms representing the specific types of consequence the variant has on
-          transcript and/or protein molecules or regions. These are typically terms from the
-          'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
-          or 'SO:0001589' (frameshift_variant).
-      
+      - objectMolecule
+      - consequenceTypeQualifiers
