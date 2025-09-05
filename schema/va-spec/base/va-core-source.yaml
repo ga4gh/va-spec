@@ -1107,7 +1107,7 @@ $defs:
           The full data set that provided the reported the functional impact score.
 
   VariantMolecularConsequenceProposition:
-    inherits: ClinicalVariantProposition
+    inherits: ClinicalVariantProposition           # NOTE that MC annotatiosn are not CLinical in nature.  I suspect they inherit here only because that abstract class includes a geneContextQualifier which is relevant to MC PRopositions?
     maturity: draft
     type: object
     description: >-
@@ -1142,25 +1142,45 @@ $defs:
       objectConsequence:
         extends: object
         oneOf:
-          - $ref: "#/$defs/MolecularConsequence"
+          - $ref: "#/$defs/ConceptSet"                # Alt, make this a simple MappableConcept and require separate Propositions for each MC term annotation, as we originally envisioned. 
+          - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
-        description: The molecular consequence of the subject variant.
+        description: The molecular consequence(s) of the subject variant.
+      molecularContextQualifiers:
+        type: array
+        description: >-
+          The sequence molecule for which the reported consequence applies. Typically a transcript
+          sequence for variants within a gene region (e.g. ENST00000366667.6), or a protein sequence
+          for variants affecting a protein gene product. May be a chromosome sequence for intergenic
+          variants (e.g. NC_000008.11). 
+        ordered: false
+        items:
+          oneOf:
+            - $refCurie: vrs:SequenceReference
+            - $refCurie: gks.core:iriReference
+      
+      # Including this as one location where data providers mgiht capture the transcript and/or protien level manifestations of the subject variant
+      # However IMO the molecularContextQualifiers is sufficient to report the essential semantics of a molecular consequence annotation, and the 
+      # transcript/protein variants need not be part of the asserted proposition. Rather, they should be captured as 'ancillaryInfo' in the Statement. 
       molecularVariationContextQualifiers:
         type: array
         description: >-
           Sequence changes on transcript, mRNA, or protein molecules. The relationship between the
           subject variant and object terms only holds in the context of variations on molecules
           represented in this array.
-        ordered: false
         items:
           oneOf:
             - $refCurie: vrs:Allele
             - $refCurie: vrs:Adjacency
-            - $refCurie: gks.core:iriReference
+            - $refCurie: gks.core:iriReference          
+    required:
+      - predicate
+      - objectMolecule
+      - consequenceTypeQualifiers        
     required:
       - predicate
       - objectConsequence
-      - molecularVariationContextQualifiers
+      - molecularContextQualifiers
 
   MolecularConsequence:
     maturity: draft
@@ -1181,3 +1201,36 @@ $defs:
           'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
           or 'SO:0001589' (frameshift_variant).
       
+ # A ConceptSet class provides a general data structure for bundling more than one Mappable Concept and describing the logical relationship between them.
+ # This would be a parent class for other 'Set' classes (e.g. ConditionSet, TherapySet') - and live with these classes in the domain-entities-source.yaml file. 
+ # When used as the object of a MC Proposition, it would hold terms representing the specific types
+ # of consequence the variant has on transcript and/or protein molecules or regions. 
+  ConceptSet:
+    type: object
+    maturity: trial use
+    inherits: gks-core:Element
+    description: >-
+      A set of MappableConcepts.
+    properties:
+      members:
+        type: array
+        ordered: false
+        items:
+          oneOf:
+            - $refCurie: vrs:MappableConcept
+            - $refCurie: gks.core:iriReference
+        description: >-
+          A list of concepts that belong to the set.
+        minItems: 2
+      membershipOperator:
+        description: >-
+          The logical relationship between members of the set, that indicates how they manifest in the context in which they are represented.
+          The value 'AND' indicates that all members in the set co-occur in the context in which they are represented.
+          The value 'OR' indicates that the members ae substitues that can be considered individually in the context in which theya re represented.
+        type: string
+        enum:
+           - AND
+           - OR
+    required:
+      - members
+      - membershipOperator
