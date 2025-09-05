@@ -1,0 +1,67 @@
+id: vep:ENST00000366667:c.803C>T
+type: Statement
+proposition:
+  type: MolecularConsequenceProposition
+  subjectVariation: "#/my_subject_variant"
+  predicate: hasMolecularConsequenceFor
+  objectMolecules:
+	  type: MoleculeSet
+	  molecules:
+	    - id: ENST00000366667.6
+        type: SequenceReference
+        refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
+        residueAlphabet: na
+	    - id: ENSP00000505981.1
+        type: SequenceReference
+	      moleculeType: protein
+        refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz   
+        residueAlphabet: aa
+  consequenceTypeQualifiers:
+    - name: missense_variant
+      primaryCoding:
+        code: SO:0001583
+        system: sequenceontology
+direction: supports
+ancillaryInfo:    	
+  transcriptVariant:
+    type: Allele
+    location:
+      type: SequenceLocation
+      end: 870
+      start: 869
+      sequenceReference:
+        id: ENST00000366667.6
+        refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
+        residueAlphabet: na	  	  
+    state:
+      type: LiteralSequenceExpression
+      sequence: T
+    expressions:
+      - syntax: hgvs.c
+        value: ENST00000366667.6:c.803C>T
+  proteinVariant:
+    type: Allele
+    location:
+  	  type: SequenceLocation
+  	  start: 267
+  	  end: 268
+      sequenceReference:
+        id: ENSP00000505981.1
+        refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz
+        residueAlphabet: aa	  
+	state:
+  	  type: LiteralSequenceExpression
+  	  sequence: V
+	  expressions:
+  	    - syntax: hgvs.p
+    	  value: ENSP00000505981.1:p.Ala268Val
+ affectedGene:
+	name: AGT
+	primaryCoding:
+    code: HGNC:333
+  	system: hgnc
+	mappings:
+    - coding:
+        code: ENSG00000135744
+        system: Ensembl-Gene
+      relation: exactMatch
