@@ -6,8 +6,8 @@ proposition:     # Proposition semantics here read  "my_subject_variant has mole
   predicate: hasMolecularConsequence
   objectConsequence:         # If >1 consequence termas where, we use a ConceptSet rather than a single MappableConcept as the value here. This is a more generalizable approach than the MolecularConsequence class proposed in PR #336. 
     type: ConceptSet
-	  conceptType: MolecularConsequence
-	  members:
+	conceptType: MolecularConsequence
+	members:
       - name: missense_variant
         primaryCoding:
           code: "SO:0001583"
@@ -20,12 +20,12 @@ proposition:     # Proposition semantics here read  "my_subject_variant has mole
   moleculeContextQualifiers:
     - id: ENST00000366667.6
       type: SequenceReference
-	    moleculeType: mRNA
+	  moleculeType: mRNA
       refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
       residueAlphabet: na
 	- id: ENSP00000505981.1
       type: SequenceReference
-	    moleculeType: protein
+	  moleculeType: protein
       refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz   
       residueAlphabet: aa
 direction: supports
@@ -50,17 +50,17 @@ ancillaryInfo:
   	  start: 267
   	  end: 268
       sequenceReference: ENSP00000505981.1 
-	  state:
+	state:
   	  type: LiteralSequenceExpression
   	  sequence: V
-	  expressions:
+	expressions:
   	  - syntax: hgvs.p
-       value: ENSP00000505981.1:p.Ala268Val
- affectedGene:                   # we could instead capture this as a geneContextQualifier above, if we want it to be part of the semantics of the proposition. But IMO it is ancillary info to the core MC statement. 
-	name: AGT
+        value: ENSP00000505981.1:p.Ala268Val
+  affectedGene:                   # we could instead capture this as a geneContextQualifier above, if we want it to be part of the semantics of the proposition. But IMO it is ancillary info to the core MC statement. 
+    name: AGT
 	primaryCoding:
-    code: HGNC:333
-  	system: hgnc
+      code: HGNC:333
+  	  system: hgnc
 	mappings:
     - coding:
         code: ENSG00000135744
