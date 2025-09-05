@@ -122,7 +122,7 @@ $defs:
       - therapies
       - membershipOperator
 
- # MoleculeSet data structure to provide support for substitute molecules in a molecular consequence proposition
+ # MoleculeSet data structure to provide support for substitute molecules that can be the 'object' of a MolecularConsequenceProposition
   MoleculeSet:
     type: object
     maturity: trial use
@@ -130,7 +130,7 @@ $defs:
     description: >-
       A set of molecules (transcripts, proteins).
     properties:
-      members:
+      molecules:
         type: array
         ordered: false
         items:
@@ -138,13 +138,13 @@ $defs:
             - $refCurie: vrs:SequenceReference
             - $refCurie: gks.core:iriReference
         description: >-
-          A list of molecules (transcripts, proteins).
+          A list of molecules that belong to the set (e.g. transcripts, proteins).
         minItems: 2
       membershipOperator:
         description: >-
           The logical relationship between members of the set, that indicates how they manifest in the context in which they are represented.
           The value 'AND' indicates that all molecules in the set co-occur in the context in which they are represented.
-          The value 'OR' indicates that the members ae substitues that can be considered individually in the context in which theya re represented.
+          The value 'OR' indicates that the molecules ae substitues that can be considered individually in the context in which theya re represented.
         type: string
         enum:
            - AND
@@ -152,4 +152,3 @@ $defs:
     required:
       - molecules
       - membershipOperator
-
