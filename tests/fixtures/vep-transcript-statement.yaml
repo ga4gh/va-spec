@@ -1,4 +1,4 @@
-id: vep:ENST00000366667:c.803C>T
+id: vep:ENST00000366667:c.803C>T-MC
 type: Statement
 proposition:
   type: MolecularConsequenceProposition
@@ -8,14 +8,15 @@ proposition:
 	  type: MoleculeSet
 	  molecules:
 	    - id: ENST00000366667.6
-        type: SequenceReference
-        refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
-        residueAlphabet: na
+          type: SequenceReference
+	      moleculeType: transcript
+          refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk   
+          residueAlphabet: na
 	    - id: ENSP00000505981.1
-        type: SequenceReference
+          type: SequenceReference
 	      moleculeType: protein
-        refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz   
-        residueAlphabet: aa
+          refgetAccession: SQ.MWE2Njg3OGEzMzc3NTFjZjU5MzI5ZDgz   
+          residueAlphabet: aa
   consequenceTypeQualifiers:
     - name: missense_variant
       primaryCoding:
