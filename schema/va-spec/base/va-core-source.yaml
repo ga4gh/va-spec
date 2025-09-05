@@ -1120,8 +1120,8 @@ $defs:
         description: >-
           The full data set that provided the reported the functional impact score.
 
-# Alternate model that aligns with Matt's original proposal w.r.t. SPOQ pattern (object = affected molecule, and consequence terms as qualifiers)
-# But it does adopt some features of Mrinal's proposal. 
+# Alternate model that aligns with Matt's original proposal in PR #336 w.r.t. SPOQ pattern (object = affected molecule, and consequence terms as qualifiers)
+# But it does adopt some features of Mrinal's proposal in PR #346. 
   VariantMolecularConsequenceProposition:
     inherits: SubjectVariantProposition
     maturity: draft
