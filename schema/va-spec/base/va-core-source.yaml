@@ -530,8 +530,8 @@ $defs:
         representations of the variant, transcript or protein molecules on which the consequence applies, genes affected
         by the variant, or specific domains/motifs the variant overlaps - as such information provides biological context
         for assessing the significance of the reported consequence. Note that ancillary information does not contribute to
-        the semantics of the Statement being made, nor does it represent evidence or provenance supporting it. It is truly
-        ancillary information that a data provider wishes to include alongside the central knowledge being reported.     
+        the semantics of the Statement's Proposition, nor does it represent evidence or provenance supporting it. It is
+        additional information that a data provider wishes to include alongside the central knowledge being reported.     
     required:
       - proposition
       - direction
