@@ -1006,6 +1006,8 @@ $defs:
         extends: subjectVariant
         oneOf:
           - $refCurie: vrs:Allele
+          - $refCurie: vrs:Adjacency
+          - $refCurie: cat-vrs:CategoricalVariant
           - $refCurie: gks.core:iriReference
       predicate:
         extends: predicate
