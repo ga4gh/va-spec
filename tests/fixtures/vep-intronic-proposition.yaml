@@ -2,7 +2,7 @@ type: VariantMolecularConsequenceProposition
 subjectVariant: "#/my_focus_variant"
 predicate: "hasMolecularConsequence"
 objectConsequence:
-  terms:
+  concepts:
     - name: intron_variant
       primaryCoding:
         code: "SO:0001627"
@@ -11,7 +11,9 @@ objectConsequence:
       primaryCoding:
         code: "SO:0001619"
         system: "sequenceontology"
-molecularVariationContextQualifiers: []
+    membershipOperator: "OR"
+        
+transcriptVariationContextQualifier: []
   # Problem: VRS alleles can't be defined on intronic or upstream/downstream regions. Otherwise, we would put:
   # - type: Allele
   #   expressions:
