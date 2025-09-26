@@ -1137,7 +1137,7 @@ $defs:
           The full data set that provided the reported the functional impact score.
 
   VariantMolecularConsequenceProposition:
-    inherits: ClinicalVariantProposition
+    inherits: SubjectVariantProposition
     maturity: draft
     type: object
     description: >-
@@ -1147,7 +1147,7 @@ $defs:
       gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that
       annotations about variant impact on gene product function, which may occur downstream of a
       molecular consequence, are not in scope here. These are covered by a Variant Functional Impact
-      Proposition class.
+      Proposition classes.
     properties:
       type:
         extends: type
@@ -1156,6 +1156,12 @@ $defs:
         description: MUST be "VariantMolecularConsequenceProposition".
       subjectVariant:
         extends: subjectVariant
+        description: >-
+          MUST be a genomic variant specified against genomic reference sequence(s). This practice
+          most directly reflects data conventions from sources like VEP, and aligns with the intended
+          use of Molecular Consequence data. There are separate qualifier attributes in the model to
+          capture transcript and/or protein level representations of the subject, that indicate the
+          variant context in which the reported consequence(s) are actually manifest.        
         oneOf:
           - $refCurie: vrs:Allele
           - $refCurie: vrs:Adjacency
@@ -1172,42 +1178,34 @@ $defs:
       objectConsequence:
         extends: object
         oneOf:
-          - $ref: "#/$defs/MolecularConsequence"
+          - $ref: ConceptOrConceptSet
           - $refCurie: gks.core:iriReference
-        description: The molecular consequence of the subject variant.
-      molecularVariationContextQualifiers:
-        type: array
+        description: >- 
+           The molecular consequence(s) of the subject variant, in the context of the qualifying
+           transcript and/or protein variation context(s). These are typically terms from the
+          'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
+          or 'SO:0001589' (frameshift_variant).
+      transcriptVariationContextQualifier:
         description: >-
-          Sequence changes on transcript, mRNA, or protein molecules. The relationship between the
-          subject variant and object terms only holds in the context of variations on molecules
-          represented in this array.
-        ordered: false
-        items:
-          oneOf:
-            - $refCurie: vrs:Allele
-            - $refCurie: vrs:Adjacency
-            - $refCurie: gks.core:iriReference
+          The subject genomic variant as projected on a particular transcript or mRNA molecule. 
+          The reported relationship between the subject variant and object consequence terms holds
+          specifically in the context of this transcript variation. A transcript variation context
+          MUST be reported, unless the subject is an intergenic variant. 
+        oneOf:
+          - $refCurie: vrs:Allele
+          - $refCurie: vrs:Adjacency
+          - $refCurie: gks.core:iriReference
+      proteinVariationContextQualifier:
+        description: >-
+          The subject genomic variant as projected on a particular protein molecule. The reported
+          relationship between the subject variant and object consequence terms holds specifically
+          in the context of this protein variation. A protein variation context MUST be accompanied
+          by its corresponding transcript variation context.
+        oneOf:
+          - $refCurie: vrs:Allele
+          - $refCurie: vrs:Adjacency
+          - $refCurie: gks.core:iriReference
     required:
       - predicate
       - objectConsequence
-      - molecularVariationContextQualifiers
-
-  MolecularConsequence:
-    maturity: draft
-    type: object
-    description: >-
-      The molecular consequence of the variant on a transcript and/or protein molecule.
-    properties:
-      terms:
-        type: array
-        ordered: false
-        items:
-          oneOf:
-            - $refCurie: gks.core:MappableConcept
-            - $refCurie: gks.core:iriReference
-        description: >-
-          One or more terms representing the specific types of consequence the variant has on
-          transcript and/or protein molecules or regions. These are typically terms from the
-          'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
-          or 'SO:0001589' (frameshift_variant).
       
