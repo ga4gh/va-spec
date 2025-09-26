@@ -10,9 +10,57 @@ namespaces:
   gks.core: /ga4gh/schema/gks-core/1.1.0/json/
 
 $defs:
+  # Generic class that can hold a single or a set of Mappabale Concepts of any kind
+  ConceptOrConceptSet:
+    maturity: draft
+    description: >-
+    oneOf:
+      - $refCurie: gks.core:MappableConcept
+      - $ref: "#/$defs/ConceptSet"
+      A single domain concept, or a set of concept (ConceptSet).
+    $comment: >-
+      Individual concepts are represented using the MappableConcept class, which supports optional mappings and metadata
+      about the code system. Sets of concepts are represented using the ConceptSet class, which is an array of 2 or more 
+      MappableConcept objects.
+      
+  # A ConceptSet data structure to provide support for sets of generic concepts.
+  ConceptSet:
+    type: object
+    maturity: draft
+    inherits: gks-core:Element
+    description: >-
+      A set of concepts that may be considered as dependent (occurring together), or independent (existing separately)
+      in the context of some knowledge reported about them, as indicated by a set membership operator. e.g. a set of independent
+      molecular consequences that both result from the presence of a particular genetic variant (membership operator = OR).
+    properties:
+      concepts:
+        type: array
+        ordered: false
+        items:
+          oneOf:
+            - $refCurie: gks.core:MappableConcept
+            - $ref: "#/$defs/ConceptSet"
+        description: >-
+          A list of concepts that are dependent (occurring together), or independent (existing separately), depending on the
+          membership operator.
+        minItems: 2
+      membershipOperator:
+        description: >-
+          The logical relationship between concepts in the set, in the context of some knowledge reported about them.
+          The value 'AND' indicates that the concepts are dependent and occur together in this context.
+          The value 'OR' indicates that each concept applies independently in this context.
+        type: string
+        enum:
+           - AND
+           - OR
+    required:
+      - concepts
+      - membershipOperator
+
   # Condition data structure for consolidating the different forms of conditions, individual vs co-occurring traits
   Condition:
     maturity: trial use
+    inherits: ConceptOrConceptSet
     description: >-
       A single condition (disease, phenotype, or trait), or a set of conditions (ConditionSet).
     $comment: >-
@@ -30,6 +78,7 @@ $defs:
   # ConditionSet data structure to provide support for co-occurring or substitute conditions.
   ConditionSet:
     type: object
+    inherits: ConceptSet
     maturity: trial use
     inherits: gks-core:Element
     description: >-
@@ -39,6 +88,7 @@ $defs:
       study.
     properties:
       conditions:
+        extends: concepts
         type: array
         ordered: false
         items:
@@ -50,8 +100,9 @@ $defs:
           related, depending on the membership operator.
         minItems: 2
       membershipOperator:
+        extends: membershipOperator
         description: >-
-          The logical relationship between members of the set, that indicates how they manifest in patients/research subjects.
+          The logical relationship between conditions in the set, that indicates how they manifest in patients/research subjects.
           The value 'AND' indicates that all conditions in the set co-occur together in a given patient or subject.
           The value 'OR' indicates that only one condition in the set manifests in each participant interrogated in a given study.
         type: string
@@ -69,8 +120,10 @@ $defs:
     required:
       - conditions
       - membershipOperator
+      
   # Therapeutic
   Therapeutic:
+    inherits: ConceptOrConceptSet
     maturity: trial use
     description: >-
       An individual therapy (drug, procedure, behavioral intervention, etc.), or group of therapies (TherapyGroup).
@@ -84,6 +137,7 @@ $defs:
 
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
   TherapyGroup:
+    extends: ConceptSet
     type: object
     maturity: trial use
     inherits: gks-core:Element
@@ -92,6 +146,7 @@ $defs:
       individually to a different subset of participants in a research study.
     properties:
       therapies:
+        extends: concepts
         type: array
         ordered: false
         items:
@@ -100,8 +155,9 @@ $defs:
           A list of therapies that are applied to treat a condition.
         minItems: 2
       membershipOperator:
+        extends: membershipOperator
         description: >-
-          The logical relationship between members of the group, that indicates how they were applied in treating
+          The logical relationship between therapies in the group, that indicates how they were applied in treating
           participants in a study.  The value 'AND' indicates that all therapies in the group were applied in combination
           to a given patient or subject. The value 'OR' indicates that each therapy was applied individually to a distinct
           subset of participants in the cohort that was interrogated in a given study.
