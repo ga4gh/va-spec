@@ -20,7 +20,7 @@ $defs:
       A single domain concept, or a set of concept (ConceptSet).
     $comment: >-
       Individual concepts are represented using the MappableConcept class, which supports optional mappings and metadata
-      about the code system. Sets of concepts are represented using the ConceptSet class, which is an array of 2 or more 
+      about the code system. Sets of concepts are represented using the ConceptSet class, which is an array of 2 or more
       MappableConcept objects.
       
   # A ConceptSet data structure to provide support for sets of generic concepts.
@@ -47,8 +47,10 @@ $defs:
       membershipOperator:
         description: >-
           The logical relationship between concepts in the set, in the context of some knowledge reported about them.
-          The value 'AND' indicates that the concepts are dependent and occur together in this context.
-          The value 'OR' indicates that each concept applies independently in this context.
+          The value 'AND' indicates that the concepts are dependent and occur together in this context - i.e. the reported assertion
+          is not necessarily true for each concept on its own - only in combination with the other(s).
+          The value 'OR' indicates that each concept applies independently in this context - i.e. the reported assertion is necessarily
+          true for each concept on its own, independent of the presence of the other(s).
         type: string
         enum:
            - AND
