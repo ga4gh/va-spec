@@ -8,7 +8,7 @@ objectConsequence:
       primaryCoding:
         code: "SO:0001583"
         system: "sequenceontology"
-molecularVariationContextQualifiers: 
+transcriptVariationContextQualifier: 
   - type: Allele
     location:
       type: SequenceLocation
@@ -27,6 +27,7 @@ molecularVariationContextQualifiers:
     expressions:
       - syntax: hgvs.c
         value: ENST00000366667.6:c.803C>T
+proteinVariationContextQualifier: 
   - type: Allele
     location:
       type: SequenceLocation
