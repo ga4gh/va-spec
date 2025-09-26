@@ -8,7 +8,8 @@ objectConsequence:
       primaryCoding:
         code: "SO:0001628"
         system: "sequenceontology"
-molecularVariationContextQualifiers: []
+transcriptVariationContextQualifiers: []
+proteinVariationContextQualifiers: []
 extensions:
   - name: impact
     value: MODIFIER
