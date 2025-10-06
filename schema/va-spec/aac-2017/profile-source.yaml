@@ -40,10 +40,10 @@ $defs:
                 - properties:
                       code:
                         enum:
-                          - Level A
-                          - Level B
-                          - Level C
-                          - Level D
+                          - Strong
+                          - Potential
+                          - Likely
+                          - Definitive
                       system:
                         const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
@@ -98,10 +98,10 @@ $defs:
                 - properties:
                     code:
                       enum:
-                        - Level A
-                        - Level B
-                        - Level C
-                        - Level D
+                        - Strong
+                        - Potential
+                        - Likely
+                        - Definitive
                     system:
                       const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
@@ -158,10 +158,10 @@ $defs:
                 - properties:
                       code:
                         enum:
-                          - Level A
-                          - Level B
-                          - Level C
-                          - Level D
+                          - Strong
+                          - Potential
+                          - Likely
+                          - Definitive
                       system:
                         const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
