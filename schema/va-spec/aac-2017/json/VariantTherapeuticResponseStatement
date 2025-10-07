@@ -1,7 +1,7 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/aac-2017/json/VariantTherapeuticResponseStudyStatement",
-   "title": "VariantTherapeuticResponseStudyStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/aac-2017/json/VariantTherapeuticResponseStatement",
+   "title": "VariantTherapeuticResponseStatement",
    "description": "A statement reporting a conclusion from a single study about whether a variant is associated with a therapeutic response (positive or negative) - based on interpretation of the study's results.",
    "maturity": "draft",
    "allOf": [
@@ -11,7 +11,7 @@
       {
          "properties": {
             "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition",
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition",
                "description": "A proposition about the therapeutic response associated with a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             },
             "strength": {
@@ -28,8 +28,8 @@
                                  "enum": [
                                     "Strong",
                                     "Potential",
-                                    "Likely",
-                                    "Definitive"
+                                    "Definitive",
+                                    "Likely"
                                  ]
                               },
                               "system": {
@@ -53,8 +53,8 @@
                            "properties": {
                               "code": {
                                  "enum": [
-                                    "Tier I",
-                                    "Tier II",
+                                    "Tier I (Strong Clinical Significance)",
+                                    "Tier II (Potential Clinical Significance)",
                                     "Tier III",
                                     "Tier IV"
                                  ]

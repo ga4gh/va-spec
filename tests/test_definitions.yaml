@@ -78,7 +78,7 @@ tests:
     definition: MappableConcept
   # - test_file: tr-classification-inline.yaml
   #   namespace: va-spec.aac-2017
-  #   definition: VariantTherapeuticResponseStudyStatement
+  #   definition: VariantTherapeuticResponseStatement
   - test_file: therapeutic-response-inline.yaml
     namespace: va-spec.base
     definition: Statement

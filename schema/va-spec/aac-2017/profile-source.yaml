@@ -12,7 +12,7 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  VariantDiagnosticStudyStatement:
+  VariantDiagnosticStatement:
     maturity: draft
     description: >-
       A statement reporting a conclusion from a single study about whether a variant
@@ -23,7 +23,7 @@ $defs:
     - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
           description: >-
             A proposition about a diagnostic association between a variant and condition, for which the study provides
             evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -42,8 +42,8 @@ $defs:
                         enum:
                           - Strong
                           - Potential
-                          - Likely
                           - Definitive
+                          - Likely
                       system:
                         const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
@@ -57,8 +57,8 @@ $defs:
                 - properties:
                     code:
                       enum:
-                        - Tier I
-                        - Tier II
+                        - Tier I (Strong Clinical Significance)
+                        - Tier II (Potential Clinical Significance)
                         - Tier III
                         - Tier IV
                     system:
@@ -71,7 +71,7 @@ $defs:
         - classification
         - specifiedBy
 
-  VariantPrognosticStudyStatement:
+  VariantPrognosticStatement:
     maturity: draft
     description: >-
       A statement reporting a conclusion from a single study about whether a variant
@@ -81,7 +81,7 @@ $defs:
     - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
           description: >-
             A proposition about a prognostic association between a variant and condition, for which the study provides
             evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -98,10 +98,10 @@ $defs:
                 - properties:
                     code:
                       enum:
-                        - Strong
-                        - Potential
-                        - Likely
-                        - Definitive
+                          - Strong
+                          - Potential
+                          - Definitive
+                          - Likely
                     system:
                       const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
@@ -117,8 +117,8 @@ $defs:
                 - properties:
                     code:
                       enum:
-                        - Tier I
-                        - Tier II
+                        - Tier I (Strong Clinical Significance)
+                        - Tier II (Potential Clinical Significance)
                         - Tier III
                         - Tier IV
                     system:
@@ -131,7 +131,7 @@ $defs:
         - classification
         - specifiedBy
 
-  VariantTherapeuticResponseStudyStatement:
+  VariantTherapeuticResponseStatement:
     maturity: draft
     description: >-
       A statement reporting a conclusion from a single study about whether a variant
@@ -141,7 +141,7 @@ $defs:
     - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
           description: >-
             A proposition about the therapeutic response associated with a variant, for which the study provides
             evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -160,8 +160,8 @@ $defs:
                         enum:
                           - Strong
                           - Potential
-                          - Likely
                           - Definitive
+                          - Likely
                       system:
                         const: AMP/ASCO/CAP (AAC) Guidelines, 2017
         classification:
@@ -175,8 +175,8 @@ $defs:
                 - properties:
                     code:
                       enum:
-                        - Tier I
-                        - Tier II
+                        - Tier I (Strong Clinical Significance)
+                        - Tier II (Potential Clinical Significance)
                         - Tier III
                         - Tier IV
                     system:
