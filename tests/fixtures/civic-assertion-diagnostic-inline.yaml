@@ -1,7 +1,7 @@
 id: civic.aid:9
 classification:
   primaryCoding:
-    code: Tier II
+    code: Tier II (Potential Clinical Significance)
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 contributions:
   - activityType: endorsement.last_reviewed
@@ -259,6 +259,79 @@ hasEvidenceLines:
                 system: https://go.osu.edu/evidence-codes
               relation: exactMatch
         type: Statement
+    targetProposition:
+      alleleOriginQualifier:
+        extensions:
+          - name: civic_variant_origin
+            value: SOMATIC
+        name: somatic
+      geneContextQualifier:
+        conceptType: Gene
+        extensions:
+          - name: aliases
+            value:
+              - ACTRI
+              - ACVR1
+              - ACVR1A
+              - ACVRLK2
+              - ALK2
+              - FOP
+              - SKR1
+              - TSRI
+        id: civic.gid:154
+        mappings:
+          - coding:
+              code: "90"
+              id: ncbigene:90
+              system: https://www.ncbi.nlm.nih.gov/gene/
+            relation: exactMatch
+        name: ACVR1
+      objectCondition:
+        conceptType: Disease
+        id: civic.did:2950
+        mappings:
+          - coding:
+              code: DOID:0080684
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+        name: Diffuse Midline Glioma, H3 K27M-mutant
+      predicate: isDiagnosticInclusionCriterionFor
+      subjectVariant:
+        aliases:
+          - GLY328VAL
+        extensions:
+          - name: CIViC Molecular Profile Score
+            value: 35.0
+          - name: expressions
+            value:
+              - syntax: hgvs.c
+                value: NM_001105.4:c.983G>T
+              - syntax: hgvs.p
+                value: NP_001096.1:p.Gly328Val
+              - syntax: hgvs.g
+                value: NC_000002.11:g.158622516C>A
+              - syntax: hgvs.c
+                value: ENST00000434821.1:c.983G>T
+          - name: CIViC representative coordinate
+            value:
+              chromosome: "2"
+              ensembl_version: 75
+              reference_bases: C
+              reference_build: GRCh37
+              representative_transcript: ENST00000434821.1
+              start: 158622516
+              stop: 158622516
+              type: coordinates
+              variant_bases: A
+        id: civic.mpid:1594
+        mappings:
+          - coding:
+              code: rs387906589
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+        name: ACVR1 G328V
+        type: CategoricalVariant
+      type: VariantDiagnosticProposition
     type: EvidenceLine
 proposition:
   alleleOriginQualifier:
@@ -296,7 +369,7 @@ proposition:
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Diffuse Midline Glioma, H3 K27M-mutant
-  predicate: isDiagnosticInclusionCriterionFor
+  predicate: hasClinicalSignificance
   subjectVariant:
     aliases:
       - GLY328VAL
@@ -332,7 +405,7 @@ proposition:
         relation: relatedMatch
     name: ACVR1 G328V
     type: CategoricalVariant
-  type: VariantDiagnosticProposition
+  type: VariantClinicalSignificanceProposition
 specifiedBy:
   id: civic.method:2019
   name: CIViC Curation SOP (2019)
@@ -354,7 +427,7 @@ specifiedBy:
   methodType: curation
 strength:
   primaryCoding:
-    code: Level C
+    code: Potential
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 type: Statement
 reportedIn:
