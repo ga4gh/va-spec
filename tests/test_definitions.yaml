@@ -79,6 +79,27 @@ tests:
   # - test_file: tr-classification-inline.yaml
   #   namespace: va-spec.aac-2017
   #   definition: VariantTherapeuticResponseStatement
+  - test_file: civic-assertion-combination-therapy-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantTherapeuticResponseStatement
+  - test_file: civic-assertion-diagnostic-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantDiagnosticStatement
+  - test_file: diagnostic-tier-iii-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantDiagnosticStatement
+  - test_file: diagnostic-tier-iv-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantDiagnosticStatement
+  - test_file: civic-assertion-diagnostic-phenotypes-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantDiagnosticStatement
+  - test_file: civic-assertion-prognostic-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantPrognosticStatement
+  - test_file: civic-assertion-therapeutic-response-inline.yaml
+    namespace: va-spec.aac-2017
+    definition: VariantTherapeuticResponseStatement
   - test_file: therapeutic-response-inline.yaml
     namespace: va-spec.base
     definition: Statement

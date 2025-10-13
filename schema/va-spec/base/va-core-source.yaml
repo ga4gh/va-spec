@@ -470,7 +470,9 @@ $defs:
           is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') -
           or they can choose values that don't commit to one or the other if they don't want to make the distinction
           (e.g. 'high' vs 'medium' vs 'low').
-        $refCurie: gks.core:MappableConcept
+        anyOf:
+          - $refCurie: gks.core:MappableConcept
+          - type: "null"
       score:
         type: number
         maturity: draft

@@ -6,7 +6,6 @@ description: >-
   American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for the
   interpretation and reporting of sequence variants in cancer.
 strict: true
-
 imports:
   va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
@@ -20,24 +19,24 @@ $defs:
       disease (diagnostic exclusion criterion) - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
-    - properties:
-        proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
-          description: >-
-            A proposition about a diagnostic association between a variant and condition, for which the study provides
-            evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
-            may be assessed and reported by the Statement.
-        strength:
-          description: >-
-            The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition
-            for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
-            Guidelines.
-          properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - properties:
+      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
+      - properties:
+          proposition:
+            $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
+            description: >-
+              A proposition about a diagnostic association between a variant and condition, for which the study provides
+              evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
+              may be assessed and reported by the Statement.
+          strength:
+            description: >-
+              The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition
+              for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
+              Guidelines.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
                       code:
                         enum:
                           - Strong
@@ -46,30 +45,136 @@ $defs:
                           - Likely
                       system:
                         const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-        classification:
-          description: >-
-            A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
+          classification:
+            description: >-
+              A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
+              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
+                      code:
+                        enum:
+                          - Tier I (Strong Clinical Significance)
+                          - Tier II (Potential Clinical Significance)
+                          - Tier III
+                          - Tier IV
+                      system:
+                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+          specifiedBy:
+            description: >-
+              A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of
+              evidence.
+        required:
+          - classification
+          - specifiedBy
+      - if:
           properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier I (Strong Clinical Significance)
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Strong
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: supports
+          required: [strength, direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier II (Potential Clinical Significance)
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Potential
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: supports
+          required: [strength, direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier III
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: "null"
+            direction:
+              const: neutral
+          required: [direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier IV
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
                     code:
                       enum:
-                        - Tier I (Strong Clinical Significance)
-                        - Tier II (Potential Clinical Significance)
-                        - Tier III
-                        - Tier IV
-                    system:
-                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-        specifiedBy:
-          description: >-
-            A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of
-            evidence.
-      required:
-        - classification
-        - specifiedBy
+                        - Definitive
+                        - Likely
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: disputes
+          required: [strength, direction]
 
   VariantPrognosticStatement:
     maturity: draft
@@ -78,84 +183,24 @@ $defs:
       is associated with a disease prognosis - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
-    - properties:
-        proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
-          description: >-
-            A proposition about a prognostic association between a variant and condition, for which the study provides
-            evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
-            may be assessed and reported by the Statement.
-        strength:
-          description: >-
-            The strength of support that the Statement is determined to provide for or against the Prognostic Proposition
-            for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
-            Guidelines.
-          properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - properties:
-                    code:
-                      enum:
-                          - Strong
-                          - Potential
-                          - Definitive
-                          - Likely
-                    system:
-                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-        classification:
-          description: >-
-            A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
-            enumerated value set here is bound to the `code` field of the Coding object that is nested inside a MappableConcept's
-            primary coding.
-          properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - properties:
-                    code:
-                      enum:
-                        - Tier I (Strong Clinical Significance)
-                        - Tier II (Potential Clinical Significance)
-                        - Tier III
-                        - Tier IV
-                    system:
-                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-        specifiedBy:
-          description: >-
-            A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of
-            evidence.
-      required:
-        - classification
-        - specifiedBy
-
-  VariantTherapeuticResponseStatement:
-    maturity: draft
-    description: >-
-      A statement reporting a conclusion from a single study about whether a variant
-      is associated with a therapeutic response (positive or negative) - based on interpretation of the study's
-      results.
-    allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
-    - properties:
-        proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
-          description: >-
-            A proposition about the therapeutic response associated with a variant, for which the study provides
-            evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
-            may be assessed and reported by the Statement.
-        strength:
-          description: >-
-            The strength of support that the Statement is determined to provide for or against the Therapeutic Response
-            Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC)
-            2017 Guidelines.
-          properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - properties:
+      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
+      - properties:
+          proposition:
+            $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
+            description: >-
+              A proposition about a prognostic association between a variant and condition, for which the study provides
+              evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
+              may be assessed and reported by the Statement.
+          strength:
+            description: >-
+              The strength of support that the Statement is determined to provide for or against the Prognostic Proposition
+              for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
+              Guidelines.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
                       code:
                         enum:
                           - Strong
@@ -164,27 +209,299 @@ $defs:
                           - Likely
                       system:
                         const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-        classification:
-          description: >-
-            A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-            the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
+          classification:
+            description: >-
+              A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
+              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
+              enumerated value set here is bound to the `code` field of the Coding object that is nested inside a MappableConcept's
+              primary coding.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
+                      code:
+                        enum:
+                          - Tier I (Strong Clinical Significance)
+                          - Tier II (Potential Clinical Significance)
+                          - Tier III
+                          - Tier IV
+                      system:
+                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+          specifiedBy:
+            description: >-
+              A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of
+              evidence.
+        required:
+          - classification
+          - specifiedBy
+      - if:
           properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                - properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier I (Strong Clinical Significance)
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Strong
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: supports
+          required: [strength, direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier II (Potential Clinical Significance)
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Potential
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: supports
+          required: [strength, direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier III
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: "null"
+            direction:
+              const: neutral
+          required: [direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier IV
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
                     code:
                       enum:
-                        - Tier I (Strong Clinical Significance)
-                        - Tier II (Potential Clinical Significance)
-                        - Tier III
-                        - Tier IV
-                    system:
-                      const: AMP/ASCO/CAP (AAC) Guidelines, 2017
-        specifiedBy:
-          description: >-
-            A method that specifies how the therapeutic response classification was ultimately assigned to the variant,
-            based on assessment of evidence.
-      required:
-        - classification
-        - specifiedBy
+                        - Definitive
+                        - Likely
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: disputes
+          required: [strength, direction]
+
+  VariantTherapeuticResponseStatement:
+    maturity: draft
+    description: >-
+      A statement reporting a conclusion from a single study about whether a variant
+      is associated with a therapeutic response (positive or negative) - based on interpretation of the study's
+      results.
+    allOf:
+      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
+      - properties:
+          proposition:
+            $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
+            description: >-
+              A proposition about the therapeutic response associated with a variant, for which the study provides
+              evidence. The validity of this proposition, and the level of confidence/evidence supporting it,
+              may be assessed and reported by the Statement.
+          strength:
+            description: >-
+              The strength of support that the Statement is determined to provide for or against the Therapeutic Response
+              Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC)
+              2017 Guidelines.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
+                      code:
+                        enum:
+                          - Strong
+                          - Potential
+                          - Definitive
+                          - Likely
+                      system:
+                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+          classification:
+            description: >-
+              A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
+              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
+                      code:
+                        enum:
+                          - Tier I (Strong Clinical Significance)
+                          - Tier II (Potential Clinical Significance)
+                          - Tier III
+                          - Tier IV
+                      system:
+                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+          specifiedBy:
+            description: >-
+              A method that specifies how the therapeutic response classification was ultimately assigned to the variant,
+              based on assessment of evidence.
+        required:
+          - classification
+          - specifiedBy
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier I (Strong Clinical Significance)
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Strong
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: supports
+          required: [strength, direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier II (Potential Clinical Significance)
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Potential
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: supports
+          required: [strength, direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier III
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: "null"
+            direction:
+              const: neutral
+          required: [direction]
+      - if:
+          properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      const: Tier IV
+                  required: [code]
+              required: [primaryCoding]
+          required: [classification]
+        then:
+          properties:
+            strength:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    code:
+                      enum:
+                        - Definitive
+                        - Likely
+                  required: [code]
+              required: [primaryCoding]
+            direction:
+              const: disputes
+          required: [strength, direction]

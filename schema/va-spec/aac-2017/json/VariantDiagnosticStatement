@@ -76,6 +76,224 @@
             "classification",
             "specifiedBy"
          ]
+      },
+      {
+         "if": {
+            "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "const": "Tier I (Strong Clinical Significance)"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "classification"
+            ]
+         },
+         "then": {
+            "properties": {
+               "strength": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "const": "Strong"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               },
+               "direction": {
+                  "const": "supports"
+               }
+            },
+            "required": [
+               "strength",
+               "direction"
+            ]
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "const": "Tier II (Potential Clinical Significance)"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "classification"
+            ]
+         },
+         "then": {
+            "properties": {
+               "strength": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "const": "Potential"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               },
+               "direction": {
+                  "const": "supports"
+               }
+            },
+            "required": [
+               "strength",
+               "direction"
+            ]
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "const": "Tier III"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "classification"
+            ]
+         },
+         "then": {
+            "properties": {
+               "strength": {
+                  "type": "null"
+               },
+               "direction": {
+                  "const": "neutral"
+               }
+            },
+            "required": [
+               "direction"
+            ]
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "const": "Tier IV"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "classification"
+            ]
+         },
+         "then": {
+            "properties": {
+               "strength": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "code": {
+                              "enum": [
+                                 "Definitive",
+                                 "Likely"
+                              ]
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               },
+               "direction": {
+                  "const": "disputes"
+               }
+            },
+            "required": [
+               "strength",
+               "direction"
+            ]
+         }
       }
    ]
 }
