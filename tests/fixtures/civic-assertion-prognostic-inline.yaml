@@ -1,6 +1,7 @@
 classification:
   primaryCoding:
-    code: Tier I (Strong Clinical Significance)
+    code: Tier I
+    name: Tier I (Strong Clinical Significance)
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   BRAF V600E was associated with worse prognosis in Phase II and III colorectal

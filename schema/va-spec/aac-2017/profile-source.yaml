@@ -56,8 +56,8 @@ $defs:
                   - properties:
                       code:
                         enum:
-                          - Tier I (Strong Clinical Significance)
-                          - Tier II (Potential Clinical Significance)
+                          - Tier I
+                          - Tier II
                           - Tier III
                           - Tier IV
                       system:
@@ -78,12 +78,21 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: Tier I (Strong Clinical Significance)
+                      const: Tier I
                   required: [code]
               required: [primaryCoding]
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    name:
+                      const: Tier I (Strong Clinical Significance)
+                  required: [name]
             strength:
               type: object
               properties:
@@ -96,7 +105,7 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [strength, direction]
+          required: [classification, strength, direction]
       - if:
           properties:
             classification:
@@ -106,12 +115,21 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: Tier II (Potential Clinical Significance)
+                      const: Tier II
                   required: [code]
               required: [primaryCoding]
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    name:
+                      const: Tier II (Potential Clinical Significance)
+                  required: [name]
             strength:
               type: object
               properties:
@@ -124,7 +142,7 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [strength, direction]
+          required: [classification, strength, direction]
       - if:
           properties:
             classification:
@@ -222,8 +240,8 @@ $defs:
                   - properties:
                       code:
                         enum:
-                          - Tier I (Strong Clinical Significance)
-                          - Tier II (Potential Clinical Significance)
+                          - Tier I
+                          - Tier II
                           - Tier III
                           - Tier IV
                       system:
@@ -244,12 +262,21 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: Tier I (Strong Clinical Significance)
+                      const: Tier I
                   required: [code]
               required: [primaryCoding]
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    name:
+                      const: Tier I (Strong Clinical Significance)
+                  required: [name]
             strength:
               type: object
               properties:
@@ -262,7 +289,7 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [strength, direction]
+          required: [classification, strength, direction]
       - if:
           properties:
             classification:
@@ -272,12 +299,21 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: Tier II (Potential Clinical Significance)
+                      const: Tier II
                   required: [code]
               required: [primaryCoding]
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    name:
+                      const: Tier II (Potential Clinical Significance)
+                  required: [name]
             strength:
               type: object
               properties:
@@ -290,7 +326,7 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [strength, direction]
+          required: [classification, strength, direction]
       - if:
           properties:
             classification:
@@ -386,8 +422,8 @@ $defs:
                   - properties:
                       code:
                         enum:
-                          - Tier I (Strong Clinical Significance)
-                          - Tier II (Potential Clinical Significance)
+                          - Tier I
+                          - Tier II
                           - Tier III
                           - Tier IV
                       system:
@@ -408,12 +444,21 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: Tier I (Strong Clinical Significance)
+                      const: Tier I
                   required: [code]
               required: [primaryCoding]
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    name:
+                      const: Tier I (Strong Clinical Significance)
+                  required: [name]
             strength:
               type: object
               properties:
@@ -426,7 +471,7 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [strength, direction]
+          required: [classification, strength, direction]
       - if:
           properties:
             classification:
@@ -436,12 +481,21 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: Tier II (Potential Clinical Significance)
+                      const: Tier II
                   required: [code]
               required: [primaryCoding]
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                primaryCoding:
+                  type: object
+                  properties:
+                    name:
+                      const: Tier II (Potential Clinical Significance)
+                  required: [name]
             strength:
               type: object
               properties:
@@ -454,7 +508,7 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [strength, direction]
+          required: [classification, strength, direction]
       - if:
           properties:
             classification:

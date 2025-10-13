@@ -53,8 +53,8 @@
                            "properties": {
                               "code": {
                                  "enum": [
-                                    "Tier I (Strong Clinical Significance)",
-                                    "Tier II (Potential Clinical Significance)",
+                                    "Tier I",
+                                    "Tier II",
                                     "Tier III",
                                     "Tier IV"
                                  ]
@@ -87,7 +87,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "Tier I (Strong Clinical Significance)"
+                              "const": "Tier I"
                            }
                         },
                         "required": [
@@ -106,6 +106,22 @@
          },
          "then": {
             "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "name": {
+                              "const": "Tier I (Strong Clinical Significance)"
+                           }
+                        },
+                        "required": [
+                           "name"
+                        ]
+                     }
+                  }
+               },
                "strength": {
                   "type": "object",
                   "properties": {
@@ -130,6 +146,7 @@
                }
             },
             "required": [
+               "classification",
                "strength",
                "direction"
             ]
@@ -145,7 +162,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "Tier II (Potential Clinical Significance)"
+                              "const": "Tier II"
                            }
                         },
                         "required": [
@@ -164,6 +181,22 @@
          },
          "then": {
             "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "name": {
+                              "const": "Tier II (Potential Clinical Significance)"
+                           }
+                        },
+                        "required": [
+                           "name"
+                        ]
+                     }
+                  }
+               },
                "strength": {
                   "type": "object",
                   "properties": {
@@ -188,6 +221,7 @@
                }
             },
             "required": [
+               "classification",
                "strength",
                "direction"
             ]

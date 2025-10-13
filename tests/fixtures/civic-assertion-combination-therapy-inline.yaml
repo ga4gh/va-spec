@@ -1,6 +1,7 @@
 classification:
   primaryCoding:
-    code: Tier I (Strong Clinical Significance)
+    code: Tier I
+    name: Tier I (Strong Clinical Significance)
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   Combination treatment of BRAF inhibitor dabrafenib and MEK inhibitor
