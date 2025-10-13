@@ -256,9 +256,7 @@
          },
          "then": {
             "properties": {
-               "strength": {
-                  "type": "null"
-               },
+               "strength": false,
                "direction": {
                   "const": "neutral"
                }

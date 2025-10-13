@@ -158,8 +158,7 @@ $defs:
           required: [classification]
         then:
           properties:
-            strength:
-              type: "null"
+            strength: false
             direction:
               const: neutral
           required: [direction]
@@ -342,8 +341,7 @@ $defs:
           required: [classification]
         then:
           properties:
-            strength:
-              type: "null"
+            strength: false
             direction:
               const: neutral
           required: [direction]
@@ -524,8 +522,7 @@ $defs:
           required: [classification]
         then:
           properties:
-            strength:
-              type: "null"
+            strength: false
             direction:
               const: neutral
           required: [direction]
