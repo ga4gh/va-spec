@@ -472,7 +472,7 @@ proposition:
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Diffuse Midline Glioma, H3 K27M-mutant
-  predicate: hasClinicalSignificance
+  predicate: hasClinicalSignificanceFor
   subjectVariant:
     aliases:
       - GLY328VAL

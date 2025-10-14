@@ -1070,7 +1070,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: BRAF
-  predicate: hasClinicalSignificance
+  predicate: hasClinicalSignificanceFor
   subjectVariant:
     aliases:
       - VAL600GLU

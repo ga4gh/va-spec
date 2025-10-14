@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Proposition about the clinical significance of a variant per AMP/ASCO/CAP guidelines
+A Proposition describing the clinical significance of a variant with respect to a condition.
 
 **Information Model**
 
@@ -76,7 +76,7 @@ Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`
       -
       - string
       - 1..1
-      - The relationship the Proposition describes between the subject variant and object Condition. MUST be "hasClinicalSignificance".
+      - The predicate associating the subject variant to clinical significance for the object Condition. MUST be "hasClinicalSignificanceFor".
    *  - objectCondition
       -
       - :ref:`Condition` | :ref:`iriReference`

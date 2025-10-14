@@ -1555,7 +1555,7 @@ proposition:
         relation: relatedMatch
     name: EGFR L858R
     type: CategoricalVariant
-  predicate: hasClinicalSignificance
+  predicate: hasClinicalSignificanceFor
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/6

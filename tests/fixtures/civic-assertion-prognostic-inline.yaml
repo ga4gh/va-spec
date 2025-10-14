@@ -1266,7 +1266,7 @@ proposition:
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Colorectal Cancer
-  predicate: hasClinicalSignificance
+  predicate: hasClinicalSignificanceFor
   subjectVariant:
     aliases:
       - VAL600GLU

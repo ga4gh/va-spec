@@ -540,7 +540,7 @@ proposition:
             name: Adult onset
         membershipOperator: OR
     membershipOperator: AND
-  predicate: hasClinicalSignificance
+  predicate: hasClinicalSignificanceFor
   subjectVariant:
     extensions:
       - name: CIViC Molecular Profile Score

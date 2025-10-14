@@ -4,7 +4,7 @@
    "title": "VariantClinicalSignificanceProposition",
    "type": "object",
    "maturity": "draft",
-   "description": "A Proposition about the clinical significance of a variant per AMP/ASCO/CAP guidelines",
+   "description": "A Proposition describing the clinical significance of a variant with respect to a condition.",
    "properties": {
       "id": {
          "type": "string",
@@ -83,10 +83,10 @@
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship the Proposition describes between the subject variant and object Condition. MUST be \"hasClinicalSignificance\".",
+         "description": "The predicate associating the subject variant to clinical significance for the object Condition. MUST be \"hasClinicalSignificanceFor\".",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "const": "hasClinicalSignificance",
-         "default": "hasClinicalSignificance"
+         "const": "hasClinicalSignificanceFor",
+         "default": "hasClinicalSignificanceFor"
       },
       "objectCondition": {
          "oneOf": [
