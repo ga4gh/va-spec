@@ -804,8 +804,8 @@ $defs:
       predicate:
         extends: predicate
         description: >-
-          The relationship the Proposition describes between the subject variant
-          and object Condition. MUST be "hasClinicalSignificance".
+          The predicate associating the subject variant to clinical significance for
+          the object Condition. MUST be "hasClinicalSignificanceFor".
         const: hasClinicalSignificance
         default: hasClinicalSignificance
       objectCondition:
