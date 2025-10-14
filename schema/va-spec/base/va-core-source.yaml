@@ -794,7 +794,7 @@ $defs:
     type: object
     maturity: draft
     description: >-
-      A Proposition about the clinical significance of a variant per AMP/ASCO/CAP guidelines
+      A Proposition describing the clinical significance of a variant with respect to a condition.
     properties:
       type:
         extends: type
