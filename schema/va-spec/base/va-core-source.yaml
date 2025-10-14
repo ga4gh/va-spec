@@ -806,8 +806,8 @@ $defs:
         description: >-
           The predicate associating the subject variant to clinical significance for
           the object Condition. MUST be "hasClinicalSignificanceFor".
-        const: hasClinicalSignificance
-        default: hasClinicalSignificance
+        const: hasClinicalSignificanceFor
+        default: hasClinicalSignificanceFor
       objectCondition:
         extends: object
         oneOf:
