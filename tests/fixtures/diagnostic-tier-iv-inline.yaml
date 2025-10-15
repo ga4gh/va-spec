@@ -1,3 +1,4 @@
+id: tier3-example.civic.aid:9
 classification:
   primaryCoding:
     code: Tier IV
@@ -434,7 +435,6 @@ hasEvidenceLines:
       type: VariantDiagnosticProposition
 
     type: EvidenceLine
-id: tier3-example.civic.aid:9
 proposition:
   alleleOriginQualifier:
     extensions:

@@ -1,3 +1,4 @@
+id: civic.aid:115
 classification:
   primaryCoding:
     code: Tier I
@@ -479,8 +480,101 @@ hasEvidenceLines:
       primaryCoding:
         code: Level A
         system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+    targetProposition:
+      alleleOriginQualifier:
+        extensions:
+          - name: civic_variant_origin
+            value: SOMATIC
+        name: somatic
+      geneContextQualifier:
+        conceptType: Gene
+        extensions:
+          - name: aliases
+            value:
+              - A-MYB
+              - AMYB
+              - MYBL1
+        id: civic.gid:3731
+        mappings:
+          - coding:
+              code: "4603"
+              id: ncbigene:4603
+              system: https://www.ncbi.nlm.nih.gov/gene/
+            relation: exactMatch
+        name: MYBL1
+      objectCondition:
+        conditions:
+          - conceptType: Disease
+            id: civic.did:3387
+            mappings:
+              - coding:
+                  code: DOID:0081279
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
+          - conditions:
+              - conceptType: Phenotype
+                id: civic.phenotype:8121
+                mappings:
+                  - coding:
+                      code: HP:0011463
+                      system: https://hpo.jax.org/app/browse/term/
+                    relation: exactMatch
+                name: Childhood onset
+              - conceptType: Phenotype
+                id: civic.phenotype:2656
+                mappings:
+                  - coding:
+                      code: HP:0003621
+                      system: https://hpo.jax.org/app/browse/term/
+                    relation: exactMatch
+                name: Juvenile onset
+              - conceptType: Phenotype
+                id: civic.phenotype:2643
+                mappings:
+                  - coding:
+                      code: HP:0003581
+                      system: https://hpo.jax.org/app/browse/term/
+                    relation: exactMatch
+                name: Adult onset
+            membershipOperator: OR
+        membershipOperator: AND
+      predicate: isDiagnosticInclusionCriterionFor
+      subjectVariant:
+        extensions:
+          - name: CIViC Molecular Profile Score
+            value: 40.0
+          - name: CIViC representative coordinate
+            value:
+              chromosome: null
+              ensembl_version: null
+              reference_bases: null
+              reference_build: null
+              representative_transcript: null
+              start: null
+              stop: null
+              type: coordinates
+              variant_bases: null
+        id: civic.mpid:4878
+        mappings:
+          - coding:
+              code: "4878"
+              id: civic.mpid:4878
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+          - coding:
+              code: "4743"
+              extensions:
+                - name: subtype
+                  value: gene_variant
+              id: civic.vid:4743
+              name: Rearrangement
+              system: https://civicdb.org/links/variant/
+            relation: exactMatch
+        name: MYBL1 Rearrangement
+        type: CategoricalVariant
+      type: VariantDiagnosticProposition
     type: EvidenceLine
-id: civic.aid:115
 proposition:
   alleleOriginQualifier:
     extensions:

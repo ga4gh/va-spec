@@ -1,3 +1,4 @@
+id: civic.aid:6
 classification:
   primaryCoding:
     code: Tier I
@@ -1418,7 +1419,6 @@ hasEvidenceLines:
         type: CategoricalVariant
       type: VariantTherapeuticResponseProposition
     type: EvidenceLine
-id: civic.aid:6
 proposition:
   alleleOriginQualifier:
     extensions:
