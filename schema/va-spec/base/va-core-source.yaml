@@ -846,6 +846,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet          
           - $refCurie: gks.core:iriReference
         description: The disease that is evaluated for diagnosis.
     required:
@@ -875,8 +876,9 @@ $defs:
       objectTumorType:
         extends: object
         oneOf:
-        - $ref: Condition
-        - $refCurie: gks.core:iriReference
+          - $ref: Condition
+          - $ref: ConditionSet       
+          - $refCurie: gks.core:iriReference
         description: >-
           The tumor type for which the variant impact is evaluated.
     required:
@@ -907,8 +909,9 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet          
           - $refCurie: gks.core:iriReference
-        description: The :ref:`Condition` for which the variant impact is stated.
+        description: The :ref:`Condition` or :ref:`ConditionSet`for which the variant impact is stated.
       penetranceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-
@@ -952,6 +955,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
         description: The disease that is evaluated for outcome.
     required:
@@ -981,16 +985,17 @@ $defs:
         enum:
         - predictsSensitivityTo
         - predictsResistanceTo
-      objectTherapeutic:
+      objectTherapy:
         description: A drug administration or other therapeutic procedure that the neoplasm
           is intended to respond to.
         extends: object
         oneOf:
-        - $ref: Therapeutic
+        - $ref: Therapy
         - $refCurie: gks.core:iriReference
       conditionQualifier:
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet          
           - $refCurie: gks.core:iriReference
         description: >-
           Reports the disease context in which the variant's association with therapeutic
@@ -998,7 +1003,7 @@ $defs:
           therapeutic response propositions.
     required:
     - predicate
-    - objectTherapeutic
+    - objectTherapy
     - conditionQualifier
 
   CohortAlleleFrequencyStudyResult:
@@ -1165,7 +1170,6 @@ $defs:
         oneOf:
           - $refCurie: vrs:Allele
           - $refCurie: vrs:Adjacency
-          - $refCurie: cat-vrs:CategoricalVariant
           - $refCurie: gks.core:iriReference
       predicate:
         extends: predicate
@@ -1178,13 +1182,15 @@ $defs:
       objectConsequence:
         extends: object
         oneOf:
-          - $ref: ConceptOrConceptSet
+          - $ref: MappableConcept
+          - $ref: ConceptSet          
           - $refCurie: gks.core:iriReference
         description: >- 
            The molecular consequence(s) of the subject variant, in the context of the qualifying
            transcript and/or protein variation context(s). These are typically terms from the
-          'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
-          or 'SO:0001589' (frameshift_variant).
+           'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
+           or 'SO:0001589' (frameshift_variant). If more than one consequence term apply, 
+           use a ConceptSet to capture them.
       transcriptVariationContextQualifier:
         description: >-
           The subject genomic variant as projected on a particular transcript or mRNA molecule. 
