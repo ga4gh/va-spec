@@ -1,8 +1,8 @@
 id: civic.aid:7
 classification:
+  name: Tier I
   primaryCoding:
     code: tier 1
-    name: Tier I
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   Combination treatment of BRAF inhibitor dabrafenib and MEK inhibitor

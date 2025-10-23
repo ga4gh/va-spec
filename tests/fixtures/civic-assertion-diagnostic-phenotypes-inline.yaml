@@ -1,8 +1,8 @@
 id: civic.aid:115
 classification:
+  name: Tier I
   primaryCoding:
     code: tier 1
-    name: Tier I
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   Diffuse astrocytoma, MYB- or MYBL1-altered is a rare, CNS WHO grade 1,

@@ -142,18 +142,13 @@
                "classification": {
                   "type": "object",
                   "properties": {
-                     "primaryCoding": {
-                        "type": "object",
-                        "properties": {
-                           "name": {
-                              "const": "Tier I"
-                           }
-                        },
-                        "required": [
-                           "name"
-                        ]
+                     "name": {
+                        "const": "Tier I"
                      }
-                  }
+                  },
+                  "required": [
+                     "name"
+                  ]
                },
                "strength": {
                   "type": "object",
@@ -217,18 +212,13 @@
                "classification": {
                   "type": "object",
                   "properties": {
-                     "primaryCoding": {
-                        "type": "object",
-                        "properties": {
-                           "name": {
-                              "const": "Tier II"
-                           }
-                        },
-                        "required": [
-                           "name"
-                        ]
+                     "name": {
+                        "const": "Tier II"
                      }
-                  }
+                  },
+                  "required": [
+                     "name"
+                  ]
                },
                "strength": {
                   "type": "object",
@@ -289,6 +279,17 @@
          },
          "then": {
             "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "name": {
+                        "const": "Tier III"
+                     }
+                  },
+                  "required": [
+                     "name"
+                  ]
+               },
                "strength": false,
                "direction": {
                   "const": "neutral"
@@ -328,6 +329,17 @@
          },
          "then": {
             "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "name": {
+                        "const": "Tier IV"
+                     }
+                  },
+                  "required": [
+                     "name"
+                  ]
+               },
                "strength": false,
                "direction": {
                   "const": "disputes"

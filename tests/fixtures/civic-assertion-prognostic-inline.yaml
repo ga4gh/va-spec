@@ -1,8 +1,8 @@
 id: civic.aid:20
 classification:
+  name: Tier I
   primaryCoding:
     code: tier 1
-    name: Tier I
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   BRAF V600E was associated with worse prognosis in Phase II and III colorectal

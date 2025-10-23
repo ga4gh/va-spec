@@ -99,12 +99,9 @@ $defs:
             classification:
               type: object
               properties:
-                primaryCoding:
-                  type: object
-                  properties:
-                    name:
-                      const: Tier I
-                  required: [name]
+                name:
+                  const: Tier I
+              required: [name]
             strength:
               type: object
               properties:
@@ -136,12 +133,9 @@ $defs:
             classification:
               type: object
               properties:
-                primaryCoding:
-                  type: object
-                  properties:
-                    name:
-                      const: Tier II
-                  required: [name]
+                name:
+                  const: Tier II
+              required: [name]
             strength:
               type: object
               properties:
@@ -170,6 +164,12 @@ $defs:
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                name:
+                  const: Tier III
+              required: [name]
             strength: false
             direction:
               const: neutral
@@ -189,6 +189,12 @@ $defs:
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                name:
+                  const: Tier IV
+              required: [name]
             strength: false
             direction:
               const: disputes
@@ -283,12 +289,9 @@ $defs:
             classification:
               type: object
               properties:
-                primaryCoding:
-                  type: object
-                  properties:
-                    name:
-                      const: Tier I
-                  required: [name]
+                name:
+                  const: Tier I
+              required: [name]
             strength:
               type: object
               properties:
@@ -320,12 +323,9 @@ $defs:
             classification:
               type: object
               properties:
-                primaryCoding:
-                  type: object
-                  properties:
-                    name:
-                      const: Tier II
-                  required: [name]
+                name:
+                  const: Tier II
+              required: [name]
             strength:
               type: object
               properties:
@@ -354,6 +354,12 @@ $defs:
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                name:
+                  const: Tier III
+              required: [name]
             strength: false
             direction:
               const: neutral
@@ -373,6 +379,12 @@ $defs:
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                name:
+                  const: Tier IV
+              required: [name]
             strength: false
             direction:
               const: disputes
@@ -465,12 +477,9 @@ $defs:
             classification:
               type: object
               properties:
-                primaryCoding:
-                  type: object
-                  properties:
-                    name:
-                      const: Tier I
-                  required: [name]
+                name:
+                  const: Tier I
+              required: [name]
             strength:
               type: object
               properties:
@@ -502,12 +511,9 @@ $defs:
             classification:
               type: object
               properties:
-                primaryCoding:
-                  type: object
-                  properties:
-                    name:
-                      const: Tier II
-                  required: [name]
+                name:
+                  const: Tier II
+              required: [name]
             strength:
               type: object
               properties:
@@ -536,6 +542,12 @@ $defs:
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                name:
+                  const: Tier III
+              required: [name]
             strength: false
             direction:
               const: neutral
@@ -555,6 +567,12 @@ $defs:
           required: [classification]
         then:
           properties:
+            classification:
+              type: object
+              properties:
+                name:
+                  const: Tier IV
+              required: [name]
             strength: false
             direction:
               const: disputes
