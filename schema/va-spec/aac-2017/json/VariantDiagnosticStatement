@@ -14,6 +14,41 @@
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition",
                "description": "A proposition about a diagnostic association between a variant and condition, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement."
             },
+            "hasEvidenceLines": {
+               "type": "array",
+               "ordered": false,
+               "items": {
+                  "anyOf": [
+                     {
+                        "allOf": [
+                           {
+                              "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
+                           },
+                           {
+                              "properties": {
+                                 "targetProposition": {
+                                    "anyOf": [
+                                       {
+                                          "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
+                                       },
+                                       {
+                                          "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
+                                       },
+                                       {
+                                          "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+                                       }
+                                    ]
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+                     }
+                  ]
+               }
+            },
             "strength": {
                "description": "The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017 Guidelines.",
                "properties": {
@@ -26,10 +61,8 @@
                            "properties": {
                               "code": {
                                  "enum": [
-                                    "Strong",
-                                    "Potential",
-                                    "Definitive",
-                                    "Likely"
+                                    "strong",
+                                    "potential"
                                  ]
                               },
                               "system": {
@@ -53,10 +86,10 @@
                            "properties": {
                               "code": {
                                  "enum": [
-                                    "Tier I",
-                                    "Tier II",
-                                    "Tier III",
-                                    "Tier IV"
+                                    "tier 1",
+                                    "tier 2",
+                                    "tier 3",
+                                    "tier 4"
                                  ]
                               },
                               "system": {
@@ -87,36 +120,36 @@
                         "type": "object",
                         "properties": {
                            "code": {
+                              "const": "tier I"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "classification"
+            ]
+         },
+         "then": {
+            "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "name": {
                               "const": "Tier I"
                            }
                         },
                         "required": [
-                           "code"
-                        ]
-                     }
-                  },
-                  "required": [
-                     "primaryCoding"
-                  ]
-               }
-            },
-            "required": [
-               "classification"
-            ]
-         },
-         "then": {
-            "properties": {
-               "classification": {
-                  "type": "object",
-                  "properties": {
-                     "primaryCoding": {
-                        "type": "object",
-                        "properties": {
-                           "name": {
-                              "const": "Tier I (Strong Clinical Significance)"
-                           }
-                        },
-                        "required": [
                            "name"
                         ]
                      }
@@ -129,7 +162,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "Strong"
+                              "const": "strong"
                            }
                         },
                         "required": [
@@ -162,36 +195,36 @@
                         "type": "object",
                         "properties": {
                            "code": {
+                              "const": "tier 2"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "classification"
+            ]
+         },
+         "then": {
+            "properties": {
+               "classification": {
+                  "type": "object",
+                  "properties": {
+                     "primaryCoding": {
+                        "type": "object",
+                        "properties": {
+                           "name": {
                               "const": "Tier II"
                            }
                         },
                         "required": [
-                           "code"
-                        ]
-                     }
-                  },
-                  "required": [
-                     "primaryCoding"
-                  ]
-               }
-            },
-            "required": [
-               "classification"
-            ]
-         },
-         "then": {
-            "properties": {
-               "classification": {
-                  "type": "object",
-                  "properties": {
-                     "primaryCoding": {
-                        "type": "object",
-                        "properties": {
-                           "name": {
-                              "const": "Tier II (Potential Clinical Significance)"
-                           }
-                        },
-                        "required": [
                            "name"
                         ]
                      }
@@ -204,7 +237,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "Potential"
+                              "const": "potential"
                            }
                         },
                         "required": [
@@ -237,7 +270,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "Tier III"
+                              "const": "tier 3"
                            }
                         },
                         "required": [
@@ -276,7 +309,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "Tier IV"
+                              "const": "tier 4"
                            }
                         },
                         "required": [
@@ -295,34 +328,12 @@
          },
          "then": {
             "properties": {
-               "strength": {
-                  "type": "object",
-                  "properties": {
-                     "primaryCoding": {
-                        "type": "object",
-                        "properties": {
-                           "code": {
-                              "enum": [
-                                 "Definitive",
-                                 "Likely"
-                              ]
-                           }
-                        },
-                        "required": [
-                           "code"
-                        ]
-                     }
-                  },
-                  "required": [
-                     "primaryCoding"
-                  ]
-               },
+               "strength": false,
                "direction": {
                   "const": "disputes"
                }
             },
             "required": [
-               "strength",
                "direction"
             ]
          }

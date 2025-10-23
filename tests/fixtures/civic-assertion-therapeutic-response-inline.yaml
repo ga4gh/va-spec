@@ -1,8 +1,8 @@
 id: civic.aid:6
 classification:
   primaryCoding:
-    code: Tier I
-    name: Tier I (Strong Clinical Significance)
+    code: tier 1
+    name: Tier I
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   L858R is among the most common sensitizing EGFR mutations in NSCLC, and
@@ -1580,6 +1580,6 @@ specifiedBy:
   type: Method
 strength:
   primaryCoding:
-    code: Strong
+    code: strong
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 type: Statement

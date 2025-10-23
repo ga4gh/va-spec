@@ -1,8 +1,8 @@
 id: civic.aid:9
 classification:
   primaryCoding:
-    code: Tier II
-    name: Tier II (Potential Clinical Significance)
+    code: tier 2
+    name: Tier II
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 description:
   ACVR1 G328V mutations occur within the kinase domain, leading to activation
@@ -561,6 +561,6 @@ specifiedBy:
   type: Method
 strength:
   primaryCoding:
-    code: Potential
+    code: potential
     system: AMP/ASCO/CAP (AAC) Guidelines, 2017
 type: Statement
