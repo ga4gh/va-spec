@@ -244,6 +244,7 @@ $defs:
       - $ref: "#/$defs/VariantPrognosticProposition"
       - $ref: "#/$defs/VariantOncogenicityProposition"
       - $ref: "#/$defs/VariantTherapeuticResponseProposition"
+      - $ref: "#/$defs/VariantClinicalSignificanceProposition"
     heritableProperties:
       subjectVariant:
         extends: subject
