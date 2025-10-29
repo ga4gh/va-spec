@@ -3,7 +3,7 @@ classification:
   name: Tier I
   primaryCoding:
     code: tier 1
-    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+    system: AMP/ASCO/CAP Guidelines, 2017
 description:
   L858R is among the most common sensitizing EGFR mutations in NSCLC, and
   is assessed via DNA mutational analysis, including Sanger sequencing and next generation
@@ -1261,8 +1261,8 @@ hasEvidenceLines:
         type: Statement
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: Level A
-        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+        code: A
+        system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
         extensions:
@@ -1581,5 +1581,5 @@ specifiedBy:
 strength:
   primaryCoding:
     code: strong
-    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+    system: AMP/ASCO/CAP Guidelines, 2017
 type: Statement

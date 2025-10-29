@@ -38,6 +38,32 @@
                                           "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
                                        }
                                     ]
+                                 },
+                                 "strengthOfEvidenceProvided": {
+                                    "properties": {
+                                       "primaryCoding": {
+                                          "allOf": [
+                                             {
+                                                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                                             },
+                                             {
+                                                "properties": {
+                                                   "code": {
+                                                      "enum": [
+                                                         "A",
+                                                         "B",
+                                                         "C",
+                                                         "D"
+                                                      ]
+                                                   },
+                                                   "system": {
+                                                      "const": "AMP/ASCO/CAP Guidelines, 2017"
+                                                   }
+                                                }
+                                             }
+                                          ]
+                                       }
+                                    }
                                  }
                               }
                            }
@@ -66,7 +92,7 @@
                                  ]
                               },
                               "system": {
-                                 "const": "AMP/ASCO/CAP (AAC) Guidelines, 2017"
+                                 "const": "AMP/ASCO/CAP Guidelines, 2017"
                               }
                            }
                         }
@@ -93,7 +119,7 @@
                                  ]
                               },
                               "system": {
-                                 "const": "AMP/ASCO/CAP (AAC) Guidelines, 2017"
+                                 "const": "AMP/ASCO/CAP Guidelines, 2017"
                               }
                            }
                         }

@@ -3,7 +3,7 @@ classification:
   name: Tier III
   primaryCoding:
     code: tier 3
-    system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+    system: AMP/ASCO/CAP Guidelines, 2017
 description:
   ACVR1 G328V mutations occur within the kinase domain, leading to activation
   of downstream signaling. Exclusively seen in high-grade pediatric gliomas, supporting
@@ -329,8 +329,8 @@ hasEvidenceLines:
         type: Statement
     strengthOfEvidenceProvided:
       primaryCoding:
-        code: Level C
-        system: AMP/ASCO/CAP (AAC) Guidelines, 2017
+        code: C
+        system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
         extensions:

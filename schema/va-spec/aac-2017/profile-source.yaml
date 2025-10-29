@@ -40,6 +40,20 @@ $defs:
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+                        strengthOfEvidenceProvided:
+                          properties:
+                            primaryCoding:
+                              allOf:
+                                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                                - properties:
+                                    code:
+                                      enum:
+                                        - A
+                                        - B
+                                        - C
+                                        - D
+                                    system:
+                                      const: AMP/ASCO/CAP Guidelines, 2017
                 - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
           strength:
             description: >-
@@ -56,7 +70,7 @@ $defs:
                           - strong
                           - potential
                       system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                        const: AMP/ASCO/CAP Guidelines, 2017
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
@@ -73,7 +87,7 @@ $defs:
                           - tier 3
                           - tier 4
                       system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                        const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
             description: >-
               A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of
@@ -228,6 +242,20 @@ $defs:
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+                        strengthOfEvidenceProvided:
+                          properties:
+                            primaryCoding:
+                              allOf:
+                                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                                - properties:
+                                    code:
+                                      enum:
+                                        - A
+                                        - B
+                                        - C
+                                        - D
+                                    system:
+                                      const: AMP/ASCO/CAP Guidelines, 2017
                 - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
           strength:
             description: >-
@@ -244,7 +272,7 @@ $defs:
                           - strong
                           - potential
                       system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                        const: AMP/ASCO/CAP Guidelines, 2017
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
@@ -263,7 +291,7 @@ $defs:
                           - tier 3
                           - tier 4
                       system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                        const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
             description: >-
               A method that specifies how the prognostic classification was ultimately assigned to the variant, based on assessment of
@@ -418,6 +446,20 @@ $defs:
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
                             - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+                        strengthOfEvidenceProvided:
+                          properties:
+                            primaryCoding:
+                              allOf:
+                                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                                - properties:
+                                    code:
+                                      enum:
+                                        - A
+                                        - B
+                                        - C
+                                        - D
+                                    system:
+                                      const: AMP/ASCO/CAP Guidelines, 2017
                 - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
           strength:
             description: >-
@@ -434,7 +476,7 @@ $defs:
                           - strong
                           - potential
                       system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                        const: AMP/ASCO/CAP Guidelines, 2017
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
@@ -451,7 +493,7 @@ $defs:
                           - tier 3
                           - tier 4
                       system:
-                        const: AMP/ASCO/CAP (AAC) Guidelines, 2017
+                        const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
             description: >-
               A method that specifies how the therapeutic response classification was ultimately assigned to the variant,
