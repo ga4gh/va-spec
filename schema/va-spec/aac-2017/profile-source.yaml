@@ -58,7 +58,7 @@ $defs:
           strength:
             description: >-
               The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition
-              for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
+              for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP 2017
               Guidelines.
             properties:
               primaryCoding:
@@ -74,7 +74,7 @@ $defs:
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
+              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP 2017 Guidelines.
             properties:
               primaryCoding:
                 allOf:
@@ -82,10 +82,10 @@ $defs:
                   - properties:
                       code:
                         enum:
-                          - tier 1
-                          - tier 2
-                          - tier 3
-                          - tier 4
+                          - tier i
+                          - tier ii
+                          - tier iii
+                          - tier iv
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
@@ -104,7 +104,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier I
+                      const: tier i
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -138,7 +138,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 2
+                      const: tier ii
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -172,7 +172,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 3
+                      const: tier iii
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -197,7 +197,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 4
+                      const: tier iv
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -260,7 +260,7 @@ $defs:
           strength:
             description: >-
               The strength of support that the Statement is determined to provide for or against the Prognostic Proposition
-              for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017
+              for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP 2017
               Guidelines.
             properties:
               primaryCoding:
@@ -276,7 +276,7 @@ $defs:
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines. Note that the
+              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP 2017 Guidelines. Note that the
               enumerated value set here is bound to the `code` field of the Coding object that is nested inside a MappableConcept's
               primary coding.
             properties:
@@ -286,10 +286,10 @@ $defs:
                   - properties:
                       code:
                         enum:
-                          - tier 1
-                          - tier 2
-                          - tier 3
-                          - tier 4
+                          - tier i
+                          - tier ii
+                          - tier iii
+                          - tier iv
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
@@ -308,7 +308,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier I
+                      const: tier i
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -342,7 +342,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 2
+                      const: tier ii
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -376,7 +376,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 3
+                      const: tier iii
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -401,7 +401,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 4
+                      const: tier iv
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -464,7 +464,7 @@ $defs:
           strength:
             description: >-
               The strength of support that the Statement is determined to provide for or against the Therapeutic Response
-              Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC)
+              Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP
               2017 Guidelines.
             properties:
               primaryCoding:
@@ -480,7 +480,7 @@ $defs:
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.
+              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP 2017 Guidelines.
             properties:
               primaryCoding:
                 allOf:
@@ -488,10 +488,10 @@ $defs:
                   - properties:
                       code:
                         enum:
-                          - tier 1
-                          - tier 2
-                          - tier 3
-                          - tier 4
+                          - tier i
+                          - tier ii
+                          - tier iii
+                          - tier iv
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
@@ -510,7 +510,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier I
+                      const: tier i
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -544,7 +544,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 2
+                      const: tier ii
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -578,7 +578,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 3
+                      const: tier iii
                   required: [code]
               required: [primaryCoding]
           required: [classification]
@@ -603,7 +603,7 @@ $defs:
                   type: object
                   properties:
                     code:
-                      const: tier 4
+                      const: tier iv
                   required: [code]
               required: [primaryCoding]
           required: [classification]

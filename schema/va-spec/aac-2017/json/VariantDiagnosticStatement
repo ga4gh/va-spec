@@ -76,7 +76,7 @@
                }
             },
             "strength": {
-               "description": "The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP (AAC) 2017 Guidelines.",
+               "description": "The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP 2017 Guidelines.",
                "properties": {
                   "primaryCoding": {
                      "allOf": [
@@ -101,7 +101,7 @@
                }
             },
             "classification": {
-               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP (AAC) 2017 Guidelines.",
+               "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP 2017 Guidelines.",
                "properties": {
                   "primaryCoding": {
                      "allOf": [
@@ -112,10 +112,10 @@
                            "properties": {
                               "code": {
                                  "enum": [
-                                    "tier 1",
-                                    "tier 2",
-                                    "tier 3",
-                                    "tier 4"
+                                    "tier i",
+                                    "tier ii",
+                                    "tier iii",
+                                    "tier iv"
                                  ]
                               },
                               "system": {
@@ -146,7 +146,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "tier I"
+                              "const": "tier i"
                            }
                         },
                         "required": [
@@ -216,7 +216,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "tier 2"
+                              "const": "tier ii"
                            }
                         },
                         "required": [
@@ -286,7 +286,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "tier 3"
+                              "const": "tier iii"
                            }
                         },
                         "required": [
@@ -336,7 +336,7 @@
                         "type": "object",
                         "properties": {
                            "code": {
-                              "const": "tier 4"
+                              "const": "tier iv"
                            }
                         },
                         "required": [

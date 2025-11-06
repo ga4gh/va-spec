@@ -2,7 +2,7 @@ id: tier3-example.civic.aid:9
 classification:
   name: Tier IV
   primaryCoding:
-    code: tier 4
+    code: tier iv
     system: AMP/ASCO/CAP Guidelines, 2017
 description:
   ACVR1 G328V mutations occur within the kinase domain, leading to activation
