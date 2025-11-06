@@ -81,4 +81,4 @@ Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`
       -
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - The disease that is evaluated.
+      - The condition that is evaluated.
