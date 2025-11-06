@@ -814,7 +814,7 @@ $defs:
         oneOf:
           - $ref: Condition
           - $refCurie: gks.core:iriReference
-        description: The disease that is evaluated.
+        description: The condition that is evaluated.
     required:
       - predicate
       - objectCondition
