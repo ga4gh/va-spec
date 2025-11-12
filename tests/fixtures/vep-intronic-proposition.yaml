@@ -1,5 +1,26 @@
 type: VariantMolecularConsequenceProposition
-subjectVariant: "#/my_focus_variant"
+subjectVariant:
+  id: ga4gh:VA.Ij_2rkQGZczhBHs4uFBqgUalWaaIU5mw
+  type: Allele
+  digest: Ij_2rkQGZczhBHs4uFBqgUalWaaIU5mw
+  location:
+    id: ga4gh:SL.5hywsNfg0LIaWH9o22xDpeKrTz0XWF7d
+    type: SequenceLocation
+    digest: 5hywsNfg0LIaWH9o22xDpeKrTz0XWF7d
+    sequenceReference:
+      type: SequenceReference
+      refgetAccession: SQ.9KdcA9ZpY1Cpvxvg8bMSLYDUpsX6GDLO
+    start: 7540646
+    end: 7540648
+    sequence: AA
+  state:
+    type: ReferenceLengthExpression
+    length: 3
+    sequence: AAA
+    repeatSubunitLength: 1
+  expressions:
+    - syntax: hgvs.g
+      value: NC_000002.11:g.7540648dup
 predicate: "hasMolecularConsequence"
 objectConsequence:
   concepts:
@@ -11,7 +32,7 @@ objectConsequence:
       primaryCoding:
         code: "SO:0001619"
         system: "sequenceontology"
-    membershipOperator: "OR"
+  membershipOperator: "OR"
         
 transcriptVariationContextQualifier: []
   # Problem: VRS alleles can't be defined on intronic or upstream/downstream regions. Otherwise, we would put:
