@@ -139,3 +139,14 @@ tests:
   - test_file: Exp-Var-Func-Impact-Study-Result-01.yaml
     namespace: va-spec.base
     definition: ExperimentalVariantFunctionalImpactStudyResult
+
+    # test VEP effect predictor propositions
+  - test_file: cadd-prediction-proposition.yaml
+    namespace: va-spec.base
+    definition: InSilicoVariantEffectPredictionProposition
+  - test_file: sift-prediction-proposition.yaml
+    namespace: va-spec.base
+    definition: InSilicoVariantEffectPredictionProposition
+  - test_file: spliceai-prediction-proposition.yaml
+    namespace: va-spec.base
+    definition: InSilicoVariantEffectPredictionProposition
