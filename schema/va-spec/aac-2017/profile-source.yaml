@@ -86,9 +86,6 @@ $defs:
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
           specifiedBy:
-            description: >-
-              A method that specifies how the diagnostic classification was ultimately assigned to the variant, based on assessment of
-              evidence.
         required:
           - classification
           - specifiedBy
