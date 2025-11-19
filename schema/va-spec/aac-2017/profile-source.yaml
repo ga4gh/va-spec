@@ -71,7 +71,7 @@ $defs:
           classification:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
-              the Statement's Proposition - reported here using terms from the AMP/ASCO/CAP 2017 Guidelines.
+              the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.
             properties:
               primaryCoding:
                 allOf:
