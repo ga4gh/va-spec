@@ -11,6 +11,74 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
+  AmpAscoCapEvidenceLine:
+    maturity: draft
+    description: Evidence line for AMP/ASCO/CAP
+    allOf:
+      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
+      - properties:
+          targetProposition:
+            oneOf:
+              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
+              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
+              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+          strengthOfEvidenceProvided:
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - properties:
+                      code:
+                        enum: [A, B, C, D]
+                      system:
+                        const: AMP/ASCO/CAP Guidelines, 2017
+    required: [targetProposition]
+
+  PrognosticEvidenceLine:
+    maturity: draft
+    type: array
+    ordered: false
+    description: Prognostic evidence line for AMP/ASCO/CAP
+    items:
+      anyOf:
+        - allOf:
+          - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+          - properties:
+              targetProposition:
+                $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
+            required: [targetProposition]
+        - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+
+  DiagnosticEvidenceLine:
+    maturity: draft
+    type: array
+    ordered: false
+    description: Diagnostic evidence line for AMP/ASCO/CAP
+    items:
+      anyOf:
+        - allOf:
+          - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+          - properties:
+              targetProposition:
+                $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
+            required: [targetProposition]
+        - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+
+  TherapeuticEvidenceLine:
+    maturity: draft
+    type: array
+    ordered: false
+    description: Therapeutic evidence line for AMP/ASCO/CAP
+    items:
+      anyOf:
+        - allOf:
+          - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+          - properties:
+              targetProposition:
+                $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
+            required: [targetProposition]
+        - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+
   VariantClinicalSignificanceStatement:
     maturity: draft
     description: >-
@@ -75,33 +143,10 @@ $defs:
         then:
           properties:
             hasEvidenceLines:
-              type: array
-              ordered: false
-              items:
-                anyOf:
-                  - allOf:
-                      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
-                      - properties:
-                          targetProposition:
-                            oneOf:
-                              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
-                              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
-                              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
-                          strengthOfEvidenceProvided:
-                            properties:
-                              primaryCoding:
-                                allOf:
-                                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                                  - properties:
-                                      code:
-                                        enum:
-                                          - A
-                                          - B
-                                          - C
-                                          - D
-                                      system:
-                                        const: AMP/ASCO/CAP Guidelines, 2017
-                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+              oneOf:
+                - $ref: "#/$defs/DiagnosticEvidenceLine"
+                - $ref: "#/$defs/PrognosticEvidenceLine"
+                - $ref: "#/$defs/TherapeuticEvidenceLine"
             classification:
               type: object
               properties:
@@ -137,33 +182,10 @@ $defs:
         then:
           properties:
             hasEvidenceLines:
-              type: array
-              ordered: false
-              items:
-                anyOf:
-                  - allOf:
-                      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
-                      - properties:
-                          targetProposition:
-                            oneOf:
-                              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
-                              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
-                              - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
-                          strengthOfEvidenceProvided:
-                            properties:
-                              primaryCoding:
-                                allOf:
-                                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
-                                  - properties:
-                                      code:
-                                        enum:
-                                          - A
-                                          - B
-                                          - C
-                                          - D
-                                      system:
-                                        const: AMP/ASCO/CAP Guidelines, 2017
-                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+              oneOf:
+                - $ref: "#/$defs/DiagnosticEvidenceLine"
+                - $ref: "#/$defs/PrognosticEvidenceLine"
+                - $ref: "#/$defs/TherapeuticEvidenceLine"
             classification:
               type: object
               properties:
