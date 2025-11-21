@@ -79,6 +79,6 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`ClinicalVa
       - The relationship the Proposition describes between the subject variant and object Condition. MUST be one of "isDiagnosticInclusionCriterionFor" or "isDiagnosticExclusionCriterionFor".
    *  - objectCondition
       -
-      - :ref:`Condition` | :ref:`iriReference`
+      - :ref:`Condition` | :ref:`ConditionSet` | :ref:`iriReference`
       - 1..1
       - The disease that is evaluated for diagnosis.

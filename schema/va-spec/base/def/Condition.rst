@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A single condition (disease, phenotype, or trait), or a set of conditions (ConditionSet).
+A concept representing a single condition (disease, phenotype, or trait).
 
 **Information Model**
 

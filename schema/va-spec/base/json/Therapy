@@ -1,0 +1,24 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/Therapy",
+   "title": "Therapy",
+   "maturity": "trial use",
+   "description": "An individual therapy (drug, procedure, behavioral intervention, etc.)",
+   "$comment": "At present, individual therapies are represented using this specialization of MappableConcept, that captures a code or name for the therapy, along with optional mappings and metadata about the code system. Groups of therapies are represented using the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+      },
+      {
+         "properties": {
+            "conceptType": {
+               "const": "Therapy",
+               "default": "Therapy"
+            }
+         },
+         "required": [
+            "conceptType"
+         ]
+      }
+   ]
+}

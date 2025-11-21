@@ -97,6 +97,9 @@
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ConditionSet"
             }
          ],
          "description": "The disease that is evaluated for diagnosis.",

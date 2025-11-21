@@ -79,9 +79,9 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Clinica
       - The relationship the Proposition describes between the subject variant and object condition. MUST be "isCausalFor".
    *  - objectCondition
       -
-      - :ref:`Condition` | :ref:`iriReference`
+      - :ref:`Condition` | :ref:`ConditionSet` | :ref:`iriReference`
       - 1..1
-      - The :ref:`Condition` for which the variant impact is stated.
+      - The :ref:`Condition` or :ref:`ConditionSet`for which the variant impact is stated.
    *  - penetranceQualifier
       -
       - :ref:`MappableConcept`

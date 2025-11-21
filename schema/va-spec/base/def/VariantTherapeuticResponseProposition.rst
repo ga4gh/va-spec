@@ -77,13 +77,13 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - string
       - 1..1
       - The relationship the Proposition describes between the subject variant and object therapeutic. MUST be one of "predictsSensitivityTo" or "predictsResistanceTo".
-   *  - objectTherapeutic
+   *  - objectTherapy
       -
-      - :ref:`Therapeutic` | :ref:`iriReference`
+      - :ref:`Therapy` | :ref:`iriReference`
       - 1..1
       - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
    *  - conditionQualifier
       -
-      - :ref:`Condition` | :ref:`iriReference`
+      - :ref:`Condition` | :ref:`ConditionSet` | :ref:`iriReference`
       - 1..1
       - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions.

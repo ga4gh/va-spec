@@ -33,7 +33,7 @@ objectConsequence:
         code: "SO:0001619"
         system: "sequenceontology"
   membershipOperator: "OR"
-        
+
 transcriptVariationContextQualifier: []
   # Problem: VRS alleles can't be defined on intronic or upstream/downstream regions. Otherwise, we would put:
   # - type: Allele

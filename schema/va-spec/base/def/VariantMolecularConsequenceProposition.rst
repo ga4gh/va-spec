@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Proposition describing a type of consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition class.
+A Proposition describing a type of consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition classes.
 
 **Information Model**
 
-Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`SubjectVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -52,16 +52,6 @@ Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - geneContextQualifier
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
-   *  - alleleOriginQualifier
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - Reports whether the Proposition should be interpreted in the context of a heritable "germline" variant, an acquired "somatic" variant in a tumor,  post-zygotic "mosaic" variant. While these are the most commonly reported allele origins, other more nuanced concepts can be captured  (e.g. "maternal" vs "paternal" allele origin"). In practice, populating this field may be complicated by the fact that some sources report allele origin based on the type of tissue that was sequenced to identify the variant, and others use it more generally to specify a category of variant for which the proposition holds. The stated intent of this attribute is the latter. However, if an implementer is not sure about which is reported in their data, it may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity.
    *  - type
       -
       - string
@@ -69,9 +59,9 @@ Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`
       - MUST be "VariantMolecularConsequenceProposition".
    *  - subjectVariant
       -
-      - :ref:`Allele` | :ref:`Adjacency` | :ref:`CategoricalVariant` | :ref:`iriReference`
+      - :ref:`Allele` | :ref:`Adjacency` | :ref:`iriReference`
       - 1..1
-      - A variant that is the subject of the Proposition.
+      - MUST be a genomic variant specified against genomic reference sequence(s). This practice most directly reflects data conventions from sources like VEP, and aligns with the intended use of Molecular Consequence data. There are separate qualifier attributes in the model to capture transcript and/or protein level representations of the subject, that indicate the variant context in which the reported consequence(s) are actually manifest.
    *  - predicate
       -
       - string
@@ -79,14 +69,21 @@ Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`
       - The relationship the Proposition describes between the subject variant and object consequence terms for which the molecular consequence applies. MUST be "hasMolecularConsequence".
    *  - objectConsequence
       -
-      - :ref:`MolecularConsequence` | :ref:`iriReference`
+      - :ref:`MappableConcept` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
-      - The molecular consequence of the subject variant.
-   *  - molecularVariationContextQualifiers
+      - The molecular consequence(s) of the subject variant, in the context of the qualifying transcript and/or protein variation context(s). These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant). If more than one consequence term apply, use a ConceptSet to capture them.
+   *  - transcriptVariationContextQualifier
       -
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`Allele` | :ref:`Adjacency` | :ref:`iriReference`
-      - 0..m
-      - Sequence changes on transcript, mRNA, or protein molecules. The relationship between the subject variant and object terms only holds in the context of variations on molecules represented in this array.
+      - 0..1
+      - The subject genomic variant as projected on a particular transcript or mRNA molecule. The reported relationship between the subject variant and object consequence terms holds specifically in the context of this transcript variation. A transcript variation context MUST be reported, unless the subject is an intergenic variant.
+   *  - proteinVariationContextQualifier
+      -
+      - :ref:`Allele` | :ref:`Adjacency` | :ref:`iriReference`
+      - 0..1
+      - The subject genomic variant as projected on a particular protein molecule. The reported relationship between the subject variant and object consequence terms holds specifically in the context of this protein variation. A protein variation context MUST be accompanied by its corresponding transcript variation context.
+   *  - geneContextQualifier
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.

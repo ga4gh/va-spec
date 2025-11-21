@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-An individual therapy (drug, procedure, behavioral intervention, etc.), or group of therapies (TherapyGroup).
+An individual therapy (drug, procedure, behavioral intervention, etc.)
 
 **Information Model**
 

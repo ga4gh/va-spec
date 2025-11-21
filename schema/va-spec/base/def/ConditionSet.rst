@@ -8,7 +8,7 @@ A set of conditions (diseases, phenotypes, traits) that occur together or are re
 
 **Information Model**
 
-Some ConditionSet attributes are inherited from :ref:`gks-core:Element`.
+Some ConditionSet attributes are inherited from :ref:`ConceptSet`.
 
 .. list-table::
    :class: clean-wrap
@@ -21,29 +21,21 @@ Some ConditionSet attributes are inherited from :ref:`gks-core:Element`.
       - Type
       - Limits
       - Description
-   *  - id
+   *  - type
       -
-      - string
+      - _Not Specified_
       - 0..1
-      - The 'logical' identifier of the data element in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.
-   *  - extensions
-      -
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Extension`
-      - 0..m
-      - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
+      - MUST be "ConceptSet".
    *  - conditions
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`MappableConcept` | :ref:`ConditionSet`
+      - :ref:`Condition` | :ref:`ConditionSet`
       - 2..m
       - A list of conditions (diseases, phenotypes, traits) that are co-occurring or related, depending on the membership operator.
    *  - membershipOperator
       -
       - string
       - 1..1
-      - The logical relationship between members of the set, that indicates how they manifest in patients/research subjects. The value 'AND' indicates that all conditions in the set co-occur together in a given patient or subject. The value 'OR' indicates that only one condition in the set manifests in each participant interrogated in a given study.
+      - The logical relationship between conditions in the set, that indicates how they manifest in patients/research subjects. The value 'AND' indicates that all conditions in the set co-occur together in a given patient or subject. The value 'OR' indicates that only one condition in the set manifests in each participant interrogated in a given study.

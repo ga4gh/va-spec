@@ -1,6 +1,6 @@
 # See examples/vep_data/transcript-consequence-unformatted.jsonc for source data
 type: VariantMolecularConsequenceProposition
-subjectVariant: 
+subjectVariant:
   id: ga4gh:VA.tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
   type: Allele
   digest: tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
@@ -27,7 +27,7 @@ objectConsequence:
       primaryCoding:
         code: "SO:0001583"
         system: "sequenceontology"
-transcriptVariationContextQualifier: 
+transcriptVariationContextQualifier:
   - type: Allele
     location:
       type: SequenceLocation
@@ -45,7 +45,7 @@ transcriptVariationContextQualifier:
     expressions:
       - syntax: hgvs.c
         value: ENST00000366667.6:c.803C>T
-proteinVariationContextQualifier: 
+proteinVariationContextQualifier:
   - type: Allele
     location:
       type: SequenceLocation

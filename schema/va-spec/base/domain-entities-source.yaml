@@ -9,17 +9,22 @@ imports:
 namespaces:
   gks.core: /ga4gh/schema/gks-core/1.1.0/json/
 
-$defs:      
+$defs:
   # A ConceptSet data structure to provide support for sets of generic concepts.
   ConceptSet:
     type: object
-    maturity: draft
+    maturity: trial use
     inherits: gks-core:Element
     description: >-
       A set of concepts that may be considered as dependent (occurring together), or independent (existing separately)
       in the context of some knowledge reported about them, as indicated by a set membership operator. e.g. a set of independent
       molecular consequences that both result from the presence of a particular genetic variant (membership operator = OR).
     properties:
+      type:
+        const: ConceptSet
+        default: ConceptSet
+        description: MUST be "ConceptSet".
+    heritableProperties:
       concepts:
         type: array
         ordered: false
@@ -42,14 +47,13 @@ $defs:
         enum:
            - AND
            - OR
-    required:
+    heritableRequired:
       - concepts
       - membershipOperator
 
   # Condition data structure for defining single conditions as an extension of MappableConcept
   Condition:
     maturity: trial use
-    inherits: MappableConcept
     description: >-
       A concept representing a single condition (disease, phenotype, or trait).
     $comment: >-
@@ -60,15 +64,15 @@ $defs:
       a conceptType = "Absent". Additionally, either the 'name' or 'primaryCoding' attribute of a MappableConcept must
       be populated.  The name or code may simple reiterate the conceptType (e.g. 'condition absent'), or report a more specific
       nature or reason for the absence of a condition (e.g. 'Data Missing in Source', 'Condition Unknown', 'All Mendelian Diseases').
-    properties:
-      conceptType:
-        extends: conceptType
-        const: Condition
-        defailt: Condition
-        description: MUST be "Condition"
-    required:
-      - conceptType
-      
+    allOf:
+      - $refCurie: gks.core:MappableConcept
+      - properties:
+          conceptType:
+            const: Condition
+            default: Condition
+        required:
+          - conceptType
+
   # ConditionSet data structure to provide support for co-occurring or substitute conditions.
   ConditionSet:
     type: object
@@ -80,6 +84,10 @@ $defs:
       same patient or individually in a different subset of participants in a research
       study.
     properties:
+      type:
+        const: ConceptSet
+        default: ConceptSet
+        description: MUST be "ConceptSet".
       conditions:
         extends: concepts
         items:
@@ -106,26 +114,25 @@ $defs:
     required:
       - conditions
       - membershipOperator
-  
+
   # Therapy data structure for defining single therapies as an extension of MappableConcept
   Therapy:
-    inherits: MappableConcept
     maturity: trial use
     description: >-
       An individual therapy (drug, procedure, behavioral intervention, etc.)
     $comment: >-
-      At present, individual therapies are represented using this specialization of MappableConcept, that captures a code or name 
-      for the therapy, along with optional mappings and metadata about the code system. Groups of therapies are represented using 
+      At present, individual therapies are represented using this specialization of MappableConcept, that captures a code or name
+      for the therapy, along with optional mappings and metadata about the code system. Groups of therapies are represented using
       the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.
-    properties:
-      conceptType:
-        extends: conceptType
-        const: Therapy
-        defailt: Therapy
-        description: MUST be "Therapy"
-    required:
-      - conceptType
-      
+    allOf:
+      - $refCurie: gks.core:MappableConcept
+      - properties:
+          conceptType:
+            const: Therapy
+            default: Therapy
+        required:
+          - conceptType
+
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
   TherapyGroup:
     inherits: ConceptSet
@@ -135,12 +142,16 @@ $defs:
       A group of two or more therapies that are applied in combination to a single patient/subject, or applied
       individually to a different subset of participants in a research study.
     properties:
+      type:
+        const: ConceptSet
+        default: ConceptSet
+        description: MUST be "ConceptSet".
       therapies:
         extends: concepts
         items:
           oneOf:
             - $ref: "#/$defs/Therapy"
-            - $ref: "#/$defs/TherapySet"
+            - $ref: "#/$defs/TherapyGroup"
         description: >-
           A list of therapies that are applied to treat a condition.
       membershipOperator:
