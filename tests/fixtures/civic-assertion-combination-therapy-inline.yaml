@@ -1,0 +1,1377 @@
+id: civic.aid:7
+classification:
+  name: Tier I
+  primaryCoding:
+    code: tier i
+    system: AMP/ASCO/CAP Guidelines, 2017
+description:
+  Combination treatment of BRAF inhibitor dabrafenib and MEK inhibitor
+  trametinib is recommended for adjuvant treatment of stage III or recurrent melanoma
+  with BRAF V600E mutation detected by the approved THxID kit, as well as first line
+  treatment for metastatic melanoma. The treatments are FDA approved based on studies
+  including the Phase III COMBI-V, COMBI-D and COMBI-AD Trials. Combination therapy
+  is now recommended above BRAF inhibitor monotherapy. Cutaneous squamous-cell carcinoma
+  and keratoacanthoma occur at lower rates with combination therapy than with BRAF
+  inhibitor alone.
+direction: supports
+hasEvidenceLines:
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          Adjuvant dual treatment with BRAF inhibitor dabrafenib and MEK inhibitor
+          trametinib was administered to patients with stage III resected melenoma with
+          V600E or V600K mutation in this stage III trial (COMBO-AD, NCT01682083). 792
+          (91%) patients had V600E, and were administered dabrafenib and trametinib or
+          placebo for 12 months. In subsequent analysis, relapse or death occurred in
+          150/397 patients (38%) in the treatment group and 229/395 patients (58%) in
+          the placebo group for a 95% CI Hazard Ratio of 0.48 (0.39-0.58).
+        direction: supports
+        id: civic.eid:6178
+        proposition:
+          alleleOriginQualifier:
+            extensions:
+              - name: civic_variant_origin
+                value: SOMATIC
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:7
+            mappings:
+              - coding:
+                  code: DOID:1909
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Melanoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types. Of
+                  these, the mutation of valine 600 to glutamic acid (V600E) is the most
+                  prevalent. V600E has been determined to be an activating mutation, and
+                  cells that harbor it, along with other V600 mutations are sensitive to
+                  the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have also
+                  been correlated with poor prognosis in many cancer types, although there
+                  is at least one study that questions this conclusion in papillary thyroid
+                  cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+                  dimers and are resistant to vemurafenib. Such mutants may be sensitive
+                  to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or NSCLC
+                  may be effectively treated with combinations that include inhibitors of
+                  receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectTherapeutic:
+            membershipOperator: AND
+            therapies:
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - BRAF Inhibitor GSK2118436
+                      - Benzenesulfonamide, N-(3-(5-(2-amino-4-pyrimidinyl)-2-(1,1-dimethylethyl)-4-thiazolyl)-2-fluorophenyl)-2,6-difluoro-
+                      - GSK 2118436
+                      - GSK 2118436A
+                      - GSK-2118436
+                      - GSK-2118436A
+                      - GSK2118436
+                      - GSK2118436A
+                id: civic.tid:22
+                mappings:
+                  - coding:
+                      code: C82386
+                      id: ncit:C82386
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Dabrafenib
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - GSK1120212
+                      - JTP-74057
+                      - MEK Inhibitor GSK1120212
+                      - Mekinist
+                      - N-(3-{3-cyclopropyl-5-[(2-fluoro-4-iodophenyl)amino]-6,8-dimethyl-2,4,7-trioxo-3,4,6,7-tetrahydropyrido[4,3-d]pyrimidin-1(2H)-yl}phenyl)acetamide
+                id: civic.tid:19
+                mappings:
+                  - coding:
+                      code: C77908
+                      id: ncit:C77908
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Trametinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant is
+              correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective when
+              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
+              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
+              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
+              combination therapies have been successful in treating V600E mutations.
+              However, cetuximab and panitumumab have been largely shown to be ineffective
+              without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: "12"
+                  id: civic.mpid:12
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "12"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variant_types
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:12
+                  name: V600E
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA123643
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "13961"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376069"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:2475
+            name: Long et al., 2017
+            pmid: "28891408"
+            title: Adjuvant Dabrafenib plus Trametinib in Stage III BRAF-Mutated Melanoma.
+            type: Document
+            urls:
+              - https://civicdb.org/links/source/2475
+              - http://www.ncbi.nlm.nih.gov/pubmed/28891408
+          - https://civicdb.org/links/evidence/6178
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          In this Phase III trial (NCT01584648 COMBI-d), previously untreated
+          patients with unresectable stage IIIC or IV melanoma with BRAF V600E (359 patients)
+          or V600K (61 patients) received dabrafenib and trametinib or dabrafenib alone
+          with primary endpoint of progression free survival and secondary endpoints including
+          disease response. The hazard ratio for progression or death in the V600E group
+          was 0.81 for dabrafenib-trametinib vs dabrafenib-alone. Of 179 V600E patients
+          in the dabrafenib-trametinib group, 68% of patients had a response, which was
+          15 percentage points higher than in the dabrafenib-alone group (95% CI, 4 to
+          24; P=0.006).
+        direction: supports
+        id: civic.eid:6938
+        proposition:
+          alleleOriginQualifier:
+            extensions:
+              - name: civic_variant_origin
+                value: SOMATIC
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:7
+            mappings:
+              - coding:
+                  code: DOID:1909
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Melanoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types. Of
+                  these, the mutation of valine 600 to glutamic acid (V600E) is the most
+                  prevalent. V600E has been determined to be an activating mutation, and
+                  cells that harbor it, along with other V600 mutations are sensitive to
+                  the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have also
+                  been correlated with poor prognosis in many cancer types, although there
+                  is at least one study that questions this conclusion in papillary thyroid
+                  cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+                  dimers and are resistant to vemurafenib. Such mutants may be sensitive
+                  to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or NSCLC
+                  may be effectively treated with combinations that include inhibitors of
+                  receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectTherapeutic:
+            membershipOperator: AND
+            therapies:
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - BRAF Inhibitor GSK2118436
+                      - Benzenesulfonamide, N-(3-(5-(2-amino-4-pyrimidinyl)-2-(1,1-dimethylethyl)-4-thiazolyl)-2-fluorophenyl)-2,6-difluoro-
+                      - GSK 2118436
+                      - GSK 2118436A
+                      - GSK-2118436
+                      - GSK-2118436A
+                      - GSK2118436
+                      - GSK2118436A
+                id: civic.tid:22
+                mappings:
+                  - coding:
+                      code: C82386
+                      id: ncit:C82386
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Dabrafenib
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - GSK1120212
+                      - JTP-74057
+                      - MEK Inhibitor GSK1120212
+                      - Mekinist
+                      - N-(3-{3-cyclopropyl-5-[(2-fluoro-4-iodophenyl)amino]-6,8-dimethyl-2,4,7-trioxo-3,4,6,7-tetrahydropyrido[4,3-d]pyrimidin-1(2H)-yl}phenyl)acetamide
+                id: civic.tid:19
+                mappings:
+                  - coding:
+                      code: C77908
+                      id: ncit:C77908
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Trametinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant is
+              correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective when
+              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
+              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
+              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
+              combination therapies have been successful in treating V600E mutations.
+              However, cetuximab and panitumumab have been largely shown to be ineffective
+              without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: "12"
+                  id: civic.mpid:12
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "12"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variant_types
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:12
+                  name: V600E
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA123643
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "13961"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376069"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:2671
+            name: Long et al., 2014
+            pmid: "25265492"
+            title: Combined BRAF and MEK inhibition versus BRAF inhibition alone in melanoma.
+            type: Document
+            urls:
+              - https://civicdb.org/links/source/2671
+              - http://www.ncbi.nlm.nih.gov/pubmed/25265492
+          - https://civicdb.org/links/evidence/6938
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          In a clinical trial (NCT01597908) of 704 metastatic melanoma patients,
+          patients harboring a BRAF V600E mutation and treated with vemurafenib (n=317)
+          were associated with a 51% response rate, as compared to a 64% response rate
+          (p<0.001) in V600E mutation positive patients treated with dabrafenib and trametinib
+          combination therapy (n=312). Median progression-free survival was 11.4 months
+          in the combination-therapy group and 7.3 months in the vemurafenib group (hazard
+          ratio, 0.56; 95% CI, 0.46 to 0.69; P<0.001).
+        direction: supports
+        id: civic.eid:3758
+        proposition:
+          alleleOriginQualifier:
+            extensions:
+              - name: civic_variant_origin
+                value: SOMATIC
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:206
+            mappings:
+              - coding:
+                  code: DOID:8923
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Skin Melanoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types. Of
+                  these, the mutation of valine 600 to glutamic acid (V600E) is the most
+                  prevalent. V600E has been determined to be an activating mutation, and
+                  cells that harbor it, along with other V600 mutations are sensitive to
+                  the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have also
+                  been correlated with poor prognosis in many cancer types, although there
+                  is at least one study that questions this conclusion in papillary thyroid
+                  cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+                  dimers and are resistant to vemurafenib. Such mutants may be sensitive
+                  to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or NSCLC
+                  may be effectively treated with combinations that include inhibitors of
+                  receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectTherapeutic:
+            membershipOperator: AND
+            therapies:
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - BRAF Inhibitor GSK2118436
+                      - Benzenesulfonamide, N-(3-(5-(2-amino-4-pyrimidinyl)-2-(1,1-dimethylethyl)-4-thiazolyl)-2-fluorophenyl)-2,6-difluoro-
+                      - GSK 2118436
+                      - GSK 2118436A
+                      - GSK-2118436
+                      - GSK-2118436A
+                      - GSK2118436
+                      - GSK2118436A
+                id: civic.tid:22
+                mappings:
+                  - coding:
+                      code: C82386
+                      id: ncit:C82386
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Dabrafenib
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - GSK1120212
+                      - JTP-74057
+                      - MEK Inhibitor GSK1120212
+                      - Mekinist
+                      - N-(3-{3-cyclopropyl-5-[(2-fluoro-4-iodophenyl)amino]-6,8-dimethyl-2,4,7-trioxo-3,4,6,7-tetrahydropyrido[4,3-d]pyrimidin-1(2H)-yl}phenyl)acetamide
+                id: civic.tid:19
+                mappings:
+                  - coding:
+                      code: C77908
+                      id: ncit:C77908
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Trametinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant is
+              correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective when
+              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
+              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
+              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
+              combination therapies have been successful in treating V600E mutations.
+              However, cetuximab and panitumumab have been largely shown to be ineffective
+              without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: "12"
+                  id: civic.mpid:12
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "12"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variant_types
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:12
+                  name: V600E
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA123643
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "13961"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376069"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:353
+            name: Robert et al., 2015
+            pmid: "25399551"
+            title: Improved overall survival in melanoma with combined dabrafenib and trametinib.
+            type: Document
+            urls:
+              - https://civicdb.org/links/source/353
+              - http://www.ncbi.nlm.nih.gov/pubmed/25399551
+          - https://civicdb.org/links/evidence/3758
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          In this Phase I and II study (NCT01072175) patients with metastatic
+          melanoma were given dabrafenib and trametinib combination therapy vs. dabrafenib
+          monotherapy. From V600E patients, 45 received monotherapy and 92 received combination
+          therapy. Hazard ratio for progression or death was 0.43 (95% CI, 0.27-0.71).
+          Both patients with the BRAF V600E and V600K mutation showed significant improvement
+          in progression-free survival.
+        direction: supports
+        id: civic.eid:6940
+        proposition:
+          alleleOriginQualifier:
+            extensions:
+              - name: civic_variant_origin
+                value: SOMATIC
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:7
+            mappings:
+              - coding:
+                  code: DOID:1909
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Melanoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - B-RAF1
+                  - B-raf
+                  - BRAF
+                  - BRAF-1
+                  - BRAF1
+                  - NS7
+                  - RAFB1
+              - name: description
+                value:
+                  "BRAF mutations are found to be recurrent in many cancer types. Of
+                  these, the mutation of valine 600 to glutamic acid (V600E) is the most
+                  prevalent. V600E has been determined to be an activating mutation, and
+                  cells that harbor it, along with other V600 mutations are sensitive to
+                  the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+                  as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+                  has seen some success in BRAF mutant melanomas. BRAF mutations have also
+                  been correlated with poor prognosis in many cancer types, although there
+                  is at least one study that questions this conclusion in papillary thyroid
+                  cancer.
+
+
+                  Oncogenic BRAF mutations are divided into three categories that determine
+                  their sensitivity to inhibitors.
+
+                  Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+                  and are sensitive to current RAF monomer inhibitors.
+
+                  Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+                  G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+                  dimers and are resistant to vemurafenib. Such mutants may be sensitive
+                  to novel RAF dimer inhibitors or MEK inhibitors.
+
+                  Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+                  N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+                  low or absent kinase activity are RAS-dependent and they activate ERK
+                  by increasing their binding to activated RAS and wild-type CRAF. Class
+                  3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+                  be treated with MEK inhibitors. In epithelial tumors such as CRC or NSCLC
+                  may be effectively treated with combinations that include inhibitors of
+                  receptor tyrosine kinase."
+            id: civic.gid:5
+            mappings:
+              - coding:
+                  code: "673"
+                  id: ncbigene:673
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: BRAF
+          objectTherapeutic:
+            membershipOperator: AND
+            therapies:
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - BRAF Inhibitor GSK2118436
+                      - Benzenesulfonamide, N-(3-(5-(2-amino-4-pyrimidinyl)-2-(1,1-dimethylethyl)-4-thiazolyl)-2-fluorophenyl)-2,6-difluoro-
+                      - GSK 2118436
+                      - GSK 2118436A
+                      - GSK-2118436
+                      - GSK-2118436A
+                      - GSK2118436
+                      - GSK2118436A
+                id: civic.tid:22
+                mappings:
+                  - coding:
+                      code: C82386
+                      id: ncit:C82386
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Dabrafenib
+              - conceptType: Therapy
+                extensions:
+                  - name: aliases
+                    value:
+                      - GSK1120212
+                      - JTP-74057
+                      - MEK Inhibitor GSK1120212
+                      - Mekinist
+                      - N-(3-{3-cyclopropyl-5-[(2-fluoro-4-iodophenyl)amino]-6,8-dimethyl-2,4,7-trioxo-3,4,6,7-tetrahydropyrido[4,3-d]pyrimidin-1(2H)-yl}phenyl)acetamide
+                id: civic.tid:19
+                mappings:
+                  - coding:
+                      code: C77908
+                      id: ncit:C77908
+                      system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                    relation: exactMatch
+                name: Trametinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - VAL600GLU
+              - V640E
+              - VAL640GLU
+            description:
+              BRAF V600E has been shown to be recurrent in many cancer types.
+              It is one of the most widely studied variants in cancer. This variant is
+              correlated with poor prognosis in certain cancer types, including colorectal
+              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+              has been shown to be effective in clinical trials with an array of BRAF
+              mutations and cancer types. Dabrafenib has also shown to be effective when
+              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
+              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
+              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
+              combination therapies have been successful in treating V600E mutations.
+              However, cetuximab and panitumumab have been largely shown to be ineffective
+              without supplementary treatment.
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 1433.5
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                  - syntax: hgvs.p
+                    value: NP_004324.2:p.Val600Glu
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                  - syntax: hgvs.c
+                    value: ENST00000288602.6:c.1799T>A
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: A
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000288602.6
+                  start: 140453136
+                  stop: 140453136
+                  type: coordinates
+                  variant_bases: T
+            id: civic.mpid:12
+            mappings:
+              - coding:
+                  code: "12"
+                  id: civic.mpid:12
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "12"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variant_types
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:12
+                  name: V600E
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA123643
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "13961"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376069"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs113488022
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: BRAF V600E
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:103
+            name: Flaherty et al., 2012
+            pmid: "23020132"
+            title: Combined BRAF and MEK inhibition in melanoma with BRAF V600 mutations.
+            type: Document
+            urls:
+              - https://civicdb.org/links/source/103
+              - http://www.ncbi.nlm.nih.gov/pubmed/23020132
+              - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3549295
+          - https://civicdb.org/links/evidence/6940
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: A
+        system: AMP/ASCO/CAP Guidelines, 2017
+    targetProposition:
+      alleleOriginQualifier:
+        extensions:
+          - name: civic_variant_origin
+            value: SOMATIC
+        name: somatic
+      conditionQualifier:
+        conceptType: Disease
+        id: civic.did:7
+        mappings:
+          - coding:
+              code: DOID:1909
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+        name: Melanoma
+      geneContextQualifier:
+        conceptType: Gene
+        extensions:
+          - name: aliases
+            value:
+              - B-RAF1
+              - B-raf
+              - BRAF
+              - BRAF-1
+              - BRAF1
+              - NS7
+              - RAFB1
+          - name: description
+            value:
+              "BRAF mutations are found to be recurrent in many cancer types. Of
+              these, the mutation of valine 600 to glutamic acid (V600E) is the most
+              prevalent. V600E has been determined to be an activating mutation, and
+              cells that harbor it, along with other V600 mutations are sensitive to
+              the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
+              as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
+              has seen some success in BRAF mutant melanomas. BRAF mutations have also
+              been correlated with poor prognosis in many cancer types, although there
+              is at least one study that questions this conclusion in papillary thyroid
+              cancer.
+
+
+              Oncogenic BRAF mutations are divided into three categories that determine
+              their sensitivity to inhibitors.
+
+              Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
+              and are sensitive to current RAF monomer inhibitors.
+
+              Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
+              G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+              dimers and are resistant to vemurafenib. Such mutants may be sensitive
+              to novel RAF dimer inhibitors or MEK inhibitors.
+
+              Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
+              N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
+              low or absent kinase activity are RAS-dependent and they activate ERK
+              by increasing their binding to activated RAS and wild-type CRAF. Class
+              3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
+              be treated with MEK inhibitors. In epithelial tumors such as CRC or NSCLC
+              may be effectively treated with combinations that include inhibitors of
+              receptor tyrosine kinase."
+        id: civic.gid:5
+        mappings:
+          - coding:
+              code: "673"
+              id: ncbigene:673
+              system: https://www.ncbi.nlm.nih.gov/gene/
+            relation: exactMatch
+        name: BRAF
+      objectTherapeutic:
+        membershipOperator: AND
+        therapies:
+          - conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - BRAF Inhibitor GSK2118436
+                  - Benzenesulfonamide, N-(3-(5-(2-amino-4-pyrimidinyl)-2-(1,1-dimethylethyl)-4-thiazolyl)-2-fluorophenyl)-2,6-difluoro-
+                  - GSK 2118436
+                  - GSK 2118436A
+                  - GSK-2118436
+                  - GSK-2118436A
+                  - GSK2118436
+                  - GSK2118436A
+            id: civic.tid:22
+            mappings:
+              - coding:
+                  code: C82386
+                  id: ncit:C82386
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Dabrafenib
+          - conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - GSK1120212
+                  - JTP-74057
+                  - MEK Inhibitor GSK1120212
+                  - Mekinist
+                  - N-(3-{3-cyclopropyl-5-[(2-fluoro-4-iodophenyl)amino]-6,8-dimethyl-2,4,7-trioxo-3,4,6,7-tetrahydropyrido[4,3-d]pyrimidin-1(2H)-yl}phenyl)acetamide
+            id: civic.tid:19
+            mappings:
+              - coding:
+                  code: C77908
+                  id: ncit:C77908
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Trametinib
+      predicate: predictsSensitivityTo
+      subjectVariant:
+        aliases:
+          - VAL600GLU
+          - V640E
+          - VAL640GLU
+        description:
+          BRAF V600E has been shown to be recurrent in many cancer types.
+          It is one of the most widely studied variants in cancer. This variant is
+          correlated with poor prognosis in certain cancer types, including colorectal
+          cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
+          has been shown to be effective in clinical trials with an array of BRAF
+          mutations and cancer types. Dabrafenib has also shown to be effective when
+          combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
+          However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
+          has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
+          combination therapies have been successful in treating V600E mutations.
+          However, cetuximab and panitumumab have been largely shown to be ineffective
+          without supplementary treatment.
+        extensions:
+          - name: CIViC Molecular Profile Score
+            value: 1433.5
+          - name: expressions
+            value:
+              - syntax: hgvs.c
+                value: NM_004333.4:c.1799T>A
+              - syntax: hgvs.p
+                value: NP_004324.2:p.Val600Glu
+              - syntax: hgvs.g
+                value: NC_000007.13:g.140453136A>T
+              - syntax: hgvs.c
+                value: ENST00000288602.6:c.1799T>A
+          - name: CIViC representative coordinate
+            value:
+              chromosome: "7"
+              ensembl_version: 75
+              reference_bases: A
+              reference_build: GRCh37
+              representative_transcript: ENST00000288602.6
+              start: 140453136
+              stop: 140453136
+              type: coordinates
+              variant_bases: T
+        id: civic.mpid:12
+        mappings:
+          - coding:
+              code: "12"
+              id: civic.mpid:12
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+          - coding:
+              code: "12"
+              extensions:
+                - name: subtype
+                  value: gene_variant
+                - name: variant_types
+                  value:
+                    - coding:
+                        code: SO:0001583
+                        id: civic.variant_type:47
+                        name: Missense Variant
+                        system: http://www.sequenceontology.org/browser/current_svn/term/
+                      relation: exactMatch
+              id: civic.vid:12
+              name: V600E
+              system: https://civicdb.org/links/variant/
+            relation: exactMatch
+          - coding:
+              code: CA123643
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "13961"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              code: "376069"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              code: rs113488022
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+        name: BRAF V600E
+        type: CategoricalVariant
+      type: VariantTherapeuticResponseProposition
+    type: EvidenceLine
+proposition:
+  alleleOriginQualifier:
+    extensions:
+      - name: civic_variant_origin
+        value: SOMATIC
+    name: somatic
+  objectCondition:
+    conceptType: Disease
+    id: civic.did:7
+    mappings:
+      - coding:
+          code: DOID:1909
+          system: https://disease-ontology.org/?id=
+        relation: exactMatch
+    name: Melanoma
+  geneContextQualifier:
+    conceptType: Gene
+    extensions:
+      - name: aliases
+        value:
+          - B-RAF1
+          - B-raf
+          - BRAF
+          - BRAF-1
+          - BRAF1
+          - NS7
+          - RAFB1
+      - name: description
+        value:
+          "BRAF mutations are found to be recurrent in many cancer types. Of these,
+          the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
+          V600E has been determined to be an activating mutation, and cells that harbor
+          it, along with other V600 mutations are sensitive to the BRAF inhibitor dabrafenib.
+          It is also common to use MEK inhibition as a substitute for BRAF inhibitors,
+          and the MEK inhibitor trametinib has seen some success in BRAF mutant melanomas.
+          BRAF mutations have also been correlated with poor prognosis in many cancer
+          types, although there is at least one study that questions this conclusion
+          in papillary thyroid cancer.
+
+
+          Oncogenic BRAF mutations are divided into three categories that determine
+          their sensitivity to inhibitors.
+
+          Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers and
+          are sensitive to current RAF monomer inhibitors.
+
+          Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V, G469R,
+          G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
+          dimers and are resistant to vemurafenib. Such mutants may be sensitive to
+          novel RAF dimer inhibitors or MEK inhibitors.
+
+          Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E, N581S,
+          N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with low or absent
+          kinase activity are RAS-dependent and they activate ERK by increasing their
+          binding to activated RAS and wild-type CRAF. Class 3 BRAF mutations coexist
+          with mutations in RAS or NF1 in melanoma may be treated with MEK inhibitors.
+          In epithelial tumors such as CRC or NSCLC may be effectively treated with
+          combinations that include inhibitors of receptor tyrosine kinase."
+    id: civic.gid:5
+    mappings:
+      - coding:
+          code: "673"
+          id: ncbigene:673
+          system: https://www.ncbi.nlm.nih.gov/gene/
+        relation: exactMatch
+    name: BRAF
+  predicate: hasClinicalSignificanceFor
+  subjectVariant:
+    aliases:
+      - VAL600GLU
+      - V640E
+      - VAL640GLU
+    description:
+      BRAF V600E has been shown to be recurrent in many cancer types. It
+      is one of the most widely studied variants in cancer. This variant is correlated
+      with poor prognosis in certain cancer types, including colorectal cancer and
+      papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+      to be effective in clinical trials with an array of BRAF mutations and cancer
+      types. Dabrafenib has also shown to be effective when combined with the MEK
+      inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+      with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+      Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+      have been successful in treating V600E mutations. However, cetuximab and panitumumab
+      have been largely shown to be ineffective without supplementary treatment.
+    extensions:
+      - name: CIViC Molecular Profile Score
+        value: 1433.5
+      - name: expressions
+        value:
+          - syntax: hgvs.c
+            value: NM_004333.4:c.1799T>A
+          - syntax: hgvs.p
+            value: NP_004324.2:p.Val600Glu
+          - syntax: hgvs.g
+            value: NC_000007.13:g.140453136A>T
+          - syntax: hgvs.c
+            value: ENST00000288602.6:c.1799T>A
+      - name: CIViC representative coordinate
+        value:
+          chromosome: "7"
+          ensembl_version: 75
+          reference_bases: A
+          reference_build: GRCh37
+          representative_transcript: ENST00000288602.6
+          start: 140453136
+          stop: 140453136
+          type: coordinates
+          variant_bases: T
+    id: civic.mpid:12
+    mappings:
+      - coding:
+          code: "12"
+          id: civic.mpid:12
+          system: https://civicdb.org/links/molecular_profile/
+        relation: exactMatch
+      - coding:
+          code: "12"
+          extensions:
+            - name: subtype
+              value: gene_variant
+            - name: variant_types
+              value:
+                - coding:
+                    code: SO:0001583
+                    id: civic.variant_type:47
+                    name: Missense Variant
+                    system: http://www.sequenceontology.org/browser/current_svn/term/
+                  relation: exactMatch
+          id: civic.vid:12
+          name: V600E
+          system: https://civicdb.org/links/variant/
+        relation: exactMatch
+      - coding:
+          code: CA123643
+          system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+        relation: relatedMatch
+      - coding:
+          code: "13961"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          code: "376069"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          code: rs113488022
+          system: https://www.ncbi.nlm.nih.gov/snp/
+        relation: relatedMatch
+    name: BRAF V600E
+    type: CategoricalVariant
+  type: VariantClinicalSignificanceProposition
+reportedIn:
+  - https://civicdb.org/links/assertion/7
+specifiedBy:
+  id: civic.method:2019
+  methodType: curation
+  name: CIViC Curation SOP (2019)
+  reportedIn:
+    aliases:
+      - CIViC curation SOP
+    doi: 10.1186/s13073-019-0687-x
+    id: pmid:31779674
+    name: Danos et al., 2019, Genome Med.
+    pmid: "31779674"
+    title:
+      Standard operating procedure for curation and clinical interpretation of
+      variants in cancer
+    type: Document
+    urls:
+      - https://doi.org/10.1186/s13073-019-0687-x
+      - https://pubmed.ncbi.nlm.nih.gov/31779674/
+  type: Method
+strength:
+  primaryCoding:
+    code: strong
+    system: AMP/ASCO/CAP Guidelines, 2017
+type: Statement

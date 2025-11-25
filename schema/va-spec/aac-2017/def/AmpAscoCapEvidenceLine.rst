@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A statement reporting a conclusion from a single study about whether a variant is associated with a disease prognosis - based on interpretation of the study's results.
+Evidence line for AMP/ASCO/CAP
 
 **Information Model**
 

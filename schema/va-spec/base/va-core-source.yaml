@@ -244,6 +244,7 @@ $defs:
       - $ref: "#/$defs/VariantPrognosticProposition"
       - $ref: "#/$defs/VariantOncogenicityProposition"
       - $ref: "#/$defs/VariantTherapeuticResponseProposition"
+      - $ref: "#/$defs/VariantClinicalSignificanceProposition"
     heritableProperties:
       subjectVariant:
         extends: subject
@@ -788,6 +789,35 @@ $defs:
     required:
       - predicate
       - objectSequenceFeature
+
+  VariantClinicalSignificanceProposition:
+    inherits: ClinicalVariantProposition
+    type: object
+    maturity: draft
+    description: >-
+      A Proposition describing the clinical significance of a variant with respect to a condition.
+    properties:
+      type:
+        extends: type
+        const: "VariantClinicalSignificanceProposition"
+        default: "VariantClinicalSignificanceProposition"
+        description: MUST be "VariantClinicalSignificanceProposition".
+      predicate:
+        extends: predicate
+        description: >-
+          The predicate associating the subject variant to clinical significance for
+          the object Condition. MUST be "hasClinicalSignificanceFor".
+        const: hasClinicalSignificanceFor
+        default: hasClinicalSignificanceFor
+      objectCondition:
+        extends: object
+        oneOf:
+          - $ref: Condition
+          - $refCurie: gks.core:iriReference
+        description: The condition that is evaluated.
+    required:
+      - predicate
+      - objectCondition
 
   # Variant Diagnostic Proposition
   VariantDiagnosticProposition:

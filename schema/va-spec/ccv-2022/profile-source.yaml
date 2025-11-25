@@ -12,7 +12,7 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 $defs:
-  VariantOncogenicityStudyStatement:
+  VariantOncogenicityStatement:
     maturity: draft
     description: >-
       A statement reporting a conclusion from a single study about whether a variant

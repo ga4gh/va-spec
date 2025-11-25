@@ -1,3 +1,4 @@
+from jsonschema import ValidationError
 from config import test_path, fixtures_path
 import yaml
 from config import validator, js_def, coverage
@@ -19,7 +20,7 @@ def test_examples():
 
         try:
             assert class_validator.validate(data) is None
-        except AssertionError as e:
+        except (AssertionError, ValidationError) as e:
             raise AssertionError(f"AssertionError in {test['test_file']}: {e}")
 
 def test_trial_use_class_coverage():
