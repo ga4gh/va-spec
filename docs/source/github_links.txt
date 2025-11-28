@@ -22,6 +22,9 @@ nonsyndromic_genetic_hearing_loss = tests/fixtures/VA-ClinVar-SCV-Example-002.ya
 discrete_allele = tests/fixtures/allele.yaml
 canonical_allele = examples/canonicalAllele-ex1.yaml
 
+variant_clinical_significance_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L82
+variant_clinical_significance_statement_json_schema = schema/va-spec/aac-2017/json/VariantClinicalSignificanceStatement
+
 pathogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L887
 pathogenicity_proposition_json_schema = schema/va-spec/base/json/VariantPathogenicityProposition
 oncogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L856

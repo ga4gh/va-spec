@@ -28,3 +28,38 @@ VariantClinicalSignificanceStatement
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .. include::  ../../def/va-spec.aac-2017/VariantClinicalSignificanceStatement.rst
+
+This profile applies the following **constraints** on top of the core :ref:`Statement<Statement>` class definition:
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+
+
+   *  - Field
+      - Flags
+      - Type
+      - Limits
+      - Description
+   *  - proposition
+      -
+      - :ref:`Variant Clinical Significance Proposition<clinical-significance-proposition>`
+      - 1..1
+      - A proposition about the clinical significance of a variant with respect to a condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
+   *  - strength
+      -
+      - :ref:`MappableConcept` (nested enum:  strong | potential)
+      - 0..1
+      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
+   *  - classification
+      -
+      - :ref:`MappableConcept`  (nested enum: tier i | tier ii | tier iii | tier iv)
+      - 0..1
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept. If `tier i` or `tier ii`, then a `PrognosticEvidenceLine`, `DiagnosticEvidenceLine`, or `TherapeuticEvidenceLine` MUST be used for any evidence lines (see Artifacts below for more information).
+
+**Artifacts**
+
+ - |variant_clinical_significance_statement_source_yaml|
+ - |variant_clinical_significance_statement_json_schema|
