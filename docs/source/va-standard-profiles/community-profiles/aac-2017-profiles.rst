@@ -24,8 +24,8 @@ The number and coverage of these profiles will grow as these implementations exp
 
 .. _variant-clinical-significance-statement-aac-2017:
 
-VariantClinicalSignificanceStatement
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Variant Clinical Significance Statement
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 .. include::  ../../def/va-spec.aac-2017/VariantClinicalSignificanceStatement.rst
 
