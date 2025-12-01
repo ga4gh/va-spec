@@ -19,11 +19,7 @@ $defs:
       A set of concepts that may be considered as dependent (occurring together), or independent (existing separately)
       in the context of some knowledge reported about them, as indicated by a set membership operator. e.g. a set of independent
       molecular consequences that both result from the presence of a particular genetic variant (membership operator = OR).
-    properties:
-      type:
-        const: ConceptSet
-        default: ConceptSet
-        description: MUST be "ConceptSet".
+    properties: {}
     heritableProperties:
       type:
         type: string
@@ -76,9 +72,8 @@ $defs:
             oneOf:
               - const: Condition
               - const: Condition Absent
-            default: Condition
-        required:
-          - conceptType
+            default: condition
+        additionalProperties: true
 
   # ConditionSet data structure to provide support for co-occurring or substitute conditions.
   ConditionSet:
@@ -106,6 +101,7 @@ $defs:
               oneOf:
                 - $ref: "#/$defs/Condition"
                 - $ref: "#/$defs/ConditionSet"
+        additionalProperties: true
 
   # Therapy data structure for defining single therapies as an extension of MappableConcept
   Therapy:
@@ -124,8 +120,7 @@ $defs:
               - const: Therapy
               - const: Therapy Absent
             default: Therapy
-        required:
-          - conceptType
+        additionalProperties: true
 
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
   TherapyGroup:
@@ -156,3 +151,4 @@ $defs:
             oneOf:
               - $ref: "#/$defs/Therapy"
               - $ref: "#/$defs/TherapyGroup"
+      additionalProperties: true

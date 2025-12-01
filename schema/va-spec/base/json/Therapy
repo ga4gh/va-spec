@@ -23,9 +23,7 @@
                "default": "Therapy"
             }
          },
-         "required": [
-            "conceptType"
-         ]
+         "additionalProperties": true
       }
    ]
 }

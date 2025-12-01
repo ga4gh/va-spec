@@ -1,5 +1,5 @@
 id: civic.theragroup:e1090
-therapies:
+concepts:
   - primaryCoding:
       code: ncit:C1005
       system: ncit

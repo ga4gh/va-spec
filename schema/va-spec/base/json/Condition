@@ -20,12 +20,10 @@
                      "const": "Condition Absent"
                   }
                ],
-               "default": "Condition"
+               "default": "condition"
             }
          },
-         "required": [
-            "conceptType"
-         ]
+         "additionalProperties": true
       }
    ]
 }
