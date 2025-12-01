@@ -26,6 +26,12 @@
       }
    },
    "heritableProperties": {
+      "type": {
+         "type": "string",
+         "const": "ConceptSet",
+         "default": "ConceptSet",
+         "description": "MUST be \"ConceptSet\"."
+      },
       "concepts": {
          "type": "array",
          "ordered": false,

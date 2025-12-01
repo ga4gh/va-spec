@@ -21,6 +21,11 @@ Some ConceptSet attributes are inherited from :ref:`gks-core:Element`.
       - Type
       - Limits
       - Description
+   *  - type
+      -
+      - string
+      - 0..1
+      - MUST be "ConceptSet".
    *  - concepts
       -
                         .. raw:: html

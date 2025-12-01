@@ -12,7 +12,14 @@
       {
          "properties": {
             "conceptType": {
-               "const": "Therapy",
+               "oneOf": [
+                  {
+                     "const": "Therapy"
+                  },
+                  {
+                     "const": "Therapy Absent"
+                  }
+               ],
                "default": "Therapy"
             }
          },
