@@ -83,7 +83,7 @@ proposition:
           code: SO:0001583
           system: http://www.sequenceontology.org/browser/current_release/term/
           name: missense_variant
-  objectTherapeutic:
+  objectTherapy:
     id: civic.tid:146
     conceptType: Drug
     name: Afatinib

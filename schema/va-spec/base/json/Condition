@@ -12,15 +12,21 @@
       {
          "properties": {
             "conceptType": {
-               "oneOf": [
+               "anyOf": [
                   {
-                     "const": "Condition"
+                     "enum": [
+                        "Condition",
+                        "Phenotype",
+                        "Disease",
+                        "Trait",
+                        "Absent"
+                     ]
                   },
                   {
-                     "const": "Condition Absent"
+                     "type": "string"
                   }
                ],
-               "default": "condition"
+               "default": "Condition"
             }
          },
          "additionalProperties": true

@@ -12,12 +12,18 @@
       {
          "properties": {
             "conceptType": {
-               "oneOf": [
+               "anyOf": [
                   {
-                     "const": "Therapy"
+                     "enum": [
+                        "Therapy",
+                        "Absent",
+                        "Drug",
+                        "Procedure",
+                        "Behavioral Intervention"
+                     ]
                   },
                   {
-                     "const": "Therapy Absent"
+                     "type": "string"
                   }
                ],
                "default": "Therapy"

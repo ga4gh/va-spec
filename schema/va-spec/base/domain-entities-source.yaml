@@ -19,8 +19,7 @@ $defs:
       A set of concepts that may be considered as dependent (occurring together), or independent (existing separately)
       in the context of some knowledge reported about them, as indicated by a set membership operator. e.g. a set of independent
       molecular consequences that both result from the presence of a particular genetic variant (membership operator = OR).
-    properties: {}
-    heritableProperties:
+    properties:
       type:
         type: string
         const: ConceptSet
@@ -48,7 +47,7 @@ $defs:
         enum:
            - AND
            - OR
-    heritableRequired:
+    required:
       - concepts
       - membershipOperator
 
@@ -69,10 +68,10 @@ $defs:
       - $refCurie: gks.core:MappableConcept
       - properties:
           conceptType:
-            oneOf:
-              - const: Condition
-              - const: Condition Absent
-            default: condition
+            anyOf:
+              - enum: [Condition, Phenotype, Disease, Trait, Absent]
+              - type: string
+            default: Condition
         additionalProperties: true
 
   # ConditionSet data structure to provide support for co-occurring or substitute conditions.
@@ -116,15 +115,14 @@ $defs:
       - $refCurie: gks.core:MappableConcept
       - properties:
           conceptType:
-            oneOf:
-              - const: Therapy
-              - const: Therapy Absent
+            anyOf:
+              - enum: [Therapy, Absent, Drug, Procedure, Behavioral Intervention]
+              - type: string
             default: Therapy
         additionalProperties: true
 
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
   TherapyGroup:
-    inherits: ConceptSet
     maturity: trial use
     description: >-
       A group of two or more therapies that are applied in combination to a single patient/subject, or applied

@@ -991,6 +991,7 @@ $defs:
         extends: object
         oneOf:
         - $ref: Therapy
+        - $ref: TherapyGroup
         - $refCurie: gks.core:iriReference
       conditionQualifier:
         oneOf:

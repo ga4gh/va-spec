@@ -19,13 +19,11 @@ subjectVariant:
     sequence: C
 predicate: "hasMolecularConsequence"
 objectConsequence:
-  terms:
-    - name: intergenic_variant
-      primaryCoding:
-        code: "SO:0001628"
-        system: "sequenceontology"
-transcriptVariationContextQualifiers: []
-proteinVariationContextQualifiers: []
+  name: intergenic_variant
+  conceptType: MolecularConsequence
+  primaryCoding:
+    code: "SO:0001628"
+    system: "sequenceontology"
 extensions:
   - name: impact
     value: MODIFIER

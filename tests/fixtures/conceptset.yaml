@@ -1,0 +1,17 @@
+id: conceptset001
+type: ConceptSet
+concepts:
+  - name: intron_variant
+    conceptType: MolecularConsequence
+    primaryCoding:
+      code: "SO:0001627"
+      system: "sequenceontology"
+  - name: non_coding_transcript_variant
+    conceptType: MolecularConsequence
+    primaryCoding:
+      code: "SO:0001619"
+      system: "sequenceontology"
+membershipOperator: "OR"
+extensions:
+  - name: impact
+    value: MODIFIER

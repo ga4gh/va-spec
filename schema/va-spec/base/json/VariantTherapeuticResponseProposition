@@ -97,6 +97,9 @@
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Therapy"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/TherapyGroup"
             }
          ],
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",

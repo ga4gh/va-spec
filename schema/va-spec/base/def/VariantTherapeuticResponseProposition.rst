@@ -79,7 +79,7 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`C
       - The relationship the Proposition describes between the subject variant and object therapeutic. MUST be one of "predictsSensitivityTo" or "predictsResistanceTo".
    *  - objectTherapy
       -
-      - :ref:`Therapy` | :ref:`iriReference`
+      - :ref:`Therapy` | :ref:`TherapyGroup` | :ref:`iriReference`
       - 1..1
       - A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.
    *  - conditionQualifier
