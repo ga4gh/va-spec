@@ -28,8 +28,7 @@
                ],
                "default": "Condition"
             }
-         },
-         "additionalProperties": true
+         }
       }
    ]
 }

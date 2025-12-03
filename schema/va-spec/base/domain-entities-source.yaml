@@ -72,7 +72,6 @@ $defs:
               - enum: [Condition, Phenotype, Disease, Trait, Absent]
               - type: string
             default: Condition
-        additionalProperties: true
 
   # ConditionSet data structure to provide support for co-occurring or substitute conditions.
   ConditionSet:
@@ -100,7 +99,6 @@ $defs:
               oneOf:
                 - $ref: "#/$defs/Condition"
                 - $ref: "#/$defs/ConditionSet"
-        additionalProperties: true
 
   # Therapy data structure for defining single therapies as an extension of MappableConcept
   Therapy:
@@ -119,7 +117,6 @@ $defs:
               - enum: [Therapy, Absent, Drug, Procedure, Behavioral Intervention]
               - type: string
             default: Therapy
-        additionalProperties: true
 
   # TherapyGroup data structure to provide support for combination therapies (i.e. drug treatment, etc.)
   TherapyGroup:
@@ -149,4 +146,3 @@ $defs:
             oneOf:
               - $ref: "#/$defs/Therapy"
               - $ref: "#/$defs/TherapyGroup"
-      additionalProperties: true
