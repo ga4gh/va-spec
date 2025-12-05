@@ -82,10 +82,9 @@ $defs:
   VariantClinicalSignificanceStatement:
     maturity: draft
     description: >-
-      A statement reporting a conclusion from a single study about whether a variant
-      is associated with a disease (a diagnostic inclusion criterion), or absence of a
-      disease (diagnostic exclusion criterion) - based on interpretation of the study's
-      results.
+      A statement reporting a conclusion from a single study about the clinical
+      significance of a variant with respect to a condition, based on interpretation of
+      the study's results.
     allOf:
       - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
       - properties:
@@ -93,7 +92,7 @@ $defs:
             $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
           strength:
             description: >-
-              The strength of support that the Statement is determined to provide for or against the Diagnostic Proposition
+              The strength of support that the Statement is determined to provide for or against the Variant Clinical Significance Proposition
               for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP 2017
               Guidelines.
             properties:

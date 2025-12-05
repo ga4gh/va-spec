@@ -1,10 +1,3 @@
-therapeutic_response_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L134
-therapeutic_response_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantTherapeuticResponseStatement
-diagnostic_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L15
-diagnostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantDiagnosticStatement
-prognostic_study_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L74
-prognostic_study_statement_json_schema = schema/va-spec/aac-2017/json/VariantPrognosticStatement
-
 oncogenicity_evidence_line_source_yaml = schema/va-spec/ccv-2022/profile-source.yaml#L66
 oncogenicity_evidence_line_json_schema = schema/va-spec/ccv-2022/json/VariantOncogenicityEvidenceLine
 oncogenicity_study_statement_source_yaml = schema/va-spec/ccv-2022/profile-source.yaml#L15
@@ -29,22 +22,27 @@ nonsyndromic_genetic_hearing_loss = tests/fixtures/VA-ClinVar-SCV-Example-002.ya
 discrete_allele = tests/fixtures/allele.yaml
 canonical_allele = examples/canonicalAllele-ex1.yaml
 
-pathogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L857
+variant_clinical_significance_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L82
+variant_clinical_significance_statement_json_schema = schema/va-spec/aac-2017/json/VariantClinicalSignificanceStatement
+
+pathogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L887
 pathogenicity_proposition_json_schema = schema/va-spec/base/json/VariantPathogenicityProposition
-oncogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L826
+oncogenicity_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L856
 oncogenicity_proposition_json_schema = schema/va-spec/base/json/VariantOncogenicityProposition
-therapeutic_response_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L932
+clinical_significance_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L793
+clinical_significance_proposition_json_schema = schema/va-spec/base/json/VariantClinicalSignificanceProposition
+therapeutic_response_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L962
 therapeutic_response_proposition_json_schema = schema/va-spec/base/json/TherapeuticResponseProposition
-diagnostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L792
+diagnostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L823
 diagnostic_proposition_json_schema = schema/va-spec/base/json/VariantDiagnosticProposition
-prognostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L900
+prognostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L930
 prognostic_proposition_json_schema = schema/va-spec/base/json/VariantPrognosticProposition
-experimental_variant_functional_impact_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L747
+experimental_variant_functional_impact_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L749
 experimental_variant_functional_impact_proposition_json_schema = schema/va-spec/base/json/ExperimentalVariantFunctionalImpactProposition
 
-cohort_allele_frequency_study_result_source_yaml = schema/va-spec/base/va-core-source.yaml#L974
+cohort_allele_frequency_study_result_source_yaml = schema/va-spec/base/va-core-source.yaml#L1004
 cohort_allele_frequency_study_result_json_schema = schema/va-spec/base/json/CohortAlleleFrequencyStudyResult
-experimental_variant_functional_impact_study_result_source_yaml = schema/va-spec/base/va-core-source.yaml#L1079
+experimental_variant_functional_impact_study_result_source_yaml = schema/va-spec/base/va-core-source.yaml#L1109
 experimental_variant_functional_impact_study_result_json_schema = schema/va-spec/base/json/ExperimentalVariantFunctionalImpactStudyResult
 
 core_class_json_schema_files = schema/va-spec/base/json/

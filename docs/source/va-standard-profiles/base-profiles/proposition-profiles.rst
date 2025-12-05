@@ -45,6 +45,17 @@ Variant Oncogenicity Proposition
  - Optional ``qualifier`` attributes are able to support details like a **somatic allele origin** and **EGFR gene context** for the variant.
  - These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
+.. _clinical-significance-proposition:
+
+Variant Clinical Significance Proposition
+#########################################
+
+.. include::  ../../def/va-spec/VariantClinicalSignificanceProposition.rst
+
+**Artifacts**
+ - |clinical_significance_proposition_source_yaml|
+ - |clinical_significance_proposition_json_schema|
+
 .. _variant-therapeutic-response-proposition:
 
 Variant Therapeutic Response Proposition
