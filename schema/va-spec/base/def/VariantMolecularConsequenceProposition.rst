@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A Proposition describing a type of consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition classes.
+A Proposition describing a predicted molecular consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition classes.
 
 **Information Model**
 
@@ -86,4 +86,4 @@ Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
+      - The gene for which this statement reports a VariantMolecularConsequence.

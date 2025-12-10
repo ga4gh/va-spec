@@ -4,7 +4,7 @@
    "title": "VariantMolecularConsequenceProposition",
    "maturity": "draft",
    "type": "object",
-   "description": "A Proposition describing a type of consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition classes.",
+   "description": "A Proposition describing a predicted molecular consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition classes.",
    "properties": {
       "id": {
          "type": "string",
@@ -109,8 +109,7 @@
          ]
       },
       "geneContextQualifier": {
-         "description": "Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.",
-         "$comment": "This is not a required field, and should be used when information about the gene context of the subject variant is known, relevant, and not apparent from the representation of the variant itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context, but not necessary for complex variants like gene fusions, whose Cat-VRS representations reference specific transcripts and/or genes that provide a built-in gene context.",
+         "description": "The gene for which this statement reports a VariantMolecularConsequence.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
