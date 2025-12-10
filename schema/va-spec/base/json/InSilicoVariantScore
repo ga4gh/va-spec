@@ -1,0 +1,31 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantScore",
+   "title": "InSilicoVariantScore",
+   "maturity": "draft",
+   "type": "object",
+   "description": "A score from an in silico tool used to evaluate likely variant deleteriousness.",
+   "properties": {
+        "score": {
+            "type": "number",
+            "description": "A statistical measure of likely variant deleteriousness"
+        },
+        "categoricalImpact":{
+            "oneOf": [
+                {
+                    "$refCurie": "gks.core:iriReference"
+                },
+                {
+                    "$ref": "#/$defs/MappableConcept"
+                }
+            ],
+            "description": "The categorical term derived from this score (e.g., tolerated or pathogenic)"
+        },
+        "ancillaryResults": {
+            "type": "object",
+            "description": "An object in which implementers can define custom fields to capture any information output by the specific variant scoring method. E.g., CADD reports both raw and Phred scores, so the ancillaryResults could be {\"default_score\": \"phred\", \"raw_score\": 2.503}"
+        }
+    },
+   "required": [],
+   "additionalProperties": false
+}

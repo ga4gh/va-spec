@@ -239,7 +239,7 @@ $defs:
       A :ref:`Proposition` that has a variant as the subject.
     oneOf:
       - $ref: "#/$defs/ExperimentalVariantFunctionalImpactProposition"
-      - $ref: "#/$defs/InSilicoVariantEffectPredictionProposition"
+      - $ref: "#/$defs/InSilicoVariantScoreProposition"
       - $ref: "#/$defs/VariantPathogenicityProposition"
       - $ref: "#/$defs/VariantDiagnosticProposition"
       - $ref: "#/$defs/VariantPrognosticProposition"
@@ -1137,7 +1137,7 @@ $defs:
         description: >-
           The full data set that provided the reported the functional impact score.
 
-  InSilicoVariantEffectPredictionProposition:
+  InSilicoVariantScoreProposition:
     inherits: ClinicalVariantProposition
     maturity: draft
     type: object
@@ -1158,7 +1158,7 @@ $defs:
       objectImpact:
         extends: object
         oneOf:
-          - $ref: "#/$defs/InSilicoPredictedImpact"
+          - $ref: "#/$defs/InSilicoVariantScore"
           - $refCurie: gks.core:iriReference
         description: >-
           The predicted impact of the subject variant with respect to a certain variant effect predictor
@@ -1188,7 +1188,7 @@ $defs:
       - molecularVariationContextQualifiers
       - effectPredictorContextQualifier
 
-InSilicoPredictedImpact:
+InSilicoVariantScore:
     maturity: draft
     type: object
     description: >-

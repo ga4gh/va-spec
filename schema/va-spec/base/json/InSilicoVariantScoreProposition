@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantEffectPredictionProposition",
-   "title": "InSilicoVariantEffectPredictionProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantScoreProposition",
+   "title": "InSilicoVariantScoreProposition",
    "maturity": "draft",
    "type": "object",
-   "description": "A Proposition describing the predicted impact of a variant based on an variant effect predictor.",
+   "description": "A Proposition describing the scoring of the likely deleteriousness of a variant by an in-silico tool.",
    "properties": {
       "id": {
          "type": "string",
@@ -38,10 +38,10 @@
       },
       "type": {
          "type": "string",
-         "description": "MUST be \"InSilicoVariantEffectPredictionProposition\".",
+         "description": "MUST be \"InSilicoVariantScoreProposition\".",
          "$comment": "MUST be the name of a concrete class from the data model.",
-         "const": "InSilicoVariantEffectPredictionProposition",
-         "default": "InSilicoVariantEffectPredictionProposition"
+         "const": "InSilicoVariantScoreProposition",
+         "default": "InSilicoVariantScoreProposition"
       },
       "subjectVariant": {
          "oneOf": [
@@ -71,7 +71,7 @@
       "objectImpact": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoPredictedImpact"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantScore"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
@@ -82,7 +82,7 @@
       },
       "molecularVariationContextQualifiers": {
          "type": "array",
-         "description": "Sequence changes on transcript, mRNA, or protein molecules. The relationship between the subject variant and object terms only holds in the context of variations on molecules represented in this array.",
+         "description": "Sequence changes on DNA, mRNA, or protein molecules. The relationship between the subject variant and object terms only holds in the context of variations on molecules represented in this array.",
          "ordered": false,
          "items": {
             "oneOf": [

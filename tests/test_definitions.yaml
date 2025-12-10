@@ -143,10 +143,10 @@ tests:
     # test VEP effect predictor propositions
   - test_file: cadd-prediction-proposition.yaml
     namespace: va-spec.base
-    definition: InSilicoVariantEffectPredictionProposition
+    definition: InSilicoVariantScoreProposition
   - test_file: sift-prediction-proposition.yaml
     namespace: va-spec.base
-    definition: InSilicoVariantEffectPredictionProposition
+    definition: InSilicoVariantScoreProposition
   - test_file: spliceai-prediction-proposition.yaml
     namespace: va-spec.base
-    definition: InSilicoVariantEffectPredictionProposition
+    definition: InSilicoVariantScoreProposition

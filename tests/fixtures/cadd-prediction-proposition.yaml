@@ -1,5 +1,5 @@
 id: cadd-prediction-example
-type: InSilicoVariantEffectPredictionProposition
+type: InSilicoVariantScoreProposition
 description: Example proposition for a CADD score
 subjectVariant: 
   id: ga4gh:VA.tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
@@ -23,7 +23,7 @@ subjectVariant:
       value: NC_000001.10:g.230845767G>T
 predicate: hasPredictedImpact
 objectImpact: 
-  type: InSilicoPredictedImpact
+  type: InSilicoVariantScore
   score: 1.136748
   ancillaryResults: 
     caddPhred: 11.7
