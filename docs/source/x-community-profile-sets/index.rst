@@ -1,3 +1,5 @@
+:orphan:
+
 .. _community-profile-sets:
 
 Community Profile Sets
