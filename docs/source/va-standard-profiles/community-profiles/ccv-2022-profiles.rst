@@ -14,12 +14,6 @@ These initial profiles were developed to support the following implementations a
    :align: left
    :widths: 30 70
 
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: 30 70
-
    *  - Implementer
       - Use Case
    *  - VICC MetaKB
