@@ -16,7 +16,7 @@ These Community Profiles layer additional constraints on top of core class defin
 - ACMG evidence strengths (``strong``, ``supporting``, ``moderate``)
 - ACMG classification outcomes (``pathogenic``, ``likely pathogenic``, ``benign``, ``likely benign``, ``VUS``)
 
-See :ref:`here <acmg-variant-pathogencity-statement-example>` for a simple data example of an ACMG-aligned Variant Pathogenicity Statement.
+See :ref:`here <acmg-variant-pathogenicity-statement-example>` for a simple data example of an ACMG-aligned Variant Pathogenicity Statement.
 
 See :ref:`here <profile-authoring-mechanisms>` for a description of how constraints in Community Pofiles are authored.
 

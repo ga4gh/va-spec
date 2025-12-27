@@ -56,6 +56,7 @@ Where suitable standards exist they are incorporated into the VA-Spec - as we ha
 
 Version 1 of the VA-Spec represents all other Domain Entity types using a simple :ref:`IRI Reference <iriReference>`, or a :ref:`Mappable Concept <mappable-concept>` which bundles an established code for the entity with metadata and mappings for the code and code system. Where there is a need to represent collections of more than one Domain Entity, classes are defined to capture these as sets of Mappable Concepts (e.g. ``ConditionSet``, ``Therapy Group``). More information and examples of Domain Entity representation can be found `here <https://va-ga4gh.readthedocs.io/en/latest/core-information-model/domain-entities.html>`_.
 
+.. _profile-authoring-mechanisms:
 
 Profile Authoring Mechanisms
 ############################
