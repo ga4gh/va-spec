@@ -18,9 +18,7 @@ Custom Variant Pathogenicity Statement Example
 
 **Data**:
 
-.. note:: Comments in the example below will be easier to view in the |custom_pathogenicity_statement_example_source_yaml|, which affords the option of a wider browser window.
-
-.. code-block:: yaml
+.. annotated-code-block:: yaml
 
  SCV000778434.1:
   id: SCV000778434.1

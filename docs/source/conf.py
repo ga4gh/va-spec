@@ -7,7 +7,10 @@
 # -- GIT branch and release info --------------------------------------------------------------
 import os
 import requests
+import sys
 import subprocess
+from pathlib import Path
+
 
 def get_rtd_branch_from_github(repo="ga4gh/va-spec", default="main"):
     """
@@ -19,7 +22,7 @@ def get_rtd_branch_from_github(repo="ga4gh/va-spec", default="main"):
             result = subprocess.run(
                 ["git", "rev-parse", "--abbrev-ref", "HEAD"],
                 capture_output=True,
-                check=True
+                check=True,
             )
             branch = result.stdout.decode().strip()
             return branch if branch != "HEAD" else default
@@ -39,7 +42,7 @@ def get_rtd_branch_from_github(repo="ga4gh/va-spec", default="main"):
         response = requests.get(
             f"https://api.github.com/repos/{repo}/pulls/{pr_number}",
             headers=headers,
-            timeout=5
+            timeout=5,
         )
         if response.status_code == 200:
             return response.json()["head"]["ref"]  # actual source branch name
@@ -49,6 +52,7 @@ def get_rtd_branch_from_github(repo="ga4gh/va-spec", default="main"):
         print(f"GitHub API exception: {e}")
 
     return f"pull/{pr_number}"
+
 
 # def get_git_branch_or_default(default="main"):
 #     """
@@ -74,6 +78,7 @@ def get_rtd_branch_from_github(repo="ga4gh/va-spec", default="main"):
 #     except subprocess.CalledProcessError:
 #         return default
 
+
 def get_exact_git_tag():
     """
     Returns the exact tag for the current Git commit, if one exists.
@@ -83,7 +88,7 @@ def get_exact_git_tag():
         result = subprocess.run(
             ["git", "describe", "--tags", "--exact-match"],
             capture_output=True,
-            check=True
+            check=True,
         )
         tag = result.stdout.decode().strip()
         return tag if tag else None
@@ -94,16 +99,19 @@ def get_exact_git_tag():
 # -- Project information -----------------------------------------------------
 
 print("*!*!*!*!* Branch detected:", get_rtd_branch_from_github())
-print("RTD env:", {
-    "READTHEDOCS": os.environ.get("READTHEDOCS"),
-    "READTHEDOCS_VERSION": os.environ.get("READTHEDOCS_VERSION"),
-    "READTHEDOCS_VERSION_TYPE": os.environ.get("READTHEDOCS_VERSION_TYPE"),
-})
+print(
+    "RTD env:",
+    {
+        "READTHEDOCS": os.environ.get("READTHEDOCS"),
+        "READTHEDOCS_VERSION": os.environ.get("READTHEDOCS_VERSION"),
+        "READTHEDOCS_VERSION_TYPE": os.environ.get("READTHEDOCS_VERSION_TYPE"),
+    },
+)
 
-project = 'GA4GH Variant Annotation Specification'
-copyright = '2024, GA4GH VA Contributors'
-author = 'Committers'
-master_doc = 'index'
+project = "GA4GH Variant Annotation Specification"
+copyright = "2024, GA4GH VA Contributors"
+author = "Committers"
+master_doc = "index"
 # get the release from the git tag if available, otherwise use the branch name
 release = get_exact_git_tag()
 if release == None:
@@ -111,7 +119,7 @@ if release == None:
     release = get_rtd_branch_from_github(default="1.0")
 
 # Load static rst_epilog from file
-rst_epilog_fn = os.path.join(os.path.dirname(__file__), 'rst_epilog')
+rst_epilog_fn = os.path.join(os.path.dirname(__file__), "rst_epilog")
 with open(rst_epilog_fn, encoding="utf-8") as f:
     static_epilog = f.read().format(release=release)
 
@@ -137,7 +145,7 @@ with open(link_file_path, encoding="utf-8") as f:
         if "=" in line:
             label, filepath = [part.strip() for part in line.split("=", 1)]
             url = f"{github_base}/{filepath}"
-            label_text = label.replace('_', ' ').title()
+            label_text = label.replace("_", " ").title()
             link = f".. |{label}| replace:: `{label_text} <{url}>`__"
             dynamic_links.append(link)
 
@@ -145,19 +153,27 @@ with open(link_file_path, encoding="utf-8") as f:
 dynamic_epilog = "\n".join(dynamic_links)
 
 # Combine both static and dynamic epilogs
-rst_epilog = static_epilog  + "\n" + dynamic_epilog
+rst_epilog = static_epilog + "\n" + dynamic_epilog
 
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))  # allows importing "_ext.*" next to conf.py
+sys.path.insert(
+    0, str(HERE / "_ext")
+)  # allows importing "annotations" directly (optional)
+
 extensions = [
-    'sphinx.ext.todo'
+    "sphinx.ext.todo",
+    "_ext.annotations",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -173,24 +189,25 @@ todo_emit_warnings = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 html_theme_options = {
-    'navigation_depth': 5,  # Increase to 4 levels of nested sections
-    'collapse_navigation': False
+    "navigation_depth": 5,  # Increase to 4 levels of nested sections
+    "collapse_navigation": False,
 }
-html_logo = 'images/GA-logo.png'
+html_logo = "images/GA-logo.png"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static"]
 
-html_css_files = ['theme_overrides.css']
+html_css_files = ["theme_overrides.css"]
 
 # Sidebars
 
-html_sidebars = { '**': ['globaltoc.html', 'relations.html',
-                         'sourcelink.html', 'searchbox.html'] }
+html_sidebars = {
+    "**": ["globaltoc.html", "relations.html", "sourcelink.html", "searchbox.html"]
+}
 html_context = {
     "conf_py_path": "/docs/source/",
     "display_github": True,
