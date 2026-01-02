@@ -20,8 +20,6 @@ See :ref:`here <acmg-variant-pathogenicity-statement-example>` for a simple data
 
 See :ref:`here <profile-authoring-mechanisms>` for a description of how constraints in Community Pofiles are authored.
 
-See :ref:`here <community-profile-sets>` for a more in-depth discussion of the above Community Profiles.
-
 -----
 
 **Index:**
