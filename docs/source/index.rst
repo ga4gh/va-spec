@@ -41,7 +41,6 @@ If you have questions or feedback, please reach out to the VA Team through our `
    modeling-foundations/index
    core-information-model/index
    va-standard-profiles/index
-   imported-models/index
    reference-implementation
    developer-guide
    examples/index

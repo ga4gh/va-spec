@@ -3,6 +3,6 @@
 CategoricalVariant
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../def/cat-vrs/CategoricalVariant.rst
+.. include::  ../../def/cat-vrs/CategoricalVariant.rst
 
 
