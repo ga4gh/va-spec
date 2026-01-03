@@ -151,7 +151,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 
 **Information Model**
 
-No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference> or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
+No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
 
 **Examples**
   - |brca2_gene| as a Mappable Concept

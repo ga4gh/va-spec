@@ -18,9 +18,17 @@ VRS
 .. toctree::
    :titlesonly:
 
+   ga4gh-identifiable-object
+   sequence-string
+   residue
    molecular-variation
    allele
+   location
    sequence-location
+   sequence-reference
+   expression
+   sequence-expression
+   range
 
 
 Cat-VRS
