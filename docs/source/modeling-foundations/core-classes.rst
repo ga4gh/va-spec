@@ -15,4 +15,4 @@ Below is a hierarchical view of classes in the VA Core Model, where attributes a
 
 **Primary Classes** in the model include :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, and :ref:`Evidence Line <EvidenceLine>` - which root larger data structures used to collect data in VA Models as described in the :ref:`next section <data-structures>`. Other primary classes are used to capture provenance information about these key knowledge artifacts. :ref:`Propositions <Proposition>` play a special role in VA Models, as descried :ref:`here <propositions>`.
 
-**Complex Data Type** classes hold collections of related fields that are used to capture values of certain attributes in the primary classes (e.g. see the many attributes that take a :ref:`MappableConcept <MappableConcept> as their value).
+**Complex Data Type** classes hold collections of related fields that are used to capture values of certain attributes in the primary classes (e.g. see the many attributes that take a :ref:`MappableConcept` as their value).
