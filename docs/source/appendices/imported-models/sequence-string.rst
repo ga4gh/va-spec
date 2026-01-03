@@ -4,4 +4,3 @@ sequenceString
 !!!!!!!!!!!!!!
 
 .. include::  ../../def/vrs/sequenceString.rst
-

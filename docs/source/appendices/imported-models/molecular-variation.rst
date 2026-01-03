@@ -4,4 +4,3 @@ MolecularVariation
 !!!!!!!!!!!!!!!!!!
 
 .. include::  ../../def/vrs/MolecularVariation.rst
-

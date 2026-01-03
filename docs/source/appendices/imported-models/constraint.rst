@@ -4,4 +4,3 @@ Constraint
 !!!!!!!!!!
 
 .. include::  ../../def/cat-vrs/Constraint.rst
-

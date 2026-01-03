@@ -4,4 +4,3 @@ Range
 !!!!!!!!!!
 
 .. include::  ../../def/vrs/Range.rst
-

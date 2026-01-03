@@ -4,4 +4,3 @@ SequenceReference
 !!!!!!!!!!!!!!!!!!
 
 .. include::  ../../def/vrs/SequenceReference.rst
-

@@ -4,4 +4,3 @@ Expression
 !!!!!!!!!!
 
 .. include::  ../../def/vrs/Expression.rst
-

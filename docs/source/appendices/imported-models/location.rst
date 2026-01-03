@@ -4,4 +4,3 @@ Location
 !!!!!!!!
 
 .. include::  ../../def/vrs/Location.rst
-

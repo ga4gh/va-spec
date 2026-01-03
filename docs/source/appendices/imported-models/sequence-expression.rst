@@ -4,4 +4,3 @@ SequenceExpression
 !!!!!!!!!!!!!!!!!!
 
 .. include::  ../../def/vrs/SequenceExpression.rst
-
