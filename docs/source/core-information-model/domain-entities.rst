@@ -65,6 +65,37 @@ To represent these diverse types of variation, the VA-Spec imports two complemen
   - A |discrete_allele| as a VRS object
   - A |canonical_allele| as a Cat-VRS object
 
+.. _MolecularVariation:
+
+Molecular Variation
+@@@@@@@@@@@@@@@@@@@
+
+.. include:: ../def/vrs/MolecularVariation.rst
+
+Text about Molecular Variation here. I just copied what was in https://github.com/ga4gh/vrs/blob/v2/docs/source/concepts/MolecularVariation/index.rst?plain=1 for imports in the cat-vrs docs
+
+**Subclasses**
+
+.. toctree::
+   :titlesonly:
+
+   Allele
+   Adjacency
+   CisPhasedBlock
+   Terminus
+   DerivativeMolecule
+
+I added an imported folder and added Allele.rst, as copied from the VRS documentation there, along with cat-vrs' imported/index.rst. I'm not sure why the toc tree isn't showing Allele though... I thought that toctree just needed the files in other folders to show. hrm.
+
+.. _CategoricalVariant:
+
+Categorical Variant
+@@@@@@@@@@@@@@@@@@@
+
+.. include:: ../def/cat-vrs/CategoricalVariant.rst
+
+Text about Categorical Variants here
+
 .. _Condition:
 
 Condition
