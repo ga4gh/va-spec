@@ -14,13 +14,11 @@ pathogenicity_statement_example_source_yaml = examples/acmg-variant-pathogenicit
 acmg_pathogenicity_statement_with_evidence_example_source_yaml = examples/acmg-variant-pathogenicity-statement-with-evidence.yaml
 
 
-brca2_gene = examples/mappable-concept-gene.yaml
 arsenic_trioxide_&_tretinoin = tests/fixtures/therapy-group.yaml
 afatinib = tests/fixtures/therapeuticAgent.yaml
 two_co-occurring_phenotypes = tests/fixtures/conditionset.yaml
 nonsyndromic_genetic_hearing_loss = tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7
 discrete_allele = tests/fixtures/allele.yaml
-canonical_allele = examples/canonicalAllele-ex1.yaml
 
 variant_clinical_significance_statement_source_yaml = schema/va-spec/aac-2017/profile-source.yaml#L82
 variant_clinical_significance_statement_json_schema = schema/va-spec/aac-2017/json/VariantClinicalSignificanceStatement
@@ -32,7 +30,7 @@ oncogenicity_proposition_json_schema = schema/va-spec/base/json/VariantOncogenic
 clinical_significance_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L793
 clinical_significance_proposition_json_schema = schema/va-spec/base/json/VariantClinicalSignificanceProposition
 therapeutic_response_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L962
-therapeutic_response_proposition_json_schema = schema/va-spec/base/json/TherapeuticResponseProposition
+therapeutic_response_proposition_json_schema = schema/va-spec/base/json/VariantTherapeuticResponseProposition
 diagnostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L823
 diagnostic_proposition_json_schema = schema/va-spec/base/json/VariantDiagnosticProposition
 prognostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L930

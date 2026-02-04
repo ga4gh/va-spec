@@ -63,7 +63,7 @@ To represent these diverse types of variation, the VA-Spec imports two complemen
 
 **Examples**
   - A |discrete_allele| as a VRS object
-  - A |canonical_allele| as a Cat-VRS object
+  - A :cat_vrs_source:`Canonical Allele<examples/canonicalAllele-ex1.yaml>` as a Cat-VRS object
 
 .. _Condition:
 
@@ -154,7 +154,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
 
 **Examples**
-  - |brca2_gene| as a Mappable Concept
+  - :gks_core_source:`BRCA2 <examples/mappable-concept-gene.yaml>` as a MappableConcept
 
 
 -----------
