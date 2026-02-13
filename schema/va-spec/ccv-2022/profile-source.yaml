@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.0.1/ccv-2022/profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/ccv-2022/profile-source.yaml"
 title: CCV 2022 Variant Oncogenicity Profiles
 description: >-
   Profiles defined to align with terminology and conventions from the Clinical Genome Resource (ClinGen),
@@ -19,10 +19,10 @@ $defs:
       is associated with oncogenicity (positive or negative) - based on interpretation of the study's
       results.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
+    - $ref: "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/Statement"
     - properties:
         proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantOncogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/VariantOncogenicityProposition"
           description: >-
             A proposition about the oncogenicity of a variant, for which the study provides evidence.
             The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -74,14 +74,14 @@ $defs:
       (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
+    - $ref: "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/EvidenceLine"
     - properties:
         targetProposition:
           description: >-
             A Variant Oncoogenicity Proposition against which a specific type of evidence was assessed, to
             determine the strength and direction of support this evidence provides for or against the
             proposition's validity.
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantOncogenicityProposition"
+          $ref: "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/VariantOncogenicityProposition"
         directionOfEvidenceProvided:
           type: string
           enum: [ "supports", "neutral", "disputes" ]
