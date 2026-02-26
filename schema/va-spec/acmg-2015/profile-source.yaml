@@ -55,7 +55,7 @@ $defs:
           properties:
             primaryCoding:
               allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
                 - oneOf:
                   - properties:
                       code:
