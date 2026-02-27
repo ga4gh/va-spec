@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantScoreProposition",
-   "title": "InSilicoVariantScoreProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/ComputationalVariantFunctionalImpactProposition",
+   "title": "ComputationalVariantFunctionalImpactProposition",
    "maturity": "draft",
    "type": "object",
-   "description": "A Proposition describing the scoring of the likely deleteriousness of a variant by an in-silico tool.",
+   "description": "A Proposition describing the functional impact of a variant, as predicted by an in-silico tool.",
    "properties": {
       "id": {
          "type": "string",
@@ -65,24 +65,27 @@
          "type": "string",
          "description": "The relationship the Proposition describes between the subject variant and object impact MUST be \"hasPredictedImpact\".",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "const": "hasPredictedImpact",
-         "default": "hasPredictedImpact"
+         "const": "impactsFunctionOf",
+         "default": "impactsFunctionOf"
       },
-      "objectImpact": {
+      "objectFeatureType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/InSilicoVariantScore"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Gene"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Allele"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
             }
          ],
-         "description": "The predicted impact of the subject variant with respect to a certain variant effect predictor.",
+         "description": "The type of the feature the subject variant is predicted to functionally impact",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       },
-      "molecularVariationContextQualifiers": {
+      "transcriptVariationContextQualifiers": {
          "type": "array",
-         "description": "Sequence changes on DNA, mRNA, or protein molecules. The relationship between the subject variant and object terms only holds in the context of variations on molecules represented in this array.",
+         "description": "Sequence changes on DNA that the subject variant impacts the function of. The relationship between the subject variant and object terms only holds in the context of variations on molecules represented in this array.",
          "ordered": false,
          "items": {
             "oneOf": [
@@ -98,8 +101,8 @@
             ]
          }
       },
-      "effectPredictorContextQualifier": {
-         "description": "The variant effect predictor that was used to evaluate this proposition. The relationship between the subject variant and object impact only makes sense in the context of the effect predictor that produced the impact.",
+      "geneContextQualifier": {
+         "description": "A specific gene that the subject variant impacts the function of. The relationship between the subject variant and object impact only makes sense in the context of the effect predictor that produced the impact.",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.0.0/json/MappableConcept"
@@ -111,9 +114,8 @@
       }
    },
    "required": [
-      "molecularVariationContextQualifiers",
-      "effectPredictorContextQualifier",
-      "objectImpact",
+      "transcriptVariationContextQualifiers",
+      "objectFeatureType",
       "predicate",
       "subjectVariant",
       "type"
