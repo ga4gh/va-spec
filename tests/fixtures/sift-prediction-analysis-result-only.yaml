@@ -1,0 +1,55 @@
+# A standalone ComputationalVariantFunctionalImpactAnalysisResult with no associated Statement.
+# All data relevant to the in silico prediction is captured directly in the Analysis Result:
+# the focus variant, the numeric score, the categorical interpretation, provenance, and source.
+# This pattern is appropriate when the consumer only needs the raw analysis outputs
+# without a formal assertion of truth about a proposition.
+type: ComputationalVariantFunctionalImpactAnalysisResult
+focusVariant:
+  id: ga4gh:VA.tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
+  type: Allele
+  digest: tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
+  location:
+    id: ga4gh:SL.GoNDM4YeMRQxFNv6bCIn3UHth7ysaLwQ
+    type: SequenceLocation
+    digest: GoNDM4YeMRQxFNv6bCIn3UHth7ysaLwQ
+    sequenceReference:
+      type: SequenceReference
+      refgetAccession: SQ.S_KjnFVz-FE7M0W6yoaUDgYxLPc1jyWU
+    start: 230845766
+    end: 230845767
+    sequence: G
+  state:
+    type: LiteralSequenceExpression
+    sequence: T
+  expressions:
+    - syntax: hgvs.g
+      value: NC_000001.10:g.230845767G>T
+transcriptContextQualifiers:
+- type: SequenceReference
+  id: ENST00000366667.6
+  refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
+  residueAlphabet: na
+score: 0.06
+scoreType: SIFT impact score
+# The categorical impact lives here in the Study Result rather than in a Statement,
+# since there is no Statement to carry it in this standalone Analysis Result representation.
+categoricalImpact:
+  primaryCoding:
+    code: tolerated
+    system: sift-categorical-impacts
+specifiedBy:
+  name: SIFT
+  type: Method
+  methodType: variant effect predictor
+  reportedIn:
+    type: Document
+    pmid: '37556001'
+ancillaryResults:
+  siftConservationScore: 0.42
+sourceDataSet:
+  type: DataSet
+  name: Ensembl VEP annotations
+  reportedIn:
+    type: Document
+    urls:
+      - "https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2"

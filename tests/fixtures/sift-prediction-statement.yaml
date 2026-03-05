@@ -44,6 +44,7 @@ proposition:
 hasEvidence: # Currently statement has "hasEvidenceLines" which requires the creation of EvidenceLines for each score. I really do not want to do this, so maybe we can simplify??
 - type: DataItem
   dataType: SIFT score
+  name: 
   value: 0.06
   isPrimary: True # IDEA: be able to designate a score as primary???
 - type: DataItem
