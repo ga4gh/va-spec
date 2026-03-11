@@ -22,7 +22,17 @@ proposition:
       - syntax: hgvs.g
         value: NC_000001.10:g.230845767G>T
   predicate: impactsFunctionOf
-  objectFeatureType: Transcript
+  objectFeatureType: Gene
+  geneContextQualifier:
+    name: AGT
+    mappings:
+      - coding:
+          code: ENSG00000135744
+          system: Ensembl-Gene
+        relation: exactMatch
+    primaryCoding:
+      code: HGNC:333
+      system: hgnc
   transcriptContextQualifiers:
   - type: SequenceReference
     id: ENST00000366667.6
@@ -58,11 +68,6 @@ hasEvidence:
     expressions:
       - syntax: hgvs.g
         value: NC_000001.10:g.230845767G>T
-  transcriptContextQualifiers:
-  - type: SequenceReference
-    id: ENST00000366667.6
-    refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
-    residueAlphabet: na
   score: 0.06
   scoreType: SIFT impact score
   specifiedBy:
@@ -73,7 +78,7 @@ hasEvidence:
       type: Document
       pmid: '37556001'
   ancillaryResults:
-    siftConservationScore: 0.42
+    siftConservationScore: 0.42  # This is a fake score to represent predictors with multiple scores
 specifiedBy:
   name: SIFT
   type: Method

@@ -1,6 +1,8 @@
-# A standalone ComputationalVariantFunctionalImpactAnalysisResult with no associated Statement.
-# All data relevant to the in silico prediction is captured directly in the Analysis Result:
-# the focus variant, the numeric score, the categorical interpretation, provenance, and source.
+# A standalone ComputationalVariantFunctionalImpactAnalysisResult for a SpliceAI prediction.
+# SpliceAI produces four delta scores (DS) and four delta positions (DP) — one pair per
+# splice-site event type (acceptor gain, acceptor loss, donor gain, donor loss).
+# The primary score field holds the max delta score (the conventionally reported summary value),
+# while ancillaryResults captures all eight per-event scores and positions, plus the gene symbol.
 # This pattern is appropriate when the consumer only needs the raw analysis outputs
 # without a formal assertion of truth about a proposition.
 type: ComputationalVariantFunctionalImpactAnalysisResult
@@ -29,23 +31,30 @@ transcriptContext:
   id: ENST00000366667.6
   refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
   residueAlphabet: na
-score: 0.06
-scoreType: SIFT impact score
-# The categorical impact lives here in the Study Result rather than in a Statement,
-# since there is no Statement to carry it in this standalone Analysis Result representation.
-categoricalImpact:
-  primaryCoding:
-    code: tolerated
-    system: sift-categorical-impacts
+# The primary score is the max of the four delta scores (DS_AG, DS_AL, DS_DG, DS_DL),
+# which is the value conventionally used for thresholding (e.g., >= 0.5 = high impact).
+score: 0.52
+scoreType: SpliceAI max delta score
 specifiedBy:
-  name: SIFT
+  name: SpliceAI
   type: Method
   methodType: variant effect predictor
   reportedIn:
     type: Document
-    pmid: '37556001'
+    pmid: '30661751'
 ancillaryResults:
-  siftConservationScore: 0.42 
+  # Delta scores: probability of the variant altering each splice-site event type.
+  # Values range from 0 to 1; higher values indicate greater predicted impact.
+  DS_AG: 0.52   # acceptor gain
+  DS_AL: 0.00   # acceptor loss
+  DS_DG: 0.01   # donor gain
+  DS_DL: 0.00   # donor loss
+  # Delta positions: distance (in bp) from the variant to the affected splice site for each event.
+  DP_AG: -26
+  DP_AL: 0
+  DP_DG: -26
+  DP_DL: -29
+  SYMBOL: AGT
 sourceDataSet:
   type: DataSet
   name: Ensembl VEP annotations

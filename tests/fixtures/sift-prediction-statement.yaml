@@ -22,25 +22,22 @@ proposition:
       - syntax: hgvs.g
         value: NC_000001.10:g.230845767G>T
   predicate: impactsFunctionOf
-  objectFeatureType: Transcript # Make this a MappableConcept???
-  transcriptVariationContextQualifiers:
-  - type: Allele
-    location:
-      type: SequenceLocation
-      start: 869
-      end: 870
-      sequence: C
-      sequenceReference:
-        type: SequenceReference
-        id: ENST00000366667.6
-        refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
-        residueAlphabet: na
-    state:
-      type: LiteralSequenceExpression
-      sequence: T
-    expressions:
-      - syntax: hgvs.c
-        value: ENST00000366667.6:c.803C>T
+  objectFeatureType: Gene
+  geneContextQualifier:
+    name: AGT
+    mappings:
+      - coding:
+          code: ENSG00000135744
+          system: Ensembl-Gene
+        relation: exactMatch
+    primaryCoding:
+      code: HGNC:333
+      system: hgnc
+  transcriptContextQualifiers:
+  - type: SequenceReference
+    id: ENST00000366667.6
+    refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
+    residueAlphabet: na
 hasEvidence: # Currently statement has "hasEvidenceLines" which requires the creation of EvidenceLines for each score. I really do not want to do this, so maybe we can simplify??
 - type: DataItem
   dataType: SIFT score

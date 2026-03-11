@@ -69,17 +69,8 @@
          "default": "impactsFunctionOf"
       },
       "objectFeatureType": {
-         "oneOf": [
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Gene"
-            },
-            {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Allele"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
-            }
-         ],
+         "type": "array",
+         "enum": ["Gene", "Transcript", "Subset of biological region in SO"], 
          "description": "The type of the feature the subject variant is predicted to functionally impact",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       },
@@ -100,6 +91,12 @@
                }
             ]
          }
+      },
+      "transcriptContextQualifiers": {
+         "makethisamappableconcept": "blah",
+         "id is something transient": "yes",
+         "name is the actual ID": "yes",
+         "howtomatchENSTsandNMs": "ha"
       },
       "geneContextQualifier": {
          "description": "A specific gene that the subject variant impacts the function of. The relationship between the subject variant and object impact only makes sense in the context of the effect predictor that produced the impact.",
