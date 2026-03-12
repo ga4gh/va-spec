@@ -1,14 +1,14 @@
-.. note:: This data class is at a **trial use** maturity level and may \
-    change in future releases. Maturity \
+.. warning:: This data class is at a **draft** maturity level and may \
+    change significantly in future releases. Maturity \
     levels are described in the :ref:`maturity-model`.
 
 **Computational Definition**
 
-A Proposition about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion).
+A Proposition describing the clinical significance of a variant with respect to a condition.
 
 **Information Model**
 
-Some VariantDiagnosticProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
+Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -71,14 +71,14 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`GeneticCon
       -
       - string
       - 1..1
-      - MUST be "VariantDiagnosticProposition".
+      - MUST be "VariantClinicalSignificanceProposition".
    *  - predicate
       -
       - string
       - 1..1
-      - The relationship the Proposition describes between the subject variant and object Condition. MUST be one of "isDiagnosticInclusionCriterionFor" or "isDiagnosticExclusionCriterionFor".
+      - The predicate associating the subject variant to clinical significance for the object Condition. MUST be "hasClinicalSignificanceFor".
    *  - objectCondition
       -
       - :ref:`Condition` | :ref:`iriReference`
       - 1..1
-      - The disease that is evaluated for diagnosis.
+      - The condition that is evaluated.

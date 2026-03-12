@@ -1,10 +1,10 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition",
-   "title": "VariantDiagnosticProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition",
+   "title": "VariantClinicalSignificanceProposition",
    "type": "object",
-   "maturity": "trial use",
-   "description": "A Proposition about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion).",
+   "maturity": "draft",
+   "description": "A Proposition describing the clinical significance of a variant with respect to a condition.",
    "properties": {
       "id": {
          "type": "string",
@@ -76,19 +76,17 @@
       },
       "type": {
          "type": "string",
-         "description": "MUST be \"VariantDiagnosticProposition\".",
+         "description": "MUST be \"VariantClinicalSignificanceProposition\".",
          "$comment": "MUST be the name of a concrete class from the data model.",
-         "const": "VariantDiagnosticProposition",
-         "default": "VariantDiagnosticProposition"
+         "const": "VariantClinicalSignificanceProposition",
+         "default": "VariantClinicalSignificanceProposition"
       },
       "predicate": {
          "type": "string",
-         "description": "The relationship the Proposition describes between the subject variant and object Condition. MUST be one of \"isDiagnosticInclusionCriterionFor\" or \"isDiagnosticExclusionCriterionFor\".",
+         "description": "The predicate associating the subject variant to clinical significance for the object Condition. MUST be \"hasClinicalSignificanceFor\".",
          "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
-         "enum": [
-            "isDiagnosticInclusionCriterionFor",
-            "isDiagnosticExclusionCriterionFor"
-         ]
+         "const": "hasClinicalSignificanceFor",
+         "default": "hasClinicalSignificanceFor"
       },
       "objectCondition": {
          "oneOf": [
@@ -99,7 +97,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
             }
          ],
-         "description": "The disease that is evaluated for diagnosis.",
+         "description": "The condition that is evaluated.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       }
    },
