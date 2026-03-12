@@ -72,7 +72,7 @@ Here we describe the technical mechanism and syntax used to define VA Profiles. 
   # Syntax from the source yaml file where the Variant Pathogenicity Proposition Base Profile is authored
 
   VariantPathogenicityProposition:
-    inherits: ClinicalVariantProposition           # MSP inherits keyword
+    inherits: GeneticContextVariantProposition     # MSP inherits keyword
     maturity: trial use
     type: object
     description: A proposition describing the role of a variant in causing a heritable condition.

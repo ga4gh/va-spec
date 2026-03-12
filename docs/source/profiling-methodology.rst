@@ -64,7 +64,7 @@ Version 1.0 of the VA-Spec relies on two distinct mechanisms for authoring diffe
   # From the source yaml file where the Variant Pathogenicity Proposition Base Profile is authored
 
   VariantPathogenicityProposition:
-    inherits: ClinicalVariantProposition           # MSP inherits keyword
+    inherits: GeneticContextVariantProposition     # MSP inherits keyword
     maturity: trial use
     type: object
     description: A proposition describing the role of a variant in causing a heritable condition.
