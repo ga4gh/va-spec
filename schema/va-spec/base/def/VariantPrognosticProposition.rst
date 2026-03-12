@@ -8,7 +8,7 @@ A Proposition about whether a variant is associated with an improved or worse ou
 
 **Information Model**
 
-Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantPrognosticProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap

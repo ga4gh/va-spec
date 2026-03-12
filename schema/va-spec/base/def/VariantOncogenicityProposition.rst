@@ -8,7 +8,7 @@ A proposition describing the role of a variant in causing a tumor type.
 
 **Information Model**
 
-Some VariantOncogenicityProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantOncogenicityProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
