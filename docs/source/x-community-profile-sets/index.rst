@@ -69,29 +69,27 @@ As additional CCV-based Evidence Line profiles are created to describe interpret
 
 .. _aac-2017:
 
-AAC-2017 Community Profile Set
-###############################
+AMP/ASCO/CAP 2017 Community Profile Set
+#######################################
 
 A set of profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP), American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for **clinical significance interpretation** of sequence variants in cancer.
 
 **Community Guideline:**
 
- - `AMP/ASCO/CAP (AAC) 2017 clinical interpretation guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
+ - `AMP/ASCO/CAP 2017 clinical interpretation guidelines <https://pubmed.ncbi.nlm.nih.gov/27993330/>`_
 
 **Included Profiles**:
 
-  - :ref:`Variant Therapeutic Response Statement (AAC 2017)<variant-therapeutic-response-statement-aac-2017>`
+  - :ref:`Variant Clinical Significance Statement<variant-clinical-significance-statement-aac-2017>`
   - :ref:`Variant Therapeutic Response Proposition<variant-therapeutic-response-proposition>`
-  - :ref:`Variant Diagnostic Statement (AAC 2017)<variant-diagnostic-statement-aac-2017>`
   - :ref:`Variant Diagnostic Proposition<variant-diagnostic-proposition>`
-  - :ref:`Variant Prognostic Statement (AAC 2017)<variant-prognostic-statement-aac-2017>`
   - :ref:`Variant Prognostic Proposition<variant-prognostic-proposition>`
 
 **Implementation Notes:**
 
-This Profile Set includes VA Standard Profiles that support data generated using AAC-based interpretation guidelines or terminologies.
+This Profile Set includes VA Standard Profiles that support data generated using AMP/ASCO/CAP-based interpretation guidelines or terminologies.
 
  - The **Statement** profiles can represent final different types of clinical classifications of a variant.
- - The **Proposition** profiles themselves do not define any AAC-specific constraints, but are used to build the **Statement** structures that do.
+ - The **Proposition** profiles themselves do not define any AMP/ASCO/CAP-specific constraints, but are used to build the **Statement** structures that do.
 
-As any new AAC-based profiles are created to support emerging use cases, these will be added to this community profile set.
+As any new AMP/ASCO/CAP-based profiles are created to support emerging use cases, these will be added to this community profile set.

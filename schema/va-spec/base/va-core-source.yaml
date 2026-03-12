@@ -10,7 +10,7 @@ imports:
   gks-core: ../../gks-core/gks-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.0.0/json/
+  gks.core: /ga4gh/schema/gks-core/1.1.0/json/
   vrs: /ga4gh/schema/vrs/2.0.1/json/
   cat-vrs: /ga4gh/schema/cat-vrs/1.0.0/json/
 
@@ -244,6 +244,7 @@ $defs:
       - $ref: "#/$defs/VariantPrognosticProposition"
       - $ref: "#/$defs/VariantOncogenicityProposition"
       - $ref: "#/$defs/VariantTherapeuticResponseProposition"
+      - $ref: "#/$defs/VariantClinicalSignificanceProposition"
     heritableProperties:
       subjectVariant:
         extends: subject
@@ -734,9 +735,9 @@ $defs:
       alleleOriginQualifier:
         description: >-
          Reports whether the Proposition should be interpreted in the context of a heritable "germline" variant,
-         an acquired "somatic" variant in a tumor,  post-zygotic "mosaic" variant. While these are the most
+         an acquired "somatic" variant in a tumor, or a post-zygotic "mosaic" variant. While these are the most
          commonly reported allele origins, other more nuanced concepts can be captured  (e.g. "maternal" vs "paternal"
-         allele origin"). In practice, populating this field may be complicated by the fact that some sources report
+         allele origin). In practice, populating this field may be complicated by the fact that some sources report
          allele origin based on the type of tissue that was sequenced to identify the variant, and others use it more
          generally to specify a category of variant for which the proposition holds. The stated intent of this
          attribute is the latter. However, if an implementer is not sure about which is reported in their data, it
@@ -789,6 +790,35 @@ $defs:
     required:
       - predicate
       - objectSequenceFeature
+
+  VariantClinicalSignificanceProposition:
+    inherits: ClinicalVariantProposition
+    type: object
+    maturity: draft
+    description: >-
+      A Proposition describing the clinical significance of a variant with respect to a condition.
+    properties:
+      type:
+        extends: type
+        const: "VariantClinicalSignificanceProposition"
+        default: "VariantClinicalSignificanceProposition"
+        description: MUST be "VariantClinicalSignificanceProposition".
+      predicate:
+        extends: predicate
+        description: >-
+          The predicate associating the subject variant to clinical significance for
+          the object Condition. MUST be "hasClinicalSignificanceFor".
+        const: hasClinicalSignificanceFor
+        default: hasClinicalSignificanceFor
+      objectCondition:
+        extends: object
+        oneOf:
+          - $ref: Condition
+          - $refCurie: gks.core:iriReference
+        description: The condition that is evaluated.
+    required:
+      - predicate
+      - objectCondition
 
   # Variant Diagnostic Proposition
   VariantDiagnosticProposition:

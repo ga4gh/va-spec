@@ -1,0 +1,563 @@
+id: tier3-example.civic.aid:9
+classification:
+  name: Tier III
+  primaryCoding:
+    code: tier iii
+    system: AMP/ASCO/CAP Guidelines, 2017
+description:
+  ACVR1 G328V mutations occur within the kinase domain, leading to activation
+  of downstream signaling. Exclusively seen in high-grade pediatric gliomas, supporting
+  diagnosis of diffuse intrinsic pontine glioma.
+direction: neutral
+hasEvidenceLines:
+  - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          Sequencing of 39 pediatric midline high-grade astrocytomas identified
+          5 patients with ACVR1 mutations. The authors identified an increase in endogenous
+          phospho-SMAD1/5/8 signal in diffuse intrinsic pontine glioma (DIPG) cells harboring
+          ACVR1 G328V, with corresponding increase in phospho-SMAD1/5/8 staining as well.
+          By PCR, the authors show strong increase in fold change of mRNA expression in
+          downstream proteins of the ACVR1/BMP pathway, ID, ID2, ID3 and SNAI1 in ACVR1-mutant
+          DIPG cell line compared to glioblastoma cells (KNS42 cells). These activating
+          ACVR1 mutations were exclusively in midline high grade astrocytomas (P = 0.0040,
+          Fisher's exact test).
+        direction: supports
+        id: civic.eid:4846
+        proposition:
+          alleleOriginQualifier:
+            extensions:
+              - name: civic_variant_origin
+                value: SOMATIC
+            name: somatic
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - ACTRI
+                  - ACVR1
+                  - ACVR1A
+                  - ACVRLK2
+                  - ALK2
+                  - FOP
+                  - SKR1
+                  - TSRI
+            id: civic.gid:154
+            mappings:
+              - coding:
+                  code: "90"
+                  id: ncbigene:90
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: ACVR1
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:2950
+            mappings:
+              - coding:
+                  code: DOID:0080684
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Diffuse Midline Glioma, H3 K27M-mutant
+          predicate: isDiagnosticInclusionCriterionFor
+          subjectVariant:
+            aliases:
+              - GLY328VAL
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 35.0
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_001105.4:c.983G>T
+                  - syntax: hgvs.p
+                    value: NP_001096.1:p.Gly328Val
+                  - syntax: hgvs.g
+                    value: NC_000002.11:g.158622516C>A
+                  - syntax: hgvs.c
+                    value: ENST00000434821.1:c.983G>T
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "2"
+                  ensembl_version: 75
+                  reference_bases: C
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000434821.1
+                  start: 158622516
+                  stop: 158622516
+                  type: coordinates
+                  variant_bases: A
+            id: civic.mpid:1594
+            mappings:
+              - coding:
+                  code: "1594"
+                  id: civic.mpid:1594
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "1686"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variant_types
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:1686
+                  name: G328V
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA16602802
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "376363"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs387906589
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: ACVR1 G328V
+            type: CategoricalVariant
+          type: VariantDiagnosticProposition
+        reportedIn:
+          - id: civic.sid:2149
+            name: Fontebasso et al., 2014
+            pmid: "24705250"
+            title:
+              Recurrent somatic mutations in ACVR1 in pediatric midline high-grade
+              astrocytoma.
+            type: Document
+            urls:
+              - https://civicdb.org/links/source/2149
+              - http://www.ncbi.nlm.nih.gov/pubmed/24705250
+              - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4282994
+          - https://civicdb.org/links/evidence/4846
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          In a study sequencing 61 patients (median age 6.3) with diffuse intrinsic
+          pontine glioma (DIPG), 12 variants affecting ACVR1 were observed. Five patients
+          had G328V within the kinase domain. The ACVR1 G328V mutation was expressed using
+          the pCDH511b vector in immortalized normal human astrocytes (iNHAs) where it
+          activated downstream BMP signaling and enhanced cell growth. Activating ACVR1
+          mutations are recurrent and support diagnosis of high grade glioma. PEDIATRIC
+        direction: supports
+        id: civic.eid:6955
+        proposition:
+          alleleOriginQualifier:
+            extensions:
+              - name: civic_variant_origin
+                value: SOMATIC
+            name: somatic
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - ACTRI
+                  - ACVR1
+                  - ACVR1A
+                  - ACVRLK2
+                  - ALK2
+                  - FOP
+                  - SKR1
+                  - TSRI
+            id: civic.gid:154
+            mappings:
+              - coding:
+                  code: "90"
+                  id: ncbigene:90
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: ACVR1
+          objectCondition:
+            conceptType: Disease
+            id: civic.did:2950
+            mappings:
+              - coding:
+                  code: DOID:0080684
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Diffuse Midline Glioma, H3 K27M-mutant
+          predicate: isDiagnosticInclusionCriterionFor
+          subjectVariant:
+            aliases:
+              - GLY328VAL
+            extensions:
+              - name: CIViC Molecular Profile Score
+                value: 35.0
+              - name: expressions
+                value:
+                  - syntax: hgvs.c
+                    value: NM_001105.4:c.983G>T
+                  - syntax: hgvs.p
+                    value: NP_001096.1:p.Gly328Val
+                  - syntax: hgvs.g
+                    value: NC_000002.11:g.158622516C>A
+                  - syntax: hgvs.c
+                    value: ENST00000434821.1:c.983G>T
+              - name: CIViC representative coordinate
+                value:
+                  chromosome: "2"
+                  ensembl_version: 75
+                  reference_bases: C
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000434821.1
+                  start: 158622516
+                  stop: 158622516
+                  type: coordinates
+                  variant_bases: A
+            id: civic.mpid:1594
+            mappings:
+              - coding:
+                  code: "1594"
+                  id: civic.mpid:1594
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "1686"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variant_types
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:1686
+                  name: G328V
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA16602802
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "376363"
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs387906589
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            name: ACVR1 G328V
+            type: CategoricalVariant
+          type: VariantDiagnosticProposition
+        reportedIn:
+          - id: civic.sid:2680
+            name: Buczkowicz et al., 2014
+            pmid: "24705254"
+            title:
+              Genomic analysis of diffuse intrinsic pontine gliomas identifies three
+              molecular subgroups and recurrent activating ACVR1 mutations.
+            type: Document
+            urls:
+              - https://civicdb.org/links/source/2680
+              - http://www.ncbi.nlm.nih.gov/pubmed/24705254
+              - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3997489
+          - https://civicdb.org/links/evidence/6955
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: C
+        system: AMP/ASCO/CAP Guidelines, 2017
+    targetProposition:
+      alleleOriginQualifier:
+        extensions:
+          - name: civic_variant_origin
+            value: SOMATIC
+        name: somatic
+      geneContextQualifier:
+        conceptType: Gene
+        extensions:
+          - name: aliases
+            value:
+              - ACTRI
+              - ACVR1
+              - ACVR1A
+              - ACVRLK2
+              - ALK2
+              - FOP
+              - SKR1
+              - TSRI
+        id: civic.gid:154
+        mappings:
+          - coding:
+              code: "90"
+              id: ncbigene:90
+              system: https://www.ncbi.nlm.nih.gov/gene/
+            relation: exactMatch
+        name: ACVR1
+      objectCondition:
+        conceptType: Disease
+        id: civic.did:2950
+        mappings:
+          - coding:
+              code: DOID:0080684
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+        name: Diffuse Midline Glioma, H3 K27M-mutant
+      predicate: isDiagnosticInclusionCriterionFor
+      subjectVariant:
+        aliases:
+          - GLY328VAL
+        extensions:
+          - name: CIViC Molecular Profile Score
+            value: 35.0
+          - name: expressions
+            value:
+              - syntax: hgvs.c
+                value: NM_001105.4:c.983G>T
+              - syntax: hgvs.p
+                value: NP_001096.1:p.Gly328Val
+              - syntax: hgvs.g
+                value: NC_000002.11:g.158622516C>A
+              - syntax: hgvs.c
+                value: ENST00000434821.1:c.983G>T
+          - name: CIViC representative coordinate
+            value:
+              chromosome: "2"
+              ensembl_version: 75
+              reference_bases: C
+              reference_build: GRCh37
+              representative_transcript: ENST00000434821.1
+              start: 158622516
+              stop: 158622516
+              type: coordinates
+              variant_bases: A
+        id: civic.mpid:1594
+        mappings:
+          - coding:
+              code: "1594"
+              id: civic.mpid:1594
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+          - coding:
+              code: "1686"
+              extensions:
+                - name: subtype
+                  value: gene_variant
+                - name: variant_types
+                  value:
+                    - coding:
+                        code: SO:0001583
+                        id: civic.variant_type:47
+                        name: Missense Variant
+                        system: http://www.sequenceontology.org/browser/current_svn/term/
+                      relation: exactMatch
+              id: civic.vid:1686
+              name: G328V
+              system: https://civicdb.org/links/variant/
+            relation: exactMatch
+          - coding:
+              code: CA16602802
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "376363"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              code: rs387906589
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+        name: ACVR1 G328V
+        type: CategoricalVariant
+      type: VariantDiagnosticProposition
+
+    type: EvidenceLine
+proposition:
+  alleleOriginQualifier:
+    extensions:
+      - name: civic_variant_origin
+        value: SOMATIC
+    name: somatic
+  geneContextQualifier:
+    conceptType: Gene
+    extensions:
+      - name: aliases
+        value:
+          - ACTRI
+          - ACVR1
+          - ACVR1A
+          - ACVRLK2
+          - ALK2
+          - FOP
+          - SKR1
+          - TSRI
+    id: civic.gid:154
+    mappings:
+      - coding:
+          code: "90"
+          id: ncbigene:90
+          system: https://www.ncbi.nlm.nih.gov/gene/
+        relation: exactMatch
+    name: ACVR1
+  objectCondition:
+    conceptType: Disease
+    id: civic.did:2950
+    mappings:
+      - coding:
+          code: DOID:0080684
+          system: https://disease-ontology.org/?id=
+        relation: exactMatch
+    name: Diffuse Midline Glioma, H3 K27M-mutant
+  predicate: hasClinicalSignificanceFor
+  subjectVariant:
+    aliases:
+      - GLY328VAL
+    extensions:
+      - name: CIViC Molecular Profile Score
+        value: 35.0
+      - name: expressions
+        value:
+          - syntax: hgvs.c
+            value: NM_001105.4:c.983G>T
+          - syntax: hgvs.p
+            value: NP_001096.1:p.Gly328Val
+          - syntax: hgvs.g
+            value: NC_000002.11:g.158622516C>A
+          - syntax: hgvs.c
+            value: ENST00000434821.1:c.983G>T
+      - name: CIViC representative coordinate
+        value:
+          chromosome: "2"
+          ensembl_version: 75
+          reference_bases: C
+          reference_build: GRCh37
+          representative_transcript: ENST00000434821.1
+          start: 158622516
+          stop: 158622516
+          type: coordinates
+          variant_bases: A
+    id: civic.mpid:1594
+    mappings:
+      - coding:
+          code: "1594"
+          id: civic.mpid:1594
+          system: https://civicdb.org/links/molecular_profile/
+        relation: exactMatch
+      - coding:
+          code: "1686"
+          extensions:
+            - name: subtype
+              value: gene_variant
+            - name: variant_types
+              value:
+                - coding:
+                    code: SO:0001583
+                    id: civic.variant_type:47
+                    name: Missense Variant
+                    system: http://www.sequenceontology.org/browser/current_svn/term/
+                  relation: exactMatch
+          id: civic.vid:1686
+          name: G328V
+          system: https://civicdb.org/links/variant/
+        relation: exactMatch
+      - coding:
+          code: CA16602802
+          system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+        relation: relatedMatch
+      - coding:
+          code: "376363"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          code: rs387906589
+          system: https://www.ncbi.nlm.nih.gov/snp/
+        relation: relatedMatch
+    name: ACVR1 G328V
+    type: CategoricalVariant
+  type: VariantClinicalSignificanceProposition
+reportedIn:
+  - https://civicdb.org/links/assertion/9
+specifiedBy:
+  id: civic.method:2019
+  methodType: curation
+  name: CIViC Curation SOP (2019)
+  reportedIn:
+    aliases:
+      - CIViC curation SOP
+    doi: 10.1186/s13073-019-0687-x
+    id: pmid:31779674
+    name: Danos et al., 2019, Genome Med.
+    pmid: "31779674"
+    title:
+      Standard operating procedure for curation and clinical interpretation of
+      variants in cancer
+    type: Document
+    urls:
+      - https://doi.org/10.1186/s13073-019-0687-x
+      - https://pubmed.ncbi.nlm.nih.gov/31779674/
+  type: Method
+type: Statement

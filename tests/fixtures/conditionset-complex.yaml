@@ -22,7 +22,6 @@ conditions:
         mappings:
           - coding:
               code: HP:0003621
-              id: HP:0003621
               system: https://hpo.jax.org/browse/term/
             relation: exactMatch
         name: Juvenile onset

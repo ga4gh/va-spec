@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A statement reporting a conclusion from a single study about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion) - based on interpretation of the study's results.
+A statement reporting a conclusion from a single study about the clinical significance of a variant with respect to a condition, based on interpretation of the study's results.
 
 **Information Model**
 
