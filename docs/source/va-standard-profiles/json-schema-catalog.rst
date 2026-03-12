@@ -10,6 +10,7 @@ To facilitate developer access to these key resources, we provide this central c
 **Study Result Base Profiles:**
  - |cohort_allele_frequency_study_result_json_schema|
  - |experimental_variant_functional_impact_study_result_json_schema|
+ - |tumor_variant_frequency_result_json_schema|
 
 **Proposition Base Profiles:**
  - |pathogenicity_proposition_json_schema|

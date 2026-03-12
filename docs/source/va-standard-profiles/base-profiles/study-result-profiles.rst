@@ -41,3 +41,17 @@ Experimental Variant Functional Impact Study Result
 **Use Cases and Implementations**
 
 This Study Result profile was defined to support an early `MAVE-DB <https://www.mavedb.org/>`_ implementation of the VA-Spec, as a format to represent high-throughput, quantitative multiplex-assay based functional impact data. This is a very unique type of assay and functional impact data, and the model may be generalized in the future to support broader use cases, as new requirements and implementers emerge.
+
+
+Tumor Variant Frequency Study Result
+####################################
+
+.. include:: ../../def/va-spec/TumorVariantFrequencyStudyResult.rst
+
+**Artifacts**
+ - |tumor_variant_frequency_study_result_source_yaml|
+ - |tumor_variant_frequency_study_result_json_schema|
+
+**Use Cases and Implementations**
+
+This Study Result profile is intended to represent the frequency of a variant in a tumor sample cohort or subgroup, together with the study context and supporting provenance needed to interpret those measurements. This is designed for use cases such as aggregating somatic variant prevalence across tumor datasets, summarizing biomarker frequencies in disease-specific cohorts, or exchanging tumor variant frequency evidence derived from curated knowledgebases. The model may be generalized in the future to support broader use cases, as new requirements and implementers emerge.
