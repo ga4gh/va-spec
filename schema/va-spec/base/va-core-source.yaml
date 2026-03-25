@@ -1150,37 +1150,37 @@ ComputationalVariantFunctionalImpactAnalysisResult:
       default: "ComputationalVariantFunctionalImpactAnalysisResult"
     focusVariant:
       oneOf:
-        - $ref: gks.core:iriReference
-        - $ref: vrs.Allele"
-        - $ref: cat-vrs.CategoricalVariant"
+        - $refCurie: gks.core:iriReference
+        - $refCurie: vrs.Allele
+        - $refCurie: cat-vrs.CategoricalVariant
       description: The genetic variant for which the in silico analysis was performed.
     transcriptVariationContext:
       oneOf:
-        - $ref: gks.core:iriReference
-        - $ref: vrs.Allele"
+        - $refCurie: gks.core:iriReference
+        - $refCurie: vrs.Allele"
       description: The transcript in the context of which the in silico analysis was performed.
     impactScore:
       type: number
       description: The primary numeric score produced by the in silico tool for this variant.
     impactScoreType:
       oneOf:
-        - $ref: gks.core:iriReference"
-        - $ref: gks.core:MappableConcept"
+        - $refCurie: gks.core:iriReference
+        - $refCurie: gks.core:MappableConcept
       description: A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score').
     categoricalImpact:
       oneOf:
-        - $ref: gks.core:iriReference"
-        - $ref: gks.core:MappableConcept"
+        - $refCurie: gks.core:iriReference
+        - $refCurie: gks.core:MappableConcept
       description: The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic').
     impactedFeatureType:
       oneOf:
-        - $ref: gks.core:iriReference"
-        - $ref: gks.core:MappableConcept"
+        - $refCurie: gks.core:iriReference
+        - $refCurie: gks.core:MappableConcept
       description: A descriptor indicating the type of feature for which the focus variant has a predicted impact
     impactedFeature:
       oneOf:
-        - $ref: gks.core:iriReference"
-        - $ref: gks.core:MappableConcept"
+        - $refCurie: gks.core:iriReference
+        - $refCurie: gks.core:MappableConcept
       description: The specific feature for which the focus variant has a predicted impact
     ancillaryResults:
       maturity: draft
@@ -1191,18 +1191,18 @@ ComputationalVariantFunctionalImpactAnalysisResult:
       additionalProperties: true
     specifiedBy:
       oneOf:
-        - $ref: gks.core:iriReference"
-        - $ref: va-spec:Method"
+        - $refCurie: gks.core:iriReference
+        - $ref: "#/$defs/Method"
       description: The in silico method or algorithm that was applied to generate the reported score(s).
     contributions:
       type: array
       ordered: true
       items:
-        $ref: va-spec:Contribution
+        $ref: "#/$defs/Contribution"
       description: Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
       sourceDataSet:
-      $ref: va-spec:DataSet
-      description: "The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset)."
+      $ref: "#/$defs/DataSet"
+      description: The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
   required:
     - type
     - focusVariant
