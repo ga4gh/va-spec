@@ -134,3 +134,4 @@ dmypy.json
 
 # Pipfile
 Pipfile*
+.claude/settings.json
