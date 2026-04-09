@@ -4,19 +4,4 @@
 
 **Computational Definition**
 
-A concept representing a single condition (disease, phenotype, or trait).
-
-**Information Model**
-
-
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-   *  - Field
-      - Flags
-      - Type
-      - Limits
-      - Description
+A specialization of MappableConcept representing a single condition (disease, phenotype, or trait). Allowed conceptType values include: Condition, Phenotype, Disease, Trait, Absent.

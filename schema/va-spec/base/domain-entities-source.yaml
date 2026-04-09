@@ -14,7 +14,8 @@ $defs:
   Condition:
     maturity: trial use
     description: >-
-      A concept representing a single condition (disease, phenotype, or trait).
+      A specialization of MappableConcept representing a single condition (disease, phenotype, or trait).
+      Allowed conceptType values include: Condition, Phenotype, Disease, Trait, Absent.
     $comment: >-
       At present, individual conditions are represented using a MappableConcept that captures a code or name
       for the condition, along with optional mappings and metadata about the code system. Groups of conditions are represented
@@ -36,10 +37,9 @@ $defs:
   ConditionSet:
     maturity: trial use
     description: >-
-      A set of conditions (diseases, phenotypes, traits) that occur together or are
-      related, depending on the membership operator, and may manifest together in the
-      same patient or individually in a different subset of participants in a research
-      study.
+      A specialization of ConceptSet representing a set of conditions (diseases, phenotypes, traits)
+      that occur together or are related, depending on the membership operator.
+      Concepts are restricted to Condition and ConditionSet members.
     $comment: >-
       The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
       that manifest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate
@@ -63,7 +63,8 @@ $defs:
   Therapy:
     maturity: trial use
     description: >-
-      An individual therapy (drug, procedure, behavioral intervention, etc.)
+      A specialization of MappableConcept representing an individual therapy (drug, procedure, behavioral intervention, etc.).
+      Allowed conceptType values include: Therapy, Absent, Drug, Procedure, Behavioral Intervention.
     $comment: >-
       At present, individual therapies are represented using this specialization of MappableConcept, that captures a code or name
       for the therapy, along with optional mappings and metadata about the code system. Groups of therapies are represented using
@@ -81,8 +82,9 @@ $defs:
   TherapyGroup:
     maturity: trial use
     description: >-
-      A group of two or more therapies that are applied in combination to a single patient/subject, or applied
-      individually to a different subset of participants in a research study.
+      A specialization of ConceptSet representing a group of two or more therapies that are applied in combination
+      to a single patient/subject, or applied individually to a different subset of participants in a research study.
+      Concepts are restricted to Therapy and TherapyGroup members.
     $comment: >-
       The membershipOperator value 'AND' indicates that all therapies in the group were applied in combination
       to a given patient or subject. The value 'OR' indicates that each therapy was applied individually to a distinct

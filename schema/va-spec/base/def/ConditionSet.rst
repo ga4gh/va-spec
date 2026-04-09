@@ -4,19 +4,4 @@
 
 **Computational Definition**
 
-A set of conditions (diseases, phenotypes, traits) that occur together or are related, depending on the membership operator, and may manifest together in the same patient or individually in a different subset of participants in a research study.
-
-**Information Model**
-
-
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-   *  - Field
-      - Flags
-      - Type
-      - Limits
-      - Description
+A specialization of ConceptSet representing a set of conditions (diseases, phenotypes, traits) that occur together or are related, depending on the membership operator. Concepts are restricted to Condition and ConditionSet members.

@@ -4,19 +4,4 @@
 
 **Computational Definition**
 
-A group of two or more therapies that are applied in combination to a single patient/subject, or applied individually to a different subset of participants in a research study.
-
-**Information Model**
-
-
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-   *  - Field
-      - Flags
-      - Type
-      - Limits
-      - Description
+A specialization of ConceptSet representing a group of two or more therapies that are applied in combination to a single patient/subject, or applied individually to a different subset of participants in a research study. Concepts are restricted to Therapy and TherapyGroup members.
