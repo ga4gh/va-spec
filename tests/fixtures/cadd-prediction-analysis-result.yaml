@@ -1,7 +1,5 @@
-id: cadd-prediction-example
-type: InSilicoVariantScoreProposition
-description: Example proposition for a CADD score
-subjectVariant: 
+type: ComputationalVariantFunctionalImpactAnalysisResult
+focusVariant:
   id: ga4gh:VA.tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
   type: Allele
   digest: tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
@@ -21,32 +19,42 @@ subjectVariant:
   expressions:
     - syntax: hgvs.g
       value: NC_000001.10:g.230845767G>T
-predicate: hasPredictedImpact
-objectImpact: 
-  type: InSilicoVariantScore
-  score: 1.136748
-  ancillaryResults: 
-    caddPhred: 11.7
-molecularVariationContextQualifiers:
-- type: Allele
+transcriptVariationContext:
+  type: Allele
   location:
     type: SequenceLocation
-    start: 869
-    end: 870
-    sequence: C
     sequenceReference:
       type: SequenceReference
       id: ENST00000366667.6
       refgetAccession: SQ.Y2M5OWI4OGRiN2JkNGViYzQ2MjllMThk
       residueAlphabet: na
+    start: 869
+    end: 870
+    sequence: C
   state:
     type: LiteralSequenceExpression
     sequence: T
   expressions:
     - syntax: hgvs.c
       value: ENST00000366667.6:c.803C>T
-effectPredictorContextQualifier:
-- name: CADD
+impactScore: 11.7
+impactScoreType:
   primaryCoding:
-    code: "cadd"
-    system: "VEPEffectPredictors"
+    code: phred
+    system: cadd-score-types
+ancillaryResults:
+  caddRaw: 1.136748
+specifiedBy:
+  name: CADD
+  type: Method
+  methodType: variant effect predictor
+  reportedIn:
+    type: Document
+    pmid: '30371827'
+sourceDataSet:
+  type: DataSet
+  name: Ensembl VEP annotations
+  reportedIn:
+    type: Document
+    urls:
+      - "https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2"
