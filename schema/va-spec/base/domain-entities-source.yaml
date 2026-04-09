@@ -10,47 +10,6 @@ namespaces:
   gks.core: /ga4gh/schema/gks-core/1.1.0/json/
 
 $defs:
-  # A ConceptSet data structure to provide support for sets of generic concepts.
-  ConceptSet:
-    type: object
-    maturity: trial use
-    inherits: gks-core:Element
-    description: >-
-      A set of concepts that may be considered as dependent (occurring together), or independent (existing separately)
-      in the context of some knowledge reported about them, as indicated by a set membership operator. e.g. a set of independent
-      molecular consequences that both result from the presence of a particular genetic variant (membership operator = OR).
-    properties:
-      type:
-        type: string
-        const: ConceptSet
-        default: ConceptSet
-        description: MUST be "ConceptSet".
-      concepts:
-        type: array
-        ordered: false
-        items:
-          oneOf:
-            - $refCurie: gks.core:MappableConcept
-            - $ref: "#/$defs/ConceptSet"
-        description: >-
-          A list of concepts that are dependent (occurring together), or independent (existing separately), depending on the
-          membership operator.
-        minItems: 2
-      membershipOperator:
-        description: >-
-          The logical relationship between concepts in the set, in the context of some knowledge reported about them.
-          The value 'AND' indicates that the concepts are dependent and occur together in this context - i.e. the reported assertion
-          is not necessarily true for each concept on its own - only in combination with the other(s).
-          The value 'OR' indicates that each concept applies independently in this context - i.e. the reported assertion is necessarily
-          true for each concept on its own, independent of the presence of the other(s).
-        type: string
-        enum:
-           - AND
-           - OR
-    required:
-      - concepts
-      - membershipOperator
-
   # Condition data structure for defining single conditions as an extension of MappableConcept
   Condition:
     maturity: trial use
@@ -90,7 +49,7 @@ $defs:
       Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single
       cohort that is large enough support a statistically significant results about this grouping of related conditions.
     allOf:
-      - $ref: "#/$defs/ConceptSet"
+      - $refCurie: gks.core:ConceptSet
       - properties:
           concepts:
             type: array
@@ -137,7 +96,7 @@ $defs:
       Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the
       individual therapies used in the study in a TherapyGroup.
     allOf:
-    - $ref: "#/$defs/ConceptSet"
+    - $refCurie: gks.core:ConceptSet
     - properties:
         concepts:
           type: array

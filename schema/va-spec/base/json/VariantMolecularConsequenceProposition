@@ -68,13 +68,13 @@
       "objectConsequence": {
          "oneOf": [
             {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/ConceptSet"
+            },
+            {
                "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
-            },
-            {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/ConceptSet"
             }
          ],
          "description": "The molecular consequence(s) of the subject variant, in the context of the qualifying transcript and/or protein variation context(s). These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant). If more than one consequence term apply, use a ConceptSet to capture them.",

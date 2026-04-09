@@ -1184,7 +1184,7 @@ $defs:
         extends: object
         oneOf:
           - $refCurie: gks.core:MappableConcept
-          - $ref: ConceptSet
+          - $refCurie: gks.core:ConceptSet
           - $refCurie: gks.core:iriReference
         description: >-
            The molecular consequence(s) of the subject variant, in the context of the qualifying
