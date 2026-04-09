@@ -95,9 +95,9 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapeutic:
+          objectTherapy:
             membershipOperator: AND
-            therapies:
+            concepts:
               - conceptType: Therapy
                 extensions:
                   - name: aliases
@@ -342,9 +342,9 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapeutic:
+          objectTherapy:
             membershipOperator: AND
-            therapies:
+            concepts:
               - conceptType: Therapy
                 extensions:
                   - name: aliases
@@ -587,9 +587,9 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapeutic:
+          objectTherapy:
             membershipOperator: AND
-            therapies:
+            concepts:
               - conceptType: Therapy
                 extensions:
                   - name: aliases
@@ -831,9 +831,9 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapeutic:
+          objectTherapy:
             membershipOperator: AND
-            therapies:
+            concepts:
               - conceptType: Therapy
                 extensions:
                   - name: aliases
@@ -1071,9 +1071,9 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: BRAF
-      objectTherapeutic:
+      objectTherapy:
         membershipOperator: AND
-        therapies:
+        concepts:
           - conceptType: Therapy
             extensions:
               - name: aliases

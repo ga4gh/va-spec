@@ -813,6 +813,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
         description: The condition that is evaluated.
     required:

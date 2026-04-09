@@ -31,9 +31,6 @@ tests:
     definition: Agent
 
   # test domain entities
-  - test_file: conceptset.yaml
-    namespace: va-spec.base
-    definition: ConceptSet
   - test_file: conditionset.yaml
     namespace: va-spec.base
     definition: ConditionSet
