@@ -25,6 +25,8 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
       - Practical, developer-focused support for authoring and implementing VA Profiles in data systems.
    *  - :ref:`Examples <examples>`
       - A set of annotated data examples and scenarios that demonstrate use of VA Models.
+   *  - :ref:`Getting Involved <getting-involved>`
+      - Ways to join the VA-Spec community, attend meetings, and contribute to the project.
    *  - :ref:`Appendices <appendices>`
       - A collection of pages with additional information on various aspects of the VA-Spec.
 
@@ -44,4 +46,5 @@ If you have questions or feedback, please reach out to the VA Team through our `
    reference-implementation
    developer-guide
    examples/index
+   getting_involved
    appendices/index
