@@ -1,0 +1,511 @@
+{
+    "variant_urn": "urn:mavedb:00000050-a-1#4504",
+    "annotation": {
+        "type": "EvidenceLine",
+        "description": "Pathogenicity evidence line urn:mavedb:00000050-a-1#4504.",
+        "specifiedBy": {
+            "type": "Method",
+            "name": "Software version",
+            "methodType": "BS3",
+            "reportedIn": "https://github.com/Dzeiberg/mave_calibration"
+        },
+        "contributions": [
+            {
+                "type": "Contribution",
+                "name": "MaveDB API",
+                "description": "Contribution from the MaveDB API",
+                "contributor": {
+                    "type": "Agent",
+                    "name": "MaveDB API",
+                    "description": "MaveDB API agent, version 2026.1.2",
+                    "extensions": [
+                        {
+                            "name": "mavedbApiVersion",
+                            "value": "2026.1.2"
+                        }
+                    ],
+                    "agentType": "Software"
+                },
+                "activityType": "software application programming interface",
+                "date": "2026-04-13 00:00:00"
+            },
+            {
+                "type": "Contribution",
+                "name": "MaveDB VRS Mapper",
+                "description": "Contribution from the MaveDB VRS mapping software",
+                "contributor": {
+                    "type": "Agent",
+                    "name": "MaveDB VRS Mapping Agent",
+                    "description": "MaveDB VRS mapping agent, version 2025.1.0",
+                    "extensions": [
+                        {
+                            "name": "mavedbVrsVersion",
+                            "value": "2025.1.0"
+                        }
+                    ],
+                    "agentType": "Software"
+                },
+                "activityType": "human genome sequence mapping process",
+                "date": "2025-06-13 00:00:00"
+            },
+            {
+                "type": "Contribution",
+                "name": "ExCALIBR Calibration",
+                "description": "Contribution from the ExCALIBR Calibration software",
+                "contributor": {
+                    "type": "Agent",
+                    "name": "ExCALIBR Variant Calibrator",
+                    "description": "ExCALIBR variant calibrator, see https://github.com/Dzeiberg/mave_calibration",
+                    "agentType": "Software"
+                },
+                "activityType": "variant specific calibration software"
+            },
+            {
+                "type": "Contribution",
+                "name": "MaveDB Dataset Creator",
+                "description": "When this resource was first submitted, and by whom.",
+                "extensions": [
+                    {
+                        "name": "resourceType",
+                        "value": "Variant"
+                    }
+                ],
+                "contributor": {
+                    "type": "Agent",
+                    "name": "0000-0002-6145-882X",
+                    "description": "MaveDB ORCid authenticated user 0000-0002-6145-882X",
+                    "agentType": "Person"
+                },
+                "activityType": "http://purl.obolibrary.org/obo/CRO_0000105",
+                "date": "2020-10-16 00:00:00"
+            },
+            {
+                "type": "Contribution",
+                "name": "MaveDB Dataset Modifier",
+                "description": "When this resource was last modified, and by whom.",
+                "extensions": [
+                    {
+                        "name": "resourceType",
+                        "value": "Variant"
+                    }
+                ],
+                "contributor": {
+                    "type": "Agent",
+                    "name": "0000-0002-6145-882X",
+                    "description": "MaveDB ORCid authenticated user 0000-0002-6145-882X",
+                    "agentType": "Person"
+                },
+                "activityType": "http://purl.obolibrary.org/obo/CRO_0000103",
+                "date": "2020-11-25 00:00:00"
+            }
+        ],
+        "targetProposition": {
+            "type": "VariantPathogenicityProposition",
+            "description": "Variant pathogenicity proposition for urn:mavedb:00000050-a-1#4504.",
+            "subjectVariant": {
+                "id": "ga4gh:VA.XBwqdrIt-Rd8O8QRO1wOlKRU1X9GNLKB",
+                "type": "Allele",
+                "extensions": [
+                    {
+                        "name": "vrs_ref_allele_seq",
+                        "value": "Y"
+                    }
+                ],
+                "digest": "XBwqdrIt-Rd8O8QRO1wOlKRU1X9GNLKB",
+                "expressions": [
+                    {
+                        "syntax": "hgvs.p",
+                        "value": "NP_000242.1:p.Tyr238Cys"
+                    }
+                ],
+                "location": {
+                    "id": "ga4gh:SL.uKALFCsQ6P91XyBhBq99BeZSNQ0vQgM0",
+                    "type": "SequenceLocation",
+                    "digest": "uKALFCsQ6P91XyBhBq99BeZSNQ0vQgM0",
+                    "sequenceReference": {
+                        "type": "SequenceReference",
+                        "refgetAccession": "SQ.UuvvW8E_j2hLVHqP4XCbiWYRvDqvBaOI"
+                    },
+                    "start": 237,
+                    "end": 238
+                },
+                "state": {
+                    "type": "LiteralSequenceExpression",
+                    "sequence": "C"
+                }
+            },
+            "predicate": "isCausalFor",
+            "objectCondition": {
+                "conceptType": "Disease",
+                "primaryCoding": {
+                    "system": "https://www.ncbi.nlm.nih.gov/medgen/",
+                    "code": "C0012634",
+                    "iris": [
+                        "http://identifiers.org/medgen/C0012634"
+                    ]
+                }
+            }
+        },
+        "hasEvidenceItems": [
+            {
+                "type": "Statement",
+                "description": "Variant functional impact statement for urn:mavedb:00000050-a-1#4504.",
+                "specifiedBy": {
+                    "type": "Method",
+                    "name": "Variant interpretation guideline",
+                    "reportedIn": "https://pubmed.ncbi.nlm.nih.gov/29785012/"
+                },
+                "contributions": [
+                    {
+                        "type": "Contribution",
+                        "name": "MaveDB API",
+                        "description": "Contribution from the MaveDB API",
+                        "contributor": {
+                            "type": "Agent",
+                            "name": "MaveDB API",
+                            "description": "MaveDB API agent, version 2026.1.2",
+                            "extensions": [
+                                {
+                                    "name": "mavedbApiVersion",
+                                    "value": "2026.1.2"
+                                }
+                            ],
+                            "agentType": "Software"
+                        },
+                        "activityType": "software application programming interface",
+                        "date": "2026-04-13 00:00:00"
+                    },
+                    {
+                        "type": "Contribution",
+                        "name": "MaveDB VRS Mapper",
+                        "description": "Contribution from the MaveDB VRS mapping software",
+                        "contributor": {
+                            "type": "Agent",
+                            "name": "MaveDB VRS Mapping Agent",
+                            "description": "MaveDB VRS mapping agent, version 2025.1.0",
+                            "extensions": [
+                                {
+                                    "name": "mavedbVrsVersion",
+                                    "value": "2025.1.0"
+                                }
+                            ],
+                            "agentType": "Software"
+                        },
+                        "activityType": "human genome sequence mapping process",
+                        "date": "2025-06-13 00:00:00"
+                    },
+                    {
+                        "type": "Contribution",
+                        "name": "MaveDB Dataset Creator",
+                        "description": "When this resource was first submitted, and by whom.",
+                        "extensions": [
+                            {
+                                "name": "resourceType",
+                                "value": "Variant"
+                            }
+                        ],
+                        "contributor": {
+                            "type": "Agent",
+                            "name": "0000-0002-6145-882X",
+                            "description": "MaveDB ORCid authenticated user 0000-0002-6145-882X",
+                            "agentType": "Person"
+                        },
+                        "activityType": "http://purl.obolibrary.org/obo/CRO_0000105",
+                        "date": "2020-10-16 00:00:00"
+                    },
+                    {
+                        "type": "Contribution",
+                        "name": "MaveDB Dataset Modifier",
+                        "description": "When this resource was last modified, and by whom.",
+                        "extensions": [
+                            {
+                                "name": "resourceType",
+                                "value": "Variant"
+                            }
+                        ],
+                        "contributor": {
+                            "type": "Agent",
+                            "name": "0000-0002-6145-882X",
+                            "description": "MaveDB ORCid authenticated user 0000-0002-6145-882X",
+                            "agentType": "Person"
+                        },
+                        "activityType": "http://purl.obolibrary.org/obo/CRO_0000103",
+                        "date": "2020-11-25 00:00:00"
+                    }
+                ],
+                "proposition": {
+                    "type": "ExperimentalVariantFunctionalImpactProposition",
+                    "description": "Variant functional impact proposition for urn:mavedb:00000050-a-1#4504.",
+                    "subjectVariant": {
+                        "id": "ga4gh:VA.XBwqdrIt-Rd8O8QRO1wOlKRU1X9GNLKB",
+                        "type": "Allele",
+                        "extensions": [
+                            {
+                                "name": "vrs_ref_allele_seq",
+                                "value": "Y"
+                            }
+                        ],
+                        "digest": "XBwqdrIt-Rd8O8QRO1wOlKRU1X9GNLKB",
+                        "expressions": [
+                            {
+                                "syntax": "hgvs.p",
+                                "value": "NP_000242.1:p.Tyr238Cys"
+                            }
+                        ],
+                        "location": {
+                            "id": "ga4gh:SL.uKALFCsQ6P91XyBhBq99BeZSNQ0vQgM0",
+                            "type": "SequenceLocation",
+                            "digest": "uKALFCsQ6P91XyBhBq99BeZSNQ0vQgM0",
+                            "sequenceReference": {
+                                "type": "SequenceReference",
+                                "refgetAccession": "SQ.UuvvW8E_j2hLVHqP4XCbiWYRvDqvBaOI"
+                            },
+                            "start": 237,
+                            "end": 238
+                        },
+                        "state": {
+                            "type": "LiteralSequenceExpression",
+                            "sequence": "C"
+                        }
+                    },
+                    "predicate": "impactsFunctionOf",
+                    "objectSequenceFeature": "placeholder",
+                    "experimentalContextQualifier": {
+                        "id": "urn:mavedb:00000050-a",
+                        "type": "Document",
+                        "name": "MaveDB Experiment",
+                        "description": "Massively parallel functional testing of MSH2 missense variants conferring Lynch Syndrome risk",
+                        "documentType": "experiment",
+                        "title": "MSH2 deep mutational scan",
+                        "urls": [
+                            "https://mavedb.org/experiments/urn:mavedb:00000050-a"
+                        ]
+                    }
+                },
+                "direction": "disputes",
+                "classification": {
+                    "primaryCoding": {
+                        "system": "ga4gh-gks-term:experimental-var-func-impact-classification",
+                        "code": "normal"
+                    }
+                },
+                "hasEvidenceLines": [
+                    {
+                        "type": "EvidenceLine",
+                        "description": "Functional evidence line for urn:mavedb:00000050-a-1#4504",
+                        "specifiedBy": {
+                            "type": "Method",
+                            "name": "Experimental protocol",
+                            "reportedIn": "http://www.ncbi.nlm.nih.gov/pubmed/33357406"
+                        },
+                        "contributions": [
+                            {
+                                "type": "Contribution",
+                                "name": "MaveDB API",
+                                "description": "Contribution from the MaveDB API",
+                                "contributor": {
+                                    "type": "Agent",
+                                    "name": "MaveDB API",
+                                    "description": "MaveDB API agent, version 2026.1.2",
+                                    "extensions": [
+                                        {
+                                            "name": "mavedbApiVersion",
+                                            "value": "2026.1.2"
+                                        }
+                                    ],
+                                    "agentType": "Software"
+                                },
+                                "activityType": "software application programming interface",
+                                "date": "2026-04-13 00:00:00"
+                            },
+                            {
+                                "type": "Contribution",
+                                "name": "MaveDB VRS Mapper",
+                                "description": "Contribution from the MaveDB VRS mapping software",
+                                "contributor": {
+                                    "type": "Agent",
+                                    "name": "MaveDB VRS Mapping Agent",
+                                    "description": "MaveDB VRS mapping agent, version 2025.1.0",
+                                    "extensions": [
+                                        {
+                                            "name": "mavedbVrsVersion",
+                                            "value": "2025.1.0"
+                                        }
+                                    ],
+                                    "agentType": "Software"
+                                },
+                                "activityType": "human genome sequence mapping process",
+                                "date": "2025-06-13 00:00:00"
+                            },
+                            {
+                                "type": "Contribution",
+                                "name": "MaveDB Dataset Creator",
+                                "description": "When this resource was first submitted, and by whom.",
+                                "extensions": [
+                                    {
+                                        "name": "resourceType",
+                                        "value": "Variant"
+                                    }
+                                ],
+                                "contributor": {
+                                    "type": "Agent",
+                                    "name": "0000-0002-6145-882X",
+                                    "description": "MaveDB ORCid authenticated user 0000-0002-6145-882X",
+                                    "agentType": "Person"
+                                },
+                                "activityType": "http://purl.obolibrary.org/obo/CRO_0000105",
+                                "date": "2020-10-16 00:00:00"
+                            },
+                            {
+                                "type": "Contribution",
+                                "name": "MaveDB Dataset Modifier",
+                                "description": "When this resource was last modified, and by whom.",
+                                "extensions": [
+                                    {
+                                        "name": "resourceType",
+                                        "value": "Variant"
+                                    }
+                                ],
+                                "contributor": {
+                                    "type": "Agent",
+                                    "name": "0000-0002-6145-882X",
+                                    "description": "MaveDB ORCid authenticated user 0000-0002-6145-882X",
+                                    "agentType": "Person"
+                                },
+                                "activityType": "http://purl.obolibrary.org/obo/CRO_0000103",
+                                "date": "2020-11-25 00:00:00"
+                            }
+                        ],
+                        "reportedIn": [
+                            {
+                                "id": "urn:mavedb:00000050-a-1",
+                                "type": "Document",
+                                "name": "MaveDB Score Set",
+                                "description": "MSH2 loss-of-function (LOF) scores in human HAP1 cells.",
+                                "documentType": "score set",
+                                "title": "MSH2 LOF scores (HAP1)",
+                                "urls": [
+                                    "https://mavedb.org/score-sets/urn:mavedb:00000050-a-1"
+                                ]
+                            }
+                        ],
+                        "hasEvidenceItems": [
+                            {
+                                "type": "ExperimentalVariantFunctionalImpactStudyResult",
+                                "description": "Variant effect study result for urn:mavedb:00000050-a-1#4504.",
+                                "specifiedBy": {
+                                    "type": "Method",
+                                    "name": "Experimental protocol",
+                                    "reportedIn": "http://www.ncbi.nlm.nih.gov/pubmed/33357406"
+                                },
+                                "contributions": [
+                                    {
+                                        "type": "Contribution",
+                                        "name": "MaveDB API",
+                                        "description": "Contribution from the MaveDB API",
+                                        "contributor": {
+                                            "type": "Agent",
+                                            "name": "MaveDB API",
+                                            "description": "MaveDB API agent, version 2026.1.2",
+                                            "extensions": [
+                                                {
+                                                    "name": "mavedbApiVersion",
+                                                    "value": "2026.1.2"
+                                                }
+                                            ],
+                                            "agentType": "Software"
+                                        },
+                                        "activityType": "software application programming interface",
+                                        "date": "2026-04-13 00:00:00"
+                                    },
+                                    {
+                                        "type": "Contribution",
+                                        "name": "MaveDB VRS Mapper",
+                                        "description": "Contribution from the MaveDB VRS mapping software",
+                                        "contributor": {
+                                            "type": "Agent",
+                                            "name": "MaveDB VRS Mapping Agent",
+                                            "description": "MaveDB VRS mapping agent, version 2025.1.0",
+                                            "extensions": [
+                                                {
+                                                    "name": "mavedbVrsVersion",
+                                                    "value": "2025.1.0"
+                                                }
+                                            ],
+                                            "agentType": "Software"
+                                        },
+                                        "activityType": "human genome sequence mapping process",
+                                        "date": "2025-06-13 00:00:00"
+                                    }
+                                ],
+                                "reportedIn": [
+                                    "https://mavedb.org/score-sets/urn:mavedb:00000050-a-1?variant=urn%3Amavedb%3A00000050-a-1%234504",
+                                    "https://mavedb.org/variant/PA658736774"
+                                ],
+                                "sourceDataSet": {
+                                    "id": "urn:mavedb:00000050-a-1",
+                                    "type": "DataSet",
+                                    "name": "MSH2 LOF scores (HAP1)",
+                                    "description": "MSH2 loss-of-function (LOF) scores in human HAP1 cells.",
+                                    "reportedIn": "https://mavedb.org/score-sets/urn:mavedb:00000050-a-1",
+                                    "releaseDate": "2020-11-25",
+                                    "license": {
+                                        "name": "CC0"
+                                    }
+                                },
+                                "focusVariant": {
+                                    "id": "ga4gh:VA.XBwqdrIt-Rd8O8QRO1wOlKRU1X9GNLKB",
+                                    "type": "Allele",
+                                    "extensions": [
+                                        {
+                                            "name": "vrs_ref_allele_seq",
+                                            "value": "Y"
+                                        }
+                                    ],
+                                    "digest": "XBwqdrIt-Rd8O8QRO1wOlKRU1X9GNLKB",
+                                    "expressions": [
+                                        {
+                                            "syntax": "hgvs.p",
+                                            "value": "NP_000242.1:p.Tyr238Cys"
+                                        }
+                                    ],
+                                    "location": {
+                                        "id": "ga4gh:SL.uKALFCsQ6P91XyBhBq99BeZSNQ0vQgM0",
+                                        "type": "SequenceLocation",
+                                        "digest": "uKALFCsQ6P91XyBhBq99BeZSNQ0vQgM0",
+                                        "sequenceReference": {
+                                            "type": "SequenceReference",
+                                            "refgetAccession": "SQ.UuvvW8E_j2hLVHqP4XCbiWYRvDqvBaOI"
+                                        },
+                                        "start": 237,
+                                        "end": 238
+                                    },
+                                    "state": {
+                                        "type": "LiteralSequenceExpression",
+                                        "sequence": "C"
+                                    }
+                                },
+                                "functionalImpactScore": -4.332834570938722
+                            }
+                        ],
+                        "directionOfEvidenceProvided": "supports"
+                    }
+                ]
+            }
+        ],
+        "directionOfEvidenceProvided": "disputes",
+        "strengthOfEvidenceProvided": {
+            "primaryCoding": {
+                "system": "ACMG Guidelines, 2015",
+                "code": "strong"
+            }
+        },
+        "evidenceOutcome": {
+            "name": "ACMG 2015 BS3 Criterion Met",
+            "primaryCoding": {
+                "system": "ACMG Guidelines, 2015",
+                "code": "BS3"
+            }
+        }
+    }
+}
