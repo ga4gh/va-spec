@@ -3,7 +3,7 @@
 Getting Involved
 @@@@@@@@@@@@@@@@
 
-VA-Spec is driven by community involvement. This product is early in development, and needs your input and expertise to make the best and most helpful tool we can. Here are a few ways that you
+VA-Spec is driven by community involvement. This product is early in development, and we need your input and expertise to help make this as effective as possible. Here are a few ways that you
 can get involved:
 
 
