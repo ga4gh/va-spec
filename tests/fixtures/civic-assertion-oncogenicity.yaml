@@ -1,0 +1,318 @@
+id: civic.aid:202
+type: Statement
+proposition:
+  type: VariantOncogenicityProposition
+  objectTumorType:
+    id: civic.did:15
+    conceptType: Disease
+    name: Medullary Thyroid Carcinoma
+    mappings:
+      - coding:
+          code: DOID:3973
+          system: https://disease-ontology.org/?id=
+        relation: exactMatch
+  predicate: isOncogenicFor
+  subjectVariant:
+    id: civic.mpid:113
+    type: CategoricalVariant
+    description: RET M918T is the most common somatically acquired mutation in
+      medullary thyroid cancer (MTC). While there currently are no RET-specific
+      inhibiting agents, promiscuous kinase inhibitors have seen some success in
+      treating RET overactivity. Data suggests however, that the M918T mutation
+      may lead to drug resistance, especially against the VEGFR-inhibitor
+      motesanib. It has also been suggested that RET M918T leads to more
+      aggressive MTC with a poorer prognosis.
+    name: RET M918T
+    aliases:
+      - MET918THRRS74799832
+    mappings:
+      - coding:
+          code: rs74799832
+          system: https://www.ncbi.nlm.nih.gov/snp/
+        relation: relatedMatch
+      - coding:
+          code: CA009082
+          system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+        relation: relatedMatch
+      - coding:
+          code: "13919"
+          system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+        relation: relatedMatch
+      - coding:
+          id: civic.mpid:113
+          code: "113"
+          system: https://civicdb.org/links/molecular_profile/
+        relation: exactMatch
+strength:
+  primaryCoding:
+    code: likely
+    system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+classification:
+  primaryCoding:
+    code: likely oncogenic
+    system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+direction: supports
+specifiedBy:
+  id: civic.method:2019
+  name: CIViC Curation SOP (2019)
+  reportedIn:
+    id: pmid:31779674
+    name: Danos et al., 2019, Genome Med.
+    title: Standard operating procedure for curation and clinical interpretation of
+      variants in cancer
+    doi: 10.1186/s13073-019-0687-x
+    pmid: "31779674"
+    urls:
+      - https://doi.org/10.1186/s13073-019-0687-x
+      - https://pubmed.ncbi.nlm.nih.gov/31779674/
+    aliases:
+      - CIViC curation SOP
+    type: Document
+  methodType: curation
+  type: Method
+hasEvidenceLines:
+  - type: EvidenceLine
+    directionOfEvidenceProvided: supports
+    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+      type: VariantOncogenicityProposition
+      objectTumorType:
+        id: civic.did:15
+        conceptType: Disease
+        name: Medullary Thyroid Carcinoma
+        mappings:
+          - coding:
+              code: DOID:3973
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+      predicate: isOncogenicFor
+      subjectVariant:
+        id: civic.mpid:113
+        type: CategoricalVariant
+        description: RET M918T is the most common somatically acquired mutation in
+          medullary thyroid cancer (MTC). While there currently are no RET-specific
+          inhibiting agents, promiscuous kinase inhibitors have seen some success in
+          treating RET overactivity. Data suggests however, that the M918T mutation
+          may lead to drug resistance, especially against the VEGFR-inhibitor
+          motesanib. It has also been suggested that RET M918T leads to more
+          aggressive MTC with a poorer prognosis.
+        name: RET M918T
+        aliases:
+          - MET918THRRS74799832
+        mappings:
+          - coding:
+              code: rs74799832
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+          - coding:
+              code: CA009082
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "13919"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              id: civic.mpid:113
+              code: "113"
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: OM1
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+  - type: EvidenceLine
+    directionOfEvidenceProvided: supports
+    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+      type: VariantOncogenicityProposition
+      objectTumorType:
+        id: civic.did:15
+        conceptType: Disease
+        name: Medullary Thyroid Carcinoma
+        mappings:
+          - coding:
+              code: DOID:3973
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+      predicate: isOncogenicFor
+      subjectVariant:
+        id: civic.mpid:113
+        type: CategoricalVariant
+        description: RET M918T is the most common somatically acquired mutation in
+          medullary thyroid cancer (MTC). While there currently are no RET-specific
+          inhibiting agents, promiscuous kinase inhibitors have seen some success in
+          treating RET overactivity. Data suggests however, that the M918T mutation
+          may lead to drug resistance, especially against the VEGFR-inhibitor
+          motesanib. It has also been suggested that RET M918T leads to more
+          aggressive MTC with a poorer prognosis.
+        name: RET M918T
+        aliases:
+          - MET918THRRS74799832
+        mappings:
+          - coding:
+              code: rs74799832
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+          - coding:
+              code: CA009082
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "13919"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              id: civic.mpid:113
+              code: "113"
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: OS2
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+  - type: EvidenceLine
+    directionOfEvidenceProvided: supports
+    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+      type: VariantOncogenicityProposition
+      objectTumorType:
+        id: civic.did:15
+        conceptType: Disease
+        name: Medullary Thyroid Carcinoma
+        mappings:
+          - coding:
+              code: DOID:3973
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+      predicate: isOncogenicFor
+      subjectVariant:
+        id: civic.mpid:113
+        type: CategoricalVariant
+        description: RET M918T is the most common somatically acquired mutation in
+          medullary thyroid cancer (MTC). While there currently are no RET-specific
+          inhibiting agents, promiscuous kinase inhibitors have seen some success in
+          treating RET overactivity. Data suggests however, that the M918T mutation
+          may lead to drug resistance, especially against the VEGFR-inhibitor
+          motesanib. It has also been suggested that RET M918T leads to more
+          aggressive MTC with a poorer prognosis.
+        name: RET M918T
+        aliases:
+          - MET918THRRS74799832
+        mappings:
+          - coding:
+              code: rs74799832
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+          - coding:
+              code: CA009082
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "13919"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              id: civic.mpid:113
+              code: "113"
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: OP4
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+  - type: EvidenceLine
+    directionOfEvidenceProvided: supports
+    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+      type: VariantOncogenicityProposition
+      objectTumorType:
+        id: civic.did:15
+        conceptType: Disease
+        name: Medullary Thyroid Carcinoma
+        mappings:
+          - coding:
+              code: DOID:3973
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+      predicate: isOncogenicFor
+      subjectVariant:
+        id: civic.mpid:113
+        type: CategoricalVariant
+        description: RET M918T is the most common somatically acquired mutation in
+          medullary thyroid cancer (MTC). While there currently are no RET-specific
+          inhibiting agents, promiscuous kinase inhibitors have seen some success in
+          treating RET overactivity. Data suggests however, that the M918T mutation
+          may lead to drug resistance, especially against the VEGFR-inhibitor
+          motesanib. It has also been suggested that RET M918T leads to more
+          aggressive MTC with a poorer prognosis.
+        name: RET M918T
+        aliases:
+          - MET918THRRS74799832
+        mappings:
+          - coding:
+              code: rs74799832
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+          - coding:
+              code: CA009082
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "13919"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              id: civic.mpid:113
+              code: "113"
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: OP1
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+  - type: EvidenceLine
+    directionOfEvidenceProvided: supports
+    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+      type: VariantOncogenicityProposition
+      objectTumorType:
+        id: civic.did:15
+        conceptType: Disease
+        name: Medullary Thyroid Carcinoma
+        mappings:
+          - coding:
+              code: DOID:3973
+              system: https://disease-ontology.org/?id=
+            relation: exactMatch
+      predicate: isOncogenicFor
+      subjectVariant:
+        id: civic.mpid:113
+        type: CategoricalVariant
+        description: RET M918T is the most common somatically acquired mutation in
+          medullary thyroid cancer (MTC). While there currently are no RET-specific
+          inhibiting agents, promiscuous kinase inhibitors have seen some success in
+          treating RET overactivity. Data suggests however, that the M918T mutation
+          may lead to drug resistance, especially against the VEGFR-inhibitor
+          motesanib. It has also been suggested that RET M918T leads to more
+          aggressive MTC with a poorer prognosis.
+        name: RET M918T
+        aliases:
+          - MET918THRRS74799832
+        mappings:
+          - coding:
+              code: rs74799832
+              system: https://www.ncbi.nlm.nih.gov/snp/
+            relation: relatedMatch
+          - coding:
+              code: CA009082
+              system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+            relation: relatedMatch
+          - coding:
+              code: "13919"
+              system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+            relation: relatedMatch
+          - coding:
+              id: civic.mpid:113
+              code: "113"
+              system: https://civicdb.org/links/molecular_profile/
+            relation: exactMatch
+    strengthOfEvidenceProvided:
+      primaryCoding:
+        code: OP3
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
