@@ -53,22 +53,18 @@ classification:
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
 direction: supports
 specifiedBy:
-  id: civic.method:2019
-  name: CIViC Curation SOP (2019)
+  name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
   reportedIn:
-    id: pmid:31779674
-    name: Danos et al., 2019, Genome Med.
-    title: Standard operating procedure for curation and clinical interpretation of
-      variants in cancer
-    doi: 10.1186/s13073-019-0687-x
-    pmid: "31779674"
+    id: pmid:35101336
+    name: Horak et al., 2022, Genet Med.
+    title: "Standards for the classification of pathogenicity of somatic variants in cancer (oncogenicity): Joint recommendations of Clinical Genome Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant Interpretation for Cancer Consortium (VICC)"
+    doi: 10.1016/j.gim.2022.01.001
+    pmid: "35101336"
     urls:
-      - https://doi.org/10.1186/s13073-019-0687-x
-      - https://pubmed.ncbi.nlm.nih.gov/31779674/
-    aliases:
-      - CIViC curation SOP
+      - https://doi.org/10.1016/j.gim.2022.01.001
+      - https://pubmed.ncbi.nlm.nih.gov/35101336/
     type: Document
-  methodType: curation
+  methodType: guideline
   type: Method
 hasEvidenceLines:
   - type: EvidenceLine
