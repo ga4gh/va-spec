@@ -114,8 +114,13 @@ hasEvidenceLines:
             relation: exactMatch
     strengthOfEvidenceProvided:
       primaryCoding:
+        code: moderate
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    evidenceOutcome:
+      primaryCoding:
         code: OM1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    scoreOfEvidenceProvided: 2
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     targetProposition:  # identical to VariantOncogenicityStatement.proposition
@@ -162,9 +167,14 @@ hasEvidenceLines:
               system: https://civicdb.org/links/molecular_profile/
             relation: exactMatch
     strengthOfEvidenceProvided:
+      primaryCoding:
+        code: strong
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    evidenceOutcome:
       primaryCoding:
         code: OS2
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    scoreOfEvidenceProvided: 4
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     targetProposition:  # identical to VariantOncogenicityStatement.proposition
@@ -211,9 +221,14 @@ hasEvidenceLines:
               system: https://civicdb.org/links/molecular_profile/
             relation: exactMatch
     strengthOfEvidenceProvided:
+      primaryCoding:
+        code: supporting
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    evidenceOutcome:
       primaryCoding:
         code: OP4
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    scoreOfEvidenceProvided: 1
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     targetProposition:  # identical to VariantOncogenicityStatement.proposition
@@ -260,9 +275,14 @@ hasEvidenceLines:
               system: https://civicdb.org/links/molecular_profile/
             relation: exactMatch
     strengthOfEvidenceProvided:
+      primaryCoding:
+        code: supporting
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    evidenceOutcome:
       primaryCoding:
         code: OP1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    scoreOfEvidenceProvided: 1
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     targetProposition:  # identical to VariantOncogenicityStatement.proposition
@@ -310,5 +330,10 @@ hasEvidenceLines:
             relation: exactMatch
     strengthOfEvidenceProvided:
       primaryCoding:
+        code: supporting
+        system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    evidenceOutcome:
+      primaryCoding:
         code: OP3
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+    scoreOfEvidenceProvided: 1
