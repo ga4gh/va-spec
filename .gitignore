@@ -137,3 +137,6 @@ Pipfile*
 
 # mac things
 .DS_Store
+
+# Coding agents
+.claude/settings.json
