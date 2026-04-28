@@ -1001,6 +1001,39 @@ $defs:
     - objectTherapeutic
     - conditionQualifier
 
+  GeneValidityProposition:
+    inherits: va-core:Proposition
+    maturity: draft
+    type: object
+    description: "A proposition that variants affecting the subjectGene are valid for evaluation as causal for the objectCondition using appropriate variant classification criteria, given the qualifierModeOfInheritance."
+    properties:
+      type:
+        extends: type
+        const: GeneValidityProposition
+        default: GeneValidityProposition
+      subjectGene:
+        extends: subject
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+      predicate:
+        extends: predicate
+        const: "GeneValidityPredicate"
+        default: "GeneValidityPredicate"
+      objectCondition:
+        extends: object
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+      qualifierModeOfInheritance:
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+    required:
+      - predicate
+      - subjectGene
+      - objectCondition
+
   CohortAlleleFrequencyStudyResult:
     inherits: StudyResult
     maturity: trial use
