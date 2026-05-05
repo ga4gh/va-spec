@@ -26,7 +26,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
                   - properties:
                       code:
                         enum: [A, B, C, D]
@@ -47,7 +47,7 @@ $defs:
               targetProposition:
                 $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPrognosticProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+        - $ref: "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
 
   DiagnosticEvidenceLine:
     maturity: draft
@@ -62,7 +62,7 @@ $defs:
               targetProposition:
                 $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+        - $ref: "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
 
   TherapeuticEvidenceLine:
     maturity: draft
@@ -77,7 +77,7 @@ $defs:
               targetProposition:
                 $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+        - $ref: "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -98,7 +98,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
                   - properties:
                       code:
                         enum:
@@ -113,7 +113,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.0.0/json/Coding"
+                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
                   - properties:
                       code:
                         enum:
