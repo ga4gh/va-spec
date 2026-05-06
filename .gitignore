@@ -135,6 +135,8 @@ dmypy.json
 # Pipfile
 Pipfile*
 
-# MacOS things
+# mac things
 .DS_Store
+
+# Coding agents
 .claude/settings.json
