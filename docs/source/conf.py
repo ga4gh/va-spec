@@ -101,7 +101,7 @@ print("RTD env:", {
 })
 
 project = 'GA4GH Variant Annotation Specification'
-copyright = '2024, GA4GH VA Contributors'
+copyright = '2024-%Y, GA4GH VA Contributors'
 author = 'Committers'
 master_doc = 'index'
 # get the release from the git tag if available, otherwise use the branch name
