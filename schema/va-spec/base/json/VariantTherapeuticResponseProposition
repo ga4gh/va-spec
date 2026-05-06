@@ -39,7 +39,7 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.1.0-snapshot.2026-02.1/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.0-snapshot.2026-02.3/json/CategoricalVariant"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
