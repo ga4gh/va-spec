@@ -12,7 +12,7 @@ imports:
 namespaces:
   gks.core: /ga4gh/schema/gks-core/1.1.0/json/
   vrs: /ga4gh/schema/vrs/2.1.0-snapshot.2026-02.2/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.1.0-snapshot.2026-02.2/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.1.0-snapshot.2026-02.3/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
