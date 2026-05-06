@@ -26,7 +26,7 @@
             ]
          },
          {
-            "$ref": "/ga4gh/schema/gks-core/1.0.0/json/iriReference"
+            "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
          }
       ]
    }
