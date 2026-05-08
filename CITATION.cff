@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use GA4GH Variant Annotation Specification (VA-Spec), please cite it using the metadata from this file."
+title: "GA4GH Variant Annotation Specification"
+authors:
+  - name: "GA4GH VA Contributors"
+version: "1.0.1"
+date-released: "2025-07-23"
+license: "Apache-2.0"
+repository-code: "https://github.com/ga4gh/va-spec"
+url: "https://va-spec.ga4gh.org/"
+abstract: >-
+  The GA4GH Variant Annotation Specification (VA-Spec) is a standard developed
+  by the Global Alliance for Genomics and Health (GA4GH) to facilitate sharing
+  of biological and clinical knowledge about genetic variation. It consists of
+  a foundational domain-agnostic VA Core Model, profiles derived from this core
+  model that provide schema for specific types of variant knowledge, and a
+  Python reference implementation.
+keywords:
+  - "GA4GH"
+  - "genomics"
+  - "variant annotation"
+  - "variant interpretation"
+  - "genomic knowledge standards"
+  - "clinical genomics"
+  - "information model"
