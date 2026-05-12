@@ -48,13 +48,29 @@ specifiedBy:
   name: CADD
   type: Method
   methodType: variant effect predictor
+  extensions:
+    - name: softwareVersion
+      value: 'v1.7'
   reportedIn:
     type: Document
     pmid: '30371827'
+contributions:
+  - type: Contribution
+    contributor:
+      type: Agent
+      id: https://www.ensembl.org/info/docs/tools/vep/index.html
+      name: Ensembl VEP
+      agentType: software
+      extensions:
+        - name: softwareVersion
+          value: '113.0'
+    activityType: variant annotation
 sourceDataSet:
   type: DataSet
-  name: Ensembl VEP annotations
+  name: CADD precomputed SNV scores
+  version: 'v1.7'
+  releaseDate: '2024-02-05'
   reportedIn:
     type: Document
     urls:
-      - "https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2"
+      - "https://krishna.gs.washington.edu/download/CADD/v1.7/GRCh38/whole_genome_SNVs.tsv.gz"

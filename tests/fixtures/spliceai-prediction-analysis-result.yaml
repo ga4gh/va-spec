@@ -71,13 +71,29 @@ specifiedBy:
   name: SpliceAI
   type: Method
   methodType: variant effect predictor
+  extensions:
+    - name: softwareVersion
+      value: '1.3.1'
   reportedIn:
     type: Document
     pmid: '30661751'
+contributions:
+  - type: Contribution
+    contributor:
+      type: Agent
+      id: https://www.ensembl.org/info/docs/tools/vep/index.html
+      name: Ensembl VEP
+      agentType: software
+      extensions:
+        - name: softwareVersion
+          value: '113.0'
+    activityType: variant annotation
 sourceDataSet:
   type: DataSet
-  name: Ensembl VEP annotations
+  name: SpliceAI precomputed SNV scores
+  version: '1.3.1'
+  releaseDate: '2020-03-07'
   reportedIn:
     type: Document
     urls:
-      - "https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2"
+      - "https://basespace.illumina.com/s/otSPW8hnhaZR"

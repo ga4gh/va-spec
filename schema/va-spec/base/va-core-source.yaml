@@ -1200,7 +1200,7 @@ ComputationalVariantFunctionalImpactAnalysisResult:
       items:
         $ref: "#/$defs/Contribution"
       description: Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
-      sourceDataSet:
+    sourceDataSet:
       $ref: "#/$defs/DataSet"
       description: The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
   required:

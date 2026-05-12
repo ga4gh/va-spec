@@ -55,13 +55,29 @@ specifiedBy:
   name: SIFT
   type: Method
   methodType: variant effect predictor
+  extensions:
+    - name: softwareVersion
+      value: '6.2.1'
   reportedIn:
     type: Document
     pmid: '37556001'
+contributions:
+  - type: Contribution
+    contributor:
+      type: Agent
+      id: https://www.ensembl.org/info/docs/tools/vep/index.html
+      name: Ensembl VEP
+      agentType: software
+      extensions:
+        - name: softwareVersion
+          value: '113.0'
+    activityType: variant annotation
 sourceDataSet:
   type: DataSet
-  name: Ensembl VEP annotations
+  name: Ensembl VEP indexed cache
+  version: '113'
+  releaseDate: '2024-09-06'
   reportedIn:
     type: Document
     urls:
-      - "https://rest.ensembl.org/vep/human/hgvs/ENST00000366667:c.803C%3ET?content-type=application/json&hgvs=true&CADD=true&SpliceAI=2"
+      - "https://ftp.ensembl.org/pub/release-113/variation/indexed_vep_cache/homo_sapiens_vep_113_GRCh38.tar.gz"
