@@ -1011,6 +1011,7 @@ $defs:
         extends: type
         const: GeneDiseaseValidityProposition
         default: GeneDiseaseValidityProposition
+        description: MUST be "GeneDiseaseValidityProposition".
       subjectGene:
         extends: subject
         oneOf:
@@ -1020,6 +1021,7 @@ $defs:
         extends: predicate
         const: "variantsInGeneCausalFor"
         default: "variantsInGeneCausalFor"
+        description: MUST be "variantsInGeneCausalFor".
       objectCondition:
         extends: object
         oneOf:
