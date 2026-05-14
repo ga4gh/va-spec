@@ -1009,8 +1009,8 @@ $defs:
     properties:
       type:
         extends: type
-        const: GeneValidityProposition
-        default: GeneValidityProposition
+        const: GeneDiseaseValidityProposition
+        default: GeneDiseaseValidityProposition
       subjectGene:
         extends: subject
         oneOf:
