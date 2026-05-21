@@ -59,6 +59,10 @@ $defs:
           description: >-
             The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
             based on assessment of evidence.
+        hasEvidenceLines:
+          type: array
+          items:
+            $ref: "#/$defs/VariantOncogenicityEvidenceLine"
       required:
         - classification
         - specifiedBy
