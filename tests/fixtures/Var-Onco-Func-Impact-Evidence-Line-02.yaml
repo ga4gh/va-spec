@@ -53,7 +53,7 @@ strengthOfEvidenceProvided:
 scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
-  methodType: OS2
+  methodType: functional_assay
   reportedIn:
     type: Document
     pmid: '35101336'

@@ -44,39 +44,81 @@
             },
             "specifiedBy": {
                "description": "The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel guidelines for ACMG interpretations).",
-               "methodType": {
-                  "description": "A term representing the type of method used to assess evidence for or against the pathogenicity of a variant. Method type is reported as the ACMG Code that defines criteria against which evidence is assessed to determine if it supports pathogenicity or benignity of a variant.",
-                  "type": "string",
-                  "enum": [
-                     "PVS1",
-                     "PS1",
-                     "PS2",
-                     "PS3",
-                     "PS4",
-                     "PM1",
-                     "PM2",
-                     "PM3",
-                     "PM4",
-                     "PM5",
-                     "PM6",
-                     "PP1",
-                     "PP2",
-                     "PP3",
-                     "PP4",
-                     "PP5",
-                     "BA1",
-                     "BS1",
-                     "BS2",
-                     "BS3",
-                     "BS4",
-                     "BP1",
-                     "BP2",
-                     "BP3",
-                     "BP4",
-                     "BP5",
-                     "BP6",
-                     "BP7"
-                  ]
+               "properties": {
+                  "methodType": {
+                     "description": "A term representing the type of method used to assess evidence for or against the pathogenicity of a variant. Method type is reported as the ACMG Code that defines criteria against which evidence is assessed to determine if it supports pathogenicity or benignity of a variant.",
+                     "type": "string",
+                     "oneOf": [
+                        {
+                           "const": "Population Data Assessment",
+                           "description": "Assessment of whether population control frequency refutes pathogenicity or whether absence/extreme rarity in controls provides supporting evidence for pathogenicity."
+                        },
+                        {
+                           "const": "Case-Control Enrichment Assessment",
+                           "description": "Prevalence in affected statistically increased over matched controls, or enrichment in controls inconsistent with disease penetrance"
+                        },
+                        {
+                           "const": "Null variant assessment",
+                           "description": "Predicted null variant in a gene where LOF is a known mechanism of disease"
+                        },
+                        {
+                           "const": "Same amino acid change assessment",
+                           "description": "Same amino acid change as an established pathogenic variant"
+                        },
+                        {
+                           "const": "Mutational hot spot and functional domain assessment",
+                           "description": "Mutational hot spot or well-established functional domain without benign variation"
+                        },
+                        {
+                           "const": "Protein length change assessment",
+                           "description": "Protein length change, or in-frame indels changing counts of repeats with no known function"
+                        },
+                        {
+                           "const": "Novel missense position assessment",
+                           "description": "Novel missense change at an amino acid where a different pathogenic missense change has been seen before"
+                        },
+                        {
+                           "const": "Variant spectrum assessment",
+                           "description": "Missense in a gene where only truncation causes disease, or with low rate of benign missense variation"
+                        },
+                        {
+                           "const": "In silico functional impact assessment",
+                           "description": "Multiple lines of computational evidence support a deleterious effect or no impact"
+                        },
+                        {
+                           "const": "Predicted silent variant assessment",
+                           "description": "Silent variant with no predicted splicing impact"
+                        },
+                        {
+                           "const": "Functional Data Assessment",
+                           "description": "Well-established functional studies show or do not show deleterious effect"
+                        },
+                        {
+                           "const": "Segregation Data Assessment",
+                           "description": "Consegregation with diease in multiple family members, or nonsegregation"
+                        },
+                        {
+                           "const": "De Novo Data Assessment",
+                           "description": "De novo, with or without paternity and maternity confirmed"
+                        },
+                        {
+                           "const": "Cis/trans variant assessment",
+                           "description": "Observed in trans with a dominant variant, in cis with a pathogenic variant, or in trans with a pathogenic variant in a recessive disorder"
+                        },
+                        {
+                           "const": "Reputable Source Assessment",
+                           "description": "Benign or pathogenic according to a reputable source"
+                        },
+                        {
+                           "const": "Phenotype-gene specificity assessment",
+                           "description": "Patient's phenotype or family history highly specific for the gene and disorder"
+                        },
+                        {
+                           "const": "Alternative cause assessment",
+                           "description": "Found in a case with an alternate cause"
+                        }
+                     ]
+                  }
                },
                "required": [
                   "methodType",
@@ -118,6 +160,465 @@
             "required": [
                "strengthOfEvidenceProvided"
             ]
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Population Data Assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(BA1|BS1|PM2)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Case-Control Enrichment Assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(BS2|PM4)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Null variant assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^PVS1(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Same amino acid change assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^PS1(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Mutational hot spot and functional domain assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^PM1(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Protein length change assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PM4|BP3)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Novel missense position assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^PM5(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Variant spectrum assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PP2|BP1)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "In silico functional impact assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PP3|BP4)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Predicted silent variant assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^BP7(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Functional Data Assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PS3|BS3)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Segregation Data Assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PP1|BS4)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "De Novo Data Assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PS2|PM6)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Cis/trans variant assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PM3|BP2)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Reputable Source Assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(PP5|BP6)(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Phenotype-gene specificity assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^PP4(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "methodType": {
+                  "const": "Alternative cause assessment"
+               }
+            },
+            "required": [
+               "methodType"
+            ]
+         },
+         "then": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^BP5(_.+)?$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
          }
       }
    ],
