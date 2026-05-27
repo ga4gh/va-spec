@@ -1,0 +1,165 @@
+
+Scenario 1: Criterion met with default strength (others in same category implicitly not met)
+
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: disputes
+      strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
+        name: strong
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: BS1                     # or BA1, or BS1_Supporting, . . .  
+
+Scenario 2: Criterion met with modified strength (BS1 modified to supporting)
+
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: disputes
+      strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
+        name: supporting
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: BS1_supporting
+
+
+Scenario 3: A specific criterion not met
+
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: neutral
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: BS1_not_met 
+
+
+Scenario 4: All criterion in category (under a shared method) not met (Population Data Assessment codes all not met)
+
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: neutral
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: no_codes_met            # but if we want this value to be complete and stand on its own (which IMO is kind of the point) - we would want more here, e.g. "no Population Data Assessment codes met", or "BA1, BS1, BS2, PM2 not met")
+
+Scenario 5:  Criteria not evaluated
+
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: neutral
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: BA1_not_evaluated       # or, no_codes_evaluated if no codes associated with the method were assessed
+
+
+5. Conflicting codes met (PM2 and BS1)
+
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: supports
+      strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
+        name: moderate
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: PM2
+        
+conditions:
+  HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
+  variations:
+    NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
+  evidenceLines:
+    NM_004985.5:c.35G>A.BA1:
+      type: EvidenceLine
+      targetProposition:
+        subjectVariant: "#/variation/NM_004985.5:c.35G>A"
+        predicate: isCausalFor
+        objectCondition: "#/conditions/HereditaryCancer"
+        geneContextQualifier:
+          conceptType: gene
+          name: BRCA1
+      directionOfEvidenceProvided: disputes
+      strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
+        name: stand alone
+      specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
+        methodType: Population Data Assessment
+      evidenceOutcome:               # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        name: BS1
+        
+Scenario 6: Melissa's error scenario?
