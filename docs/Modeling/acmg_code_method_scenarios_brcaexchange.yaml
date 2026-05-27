@@ -1,13 +1,15 @@
+# Examples illustrating how data looks for the specific scenarios from BRCA Exchange data that Melissa Cline wanted to be sure the approach covers
 
-Scenario 1: Criterion met with default strength (others in same category implicitly not met)
+
+Scenario 1: Criterion met with default strength (e.g. BS1 met - others in same category implicitly not met . . but additional evidence lines can be created to explicitly say they are not met if desired)
 
 conditions:
   HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP001:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec (which binds methodType and evidenceOutcome attributes to specific values)
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -19,19 +21,19 @@ conditions:
       strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
         name: strong
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
+        methodType: ACMGv3.POP        # Population Data Assessment
       evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
-        name: BS1                     # or BA1, or BS1_Supporting, . . .  
+        name: BS1                     
 
-Scenario 2: Criterion met with modified strength (BS1 modified to supporting)
+Scenario 2: Criterion met with modified strength (BS1 'strong' modified to 'supporting')
 
 conditions:
   HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP001:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec 
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -43,7 +45,7 @@ conditions:
       strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
         name: supporting
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
+        methodType: ACMGv3.POP        # Population Data Assessment
       evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
         name: BS1_supporting
 
@@ -55,8 +57,8 @@ conditions:
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP001:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec 
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -66,7 +68,7 @@ conditions:
           name: BRCA1
       directionOfEvidenceProvided: neutral
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
+        methodType: ACMGv3.POP        # Population Data Assessment
       evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
         name: BS1_not_met 
 
@@ -78,8 +80,8 @@ conditions:
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP001:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec 
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -89,19 +91,19 @@ conditions:
           name: BRCA1
       directionOfEvidenceProvided: neutral
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
+        methodType: ACMGv3.POP        # Population Data Assessment
       evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
-        name: no_codes_met            # but if we want this value to be complete and stand on its own (which IMO is kind of the point) - we would want more here, e.g. "no Population Data Assessment codes met", or "BA1, BS1, BS2, PM2 not met")
+        name: no_criteria_met         # but if we want this value to be complete and stand on its own (which IMO is kind of the point) - we would want more here, e.g. "no POP critiera met", or "BA1, BS1, BS2, PM2 not met")
 
-Scenario 5:  Criteria not evaluated
+Scenario 5:  A specific criteria was not evaluated (BA1)
 
 conditions:
   HereditaryCancer:                   #... herediatary cancer mappable concept with conceptType = "Disease"  
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP001:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec 
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -111,9 +113,9 @@ conditions:
           name: BRCA1
       directionOfEvidenceProvided: neutral
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
+        methodType: ACMGv3.POP        # Population Data Assessment
       evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
-        name: BA1_not_evaluated       # or, no_codes_evaluated if no codes associated with the method were assessed
+        name: BA1_not_evaluated       # or, no_criteria_evaluated if no critiera associated with the POP method were assessed
 
 
 5. Conflicting codes met (PM2 and BS1)
@@ -123,8 +125,8 @@ conditions:
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP001:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec 
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -136,7 +138,7 @@ conditions:
       strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
         name: moderate
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
+        methodType: ACMGv3.POP        # Population Data Assessment
       evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
         name: PM2
         
@@ -145,8 +147,8 @@ conditions:
   variations:
     NM_004985.5:c.35G>A:              #... vrs representation of the variant, including HGVS expressions, VRS Allele members, etc.
   evidenceLines:
-    NM_004985.5:c.35G>A.BA1:
-      type: EvidenceLine
+    NM_004985.5:c.35G>A.POP002:
+      type: EvidenceLine              # ... but based on a "ACMGv3 POP Pathogenicity Evidence Line" profile defined in the VA Spec 
       targetProposition:
         subjectVariant: "#/variation/NM_004985.5:c.35G>A"
         predicate: isCausalFor
@@ -158,8 +160,8 @@ conditions:
       strengthOfEvidenceProvided:     # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-defined values
         name: stand alone
       specifiedBy:                    # Method object, in which the 'methodType' field is bound to an enum holding the method types we defined and aligned with ACMG codes
-        methodType: Population Data Assessment
-      evidenceOutcome:               # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
+        methodType: ACMGv3.POP        # Population Data Assessment
+      evidenceOutcome:                # MappableConcept object, in which the 'name' field is bound to an enum with ACMG-based values 
         name: BS1
         
 Scenario 6: Melissa's error scenario?
