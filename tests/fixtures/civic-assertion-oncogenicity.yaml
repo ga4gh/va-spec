@@ -135,6 +135,11 @@ proposition:
             value: ENST00000355710.3:c.2753T>C
           - syntax: hgvs.g
             value: NC_000010.10:g.43617416T>C
+          - syntax: hgvs.c
+            value: ENST00000355710.8:c.2753T>C
+            extensions:
+              - name: is_mane_select
+                value: true
       - name: CIViC representative coordinate
         value:
           chromosome: "10"
