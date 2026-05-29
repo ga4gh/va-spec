@@ -81,6 +81,11 @@ hasEvidenceLines:
                     value: NC_000002.11:g.158622516C>A
                   - syntax: hgvs.c
                     value: ENST00000434821.1:c.983G>T
+                  - syntax: hgvs.c
+                    value: ENST00000434821.7:c.983G>T
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "2"
@@ -237,6 +242,11 @@ hasEvidenceLines:
                     value: NC_000002.11:g.158622516C>A
                   - syntax: hgvs.c
                     value: ENST00000434821.1:c.983G>T
+                  - syntax: hgvs.c
+                    value: ENST00000434821.7:c.983G>T
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "2"
@@ -388,6 +398,11 @@ hasEvidenceLines:
                 value: NC_000002.11:g.158622516C>A
               - syntax: hgvs.c
                 value: ENST00000434821.1:c.983G>T
+              - syntax: hgvs.c
+                value: ENST00000434821.7:c.983G>T
+                extensions:
+                  - name: is_mane_select
+                    value: true
           - name: CIViC representative coordinate
             value:
               chromosome: "2"
@@ -493,6 +508,11 @@ proposition:
             value: NC_000002.11:g.158622516C>A
           - syntax: hgvs.c
             value: ENST00000434821.1:c.983G>T
+          - syntax: hgvs.c
+            value: ENST00000434821.7:c.983G>T
+            extensions:
+              - name: is_mane_select
+                value: true
       - name: CIViC representative coordinate
         value:
           chromosome: "2"

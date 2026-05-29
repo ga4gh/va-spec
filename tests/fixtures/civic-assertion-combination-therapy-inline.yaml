@@ -180,6 +180,11 @@ hasEvidenceLines:
                     value: NC_000007.13:g.140453136A>T
                   - syntax: hgvs.c
                     value: ENST00000288602.6:c.1799T>A
+                  - syntax: hgvs.c
+                    value: ENST00000646891.2:c.1799T>A
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -434,6 +439,11 @@ hasEvidenceLines:
                     value: NC_000007.13:g.140453136A>T
                   - syntax: hgvs.c
                     value: ENST00000288602.6:c.1799T>A
+                  - syntax: hgvs.c
+                    value: ENST00000646891.2:c.1799T>A
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -686,6 +696,11 @@ hasEvidenceLines:
                     value: NC_000007.13:g.140453136A>T
                   - syntax: hgvs.c
                     value: ENST00000288602.6:c.1799T>A
+                  - syntax: hgvs.c
+                    value: ENST00000646891.2:c.1799T>A
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -937,6 +952,11 @@ hasEvidenceLines:
                     value: NC_000007.13:g.140453136A>T
                   - syntax: hgvs.c
                     value: ENST00000288602.6:c.1799T>A
+                  - syntax: hgvs.c
+                    value: ENST00000646891.2:c.1799T>A
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -1181,6 +1201,11 @@ hasEvidenceLines:
                 value: NC_000007.13:g.140453136A>T
               - syntax: hgvs.c
                 value: ENST00000288602.6:c.1799T>A
+              - syntax: hgvs.c
+                value: ENST00000646891.2:c.1799T>A
+                extensions:
+                  - name: is_mane_select
+                    value: true
           - name: CIViC representative coordinate
             value:
               chromosome: "7"
@@ -1334,6 +1359,11 @@ proposition:
             value: NC_000007.13:g.140453136A>T
           - syntax: hgvs.c
             value: ENST00000288602.6:c.1799T>A
+          - syntax: hgvs.c
+            value: ENST00000646891.2:c.1799T>A
+            extensions:
+              - name: is_mane_select
+                value: true
       - name: CIViC representative coordinate
         value:
           chromosome: "7"

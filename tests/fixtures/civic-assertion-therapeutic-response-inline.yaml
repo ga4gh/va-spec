@@ -128,6 +128,11 @@ hasEvidenceLines:
                     value: ENST00000275493.2:c.2573T>G
                   - syntax: hgvs.p
                     value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.c
+                    value: ENST00000275493.7:c.2573T>G
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -333,6 +338,11 @@ hasEvidenceLines:
                     value: ENST00000275493.2:c.2573T>G
                   - syntax: hgvs.p
                     value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.c
+                    value: ENST00000275493.7:c.2573T>G
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -543,6 +553,11 @@ hasEvidenceLines:
                     value: ENST00000275493.2:c.2573T>G
                   - syntax: hgvs.p
                     value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.c
+                    value: ENST00000275493.7:c.2573T>G
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -753,6 +768,11 @@ hasEvidenceLines:
                     value: ENST00000275493.2:c.2573T>G
                   - syntax: hgvs.p
                     value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.c
+                    value: ENST00000275493.7:c.2573T>G
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -961,6 +981,11 @@ hasEvidenceLines:
                     value: ENST00000275493.2:c.2573T>G
                   - syntax: hgvs.p
                     value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.c
+                    value: ENST00000275493.7:c.2573T>G
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -1171,6 +1196,11 @@ hasEvidenceLines:
                     value: ENST00000275493.2:c.2573T>G
                   - syntax: hgvs.p
                     value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.c
+                    value: ENST00000275493.7:c.2573T>G
+                    extensions:
+                      - name: is_mane_select
+                        value: true
               - name: CIViC representative coordinate
                 value:
                   chromosome: "7"
@@ -1376,6 +1406,11 @@ hasEvidenceLines:
                 value: ENST00000275493.2:c.2573T>G
               - syntax: hgvs.p
                 value: NP_005219.2:p.Leu858Arg
+              - syntax: hgvs.c
+                value: ENST00000275493.7:c.2573T>G
+                extensions:
+                  - name: is_mane_select
+                    value: true
           - name: CIViC representative coordinate
             value:
               chromosome: "7"
@@ -1517,6 +1552,11 @@ proposition:
             value: ENST00000275493.2:c.2573T>G
           - syntax: hgvs.p
             value: NP_005219.2:p.Leu858Arg
+          - syntax: hgvs.c
+            value: ENST00000275493.7:c.2573T>G
+            extensions:
+              - name: is_mane_select
+                value: true
       - name: CIViC representative coordinate
         value:
           chromosome: "7"
