@@ -333,7 +333,7 @@ hasEvidenceLines:
     scoreOfEvidenceProvided: 2
     specifiedBy:
       type: Method
-      methodType: OM1
+      methodType: functional_domain_location
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       reportedIn:
         doi: 10.1016/j.gim.2022.01.001
@@ -500,7 +500,7 @@ hasEvidenceLines:
     scoreOfEvidenceProvided: 4
     specifiedBy:
       type: Method
-      methodType: OS2
+      methodType: functional_assay
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       reportedIn:
         doi: 10.1016/j.gim.2022.01.001
@@ -667,7 +667,7 @@ hasEvidenceLines:
     scoreOfEvidenceProvided: 1
     specifiedBy:
       type: Method
-      methodType: OP4
+      methodType: population_frequency
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       reportedIn:
         doi: 10.1016/j.gim.2022.01.001
@@ -834,7 +834,7 @@ hasEvidenceLines:
     scoreOfEvidenceProvided: 1
     specifiedBy:
       type: Method
-      methodType: OP1
+      methodType: computational_prediction
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       reportedIn:
         doi: 10.1016/j.gim.2022.01.001
@@ -1001,7 +1001,7 @@ hasEvidenceLines:
     scoreOfEvidenceProvided: 1
     specifiedBy:
       type: Method
-      methodType: OP3
+      methodType: somatic_hotspot_recurrence
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       reportedIn:
         doi: 10.1016/j.gim.2022.01.001
