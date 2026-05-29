@@ -9,6 +9,49 @@ objectTumorType:
         system: https://disease-ontology.org/?id=
       relation: exactMatch
 predicate: isOncogenicFor
+alleleOriginQualifier:
+  extensions:
+    - name: civic_variant_origin
+      value: SOMATIC
+  name: somatic
+geneContextQualifier:
+  conceptType: Gene
+  extensions:
+    - name: aliases
+      value:
+        - CDHF12
+        - CDHR16
+        - HSCR1
+        - MEN2A
+        - MEN2B
+        - MTC1
+        - PTC
+        - RET
+        - RET-ELE1
+    - name: description
+      value:
+        RET mutations and the RET fusion RET-PTC lead to activation of this
+        tyrosine kinase receptor and are associated with thyroid cancers. RET
+        point mutations are the most common mutations identified in medullary
+        thyroid cancer (MTC) with germline and somatic mutations in RET
+        associated with hereditary and sporadic forms, respectively. The most
+        common somatic form mutation is M918T (exon 16) and a variety of other
+        mutations effecting exons 10, 11 and 15 have been described. The
+        prognostic significance of these mutations have been hotly debated in
+        the field, however, data suggests that some RET mutation may confer
+        drug resistance. Highly selective and well-tolerated RET inhibitors,
+        selpercatinib (LOXO-292) and pralsetinib (BLU-667), have been FDA
+        approved recently for the treatment of RET fusion-positive
+        non-small-cell lung cancer, RET fusion-positive thyroid cancer and
+        RET-mutant medullary thyroid cancer.
+  id: civic.gid:42
+  mappings:
+    - coding:
+        code: "5979"
+        id: ncbigene:5979
+        system: https://www.ncbi.nlm.nih.gov/gene/
+      relation: exactMatch
+  name: RET
 subjectVariant:
   id: civic.mpid:113
   type: CategoricalVariant
@@ -21,7 +64,7 @@ subjectVariant:
     aggressive MTC with a poorer prognosis.
   name: RET M918T
   aliases:
-    - MET918THRRS74799832
+    - MET918THR
   mappings:
     - coding:
         code: rs74799832
@@ -40,3 +83,49 @@ subjectVariant:
         code: "113"
         system: https://civicdb.org/links/molecular_profile/
       relation: exactMatch
+    - coding:
+        code: "113"
+        extensions:
+          - name: subtype
+            value: gene_variant
+          - name: variant_types
+            value:
+              - coding:
+                  code: SO:0001583
+                  id: civic.variant_type:47
+                  name: Missense Variant
+                  system: http://www.sequenceontology.org/browser/current_svn/term/
+                relation: exactMatch
+        id: civic.vid:113
+        name: M918T
+        system: https://civicdb.org/links/variant/
+      relation: exactMatch
+  extensions:
+    - name: CIViC Molecular Profile Score
+      value: 139.0
+    - name: expressions
+      value:
+        - syntax: hgvs.c
+          value: NM_020975.4:c.2753T>C
+        - syntax: hgvs.p
+          value: NP_065681.1:p.Met918Thr
+        - syntax: hgvs.c
+          value: ENST00000355710.3:c.2753T>C
+        - syntax: hgvs.g
+          value: NC_000010.10:g.43617416T>C
+        - syntax: hgvs.c
+          value: ENST00000355710.8:c.2753T>C
+          extensions:
+            - name: is_mane_select
+              value: true
+    - name: CIViC representative coordinate
+      value:
+        chromosome: "10"
+        ensembl_version: 75
+        reference_bases: T
+        reference_build: GRCh37
+        representative_transcript: ENST00000355710.3
+        start: 43617416
+        stop: 43617416
+        type: coordinates
+        variant_bases: C
