@@ -11,6 +11,8 @@ Below are the Study Result Profiles currently defined as part of the VA-Spec, an
 
 .. _cohort-allele-frequency-study-result:
 
+.. _cohortallelefrequencystudyresult:
+
 Cohort Allele Frequency Study Result
 ####################################
 

@@ -38,7 +38,7 @@ Profiling Example
 
 The diagram below illustrates at a conceptual level some of the profiling steps applied to the core Statement and Proposition classes, to create models supporting ACMG-based Variant Pathogenicity Statements.
 
-.. _profiling-methodology
+.. _profiling-methodology:
 
 .. figure:: ../images/profiling-methodology.png
 

@@ -11,6 +11,7 @@ Concept Mapping
 **IMPLEMENTATION GUIDANCE**
 
 1. Populating the ``relation`` attribute
+
  - A mapping relation must be provided in any ConceptMapping.
  - Permissible values come from the 'mapping relation' branch of the `Simple Knowledge Organization System (SKOS) <https://www.w3.org/2004/02/skos/>`_, which includes 5 possible mapping relations:
 
