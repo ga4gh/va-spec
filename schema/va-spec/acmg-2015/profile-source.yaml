@@ -189,7 +189,7 @@ $defs:
                     effect
                 - const: Segregation Data Assessment
                   description: >-
-                    Consegregation with diease in multiple family members, or
+                    Consegregation with disease in multiple family members, or
                     nonsegregation
                 - const: De Novo Data Assessment
                   description: >-

@@ -127,7 +127,7 @@ $defs:
                   description: >-
                     Assessment of whether population control frequency refutes
                     oncogenicity or whether absence/extreme rarity in controls provides
-                     supporting evidence for oncogenicity.
+                    supporting evidence for oncogenicity.
                 - const: functional_assay
                   description: >-
                     Assessment of well-established in vitro or in vivo functional
