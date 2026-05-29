@@ -1,4 +1,3 @@
-id: civic.aid:115
 classification:
   name: Tier I
   primaryCoding:
@@ -18,6 +17,12 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
+    extensions:
+      - name: citations
+        value:
+          - https://civicdb.org/links/evidence/11780
+          - https://civicdb.org/links/evidence/11781
+          - https://civicdb.org/links/evidence/11779
     hasEvidenceItems:
       - description:
           "Histological, molecular, and clinical analysis of 26 histologically\
@@ -575,6 +580,7 @@ hasEvidenceLines:
         type: CategoricalVariant
       type: VariantDiagnosticProposition
     type: EvidenceLine
+id: civic.aid:115
 proposition:
   alleleOriginQualifier:
     extensions:

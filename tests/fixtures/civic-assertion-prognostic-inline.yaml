@@ -1,4 +1,3 @@
-id: civic.aid:20
 classification:
   name: Tier I
   primaryCoding:
@@ -12,6 +11,15 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
+    extensions:
+      - name: citations
+        value:
+          - https://civicdb.org/links/evidence/103
+          - https://civicdb.org/links/evidence/7156
+          - https://civicdb.org/links/evidence/7157
+          - https://civicdb.org/links/evidence/7158
+          - https://civicdb.org/links/evidence/7159
+          - https://civicdb.org/links/evidence/1552
     hasEvidenceItems:
       - description:
           V600E is associated with adverse pathological features of colorectal
@@ -107,7 +115,7 @@ hasEvidenceLines:
               without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
-                value: 1433.5
+                value: 1476.5
               - name: expressions
                 value:
                   - syntax: hgvs.c
@@ -318,7 +326,7 @@ hasEvidenceLines:
               without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
-                value: 1433.5
+                value: 1476.5
               - name: expressions
                 value:
                   - syntax: hgvs.c
@@ -529,7 +537,7 @@ hasEvidenceLines:
               without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
-                value: 1433.5
+                value: 1476.5
               - name: expressions
                 value:
                   - syntax: hgvs.c
@@ -1087,7 +1095,7 @@ hasEvidenceLines:
               without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
-                value: 1433.5
+                value: 1476.5
               - name: expressions
                 value:
                   - syntax: hgvs.c
@@ -1220,36 +1228,34 @@ hasEvidenceLines:
           - name: description
             value:
               "BRAF mutations are found to be recurrent in many cancer types. Of
-              these, the mutation of valine 600 to glutamic acid (V600E) is the most
-              prevalent. V600E has been determined to be an activating mutation, and
-              cells that harbor it, along with other V600 mutations are sensitive to
-              the BRAF inhibitor dabrafenib. It is also common to use MEK inhibition
-              as a substitute for BRAF inhibitors, and the MEK inhibitor trametinib
-              has seen some success in BRAF mutant melanomas. BRAF mutations have also
-              been correlated with poor prognosis in many cancer types, although there
-              is at least one study that questions this conclusion in papillary thyroid
-              cancer.
+              these, the mutation of valine 600 to glutamic acid (V600E) is the most prevalent.
+              V600E has been determined to be an activating mutation, and cells that harbor
+              it, along with other V600 mutations are sensitive to the BRAF inhibitor
+              dabrafenib. It is also common to use MEK inhibition as a substitute for
+              BRAF inhibitors, and the MEK inhibitor trametinib has seen some success
+              in BRAF mutant melanomas. BRAF mutations have also been correlated with
+              poor prognosis in many cancer types, although there is at least one study
+              that questions this conclusion in papillary thyroid cancer.
 
 
               Oncogenic BRAF mutations are divided into three categories that determine
               their sensitivity to inhibitors.
 
-              Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers
-              and are sensitive to current RAF monomer inhibitors.
+              Class 1 BRAF mutations (V600) are RAS-independent, signal as monomers and
+              are sensitive to current RAF monomer inhibitors.
 
               Class 2 BRAF mutations (K601E, K601N, K601T, L597Q, L597V, G469A, G469V,
               G469R, G464V, G464E, and fusions) are RAS-independent, signaling as constitutive
-              dimers and are resistant to vemurafenib. Such mutants may be sensitive
-              to novel RAF dimer inhibitors or MEK inhibitors.
+              dimers and are resistant to vemurafenib. Such mutants may be sensitive to
+              novel RAF dimer inhibitors or MEK inhibitors.
 
               Class 3 BRAF mutations (D287H, V459L, G466V, G466E, G466A, S467L, G469E,
               N581S, N581I, D594N, D594G, D594A, D594H, F595L, G596D, and G596R) with
-              low or absent kinase activity are RAS-dependent and they activate ERK
-              by increasing their binding to activated RAS and wild-type CRAF. Class
-              3 BRAF mutations coexist with mutations in RAS or NF1 in melanoma may
-              be treated with MEK inhibitors. In epithelial tumors such as CRC or NSCLC
-              may be effectively treated with combinations that include inhibitors of
-              receptor tyrosine kinase."
+              low or absent kinase activity are RAS-dependent and they activate ERK by
+              increasing their binding to activated RAS and wild-type CRAF. Class 3 BRAF
+              mutations coexist with mutations in RAS or NF1 in melanoma may be treated
+              with MEK inhibitors. In epithelial tumors such as CRC or NSCLC may be effectively
+              treated with combinations that include inhibitors of receptor tyrosine kinase."
         id: civic.gid:5
         mappings:
           - coding:
@@ -1275,20 +1281,19 @@ hasEvidenceLines:
           - VAL640GLU
         description:
           BRAF V600E has been shown to be recurrent in many cancer types.
-          It is one of the most widely studied variants in cancer. This variant is
-          correlated with poor prognosis in certain cancer types, including colorectal
-          cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
-          has been shown to be effective in clinical trials with an array of BRAF
-          mutations and cancer types. Dabrafenib has also shown to be effective when
-          combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
-          However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
-          has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
-          combination therapies have been successful in treating V600E mutations.
-          However, cetuximab and panitumumab have been largely shown to be ineffective
-          without supplementary treatment.
+          It is one of the most widely studied variants in cancer. This variant is correlated
+          with poor prognosis in certain cancer types, including colorectal cancer and
+          papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+          to be effective in clinical trials with an array of BRAF mutations and cancer
+          types. Dabrafenib has also shown to be effective when combined with the MEK
+          inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+          with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+          Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+          have been successful in treating V600E mutations. However, cetuximab and panitumumab
+          have been largely shown to be ineffective without supplementary treatment.
         extensions:
           - name: CIViC Molecular Profile Score
-            value: 1433.5
+            value: 1476.5
           - name: expressions
             value:
               - syntax: hgvs.c
@@ -1354,6 +1359,7 @@ hasEvidenceLines:
         type: CategoricalVariant
       type: VariantPrognosticProposition
     type: EvidenceLine
+id: civic.aid:20
 proposition:
   alleleOriginQualifier:
     extensions:
@@ -1440,7 +1446,7 @@ proposition:
       have been largely shown to be ineffective without supplementary treatment.
     extensions:
       - name: CIViC Molecular Profile Score
-        value: 1433.5
+        value: 1476.5
       - name: expressions
         value:
           - syntax: hgvs.c

@@ -1,4 +1,3 @@
-id: civic.aid:9
 classification:
   name: Tier II
   primaryCoding:
@@ -11,6 +10,11 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
+    extensions:
+      - name: citations
+        value:
+          - https://civicdb.org/links/evidence/4846
+          - https://civicdb.org/links/evidence/6955
     hasEvidenceItems:
       - description:
           Sequencing of 39 pediatric midline high-grade astrocytomas identified
@@ -435,6 +439,7 @@ hasEvidenceLines:
         type: CategoricalVariant
       type: VariantDiagnosticProposition
     type: EvidenceLine
+id: civic.aid:9
 proposition:
   alleleOriginQualifier:
     extensions:

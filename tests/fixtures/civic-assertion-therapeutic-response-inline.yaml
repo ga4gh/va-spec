@@ -1,4 +1,3 @@
-id: civic.aid:6
 classification:
   name: Tier I
   primaryCoding:
@@ -12,6 +11,15 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
+    extensions:
+      - name: citations
+        value:
+          - https://civicdb.org/links/evidence/2997
+          - https://civicdb.org/links/evidence/879
+          - https://civicdb.org/links/evidence/982
+          - https://civicdb.org/links/evidence/883
+          - https://civicdb.org/links/evidence/968
+          - https://civicdb.org/links/evidence/2629
     hasEvidenceItems:
       - description:
           Afatinib, an irreversible inhibitor of the ErbB family of tyrosine
@@ -47,6 +55,7 @@ hasEvidenceLines:
                   - ERRP
                   - HER1
                   - NISBD2
+                  - NNCIS
                   - PIG61
                   - mENA
               - name: description
@@ -251,6 +260,7 @@ hasEvidenceLines:
                   - ERRP
                   - HER1
                   - NISBD2
+                  - NNCIS
                   - PIG61
                   - mENA
               - name: description
@@ -460,6 +470,7 @@ hasEvidenceLines:
                   - ERRP
                   - HER1
                   - NISBD2
+                  - NNCIS
                   - PIG61
                   - mENA
               - name: description
@@ -669,6 +680,7 @@ hasEvidenceLines:
                   - ERRP
                   - HER1
                   - NISBD2
+                  - NNCIS
                   - PIG61
                   - mENA
               - name: description
@@ -876,6 +888,7 @@ hasEvidenceLines:
                   - ERRP
                   - HER1
                   - NISBD2
+                  - NNCIS
                   - PIG61
                   - mENA
               - name: description
@@ -1085,6 +1098,7 @@ hasEvidenceLines:
                   - ERRP
                   - HER1
                   - NISBD2
+                  - NNCIS
                   - PIG61
                   - mENA
               - name: description
@@ -1289,23 +1303,25 @@ hasEvidenceLines:
               - ERRP
               - HER1
               - NISBD2
+              - NNCIS
               - PIG61
               - mENA
           - name: description
             value:
               EGFR is widely recognized for its importance in cancer. Amplification
-              and mutations have been shown to be driving events in many cancer types. Its
-              role in non-small cell lung cancer, glioblastoma and basal-like breast cancers
-              has spurred many research and drug development efforts. Tyrosine kinase inhibitors
-              have shown efficacy in EGFR amplfied tumors, most notably gefitinib and erlotinib.
-              Mutations in EGFR have been shown to confer resistance to these drugs, particularly
-              the variant T790M, which has been functionally characterized as a resistance
-              marker for both of these drugs. The later generation TKI's have seen some
-              success in treating these resistant cases, and targeted sequencing of the
-              EGFR locus has become a common practice in treatment of non-small cell lung
-              cancer. Overproduction of ligands is another possible mechanism of activation
-              of EGFR. ERBB ligands include EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and
-              NRG1-4 (for detailed information please refer to the respective ligand section).
+              and mutations have been shown to be driving events in many cancer types.
+              Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+              cancers has spurred many research and drug development efforts. Tyrosine
+              kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+              gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+              to these drugs, particularly the variant T790M, which has been functionally
+              characterized as a resistance marker for both of these drugs. The later
+              generation TKI's have seen some success in treating these resistant cases,
+              and targeted sequencing of the EGFR locus has become a common practice in
+              treatment of non-small cell lung cancer. Overproduction of ligands is another
+              possible mechanism of activation of EGFR. ERBB ligands include EGF, TGF-a,
+              AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information please
+              refer to the respective ligand section).
         id: civic.gid:19
         mappings:
           - coding:
@@ -1340,13 +1356,13 @@ hasEvidenceLines:
         description:
           EGFR L858R has long been recognized as a functionally significant
           mutation in cancer, and is one of the most prevalent single mutations in lung
-          cancer. Best described in non-small cell lung cancer (NSCLC), the mutation seems
-          to confer sensitivity to first and second generation TKI's like gefitinib and
-          neratinib. NSCLC patients with this mutation treated with TKI's show increased
-          overall and progression-free survival, as compared to chemotherapy alone. Third
-          generation TKI's are currently in clinical trials that specifically focus on
-          mutant forms of EGFR, a few of which have shown efficacy in treating patients
-          that failed to respond to earlier generation TKI therapies.
+          cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+          seems to confer sensitivity to first and second generation TKI's like gefitinib
+          and neratinib. NSCLC patients with this mutation treated with TKI's show increased
+          overall and progression-free survival, as compared to chemotherapy alone.
+          Third generation TKI's are currently in clinical trials that specifically
+          focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+          patients that failed to respond to earlier generation TKI therapies.
         extensions:
           - name: CIViC Molecular Profile Score
             value: 379.0
@@ -1419,21 +1435,13 @@ hasEvidenceLines:
         type: CategoricalVariant
       type: VariantTherapeuticResponseProposition
     type: EvidenceLine
+id: civic.aid:6
 proposition:
   alleleOriginQualifier:
     extensions:
       - name: civic_variant_origin
         value: SOMATIC
     name: somatic
-  objectCondition:
-    conceptType: Disease
-    id: civic.did:8
-    mappings:
-      - coding:
-          code: DOID:3908
-          system: https://disease-ontology.org/?id=
-        relation: exactMatch
-    name: Lung Non-small Cell Carcinoma
   geneContextQualifier:
     conceptType: Gene
     extensions:
@@ -1445,6 +1453,7 @@ proposition:
           - ERRP
           - HER1
           - NISBD2
+          - NNCIS
           - PIG61
           - mENA
       - name: description
@@ -1470,6 +1479,16 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: EGFR
+  objectCondition:
+    conceptType: Disease
+    id: civic.did:8
+    mappings:
+      - coding:
+          code: DOID:3908
+          system: https://disease-ontology.org/?id=
+        relation: exactMatch
+    name: Lung Non-small Cell Carcinoma
+  predicate: hasClinicalSignificanceFor
   subjectVariant:
     aliases:
       - LEU858ARG
@@ -1555,7 +1574,6 @@ proposition:
         relation: relatedMatch
     name: EGFR L858R
     type: CategoricalVariant
-  predicate: hasClinicalSignificanceFor
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/6
