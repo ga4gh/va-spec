@@ -178,6 +178,13 @@ specifiedBy:
   type: Method
 reportedIn:
   - https://civicdb.org/links/assertion/202
+  - https://civicdb.org/links/evidence/74
+  - https://civicdb.org/links/evidence/12800
+  - https://civicdb.org/links/evidence/78
+  - https://civicdb.org/links/evidence/12711
+  - https://civicdb.org/links/evidence/12805
+  - https://civicdb.org/links/evidence/11723
+  - https://civicdb.org/links/evidence/12709
 contributions:
   - activityType: approval.last_reviewed
     contributor:
@@ -230,16 +237,6 @@ hasEvidenceLines:
         urls:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
-    extensions: # These are the same across all evidence lines
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/74
-          - https://civicdb.org/links/evidence/12800
-          - https://civicdb.org/links/evidence/78
-          - https://civicdb.org/links/evidence/12711
-          - https://civicdb.org/links/evidence/12805
-          - https://civicdb.org/links/evidence/11723
-          - https://civicdb.org/links/evidence/12709
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
@@ -269,16 +266,6 @@ hasEvidenceLines:
         urls:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
-    extensions: # These are the same across all evidence lines
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/74
-          - https://civicdb.org/links/evidence/12800
-          - https://civicdb.org/links/evidence/78
-          - https://civicdb.org/links/evidence/12711
-          - https://civicdb.org/links/evidence/12805
-          - https://civicdb.org/links/evidence/11723
-          - https://civicdb.org/links/evidence/12709
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
@@ -308,16 +295,6 @@ hasEvidenceLines:
         urls:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
-    extensions: # These are the same across all evidence lines
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/74
-          - https://civicdb.org/links/evidence/12800
-          - https://civicdb.org/links/evidence/78
-          - https://civicdb.org/links/evidence/12711
-          - https://civicdb.org/links/evidence/12805
-          - https://civicdb.org/links/evidence/11723
-          - https://civicdb.org/links/evidence/12709
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
@@ -347,16 +324,6 @@ hasEvidenceLines:
         urls:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
-    extensions: # These are the same across all evidence lines
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/74
-          - https://civicdb.org/links/evidence/12800
-          - https://civicdb.org/links/evidence/78
-          - https://civicdb.org/links/evidence/12711
-          - https://civicdb.org/links/evidence/12805
-          - https://civicdb.org/links/evidence/11723
-          - https://civicdb.org/links/evidence/12709
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
     strengthOfEvidenceProvided:
@@ -386,13 +353,3 @@ hasEvidenceLines:
         urls:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
-    extensions: # These are the same across all evidence lines
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/74
-          - https://civicdb.org/links/evidence/12800
-          - https://civicdb.org/links/evidence/78
-          - https://civicdb.org/links/evidence/12711
-          - https://civicdb.org/links/evidence/12805
-          - https://civicdb.org/links/evidence/11723
-          - https://civicdb.org/links/evidence/12709
