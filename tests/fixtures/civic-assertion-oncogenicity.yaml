@@ -32,9 +32,11 @@ proposition:
         relation: exactMatch
   predicate: isOncogenicFor
   alleleOriginQualifier:
-    extensions:
-      - name: civic_variant_origin
-        value: SOMATIC
+    mappings:
+      - coding:
+          code: SOMATIC
+          system: https://civicdb.org
+        relation: exactMatch
     name: somatic
   geneContextQualifier:
     conceptType: Gene
