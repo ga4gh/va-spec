@@ -11,15 +11,6 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
-    extensions:
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/2997
-          - https://civicdb.org/links/evidence/879
-          - https://civicdb.org/links/evidence/982
-          - https://civicdb.org/links/evidence/883
-          - https://civicdb.org/links/evidence/968
-          - https://civicdb.org/links/evidence/2629
     hasEvidenceItems:
       - description:
           Afatinib, an irreversible inhibitor of the ErbB family of tyrosine
@@ -1633,6 +1624,12 @@ proposition:
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/6
+  - https://civicdb.org/links/evidence/2997
+  - https://civicdb.org/links/evidence/879
+  - https://civicdb.org/links/evidence/982
+  - https://civicdb.org/links/evidence/883
+  - https://civicdb.org/links/evidence/968
+  - https://civicdb.org/links/evidence/2629
 specifiedBy:
   id: civic.method:2019
   methodType: curation

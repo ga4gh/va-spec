@@ -15,13 +15,6 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
-    extensions:
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/6178
-          - https://civicdb.org/links/evidence/6938
-          - https://civicdb.org/links/evidence/3758
-          - https://civicdb.org/links/evidence/6940
     hasEvidenceItems:
       - description:
           Adjuvant dual treatment with BRAF inhibitor dabrafenib and MEK inhibitor
@@ -1432,6 +1425,10 @@ proposition:
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/7
+  - https://civicdb.org/links/evidence/6178
+  - https://civicdb.org/links/evidence/6938
+  - https://civicdb.org/links/evidence/3758
+  - https://civicdb.org/links/evidence/6940
 specifiedBy:
   id: civic.method:2019
   methodType: curation

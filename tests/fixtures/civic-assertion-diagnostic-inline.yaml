@@ -10,11 +10,6 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
-    extensions:
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/4846
-          - https://civicdb.org/links/evidence/6955
     hasEvidenceItems:
       - description:
           Sequencing of 39 pediatric midline high-grade astrocytomas identified
@@ -573,6 +568,8 @@ proposition:
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/9
+  - https://civicdb.org/links/evidence/4846
+  - https://civicdb.org/links/evidence/6955
 specifiedBy:
   id: civic.method:2019
   methodType: curation

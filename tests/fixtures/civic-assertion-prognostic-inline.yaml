@@ -11,15 +11,6 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
-    extensions:
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/103
-          - https://civicdb.org/links/evidence/7156
-          - https://civicdb.org/links/evidence/7157
-          - https://civicdb.org/links/evidence/7158
-          - https://civicdb.org/links/evidence/7159
-          - https://civicdb.org/links/evidence/1552
     hasEvidenceItems:
       - description:
           V600E is associated with adverse pathological features of colorectal
@@ -1554,6 +1545,12 @@ proposition:
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/20
+  - https://civicdb.org/links/evidence/103
+  - https://civicdb.org/links/evidence/7156
+  - https://civicdb.org/links/evidence/7157
+  - https://civicdb.org/links/evidence/7158
+  - https://civicdb.org/links/evidence/7159
+  - https://civicdb.org/links/evidence/1552
 specifiedBy:
   id: civic.method:2019
   methodType: curation

@@ -17,12 +17,6 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
-    extensions:
-      - name: citations
-        value:
-          - https://civicdb.org/links/evidence/11780
-          - https://civicdb.org/links/evidence/11781
-          - https://civicdb.org/links/evidence/11779
     hasEvidenceItems:
       - description:
           "Histological, molecular, and clinical analysis of 26 histologically\
@@ -687,6 +681,9 @@ proposition:
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/115
+  - https://civicdb.org/links/evidence/11780
+  - https://civicdb.org/links/evidence/11781
+  - https://civicdb.org/links/evidence/11779
 specifiedBy:
   id: civic.method:2019
   methodType: curation
