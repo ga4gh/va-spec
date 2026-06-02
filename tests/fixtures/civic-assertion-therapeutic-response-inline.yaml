@@ -31,9 +31,11 @@ hasEvidenceLines:
         id: civic.eid:2997
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           conditionQualifier:
             conceptType: Disease
@@ -241,9 +243,11 @@ hasEvidenceLines:
         id: civic.eid:879
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           conditionQualifier:
             conceptType: Disease
@@ -456,9 +460,11 @@ hasEvidenceLines:
         id: civic.eid:982
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           conditionQualifier:
             conceptType: Disease
@@ -671,9 +677,11 @@ hasEvidenceLines:
         id: civic.eid:883
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           conditionQualifier:
             conceptType: Disease
@@ -884,9 +892,11 @@ hasEvidenceLines:
         id: civic.eid:968
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           conditionQualifier:
             conceptType: Disease
@@ -1099,9 +1109,11 @@ hasEvidenceLines:
         id: civic.eid:2629
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           conditionQualifier:
             conceptType: Disease
@@ -1309,9 +1321,11 @@ hasEvidenceLines:
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
-        extensions:
-          - name: civic_variant_origin
-            value: SOMATIC
+        mappings:
+          - coding:
+              code: SOMATIC
+              system: https://civicdb.org
+            relation: exactMatch
         name: somatic
       conditionQualifier:
         conceptType: Disease
@@ -1473,9 +1487,11 @@ hasEvidenceLines:
 id: civic.aid:6
 proposition:
   alleleOriginQualifier:
-    extensions:
-      - name: civic_variant_origin
-        value: SOMATIC
+    mappings:
+      - coding:
+          code: SOMATIC
+          system: https://civicdb.org
+        relation: exactMatch
     name: somatic
   geneContextQualifier:
     conceptType: Gene

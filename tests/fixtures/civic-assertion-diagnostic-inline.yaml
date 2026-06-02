@@ -30,9 +30,11 @@ hasEvidenceLines:
         id: civic.eid:4846
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           geneContextQualifier:
             conceptType: Gene
@@ -191,9 +193,11 @@ hasEvidenceLines:
         id: civic.eid:6955
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           geneContextQualifier:
             conceptType: Gene
@@ -347,9 +351,11 @@ hasEvidenceLines:
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
-        extensions:
-          - name: civic_variant_origin
-            value: SOMATIC
+        mappings:
+          - coding:
+              code: SOMATIC
+              system: https://civicdb.org
+            relation: exactMatch
         name: somatic
       geneContextQualifier:
         conceptType: Gene
@@ -457,9 +463,11 @@ hasEvidenceLines:
 id: civic.aid:9
 proposition:
   alleleOriginQualifier:
-    extensions:
-      - name: civic_variant_origin
-        value: SOMATIC
+    mappings:
+      - coding:
+          code: SOMATIC
+          system: https://civicdb.org
+        relation: exactMatch
     name: somatic
   geneContextQualifier:
     conceptType: Gene
