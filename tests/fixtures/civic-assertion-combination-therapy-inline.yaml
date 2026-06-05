@@ -150,18 +150,17 @@ hasEvidenceLines:
               - V640E
               - VAL640GLU
             description:
-              BRAF V600E has been shown to be recurrent in many cancer types.
-              It is one of the most widely studied variants in cancer. This variant is
-              correlated with poor prognosis in certain cancer types, including colorectal
-              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
-              has been shown to be effective in clinical trials with an array of BRAF
-              mutations and cancer types. Dabrafenib has also shown to be effective when
-              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
-              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
-              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
-              combination therapies have been successful in treating V600E mutations.
-              However, cetuximab and panitumumab have been largely shown to be ineffective
-              without supplementary treatment.
+              BRAF V600E has been shown to be recurrent in many cancer types. It
+              is one of the most widely studied variants in cancer. This variant is correlated
+              with poor prognosis in certain cancer types, including colorectal cancer and
+              papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+              to be effective in clinical trials with an array of BRAF mutations and cancer
+              types. Dabrafenib has also shown to be effective when combined with the MEK
+              inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+              with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+              Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+              have been successful in treating V600E mutations. However, cetuximab and panitumumab
+              have been largely shown to be ineffective without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
                 value: 1476.5
@@ -192,6 +191,36 @@ hasEvidenceLines:
                   type: coordinates
                   variant_bases: T
             id: civic.mpid:12
+            constraints:
+              - allele:
+                  digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_004324.2:p.Val600Glu
+                  id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  location:
+                    digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    end: 600
+                    id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    sequence: V
+                    sequenceReference:
+                      refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+                      type: SequenceReference
+                    start: 599
+                    type: SequenceLocation
+                  name: BRAF V600E
+                  state:
+                    sequence: E
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
             mappings:
               - coding:
                   code: "12"
@@ -217,20 +246,65 @@ hasEvidenceLines:
                 relation: exactMatch
               - coding:
                   code: CA123643
+                  id: clingen.allele:CA123643
                   system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
                 relation: relatedMatch
               - coding:
                   code: "13961"
+                  id: clinvar:13961
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: "376069"
+                  id: clinvar:376069
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: rs113488022
+                  id: dbsnp:rs113488022
                   system: https://www.ncbi.nlm.nih.gov/snp/
                 relation: relatedMatch
+            members:
+              - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                location:
+                  digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  end: 2025
+                  id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+                    type: SequenceReference
+                  start: 2024
+                  type: SequenceLocation
+                name: NM_004333.4:c.1799T>A
+                state:
+                  sequence: A
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                location:
+                  digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  end: 140753336
+                  id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  sequence: A
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 140753335
+                  type: SequenceLocation
+                name: NC_000007.13:g.140453136A>T
+                state:
+                  sequence: T
+                  type: LiteralSequenceExpression
+                type: Allele
             name: BRAF V600E
             type: CategoricalVariant
           type: VariantTherapeuticResponseProposition
@@ -411,18 +485,17 @@ hasEvidenceLines:
               - V640E
               - VAL640GLU
             description:
-              BRAF V600E has been shown to be recurrent in many cancer types.
-              It is one of the most widely studied variants in cancer. This variant is
-              correlated with poor prognosis in certain cancer types, including colorectal
-              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
-              has been shown to be effective in clinical trials with an array of BRAF
-              mutations and cancer types. Dabrafenib has also shown to be effective when
-              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
-              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
-              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
-              combination therapies have been successful in treating V600E mutations.
-              However, cetuximab and panitumumab have been largely shown to be ineffective
-              without supplementary treatment.
+              BRAF V600E has been shown to be recurrent in many cancer types. It
+              is one of the most widely studied variants in cancer. This variant is correlated
+              with poor prognosis in certain cancer types, including colorectal cancer and
+              papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+              to be effective in clinical trials with an array of BRAF mutations and cancer
+              types. Dabrafenib has also shown to be effective when combined with the MEK
+              inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+              with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+              Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+              have been successful in treating V600E mutations. However, cetuximab and panitumumab
+              have been largely shown to be ineffective without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
                 value: 1476.5
@@ -453,6 +526,36 @@ hasEvidenceLines:
                   type: coordinates
                   variant_bases: T
             id: civic.mpid:12
+            constraints:
+              - allele:
+                  digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_004324.2:p.Val600Glu
+                  id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  location:
+                    digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    end: 600
+                    id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    sequence: V
+                    sequenceReference:
+                      refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+                      type: SequenceReference
+                    start: 599
+                    type: SequenceLocation
+                  name: BRAF V600E
+                  state:
+                    sequence: E
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
             mappings:
               - coding:
                   code: "12"
@@ -478,20 +581,65 @@ hasEvidenceLines:
                 relation: exactMatch
               - coding:
                   code: CA123643
+                  id: clingen.allele:CA123643
                   system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
                 relation: relatedMatch
               - coding:
                   code: "13961"
+                  id: clinvar:13961
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: "376069"
+                  id: clinvar:376069
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: rs113488022
+                  id: dbsnp:rs113488022
                   system: https://www.ncbi.nlm.nih.gov/snp/
                 relation: relatedMatch
+            members:
+              - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                location:
+                  digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  end: 2025
+                  id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+                    type: SequenceReference
+                  start: 2024
+                  type: SequenceLocation
+                name: NM_004333.4:c.1799T>A
+                state:
+                  sequence: A
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                location:
+                  digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  end: 140753336
+                  id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  sequence: A
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 140753335
+                  type: SequenceLocation
+                name: NC_000007.13:g.140453136A>T
+                state:
+                  sequence: T
+                  type: LiteralSequenceExpression
+                type: Allele
             name: BRAF V600E
             type: CategoricalVariant
           type: VariantTherapeuticResponseProposition
@@ -670,18 +818,17 @@ hasEvidenceLines:
               - V640E
               - VAL640GLU
             description:
-              BRAF V600E has been shown to be recurrent in many cancer types.
-              It is one of the most widely studied variants in cancer. This variant is
-              correlated with poor prognosis in certain cancer types, including colorectal
-              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
-              has been shown to be effective in clinical trials with an array of BRAF
-              mutations and cancer types. Dabrafenib has also shown to be effective when
-              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
-              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
-              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
-              combination therapies have been successful in treating V600E mutations.
-              However, cetuximab and panitumumab have been largely shown to be ineffective
-              without supplementary treatment.
+              BRAF V600E has been shown to be recurrent in many cancer types. It
+              is one of the most widely studied variants in cancer. This variant is correlated
+              with poor prognosis in certain cancer types, including colorectal cancer and
+              papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+              to be effective in clinical trials with an array of BRAF mutations and cancer
+              types. Dabrafenib has also shown to be effective when combined with the MEK
+              inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+              with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+              Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+              have been successful in treating V600E mutations. However, cetuximab and panitumumab
+              have been largely shown to be ineffective without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
                 value: 1476.5
@@ -712,6 +859,36 @@ hasEvidenceLines:
                   type: coordinates
                   variant_bases: T
             id: civic.mpid:12
+            constraints:
+              - allele:
+                  digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_004324.2:p.Val600Glu
+                  id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  location:
+                    digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    end: 600
+                    id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    sequence: V
+                    sequenceReference:
+                      refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+                      type: SequenceReference
+                    start: 599
+                    type: SequenceLocation
+                  name: BRAF V600E
+                  state:
+                    sequence: E
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
             mappings:
               - coding:
                   code: "12"
@@ -737,20 +914,65 @@ hasEvidenceLines:
                 relation: exactMatch
               - coding:
                   code: CA123643
+                  id: clingen.allele:CA123643
                   system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
                 relation: relatedMatch
               - coding:
                   code: "13961"
+                  id: clinvar:13961
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: "376069"
+                  id: clinvar:376069
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: rs113488022
+                  id: dbsnp:rs113488022
                   system: https://www.ncbi.nlm.nih.gov/snp/
                 relation: relatedMatch
+            members:
+              - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                location:
+                  digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  end: 2025
+                  id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+                    type: SequenceReference
+                  start: 2024
+                  type: SequenceLocation
+                name: NM_004333.4:c.1799T>A
+                state:
+                  sequence: A
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                location:
+                  digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  end: 140753336
+                  id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  sequence: A
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 140753335
+                  type: SequenceLocation
+                name: NC_000007.13:g.140453136A>T
+                state:
+                  sequence: T
+                  type: LiteralSequenceExpression
+                type: Allele
             name: BRAF V600E
             type: CategoricalVariant
           type: VariantTherapeuticResponseProposition
@@ -928,18 +1150,17 @@ hasEvidenceLines:
               - V640E
               - VAL640GLU
             description:
-              BRAF V600E has been shown to be recurrent in many cancer types.
-              It is one of the most widely studied variants in cancer. This variant is
-              correlated with poor prognosis in certain cancer types, including colorectal
-              cancer and papillary thyroid cancer. The targeted therapeutic dabrafenib
-              has been shown to be effective in clinical trials with an array of BRAF
-              mutations and cancer types. Dabrafenib has also shown to be effective when
-              combined with the MEK inhibitor trametinib in colorectal cancer and melanoma.
-              However, in patients with TP53, CDKN2A and KRAS mutations, dabrafenib resistance
-              has been reported. Ipilimumab, regorafenib, vemurafenib, and a number of
-              combination therapies have been successful in treating V600E mutations.
-              However, cetuximab and panitumumab have been largely shown to be ineffective
-              without supplementary treatment.
+              BRAF V600E has been shown to be recurrent in many cancer types. It
+              is one of the most widely studied variants in cancer. This variant is correlated
+              with poor prognosis in certain cancer types, including colorectal cancer and
+              papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
+              to be effective in clinical trials with an array of BRAF mutations and cancer
+              types. Dabrafenib has also shown to be effective when combined with the MEK
+              inhibitor trametinib in colorectal cancer and melanoma. However, in patients
+              with TP53, CDKN2A and KRAS mutations, dabrafenib resistance has been reported.
+              Ipilimumab, regorafenib, vemurafenib, and a number of combination therapies
+              have been successful in treating V600E mutations. However, cetuximab and panitumumab
+              have been largely shown to be ineffective without supplementary treatment.
             extensions:
               - name: CIViC Molecular Profile Score
                 value: 1476.5
@@ -970,6 +1191,36 @@ hasEvidenceLines:
                   type: coordinates
                   variant_bases: T
             id: civic.mpid:12
+            constraints:
+              - allele:
+                  digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_004324.2:p.Val600Glu
+                  id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+                  location:
+                    digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    end: 600
+                    id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                    sequence: V
+                    sequenceReference:
+                      refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+                      type: SequenceReference
+                    start: 599
+                    type: SequenceLocation
+                  name: BRAF V600E
+                  state:
+                    sequence: E
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
             mappings:
               - coding:
                   code: "12"
@@ -995,20 +1246,65 @@ hasEvidenceLines:
                 relation: exactMatch
               - coding:
                   code: CA123643
+                  id: clingen.allele:CA123643
                   system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
                 relation: relatedMatch
               - coding:
                   code: "13961"
+                  id: clinvar:13961
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: "376069"
+                  id: clinvar:376069
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: rs113488022
+                  id: dbsnp:rs113488022
                   system: https://www.ncbi.nlm.nih.gov/snp/
                 relation: relatedMatch
+            members:
+              - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_004333.4:c.1799T>A
+                id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+                location:
+                  digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  end: 2025
+                  id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+                    type: SequenceReference
+                  start: 2024
+                  type: SequenceLocation
+                name: NM_004333.4:c.1799T>A
+                state:
+                  sequence: A
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.140453136A>T
+                id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+                location:
+                  digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  end: 140753336
+                  id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+                  sequence: A
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 140753335
+                  type: SequenceLocation
+                name: NC_000007.13:g.140453136A>T
+                state:
+                  sequence: T
+                  type: LiteralSequenceExpression
+                type: Allele
             name: BRAF V600E
             type: CategoricalVariant
           type: VariantTherapeuticResponseProposition
@@ -1180,8 +1476,8 @@ hasEvidenceLines:
           - V640E
           - VAL640GLU
         description:
-          BRAF V600E has been shown to be recurrent in many cancer types.
-          It is one of the most widely studied variants in cancer. This variant is correlated
+          BRAF V600E has been shown to be recurrent in many cancer types. It
+          is one of the most widely studied variants in cancer. This variant is correlated
           with poor prognosis in certain cancer types, including colorectal cancer and
           papillary thyroid cancer. The targeted therapeutic dabrafenib has been shown
           to be effective in clinical trials with an array of BRAF mutations and cancer
@@ -1221,6 +1517,36 @@ hasEvidenceLines:
               type: coordinates
               variant_bases: T
         id: civic.mpid:12
+        constraints:
+          - allele:
+              digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+              expressions:
+                - syntax: hgvs.p
+                  value: NP_004324.2:p.Val600Glu
+              id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+              location:
+                digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                end: 600
+                id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+                sequence: V
+                sequenceReference:
+                  refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+                  type: SequenceReference
+                start: 599
+                type: SequenceLocation
+              name: BRAF V600E
+              state:
+                sequence: E
+                type: LiteralSequenceExpression
+              type: Allele
+            relations:
+              - primaryCoding:
+                  code: liftover_to
+                  system: ga4gh-gks-term:allele-relation
+              - primaryCoding:
+                  code: translation_of
+                  system: http://www.sequenceontology.org
+            type: DefiningAlleleConstraint
         mappings:
           - coding:
               code: "12"
@@ -1246,20 +1572,65 @@ hasEvidenceLines:
             relation: exactMatch
           - coding:
               code: CA123643
+              id: clingen.allele:CA123643
               system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
             relation: relatedMatch
           - coding:
               code: "13961"
+              id: clinvar:13961
               system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
             relation: relatedMatch
           - coding:
               code: "376069"
+              id: clinvar:376069
               system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
             relation: relatedMatch
           - coding:
               code: rs113488022
+              id: dbsnp:rs113488022
               system: https://www.ncbi.nlm.nih.gov/snp/
             relation: relatedMatch
+        members:
+          - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+            expressions:
+              - syntax: hgvs.c
+                value: NM_004333.4:c.1799T>A
+            id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+            location:
+              digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+              end: 2025
+              id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+              sequence: T
+              sequenceReference:
+                refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+                type: SequenceReference
+              start: 2024
+              type: SequenceLocation
+            name: NM_004333.4:c.1799T>A
+            state:
+              sequence: A
+              type: LiteralSequenceExpression
+            type: Allele
+          - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+            expressions:
+              - syntax: hgvs.g
+                value: NC_000007.13:g.140453136A>T
+            id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+            location:
+              digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+              end: 140753336
+              id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+              sequence: A
+              sequenceReference:
+                refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                type: SequenceReference
+              start: 140753335
+              type: SequenceLocation
+            name: NC_000007.13:g.140453136A>T
+            state:
+              sequence: T
+              type: LiteralSequenceExpression
+            type: Allele
         name: BRAF V600E
         type: CategoricalVariant
       type: VariantTherapeuticResponseProposition
@@ -1381,6 +1752,36 @@ proposition:
           type: coordinates
           variant_bases: T
     id: civic.mpid:12
+    constraints:
+      - allele:
+          digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+          expressions:
+            - syntax: hgvs.p
+              value: NP_004324.2:p.Val600Glu
+          id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+          location:
+            digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+            end: 600
+            id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+            sequence: V
+            sequenceReference:
+              refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+              type: SequenceReference
+            start: 599
+            type: SequenceLocation
+          name: BRAF V600E
+          state:
+            sequence: E
+            type: LiteralSequenceExpression
+          type: Allele
+        relations:
+          - primaryCoding:
+              code: liftover_to
+              system: ga4gh-gks-term:allele-relation
+          - primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+        type: DefiningAlleleConstraint
     mappings:
       - coding:
           code: "12"
@@ -1406,20 +1807,65 @@ proposition:
         relation: exactMatch
       - coding:
           code: CA123643
+          id: clingen.allele:CA123643
           system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
         relation: relatedMatch
       - coding:
           code: "13961"
+          id: clinvar:13961
           system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
         relation: relatedMatch
       - coding:
           code: "376069"
+          id: clinvar:376069
           system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
         relation: relatedMatch
       - coding:
           code: rs113488022
+          id: dbsnp:rs113488022
           system: https://www.ncbi.nlm.nih.gov/snp/
         relation: relatedMatch
+    members:
+      - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+        expressions:
+          - syntax: hgvs.c
+            value: NM_004333.4:c.1799T>A
+        id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+        location:
+          digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+          end: 2025
+          id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+          sequence: T
+          sequenceReference:
+            refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+            type: SequenceReference
+          start: 2024
+          type: SequenceLocation
+        name: NM_004333.4:c.1799T>A
+        state:
+          sequence: A
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+        expressions:
+          - syntax: hgvs.g
+            value: NC_000007.13:g.140453136A>T
+        id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+        location:
+          digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+          end: 140753336
+          id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+          sequence: A
+          sequenceReference:
+            refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+            type: SequenceReference
+          start: 140753335
+          type: SequenceLocation
+        name: NC_000007.13:g.140453136A>T
+        state:
+          sequence: T
+          type: LiteralSequenceExpression
+        type: Allele
     name: BRAF V600E
     type: CategoricalVariant
   type: VariantClinicalSignificanceProposition

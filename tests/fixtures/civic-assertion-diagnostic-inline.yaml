@@ -95,6 +95,36 @@ hasEvidenceLines:
                   type: coordinates
                   variant_bases: A
             id: civic.mpid:1594
+            constraints:
+              - allele:
+                  digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_001096.1:p.Gly328Val
+                  id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+                  location:
+                    digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                    end: 328
+                    id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                    sequence: G
+                    sequenceReference:
+                      refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+                      type: SequenceReference
+                    start: 327
+                    type: SequenceLocation
+                  name: ACVR1 G328V
+                  state:
+                    sequence: V
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
             mappings:
               - coding:
                   code: "1594"
@@ -120,16 +150,60 @@ hasEvidenceLines:
                 relation: exactMatch
               - coding:
                   code: CA16602802
+                  id: clingen.allele:CA16602802
                   system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
                 relation: relatedMatch
               - coding:
                   code: "376363"
+                  id: clinvar:376363
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: rs387906589
+                  id: dbsnp:rs387906589
                   system: https://www.ncbi.nlm.nih.gov/snp/
                 relation: relatedMatch
+            members:
+              - digest: knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_001105.4:c.983G>T
+                id: ga4gh:VA.knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+                location:
+                  digest: DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+                  end: 1700
+                  id: ga4gh:SL.DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+                  sequence: G
+                  sequenceReference:
+                    refgetAccession: SQ.EJQv9rQmiD76iFmXsLwCy2dJHOFO3bpj
+                    type: SequenceReference
+                  start: 1699
+                  type: SequenceLocation
+                name: NM_001105.4:c.983G>T
+                state:
+                  sequence: T
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: affc26OivYhQEhNjs0NS2f3-2BYoEsey
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000002.11:g.158622516C>A
+                id: ga4gh:VA.affc26OivYhQEhNjs0NS2f3-2BYoEsey
+                location:
+                  digest: ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+                  end: 157766004
+                  id: ga4gh:SL.ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+                  sequence: C
+                  sequenceReference:
+                    refgetAccession: SQ.pnAqCRBrTsUoBghSD1yp_jXWSmlbdh4g
+                    type: SequenceReference
+                  start: 157766003
+                  type: SequenceLocation
+                name: NC_000002.11:g.158622516C>A
+                state:
+                  sequence: A
+                  type: LiteralSequenceExpression
+                type: Allele
             name: ACVR1 G328V
             type: CategoricalVariant
           type: VariantDiagnosticProposition
@@ -258,6 +332,36 @@ hasEvidenceLines:
                   type: coordinates
                   variant_bases: A
             id: civic.mpid:1594
+            constraints:
+              - allele:
+                  digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_001096.1:p.Gly328Val
+                  id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+                  location:
+                    digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                    end: 328
+                    id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                    sequence: G
+                    sequenceReference:
+                      refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+                      type: SequenceReference
+                    start: 327
+                    type: SequenceLocation
+                  name: ACVR1 G328V
+                  state:
+                    sequence: V
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
             mappings:
               - coding:
                   code: "1594"
@@ -283,16 +387,60 @@ hasEvidenceLines:
                 relation: exactMatch
               - coding:
                   code: CA16602802
+                  id: clingen.allele:CA16602802
                   system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
                 relation: relatedMatch
               - coding:
                   code: "376363"
+                  id: clinvar:376363
                   system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
                 relation: relatedMatch
               - coding:
                   code: rs387906589
+                  id: dbsnp:rs387906589
                   system: https://www.ncbi.nlm.nih.gov/snp/
                 relation: relatedMatch
+            members:
+              - digest: knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_001105.4:c.983G>T
+                id: ga4gh:VA.knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+                location:
+                  digest: DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+                  end: 1700
+                  id: ga4gh:SL.DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+                  sequence: G
+                  sequenceReference:
+                    refgetAccession: SQ.EJQv9rQmiD76iFmXsLwCy2dJHOFO3bpj
+                    type: SequenceReference
+                  start: 1699
+                  type: SequenceLocation
+                name: NM_001105.4:c.983G>T
+                state:
+                  sequence: T
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: affc26OivYhQEhNjs0NS2f3-2BYoEsey
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000002.11:g.158622516C>A
+                id: ga4gh:VA.affc26OivYhQEhNjs0NS2f3-2BYoEsey
+                location:
+                  digest: ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+                  end: 157766004
+                  id: ga4gh:SL.ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+                  sequence: C
+                  sequenceReference:
+                    refgetAccession: SQ.pnAqCRBrTsUoBghSD1yp_jXWSmlbdh4g
+                    type: SequenceReference
+                  start: 157766003
+                  type: SequenceLocation
+                name: NC_000002.11:g.158622516C>A
+                state:
+                  sequence: A
+                  type: LiteralSequenceExpression
+                type: Allele
             name: ACVR1 G328V
             type: CategoricalVariant
           type: VariantDiagnosticProposition
@@ -416,6 +564,36 @@ hasEvidenceLines:
               type: coordinates
               variant_bases: A
         id: civic.mpid:1594
+        constraints:
+          - allele:
+              digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+              expressions:
+                - syntax: hgvs.p
+                  value: NP_001096.1:p.Gly328Val
+              id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+              location:
+                digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                end: 328
+                id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                sequence: G
+                sequenceReference:
+                  refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+                  type: SequenceReference
+                start: 327
+                type: SequenceLocation
+              name: ACVR1 G328V
+              state:
+                sequence: V
+                type: LiteralSequenceExpression
+              type: Allele
+            relations:
+              - primaryCoding:
+                  code: liftover_to
+                  system: ga4gh-gks-term:allele-relation
+              - primaryCoding:
+                  code: translation_of
+                  system: http://www.sequenceontology.org
+            type: DefiningAlleleConstraint
         mappings:
           - coding:
               code: "1594"
@@ -441,16 +619,60 @@ hasEvidenceLines:
             relation: exactMatch
           - coding:
               code: CA16602802
+              id: clingen.allele:CA16602802
               system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
             relation: relatedMatch
           - coding:
               code: "376363"
+              id: clinvar:376363
               system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
             relation: relatedMatch
           - coding:
               code: rs387906589
+              id: dbsnp:rs387906589
               system: https://www.ncbi.nlm.nih.gov/snp/
             relation: relatedMatch
+        members:
+          - digest: knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+            expressions:
+              - syntax: hgvs.c
+                value: NM_001105.4:c.983G>T
+            id: ga4gh:VA.knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+            location:
+              digest: DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+              end: 1700
+              id: ga4gh:SL.DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+              sequence: G
+              sequenceReference:
+                refgetAccession: SQ.EJQv9rQmiD76iFmXsLwCy2dJHOFO3bpj
+                type: SequenceReference
+              start: 1699
+              type: SequenceLocation
+            name: NM_001105.4:c.983G>T
+            state:
+              sequence: T
+              type: LiteralSequenceExpression
+            type: Allele
+          - digest: affc26OivYhQEhNjs0NS2f3-2BYoEsey
+            expressions:
+              - syntax: hgvs.g
+                value: NC_000002.11:g.158622516C>A
+            id: ga4gh:VA.affc26OivYhQEhNjs0NS2f3-2BYoEsey
+            location:
+              digest: ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+              end: 157766004
+              id: ga4gh:SL.ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+              sequence: C
+              sequenceReference:
+                refgetAccession: SQ.pnAqCRBrTsUoBghSD1yp_jXWSmlbdh4g
+                type: SequenceReference
+              start: 157766003
+              type: SequenceLocation
+            name: NC_000002.11:g.158622516C>A
+            state:
+              sequence: A
+              type: LiteralSequenceExpression
+            type: Allele
         name: ACVR1 G328V
         type: CategoricalVariant
       type: VariantDiagnosticProposition
@@ -528,6 +750,36 @@ proposition:
           type: coordinates
           variant_bases: A
     id: civic.mpid:1594
+    constraints:
+      - allele:
+          digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+          expressions:
+            - syntax: hgvs.p
+              value: NP_001096.1:p.Gly328Val
+          id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+          location:
+            digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+            end: 328
+            id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+            sequence: G
+            sequenceReference:
+              refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+              type: SequenceReference
+            start: 327
+            type: SequenceLocation
+          name: ACVR1 G328V
+          state:
+            sequence: V
+            type: LiteralSequenceExpression
+          type: Allele
+        relations:
+          - primaryCoding:
+              code: liftover_to
+              system: ga4gh-gks-term:allele-relation
+          - primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+        type: DefiningAlleleConstraint
     mappings:
       - coding:
           code: "1594"
@@ -553,16 +805,60 @@ proposition:
         relation: exactMatch
       - coding:
           code: CA16602802
+          id: clingen.allele:CA16602802
           system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
         relation: relatedMatch
       - coding:
           code: "376363"
+          id: clinvar:376363
           system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
         relation: relatedMatch
       - coding:
           code: rs387906589
+          id: dbsnp:rs387906589
           system: https://www.ncbi.nlm.nih.gov/snp/
         relation: relatedMatch
+    members:
+      - digest: knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+        expressions:
+          - syntax: hgvs.c
+            value: NM_001105.4:c.983G>T
+        id: ga4gh:VA.knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+        location:
+          digest: DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+          end: 1700
+          id: ga4gh:SL.DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+          sequence: G
+          sequenceReference:
+            refgetAccession: SQ.EJQv9rQmiD76iFmXsLwCy2dJHOFO3bpj
+            type: SequenceReference
+          start: 1699
+          type: SequenceLocation
+        name: NM_001105.4:c.983G>T
+        state:
+          sequence: T
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: affc26OivYhQEhNjs0NS2f3-2BYoEsey
+        expressions:
+          - syntax: hgvs.g
+            value: NC_000002.11:g.158622516C>A
+        id: ga4gh:VA.affc26OivYhQEhNjs0NS2f3-2BYoEsey
+        location:
+          digest: ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+          end: 157766004
+          id: ga4gh:SL.ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+          sequence: C
+          sequenceReference:
+            refgetAccession: SQ.pnAqCRBrTsUoBghSD1yp_jXWSmlbdh4g
+            type: SequenceReference
+          start: 157766003
+          type: SequenceLocation
+        name: NC_000002.11:g.158622516C>A
+        state:
+          sequence: A
+          type: LiteralSequenceExpression
+        type: Allele
     name: ACVR1 G328V
     type: CategoricalVariant
   type: VariantClinicalSignificanceProposition
