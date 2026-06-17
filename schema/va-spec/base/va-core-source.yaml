@@ -791,8 +791,9 @@ $defs:
       - predicate
       - objectSequenceFeature
 
+  # Variant Clinical Significance Proposition
   VariantClinicalSignificanceProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     type: object
     maturity: draft
     description: >-
