@@ -1002,7 +1002,7 @@ $defs:
     - conditionQualifier
 
   GeneDiseaseValidityProposition:
-    inherits: va-core:Proposition
+    inherits: Proposition
     maturity: draft
     type: object
     description: "A proposition that variants affecting a particular Gene are valid for evaluation as causal for some Condition using appropriate variant classification criteria, given a specific mode of inheritance."
