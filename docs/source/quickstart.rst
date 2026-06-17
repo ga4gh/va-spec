@@ -14,4 +14,3 @@ For most new users, the best way to get started with VA-Spec is to start by read
 Next, many users may want to start prototyping their own software with some sample data, to explore the construction of VA-Spec profiles.  There are a number of example datasets available in both YAML and JSON at `<https://github.com/ga4gh/va-spec/tree/v1/examples>`_.
 
 Finally, VA-Spec is an open-source initiative, driven by community involvement, and we welcome participation from individuals at all levels of skill and experience!  To learn about ways to join working group meetings, participate in monthly virutal hackathons, or simply follow the latest news on VA-Spec and related products, visit See :ref:`Getting Involved <getting-involved>` for more details.
-
