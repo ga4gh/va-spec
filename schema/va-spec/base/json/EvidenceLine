@@ -87,6 +87,9 @@
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/GeneDiseaseValidityProposition"
+            },
+            {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantClinicalSignificanceProposition"
             },
             {
