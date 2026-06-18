@@ -34,7 +34,7 @@ VA-Spec uses the below `-source.yaml` files as the source document for JSON Sche
 - [./schema/va-spec/base/va-core-source.yaml](./schema/va-spec/base/va-core-source.yaml)
 - [./schema/va-spec/ccv-2022/profile-source.yaml](./schema/va-spec/ccv-2022/profile-source.yaml)
 
-To create the corresponding def and json files after making changes to any one of the source documents, from the root directory:
+To create the corresponding def and JSON files after making changes to any one of the source documents, from the root directory:
 
     cd schema
     make clean
