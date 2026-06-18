@@ -40,8 +40,7 @@ To create the corresponding def and JSON files after making changes to any one o
     make clean
     make all
 
-> *Note: We have a custom pre-commit hook to run these commands after you stage a source
-> document*
+> **Note:** We have a custom pre-commit hook to run these commands after you stage a source document.
 
 ## Contributing to the docs
 
