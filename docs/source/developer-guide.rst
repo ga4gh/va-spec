@@ -93,7 +93,7 @@ Here we describe the technical mechanism and syntax used to define VA Profiles. 
 
 - **Mechanism**:  Defines subschema that layer additional constraints on top of VA core attributes to refine the values they are able to take.
 - **Syntax**:  Relies on schema composition using the native JSON Schema ``allOf`` keyword, which does not result in creation of concrete subclasses for each profile. Source files are organized in directories based on the community guideline they enforce (e.g. ACMG-2015, or AAC-2022).
-- **Application**: Used in authoring "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <evidence-line-acmg-2015>` classes, which embed corresponding base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
+- **Application**: Used in authoring "Community Profiles" that add guideline-specific constraints on core :ref:`Statement <variant-pathogenicity-statement-acmg-2015>` and :ref:`Evidence Line <variant-pathogenicity-evidence-line-acmg-2015>` classes, which embed corresponding base Proposition profiles to represent semantics of the possible fact they assert or evaluate evidence against, respectively.
 - **Rationale**: Allows implementers to define simple constraints for Statement and Evidence Line profiles in a way that does not require running custom Metaschema Processor tooling.
 - **Example**:
 
