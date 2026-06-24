@@ -44,7 +44,7 @@ strengthOfEvidenceProvided:
     system: ACMG Guidelines, 2015
 specifiedBy:
   type: Method
-  methodType: PS3
+  methodType: Functional Data Assessment
   name: ACMG 2015 PS3 Criterion
   reportedIn:
     type: Document
