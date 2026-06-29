@@ -38,7 +38,7 @@ transcriptVariationContext:
     - syntax: hgvs.c
       value: ENST00000366667.6:c.803C>T
 impactScore: 0.52
-impactScoreType: 
+impactScoreType:
   primaryCoding:
     code: DS_AG
     system: spliceai-score-types

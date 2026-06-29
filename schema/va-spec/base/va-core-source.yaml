@@ -1185,7 +1185,7 @@ ComputationalVariantFunctionalImpactAnalysisResult:
     ancillaryResults:
       maturity: draft
       description: >-
-        An object in which implementers can define custom fields to capture additional scores or outputs produced by the in silico tool beyond the primary score. 
+        An object in which implementers can define custom fields to capture additional scores or outputs produced by the in silico tool beyond the primary score.
         For example, CADD reports both a raw score and a Phred-scaled score; the primary score field would hold one, and ancillaryResults would hold the other.
       type: object
       additionalProperties: true
