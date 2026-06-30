@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/domain-entities-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-snapshot.2026-06.1/base/domain-entities-source.yaml"
 title: VA Spec Shared Domain Entity Data Structures
 strict: true
 
@@ -56,8 +56,8 @@ $defs:
           The value 'OR' indicates that only one condition in the set manifests in each participant interrogated in a given study.
         type: string
         enum:
-           - AND
-           - OR
+          - AND
+          - OR
         $comment: >-
           The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
           that manifest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate
@@ -107,8 +107,8 @@ $defs:
           subset of participants in the cohort that was interrogated in a given study.
         type: string
         enum:
-           - AND
-           - OR
+          - AND
+          - OR
         $comment: >-
           The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals
           that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical
