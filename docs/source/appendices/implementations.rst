@@ -20,7 +20,7 @@ of the VA-Spec. They are expected to be updated as the VA-Spec is finalized.
       - `GA4GH VA-Spec Python Repository <https://github.com/ga4gh/va-spec-python>`_
       - The reference implementation for VA-Spec, this python package provides tools for generation and validation of VA-Spec objects.
    *  - VICC MetaKB
-      - `Cancer Variants API v2 (Dev) <https://dev-search.cancervariants.org/api/v2>`_
+      - `Online MetaKB UI <https://pediatric.metakb.org/>`_
       - The VICC Meta-Knowledgebase (MetaKB) v2 is currently under development as a knowledge integration engine that works across germline and somatic variant evidence. It represents genomic knowledge statements using the VA-Spec v1.0 March pre-release.
    *  - ClinVar Submission Utility
       - `ClinVar This Repository <https://github.com/clingen-data-model/clinvar-this>`_

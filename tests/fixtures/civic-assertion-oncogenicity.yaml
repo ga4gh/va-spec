@@ -69,7 +69,7 @@ specifiedBy:
 hasEvidenceLines:
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
-    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+    targetProposition: # identical to VariantOncogenicityStatement.proposition
       type: VariantOncogenicityProposition
       objectTumorType:
         id: civic.did:15
@@ -84,7 +84,8 @@ hasEvidenceLines:
       subjectVariant:
         id: civic.mpid:113
         type: CategoricalVariant
-        description: RET M918T is the most common somatically acquired mutation in
+        description:
+          RET M918T is the most common somatically acquired mutation in
           medullary thyroid cancer (MTC). While there currently are no RET-specific
           inhibiting agents, promiscuous kinase inhibitors have seen some success in
           treating RET overactivity. Data suggests however, that the M918T mutation
@@ -121,9 +122,27 @@ hasEvidenceLines:
         code: OM1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     scoreOfEvidenceProvided: 2
+    specifiedBy:
+      type: Method
+      methodType: functional_domain_location
+      name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+      reportedIn:
+        doi: 10.1016/j.gim.2022.01.001
+        id: pmid:35101336
+        name: Horak et al., 2022, Genet Med.
+        pmid: "35101336"
+        title:
+          "Standards for the classification of pathogenicity of somatic variants in
+          cancer (oncogenicity): Joint recommendations of Clinical Genome
+          Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant
+          Interpretation for Cancer Consortium (VICC)"
+        type: Document
+        urls:
+          - https://doi.org/10.1016/j.gim.2022.01.001
+          - https://pubmed.ncbi.nlm.nih.gov/35101336/
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
-    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+    targetProposition: # identical to VariantOncogenicityStatement.proposition
       type: VariantOncogenicityProposition
       objectTumorType:
         id: civic.did:15
@@ -138,7 +157,8 @@ hasEvidenceLines:
       subjectVariant:
         id: civic.mpid:113
         type: CategoricalVariant
-        description: RET M918T is the most common somatically acquired mutation in
+        description:
+          RET M918T is the most common somatically acquired mutation in
           medullary thyroid cancer (MTC). While there currently are no RET-specific
           inhibiting agents, promiscuous kinase inhibitors have seen some success in
           treating RET overactivity. Data suggests however, that the M918T mutation
@@ -175,9 +195,27 @@ hasEvidenceLines:
         code: OS2
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     scoreOfEvidenceProvided: 4
+    specifiedBy:
+      type: Method
+      methodType: functional_assay
+      name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+      reportedIn:
+        doi: 10.1016/j.gim.2022.01.001
+        id: pmid:35101336
+        name: Horak et al., 2022, Genet Med.
+        pmid: "35101336"
+        title:
+          "Standards for the classification of pathogenicity of somatic variants in
+          cancer (oncogenicity): Joint recommendations of Clinical Genome
+          Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant
+          Interpretation for Cancer Consortium (VICC)"
+        type: Document
+        urls:
+          - https://doi.org/10.1016/j.gim.2022.01.001
+          - https://pubmed.ncbi.nlm.nih.gov/35101336/
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
-    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+    targetProposition: # identical to VariantOncogenicityStatement.proposition
       type: VariantOncogenicityProposition
       objectTumorType:
         id: civic.did:15
@@ -192,7 +230,8 @@ hasEvidenceLines:
       subjectVariant:
         id: civic.mpid:113
         type: CategoricalVariant
-        description: RET M918T is the most common somatically acquired mutation in
+        description:
+          RET M918T is the most common somatically acquired mutation in
           medullary thyroid cancer (MTC). While there currently are no RET-specific
           inhibiting agents, promiscuous kinase inhibitors have seen some success in
           treating RET overactivity. Data suggests however, that the M918T mutation
@@ -229,9 +268,27 @@ hasEvidenceLines:
         code: OP4
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     scoreOfEvidenceProvided: 1
+    specifiedBy:
+      type: Method
+      methodType: population_frequency
+      name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+      reportedIn:
+        doi: 10.1016/j.gim.2022.01.001
+        id: pmid:35101336
+        name: Horak et al., 2022, Genet Med.
+        pmid: "35101336"
+        title:
+          "Standards for the classification of pathogenicity of somatic variants in
+          cancer (oncogenicity): Joint recommendations of Clinical Genome
+          Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant
+          Interpretation for Cancer Consortium (VICC)"
+        type: Document
+        urls:
+          - https://doi.org/10.1016/j.gim.2022.01.001
+          - https://pubmed.ncbi.nlm.nih.gov/35101336/
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
-    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+    targetProposition: # identical to VariantOncogenicityStatement.proposition
       type: VariantOncogenicityProposition
       objectTumorType:
         id: civic.did:15
@@ -246,7 +303,8 @@ hasEvidenceLines:
       subjectVariant:
         id: civic.mpid:113
         type: CategoricalVariant
-        description: RET M918T is the most common somatically acquired mutation in
+        description:
+          RET M918T is the most common somatically acquired mutation in
           medullary thyroid cancer (MTC). While there currently are no RET-specific
           inhibiting agents, promiscuous kinase inhibitors have seen some success in
           treating RET overactivity. Data suggests however, that the M918T mutation
@@ -283,9 +341,27 @@ hasEvidenceLines:
         code: OP1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     scoreOfEvidenceProvided: 1
+    specifiedBy:
+      type: Method
+      methodType: computational_prediction
+      name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+      reportedIn:
+        doi: 10.1016/j.gim.2022.01.001
+        id: pmid:35101336
+        name: Horak et al., 2022, Genet Med.
+        pmid: "35101336"
+        title:
+          "Standards for the classification of pathogenicity of somatic variants in
+          cancer (oncogenicity): Joint recommendations of Clinical Genome
+          Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant
+          Interpretation for Cancer Consortium (VICC)"
+        type: Document
+        urls:
+          - https://doi.org/10.1016/j.gim.2022.01.001
+          - https://pubmed.ncbi.nlm.nih.gov/35101336/
   - type: EvidenceLine
     directionOfEvidenceProvided: supports
-    targetProposition:  # identical to VariantOncogenicityStatement.proposition
+    targetProposition: # identical to VariantOncogenicityStatement.proposition
       type: VariantOncogenicityProposition
       objectTumorType:
         id: civic.did:15
@@ -300,7 +376,8 @@ hasEvidenceLines:
       subjectVariant:
         id: civic.mpid:113
         type: CategoricalVariant
-        description: RET M918T is the most common somatically acquired mutation in
+        description:
+          RET M918T is the most common somatically acquired mutation in
           medullary thyroid cancer (MTC). While there currently are no RET-specific
           inhibiting agents, promiscuous kinase inhibitors have seen some success in
           treating RET overactivity. Data suggests however, that the M918T mutation
@@ -337,3 +414,21 @@ hasEvidenceLines:
         code: OP3
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     scoreOfEvidenceProvided: 1
+    specifiedBy:
+      type: Method
+      methodType: somatic_hotspot_recurrence
+      name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+      reportedIn:
+        doi: 10.1016/j.gim.2022.01.001
+        id: pmid:35101336
+        name: Horak et al., 2022, Genet Med.
+        pmid: "35101336"
+        title:
+          "Standards for the classification of pathogenicity of somatic variants in
+          cancer (oncogenicity): Joint recommendations of Clinical Genome
+          Resource (ClinGen), Cancer Genomics Consortium (CGC), and Variant
+          Interpretation for Cancer Consortium (VICC)"
+        type: Document
+        urls:
+          - https://doi.org/10.1016/j.gim.2022.01.001
+          - https://pubmed.ncbi.nlm.nih.gov/35101336/

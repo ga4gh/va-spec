@@ -10,6 +10,7 @@ To facilitate developer access to these key resources, we provide this central c
 **Study Result Base Profiles:**
  - |cohort_allele_frequency_study_result_json_schema|
  - |experimental_variant_functional_impact_study_result_json_schema|
+ - |tumor_variant_frequency_result_json_schema|
 
 **Proposition Base Profiles:**
  - |pathogenicity_proposition_json_schema|
@@ -22,9 +23,7 @@ To facilitate developer access to these key resources, we provide this central c
 **Statement Community Profiles:**
  - |pathogenicity_statement_json_schema| (ACMG-2015)
  - |oncogenicity_study_statement_json_schema| (CCV-2022)
- - |therapeutic_response_study_statement_json_schema| (AAC-2017)
- - |diagnostic_study_statement_json_schema| (AAC-2017)
- - |prognostic_study_statement_json_schema| (AAC-2017)
+ - |variant_clinical_significance_statement_json_schema| (AAC-2017)
 
 **Evidence Line Community Profiles:**
  - |pathogenicity_evidence_line_json_schema| (ACMG-2015)

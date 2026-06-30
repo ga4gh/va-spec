@@ -59,6 +59,10 @@ $defs:
           description: >-
             The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
             based on assessment of evidence.
+        hasEvidenceLines:
+          type: array
+          items:
+            $ref: "#/$defs/VariantOncogenicityEvidenceLine"
       required:
         - classification
         - specifiedBy
@@ -78,7 +82,7 @@ $defs:
     - properties:
         targetProposition:
           description: >-
-            A Variant Oncoogenicity Proposition against which a specific type of evidence was assessed, to
+            A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to
             determine the strength and direction of support this evidence provides for or against the
             proposition's validity.
           $ref: "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/VariantOncogenicityProposition"
@@ -115,30 +119,55 @@ $defs:
             of support that it provides for or against a variant's oncogenicity. While the CCV Criteria themselves
             provide minimal guidance, typically a more detailed, gene- or cancer- specific rubric is followed
             to determine if a given criterion was met, and how strongly.
-          methodType:
-            description: >-
-              A term representing the type of method used to assess evidence for or against the oncogenicity of a variant.
-              Method type is reported as the CCV Code that defines criteria against which evidence is assessed to determine
-              if it supports oncogenicity or benignity of a variant.
-            type: string
-            enum:
-              - OVS1
-              - OS1
-              - OS2
-              - OS3
-              - OM1
-              - OM2
-              - OM3
-              - OM4
-              - OP1
-              - OP2
-              - OP3
-              - OP4
-              - SBVS1
-              - SBS1
-              - SBS2
-              - SBP1
-              - SBP2
+          properties:
+            methodType:
+              description: >-
+                A term representing the type of method used to assess evidence for or against the oncogenicity of a variant.
+                Method type is reported as the CCV Code that defines criteria against which evidence is assessed to determine
+                if it supports oncogenicity or benignity of a variant.
+              type: string
+              oneOf:
+                - const: population_frequency
+                  description: >-
+                    Assessment of whether population control frequency refutes
+                    oncogenicity or whether absence/extreme rarity in controls provides
+                    supporting evidence for oncogenicity.
+                - const: functional_assay
+                  description: >-
+                    Assessment of well-established in vitro or in vivo functional
+                    studies to determine whether experimental evidence supports or
+                    refutes an oncogenic effect.
+                - const: primary_sequence_consequence
+                  description: >-
+                    Assessment of the primary sequence-level consequence of the variant,
+                    including null/loss-of-function effects, protein-length changes,
+                    stop-loss effects, or synonymous variants predicted to have no
+                    splice or conservation impact.
+                - const: functional_domain_location
+                  description: >-
+                    Assessment of whether the variant occurs in a critical and
+                    well-established functional domain or region, such as an enzyme
+                    active site.
+                - const: amino_acid_or_residue_analogy
+                  description: >-
+                    Assessment by analogy to previously established oncogenic variants,
+                    including the same amino acid change or a different missense change
+                    at the same residue.
+                - const: somatic_hotspot_recurrence
+                  description: >-
+                    Assessment of somatic recurrence at cancer hotspots or recurrently
+                    mutated residues, with evidence strength based on recurrence
+                    thresholds.
+                - const: computational_prediction
+                  description: >-
+                    Aggregate assessment of computational predictions, including
+                    conservation, missense-effect, and splice-effect tools, supporting
+                    either oncogenic effect or no effect.
+                - const: single_genetic_etiology_context
+                  description: >-
+                    Assessment of whether the variant occurs in a gene and malignancy
+                    context where the disease has a single genetic etiology, making that
+                    gene-level event supportive of oncogenicity.
           required:
             - methodType
             - reportedIn
@@ -166,6 +195,134 @@ $defs:
         required: [directionOfEvidenceProvided]
       then:
         required: [strengthOfEvidenceProvided]
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: population_frequency
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^(SBVS1|SBS1|OP4)(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: functional_assay
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^(OS2|SBS2)(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: primary_sequence_consequence
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^(OVS1|OM2|SBP2)(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: functional_domain_location
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^OM1(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: amino_acid_or_residue_analogy
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^(OS1|OM4)(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: somatic_hotspot_recurrence
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^(OS3|OM3|OP3)(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: computational_prediction
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^(OP1|SBP1)(_.+)?$"
+    - if:
+        properties:
+          specifiedBy:
+            properties:
+              methodType:
+                const: single_genetic_etiology_context
+            required: [methodType]
+        required: [specifiedBy]
+      then:
+        properties:
+          evidenceOutcome:
+            properties:
+              primaryCoding:
+                properties:
+                  code:
+                    pattern: "^OP2(_.+)?$"
     required:
       - directionOfEvidenceProvided
       - specifiedBy
