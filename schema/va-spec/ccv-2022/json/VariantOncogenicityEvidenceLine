@@ -1,18 +1,18 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/ccv-2022/json/VariantOncogenicityEvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-snapshot.2026-06.1/ccv-2022/json/VariantOncogenicityEvidenceLine",
    "title": "VariantOncogenicityEvidenceLine",
    "description": "An Evidence Line that describes how evidence for a variant was interpreted to determine if a specific CCV 2022 criterion code is met, and the strength that evidence this provides for or against the variant's oncogenicity. An Evidence Line that describes how a specific type of information was interpreted as evidence for or against a variant's oncogenicity. In the CCV Framework, evidence is assessed by determining if a specific criterion (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-06.1/base/json/EvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "description": "A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.",
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-02.1/base/json/VariantOncogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-snapshot.2026-06.1/base/json/VariantOncogenicityProposition"
             },
             "directionOfEvidenceProvided": {
                "type": "string",
