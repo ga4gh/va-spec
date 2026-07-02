@@ -87,7 +87,14 @@
             "hasEvidenceLines": {
                "type": "array",
                "items": {
-                  "$ref": "/ga4gh/schema/va-spec/1.0.1/acmg-2015/json/VariantPathogenicityEvidenceLine"
+                  "anyOf": [
+                     {
+                        "$ref": "/ga4gh/schema/va-spec/1.0.1/acmg-2015/json/VariantPathogenicityEvidenceLine"
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+                     }
+                  ]
                }
             }
          },
