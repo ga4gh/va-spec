@@ -10,6 +10,9 @@ imports:
   va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
 
+namespaces:
+  gks.core: /ga4gh/schema/gks-core/1.1.0/json/
+
 $defs:
   AmpAscoCapEvidenceLine:
     maturity: draft
@@ -143,6 +146,7 @@ $defs:
           properties:
             hasEvidenceLines:
               oneOf:
+                - $refCurie: gks.core:iriReference
                 - $ref: "#/$defs/DiagnosticEvidenceLine"
                 - $ref: "#/$defs/PrognosticEvidenceLine"
                 - $ref: "#/$defs/TherapeuticEvidenceLine"
@@ -182,6 +186,7 @@ $defs:
           properties:
             hasEvidenceLines:
               oneOf:
+                - $refCurie: gks.core:iriReference
                 - $ref: "#/$defs/DiagnosticEvidenceLine"
                 - $ref: "#/$defs/PrognosticEvidenceLine"
                 - $ref: "#/$defs/TherapeuticEvidenceLine"
