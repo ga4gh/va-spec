@@ -21,7 +21,7 @@ contributions:
       id: civic.organization:1
       name: CIViC
       type: Agent
-    date: 2026-04-16 00:00:00
+    date: 2026-04-16:00:00:00
     type: Contribution
 description:
   "Published sequencing studies have shown that RET mutations are very
