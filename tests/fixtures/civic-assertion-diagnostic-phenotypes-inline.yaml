@@ -19,21 +19,21 @@ hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     hasEvidenceItems:
       - description:
-          "Histological, molecular, and clinical analysis of 26 histologically\
-          \ prototypical isomorphic diffuse gliomas with a specific DNA methylation profile\
-          \ distinct from other glial/glio-neuronal brain tumors and normal hemispheric\
-          \ tissue were found to be most closely related to pediatric MYB/MYBL1-altered\
-          \ diffuse astrocytomas and angiocentric gliomas. IDH1/2-wildtype status was\
-          \ verified by Sanger sequencing of 24 cases with sufficient DNA. Integrating\
-          \ copy number and RNA sequencing demonstrated MYBL1 (n=14) or MYB (n=6) alterations\
-          \ in 77% (20/26) of these tumors. Nine tumors had MYBL1 rearrangements (including\
-          \ one involving 5\u2019 of MYBL1) with various gene partners, including MMP16\
-          \ (n=3), RAD51B (n=1), MAML2 (n=1), ZFHX4 (n=1), TOX (n=1), RP11-586K2.1 (intergenic\
-          \ region) (n=1), and RP11492M23.2 (intergenic region) (n=1). These fusions resulted\
-          \ in a deletion of the C-terminal negative regulatory C-myb domain of MYBL1.\
-          \  Copy number analysis revealed gain or loss involving MYBL1 in 10 tumors,\
-          \ including six with MYBL1 fusion and four without MYBL1 fusions detected. Increased\
-          \ MYBL1 expression was observed in 71% (10/14) of the tumors with MYBL1 alterations."
+          Histological, molecular, and clinical analysis of 26 histologically
+          prototypical isomorphic diffuse gliomas with a specific DNA methylation profile
+          distinct from other glial/glio-neuronal brain tumors and normal hemispheric
+          tissue were found to be most closely related to pediatric MYB/MYBL1-altered
+          diffuse astrocytomas and angiocentric gliomas. IDH1/2-wildtype status was verified
+          by Sanger sequencing of 24 cases with sufficient DNA. Integrating copy number
+          and RNA sequencing demonstrated MYBL1 (n=14) or MYB (n=6) alterations in 77%
+          (20/26) of these tumors. Nine tumors had MYBL1 rearrangements (including one
+          involving 5’ of MYBL1) with various gene partners, including MMP16 (n=3), RAD51B
+          (n=1), MAML2 (n=1), ZFHX4 (n=1), TOX (n=1), RP11-586K2.1 (intergenic region)
+          (n=1), and RP11492M23.2 (intergenic region) (n=1). These fusions resulted in
+          a deletion of the C-terminal negative regulatory C-myb domain of MYBL1.  Copy
+          number analysis revealed gain or loss involving MYBL1 in 10 tumors, including
+          six with MYBL1 fusion and four without MYBL1 fusions detected. Increased MYBL1
+          expression was observed in 71% (10/14) of the tumors with MYBL1 alterations.
         direction: supports
         id: civic.eid:11780
         proposition:
@@ -41,6 +41,8 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
                   system: https://civicdb.org
                 relation: exactMatch
             name: somatic
@@ -100,19 +102,12 @@ hasEvidenceLines:
           predicate: isDiagnosticInclusionCriterionFor
           subjectVariant:
             extensions:
-              - name: CIViC Molecular Profile Score
+              - name: molecularProfileScore
                 value: 40.0
-              - name: CIViC representative coordinate
-                value:
-                  chromosome: null
-                  ensembl_version: null
-                  reference_bases: null
-                  reference_build: null
-                  representative_transcript: null
-                  start: null
-                  stop: null
-                  type: coordinates
-                  variant_bases: null
+              - name: hgvsDescriptions
+                value: []
+              - name: categoricalVariationType
+                value: Undefined
             id: civic.mpid:4878
             mappings:
               - coding:
@@ -142,10 +137,10 @@ hasEvidenceLines:
               course.
             type: Document
             urls:
+              - https://civicdb.org/links/evidence/11780
               - https://civicdb.org/links/source/4905
               - http://www.ncbi.nlm.nih.gov/pubmed/31563982
               - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477753
-          - https://civicdb.org/links/evidence/11780
         specifiedBy:
           id: civic.method:2019
           methodType: curation
@@ -200,6 +195,8 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
                   system: https://civicdb.org
                 relation: exactMatch
             name: somatic
@@ -251,19 +248,12 @@ hasEvidenceLines:
           predicate: isDiagnosticInclusionCriterionFor
           subjectVariant:
             extensions:
-              - name: CIViC Molecular Profile Score
+              - name: molecularProfileScore
                 value: 40.0
-              - name: CIViC representative coordinate
-                value:
-                  chromosome: null
-                  ensembl_version: null
-                  reference_bases: null
-                  reference_build: null
-                  representative_transcript: null
-                  start: null
-                  stop: null
-                  type: coordinates
-                  variant_bases: null
+              - name: hgvsDescriptions
+                value: []
+              - name: categoricalVariationType
+                value: Undefined
             id: civic.mpid:4878
             mappings:
               - coding:
@@ -292,10 +282,10 @@ hasEvidenceLines:
               oncogenic truncating rearrangements in the transcription factor MYBL1.
             type: Document
             urls:
+              - https://civicdb.org/links/evidence/11781
               - https://civicdb.org/links/source/4907
               - http://www.ncbi.nlm.nih.gov/pubmed/23633565
               - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3657784
-          - https://civicdb.org/links/evidence/11781
         specifiedBy:
           id: civic.method:2019
           methodType: curation
@@ -354,6 +344,8 @@ hasEvidenceLines:
             mappings:
               - coding:
                   code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
                   system: https://civicdb.org
                 relation: exactMatch
             name: somatic
@@ -405,19 +397,12 @@ hasEvidenceLines:
           predicate: isDiagnosticInclusionCriterionFor
           subjectVariant:
             extensions:
-              - name: CIViC Molecular Profile Score
+              - name: molecularProfileScore
                 value: 40.0
-              - name: CIViC representative coordinate
-                value:
-                  chromosome: null
-                  ensembl_version: null
-                  reference_bases: null
-                  reference_build: null
-                  representative_transcript: null
-                  start: null
-                  stop: null
-                  type: coordinates
-                  variant_bases: null
+              - name: hgvsDescriptions
+                value: []
+              - name: categoricalVariationType
+                value: Undefined
             id: civic.mpid:4878
             mappings:
               - coding:
@@ -446,10 +431,10 @@ hasEvidenceLines:
               FGFR1, and MYB mutations occur at high frequency and align with morphology."
             type: Document
             urls:
+              - https://civicdb.org/links/evidence/11779
               - https://civicdb.org/links/source/4901
               - http://www.ncbi.nlm.nih.gov/pubmed/26810070
               - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4866893
-          - https://civicdb.org/links/evidence/11779
         specifiedBy:
           id: civic.method:2019
           methodType: curation
@@ -490,6 +475,8 @@ hasEvidenceLines:
         mappings:
           - coding:
               code: SOMATIC
+              iris:
+                - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
               system: https://civicdb.org
             relation: exactMatch
         name: somatic
@@ -549,19 +536,12 @@ hasEvidenceLines:
       predicate: isDiagnosticInclusionCriterionFor
       subjectVariant:
         extensions:
-          - name: CIViC Molecular Profile Score
+          - name: molecularProfileScore
             value: 40.0
-          - name: CIViC representative coordinate
-            value:
-              chromosome: null
-              ensembl_version: null
-              reference_bases: null
-              reference_build: null
-              representative_transcript: null
-              start: null
-              stop: null
-              type: coordinates
-              variant_bases: null
+          - name: hgvsDescriptions
+            value: []
+          - name: categoricalVariationType
+            value: Undefined
         id: civic.mpid:4878
         mappings:
           - coding:
@@ -588,6 +568,8 @@ proposition:
     mappings:
       - coding:
           code: SOMATIC
+          iris:
+            - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
           system: https://civicdb.org
         relation: exactMatch
     name: somatic
@@ -647,19 +629,12 @@ proposition:
   predicate: hasClinicalSignificanceFor
   subjectVariant:
     extensions:
-      - name: CIViC Molecular Profile Score
+      - name: molecularProfileScore
         value: 40.0
-      - name: CIViC representative coordinate
-        value:
-          chromosome: null
-          ensembl_version: null
-          reference_bases: null
-          reference_build: null
-          representative_transcript: null
-          start: null
-          stop: null
-          type: coordinates
-          variant_bases: null
+      - name: hgvsDescriptions
+        value: []
+      - name: categoricalVariationType
+        value: Undefined
     id: civic.mpid:4878
     mappings:
       - coding:
@@ -681,9 +656,42 @@ proposition:
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/115
-  - https://civicdb.org/links/evidence/11780
-  - https://civicdb.org/links/evidence/11781
-  - https://civicdb.org/links/evidence/11779
+  - id: civic.sid:4905
+    name: Wefers et al., 2020
+    pmid: "31563982"
+    title:
+      Isomorphic diffuse glioma is a morphologically and molecularly distinct tumour
+      entity with recurrent gene fusions of MYBL1 or MYB and a benign disease course.
+    type: Document
+    urls:
+      - https://civicdb.org/links/evidence/11780
+      - https://civicdb.org/links/source/4905
+      - http://www.ncbi.nlm.nih.gov/pubmed/31563982
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7477753
+  - id: civic.sid:4907
+    name: Ramkissoon et al., 2013
+    pmid: "23633565"
+    title:
+      Genomic analysis of diffuse pediatric low-grade gliomas identifies recurrent
+      oncogenic truncating rearrangements in the transcription factor MYBL1.
+    type: Document
+    urls:
+      - https://civicdb.org/links/evidence/11781
+      - https://civicdb.org/links/source/4907
+      - http://www.ncbi.nlm.nih.gov/pubmed/23633565
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3657784
+  - id: civic.sid:4901
+    name: Qaddoumi et al., 2016
+    pmid: "26810070"
+    title:
+      "Genetic alterations in uncommon low-grade neuroepithelial tumors: BRAF,
+      FGFR1, and MYB mutations occur at high frequency and align with morphology."
+    type: Document
+    urls:
+      - https://civicdb.org/links/evidence/11779
+      - https://civicdb.org/links/source/4901
+      - http://www.ncbi.nlm.nih.gov/pubmed/26810070
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4866893
 specifiedBy:
   id: civic.method:2019
   methodType: curation
