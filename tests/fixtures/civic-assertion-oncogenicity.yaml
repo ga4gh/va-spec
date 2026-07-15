@@ -16,12 +16,12 @@ contributions:
         strict criteria of the CIViC standard operating procedure, core approval members
         approve them for 1-star submission to the ClinVar CIViC organization.
       extensions:
-        - name: is_approved_vcep
+        - name: isApprovedVcep
           value: false
       id: civic.organization:1
       name: CIViC
       type: Agent
-    date: 2026-04-16:00:00:00
+    date: 2026-04-16 00:00:00
     type: Contribution
 description:
   "Published sequencing studies have shown that RET mutations are very
@@ -288,7 +288,7 @@ proposition:
       especially against the VEGFR-inhibitor motesanib. It has also been suggested
       that RET M918T leads to more aggressive MTC with a poorer prognosis.
     extensions:
-      - name: CIViC Molecular Profile Score
+      - name: molecularProfileScore
         value: 139.0
       - name: hgvsDescriptions
         value:
@@ -300,7 +300,7 @@ proposition:
           - ENSP00000347942.3:p.Met918Thr
       - name: maneSelectTranscript
         value: ENST00000355710.8:c.2753T>C
-      - name: CIViC representative coordinate
+      - name: representativeVariantCoordinates
         value:
           chromosome: "10"
           ensembl_version: 75
@@ -325,7 +325,7 @@ proposition:
           extensions:
             - name: subtype
               value: gene_variant
-            - name: variant_types
+            - name: variantTypes
               value:
                 - coding:
                     code: SO:0001583
@@ -393,6 +393,28 @@ proposition:
         name: NC_000010.11:g.43121968T>C
         state:
           sequence: C
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: hEybNB_CeKflfFhT5AKOU5i1lgZPP-aS
+        expressions:
+          - syntax: hgvs.p
+            value: NP_065681.1:p.Met918Thr
+          - syntax: hgvs.p
+            value: ENSP00000347942.3:p.Met918Thr
+        id: ga4gh:VA.hEybNB_CeKflfFhT5AKOU5i1lgZPP-aS
+        location:
+          digest: oIeqSfOEuqO7KNOPt8YUIa9vo1f6yMao
+          end: 918
+          id: ga4gh:SL.oIeqSfOEuqO7KNOPt8YUIa9vo1f6yMao
+          sequence: M
+          sequenceReference:
+            refgetAccession: SQ.jMu9-ItXSycQsm4hyABeW_UfSNRXRVnl
+            type: SequenceReference
+          start: 917
+          type: SequenceLocation
+        name: RET M918T
+        state:
+          sequence: T
           type: LiteralSequenceExpression
         type: Allele
     name: RET M918T
