@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A Proposition describing the clinical significance of a variant with respect to a condition.
+A proposition that variants affecting a particular Gene are valid for evaluation as causal for some Condition using appropriate variant classification criteria, given a specific mode of inheritance.
 
 **Information Model**
 
-Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
+Some GeneDiseaseValidityProposition attributes are inherited from :ref:`Proposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -52,33 +52,28 @@ Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - subjectVariant
-      -
-      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`iriReference`
-      - 1..1
-      - A variant that is the subject of the Proposition.
-   *  - geneContextQualifier
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - Reports a gene impacted by the variant, which may contribute to the association described in the Proposition.
-   *  - alleleOriginQualifier
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - Reports whether the Proposition should be interpreted in the context of a heritable "germline" variant, an acquired "somatic" variant in a tumor, or a post-zygotic "mosaic" variant. While these are the most commonly reported allele origins, other more nuanced concepts can be captured  (e.g. "maternal" vs "paternal" allele origin). In practice, populating this field may be complicated by the fact that some sources report allele origin based on the type of tissue that was sequenced to identify the variant, and others use it more generally to specify a category of variant for which the proposition holds. The stated intent of this attribute is the latter. However, if an implementer is not sure about which is reported in their data, it may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity.
    *  - type
       -
       - string
       - 1..1
-      - MUST be "VariantClinicalSignificanceProposition".
+      - MUST be "GeneDiseaseValidityProposition".
+   *  - subjectGene
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 1..1
+      - The Entity or concept about which the Proposition is made.
    *  - predicate
       -
       - string
       - 1..1
-      - The predicate associating the subject variant to clinical significance for the object Condition. MUST be "hasClinicalSignificanceFor".
+      - MUST be "variantsInGeneCausalFor".
    *  - objectCondition
       -
-      - :ref:`Condition` | :ref:`ConditionSet` | :ref:`iriReference`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
-      - The condition that is evaluated.
+      - An Entity or concept that is related to the subject of a Proposition via its predicate.
+   *  - modeOfInheritanceQualifier
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      -

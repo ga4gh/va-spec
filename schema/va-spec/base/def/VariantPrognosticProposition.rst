@@ -8,7 +8,7 @@ A Proposition about whether a variant is associated with an improved or worse ou
 
 **Information Model**
 
-Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantPrognosticProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
@@ -79,6 +79,6 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`ClinicalVa
       - The relationship the Proposition describes between the subject variant and object Condition. MUST be one of "associatedWithBetterOutcomeFor" or "associatedWithWorseOutcomeFor".
    *  - objectCondition
       -
-      - :ref:`Condition` | :ref:`iriReference`
+      - :ref:`Condition` | :ref:`ConditionSet` | :ref:`iriReference`
       - 1..1
       - The disease that is evaluated for outcome.

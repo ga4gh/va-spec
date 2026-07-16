@@ -1,5 +1,5 @@
 membershipOperator: AND
-conditions:
+concepts:
   - conceptType: Disease
     id: civic.did:3387
     mappings:
@@ -8,7 +8,7 @@ conditions:
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-  - conditions:
+  - concepts:
       - conceptType: Phenotype
         id: civic.phenotype:8121
         mappings:

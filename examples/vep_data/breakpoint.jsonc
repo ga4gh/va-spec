@@ -1,0 +1,240 @@
+// #CHROM	POS	        ID	    REF 	ALT
+// 2	    42522694	.	    C	    C]chr2:29446394]
+{
+    "most_severe_consequence": "feature_truncation",
+    "strand": 1,
+    "transcript_consequences": [
+        {
+            "allele_num": 0,
+            "gene_symbol_source": "HGNC",
+            "trembl": [
+                "F2Z2B5_HUMAN"
+            ],
+            "variant_allele": "C.",
+            "swissprot": [
+                "EMAL4_HUMAN"
+            ],
+            "hgnc_id": 1316,
+            "impact": "HIGH",
+            "uniparc": [
+                "UPI0000140350"
+            ],
+            "gene_symbol": "EML4",
+            "consequence_terms": [
+                "feature_truncation",
+                "intron_variant"
+            ],
+            "transcript_id": "ENST00000318522",
+            "source": "Ensembl",
+            "strand": 1,
+            "canonical": 1,
+            "gene_id": "ENSG00000143924"
+        },
+        {
+            "hgnc_id": 427,
+            "swissprot": [
+                "ALK_HUMAN"
+            ],
+            "gene_symbol_source": "HGNC",
+            "variant_allele": "C]chr2:29446394]",
+            "trembl": [
+                "Q580I3_HUMAN"
+            ],
+            "allele_num": 1,
+            "canonical": 1,
+            "gene_id": "ENSG00000171094",
+            "strand": -1,
+            "source": "Ensembl",
+            "consequence_terms": [
+                "feature_truncation"
+            ],
+            "gene_symbol": "ALK",
+            "transcript_id": "ENST00000389048",
+            "uniparc": [
+                "UPI00001684DA"
+            ],
+            "impact": "HIGH"
+        },
+        {
+            "transcript_id": "ENST00000401738",
+            "gene_symbol": "EML4",
+            "consequence_terms": [
+                "feature_truncation",
+                "intron_variant"
+            ],
+            "impact": "HIGH",
+            "uniparc": [
+                "UPI0001F784D4"
+            ],
+            "gene_id": "ENSG00000143924",
+            "source": "Ensembl",
+            "strand": 1,
+            "trembl": [
+                "F2Z2B5_HUMAN",
+                "B5MBZ0_HUMAN"
+            ],
+            "variant_allele": "C.",
+            "gene_symbol_source": "HGNC",
+            "allele_num": 0,
+            "hgnc_id": 1316
+        },
+        {
+            "swissprot": [
+                "EMAL4_HUMAN"
+            ],
+            "hgnc_id": 1316,
+            "allele_num": 0,
+            "gene_symbol_source": "HGNC",
+            "variant_allele": "C.",
+            "trembl": [
+                "F2Z2B5_HUMAN"
+            ],
+            "strand": 1,
+            "source": "Ensembl",
+            "gene_id": "ENSG00000143924",
+            "uniparc": [
+                "UPI0001881585"
+            ],
+            "impact": "HIGH",
+            "consequence_terms": [
+                "feature_truncation",
+                "intron_variant"
+            ],
+            "gene_symbol": "EML4",
+            "transcript_id": "ENST00000402711"
+        },
+        {
+            "hgnc_id": 1316,
+            "allele_num": 0,
+            "gene_symbol_source": "HGNC",
+            "variant_allele": "C.",
+            "source": "Ensembl",
+            "strand": 1,
+            "gene_id": "ENSG00000143924",
+            "impact": "HIGH",
+            "gene_symbol": "EML4",
+            "consequence_terms": [
+                "feature_truncation",
+                "intron_variant",
+                "non_coding_transcript_variant"
+            ],
+            "transcript_id": "ENST00000406175"
+        },
+        {
+            "gene_id": "ENSG00000171094",
+            "strand": -1,
+            "source": "Ensembl",
+            "transcript_id": "ENST00000431873",
+            "consequence_terms": [
+                "feature_truncation"
+            ],
+            "gene_symbol": "ALK",
+            "uniparc": [
+                "UPI0001AE7676"
+            ],
+            "impact": "HIGH",
+            "hgnc_id": 427,
+            "trembl": [
+                "E7EPW7_HUMAN"
+            ],
+            "variant_allele": "C]chr2:29446394]",
+            "gene_symbol_source": "HGNC",
+            "allele_num": 1
+        },
+        {
+            "hgnc_id": 427,
+            "flags": [
+                "cds_start_NF"
+            ],
+            "allele_num": 1,
+            "variant_allele": "C]chr2:29446394]",
+            "trembl": [
+                "H7BZ33_HUMAN"
+            ],
+            "gene_symbol_source": "HGNC",
+            "strand": -1,
+            "source": "Ensembl",
+            "gene_id": "ENSG00000171094",
+            "impact": "MODIFIER",
+            "uniparc": [
+                "UPI000173A44B"
+            ],
+            "transcript_id": "ENST00000453137",
+            "consequence_terms": [
+                "intergenic_variant"
+            ],
+            "gene_symbol": "ALK"
+        },
+        {
+            "hgnc_id": 1316,
+            "allele_num": 0,
+            "variant_allele": "C.",
+            "gene_symbol_source": "EntrezGene",
+            "source": "RefSeq",
+            "strand": 1,
+            "gene_id": "27436",
+            "impact": "HIGH",
+            "transcript_id": "NM_001145076.3",
+            "gene_symbol": "EML4",
+            "consequence_terms": [
+                "feature_truncation",
+                "intron_variant"
+            ]
+        },
+        {
+            "allele_num": 1,
+            "gene_symbol_source": "EntrezGene",
+            "variant_allele": "C]chr2:29446394]",
+            "hgnc_id": 427,
+            "impact": "HIGH",
+            "consequence_terms": [
+                "feature_truncation"
+            ],
+            "gene_symbol": "ALK",
+            "transcript_id": "NM_001353765.2",
+            "strand": -1,
+            "source": "RefSeq",
+            "gene_id": "238"
+        },
+        {
+            "impact": "HIGH",
+            "consequence_terms": [
+                "feature_truncation"
+            ],
+            "gene_symbol": "ALK",
+            "transcript_id": "NM_004304.5",
+            "strand": -1,
+            "source": "RefSeq",
+            "canonical": 1,
+            "gene_id": "238",
+            "allele_num": 1,
+            "gene_symbol_source": "EntrezGene",
+            "variant_allele": "C]chr2:29446394]",
+            "hgnc_id": 427
+        },
+        {
+            "transcript_id": "NM_019063.5",
+            "consequence_terms": [
+                "feature_truncation",
+                "intron_variant"
+            ],
+            "gene_symbol": "EML4",
+            "impact": "HIGH",
+            "gene_id": "27436",
+            "canonical": 1,
+            "strand": 1,
+            "source": "RefSeq",
+            "variant_allele": "C.",
+            "gene_symbol_source": "EntrezGene",
+            "allele_num": 0,
+            "hgnc_id": 1316
+        }
+    ],
+    "start": 42522695,
+    "end": 42522695,
+    "seq_region_name": "2",
+    "assembly_name": "GRCh37",
+    "id": "122",
+    "allele_string": "C/C]chr2:29446394]",
+    "input": "2\t42522694\t122\tC\tC]chr2:29446394]\t248\tPASS\tAC=1;AF=0.50;AN=2;BaseQRankSum=1.010;DB;DP=56;Dels=0.00;FS=1.010;HRun=2;HaplotypeScore=0.0000;MQ0=0;MQ=58.92;MQRankSum=-1.060;QD=11.74;ReadPosRankSum=-0.830;set=variant2\tGT:AD:DP:GQ:PL\t0/1:30,26:56:99:687,0,762"
+}

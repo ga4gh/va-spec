@@ -14,4 +14,4 @@ repos:
         name: Update json and def files
         entry: pre-commit-hooks/update-json-def-files.sh
         language: system
-        files: ^schema/.*/.*-source.yaml$
+        files: ^schema/va-spec/.+-source\.yaml$
