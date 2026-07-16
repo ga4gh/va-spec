@@ -433,17 +433,7 @@ reportedIn:
       - https://civicdb.org/links/evidence/74
       - https://civicdb.org/links/source/44
       - http://www.ncbi.nlm.nih.gov/pubmed/18073307
-  - id: civic.sid:44
-    name: Elisei et al., 2008
-    pmid: "18073307"
-    title:
-      "Prognostic significance of somatic RET oncogene mutations in sporadic medullary
-      thyroid cancer: a 10-year follow-up study."
-    type: Document
-    urls:
       - https://civicdb.org/links/evidence/12800
-      - https://civicdb.org/links/source/44
-      - http://www.ncbi.nlm.nih.gov/pubmed/18073307
   - id: civic.sid:92
     name: Egawa et al., 1998
     pmid: "9839497"
