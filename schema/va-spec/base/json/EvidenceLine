@@ -93,6 +93,9 @@
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantDiagnosticProposition"
             },
             {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantMolecularConsequenceProposition"
+            },
+            {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/VariantOncogenicityProposition"
             },
             {

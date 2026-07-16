@@ -813,6 +813,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
         description: The condition that is evaluated.
     required:
@@ -846,6 +847,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
         description: The disease that is evaluated for diagnosis.
     required:
@@ -875,8 +877,9 @@ $defs:
       objectTumorType:
         extends: object
         oneOf:
-        - $ref: Condition
-        - $refCurie: gks.core:iriReference
+          - $ref: Condition
+          - $ref: ConditionSet
+          - $refCurie: gks.core:iriReference
         description: >-
           The tumor type for which the variant impact is evaluated.
     required:
@@ -907,8 +910,9 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
-        description: The :ref:`Condition` for which the variant impact is stated.
+        description: The :ref:`Condition` or :ref:`ConditionSet`for which the variant impact is stated.
       penetranceQualifier:
         $refCurie: gks.core:MappableConcept
         description: >-
@@ -952,6 +956,7 @@ $defs:
         extends: object
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
         description: The disease that is evaluated for outcome.
     required:
@@ -981,16 +986,18 @@ $defs:
         enum:
         - predictsSensitivityTo
         - predictsResistanceTo
-      objectTherapeutic:
+      objectTherapy:
         description: A drug administration or other therapeutic procedure that the neoplasm
           is intended to respond to.
         extends: object
         oneOf:
-        - $ref: Therapeutic
+        - $ref: Therapy
+        - $ref: TherapyGroup
         - $refCurie: gks.core:iriReference
       conditionQualifier:
         oneOf:
           - $ref: Condition
+          - $ref: ConditionSet
           - $refCurie: gks.core:iriReference
         description: >-
           Reports the disease context in which the variant's association with therapeutic
@@ -998,7 +1005,7 @@ $defs:
           therapeutic response propositions.
     required:
     - predicate
-    - objectTherapeutic
+    - objectTherapy
     - conditionQualifier
 
   CohortAlleleFrequencyStudyResult:
@@ -1135,3 +1142,83 @@ $defs:
         extends: sourceDataSet
         description: >-
           The full data set that provided the reported the functional impact score.
+
+  VariantMolecularConsequenceProposition:
+    inherits: SubjectVariantProposition
+    maturity: draft
+    type: object
+    description: >-
+      A Proposition describing a predicted molecular consequence of a variant on transcript and
+      protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron
+      variant', 'splice-site variant'), or an impact on the processing of the molecule along the
+      path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant').
+      Note that annotations about variant impact on gene product function, which may occur
+      downstream of a molecular consequence, are not in scope here. These are covered by a Variant
+      Functional Impact Proposition classes.
+    properties:
+      type:
+        extends: type
+        const: "VariantMolecularConsequenceProposition"
+        default: "VariantMolecularConsequenceProposition"
+        description: MUST be "VariantMolecularConsequenceProposition".
+      subjectVariant:
+        extends: subjectVariant
+        description: >-
+          MUST be a genomic variant specified against genomic reference sequence(s). This practice
+          most directly reflects data conventions from sources like VEP, and aligns with the intended
+          use of Molecular Consequence data. There are separate qualifier attributes in the model to
+          capture transcript and/or protein level representations of the subject, that indicate the
+          variant context in which the reported consequence(s) are actually manifest.
+        oneOf:
+          - $refCurie: vrs:Allele
+          - $refCurie: vrs:Adjacency
+          - $refCurie: gks.core:iriReference
+      predicate:
+        extends: predicate
+        description: >-
+          The relationship the Proposition describes between the subject variant
+          and object consequence terms for which the molecular consequence applies.
+          MUST be "hasMolecularConsequence".
+        const: hasMolecularConsequence
+        default: hasMolecularConsequence
+      objectConsequence:
+        extends: object
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:ConceptSet
+          - $refCurie: gks.core:iriReference
+        description: >-
+           The molecular consequence(s) of the subject variant, in the context of the qualifying
+           transcript and/or protein variation context(s). These are typically terms from the
+           'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant),
+           or 'SO:0001589' (frameshift_variant). If more than one consequence term apply,
+           use a ConceptSet to capture them.
+      transcriptVariationContextQualifier:
+        description: >-
+          The subject genomic variant as projected on a particular transcript or mRNA molecule.
+          The reported relationship between the subject variant and object consequence terms holds
+          specifically in the context of this transcript variation. A transcript variation context
+          MUST be reported, unless the subject is an intergenic variant.
+        oneOf:
+          - $refCurie: vrs:Allele
+          - $refCurie: vrs:Adjacency
+          - $refCurie: gks.core:iriReference
+      proteinVariationContextQualifier:
+        description: >-
+          The subject genomic variant as projected on a particular protein molecule. The reported
+          relationship between the subject variant and object consequence terms holds specifically
+          in the context of this protein variation. A protein variation context MUST be accompanied
+          by its corresponding transcript variation context.
+        oneOf:
+          - $refCurie: vrs:Allele
+          - $refCurie: vrs:Adjacency
+          - $refCurie: gks.core:iriReference
+      geneContextQualifier:
+        description: >-
+          The gene for which this statement reports a VariantMolecularConsequence.
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+    required:
+      - predicate
+      - objectConsequence

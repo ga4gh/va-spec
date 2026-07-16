@@ -74,8 +74,8 @@ tests:
 
   # test AMP/ASCO/CAP 2017 Statements and domain entities
   - test_file: therapeuticAgent.yaml
-    namespace: gks-core
-    definition: MappableConcept
+    namespace: va-spec.base
+    definition: Therapy
   # - test_file: tr-classification-inline.yaml
   #   namespace: va-spec.aac-2017
   #   definition: VariantClinicalSignificanceStatement
@@ -139,3 +139,14 @@ tests:
   - test_file: Exp-Var-Func-Impact-Study-Result-01.yaml
     namespace: va-spec.base
     definition: ExperimentalVariantFunctionalImpactStudyResult
+
+  # test VEP molecular consequence propositions
+  - test_file: vep-transcript-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantMolecularConsequenceProposition
+  - test_file: vep-intronic-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantMolecularConsequenceProposition
+  - test_file: vep-intergenic-proposition.yaml
+    namespace: va-spec.base
+    definition: VariantMolecularConsequenceProposition

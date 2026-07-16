@@ -72,7 +72,7 @@ Condition
 
 .. include::  ../def/va-spec/Condition.rst
 
-The **Condition** schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
+The **Condition** schema is defined as a specialization of :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the condition, along with optional mappings and metadata about the code system.
 
 **Examples**
  - |nonsyndromic_genetic_hearing_loss| as a Mappable Concept
@@ -105,14 +105,14 @@ Condition Set
        - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
 
 
-.. _Therapeutic:
+.. _Therapy:
 
-Therapeutic
-@@@@@@@@@@@
+Therapy
+@@@@@@@
 
-.. include::  ../def/va-spec/Therapeutic.rst
+.. include::  ../def/va-spec/Therapy.rst
 
-The **Therapeutic** schema is defined simply as ``oneOf`` an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>`.
+The **Therapy** schema is defined as a specialization of :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the therapy, along with optional mappings and metadata about the code system.
 
 **Examples**
   - |afatinib| as a Mappable Concept

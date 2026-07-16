@@ -1,0 +1,130 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/VariantMolecularConsequenceProposition",
+   "title": "VariantMolecularConsequenceProposition",
+   "maturity": "draft",
+   "type": "object",
+   "description": "A Proposition describing a predicted molecular consequence of a variant on transcript and protein molecules - typically reporting the type of sequence feature affected (e.g. 'intron variant', 'splice-site variant'), or an impact on the processing of the molecule along the path from gene to transcript to polypeptide (e.g. 'missense variant', 'frameshift variant'). Note that annotations about variant impact on gene product function, which may occur downstream of a molecular consequence, are not in scope here. These are covered by a Variant Functional Impact Proposition classes.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.",
+         "$comment": "Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to re-use an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context."
+      },
+      "name": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "aliases": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core/1.1.0/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+         "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"VariantMolecularConsequenceProposition\".",
+         "$comment": "MUST be the name of a concrete class from the data model.",
+         "const": "VariantMolecularConsequenceProposition",
+         "default": "VariantMolecularConsequenceProposition"
+      },
+      "subjectVariant": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Adjacency"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
+            }
+         ],
+         "description": "MUST be a genomic variant specified against genomic reference sequence(s). This practice most directly reflects data conventions from sources like VEP, and aligns with the intended use of Molecular Consequence data. There are separate qualifier attributes in the model to capture transcript and/or protein level representations of the subject, that indicate the variant context in which the reported consequence(s) are actually manifest.",
+         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+      },
+      "predicate": {
+         "type": "string",
+         "description": "The relationship the Proposition describes between the subject variant and object consequence terms for which the molecular consequence applies. MUST be \"hasMolecularConsequence\".",
+         "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain.",
+         "const": "hasMolecularConsequence",
+         "default": "hasMolecularConsequence"
+      },
+      "objectConsequence": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/ConceptSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+            }
+         ],
+         "description": "The molecular consequence(s) of the subject variant, in the context of the qualifying transcript and/or protein variation context(s). These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant). If more than one consequence term apply, use a ConceptSet to capture them.",
+         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
+      },
+      "transcriptVariationContextQualifier": {
+         "description": "The subject genomic variant as projected on a particular transcript or mRNA molecule. The reported relationship between the subject variant and object consequence terms holds specifically in the context of this transcript variation. A transcript variation context MUST be reported, unless the subject is an intergenic variant.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Adjacency"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
+            }
+         ]
+      },
+      "proteinVariationContextQualifier": {
+         "description": "The subject genomic variant as projected on a particular protein molecule. The reported relationship between the subject variant and object consequence terms holds specifically in the context of this protein variation. A protein variation context MUST be accompanied by its corresponding transcript variation context.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Adjacency"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
+            }
+         ]
+      },
+      "geneContextQualifier": {
+         "description": "The gene for which this statement reports a VariantMolecularConsequence.",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+            }
+         ]
+      }
+   },
+   "required": [
+      "objectConsequence",
+      "predicate",
+      "subjectVariant",
+      "type"
+   ],
+   "additionalProperties": false
+}

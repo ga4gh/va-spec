@@ -1,5 +1,5 @@
 id: traitset001
-conditions:
+concepts:
   - primaryCoding:
       code: HP:0025769
       system: http://human-phenotype-ontology.github.io/

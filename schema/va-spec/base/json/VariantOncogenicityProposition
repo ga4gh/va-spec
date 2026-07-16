@@ -95,6 +95,9 @@
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ConditionSet"
             }
          ],
          "description": "The tumor type for which the variant impact is evaluated.",
