@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-A single condition (disease, phenotype, or trait), or a set of conditions (ConditionSet).
+A specialization of MappableConcept representing a single condition (disease, phenotype, or trait). Allowed conceptType values include: Condition, Phenotype, Disease, Trait, Absent.
 
 **Information Model**
 

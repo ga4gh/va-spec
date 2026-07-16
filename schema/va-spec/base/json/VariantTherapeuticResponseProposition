@@ -90,13 +90,16 @@
             "predictsResistanceTo"
          ]
       },
-      "objectTherapeutic": {
+      "objectTherapy": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Therapeutic"
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Therapy"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/TherapyGroup"
             }
          ],
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
@@ -109,6 +112,9 @@
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
+            },
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ConditionSet"
             }
          ],
          "description": "Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions."
@@ -116,7 +122,7 @@
    },
    "required": [
       "conditionQualifier",
-      "objectTherapeutic",
+      "objectTherapy",
       "predicate",
       "subjectVariant",
       "type"

@@ -4,7 +4,7 @@
 
 **Computational Definition**
 
-An individual therapy (drug, procedure, behavioral intervention, etc.), or group of therapies (TherapyGroup).
+A specialization of MappableConcept representing an individual therapy (drug, procedure, behavioral intervention, etc.). Allowed conceptType values include: Therapy, Absent, Drug, Procedure, Behavioral Intervention.
 
 **Information Model**
 

@@ -1,0 +1,41 @@
+// From: https://rest.ensembl.org/vep/human/hgvs/2:g.7540648dup?content-type=application/json&hgvs=true
+{
+    "end": 7540647,
+    "id": "2:g.7540648dup",
+    "transcript_consequences": [
+        {
+            "strand": -1,
+            "gene_id": "ENSG00000230515",
+            "variant_allele": "G",
+            "hgvsc": "ENST00000811587.1:n.327-16745dup",
+            "impact": "MODIFIER",
+            "biotype": "lncRNA",
+            "transcript_id": "ENST00000811587",
+            "consequence_terms": [
+                "intron_variant",
+                "non_coding_transcript_variant"
+            ]
+        },
+        {
+            "transcript_id": "ENST00000811740",
+            "consequence_terms": [
+                "intron_variant",
+                "non_coding_transcript_variant"
+            ],
+            "biotype": "lncRNA",
+            "impact": "MODIFIER",
+            "hgvsc": "ENST00000811740.1:n.61+3479dup",
+            "variant_allele": "G",
+            "gene_id": "ENSG00000305573",
+            "strand": 1,
+            "hgvs_offset": 3
+        }
+    ],
+    "most_severe_consequence": "intron_variant",
+    "input": "2:g.7540648dup",
+    "assembly_name": "GRCh38",
+    "allele_string": "-/G",
+    "start": 7540648,
+    "strand": 1,
+    "seq_region_name": "2"
+}

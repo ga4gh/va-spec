@@ -45,6 +45,10 @@ Experimental Variant Functional Impact Study Result
 This Study Result profile was defined to support an early `MAVE-DB <https://www.mavedb.org/>`_ implementation of the VA-Spec, as a format to represent high-throughput, quantitative multiplex-assay based functional impact data. This is a very unique type of assay and functional impact data, and the model may be generalized in the future to support broader use cases, as new requirements and implementers emerge.
 
 
+.. _tumor-variant-frequency-study-result:
+
+.. _tumorvariantfrequencystudyresult:
+
 Tumor Variant Frequency Study Result
 ####################################
 
