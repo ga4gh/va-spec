@@ -8,7 +8,7 @@ A Proposition describing the clinical significance of a variant with respect to 
 
 **Information Model**
 
-Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantClinicalSignificanceProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap

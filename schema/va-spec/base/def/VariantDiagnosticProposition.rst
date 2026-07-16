@@ -8,7 +8,7 @@ A Proposition about whether a variant is associated with a disease (a diagnostic
 
 **Information Model**
 
-Some VariantDiagnosticProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantDiagnosticProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap

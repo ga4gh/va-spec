@@ -8,7 +8,7 @@ A proposition describing the role of a variant in causing a heritable condition.
 
 **Information Model**
 
-Some VariantPathogenicityProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantPathogenicityProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap

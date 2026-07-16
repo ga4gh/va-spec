@@ -711,12 +711,13 @@ $defs:
           membership in the group.
         $comment: We should evaluate this for use with boolean operators before going normative
 
-  # proposition profiles section
-  ClinicalVariantProposition:
+  # Proposition profiles section
+  GeneticContextVariantProposition:
     inherits: SubjectVariantProposition
     maturity: trial use
     description: >-
-      A proposition for use in describing the effect of variants in human subjects.
+      A proposition used to describe knowledge about a variant that includes or depends on its genetic
+      context - e.g. the allelic origin of the variant, or its relationship to a specific gene.
     heritableProperties:
       geneContextQualifier:
         description: >-
@@ -790,8 +791,9 @@ $defs:
       - predicate
       - objectSequenceFeature
 
+  # Variant Clinical Significance Proposition
   VariantClinicalSignificanceProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     type: object
     maturity: draft
     description: >-
@@ -822,7 +824,7 @@ $defs:
 
   # Variant Diagnostic Proposition
   VariantDiagnosticProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     type: object
     maturity: trial use
     description: >-
@@ -856,7 +858,7 @@ $defs:
 
   # Variant Oncogenicity Proposition
   VariantOncogenicityProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     maturity: trial use
     type: object
     description: >-
@@ -888,7 +890,7 @@ $defs:
 
   # Variant Pathogenicity Proposition
   VariantPathogenicityProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     maturity: trial use
     type: object
     description: >-
@@ -932,7 +934,7 @@ $defs:
 
   # Variant Prognostic Proposition
   VariantPrognosticProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     type: object
     maturity: trial use
     description: >-
@@ -965,7 +967,7 @@ $defs:
 
   # Variant Therapeutic Response Proposition
   VariantTherapeuticResponseProposition:
-    inherits: ClinicalVariantProposition
+    inherits: GeneticContextVariantProposition
     maturity: trial use
     type: object
     description: >-

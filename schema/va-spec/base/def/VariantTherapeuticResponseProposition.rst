@@ -8,7 +8,7 @@ A Proposition about the role of a variant in modulating the response of a neopla
 
 **Information Model**
 
-Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`ClinicalVariantProposition`.
+Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`GeneticContextVariantProposition`.
 
 .. list-table::
    :class: clean-wrap
