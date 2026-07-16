@@ -22,3 +22,4 @@ This Entity class is imported from the `GKS-Core model <https://github.com/ga4gh
    proposition
    subject-variant-proposition
    clinical-variant-proposition
+   gene-disease-validity-proposition
