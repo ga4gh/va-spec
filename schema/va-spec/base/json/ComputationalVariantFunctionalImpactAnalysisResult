@@ -8,7 +8,7 @@
    "properties": {
       "type": {
          "type": "string",
-         "description": "MUST be \\\"ComputationalVariantFunctionalImpactAnalysisResult\\\".",
+         "description": "MUST be \"ComputationalVariantFunctionalImpactAnalysisResult\".",
          "const": "ComputationalVariantFunctionalImpactAnalysisResult",
          "default": "ComputationalVariantFunctionalImpactAnalysisResult"
       },

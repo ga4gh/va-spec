@@ -24,7 +24,7 @@ An AnalysisResult that reports the output of a single in silico tool's analysis 
       -
       - string
       - 1..1
-      - MUST be \"ComputationalVariantFunctionalImpactAnalysisResult\".
+      - MUST be "ComputationalVariantFunctionalImpactAnalysisResult".
    *  - focusVariant
       -
       - :ref:`iriReference` | :ref:`Allele` | :ref:`CategoricalVariant`
