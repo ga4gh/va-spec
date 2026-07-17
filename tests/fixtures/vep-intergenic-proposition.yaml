@@ -1,0 +1,29 @@
+id: vep:NC_000024.10:g.56673840G>C
+type: VariantMolecularConsequenceProposition
+subjectVariant:
+  id: ga4gh:VA.FbMsdwP5X2_3OJbC8TefXFfrmUvOHi2k
+  type: Allele
+  digest: FbMsdwP5X2_3OJbC8TefXFfrmUvOHi2k
+  location:
+    id: ga4gh:SL.kjNgNUiyJxuPygfrBGb2gmJ5saEyLNlQ
+    type: SequenceLocation
+    digest: kjNgNUiyJxuPygfrBGb2gmJ5saEyLNlQ
+    sequenceReference:
+      type: SequenceReference
+      refgetAccession: SQ.8_liLu1aycC0tPQPFmUaGXJLDs5SbPZ5
+    start: 56673839
+    end: 56673840
+    sequence: G
+  state:
+    type: LiteralSequenceExpression
+    sequence: C
+predicate: "hasMolecularConsequence"
+objectConsequence:
+  name: intergenic_variant
+  conceptType: MolecularConsequence
+  primaryCoding:
+    code: "SO:0001628"
+    system: "sequenceontology"
+extensions:
+  - name: impact
+    value: MODIFIER

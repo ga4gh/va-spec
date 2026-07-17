@@ -5,10 +5,12 @@ description: >-
   Profiles defined to align with terminology and conventions from the American College of Medical Genetics
   and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
 strict: true
-
 imports:
   va-core: ../base/va-core-source.yaml
   gks-core: ../../gks-core/gks-core-source.yaml
+
+namespaces:
+  gks.core: /ga4gh/schema/gks-core/1.1.0/json/
 
 $defs:
   # Variant Pathogenicity Statement
@@ -17,77 +19,79 @@ $defs:
     description: >-
       A Statement describing the role of a variant in causing an inherited condition.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
-    - properties:
-        proposition:
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
-          description: >-
-            A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
-            A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
-            level of confidence/evidence supporting this claim.
-        strength:
-          description: >-
-            The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide
-            for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative
-            to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
-            MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
-          properties:
-            primaryCoding:
-              code:
-                enum:
-                  - definitive
-                  - likely
-              system:
-                const: ACMG Guidelines, 2015
-          required: [primaryCoding]
-        classification:
-          description: >-
-            The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines.
-            These classifications should coincide with the direction and strength values as follows:
-            'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate,
-            'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance'
-            can be one of three possibilities... supports-weak, disputes-weak or neutral for
-            uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or
-            uncertain significance (favoring neither pathogenic nor benign).
-            The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be
-            applied based on whether the variant proposition was defined to have a 'penetrance' of
-            'low' or 'risk' respectively.
-          properties:
-            primaryCoding:
-              allOf:
-                - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
-                - oneOf:
-                  - properties:
-                      code:
-                        enum:
-                          - pathogenic
-                          - likely pathogenic
-                          - benign
-                          - likely benign
-                          - uncertain significance
-                      system:
-                        const: ACMG Guidelines, 2015
-                  - properties:
-                      code:
-                        enum:
-                          - pathogenic, low penetrance
-                          - likely pathogenic, low penetrance
-                          - established risk allele
-                          - likely risk allele
-                          - uncertain risk allele
-                      system:
-                        const: ClinGen Low Penetrance and Risk Allele Recommendations, 2024
-        specifiedBy:
-          description: >-
-            The method that specifies how the pathogenicity classification is ultimately assigned to the variant,
-            based on assessment of evidence.
-        hasEvidenceLines:
-          type: array
-          items:
-            $ref: "#/$defs/VariantPathogenicityEvidenceLine"
-      required:
-        - classification
-        - specifiedBy
+      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/Statement"
+      - properties:
+          proposition:
+            $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
+            description: >-
+              A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
+              A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
+              level of confidence/evidence supporting this claim.
+          strength:
+            description: >-
+              The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide
+              for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative
+              to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
+              MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
+            properties:
+              primaryCoding:
+                code:
+                  enum:
+                    - definitive
+                    - likely
+                system:
+                  const: ACMG Guidelines, 2015
+            required: [primaryCoding]
+          classification:
+            description: >-
+              The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines.
+              These classifications should coincide with the direction and strength values as follows:
+              'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate,
+              'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance'
+              can be one of three possibilities... supports-weak, disputes-weak or neutral for
+              uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or
+              uncertain significance (favoring neither pathogenic nor benign).
+              The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be
+              applied based on whether the variant proposition was defined to have a 'penetrance' of
+              'low' or 'risk' respectively.
+            properties:
+              primaryCoding:
+                allOf:
+                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
+                  - oneOf:
+                      - properties:
+                          code:
+                            enum:
+                              - pathogenic
+                              - likely pathogenic
+                              - benign
+                              - likely benign
+                              - uncertain significance
+                          system:
+                            const: ACMG Guidelines, 2015
+                      - properties:
+                          code:
+                            enum:
+                              - pathogenic, low penetrance
+                              - likely pathogenic, low penetrance
+                              - established risk allele
+                              - likely risk allele
+                              - uncertain risk allele
+                          system:
+                            const: ClinGen Low Penetrance and Risk Allele Recommendations, 2024
+          specifiedBy:
+            description: >-
+              The method that specifies how the pathogenicity classification is ultimately assigned to the variant,
+              based on assessment of evidence.
+          hasEvidenceLines:
+            type: array
+            items:
+              anyOf:
+                - $ref: "#/$defs/VariantPathogenicityEvidenceLine"
+                - $refCurie: gks.core:iriReference
+        required:
+          - classification
+          - specifiedBy
 
   VariantPathogenicityEvidenceLine:
     maturity: draft
@@ -97,373 +101,373 @@ $defs:
       (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-    - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
-    - properties:
-        targetProposition:
-          description: >-
-            A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
-            determine the strength and direction of support this evidence provides for or against the
-            proposition's validity.
-          $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
-        directionOfEvidenceProvided:
-          type: string
-          enum: [ "supports", "neutral", "disputes" ]
-          description: >-
-            The direction of support that the Evidence Line is determined to provide toward its target Proposition
-            (supports, disputes, neutral). For ACMG-based assessments, if a pathogenicity criterion is 'met' in the
-            Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes',
-            and if a criteria is 'not met' the direction is 'none'.
-        strengthOfEvidenceProvided:
-          description: >-
-            The strength of support that an Evidence Line is determined to provide for or against the proposed
-            pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
-            the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose
-            nested 'code' field is bound to an enumerated set of values. Conditional requirement: if
-            `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required.
-            If it is 'none', then this attribute is not allowed.
+      - $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/EvidenceLine"
+      - properties:
+          targetProposition:
+            description: >-
+              A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
+              determine the strength and direction of support this evidence provides for or against the
+              proposition's validity.
+            $ref: "/ga4gh/schema/va-spec/1.0.1/base/json/VariantPathogenicityProposition"
+          directionOfEvidenceProvided:
+            type: string
+            enum: ["supports", "neutral", "disputes"]
+            description: >-
+              The direction of support that the Evidence Line is determined to provide toward its target Proposition
+              (supports, disputes, neutral). For ACMG-based assessments, if a pathogenicity criterion is 'met' in the
+              Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes',
+              and if a criteria is 'not met' the direction is 'none'.
+          strengthOfEvidenceProvided:
+            description: >-
+              The strength of support that an Evidence Line is determined to provide for or against the proposed
+              pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
+              the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose
+              nested 'code' field is bound to an enumerated set of values. Conditional requirement: if
+              `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required.
+              If it is 'none', then this attribute is not allowed.
+            properties:
+              primaryCoding:
+                code:
+                  enum:
+                    - standalone
+                    - very strong
+                    - strong
+                    - moderate
+                    - supporting
+                system:
+                  const: ACMG Guidelines, 2015
+          specifiedBy:
+            description: >-
+              The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction
+              of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves
+              provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to
+              determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel
+              guidelines for ACMG interpretations).
+            properties:
+              methodType:
+                description: >-
+                  A term representing the type of method used to assess evidence for or against the pathogenicity of a variant.
+                  Method type is reported as the ACMG Code that defines criteria against which evidence is assessed to determine
+                  if it supports pathogenicity or benignity of a variant.
+                type: string
+                oneOf:
+                  - const: Population Data Assessment
+                    description: >-
+                      Assessment of whether population control frequency refutes
+                      pathogenicity or whether absence/extreme rarity in controls provides
+                      supporting evidence for pathogenicity.
+                  - const: Case-Control Enrichment Assessment
+                    description: >-
+                      Prevalence in affected statistically increased over matched
+                      controls, or enrichment in controls inconsistent with disease
+                      penetrance
+                  - const: Null variant assessment
+                    description: >-
+                      Predicted null variant in a gene where LOF is a known mechanism of
+                      disease
+                  - const: Same amino acid change assessment
+                    description: >-
+                      Same amino acid change as an established pathogenic variant
+                  - const: Mutational hot spot and functional domain assessment
+                    description: >-
+                      Mutational hot spot or well-established functional domain without
+                      benign variation
+                  - const: Protein length change assessment
+                    description: >-
+                      Protein length change, or in-frame indels changing counts of repeats
+                      with no known function
+                  - const: Novel missense position assessment
+                    description: >-
+                      Novel missense change at an amino acid where a different pathogenic
+                      missense change has been seen before
+                  - const: Variant spectrum assessment
+                    description: >-
+                      Missense in a gene where only truncation causes disease, or with low
+                      rate of benign missense variation
+                  - const: In silico functional impact assessment
+                    description: >-
+                      Multiple lines of computational evidence support a deleterious
+                      effect or no impact
+                  - const: Predicted silent variant assessment
+                    description: >-
+                      Silent variant with no predicted splicing impact
+                  - const: Functional Data Assessment
+                    description: >-
+                      Well-established functional studies show or do not show deleterious
+                      effect
+                  - const: Segregation Data Assessment
+                    description: >-
+                      Consegregation with disease in multiple family members, or
+                      nonsegregation
+                  - const: De Novo Data Assessment
+                    description: >-
+                      De novo, with or without paternity and maternity confirmed
+                  - const: Cis/trans variant assessment
+                    description: >-
+                      Observed in trans with a dominant variant, in cis with a pathogenic
+                      variant, or in trans with a pathogenic variant in a recessive
+                      disorder
+                  - const: Reputable Source Assessment
+                    description: >-
+                      Benign or pathogenic according to a reputable source
+                  - const: Phenotype-gene specificity assessment
+                    description: >-
+                      Patient's phenotype or family history highly specific for the gene
+                      and disorder
+                  - const: Alternative cause assessment
+                    description: >-
+                      Found in a case with an alternate cause
+            required:
+              - methodType
+              - reportedIn
+          evidenceOutcome:
+            description: >-
+              The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and
+              'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments.
+              Rules for constructing this string are as follows, and enforced by a regex constraint:
+              (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion
+              code (e.g. 'PM2' when the PM2 criteria is met with moderate strength);
+              (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the
+              altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength);
+              (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'PS3_not_met').
+            properties:
+              primaryCoding:
+                code:
+                  pattern: "^((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?)$"
+                  example: PS3, PS3_moderate, PS3_not_met, BP6, BP6_strong, BP6_not_met
+                  description: >-
+                    The code for the evidence outcome, which is based on the ACMG criterion code, used,
+                    and the assessed direction and strength of evidence provided.
+                system:
+                  const: ACMG Guidelines, 2015
+      - if:
           properties:
-            primaryCoding:
-              code:
-                enum:
-                  - standalone
-                  - very strong
-                  - strong
-                  - moderate
-                  - supporting
-              system:
-                const: ACMG Guidelines, 2015
-        specifiedBy:
-          description: >-
-            The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction
-            of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves
-            provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to
-            determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel
-            guidelines for ACMG interpretations).
+            directionOfEvidenceProvided:
+              enum: [supports, disputes]
+          required: [directionOfEvidenceProvided]
+        then:
+          required: [strengthOfEvidenceProvided]
+      - if:
           properties:
             methodType:
-              description: >-
-                A term representing the type of method used to assess evidence for or against the pathogenicity of a variant.
-                Method type is reported as the ACMG Code that defines criteria against which evidence is assessed to determine
-                if it supports pathogenicity or benignity of a variant.
-              type: string
-              oneOf:
-                - const: Population Data Assessment
-                  description: >-
-                    Assessment of whether population control frequency refutes
-                    pathogenicity or whether absence/extreme rarity in controls provides
-                    supporting evidence for pathogenicity.
-                - const: Case-Control Enrichment Assessment
-                  description: >-
-                    Prevalence in affected statistically increased over matched
-                    controls, or enrichment in controls inconsistent with disease
-                    penetrance
-                - const: Null variant assessment
-                  description: >-
-                    Predicted null variant in a gene where LOF is a known mechanism of
-                    disease
-                - const: Same amino acid change assessment
-                  description: >-
-                    Same amino acid change as an established pathogenic variant
-                - const: Mutational hot spot and functional domain assessment
-                  description: >-
-                    Mutational hot spot or well-established functional domain without
-                    benign variation
-                - const: Protein length change assessment
-                  description: >-
-                    Protein length change, or in-frame indels changing counts of repeats
-                    with no known function
-                - const: Novel missense position assessment
-                  description: >-
-                    Novel missense change at an amino acid where a different pathogenic
-                    missense change has been seen before
-                - const: Variant spectrum assessment
-                  description: >-
-                    Missense in a gene where only truncation causes disease, or with low
-                    rate of benign missense variation
-                - const: In silico functional impact assessment
-                  description: >-
-                    Multiple lines of computational evidence support a deleterious
-                    effect or no impact
-                - const: Predicted silent variant assessment
-                  description: >-
-                    Silent variant with no predicted splicing impact
-                - const: Functional Data Assessment
-                  description: >-
-                    Well-established functional studies show or do not show deleterious
-                    effect
-                - const: Segregation Data Assessment
-                  description: >-
-                    Consegregation with disease in multiple family members, or
-                    nonsegregation
-                - const: De Novo Data Assessment
-                  description: >-
-                    De novo, with or without paternity and maternity confirmed
-                - const: Cis/trans variant assessment
-                  description: >-
-                    Observed in trans with a dominant variant, in cis with a pathogenic
-                    variant, or in trans with a pathogenic variant in a recessive
-                    disorder
-                - const: Reputable Source Assessment
-                  description: >-
-                    Benign or pathogenic according to a reputable source
-                - const: Phenotype-gene specificity assessment
-                  description: >-
-                    Patient's phenotype or family history highly specific for the gene
-                    and disorder
-                - const: Alternative cause assessment
-                  description: >-
-                    Found in a case with an alternate cause
-          required:
-            - methodType
-            - reportedIn
-        evidenceOutcome:
-          description: >-
-            The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and
-            'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments.
-            Rules for constructing this string are as follows, and enforced by a regex constraint:
-            (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion
-            code (e.g. 'PM2' when the PM2 criteria is met with moderate strength);
-            (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the
-            altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength);
-            (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'PS3_not_met').
+              const: Population Data Assessment
+          required: [methodType]
+        then:
           properties:
-            primaryCoding:
-              code:
-                pattern: '^((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?)$'
-                example: PS3, PS3_moderate, PS3_not_met, BP6, BP6_strong, BP6_not_met
-                description: >-
-                  The code for the evidence outcome, which is based on the ACMG criterion code, used,
-                  and the assessed direction and strength of evidence provided.
-              system:
-                const: ACMG Guidelines, 2015
-    - if:
-        properties:
-          directionOfEvidenceProvided:
-            enum: [supports, disputes]
-        required: [directionOfEvidenceProvided]
-      then:
-        required: [strengthOfEvidenceProvided]
-    - if:
-        properties:
-          methodType:
-            const: Population Data Assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(BA1|BS1|PM2)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Case-Control Enrichment Assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(BS2|PM4)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Null variant assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^PVS1(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Same amino acid change assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^PS1(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Mutational hot spot and functional domain assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^PM1(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Protein length change assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PM4|BP3)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Novel missense position assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^PM5(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Variant spectrum assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PP2|BP1)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: In silico functional impact assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PP3|BP4)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Predicted silent variant assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^BP7(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Functional Data Assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PS3|BS3)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Segregation Data Assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PP1|BS4)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: De Novo Data Assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PS2|PM6)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Cis/trans variant assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PM3|BP2)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Reputable Source Assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^(PP5|BP6)(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Phenotype-gene specificity assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^PP4(_.+)?$"
-    - if:
-        properties:
-          methodType:
-            const: Alternative cause assessment
-        required: [methodType]
-      then:
-        properties:
-          evidenceOutcome:
-            properties:
-              primaryCoding:
-                properties:
-                  code:
-                    pattern: "^BP5(_.+)?$"
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(BA1|BS1|PM2)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Case-Control Enrichment Assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(BS2|PM4)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Null variant assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^PVS1(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Same amino acid change assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^PS1(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Mutational hot spot and functional domain assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^PM1(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Protein length change assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PM4|BP3)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Novel missense position assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^PM5(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Variant spectrum assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PP2|BP1)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: In silico functional impact assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PP3|BP4)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Predicted silent variant assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^BP7(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Functional Data Assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PS3|BS3)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Segregation Data Assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PP1|BS4)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: De Novo Data Assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PS2|PM6)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Cis/trans variant assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PM3|BP2)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Reputable Source Assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^(PP5|BP6)(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Phenotype-gene specificity assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^PP4(_.+)?$"
+      - if:
+          properties:
+            methodType:
+              const: Alternative cause assessment
+          required: [methodType]
+        then:
+          properties:
+            evidenceOutcome:
+              properties:
+                primaryCoding:
+                  properties:
+                    code:
+                      pattern: "^BP5(_.+)?$"
     required:
       - directionOfEvidenceProvided
       - specifiedBy

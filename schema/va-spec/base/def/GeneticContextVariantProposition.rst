@@ -4,11 +4,11 @@
 
 **Computational Definition**
 
-A proposition for use in describing the effect of variants in human subjects.
+A proposition used to describe knowledge about a variant that includes or depends on its genetic context - e.g. the allelic origin of the variant, or its relationship to a specific gene.
 
 **Information Model**
 
-Some ClinicalVariantProposition attributes are inherited from :ref:`SubjectVariantProposition`.
+Some GeneticContextVariantProposition attributes are inherited from :ref:`SubjectVariantProposition`.
 
 .. list-table::
    :class: clean-wrap

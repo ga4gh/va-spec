@@ -63,7 +63,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: MYBL1
           objectCondition:
-            conditions:
+            concepts:
               - conceptType: Disease
                 id: civic.did:3387
                 mappings:
@@ -72,7 +72,7 @@ hasEvidenceLines:
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-              - conditions:
+              - concepts:
                   - conceptType: Phenotype
                     id: civic.phenotype:2656
                     mappings:
@@ -217,7 +217,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: MYBL1
           objectCondition:
-            conditions:
+            concepts:
               - conceptType: Disease
                 id: civic.did:3387
                 mappings:
@@ -226,7 +226,7 @@ hasEvidenceLines:
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-              - conditions:
+              - concepts:
                   - conceptType: Phenotype
                     id: civic.phenotype:8121
                     mappings:
@@ -366,7 +366,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: MYBL1
           objectCondition:
-            conditions:
+            concepts:
               - conceptType: Disease
                 id: civic.did:3387
                 mappings:
@@ -375,7 +375,7 @@ hasEvidenceLines:
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-              - conditions:
+              - concepts:
                   - conceptType: Phenotype
                     id: civic.phenotype:8121
                     mappings:
@@ -497,7 +497,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: MYBL1
       objectCondition:
-        conditions:
+        concepts:
           - conceptType: Disease
             id: civic.did:3387
             mappings:
@@ -506,7 +506,7 @@ hasEvidenceLines:
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-          - conditions:
+          - concepts:
               - conceptType: Phenotype
                 id: civic.phenotype:8121
                 mappings:
@@ -590,7 +590,7 @@ proposition:
         relation: exactMatch
     name: MYBL1
   objectCondition:
-    conditions:
+    concepts:
       - conceptType: Disease
         id: civic.did:3387
         mappings:
@@ -599,7 +599,7 @@ proposition:
               system: https://disease-ontology.org/?id=
             relation: exactMatch
         name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-      - conditions:
+      - concepts:
           - conceptType: Phenotype
             id: civic.phenotype:8121
             mappings:

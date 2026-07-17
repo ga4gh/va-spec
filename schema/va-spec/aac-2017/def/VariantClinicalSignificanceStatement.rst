@@ -5,18 +5,3 @@
 **Computational Definition**
 
 A statement reporting a conclusion from a single study about the clinical significance of a variant with respect to a condition, based on interpretation of the study's results.
-
-**Information Model**
-
-
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-   *  - Field
-      - Flags
-      - Type
-      - Limits
-      - Description

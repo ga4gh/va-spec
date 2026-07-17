@@ -11,6 +11,1907 @@ description:
 direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
+    hasEvidenceItems:
+      - description:
+          Afatinib, an irreversible inhibitor of the ErbB family of tyrosine
+          kinases has been approved in the US for the first-line treatment of patients
+          with metastatic non-small-cell lung cancer (NSCLC) who have tumours with EGFR
+          exon 19 deletions or exon 21 (L858R) substitution mutations as detected by a
+          US FDA-approved test
+        direction: supports
+        id: civic.eid:2997
+        proposition:
+          alleleOriginQualifier:
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:8
+            mappings:
+              - coding:
+                  code: DOID:3908
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Lung Non-small Cell Carcinoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - NNCIS
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+                  cancers has spurred many research and drug development efforts. Tyrosine
+                  kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+                  gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+                  to these drugs, particularly the variant T790M, which has been functionally
+                  characterized as a resistance marker for both of these drugs. The later
+                  generation TKI's have seen some success in treating these resistant cases,
+                  and targeted sequencing of the EGFR locus has become a common practice
+                  in treatment of non-small cell lung cancer. Overproduction of ligands
+                  is another possible mechanism of activation of EGFR. ERBB ligands include
+                  EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information
+                  please refer to the respective ligand section).
+            id: civic.gid:19
+            mappings:
+              - coding:
+                  code: "1956"
+                  id: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: EGFR
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW-2992
+                  - BIBW2992
+            id: civic.tid:146
+            mappings:
+              - coding:
+                  code: C66940
+                  id: ncit:C66940
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Afatinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - LEU858ARG
+              - L813R
+              - LEU813ARG
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                    - syntax: hgvs.p
+                      value: ENSP00000275493.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  name: EGFR L858R
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations in
+              lung cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+              seems to confer sensitivity to first and second generation TKI's like gefitinib
+              and neratinib. NSCLC patients with this mutation treated with TKI's show
+              increased overall and progression-free survival, as compared to chemotherapy
+              alone. Third generation TKI's are currently in clinical trials that specifically
+              focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+              patients that failed to respond to earlier generation TKI therapies.
+            extensions:
+              - name: molecularProfileScore
+                value: 379.0
+              - name: hgvsDescriptions
+                value:
+                  - NC_000007.13:g.55259515T>G
+                  - NM_005228.4:c.2573T>G
+                  - ENST00000275493.2:c.2573T>G
+                  - NP_005219.2:p.Leu858Arg
+                  - NC_000007.14:g.55191822T>G
+                  - ENSP00000275493.2:p.Leu858Arg
+              - name: maneSelectTranscript
+                value: ENST00000275493.7:c.2573T>G
+              - name: representativeVariantCoordinates
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: categoricalVariationType
+                value: ProteinSequenceConsequence
+            id: civic.mpid:33
+            mappings:
+              - coding:
+                  code: "33"
+                  id: civic.mpid:33
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "33"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variantTypes
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:33
+                  name: L858R
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  id: clingen.allele:CA126713
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  id: clinvar:16609
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  id: clinvar:376282
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  id: clinvar:376280
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  id: dbsnp:rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                  - syntax: hgvs.g
+                    value: NC_000007.14:g.55191822T>G
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                name: NC_000007.14:g.55191822T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                name: NM_005228.4:c.2573T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                expressions:
+                  - syntax: hgvs.p
+                    value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.p
+                    value: ENSP00000275493.2:p.Leu858Arg
+                id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                location:
+                  digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  end: 858
+                  id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  sequence: L
+                  sequenceReference:
+                    refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                    type: SequenceReference
+                  start: 857
+                  type: SequenceLocation
+                name: EGFR L858R
+                state:
+                  sequence: R
+                  type: LiteralSequenceExpression
+                type: Allele
+            name: EGFR L858R
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:1725
+            name: Dungo et al., 2013
+            pmid: "23982599"
+            title: "Afatinib: first global approval."
+            type: Document
+            urls:
+              - https://civicdb.org/links/evidence/2997
+              - https://civicdb.org/links/source/1725
+              - http://www.ncbi.nlm.nih.gov/pubmed/23982599
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000001
+                name: authoritative evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Validated association
+          primaryCoding:
+            code: A
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          A phase III clinical trial (NCT00949650) found that median progression
+          free survival among patients with exon 19 deletions or L858R EGFR mutations
+          (n = 308) was 13.6 months for afatinib and 6.9 months for chemotherapy (HR,
+          0.47; 95% CI, 0.34 to 0.65; P = 0.001).
+        direction: supports
+        id: civic.eid:879
+        proposition:
+          alleleOriginQualifier:
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:30
+            mappings:
+              - coding:
+                  code: DOID:3910
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Lung Adenocarcinoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - NNCIS
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+                  cancers has spurred many research and drug development efforts. Tyrosine
+                  kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+                  gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+                  to these drugs, particularly the variant T790M, which has been functionally
+                  characterized as a resistance marker for both of these drugs. The later
+                  generation TKI's have seen some success in treating these resistant cases,
+                  and targeted sequencing of the EGFR locus has become a common practice
+                  in treatment of non-small cell lung cancer. Overproduction of ligands
+                  is another possible mechanism of activation of EGFR. ERBB ligands include
+                  EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information
+                  please refer to the respective ligand section).
+            id: civic.gid:19
+            mappings:
+              - coding:
+                  code: "1956"
+                  id: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: EGFR
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW-2992
+                  - BIBW2992
+            id: civic.tid:146
+            mappings:
+              - coding:
+                  code: C66940
+                  id: ncit:C66940
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Afatinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - LEU858ARG
+              - L813R
+              - LEU813ARG
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                    - syntax: hgvs.p
+                      value: ENSP00000275493.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  name: EGFR L858R
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations in
+              lung cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+              seems to confer sensitivity to first and second generation TKI's like gefitinib
+              and neratinib. NSCLC patients with this mutation treated with TKI's show
+              increased overall and progression-free survival, as compared to chemotherapy
+              alone. Third generation TKI's are currently in clinical trials that specifically
+              focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+              patients that failed to respond to earlier generation TKI therapies.
+            extensions:
+              - name: molecularProfileScore
+                value: 379.0
+              - name: hgvsDescriptions
+                value:
+                  - NC_000007.13:g.55259515T>G
+                  - NM_005228.4:c.2573T>G
+                  - ENST00000275493.2:c.2573T>G
+                  - NP_005219.2:p.Leu858Arg
+                  - NC_000007.14:g.55191822T>G
+                  - ENSP00000275493.2:p.Leu858Arg
+              - name: maneSelectTranscript
+                value: ENST00000275493.7:c.2573T>G
+              - name: representativeVariantCoordinates
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: categoricalVariationType
+                value: ProteinSequenceConsequence
+            id: civic.mpid:33
+            mappings:
+              - coding:
+                  code: "33"
+                  id: civic.mpid:33
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "33"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variantTypes
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:33
+                  name: L858R
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  id: clingen.allele:CA126713
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  id: clinvar:16609
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  id: clinvar:376282
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  id: clinvar:376280
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  id: dbsnp:rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                  - syntax: hgvs.g
+                    value: NC_000007.14:g.55191822T>G
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                name: NC_000007.14:g.55191822T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                name: NM_005228.4:c.2573T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                expressions:
+                  - syntax: hgvs.p
+                    value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.p
+                    value: ENSP00000275493.2:p.Leu858Arg
+                id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                location:
+                  digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  end: 858
+                  id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  sequence: L
+                  sequenceReference:
+                    refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                    type: SequenceReference
+                  start: 857
+                  type: SequenceLocation
+                name: EGFR L858R
+                state:
+                  sequence: R
+                  type: LiteralSequenceExpression
+                type: Allele
+            name: EGFR L858R
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:592
+            name: Sequist et al., 2013
+            pmid: "23816960"
+            title:
+              Phase III study of afatinib or cisplatin plus pemetrexed in patients
+              with metastatic lung adenocarcinoma with EGFR mutations.
+            type: Document
+            urls:
+              - https://civicdb.org/links/evidence/879
+              - https://civicdb.org/links/source/592
+              - http://www.ncbi.nlm.nih.gov/pubmed/23816960
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          "Afatinib is an irreversible covalent inhibitor of EGFR (second generation).
+          This Phase III clinical trial (LUX-Lung 6; NCT01121393) was performed in Asian
+          patients with EGFR mutant advanced NSCLC. 364 eligible patients with EGFR mutations
+          were assigned to afatinib (n=242) or gemcitabine and cisplatin (n=122) treatment.
+          The trial observed significantly longer median progression-free survival with
+          afatinib vs. gemcitabine and cisplatin treatment (11.0 vs. 5.6 months). Afatinib/Chemotherapy
+          group compositions: 51.2/50.8 % del 19; 38/37.7 % Leu858Arg; 10.8/11.5 % Uncommon."
+        direction: supports
+        id: civic.eid:982
+        proposition:
+          alleleOriginQualifier:
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:30
+            mappings:
+              - coding:
+                  code: DOID:3910
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Lung Adenocarcinoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - NNCIS
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+                  cancers has spurred many research and drug development efforts. Tyrosine
+                  kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+                  gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+                  to these drugs, particularly the variant T790M, which has been functionally
+                  characterized as a resistance marker for both of these drugs. The later
+                  generation TKI's have seen some success in treating these resistant cases,
+                  and targeted sequencing of the EGFR locus has become a common practice
+                  in treatment of non-small cell lung cancer. Overproduction of ligands
+                  is another possible mechanism of activation of EGFR. ERBB ligands include
+                  EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information
+                  please refer to the respective ligand section).
+            id: civic.gid:19
+            mappings:
+              - coding:
+                  code: "1956"
+                  id: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: EGFR
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW-2992
+                  - BIBW2992
+            id: civic.tid:146
+            mappings:
+              - coding:
+                  code: C66940
+                  id: ncit:C66940
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Afatinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - LEU858ARG
+              - L813R
+              - LEU813ARG
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                    - syntax: hgvs.p
+                      value: ENSP00000275493.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  name: EGFR L858R
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations in
+              lung cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+              seems to confer sensitivity to first and second generation TKI's like gefitinib
+              and neratinib. NSCLC patients with this mutation treated with TKI's show
+              increased overall and progression-free survival, as compared to chemotherapy
+              alone. Third generation TKI's are currently in clinical trials that specifically
+              focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+              patients that failed to respond to earlier generation TKI therapies.
+            extensions:
+              - name: molecularProfileScore
+                value: 379.0
+              - name: hgvsDescriptions
+                value:
+                  - NC_000007.13:g.55259515T>G
+                  - NM_005228.4:c.2573T>G
+                  - ENST00000275493.2:c.2573T>G
+                  - NP_005219.2:p.Leu858Arg
+                  - NC_000007.14:g.55191822T>G
+                  - ENSP00000275493.2:p.Leu858Arg
+              - name: maneSelectTranscript
+                value: ENST00000275493.7:c.2573T>G
+              - name: representativeVariantCoordinates
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: categoricalVariationType
+                value: ProteinSequenceConsequence
+            id: civic.mpid:33
+            mappings:
+              - coding:
+                  code: "33"
+                  id: civic.mpid:33
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "33"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variantTypes
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:33
+                  name: L858R
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  id: clingen.allele:CA126713
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  id: clinvar:16609
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  id: clinvar:376282
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  id: clinvar:376280
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  id: dbsnp:rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                  - syntax: hgvs.g
+                    value: NC_000007.14:g.55191822T>G
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                name: NC_000007.14:g.55191822T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                name: NM_005228.4:c.2573T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                expressions:
+                  - syntax: hgvs.p
+                    value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.p
+                    value: ENSP00000275493.2:p.Leu858Arg
+                id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                location:
+                  digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  end: 858
+                  id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  sequence: L
+                  sequenceReference:
+                    refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                    type: SequenceReference
+                  start: 857
+                  type: SequenceLocation
+                name: EGFR L858R
+                state:
+                  sequence: R
+                  type: LiteralSequenceExpression
+                type: Allele
+            name: EGFR L858R
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:679
+            name: Wu et al., 2014
+            pmid: "24439929"
+            title:
+              "Afatinib versus cisplatin plus gemcitabine for first-line treatment
+              of Asian patients with advanced non-small-cell lung cancer harbouring EGFR
+              mutations (LUX-Lung 6): an open-label, randomised phase 3 trial."
+            type: Document
+            urls:
+              - https://civicdb.org/links/evidence/982
+              - https://civicdb.org/links/source/679
+              - http://www.ncbi.nlm.nih.gov/pubmed/24439929
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          In a phase 2 study of patients with lung adenocarcinoma (stage IIIb
+          with pleural effusion or stage IV) and EGFR mutations, treated with afatinib
+          were assessed by objective response. 129 patients were treated with afatinib.
+          66% of the 106 patients with two common activating EGFR mutations (deletion
+          19 or L858R) had an objective response compared to 39% of 23 patients with less
+          common mutations.
+        direction: supports
+        id: civic.eid:883
+        proposition:
+          alleleOriginQualifier:
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:30
+            mappings:
+              - coding:
+                  code: DOID:3910
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Lung Adenocarcinoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - NNCIS
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+                  cancers has spurred many research and drug development efforts. Tyrosine
+                  kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+                  gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+                  to these drugs, particularly the variant T790M, which has been functionally
+                  characterized as a resistance marker for both of these drugs. The later
+                  generation TKI's have seen some success in treating these resistant cases,
+                  and targeted sequencing of the EGFR locus has become a common practice
+                  in treatment of non-small cell lung cancer. Overproduction of ligands
+                  is another possible mechanism of activation of EGFR. ERBB ligands include
+                  EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information
+                  please refer to the respective ligand section).
+            id: civic.gid:19
+            mappings:
+              - coding:
+                  code: "1956"
+                  id: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: EGFR
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW-2992
+                  - BIBW2992
+            id: civic.tid:146
+            mappings:
+              - coding:
+                  code: C66940
+                  id: ncit:C66940
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Afatinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - LEU858ARG
+              - L813R
+              - LEU813ARG
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                    - syntax: hgvs.p
+                      value: ENSP00000275493.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  name: EGFR L858R
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations in
+              lung cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+              seems to confer sensitivity to first and second generation TKI's like gefitinib
+              and neratinib. NSCLC patients with this mutation treated with TKI's show
+              increased overall and progression-free survival, as compared to chemotherapy
+              alone. Third generation TKI's are currently in clinical trials that specifically
+              focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+              patients that failed to respond to earlier generation TKI therapies.
+            extensions:
+              - name: molecularProfileScore
+                value: 379.0
+              - name: hgvsDescriptions
+                value:
+                  - NC_000007.13:g.55259515T>G
+                  - NM_005228.4:c.2573T>G
+                  - ENST00000275493.2:c.2573T>G
+                  - NP_005219.2:p.Leu858Arg
+                  - NC_000007.14:g.55191822T>G
+                  - ENSP00000275493.2:p.Leu858Arg
+              - name: maneSelectTranscript
+                value: ENST00000275493.7:c.2573T>G
+              - name: representativeVariantCoordinates
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: categoricalVariationType
+                value: ProteinSequenceConsequence
+            id: civic.mpid:33
+            mappings:
+              - coding:
+                  code: "33"
+                  id: civic.mpid:33
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "33"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variantTypes
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:33
+                  name: L858R
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  id: clingen.allele:CA126713
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  id: clinvar:16609
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  id: clinvar:376282
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  id: clinvar:376280
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  id: dbsnp:rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                  - syntax: hgvs.g
+                    value: NC_000007.14:g.55191822T>G
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                name: NC_000007.14:g.55191822T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                name: NM_005228.4:c.2573T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                expressions:
+                  - syntax: hgvs.p
+                    value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.p
+                    value: ENSP00000275493.2:p.Leu858Arg
+                id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                location:
+                  digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  end: 858
+                  id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  sequence: L
+                  sequenceReference:
+                    refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                    type: SequenceReference
+                  start: 857
+                  type: SequenceLocation
+                name: EGFR L858R
+                state:
+                  sequence: R
+                  type: LiteralSequenceExpression
+                type: Allele
+            name: EGFR L858R
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:594
+            name: Yang et al., 2012
+            pmid: "22452895"
+            title:
+              "Afatinib for patients with lung adenocarcinoma and epidermal growth
+              factor receptor mutations (LUX-Lung 2): a phase 2 trial."
+            type: Document
+            urls:
+              - https://civicdb.org/links/evidence/883
+              - https://civicdb.org/links/source/594
+              - http://www.ncbi.nlm.nih.gov/pubmed/22452895
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000005
+                name: clinical cohort evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Clinical evidence
+          primaryCoding:
+            code: B
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          Cells harboring L858R were sensitive to afatinib. This study performed
+          drug response assays using five human NSCLC cell lines with various combinations
+          of EGFR mutations. In order to directly compare the sensitivity of multiple
+          EGFR mutations to EGFR-TKIs the authors also generated multiple EGFR transduced
+          Ba/F3 stable cell lines and evaluated sensitivity to EGFR-TKIs by MTS assay.
+        direction: supports
+        id: civic.eid:968
+        proposition:
+          alleleOriginQualifier:
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:8
+            mappings:
+              - coding:
+                  code: DOID:3908
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Lung Non-small Cell Carcinoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - NNCIS
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+                  cancers has spurred many research and drug development efforts. Tyrosine
+                  kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+                  gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+                  to these drugs, particularly the variant T790M, which has been functionally
+                  characterized as a resistance marker for both of these drugs. The later
+                  generation TKI's have seen some success in treating these resistant cases,
+                  and targeted sequencing of the EGFR locus has become a common practice
+                  in treatment of non-small cell lung cancer. Overproduction of ligands
+                  is another possible mechanism of activation of EGFR. ERBB ligands include
+                  EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information
+                  please refer to the respective ligand section).
+            id: civic.gid:19
+            mappings:
+              - coding:
+                  code: "1956"
+                  id: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: EGFR
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW-2992
+                  - BIBW2992
+            id: civic.tid:146
+            mappings:
+              - coding:
+                  code: C66940
+                  id: ncit:C66940
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Afatinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - LEU858ARG
+              - L813R
+              - LEU813ARG
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                    - syntax: hgvs.p
+                      value: ENSP00000275493.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  name: EGFR L858R
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations in
+              lung cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+              seems to confer sensitivity to first and second generation TKI's like gefitinib
+              and neratinib. NSCLC patients with this mutation treated with TKI's show
+              increased overall and progression-free survival, as compared to chemotherapy
+              alone. Third generation TKI's are currently in clinical trials that specifically
+              focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+              patients that failed to respond to earlier generation TKI therapies.
+            extensions:
+              - name: molecularProfileScore
+                value: 379.0
+              - name: hgvsDescriptions
+                value:
+                  - NC_000007.13:g.55259515T>G
+                  - NM_005228.4:c.2573T>G
+                  - ENST00000275493.2:c.2573T>G
+                  - NP_005219.2:p.Leu858Arg
+                  - NC_000007.14:g.55191822T>G
+                  - ENSP00000275493.2:p.Leu858Arg
+              - name: maneSelectTranscript
+                value: ENST00000275493.7:c.2573T>G
+              - name: representativeVariantCoordinates
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: categoricalVariationType
+                value: ProteinSequenceConsequence
+            id: civic.mpid:33
+            mappings:
+              - coding:
+                  code: "33"
+                  id: civic.mpid:33
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "33"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variantTypes
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:33
+                  name: L858R
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  id: clingen.allele:CA126713
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  id: clinvar:16609
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  id: clinvar:376282
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  id: clinvar:376280
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  id: dbsnp:rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                  - syntax: hgvs.g
+                    value: NC_000007.14:g.55191822T>G
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                name: NC_000007.14:g.55191822T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                name: NM_005228.4:c.2573T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                expressions:
+                  - syntax: hgvs.p
+                    value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.p
+                    value: ENSP00000275493.2:p.Leu858Arg
+                id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                location:
+                  digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  end: 858
+                  id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  sequence: L
+                  sequenceReference:
+                    refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                    type: SequenceReference
+                  start: 857
+                  type: SequenceLocation
+                name: EGFR L858R
+                state:
+                  sequence: R
+                  type: LiteralSequenceExpression
+                type: Allele
+            name: EGFR L858R
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:669
+            name: Hirano et al., 2015
+            pmid: "26515464"
+            title:
+              In vitro modeling to determine mutation specificity of EGFR tyrosine
+              kinase inhibitors against clinically relevant EGFR mutants in non-small-cell
+              lung cancer.
+            type: Document
+            urls:
+              - https://civicdb.org/links/evidence/968
+              - https://civicdb.org/links/source/669
+              - http://www.ncbi.nlm.nih.gov/pubmed/26515464
+              - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4770737
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000009
+                name: preclinical evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Preclinical evidence
+          primaryCoding:
+            code: D
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
+      - description:
+          "In an in vitro study using NCI-H1666 cells (wildtype EGFR) and NCI-H3255
+          cells (EGFR-L858R), inhibition of cell growth was used as an assay to determine
+          sensitivity to irreversible tyrosine kinase inhibitor (TKI) drugs. Cells with
+          an EGFR L858R mutation demonstrated an improved response to afatinib (IC50:
+          0.7nM vs. 60nM) compared to wildtype EGFR cells."
+        direction: supports
+        id: civic.eid:2629
+        proposition:
+          alleleOriginQualifier:
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
+            name: somatic
+          conditionQualifier:
+            conceptType: Disease
+            id: civic.did:8
+            mappings:
+              - coding:
+                  code: DOID:3908
+                  system: https://disease-ontology.org/?id=
+                relation: exactMatch
+            name: Lung Non-small Cell Carcinoma
+          geneContextQualifier:
+            conceptType: Gene
+            extensions:
+              - name: aliases
+                value:
+                  - EGFR
+                  - ERBB
+                  - ERBB1
+                  - ERRP
+                  - HER1
+                  - NISBD2
+                  - NNCIS
+                  - PIG61
+                  - mENA
+              - name: description
+                value:
+                  EGFR is widely recognized for its importance in cancer. Amplification
+                  and mutations have been shown to be driving events in many cancer types.
+                  Its role in non-small cell lung cancer, glioblastoma and basal-like breast
+                  cancers has spurred many research and drug development efforts. Tyrosine
+                  kinase inhibitors have shown efficacy in EGFR amplfied tumors, most notably
+                  gefitinib and erlotinib. Mutations in EGFR have been shown to confer resistance
+                  to these drugs, particularly the variant T790M, which has been functionally
+                  characterized as a resistance marker for both of these drugs. The later
+                  generation TKI's have seen some success in treating these resistant cases,
+                  and targeted sequencing of the EGFR locus has become a common practice
+                  in treatment of non-small cell lung cancer. Overproduction of ligands
+                  is another possible mechanism of activation of EGFR. ERBB ligands include
+                  EGF, TGF-a, AREG, EPG, BTC, HB-EGF, EPR and NRG1-4 (for detailed information
+                  please refer to the respective ligand section).
+            id: civic.gid:19
+            mappings:
+              - coding:
+                  code: "1956"
+                  id: ncbigene:1956
+                  system: https://www.ncbi.nlm.nih.gov/gene/
+                relation: exactMatch
+            name: EGFR
+          objectTherapeutic:
+            conceptType: Therapy
+            extensions:
+              - name: aliases
+                value:
+                  - (2e)-N-(4-(3-Chloro-4-Fluoroanilino)-7-(((3s)-Oxolan-3-yl)Oxy)Quinoxazolin-6-yl)-4-(Dimethylamino)But-2-Enamide
+                  - BIBW 2992
+                  - BIBW-2992
+                  - BIBW2992
+            id: civic.tid:146
+            mappings:
+              - coding:
+                  code: C66940
+                  id: ncit:C66940
+                  system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
+                relation: exactMatch
+            name: Afatinib
+          predicate: predictsSensitivityTo
+          subjectVariant:
+            aliases:
+              - LEU858ARG
+              - L813R
+              - LEU813ARG
+            constraints:
+              - allele:
+                  digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  expressions:
+                    - syntax: hgvs.p
+                      value: NP_005219.2:p.Leu858Arg
+                    - syntax: hgvs.p
+                      value: ENSP00000275493.2:p.Leu858Arg
+                  id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                  location:
+                    digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    end: 858
+                    id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                    sequence: L
+                    sequenceReference:
+                      refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                      type: SequenceReference
+                    start: 857
+                    type: SequenceLocation
+                  name: EGFR L858R
+                  state:
+                    sequence: R
+                    type: LiteralSequenceExpression
+                  type: Allele
+                relations:
+                  - primaryCoding:
+                      code: liftover_to
+                      system: ga4gh-gks-term:allele-relation
+                  - primaryCoding:
+                      code: translation_of
+                      system: http://www.sequenceontology.org
+                type: DefiningAlleleConstraint
+            description:
+              EGFR L858R has long been recognized as a functionally significant
+              mutation in cancer, and is one of the most prevalent single mutations in
+              lung cancer. Best described in non-small cell lung cancer (NSCLC), the mutation
+              seems to confer sensitivity to first and second generation TKI's like gefitinib
+              and neratinib. NSCLC patients with this mutation treated with TKI's show
+              increased overall and progression-free survival, as compared to chemotherapy
+              alone. Third generation TKI's are currently in clinical trials that specifically
+              focus on mutant forms of EGFR, a few of which have shown efficacy in treating
+              patients that failed to respond to earlier generation TKI therapies.
+            extensions:
+              - name: molecularProfileScore
+                value: 379.0
+              - name: hgvsDescriptions
+                value:
+                  - NC_000007.13:g.55259515T>G
+                  - NM_005228.4:c.2573T>G
+                  - ENST00000275493.2:c.2573T>G
+                  - NP_005219.2:p.Leu858Arg
+                  - NC_000007.14:g.55191822T>G
+                  - ENSP00000275493.2:p.Leu858Arg
+              - name: maneSelectTranscript
+                value: ENST00000275493.7:c.2573T>G
+              - name: representativeVariantCoordinates
+                value:
+                  chromosome: "7"
+                  ensembl_version: 75
+                  reference_bases: T
+                  reference_build: GRCh37
+                  representative_transcript: ENST00000275493.2
+                  start: 55259515
+                  stop: 55259515
+                  type: coordinates
+                  variant_bases: G
+              - name: categoricalVariationType
+                value: ProteinSequenceConsequence
+            id: civic.mpid:33
+            mappings:
+              - coding:
+                  code: "33"
+                  id: civic.mpid:33
+                  system: https://civicdb.org/links/molecular_profile/
+                relation: exactMatch
+              - coding:
+                  code: "33"
+                  extensions:
+                    - name: subtype
+                      value: gene_variant
+                    - name: variantTypes
+                      value:
+                        - coding:
+                            code: SO:0001583
+                            id: civic.variant_type:47
+                            name: Missense Variant
+                            system: http://www.sequenceontology.org/browser/current_svn/term/
+                          relation: exactMatch
+                  id: civic.vid:33
+                  name: L858R
+                  system: https://civicdb.org/links/variant/
+                relation: exactMatch
+              - coding:
+                  code: CA126713
+                  id: clingen.allele:CA126713
+                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
+                relation: relatedMatch
+              - coding:
+                  code: "16609"
+                  id: clinvar:16609
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376282"
+                  id: clinvar:376282
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: "376280"
+                  id: clinvar:376280
+                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
+                relation: relatedMatch
+              - coding:
+                  code: rs121434568
+                  id: dbsnp:rs121434568
+                  system: https://www.ncbi.nlm.nih.gov/snp/
+                relation: relatedMatch
+            members:
+              - digest: pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                expressions:
+                  - syntax: hgvs.g
+                    value: NC_000007.13:g.55259515T>G
+                  - syntax: hgvs.g
+                    value: NC_000007.14:g.55191822T>G
+                id: ga4gh:VA.pM_eD8ha-bnAu6wJOoQTtHYIvEShSN51
+                location:
+                  digest: 7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  end: 55191822
+                  id: ga4gh:SL.7g6PIIHJ_QkKe_dRvkuCe8UtZCmPxo5B
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+                    type: SequenceReference
+                  start: 55191821
+                  type: SequenceLocation
+                name: NC_000007.14:g.55191822T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                expressions:
+                  - syntax: hgvs.c
+                    value: NM_005228.4:c.2573T>G
+                id: ga4gh:VA.gV7_dnvF8SQSeUdvgDFhU65zK_csc6VE
+                location:
+                  digest: LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  end: 2834
+                  id: ga4gh:SL.LREsUiEYvOrRhwXW1rG72kXFPegvkNzI
+                  sequence: T
+                  sequenceReference:
+                    refgetAccession: SQ.d_QsP29RWJi6bac7GOC9cJ9AO7s_HUMN
+                    type: SequenceReference
+                  start: 2833
+                  type: SequenceLocation
+                name: NM_005228.4:c.2573T>G
+                state:
+                  sequence: G
+                  type: LiteralSequenceExpression
+                type: Allele
+              - digest: S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                expressions:
+                  - syntax: hgvs.p
+                    value: NP_005219.2:p.Leu858Arg
+                  - syntax: hgvs.p
+                    value: ENSP00000275493.2:p.Leu858Arg
+                id: ga4gh:VA.S41CcMJT2bcd8R4-qXZWH1PoHWNtG2PZ
+                location:
+                  digest: v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  end: 858
+                  id: ga4gh:SL.v0_edynH98OIu-0QPVT5anCSOriAFSDQ
+                  sequence: L
+                  sequenceReference:
+                    refgetAccession: SQ.vyo55F6mA6n2LgN4cagcdRzOuh38V4mE
+                    type: SequenceReference
+                  start: 857
+                  type: SequenceLocation
+                name: EGFR L858R
+                state:
+                  sequence: R
+                  type: LiteralSequenceExpression
+                type: Allele
+            name: EGFR L858R
+            type: CategoricalVariant
+          type: VariantTherapeuticResponseProposition
+        reportedIn:
+          - id: civic.sid:1525
+            name: Li et al., 2008
+            pmid: "18408761"
+            title:
+              BIBW2992, an irreversible EGFR/HER2 inhibitor highly effective in preclinical
+              lung cancer models.
+            type: Document
+            urls:
+              - https://civicdb.org/links/evidence/2629
+              - https://civicdb.org/links/source/1525
+              - http://www.ncbi.nlm.nih.gov/pubmed/18408761
+              - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2748240
+        specifiedBy:
+          id: civic.method:2019
+          methodType: curation
+          name: CIViC Curation SOP (2019)
+          reportedIn:
+            aliases:
+              - CIViC curation SOP
+            doi: 10.1186/s13073-019-0687-x
+            id: pmid:31779674
+            name: Danos et al., 2019, Genome Med.
+            pmid: "31779674"
+            title:
+              Standard operating procedure for curation and clinical interpretation
+              of variants in cancer
+            type: Document
+            urls:
+              - https://doi.org/10.1186/s13073-019-0687-x
+              - https://pubmed.ncbi.nlm.nih.gov/31779674/
+          type: Method
+        strength:
+          mappings:
+            - coding:
+                code: e000009
+                name: preclinical evidence
+                system: https://go.osu.edu/evidence-codes
+              relation: exactMatch
+          name: Preclinical evidence
+          primaryCoding:
+            code: D
+            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
+        type: Statement
     strengthOfEvidenceProvided:
       primaryCoding:
         code: A
