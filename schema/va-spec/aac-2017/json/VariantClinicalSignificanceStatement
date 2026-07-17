@@ -103,6 +103,9 @@
                "hasEvidenceLines": {
                   "oneOf": [
                      {
+                        "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+                     },
+                     {
                         "$ref": "/ga4gh/schema/va-spec/1.0.1/aac-2017/json/DiagnosticEvidenceLine"
                      },
                      {
@@ -185,6 +188,9 @@
             "properties": {
                "hasEvidenceLines": {
                   "oneOf": [
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+                     },
                      {
                         "$ref": "/ga4gh/schema/va-spec/1.0.1/aac-2017/json/DiagnosticEvidenceLine"
                      },
