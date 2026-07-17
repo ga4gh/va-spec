@@ -18,15 +18,24 @@
                "description": "The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.",
                "properties": {
                   "primaryCoding": {
-                     "code": {
-                        "enum": [
-                           "definitive",
-                           "likely"
-                        ]
-                     },
-                     "system": {
-                        "const": "ACMG Guidelines, 2015"
-                     }
+                     "allOf": [
+                        {
+                           "$ref": "/ga4gh/schema/gks-core/1.1.0/json/Coding"
+                        },
+                        {
+                           "properties": {
+                              "code": {
+                                 "enum": [
+                                    "definitive",
+                                    "likely"
+                                 ]
+                              },
+                              "system": {
+                                 "const": "ACMG Guidelines, 2015"
+                              }
+                           }
+                        }
+                     ]
                   }
                },
                "required": [

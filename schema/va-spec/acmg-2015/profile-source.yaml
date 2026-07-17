@@ -35,12 +35,15 @@ $defs:
               MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
             properties:
               primaryCoding:
-                code:
-                  enum:
-                    - definitive
-                    - likely
-                system:
-                  const: ACMG Guidelines, 2015
+                allOf:
+                  - $refCurie: gks.core:Coding
+                  - properties:
+                      code:
+                        enum:
+                          - definitive
+                          - likely
+                      system:
+                        const: ACMG Guidelines, 2015
             required: [primaryCoding]
           classification:
             description: >-
@@ -57,7 +60,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
+                  - $refCurie: gks.core:Coding
                   - oneOf:
                       - properties:
                           code:
@@ -127,15 +130,18 @@ $defs:
               If it is 'none', then this attribute is not allowed.
             properties:
               primaryCoding:
-                code:
-                  enum:
-                    - standalone
-                    - very strong
-                    - strong
-                    - moderate
-                    - supporting
-                system:
-                  const: ACMG Guidelines, 2015
+                allOf:
+                  - $refCurie: gks.core:Coding
+                  - properties:
+                      code:
+                        enum:
+                          - standalone
+                          - very strong
+                          - strong
+                          - moderate
+                          - supporting
+                      system:
+                        const: ACMG Guidelines, 2015
           specifiedBy:
             description: >-
               The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction
