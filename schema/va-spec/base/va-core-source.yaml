@@ -111,7 +111,7 @@ $defs:
     oneOf:
       - $ref: "#/$defs/CohortAlleleFrequencyStudyResult"
       - $ref: "#/$defs/ExperimentalVariantFunctionalImpactStudyResult"
-      - $ref: "#/defs/ComputationalVariantFunctionalImpactAnalysisResult"
+      - $ref: "#/$defs/ComputationalVariantFunctionalImpactAnalysisResult"
     heritableProperties:
       focus:
         oneOf:
@@ -1181,77 +1181,78 @@ $defs:
         description: >-
           The full data set that provided the reported the functional impact score.
 
-ComputationalVariantFunctionalImpactAnalysisResult:
-  maturity: draft
-  type: object
-  description: >-
-    An AnalysisResult that reports the output of a single in silico tool's analysis of a variant's functional impact, including any numeric score(s) and optional categorical interpretation.
-  properties:
-    type:
-      type: string
-      description: MUST be \"ComputationalVariantFunctionalImpactAnalysisResult\".
-      const: "ComputationalVariantFunctionalImpactAnalysisResult"
-      default: "ComputationalVariantFunctionalImpactAnalysisResult"
-    focusVariant:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $refCurie: vrs.Allele
-        - $refCurie: cat-vrs.CategoricalVariant
-      description: The genetic variant for which the in silico analysis was performed.
-    transcriptVariationContext:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $refCurie: vrs.Allele"
-      description: The transcript in the context of which the in silico analysis was performed.
-    impactScore:
-      type: number
-      description: The primary numeric score produced by the in silico tool for this variant.
-    impactScoreType:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $refCurie: gks.core:MappableConcept
-      description: A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score').
-    categoricalImpact:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $refCurie: gks.core:MappableConcept
-      description: The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic').
-    impactedFeatureType:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $refCurie: gks.core:MappableConcept
-      description: A descriptor indicating the type of feature for which the focus variant has a predicted impact
-    impactedFeature:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $refCurie: gks.core:MappableConcept
-      description: The specific feature for which the focus variant has a predicted impact
-    ancillaryResults:
-      maturity: draft
-      description: >-
-        An object in which implementers can define custom fields to capture additional scores or outputs produced by the in silico tool beyond the primary score.
-        For example, CADD reports both a raw score and a Phred-scaled score; the primary score field would hold one, and ancillaryResults would hold the other.
-      type: object
-      additionalProperties: true
-    specifiedBy:
-      oneOf:
-        - $refCurie: gks.core:iriReference
-        - $ref: "#/$defs/Method"
-      description: The in silico method or algorithm that was applied to generate the reported score(s).
-    contributions:
-      type: array
-      ordered: true
-      items:
-        $ref: "#/$defs/Contribution"
-      description: Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
-    sourceDataSet:
-      $ref: "#/$defs/DataSet"
-      description: The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
-  required:
-    - type
-    - focusVariant
-    - transcriptVariationContext
-    - impactScore
+  ComputationalVariantFunctionalImpactAnalysisResult:
+    maturity: draft
+    type: object
+    description: >-
+      An AnalysisResult that reports the output of a single in silico tool's analysis of a variant's functional impact, including any numeric score(s) and optional categorical interpretation.
+    properties:
+      type:
+        type: string
+        description: MUST be \"ComputationalVariantFunctionalImpactAnalysisResult\".
+        const: "ComputationalVariantFunctionalImpactAnalysisResult"
+        default: "ComputationalVariantFunctionalImpactAnalysisResult"
+      focusVariant:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: vrs:Allele
+          - $refCurie: cat-vrs:CategoricalVariant
+        description: The genetic variant for which the in silico analysis was performed.
+      transcriptVariationContext:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: vrs:Allele
+        description: The transcript in the context of which the in silico analysis was performed.
+      impactScore:
+        type: number
+        description: The primary numeric score produced by the in silico tool for this variant.
+      impactScoreType:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score').
+      categoricalImpact:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic').
+      impactedFeatureType:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: A descriptor indicating the type of feature for which the focus variant has a predicted impact
+      impactedFeature:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: The specific feature for which the focus variant has a predicted impact
+      ancillaryResults:
+        maturity: draft
+        description: >-
+          An object in which implementers can define custom fields to capture additional scores or outputs produced by the in silico tool beyond the primary score.
+          For example, CADD reports both a raw score and a Phred-scaled score; the primary score field would hold one, and ancillaryResults would hold the other.
+        type: object
+        additionalProperties: true
+      specifiedBy:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $ref: "#/$defs/Method"
+        description: The in silico method or algorithm that was applied to generate the reported score(s).
+      contributions:
+        type: array
+        ordered: true
+        items:
+          $ref: "#/$defs/Contribution"
+        description: Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
+      sourceDataSet:
+        $ref: "#/$defs/DataSet"
+        description: The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
+    required:
+      - type
+      - focusVariant
+      - transcriptVariationContext
+      - impactScore
+
   VariantMolecularConsequenceProposition:
     inherits: SubjectVariantProposition
     maturity: draft
