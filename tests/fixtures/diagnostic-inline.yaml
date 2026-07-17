@@ -5,9 +5,13 @@ direction: supports
 id: civic.eid:80
 proposition:
   alleleOriginQualifier:
-    extensions:
-      - name: civic_variant_origin
-        value: SOMATIC
+    mappings:
+      - coding:
+          code: SOMATIC
+          iris:
+            - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+          system: https://civicdb.org
+        relation: exactMatch
     name: somatic
   geneContextQualifier:
     conceptType: Gene
@@ -75,6 +79,40 @@ proposition:
       - VAL600GLU
       - V640E
       - VAL640GLU
+    constraints:
+      - allele:
+          digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+          expressions:
+            - syntax: hgvs.p
+              value: NP_004324.2:p.Val600Glu
+            - syntax: hgvs.p
+              value: ENSP00000493543.1:p.Val600Glu
+            - syntax: hgvs.p
+              value: ENSP00000496776.1:p.Val640Glu
+          id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+          location:
+            digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+            end: 600
+            id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+            sequence: V
+            sequenceReference:
+              refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+              type: SequenceReference
+            start: 599
+            type: SequenceLocation
+          name: BRAF V600E
+          state:
+            sequence: E
+            type: LiteralSequenceExpression
+          type: Allele
+        relations:
+          - primaryCoding:
+              code: liftover_to
+              system: ga4gh-gks-term:allele-relation
+          - primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+        type: DefiningAlleleConstraint
     description:
       BRAF V600E has been shown to be recurrent in many cancer types. It
       is one of the most widely studied variants in cancer. This variant is correlated
@@ -88,19 +126,20 @@ proposition:
       have been successful in treating V600E mutations. However, cetuximab and panitumumab
       have been largely shown to be ineffective without supplementary treatment.
     extensions:
-      - name: CIViC Molecular Profile Score
-        value: 1433.5
-      - name: expressions
+      - name: molecularProfileScore
+        value: 1471.5
+      - name: hgvsDescriptions
         value:
-          - syntax: hgvs.c
-            value: NM_004333.4:c.1799T>A
-          - syntax: hgvs.p
-            value: NP_004324.2:p.Val600Glu
-          - syntax: hgvs.g
-            value: NC_000007.13:g.140453136A>T
-          - syntax: hgvs.c
-            value: ENST00000288602.6:c.1799T>A
-      - name: CIViC representative coordinate
+          - NM_004333.4:c.1799T>A
+          - NP_004324.2:p.Val600Glu
+          - NC_000007.13:g.140453136A>T
+          - ENST00000288602.6:c.1799T>A
+          - NC_000007.14:g.140753336A>T
+          - ENSP00000493543.1:p.Val600Glu
+          - ENSP00000496776.1:p.Val640Glu
+      - name: maneSelectTranscript
+        value: ENST00000646891.2:c.1799T>A
+      - name: representativeVariantCoordinates
         value:
           chromosome: "7"
           ensembl_version: 75
@@ -111,6 +150,8 @@ proposition:
           stop: 140453136
           type: coordinates
           variant_bases: T
+      - name: categoricalVariationType
+        value: ProteinSequenceConsequence
     id: civic.mpid:12
     mappings:
       - coding:
@@ -123,7 +164,7 @@ proposition:
           extensions:
             - name: subtype
               value: gene_variant
-            - name: variant_types
+            - name: variantTypes
               value:
                 - coding:
                     code: SO:0001583
@@ -137,20 +178,91 @@ proposition:
         relation: exactMatch
       - coding:
           code: CA123643
+          id: clingen.allele:CA123643
           system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
         relation: relatedMatch
       - coding:
           code: "13961"
+          id: clinvar:13961
           system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
         relation: relatedMatch
       - coding:
           code: "376069"
+          id: clinvar:376069
           system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
         relation: relatedMatch
       - coding:
           code: rs113488022
+          id: dbsnp:rs113488022
           system: https://www.ncbi.nlm.nih.gov/snp/
         relation: relatedMatch
+    members:
+      - digest: W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+        expressions:
+          - syntax: hgvs.c
+            value: NM_004333.4:c.1799T>A
+        id: ga4gh:VA.W6xsV-aFm9yT2Bic5cFAV2j0rll6KK5R
+        location:
+          digest: 8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+          end: 2025
+          id: ga4gh:SL.8HBKs9fzlT3tKWlM03REjkg_0Om6Y33U
+          sequence: T
+          sequenceReference:
+            refgetAccession: SQ.aKMPEJgmlZXt_F6gRY5cUG3THH2n-GUa
+            type: SequenceReference
+          start: 2024
+          type: SequenceLocation
+        name: NM_004333.4:c.1799T>A
+        state:
+          sequence: A
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: Otc5ovrw906Ack087o1fhegB4jDRqCAe
+        expressions:
+          - syntax: hgvs.g
+            value: NC_000007.13:g.140453136A>T
+          - syntax: hgvs.g
+            value: NC_000007.14:g.140753336A>T
+        id: ga4gh:VA.Otc5ovrw906Ack087o1fhegB4jDRqCAe
+        location:
+          digest: nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+          end: 140753336
+          id: ga4gh:SL.nhul5x5P_fKjGEpY9PEkMIekJfZaKom2
+          sequence: A
+          sequenceReference:
+            refgetAccession: SQ.F-LrLMe1SRpfUZHkQmvkVKFEGaoDeHul
+            type: SequenceReference
+          start: 140753335
+          type: SequenceLocation
+        name: NC_000007.14:g.140753336A>T
+        state:
+          sequence: T
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+        expressions:
+          - syntax: hgvs.p
+            value: NP_004324.2:p.Val600Glu
+          - syntax: hgvs.p
+            value: ENSP00000493543.1:p.Val600Glu
+          - syntax: hgvs.p
+            value: ENSP00000496776.1:p.Val640Glu
+        id: ga4gh:VA.j4XnsLZcdzDIYa5pvvXM7t1wn9OITr0L
+        location:
+          digest: t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+          end: 600
+          id: ga4gh:SL.t-3DrWALhgLdXHsupI-e-M00aL3HgK3y
+          sequence: V
+          sequenceReference:
+            refgetAccession: SQ.cQvw4UsHHRRlogxbWCB8W-mKD4AraM9y
+            type: SequenceReference
+          start: 599
+          type: SequenceLocation
+        name: BRAF V600E
+        state:
+          sequence: E
+          type: LiteralSequenceExpression
+        type: Allele
     name: BRAF V600E
     type: CategoricalVariant
   type: VariantDiagnosticProposition
@@ -163,9 +275,9 @@ reportedIn:
       biopsy samples identifies mutated papillary thyroid cancers.
     type: Document
     urls:
+      - https://civicdb.org/links/evidence/80
       - https://civicdb.org/links/source/94
       - http://www.ncbi.nlm.nih.gov/pubmed/24570209
-  - https://civicdb.org/links/evidence/80
 specifiedBy:
   id: civic.method:2019
   methodType: curation

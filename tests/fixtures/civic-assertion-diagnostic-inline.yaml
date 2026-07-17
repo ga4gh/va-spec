@@ -1,4 +1,3 @@
-id: civic.aid:9
 classification:
   name: Tier II
   primaryCoding:
@@ -26,9 +25,13 @@ hasEvidenceLines:
         id: civic.eid:4846
         proposition:
           alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
+            mappings:
+              - coding:
+                  code: SOMATIC
+                  iris:
+                    - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+                  system: https://civicdb.org
+                relation: exactMatch
             name: somatic
           geneContextQualifier:
             conceptType: Gene
@@ -59,72 +62,33 @@ hasEvidenceLines:
                   code: DOID:0080684
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
-            name: Diffuse Midline Glioma, H3 K27M-mutant
+            name: Diffuse Midline Glioma, H3 K27-altered
           predicate: isDiagnosticInclusionCriterionFor
           subjectVariant:
-            aliases:
-              - GLY328VAL
             extensions:
-              - name: CIViC Molecular Profile Score
-                value: 35.0
-              - name: expressions
-                value:
-                  - syntax: hgvs.c
-                    value: NM_001105.4:c.983G>T
-                  - syntax: hgvs.p
-                    value: NP_001096.1:p.Gly328Val
-                  - syntax: hgvs.g
-                    value: NC_000002.11:g.158622516C>A
-                  - syntax: hgvs.c
-                    value: ENST00000434821.1:c.983G>T
-              - name: CIViC representative coordinate
-                value:
-                  chromosome: "2"
-                  ensembl_version: 75
-                  reference_bases: C
-                  reference_build: GRCh37
-                  representative_transcript: ENST00000434821.1
-                  start: 158622516
-                  stop: 158622516
-                  type: coordinates
-                  variant_bases: A
-            id: civic.mpid:1594
+              - name: molecularProfileScore
+                value: 15.0
+              - name: hgvsDescriptions
+                value: []
+              - name: categoricalVariationType
+                value: Undefined
+            id: civic.mpid:1937
             mappings:
               - coding:
-                  code: "1594"
-                  id: civic.mpid:1594
+                  code: "1937"
+                  id: civic.mpid:1937
                   system: https://civicdb.org/links/molecular_profile/
                 relation: exactMatch
               - coding:
-                  code: "1686"
+                  code: "2061"
                   extensions:
                     - name: subtype
                       value: gene_variant
-                    - name: variant_types
-                      value:
-                        - coding:
-                            code: SO:0001583
-                            id: civic.variant_type:47
-                            name: Missense Variant
-                            system: http://www.sequenceontology.org/browser/current_svn/term/
-                          relation: exactMatch
-                  id: civic.vid:1686
-                  name: G328V
+                  id: civic.vid:2061
+                  name: Gain-of-Function
                   system: https://civicdb.org/links/variant/
                 relation: exactMatch
-              - coding:
-                  code: CA16602802
-                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
-                relation: relatedMatch
-              - coding:
-                  code: "376363"
-                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
-                relation: relatedMatch
-              - coding:
-                  code: rs387906589
-                  system: https://www.ncbi.nlm.nih.gov/snp/
-                relation: relatedMatch
-            name: ACVR1 G328V
+            name: ACVR1 Gain-of-Function
             type: CategoricalVariant
           type: VariantDiagnosticProposition
         reportedIn:
@@ -136,166 +100,10 @@ hasEvidenceLines:
               astrocytoma.
             type: Document
             urls:
+              - https://civicdb.org/links/evidence/4846
               - https://civicdb.org/links/source/2149
               - http://www.ncbi.nlm.nih.gov/pubmed/24705250
               - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4282994
-          - https://civicdb.org/links/evidence/4846
-        specifiedBy:
-          id: civic.method:2019
-          methodType: curation
-          name: CIViC Curation SOP (2019)
-          reportedIn:
-            aliases:
-              - CIViC curation SOP
-            doi: 10.1186/s13073-019-0687-x
-            id: pmid:31779674
-            name: Danos et al., 2019, Genome Med.
-            pmid: "31779674"
-            title:
-              Standard operating procedure for curation and clinical interpretation
-              of variants in cancer
-            type: Document
-            urls:
-              - https://doi.org/10.1186/s13073-019-0687-x
-              - https://pubmed.ncbi.nlm.nih.gov/31779674/
-          type: Method
-        strength:
-          mappings:
-            - coding:
-                code: e000005
-                name: clinical cohort evidence
-                system: https://go.osu.edu/evidence-codes
-              relation: exactMatch
-          name: Clinical evidence
-          primaryCoding:
-            code: B
-            system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
-        type: Statement
-      - description:
-          In a study sequencing 61 patients (median age 6.3) with diffuse intrinsic
-          pontine glioma (DIPG), 12 variants affecting ACVR1 were observed. Five patients
-          had G328V within the kinase domain. The ACVR1 G328V mutation was expressed using
-          the pCDH511b vector in immortalized normal human astrocytes (iNHAs) where it
-          activated downstream BMP signaling and enhanced cell growth. Activating ACVR1
-          mutations are recurrent and support diagnosis of high grade glioma. PEDIATRIC
-        direction: supports
-        id: civic.eid:6955
-        proposition:
-          alleleOriginQualifier:
-            extensions:
-              - name: civic_variant_origin
-                value: SOMATIC
-            name: somatic
-          geneContextQualifier:
-            conceptType: Gene
-            extensions:
-              - name: aliases
-                value:
-                  - ACTRI
-                  - ACVR1
-                  - ACVR1A
-                  - ACVRLK2
-                  - ALK2
-                  - FOP
-                  - SKR1
-                  - TSRI
-            id: civic.gid:154
-            mappings:
-              - coding:
-                  code: "90"
-                  id: ncbigene:90
-                  system: https://www.ncbi.nlm.nih.gov/gene/
-                relation: exactMatch
-            name: ACVR1
-          objectCondition:
-            conceptType: Disease
-            id: civic.did:2950
-            mappings:
-              - coding:
-                  code: DOID:0080684
-                  system: https://disease-ontology.org/?id=
-                relation: exactMatch
-            name: Diffuse Midline Glioma, H3 K27M-mutant
-          predicate: isDiagnosticInclusionCriterionFor
-          subjectVariant:
-            aliases:
-              - GLY328VAL
-            extensions:
-              - name: CIViC Molecular Profile Score
-                value: 35.0
-              - name: expressions
-                value:
-                  - syntax: hgvs.c
-                    value: NM_001105.4:c.983G>T
-                  - syntax: hgvs.p
-                    value: NP_001096.1:p.Gly328Val
-                  - syntax: hgvs.g
-                    value: NC_000002.11:g.158622516C>A
-                  - syntax: hgvs.c
-                    value: ENST00000434821.1:c.983G>T
-              - name: CIViC representative coordinate
-                value:
-                  chromosome: "2"
-                  ensembl_version: 75
-                  reference_bases: C
-                  reference_build: GRCh37
-                  representative_transcript: ENST00000434821.1
-                  start: 158622516
-                  stop: 158622516
-                  type: coordinates
-                  variant_bases: A
-            id: civic.mpid:1594
-            mappings:
-              - coding:
-                  code: "1594"
-                  id: civic.mpid:1594
-                  system: https://civicdb.org/links/molecular_profile/
-                relation: exactMatch
-              - coding:
-                  code: "1686"
-                  extensions:
-                    - name: subtype
-                      value: gene_variant
-                    - name: variant_types
-                      value:
-                        - coding:
-                            code: SO:0001583
-                            id: civic.variant_type:47
-                            name: Missense Variant
-                            system: http://www.sequenceontology.org/browser/current_svn/term/
-                          relation: exactMatch
-                  id: civic.vid:1686
-                  name: G328V
-                  system: https://civicdb.org/links/variant/
-                relation: exactMatch
-              - coding:
-                  code: CA16602802
-                  system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
-                relation: relatedMatch
-              - coding:
-                  code: "376363"
-                  system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
-                relation: relatedMatch
-              - coding:
-                  code: rs387906589
-                  system: https://www.ncbi.nlm.nih.gov/snp/
-                relation: relatedMatch
-            name: ACVR1 G328V
-            type: CategoricalVariant
-          type: VariantDiagnosticProposition
-        reportedIn:
-          - id: civic.sid:2680
-            name: Buczkowicz et al., 2014
-            pmid: "24705254"
-            title:
-              Genomic analysis of diffuse intrinsic pontine gliomas identifies three
-              molecular subgroups and recurrent activating ACVR1 mutations.
-            type: Document
-            urls:
-              - https://civicdb.org/links/source/2680
-              - http://www.ncbi.nlm.nih.gov/pubmed/24705254
-              - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3997489
-          - https://civicdb.org/links/evidence/6955
         specifiedBy:
           id: civic.method:2019
           methodType: curation
@@ -333,9 +141,13 @@ hasEvidenceLines:
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
-        extensions:
-          - name: civic_variant_origin
-            value: SOMATIC
+        mappings:
+          - coding:
+              code: SOMATIC
+              iris:
+                - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+              system: https://civicdb.org
+            relation: exactMatch
         name: somatic
       geneContextQualifier:
         conceptType: Gene
@@ -366,25 +178,62 @@ hasEvidenceLines:
               code: DOID:0080684
               system: https://disease-ontology.org/?id=
             relation: exactMatch
-        name: Diffuse Midline Glioma, H3 K27M-mutant
+        name: Diffuse Midline Glioma, H3 K27-altered
       predicate: isDiagnosticInclusionCriterionFor
       subjectVariant:
         aliases:
           - GLY328VAL
+        constraints:
+          - allele:
+              digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+              expressions:
+                - syntax: hgvs.p
+                  value: NP_001096.1:p.Gly328Val
+                - syntax: hgvs.p
+                  value: NP_001104537.1:p.Gly328Val
+                - syntax: hgvs.p
+                  value: ENSP00000405004.1:p.Gly328Val
+              id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+              location:
+                digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                end: 328
+                id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+                sequence: G
+                sequenceReference:
+                  refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+                  type: SequenceReference
+                start: 327
+                type: SequenceLocation
+              name: ACVR1 G328V
+              state:
+                sequence: V
+                type: LiteralSequenceExpression
+              type: Allele
+            relations:
+              - primaryCoding:
+                  code: liftover_to
+                  system: ga4gh-gks-term:allele-relation
+              - primaryCoding:
+                  code: translation_of
+                  system: http://www.sequenceontology.org
+            type: DefiningAlleleConstraint
         extensions:
-          - name: CIViC Molecular Profile Score
+          - name: molecularProfileScore
             value: 35.0
-          - name: expressions
+          - name: hgvsDescriptions
             value:
-              - syntax: hgvs.c
-                value: NM_001105.4:c.983G>T
-              - syntax: hgvs.p
-                value: NP_001096.1:p.Gly328Val
-              - syntax: hgvs.g
-                value: NC_000002.11:g.158622516C>A
-              - syntax: hgvs.c
-                value: ENST00000434821.1:c.983G>T
-          - name: CIViC representative coordinate
+              - NM_001105.4:c.983G>T
+              - NP_001096.1:p.Gly328Val
+              - NC_000002.11:g.158622516C>A
+              - ENST00000434821.1:c.983G>T
+              - NC_000002.12:g.157766004C>A
+              - NM_001111067.4:c.983G>T
+              - NP_001104537.1:p.Gly328Val
+              - ENST00000434821.7:c.983G>T
+              - ENSP00000405004.1:p.Gly328Val
+          - name: maneSelectTranscript
+            value: ENST00000434821.7:c.983G>T
+          - name: representativeVariantCoordinates
             value:
               chromosome: "2"
               ensembl_version: 75
@@ -395,6 +244,8 @@ hasEvidenceLines:
               stop: 158622516
               type: coordinates
               variant_bases: A
+          - name: categoricalVariationType
+            value: ProteinSequenceConsequence
         id: civic.mpid:1594
         mappings:
           - coding:
@@ -407,7 +258,7 @@ hasEvidenceLines:
               extensions:
                 - name: subtype
                   value: gene_variant
-                - name: variant_types
+                - name: variantTypes
                   value:
                     - coding:
                         code: SO:0001583
@@ -421,25 +272,102 @@ hasEvidenceLines:
             relation: exactMatch
           - coding:
               code: CA16602802
+              id: clingen.allele:CA16602802
               system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
             relation: relatedMatch
           - coding:
               code: "376363"
+              id: clinvar:376363
               system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
             relation: relatedMatch
           - coding:
               code: rs387906589
+              id: dbsnp:rs387906589
               system: https://www.ncbi.nlm.nih.gov/snp/
             relation: relatedMatch
+        members:
+          - digest: knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+            expressions:
+              - syntax: hgvs.c
+                value: NM_001105.4:c.983G>T
+              - syntax: hgvs.c
+                value: NM_001111067.4:c.983G>T
+            id: ga4gh:VA.knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+            location:
+              digest: DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+              end: 1700
+              id: ga4gh:SL.DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+              sequence: G
+              sequenceReference:
+                refgetAccession: SQ.EJQv9rQmiD76iFmXsLwCy2dJHOFO3bpj
+                type: SequenceReference
+              start: 1699
+              type: SequenceLocation
+            name: NM_001111067.4:c.983G>T
+            state:
+              sequence: T
+              type: LiteralSequenceExpression
+            type: Allele
+          - digest: affc26OivYhQEhNjs0NS2f3-2BYoEsey
+            expressions:
+              - syntax: hgvs.g
+                value: NC_000002.11:g.158622516C>A
+              - syntax: hgvs.g
+                value: NC_000002.12:g.157766004C>A
+            id: ga4gh:VA.affc26OivYhQEhNjs0NS2f3-2BYoEsey
+            location:
+              digest: ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+              end: 157766004
+              id: ga4gh:SL.ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+              sequence: C
+              sequenceReference:
+                refgetAccession: SQ.pnAqCRBrTsUoBghSD1yp_jXWSmlbdh4g
+                type: SequenceReference
+              start: 157766003
+              type: SequenceLocation
+            name: NC_000002.12:g.157766004C>A
+            state:
+              sequence: A
+              type: LiteralSequenceExpression
+            type: Allele
+          - digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+            expressions:
+              - syntax: hgvs.p
+                value: NP_001096.1:p.Gly328Val
+              - syntax: hgvs.p
+                value: NP_001104537.1:p.Gly328Val
+              - syntax: hgvs.p
+                value: ENSP00000405004.1:p.Gly328Val
+            id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+            location:
+              digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+              end: 328
+              id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+              sequence: G
+              sequenceReference:
+                refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+                type: SequenceReference
+              start: 327
+              type: SequenceLocation
+            name: ACVR1 G328V
+            state:
+              sequence: V
+              type: LiteralSequenceExpression
+            type: Allele
         name: ACVR1 G328V
         type: CategoricalVariant
       type: VariantDiagnosticProposition
     type: EvidenceLine
+id: civic.aid:9
 proposition:
   alleleOriginQualifier:
-    extensions:
-      - name: civic_variant_origin
-        value: SOMATIC
+    mappings:
+      - coding:
+          code: SOMATIC
+          iris:
+            - https://civic.readthedocs.io/en/latest/model/evidence/origin.html
+          system: https://civicdb.org
+        relation: exactMatch
     name: somatic
   geneContextQualifier:
     conceptType: Gene
@@ -470,25 +398,62 @@ proposition:
           code: DOID:0080684
           system: https://disease-ontology.org/?id=
         relation: exactMatch
-    name: Diffuse Midline Glioma, H3 K27M-mutant
+    name: Diffuse Midline Glioma, H3 K27-altered
   predicate: hasClinicalSignificanceFor
   subjectVariant:
     aliases:
       - GLY328VAL
+    constraints:
+      - allele:
+          digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+          expressions:
+            - syntax: hgvs.p
+              value: NP_001096.1:p.Gly328Val
+            - syntax: hgvs.p
+              value: NP_001104537.1:p.Gly328Val
+            - syntax: hgvs.p
+              value: ENSP00000405004.1:p.Gly328Val
+          id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+          location:
+            digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+            end: 328
+            id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+            sequence: G
+            sequenceReference:
+              refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+              type: SequenceReference
+            start: 327
+            type: SequenceLocation
+          name: ACVR1 G328V
+          state:
+            sequence: V
+            type: LiteralSequenceExpression
+          type: Allele
+        relations:
+          - primaryCoding:
+              code: liftover_to
+              system: ga4gh-gks-term:allele-relation
+          - primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+        type: DefiningAlleleConstraint
     extensions:
-      - name: CIViC Molecular Profile Score
+      - name: molecularProfileScore
         value: 35.0
-      - name: expressions
+      - name: hgvsDescriptions
         value:
-          - syntax: hgvs.c
-            value: NM_001105.4:c.983G>T
-          - syntax: hgvs.p
-            value: NP_001096.1:p.Gly328Val
-          - syntax: hgvs.g
-            value: NC_000002.11:g.158622516C>A
-          - syntax: hgvs.c
-            value: ENST00000434821.1:c.983G>T
-      - name: CIViC representative coordinate
+          - NM_001105.4:c.983G>T
+          - NP_001096.1:p.Gly328Val
+          - NC_000002.11:g.158622516C>A
+          - ENST00000434821.1:c.983G>T
+          - NC_000002.12:g.157766004C>A
+          - NM_001111067.4:c.983G>T
+          - NP_001104537.1:p.Gly328Val
+          - ENST00000434821.7:c.983G>T
+          - ENSP00000405004.1:p.Gly328Val
+      - name: maneSelectTranscript
+        value: ENST00000434821.7:c.983G>T
+      - name: representativeVariantCoordinates
         value:
           chromosome: "2"
           ensembl_version: 75
@@ -499,6 +464,8 @@ proposition:
           stop: 158622516
           type: coordinates
           variant_bases: A
+      - name: categoricalVariationType
+        value: ProteinSequenceConsequence
     id: civic.mpid:1594
     mappings:
       - coding:
@@ -511,7 +478,7 @@ proposition:
           extensions:
             - name: subtype
               value: gene_variant
-            - name: variant_types
+            - name: variantTypes
               value:
                 - coding:
                     code: SO:0001583
@@ -525,21 +492,115 @@ proposition:
         relation: exactMatch
       - coding:
           code: CA16602802
+          id: clingen.allele:CA16602802
           system: https://reg.clinicalgenome.org/redmine/projects/registry/genboree_registry/by_canonicalid?canonicalid=
         relation: relatedMatch
       - coding:
           code: "376363"
+          id: clinvar:376363
           system: https://www.ncbi.nlm.nih.gov/clinvar/variation/
         relation: relatedMatch
       - coding:
           code: rs387906589
+          id: dbsnp:rs387906589
           system: https://www.ncbi.nlm.nih.gov/snp/
         relation: relatedMatch
+    members:
+      - digest: knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+        expressions:
+          - syntax: hgvs.c
+            value: NM_001105.4:c.983G>T
+          - syntax: hgvs.c
+            value: NM_001111067.4:c.983G>T
+        id: ga4gh:VA.knLN28eRu0f2IUAQBHwXjvjyKyNNwb9N
+        location:
+          digest: DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+          end: 1700
+          id: ga4gh:SL.DO4BZ8csWCDedM5lh7NrmIpS3RnboBHw
+          sequence: G
+          sequenceReference:
+            refgetAccession: SQ.EJQv9rQmiD76iFmXsLwCy2dJHOFO3bpj
+            type: SequenceReference
+          start: 1699
+          type: SequenceLocation
+        name: NM_001111067.4:c.983G>T
+        state:
+          sequence: T
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: affc26OivYhQEhNjs0NS2f3-2BYoEsey
+        expressions:
+          - syntax: hgvs.g
+            value: NC_000002.11:g.158622516C>A
+          - syntax: hgvs.g
+            value: NC_000002.12:g.157766004C>A
+        id: ga4gh:VA.affc26OivYhQEhNjs0NS2f3-2BYoEsey
+        location:
+          digest: ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+          end: 157766004
+          id: ga4gh:SL.ET6dAkJ468aUfP3iLEWuG_Yfl_gFMDq0
+          sequence: C
+          sequenceReference:
+            refgetAccession: SQ.pnAqCRBrTsUoBghSD1yp_jXWSmlbdh4g
+            type: SequenceReference
+          start: 157766003
+          type: SequenceLocation
+        name: NC_000002.12:g.157766004C>A
+        state:
+          sequence: A
+          type: LiteralSequenceExpression
+        type: Allele
+      - digest: fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+        expressions:
+          - syntax: hgvs.p
+            value: NP_001096.1:p.Gly328Val
+          - syntax: hgvs.p
+            value: NP_001104537.1:p.Gly328Val
+          - syntax: hgvs.p
+            value: ENSP00000405004.1:p.Gly328Val
+        id: ga4gh:VA.fcWuwB4g25bTPp52iyTF7DnBNPm5POer
+        location:
+          digest: cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+          end: 328
+          id: ga4gh:SL.cOMztEW7PBkzDSr_gkVyzfYDcmH8fp3G
+          sequence: G
+          sequenceReference:
+            refgetAccession: SQ.6CnHhDq_bDCsuIBf0AzxtKq_lXYM7f0m
+            type: SequenceReference
+          start: 327
+          type: SequenceLocation
+        name: ACVR1 G328V
+        state:
+          sequence: V
+          type: LiteralSequenceExpression
+        type: Allele
     name: ACVR1 G328V
     type: CategoricalVariant
   type: VariantClinicalSignificanceProposition
 reportedIn:
   - https://civicdb.org/links/assertion/9
+  - id: civic.sid:2149
+    name: Fontebasso et al., 2014
+    pmid: "24705250"
+    title: Recurrent somatic mutations in ACVR1 in pediatric midline high-grade astrocytoma.
+    type: Document
+    urls:
+      - https://civicdb.org/links/evidence/4846
+      - https://civicdb.org/links/source/2149
+      - http://www.ncbi.nlm.nih.gov/pubmed/24705250
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4282994
+  - id: civic.sid:2680
+    name: Buczkowicz et al., 2014
+    pmid: "24705254"
+    title:
+      Genomic analysis of diffuse intrinsic pontine gliomas identifies three molecular
+      subgroups and recurrent activating ACVR1 mutations.
+    type: Document
+    urls:
+      - https://civicdb.org/links/evidence/6955
+      - https://civicdb.org/links/source/2680
+      - http://www.ncbi.nlm.nih.gov/pubmed/24705254
+      - https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3997489
 specifiedBy:
   id: civic.method:2019
   methodType: curation
