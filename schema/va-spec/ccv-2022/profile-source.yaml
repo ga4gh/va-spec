@@ -39,24 +39,30 @@ $defs:
               attribute is required. If it is 'neutral', then this attribute is not allowed.
             properties:
               primaryCoding:
-                code:
-                  enum:
-                    - definitive
-                    - likely
-                system:
-                  const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+                allOf:
+                  - $refCurie: gks.core:Coding
+                  - properties:
+                      code:
+                        enum:
+                          - definitive
+                          - likely
+                      system:
+                        const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
           classification:
             properties:
               primaryCoding:
-                code:
-                  enum:
-                    - oncogenic
-                    - likely oncogenic
-                    - uncertain significance
-                    - likely benign
-                    - benign
-                system:
-                  const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+                allOf:
+                  - $refCurie: gks.core:Coding
+                  - properties:
+                      code:
+                        enum:
+                          - oncogenic
+                          - likely oncogenic
+                          - uncertain significance
+                          - likely benign
+                          - benign
+                      system:
+                        const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
           specifiedBy:
             description: >-
               The method that specifies how the oncogenicity classification is ultimately assigned to the variant,
@@ -108,15 +114,18 @@ $defs:
               If it is 'none', then this attribute is not allowed.
             properties:
               primaryCoding:
-                code:
-                  enum:
-                    - standalone
-                    - very strong
-                    - strong
-                    - moderate
-                    - supporting
-                system:
-                  const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+                allOf:
+                  - $refCurie: gks.core:Coding
+                  - properties:
+                      code:
+                        enum:
+                          - standalone
+                          - very strong
+                          - strong
+                          - moderate
+                          - supporting
+                      system:
+                        const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
           specifiedBy:
             description: >-
               The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction

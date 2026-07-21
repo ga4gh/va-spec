@@ -29,7 +29,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
+                  - $refCurie: gks.core:Coding
                   - properties:
                       code:
                         enum: [A, B, C, D]
@@ -101,7 +101,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
+                  - $refCurie: gks.core:Coding
                   - properties:
                       code:
                         enum:
@@ -116,7 +116,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $ref: "/ga4gh/schema/gks-core/1.1.0/json/Coding"
+                  - $refCurie: gks.core:Coding
                   - properties:
                       code:
                         enum:
