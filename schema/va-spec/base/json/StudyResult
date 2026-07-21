@@ -10,10 +10,10 @@
          "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/CohortAlleleFrequencyStudyResult"
       },
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ExperimentalVariantFunctionalImpactStudyResult"
+         "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ComputationalVariantFunctionalImpactAnalysisResult"
       },
       {
-         "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ComputationalVariantFunctionalImpactAnalysisResult"
+         "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ExperimentalVariantFunctionalImpactStudyResult"
       }
    ]
 }
