@@ -2,5 +2,6 @@ id: amr
 name: Admixed American Ancestry Group
 type: StudyGroup
 characteristics:
-- conceptType: genetic ancestry
+- type: MappableConcept
+  conceptType: genetic ancestry
   name: Admixed American

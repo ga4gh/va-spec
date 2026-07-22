@@ -1,4 +1,5 @@
 classification:
+  type: MappableConcept
   name: Tier I
   primaryCoding:
     code: tier i
@@ -38,6 +39,7 @@ hasEvidenceLines:
         id: civic.eid:11780
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -47,6 +49,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -63,8 +66,10 @@ hasEvidenceLines:
                 relation: exactMatch
             name: MYBL1
           objectCondition:
+            type: ConceptSet
             concepts:
-              - conceptType: Disease
+              - type: MappableConcept
+                conceptType: Disease
                 id: civic.did:3387
                 mappings:
                   - coding:
@@ -72,8 +77,10 @@ hasEvidenceLines:
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-              - concepts:
-                  - conceptType: Phenotype
+              - type: ConceptSet
+                concepts:
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:2656
                     mappings:
                       - coding:
@@ -81,7 +88,8 @@ hasEvidenceLines:
                           system: https://hpo.jax.org/app/browse/term/
                         relation: exactMatch
                     name: Juvenile onset
-                  - conceptType: Phenotype
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:8120
                     mappings:
                       - coding:
@@ -89,7 +97,8 @@ hasEvidenceLines:
                           system: https://hpo.jax.org/app/browse/term/
                         relation: exactMatch
                     name: Young adult onset
-                  - conceptType: Phenotype
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:2647
                     mappings:
                       - coding:
@@ -161,6 +170,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -192,6 +202,7 @@ hasEvidenceLines:
         id: civic.eid:11781
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -201,6 +212,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -217,8 +229,10 @@ hasEvidenceLines:
                 relation: exactMatch
             name: MYBL1
           objectCondition:
+            type: ConceptSet
             concepts:
-              - conceptType: Disease
+              - type: MappableConcept
+                conceptType: Disease
                 id: civic.did:3387
                 mappings:
                   - coding:
@@ -226,8 +240,10 @@ hasEvidenceLines:
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-              - concepts:
-                  - conceptType: Phenotype
+              - type: ConceptSet
+                concepts:
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:8121
                     mappings:
                       - coding:
@@ -235,7 +251,8 @@ hasEvidenceLines:
                           system: https://hpo.jax.org/app/browse/term/
                         relation: exactMatch
                     name: Childhood onset
-                  - conceptType: Phenotype
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:2656
                     mappings:
                       - coding:
@@ -306,6 +323,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -341,6 +359,7 @@ hasEvidenceLines:
         id: civic.eid:11779
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -350,6 +369,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -366,8 +386,10 @@ hasEvidenceLines:
                 relation: exactMatch
             name: MYBL1
           objectCondition:
+            type: ConceptSet
             concepts:
-              - conceptType: Disease
+              - type: MappableConcept
+                conceptType: Disease
                 id: civic.did:3387
                 mappings:
                   - coding:
@@ -375,8 +397,10 @@ hasEvidenceLines:
                       system: https://disease-ontology.org/?id=
                     relation: exactMatch
                 name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-              - concepts:
-                  - conceptType: Phenotype
+              - type: ConceptSet
+                concepts:
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:8121
                     mappings:
                       - coding:
@@ -384,7 +408,8 @@ hasEvidenceLines:
                           system: https://hpo.jax.org/app/browse/term/
                         relation: exactMatch
                     name: Childhood onset
-                  - conceptType: Phenotype
+                  - type: MappableConcept
+                    conceptType: Phenotype
                     id: civic.phenotype:2656
                     mappings:
                       - coding:
@@ -455,6 +480,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000008
@@ -467,11 +493,13 @@ hasEvidenceLines:
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: A
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
+        type: MappableConcept
         mappings:
           - coding:
               code: SOMATIC
@@ -481,6 +509,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: somatic
       geneContextQualifier:
+        type: MappableConcept
         conceptType: Gene
         extensions:
           - name: aliases
@@ -497,8 +526,10 @@ hasEvidenceLines:
             relation: exactMatch
         name: MYBL1
       objectCondition:
+        type: ConceptSet
         concepts:
-          - conceptType: Disease
+          - type: MappableConcept
+            conceptType: Disease
             id: civic.did:3387
             mappings:
               - coding:
@@ -506,8 +537,10 @@ hasEvidenceLines:
                   system: https://disease-ontology.org/?id=
                 relation: exactMatch
             name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-          - concepts:
-              - conceptType: Phenotype
+          - type: ConceptSet
+            concepts:
+              - type: MappableConcept
+                conceptType: Phenotype
                 id: civic.phenotype:8121
                 mappings:
                   - coding:
@@ -515,7 +548,8 @@ hasEvidenceLines:
                       system: https://hpo.jax.org/app/browse/term/
                     relation: exactMatch
                 name: Childhood onset
-              - conceptType: Phenotype
+              - type: MappableConcept
+                conceptType: Phenotype
                 id: civic.phenotype:2656
                 mappings:
                   - coding:
@@ -523,7 +557,8 @@ hasEvidenceLines:
                       system: https://hpo.jax.org/app/browse/term/
                     relation: exactMatch
                 name: Juvenile onset
-              - conceptType: Phenotype
+              - type: MappableConcept
+                conceptType: Phenotype
                 id: civic.phenotype:2643
                 mappings:
                   - coding:
@@ -565,6 +600,7 @@ hasEvidenceLines:
 id: civic.aid:115
 proposition:
   alleleOriginQualifier:
+    type: MappableConcept
     mappings:
       - coding:
           code: SOMATIC
@@ -574,6 +610,7 @@ proposition:
         relation: exactMatch
     name: somatic
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     extensions:
       - name: aliases
@@ -590,8 +627,10 @@ proposition:
         relation: exactMatch
     name: MYBL1
   objectCondition:
+    type: ConceptSet
     concepts:
-      - conceptType: Disease
+      - type: MappableConcept
+        conceptType: Disease
         id: civic.did:3387
         mappings:
           - coding:
@@ -599,8 +638,10 @@ proposition:
               system: https://disease-ontology.org/?id=
             relation: exactMatch
         name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-      - concepts:
-          - conceptType: Phenotype
+      - type: ConceptSet
+        concepts:
+          - type: MappableConcept
+            conceptType: Phenotype
             id: civic.phenotype:8121
             mappings:
               - coding:
@@ -608,7 +649,8 @@ proposition:
                   system: https://hpo.jax.org/app/browse/term/
                 relation: exactMatch
             name: Childhood onset
-          - conceptType: Phenotype
+          - type: MappableConcept
+            conceptType: Phenotype
             id: civic.phenotype:2656
             mappings:
               - coding:
@@ -616,7 +658,8 @@ proposition:
                   system: https://hpo.jax.org/app/browse/term/
                 relation: exactMatch
             name: Juvenile onset
-          - conceptType: Phenotype
+          - type: MappableConcept
+            conceptType: Phenotype
             id: civic.phenotype:2643
             mappings:
               - coding:
@@ -712,6 +755,7 @@ specifiedBy:
       - https://pubmed.ncbi.nlm.nih.gov/31779674/
   type: Method
 strength:
+  type: MappableConcept
   primaryCoding:
     code: strong
     system: AMP/ASCO/CAP Guidelines, 2017

@@ -39,6 +39,7 @@ transcriptVariationContext:
       value: ENST00000366667.6:c.803C>T
 impactScore: 11.7
 impactScoreType:
+  type: MappableConcept
   primaryCoding:
     code: phred
     system: cadd-score-types

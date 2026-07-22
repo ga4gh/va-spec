@@ -33,16 +33,19 @@ proposition:
             - syntax: spdi
               value: NC_000001.11:40819438:CTCCTCCT:CTCCT
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: liftover_to
               system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: transcribed_to
               system: https://www.sequenceontology.org/
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/transcribed_to
   predicate: isCausalFor
   objectCondition:
+    type: MappableConcept
     id: clinvar.trait/939
     conceptType: Disease
     name: Autosomal dominant nonsyndromic hearing loss 2A
@@ -52,16 +55,19 @@ proposition:
       iris:
         - http://identifiers.org/medgen/C2677637
   penetranceQualifier:
+    type: MappableConcept
     primaryCoding:
       code: high
       system: ga4gh-gks-term:pathogenicity-penetrance-qualifier
     name: high
 direction: supports
 strength:
+  type: MappableConcept
   primaryCoding:
     code: definitive
     system: ACMG Guidelines, 2015
 classification:
+  type: MappableConcept
   primaryCoding:
     code: pathogenic
     system: ACMG Guidelines, 2015

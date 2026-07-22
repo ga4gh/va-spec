@@ -1,4 +1,5 @@
 classification:
+  type: MappableConcept
   name: Tier I
   primaryCoding:
     code: tier i
@@ -22,6 +23,7 @@ hasEvidenceLines:
         id: civic.eid:2997
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -31,6 +33,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:8
             mappings:
@@ -40,6 +43,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Lung Non-small Cell Carcinoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -78,6 +82,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: EGFR
           objectTherapy:
+            type: MappableConcept
             conceptType: Therapy
             extensions:
               - name: aliases
@@ -125,10 +130,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -315,6 +322,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000001
@@ -335,6 +343,7 @@ hasEvidenceLines:
         id: civic.eid:879
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -344,6 +353,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:30
             mappings:
@@ -353,6 +363,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Lung Adenocarcinoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -391,6 +402,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: EGFR
           objectTherapy:
+            type: MappableConcept
             conceptType: Therapy
             extensions:
               - name: aliases
@@ -438,10 +450,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -630,6 +644,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -653,6 +668,7 @@ hasEvidenceLines:
         id: civic.eid:982
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -662,6 +678,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:30
             mappings:
@@ -671,6 +688,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Lung Adenocarcinoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -709,6 +727,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: EGFR
           objectTherapy:
+            type: MappableConcept
             conceptType: Therapy
             extensions:
               - name: aliases
@@ -756,10 +775,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -949,6 +970,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -971,6 +993,7 @@ hasEvidenceLines:
         id: civic.eid:883
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -980,6 +1003,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:30
             mappings:
@@ -989,6 +1013,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Lung Adenocarcinoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -1027,6 +1052,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: EGFR
           objectTherapy:
+            type: MappableConcept
             conceptType: Therapy
             extensions:
               - name: aliases
@@ -1074,10 +1100,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -1266,6 +1294,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -1287,6 +1316,7 @@ hasEvidenceLines:
         id: civic.eid:968
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -1296,6 +1326,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:8
             mappings:
@@ -1305,6 +1336,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Lung Non-small Cell Carcinoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -1343,6 +1375,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: EGFR
           objectTherapy:
+            type: MappableConcept
             conceptType: Therapy
             extensions:
               - name: aliases
@@ -1390,10 +1423,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -1584,6 +1619,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000009
@@ -1605,6 +1641,7 @@ hasEvidenceLines:
         id: civic.eid:2629
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -1614,6 +1651,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:8
             mappings:
@@ -1623,6 +1661,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Lung Non-small Cell Carcinoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -1661,6 +1700,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: EGFR
           objectTherapy:
+            type: MappableConcept
             conceptType: Therapy
             extensions:
               - name: aliases
@@ -1708,10 +1748,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -1901,6 +1943,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000009
@@ -1913,11 +1956,13 @@ hasEvidenceLines:
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: A
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
+        type: MappableConcept
         mappings:
           - coding:
               code: SOMATIC
@@ -1927,6 +1972,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: somatic
       conditionQualifier:
+        type: MappableConcept
         conceptType: Disease
         id: civic.did:8
         mappings:
@@ -1936,6 +1982,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: Lung Non-small Cell Carcinoma
       geneContextQualifier:
+        type: MappableConcept
         conceptType: Gene
         extensions:
           - name: aliases
@@ -1974,6 +2021,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: EGFR
       objectTherapy:
+        type: MappableConcept
         conceptType: Therapy
         extensions:
           - name: aliases
@@ -2021,10 +2069,12 @@ hasEvidenceLines:
                 type: LiteralSequenceExpression
               type: Allele
             relations:
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: liftover_to
                   system: ga4gh-gks-term:allele-relation
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: translation_of
                   system: http://www.sequenceontology.org
             type: DefiningAlleleConstraint
@@ -2185,6 +2235,7 @@ hasEvidenceLines:
 id: civic.aid:6
 proposition:
   alleleOriginQualifier:
+    type: MappableConcept
     mappings:
       - coding:
           code: SOMATIC
@@ -2194,6 +2245,7 @@ proposition:
         relation: exactMatch
     name: somatic
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     extensions:
       - name: aliases
@@ -2231,6 +2283,7 @@ proposition:
         relation: exactMatch
     name: EGFR
   objectCondition:
+    type: MappableConcept
     conceptType: Disease
     id: civic.did:8
     mappings:
@@ -2270,10 +2323,12 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: liftover_to
               system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
         type: DefiningAlleleConstraint
@@ -2519,6 +2574,7 @@ specifiedBy:
       - https://pubmed.ncbi.nlm.nih.gov/31779674/
   type: Method
 strength:
+  type: MappableConcept
   primaryCoding:
     code: strong
     system: AMP/ASCO/CAP Guidelines, 2017

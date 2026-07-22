@@ -39,14 +39,17 @@ transcriptVariationContext:
       value: ENST00000366667.6:c.803C>T
 impactScore: 0.06
 impactScoreType:
+  type: MappableConcept
   primaryCoding:
     code: raw
     system: sift-score-types
 categoricalImpact:
+  type: MappableConcept
   primaryCoding:
     code: tolerated
     system: sift-categorical-impacts
 impactedFeatureType:
+  type: MappableConcept
   name: Protein
   primaryCoding:
     code: SO:0000104

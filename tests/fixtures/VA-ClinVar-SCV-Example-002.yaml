@@ -5,6 +5,7 @@ proposition:
   subjectVariant: catvars-mvp.jsonc#/208366 # NOQA: IRI resolution not tested; inline
                                     # version of this object tested in SCV example 1
   objectCondition:
+    type: MappableConcept
     id: clinvarTrait:9544 # This ID syntax is clinvar.trait/9544 in example 1. Both OK.
     conceptType: Disease
     name: Nonsyndromic genetic hearing loss
@@ -16,10 +17,12 @@ proposition:
   predicate: isCausalFor
 direction: supports
 strength:
+  type: MappableConcept
   primaryCoding:
     code: likely
     system: ACMG Guidelines, 2015
 classification:
+  type: MappableConcept
   primaryCoding:
     code: likely pathogenic
     system: ACMG Guidelines, 2015

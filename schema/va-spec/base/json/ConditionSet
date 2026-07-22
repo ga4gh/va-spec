@@ -1,13 +1,13 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/ConditionSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ConditionSet",
    "title": "ConditionSet",
    "maturity": "trial use",
    "description": "A specialization of ConceptSet representing a set of conditions (diseases, phenotypes, traits) that occur together or are related, depending on the membership operator. Concepts are restricted to Condition and ConditionSet members.",
    "$comment": "The membershipOperator `OR` should be used only in the specific scenario where a study is done on a cohort of individuals that manifest only one of the conditions in the set. Conclusions about this condition are determined based on an aggregate statistical analysis across all members of this mixed cohort \u2013 because the study does not provide the statistical power to make a conclusion about each condition individually. In such cases, it would be misleading to create separate statements about each condition on its own. Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/gks-core/1.1.0/json/ConceptSet"
+         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/ConceptSet"
       },
       {
          "properties": {
@@ -17,10 +17,10 @@
                "items": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Condition"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ConditionSet"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ConditionSet"
                      }
                   ]
                }

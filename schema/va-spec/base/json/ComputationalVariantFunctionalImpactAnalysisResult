@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/ComputationalVariantFunctionalImpactAnalysisResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ComputationalVariantFunctionalImpactAnalysisResult",
    "title": "ComputationalVariantFunctionalImpactAnalysisResult",
    "maturity": "draft",
    "type": "object",
@@ -15,13 +15,13 @@
       "focusVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.0.0/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/Allele"
             }
          ],
          "description": "The genetic variant for which the in silico analysis was performed."
@@ -29,10 +29,10 @@
       "transcriptVariationContext": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/Allele"
             }
          ],
          "description": "The transcript in the context of which the in silico analysis was performed."
@@ -44,10 +44,10 @@
       "impactScoreType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score')."
@@ -55,10 +55,10 @@
       "categoricalImpact": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic')."
@@ -66,10 +66,10 @@
       "impactedFeatureType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "A descriptor indicating the type of feature for which the focus variant has a predicted impact"
@@ -77,10 +77,10 @@
       "impactedFeature": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The specific feature for which the focus variant has a predicted impact"
@@ -94,10 +94,10 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The in silico method or algorithm that was applied to generate the reported score(s)."
@@ -106,12 +106,12 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity."
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/DataSet",
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/DataSet",
          "description": "The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset)."
       }
    },

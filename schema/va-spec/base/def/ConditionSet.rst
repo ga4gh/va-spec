@@ -5,3 +5,18 @@
 **Computational Definition**
 
 A specialization of ConceptSet representing a set of conditions (diseases, phenotypes, traits) that occur together or are related, depending on the membership operator. Concepts are restricted to Condition and ConditionSet members.
+
+**Information Model**
+
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+
+   *  - Field
+      - Flags
+      - Type
+      - Limits
+      - Description

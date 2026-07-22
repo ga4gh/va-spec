@@ -24,13 +24,15 @@ targetProposition:
             - syntax: hgvs.p
               value: NP_000305.3:p.Arg11Thr
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isOncogenicFor
   objectTumorType:
+    type: MappableConcept
     primaryCoding:
       code: ncit:C4872
       system: https://www.ebi.ac.uk/ols4/ontologies/ncit
@@ -38,6 +40,7 @@ targetProposition:
         - http://purl.obolibrary.org/obo/NCIT_C4872C4872
     name: Breast Carcinoma
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     name: EGFR
     primaryCoding:
@@ -47,6 +50,7 @@ targetProposition:
         - http://identifiers.org/ncbigene/1956
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided:
+  type: MappableConcept
   primaryCoding:
     code: supporting
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -59,6 +63,7 @@ specifiedBy:
     pmid: '35101336'
     name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
 evidenceOutcome:
+  type: MappableConcept
   primaryCoding:
     code: OS2_supporting
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022

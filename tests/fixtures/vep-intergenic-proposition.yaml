@@ -19,6 +19,7 @@ subjectVariant:
     sequence: C
 predicate: "hasMolecularConsequence"
 objectConsequence:
+  type: MappableConcept
   name: intergenic_variant
   conceptType: MolecularConsequence
   primaryCoding:

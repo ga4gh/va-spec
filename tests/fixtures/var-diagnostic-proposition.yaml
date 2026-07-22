@@ -24,13 +24,15 @@ subjectVariant:
           - syntax: hgvs.p
             value: NP_000305.3:p.Arg11Thr
       relations:
-        - primaryCoding:
+        - type: MappableConcept
+          primaryCoding:
             code: translation_of
             system: http://www.sequenceontology.org
             iris:
               - http://www.sequenceontology.org/browser/current_release/term/translation_of
 predicate: isDiagnosticInclusionCriterionFor
 objectCondition:
+  type: MappableConcept
   primaryCoding:
     code: ncit:C4872
     system: https://www.ebi.ac.uk/ols4/ontologies/ncit
@@ -38,6 +40,7 @@ objectCondition:
       - http://purl.obolibrary.org/obo/NCIT_C4872
   name: Breast Carcinoma
 geneContextQualifier:
+  type: MappableConcept
   conceptType: Gene
   name: EGFR
   primaryCoding:
@@ -46,6 +49,7 @@ geneContextQualifier:
     iris:
       - http://identifiers.org/ncbigene/1956
 alleleOriginQualifier:
+  type: MappableConcept
   primaryCoding:
     code: GENO:0000882
     system: https://github.com/monarch-initiative/GENO-ontology/

@@ -1,4 +1,5 @@
 classification:
+  type: MappableConcept
   name: Tier I
   primaryCoding:
     code: tier i
@@ -25,6 +26,7 @@ hasEvidenceLines:
         id: civic.eid:7158
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -34,6 +36,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -87,6 +90,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: BRAF
           objectCondition:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:11
             mappings:
@@ -99,6 +103,7 @@ hasEvidenceLines:
           subjectVariant:
             constraints:
               - featureContext:
+                  type: MappableConcept
                   primaryCoding:
                     code: "673"
                     id: ncbigene:673
@@ -179,6 +184,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -207,6 +213,7 @@ hasEvidenceLines:
         id: civic.eid:7159
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -216,6 +223,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -269,6 +277,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: BRAF
           objectCondition:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:11
             mappings:
@@ -281,6 +290,7 @@ hasEvidenceLines:
           subjectVariant:
             constraints:
               - featureContext:
+                  type: MappableConcept
                   primaryCoding:
                     code: "673"
                     id: ncbigene:673
@@ -359,6 +369,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -371,11 +382,13 @@ hasEvidenceLines:
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: A
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
+        type: MappableConcept
         mappings:
           - coding:
               code: SOMATIC
@@ -385,6 +398,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: somatic
       geneContextQualifier:
+        type: MappableConcept
         conceptType: Gene
         extensions:
           - name: aliases
@@ -436,6 +450,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: BRAF
       objectCondition:
+        type: MappableConcept
         conceptType: Disease
         id: civic.did:11
         mappings:
@@ -477,10 +492,12 @@ hasEvidenceLines:
                 type: LiteralSequenceExpression
               type: Allele
             relations:
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: liftover_to
                   system: ga4gh-gks-term:allele-relation
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: translation_of
                   system: http://www.sequenceontology.org
             type: DefiningAlleleConstraint
@@ -641,6 +658,7 @@ hasEvidenceLines:
 id: civic.aid:20
 proposition:
   alleleOriginQualifier:
+    type: MappableConcept
     mappings:
       - coding:
           code: SOMATIC
@@ -650,6 +668,7 @@ proposition:
         relation: exactMatch
     name: somatic
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     extensions:
       - name: aliases
@@ -701,6 +720,7 @@ proposition:
         relation: exactMatch
     name: BRAF
   objectCondition:
+    type: MappableConcept
     conceptType: Disease
     id: civic.did:11
     mappings:
@@ -742,10 +762,12 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: liftover_to
               system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
         type: DefiningAlleleConstraint
@@ -994,6 +1016,7 @@ specifiedBy:
       - https://pubmed.ncbi.nlm.nih.gov/31779674/
   type: Method
 strength:
+  type: MappableConcept
   primaryCoding:
     code: strong
     system: AMP/ASCO/CAP Guidelines, 2017

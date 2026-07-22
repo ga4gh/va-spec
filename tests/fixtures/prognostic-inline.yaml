@@ -4,6 +4,7 @@ description: https://civicdb.org/evidence/82/summary
 direction: supports
 strength:
   # id: civic.evidenceLevel:B
+  type: MappableConcept
   name: Clinical evidence
   primaryCoding:
     code: B
@@ -82,6 +83,7 @@ proposition:
           system: http://www.sequenceontology.org/browser/current_release/term/
           name: missense_variant
   objectCondition:
+    type: MappableConcept
     id: civic.did:7
     conceptType: Disease
     name: Melanoma
@@ -92,6 +94,7 @@ proposition:
         relation: exactMatch
   alleleOriginQualifier: somatic
   geneContextQualifier:
+    type: MappableConcept
     id: civic.gid:5
     conceptType: Gene
     name: BRAF

@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/VariantTherapeuticResponseProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/VariantTherapeuticResponseProposition",
    "title": "VariantTherapeuticResponseProposition",
    "maturity": "trial use",
    "type": "object",
@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.1.0/json/Extension"
+            "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -39,13 +39,13 @@
       "subjectVariant": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.0.0/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.0.1/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/MolecularVariation"
             }
          ],
          "description": "A variant that is the subject of the Proposition.",
@@ -56,10 +56,10 @@
          "$comment": "This is not a required field, and should be used when information about the gene context of the subject variant is known, relevant, and not apparent from the representation of the variant itself. It is useful for simpler variants such as SNVs where we cannot infer the gene context, but not necessary for complex variants like gene fusions, whose Cat-VRS representations reference specific transcripts and/or genes that provide a built-in gene context.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ]
       },
@@ -67,10 +67,10 @@
          "description": "Reports whether the Proposition should be interpreted in the context of a heritable \"germline\" variant, an acquired \"somatic\" variant in a tumor, or a post-zygotic \"mosaic\" variant. While these are the most commonly reported allele origins, other more nuanced concepts can be captured  (e.g. \"maternal\" vs \"paternal\" allele origin). In practice, populating this field may be complicated by the fact that some sources report allele origin based on the type of tissue that was sequenced to identify the variant, and others use it more generally to specify a category of variant for which the proposition holds. The stated intent of this attribute is the latter. However, if an implementer is not sure about which is reported in their data, it may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ]
       },
@@ -93,13 +93,13 @@
       "objectTherapy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Therapy"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Therapy"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/TherapyGroup"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/TherapyGroup"
             }
          ],
          "description": "A drug administration or other therapeutic procedure that the neoplasm is intended to respond to.",
@@ -108,13 +108,13 @@
       "conditionQualifier": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.1.0/json/iriReference"
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Condition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/ConditionSet"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ConditionSet"
             }
          ],
          "description": "Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions."
