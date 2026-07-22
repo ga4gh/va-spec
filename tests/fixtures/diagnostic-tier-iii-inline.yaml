@@ -1,4 +1,5 @@
 classification:
+  type: MappableConcept
   name: Tier III
   primaryCoding:
     code: tier iii
@@ -25,6 +26,7 @@ hasEvidenceLines:
         id: civic.eid:4846
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -34,6 +36,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -55,6 +58,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: ACVR1
           objectCondition:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:2950
             mappings:
@@ -124,6 +128,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -136,11 +141,13 @@ hasEvidenceLines:
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: C
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
+        type: MappableConcept
         mappings:
           - coding:
               code: SOMATIC
@@ -150,6 +157,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: somatic
       geneContextQualifier:
+        type: MappableConcept
         conceptType: Gene
         extensions:
           - name: aliases
@@ -171,6 +179,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: ACVR1
       objectCondition:
+        type: MappableConcept
         conceptType: Disease
         id: civic.did:2950
         mappings:
@@ -210,10 +219,12 @@ hasEvidenceLines:
                 type: LiteralSequenceExpression
               type: Allele
             relations:
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: liftover_to
                   system: ga4gh-gks-term:allele-relation
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: translation_of
                   system: http://www.sequenceontology.org
             type: DefiningAlleleConstraint
@@ -361,6 +372,7 @@ hasEvidenceLines:
 id: tier3-example.civic.aid:9
 proposition:
   alleleOriginQualifier:
+    type: MappableConcept
     mappings:
       - coding:
           code: SOMATIC
@@ -370,6 +382,7 @@ proposition:
         relation: exactMatch
     name: somatic
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     extensions:
       - name: aliases
@@ -391,6 +404,7 @@ proposition:
         relation: exactMatch
     name: ACVR1
   objectCondition:
+    type: MappableConcept
     conceptType: Disease
     id: civic.did:2950
     mappings:
@@ -430,10 +444,12 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: liftover_to
               system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
         type: DefiningAlleleConstraint

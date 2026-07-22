@@ -27,6 +27,7 @@ sourceDataSet:
     type: DataSet
     name: variant effect data set
     license:
+      type: MappableConcept
       primaryCoding:
         code: CC0
         system: https://spdx.org/licenses/

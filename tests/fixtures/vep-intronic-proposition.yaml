@@ -23,13 +23,16 @@ subjectVariant:
       value: NC_000002.11:g.7540648dup
 predicate: "hasMolecularConsequence"
 objectConsequence:
+  type: ConceptSet
   concepts:
-    - name: intron_variant
+    - type: MappableConcept
+      name: intron_variant
       conceptType: MolecularConsequence
       primaryCoding:
         code: "SO:0001627"
         system: "sequenceontology"
-    - name: non_coding_transcript_variant
+    - type: MappableConcept
+      name: non_coding_transcript_variant
       conceptType: MolecularConsequence
       primaryCoding:
         code: "SO:0001619"
@@ -49,6 +52,7 @@ objectConsequence:
   #     residueAlphabet: na
   #     type: SequenceReference
 geneContextQualifier:
+  type: MappableConcept
   primaryCoding:
     code: ENSG00000230515
     system: Ensembl-Gene

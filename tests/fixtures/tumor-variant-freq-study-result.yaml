@@ -38,7 +38,8 @@ subGroupFrequency:
           name: CNS/Brain Tumor SubGroup
           type: StudyGroup
           characteristics:
-            - conceptType: Disease
+            - type: MappableConcept
+              conceptType: Disease
               name: CNS/Brain Tumors
         affectedSampleCount: 16
         totalSampleCount: 658
@@ -52,7 +53,8 @@ subGroupFrequency:
           name: Bowel Tumor SubGroup
           type: StudyGroup
           characteristics:
-            - conceptType: Disease
+            - type: MappableConcept
+              conceptType: Disease
               name: Bowel Tumors
         affectedSampleCount: 1
         totalSampleCount: 1184
@@ -74,7 +76,8 @@ subGroupFrequency:
           name: CNS/Brain Tumor SubGroup
           type: StudyGroup
           characteristics:
-            - conceptType: Disease
+            - type: MappableConcept
+              conceptType: Disease
               name: CNS/Brain Tumors
         affectedSampleCount: 6
         totalSampleCount: 658
@@ -88,7 +91,8 @@ subGroupFrequency:
           name: Bowel Tumor SubGroup
           type: StudyGroup
           characteristics:
-            - conceptType: Disease
+            - type: MappableConcept
+              conceptType: Disease
               name: Bowel Tumors
         affectedSampleCount: 1
         totalSampleCount: 1184
@@ -110,7 +114,8 @@ subGroupFrequency:
           name: Skin SubGroup
           type: StudyGroup
           characteristics:
-            - conceptType: Disease
+            - type: MappableConcept
+              conceptType: Disease
               name: Skin Tumors
         affectedSampleCount: 1
         totalSampleCount: 359

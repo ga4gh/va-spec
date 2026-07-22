@@ -48,7 +48,8 @@ subCohortFrequency:
       name: Remaining individuals Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Remaining individuals
   - id: gnomad4:1-10120-T-G.amr
     type: CohortAlleleFrequencyStudyResult
@@ -62,7 +63,8 @@ subCohortFrequency:
       name: Admixed American Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Admixed American
   - id: gnomad4:1-10120-T-G.fin
     type: CohortAlleleFrequencyStudyResult
@@ -76,7 +78,8 @@ subCohortFrequency:
       name: Finnish Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Finnish
   - id: gnomad4:1-10120-T-G.ami
     type: CohortAlleleFrequencyStudyResult
@@ -90,7 +93,8 @@ subCohortFrequency:
       name: Amish Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Amish
   - id: gnomad4:1-10120-T-G.eas
     type: CohortAlleleFrequencyStudyResult
@@ -104,7 +108,8 @@ subCohortFrequency:
       name: East Asian Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: East Asian
   - id: gnomad4:1-10120-T-G.mid
     type: CohortAlleleFrequencyStudyResult
@@ -118,7 +123,8 @@ subCohortFrequency:
       name: Middle Eastern Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Middle Eastern
   - id: gnomad4:1-10120-T-G.sas
     type: CohortAlleleFrequencyStudyResult
@@ -132,7 +138,8 @@ subCohortFrequency:
       name: South Asian Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: South Asian
   - id: gnomad4:1-10120-T-G.asj
     type: CohortAlleleFrequencyStudyResult
@@ -146,7 +153,8 @@ subCohortFrequency:
       name: Ashkenazi Jewish Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Ashkenazi Jewish
   - id: gnomad4:1-10120-T-G.afr
     type: CohortAlleleFrequencyStudyResult
@@ -160,7 +168,8 @@ subCohortFrequency:
       name: African/African-American Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: African/African-American
   - id: gnomad4:1-10120-T-G.nfe
     type: CohortAlleleFrequencyStudyResult
@@ -174,7 +183,8 @@ subCohortFrequency:
       name: Non-Finnish European Ancestry Group
       type: StudyGroup
       characteristics:
-      - conceptType: genetic ancestry
+      - type: MappableConcept
+        conceptType: genetic ancestry
         name: Non-Finnish European
   - id: gnomad4:1-10120-T-G.XX
     type: CohortAlleleFrequencyStudyResult
@@ -188,7 +198,8 @@ subCohortFrequency:
       name: XX
       type: StudyGroup
       characteristics:
-      - conceptType: biological sex
+      - type: MappableConcept
+        conceptType: biological sex
         name: XX
   - id: gnomad4:1-10120-T-G.XY
     type: CohortAlleleFrequencyStudyResult
@@ -202,5 +213,6 @@ subCohortFrequency:
       name: XY
       type: StudyGroup
       characteristics:
-      - conceptType: biological sex
+      - type: MappableConcept
+        conceptType: biological sex
         name: XY

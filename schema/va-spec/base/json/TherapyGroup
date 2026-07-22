@@ -1,13 +1,13 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.0.1/base/json/TherapyGroup",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/TherapyGroup",
    "title": "TherapyGroup",
    "maturity": "trial use",
    "description": "A specialization of ConceptSet representing a group of two or more therapies that are applied in combination to a single patient/subject, or applied individually to a different subset of participants in a research study. Concepts are restricted to Therapy and TherapyGroup members.",
    "$comment": "The membershipOperator value 'AND' indicates that all therapies in the group were applied in combination to a given patient or subject. The value 'OR' indicates that each therapy was applied individually to a distinct subset of participants in the cohort that was interrogated in a given study. `OR` should be used only in the specific scenario where a study is done on a cohort of individuals that receive one of the therapies in the group - and the treatment response is determined based on an aggregate statistical analysis across all members of this mixed cohort. In such cases, the study does not provide the statistical power to make a conclusion about response to each therapy individually. Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments. Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/gks-core/1.1.0/json/ConceptSet"
+         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/ConceptSet"
       },
       {
          "properties": {
@@ -17,10 +17,10 @@
                "items": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/Therapy"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Therapy"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.0.1/base/json/TherapyGroup"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/TherapyGroup"
                      }
                   ]
                }

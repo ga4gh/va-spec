@@ -66,6 +66,7 @@ subjectVariant:
         system: http://www.sequenceontology.org/browser/current_release/term/
         name: missense_variant
 objectTherapy:
+  type: MappableConcept
   id: civic.tid:146
   conceptType: Drug
   name: Afatinib
@@ -80,6 +81,7 @@ objectTherapy:
         system: https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=
       relation: exactMatch
 conditionQualifier:
+  type: MappableConcept
   id: civic.did:30
   conceptType: Disease
   name: Lung Adenocarcinoma
@@ -89,6 +91,7 @@ conditionQualifier:
         system: https://www.disease-ontology.org/
       relation: exactMatch
 alleleOriginQualifier:
+  type: MappableConcept
   primaryCoding:
     code: GENO:0000882
     system: https://github.com/monarch-initiative/GENO-ontology/
@@ -96,6 +99,7 @@ alleleOriginQualifier:
       - http://purl.obolibrary.org/obo/GENO_0000882
   name: somatic allele origin
 geneContextQualifier:
+  type: MappableConcept
   id: civic.gid:19
   conceptType: Gene
   name: EGFR

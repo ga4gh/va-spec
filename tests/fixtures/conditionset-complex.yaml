@@ -1,6 +1,8 @@
+type: ConceptSet
 membershipOperator: AND
 concepts:
-  - conceptType: Disease
+  - type: MappableConcept
+    conceptType: Disease
     id: civic.did:3387
     mappings:
       - coding:
@@ -8,8 +10,10 @@ concepts:
           system: https://disease-ontology.org/?id=
         relation: exactMatch
     name: Diffuse Astrocytoma, MYB- Or MYBL1-altered
-  - concepts:
-      - conceptType: Phenotype
+  - type: ConceptSet
+    concepts:
+      - type: MappableConcept
+        conceptType: Phenotype
         id: civic.phenotype:8121
         mappings:
           - coding:
@@ -17,7 +21,8 @@ concepts:
               system: https://hpo.jax.org/browse/term/
             relation: exactMatch
         name: Childhood onset
-      - conceptType: Phenotype
+      - type: MappableConcept
+        conceptType: Phenotype
         id: civic.phenotype:2656
         mappings:
           - coding:
@@ -25,7 +30,8 @@ concepts:
               system: https://hpo.jax.org/browse/term/
             relation: exactMatch
         name: Juvenile onset
-      - conceptType: Phenotype
+      - type: MappableConcept
+        conceptType: Phenotype
         id: civic.phenotype:2643
         mappings:
           - coding:

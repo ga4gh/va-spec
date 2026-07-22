@@ -25,20 +25,24 @@ targetProposition:
             - syntax: hgvs.p
               value: NP_000305.3:p.Arg11Thr
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isCausalFor
   objectCondition:
+    type: MappableConcept
     conceptType: Disease
     name: Unspecified
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     name: PTEN
 directionOfEvidenceProvided: supports
 strengthOfEvidenceProvided:
+  type: MappableConcept
   primaryCoding:
     code: supporting
     system: ACMG Guidelines, 2015
@@ -51,6 +55,7 @@ specifiedBy:
     pmid: '25741868'
     name: ACMG Guidelines, 2015
 evidenceOutcome:
+  type: MappableConcept
   primaryCoding:
     code: PS3_supporting
     system: ACMG Guidelines, 2015

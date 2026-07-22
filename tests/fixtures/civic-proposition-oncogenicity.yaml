@@ -1,4 +1,5 @@
 alleleOriginQualifier:
+  type: MappableConcept
   mappings:
     - coding:
         code: SOMATIC
@@ -8,6 +9,7 @@ alleleOriginQualifier:
       relation: exactMatch
   name: somatic
 geneContextQualifier:
+  type: MappableConcept
   conceptType: Gene
   extensions:
     - name: aliases
@@ -44,6 +46,7 @@ geneContextQualifier:
       relation: exactMatch
   name: RET
 objectTumorType:
+  type: MappableConcept
   conceptType: Disease
   id: civic.did:15
   mappings:
@@ -81,10 +84,12 @@ subjectVariant:
           type: LiteralSequenceExpression
         type: Allele
       relations:
-        - primaryCoding:
+        - type: MappableConcept
+          primaryCoding:
             code: liftover_to
             system: ga4gh-gks-term:allele-relation
-        - primaryCoding:
+        - type: MappableConcept
+          primaryCoding:
             code: translation_of
             system: http://www.sequenceontology.org
       type: DefiningAlleleConstraint

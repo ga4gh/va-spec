@@ -22,6 +22,7 @@ subjectVariant:
       value: NC_000001.10:g.230845767G>T
 predicate: "hasMolecularConsequence"
 objectConsequence:
+  type: MappableConcept
   name: missense_variant
   conceptType: MolecularConsequence
   primaryCoding:
@@ -64,6 +65,7 @@ proteinVariationContextQualifier:
     - syntax: hgvs.p
       value: ENSP00000505981.1:p.Ala268Val
 geneContextQualifier:
+  type: MappableConcept
   name: AGT
   mappings:
     - coding:

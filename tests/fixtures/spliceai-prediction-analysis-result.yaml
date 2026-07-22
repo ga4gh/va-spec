@@ -39,15 +39,18 @@ transcriptVariationContext:
       value: ENST00000366667.6:c.803C>T
 impactScore: 0.52
 impactScoreType:
+  type: MappableConcept
   primaryCoding:
     code: DS_AG
     system: spliceai-score-types
 impactedFeatureType:
+  type: MappableConcept
   name: Gene
   primaryCoding:
     code: SO:0000704
     system: Sequence Ontology
 impactedFeature:
+  type: MappableConcept
   name: AGT
   mappings:
     - coding:

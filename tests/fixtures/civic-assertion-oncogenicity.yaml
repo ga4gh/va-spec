@@ -1,4 +1,5 @@
 classification:
+  type: MappableConcept
   primaryCoding:
     code: likely oncogenic
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -45,6 +46,7 @@ direction: supports
 hasEvidenceLines:
   - directionOfEvidenceProvided: supports
     evidenceOutcome:
+      type: MappableConcept
       primaryCoding:
         code: OM1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -68,12 +70,14 @@ hasEvidenceLines:
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: moderate
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     type: EvidenceLine
   - directionOfEvidenceProvided: supports
     evidenceOutcome:
+      type: MappableConcept
       primaryCoding:
         code: OS2
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -97,12 +101,14 @@ hasEvidenceLines:
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: strong
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     type: EvidenceLine
   - directionOfEvidenceProvided: supports
     evidenceOutcome:
+      type: MappableConcept
       primaryCoding:
         code: OP4
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -126,12 +132,14 @@ hasEvidenceLines:
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: supporting
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     type: EvidenceLine
   - directionOfEvidenceProvided: supports
     evidenceOutcome:
+      type: MappableConcept
       primaryCoding:
         code: OP1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -155,12 +163,14 @@ hasEvidenceLines:
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: supporting
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
     type: EvidenceLine
   - directionOfEvidenceProvided: supports
     evidenceOutcome:
+      type: MappableConcept
       primaryCoding:
         code: OP3
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -184,6 +194,7 @@ hasEvidenceLines:
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: supporting
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -191,6 +202,7 @@ hasEvidenceLines:
 id: civic.aid:202
 proposition:
   alleleOriginQualifier:
+    type: MappableConcept
     mappings:
       - coding:
           code: SOMATIC
@@ -200,6 +212,7 @@ proposition:
         relation: exactMatch
     name: somatic
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     extensions:
       - name: aliases
@@ -236,6 +249,7 @@ proposition:
         relation: exactMatch
     name: RET
   objectTumorType:
+    type: MappableConcept
     conceptType: Disease
     id: civic.did:15
     mappings:
@@ -273,10 +287,12 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: liftover_to
               system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
         type: DefiningAlleleConstraint
@@ -509,6 +525,7 @@ specifiedBy:
       - https://pubmed.ncbi.nlm.nih.gov/35101336/
   type: Method
 strength:
+  type: MappableConcept
   primaryCoding:
     code: likely
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022

@@ -1,10 +1,13 @@
+type: ConceptSet
 id: civic.theragroup:e1090
 concepts:
-  - primaryCoding:
+  - type: MappableConcept
+    primaryCoding:
       code: ncit:C1005
       system: ncit
     name: Arsenic Trioxide
-  - primaryCoding:
+  - type: MappableConcept
+    primaryCoding:
       code: C900
       system: ncit
     name: Tretinoin

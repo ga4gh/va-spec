@@ -1,4 +1,5 @@
 classification:
+  type: MappableConcept
   name: Tier I
   primaryCoding:
     code: tier i
@@ -28,6 +29,7 @@ hasEvidenceLines:
         id: civic.eid:6178
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -37,6 +39,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:7
             mappings:
@@ -46,6 +49,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Melanoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -99,9 +103,11 @@ hasEvidenceLines:
                 relation: exactMatch
             name: BRAF
           objectTherapy:
+            type: ConceptSet
             membershipOperator: AND
             concepts:
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -121,7 +127,8 @@ hasEvidenceLines:
                       system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
                     relation: exactMatch
                 name: Dabrafenib
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -178,10 +185,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -369,6 +378,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -394,6 +404,7 @@ hasEvidenceLines:
         id: civic.eid:6938
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -403,6 +414,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:7
             mappings:
@@ -412,6 +424,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Melanoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -465,9 +478,11 @@ hasEvidenceLines:
                 relation: exactMatch
             name: BRAF
           objectTherapy:
+            type: ConceptSet
             membershipOperator: AND
             concepts:
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -487,7 +502,8 @@ hasEvidenceLines:
                       system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
                     relation: exactMatch
                 name: Dabrafenib
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -544,10 +560,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -735,6 +753,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -758,6 +777,7 @@ hasEvidenceLines:
         id: civic.eid:3758
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -767,6 +787,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:206
             mappings:
@@ -776,6 +797,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Skin Melanoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -829,9 +851,11 @@ hasEvidenceLines:
                 relation: exactMatch
             name: BRAF
           objectTherapy:
+            type: ConceptSet
             membershipOperator: AND
             concepts:
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -851,7 +875,8 @@ hasEvidenceLines:
                       system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
                     relation: exactMatch
                 name: Dabrafenib
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -908,10 +933,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -1099,6 +1126,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -1121,6 +1149,7 @@ hasEvidenceLines:
         id: civic.eid:6940
         proposition:
           alleleOriginQualifier:
+            type: MappableConcept
             mappings:
               - coding:
                   code: SOMATIC
@@ -1130,6 +1159,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: somatic
           conditionQualifier:
+            type: MappableConcept
             conceptType: Disease
             id: civic.did:7
             mappings:
@@ -1139,6 +1169,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Melanoma
           geneContextQualifier:
+            type: MappableConcept
             conceptType: Gene
             extensions:
               - name: aliases
@@ -1192,9 +1223,11 @@ hasEvidenceLines:
                 relation: exactMatch
             name: BRAF
           objectTherapy:
+            type: ConceptSet
             membershipOperator: AND
             concepts:
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -1214,7 +1247,8 @@ hasEvidenceLines:
                       system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
                     relation: exactMatch
                 name: Dabrafenib
-              - conceptType: Therapy
+              - type: MappableConcept
+                conceptType: Therapy
                 extensions:
                   - name: aliases
                     value:
@@ -1271,10 +1305,12 @@ hasEvidenceLines:
                     type: LiteralSequenceExpression
                   type: Allele
                 relations:
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: liftover_to
                       system: ga4gh-gks-term:allele-relation
-                  - primaryCoding:
+                  - type: MappableConcept
+                    primaryCoding:
                       code: translation_of
                       system: http://www.sequenceontology.org
                 type: DefiningAlleleConstraint
@@ -1463,6 +1499,7 @@ hasEvidenceLines:
               - https://pubmed.ncbi.nlm.nih.gov/31779674/
           type: Method
         strength:
+          type: MappableConcept
           mappings:
             - coding:
                 code: e000005
@@ -1475,11 +1512,13 @@ hasEvidenceLines:
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
     strengthOfEvidenceProvided:
+      type: MappableConcept
       primaryCoding:
         code: A
         system: AMP/ASCO/CAP Guidelines, 2017
     targetProposition:
       alleleOriginQualifier:
+        type: MappableConcept
         mappings:
           - coding:
               code: SOMATIC
@@ -1489,6 +1528,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: somatic
       conditionQualifier:
+        type: MappableConcept
         conceptType: Disease
         id: civic.did:7
         mappings:
@@ -1498,6 +1538,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: Melanoma
       geneContextQualifier:
+        type: MappableConcept
         conceptType: Gene
         extensions:
           - name: aliases
@@ -1549,9 +1590,11 @@ hasEvidenceLines:
             relation: exactMatch
         name: BRAF
       objectTherapy:
+        type: ConceptSet
         membershipOperator: AND
         concepts:
-          - conceptType: Therapy
+          - type: MappableConcept
+            conceptType: Therapy
             extensions:
               - name: aliases
                 value:
@@ -1571,7 +1614,8 @@ hasEvidenceLines:
                   system: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=
                 relation: exactMatch
             name: Dabrafenib
-          - conceptType: Therapy
+          - type: MappableConcept
+            conceptType: Therapy
             extensions:
               - name: aliases
                 value:
@@ -1628,10 +1672,12 @@ hasEvidenceLines:
                 type: LiteralSequenceExpression
               type: Allele
             relations:
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: liftover_to
                   system: ga4gh-gks-term:allele-relation
-              - primaryCoding:
+              - type: MappableConcept
+                primaryCoding:
                   code: translation_of
                   system: http://www.sequenceontology.org
             type: DefiningAlleleConstraint
@@ -1792,6 +1838,7 @@ hasEvidenceLines:
 id: civic.aid:7
 proposition:
   alleleOriginQualifier:
+    type: MappableConcept
     mappings:
       - coding:
           code: SOMATIC
@@ -1801,6 +1848,7 @@ proposition:
         relation: exactMatch
     name: somatic
   geneContextQualifier:
+    type: MappableConcept
     conceptType: Gene
     extensions:
       - name: aliases
@@ -1852,6 +1900,7 @@ proposition:
         relation: exactMatch
     name: BRAF
   objectCondition:
+    type: MappableConcept
     conceptType: Disease
     id: civic.did:7
     mappings:
@@ -1893,10 +1942,12 @@ proposition:
             type: LiteralSequenceExpression
           type: Allele
         relations:
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: liftover_to
               system: ga4gh-gks-term:allele-relation
-          - primaryCoding:
+          - type: MappableConcept
+            primaryCoding:
               code: translation_of
               system: http://www.sequenceontology.org
         type: DefiningAlleleConstraint
@@ -2112,6 +2163,7 @@ specifiedBy:
       - https://pubmed.ncbi.nlm.nih.gov/31779674/
   type: Method
 strength:
+  type: MappableConcept
   primaryCoding:
     code: strong
     system: AMP/ASCO/CAP Guidelines, 2017
