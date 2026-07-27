@@ -232,6 +232,37 @@ $defs:
       - predicate
       - object
 
+  CustomQualifier:
+    type: object
+    maturity: trial use
+    description: >-
+      The CustomQualifier class provides CustomPropositions with a means to include
+      additional attributes that are outside of the specified standard
+      but needed by a given content provider or system implementer.
+      These custom qualifiers are not expected to be natively understood, but
+      may be used for pre-negotiated exchange of message attributes
+      between systems.
+    properties:
+      name:
+        type: string
+        description: >-
+          A name for the CustomQualifier. Should be indicative of its meaning and/or the type of
+          information it value represents.
+      value:
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: The value of the CustomQualifier - which may be a mappable concept or an IRI reference.
+        additionalProperties: true
+      description:
+        type: string
+        description: >-
+          A description of the meaning or utility of the CustomQualifier, to explain
+          the type of information it is meant to hold.
+    required:
+      - name
+      - value
+
   CustomProposition:
     inherits: Proposition
     maturity: trial use
@@ -263,15 +294,7 @@ $defs:
         type: array
         ordered: false
         items:
-          properties:
-            key:
-              type: string
-              description: The name of the qualifier.
-            value:
-              oneOf:
-                - $refCurie: gks.core:MappableConcept
-                - $refCurie: gks.core:iriReference
-              description: The value of the qualifier.
+          $ref: "#/$defs/CustomQualifier"
         description: >-
           An array of custom qualifier objects that provide additional information about the Proposition.
         $comment: >-

@@ -76,23 +76,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "properties": {
-               "key": {
-                  "type": "string",
-                  "description": "The name of the qualifier."
-               },
-               "value": {
-                  "oneOf": [
-                     {
-                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
-                     },
-                     {
-                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
-                     }
-                  ],
-                  "description": "The value of the qualifier."
-               }
-            }
+            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomQualifier"
          },
          "description": "An array of custom qualifier objects that provide additional information about the Proposition.",
          "$comment": "Qualifier objects have a key-value data structure that allows definition of custom qualifiers for a Proposition. The key is a string that names the qualifier, and the value is either a mappable concept or an IRI reference that provides the value of the qualifier. This allows for flexible representation of additional information that may be relevant to the Proposition, but is not captured by the subject-predicate-object structure."

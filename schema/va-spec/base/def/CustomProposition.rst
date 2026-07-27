@@ -77,6 +77,6 @@ Some CustomProposition attributes are inherited from :ref:`Proposition`.
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - _Not Specified_
+      - :ref:`CustomQualifier`
       - 0..m
       - An array of custom qualifier objects that provide additional information about the Proposition.

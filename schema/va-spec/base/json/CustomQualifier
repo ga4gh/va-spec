@@ -1,0 +1,35 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomQualifier",
+   "title": "CustomQualifier",
+   "type": "object",
+   "maturity": "trial use",
+   "description": "The CustomQualifier class provides CustomPropositions with a means to include additional attributes that are outside of the specified standard but needed by a given content provider or system implementer. These custom qualifiers are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems.",
+   "properties": {
+      "name": {
+         "type": "string",
+         "description": "A name for the CustomQualifier. Should be indicative of its meaning and/or the type of information it value represents."
+      },
+      "value": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
+         "description": "The value of the CustomQualifier - which may be a mappable concept or an IRI reference.",
+         "additionalProperties": true
+      },
+      "description": {
+         "type": "string",
+         "description": "A description of the meaning or utility of the CustomQualifier, to explain the type of information it is meant to hold."
+      }
+   },
+   "required": [
+      "name",
+      "value"
+   ],
+   "additionalProperties": false
+}
