@@ -20,6 +20,7 @@ This Entity class is imported from the `GKS-Core model <https://github.com/ga4gh
    agent
    study-group
    proposition
+   custom-proposition
    subject-variant-proposition
    gene-disease-validity-proposition
    genetic-context-variant-proposition
