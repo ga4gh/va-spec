@@ -126,3 +126,21 @@ Experimental Variant Functional Impact Proposition
  - The ``subject``, ``predicate``, ``object`` attributes defined in this profile can be used to create structured representations of basic propositions such as  *"NP_000305.3:p.Arg11Thr impacts the function of the human PTEN gene"*.
  - Here, an optional ``experimentalContextQualifier`` attribute can reference an assay or analysis that supported the reported impact, which can further inform interpretation of the proposed knowledge.
  - These specific attributes were defined to support the needs of an early :ref:`MAVE-DB implementation <implementations>` of the VA-Spec, and will likely be refined and/or expanded as additional use cases emerge.
+
+
+.. _gene-disease-validity-proposition:
+.. _GeneDiseaseValidityProposition:
+
+Gene Disease Validity Proposition
+#################################
+
+.. include::  ../../def/va-spec/GeneDiseaseValidityProposition.rst
+
+
+.. _custom-proposition:
+.. _CustomProposition:
+
+Custom Proposition
+##################
+
+.. include::  ../../def/va-spec/CustomProposition.rst

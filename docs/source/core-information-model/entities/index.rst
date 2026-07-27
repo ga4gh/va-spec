@@ -16,11 +16,15 @@ This Entity class is imported from the `GKS-Core model <https://github.com/ga4gh
    :maxdepth: 1
 
    information-entities/index
+   proposition
+   information-entities/statement
+   information-entities/study-result
+   information-entities/evidence-line
    contribution
    agent
+   information-entities/method
+   information-entities/document
+   information-entities/dataset
    study-group
-   proposition
-   custom-proposition
    subject-variant-proposition
-   gene-disease-validity-proposition
    genetic-context-variant-proposition
