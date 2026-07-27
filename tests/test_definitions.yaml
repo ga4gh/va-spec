@@ -29,6 +29,9 @@ tests:
   - test_file: agent.yaml
     namespace: va-spec.base
     definition: Agent
+  - test_file: custom-qualifier.yaml
+    namespace: va-spec.base
+    definition: CustomQualifier
 
   # test domain entities
   - test_file: conditionset.yaml
@@ -42,6 +45,9 @@ tests:
     definition: TherapyGroup
 
   # test propositions
+  - test_file: custom-proposition.yaml
+    namespace: va-spec.base
+    definition: CustomProposition
   - test_file: EVFI-proposition.yaml
     namespace: va-spec.base
     definition: ExperimentalVariantFunctionalImpactProposition

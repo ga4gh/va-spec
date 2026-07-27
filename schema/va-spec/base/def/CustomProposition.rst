@@ -59,7 +59,7 @@ Some CustomProposition attributes are inherited from :ref:`Proposition`.
       - MUST be "CustomProposition".
    *  - subject
       -
-      - :ref:`Entity` | :ref:`iriReference`
+      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
       - A custom entity or concept that is the subject of the Proposition.
    *  - predicate

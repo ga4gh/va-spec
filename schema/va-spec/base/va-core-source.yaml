@@ -278,7 +278,9 @@ $defs:
       subject:
         extends: subject
         oneOf:
-          - $refCurie: gks.core:Entity
+          - $refCurie: vrs:MolecularVariation
+          - $refCurie: cat-vrs:CategoricalVariant
+          - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
         description: A custom entity or concept that is the subject of the Proposition.
       predicate:

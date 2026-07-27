@@ -1,0 +1,37 @@
+id: CustomProp001
+name: Example custom proposition
+description: A provider-defined proposition asserting that a gene is valid for a disease.
+type: CustomProposition
+subject:
+  type: MappableConcept
+  id: hgnc:5173
+  conceptType: Gene
+  name: HRAS
+  primaryCoding:
+    code: HGNC:5173
+    system: https://www.genenames.org/
+    iris:
+      - https://identifiers.org/hgnc:5173
+predicate: isGeneticBasisFor
+object:
+  type: MappableConcept
+  id: mondo:0009648
+  conceptType: Disease
+  name: Costello syndrome
+  primaryCoding:
+    code: MONDO:0009648
+    system: http://purl.obolibrary.org/obo/
+    iris:
+      - http://purl.obolibrary.org/obo/MONDO_0009648
+qualifiers:
+  - name: classification
+    description: The provider's gene-disease validity classification for this relationship.
+    value:
+      type: MappableConcept
+      name: Definitive
+      primaryCoding:
+        code: definitive
+        system: https://www.clinicalgenome.org/
+  - name: modeOfInheritance
+    description: Mode of inheritance under which the asserted relationship holds.
+    value: http://purl.obolibrary.org/obo/HP_0000006
