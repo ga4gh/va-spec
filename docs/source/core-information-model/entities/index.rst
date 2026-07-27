@@ -20,6 +20,7 @@ This Entity class is imported from the `GKS-Core model <https://github.com/ga4gh
    information-entities/statement
    information-entities/study-result
    information-entities/evidence-line
+   ../elements/mappable-concept
    contribution
    agent
    information-entities/method
