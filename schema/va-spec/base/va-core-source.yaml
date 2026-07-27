@@ -116,7 +116,6 @@ $defs:
       focus:
         oneOf:
           - $refCurie: gks.core:Entity
-          - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
         description: >-
           The specific participant, subject or experimental unit in a Study that data included in the
@@ -233,6 +232,55 @@ $defs:
       - predicate
       - object
 
+  CustomProposition:
+    inherits: Proposition
+    maturity: trial use
+    type: object
+    description: >-
+      A :ref:`Proposition` that is defined by a data provider for their own use.
+    properties:
+      type:
+        extends: type
+        const: "CustomProposition"
+        default: "CustomProposition"
+        description: MUST be "CustomProposition".
+      subject:
+        extends: subject
+        oneOf:
+          - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:iriReference
+        description: A custom entity or concept that is the subject of the Proposition.
+      predicate:
+        extends: predicate
+        description: A custom predicate that describes the relationship between the subject and object of the Proposition.
+      object:
+        extends: object
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: A custom entity or concept that is the object of the Proposition.
+      qualifiers:
+        type: array
+        ordered: false
+        items:
+          properties:
+            key:
+              type: string
+              description: The name of the qualifier.
+            value:
+              oneOf:
+                - $refCurie: gks.core:MappableConcept
+                - $refCurie: gks.core:iriReference
+              description: The value of the qualifier.
+        description: >-
+          An array of custom qualifier objects that provide additional information about the Proposition.
+        $comment: >-
+          Qualifier objects have a key-value data structure that allows definition of custom
+          qualifiers for a Proposition. The key is a string that names the qualifier, and the value is
+          either a mappable concept or an IRI reference that provides the value of the qualifier. This allows
+          for flexible representation of additional information that may be relevant to the Proposition, but
+          is not captured by the subject-predicate-object structure.
+
   SubjectVariantProposition:
     inherits: Proposition
     maturity: trial use
@@ -254,7 +302,6 @@ $defs:
           - $refCurie: cat-vrs:CategoricalVariant
           - $refCurie: gks.core:iriReference
         description: A variant that is the subject of the Proposition.
-
 
   # concrete core classes section -- Method, Contribution, Document, Agent, Statement, EvidenceLine, DataSet, StudyGroup
   Method:

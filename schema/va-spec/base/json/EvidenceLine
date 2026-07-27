@@ -84,6 +84,9 @@
          "description": "The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.",
          "oneOf": [
             {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomProposition"
+            },
+            {
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {

@@ -1,0 +1,108 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomProposition",
+   "title": "CustomProposition",
+   "maturity": "trial use",
+   "type": "object",
+   "description": "A Proposition that is defined by a data provider for their own use.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another.",
+         "$comment": "Note that it is common for implementers to create their own internal logical ids - typically a serially or randomly generated value like a UUID that is assigned to the data object as it is created in a system. But an implementer may choose to re-use an existing, globally unique id from an external system or authority for this purpose (e.g. an HGNC id for a Gene object) - as long as it is unique within the implementing system, and can be used to reference the identified object in this context."
+      },
+      "name": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "aliases": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
+         "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"CustomProposition\".",
+         "$comment": "MUST be the name of a concrete class from the data model.",
+         "const": "CustomProposition",
+         "default": "CustomProposition"
+      },
+      "subject": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Entity"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
+         "description": "A custom entity or concept that is the subject of the Proposition.",
+         "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
+      },
+      "predicate": {
+         "type": "string",
+         "description": "A custom predicate that describes the relationship between the subject and object of the Proposition.",
+         "$comment": "When applied to represent a particular type of Proposition (via 'Profiling'), implementers can define a value set of predicates for the relationships relevant in the domain."
+      },
+      "object": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
+         "description": "A custom entity or concept that is the object of the Proposition.",
+         "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
+      },
+      "qualifiers": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "properties": {
+               "key": {
+                  "type": "string",
+                  "description": "The name of the qualifier."
+               },
+               "value": {
+                  "oneOf": [
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+                     }
+                  ],
+                  "description": "The value of the qualifier."
+               }
+            }
+         },
+         "description": "An array of custom qualifier objects that provide additional information about the Proposition.",
+         "$comment": "Qualifier objects have a key-value data structure that allows definition of custom qualifiers for a Proposition. The key is a string that names the qualifier, and the value is either a mappable concept or an IRI reference that provides the value of the qualifier. This allows for flexible representation of additional information that may be relevant to the Proposition, but is not captured by the subject-predicate-object structure."
+      }
+   },
+   "required": [
+      "object",
+      "predicate",
+      "subject",
+      "type"
+   ],
+   "additionalProperties": false
+}
