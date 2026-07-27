@@ -37,7 +37,7 @@ datetime
 
 .. _CustomQualifier:
 
-CustomQualifier
-***************
+Custom Qualifier
+****************
 
 .. include::  ../def/va-spec/CustomQualifier.rst
