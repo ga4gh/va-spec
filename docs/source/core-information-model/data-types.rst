@@ -33,11 +33,3 @@ datetime
 ********
 
 .. include::  ../def/gks-core/datetime.rst
-
-
-.. _CustomQualifier:
-
-Custom Qualifier
-****************
-
-.. include::  ../def/va-spec/CustomQualifier.rst

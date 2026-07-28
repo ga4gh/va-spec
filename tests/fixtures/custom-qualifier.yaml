@@ -1,8 +1,0 @@
-name: classification
-description: The provider's gene-disease validity classification for this relationship.
-value:
-  type: MappableConcept
-  name: Definitive
-  primaryCoding:
-    code: definitive
-    system: https://www.clinicalgenome.org/

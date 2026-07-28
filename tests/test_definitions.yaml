@@ -29,9 +29,6 @@ tests:
   - test_file: agent.yaml
     namespace: va-spec.base
     definition: Agent
-  - test_file: custom-qualifier.yaml
-    namespace: va-spec.base
-    definition: CustomQualifier
 
   # test domain entities
   - test_file: conditionset.yaml

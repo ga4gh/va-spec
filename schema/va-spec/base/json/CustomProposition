@@ -86,10 +86,36 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomQualifier"
+            "type": "object",
+            "properties": {
+               "name": {
+                  "type": "string",
+                  "description": "A name for the qualifier. Should be indicative of its meaning and/or the type of information its value represents."
+               },
+               "value": {
+                  "oneOf": [
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+                     }
+                  ],
+                  "description": "The value of the qualifier - either a MappableConcept or an IRI reference."
+               },
+               "description": {
+                  "type": "string",
+                  "description": "A description of the meaning or utility of the qualifier, to explain the type of information it is meant to hold."
+               }
+            },
+            "required": [
+               "name",
+               "value"
+            ],
+            "additionalProperties": false
          },
-         "description": "An array of custom qualifier objects that provide additional information about the Proposition.",
-         "$comment": "Qualifier objects have a key-value data structure that allows definition of custom qualifiers for a Proposition. The key is a string that names the qualifier, and the value is either a mappable concept or an IRI reference that provides the value of the qualifier. This allows for flexible representation of additional information that may be relevant to the Proposition, but is not captured by the subject-predicate-object structure."
+         "description": "An array of custom qualifier objects that provide additional information about the Proposition. Each qualifier is an object with a required 'name' (string) identifying the qualifier, a required 'value' (a MappableConcept or an IRI reference), and an optional 'description' (string) explaining its meaning.",
+         "$comment": "Qualifier objects have a name-value data structure that allows definition of custom qualifiers for a Proposition. This substructure is embedded directly in the qualifiers array rather than being defined as a standalone data type. The 'name' names the qualifier, and the 'value' is either a MappableConcept or an IRI reference that provides its value. This allows for flexible representation of additional information that may be relevant to the Proposition, but is not captured by the subject-predicate-object structure."
       }
    },
    "required": [
