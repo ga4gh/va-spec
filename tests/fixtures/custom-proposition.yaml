@@ -2,6 +2,7 @@ id: CustomProp001
 name: Example custom proposition
 description: A provider-defined proposition asserting that a gene is valid for a disease.
 type: CustomProposition
+subtype: GeneDiseaseValidityProposition
 subject:
   type: MappableConcept
   id: hgnc:5173
