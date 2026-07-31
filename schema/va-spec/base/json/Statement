@@ -85,6 +85,9 @@
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition\u2019s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of the Proposition\u2019s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).",
          "oneOf": [
             {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomProposition"
+            },
+            {
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ExperimentalVariantFunctionalImpactProposition"
             },
             {

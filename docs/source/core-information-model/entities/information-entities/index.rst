@@ -5,15 +5,13 @@ Information Entity
 
 .. include::  ../../../def/va-spec/InformationEntity.rst
 
+-----
+
 **Subclasses**
 
-.. toctree::
-   :titlesonly:
-   :maxdepth: 0
-
-   method
-   document
-   dataset
-   statement
-   evidence-line
-   study-result
+- :ref:`Statement`
+- :ref:`StudyResult`
+- :ref:`EvidenceLine`
+- :ref:`Method`
+- :ref:`Document`
+- :ref:`DataSet`

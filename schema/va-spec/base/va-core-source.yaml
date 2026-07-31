@@ -116,7 +116,6 @@ $defs:
       focus:
         oneOf:
           - $refCurie: gks.core:Entity
-          - $refCurie: gks.core:MappableConcept
           - $refCurie: gks.core:iriReference
         description: >-
           The specific participant, subject or experimental unit in a Study that data included in the
@@ -233,6 +232,79 @@ $defs:
       - predicate
       - object
 
+  CustomProposition:
+    inherits: Proposition
+    maturity: draft
+    type: object
+    description: >-
+      A :ref:`Proposition` that is defined by a data provider for their own use.
+    properties:
+      type:
+        extends: type
+        const: "CustomProposition"
+        default: "CustomProposition"
+        description: MUST be "CustomProposition".
+      customPropositionType:
+        type: string
+        description: >-
+          A user-defined subtype that distinguishes one kind of CustomProposition from another.
+          Because all CustomPropositions share the same 'type' value ("CustomProposition"), this
+          attribute plays the role that 'type' plays for standard Proposition subclasses - allowing
+          consumers to discern the specific type of possible fact a given CustomProposition represents
+          (e.g. "GeneDiseaseValidityProposition").
+      subject:
+        extends: subject
+        oneOf:
+          - $refCurie: vrs:MolecularVariation
+          - $refCurie: cat-vrs:CategoricalVariant
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
+        description: A custom entity or concept that is the subject of the Proposition.
+      predicate:
+        extends: predicate
+        description: A custom predicate that describes the relationship between the subject and object of the Proposition.
+      object:
+        extends: object
+        oneOf:
+          - $refCurie: gks.core:iriReference
+          - $refCurie: gks.core:MappableConcept
+        description: A custom entity or concept that is the object of the Proposition.
+      qualifiers:
+        type: array
+        ordered: false
+        items:
+          type: object
+          properties:
+            name:
+              type: string
+              description: >-
+                A name for the qualifier. Should be indicative of its meaning and/or the type of
+                information its value represents.
+            value:
+              oneOf:
+                - $refCurie: gks.core:iriReference
+                - $refCurie: gks.core:MappableConcept
+              description: >-
+                The value of the qualifier - either a MappableConcept or an IRI reference.
+          required:
+            - name
+            - value
+          additionalProperties: false
+        description: >-
+          An array of custom qualifier objects that provide additional information about the
+          Proposition. Each qualifier is an object with a required 'name' (string) identifying the
+          qualifier, a required 'value' (a MappableConcept or an IRI reference), and an optional
+          'description' (string) explaining its meaning.
+        $comment: >-
+          Qualifier objects have a name-value data structure that allows definition of custom
+          qualifiers for a Proposition. This substructure is embedded directly in the qualifiers
+          array rather than being defined as a standalone data type. The 'name' names the qualifier,
+          and the 'value' is either a MappableConcept or an IRI reference that provides its value.
+          This allows for flexible representation of additional information that may be relevant to
+          the Proposition, but is not captured by the subject-predicate-object structure.
+    required:
+      - customPropositionType
+
   SubjectVariantProposition:
     inherits: Proposition
     maturity: trial use
@@ -254,7 +326,6 @@ $defs:
           - $refCurie: cat-vrs:CategoricalVariant
           - $refCurie: gks.core:iriReference
         description: A variant that is the subject of the Proposition.
-
 
   # concrete core classes section -- Method, Contribution, Document, Agent, Statement, EvidenceLine, DataSet, StudyGroup
   Method:

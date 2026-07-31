@@ -19,5 +19,4 @@ This Element class is imported from the `GKS-Core model <https://github.com/ga4g
 
    coding
    concept-mapping
-   mappable-concept
    extension

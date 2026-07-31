@@ -1,6 +1,6 @@
 .. _GeneticContextVariantProposition:
 
-GeneticContextVariantProposition
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Genetic Context Variant Proposition
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .. include::  ../../def/va-spec/GeneticContextVariantProposition.rst
