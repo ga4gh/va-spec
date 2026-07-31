@@ -234,7 +234,7 @@ $defs:
 
   CustomProposition:
     inherits: Proposition
-    maturity: trial use
+    maturity: draft
     type: object
     description: >-
       A :ref:`Proposition` that is defined by a data provider for their own use.
