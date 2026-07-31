@@ -244,7 +244,7 @@ $defs:
         const: "CustomProposition"
         default: "CustomProposition"
         description: MUST be "CustomProposition".
-      subtype:
+      customPropositionType:
         type: string
         description: >-
           A user-defined subtype that distinguishes one kind of CustomProposition from another.
