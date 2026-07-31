@@ -286,11 +286,6 @@ $defs:
                 - $refCurie: gks.core:MappableConcept
               description: >-
                 The value of the qualifier - either a MappableConcept or an IRI reference.
-            description:
-              type: string
-              description: >-
-                A description of the meaning or utility of the qualifier, to explain the type of
-                information it is meant to hold.
           required:
             - name
             - value

@@ -2,7 +2,7 @@
    "$schema": "https://json-schema.org/draft/2020-12/schema",
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/CustomProposition",
    "title": "CustomProposition",
-   "maturity": "trial use",
+   "maturity": "draft",
    "type": "object",
    "description": "A Proposition that is defined by a data provider for their own use.",
    "properties": {
@@ -43,7 +43,7 @@
          "const": "CustomProposition",
          "default": "CustomProposition"
       },
-      "subtype": {
+      "customPropositionType": {
          "type": "string",
          "description": "A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value (\"CustomProposition\"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. \"GeneDiseaseValidityProposition\")."
       },
@@ -102,10 +102,6 @@
                      }
                   ],
                   "description": "The value of the qualifier - either a MappableConcept or an IRI reference."
-               },
-               "description": {
-                  "type": "string",
-                  "description": "A description of the meaning or utility of the qualifier, to explain the type of information it is meant to hold."
                }
             },
             "required": [
