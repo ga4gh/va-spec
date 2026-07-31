@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Condition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Condition",
    "title": "Condition",
    "maturity": "trial use",
    "description": "A specialization of MappableConcept representing a single condition (disease, phenotype, or trait). Allowed conceptType values include: Condition, Phenotype, Disease, Trait, Absent.",

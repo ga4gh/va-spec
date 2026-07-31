@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ConditionSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/ConditionSet",
    "title": "ConditionSet",
    "maturity": "trial use",
    "description": "A specialization of ConceptSet representing a set of conditions (diseases, phenotypes, traits) that occur together or are related, depending on the membership operator. Concepts are restricted to Condition and ConditionSet members.",
@@ -17,10 +17,10 @@
                "items": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Condition"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Condition"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ConditionSet"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/ConditionSet"
                      }
                   ]
                }

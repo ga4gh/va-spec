@@ -1,25 +1,25 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/aac-2017/json/AmpAscoCapEvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/aac-2017/json/AmpAscoCapEvidenceLine",
    "title": "AmpAscoCapEvidenceLine",
    "description": "Evidence line for AMP/ASCO/CAP",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/EvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "oneOf": [
                   {
-                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/VariantPrognosticProposition"
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantPrognosticProposition"
                   },
                   {
-                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/VariantDiagnosticProposition"
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantDiagnosticProposition"
                   },
                   {
-                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/VariantTherapeuticResponseProposition"
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantTherapeuticResponseProposition"
                   }
                ]
             },
