@@ -303,7 +303,7 @@ $defs:
           This allows for flexible representation of additional information that may be relevant to
           the Proposition, but is not captured by the subject-predicate-object structure.
     required:
-      - subtype
+      - customPropositionType
 
   SubjectVariantProposition:
     inherits: Proposition

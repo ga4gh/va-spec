@@ -115,10 +115,10 @@
       }
    },
    "required": [
+      "customPropositionType",
       "object",
       "predicate",
       "subject",
-      "subtype",
       "type"
    ],
    "additionalProperties": false

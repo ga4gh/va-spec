@@ -2,7 +2,7 @@ id: CustomProp001
 name: Example custom proposition
 description: A provider-defined proposition asserting that a gene is valid for a disease.
 type: CustomProposition
-subtype: GeneDiseaseValidityProposition
+customPropositionType: GeneDiseaseValidityProposition
 subject:
   type: MappableConcept
   id: hgnc:5173
@@ -26,7 +26,6 @@ object:
       - http://purl.obolibrary.org/obo/MONDO_0009648
 qualifiers:
   - name: classification
-    description: The provider's gene-disease validity classification for this relationship.
     value:
       type: MappableConcept
       name: Definitive
@@ -34,5 +33,4 @@ qualifiers:
         code: definitive
         system: https://www.clinicalgenome.org/
   - name: modeOfInheritance
-    description: Mode of inheritance under which the asserted relationship holds.
     value: http://purl.obolibrary.org/obo/HP_0000006
