@@ -138,3 +138,8 @@ va-spec.base:Agent:
   - extensions
   - aliases
   - description
+
+va-spec.base:CustomProposition:
+  # Entity
+  - aliases
+  - extensions

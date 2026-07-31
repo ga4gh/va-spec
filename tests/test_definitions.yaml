@@ -42,6 +42,9 @@ tests:
     definition: TherapyGroup
 
   # test propositions
+  - test_file: custom-proposition.yaml
+    namespace: va-spec.base
+    definition: CustomProposition
   - test_file: EVFI-proposition.yaml
     namespace: va-spec.base
     definition: ExperimentalVariantFunctionalImpactProposition
