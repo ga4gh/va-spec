@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/VariantPrognosticProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantPrognosticProposition",
    "title": "VariantPrognosticProposition",
    "type": "object",
    "maturity": "trial use",
@@ -96,10 +96,10 @@
                "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Condition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/ConditionSet"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/ConditionSet"
             }
          ],
          "description": "The disease that is evaluated for outcome.",

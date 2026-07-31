@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/TherapyGroup",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/TherapyGroup",
    "title": "TherapyGroup",
    "maturity": "trial use",
    "description": "A specialization of ConceptSet representing a group of two or more therapies that are applied in combination to a single patient/subject, or applied individually to a different subset of participants in a research study. Concepts are restricted to Therapy and TherapyGroup members.",
@@ -17,10 +17,10 @@
                "items": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/Therapy"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Therapy"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.1/base/json/TherapyGroup"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/TherapyGroup"
                      }
                   ]
                }
