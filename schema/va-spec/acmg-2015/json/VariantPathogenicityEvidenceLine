@@ -1,18 +1,18 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/acmg-2015/json/VariantPathogenicityEvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/acmg-2015/json/VariantPathogenicityEvidenceLine",
    "title": "VariantPathogenicityEvidenceLine",
    "description": "An Evidence Line that describes how a specific type of information was interpreted as evidence for or against a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/v1/base/json/EvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "description": "A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.",
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantPathogenicityProposition"
+               "$ref": "/ga4gh/schema/va-spec/v1/base/json/VariantPathogenicityProposition"
             },
             "directionOfEvidenceProvided": {
                "type": "string",

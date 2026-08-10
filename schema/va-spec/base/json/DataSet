@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/DataSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/base/json/DataSet",
    "title": "DataSet",
    "type": "object",
    "maturity": "trial use",
@@ -53,7 +53,7 @@
       "reportedIn": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/v1/base/json/Document"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
