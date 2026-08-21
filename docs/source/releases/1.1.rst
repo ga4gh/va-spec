@@ -1,0 +1,55 @@
+1.1
+!!!
+
+1.1.0
+@@@@@
+
+Minor Version Increment
+########################
+
+Backwards-incompatible changes to previously-released *trial use* product
+features, and additions/changes to *trial use* or *normative* data classes,
+per the :ref:`gks-maturity-model` versioning rules:
+
+  * renames the abstract ``ClinicalVariantProposition`` class (*trial use*) to
+    :ref:`GeneticContextVariantProposition`, and updates its definition to
+    describe knowledge that depends on a variant's genetic context
+  * adopts the GKS-Core 1.2.0-ballot ``MappableConcept`` and ``ConceptSet``
+    changes (both *trial use* in GKS-Core), which now inherit ``Entity`` and
+    require a ``type`` discriminator field — a backwards-incompatible
+    addition of a required field to these previously-released *trial use*
+    classes. This propagates to the VA-Spec *trial use* classes that
+    specialize them: :ref:`Condition` and :ref:`Therapy` (specializations of
+    ``MappableConcept``), and :ref:`ConditionSet` and :ref:`TherapyGroup`
+    (specializations of ``ConceptSet``)
+
+Patch Version Increment
+#########################
+
+New product features at the *draft* maturity level, changes to existing
+*draft* features, and supporting changes that do not affect data
+compatibility:
+
+  * adds a new ``CustomProposition`` class (*draft*), allowing providers to define their own proposition types
+  * adds :ref:`GeneDiseaseValidityProposition` (*draft*), a new proposition type for gene-disease validity assertions
+  * adds ``VariantMolecularConsequenceProposition`` (*draft*), for representing the functional consequences of a variant
+  * updates the ``ComputationalVariantFunctionalImpactAnalysisResult`` (*draft*) source schema
+  * updates the AAC 2017 Aligned Profiles (*draft*) to better reflect the source guidelines
+  * adds constraints to evidence line types for the ACMG (*draft*) and CCV (*draft*) statement profiles
+  * updates method types in the CCV (*draft*) and ACMG (*draft*) evidence line profiles
+  * updates ``hasEvidenceLines`` in the AAC/ACMG/CCV (*draft*) statement profiles to accept IRIs
+  * enforces enum validation in ``primaryCodings`` across the AAC/ACMG/CCV (*draft*) profiles
+  * updates the :ref:`ConditionSet` VA-Spec version reference
+  * resolves a typo ("Oncoogenicity" :math:`\rightarrow` "Oncogenicity") in the CCV oncogenicity evidence line profile
+  * fixes typos in the allele origin description
+  * updates descriptions for the Variant Clinical Significance Statement profile
+  * updates VRS and CAT-VRS submodule references (see the GKS-Core update
+    above for the one substantive change pulled in via the GKS-Core bump)
+  * adds Quick Start guidance
+  * adds documentation for the ``TumorVariantFrequencyStudyResult`` (*draft*) profile to the Study Result profiles page
+  * adds a README to the Modeling subdirectory
+  * updates the repository README to include contributing information
+  * adds a CITATION file
+  * various documentation fixes and copyright year updates
+  * adds test examples and fixtures for CIViC oncogenicity assertions and propositions
+  * adds a pre-commit hook to detect and stage VA-Spec schema updates
