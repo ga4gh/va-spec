@@ -53,3 +53,6 @@ compatibility:
   * various documentation fixes and copyright year updates
   * adds test examples and fixtures for CIViC oncogenicity assertions and propositions
   * adds a pre-commit hook to detect and stage VA-Spec schema updates
+  * corrects the core model class diagram to show :ref:`DataSet` inheriting
+    from ``Entity`` rather than ``InformationEntity``, matching the source
+    schema (closes `#380 <https://github.com/ga4gh/va-spec/issues/380>`__)
