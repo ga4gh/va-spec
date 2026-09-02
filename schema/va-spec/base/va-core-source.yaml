@@ -130,7 +130,9 @@ $defs:
           in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with
           clinical outcomes).
       sourceDataSet:
-        $ref: "#/$defs/DataSet"
+        oneOf:
+          - $ref: "#/$defs/DataSet"
+          - $refCurie: gks.core:iriReference
         description: >-
           A larger DataSet from which the data included in the StudyResult was taken or derived.
         $comment: >-
@@ -181,7 +183,8 @@ $defs:
     heritableProperties:
       subject:
         oneOf:
-        - type: object
+          - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:iriReference
         description: The Entity or concept about which the Proposition is made.
         $comment: >-
           In profiles for most VA-Spec implementations, the subject will be a some type of genetic
@@ -197,7 +200,8 @@ $defs:
           set of predicates for the relationships relevant in the domain.
       object:
         oneOf:
-        - type: object
+          - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:iriReference
         description: An Entity or concept that is related to the subject of a Proposition via its predicate.
         $comment: >-
           The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a
@@ -381,7 +385,9 @@ $defs:
         default: Contribution
         description: MUST be "Contribution".
       contributor:
-        $ref: "#/$defs/Agent"
+        oneOf:
+          - $ref: "#/$defs/Agent"
+          - $refCurie: gks.core:iriReference
         description: >-
           The agent that made the contribution.
       activityType:
@@ -501,7 +507,9 @@ $defs:
         default: Statement
         description: MUST be "Statement".
       proposition:
-        $ref: "#/$defs/Proposition"
+        oneOf:
+          - $ref: "#/$defs/Proposition"
+          - $refCurie: gks.core:iriReference
         description:  >-
           A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being
           true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
@@ -543,7 +551,9 @@ $defs:
           is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') -
           or they can choose values that don't commit to one or the other if they don't want to make the distinction
           (e.g. 'high' vs 'medium' vs 'low').
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
       score:
         type: number
         maturity: draft
@@ -558,7 +568,9 @@ $defs:
           The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
           on a numerical score.
       classification:
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's Proposition, in terms of a classification of
@@ -631,7 +643,9 @@ $defs:
         default: EvidenceLine
         description: MUST be "EvidenceLine".
       targetProposition:
-        $ref: "#/$defs/Proposition"
+        oneOf:
+          - $ref: "#/$defs/Proposition"
+          - $refCurie: gks.core:iriReference
         description: >-
           The possible fact against which evidence items contained in an Evidence Line were collectively evaluated,
           in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based
@@ -741,7 +755,9 @@ $defs:
           revisions that add or modify content, but don’t change the identity of the resource. Use this
           attribute in cases where version is not reflected in an identifier associated with the data set.
       license:
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           A specific license that dictates legal permissions for how a data set can be used
           (by whom, where, for what purposes, with what additional requirements, etc.)
@@ -988,13 +1004,17 @@ $defs:
           - $refCurie: gks.core:iriReference
         description: The :ref:`Condition` or :ref:`ConditionSet`for which the variant impact is stated.
       penetranceQualifier:
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
           Consider using terms or codes from community terminologies here - e.g. terms from the
@@ -1065,9 +1085,9 @@ $defs:
           is intended to respond to.
         extends: object
         oneOf:
-        - $ref: Therapy
-        - $ref: TherapyGroup
-        - $refCurie: gks.core:iriReference
+          - $ref: Therapy
+          - $ref: TherapyGroup
+          - $refCurie: gks.core:iriReference
       conditionQualifier:
         oneOf:
           - $ref: Condition
@@ -1149,7 +1169,9 @@ $defs:
         type: number
         description: The frequency of the focusAllele in the cohort.
       cohort:
-        $ref: "#/$defs/StudyGroup"
+        oneOf:
+          - $ref: "#/$defs/StudyGroup"
+          - $refCurie: gks.core:iriReference
         description: The cohort from which the frequency was derived.
       subCohortFrequency:
         type: array
@@ -1190,8 +1212,8 @@ $defs:
         description: The variant for which frequency data is reported in the Study Result.
         oneOf:
         - $refCurie: vrs:Allele
-        - $refCurie: gks.core:iriReference
         - $refCurie: cat-vrs:CategoricalVariant
+        - $refCurie: gks.core:iriReference
       affectedSampleCount:
         type: integer
         description: The number of tumor samples in the sample group that contain the focus variant.
@@ -1203,7 +1225,9 @@ $defs:
         type: number
         description: The frequency of tumor samples that include the focus variant in the sample group.
       sampleGroup:
-        $ref: "#/$defs/StudyGroup"
+        oneOf:
+          - $ref: "#/$defs/StudyGroup"
+          - $refCurie: gks.core:iriReference
         description: The set of samples about which the frequency data was generated.
       subGroupFrequency:
         type: array
@@ -1316,7 +1340,9 @@ $defs:
           $ref: "#/$defs/Contribution"
         description: Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
       sourceDataSet:
-        $ref: "#/$defs/DataSet"
+        oneOf:
+          - $ref: "#/$defs/DataSet"
+          - $refCurie: gks.core:iriReference
         description: The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
     required:
       - type

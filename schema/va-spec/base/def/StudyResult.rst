@@ -85,7 +85,7 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - The specific participant, subject or experimental unit in a Study that data included in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - A larger DataSet from which the data included in the StudyResult was taken or derived.
    *  - ancillaryResults

@@ -81,8 +81,6 @@
          "default": "Statement"
       },
       "proposition": {
-         "description": "A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.",
-         "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition\u2019s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of the Proposition\u2019s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS).",
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/CustomProposition"
@@ -113,8 +111,13 @@
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantTherapeuticResponseProposition"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
-         ]
+         ],
+         "description": "A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.",
+         "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition\u2019s validity (i.e. how likely it is to be true or false based on evaluated evidence). The semantics of the Proposition are explicitly captured using subject, predicate, object, and optional qualifier attributes (SPOQ). An assessment of the Proposition\u2019s validity can optionally be captured using the Statement's direction, strength, and/or score attributes (DS)."
       },
       "direction": {
          "description": "A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.",
@@ -129,7 +132,14 @@
       "strength": {
          "description": "A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.",
          "$comment": "Statements put forth a Proposition that expresses some possible fact about the world, and may provide an assessment of this proposition's validity (i.e. how likely it is to be true or false based on evaluated evidence) using 'direction', 'strength', and 'score' attributes. The 'strength' attribute is used to report the strength of this assessment in the direction indicated. Strength can be framed as a *level of confidence* that the Proposition is true or false, or as a *level of evidence* that supports or disputes it. Data creators can define the permissible values for the 'strength' attribute to indicate which of these facets is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') - or they can choose values that don't commit to one or the other if they don't want to make the distinction (e.g. 'high' vs 'medium' vs 'low').",
-         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ]
       },
       "score": {
          "type": "number",
@@ -138,9 +148,16 @@
          "description": "A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute."
       },
       "classification": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.",
-         "$comment": "Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification.",
-         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+         "$comment": "Permissible values for this attribute are typically selected to be succinct and familiar in the target community of practice - and can be provided to report of a statement's conclusion in user-friendly terms. For example, in a Statement assessing the proposition that \"BRCA2 c.8023A>G is pathogenic for Breast Cancer\", and reporting a direction of 'supports' and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation Guidelines would be used as a subject classification."
       },
       "hasEvidenceLines": {
          "type": "array",

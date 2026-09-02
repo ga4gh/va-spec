@@ -96,7 +96,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - MUST be "CohortAlleleFrequencyStudyResult".
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - The dataset from which the CohortAlleleFrequencyStudyResult was reported.
    *  - focusAllele
@@ -121,7 +121,7 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - The frequency of the focusAllele in the cohort.
    *  - cohort
       -
-      - :ref:`StudyGroup`
+      - :ref:`StudyGroup` | :ref:`iriReference`
       - 1..1
       - The cohort from which the frequency was derived.
    *  - subCohortFrequency

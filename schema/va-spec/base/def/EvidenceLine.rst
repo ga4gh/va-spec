@@ -80,7 +80,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - MUST be "EvidenceLine".
    *  - targetProposition
       -
-      - :ref:`Proposition`
+      - :ref:`Proposition` | :ref:`iriReference`
       - 0..1
       - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.
    *  - hasEvidenceItems

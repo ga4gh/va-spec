@@ -59,7 +59,7 @@ Some Contribution attributes are inherited from :ref:`gks-core:Entity`.
       - MUST be "Contribution".
    *  - contributor
       -
-      - :ref:`Agent`
+      - :ref:`Agent` | :ref:`iriReference`
       - 0..1
       - The agent that made the contribution.
    *  - activityType

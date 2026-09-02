@@ -106,6 +106,6 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - The assay that was performed to generate the reported functional impact score.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - The full data set that provided the reported the functional impact score.

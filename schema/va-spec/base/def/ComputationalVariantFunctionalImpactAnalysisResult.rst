@@ -83,6 +83,6 @@ An AnalysisResult that reports the output of a single in silico tool's analysis 
       - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
