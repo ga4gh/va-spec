@@ -59,7 +59,7 @@ Some Proposition attributes are inherited from :ref:`gks-core:Entity`.
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - subject
       -
-      - :ref:`Entity` | :ref:`iriReference`
+      - :ref:`Entity` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
       - The Entity or concept about which the Proposition is made.
    *  - predicate
@@ -69,6 +69,6 @@ Some Proposition attributes are inherited from :ref:`gks-core:Entity`.
       - The relationship declared to hold between the subject and the object of the Proposition.
    *  - object
       -
-      - :ref:`Entity` | :ref:`iriReference`
+      - :ref:`Entity` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
       - An Entity or concept that is related to the subject of a Proposition via its predicate.

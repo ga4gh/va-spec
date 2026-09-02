@@ -116,6 +116,7 @@ $defs:
       focus:
         oneOf:
           - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:ConceptSet
           - $refCurie: gks.core:iriReference
         description: >-
           The specific participant, subject or experimental unit in a Study that data included in the
@@ -184,6 +185,7 @@ $defs:
       subject:
         oneOf:
           - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:ConceptSet
           - $refCurie: gks.core:iriReference
         description: The Entity or concept about which the Proposition is made.
         $comment: >-
@@ -201,6 +203,7 @@ $defs:
       object:
         oneOf:
           - $refCurie: gks.core:Entity
+          - $refCurie: gks.core:ConceptSet
           - $refCurie: gks.core:iriReference
         description: An Entity or concept that is related to the subject of a Proposition via its predicate.
         $comment: >-
@@ -259,20 +262,24 @@ $defs:
       subject:
         extends: subject
         oneOf:
-          - $refCurie: vrs:MolecularVariation
+          - $refCurie: vrs:Variation
           - $refCurie: cat-vrs:CategoricalVariant
           - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:ConceptSet
           - $refCurie: gks.core:iriReference
-        description: A custom entity or concept that is the subject of the Proposition.
+        description: A variant or concept that is the subject of the Proposition.
       predicate:
         extends: predicate
         description: A custom predicate that describes the relationship between the subject and object of the Proposition.
       object:
         extends: object
         oneOf:
-          - $refCurie: gks.core:iriReference
+          - $refCurie: vrs:Variation
+          - $refCurie: cat-vrs:CategoricalVariant
           - $refCurie: gks.core:MappableConcept
-        description: A custom entity or concept that is the object of the Proposition.
+          - $refCurie: gks.core:ConceptSet
+          - $refCurie: gks.core:iriReference
+        description: A variant or concept that is the object of the Proposition.
       qualifiers:
         type: array
         ordered: false
@@ -286,8 +293,9 @@ $defs:
                 information its value represents.
             value:
               oneOf:
-                - $refCurie: gks.core:iriReference
                 - $refCurie: gks.core:MappableConcept
+                - $refCurie: gks.core:ConceptSet
+                - $refCurie: gks.core:iriReference
               description: >-
                 The value of the qualifier - either a MappableConcept or an IRI reference.
           required:
@@ -680,7 +688,9 @@ $defs:
           The direction of support that the Evidence Line is determined to provide toward its target Proposition
           (supports, disputes, neutral)
       strengthOfEvidenceProvided:
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against its target Proposition,
           evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
@@ -695,7 +705,9 @@ $defs:
           against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided
           value.
       evidenceOutcome:
-        $refCurie: gks.core:MappableConcept
+        oneOf:
+          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
           the direction and strength of support it provides for or against the target Proposition.
@@ -792,7 +804,9 @@ $defs:
       characteristics:
         type: array
         items:
-          $refCurie: gks.core:MappableConcept
+          oneOf:
+            - $refCurie: gks.core:MappableConcept
+            - $refCurie: gks.core:iriReference
         ordered: false
         description: >-
           A feature or role shared by all members of the StudyGroup, representing a criterion for
@@ -858,8 +872,8 @@ $defs:
       objectSequenceFeature:
         extends: object
         oneOf:
-          - $refCurie: gks.core:iriReference
           - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact
           of the subject variant is reported.
@@ -1308,18 +1322,18 @@ $defs:
         description: A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score').
       categoricalImpact:
         oneOf:
-          - $refCurie: gks.core:iriReference
           - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic').
       impactedFeatureType:
         oneOf:
-          - $refCurie: gks.core:iriReference
           - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: A descriptor indicating the type of feature for which the focus variant has a predicted impact
       impactedFeature:
         oneOf:
-          - $refCurie: gks.core:iriReference
           - $refCurie: gks.core:MappableConcept
+          - $refCurie: gks.core:iriReference
         description: The specific feature for which the focus variant has a predicted impact
       ancillaryResults:
         maturity: draft
@@ -1330,8 +1344,8 @@ $defs:
         additionalProperties: true
       specifiedBy:
         oneOf:
-          - $refCurie: gks.core:iriReference
           - $ref: "#/$defs/Method"
+          - $refCurie: gks.core:iriReference
         description: The in silico method or algorithm that was applied to generate the reported score(s).
       contributions:
         type: array

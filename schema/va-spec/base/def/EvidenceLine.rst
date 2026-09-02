@@ -98,7 +98,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)
    *  - strengthOfEvidenceProvided
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - scoreOfEvidenceProvided
@@ -108,6 +108,6 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - evidenceOutcome
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.

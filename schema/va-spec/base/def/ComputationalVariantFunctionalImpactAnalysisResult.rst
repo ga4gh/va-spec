@@ -47,17 +47,17 @@ An AnalysisResult that reports the output of a single in silico tool's analysis 
       - A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score').
    *  - categoricalImpact
       -
-      - :ref:`iriReference` | :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic').
    *  - impactedFeatureType
       -
-      - :ref:`iriReference` | :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - A descriptor indicating the type of feature for which the focus variant has a predicted impact
    *  - impactedFeature
       -
-      - :ref:`iriReference` | :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The specific feature for which the focus variant has a predicted impact
    *  - ancillaryResults
@@ -70,7 +70,7 @@ An AnalysisResult that reports the output of a single in silico tool's analysis 
       - An object in which implementers can define custom fields to capture additional scores or outputs produced by the in silico tool beyond the primary score. For example, CADD reports both a raw score and a Phred-scaled score; the primary score field would hold one, and ancillaryResults would hold the other.
    *  - specifiedBy
       -
-      - :ref:`iriReference` | :ref:`Method`
+      - :ref:`Method` | :ref:`iriReference`
       - 0..1
       - The in silico method or algorithm that was applied to generate the reported score(s).
    *  - contributions

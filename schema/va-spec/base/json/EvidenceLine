@@ -150,17 +150,31 @@
          "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)"
       },
       "strengthOfEvidenceProvided": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
          "description": "The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.",
-         "$comment": "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided.",
-         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+         "$comment": "Values of this attribute can be defined by for a given profile based on domain/application needs, but should be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute can be used to report quantitative assessments of evidence provided."
       },
       "scoreOfEvidenceProvided": {
          "type": "number",
          "description": "A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value."
       },
       "evidenceOutcome": {
-         "description": "A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.",
-         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
+         "description": "A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition."
       }
    },
    "required": [

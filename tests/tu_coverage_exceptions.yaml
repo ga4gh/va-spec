@@ -1,3 +1,8 @@
+va-spec.base:CustomProposition:
+  # Entity
+  - aliases
+  - extensions
+
 va-spec.base:ExperimentalVariantFunctionalImpactProposition:
   # Entity
   - name

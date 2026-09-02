@@ -69,7 +69,7 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - The relationship the Proposition describes between the subject variant and object sequence feature whose function it may alter. MUST be "impactsFunctionOf".
    *  - objectSequenceFeature
       -
-      - :ref:`iriReference` | :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
       - The sequence feature (typically a gene or gene product) on whose function the impact of the subject variant is reported.
    *  - experimentalContextQualifier
