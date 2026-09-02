@@ -144,3 +144,13 @@ Custom Proposition
 ##################
 
 .. include::  ../../def/va-spec/CustomProposition.rst
+
+
+**Artifacts**
+ - |custom_proposition_source_yaml|
+ - |custom_proposition_json_schema|
+
+**Custom Proposition Semantics**
+ - The ``CustomProposition`` class lets data providers define their own proposition types before they are formally profiled in the VA-Spec, using the generic ``subject``, ``predicate``, ``object`` structure of the core :ref:`Proposition<Proposition>`.
+ - The ``customPropositionType`` attribute distinguishes one kind of CustomProposition from another - playing the role that ``type`` plays for standard Proposition subclasses (e.g. ClinVar's *"ClinvarDrugResponseProposition"*, which asserts a proposition such as *"a CFTR variant has a drug response for ivacaftor"*).
+ - ``CustomProposition`` is at a **draft** maturity level and may change significantly in future releases.

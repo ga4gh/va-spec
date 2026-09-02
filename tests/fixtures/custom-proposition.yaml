@@ -1,36 +1,35 @@
 id: CustomProp001
 name: Example custom proposition
-description: A provider-defined proposition asserting that a gene is valid for a disease.
+description: >-
+  A provider-defined proposition, modeled by ClinVar as a ClinvarDrugResponseProposition,
+  asserting that a CFTR variant modulates response to the drug ivacaftor.
 type: CustomProposition
-customPropositionType: GeneDiseaseValidityProposition
-subject:
-  type: MappableConcept
-  id: hgnc:5173
-  conceptType: Gene
-  name: HRAS
-  primaryCoding:
-    code: HGNC:5173
-    system: https://www.genenames.org/
-    iris:
-      - https://identifiers.org/hgnc:5173
-predicate: isGeneticBasisFor
+customPropositionType: ClinvarDrugResponseProposition
+subject: https://www.ncbi.nlm.nih.gov/clinvar/variation/7108/
+predicate: hasDrugResponseFor
 object:
   type: MappableConcept
-  id: mondo:0009648
   conceptType: Disease
-  name: Costello syndrome
+  name: ivacaftor response
   primaryCoding:
-    code: MONDO:0009648
-    system: http://purl.obolibrary.org/obo/
+    code: CN236500
+    system: https://www.ncbi.nlm.nih.gov/medgen/
     iris:
-      - http://purl.obolibrary.org/obo/MONDO_0009648
+      - https://www.ncbi.nlm.nih.gov/medgen/CN236500
 qualifiers:
   - name: classification
     value:
       type: MappableConcept
-      name: Definitive
+      name: responsive
       primaryCoding:
-        code: definitive
-        system: https://www.clinicalgenome.org/
-  - name: modeOfInheritance
-    value: http://purl.obolibrary.org/obo/HP_0000006
+        code: drug-response
+        system: https://www.ncbi.nlm.nih.gov/clinvar/
+  - name: drug
+    value:
+      type: MappableConcept
+      name: ivacaftor
+      primaryCoding:
+        code: "1243041"
+        system: https://mor.nlm.nih.gov/RxNav/
+        iris:
+          - https://mor.nlm.nih.gov/RxNav/search?searchBy=RXCUI&searchTerm=1243041

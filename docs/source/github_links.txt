@@ -37,6 +37,8 @@ prognostic_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L93
 prognostic_proposition_json_schema = schema/va-spec/base/json/VariantPrognosticProposition
 experimental_variant_functional_impact_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L749
 experimental_variant_functional_impact_proposition_json_schema = schema/va-spec/base/json/ExperimentalVariantFunctionalImpactProposition
+custom_proposition_source_yaml = schema/va-spec/base/va-core-source.yaml#L242
+custom_proposition_json_schema = schema/va-spec/base/json/CustomProposition
 
 cohort_allele_frequency_study_result_source_yaml = schema/va-spec/base/va-core-source.yaml#L1004
 cohort_allele_frequency_study_result_json_schema = schema/va-spec/base/json/CohortAlleleFrequencyStudyResult

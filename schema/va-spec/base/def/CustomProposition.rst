@@ -61,7 +61,7 @@ Some CustomProposition attributes are inherited from :ref:`Proposition`.
       -
       - string
       - 1..1
-      - A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value ("CustomProposition"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. "GeneDiseaseValidityProposition").
+      - A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value ("CustomProposition"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. "ClinvarDrugResponseProposition").
    *  - subject
       -
       - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`MappableConcept` | :ref:`ConceptSet` | :ref:`iriReference`
