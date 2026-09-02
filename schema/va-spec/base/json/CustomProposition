@@ -45,12 +45,15 @@
       },
       "customPropositionType": {
          "type": "string",
-         "description": "A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value (\"CustomProposition\"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. \"GeneDiseaseValidityProposition\")."
+         "description": "A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value (\"CustomProposition\"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. \"ClinvarDrugResponseProposition\")."
       },
       "subject": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/CategoricalVariant"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/ConceptSet"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
@@ -59,10 +62,10 @@
                "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/MolecularVariation"
+               "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/Variation"
             }
          ],
-         "description": "A custom entity or concept that is the subject of the Proposition.",
+         "description": "A variant or concept that is the subject of the Proposition.",
          "$comment": "In profiles for most VA-Spec implementations, the subject will be a some type of genetic variation. However, the Core VA model is domain-agnostic, and supports Propositions about any type of Entity. Some data providers may want to make statements about other entities or concepts that represent evidence for a Propositions about genetic variation (e.g. a statement that a gene is valid for some disease is one type of evidence that may support the pathogenicity of a variant that affects that gene)."
       },
       "predicate": {
@@ -73,13 +76,22 @@
       "object": {
          "oneOf": [
             {
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/CategoricalVariant"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/ConceptSet"
+            },
+            {
                "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
                "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/Variation"
             }
          ],
-         "description": "A custom entity or concept that is the object of the Proposition.",
+         "description": "A variant or concept that is the object of the Proposition.",
          "$comment": "The object of a Proposition can be any Entity or concept that is related to the subject. When the subject is a genetic variation, the object is often a disease, phenotype, therapeutic intervention, or gene."
       },
       "qualifiers": {
@@ -95,10 +107,13 @@
                "value": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
                      },
                      {
-                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/ConceptSet"
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
                      }
                   ],
                   "description": "The value of the qualifier - either a MappableConcept or an IRI reference."

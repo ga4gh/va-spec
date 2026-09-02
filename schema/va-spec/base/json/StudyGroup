@@ -53,7 +53,14 @@
       "characteristics": {
          "type": "array",
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               }
+            ]
          },
          "ordered": false,
          "description": "A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.",

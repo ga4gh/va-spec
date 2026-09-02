@@ -80,7 +80,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - MUST be "EvidenceLine".
    *  - targetProposition
       -
-      - :ref:`Proposition`
+      - :ref:`Proposition` | :ref:`iriReference`
       - 0..1
       - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.
    *  - hasEvidenceItems
@@ -98,7 +98,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)
    *  - strengthOfEvidenceProvided
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - scoreOfEvidenceProvided
@@ -108,6 +108,6 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - evidenceOutcome
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.

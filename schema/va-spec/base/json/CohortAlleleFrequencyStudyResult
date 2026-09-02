@@ -94,7 +94,14 @@
          "default": "CohortAlleleFrequencyStudyResult"
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/DataSet",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/DataSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
          "description": "The dataset from which the CohortAlleleFrequencyStudyResult was reported.",
          "$comment": "In most cases, a StudyResult will be generated using data from one source dataset - but it is possible multiple datasets related to a single study contain data about a particular focus that get collected into a single StudyResult instance. If use cases for this arise we can make this attribute take an array of DataSets."
       },
@@ -123,7 +130,14 @@
          "description": "The frequency of the focusAllele in the cohort."
       },
       "cohort": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/StudyGroup",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/StudyGroup"
+            },
+            {
+               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            }
+         ],
          "description": "The cohort from which the frequency was derived."
       },
       "subCohortFrequency": {

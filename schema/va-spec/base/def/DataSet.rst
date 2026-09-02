@@ -82,6 +82,6 @@ Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
       - The version of the DataSet, as assigned by its creator.
    *  - license
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)

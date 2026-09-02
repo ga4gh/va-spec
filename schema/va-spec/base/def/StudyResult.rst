@@ -80,12 +80,12 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - A document in which the the Information Entity is reported.
    *  - focus
       -
-      - :ref:`Entity` | :ref:`iriReference`
+      - :ref:`Entity` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
       - The specific participant, subject or experimental unit in a Study that data included in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - A larger DataSet from which the data included in the StudyResult was taken or derived.
    *  - ancillaryResults

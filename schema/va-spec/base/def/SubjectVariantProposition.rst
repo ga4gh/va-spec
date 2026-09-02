@@ -64,7 +64,7 @@ Some SubjectVariantProposition attributes are inherited from :ref:`Proposition`.
       - The relationship declared to hold between the subject and the object of the Proposition.
    *  - object
       -
-      - object
+      - :ref:`Entity` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
       - An Entity or concept that is related to the subject of a Proposition via its predicate.
    *  - subjectVariant

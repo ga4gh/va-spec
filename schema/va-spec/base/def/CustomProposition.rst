@@ -61,12 +61,12 @@ Some CustomProposition attributes are inherited from :ref:`Proposition`.
       -
       - string
       - 1..1
-      - A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value ("CustomProposition"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. "GeneDiseaseValidityProposition").
+      - A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value ("CustomProposition"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. "ClinvarDrugResponseProposition").
    *  - subject
       -
-      - :ref:`MolecularVariation` | :ref:`CategoricalVariant` | :ref:`MappableConcept` | :ref:`iriReference`
+      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`MappableConcept` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
-      - A custom entity or concept that is the subject of the Proposition.
+      - A variant or concept that is the subject of the Proposition.
    *  - predicate
       -
       - string
@@ -74,9 +74,9 @@ Some CustomProposition attributes are inherited from :ref:`Proposition`.
       - A custom predicate that describes the relationship between the subject and object of the Proposition.
    *  - object
       -
-      - :ref:`iriReference` | :ref:`MappableConcept`
+      - :ref:`Variation` | :ref:`CategoricalVariant` | :ref:`MappableConcept` | :ref:`ConceptSet` | :ref:`iriReference`
       - 1..1
-      - A custom entity or concept that is the object of the Proposition.
+      - A variant or concept that is the object of the Proposition.
    *  - qualifiers
       -
                         .. raw:: html
