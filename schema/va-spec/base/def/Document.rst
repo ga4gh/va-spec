@@ -8,7 +8,7 @@ A collection of information, usually in a text-based or graphic human-readable f
 
 **Information Model**
 
-Some Document attributes are inherited from :ref:`gks-core:Entity`.
+Some Document attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

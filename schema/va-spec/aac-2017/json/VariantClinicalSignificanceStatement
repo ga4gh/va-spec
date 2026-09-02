@@ -19,7 +19,7 @@
                   "primaryCoding": {
                      "allOf": [
                         {
-                           "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Coding"
+                           "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/Coding"
                         },
                         {
                            "properties": {
@@ -44,7 +44,7 @@
                   "primaryCoding": {
                      "allOf": [
                         {
-                           "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Coding"
+                           "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/Coding"
                         },
                         {
                            "properties": {
@@ -103,7 +103,7 @@
                "hasEvidenceLines": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+                        "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
                      },
                      {
                         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/aac-2017/json/DiagnosticEvidenceLine"
@@ -189,7 +189,7 @@
                "hasEvidenceLines": {
                   "oneOf": [
                      {
-                        "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+                        "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
                      },
                      {
                         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/aac-2017/json/DiagnosticEvidenceLine"

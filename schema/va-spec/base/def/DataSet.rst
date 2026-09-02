@@ -8,7 +8,7 @@ A collection of related data items or records that are organized together in a c
 
 **Information Model**
 
-Some DataSet attributes are inherited from :ref:`gks-core:Entity`.
+Some DataSet attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

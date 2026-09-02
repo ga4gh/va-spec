@@ -7,10 +7,10 @@ description: >-
 strict: true
 imports:
   va-core: ../base/va-core-source.yaml
-  gks-core: ../../gks-core/gks-core-source.yaml
+  gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/
+  gkm.core: /ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/
 
 $defs:
   # Variant Pathogenicity Statement
@@ -36,7 +36,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum:
@@ -60,7 +60,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - oneOf:
                       - properties:
                           code:
@@ -91,7 +91,7 @@ $defs:
             items:
               anyOf:
                 - $ref: "#/$defs/VariantPathogenicityEvidenceLine"
-                - $refCurie: gks.core:iriReference
+                - $refCurie: gkm.core:iriReference
         required:
           - classification
           - specifiedBy
@@ -131,7 +131,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum:

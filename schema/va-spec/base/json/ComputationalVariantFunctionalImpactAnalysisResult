@@ -18,7 +18,7 @@
                "$ref": "/ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
                "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/Allele"
@@ -29,7 +29,7 @@
       "transcriptVariationContext": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
                "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/Allele"
@@ -44,10 +44,10 @@
       "impactScoreType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score')."
@@ -55,10 +55,10 @@
       "categoricalImpact": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic')."
@@ -66,10 +66,10 @@
       "impactedFeatureType": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "A descriptor indicating the type of feature for which the focus variant has a predicted impact"
@@ -77,10 +77,10 @@
       "impactedFeature": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The specific feature for which the focus variant has a predicted impact"
@@ -97,7 +97,7 @@
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The in silico method or algorithm that was applied to generate the reported score(s)."

@@ -8,10 +8,10 @@ description: >-
 strict: true
 imports:
   va-core: ../base/va-core-source.yaml
-  gks-core: ../../gks-core/gks-core-source.yaml
+  gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/
+  gkm.core: /ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/
 
 $defs:
   AmpAscoCapEvidenceLine:
@@ -29,7 +29,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum: [A, B, C, D]
@@ -50,7 +50,7 @@ $defs:
               targetProposition:
                 $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantPrognosticProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+        - $ref: "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
 
   DiagnosticEvidenceLine:
     maturity: draft
@@ -65,7 +65,7 @@ $defs:
               targetProposition:
                 $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantDiagnosticProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+        - $ref: "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
 
   TherapeuticEvidenceLine:
     maturity: draft
@@ -80,7 +80,7 @@ $defs:
               targetProposition:
                 $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantTherapeuticResponseProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+        - $ref: "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -101,7 +101,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum:
@@ -116,7 +116,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum:
@@ -146,7 +146,7 @@ $defs:
           properties:
             hasEvidenceLines:
               oneOf:
-                - $refCurie: gks.core:iriReference
+                - $refCurie: gkm.core:iriReference
                 - $ref: "#/$defs/DiagnosticEvidenceLine"
                 - $ref: "#/$defs/PrognosticEvidenceLine"
                 - $ref: "#/$defs/TherapeuticEvidenceLine"
@@ -186,7 +186,7 @@ $defs:
           properties:
             hasEvidenceLines:
               oneOf:
-                - $refCurie: gks.core:iriReference
+                - $refCurie: gkm.core:iriReference
                 - $ref: "#/$defs/DiagnosticEvidenceLine"
                 - $ref: "#/$defs/PrognosticEvidenceLine"
                 - $ref: "#/$defs/TherapeuticEvidenceLine"

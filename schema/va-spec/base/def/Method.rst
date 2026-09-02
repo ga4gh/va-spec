@@ -8,7 +8,7 @@ A set of instructions that specify how to achieve some objective.
 
 **Information Model**
 
-Some Method attributes are inherited from :ref:`gks-core:Entity`.
+Some Method attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap
