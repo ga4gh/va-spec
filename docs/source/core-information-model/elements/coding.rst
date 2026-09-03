@@ -3,4 +3,4 @@
 Coding
 ******
 
-.. include::  ../../../../schema/gks-core/def/Coding.rst
+.. include::  ../../../../schema/gkm-core/def/Coding.rst

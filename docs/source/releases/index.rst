@@ -5,7 +5,7 @@ Releases
 
 .. note::
 
-    VA-Spec follows the :ref:`gks-maturity-model`, which includes our standard
+    VA-Spec follows the :ref:`gkm-maturity-model`, which includes our standard
     Work Stream practices for versioning and release cadence.
 
     Planned and ongoing work may be tracked in the `VA-Spec issue tracker

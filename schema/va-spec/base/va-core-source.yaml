@@ -146,7 +146,7 @@ $defs:
           e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or
           homozygote/heterozygote calls derived from analyzing raw allele count data.
         $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          This field is left at draft maturity, as it is different from most GKM objects by allowing any content
           to be added.
         type: object
         additionalProperties: true
@@ -157,7 +157,7 @@ $defs:
           of the primary data items captured in standard attributes in the main body of the Study Result.
           e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.
         $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          This field is left at draft maturity, as it is different from most GKM objects by allowing any content
           to be added.
         type: object
         additionalProperties: true

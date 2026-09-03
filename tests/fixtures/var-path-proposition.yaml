@@ -34,7 +34,7 @@ subjectVariant:
         - type: MappableConcept
           primaryCoding:
             code: liftover_to
-            system: ga4gh-gks-term:allele-relation
+            system: ga4gh-gkm-term:allele-relation
         - type: MappableConcept
           primaryCoding:
             code: transcribed_to
@@ -59,7 +59,7 @@ penetranceQualifier:
   name: high penetrance
   primaryCoding:
     code: high
-    system: ga4gh-gks-term:penetrance-qualifier
+    system: ga4gh-gkm-term:penetrance-qualifier
 alleleOriginQualifier:
   type: MappableConcept
   primaryCoding:

@@ -12,12 +12,12 @@ title: Variant Annotation Specification Core Information Model
 strict: true
 
 imports:
-  gks.common: ../../gks-common/common-source.yaml
+  gkm.common: ../../gkm-common/common-source.yaml
   catvrs: ../../catvrs/catvrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
 
 namespaces:
-  gks.common: ../../gks-common/common-source.json#/$defs/
+  gkm.common: ../../gkm-common/common-source.json#/$defs/
   catvrs: ../../catvrs/catvrs.json#/$defs/
   vrs: ../../vrs/vrs.json#/$defs/
 
@@ -35,7 +35,7 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
      range:
        oneOf:
          - $ref: "#/$defs/Method"
-         - $refCurie: gks.common:IRI
+         - $refCurie: gkm.common:IRI
   contributions:
     description: >-
      A list of Contribution objects that describe the activities performed by agents upon this entity.
@@ -51,7 +51,7 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
     range:
       oneOf:
         - $ref: "#/$defs/Document"
-        - $refCurie: gks.common:IRI
+        - $refCurie: gkm.common:IRI
     multivalued: true
   dateAuthored:
     description: Indicates when the information content expressed in the Information Entity was generated.
@@ -78,9 +78,9 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
       - $ref: "#/$defs/Statement"
     range:
       oneOf:
-        - $refCurie: gks.common:Entity
-        - $refCurie: gks.common:IRI
-        - $refCurie: gks.common:Coding
+        - $refCurie: gkm.common:Entity
+        - $refCurie: gkm.common:IRI
+        - $refCurie: gkm.common:Coding
     required: true
   predicate:
     description: The predicate of the Statement.
@@ -94,9 +94,9 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
       - $ref: "#/$defs/Statement"
     range:
       oneOf:
-        - $refCurie: gks.common:Entity
-        - $refCurie: gks.common:IRI
-        - $refCurie: gks.common:Coding
+        - $refCurie: gkm.common:Entity
+        - $refCurie: gkm.common:IRI
+        - $refCurie: gkm.common:Coding
   qualifier:
     description: >-
       An additional piece of information that extends or refines the meaning of the core
@@ -106,9 +106,9 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
       - $ref: "#/$defs/Statement"
     range:
       oneOf:
-        - $refCurie: gks.common:Entity
-        - $refCurie: gks.common:IRI
-        - $refCurie: gks.common:Coding
+        - $refCurie: gkm.common:Entity
+        - $refCurie: gkm.common:IRI
+        - $refCurie: gkm.common:Coding
   direction:
     description: >-
       The direction of this Statement with respect to the predicate.
@@ -124,8 +124,8 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
       - $ref: "#/$defs/Statement"
     range:
       oneOf:
-        - $refCurie: gks.common:Coding
-        - $refCurie: gks.common:IRI
+        - $refCurie: gkm.common:Coding
+        - $refCurie: gkm.common:IRI
   subjectClassification:
     description: >-
       A single term or phrase summarizing the outcome of direction and strength
@@ -137,13 +137,13 @@ $slotdefs                    # in linkML/Biolink, all slots/properties are decla
       - $ref: "#/$defs/Statement"
     range:
       oneOf:
-        - $refCurie: gks.common:Coding
-        - $refCurie: gks.common:IRI
+        - $refCurie: gkm.common:Coding
+        - $refCurie: gkm.common:IRI
 
 # Class definitiosn start here
 $defs:
   InformationEntity:
-    is_a: gks.common:Entity          # this class will inherit slots from Entity, in addition to those defined for this class below
+    is_a: gkm.common:Entity          # this class will inherit slots from Entity, in addition to those defined for this class below
     maturity: draft
     description: >-
       Information Entities are abstract (non-physical) entities that are about something (i.e. they carry
@@ -191,7 +191,7 @@ $slotdefs
       oneOf:
         - $refCurie: vrs:Variation
         - $refCurie: catvrs:CategoricalVariation
-        - $refCurie: gks.common:IRI
+        - $refCurie: gkm.common:IRI
 
   objectCondition:
     is_a: $refCurie: va.core.slots:object
@@ -200,8 +200,8 @@ $slotdefs
       - $ref: "#/$defs/VariantConditionStatement"
     range:
       oneOf:
-        - $refCurie: gks.domain-entities:Condition
-        - $refCurie: gks.common:IRI
+        - $refCurie: gkm.domain-entities:Condition
+        - $refCurie: gkm.common:IRI
 
   penetranceQualifier:
     is_a: $refCurie: va.core.slots:qualifier
@@ -231,7 +231,7 @@ $slotdefs
     domain:
       - $ref: "#/$defs/VariantPathogenicityStatement"
     range:
-      - $refCurie: gks.domain-entities:Gene
+      - $refCurie: gkm.domain-entities:Gene
 
 
 $defs

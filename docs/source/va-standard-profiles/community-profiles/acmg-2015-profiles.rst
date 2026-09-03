@@ -15,8 +15,8 @@ These initial profiles were developed to support the following implementations a
 
    *  - Implementer
       - Use Case
-   *  - ClinVar GKS
-      - Will use VA-Spec to represent GKS-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
+   *  - ClinVar GKM
+      - Will use VA-Spec to represent GKM-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
    *  - MAVE DB
       - Will use VA-Spec as a format to send multiplex-assay based functional impact data, classifications, and evidence interpretations to external platforms where they can be used to support pathogenicity and oncogenicity interpretation.
 

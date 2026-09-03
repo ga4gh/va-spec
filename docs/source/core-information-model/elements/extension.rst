@@ -3,4 +3,4 @@
 Extension
 *********
 
-.. include::  ../../../../schema/gks-core/def/Extension.rst
+.. include::  ../../../../schema/gkm-core/def/Extension.rst

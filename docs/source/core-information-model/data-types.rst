@@ -9,7 +9,7 @@ Data Types
 code
 ****
 
-.. include::  ../def/gks-core/Code.rst
+.. include::  ../def/gkm-core/Code.rst
 
 
 .. _iriReference:
@@ -17,14 +17,14 @@ code
 iriReference
 ************
 
-.. include::  ../def/gks-core/iriReference.rst
+.. include::  ../def/gkm-core/iriReference.rst
 
 .. _date:
 
 date
 ****
 
-.. include::  ../def/gks-core/date.rst
+.. include::  ../def/gkm-core/date.rst
 
 
 .. _datetime:
@@ -32,4 +32,4 @@ date
 datetime
 ********
 
-.. include::  ../def/gks-core/datetime.rst
+.. include::  ../def/gkm-core/datetime.rst

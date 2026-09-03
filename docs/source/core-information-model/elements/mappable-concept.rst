@@ -5,7 +5,7 @@
 Mappable Concept
 ****************
 
-.. include::  ../../../../schema/gks-core/def/MappableConcept.rst
+.. include::  ../../../../schema/gkm-core/def/MappableConcept.rst
 
 **Data Examples**
 
@@ -50,7 +50,7 @@ Mappable Concept
              - https://id.nlm.nih.gov/mesh/C538231
          relation: exactMatch
 
-- Another example illustrating a MappableConcept representing a Gene can be found :gks_core_source:`here <examples/mappable-concept-gene.yaml>`.
+- Another example illustrating a MappableConcept representing a Gene can be found :gkm_core_source:`here <examples/mappable-concept-gene.yaml>`.
 
 **Implementation Guidance**
 
