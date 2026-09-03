@@ -7,17 +7,17 @@ imports:
   domain-entities: ./domain-entities-source.yaml
   cat-vrs: ../../cat-vrs/cat-vrs-source.yaml
   vrs: ../../vrs/vrs-source.yaml
-  gks-core: ../../gks-core/gks-core-source.yaml
+  gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/
+  gkm.core: /ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/
   vrs: /ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/
   cat-vrs: /ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
   InformationEntity:
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       An abstract (non-physical) entity that represents 'information content' carried by physical or
@@ -31,7 +31,7 @@ $defs:
       specifiedBy:
         oneOf:
         - $ref: "#/$defs/Method"
-        - $refCurie: gks.core:iriReference
+        - $refCurie: gkm.core:iriReference
         description: >-
           A specification that describes all or part of the process that led to creation of the
           Information Entity
@@ -60,10 +60,10 @@ $defs:
         items:
           oneOf:
           - $ref: "#/$defs/Document"
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: A document in which the the Information Entity is reported.
       # dateAuthored:
-      #   $refCurie: gks.core:datetime
+      #   $refCurie: gkm.core:datetime
       #   description: Indicates when the information content expressed in the Information Entity was generated.
       #   $comment: >-
       #     The term 'authored' is used in the model to refer to the generation of abstract 'information content', as
@@ -115,8 +115,8 @@ $defs:
     heritableProperties:
       focus:
         oneOf:
-          - $refCurie: gks.core:Entity
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:Entity
+          - $refCurie: gkm.core:iriReference
         description: >-
           The specific participant, subject or experimental unit in a Study that data included in the
           StudyResult object is about - e.g. a particular variant in a population allele frequency
@@ -146,7 +146,7 @@ $defs:
           e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or
           homozygote/heterozygote calls derived from analyzing raw allele count data.
         $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          This field is left at draft maturity, as it is different from most GKM objects by allowing any content
           to be added.
         type: object
         additionalProperties: true
@@ -157,7 +157,7 @@ $defs:
           of the primary data items captured in standard attributes in the main body of the Study Result.
           e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.
         $comment: >-
-          This field is left at draft maturity, as it is different from most GKS objects by allowing any content
+          This field is left at draft maturity, as it is different from most GKM objects by allowing any content
           to be added.
         type: object
         additionalProperties: true
@@ -165,7 +165,7 @@ $defs:
       - focus
 
   Proposition:
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       An abstract entity representing a possible fact that may be true or false. As abstract entities,
@@ -209,7 +209,7 @@ $defs:
       #  Statement profile. e.g. in the VariantPathogenicityStatement profile, it is specialized into
       #  'modeOfInheritanceQualifier' and 'geneContextQualifier' attributes.
       #  We are commenting out this property for now to avoid its unwanted inheritance in Statement profiles
-      #  that import the gks-core. We will re-instate this property once we determine how the modeling framework
+      #  that import the gkm-core. We will re-instate this property once we determine how the modeling framework
       #  and tools can support formal specification of the conceptual specialization that is happening here.
       #
       #     qualifier:
@@ -257,8 +257,8 @@ $defs:
         oneOf:
           - $refCurie: vrs:MolecularVariation
           - $refCurie: cat-vrs:CategoricalVariant
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: A custom entity or concept that is the subject of the Proposition.
       predicate:
         extends: predicate
@@ -266,8 +266,8 @@ $defs:
       object:
         extends: object
         oneOf:
-          - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
         description: A custom entity or concept that is the object of the Proposition.
       qualifiers:
         type: array
@@ -282,8 +282,8 @@ $defs:
                 information its value represents.
             value:
               oneOf:
-                - $refCurie: gks.core:iriReference
-                - $refCurie: gks.core:MappableConcept
+                - $refCurie: gkm.core:iriReference
+                - $refCurie: gkm.core:MappableConcept
               description: >-
                 The value of the qualifier - either a MappableConcept or an IRI reference.
           required:
@@ -324,13 +324,13 @@ $defs:
         oneOf:
           - $refCurie: vrs:MolecularVariation
           - $refCurie: cat-vrs:CategoricalVariant
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: A variant that is the subject of the Proposition.
 
   # concrete core classes section -- Method, Contribution, Document, Agent, Statement, EvidenceLine, DataSet, StudyGroup
   Method:
     type: object
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       A set of instructions that specify how to achieve some objective.
@@ -355,7 +355,7 @@ $defs:
       reportedIn:
         oneOf:
           - $ref: "#/$defs/Document"
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: A document in which the the Method is reported.
       # license:
       #   type: string
@@ -369,7 +369,7 @@ $defs:
 
   Contribution:
     type: object
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       An action taken by an agent in contributing to the creation, modification, assessment, or
@@ -392,7 +392,7 @@ $defs:
           data generator, etc.). Values of this property may be framed as activities, or as contribution
           roles (e.g. using terms from the Contribution Role Ontology (CRO)).
       date:
-        $refCurie: gks.core:datetime
+        $refCurie: gkm.core:datetime
         description: >-
           When the contributing activity was completed.
         $comment: >-
@@ -404,7 +404,7 @@ $defs:
 
   Document:
     type: object
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       A collection of information, usually in a text-based or graphic human-readable form, intended
@@ -457,7 +457,7 @@ $defs:
 
   Agent:
     type: object
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       An autonomous actor (person, organization, or software agent) that bears some form
@@ -543,7 +543,7 @@ $defs:
           is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') -
           or they can choose values that don't commit to one or the other if they don't want to make the distinction
           (e.g. 'high' vs 'medium' vs 'low').
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
       score:
         type: number
         maturity: draft
@@ -558,7 +558,7 @@ $defs:
           The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
           on a numerical score.
       classification:
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's Proposition, in terms of a classification of
@@ -576,7 +576,7 @@ $defs:
         items:
           anyOf:
             - $ref: "#/$defs/EvidenceLine"
-            - $refCurie: gks.core:iriReference
+            - $refCurie: gkm.core:iriReference
         description: >-
           An evidence-based argument that supports or disputes the validity of the proposition that a
           Statement assesses or puts forth as true. The strength and direction of this argument (whether
@@ -645,7 +645,7 @@ $defs:
             - $ref: "#/$defs/StudyResult"
             - $ref: "#/$defs/Statement"
             - $ref: "#/$defs/EvidenceLine"
-            - $refCurie: gks.core:iriReference
+            - $refCurie: gkm.core:iriReference
         description: >-
           An individual piece of information that was evaluated as evidence in building the argument represented
           by an Evidence Line.
@@ -666,7 +666,7 @@ $defs:
           The direction of support that the Evidence Line is determined to provide toward its target Proposition
           (supports, disputes, neutral)
       strengthOfEvidenceProvided:
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against its target Proposition,
           evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
@@ -681,7 +681,7 @@ $defs:
           against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided
           value.
       evidenceOutcome:
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
         description: >-
           A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
           the direction and strength of support it provides for or against the target Proposition.
@@ -690,7 +690,7 @@ $defs:
 
   DataSet:
     type: object
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       A collection of related data items or records that are organized together in a common format
@@ -723,10 +723,10 @@ $defs:
       reportedIn:
         oneOf:
           - $ref: "#/$defs/Document"
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: A document in which the the Method is reported.
       releaseDate:
-        $refCurie: gks.core:date
+        $refCurie: gkm.core:date
         description: Indicates the date a version of a DataSet was formally released.
         $comment: >-
           This attribute may apply to version and distribution-level DataSet representations.
@@ -741,7 +741,7 @@ $defs:
           revisions that add or modify content, but don’t change the identity of the resource. Use this
           attribute in cases where version is not reflected in an identifier associated with the data set.
       license:
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
         description: >-
           A specific license that dictates legal permissions for how a data set can be used
           (by whom, where, for what purposes, with what additional requirements, etc.)
@@ -752,7 +752,7 @@ $defs:
 
   StudyGroup:
     type: object
-    inherits: gks-core:Entity
+    inherits: gkm-core:Entity
     maturity: trial use
     description: >-
       A collection of individuals or specimens from the same taxonomic class, selected for analysis in a
@@ -776,7 +776,7 @@ $defs:
       characteristics:
         type: array
         items:
-          $refCurie: gks.core:MappableConcept
+          $refCurie: gkm.core:MappableConcept
         ordered: false
         description: >-
           A feature or role shared by all members of the StudyGroup, representing a criterion for
@@ -802,8 +802,8 @@ $defs:
           but not necessary for complex variants like gene fusions, whose Cat-VRS representations reference
           specific transcripts and/or genes that provide a built-in gene context.
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
       alleleOriginQualifier:
         description: >-
          Reports whether the Proposition should be interpreted in the context of a heritable "germline" variant,
@@ -815,8 +815,8 @@ $defs:
          attribute is the latter. However, if an implementer is not sure about which is reported in their data, it
          may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity.
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
 
   # Variant Functional Impact Proposition
   ExperimentalVariantFunctionalImpactProposition:
@@ -842,8 +842,8 @@ $defs:
       objectSequenceFeature:
         extends: object
         oneOf:
-          - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
         description: >-
           The sequence feature (typically a gene or gene product) on whose function the impact
           of the subject variant is reported.
@@ -852,7 +852,7 @@ $defs:
           An assay in which the reported variant functional impact was determined -
           providing a specific experimental context in which this effect is asserted to hold.
         anyOf:
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
           - $ref: "#/$defs/Document"
           - type: object
             additionalProperties: true
@@ -888,7 +888,7 @@ $defs:
         oneOf:
           - $ref: Condition
           - $ref: ConditionSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: The condition that is evaluated.
     required:
       - predicate
@@ -922,7 +922,7 @@ $defs:
         oneOf:
           - $ref: Condition
           - $ref: ConditionSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: The disease that is evaluated for diagnosis.
     required:
       - predicate
@@ -953,7 +953,7 @@ $defs:
         oneOf:
           - $ref: Condition
           - $ref: ConditionSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: >-
           The tumor type for which the variant impact is evaluated.
     required:
@@ -985,16 +985,16 @@ $defs:
         oneOf:
           - $ref: Condition
           - $ref: ConditionSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: The :ref:`Condition` or :ref:`ConditionSet`for which the variant impact is stated.
       penetranceQualifier:
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
-        $refCurie: gks.core:MappableConcept
+        $refCurie: gkm.core:MappableConcept
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
           Consider using terms or codes from community terminologies here - e.g. terms from the
@@ -1031,7 +1031,7 @@ $defs:
         oneOf:
           - $ref: Condition
           - $ref: ConditionSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: The disease that is evaluated for outcome.
     required:
       - predicate
@@ -1067,12 +1067,12 @@ $defs:
         oneOf:
         - $ref: Therapy
         - $ref: TherapyGroup
-        - $refCurie: gks.core:iriReference
+        - $refCurie: gkm.core:iriReference
       conditionQualifier:
         oneOf:
           - $ref: Condition
           - $ref: ConditionSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: >-
           Reports the disease context in which the variant's association with therapeutic
           sensitivity or resistance is evaluated. Note that this is a required qualifier in
@@ -1096,8 +1096,8 @@ $defs:
       subjectGene:
         extends: subject
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
       predicate:
         extends: predicate
         const: "variantsInGeneCausalFor"
@@ -1106,12 +1106,12 @@ $defs:
       objectCondition:
         extends: object
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
       modeOfInheritanceQualifier:
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
     required:
       - predicate
       - subjectGene
@@ -1137,7 +1137,7 @@ $defs:
         description: The Allele for which frequency results are reported.
         oneOf:
         - $refCurie: vrs:Allele
-        - $refCurie: gks.core:iriReference
+        - $refCurie: gkm.core:iriReference
       focusAlleleCount:
         type: integer
         description: The number of occurrences of the focusAllele in the cohort.
@@ -1190,7 +1190,7 @@ $defs:
         description: The variant for which frequency data is reported in the Study Result.
         oneOf:
         - $refCurie: vrs:Allele
-        - $refCurie: gks.core:iriReference
+        - $refCurie: gkm.core:iriReference
         - $refCurie: cat-vrs:CategoricalVariant
       affectedSampleCount:
         type: integer
@@ -1238,7 +1238,7 @@ $defs:
         extends: focus
         oneOf:
           - $refCurie: vrs:MolecularVariation
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
         description: The genetic variant for which a functional impact score is generated.
       functionalImpactScore:
         type: number
@@ -1265,13 +1265,13 @@ $defs:
         default: "ComputationalVariantFunctionalImpactAnalysisResult"
       focusVariant:
         oneOf:
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
           - $refCurie: vrs:Allele
           - $refCurie: cat-vrs:CategoricalVariant
         description: The genetic variant for which the in silico analysis was performed.
       transcriptVariationContext:
         oneOf:
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
           - $refCurie: vrs:Allele
         description: The transcript in the context of which the in silico analysis was performed.
       impactScore:
@@ -1279,23 +1279,23 @@ $defs:
         description: The primary numeric score produced by the in silico tool for this variant.
       impactScoreType:
         oneOf:
-          - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
         description: A descriptor indicating what the score represents (e.g., 'SIFT impact score', 'CADD Phred-scaled impact score').
       categoricalImpact:
         oneOf:
-          - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
         description: The categorical interpretation derived from the score by the in silico tool (e.g., 'tolerated', 'benign', 'pathogenic').
       impactedFeatureType:
         oneOf:
-          - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
         description: A descriptor indicating the type of feature for which the focus variant has a predicted impact
       impactedFeature:
         oneOf:
-          - $refCurie: gks.core:iriReference
-          - $refCurie: gks.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
         description: The specific feature for which the focus variant has a predicted impact
       ancillaryResults:
         maturity: draft
@@ -1306,7 +1306,7 @@ $defs:
         additionalProperties: true
       specifiedBy:
         oneOf:
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
           - $ref: "#/$defs/Method"
         description: The in silico method or algorithm that was applied to generate the reported score(s).
       contributions:
@@ -1353,7 +1353,7 @@ $defs:
         oneOf:
           - $refCurie: vrs:Allele
           - $refCurie: vrs:Adjacency
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
       predicate:
         extends: predicate
         description: >-
@@ -1365,9 +1365,9 @@ $defs:
       objectConsequence:
         extends: object
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:ConceptSet
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:ConceptSet
+          - $refCurie: gkm.core:iriReference
         description: >-
            The molecular consequence(s) of the subject variant, in the context of the qualifying
            transcript and/or protein variation context(s). These are typically terms from the
@@ -1383,7 +1383,7 @@ $defs:
         oneOf:
           - $refCurie: vrs:Allele
           - $refCurie: vrs:Adjacency
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
       proteinVariationContextQualifier:
         description: >-
           The subject genomic variant as projected on a particular protein molecule. The reported
@@ -1393,13 +1393,13 @@ $defs:
         oneOf:
           - $refCurie: vrs:Allele
           - $refCurie: vrs:Adjacency
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:iriReference
       geneContextQualifier:
         description: >-
           The gene for which this statement reports a VariantMolecularConsequence.
         oneOf:
-          - $refCurie: gks.core:MappableConcept
-          - $refCurie: gks.core:iriReference
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
     required:
       - predicate
       - objectConsequence

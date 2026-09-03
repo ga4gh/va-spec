@@ -8,7 +8,7 @@ An abstract (non-physical) entity that represents 'information content' carried 
 
 **Information Model**
 
-Some InformationEntity attributes are inherited from :ref:`gks-core:Entity`.
+Some InformationEntity attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

@@ -8,7 +8,7 @@ A collection of individuals or specimens from the same taxonomic class, selected
 
 **Information Model**
 
-Some StudyGroup attributes are inherited from :ref:`gks-core:Entity`.
+Some StudyGroup attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

@@ -8,7 +8,7 @@ An action taken by an agent in contributing to the creation, modification, asses
 
 **Information Model**
 
-Some Contribution attributes are inherited from :ref:`gks-core:Entity`.
+Some Contribution attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

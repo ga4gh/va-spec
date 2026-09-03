@@ -36,7 +36,7 @@ proposition:
           - type: MappableConcept
             primaryCoding:
               code: liftover_to
-              system: ga4gh-gks-term:allele-relation
+              system: ga4gh-gkm-term:allele-relation
           - type: MappableConcept
             primaryCoding:
               code: transcribed_to
@@ -58,7 +58,7 @@ proposition:
     type: MappableConcept
     primaryCoding:
       code: high
-      system: ga4gh-gks-term:pathogenicity-penetrance-qualifier
+      system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier
     name: high
 direction: supports
 strength:

@@ -4,10 +4,10 @@ title: VA Spec Shared Domain Entity Data Structures
 strict: true
 
 imports:
-  gks-core: ../../gks-core/gks-core-source.yaml
+  gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/
+  gkm.core: /ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/
 
 $defs:
   # Condition data structure for defining single conditions as an extension of MappableConcept
@@ -25,7 +25,7 @@ $defs:
       be populated.  The name or code may simple reiterate the conceptType (e.g. 'condition absent'), or report a more specific
       nature or reason for the absence of a condition (e.g. 'Data Missing in Source', 'Condition Unknown', 'All Mendelian Diseases').
     allOf:
-      - $refCurie: gks.core:MappableConcept
+      - $refCurie: gkm.core:MappableConcept
       - properties:
           conceptType:
             anyOf:
@@ -49,7 +49,7 @@ $defs:
       Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single
       cohort that is large enough support a statistically significant results about this grouping of related conditions.
     allOf:
-      - $refCurie: gks.core:ConceptSet
+      - $refCurie: gkm.core:ConceptSet
       - properties:
           concepts:
             type: array
@@ -70,7 +70,7 @@ $defs:
       for the therapy, along with optional mappings and metadata about the code system. Groups of therapies are represented using
       the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.
     allOf:
-      - $refCurie: gks.core:MappableConcept
+      - $refCurie: gkm.core:MappableConcept
       - properties:
           conceptType:
             anyOf:
@@ -98,7 +98,7 @@ $defs:
       Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the
       individual therapies used in the study in a TherapyGroup.
     allOf:
-    - $refCurie: gks.core:ConceptSet
+    - $refCurie: gkm.core:ConceptSet
     - properties:
         concepts:
           type: array

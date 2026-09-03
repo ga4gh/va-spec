@@ -7,7 +7,7 @@
    "$comment": "At present, individual therapies are represented using this specialization of MappableConcept, that captures a code or name for the therapy, along with optional mappings and metadata about the code system. Groups of therapies are represented using the TherapyGroup class, which are collections of 2 or more therapies, each represented as a MappableConcept.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
       },
       {
          "properties": {

@@ -8,7 +8,7 @@ An autonomous actor (person, organization, or software agent) that bears some fo
 
 **Information Model**
 
-Some Agent attributes are inherited from :ref:`gks-core:Entity`.
+Some Agent attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

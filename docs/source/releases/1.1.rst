@@ -9,13 +9,13 @@ Minor Version Increment
 
 Backwards-incompatible changes to previously-released *trial use* product
 features, and additions/changes to *trial use* or *normative* data classes,
-per the :ref:`gks-maturity-model` versioning rules:
+per the :ref:`gkm-maturity-model` versioning rules:
 
   * renames the abstract ``ClinicalVariantProposition`` class (*trial use*) to
     :ref:`GeneticContextVariantProposition`, and updates its definition to
     describe knowledge that depends on a variant's genetic context
-  * adopts the GKS-Core 1.2.0-ballot ``MappableConcept`` and ``ConceptSet``
-    changes (both *trial use* in GKS-Core), which now inherit ``Entity`` and
+  * adopts the GKM-Core 1.2.0-ballot ``MappableConcept`` and ``ConceptSet``
+    changes (both *trial use* in GKM-Core), which now inherit ``Entity`` and
     require a ``type`` discriminator field — a backwards-incompatible
     addition of a required field to these previously-released *trial use*
     classes. This propagates to the VA-Spec *trial use* classes that
@@ -43,8 +43,8 @@ compatibility:
   * resolves a typo ("Oncoogenicity" :math:`\rightarrow` "Oncogenicity") in the CCV oncogenicity evidence line profile
   * fixes typos in the allele origin description
   * updates descriptions for the Variant Clinical Significance Statement profile
-  * updates VRS and CAT-VRS submodule references (see the GKS-Core update
-    above for the one substantive change pulled in via the GKS-Core bump)
+  * updates VRS and CAT-VRS submodule references (see the GKM-Core update
+    above for the one substantive change pulled in via the GKM-Core bump)
   * adds Quick Start guidance
   * adds documentation for the ``TumorVariantFrequencyStudyResult`` (*draft*) profile to the Study Result profiles page
   * adds a README to the Modeling subdirectory

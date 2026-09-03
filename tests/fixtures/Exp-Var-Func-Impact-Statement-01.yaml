@@ -146,7 +146,7 @@ classification:
   type: MappableConcept
   primaryCoding:
     code: normal
-    system: ga4gh-gks-term:experimental-var-func-impact-classification
+    system: ga4gh-gkm-term:experimental-var-func-impact-classification
 direction: disputes
 specifiedBy:
   type: Method

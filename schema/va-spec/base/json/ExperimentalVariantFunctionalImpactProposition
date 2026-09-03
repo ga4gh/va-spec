@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Extension"
+            "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -42,7 +42,7 @@
                "$ref": "/ga4gh/schema/cat-vrs/1.1.0-ballot.2026-07.1/json/CategoricalVariant"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
                "$ref": "/ga4gh/schema/vrs/2.1.0-ballot.2026-07.1/json/MolecularVariation"
@@ -68,10 +68,10 @@
       "objectSequenceFeature": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             }
          ],
          "description": "The sequence feature (typically a gene or gene product) on whose function the impact of the subject variant is reported.",
@@ -81,7 +81,7 @@
          "description": "An assay in which the reported variant functional impact was determined - providing a specific experimental context in which this effect is asserted to hold.",
          "anyOf": [
             {
-               "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
             },
             {
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Document"

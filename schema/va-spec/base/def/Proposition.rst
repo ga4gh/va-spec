@@ -8,7 +8,7 @@ An abstract entity representing a possible fact that may be true or false. As ab
 
 **Information Model**
 
-Some Proposition attributes are inherited from :ref:`gks-core:Entity`.
+Some Proposition attributes are inherited from :ref:`gkm-core:Entity`.
 
 .. list-table::
    :class: clean-wrap

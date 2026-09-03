@@ -6,17 +6,17 @@ $id: "https://w3id.org/ga4gh/schema/va-spec/1.x/profiles/pathogenicity/var-patho
 title: Variant Pathogenicity Definitions
 imports:
   va.core: ../../core-im/core-im-source.yaml
-  gks.common: ../../../gks-common/common-source.yaml
-  gks.genes: ../../../gks-common/genes-source.yaml
-  gks.conditions: ../../../gks-common/conditions-source.yaml
+  gkm.common: ../../../gkm-common/common-source.yaml
+  gkm.genes: ../../../gkm-common/genes-source.yaml
+  gkm.conditions: ../../../gkm-common/conditions-source.yaml
   catvrs: ../../../catvrs/catvrs-source.yaml
   vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:
   va.core: ../../core-im/core-im.json#/$defs/
-  gks.common: ../../../gks-common/common.json#/$defs/
-  gks.genes: ../../../gks-common/genes.json#/$defs/
-  gks.conditions: ../../../gks-common/conditions.json#/$defs/
+  gkm.common: ../../../gkm-common/common.json#/$defs/
+  gkm.genes: ../../../gkm-common/genes.json#/$defs/
+  gkm.conditions: ../../../gkm-common/conditions.json#/$defs/
   catvrs: ../../../catvrs.json#/$defs/
   vrs: ../../../vrs/vrs.json#/$defs/
 
@@ -41,8 +41,8 @@ $defs:
       condition:                            # for the "standard" profile, name this objectCondition, or conditionObject. Prefer the former for two reasons: {(1) IMO users looking at a Statement data will first and foremost want to easily find SPO properties, and putting first will help. Also, the menaing of 'object' in 'conditionObject' is ambiguous (could be interpreted as a data object that describes a Condition)
         extends: object
         oneOf:
-          - $refCurie: gks.conditions:Condition
-          - $refCurie: gks.common:IRI
+          - $refCurie: gkm.conditions:Condition
+          - $refCurie: gkm.common:IRI
         description: >-
           The :ref:`Condition` for which the variant impact is stated.
       qualifiers:                           # TO DO: Make recommendations based on pending decision about how to specify qualifier specializations in profiles. Hopefully metaschema additions will allow it to look as described here: https://github.com/ga4gh/va-spec/issues/134#issuecomment-2163480970
@@ -70,6 +70,6 @@ $defs:
           geneContext:
             description: >-
               A gene context that qualifies the Statement.                                      # Larry - can you give a more informative defintion for this qualifier? Is this meant to capture the gene through which the pathogenic effect of the Variation is mediated? i.e. it is the variant's impact on this gene that causes the disease?
-            $refCurie: gks.genes:Gene
+            $refCurie: gkm.genes:Gene
     required:
       - condition

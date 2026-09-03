@@ -1,7 +1,7 @@
 Imported Data Types & Classes
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-VA-Spec makes use of a number of types and classes maintained by other GKS groups. This section includes descriptions and references for those models beyond what is provided in :ref:`va-core-model` for completeness.
+VA-Spec makes use of a number of types and classes maintained by other GKM groups. This section includes descriptions and references for those models beyond what is provided in :ref:`va-core-model` for completeness.
 
 
 VRS

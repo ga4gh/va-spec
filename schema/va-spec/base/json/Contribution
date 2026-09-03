@@ -31,7 +31,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/Extension"
+            "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.",
          "$comment": "Extension objects have a key-value data structure that allows definition of custom fields in the data itself. Extensions are not expected to be natively understood, but may be used for pre-negotiated exchange of message attributes between systems."
@@ -54,7 +54,7 @@
       "date": {
          "description": "When the contributing activity was completed.",
          "$comment": "Populate this attribute with the date and time the activity was completed. MUST use ISO8601 format (\"YYYY-MM-DDTHH:MM:SS\"), e.g. \"2024-02-25T09:25:00\". In cases where a date alone is sufficient, the \"THH:MM:SS\" portion of the datetime string MAY be omitted (e.g. \"2024-02-25\").  Specifying a time zone is optional, and SHOULD use the Timezone Offset convention (+/- hours offset from UTC), e.g. \"2024-02-25T09:25:00-5:00\" for the US eastern time zone.",
-         "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/datetime"
+         "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/datetime"
       }
    },
    "required": [

@@ -26,7 +26,7 @@
             ]
          },
          {
-            "$ref": "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+            "$ref": "/ga4gh/schema/gkm-core/1.2.0-ballot.2026-07.1/json/iriReference"
          }
       ]
    }
