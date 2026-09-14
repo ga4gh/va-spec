@@ -630,9 +630,7 @@ $defs:
         ordered: false
         items:
           anyOf:
-            - $ref: "#/$defs/StudyResult"
-            - $ref: "#/$defs/Statement"
-            - $ref: "#/$defs/EvidenceLine"
+            - $ref: "#/$defs/InformationEntity"
             - $refCurie: gkm.core:iriReference
         description: >-
           An individual piece of information that was evaluated as evidence in building the argument represented
