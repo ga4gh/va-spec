@@ -3,8 +3,15 @@ from config import test_path, fixtures_path
 import yaml
 from config import validator, js_def, coverage
 
-def _get_trial_use_classes():
-    return set([x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] == 'trial use'])
+# Coverage is enforced on every class at 'draft' maturity or above -- i.e. everything
+# except 'deprecated' (no va-spec class is 'normative' yet, but that tier is included
+# for when one is). This intentionally covers draft classes too: a class shipping in a
+# ballot should have at least one validating example and full property coverage before
+# it graduates to trial use, not after.
+_COVERED_MATURITIES = {'draft', 'trial use', 'normative'}
+
+def _get_covered_classes():
+    return set(x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] in _COVERED_MATURITIES)
 
 # Abstract va-spec classes are not directly instantiated, so they have no standalone
 # example and their (inherited) properties can never be covered by an instance. The
@@ -19,6 +26,19 @@ va_abstract_classes = {
     'va-spec:Condition',
     'va-spec:Therapy',
 }
+
+# Pure `type: array` union-wrapper aliases (the value type of a Statement's
+# hasEvidenceLines): a list of AmpAscoCapEvidenceLine-or-iriReference. They have no
+# object identity of their own to instantiate standalone -- coverage of what they wrap
+# (AmpAscoCapEvidenceLine) and of the property that uses them (hasEvidenceLines) is
+# exercised via the AAC-2017 Statement fixtures.
+va_container_classes = {
+    'va-spec.aac-2017:DiagnosticEvidenceLine',
+    'va-spec.aac-2017:PrognosticEvidenceLine',
+    'va-spec.aac-2017:TherapeuticEvidenceLine',
+}
+
+va_excluded_classes = va_abstract_classes | va_container_classes
 
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:
@@ -35,8 +55,8 @@ def test_examples():
         except (AssertionError, ValidationError) as e:
             raise AssertionError(f"AssertionError in {test['test_file']}: {e}")
 
-def test_trial_use_class_coverage():
-    trial_use_classes = _get_trial_use_classes()
+def test_class_coverage():
+    covered_classes = _get_covered_classes()
     tested_classes = set()
 
     with open(test_path / 'test_definitions.yaml') as def_file:
@@ -46,11 +66,11 @@ def test_trial_use_class_coverage():
         test_cls_name = f"{test['namespace']}:{test['definition']}"
         tested_classes.add(test_cls_name)
 
-    print(trial_use_classes - tested_classes - va_abstract_classes)
-    assert len(trial_use_classes - tested_classes - va_abstract_classes) == 0
+    print(covered_classes - tested_classes - va_excluded_classes)
+    assert len(covered_classes - tested_classes - va_excluded_classes) == 0
 
-def test_trial_use_property_coverage():
-    trial_use_classes = _get_trial_use_classes()
+def test_property_coverage():
+    covered_classes = _get_covered_classes()
     with open(test_path / 'test_definitions.yaml') as def_file:
         test_spec = yaml.safe_load(def_file)
 
@@ -61,7 +81,7 @@ def test_trial_use_property_coverage():
         with open(fixtures_path / test['test_file']) as datafile:
             data = yaml.safe_load(datafile)
         test_cls_name = f"{test['namespace']}:{test['definition']}"
-        if test_cls_name not in trial_use_classes:
+        if test_cls_name not in covered_classes:
             continue
         class_definition = js_def[test_cls_name]
         if not isinstance(class_definition, dict):
@@ -71,7 +91,7 @@ def test_trial_use_property_coverage():
                 coverage[test_cls_name][p] = True
 
     no_coverage_properties = set()
-    for tu_class in trial_use_classes - va_abstract_classes:
+    for tu_class in covered_classes - va_excluded_classes:
         for tu_class_property, covered in coverage[tu_class].items():
             if tu_class_property in exceptions.get(tu_class, dict()):
                 continue

@@ -6,6 +6,37 @@ va-spec:ExperimentalVariantFunctionalImpactProposition:
   - description
   - aliases
 
+va-spec:GeneDiseaseValidityProposition:
+  # Entity
+  - extensions
+  - aliases
+  - description
+
+va-spec:VariantClinicalSignificanceProposition:
+  # Entity
+  - extensions
+  - aliases
+  - description
+
+va-spec:VariantMolecularConsequenceProposition:
+  # Entity
+  - name
+  - extensions
+  - id
+  - description
+  - aliases
+
+va-spec:ComputationalVariantFunctionalImpactAnalysisResult:
+  # Entity
+  - name
+  - id
+  - description
+  - aliases
+  - extensions
+
+  # InformationEntity
+  - reportedIn
+
 va-spec:VariantPathogenicityProposition:
   # Entity
   - extensions

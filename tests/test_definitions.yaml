@@ -45,6 +45,9 @@ tests:
   - test_file: custom-proposition.yaml
     namespace: va-spec
     definition: CustomProposition
+  - test_file: gene-disease-validity-proposition.yaml
+    namespace: va-spec
+    definition: GeneDiseaseValidityProposition
   - test_file: EVFI-proposition.yaml
     namespace: va-spec
     definition: ExperimentalVariantFunctionalImpactProposition
@@ -103,6 +106,12 @@ tests:
   - test_file: civic-assertion-therapeutic-response-inline.yaml
     namespace: va-spec.aac-2017
     definition: VariantClinicalSignificanceStatement
+  - test_file: variant-clinical-significance-proposition.yaml
+    namespace: va-spec
+    definition: VariantClinicalSignificanceProposition
+  - test_file: amp-asco-cap-evidence-line.yaml
+    namespace: va-spec.aac-2017
+    definition: AmpAscoCapEvidenceLine
   - test_file: therapeutic-response-inline.yaml
     namespace: va-spec
     definition: Statement

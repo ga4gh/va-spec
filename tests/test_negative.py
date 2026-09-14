@@ -3,12 +3,15 @@
 The example suite (test_examples.py) is positive-only: it confirms valid
 instances validate. These cases confirm that invalid instances are *rejected*,
 covering the guarantees callers rely on: closed concrete classes, required
-fields, `type` const discriminators, and enforcement of the abstract base
-contract through a concrete class's `$ref`s.
+fields, `type` const discriminators, covariant narrowing of inherited
+subject/object/focus attributes, community-profile conditional (if/then)
+constraints, and enforcement of the abstract base contract through a concrete
+class's `$ref`s.
 """
+import yaml
 import pytest
 from jsonschema import ValidationError
-from config import validator
+from config import validator, fixtures_path
 
 # (label, class namespace:name, invalid instance)
 NEGATIVE_CASES = [
@@ -56,6 +59,30 @@ NEGATIVE_CASES = [
          "locusAlleleCount": 2, "focusAlleleFrequency": 0.5,
          "cohort": {"type": "StudyGroup"}},
     ),
+    (
+        # Covariant narrowing: CohortAlleleFrequencyStudyResult narrows the
+        # inherited 'focus' to vrs:Allele | iriReference. A value of the wrong
+        # shape (here, a MappableConcept) must still be rejected even though
+        # it would satisfy the permissive base StudyResult.focus.
+        "narrowed 'focus' rejects a value of the wrong type",
+        "va-spec:CohortAlleleFrequencyStudyResult",
+        {"type": "CohortAlleleFrequencyStudyResult",
+         "focus": {"type": "MappableConcept", "name": "not an allele"},
+         "focusAlleleCount": 1, "locusAlleleCount": 2,
+         "focusAlleleFrequency": 0.5, "cohort": {"type": "StudyGroup"}},
+    ),
+    (
+        # Covariant narrowing: GeneDiseaseValidityProposition narrows the
+        # inherited 'subject' to gkm.core:MappableConcept | iriReference. A
+        # variant-shaped value (valid for other Proposition subject slots) must
+        # be rejected here.
+        "narrowed 'subject' rejects a value of the wrong type",
+        "va-spec:GeneDiseaseValidityProposition",
+        {"type": "GeneDiseaseValidityProposition",
+         "subject": {"type": "Allele", "location": {"type": "SequenceLocation"}},
+         "predicate": "variantsInGeneCausalFor",
+         "object": {"type": "MappableConcept", "name": "Disease"}},
+    ),
 ]
 
 
@@ -67,3 +94,34 @@ NEGATIVE_CASES = [
 def test_invalid_instance_is_rejected(cls, instance):
     with pytest.raises(ValidationError):
         validator[cls].validate(instance)
+
+
+def _load_fixture(name):
+    with open(fixtures_path / name) as f:
+        return yaml.safe_load(f)
+
+
+def test_aac_2017_tier_i_requires_supports_direction():
+    # civic-assertion-combination-therapy-inline.yaml is a valid Tier I
+    # VariantClinicalSignificanceStatement (classification code 'tier i',
+    # direction 'supports'). The profile's if/then constraint requires
+    # direction == 'supports' whenever classification is Tier I; flipping it
+    # to 'disputes' must be rejected.
+    instance = _load_fixture("civic-assertion-combination-therapy-inline.yaml")
+    assert instance["classification"]["primaryCoding"]["code"] == "tier i"
+    assert instance["direction"] == "supports"
+
+    instance["direction"] = "disputes"
+    with pytest.raises(ValidationError):
+        validator["va-spec.aac-2017:VariantClinicalSignificanceStatement"].validate(instance)
+
+
+def test_aac_2017_tier_i_requires_strong_strength():
+    # Same base case; the if/then also requires strength.primaryCoding.code ==
+    # 'strong' for Tier I. Weakening it to 'potential' must be rejected.
+    instance = _load_fixture("civic-assertion-combination-therapy-inline.yaml")
+    assert instance["strength"]["primaryCoding"]["code"] == "strong"
+
+    instance["strength"]["primaryCoding"]["code"] = "potential"
+    with pytest.raises(ValidationError):
+        validator["va-spec.aac-2017:VariantClinicalSignificanceStatement"].validate(instance)
