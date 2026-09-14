@@ -11,6 +11,7 @@ Below are the **VA Standard Proposition Profiles** currently defined as part of 
 
 
 .. _variant-pathogenicity-proposition:
+.. _VariantPathogenicityProposition:
 
 Variant Pathogenicity Proposition
 #################################
@@ -30,6 +31,7 @@ Variant Pathogenicity Proposition
 
 
 .. _variant-oncogenicity-proposition:
+.. _VariantOncogenicityProposition:
 
 Variant Oncogenicity Proposition
 #################################
@@ -46,6 +48,7 @@ Variant Oncogenicity Proposition
  - These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 .. _clinical-significance-proposition:
+.. _VariantClinicalSignificanceProposition:
 
 Variant Clinical Significance Proposition
 #########################################
@@ -57,6 +60,7 @@ Variant Clinical Significance Proposition
  - |clinical_significance_proposition_json_schema|
 
 .. _variant-therapeutic-response-proposition:
+.. _VariantTherapeuticResponseProposition:
 
 Variant Therapeutic Response Proposition
 ########################################
@@ -76,6 +80,7 @@ Variant Therapeutic Response Proposition
 
 
 .. _variant-diagnostic-proposition:
+.. _VariantDiagnosticProposition:
 
 Variant Diagnostic Proposition
 ##############################
@@ -93,6 +98,7 @@ Variant Diagnostic Proposition
 
 
 .. _variant-prognostic-proposition:
+.. _VariantPrognosticProposition:
 
 Variant Prognostic Proposition
 ##############################
@@ -111,6 +117,7 @@ Variant Prognostic Proposition
 
 
 .. _experimental-variant-functional-impact-proposition:
+.. _ExperimentalVariantFunctionalImpactProposition:
 
 Experimental Variant Functional Impact Proposition
 ##################################################
@@ -144,3 +151,11 @@ Custom Proposition
 ##################
 
 .. include::  ../../def/va-spec/CustomProposition.rst
+
+.. _variant-molecular-consequence-proposition:
+.. _VariantMolecularConsequenceProposition:
+
+Variant Molecular Consequence Proposition
+#########################################
+
+.. include::  ../../def/va-spec/VariantMolecularConsequenceProposition.rst

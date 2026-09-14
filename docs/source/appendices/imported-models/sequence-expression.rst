@@ -3,4 +3,4 @@
 SequenceExpression
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../../def/vrs/SequenceExpression.rst
+.. include::  ../../def/va-spec/SequenceExpression.rst

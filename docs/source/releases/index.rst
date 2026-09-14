@@ -16,5 +16,6 @@ Releases
    :maxdepth: 2
    :includehidden:
 
+   1.1.0-ballot.2026-09.rst
    1.1.rst
    1.0.rst

@@ -14,11 +14,25 @@ VRS
    residue
    molecular-variation
    allele
+   relative-allele
+   systemic-variation
+   copy-number-count
+   copy-number-change
+   derivative-molecule
+   cis-phased-block
+   traversal-block
+   terminus
+   adjacency
    location
    sequence-location
+   sequence-offset-location
+   relative-sequence-location
    sequence-reference
    expression
    sequence-expression
+   length-expression
+   literal-sequence-expression
+   reference-length-expression
    range
 
 
@@ -30,3 +44,21 @@ Cat-VRS
 
    categorical-variant
    constraint
+   defining-allele-constraint
+   defining-location-constraint
+   copy-count-constraint
+   copy-change-constraint
+   feature-context-constraint
+   function-constraint
+   adjacency-constraint
+   functional-domain
+   unspecified-element
+
+
+GKM-Core
+########
+
+.. toctree::
+   :titlesonly:
+
+   concept-set

@@ -3,4 +3,4 @@
 Constraint
 !!!!!!!!!!
 
-.. include::  ../../def/cat-vrs/Constraint.rst
+.. include::  ../../def/va-spec/Constraint.rst

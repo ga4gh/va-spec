@@ -1,0 +1,87 @@
+1.1.0-ballot.2026-09
+!!!!!!!!!!!!!!!!!!!!
+
+This release modernizes the VA-Spec build pipeline, refreshes its imported
+dependencies to the 2026-09 ballot line, reorganizes the ``schema/va-spec/``
+tree, and makes the documentation self-contained. It also carries one
+**backwards-incompatible schema change** — the abstract subject/predicate/object
+and focus attributes are now inherited under their canonical names rather than
+renamed per subclass (see *Subject / object / focus model change* below).
+
+Pipeline modernization
+#######################
+
+Supporting changes to the schema-generation tooling and repository layout that
+do not, by themselves, change the meaning of VA-Spec data:
+
+  * migrates the metaschema processor from ``ga4gh.gks.metaschema`` (0.3.2) to
+    the renamed ``ga4gh.gkm.metaschema`` (0.4.1) package (the GKS :math:`\rightarrow`
+    GKM "Genomic Knowledge Models" rebrand). The console entrypoints
+    (``source2classes``, ``source2splitjs``, ``y2t``) are unchanged, so
+    ``make all`` still drives generation.
+  * adopts the 0.4.x source conventions in every VA-Spec module source: abstract
+    classes are marked ``abstract: true`` (and are left open), concrete classes
+    are closed and drop the explicit ``type: object`` (the processor injects
+    it), ``heritableProperties`` / ``heritableRequired`` become plain
+    ``properties`` / ``required`` on abstract bases, and the removed ``extends:``
+    key is dropped.
+  * renames the nested ``gks-core`` import to ``gkm-core`` throughout the schema
+    sources, imported ``$refCurie`` namespaces (``gks.core`` :math:`\rightarrow`
+    ``gkm.core``), and the documentation.
+  * makes the imported ``schema/{cat-vrs,vrs,gkm-core}`` directories real folders
+    that symlink only to the imported ``*-source.yaml`` and ``json/`` (no
+    ``def/``); VA-Spec now generates the imported-class ``def/`` locally via
+    ``y2t`` and the docs include those local defs.
+  * checks out submodules recursively in the pre-commit CI job so ``make all``
+    can resolve the imported source symlinks on a fresh checkout.
+  * reorganizes ``schema/va-spec/``: the former ``base/`` module moves up to the
+    ``va-spec/`` root (``va-core-source.yaml`` is renamed ``va-spec-source.yaml``),
+    and the build now produces a single ``json/`` and ``def/`` under ``va-spec/``.
+    Each community profile writes its own classes into ``json/<community>/`` and
+    ``def/<community>/`` subfolders (the base classes' output sits at the ``json/``
+    and ``def/`` root). Base-class namespaces change from ``va-spec.base`` to
+    ``va-spec``; community namespaces (``va-spec.aac-2017`` etc.) are unchanged.
+  * makes the documentation fully self-contained: ``docs/source`` no longer
+    references anything outside itself. Generated class defs are synced into
+    ``docs/source/def/`` (via ``tools/sync-docs-def.sh``, wired into the
+    pre-commit hook), and the Maturity Model page and its images are materialized
+    locally rather than included from the vrs submodule.
+
+Dependency / version refresh
+############################
+
+  * bumps the ``cat-vrs`` submodule to ``1.1.1-ballot.2026-09``, which pulls in
+    ``vrs`` ``2.1.1-ballot.2026-09`` and ``gkm-core`` ``1.2.1-ballot.2026-09``.
+  * retargets the imported namespace mappings in every VA-Spec source to the new
+    imported ``$id`` tokens (``cat-vrs/1.1.1-ballot.2026-09.1``,
+    ``vrs/2.1.1-ballot.2026-09.1``, ``gkm-core/1.2.1-ballot.2026-09.1``).
+  * sets VA-Spec's own ``$id`` token to ``1.1.0-ballot.2026-09.1``.
+
+Subject / object / focus model change
+#####################################
+
+**Backwards-incompatible.** Previous ballots renamed the abstract triple
+attributes in each subclass (e.g. ``subject`` :math:`\rightarrow` ``subjectVariant``,
+``object`` :math:`\rightarrow` ``objectCondition``, ``focus`` :math:`\rightarrow` ``focusAllele``). The
+0.4.x processor inherits properties by name and does not permit renaming, so the
+model has been made consistent with that rule:
+
+  * The abstract :ref:`Proposition` declares ``subject``, ``predicate``, and
+    ``object`` (all required); the abstract :ref:`StudyResult` declares ``focus``
+    (required). Every subclass now **narrows these in place under the same name**
+    rather than renaming them. Affected serialized property names change:
+    ``subjectVariant`` / ``subjectGene`` :math:`\rightarrow` ``subject``;
+    ``objectCondition`` / ``objectTumorType`` / ``objectSequenceFeature`` /
+    ``objectTherapy`` / ``objectConsequence`` :math:`\rightarrow` ``object``;
+    ``focusAllele`` / ``focusVariant`` :math:`\rightarrow` ``focus``
+    (``focusAlleleCount`` / ``focusAlleleFrequency`` / ``locusAlleleCount`` are
+    unchanged). All examples and test fixtures were updated accordingly.
+  * The abstract base classes (:ref:`Proposition`, :ref:`StudyResult`,
+    :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
+    ``oneOf`` of their built-in subtypes, so implementers can define and validate
+    **their own** subclasses of :ref:`Statement`, :ref:`Proposition`,
+    :ref:`EvidenceLine`, and :ref:`StudyResult` against these bases.
+  * :ref:`ComputationalVariantFunctionalImpactAnalysisResult` now inherits
+    :ref:`StudyResult` (so it too requires ``focus``).
+  * The 0.4.x processor now emits a JSON Schema for every abstract class
+    (previously only unions were emitted).

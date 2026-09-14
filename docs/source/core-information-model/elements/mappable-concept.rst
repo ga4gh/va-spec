@@ -5,7 +5,7 @@
 Mappable Concept
 ****************
 
-.. include::  ../../../../schema/gks-core/def/MappableConcept.rst
+.. include::  ../../def/va-spec/MappableConcept.rst
 
 **Data Examples**
 

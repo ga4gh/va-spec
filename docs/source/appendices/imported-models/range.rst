@@ -3,4 +3,4 @@
 Range
 !!!!!!!!!!
 
-.. include::  ../../def/vrs/Range.rst
+.. include::  ../../def/va-spec/Range.rst
