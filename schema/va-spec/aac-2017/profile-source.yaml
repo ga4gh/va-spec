@@ -1,35 +1,37 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/aac-2017/profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/profile-source.yaml"
 title: AAC 2017 Profiles
 description: >-
   Profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP),
   American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for the
   interpretation and reporting of sequence variants in cancer.
 strict: true
+json-target: ../json/aac-2017
+def-target: ../def/aac-2017
 imports:
-  va-core: ../base/va-core-source.yaml
-  gks-core: ../../gks-core/gks-core-source.yaml
+  va-spec: ../va-spec-source.yaml
+  gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
-  gks.core: /ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/
+  gkm.core: /ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/
 
 $defs:
   AmpAscoCapEvidenceLine:
     maturity: draft
     description: Evidence line for AMP/ASCO/CAP
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/EvidenceLine"
+      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
       - properties:
           targetProposition:
             oneOf:
-              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantPrognosticProposition"
-              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantDiagnosticProposition"
-              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantTherapeuticResponseProposition"
+              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
+              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantDiagnosticProposition"
+              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
           strengthOfEvidenceProvided:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum: [A, B, C, D]
@@ -48,9 +50,9 @@ $defs:
           - $ref: "#/$defs/AmpAscoCapEvidenceLine"
           - properties:
               targetProposition:
-                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantPrognosticProposition"
+                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+        - $ref: "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
 
   DiagnosticEvidenceLine:
     maturity: draft
@@ -63,9 +65,9 @@ $defs:
           - $ref: "#/$defs/AmpAscoCapEvidenceLine"
           - properties:
               targetProposition:
-                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantDiagnosticProposition"
+                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantDiagnosticProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+        - $ref: "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
 
   TherapeuticEvidenceLine:
     maturity: draft
@@ -78,9 +80,9 @@ $defs:
           - $ref: "#/$defs/AmpAscoCapEvidenceLine"
           - properties:
               targetProposition:
-                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantTherapeuticResponseProposition"
+                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gks-core/1.2.0-ballot.2026-07.1/json/iriReference"
+        - $ref: "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -89,10 +91,10 @@ $defs:
       significance of a variant with respect to a condition, based on interpretation of
       the study's results.
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/Statement"
+      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
       - properties:
           proposition:
-            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-07.2/base/json/VariantClinicalSignificanceProposition"
+            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantClinicalSignificanceProposition"
           strength:
             description: >-
               The strength of support that the Statement is determined to provide for or against the Variant Clinical Significance Proposition
@@ -101,7 +103,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum:
@@ -116,7 +118,7 @@ $defs:
             properties:
               primaryCoding:
                 allOf:
-                  - $refCurie: gks.core:Coding
+                  - $refCurie: gkm.core:Coding
                   - properties:
                       code:
                         enum:
@@ -146,7 +148,7 @@ $defs:
           properties:
             hasEvidenceLines:
               oneOf:
-                - $refCurie: gks.core:iriReference
+                - $refCurie: gkm.core:iriReference
                 - $ref: "#/$defs/DiagnosticEvidenceLine"
                 - $ref: "#/$defs/PrognosticEvidenceLine"
                 - $ref: "#/$defs/TherapeuticEvidenceLine"
@@ -186,7 +188,7 @@ $defs:
           properties:
             hasEvidenceLines:
               oneOf:
-                - $refCurie: gks.core:iriReference
+                - $refCurie: gkm.core:iriReference
                 - $ref: "#/$defs/DiagnosticEvidenceLine"
                 - $ref: "#/$defs/PrognosticEvidenceLine"
                 - $ref: "#/$defs/TherapeuticEvidenceLine"

@@ -1,0 +1,140 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/TumorVariantFrequencyStudyResult",
+   "title": "TumorVariantFrequencyStudyResult",
+   "maturity": "draft",
+   "description": "A Study Result that reports measures related to the frequency of a variant in a particular tumor type.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"TumorVariantFrequencyStudyResult\".",
+         "const": "TumorVariantFrequencyStudyResult",
+         "default": "TumorVariantFrequencyStudyResult"
+      },
+      "name": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "aliases": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model."
+      },
+      "specifiedBy": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Method"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+            }
+         ],
+         "description": "A specification that describes all or part of the process that led to creation of the Information Entity"
+      },
+      "contributions": {
+         "type": "array",
+         "ordered": true,
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Contribution"
+         },
+         "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity."
+      },
+      "reportedIn": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "oneOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Document"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               }
+            ]
+         },
+         "description": "A document in which the the Information Entity is reported."
+      },
+      "focus": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Allele"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.1-ballot.2026-09.1/json/CategoricalVariant"
+            }
+         ],
+         "description": "The variant for which frequency data is reported in the Study Result."
+      },
+      "sourceDataSet": {
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet",
+         "description": "The dataset from which data in the Tumor Variant Frequency Study Result was taken."
+      },
+      "ancillaryResults": {
+         "maturity": "draft",
+         "description": "An object in which implementers can define custom fields to capture additional results derived from analysis of primary data items captured in standard attributes in the main body of the Study Result. e.g. in a Cohort Allele Frequency Study Result, this maybe a grpMaxFAF95 calculation, or homozygote/heterozygote calls derived from analyzing raw allele count data.",
+         "type": "object",
+         "additionalProperties": true
+      },
+      "qualityMeasures": {
+         "maturity": "draft",
+         "description": "An object in which implementers can define custom fields to capture metadata about the quality/provenance of the primary data items captured in standard attributes in the main body of the Study Result. e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.",
+         "type": "object",
+         "additionalProperties": true
+      },
+      "affectedSampleCount": {
+         "type": "integer",
+         "description": "The number of tumor samples in the sample group that contain the focus variant."
+      },
+      "totalSampleCount": {
+         "type": "integer",
+         "description": "The total number of tumor samples in the sample group."
+      },
+      "affectedFrequency": {
+         "type": "number",
+         "description": "The frequency of tumor samples that include the focus variant in the sample group."
+      },
+      "sampleGroup": {
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/StudyGroup",
+         "description": "The set of samples about which the frequency data was generated."
+      },
+      "subGroupFrequency": {
+         "type": "array",
+         "ordered": false,
+         "description": "A list of Tumor Variant Frequency Study Result objects describing variant frequency in different subsets of larger sample group described in the root Study Result. Subgroups can be further subdivided into more subgroups. This enables, for example, further breakdown of frequency measures in sample groups with a narrower categorical variant than the root focus variant, or sample groups with a more specific tumor type.",
+         "items": {
+            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/TumorVariantFrequencyStudyResult"
+         }
+      }
+   },
+   "required": [
+      "affectedFrequency",
+      "affectedSampleCount",
+      "focus",
+      "totalSampleCount",
+      "type"
+   ],
+   "type": "object",
+   "additionalProperties": false
+}

@@ -1,0 +1,35 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/DiagnosticEvidenceLine",
+   "title": "DiagnosticEvidenceLine",
+   "description": "Diagnostic evidence line for AMP/ASCO/CAP",
+   "json-target": "../json/aac-2017",
+   "def-target": "../def/aac-2017",
+   "maturity": "draft",
+   "type": "array",
+   "ordered": false,
+   "items": {
+      "anyOf": [
+         {
+            "allOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/AmpAscoCapEvidenceLine"
+               },
+               {
+                  "properties": {
+                     "targetProposition": {
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantDiagnosticProposition"
+                     }
+                  },
+                  "required": [
+                     "targetProposition"
+                  ]
+               }
+            ]
+         },
+         {
+            "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+         }
+      ]
+   }
+}

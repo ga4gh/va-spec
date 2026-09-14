@@ -1,0 +1,118 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/CustomProposition",
+   "title": "CustomProposition",
+   "maturity": "draft",
+   "description": "A Proposition that is defined by a data provider for their own use.",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"CustomProposition\".",
+         "const": "CustomProposition",
+         "default": "CustomProposition"
+      },
+      "name": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "aliases": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model."
+      },
+      "subject": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Variation"
+            },
+            {
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.1-ballot.2026-09.1/json/CategoricalVariant"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+            }
+         ],
+         "description": "A custom entity or concept that is the subject of the Proposition."
+      },
+      "predicate": {
+         "type": "string",
+         "description": "A custom predicate that describes the relationship between the subject and object of the Proposition."
+      },
+      "object": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/MappableConcept"
+            }
+         ],
+         "description": "A custom entity or concept that is the object of the Proposition."
+      },
+      "customPropositionType": {
+         "type": "string",
+         "description": "A user-defined subtype that distinguishes one kind of CustomProposition from another. Because all CustomPropositions share the same 'type' value (\"CustomProposition\"), this attribute plays the role that 'type' plays for standard Proposition subclasses - allowing consumers to discern the specific type of possible fact a given CustomProposition represents (e.g. \"GeneDiseaseValidityProposition\")."
+      },
+      "qualifiers": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "object",
+            "properties": {
+               "name": {
+                  "type": "string",
+                  "description": "A name for the qualifier. Should be indicative of its meaning and/or the type of information its value represents."
+               },
+               "value": {
+                  "oneOf": [
+                     {
+                        "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/MappableConcept"
+                     }
+                  ],
+                  "description": "The value of the qualifier - either a MappableConcept or an IRI reference."
+               }
+            },
+            "required": [
+               "name",
+               "value"
+            ],
+            "additionalProperties": false
+         },
+         "description": "An array of custom qualifier objects that provide additional information about the Proposition. Each qualifier is an object with a required 'name' (string) identifying the qualifier, a required 'value' (a MappableConcept or an IRI reference), and an optional 'description' (string) explaining its meaning."
+      }
+   },
+   "required": [
+      "customPropositionType",
+      "object",
+      "predicate",
+      "subject",
+      "type"
+   ],
+   "type": "object",
+   "additionalProperties": false
+}
