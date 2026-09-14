@@ -2,7 +2,7 @@ id: VTRProp724
 type: VariantTherapeuticResponseProposition
 name: EGFR L858R predicts sensitivity to Afatinib in Lung Adenocarcinoma
 predicate: predictsSensitivityTo
-subjectVariant:
+subject:
   id: civic.mpid:33
   type: CategoricalVariant
   description: >-
@@ -65,7 +65,7 @@ subjectVariant:
         code: SO:0001583
         system: http://www.sequenceontology.org/browser/current_release/term/
         name: missense_variant
-objectTherapy:
+object:
   type: MappableConcept
   id: civic.tid:146
   conceptType: Drug

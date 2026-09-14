@@ -89,7 +89,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectCondition:
+          object:
             type: MappableConcept
             conceptType: Disease
             id: civic.did:11
@@ -100,7 +100,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Colorectal Cancer
           predicate: associatedWithWorseOutcomeFor
-          subjectVariant:
+          subject:
             constraints:
               - featureContext:
                   type: MappableConcept
@@ -276,7 +276,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectCondition:
+          object:
             type: MappableConcept
             conceptType: Disease
             id: civic.did:11
@@ -287,7 +287,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Colorectal Cancer
           predicate: associatedWithWorseOutcomeFor
-          subjectVariant:
+          subject:
             constraints:
               - featureContext:
                   type: MappableConcept
@@ -449,7 +449,7 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: BRAF
-      objectCondition:
+      object:
         type: MappableConcept
         conceptType: Disease
         id: civic.did:11
@@ -460,7 +460,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: Colorectal Cancer
       predicate: associatedWithWorseOutcomeFor
-      subjectVariant:
+      subject:
         aliases:
           - VAL600GLU
           - V640E
@@ -719,7 +719,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: BRAF
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     id: civic.did:11
@@ -730,7 +730,7 @@ proposition:
         relation: exactMatch
     name: Colorectal Cancer
   predicate: hasClinicalSignificanceFor
-  subjectVariant:
+  subject:
     aliases:
       - VAL600GLU
       - V640E

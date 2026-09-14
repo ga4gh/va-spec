@@ -6,7 +6,19 @@ from config import validator, js_def, coverage
 def _get_trial_use_classes():
     return set([x for x in js_def if x.startswith('va-spec') and js_def[x]['maturity'] == 'trial use'])
 
-va_abstract_classes = {'va-spec.base:SubjectVariantProposition', 'va-spec.base:Condition', 'va-spec.base:Therapy', 'va-spec.base:StudyResult'}
+# Abstract va-spec classes are not directly instantiated, so they have no standalone
+# example and their (inherited) properties can never be covered by an instance. The
+# 0.4.x metaschema processor emits a JSON schema for every abstract class (0.3.x did
+# not), so all abstract classes must be excluded from both coverage checks.
+va_abstract_classes = {
+    'va-spec:InformationEntity',
+    'va-spec:StudyResult',
+    'va-spec:Proposition',
+    'va-spec:SubjectVariantProposition',
+    'va-spec:GeneticContextVariantProposition',
+    'va-spec:Condition',
+    'va-spec:Therapy',
+}
 
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:
@@ -59,7 +71,7 @@ def test_trial_use_property_coverage():
                 coverage[test_cls_name][p] = True
 
     no_coverage_properties = set()
-    for tu_class in trial_use_classes:
+    for tu_class in trial_use_classes - va_abstract_classes:
         for tu_class_property, covered in coverage[tu_class].items():
             if tu_class_property in exceptions.get(tu_class, dict()):
                 continue

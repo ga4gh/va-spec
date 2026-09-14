@@ -81,7 +81,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: EGFR
-          objectTherapy:
+          object:
             type: MappableConcept
             conceptType: Therapy
             extensions:
@@ -100,7 +100,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Afatinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - LEU858ARG
               - L813R
@@ -401,7 +401,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: EGFR
-          objectTherapy:
+          object:
             type: MappableConcept
             conceptType: Therapy
             extensions:
@@ -420,7 +420,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Afatinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - LEU858ARG
               - L813R
@@ -726,7 +726,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: EGFR
-          objectTherapy:
+          object:
             type: MappableConcept
             conceptType: Therapy
             extensions:
@@ -745,7 +745,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Afatinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - LEU858ARG
               - L813R
@@ -1051,7 +1051,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: EGFR
-          objectTherapy:
+          object:
             type: MappableConcept
             conceptType: Therapy
             extensions:
@@ -1070,7 +1070,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Afatinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - LEU858ARG
               - L813R
@@ -1374,7 +1374,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: EGFR
-          objectTherapy:
+          object:
             type: MappableConcept
             conceptType: Therapy
             extensions:
@@ -1393,7 +1393,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Afatinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - LEU858ARG
               - L813R
@@ -1699,7 +1699,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: EGFR
-          objectTherapy:
+          object:
             type: MappableConcept
             conceptType: Therapy
             extensions:
@@ -1718,7 +1718,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Afatinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - LEU858ARG
               - L813R
@@ -2020,7 +2020,7 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: EGFR
-      objectTherapy:
+      object:
         type: MappableConcept
         conceptType: Therapy
         extensions:
@@ -2039,7 +2039,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: Afatinib
       predicate: predictsSensitivityTo
-      subjectVariant:
+      subject:
         aliases:
           - LEU858ARG
           - L813R
@@ -2282,7 +2282,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: EGFR
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     id: civic.did:8
@@ -2293,7 +2293,7 @@ proposition:
         relation: exactMatch
     name: Lung Non-small Cell Carcinoma
   predicate: hasClinicalSignificanceFor
-  subjectVariant:
+  subject:
     aliases:
       - LEU858ARG
       - L813R

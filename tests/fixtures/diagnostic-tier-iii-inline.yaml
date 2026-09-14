@@ -57,7 +57,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: ACVR1
-          objectCondition:
+          object:
             type: MappableConcept
             conceptType: Disease
             id: civic.did:2950
@@ -68,7 +68,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Diffuse Midline Glioma, H3 K27-altered
           predicate: isDiagnosticInclusionCriterionFor
-          subjectVariant:
+          subject:
             extensions:
               - name: molecularProfileScore
                 value: 15.0
@@ -178,7 +178,7 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: ACVR1
-      objectCondition:
+      object:
         type: MappableConcept
         conceptType: Disease
         id: civic.did:2950
@@ -189,7 +189,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: Diffuse Midline Glioma, H3 K27-altered
       predicate: isDiagnosticInclusionCriterionFor
-      subjectVariant:
+      subject:
         aliases:
           - GLY328VAL
         constraints:
@@ -403,7 +403,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: ACVR1
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     id: civic.did:2950
@@ -414,7 +414,7 @@ proposition:
         relation: exactMatch
     name: Diffuse Midline Glioma, H3 K27-altered
   predicate: hasClinicalSignificanceFor
-  subjectVariant:
+  subject:
     aliases:
       - GLY328VAL
     constraints:

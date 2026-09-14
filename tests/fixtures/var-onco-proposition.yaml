@@ -1,6 +1,6 @@
 id: VarOncoProp052
 type: VariantOncogenicityProposition
-subjectVariant:
+subject:
   type: CategoricalVariant
   name: EGFR R11T
   constraints:
@@ -30,7 +30,7 @@ subjectVariant:
             iris:
               - http://www.sequenceontology.org/browser/current_release/term/translation_of
 predicate: isOncogenicFor
-objectTumorType:
+object:
   type: MappableConcept
   primaryCoding:
     code: ncit:C4872

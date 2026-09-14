@@ -65,7 +65,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: MYBL1
-          objectCondition:
+          object:
             type: ConceptSet
             concepts:
               - type: MappableConcept
@@ -109,7 +109,7 @@ hasEvidenceLines:
                 membershipOperator: OR
             membershipOperator: AND
           predicate: isDiagnosticInclusionCriterionFor
-          subjectVariant:
+          subject:
             extensions:
               - name: molecularProfileScore
                 value: 40.0
@@ -228,7 +228,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: MYBL1
-          objectCondition:
+          object:
             type: ConceptSet
             concepts:
               - type: MappableConcept
@@ -263,7 +263,7 @@ hasEvidenceLines:
                 membershipOperator: OR
             membershipOperator: AND
           predicate: isDiagnosticInclusionCriterionFor
-          subjectVariant:
+          subject:
             extensions:
               - name: molecularProfileScore
                 value: 40.0
@@ -385,7 +385,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: MYBL1
-          objectCondition:
+          object:
             type: ConceptSet
             concepts:
               - type: MappableConcept
@@ -420,7 +420,7 @@ hasEvidenceLines:
                 membershipOperator: OR
             membershipOperator: AND
           predicate: isDiagnosticInclusionCriterionFor
-          subjectVariant:
+          subject:
             extensions:
               - name: molecularProfileScore
                 value: 40.0
@@ -525,7 +525,7 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: MYBL1
-      objectCondition:
+      object:
         type: ConceptSet
         concepts:
           - type: MappableConcept
@@ -569,7 +569,7 @@ hasEvidenceLines:
             membershipOperator: OR
         membershipOperator: AND
       predicate: isDiagnosticInclusionCriterionFor
-      subjectVariant:
+      subject:
         extensions:
           - name: molecularProfileScore
             value: 40.0
@@ -626,7 +626,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: MYBL1
-  objectCondition:
+  object:
     type: ConceptSet
     concepts:
       - type: MappableConcept
@@ -670,7 +670,7 @@ proposition:
         membershipOperator: OR
     membershipOperator: AND
   predicate: hasClinicalSignificanceFor
-  subjectVariant:
+  subject:
     extensions:
       - name: molecularProfileScore
         value: 40.0
