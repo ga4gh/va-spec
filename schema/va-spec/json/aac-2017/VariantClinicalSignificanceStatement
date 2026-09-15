@@ -1,10 +1,8 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/VariantClinicalSignificanceStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/VariantClinicalSignificanceStatement",
    "title": "VariantClinicalSignificanceStatement",
    "description": "A statement reporting a conclusion from a single study about the clinical significance of a variant with respect to a condition, based on interpretation of the study's results.",
-   "json-target": "../json/aac-2017",
-   "def-target": "../def/aac-2017",
    "maturity": "draft",
    "allOf": [
       {
@@ -108,13 +106,13 @@
                         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/DiagnosticEvidenceLine"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticEvidenceLine"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/PrognosticEvidenceLine"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/TherapeuticEvidenceLine"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine"
                      }
                   ]
                },
@@ -194,13 +192,13 @@
                         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/DiagnosticEvidenceLine"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticEvidenceLine"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/PrognosticEvidenceLine"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine"
                      },
                      {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/TherapeuticEvidenceLine"
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine"
                      }
                   ]
                },

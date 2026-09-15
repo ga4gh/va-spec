@@ -1,15 +1,13 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/acmg-2015/profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/acmg-2015-profile-source.yaml"
 title: ACMG 2015 Variant Pathogenicity Profiles
 description: >-
   Profiles defined to align with terminology and conventions from the American College of Medical Genetics
   and Genomics (ACMG) 2015 guidelines for interpretation of sequence variant pathogenicity.
 strict: true
-json-target: ../json/acmg-2015
-def-target: ../def/acmg-2015
 imports:
-  va-spec: ../va-spec-source.yaml
-  gkm-core: ../../gkm-core/gkm-core-source.yaml
+  va-spec: va-spec-source.yaml
+  gkm-core: ../gkm-core/gkm-core-source.yaml
 
 namespaces:
   va-spec: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/

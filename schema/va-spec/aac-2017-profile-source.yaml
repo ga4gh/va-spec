@@ -1,16 +1,14 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017/profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017-profile-source.yaml"
 title: AAC 2017 Profiles
 description: >-
   Profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP),
   American Society of Clinical Oncology (ASCO), and College of American Pathologists (CAP) 2017 guidelines for the
   interpretation and reporting of sequence variants in cancer.
 strict: true
-json-target: ../json/aac-2017
-def-target: ../def/aac-2017
 imports:
-  va-spec: ../va-spec-source.yaml
-  gkm-core: ../../gkm-core/gkm-core-source.yaml
+  va-spec: va-spec-source.yaml
+  gkm-core: ../gkm-core/gkm-core-source.yaml
 
 namespaces:
   va-spec: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/

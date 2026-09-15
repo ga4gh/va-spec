@@ -46,6 +46,23 @@ do not, by themselves, change the meaning of VA-Spec data:
     ``def/<community>/`` subfolders (the base classes' output sits at the ``json/``
     and ``def/`` root). Base-class namespaces change from ``va-spec.base`` to
     ``va-spec``; community namespaces (``va-spec.aac-2017`` etc.) are unchanged.
+  * flattens the three community profile sources — ``aac-2017/profile-source.yaml``,
+    ``acmg-2015/profile-source.yaml``, ``ccv-2022/profile-source.yaml`` — out of
+    their own subdirectories, into ``schema/va-spec/<community>-profile-source.yaml``,
+    alongside ``va-spec-source.yaml`` and ``domain-entities-source.yaml``. This adopts
+    the ``gks-metaschema`` processor's native **profile sub-namespace** convention
+    (an ``XXX-profile-source.yaml`` file contributes ``XXX`` as a sub-namespace of the
+    folder it lives in): outputs still land at ``json/<community>/`` and
+    ``def/<community>/`` as before, but each profile class's ``$id`` is now
+    ``.../va-spec/<version>/json/<community>/<Class>`` — computed natively by the
+    processor rather than by VA-Spec's own post-processing script (removed:
+    ``tools/canonicalize-community-ids.py``, and the ``json-target``/``def-target``
+    overrides in each profile source). The four per-directory Makefiles/``prune.mk``
+    are replaced by one flat ``schema/va-spec/Makefile``/``prune.mk`` that builds
+    every source in the folder. A side benefit: cross-reference ("Used in:") lists
+    in the generated docs are computed across every source in a folder together, so
+    base classes now correctly show community profile classes that reference them
+    (previously invisible across the old subdirectory boundaries).
   * makes the documentation fully self-contained: ``docs/source`` no longer
     references anything outside itself. Generated class defs are synced into
     ``docs/source/def/`` (via ``tools/sync-docs-def.sh``, wired into the

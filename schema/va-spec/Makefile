@@ -4,20 +4,20 @@
 BUILD_DIR := build
 DEF_DIR := def
 JSON_DIR := json
-COMMUNITIES := aac-2017 acmg-2015 ccv-2022
+IMPORT_DIR := import
 
 vpath %tag $(BUILD_DIR)
 vpath %.classes $(BUILD_DIR)
 
+# va-spec is flat: every source lives here. The MSP tools place each class's
+# json/def in the right dir on their own -- base sources (va-spec,
+# domain-entities) -> ./json + ./def; each XXX-profile-source.yaml -> ./json/XXX +
+# ./def/XXX -- so this one Makefile drives all of it (no per-subdirectory Makefiles).
 SOURCES := $(wildcard *-source.yaml)
 TAGS := $(SOURCES:-source.yaml=.tag)
+IMPORTS := $(wildcard $(IMPORT_DIR)/*-source.yaml)
 
-all: build-ordered ${TAGS} prune-tag communities-all canonicalize-ids
-
-# The community json-target (../json/<c>) makes the tool emit a '..' segment in
-# community class $ids; rewrite them to their clean logical form.
-canonicalize-ids: communities-all
-	python3 ../../tools/canonicalize-community-ids.py
+all: build-ordered ${TAGS} prune-tag
 
 build-ordered: | $(BUILD_DIR)
 
@@ -30,24 +30,17 @@ $(BUILD_DIR):
 %.classes: %-source.yaml
 	source2classes $< >${BUILD_DIR}/$@
 
-%.json-tag: %-source.yaml
+%.json-tag: %-source.yaml ${IMPORTS}
 	source2splitjs $<
 	touch $(BUILD_DIR)/$@
 
-%.defs-tag: %-source.yaml
+%.defs-tag: %-source.yaml ${IMPORTS}
 	y2t $<
 	touch $(BUILD_DIR)/$@
 
-# Prune base output only (json/ top-level files); community json/<c> + def/<c> are kept.
 prune-tag: ${TAGS}
 	$(MAKE) -f prune.mk
 	touch $(BUILD_DIR)/$@
 
-# Community profiles are built after the base classes they import; each writes its
-# json/def into ../json/<c> and ../def/<c> via json-target/def-target in its source.
-communities-all: prune-tag
-	@for c in $(COMMUNITIES); do (cd $$c && $(MAKE) all) || exit 1; done
-
 clean:
-	rm -rf $(BUILD_DIR)/* $(DEF_DIR)/* $(JSON_DIR)/*
-	@for c in $(COMMUNITIES); do (cd $$c && $(MAKE) clean) || exit 1; done
+	rm -rf $(BUILD_DIR) $(DEF_DIR) $(JSON_DIR)

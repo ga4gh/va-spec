@@ -24,6 +24,7 @@ These initial profiles were developed to support the following implementations a
 The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec.
 
 .. _variant-oncogenicity-statement-ccv-2022:
+.. _VariantOncogenicityStatement:
 
 Variant Oncogenicity Statement (CCV 2022)
 #########################################
@@ -76,6 +77,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 -----
 
 .. _variant-oncogenicity-evidence-line-ccv-2022:
+.. _VariantOncogenicityEvidenceLine:
 
 Variant Oncogenicity Evidence Line (CCV 2022)
 ##############################################

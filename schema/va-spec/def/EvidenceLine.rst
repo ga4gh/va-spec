@@ -123,4 +123,4 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
 
 **Inherits:** :ref:`InformationEntity`
 
-**Used in:** :ref:`Statement`
+**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`Statement`, :ref:`VariantOncogenicityEvidenceLine`, :ref:`VariantPathogenicityEvidenceLine`

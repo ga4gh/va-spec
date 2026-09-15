@@ -125,3 +125,5 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
 
 **Inherits:** :ref:`InformationEntity`
+
+**Used in:** :ref:`VariantClinicalSignificanceStatement`, :ref:`VariantOncogenicityStatement`, :ref:`VariantPathogenicityStatement`

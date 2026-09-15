@@ -90,3 +90,5 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`G
       - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions.
 
 **Inherits:** :ref:`GeneticContextVariantProposition`
+
+**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`TherapeuticEvidenceLine`
