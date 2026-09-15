@@ -473,7 +473,7 @@ $defs:
           of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of
           the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages
           and a governing framework for evaluating the quality of evidence.
-          Also known as trust rating, review status or ranking. 
+          Also known as trust rating, review status or ranking.
       score:
         type: number
         maturity: draft
@@ -607,7 +607,7 @@ $defs:
           of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of
           the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages
           and a governing framework for evaluating the quality of evidence.
-          Also known as trust rating, review status or ranking. 
+          Also known as trust rating, review status or ranking.
       scoreOfEvidenceProvided:
         type: number
         description: >-
