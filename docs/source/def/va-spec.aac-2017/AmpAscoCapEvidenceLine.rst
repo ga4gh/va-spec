@@ -102,6 +102,14 @@ This class refines :ref:`EvidenceLine`.
       - :ref:`MappableConcept`
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
+   *  - qualityOfEvidenceProvided
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - :ref:`MappableConcept`
+      - 0..1
+      - A term used to report the quality of the assessment of a Proposition taking into consideration the reliability of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages and a governing framework for evaluating the quality of evidence. Also known as trust rating, review status or ranking.
    *  - scoreOfEvidenceProvided
       -
       - number

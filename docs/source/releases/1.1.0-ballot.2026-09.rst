@@ -79,9 +79,21 @@ model has been made consistent with that rule:
   * The abstract base classes (:ref:`Proposition`, :ref:`StudyResult`,
     :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
     ``oneOf`` of their built-in subtypes, so implementers can define and validate
-    **their own** subclasses of :ref:`Statement`, :ref:`Proposition`,
-    :ref:`EvidenceLine`, and :ref:`StudyResult` against these bases.
+    **their own** subclasses of :ref:`Proposition` and :ref:`StudyResult` against
+    these bases. :ref:`Statement` and :ref:`EvidenceLine` remain concrete and
+    closed, as before.
   * :ref:`ComputationalVariantFunctionalImpactAnalysisResult` now inherits
     :ref:`StudyResult` (so it too requires ``focus``).
   * The 0.4.x processor now emits a JSON Schema for every abstract class
     (previously only unions were emitted).
+
+Other schema content changes
+#############################
+
+  * removes the draft ``CustomProposition`` class. Data providers defining their
+    own proposition type should instead validate directly against the open
+    abstract :ref:`Proposition` base (see above).
+  * adds a draft ``quality`` attribute to :ref:`Statement` and a draft
+    ``qualityOfEvidenceProvided`` attribute to :ref:`EvidenceLine`, for reporting
+    the quality of an assessment (e.g. a trust rating or review status) alongside
+    its direction and strength/score.

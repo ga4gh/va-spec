@@ -143,15 +143,6 @@ Gene Disease Validity Proposition
 
 .. include::  ../../def/va-spec/GeneDiseaseValidityProposition.rst
 
-
-.. _custom-proposition:
-.. _CustomProposition:
-
-Custom Proposition
-##################
-
-.. include::  ../../def/va-spec/CustomProposition.rst
-
 .. _variant-molecular-consequence-proposition:
 .. _VariantMolecularConsequenceProposition:
 

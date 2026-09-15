@@ -82,4 +82,4 @@ This class must match **one of** the following:
 
 **Subclasses:** :ref:`MolecularVariation`, :ref:`SystemicVariation`
 
-**Used in:** :ref:`CategoricalVariant`, :ref:`CustomProposition`
+**Used in:** :ref:`CategoricalVariant`

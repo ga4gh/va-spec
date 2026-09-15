@@ -42,9 +42,6 @@ tests:
     definition: TherapyGroup
 
   # test propositions
-  - test_file: custom-proposition.yaml
-    namespace: va-spec
-    definition: CustomProposition
   - test_file: gene-disease-validity-proposition.yaml
     namespace: va-spec
     definition: GeneDiseaseValidityProposition
