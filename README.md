@@ -28,11 +28,11 @@ If you already cloned the repo, but forgot to include `--recurse-submodules` you
 
 VA-Spec uses the below `-source.yaml` files as the source document for JSON Schema:
 
-- [./schema/va-spec/aac-2017/profile-source.yaml](./schema/va-spec/aac-2017/profile-source.yaml)
-- [./schema/va-spec/acmg-2015/profile-source.yaml](./schema/va-spec/acmg-2015/profile-source.yaml)
-- [./schema/va-spec/base/domain-entities-source.yaml](./schema/va-spec/base/domain-entities-source.yaml)
-- [./schema/va-spec/base/va-core-source.yaml](./schema/va-spec/base/va-core-source.yaml)
-- [./schema/va-spec/ccv-2022/profile-source.yaml](./schema/va-spec/ccv-2022/profile-source.yaml)
+- [./schema/va-spec/va-spec-source.yaml](./schema/va-spec/va-spec-source.yaml)
+- [./schema/va-spec/domain-entities-source.yaml](./schema/va-spec/domain-entities-source.yaml)
+- [./schema/va-spec/aac-2017-profile-source.yaml](./schema/va-spec/aac-2017-profile-source.yaml)
+- [./schema/va-spec/acmg-2015-profile-source.yaml](./schema/va-spec/acmg-2015-profile-source.yaml)
+- [./schema/va-spec/ccv-2022-profile-source.yaml](./schema/va-spec/ccv-2022-profile-source.yaml)
 
 To create the corresponding def and JSON files after making changes to any one of the source documents, from the root directory:
 
