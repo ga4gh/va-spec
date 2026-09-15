@@ -1,7 +1,7 @@
 .. _va-profiles:
 
-VA Profiles
-!!!!!!!!!!!
+Profiles
+!!!!!!!!
 
 VA Profiles extend generic Core Model classes with specializations to support a particular type of knowledge (e.g. a variant pathogenicity), and/or align with established community terminology and curation conventions (e.g. the ACMG-2015 Guidelines)
 
