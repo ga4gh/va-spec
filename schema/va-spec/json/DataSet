@@ -35,7 +35,7 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/Extension"
+            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model."
       },
@@ -50,14 +50,14 @@
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Document"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
             }
          ],
          "description": "A document in which the the Method is reported."
       },
       "releaseDate": {
          "description": "Indicates the date a version of a DataSet was formally released.",
-         "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/date"
+         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/date"
       },
       "version": {
          "type": "string",
@@ -65,7 +65,7 @@
       },
       "license": {
          "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
-         "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
       }
    },
    "type": "object",

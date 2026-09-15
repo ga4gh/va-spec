@@ -31,7 +31,7 @@
                   "primaryCoding": {
                      "allOf": [
                         {
-                           "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/Coding"
+                           "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/Coding"
                         },
                         {
                            "properties": {

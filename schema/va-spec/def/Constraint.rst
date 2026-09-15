@@ -5,6 +5,8 @@
 
 **Abstract Class** — not instantiated directly; concrete subclasses inherit its attributes.
 
+**Sealed** — Constraint has a closed, exhaustive set of concrete subclasses; every one is listed below. No other subclass is permitted, and a conforming instance must be exactly one of these types.
+
 **Computational Definition**
 
 Constraints are used to construct an intensional semantics of categorical variant types.
@@ -31,12 +33,12 @@ Constraints are used to construct an intensional semantics of categorical varian
 
 This class must match **one of** the following:
 
+* :ref:`AdjacencyConstraint`
+* :ref:`CopyChangeConstraint`
+* :ref:`CopyCountConstraint`
 * :ref:`DefiningAlleleConstraint`
 * :ref:`DefiningLocationConstraint`
-* :ref:`AdjacencyConstraint`
 * :ref:`FeatureContextConstraint`
-* :ref:`CopyCountConstraint`
-* :ref:`CopyChangeConstraint`
 * :ref:`FunctionConstraint`
 
 

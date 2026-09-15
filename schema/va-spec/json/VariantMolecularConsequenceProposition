@@ -35,20 +35,20 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/Extension"
+            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model."
       },
       "subject": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.2.0-ballot.2026-09.1/json/Allele"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Adjacency"
+               "$ref": "/ga4gh/schema/vrs/2.2.0-ballot.2026-09.1/json/Adjacency"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
             }
          ],
          "description": "MUST be a genomic variant specified against genomic reference sequence(s). This practice most directly reflects data conventions from sources like VEP, and aligns with the intended use of Molecular Consequence data. There are separate qualifier attributes in the model to capture transcript and/or protein level representations of the subject, that indicate the variant context in which the reported consequence(s) are actually manifest."
@@ -62,13 +62,13 @@
       "object": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/ConceptSet"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/ConceptSet"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
             }
          ],
          "description": "The molecular consequence(s) of the subject variant, in the context of the qualifying transcript and/or protein variation context(s). These are typically terms from the 'structural_variant' branch of the Sequence Ontology, e.g. 'SO:0001627' (intron_variant), or 'SO:0001589' (frameshift_variant). If more than one consequence term apply, use a ConceptSet to capture them."
@@ -77,13 +77,13 @@
          "description": "The subject genomic variant as projected on a particular transcript or mRNA molecule. The reported relationship between the subject variant and object consequence terms holds specifically in the context of this transcript variation. A transcript variation context MUST be reported, unless the subject is an intergenic variant.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.2.0-ballot.2026-09.1/json/Allele"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Adjacency"
+               "$ref": "/ga4gh/schema/vrs/2.2.0-ballot.2026-09.1/json/Adjacency"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
             }
          ]
       },
@@ -91,13 +91,13 @@
          "description": "The subject genomic variant as projected on a particular protein molecule. The reported relationship between the subject variant and object consequence terms holds specifically in the context of this protein variation. A protein variation context MUST be accompanied by its corresponding transcript variation context.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.2.0-ballot.2026-09.1/json/Allele"
             },
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Adjacency"
+               "$ref": "/ga4gh/schema/vrs/2.2.0-ballot.2026-09.1/json/Adjacency"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
             }
          ]
       },
@@ -105,10 +105,10 @@
          "description": "The gene for which this statement reports a VariantMolecularConsequence.",
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/MappableConcept"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
             }
          ]
       }
