@@ -9,7 +9,6 @@ A specialization of ConceptSet representing a set of conditions (diseases, pheno
 
 **Information Model**
 
-This class refines :ref:`ConceptSet`.
 
 .. list-table::
    :class: clean-wrap
@@ -63,7 +62,7 @@ This class refines :ref:`ConceptSet`.
       - string
       - 0..1
       - A term indicating the type of concept being represented by the ConceptSet.
-   *  - concepts *(refined)*
+   *  - concepts
       -
                         .. raw:: html
 

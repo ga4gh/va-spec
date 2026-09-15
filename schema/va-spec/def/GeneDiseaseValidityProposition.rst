@@ -78,3 +78,5 @@ Some GeneDiseaseValidityProposition attributes are inherited from :ref:`Proposit
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       -
+
+**Inherits:** :ref:`Proposition`

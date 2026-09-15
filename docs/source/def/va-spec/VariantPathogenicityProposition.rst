@@ -93,3 +93,5 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Genetic
       - :ref:`MappableConcept`
       - 0..1
       - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Consider using terms or codes from community terminologies here - e.g. terms from the 'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006 (autosomal dominant inheritance).
+
+**Inherits:** :ref:`GeneticContextVariantProposition`

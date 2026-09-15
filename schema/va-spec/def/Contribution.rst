@@ -74,4 +74,6 @@ Some Contribution attributes are inherited from :ref:`gkm-core:Entity`.
       - 0..1
       - When the contributing activity was completed.
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`EvidenceLine`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`InformationEntity`, :ref:`Statement`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`

@@ -53,3 +53,5 @@ Some AdjacencyConstraint attributes are inherited from :ref:`Constraint`.
       - boolean
       - 1..1
       - When orderKnown is true, the order of adjoinedElements is assumed to denote the 5' partner first and the 3' partner second. If orderKnown is false, then the order of adjoinedElements assumed not in fact to be known, as in the case of a fusion where only one or both partners are known, but not their relative order. This field is redundant and may be set to true when using Sequence Locations and following the VRS 2 Adjacency model, as the order is implied by the usage of start and end on respective adjoinedElements.
+
+**Inherits:** :ref:`Constraint`

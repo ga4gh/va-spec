@@ -21,6 +21,8 @@ This class must match **one of** the following:
 * :ref:`DerivativeMolecule`
 
 
+**Inherits:** :ref:`Variation`
+
 **Subclasses:** :ref:`Adjacency`, :ref:`Allele`, :ref:`CisPhasedBlock`, :ref:`DerivativeMolecule`, :ref:`RelativeAllele`, :ref:`Terminus`
 
 **Used in:** :ref:`ExperimentalVariantFunctionalImpactProposition`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`GeneticContextVariantProposition`, :ref:`SubjectVariantProposition`, :ref:`VariantClinicalSignificanceProposition`, :ref:`VariantDiagnosticProposition`, :ref:`VariantOncogenicityProposition`, :ref:`VariantPathogenicityProposition`, :ref:`VariantPrognosticProposition`, :ref:`VariantTherapeuticResponseProposition`

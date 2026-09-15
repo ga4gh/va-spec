@@ -133,3 +133,5 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - :ref:`CohortAlleleFrequencyStudyResult`
       - 0..m
       - A list of CohortAlleleFrequency objects describing subcohorts of the cohort currently being described. Subcohorts can be further subdivided into more subcohorts. This enables, for example, the description of different ancestry groups and sexes among those ancestry groups.
+
+**Inherits:** :ref:`StudyResult`

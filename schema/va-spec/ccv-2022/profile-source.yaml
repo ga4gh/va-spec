@@ -13,6 +13,7 @@ imports:
   gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
+  va-spec: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/
   gkm.core: /ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/
 
 $defs:
@@ -23,10 +24,10 @@ $defs:
       is associated with oncogenicity (positive or negative) - based on interpretation of the study's
       results.
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+      - $refCurie: va-spec:Statement
       - properties:
           proposition:
-            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantOncogenicityProposition"
+            $refCurie: va-spec:VariantOncogenicityProposition
             description: >-
               A proposition about the oncogenicity of a variant, for which the study provides evidence.
               The validity of this proposition, and the level of confidence/evidence supporting it,
@@ -90,14 +91,14 @@ $defs:
       (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
+      - $refCurie: va-spec:EvidenceLine
       - properties:
           targetProposition:
             description: >-
               A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to
               determine the strength and direction of support this evidence provides for or against the
               proposition's validity.
-            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantOncogenicityProposition"
+            $refCurie: va-spec:VariantOncogenicityProposition
           directionOfEvidenceProvided:
             type: string
             enum: ["supports", "neutral", "disputes"]

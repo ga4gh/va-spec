@@ -69,4 +69,6 @@ Some FunctionalDomain attributes are inherited from :ref:`gkm-core:Entity`.
       - 1..1
       - MUST be either "preserved" or "lost"
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`AdjacencyConstraint`

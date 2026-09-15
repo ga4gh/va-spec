@@ -78,3 +78,5 @@ Some ExperimentalVariantFunctionalImpactProposition attributes are inherited fro
       - :ref:`iriReference` | :ref:`Document` | object
       - 0..1
       - An assay in which the reported variant functional impact was determined - providing a specific experimental context in which this effect is asserted to hold.
+
+**Inherits:** :ref:`SubjectVariantProposition`

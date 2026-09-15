@@ -17,6 +17,8 @@ This class must match **one of** the following:
 * :ref:`RelativeSequenceLocation`
 
 
+**Inherits:** :ref:`Ga4ghIdentifiableObject`
+
 **Subclasses:** :ref:`RelativeSequenceLocation`, :ref:`SequenceLocation`
 
 **Used in:** :ref:`Adjacency`, :ref:`AdjacencyConstraint`, :ref:`FunctionalDomain`, :ref:`Terminus`

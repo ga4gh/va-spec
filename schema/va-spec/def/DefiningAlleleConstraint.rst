@@ -40,3 +40,5 @@ Some DefiningAlleleConstraint attributes are inherited from :ref:`Constraint`.
       - :ref:`MappableConcept`
       - 0..m
       - Defined relationships from which members relate to the defining allele.
+
+**Inherits:** :ref:`Constraint`

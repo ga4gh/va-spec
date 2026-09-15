@@ -133,3 +133,5 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - :ref:`TumorVariantFrequencyStudyResult`
       - 0..m
       - A list of Tumor Variant Frequency Study Result objects describing variant frequency in different subsets of larger sample group described in the root Study Result. Subgroups can be further subdivided into more subgroups. This enables, for example, further breakdown of frequency measures in sample groups with a narrower categorical variant than the root focus variant, or sample groups with a more specific tumor type.
+
+**Inherits:** :ref:`StudyResult`

@@ -17,4 +17,6 @@ This class must match **one of** the following:
 * :ref:`CopyNumberChange`
 
 
+**Inherits:** :ref:`Variation`
+
 **Subclasses:** :ref:`CopyNumberChange`, :ref:`CopyNumberCount`

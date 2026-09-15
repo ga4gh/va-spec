@@ -9,7 +9,6 @@ A Statement describing the role of a variant in causing an inherited condition.
 
 **Information Model**
 
-This class refines :ref:`Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -58,7 +57,7 @@ This class refines :ref:`Statement`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy *(refined)*
+   *  - specifiedBy
       -
       - :ref:`Method` | :ref:`iriReference`
       - 1..1
@@ -79,7 +78,7 @@ This class refines :ref:`Statement`.
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - proposition *(refined)*
+   *  - proposition
       -
       - :ref:`VariantPathogenicityProposition`
       - 1..1
@@ -89,7 +88,7 @@ This class refines :ref:`Statement`.
       - string
       - 1..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
-   *  - strength *(refined)*
+   *  - strength
       -
       - :ref:`MappableConcept`
       - 0..1
@@ -110,12 +109,12 @@ This class refines :ref:`Statement`.
       - number
       - 0..1
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
-   *  - classification *(refined)*
+   *  - classification
       -
       - :ref:`MappableConcept`
       - 1..1
       - The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines. These classifications should coincide with the direction and strength values as follows: 'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate, 'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance' can be one of three possibilities... supports-weak, disputes-weak or neutral for uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or uncertain significance (favoring neither pathogenic nor benign). The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be applied based on whether the variant proposition was defined to have a 'penetrance' of 'low' or 'risk' respectively.
-   *  - hasEvidenceLines *(refined)*
+   *  - hasEvidenceLines
       -
                         .. raw:: html
 

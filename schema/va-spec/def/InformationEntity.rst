@@ -82,6 +82,8 @@ Some InformationEntity attributes are inherited from :ref:`gkm-core:Entity`.
       - 0..m
       - A document in which the the Information Entity is reported.
 
+**Inherits:** :ref:`Entity`
+
 **Subclasses:** :ref:`EvidenceLine`, :ref:`Statement`, :ref:`StudyResult`
 
 **Used in:** :ref:`EvidenceLine`

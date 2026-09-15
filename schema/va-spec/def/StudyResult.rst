@@ -108,4 +108,6 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
       - 0..1
       - An object in which implementers can define custom fields to capture metadata about the quality/provenance of the primary data items captured in standard attributes in the main body of the Study Result. e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.
 
+**Inherits:** :ref:`InformationEntity`
+
 **Subclasses:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`TumorVariantFrequencyStudyResult`

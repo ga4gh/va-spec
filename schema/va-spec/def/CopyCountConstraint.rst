@@ -32,3 +32,5 @@ Some CopyCountConstraint attributes are inherited from :ref:`Constraint`.
       - integer | :ref:`Range`
       - 1..1
       - The precise value or range of copies members of this categorical variant must satisfy.
+
+**Inherits:** :ref:`Constraint`

@@ -9,7 +9,6 @@ A specialization of MappableConcept representing an individual therapy (drug, pr
 
 **Information Model**
 
-This class refines :ref:`MappableConcept`.
 
 .. list-table::
    :class: clean-wrap
@@ -58,7 +57,7 @@ This class refines :ref:`MappableConcept`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - conceptType *(refined)*
+   *  - conceptType
       -
       - string | string
       - 0..1

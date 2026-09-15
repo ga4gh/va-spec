@@ -88,3 +88,5 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`G
       - :ref:`Condition` | :ref:`ConditionSet` | :ref:`iriReference`
       - 1..1
       - Reports the disease context in which the variant's association with therapeutic sensitivity or resistance is evaluated. Note that this is a required qualifier in therapeutic response propositions.
+
+**Inherits:** :ref:`GeneticContextVariantProposition`

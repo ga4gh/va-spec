@@ -69,4 +69,6 @@ Some Method attributes are inherited from :ref:`gkm-core:Entity`.
       - 0..1
       - A document in which the the Method is reported.
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`EvidenceLine`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`InformationEntity`, :ref:`Statement`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`

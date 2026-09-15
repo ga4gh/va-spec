@@ -13,6 +13,7 @@ imports:
   gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
+  va-spec: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/
   gkm.core: /ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/
 
 $defs:
@@ -20,13 +21,13 @@ $defs:
     maturity: draft
     description: Evidence line for AMP/ASCO/CAP
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
+      - $refCurie: va-spec:EvidenceLine
       - properties:
           targetProposition:
             oneOf:
-              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
-              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantDiagnosticProposition"
-              - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
+              - $refCurie: va-spec:VariantPrognosticProposition
+              - $refCurie: va-spec:VariantDiagnosticProposition
+              - $refCurie: va-spec:VariantTherapeuticResponseProposition
           strengthOfEvidenceProvided:
             properties:
               primaryCoding:
@@ -50,9 +51,9 @@ $defs:
           - $ref: "#/$defs/AmpAscoCapEvidenceLine"
           - properties:
               targetProposition:
-                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
+                $refCurie: va-spec:VariantPrognosticProposition
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+        - $refCurie: gkm.core:iriReference
 
   DiagnosticEvidenceLine:
     maturity: draft
@@ -65,9 +66,9 @@ $defs:
           - $ref: "#/$defs/AmpAscoCapEvidenceLine"
           - properties:
               targetProposition:
-                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantDiagnosticProposition"
+                $refCurie: va-spec:VariantDiagnosticProposition
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+        - $refCurie: gkm.core:iriReference
 
   TherapeuticEvidenceLine:
     maturity: draft
@@ -80,9 +81,9 @@ $defs:
           - $ref: "#/$defs/AmpAscoCapEvidenceLine"
           - properties:
               targetProposition:
-                $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
+                $refCurie: va-spec:VariantTherapeuticResponseProposition
             required: [targetProposition]
-        - $ref: "/ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/iriReference"
+        - $refCurie: gkm.core:iriReference
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -91,10 +92,10 @@ $defs:
       significance of a variant with respect to a condition, based on interpretation of
       the study's results.
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+      - $refCurie: va-spec:Statement
       - properties:
           proposition:
-            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantClinicalSignificanceProposition"
+            $refCurie: va-spec:VariantClinicalSignificanceProposition
           strength:
             description: >-
               The strength of support that the Statement is determined to provide for or against the Variant Clinical Significance Proposition

@@ -76,6 +76,8 @@ Some Proposition attributes are inherited from :ref:`gkm-core:Entity`.
       - 1..1
       - An Entity or concept that is related to the subject of a Proposition via its predicate.
 
+**Inherits:** :ref:`Entity`
+
 **Subclasses:** :ref:`GeneDiseaseValidityProposition`, :ref:`SubjectVariantProposition`
 
 **Used in:** :ref:`EvidenceLine`, :ref:`Statement`

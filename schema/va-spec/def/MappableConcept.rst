@@ -83,4 +83,6 @@ This class must match **any of** the following:
 * an object with additional constraints
 
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`AdjacencyConstraint`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`ConceptSet`, :ref:`Condition`, :ref:`DataSet`, :ref:`DefiningAlleleConstraint`, :ref:`DefiningLocationConstraint`, :ref:`EvidenceLine`, :ref:`ExperimentalVariantFunctionalImpactProposition`, :ref:`FeatureContextConstraint`, :ref:`FunctionConstraint`, :ref:`GeneDiseaseValidityProposition`, :ref:`GeneticContextVariantProposition`, :ref:`Statement`, :ref:`StudyGroup`, :ref:`Therapy`, :ref:`VariantClinicalSignificanceProposition`, :ref:`VariantDiagnosticProposition`, :ref:`VariantMolecularConsequenceProposition`, :ref:`VariantOncogenicityProposition`, :ref:`VariantPathogenicityProposition`, :ref:`VariantPrognosticProposition`, :ref:`VariantTherapeuticResponseProposition`

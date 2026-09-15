@@ -110,3 +110,5 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - number
       - 0..1
       - The score of the variant impact measured in the assay or study.
+
+**Inherits:** :ref:`StudyResult`

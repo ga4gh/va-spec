@@ -76,4 +76,6 @@ Some SubjectVariantProposition attributes are inherited from :ref:`Proposition`.
       - 1..1
       - An Entity or concept that is related to the subject of a Proposition via its predicate.
 
+**Inherits:** :ref:`Proposition`
+
 **Subclasses:** :ref:`ExperimentalVariantFunctionalImpactProposition`, :ref:`GeneticContextVariantProposition`, :ref:`VariantMolecularConsequenceProposition`

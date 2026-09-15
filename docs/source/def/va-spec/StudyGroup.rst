@@ -75,4 +75,6 @@ Some StudyGroup attributes are inherited from :ref:`gkm-core:Entity`.
       - 0..m
       - A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`TumorVariantFrequencyStudyResult`

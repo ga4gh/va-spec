@@ -9,7 +9,6 @@ Evidence line for AMP/ASCO/CAP
 
 **Information Model**
 
-This class refines :ref:`EvidenceLine`.
 
 .. list-table::
    :class: clean-wrap
@@ -79,7 +78,7 @@ This class refines :ref:`EvidenceLine`.
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - targetProposition *(refined)*
+   *  - targetProposition
       -
       - :ref:`VariantPrognosticProposition` | :ref:`VariantDiagnosticProposition` | :ref:`VariantTherapeuticResponseProposition`
       - 1..1
@@ -97,7 +96,7 @@ This class refines :ref:`EvidenceLine`.
       - string
       - 1..1
       - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)
-   *  - strengthOfEvidenceProvided *(refined)*
+   *  - strengthOfEvidenceProvided
       -
       - :ref:`MappableConcept`
       - 0..1

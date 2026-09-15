@@ -2,6 +2,7 @@
    "$schema": "https://json-schema.org/draft/2020-12/schema",
    "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/GeneticContextVariantProposition",
    "title": "GeneticContextVariantProposition",
+   "abstract": true,
    "maturity": "trial use",
    "description": "A proposition used to describe knowledge about a variant that includes or depends on its genetic context - e.g. the allelic origin of the variant, or its relationship to a specific gene.",
    "properties": {

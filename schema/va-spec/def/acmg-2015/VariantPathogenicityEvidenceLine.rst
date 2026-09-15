@@ -9,7 +9,6 @@ An Evidence Line that describes how a specific type of information was interpret
 
 **Information Model**
 
-This class refines :ref:`EvidenceLine`.
 
 .. list-table::
    :class: clean-wrap
@@ -58,7 +57,7 @@ This class refines :ref:`EvidenceLine`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - specifiedBy *(refined)*
+   *  - specifiedBy
       -
       - :ref:`Method` | :ref:`iriReference`
       - 1..1
@@ -79,7 +78,7 @@ This class refines :ref:`EvidenceLine`.
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - targetProposition *(refined)*
+   *  - targetProposition
       -
       - :ref:`VariantPathogenicityProposition`
       - 0..1
@@ -92,12 +91,12 @@ This class refines :ref:`EvidenceLine`.
       - :ref:`InformationEntity` | :ref:`iriReference`
       - 0..m
       - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
-   *  - directionOfEvidenceProvided *(refined)*
+   *  - directionOfEvidenceProvided
       -
       - string
       - 1..1
       - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral). For ACMG-based assessments, if a pathogenicity criterion is 'met' in the Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes', and if a criteria is 'not met' the direction is 'none'.
-   *  - strengthOfEvidenceProvided *(refined)*
+   *  - strengthOfEvidenceProvided
       -
       - :ref:`MappableConcept`
       - 0..1
@@ -115,7 +114,7 @@ This class refines :ref:`EvidenceLine`.
       - number
       - 0..1
       - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
-   *  - evidenceOutcome *(refined)*
+   *  - evidenceOutcome
       -
       - :ref:`MappableConcept`
       - 0..1

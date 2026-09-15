@@ -9,7 +9,6 @@ A statement reporting a conclusion from a single study about the clinical signif
 
 **Information Model**
 
-This class refines :ref:`Statement`.
 
 .. list-table::
    :class: clean-wrap
@@ -79,7 +78,7 @@ This class refines :ref:`Statement`.
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - proposition *(refined)*
+   *  - proposition
       -
       - :ref:`VariantClinicalSignificanceProposition`
       - 1..1
@@ -89,7 +88,7 @@ This class refines :ref:`Statement`.
       - string
       - 1..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
-   *  - strength *(refined)*
+   *  - strength
       -
       - :ref:`MappableConcept`
       - 0..1
@@ -110,7 +109,7 @@ This class refines :ref:`Statement`.
       - number
       - 0..1
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
-   *  - classification *(refined)*
+   *  - classification
       -
       - :ref:`MappableConcept`
       - 1..1

@@ -12,6 +12,7 @@ imports:
   gkm-core: ../../gkm-core/gkm-core-source.yaml
 
 namespaces:
+  va-spec: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/
   gkm.core: /ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/
 
 $defs:
@@ -21,10 +22,10 @@ $defs:
     description: >-
       A Statement describing the role of a variant in causing an inherited condition.
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+      - $refCurie: va-spec:Statement
       - properties:
           proposition:
-            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+            $refCurie: va-spec:VariantPathogenicityProposition
             description: >-
               A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
               A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
@@ -106,14 +107,14 @@ $defs:
       (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-      - $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
+      - $refCurie: va-spec:EvidenceLine
       - properties:
           targetProposition:
             description: >-
               A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
               determine the strength and direction of support this evidence provides for or against the
               proposition's validity.
-            $ref: "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+            $refCurie: va-spec:VariantPathogenicityProposition
           directionOfEvidenceProvided:
             type: string
             enum: ["supports", "neutral", "disputes"]

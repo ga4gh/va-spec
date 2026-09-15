@@ -135,3 +135,5 @@ Some ComputationalVariantFunctionalImpactAnalysisResult attributes are inherited
       - :ref:`iriReference` | :ref:`MappableConcept`
       - 0..1
       - The specific feature for which the focus variant has a predicted impact
+
+**Inherits:** :ref:`StudyResult`

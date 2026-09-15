@@ -68,6 +68,8 @@ This class must match **one of** the following:
 * :ref:`LengthExpression`
 
 
+**Inherits:** :ref:`Entity`
+
 **Subclasses:** :ref:`LengthExpression`, :ref:`LiteralSequenceExpression`, :ref:`ReferenceLengthExpression`
 
 **Used in:** :ref:`Adjacency`, :ref:`AdjacencyConstraint`, :ref:`Allele`, :ref:`RelativeAllele`

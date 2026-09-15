@@ -10,6 +10,7 @@ imports:
   gkm-core: ../gkm-core/gkm-core-source.yaml
 
 namespaces:
+  domain-entities: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/
   gkm.core: /ga4gh/schema/gkm-core/1.2.1-ballot.2026-09.1/json/
   vrs: /ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/
   cat-vrs: /ga4gh/schema/cat-vrs/1.1.1-ballot.2026-09.1/json/
@@ -808,8 +809,8 @@ $defs:
         default: hasClinicalSignificanceFor
       object:
         oneOf:
-          - $ref: Condition
-          - $ref: ConditionSet
+          - $refCurie: domain-entities:Condition
+          - $refCurie: domain-entities:ConditionSet
           - $refCurie: gkm.core:iriReference
         description: The condition that is evaluated.
     required:
@@ -838,8 +839,8 @@ $defs:
         - isDiagnosticExclusionCriterionFor
       object:
         oneOf:
-          - $ref: Condition
-          - $ref: ConditionSet
+          - $refCurie: domain-entities:Condition
+          - $refCurie: domain-entities:ConditionSet
           - $refCurie: gkm.core:iriReference
         description: The disease that is evaluated for diagnosis.
     required:
@@ -865,8 +866,8 @@ $defs:
         default: isOncogenicFor
       object:
         oneOf:
-          - $ref: Condition
-          - $ref: ConditionSet
+          - $refCurie: domain-entities:Condition
+          - $refCurie: domain-entities:ConditionSet
           - $refCurie: gkm.core:iriReference
         description: >-
           The tumor type for which the variant impact is evaluated.
@@ -893,8 +894,8 @@ $defs:
         default: isCausalFor
       object:
         oneOf:
-          - $ref: Condition
-          - $ref: ConditionSet
+          - $refCurie: domain-entities:Condition
+          - $refCurie: domain-entities:ConditionSet
           - $refCurie: gkm.core:iriReference
         description: The :ref:`Condition` or :ref:`ConditionSet` for which the variant impact is stated.
       penetranceQualifier:
@@ -935,8 +936,8 @@ $defs:
           - associatedWithWorseOutcomeFor
       object:
         oneOf:
-          - $ref: Condition
-          - $ref: ConditionSet
+          - $refCurie: domain-entities:Condition
+          - $refCurie: domain-entities:ConditionSet
           - $refCurie: gkm.core:iriReference
         description: The disease that is evaluated for outcome.
     required:
@@ -967,13 +968,13 @@ $defs:
         description: A drug administration or other therapeutic procedure that the neoplasm
           is intended to respond to.
         oneOf:
-        - $ref: Therapy
-        - $ref: TherapyGroup
+        - $refCurie: domain-entities:Therapy
+        - $refCurie: domain-entities:TherapyGroup
         - $refCurie: gkm.core:iriReference
       conditionQualifier:
         oneOf:
-          - $ref: Condition
-          - $ref: ConditionSet
+          - $refCurie: domain-entities:Condition
+          - $refCurie: domain-entities:ConditionSet
           - $refCurie: gkm.core:iriReference
         description: >-
           Reports the disease context in which the variant's association with therapeutic

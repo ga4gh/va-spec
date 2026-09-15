@@ -87,4 +87,6 @@ Some DataSet attributes are inherited from :ref:`gkm-core:Entity`.
       - 0..1
       - A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`

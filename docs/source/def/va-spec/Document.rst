@@ -90,4 +90,6 @@ Some Document attributes are inherited from :ref:`gkm-core:Entity`.
       - 0..1
       - A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document.
 
+**Inherits:** :ref:`Entity`
+
 **Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`DataSet`, :ref:`EvidenceLine`, :ref:`ExperimentalVariantFunctionalImpactProposition`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`InformationEntity`, :ref:`Method`, :ref:`Statement`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`

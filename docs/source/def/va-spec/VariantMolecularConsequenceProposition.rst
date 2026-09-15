@@ -88,3 +88,5 @@ Some VariantMolecularConsequenceProposition attributes are inherited from :ref:`
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The gene for which this statement reports a VariantMolecularConsequence.
+
+**Inherits:** :ref:`SubjectVariantProposition`
