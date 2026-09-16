@@ -4,30 +4,21 @@
    "title": "TherapeuticEvidenceLine",
    "description": "Therapeutic evidence line for AMP/ASCO/CAP",
    "maturity": "draft",
-   "type": "array",
-   "ordered": false,
-   "items": {
-      "anyOf": [
-         {
-            "allOf": [
-               {
-                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapEvidenceLine"
-               },
-               {
-                  "properties": {
-                     "targetProposition": {
-                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
-                     }
-                  },
-                  "required": [
-                     "targetProposition"
-                  ]
-               }
-            ]
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapEvidenceLine"
+      },
+      {
+         "properties": {
+            "targetProposition": {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
+            }
          },
-         {
-            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
-         }
-      ]
-   }
+         "required": [
+            "targetProposition"
+         ]
+      }
+   ],
+   "type": "object",
+   "unevaluatedProperties": false
 }

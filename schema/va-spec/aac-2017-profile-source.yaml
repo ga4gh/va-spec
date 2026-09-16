@@ -40,48 +40,33 @@ $defs:
 
   PrognosticEvidenceLine:
     maturity: draft
-    type: array
-    ordered: false
     description: Prognostic evidence line for AMP/ASCO/CAP
-    items:
-      anyOf:
-        - allOf:
-          - $ref: "#/$defs/AmpAscoCapEvidenceLine"
-          - properties:
-              targetProposition:
-                $refCurie: va-spec:VariantPrognosticProposition
-            required: [targetProposition]
-        - $refCurie: gkm.core:iriReference
+    allOf:
+      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+      - properties:
+          targetProposition:
+            $refCurie: va-spec:VariantPrognosticProposition
+        required: [targetProposition]
 
   DiagnosticEvidenceLine:
     maturity: draft
-    type: array
-    ordered: false
     description: Diagnostic evidence line for AMP/ASCO/CAP
-    items:
-      anyOf:
-        - allOf:
-          - $ref: "#/$defs/AmpAscoCapEvidenceLine"
-          - properties:
-              targetProposition:
-                $refCurie: va-spec:VariantDiagnosticProposition
-            required: [targetProposition]
-        - $refCurie: gkm.core:iriReference
+    allOf:
+      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+      - properties:
+          targetProposition:
+            $refCurie: va-spec:VariantDiagnosticProposition
+        required: [targetProposition]
 
   TherapeuticEvidenceLine:
     maturity: draft
-    type: array
-    ordered: false
     description: Therapeutic evidence line for AMP/ASCO/CAP
-    items:
-      anyOf:
-        - allOf:
-          - $ref: "#/$defs/AmpAscoCapEvidenceLine"
-          - properties:
-              targetProposition:
-                $refCurie: va-spec:VariantTherapeuticResponseProposition
-            required: [targetProposition]
-        - $refCurie: gkm.core:iriReference
+    allOf:
+      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+      - properties:
+          targetProposition:
+            $refCurie: va-spec:VariantTherapeuticResponseProposition
+        required: [targetProposition]
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -146,11 +131,13 @@ $defs:
         then:
           properties:
             hasEvidenceLines:
-              oneOf:
-                - $refCurie: gkm.core:iriReference
-                - $ref: "#/$defs/DiagnosticEvidenceLine"
-                - $ref: "#/$defs/PrognosticEvidenceLine"
-                - $ref: "#/$defs/TherapeuticEvidenceLine"
+              type: array
+              items:
+                anyOf:
+                  - $refCurie: gkm.core:iriReference
+                  - $ref: "#/$defs/DiagnosticEvidenceLine"
+                  - $ref: "#/$defs/PrognosticEvidenceLine"
+                  - $ref: "#/$defs/TherapeuticEvidenceLine"
             classification:
               type: object
               properties:
@@ -186,11 +173,13 @@ $defs:
         then:
           properties:
             hasEvidenceLines:
-              oneOf:
-                - $refCurie: gkm.core:iriReference
-                - $ref: "#/$defs/DiagnosticEvidenceLine"
-                - $ref: "#/$defs/PrognosticEvidenceLine"
-                - $ref: "#/$defs/TherapeuticEvidenceLine"
+              type: array
+              items:
+                anyOf:
+                  - $refCurie: gkm.core:iriReference
+                  - $ref: "#/$defs/DiagnosticEvidenceLine"
+                  - $ref: "#/$defs/PrognosticEvidenceLine"
+                  - $ref: "#/$defs/TherapeuticEvidenceLine"
             classification:
               type: object
               properties:
