@@ -57,7 +57,7 @@ strengthOfEvidenceProvided:
 scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
-  methodType: functional_assay
+  methodType: functional_data_assessment
   reportedIn:
     type: Document
     pmid: '35101336'

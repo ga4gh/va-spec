@@ -145,35 +145,35 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - *strengthOfEvidenceProvided*
       - be provided
    *  - *specifiedBy.methodType*
-      - **population_frequency**
+      - **population_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(SBVS1|SBS1|OP4)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **functional_assay**
+      - **functional_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(OS2|SBS2)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **primary_sequence_consequence**
+      - **primary_sequence_consequence_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(OVS1|OM2|SBP2)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **functional_domain_location**
+      - **functional_domain_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^OM1(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **amino_acid_or_residue_analogy**
+      - **amino_acid_analogy_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(OS1|OM4)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **somatic_hotspot_recurrence**
+      - **somatic_hotspot_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(OS3|OM3|OP3)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **computational_prediction**
+      - **in_silico_impact_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(OP1|SBP1)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **single_genetic_etiology_context**
+      - **single_genetic_etiology_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^OP2(_.+)?$**
 

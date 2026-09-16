@@ -59,35 +59,35 @@
                      "type": "string",
                      "oneOf": [
                         {
-                           "const": "population_frequency",
+                           "const": "population_data_assessment",
                            "description": "Assessment of whether population control frequency refutes oncogenicity or whether absence/extreme rarity in controls provides supporting evidence for oncogenicity."
                         },
                         {
-                           "const": "functional_assay",
+                           "const": "functional_data_assessment",
                            "description": "Assessment of well-established in vitro or in vivo functional studies to determine whether experimental evidence supports or refutes an oncogenic effect."
                         },
                         {
-                           "const": "primary_sequence_consequence",
+                           "const": "primary_sequence_consequence_assessment",
                            "description": "Assessment of the primary sequence-level consequence of the variant, including null/loss-of-function effects, protein-length changes, stop-loss effects, or synonymous variants predicted to have no splice or conservation impact."
                         },
                         {
-                           "const": "functional_domain_location",
+                           "const": "functional_domain_assessment",
                            "description": "Assessment of whether the variant occurs in a critical and well-established functional domain or region, such as an enzyme active site."
                         },
                         {
-                           "const": "amino_acid_or_residue_analogy",
+                           "const": "amino_acid_analogy_assessment",
                            "description": "Assessment by analogy to previously established oncogenic variants, including the same amino acid change or a different missense change at the same residue."
                         },
                         {
-                           "const": "somatic_hotspot_recurrence",
+                           "const": "somatic_hotspot_assessment",
                            "description": "Assessment of somatic recurrence at cancer hotspots or recurrently mutated residues, with evidence strength based on recurrence thresholds."
                         },
                         {
-                           "const": "computational_prediction",
+                           "const": "in_silico_impact_assessment",
                            "description": "Aggregate assessment of computational predictions, including conservation, missense-effect, and splice-effect tools, supporting either oncogenic effect or no effect."
                         },
                         {
-                           "const": "single_genetic_etiology_context",
+                           "const": "single_genetic_etiology_assessment",
                            "description": "Assessment of whether the variant occurs in a gene and malignancy context where the disease has a single genetic etiology, making that gene-level event supportive of oncogenicity."
                         }
                      ]
@@ -140,7 +140,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "population_frequency"
+                        "const": "population_data_assessment"
                      }
                   },
                   "required": [
@@ -174,7 +174,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "functional_assay"
+                        "const": "functional_data_assessment"
                      }
                   },
                   "required": [
@@ -208,7 +208,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "primary_sequence_consequence"
+                        "const": "primary_sequence_consequence_assessment"
                      }
                   },
                   "required": [
@@ -242,7 +242,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "functional_domain_location"
+                        "const": "functional_domain_assessment"
                      }
                   },
                   "required": [
@@ -276,7 +276,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "amino_acid_or_residue_analogy"
+                        "const": "amino_acid_analogy_assessment"
                      }
                   },
                   "required": [
@@ -310,7 +310,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "somatic_hotspot_recurrence"
+                        "const": "somatic_hotspot_assessment"
                      }
                   },
                   "required": [
@@ -344,7 +344,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "computational_prediction"
+                        "const": "in_silico_impact_assessment"
                      }
                   },
                   "required": [
@@ -378,7 +378,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "single_genetic_etiology_context"
+                        "const": "single_genetic_etiology_assessment"
                      }
                   },
                   "required": [
