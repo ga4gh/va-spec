@@ -86,7 +86,7 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - The variant for which frequency data is reported in the Study Result.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - The dataset from which data in the Tumor Variant Frequency Study Result was taken.
    *  - ancillaryResults
@@ -122,7 +122,7 @@ Some TumorVariantFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - The frequency of tumor samples that include the focus variant in the sample group.
    *  - sampleGroup
       -
-      - :ref:`StudyGroup`
+      - :ref:`StudyGroup` | :ref:`iriReference`
       - 0..1
       - The set of samples about which the frequency data was generated.
    *  - subGroupFrequency

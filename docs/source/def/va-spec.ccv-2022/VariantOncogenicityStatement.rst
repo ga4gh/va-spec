@@ -90,7 +90,7 @@ A statement reporting a conclusion from a single study about whether a variant i
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
    *  - strength
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The strength of support that an CCV 2022 Oncogenicity statement is determined to provide for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength. Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.
    *  - quality
@@ -98,7 +98,7 @@ A statement reporting a conclusion from a single study about whether a variant i
                         .. raw:: html
 
                             <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - A term used to report the quality of the assessment of a Proposition taking into consideration the reliability of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages and a governing framework for evaluating the quality of evidence. Also known as trust rating, review status or ranking.
    *  - score
@@ -111,7 +111,7 @@ A statement reporting a conclusion from a single study about whether a variant i
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
    *  - classification
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
    *  - hasEvidenceItems

@@ -86,7 +86,7 @@ Some ExperimentalVariantFunctionalImpactStudyResult attributes are inherited fro
       - The genetic variant for which a functional impact score is generated.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - The full data set that provided the reported the functional impact score.
    *  - ancillaryResults

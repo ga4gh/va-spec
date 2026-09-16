@@ -64,8 +64,15 @@
          "description": "The version of the DataSet, as assigned by its creator."
       },
       "license": {
-         "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)",
-         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
+         "description": "A specific license that dictates legal permissions for how a data set can be used (by whom, where, for what purposes, with what additional requirements, etc.)"
       }
    },
    "type": "object",

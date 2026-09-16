@@ -106,7 +106,7 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral). For CCV-based assessments, if a oncogenicity criterion is 'met' in the Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes', and if a criteria is 'not met' the direction is 'none'.
    *  - strengthOfEvidenceProvided
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The strength of support that an Evidence Line is determined to provide for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.
    *  - qualityOfEvidenceProvided
@@ -124,7 +124,7 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - evidenceOutcome
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met').
 

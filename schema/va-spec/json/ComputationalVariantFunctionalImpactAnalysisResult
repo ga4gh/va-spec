@@ -88,7 +88,14 @@
          "description": "The genetic variant for which the in silico analysis was performed."
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
          "description": "The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset)."
       },
       "ancillaryResults": {

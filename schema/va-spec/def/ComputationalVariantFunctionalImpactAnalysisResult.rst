@@ -86,7 +86,7 @@ Some ComputationalVariantFunctionalImpactAnalysisResult attributes are inherited
       - The genetic variant for which the in silico analysis was performed.
    *  - sourceDataSet
       -
-      - :ref:`DataSet`
+      - :ref:`DataSet` | :ref:`iriReference`
       - 0..1
       - The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
    *  - ancillaryResults

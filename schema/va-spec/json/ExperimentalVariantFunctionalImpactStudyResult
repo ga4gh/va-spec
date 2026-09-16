@@ -85,7 +85,14 @@
          "description": "The genetic variant for which a functional impact score is generated."
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
          "description": "The full data set that provided the reported the functional impact score."
       },
       "ancillaryResults": {

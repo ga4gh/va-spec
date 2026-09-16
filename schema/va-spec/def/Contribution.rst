@@ -60,7 +60,7 @@ Some Contribution attributes are inherited from :ref:`gkm-core:Entity`.
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
    *  - contributor
       -
-      - :ref:`Agent`
+      - :ref:`Agent` | :ref:`iriReference`
       - 0..1
       - The agent that made the contribution.
    *  - activityType

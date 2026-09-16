@@ -71,7 +71,7 @@ Some StudyGroup attributes are inherited from :ref:`gkm-core:Entity`.
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..m
       - A feature or role shared by all members of the StudyGroup, representing a criterion for membership in the group.
 

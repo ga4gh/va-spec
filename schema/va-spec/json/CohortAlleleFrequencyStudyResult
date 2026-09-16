@@ -85,7 +85,14 @@
          "description": "The Allele for which frequency results are reported."
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
          "description": "The dataset from which the CohortAlleleFrequencyStudyResult was reported."
       },
       "ancillaryResults": {
@@ -113,7 +120,14 @@
          "description": "The frequency of the focusAllele in the cohort."
       },
       "cohort": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/StudyGroup",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/StudyGroup"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
          "description": "The cohort from which the frequency was derived."
       },
       "subCohortFrequency": {

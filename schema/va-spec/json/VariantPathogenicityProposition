@@ -96,12 +96,26 @@
          ]
       },
       "penetranceQualifier": {
-         "description": "Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.",
-         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
+         "description": "Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition."
       },
       "modeOfInheritanceQualifier": {
-         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. Consider using terms or codes from community terminologies here - e.g. terms from the 'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006 (autosomal dominant inheritance).",
-         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
+         "description": "Reports a pattern of inheritance expected for the pathogenic effect of the variant. Consider using terms or codes from community terminologies here - e.g. terms from the 'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006 (autosomal dominant inheritance)."
       }
    },
    "required": [

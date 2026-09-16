@@ -85,12 +85,12 @@ Some VariantPathogenicityProposition attributes are inherited from :ref:`Genetic
       - Reports whether the Proposition should be interpreted in the context of a heritable "germline" variant, an acquired "somatic" variant in a tumor, or a post-zygotic "mosaic" variant. While these are the most commonly reported allele origins, other more nuanced concepts can be captured  (e.g. "maternal" vs "paternal" allele origin). In practice, populating this field may be complicated by the fact that some sources report allele origin based on the type of tissue that was sequenced to identify the variant, and others use it more generally to specify a category of variant for which the proposition holds. The stated intent of this attribute is the latter. However, if an implementer is not sure about which is reported in their data, it may be safer to create an Extension to hold this information, where they can explicitly acknowledge this ambiguity.
    *  - penetranceQualifier
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - Reports the penetrance of the pathogenic effect - i.e. the extent to which the variant impact is expressed by individuals carrying it as a measure of the proportion of carriers exhibiting the condition.
    *  - modeOfInheritanceQualifier
       -
-      - :ref:`MappableConcept`
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
       - Reports a pattern of inheritance expected for the pathogenic effect of the variant. Consider using terms or codes from community terminologies here - e.g. terms from the 'Mode of inheritance' branch of the Human Phenotype Ontology such as HP:0000006 (autosomal dominant inheritance).
 

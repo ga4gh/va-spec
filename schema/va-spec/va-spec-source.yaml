@@ -133,7 +133,9 @@ $defs:
           in the study (e.g. 'exposure to nicotine' in an analysis correlating this variable with
           clinical outcomes).
       sourceDataSet:
-        $ref: "#/$defs/DataSet"
+        oneOf:
+          - $ref: "#/$defs/DataSet"
+          - $refCurie: gkm.core:iriReference
         description: >-
           A larger DataSet from which the data included in the StudyResult was taken or derived.
         $comment: >-
@@ -309,7 +311,9 @@ $defs:
         default: Contribution
         description: MUST be "Contribution".
       contributor:
-        $ref: "#/$defs/Agent"
+        oneOf:
+          - $ref: "#/$defs/Agent"
+          - $refCurie: gkm.core:iriReference
         description: >-
           The agent that made the contribution.
       activityType:
@@ -422,7 +426,9 @@ $defs:
         default: Statement
         description: MUST be "Statement".
       proposition:
-        $ref: "#/$defs/Proposition"
+        oneOf:
+          - $ref: "#/$defs/Proposition"
+          - $refCurie: gkm.core:iriReference
         description:  >-
           A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being
           true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
@@ -464,10 +470,14 @@ $defs:
           is being assessed (e.g. 'high confidence' vs 'low confidence', or 'strong evidence' vs 'weak evidence') -
           or they can choose values that don't commit to one or the other if they don't want to make the distinction
           (e.g. 'high' vs 'medium' vs 'low').
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
       quality:
         maturity: draft
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           A term used to report the quality of the assessment of a Proposition taking into consideration the reliability
           of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of
@@ -487,7 +497,9 @@ $defs:
           The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
           on a numerical score.
       classification:
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           A single term or phrase summarizing the outcome of direction and strength
           assessments of a Statement's Proposition, in terms of a classification of
@@ -579,7 +591,9 @@ $defs:
         default: EvidenceLine
         description: MUST be "EvidenceLine".
       targetProposition:
-        $ref: "#/$defs/Proposition"
+        oneOf:
+          - $ref: "#/$defs/Proposition"
+          - $refCurie: gkm.core:iriReference
         description: >-
           The possible fact against which evidence items contained in an Evidence Line were collectively evaluated,
           in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based
@@ -630,7 +644,9 @@ $defs:
           The direction of support that the Evidence Line is determined to provide toward its target Proposition
           (supports, disputes, neutral)
       strengthOfEvidenceProvided:
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           The strength of support that an Evidence Line is determined to provide for or against its target Proposition,
           evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
@@ -654,7 +670,9 @@ $defs:
           against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided
           value.
       evidenceOutcome:
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of
           the direction and strength of support it provides for or against the target Proposition.
@@ -712,7 +730,9 @@ $defs:
           revisions that add or modify content, but don’t change the identity of the resource. Use this
           attribute in cases where version is not reflected in an identifier associated with the data set.
       license:
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           A specific license that dictates legal permissions for how a data set can be used
           (by whom, where, for what purposes, with what additional requirements, etc.)
@@ -745,7 +765,9 @@ $defs:
       characteristics:
         type: array
         items:
-          $refCurie: gkm.core:MappableConcept
+          oneOf:
+            - $refCurie: gkm.core:MappableConcept
+            - $refCurie: gkm.core:iriReference
         ordered: false
         description: >-
           A feature or role shared by all members of the StudyGroup, representing a criterion for
@@ -938,13 +960,17 @@ $defs:
           - $refCurie: gkm.core:iriReference
         description: The :ref:`Condition` or :ref:`ConditionSet` for which the variant impact is stated.
       penetranceQualifier:
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           Reports the penetrance of the pathogenic effect - i.e. the extent to which the
           variant impact is expressed by individuals carrying it as a measure of the
           proportion of carriers exhibiting the condition.
       modeOfInheritanceQualifier:
-        $refCurie: gkm.core:MappableConcept
+        oneOf:
+          - $refCurie: gkm.core:MappableConcept
+          - $refCurie: gkm.core:iriReference
         description: >-
           Reports a pattern of inheritance expected for the pathogenic effect of the variant.
           Consider using terms or codes from community terminologies here - e.g. terms from the
@@ -1082,7 +1108,9 @@ $defs:
         type: number
         description: The frequency of the focusAllele in the cohort.
       cohort:
-        $ref: "#/$defs/StudyGroup"
+        oneOf:
+          - $ref: "#/$defs/StudyGroup"
+          - $refCurie: gkm.core:iriReference
         description: The cohort from which the frequency was derived.
       subCohortFrequency:
         type: array
@@ -1132,7 +1160,9 @@ $defs:
         type: number
         description: The frequency of tumor samples that include the focus variant in the sample group.
       sampleGroup:
-        $ref: "#/$defs/StudyGroup"
+        oneOf:
+          - $ref: "#/$defs/StudyGroup"
+          - $refCurie: gkm.core:iriReference
         description: The set of samples about which the frequency data was generated.
       subGroupFrequency:
         type: array
@@ -1242,7 +1272,9 @@ $defs:
           $ref: "#/$defs/Contribution"
         description: Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of this Information Entity.
       sourceDataSet:
-        $ref: "#/$defs/DataSet"
+        oneOf:
+          - $ref: "#/$defs/DataSet"
+          - $refCurie: gkm.core:iriReference
         description: The dataset from which the in silico scores were retrieved or derived (e.g., an Ensembl VEP annotation dataset).
     required:
       - type

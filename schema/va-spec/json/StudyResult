@@ -84,7 +84,14 @@
          "description": "The specific participant, subject or experimental unit in a Study that data included in the StudyResult object is about - e.g. a particular variant in a population allele frequency dataset like ExAC or gnomAD."
       },
       "sourceDataSet": {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet",
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
          "description": "A larger DataSet from which the data included in the StudyResult was taken or derived."
       },
       "ancillaryResults": {

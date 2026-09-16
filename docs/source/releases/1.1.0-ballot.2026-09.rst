@@ -165,3 +165,19 @@ Other schema content changes
     pattern; the def pages for these three classes now render their full
     attribute tables and a **Composes:** line instead of the bare stub they
     rendered as opaque array wrappers.
+  * allows an :ref:`iriReference` as an alternative to an inline object on
+    attributes that reference other, independently-identifiable Information
+    Entities or concepts, so implementers can reference instead of inline
+    them: :ref:`Contribution`.contributor, :ref:`Statement`.proposition/
+    .strength/.classification/.quality, :ref:`EvidenceLine`.targetProposition/
+    .strengthOfEvidenceProvided/.evidenceOutcome, :ref:`StudyResult`.sourceDataSet
+    (and the :ref:`ComputationalVariantFunctionalImpactAnalysisResult`
+    subclass, which redeclares it), :ref:`CohortAlleleFrequencyStudyResult`.cohort,
+    :ref:`TumorVariantFrequencyStudyResult`.sampleGroup, :ref:`DataSet`.license,
+    and :ref:`StudyGroup`.characteristics. Ports the equivalent fix from the
+    still-open `PR #440 <https://github.com/ga4gh/va-spec/pull/440>`_ (opened
+    against the prior ``1.1.0-ballot.2026-07`` line); that PR's other change,
+    porting the draft ``CustomProposition`` class forward, is superseded here
+    by this release's removal of ``CustomProposition`` in favor of the open
+    abstract :ref:`Proposition` base (see *Subject / object / focus model
+    change* above).
