@@ -236,7 +236,10 @@ $defs:
               code (e.g. 'PM2' when the PM2 criteria is met with moderate strength);
               (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the
               altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength);
-              (3)  If no criterion is met, the outcome is either 'no_criteria_met' or the criterion code plus '_not_met'.
+              (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met'
+              (e.g. 'PS3_not_met');
+              (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is
+              'no_criteria_met'.
             properties:
               primaryCoding:
                 code:
