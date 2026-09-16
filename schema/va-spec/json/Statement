@@ -104,6 +104,21 @@
          "description": "A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.",
          "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
       },
+      "hasEvidenceItems": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "anyOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/InformationEntity"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+               }
+            ]
+         },
+         "description": "An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement."
+      },
       "hasEvidenceLines": {
          "type": "array",
          "ordered": false,

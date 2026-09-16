@@ -114,6 +114,14 @@ A statement reporting a conclusion from a single study about whether a variant i
       - :ref:`MappableConcept`
       - 1..1
       - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
+   *  - hasEvidenceItems
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`InformationEntity` | :ref:`iriReference`
+      - 0..m
+      - An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement.
    *  - hasEvidenceLines
       -
                         .. raw:: html

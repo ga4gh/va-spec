@@ -114,6 +114,14 @@ A Statement describing the role of a variant in causing an inherited condition.
       - :ref:`MappableConcept`
       - 1..1
       - The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines. These classifications should coincide with the direction and strength values as follows: 'pathogenic' with supports-strong, 'likely pathogenic' with supports-moderate, 'benign' with disputes-strong, 'likely benign' with disputes-moderate 'uncertain significance' can be one of three possibilities... supports-weak, disputes-weak or neutral for uncertain significance (favoring pathogenic), uncertain significance (favoring benign) or uncertain significance (favoring neither pathogenic nor benign). The 'low penetrance' and 'risk allele' versions of pathogenicity classifications would be applied based on whether the variant proposition was defined to have a 'penetrance' of 'low' or 'risk' respectively.
+   *  - hasEvidenceItems
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
+      - :ref:`InformationEntity` | :ref:`iriReference`
+      - 0..m
+      - An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement.
    *  - hasEvidenceLines
       -
                         .. raw:: html

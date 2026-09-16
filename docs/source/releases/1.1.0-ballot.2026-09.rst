@@ -129,3 +129,10 @@ Other schema content changes
     ``qualityOfEvidenceProvided`` attribute to :ref:`EvidenceLine`, for reporting
     the quality of an assessment (e.g. a trust rating or review status) alongside
     its direction and strength/score.
+  * adds ``hasEvidenceItems`` to :ref:`Statement` (so a Statement can cite
+    evidence items directly, without grouping them into a discrete Evidence
+    Line) and ``hasEvidenceLines`` to :ref:`EvidenceLine` (so Evidence Lines
+    can be nested, with a broader-scoped Evidence Line built from one or more
+    narrower-scoped subordinate ones). Both classes now declare
+    ``hasEvidenceItems`` immediately before ``hasEvidenceLines``, in the same
+    relative order.

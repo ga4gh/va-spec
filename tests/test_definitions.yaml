@@ -130,6 +130,12 @@ tests:
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec
     definition: EvidenceLine
+  - test_file: evidence-line-with-nested-evidence-lines.yaml
+    namespace: va-spec
+    definition: EvidenceLine
+  - test_file: statement-with-direct-evidence-items.yaml
+    namespace: va-spec
+    definition: Statement
   - test_file: civic-proposition-oncogenicity.yaml
     namespace: va-spec
     definition: VariantOncogenicityProposition

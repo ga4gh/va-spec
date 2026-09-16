@@ -92,6 +92,21 @@
          },
          "description": "An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line."
       },
+      "hasEvidenceLines": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "anyOf": [
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
+               },
+               {
+                  "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+               }
+            ]
+         },
+         "description": "A subordinate evidence-based argument that supports or disputes the validity of this Evidence Line's target Proposition. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items')."
+      },
       "directionOfEvidenceProvided": {
          "type": "string",
          "enum": [

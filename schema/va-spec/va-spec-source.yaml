@@ -499,6 +499,27 @@ $defs:
           "BRCA2 c.8023A>G is pathogenic for Breast Cancer", and reporting a direction of 'supports'
           and strength of 'likely', the term  'likely pathogenic' from the ACMG Variant Interpretation
           Guidelines would be used as a subject classification.
+      hasEvidenceItems:
+        type: array
+        ordered: false
+        items:
+          anyOf:
+            - $ref: "#/$defs/InformationEntity"
+            - $refCurie: gkm.core:iriReference
+        description: >-
+          An individual piece of information that was evaluated as evidence in assessing the validity of the
+          Proposition put forth by the Statement.
+        $comment: >-
+          A given Statement may be directly supported by one or many individual evidence items, in cases where
+          a data provider wants to link evidence used to assess a Statement's Proposition without organizing it
+          into discrete Evidence Lines (see :ref:`EvidenceLine` for the alternative, more structured approach of
+          grouping evidence items into scored, directional arguments).
+
+          Different types and scales of information entity can serve as evidence (experimental measurements or
+          observations, data tables or figures, images, prior assertions, etc.) Only when assessed as evidence do
+          we consider the information to be an 'Evidence Item'. For example, a piece of population frequency data
+          about BRCA2 c.8023A>G becomes an Evidence Item when it is assessed for the support it may offer for the
+          Statement's Proposition (e.g. the prospect of the variant's pathogenicity).
       hasEvidenceLines:
         type: array
         ordered: false
@@ -584,6 +605,24 @@ $defs:
           we consider the information to be an 'Evidence Item'.  For example, a piece of population frequency data
           about BRCA2 c.8023A>G  becomes an Evidence Item when it is assessed for the support it may offer for a
           target Proposition (e.g. the prospect of the variant’s pathogenicity).
+      hasEvidenceLines:
+        type: array
+        ordered: false
+        items:
+          anyOf:
+            - $ref: "#/$defs/EvidenceLine"
+            - $refCurie: gkm.core:iriReference
+        description: >-
+          A subordinate evidence-based argument that supports or disputes the validity of this Evidence
+          Line's target Proposition. The strength and direction of this argument (whether it supports or
+          disputes the proposition, and how strongly) is based on an interpretation of one or more pieces
+          of information as evidence (i.e. 'Evidence Items').
+        $comment: >-
+          This allows Evidence Lines to be nested: a broader-scoped Evidence Line can be built from one or
+          more narrower-scoped subordinate Evidence Lines, each independently assessed against the same
+          target Proposition, rather than (or in addition to) being built directly from individual evidence
+          items via hasEvidenceItems. This is useful when a data provider wants to preserve the more
+          fine-grained arguments that a broader Evidence Line was itself derived from.
       directionOfEvidenceProvided:
         type: string
         enum: [ "supports", "neutral", "disputes" ]
