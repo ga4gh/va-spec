@@ -144,71 +144,71 @@ An Evidence Line that describes how a specific type of information was interpret
       - one of: ``supports``, ``disputes``
       - ``strengthOfEvidenceProvided``
       - be provided
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Population Data Assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(BA1|BS1|PM2)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Case-Control Enrichment Assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(BS2|PM4)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Null variant assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^PVS1(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Same amino acid change assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^PS1(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Mutational hot spot and functional domain assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^PM1(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Protein length change assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PM4|BP3)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Novel missense position assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^PM5(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Variant spectrum assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PP2|BP1)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``In silico functional impact assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PP3|BP4)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Predicted silent variant assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^BP7(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Functional Data Assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PS3|BS3)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Segregation Data Assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PP1|BS4)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``De Novo Data Assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PS2|PM6)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Cis/trans variant assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PM3|BP2)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Reputable Source Assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^(PP5|BP6)(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Phenotype-gene specificity assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^PP4(_.+)?$``
-   *  - ``methodType``
+   *  - ``specifiedBy.methodType``
       - ``Alternative cause assessment``
       - ``evidenceOutcome.primaryCoding.code``
       - match the pattern ``^BP5(_.+)?$``

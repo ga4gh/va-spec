@@ -256,9 +256,12 @@ $defs:
           required: [strengthOfEvidenceProvided]
       - if:
           properties:
-            methodType:
-              const: Population Data Assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Population Data Assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -269,9 +272,12 @@ $defs:
                       pattern: "^(BA1|BS1|PM2)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Case-Control Enrichment Assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Case-Control Enrichment Assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -282,9 +288,12 @@ $defs:
                       pattern: "^(BS2|PM4)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Null variant assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Null variant assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -295,9 +304,12 @@ $defs:
                       pattern: "^PVS1(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Same amino acid change assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Same amino acid change assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -308,9 +320,12 @@ $defs:
                       pattern: "^PS1(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Mutational hot spot and functional domain assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Mutational hot spot and functional domain assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -321,9 +336,12 @@ $defs:
                       pattern: "^PM1(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Protein length change assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Protein length change assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -334,9 +352,12 @@ $defs:
                       pattern: "^(PM4|BP3)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Novel missense position assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Novel missense position assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -347,9 +368,12 @@ $defs:
                       pattern: "^PM5(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Variant spectrum assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Variant spectrum assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -360,9 +384,12 @@ $defs:
                       pattern: "^(PP2|BP1)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: In silico functional impact assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: In silico functional impact assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -373,9 +400,12 @@ $defs:
                       pattern: "^(PP3|BP4)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Predicted silent variant assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Predicted silent variant assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -386,9 +416,12 @@ $defs:
                       pattern: "^BP7(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Functional Data Assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Functional Data Assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -399,9 +432,12 @@ $defs:
                       pattern: "^(PS3|BS3)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Segregation Data Assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Segregation Data Assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -412,9 +448,12 @@ $defs:
                       pattern: "^(PP1|BS4)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: De Novo Data Assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: De Novo Data Assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -425,9 +464,12 @@ $defs:
                       pattern: "^(PS2|PM6)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Cis/trans variant assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Cis/trans variant assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -438,9 +480,12 @@ $defs:
                       pattern: "^(PM3|BP2)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Reputable Source Assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Reputable Source Assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -451,9 +496,12 @@ $defs:
                       pattern: "^(PP5|BP6)(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Phenotype-gene specificity assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Phenotype-gene specificity assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:
@@ -464,9 +512,12 @@ $defs:
                       pattern: "^PP4(_.+)?$"
       - if:
           properties:
-            methodType:
-              const: Alternative cause assessment
-          required: [methodType]
+            specifiedBy:
+              properties:
+                methodType:
+                  const: Alternative cause assessment
+              required: [methodType]
+          required: [specifiedBy]
         then:
           properties:
             evidenceOutcome:

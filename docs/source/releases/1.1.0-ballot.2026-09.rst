@@ -136,3 +136,9 @@ Other schema content changes
     narrower-scoped subordinate ones). Both classes now declare
     ``hasEvidenceItems`` immediately before ``hasEvidenceLines``, in the same
     relative order.
+  * fixes the 17 ``if``/``then`` tier-specific conditional constraints on
+    :ref:`VariantPathogenicityEvidenceLine`, which checked a non-existent
+    top-level ``methodType`` property instead of the correctly-nested
+    ``specifiedBy.methodType`` (matching the equivalent, already-correct
+    pattern on :ref:`VariantOncogenicityEvidenceLine`). As written, none of
+    these conditions could ever be satisfied by a valid instance.

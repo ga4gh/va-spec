@@ -174,12 +174,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Population Data Assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Population Data Assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -201,12 +208,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Case-Control Enrichment Assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Case-Control Enrichment Assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -228,12 +242,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Null variant assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Null variant assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -255,12 +276,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Same amino acid change assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Same amino acid change assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -282,12 +310,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Mutational hot spot and functional domain assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Mutational hot spot and functional domain assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -309,12 +344,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Protein length change assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Protein length change assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -336,12 +378,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Novel missense position assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Novel missense position assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -363,12 +412,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Variant spectrum assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Variant spectrum assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -390,12 +446,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "In silico functional impact assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "In silico functional impact assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -417,12 +480,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Predicted silent variant assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Predicted silent variant assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -444,12 +514,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Functional Data Assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Functional Data Assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -471,12 +548,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Segregation Data Assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Segregation Data Assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -498,12 +582,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "De Novo Data Assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "De Novo Data Assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -525,12 +616,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Cis/trans variant assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Cis/trans variant assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -552,12 +650,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Reputable Source Assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Reputable Source Assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -579,12 +684,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Phenotype-gene specificity assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Phenotype-gene specificity assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
@@ -606,12 +718,19 @@
       {
          "if": {
             "properties": {
-               "methodType": {
-                  "const": "Alternative cause assessment"
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "Alternative cause assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
                }
             },
             "required": [
-               "methodType"
+               "specifiedBy"
             ]
          },
          "then": {
