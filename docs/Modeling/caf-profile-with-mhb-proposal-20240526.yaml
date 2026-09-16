@@ -12,7 +12,7 @@ title: Cohort Allele Frequency                     # In the standard profile we 
 strict: true                                       # What does "strict: true" mean here?  I don't see this in other profiles.
 imports:
   va.core: ../../core-im/core-im-source.yaml
-  gks.core: ../../../gks-common/core-source.yaml
+  gkm.core: ../../../gkm-common/core-source.yaml
   vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:
@@ -76,12 +76,12 @@ $defs:
           - id
       ancillaryResults:                         # See comments/questions in the issue here: https://github.com/ga4gh/va-spec/issues/144
         maturity: draft
-        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        $comment: This field is different from most GKM objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
       qualityMeasures:                          # See comments/questions in the issue here: https://github.com/ga4gh/va-spec/issues/144
         maturity: draft
-        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        $comment: This field is different from most GKM objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
       subcohortFrequency:                       # The core-im property to use/extend here would be 'StudyResult.componentResult' which takes a 'StudyResult' object. Note there is an existing suggestion/issue to consider renaming this 'subResult' - which might fit better with the intended meaning/use, and the caf use case for it.
@@ -105,7 +105,7 @@ title: Cohort Allele Frequency Study Result       # In the standard profile we s
 strict: true
 imports:
   va.core: ../../core-im/core-im-source.yaml
-  gks.core: ../../../gks-common/core-source.yaml
+  gkm.core: ../../../gkm-common/core-source.yaml
   vrs: ../../../vrs/vrs-source.yaml
 
 namespaces:
@@ -144,12 +144,12 @@ $defs:
         extends: studyGroup
       ancillaryResults:                          # Propose to keep this as is for now - t.b.d. if we want to declare this to extend an 'ancillaryResults' property defined in the core-im - see https://github.com/ga4gh/va-spec/issues/144.
         maturity: draft
-        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        $comment: This field is different from most GKM objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
       qualityMeasures:                           # Propose to keep this as is for now - - t.b.d. if we want to declare this to extend an 'qualityMeasures' property defined in the core-im - see https://github.com/ga4gh/va-spec/issues/144.
         maturity: draft
-        $comment: This field is different from most GKS objects by allowing any content to be added, and so is independently versioned.
+        $comment: This field is different from most GKM objects by allowing any content to be added, and so is independently versioned.
         type: object
         additionalProperties: true
       subCohortFrequency:                        # Updated to declar this extends the existing core-im StudyResult property for this kind of info.  But consider renaming from compnentResult to something like subResult - which might fit better with the intended meaning/use, and the caf use case for it.

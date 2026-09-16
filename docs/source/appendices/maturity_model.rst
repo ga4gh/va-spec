@@ -1,4 +1,4 @@
-.. _gks-maturity-model:
+.. _gkm-maturity-model:
 
 .. _maturity-model:
 

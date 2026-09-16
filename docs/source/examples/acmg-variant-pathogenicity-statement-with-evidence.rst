@@ -5,7 +5,7 @@ ACMG Variant Pathogenicity Statement Example (with Evidence)
 
 **Description:**
 
-The data below builds on the simple ClinVar-GKS example described :ref:`here <acmg-variant-pathogenicity-statement-example>`, embellishing its base ClinVar record with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
+The data below builds on the simple ClinVar-GKM example described :ref:`here <acmg-variant-pathogenicity-statement-example>`, embellishing its base ClinVar record with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
 
 Specifically, it stitches together several simpler **Statement**, **Study Result**, and **Evidence Line** data examples from the `test fixtures directory <https://github.com/ga4gh/va-spec/tree/1.0.0/tests/fixtures>`_, to reveal how these objects can be combined to build the rich evidence and provenance structure below.
 
@@ -26,7 +26,7 @@ A few additional notes about this example:
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
 * Note that the variant subject of each Statement and Study Result objects is reported as the same, generic variation for simplicity (ex:Variant001). In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here <variant-congruence>`.
-* The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKS Specifications.
+* The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKM Specifications.
 
 **Data**:
 
@@ -55,7 +55,7 @@ A few additional notes about this example:
     penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
       primaryCoding:
         code: high
-        system: ga4gh-gks-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
+        system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
       name: high
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
@@ -186,7 +186,7 @@ A few additional notes about this example:
         classification:               # summarizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
           primaryCoding:
             code: abnormal            # indicates the variant version of the gene has abnormal function (consistent with the 'impactsFunctionOf' proposition being 'supported')
-            system: ga4gh-gks-term:experimental-var-func-impact-classification
+            system: ga4gh-gkm-term:experimental-var-func-impact-classification
         specifiedBy:                  # a Method followed to produce the Statement, which is described by the publication indicated below
           type: Method
           methodType:

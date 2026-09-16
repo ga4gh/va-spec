@@ -9,7 +9,7 @@ Minor Version Increment
 
 Backwards-incompatible changes to previously-released *trial use* product
 features, and additions/changes to *trial use* or *normative* data classes,
-per the :ref:`gks-maturity-model` versioning rules:
+per the :ref:`gkm-maturity-model` versioning rules:
 
   * renames the abstract ``ClinicalVariantProposition`` class (*trial use*) to
     :ref:`GeneticContextVariantProposition`, and updates its definition to

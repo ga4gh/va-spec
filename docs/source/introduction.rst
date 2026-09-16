@@ -52,8 +52,8 @@ Specific implementations in which VA-Spec supports these use cases:
    *  - ClinVar Submission Utility
       - Uses VA-Spec as input format for submission tools that send variant pathogenicity classifications and evidence to the ClinVar database via its API.
       - Active implementation used by the VICC Driver Project to share assertion data from the CIViC platform with ClinVar.
-   *  - ClinVar GKS
-      - Will use VA-Spec to represent GKS-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
+   *  - ClinVar GKM
+      - Will use VA-Spec to represent GKM-based representations of the ClinVar XML records, and exchange this data across various ClinGen data systems
       - Under development, with initial implementation in ClinGen Data pipelines planned for 2025 to support variant pathogenicity statements
    *  - VICC MetaKB
       - Using VA-Spec models to structure various types of clinical significance classifications and evidence in its community-facing data exchange APIs
@@ -75,4 +75,4 @@ VA-Spec takes an implementation-driven development approach - releasing only sch
 
 While these requirements limit the coverage of the initial VA-Spec release, it ensures that all content has proven utility in actual implementation settings. Note however that the :ref:`SEPIO Information Model <sepio-framework>`, from which the VA Core Model was derived, contains a broader set of elements that may support data not covered by current VA-Spec. These SEPIO elements can be incorporated into the VA Core Model as needed to support emerging data and use cases.
 
-Finally, annotation of elements in the Core Model and Profiles with maturity tags based on the `GKS Maturity Model <https://vrs.ga4gh.org/en/2.0/appendices/maturity_model.html>`_ ensures that adopters have a clear understanding of the stability and use of models they employ in their systems.
+Finally, annotation of elements in the Core Model and Profiles with maturity tags based on the `GKM Maturity Model <https://vrs.ga4gh.org/en/2.0/appendices/maturity_model.html>`_ ensures that adopters have a clear understanding of the stability and use of models they employ in their systems.

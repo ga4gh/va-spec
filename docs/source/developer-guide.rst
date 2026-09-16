@@ -27,7 +27,7 @@ The diagrams below illustrate where subclass- and composition-based mechanisms a
 .. image:: /images/core-model-classes-mechanism.png
 
 
-The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gkm-core, vrs, and cat-vrs models, as indicated by annotations in green which indicate the GKS specification in which each is defined.
+The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gkm-core, vrs, and cat-vrs models, as indicated by annotations in green which indicate the GKM specification in which each is defined.
 
 
 -------
@@ -60,7 +60,7 @@ Here we describe the technical mechanism and syntax used to define VA Profiles. 
 **Subclass-Based Authoring of Base Profiles**:
 
 - **Mechanism**: Specializes generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-- **Syntax**: Relies on `GKS Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  ``inherits`` keyword and requisite tooling to implement class inheritance which is not natively supported by JSON Schema.
+- **Syntax**: Relies on `GKM Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  ``inherits`` keyword and requisite tooling to implement class inheritance which is not natively supported by JSON Schema.
 - **Application**: Used in authoring "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement and Evidence Line profiles.
 - **Rationale**: Allows for the types of attribute extension and addition that are applied in these Base Profiles (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
 - **Example**:
@@ -74,13 +74,13 @@ Here we describe the technical mechanism and syntax used to define VA Profiles. 
   VariantPathogenicityProposition:
     inherits: GeneticContextVariantProposition     # MSP inherits keyword
     maturity: trial use
-    type: object
     description: A proposition describing the role of a variant in causing a heritable condition.
     properties:
-      object:
-        extends: object                            # MSP extends keyword
+      object:                                      # narrows the inherited 'object' property IN PLACE, under
+                                                     # the same name -- the MSP forbids renaming an inherited
+                                                     # property, so there is no 'extends' keyword
         oneOf:
-          - $ref: Condition
+          - $refCurie: domain-entities:Condition
           - $refCurie: gkm.core:iriReference
         description: The :ref:`Condition` for which the variant impact is stated.
       penetranceQualifier:                         # Addition of new qualifier attribute

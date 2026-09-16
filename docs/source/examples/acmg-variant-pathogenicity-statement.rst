@@ -5,7 +5,7 @@ ACMG Variant Pathogenicity Statement Example
 
 **Description:**
 
-* The Pathogenicity Statement data below adds instructive annotations to this |simple_test_fixtures_example| from ClinGen's "ClinVar-GKS" implementation of the :ref:`Variant Pathogenicity Statement (ACMG 2015) Profile <variant-pathogenicity-statement-acmg-2015>`.
+* The Pathogenicity Statement data below adds instructive annotations to this |simple_test_fixtures_example| from ClinGen's "ClinVar-GKM" implementation of the :ref:`Variant Pathogenicity Statement (ACMG 2015) Profile <variant-pathogenicity-statement-acmg-2015>`.
 * The annotations are intended to help readers better understand the structure, semantics, and utility of VA-Spec models.
 * The example itself covers a subset of data from the `ClinVar SCV000778434.1 <https://www.ncbi.nlm.nih.gov/clinvar/RCV000656422.10/>`_ record - which reports that *"the KCNQ4 variant NM_004700.4:c.803CCT[1] is pathogenic for Autosomal dominant nonsyndromic hearing loss 2A"*.
 * Note that the data below omits a full representation of the ``CategoricalVariation`` that is the subject of the Statement - as this is the remit of the `CatVRS specification <https://github.com/ga4gh/cat-vrs>`_.
@@ -36,7 +36,7 @@ ACMG Variant Pathogenicity Statement Example
     penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
       primaryCoding:
         code: high
-        system: ga4gh-gks-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
+        system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
       name: high
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
