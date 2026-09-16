@@ -29,14 +29,26 @@ js_def = dict()
 validator = dict()
 coverage = dict()
 
-paths = list(schema_root_path.glob('*/json/*'))+list(va_schemas_path.glob('*/json/*'))
+def _schema_ns(schema_path):
+    # Namespace = module path with the 'json' segment removed and the class file dropped.
+    #   schema/va-spec/json/EvidenceLine              -> 'va-spec'
+    #   schema/va-spec/json/aac-2017/AmpAscoCap...     -> 'va-spec.aac-2017'
+    #   schema/gkm-core/json/Entity                    -> 'gkm-core'
+    parts = schema_path.parts
+    rest = list(parts[parts.index('schema') + 1:])
+    ji = rest.index('json')
+    return '.'.join(rest[:ji] + rest[ji + 1:-1])
+
+# Imported modules + va-spec base classes live at <module>/json/<Class>; va-spec community
+# profiles live at va-spec/json/<community>/<Class>.
+paths = [p for p in schema_root_path.glob('*/json/*') if p.is_file()]
+paths += [p for p in va_schemas_path.glob('json/*/*') if p.is_file()]
 
 for schema_path in paths:
     content = json.loads(schema_path.read_text())
     schema_uri = schema_path.as_uri()
     content['id'] = schema_uri
-    schema_idx = schema_path.parts.index('schema')
-    schema_ns = '.'.join(schema_path.parts[schema_idx+1:-2])
+    schema_ns = _schema_ns(schema_path)
     schema_ns_name = f'{schema_ns}:{schema_path.name}'
     schema_resource = Resource(contents=content, specification=DRAFT202012)
     js_def[schema_ns_name] = content
@@ -64,7 +76,10 @@ def init_coverage(cls, p, c):
         coverage[cls][p] = False
     elif c['type'] in ['integer', 'string', 'number', 'boolean', 'array']:
         coverage[cls][p] = False
-    elif c['type'] == 'object' and c.get('additionalProperties', None) is True:
+    elif c['type'] == 'object':
+        # Free-form object (additionalProperties: true) or an open placeholder object
+        # (e.g. the abstract Proposition's permissive 'subject'/'object', which concrete
+        # subclasses narrow to specific $refs). Coverable like any other property.
         coverage[cls][p] = False
     else:
         raise ValueError(f'{cls}.{p}: {c['type']} not handled')

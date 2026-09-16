@@ -1,4 +1,4 @@
-va-spec.base:ExperimentalVariantFunctionalImpactProposition:
+va-spec:ExperimentalVariantFunctionalImpactProposition:
   # Entity
   - name
   - extensions
@@ -6,44 +6,75 @@ va-spec.base:ExperimentalVariantFunctionalImpactProposition:
   - description
   - aliases
 
-va-spec.base:VariantPathogenicityProposition:
+va-spec:GeneDiseaseValidityProposition:
   # Entity
   - extensions
   - aliases
   - description
 
-va-spec.base:VariantPrognosticProposition:
+va-spec:VariantClinicalSignificanceProposition:
   # Entity
   - extensions
   - aliases
   - description
 
-va-spec.base:VariantDiagnosticProposition:
+va-spec:VariantMolecularConsequenceProposition:
+  # Entity
+  - name
+  - extensions
+  - id
+  - description
+  - aliases
+
+va-spec:ComputationalVariantFunctionalImpactAnalysisResult:
+  # Entity
+  - name
+  - id
+  - description
+  - aliases
+  - extensions
+
+  # InformationEntity
+  - reportedIn
+
+va-spec:VariantPathogenicityProposition:
   # Entity
   - extensions
   - aliases
   - description
 
-va-spec.base:VariantTherapeuticResponseProposition:
+va-spec:VariantPrognosticProposition:
   # Entity
   - extensions
   - aliases
   - description
 
-va-spec.base:VariantOncogenicityProposition:
+va-spec:VariantDiagnosticProposition:
+  # Entity
+  - extensions
+  - aliases
+  - description
+
+va-spec:VariantTherapeuticResponseProposition:
+  # Entity
+  - extensions
+  - aliases
+  - description
+
+va-spec:VariantOncogenicityProposition:
   # Entity
   - extensions
   - aliases
   - description
   - name
 
-va-spec.base:StudyGroup:
+va-spec:StudyGroup:
   # Entity
   - description
   - aliases
   - extensions
 
-va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
+va-spec:ExperimentalVariantFunctionalImpactStudyResult:
   # Entity
   - description
   - id
@@ -55,7 +86,7 @@ va-spec.base:ExperimentalVariantFunctionalImpactStudyResult:
   - contributions
   - reportedIn
 
-va-spec.base:CohortAlleleFrequencyStudyResult:
+va-spec:CohortAlleleFrequencyStudyResult:
   # Entity
   - description
   - extensions
@@ -65,7 +96,7 @@ va-spec.base:CohortAlleleFrequencyStudyResult:
   - contributions
   - reportedIn
 
-va-spec.base:TumorVariantFrequencyStudyResult:
+va-spec:TumorVariantFrequencyStudyResult:
   # Entity
   - description
   - extensions
@@ -75,7 +106,7 @@ va-spec.base:TumorVariantFrequencyStudyResult:
   - contributions
   - reportedIn
 
-va-spec.base:EvidenceLine:
+va-spec:EvidenceLine:
   # Entity
   - description
   - extensions
@@ -89,7 +120,7 @@ va-spec.base:EvidenceLine:
   # EvidenceLine
   - hasEvidenceItems
 
-va-spec.base:Statement:
+va-spec:Statement:
   # Entity
   - extensions
   - aliases
@@ -98,17 +129,17 @@ va-spec.base:Statement:
   # Statement
   - hasEvidenceLines
 
-va-spec.base:DataSet:
+va-spec:DataSet:
   # Entity
   - extensions
   - description
 
-va-spec.base:Document:
+va-spec:Document:
   # Entity
   - description
   - extensions
 
-va-spec.base:Method:
+va-spec:Method:
   # Entity
   - aliases
   - description
@@ -118,28 +149,23 @@ va-spec.base:Method:
   - specifiedBy
   - contributions
 
-va-spec.base:ConditionSet:
+va-spec:ConditionSet:
   # Element
   - extensions
 
-va-spec.base:TherapyGroup:
+va-spec:TherapyGroup:
   # Element
   - extensions
 
-va-spec.base:Contribution:
+va-spec:Contribution:
   # Entity
   - extensions
   - aliases
   - description
   - name
 
-va-spec.base:Agent:
+va-spec:Agent:
   # Entity
   - extensions
   - aliases
   - description
-
-va-spec.base:CustomProposition:
-  # Entity
-  - aliases
-  - extensions

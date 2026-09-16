@@ -28,9 +28,9 @@ Custom Variant Pathogenicity Statement Example
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representation is not shown here.
+    subject: clinvar/208366    # the 'subject' of the Proposition, narrowed to a variant, and holds a CatVRS 'Categorical Variant' whose full representation is not shown here.
     predicate: isCausalFor     # the predicate for this Statement profile is fixed at 'isCausalFor'
-    objectCondition:           # 'objectCondition' specializes the VA Core 'object' attribute.
+    object:           # the 'object' of the Proposition, narrowed to a Condition.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider

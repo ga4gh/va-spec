@@ -23,6 +23,11 @@ These initial profiles were developed to support the following implementations a
 The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec.
 
 .. _variant-clinical-significance-statement-aac-2017:
+.. _VariantClinicalSignificanceStatement:
+.. _AmpAscoCapEvidenceLine:
+.. _DiagnosticEvidenceLine:
+.. _PrognosticEvidenceLine:
+.. _TherapeuticEvidenceLine:
 
 Variant Clinical Significance Statement
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

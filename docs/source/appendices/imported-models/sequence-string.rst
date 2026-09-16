@@ -3,4 +3,4 @@
 sequenceString
 !!!!!!!!!!!!!!
 
-.. include::  ../../def/vrs/sequenceString.rst
+.. include::  ../../def/va-spec/sequenceString.rst

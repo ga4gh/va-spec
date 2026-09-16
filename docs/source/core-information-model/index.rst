@@ -1,7 +1,7 @@
 .. _va-core-model:
 
-VA Core Model
-!!!!!!!!!!!!!
+Model
+!!!!!
 
 The **VA Core Model** is a domain-agnostic model for representing scientific knowledge about genetic variation, and the evidence and provenance supporting it.
 

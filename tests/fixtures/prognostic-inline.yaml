@@ -18,7 +18,7 @@ strength:
 proposition:
   type: VariantPrognosticProposition
   predicate: associatedWithWorseOutcomeFor
-  subjectVariant:
+  subject:
     id: civic.mpid:12
     type: CategoricalVariant
     description: >-
@@ -82,7 +82,7 @@ proposition:
           code: SO:0001583
           system: http://www.sequenceontology.org/browser/current_release/term/
           name: missense_variant
-  objectCondition:
+  object:
     type: MappableConcept
     id: civic.did:7
     conceptType: Disease

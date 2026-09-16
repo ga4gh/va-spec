@@ -56,9 +56,9 @@ The example below illustrates how such a scenario may be represented using the V
    targetProposition:
      - id: VarPathProposition001
        type: VariantPathogenicityProposition
-       subjectVariant: NM_005343.4:c.173C>T:c.173C>T
+       subject: NM_005343.4:c.173C>T:c.173C>T
        predicate: isCausalFor
-       objectCondition: Costello Syndrome
+       object: Costello Syndrome
        geneContextQualifier: HRAS
    evidenceItems: FunctionalImpactStudyResult001       # full StudyResult object omitted for space
    directionOfEvidenceProvided: supports

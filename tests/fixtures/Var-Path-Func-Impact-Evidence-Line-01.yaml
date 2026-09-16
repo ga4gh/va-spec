@@ -2,7 +2,7 @@ id: evLine01
 type: EvidenceLine
 targetProposition:
   type: VariantPathogenicityProposition
-  subjectVariant:
+  subject:
     name: NP_000305.3:p.Arg11Thr
     type: CategoricalVariant
     constraints:
@@ -32,7 +32,7 @@ targetProposition:
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isCausalFor
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     name: Unspecified

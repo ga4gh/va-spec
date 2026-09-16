@@ -23,6 +23,7 @@ These initial profiles were developed to support the following implementations a
 The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec.
 
 .. _variant-pathogenicity-statement-acmg-2015:
+.. _VariantPathogenicityStatement:
 
 Variant Pathogenicity Statement (ACMG 2015)
 ###########################################
@@ -75,6 +76,7 @@ This profile applies the following **constraints** on top of the core :ref:`Stat
 -----
 
 .. _variant-pathogenicity-evidence-line-acmg-2015:
+.. _VariantPathogenicityEvidenceLine:
 
 Variant Pathogenicity Evidence Line (ACMG 2015)
 ###############################################

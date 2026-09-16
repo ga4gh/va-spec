@@ -28,17 +28,24 @@ If you already cloned the repo, but forgot to include `--recurse-submodules` you
 
 VA-Spec uses the below `-source.yaml` files as the source document for JSON Schema:
 
-- [./schema/va-spec/aac-2017/profile-source.yaml](./schema/va-spec/aac-2017/profile-source.yaml)
-- [./schema/va-spec/acmg-2015/profile-source.yaml](./schema/va-spec/acmg-2015/profile-source.yaml)
-- [./schema/va-spec/base/domain-entities-source.yaml](./schema/va-spec/base/domain-entities-source.yaml)
-- [./schema/va-spec/base/va-core-source.yaml](./schema/va-spec/base/va-core-source.yaml)
-- [./schema/va-spec/ccv-2022/profile-source.yaml](./schema/va-spec/ccv-2022/profile-source.yaml)
+- [./schema/va-spec/va-spec-source.yaml](./schema/va-spec/va-spec-source.yaml)
+- [./schema/va-spec/domain-entities-source.yaml](./schema/va-spec/domain-entities-source.yaml)
+- [./schema/va-spec/aac-2017-profile-source.yaml](./schema/va-spec/aac-2017-profile-source.yaml)
+- [./schema/va-spec/acmg-2015-profile-source.yaml](./schema/va-spec/acmg-2015-profile-source.yaml)
+- [./schema/va-spec/ccv-2022-profile-source.yaml](./schema/va-spec/ccv-2022-profile-source.yaml)
 
 To create the corresponding def and JSON files after making changes to any one of the source documents, from the root directory:
 
     cd schema
     make clean
     make all
+
+These commands are powered by the GA4GH metaschema processor
+([ga4gh/gks-metaschema](https://github.com/ga4gh/gks-metaschema)), which defines the
+`*-source.yaml` dialect and generates the split JSON Schema and RST `def` files from it
+(via the `source2classes`, `source2splitjs`, and `y2t` console scripts invoked by `make all`).
+It is pinned in [.requirements.txt](./.requirements.txt). See that repo for details on how
+source documents are processed.
 
 > **Note:** We have a custom pre-commit hook to run these commands after you stage a source document.
 

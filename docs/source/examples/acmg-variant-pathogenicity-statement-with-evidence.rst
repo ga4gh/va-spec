@@ -41,9 +41,9 @@ A few additional notes about this example:
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: ex:Variant001    # 'subjectVariant' specializes the VA Core 'subject' attribute. The full representation of the NM_004700.4:c.803CCT[1] KCNQ4 variant is not included.
+    subject: ex:Variant001    # the 'subject' of the Proposition, narrowed to a variant. The full representation of the NM_004700.4:c.803CCT[1] KCNQ4 variant is not included.
     predicate: isCausalFor           # the predicate for this Statement profile is fixed at 'isCausalFor'
-    objectCondition:                 # 'objectCondition' specializes the VA Core 'object' attribute.
+    object:                 # the 'object' of the Proposition, narrowed to a Condition.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
@@ -108,7 +108,7 @@ A few additional notes about this example:
     - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.
       type: CohortAlleleFrequencyStudyResult
       name: Overall Cohort Allele Frequency for 1-40819444_40819446-del
-      focusAllele: ex:Variant001  # the KCNQ4 variant that data included in this Result are about (the full representation of the variant is not included)
+      focus: ex:Variant001  # the KCNQ4 variant that data included in this Result are about (the full representation of the variant is not included)
       focusAlleleFrequency: 0
       focusAlleleCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
       locusAlleleCount: 34086
@@ -163,9 +163,9 @@ A few additional notes about this example:
         type: Statement
         proposition:
           type: ExperimentalVariantFunctionalImpactProposition
-          subjectVariant: ex:Variant001  # the full representation of the variant subject of this Statement is not included
+          subject: ex:Variant001  # the full representation of the variant subject of this Statement is not included
           predicate: impactsFunctionOf   # the predicate for this type of Statement is fixed at 'impactsFunctionOf'
-          objectSequenceFeature:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
+          object:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
             id: clinvar-gene:9132
             conceptType: Gene
             primaryCoding:
@@ -208,7 +208,7 @@ A few additional notes about this example:
           hasEvidenceItems:             # a Study Result that captures the experimental data and scores on which the Functional Impact Statement was based.
             - id: ex:StudyResult002     # the evidence in this case is data captured in a Functional Impact Study Result
               type: ExperimentalVariantFunctionalImpactStudyResult
-              focusVariant: ex:Variant001   # the KCNQ4 variant that data are about (a full representation of the variant is not included)
+              focus: ex:Variant001   # the KCNQ4 variant that data are about (a full representation of the variant is not included)
               functionalImpactScore: 1.29395467005388        # this is the only data item included right now in this StudyResult
               specifiedBy:
                 type: Method
