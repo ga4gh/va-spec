@@ -1,4 +1,4 @@
-id: ccvBareNoCriteriaMetEvidenceLine
+id: ccvCodeNotMetEvidenceLine
 type: EvidenceLine
 targetProposition:
   type: VariantOncogenicityProposition
@@ -20,5 +20,5 @@ specifiedBy:
 evidenceOutcome:
   type: MappableConcept
   primaryCoding:
-    code: no_criteria_met
+    code: OS2_not_met
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022

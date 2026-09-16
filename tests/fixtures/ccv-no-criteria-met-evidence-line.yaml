@@ -20,5 +20,5 @@ specifiedBy:
 evidenceOutcome:
   type: MappableConcept
   primaryCoding:
-    code: OS2_not_met
+    code: no_criteria_met
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022

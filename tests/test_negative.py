@@ -134,7 +134,7 @@ def test_aac_2017_tier_i_requires_strong_strength():
         ("va-spec.acmg-2015:VariantPathogenicityEvidenceLine", "acmg-no-criteria-met-evidence-line.yaml"),
         ("va-spec.acmg-2015:VariantPathogenicityEvidenceLine", "acmg-code-not-met-evidence-line.yaml"),
         ("va-spec.ccv-2022:VariantOncogenicityEvidenceLine", "ccv-no-criteria-met-evidence-line.yaml"),
-        ("va-spec.ccv-2022:VariantOncogenicityEvidenceLine", "ccv-bare-no-criteria-met-evidence-line.yaml"),
+        ("va-spec.ccv-2022:VariantOncogenicityEvidenceLine", "ccv-code-not-met-evidence-line.yaml"),
     ],
 )
 def test_not_met_evidence_requires_neutral_without_strength(cls, fixture):

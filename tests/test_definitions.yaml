@@ -157,7 +157,7 @@ tests:
   - test_file: ccv-no-criteria-met-evidence-line.yaml
     namespace: va-spec.ccv-2022
     definition: VariantOncogenicityEvidenceLine
-  - test_file: ccv-bare-no-criteria-met-evidence-line.yaml
+  - test_file: ccv-code-not-met-evidence-line.yaml
     namespace: va-spec.ccv-2022
     definition: VariantOncogenicityEvidenceLine
   - test_file: Exp-Var-Func-Impact-Statement-01.yaml
