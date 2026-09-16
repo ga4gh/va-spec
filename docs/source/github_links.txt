@@ -23,6 +23,15 @@ discrete_allele = tests/fixtures/allele.yaml
 variant_clinical_significance_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L86
 variant_clinical_significance_statement_json_schema = schema/va-spec/json/aac-2017/VariantClinicalSignificanceStatement
 
+amp_asco_cap_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L18
+amp_asco_cap_evidence_line_json_schema = schema/va-spec/json/aac-2017/AmpAscoCapEvidenceLine
+diagnostic_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L56
+diagnostic_evidence_line_json_schema = schema/va-spec/json/aac-2017/DiagnosticEvidenceLine
+prognostic_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L41
+prognostic_evidence_line_json_schema = schema/va-spec/json/aac-2017/PrognosticEvidenceLine
+therapeutic_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L71
+therapeutic_evidence_line_json_schema = schema/va-spec/json/aac-2017/TherapeuticEvidenceLine
+
 pathogenicity_proposition_source_yaml = schema/va-spec/va-spec-source.yaml#L879
 pathogenicity_proposition_json_schema = schema/va-spec/json/VariantPathogenicityProposition
 oncogenicity_proposition_source_yaml = schema/va-spec/va-spec-source.yaml#L851
