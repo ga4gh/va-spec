@@ -15,7 +15,7 @@ Supporting changes to the schema-generation tooling and repository layout that
 do not, by themselves, change the meaning of VA-Spec data:
 
   * migrates the metaschema processor from ``ga4gh.gks.metaschema`` (0.3.2) to
-    the renamed ``ga4gh.gkm.metaschema`` (0.4.7) package (the GKS :math:`\rightarrow`
+    the renamed ``ga4gh.gkm.metaschema`` (0.4.8) package (the GKS :math:`\rightarrow`
     GKM "Genomic Knowledge Models" rebrand). The console entrypoints
     (``source2classes``, ``source2splitjs``, ``y2t``) are unchanged, so
     ``make all`` still drives generation. 0.4.6 tightens ``$ref`` handling: a
@@ -28,8 +28,14 @@ do not, by themselves, change the meaning of VA-Spec data:
     **Composes:** line naming the class it composes onto (mirroring the
     existing **Inherits:**/**Subclasses:** lines for ``inherits:``-based
     classes), and a composed class with ``if``/``then`` constraints now
-    renders a **Conditional Constraints** table summarizing them (e.g. the
-    AAC-2017 tier-based rules on ``VariantClinicalSignificanceStatement``).
+    renders a table summarizing them (e.g. the AAC-2017 tier-based rules on
+    ``VariantClinicalSignificanceStatement``). 0.4.8 renames that table from
+    "Conditional Constraints" to **Additional Constraints**, adds italic/bold
+    styling to the property/value cells, and gives ``anyOf``/``oneOf``
+    compositions whose only constraint is "at least one of" a plain-language
+    sentence instead of a duplicated placeholder bullet list (see
+    :ref:`MappableConcept`, which requires at least one of ``name`` or
+    ``primaryCoding``).
   * adopts the 0.4.x source conventions in every VA-Spec module source: abstract
     classes are marked ``abstract: true`` (and are left open), concrete classes
     are closed and drop the explicit ``type: object`` (the processor injects
@@ -88,6 +94,10 @@ Dependency / version refresh
     ``1.2.0-ballot.2026-09`` (nested ``vrs``/``gkm-core`` follow); the imported
     ``$id`` tokens are unchanged from the prior sync, so no namespace
     retargeting was needed this time.
+  * resyncs the ``cat-vrs`` submodule again, to the commit that itself bumps
+    ``cat-vrs`` to ``ga4gh.gkm.metaschema`` 0.4.8 and resyncs its own nested
+    ``vrs``; the imported ``$id`` tokens are still unchanged, so again no
+    namespace retargeting was needed.
 
 Subject / object / focus model change
 #####################################
