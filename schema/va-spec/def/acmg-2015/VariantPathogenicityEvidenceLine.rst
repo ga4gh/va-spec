@@ -126,7 +126,7 @@ An Evidence Line that describes how a specific type of information was interpret
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'PS3_not_met').
+      - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If no criterion is met, the outcome is either 'no_criteria_met' or the criterion code plus '_not_met'.
 
 **Additional Constraints**
 
@@ -147,71 +147,71 @@ An Evidence Line that describes how a specific type of information was interpret
    *  - *specifiedBy.methodType*
       - **population_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(BA1|BS1|PM2)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(BA1|BS1|PM2)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **case_control_enrichment_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(BS2|PM4)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(BS2|PM4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **null_variant_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^PVS1(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|PVS1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **same_amino_acid_change_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^PS1(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|PS1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **mutational_hot_spot_and_functional_domain_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^PM1(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|PM1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **protein_length_change_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PM4|BP3)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PM4|BP3)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **novel_missense_position_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^PM5(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|PM5(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **variant_spectrum_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PP2|BP1)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PP2|BP1)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **in_silico_functional_impact_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PP3|BP4)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PP3|BP4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **predicted_silent_variant_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^BP7(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|BP7(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **functional_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PS3|BS3)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PS3|BS3)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **segregation_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PP1|BS4)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PP1|BS4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **de_novo_occurrence_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PS2|PM6)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PS2|PM6)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **cis_trans_variant_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PM3|BP2)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PM3|BP2)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **reputable_source_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(PP5|BP6)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(PP5|BP6)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **phenotype_gene_specificity_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^PP4(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|PP4(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **alternative_cause_assessment**
       - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^BP5(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|BP5(_.+)?)$**
 
 
 **Composes:** :ref:`EvidenceLine`

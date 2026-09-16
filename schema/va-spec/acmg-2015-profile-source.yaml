@@ -236,12 +236,12 @@ $defs:
               code (e.g. 'PM2' when the PM2 criteria is met with moderate strength);
               (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the
               altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength);
-              (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'PS3_not_met').
+              (3)  If no criterion is met, the outcome is either 'no_criteria_met' or the criterion code plus '_not_met'.
             properties:
               primaryCoding:
                 code:
-                  pattern: "^((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?)$"
-                  example: PS3, PS3_moderate, PS3_not_met, BP6, BP6_strong, BP6_not_met
+                  pattern: "^(?:no_criteria_met|((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?))$"
+                  example: PS3, PS3_moderate, PS3_not_met, BP6, BP6_strong, BP6_not_met, no_criteria_met
                   description: >-
                     The code for the evidence outcome, which is based on the ACMG criterion code, used,
                     and the assessed direction and strength of evidence provided.
@@ -269,7 +269,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(BA1|BS1|PM2)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(BA1|BS1|PM2)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -285,7 +285,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(BS2|PM4)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(BS2|PM4)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -301,7 +301,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^PVS1(_.+)?$"
+                      pattern: "^(?:no_criteria_met|PVS1(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -317,7 +317,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^PS1(_.+)?$"
+                      pattern: "^(?:no_criteria_met|PS1(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -333,7 +333,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^PM1(_.+)?$"
+                      pattern: "^(?:no_criteria_met|PM1(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -349,7 +349,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PM4|BP3)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PM4|BP3)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -365,7 +365,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^PM5(_.+)?$"
+                      pattern: "^(?:no_criteria_met|PM5(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -381,7 +381,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PP2|BP1)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PP2|BP1)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -397,7 +397,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PP3|BP4)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PP3|BP4)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -413,7 +413,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^BP7(_.+)?$"
+                      pattern: "^(?:no_criteria_met|BP7(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -429,7 +429,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PS3|BS3)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PS3|BS3)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -445,7 +445,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PP1|BS4)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PP1|BS4)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -461,7 +461,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PS2|PM6)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PS2|PM6)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -477,7 +477,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PM3|BP2)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PM3|BP2)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -493,7 +493,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^(PP5|BP6)(_.+)?$"
+                      pattern: "^(?:no_criteria_met|(PP5|BP6)(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -509,7 +509,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^PP4(_.+)?$"
+                      pattern: "^(?:no_criteria_met|PP4(_.+)?)$"
       - if:
           properties:
             specifiedBy:
@@ -525,7 +525,7 @@ $defs:
                 primaryCoding:
                   properties:
                     code:
-                      pattern: "^BP5(_.+)?$"
+                      pattern: "^(?:no_criteria_met|BP5(_.+)?)$"
     required:
       - directionOfEvidenceProvided
       - specifiedBy

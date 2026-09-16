@@ -1,0 +1,24 @@
+id: ccvBareNoCriteriaMetEvidenceLine
+type: EvidenceLine
+targetProposition:
+  type: VariantOncogenicityProposition
+  subject:
+    type: CategoricalVariant
+    name: EGFR R11T
+  predicate: isOncogenicFor
+  object:
+    type: MappableConcept
+    conceptType: Disease
+    name: Breast Carcinoma
+directionOfEvidenceProvided: neutral
+specifiedBy:
+  type: Method
+  methodType: functional_data_assessment
+  reportedIn:
+    type: Document
+    name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
+evidenceOutcome:
+  type: MappableConcept
+  primaryCoding:
+    code: no_criteria_met
+    system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
