@@ -40,6 +40,13 @@ To create the corresponding def and JSON files after making changes to any one o
     make clean
     make all
 
+These commands are powered by the GA4GH metaschema processor
+([ga4gh/gks-metaschema](https://github.com/ga4gh/gks-metaschema)), which defines the
+`*-source.yaml` dialect and generates the split JSON Schema and RST `def` files from it
+(via the `source2classes`, `source2splitjs`, and `y2t` console scripts invoked by `make all`).
+It is pinned in [.requirements.txt](./.requirements.txt). See that repo for details on how
+source documents are processed.
+
 > **Note:** We have a custom pre-commit hook to run these commands after you stage a source document.
 
 ## Contributing to the docs
