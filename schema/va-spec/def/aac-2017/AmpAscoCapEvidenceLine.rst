@@ -120,4 +120,6 @@ Evidence line for AMP/ASCO/CAP
       - 0..1
       - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.
 
+**Composes:** :ref:`EvidenceLine`
+
 **Used in:** :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`

@@ -15,7 +15,7 @@ Supporting changes to the schema-generation tooling and repository layout that
 do not, by themselves, change the meaning of VA-Spec data:
 
   * migrates the metaschema processor from ``ga4gh.gks.metaschema`` (0.3.2) to
-    the renamed ``ga4gh.gkm.metaschema`` (0.4.6) package (the GKS :math:`\rightarrow`
+    the renamed ``ga4gh.gkm.metaschema`` (0.4.7) package (the GKS :math:`\rightarrow`
     GKM "Genomic Knowledge Models" rebrand). The console entrypoints
     (``source2classes``, ``source2splitjs``, ``y2t``) are unchanged, so
     ``make all`` still drives generation. 0.4.6 tightens ``$ref`` handling: a
@@ -23,7 +23,13 @@ do not, by themselves, change the meaning of VA-Spec data:
     and full-URL ``$ref``\ s previously used to reach classes in an imported
     module (``domain-entities``, and the base ``va-spec`` classes referenced
     from the community profiles) were converted to ``$refCurie:
-    <namespace>:<Class>``.
+    <namespace>:<Class>``. 0.4.7 adds two purely additive generated-docs
+    features: an ``allOf``-composed class's def page now carries a
+    **Composes:** line naming the class it composes onto (mirroring the
+    existing **Inherits:**/**Subclasses:** lines for ``inherits:``-based
+    classes), and a composed class with ``if``/``then`` constraints now
+    renders a **Conditional Constraints** table summarizing them (e.g. the
+    AAC-2017 tier-based rules on ``VariantClinicalSignificanceStatement``).
   * adopts the 0.4.x source conventions in every VA-Spec module source: abstract
     classes are marked ``abstract: true`` (and are left open), concrete classes
     are closed and drop the explicit ``type: object`` (the processor injects
@@ -78,6 +84,10 @@ Dependency / version refresh
     imported ``$id`` tokens (``cat-vrs/1.2.0-ballot.2026-09.1``,
     ``vrs/2.2.0-ballot.2026-09.1``, ``gkm-core/1.3.0-ballot.2026-09.1``).
   * sets VA-Spec's own ``$id`` token to ``1.1.0-ballot.2026-09.1``.
+  * resyncs the ``cat-vrs`` submodule to the latest commit on
+    ``1.2.0-ballot.2026-09`` (nested ``vrs``/``gkm-core`` follow); the imported
+    ``$id`` tokens are unchanged from the prior sync, so no namespace
+    retargeting was needed this time.
 
 Subject / object / focus model change
 #####################################

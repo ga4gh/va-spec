@@ -120,4 +120,92 @@ An Evidence Line that describes how a specific type of information was interpret
       - 0..1
       - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'PS3_not_met').
 
+**Conditional Constraints**
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+
+   *  - If property...
+      - has value...
+      - then property...
+      - must...
+   *  - ``directionOfEvidenceProvided``
+      - one of: ``supports``, ``disputes``
+      - ``strengthOfEvidenceProvided``
+      - be provided
+   *  - ``methodType``
+      - ``Population Data Assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(BA1|BS1|PM2)(_.+)?$``
+   *  - ``methodType``
+      - ``Case-Control Enrichment Assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(BS2|PM4)(_.+)?$``
+   *  - ``methodType``
+      - ``Null variant assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^PVS1(_.+)?$``
+   *  - ``methodType``
+      - ``Same amino acid change assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^PS1(_.+)?$``
+   *  - ``methodType``
+      - ``Mutational hot spot and functional domain assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^PM1(_.+)?$``
+   *  - ``methodType``
+      - ``Protein length change assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PM4|BP3)(_.+)?$``
+   *  - ``methodType``
+      - ``Novel missense position assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^PM5(_.+)?$``
+   *  - ``methodType``
+      - ``Variant spectrum assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PP2|BP1)(_.+)?$``
+   *  - ``methodType``
+      - ``In silico functional impact assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PP3|BP4)(_.+)?$``
+   *  - ``methodType``
+      - ``Predicted silent variant assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^BP7(_.+)?$``
+   *  - ``methodType``
+      - ``Functional Data Assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PS3|BS3)(_.+)?$``
+   *  - ``methodType``
+      - ``Segregation Data Assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PP1|BS4)(_.+)?$``
+   *  - ``methodType``
+      - ``De Novo Data Assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PS2|PM6)(_.+)?$``
+   *  - ``methodType``
+      - ``Cis/trans variant assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PM3|BP2)(_.+)?$``
+   *  - ``methodType``
+      - ``Reputable Source Assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(PP5|BP6)(_.+)?$``
+   *  - ``methodType``
+      - ``Phenotype-gene specificity assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^PP4(_.+)?$``
+   *  - ``methodType``
+      - ``Alternative cause assessment``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^BP5(_.+)?$``
+
+
+**Composes:** :ref:`EvidenceLine`
+
 **Used in:** :ref:`VariantPathogenicityStatement`

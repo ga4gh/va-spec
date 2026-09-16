@@ -76,4 +76,6 @@ A specialization of MappableConcept representing a single condition (disease, ph
       - 0..m
       - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
 
+**Composes:** :ref:`MappableConcept`
+
 **Used in:** :ref:`ConditionSet`, :ref:`VariantClinicalSignificanceProposition`, :ref:`VariantDiagnosticProposition`, :ref:`VariantOncogenicityProposition`, :ref:`VariantPathogenicityProposition`, :ref:`VariantPrognosticProposition`, :ref:`VariantTherapeuticResponseProposition`

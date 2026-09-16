@@ -76,4 +76,6 @@ A specialization of MappableConcept representing an individual therapy (drug, pr
       - 0..m
       - A list of mappings to concepts in terminologies or code systems. Each mapping should include a coding and a relation.
 
+**Composes:** :ref:`MappableConcept`
+
 **Used in:** :ref:`TherapyGroup`, :ref:`VariantTherapeuticResponseProposition`

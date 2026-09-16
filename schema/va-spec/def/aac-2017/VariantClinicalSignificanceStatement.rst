@@ -122,3 +122,75 @@ A statement reporting a conclusion from a single study about the clinical signif
       - :ref:`EvidenceLine` | :ref:`iriReference`
       - 0..m
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
+
+**Conditional Constraints**
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+
+   *  - If property...
+      - has value...
+      - then property...
+      - must...
+   *  - ``classification.primaryCoding.code``
+      - ``tier i``
+      - ``hasEvidenceLines``
+      - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
+   *  - ``classification.primaryCoding.code``
+      - ``tier i``
+      - ``classification.name``
+      - have value ``Tier I``
+   *  - ``classification.primaryCoding.code``
+      - ``tier i``
+      - ``strength.primaryCoding.code``
+      - have value ``strong``
+   *  - ``classification.primaryCoding.code``
+      - ``tier i``
+      - ``direction``
+      - have value ``supports``
+   *  - ``classification.primaryCoding.code``
+      - ``tier ii``
+      - ``hasEvidenceLines``
+      - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
+   *  - ``classification.primaryCoding.code``
+      - ``tier ii``
+      - ``classification.name``
+      - have value ``Tier II``
+   *  - ``classification.primaryCoding.code``
+      - ``tier ii``
+      - ``strength.primaryCoding.code``
+      - have value ``potential``
+   *  - ``classification.primaryCoding.code``
+      - ``tier ii``
+      - ``direction``
+      - have value ``supports``
+   *  - ``classification.primaryCoding.code``
+      - ``tier iii``
+      - ``classification.name``
+      - have value ``Tier III``
+   *  - ``classification.primaryCoding.code``
+      - ``tier iii``
+      - ``strength``
+      - not be provided
+   *  - ``classification.primaryCoding.code``
+      - ``tier iii``
+      - ``direction``
+      - have value ``neutral``
+   *  - ``classification.primaryCoding.code``
+      - ``tier iv``
+      - ``classification.name``
+      - have value ``Tier IV``
+   *  - ``classification.primaryCoding.code``
+      - ``tier iv``
+      - ``strength``
+      - not be provided
+   *  - ``classification.primaryCoding.code``
+      - ``tier iv``
+      - ``direction``
+      - have value ``disputes``
+
+
+**Composes:** :ref:`Statement`

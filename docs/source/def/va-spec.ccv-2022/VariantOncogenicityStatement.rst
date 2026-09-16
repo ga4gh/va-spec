@@ -122,3 +122,5 @@ A statement reporting a conclusion from a single study about whether a variant i
       - :ref:`VariantOncogenicityEvidenceLine` | :ref:`iriReference`
       - 0..m
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
+
+**Composes:** :ref:`Statement`

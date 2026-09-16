@@ -120,4 +120,56 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - 0..1
       - The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met').
 
+**Conditional Constraints**
+
+.. list-table::
+   :class: clean-wrap
+   :header-rows: 1
+   :align: left
+   :widths: auto
+
+   *  - If property...
+      - has value...
+      - then property...
+      - must...
+   *  - ``directionOfEvidenceProvided``
+      - one of: ``supports``, ``disputes``
+      - ``strengthOfEvidenceProvided``
+      - be provided
+   *  - ``specifiedBy.methodType``
+      - ``population_frequency``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(SBVS1|SBS1|OP4)(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``functional_assay``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(OS2|SBS2)(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``primary_sequence_consequence``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(OVS1|OM2|SBP2)(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``functional_domain_location``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^OM1(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``amino_acid_or_residue_analogy``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(OS1|OM4)(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``somatic_hotspot_recurrence``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(OS3|OM3|OP3)(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``computational_prediction``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^(OP1|SBP1)(_.+)?$``
+   *  - ``specifiedBy.methodType``
+      - ``single_genetic_etiology_context``
+      - ``evidenceOutcome.primaryCoding.code``
+      - match the pattern ``^OP2(_.+)?$``
+
+
+**Composes:** :ref:`EvidenceLine`
+
 **Used in:** :ref:`VariantOncogenicityStatement`
