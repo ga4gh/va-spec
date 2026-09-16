@@ -177,6 +177,10 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|OP2(_.+)?)$**
 
+If *evidenceOutcome.primaryCoding.code* must match the pattern **^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$**, then:
+
+* *directionOfEvidenceProvided* must be: **neutral**
+
 
 **Composes:** :ref:`EvidenceLine`
 

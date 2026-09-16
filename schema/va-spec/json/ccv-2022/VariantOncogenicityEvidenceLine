@@ -405,6 +405,44 @@
                }
             }
          }
+      },
+      {
+         "if": {
+            "properties": {
+               "evidenceOutcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "evidenceOutcome"
+            ]
+         },
+         "then": {
+            "properties": {
+               "directionOfEvidenceProvided": {
+                  "const": "neutral"
+               }
+            },
+            "not": {
+               "required": [
+                  "strengthOfEvidenceProvided"
+               ]
+            }
+         }
       }
    ],
    "required": [
