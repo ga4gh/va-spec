@@ -145,71 +145,71 @@ An Evidence Line that describes how a specific type of information was interpret
       - *strengthOfEvidenceProvided*
       - be provided
    *  - *specifiedBy.methodType*
-      - **Population Data Assessment**
+      - **population_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(BA1|BS1|PM2)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Case-Control Enrichment Assessment**
+      - **case_control_enrichment_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(BS2|PM4)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Null variant assessment**
+      - **null_variant_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^PVS1(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Same amino acid change assessment**
+      - **same_amino_acid_change_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^PS1(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Mutational hot spot and functional domain assessment**
+      - **mutational_hot_spot_and_functional_domain_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^PM1(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Protein length change assessment**
+      - **protein_length_change_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PM4|BP3)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Novel missense position assessment**
+      - **novel_missense_position_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^PM5(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Variant spectrum assessment**
+      - **variant_spectrum_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PP2|BP1)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **In silico functional impact assessment**
+      - **in_silico_functional_impact_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PP3|BP4)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Predicted silent variant assessment**
+      - **predicted_silent_variant_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^BP7(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Functional Data Assessment**
+      - **functional_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PS3|BS3)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Segregation Data Assessment**
+      - **segregation_data_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PP1|BS4)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **De Novo Data Assessment**
+      - **de_novo_occurrence_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PS2|PM6)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Cis/trans variant assessment**
+      - **cis_trans_variant_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PM3|BP2)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Reputable Source Assessment**
+      - **reputable_source_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(PP5|BP6)(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Phenotype-gene specificity assessment**
+      - **phenotype_gene_specificity_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^PP4(_.+)?$**
    *  - *specifiedBy.methodType*
-      - **Alternative cause assessment**
+      - **alternative_cause_assessment**
       - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^BP5(_.+)?$**
 

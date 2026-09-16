@@ -59,71 +59,71 @@
                      "type": "string",
                      "oneOf": [
                         {
-                           "const": "Population Data Assessment",
+                           "const": "population_data_assessment",
                            "description": "Assessment of whether population control frequency refutes pathogenicity or whether absence/extreme rarity in controls provides supporting evidence for pathogenicity."
                         },
                         {
-                           "const": "Case-Control Enrichment Assessment",
+                           "const": "case_control_enrichment_assessment",
                            "description": "Prevalence in affected statistically increased over matched controls, or enrichment in controls inconsistent with disease penetrance"
                         },
                         {
-                           "const": "Null variant assessment",
+                           "const": "null_variant_assessment",
                            "description": "Predicted null variant in a gene where LOF is a known mechanism of disease"
                         },
                         {
-                           "const": "Same amino acid change assessment",
+                           "const": "same_amino_acid_change_assessment",
                            "description": "Same amino acid change as an established pathogenic variant"
                         },
                         {
-                           "const": "Mutational hot spot and functional domain assessment",
+                           "const": "mutational_hot_spot_and_functional_domain_assessment",
                            "description": "Mutational hot spot or well-established functional domain without benign variation"
                         },
                         {
-                           "const": "Protein length change assessment",
+                           "const": "protein_length_change_assessment",
                            "description": "Protein length change, or in-frame indels changing counts of repeats with no known function"
                         },
                         {
-                           "const": "Novel missense position assessment",
+                           "const": "novel_missense_position_assessment",
                            "description": "Novel missense change at an amino acid where a different pathogenic missense change has been seen before"
                         },
                         {
-                           "const": "Variant spectrum assessment",
+                           "const": "variant_spectrum_assessment",
                            "description": "Missense in a gene where only truncation causes disease, or with low rate of benign missense variation"
                         },
                         {
-                           "const": "In silico functional impact assessment",
+                           "const": "in_silico_functional_impact_assessment",
                            "description": "Multiple lines of computational evidence support a deleterious effect or no impact"
                         },
                         {
-                           "const": "Predicted silent variant assessment",
+                           "const": "predicted_silent_variant_assessment",
                            "description": "Silent variant with no predicted splicing impact"
                         },
                         {
-                           "const": "Functional Data Assessment",
+                           "const": "functional_data_assessment",
                            "description": "Well-established functional studies show or do not show deleterious effect"
                         },
                         {
-                           "const": "Segregation Data Assessment",
+                           "const": "segregation_data_assessment",
                            "description": "Consegregation with disease in multiple family members, or nonsegregation"
                         },
                         {
-                           "const": "De Novo Data Assessment",
+                           "const": "de_novo_occurrence_assessment",
                            "description": "De novo, with or without paternity and maternity confirmed"
                         },
                         {
-                           "const": "Cis/trans variant assessment",
+                           "const": "cis_trans_variant_assessment",
                            "description": "Observed in trans with a dominant variant, in cis with a pathogenic variant, or in trans with a pathogenic variant in a recessive disorder"
                         },
                         {
-                           "const": "Reputable Source Assessment",
+                           "const": "reputable_source_assessment",
                            "description": "Benign or pathogenic according to a reputable source"
                         },
                         {
-                           "const": "Phenotype-gene specificity assessment",
+                           "const": "phenotype_gene_specificity_assessment",
                            "description": "Patient's phenotype or family history highly specific for the gene and disorder"
                         },
                         {
-                           "const": "Alternative cause assessment",
+                           "const": "alternative_cause_assessment",
                            "description": "Found in a case with an alternate cause"
                         }
                      ]
@@ -177,7 +177,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Population Data Assessment"
+                        "const": "population_data_assessment"
                      }
                   },
                   "required": [
@@ -211,7 +211,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Case-Control Enrichment Assessment"
+                        "const": "case_control_enrichment_assessment"
                      }
                   },
                   "required": [
@@ -245,7 +245,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Null variant assessment"
+                        "const": "null_variant_assessment"
                      }
                   },
                   "required": [
@@ -279,7 +279,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Same amino acid change assessment"
+                        "const": "same_amino_acid_change_assessment"
                      }
                   },
                   "required": [
@@ -313,7 +313,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Mutational hot spot and functional domain assessment"
+                        "const": "mutational_hot_spot_and_functional_domain_assessment"
                      }
                   },
                   "required": [
@@ -347,7 +347,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Protein length change assessment"
+                        "const": "protein_length_change_assessment"
                      }
                   },
                   "required": [
@@ -381,7 +381,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Novel missense position assessment"
+                        "const": "novel_missense_position_assessment"
                      }
                   },
                   "required": [
@@ -415,7 +415,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Variant spectrum assessment"
+                        "const": "variant_spectrum_assessment"
                      }
                   },
                   "required": [
@@ -449,7 +449,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "In silico functional impact assessment"
+                        "const": "in_silico_functional_impact_assessment"
                      }
                   },
                   "required": [
@@ -483,7 +483,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Predicted silent variant assessment"
+                        "const": "predicted_silent_variant_assessment"
                      }
                   },
                   "required": [
@@ -517,7 +517,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Functional Data Assessment"
+                        "const": "functional_data_assessment"
                      }
                   },
                   "required": [
@@ -551,7 +551,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Segregation Data Assessment"
+                        "const": "segregation_data_assessment"
                      }
                   },
                   "required": [
@@ -585,7 +585,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "De Novo Data Assessment"
+                        "const": "de_novo_occurrence_assessment"
                      }
                   },
                   "required": [
@@ -619,7 +619,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Cis/trans variant assessment"
+                        "const": "cis_trans_variant_assessment"
                      }
                   },
                   "required": [
@@ -653,7 +653,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Reputable Source Assessment"
+                        "const": "reputable_source_assessment"
                      }
                   },
                   "required": [
@@ -687,7 +687,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Phenotype-gene specificity assessment"
+                        "const": "phenotype_gene_specificity_assessment"
                      }
                   },
                   "required": [
@@ -721,7 +721,7 @@
                "specifiedBy": {
                   "properties": {
                      "methodType": {
-                        "const": "Alternative cause assessment"
+                        "const": "alternative_cause_assessment"
                      }
                   },
                   "required": [
