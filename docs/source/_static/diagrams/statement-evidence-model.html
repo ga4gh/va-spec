@@ -15,7 +15,7 @@
     }
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; height: 100%; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
   body { padding: 20px; overflow: hidden; }
   .wrap { width: 100%; }
   /* #stage is the fitted viewport; #scale-inner always renders at its natural
@@ -28,13 +28,19 @@
      spare space), so the box's real rendered position is flush left -- the
      scale must shrink from that same left edge or it drifts off-position. */
   #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  /* The figure (.diagram) is the width driver, not the prose above/below it --
+     .diagram gets its own max-content width so it always sizes to its true
+     natural width regardless of its container; the script then caps
+     .text-block elements (title/caption/legend) to that same width so a long
+     caption line can't force the whole diagram to scale down further than
+     the figure itself needs. */
   .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
   .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
   .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
   .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
   .caption code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--ink); }
 
-  .diagram { display: flex; flex-direction: column; align-items: center; }
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
 
   .vconnector { display: flex; flex-direction: row; align-items: center; justify-content: center; min-height: 46px; position: relative; padding: 2px 0; gap: 8px; }
   .vconnector .line { width: 1.5px; height: 100%; min-height: 30px; background: var(--line-strong); position: relative; }
@@ -231,13 +237,27 @@
 (function () {
   var stage = document.getElementById('stage');
   var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
   function fit() {
     inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    // The figure, not the prose above/below it, drives the natural width --
+    // cap title/caption/legend to the figure's own width so a long caption
+    // line can't force the whole diagram to scale down further than needed.
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
     var naturalWidth = inner.scrollWidth;
     var naturalHeight = inner.scrollHeight;
     var scale = Math.min(1, stage.clientWidth / naturalWidth);
     inner.style.transform = 'scale(' + scale + ')';
     stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+    // Same-origin iframe embed: shrink the outer <iframe> itself to the
+    // content's true rendered height so there's no leftover blank space
+    // below a diagram that scaled down to fit a narrower column.
+    if (window.frameElement) {
+      window.frameElement.style.height = document.documentElement.scrollHeight + 'px';
+    }
   }
   window.addEventListener('resize', fit);
   if (window.ResizeObserver) {

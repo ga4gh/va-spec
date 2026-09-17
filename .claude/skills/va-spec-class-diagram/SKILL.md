@@ -134,9 +134,10 @@ narrow, explicit exception:
   ```
 
   (`html_static_path = ["_static"]` is already configured in `docs/source/conf.py`, so files placed
-  there ship with the built site automatically — no extra Sphinx config needed.) Pick the iframe
-  height as the diagram's natural (unscaled) full height; check the built page in `sphinx-build`
-  output before calling it done, since iframe height doesn't auto-fit to content.
+  there ship with the built site automatically — no extra Sphinx config needed.) The `height:<Npx>`
+  in that snippet is only a pre-JS placeholder to avoid a layout jump on first paint (pick roughly
+  the diagram's natural unscaled height) — the diagram's own script resizes the real `<iframe>` to
+  the exact rendered height once it runs (see below), so don't hand-tune this number precisely.
 - **The diagram must scale to fit its column like a raster image, not reflow or scroll.** The
   sphinx_rtd_theme content column has a **fixed** `max-width` (currently 800px, confirmed via the
   theme's built CSS — it does not grow with a wider browser window), so any diagram wider than that
@@ -164,6 +165,25 @@ narrow, explicit exception:
     standalone diagram file) at a few window widths (e.g. 500px, ~1024px, and something wide like
     1400px) — the RTD column's fixed max-width means a wide *browser* window alone won't catch
     overflow bugs; a real narrow *column* case must be checked.
+  - **The figure (`.diagram`), not the surrounding prose, must drive the natural width.** A caption
+    or title line that's wider than the figure (unwrapped, plain-text elements try to render on one
+    line under `width: max-content`) will inflate `#scale-inner`'s measured natural width and force
+    the figure to scale down more than it needs to — the exact bug that produces a needlessly tiny,
+    hard-to-read diagram with lots of relatively huge caption text above it. Give `.diagram` its own
+    `width: max-content` (so it always reports its true intrinsic width regardless of what else is in
+    `#scale-inner`), and in the fit script, measure that width and set it as `max-width` on the
+    title/caption/legend elements *before* measuring `#scale-inner`'s `scrollWidth` for the scale
+    calculation — see `example.html`'s `textBlocks`/`diagramWidth` logic. This keeps the figure at
+    the largest size the available space allows; text wraps to match it, never the reverse.
+  - **No leftover blank space below the diagram.** Because the whole file is a same-origin embed
+    (served from the same site as the doc page that iframes it), the fit script can reach the
+    embedding `<iframe>` element directly via `window.frameElement` and set its `style.height` to
+    `document.documentElement.scrollHeight` on every `fit()` call — so the iframe always matches the
+    content's true rendered height (which shrinks along with the scaled-down diagram at narrow
+    widths) instead of sitting at a fixed height with dead space under a smaller figure. This
+    requires `html, body` to *not* have an explicit `height: 100%` (or any other forced height) —
+    that would make `scrollHeight` report the box's forced height instead of the content's actual
+    extent, defeating the measurement.
 - Before treating a diagram as final, publish it as an Artifact for review — these diagrams get
   iterated on with real design feedback (layout direction, what to include/exclude, arrow direction,
   alignment), so don't skip the review step even when the content itself seems obviously correct.
