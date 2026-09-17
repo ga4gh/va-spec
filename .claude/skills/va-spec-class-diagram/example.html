@@ -72,8 +72,12 @@
   .cls.small { width: 160px; }
   /* Proposition/Method/Contribution/Document have short field lists that left
      visible slack at 220px -- narrower boxes here also narrow the whole
-     diagram, letting the scale-to-fit script render everything larger. */
-  .cls.narrow { width: 195px; }
+     diagram, letting the scale-to-fit script render everything larger. 160px
+     is a measured safety margin above the ~145px point where the longest
+     field line ("activityType: string") starts clipping under text-overflow:
+     ellipsis -- see the va-spec-class-diagram skill for the measurement
+     method before narrowing further. */
+  .cls.narrow { width: 160px; }
   .cls .head { padding: 7px 10px 6px; border-bottom: 1.3px solid var(--line-strong); }
   .cls.role .head { border-bottom-style: dashed; }
   .cls .stereo { font-family: ui-monospace, monospace; font-size: 9px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }

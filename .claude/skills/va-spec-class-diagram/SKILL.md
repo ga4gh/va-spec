@@ -97,6 +97,16 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
   values from a previous diagram version without rechecking, since the schema moves.
 - Keep prose annotations (`.foot`, `.caption`) short, and only use them for things a reader would
   otherwise get wrong or miss — not general restatement of what the box already shows.
+- **Box widths should have little to no dead space, but never guess a narrower width — measure it.**
+  Since the figure drives the whole diagram's width (see the scale-to-fit rule below), a narrower box
+  makes everything larger within the same column budget, so it's worth trimming — but `.prop` lines
+  use `text-overflow: ellipsis`, which fails silently (truncated text, no build warning) if a box goes
+  too narrow. Before picking a width, build a small throwaway test page with the box's real field
+  strings at the real font/padding, sweep candidate widths, and check each element's
+  `scrollWidth > clientWidth` (the exact ellipsis-triggering condition) rather than eyeballing it —
+  then pick something a bit above the measured breaking point as a safety margin for font-rendering
+  differences across browsers/OSes. Re-measure whenever field content changes; don't reuse an old
+  width number for new text.
 
 ### Schema-validity policy
 
