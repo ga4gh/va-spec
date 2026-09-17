@@ -25,6 +25,6 @@ of the VA-Spec. They are expected to be updated as the VA-Spec is finalized.
    *  - ClinVar Submission Utility
       - `ClinVar This Repository <https://github.com/clingen-data-model/clinvar-this>`_
       - This fork of the clinvar-this library uses GKM-formatted data submissions as input for sharing of evidence to the ClinVar database via its API. This is being used by the VICC Driver Project to share assertion data from the CIViC platform with ClinVar.
-   *  -  ClinVar GKM
-      - `ClinGen ClinVar GKM Repository <https://github.com/clingen-data-model/clinvar-gks>`_
-      - Repository for the ClinGen ClinVar GKM pipeline (coming soon), which is a GKM-formatted version of the ClinVar database. This repository is used to generate the ClinVar GKM from the ClinVar XML data. A pre-release version of ClinVar in GKM format from Nov 2024 is available for download
+   *  -  ClinVar-GKM
+      - `ClinGen ClinVar-GKM website <https://dataexchange.clinicalgenome.org/clinvar-gkm/>`_
+      - Provides a standardized, machine-readable representation of ClinVar release data using the GKM schema set (VRS, Cat-VRS, and VA-Spec) -- normalizing variant identifiers, representing categorical variants via Cat-VRS, and capturing classification statements as VA-Spec representations. Actively maintained, with monthly full releases and weekly delta updates published in sync with ClinVar's own release schedule; the current v1 release covers variations, submitted classifications (SCVs), aggregated classifications (VCVs), and condition-level classifications (RCVs), with functional data submissions and case-level observations planned for future versions. See the `ClinGen ClinVar-GKM Repository <https://github.com/clingen-data-model/clinvar-gkm>`_ for the pipeline that generates it from ClinVar's XML data.

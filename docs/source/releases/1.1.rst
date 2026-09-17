@@ -4,6 +4,17 @@
 1.1.0
 @@@@@
 
+This release renames the abstract ``ClinicalVariantProposition`` class and adopts
+GKS-Core's updated ``MappableConcept``/``ConceptSet`` (both backwards-incompatible
+changes to *trial use* classes), consolidates the core ``EvidenceLine`` class into
+:ref:`Statement` (a "discrete evidence-based argument" is now a Statement referenced
+via another Statement's ``hasEvidenceLines``, rather than an instance of a separate
+class), and reworks how ``Proposition``/``StudyResult`` subclasses declare their
+``subject``/``predicate``/``object``/``focus`` attributes so they inherit under
+their canonical names rather than being renamed per subclass. It also modernizes
+the schema-generation pipeline and refreshes imported dependencies to the
+2026-09 ballot line.
+
 Minor Version Increment
 ########################
 
@@ -23,6 +34,147 @@ per the :ref:`gkm-maturity-model` versioning rules:
     ``MappableConcept``), and :ref:`ConditionSet` and :ref:`TherapyGroup`
     (specializations of ``ConceptSet``)
 
+Subject / object / focus model change
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+**Backwards-incompatible.** Previous ballots renamed the abstract triple
+attributes in each subclass (e.g. ``subject`` :math:`\rightarrow` ``subjectVariant``,
+``object`` :math:`\rightarrow` ``objectCondition``, ``focus`` :math:`\rightarrow` ``focusAllele``). The
+0.4.x metaschema processor inherits properties by name and does not permit
+renaming, so the model has been made consistent with that rule:
+
+  * The abstract :ref:`Proposition` declares ``subject``, ``predicate``, and
+    ``object`` (all required); the abstract :ref:`StudyResult` declares ``focus``
+    (required). Every subclass now **narrows these in place under the same name**
+    rather than renaming them. Affected serialized property names change:
+    ``subjectVariant`` / ``subjectGene`` :math:`\rightarrow` ``subject``;
+    ``objectCondition`` / ``objectTumorType`` / ``objectSequenceFeature`` /
+    ``objectTherapy`` / ``objectConsequence`` :math:`\rightarrow` ``object``;
+    ``focusAllele`` / ``focusVariant`` :math:`\rightarrow` ``focus``. All
+    examples and test fixtures were updated accordingly.
+  * The abstract base classes (:ref:`Proposition`, :ref:`StudyResult`,
+    :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
+    ``oneOf`` of their built-in subtypes, so implementers can define and validate
+    **their own** subclasses of :ref:`Proposition` and :ref:`StudyResult` against
+    these bases (the *draft* ``CustomProposition`` class, briefly introduced in
+    an earlier 1.1.0 pre-release for the same purpose, is superseded by this and
+    was removed before this release). :ref:`Statement` remains concrete and
+    closed, as before.
+  * :ref:`ComputationalVariantFunctionalImpactAnalysisResult` now inherits
+    :ref:`StudyResult` (so it too requires ``focus``).
+  * The 0.4.x processor now emits a JSON Schema for every abstract class
+    (previously only unions were emitted).
+  * allows an :ref:`iriReference` as an alternative to an inline object on
+    attributes that reference other, independently-identifiable Information
+    Entities or concepts, so implementers can reference instead of inline
+    them: :ref:`Contribution`.contributor, :ref:`Statement`.proposition/
+    .strength/.outcome/.quality, :ref:`StudyResult`.sourceDataSet
+    (and the :ref:`ComputationalVariantFunctionalImpactAnalysisResult`
+    subclass, which redeclares it), :ref:`CohortAlleleFrequencyStudyResult`.cohort,
+    :ref:`TumorVariantFrequencyStudyResult`.sampleGroup, :ref:`DataSet`.license,
+    and :ref:`StudyGroup`.characteristics.
+
+Evidence Line consolidated into Statement
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+**Backwards-incompatible.** The core ``EvidenceLine`` class is removed. A
+"discrete evidence-based argument" is now just a :ref:`Statement` referenced
+via another Statement's ``hasEvidenceLines`` attribute, rather than an
+instance of a separate class:
+
+  * :ref:`Statement` gains ``hasEvidenceItems`` (so a Statement can cite
+    evidence items directly, without grouping them into a nested,
+    evidence-line-shaped Statement) and ``hasEvidenceLines`` (an array of
+    ``Statement | iriReference``, letting a broader-scoped Statement be built
+    from one or more narrower-scoped subordinate ones). ``hasEvidenceItems``
+    is declared immediately before ``hasEvidenceLines``, in that order.
+    ``hasEvidenceItems`` items are ``Statement | StudyResult | DataItem |
+    iriReference`` -- narrower than the removed ``EvidenceLine``'s open
+    ``InformationEntity`` -- so a bare :ref:`Document` or other
+    non-data-bearing Information Entity is no longer accepted directly; wrap
+    it in a new :ref:`DataItem` instead.
+  * ``EvidenceLine``'s former attributes move onto :ref:`Statement` under
+    Statement's own names: ``targetProposition`` :math:`\rightarrow`
+    ``proposition`` (already present, now optional -- omit it when it's the
+    same proposition as the Statement the evidence line supports);
+    ``directionOfEvidenceProvided`` :math:`\rightarrow` ``direction``;
+    ``strengthOfEvidenceProvided`` :math:`\rightarrow` ``strength``;
+    ``evidenceOutcome`` merges with Statement's own ``classification``
+    attribute, and the merged attribute is renamed ``outcome``;
+    ``qualityOfEvidenceProvided`` merges with Statement's own draft
+    ``quality`` attribute.
+  * adds a new draft :ref:`DataItem` class (an :ref:`InformationEntity`
+    subclass wrapping a structured, string, or IRI-reference ``value``) as
+    one of the concrete types citable via ``hasEvidenceItems``.
+  * the AAC-2017 ``AmpAscoCapEvidenceLine``, ``DiagnosticEvidenceLine``,
+    ``PrognosticEvidenceLine``, and ``TherapeuticEvidenceLine`` classes are
+    renamed :ref:`AmpAscoCapStatement`, :ref:`DiagnosticStatement`,
+    :ref:`PrognosticStatement`, and :ref:`TherapeuticStatement`, and now
+    compose :ref:`Statement` instead of the removed ``EvidenceLine``.
+    :ref:`VariantClinicalSignificanceStatement`'s ``classification``
+    attribute is renamed ``outcome`` to match. This also fixes an
+    array-wrapping defect on the (now-renamed) :ref:`DiagnosticStatement`,
+    :ref:`PrognosticStatement`, and :ref:`TherapeuticStatement` classes:
+    each was declared as ``type: array`` (an array of itself-or-``iriReference``)
+    rather than as a plain ``allOf``-composed object, so the tier i/ii
+    ``hasEvidenceLines`` narrowing that referenced them (via a bare ``oneOf``,
+    with no ``type: array``/``items`` wrapper of its own) required the whole
+    ``hasEvidenceLines`` array to itself match one of these array-typed
+    branches, rather than letting each item independently be one of the
+    three types. The array wrapping now lives at the narrowing site instead,
+    matching :ref:`AmpAscoCapStatement`'s composition pattern.
+  * :ref:`VariantPathogenicityEvidenceLine` and
+    :ref:`VariantOncogenicityEvidenceLine` keep their names (they still
+    describe the evidence-line *role* these Statement instances play) but
+    now compose :ref:`Statement` and use its ``direction``/``strength``/
+    ``outcome`` attribute names instead of the removed
+    ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided``/
+    ``evidenceOutcome``. Each class's own ``methodType`` enumeration was
+    also normalized to ``snake_case`` codes (e.g. ACMG-2015's
+    ``"Population Data Assessment"`` :math:`\rightarrow`
+    ``population_data_assessment``; CCV-2022's ``population_frequency``
+    :math:`\rightarrow` ``population_data_assessment``,
+    ``functional_assay`` :math:`\rightarrow` ``functional_data_assessment``,
+    ``functional_domain_location`` :math:`\rightarrow`
+    ``functional_domain_assessment``, ``amino_acid_or_residue_analogy``
+    :math:`\rightarrow` ``amino_acid_analogy_assessment``,
+    ``somatic_hotspot_recurrence`` :math:`\rightarrow`
+    ``somatic_hotspot_assessment``, ``computational_prediction``
+    :math:`\rightarrow` ``in_silico_impact_assessment``, and
+    ``single_genetic_etiology_context`` :math:`\rightarrow`
+    ``single_genetic_etiology_assessment``; ACMG-2015's
+    ``de_novo_data_assessment`` is renamed ``de_novo_occurrence_assessment``),
+    and :ref:`VariantPathogenicityStatement`/:ref:`VariantOncogenicityStatement`'s
+    ``classification`` attribute is renamed ``outcome``.
+  * :ref:`CohortAlleleFrequencyStudyResult` renames ``focusAlleleCount``
+    :math:`\rightarrow` ``focusCount``, ``locusAlleleCount``
+    :math:`\rightarrow` ``locusCount``, and ``focusAlleleFrequency``
+    :math:`\rightarrow` ``alleleFrequency``.
+  * both :ref:`VariantPathogenicityEvidenceLine` and
+    :ref:`VariantOncogenicityEvidenceLine` add ``no_criteria_met`` as an
+    allowed ``outcome`` code, alongside the existing ``{criterion_code}``
+    and ``{criterion_code}_not_met`` forms. Use it to report that the
+    criteria associated with the evidence line's ``methodType`` were
+    assessed, but none of them were met. It is accepted both by each class's
+    overall outcome pattern and by every per-``methodType`` pattern.
+    **Backwards-incompatible:** both classes now also constrain the
+    *direction* and *strength* that may accompany a negative outcome: when
+    ``outcome`` is ``no_criteria_met`` or any ``{criterion_code}_not_met``
+    code, ``direction`` MUST be ``neutral`` and ``strength`` MUST NOT be
+    present. Previously a not-met outcome could be paired with a
+    ``supports``/``disputes`` direction and a strength value.
+  * fixes the 17 ``if``/``then`` tier-specific conditional constraints on
+    :ref:`VariantPathogenicityEvidenceLine`, which checked a non-existent
+    top-level ``methodType`` property instead of the correctly-nested
+    ``specifiedBy.methodType`` (matching the equivalent, already-correct
+    pattern on :ref:`VariantOncogenicityEvidenceLine`). As written, none of
+    these conditions could ever be satisfied by a valid instance.
+  * adds constraints to evidence line types for the ACMG (*draft*) and CCV
+    (*draft*) statement profiles
+  * updates ``hasEvidenceLines`` in the AAC/ACMG/CCV (*draft*) statement
+    profiles to accept IRIs
+  * all examples and test fixtures were updated accordingly.
+
 Patch Version Increment
 #########################
 
@@ -30,14 +182,10 @@ New product features at the *draft* maturity level, changes to existing
 *draft* features, and supporting changes that do not affect data
 compatibility:
 
-  * adds a new ``CustomProposition`` class (*draft*), allowing providers to define their own proposition types
   * adds :ref:`GeneDiseaseValidityProposition` (*draft*), a new proposition type for gene-disease validity assertions
   * adds ``VariantMolecularConsequenceProposition`` (*draft*), for representing the functional consequences of a variant
   * updates the ``ComputationalVariantFunctionalImpactAnalysisResult`` (*draft*) source schema
   * updates the AAC 2017 Aligned Profiles (*draft*) to better reflect the source guidelines
-  * adds constraints to evidence line types for the ACMG (*draft*) and CCV (*draft*) statement profiles
-  * updates method types in the CCV (*draft*) and ACMG (*draft*) evidence line profiles
-  * updates ``hasEvidenceLines`` in the AAC/ACMG/CCV (*draft*) statement profiles to accept IRIs
   * enforces enum validation in ``primaryCodings`` across the AAC/ACMG/CCV (*draft*) profiles
   * updates the :ref:`ConditionSet` VA-Spec version reference
   * resolves a typo ("Oncoogenicity" :math:`\rightarrow` "Oncogenicity") in the CCV oncogenicity evidence line profile
@@ -56,3 +204,86 @@ compatibility:
   * corrects the core model class diagram to show :ref:`DataSet` inheriting
     from ``Entity`` rather than ``InformationEntity``, matching the source
     schema (closes `#380 <https://github.com/ga4gh/va-spec/issues/380>`__)
+
+Pipeline modernization
+$$$$$$$$$$$$$$$$$$$$$$
+
+Supporting changes to the schema-generation tooling and repository layout that
+do not, by themselves, change the meaning of VA-Spec data:
+
+  * migrates the metaschema processor from ``ga4gh.gks.metaschema`` (0.3.2) to
+    the renamed ``ga4gh.gkm.metaschema`` (0.4.8) package (the GKS :math:`\rightarrow`
+    GKM "Genomic Knowledge Models" rebrand). The console entrypoints
+    (``source2classes``, ``source2splitjs``, ``y2t``) are unchanged, so
+    ``make all`` still drives generation. 0.4.6 tightens ``$ref`` handling: a
+    ``$ref`` must be a local ``#/$defs/...`` reference, so the bare-class-name
+    and full-URL ``$ref``\ s previously used to reach classes in an imported
+    module (``domain-entities``, and the base ``va-spec`` classes referenced
+    from the community profiles) were converted to ``$refCurie:
+    <namespace>:<Class>``. 0.4.7 adds two purely additive generated-docs
+    features: an ``allOf``-composed class's def page now carries a
+    **Composes:** line naming the class it composes onto (mirroring the
+    existing **Inherits:**/**Subclasses:** lines for ``inherits:``-based
+    classes), and a composed class with ``if``/``then`` constraints now
+    renders a table summarizing them (e.g. the AAC-2017 tier-based rules on
+    ``VariantClinicalSignificanceStatement``). 0.4.8 renames that table from
+    "Conditional Constraints" to **Additional Constraints**, adds italic/bold
+    styling to the property/value cells, and gives ``anyOf``/``oneOf``
+    compositions whose only constraint is "at least one of" a plain-language
+    sentence instead of a duplicated placeholder bullet list (see
+    :ref:`MappableConcept`, which requires at least one of ``name`` or
+    ``primaryCoding``).
+  * adopts the 0.4.x source conventions in every VA-Spec module source: abstract
+    classes are marked ``abstract: true`` (and are left open), concrete classes
+    are closed and drop the explicit ``type: object`` (the processor injects
+    it), ``heritableProperties`` / ``heritableRequired`` become plain
+    ``properties`` / ``required`` on abstract bases, and the removed ``extends:``
+    key is dropped.
+  * renames the nested ``gks-core`` import to ``gkm-core`` throughout the schema
+    sources, imported ``$refCurie`` namespaces (``gks.core`` :math:`\rightarrow`
+    ``gkm.core``), and the documentation.
+  * makes the imported ``schema/{cat-vrs,vrs,gkm-core}`` directories real folders
+    that symlink only to the imported ``*-source.yaml`` and ``json/`` (no
+    ``def/``); VA-Spec now generates the imported-class ``def/`` locally via
+    ``y2t`` and the docs include those local defs.
+  * checks out submodules recursively in the pre-commit CI job so ``make all``
+    can resolve the imported source symlinks on a fresh checkout.
+  * reorganizes ``schema/va-spec/``: the former ``base/`` module moves up to the
+    ``va-spec/`` root (``va-core-source.yaml`` is renamed ``va-spec-source.yaml``),
+    and the build now produces a single ``json/`` and ``def/`` under ``va-spec/``.
+    Each community profile writes its own classes into ``json/<community>/`` and
+    ``def/<community>/`` subfolders (the base classes' output sits at the ``json/``
+    and ``def/`` root). Base-class namespaces change from ``va-spec.base`` to
+    ``va-spec``; community namespaces (``va-spec.aac-2017`` etc.) are unchanged.
+  * flattens the three community profile sources — ``aac-2017/profile-source.yaml``,
+    ``acmg-2015/profile-source.yaml``, ``ccv-2022/profile-source.yaml`` — out of
+    their own subdirectories, into ``schema/va-spec/<community>-profile-source.yaml``,
+    alongside ``va-spec-source.yaml`` and ``domain-entities-source.yaml``. This adopts
+    the ``gks-metaschema`` processor's native **profile sub-namespace** convention
+    (an ``XXX-profile-source.yaml`` file contributes ``XXX`` as a sub-namespace of the
+    folder it lives in): outputs still land at ``json/<community>/`` and
+    ``def/<community>/`` as before, but each profile class's ``$id`` is now
+    ``.../va-spec/<version>/json/<community>/<Class>`` — computed natively by the
+    processor rather than by VA-Spec's own post-processing script (removed:
+    ``tools/canonicalize-community-ids.py``, and the ``json-target``/``def-target``
+    overrides in each profile source). The four per-directory Makefiles/``prune.mk``
+    are replaced by one flat ``schema/va-spec/Makefile``/``prune.mk`` that builds
+    every source in the folder. A side benefit: cross-reference ("Used in:") lists
+    in the generated docs are computed across every source in a folder together, so
+    base classes now correctly show community profile classes that reference them
+    (previously invisible across the old subdirectory boundaries).
+  * makes the documentation fully self-contained: ``docs/source`` no longer
+    references anything outside itself. Generated class defs are synced into
+    ``docs/source/def/`` (via ``tools/sync-docs-def.sh``, wired into the
+    pre-commit hook), and the Maturity Model page and its images are materialized
+    locally rather than included from the vrs submodule.
+
+Dependency / version refresh
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+  * bumps the ``cat-vrs`` submodule to ``1.2.0-ballot.2026-09``, which pulls in
+    ``vrs`` ``2.2.0-ballot.2026-09`` and ``gkm-core`` ``1.3.0-ballot.2026-09``.
+  * retargets the imported namespace mappings in every VA-Spec source to the new
+    imported ``$id`` tokens (``cat-vrs/1.2.0-ballot.2026-09.1``,
+    ``vrs/2.2.0-ballot.2026-09.1``, ``gkm-core/1.3.0-ballot.2026-09.1``).
+  * sets VA-Spec's own ``$id`` token to ``1.1.0``.

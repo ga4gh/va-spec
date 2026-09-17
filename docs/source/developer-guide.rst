@@ -40,7 +40,7 @@ The **Proposition** and **Study Result** Base Profiles above are defined using a
 
 .. image:: /images/community-profiles-mechanism.png
 
-The **Statement** and **Evidence Line** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes* in the VA Model -- and both kinds compose the same core :ref:`Statement <Statement>` class. The domain-specificity of these profiles is defined in the **Proposition** profiles they encapsulate, as diagrammed.  Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline (e.g. ACMG-2015, AAC-2017, CCV-2022). The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`.
+The **Statement** profiles above -- including those, like the ACMG-2015 and CCV-2022 Evidence Line profiles, that play the **Evidence Line** role -- are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes*, in the VA Model, and all of them compose the same core :ref:`Statement <Statement>` class -- grouped above by the community guideline that defines them (ACMG-2015, CCV-2022, AAC-2017). The domain-specificity of each profile is defined in the **Proposition** profile it encapsulates, as diagrammed. Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline. The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`.
 
 ------
 
