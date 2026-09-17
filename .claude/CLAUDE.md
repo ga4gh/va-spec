@@ -171,4 +171,35 @@ otherwise the coverage tests fail.
 The default/integration branch is **`v1`**, not `main`. Ballot work happens
 on dated branches like `1.1.0-ballot.2026-09`. Version-branch creation is
 restricted to repo administrators; feature branches are named
-`<issue-number>-<short-description>` off an open issue.
+`<issue-number>-<short-description>` off an open issue. PRs for new features
+target `v1`; PRs for version patches target the appropriate minor-version
+branch instead. PR titles must reflect the associated issue, in the form
+`#<issue-number> <description>` (e.g. `#250 Move ancillaryResults and
+qualityMeasures into the core StudyResult class`, see
+[CONTRIBUTING.md](../CONTRIBUTING.md)).
+
+## Release notes
+
+A ballot branch's name already encodes its **target release version** as a
+SemVer `<MAJOR>.<MINOR>.<PATCH>-ballot.<YYYY>-<MM>` prefix (see the
+"Pre-releases" section of `docs/source/appendices/maturity_model.rst`) — e.g.
+branch `1.1.0-ballot.2026-09` targets release `1.1.0`. `docs/source/releases/`
+holds one file per **minor** version line, `<major>.<minor>.rst` (e.g.
+`1.0.rst`, `1.1.rst`), not one file per patch and not one file per ballot;
+each file stacks a subsection per patch release under that line, newest
+first (see `1.0.rst`: `1.0.1` above `1.0.0`), categorized per the maturity
+model's Major/Minor/Patch version-increment rules (same file, `## Testing
+model` below for the analogous class-registry rule; the increment rules
+themselves live in `maturity_model.rst`'s "Versioning examples" section).
+
+**When documenting a change made on a ballot branch, always add/update the
+entry in that target version's file** (derive `<major>.<minor>` from the
+branch name's prefix) — never a separate `<version>-ballot.<date>.rst` file.
+Such a ballot-dated file may already exist alongside the target file as a
+more detailed, ballot-cycle-specific technical changelog (e.g.
+`1.1.0-ballot.2026-09.rst` next to `1.1.rst`), but it is not a substitute:
+nothing links to it as "the 1.1.0 release notes," so a change documented only
+there is effectively undocumented for the actual release. Whether a given
+change lands in a brand-new `<major>.<minor>.rst` (first release under a new
+line) or a new subsection of an existing one (a further patch under an
+already-released minor line) follows from whether that file already exists.

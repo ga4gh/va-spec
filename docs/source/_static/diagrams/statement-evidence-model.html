@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <title>Statement / EvidenceLine / EvidenceItem class diagram</title>
 <style>
   :root {
@@ -69,6 +70,10 @@
   .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 220px; font-size: 11.5px; }
   .cls.role { border-style: dashed; background: var(--box-role); }
   .cls.small { width: 160px; }
+  /* Proposition/Method/Contribution/Document have short field lists that left
+     visible slack at 220px -- narrower boxes here also narrow the whole
+     diagram, letting the scale-to-fit script render everything larger. */
+  .cls.narrow { width: 195px; }
   .cls .head { padding: 7px 10px 6px; border-bottom: 1.3px solid var(--line-strong); }
   .cls.role .head { border-bottom-style: dashed; }
   .cls .stereo { font-family: ui-monospace, monospace; font-size: 9px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
@@ -106,7 +111,7 @@
     <div class="side-row" style="align-items:center;">
       <div class="side-stack">
         <div class="side-row">
-          <div class="cls">
+          <div class="cls narrow">
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Proposition</div></div>
             <div class="body">
@@ -119,7 +124,7 @@
           <div class="side-connector reverse"><span class="role">proposition</span><div class="line"></div><span class="card">1..1</span></div>
         </div>
         <div class="side-row">
-          <div class="cls">
+          <div class="cls narrow">
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Method</div></div>
             <div class="body">
@@ -145,7 +150,7 @@
       <div class="side-stack">
         <div class="side-row">
           <div class="side-connector"><span class="role">contributions</span><div class="line"></div><span class="card">0..m</span></div>
-          <div class="cls">
+          <div class="cls narrow">
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Contribution</div></div>
             <div class="body">
@@ -157,7 +162,7 @@
         </div>
         <div class="side-row">
           <div class="side-connector"><span class="role">reportedIn</span><div class="line"></div><span class="card">0..m</span></div>
-          <div class="cls">
+          <div class="cls narrow">
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Document</div></div>
             <div class="body">
@@ -251,12 +256,21 @@
     var naturalHeight = inner.scrollHeight;
     var scale = Math.min(1, stage.clientWidth / naturalWidth);
     inner.style.transform = 'scale(' + scale + ')';
-    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+    var visualHeight = Math.ceil(naturalHeight * scale);
+    stage.style.height = visualHeight + 'px';
     // Same-origin iframe embed: shrink the outer <iframe> itself to the
     // content's true rendered height so there's no leftover blank space
-    // below a diagram that scaled down to fit a narrower column.
+    // below a diagram that scaled down to fit a narrower column. Deliberately
+    // NOT document.documentElement.scrollHeight: for the document's root
+    // scrolling element, scrollHeight is floored to the current viewport
+    // height (i.e. the iframe's *existing* height) even when the actual
+    // content is shorter, so it can only ever confirm the iframe's current
+    // size, never shrink it. bodyPadTop/Bottom + visualHeight is the true
+    // rendered content height, independent of the iframe's current size.
     if (window.frameElement) {
-      window.frameElement.style.height = document.documentElement.scrollHeight + 'px';
+      var bodyStyle = getComputedStyle(document.body);
+      var bodyPad = parseFloat(bodyStyle.paddingTop) + parseFloat(bodyStyle.paddingBottom);
+      window.frameElement.style.height = Math.ceil(bodyPad + visualHeight) + 'px';
     }
   }
   window.addEventListener('resize', fit);

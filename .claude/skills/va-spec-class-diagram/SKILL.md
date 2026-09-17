@@ -175,15 +175,28 @@ narrow, explicit exception:
     title/caption/legend elements *before* measuring `#scale-inner`'s `scrollWidth` for the scale
     calculation — see `example.html`'s `textBlocks`/`diagramWidth` logic. This keeps the figure at
     the largest size the available space allows; text wraps to match it, never the reverse.
-  - **No leftover blank space below the diagram.** Because the whole file is a same-origin embed
-    (served from the same site as the doc page that iframes it), the fit script can reach the
-    embedding `<iframe>` element directly via `window.frameElement` and set its `style.height` to
-    `document.documentElement.scrollHeight` on every `fit()` call — so the iframe always matches the
-    content's true rendered height (which shrinks along with the scaled-down diagram at narrow
-    widths) instead of sitting at a fixed height with dead space under a smaller figure. This
-    requires `html, body` to *not* have an explicit `height: 100%` (or any other forced height) —
-    that would make `scrollHeight` report the box's forced height instead of the content's actual
-    extent, defeating the measurement.
+  - **No leftover blank space below the diagram, and pad top/bottom equally.** Because the whole
+    file is a same-origin embed (served from the same site as the doc page that iframes it), the fit
+    script can reach the embedding `<iframe>` element directly via `window.frameElement` and set its
+    `style.height` on every `fit()` call — so the iframe always matches the content's true rendered
+    height (which shrinks along with the scaled-down diagram at narrow widths) instead of sitting at
+    a fixed placeholder height with dead space under a smaller figure.
+    - **Do not measure this via `document.documentElement.scrollHeight` (or `document.body.scrollHeight`)
+      — it's a trap.** For the document's designated scrolling element, `scrollHeight` is *floored to
+      the current viewport height* — i.e. the iframe's own *existing* height — even when the actual
+      content is shorter. Since the iframe starts at whatever placeholder height the `.rst` embed
+      declares, this measurement just keeps confirming that same starting height forever and never
+      shrinks, which is exactly the "large dead space below the figure, small/uneven padding above
+      it" bug this caused in practice. Compute the true content height directly instead: take the
+      scaled diagram's own rendered height (`naturalHeight * scale`, the same value already used for
+      `stage.style.height`) and add the `<body>`'s own top+bottom padding (read via
+      `getComputedStyle`, not hardcoded, so it stays correct if the padding value ever changes) — see
+      `example.html`'s `bodyPad`/`visualHeight` logic. This is a plain geometry sum, not a
+      scrolling-element query, so it isn't subject to the viewport floor.
+    - Also give the file its own `<!DOCTYPE html>` (it's parsed as an independent document via
+      `iframe src=`, not inlined into the parent page) — without one it renders in quirks mode, which
+      changes which element (`html` vs `body`) is the "scrolling element" the floor above applies to,
+      making the bug even less predictable to reason about.
 - Before treating a diagram as final, publish it as an Artifact for review — these diagrams get
   iterated on with real design feedback (layout direction, what to include/exclude, arrow direction,
   alignment), so don't skip the review step even when the content itself seems obviously correct.
