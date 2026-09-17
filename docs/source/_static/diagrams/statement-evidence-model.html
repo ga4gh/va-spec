@@ -267,22 +267,38 @@
     stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
   }
 
-  // Same-origin iframe embed: continuously mirrors the outer <iframe>'s
-  // height to this document's actual rendered content height, so there's
-  // never a fixed/guessed height to go stale -- not on first load, and not
-  // later when the available width (and therefore the scaled diagram's
-  // height) changes. Deliberately NOT document.documentElement.scrollHeight:
-  // for the document's root scrolling element, scrollHeight is floored to
-  // the current viewport height (i.e. the iframe's *existing* height) even
-  // when actual content is shorter, so it can only ever confirm the
-  // iframe's current size, never correct it. getBoundingClientRect().height
-  // on body is a plain geometry read (border-box, so it already includes
-  // body's own padding) with no such floor.
+  // Continuously mirrors the outer <iframe>'s height to this document's
+  // actual rendered content height, so there's never a fixed/guessed height
+  // to go stale -- not on first load, and not later when the available
+  // width (and therefore the scaled diagram's height) changes. Deliberately
+  // NOT document.documentElement.scrollHeight: for the document's root
+  // scrolling element, scrollHeight is floored to the current viewport
+  // height (i.e. the iframe's *existing* height) even when actual content
+  // is shorter, so it can only ever confirm the iframe's current size,
+  // never correct it. getBoundingClientRect().height on body is a plain
+  // geometry read (border-box, so it already includes body's own padding)
+  // with no such floor.
   function syncFrameHeight() {
-    if (!window.frameElement) return;
-    var h = Math.ceil(document.body.getBoundingClientRect().height) + 'px';
-    if (window.frameElement.style.height !== h) {
-      window.frameElement.style.height = h;
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      // Same-origin embed (e.g. the built RTD site): reach the iframe
+      // directly -- simplest, synchronous, no listener needed on the
+      // parent page.
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      // window.frameElement is null whenever this document and its parent
+      // aren't same-origin -- notably, a locally opened file:// build,
+      // where every file:// document gets its own opaque origin even when
+      // "embedded" by a sibling file on disk. That's exactly how
+      // contributors preview docs before pushing, so silently no-op'ing
+      // here would mean the height-sync never works locally. postMessage
+      // works regardless of origin; the parent page's
+      // _static/diagram-iframe-height.js listens for this and applies the
+      // height to whichever iframe sent it.
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
     }
   }
 

@@ -189,15 +189,34 @@ narrow, explicit exception:
     number — treat it as continuously reactive, not something computed once.** A static iframe
     height (even one "corrected" a single time on load) goes stale the moment the available width
     changes again later for any reason — the RTD column resizing, a sidebar toggling, a font
-    finishing load — and a stale height either leaves dead space or clips content. Because the whole
-    file is a same-origin embed (served from the same site as the doc page that iframes it), reach
-    the embedding `<iframe>` element via `window.frameElement` and keep its `style.height` mirrored
-    to this document's own rendered height with a dedicated `ResizeObserver` on `document.body` (see
-    `example.html`'s `syncFrameHeight`) — separate from the `ResizeObserver` on `#stage` that drives
-    `fit()`'s width-based rescale. They're separate observers because scaling `#stage` is what
-    *causes* `body` to change size, not the other way around; each end needs its own hook rather than
-    threading one call through the other. This makes the sync reactive-by-construction to *any*
-    layout change, not just the ones a hand-picked call site remembers to trigger.
+    finishing load — and a stale height either leaves dead space or clips content. Keep the embedding
+    `<iframe>`'s `style.height` mirrored to this document's own rendered height with a dedicated
+    `ResizeObserver` on `document.body` (see `example.html`'s `syncFrameHeight`) — separate from the
+    `ResizeObserver` on `#stage` that drives `fit()`'s width-based rescale. They're separate observers
+    because scaling `#stage` is what *causes* `body` to change size, not the other way around; each
+    end needs its own hook rather than threading one call through the other. This makes the sync
+    reactive-by-construction to *any* layout change, not just the ones a hand-picked call site
+    remembers to trigger.
+    - **`window.frameElement` only works same-origin — it silently returns `null` for a locally
+      opened `file://` build, which is exactly how contributors preview docs before pushing.** Chrome
+      gives every `file://` document its own opaque origin, so a `file://` page "embedding" a sibling
+      `file://` iframe still counts as cross-origin between them; reaching for `frameElement` there
+      just no-ops with no error, which looks exactly like "the width scales but the height stays
+      static" (width-scaling still works because it's internal to the iframe's own document — no
+      cross-document access needed). Always fall back to `window.parent.postMessage({type: '...',
+      height}, '*')` when `window.frameElement` is falsy (`window.parent !== window` confirms this
+      document really is embedded) — postMessage works regardless of origin. The receiving side is a
+      small **site-wide** listener, `docs/source/_static/diagram-iframe-height.js` (wired in via
+      `html_js_files` in `conf.py`, so it's already loaded on every doc page — don't add a per-page
+      listener `<script>` to each `.rst` embed site), which matches `event.source` against
+      `iframe.contentWindow` to find which iframe sent the message and applies the height to it. Any
+      future diagram built with this skill gets this handled automatically as long as its own script
+      posts the same `{type: 'va-spec-diagram-height', height}` message shape.
+    - Test the *live-resize* case specifically, not just fresh-loads-at-different-sizes — dragging a
+      real browser window fires events differently than separate page loads at fixed sizes, and this
+      is where the `window.frameElement`/`file://` gap above actually surfaced. A quick way: Selenium
+      (`webdriver.Chrome()`, `driver.set_window_size(...)` twice on the *same* loaded page, screenshot
+      shortly after the second resize — no reload in between).
     - **Measure the height via `document.body.getBoundingClientRect().height`, not
       `document.documentElement.scrollHeight` (or `document.body.scrollHeight`) — the latter is a
       trap.** For the document's designated scrolling element, `scrollHeight` is *floored to the

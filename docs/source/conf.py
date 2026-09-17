@@ -193,6 +193,7 @@ html_logo = "images/GA-logo.png"
 html_static_path = ["_static"]
 
 html_css_files = ["theme_overrides.css"]
+html_js_files = ["diagram-iframe-height.js"]
 
 # Sidebars
 
