@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<title>StudyResult worked example</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
+    --box: #FAFAF8; --box-role: #F3F1EA; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+    --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+      --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+  .caption code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--ink); }
+
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
+
+  /* Two flex-grow line segments sandwich the role label, so the line spans
+     the connector's FULL height (touching the upper box's bottom edge and
+     the lower box's top edge directly, padding:0) and only breaks where the
+     label actually needs the space -- not a short stub line floating above
+     a gap. Arrowhead sits at the bottom segment's end, right at the lower
+     box's edge. */
+  .vconnector { display: flex; flex-direction: column; align-items: center; min-height: 46px; position: relative; padding: 0; }
+  .vconnector .vline { width: 1.5px; flex: 1 1 auto; min-height: 8px; background: var(--line-strong); position: relative; }
+  .vconnector .vline.arrow::after {
+    content: ""; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--line-strong);
+  }
+  .vconnector .role { flex: 0 0 auto; margin: 3px 0; font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 10.5px; color: var(--ink-soft); white-space: nowrap; }
+  .vconnector .card { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); opacity: 0.75; }
+
+  .side-connector { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; flex: 0 0 80px; padding: 0 2px; }
+  .side-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
+  .side-connector .line::after {
+    content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--line-strong);
+  }
+  .side-connector.reverse .line::after {
+    right: auto; left: -1px;
+    border-left: none; border-right: 6px solid var(--line-strong);
+  }
+  .side-connector .role { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); margin-bottom: 2px; white-space: nowrap; }
+  .side-connector .card { font-family: ui-monospace, monospace; font-size: 8.5px; color: var(--ink-soft); opacity: 0.75; margin-top: 2px; }
+  .side-row { display: flex; align-items: center; }
+  .side-stack { display: flex; flex-direction: column; gap: 14px; }
+
+  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 220px; font-size: 11.5px; }
+  .cls.role { border-style: dashed; background: var(--box-role); }
+  .cls.small { width: 220px; }
+  .cls.narrow { width: 220px; }
+  .cls .head { padding: 7px 10px 6px; border-bottom: 1.3px solid var(--line-strong); }
+  .cls.role .head { border-bottom-style: dashed; }
+  .cls .stereo { font-family: ui-monospace, monospace; font-size: 9px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
+  .cls .name { font-weight: 700; font-size: 13px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .body { padding: 6px 10px 8px; display: flex; flex-direction: column; gap: 2.5px; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop .ty { color: var(--accent); font-style: italic; }
+  .badge { position: absolute; top: -8px; right: 8px; font-family: ui-monospace, monospace; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
+  .badge.d { border-color: var(--d); color: var(--d); }
+  .foot { font-size: 9.5px; color: var(--ink-soft); font-style: italic; line-height: 1.35; padding: 5px 10px 8px; border-top: 1px dotted var(--line); margin-top: 2px; }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .sw { display: inline-block; width: 20px; height: 11px; border: 1.3px solid var(--line-strong); border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  .legend .sw.role { border-style: dashed; background: var(--box-role); }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Study Result composition &mdash; worked example</h1><span class="src">va-spec-source.yaml</span></div>
+  <p class="caption">The same structure as the <a href="study-result-model.html">class diagram</a>, filled in with illustrative example data for a gnomAD population-frequency result. Field names are the same; values here are example data, not type declarations.</p>
+
+  <div class="diagram">
+    <div class="side-row" style="align-items:flex-start;">
+      <div class="side-stack">
+        <div class="side-row">
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Method</div></div>
+            <div class="body">
+              <div class="prop"><b>name</b>: <span class="ty">"gnomAD QC Pipeline v3"</span></div>
+              <div class="prop"><b>methodType</b>: <span class="ty">"gnomAD QC pipeline"</span></div>
+            </div>
+          </div>
+          <div class="side-connector reverse"><span class="role">specifiedBy</span><div class="line"></div><span class="card">0..1</span></div>
+        </div>
+      </div>
+
+      <div class="cls">
+        <span class="badge tu">TU</span>
+        <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
+        <div class="body">
+          <div class="prop"><b>focus</b>: <span class="ty">"HRAS:c.173C&gt;T"</span></div>
+          <div class="prop"><b>sourceDataSet</b>: <span class="ty">"gnomAD v3.1.2"</span></div>
+        </div>
+        <div class="foot"><b style="color:var(--ink)">focus</b> is the variant or entity under study; profiles (e.g. Cohort Allele Frequency Study Result) add their own dedicated group fields, not shown here.</div>
+      </div>
+
+      <div class="side-stack">
+        <div class="side-row">
+          <div class="side-connector"><span class="role">contributions</span><div class="line"></div><span class="card">0..m</span></div>
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Contribution</div></div>
+            <div class="body">
+              <div class="prop"><b>contributor</b>: <span class="ty">"gnomAD Consortium"</span></div>
+              <div class="prop"><b>activityType</b>: <span class="ty">"data generation"</span></div>
+              <div class="prop"><b>date</b>: <span class="ty">2023-11-01</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="side-row">
+          <div class="side-connector"><span class="role">reportedIn</span><div class="line"></div><span class="card">0..m</span></div>
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Document</div></div>
+            <div class="body">
+              <div class="prop"><b>title</b>: <span class="ty">"gnomAD v3.1.2 notes"</span></div>
+              <div class="prop"><b>urls</b>: <span class="ty">"gnomad.org"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- margin-top pulls this connector (and DataSet below it) up out of the
+         dead space left by the taller right-hand Contribution/Document stack
+         -- safe because DataSet is the same width/position as StudyResult,
+         with no horizontal overlap with that stack (measured: DataSet
+         x=[440,660] vs Document x=[740,960]). -->
+    <div class="vconnector" style="margin-top:-12px;"><div class="vline"></div><span class="role">sourceDataSet <span class="card">0..1</span></span><div class="vline arrow"></div></div>
+
+    <div class="cls">
+      <span class="badge tu">TU</span>
+      <div class="head"><div class="name">DataSet</div></div>
+      <div class="body">
+        <div class="prop"><b>name</b>: <span class="ty">"gnomAD v3.1.2"</span></div>
+        <div class="prop"><b>version</b>: <span class="ty">"3.1.2"</span></div>
+        <div class="prop"><b>releaseDate</b>: <span class="ty">2021-11-01</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item">&laquo;abstract&raquo; = open base class</span>
+    <span class="item"><span class="badge tu" style="position:static;">TU</span>&nbsp;Trial Use</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+    }
+  }
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
+  }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
+})();
+</script>

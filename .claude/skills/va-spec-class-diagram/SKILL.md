@@ -22,13 +22,49 @@ words — its job is to make the class shapes and associations click at a glance
 class/association diagram; reach for `explainer-graphic` instead if the actual ask is a real-world-analogy
 teaching graphic for a non-technical audience.
 
+## Two flavors: class diagram vs. worked example
+
+Every diagram subject can have two sibling files, same layout, different box contents:
+
+- **Class diagram** (`<name>-model.html`) — the default, described throughout the rest of this
+  skill. Field lines show `propName: Type` or `propName: cardinality`. For a technical reader who
+  wants the required associations and constraints.
+- **Worked example** (`<name>-example.html`) — same boxes, same connectors, same badges, same
+  layout, but each `.prop` line shows a concrete illustrative *value* instead of a type
+  (`subject: "HRAS:c.173C>T"` instead of `subject: Entity|IRI`). For a reader — technical or not —
+  who wants to see how the data actually plays out. Build this as a literal copy of the `-model.html`
+  file with only the `.prop` value content (and title/caption) changed — never restructure the boxes
+  or connectors between the two; that consistency is the point. Style the example values as
+  italic (`.cls .prop .ty { font-style: italic; }` in this file's own copy of the CSS) so they read
+  as data, not type declarations, and adjust the caption to say so explicitly. Note in the caption
+  that this shows the *same structure* as the class diagram (link to it if both are built).
+  - **Worked-example boxes usually need to be wider than their class-diagram counterparts.**
+    Concrete values (quoted strings, real names) commonly run longer than terse type names like
+    `string` or `0..m`, so a width that was comfortably narrow for the class diagram will clip
+    example values under `text-overflow: ellipsis`. Re-run the width-measurement method (below)
+    against the actual example content — don't assume the class diagram's widths carry over.
+  - Source real example values from any existing worked-example docs content for the same subject
+    (old superseded PNGs are a good source if one is being replaced — check git history) rather than
+    inventing arbitrary ones; reusing the same running example (e.g. a specific variant/condition)
+    across a diagram's `.foot` notes, its example flavor, and the surrounding `.rst` prose keeps the
+    docs' worked examples recognizable as "the same story" as a reader moves between pages.
+  - Which classes are abstract, need `«abstract»`, etc. — verify against the schema exactly the same
+    way for both flavors; a worked example is not exempt from the schema-validity policy below.
+  - Not every diagram needs both flavors. An inheritance/hierarchy-focused diagram (e.g. a core class
+    hierarchy) is inherently about the type relationships themselves — the class-diagram flavor
+    alone is the right (and only) fit; there's no meaningful "worked example" of an inheritance edge.
+
 ## Reference implementation
 
-`example.html` in this skill's directory is the canonical, approved reference — a diagram of
+`example.html` in this skill's directory is the canonical, approved reference for the **class-diagram**
+flavor — a diagram of
 `Statement`/`Proposition`/`Method`/`Contribution`/`Document`/`EvidenceLine`/`EvidenceItem`/`StudyResult`/`DataItem`
 built with this skill. **Copy its `<style>` block verbatim** as the starting point for any new diagram;
 only add new component variants if the reference truly doesn't cover the shape you need (and if you
 do, fold the addition back into this file's component vocabulary below so it stays reusable).
+`example-worked.html` is the matching reference for the **worked-example** flavor (same subject,
+concrete values) — copy its approach (wider boxes, italic `.ty`, adjusted caption) when building a
+worked-example sibling for a new diagram.
 
 ## Design tokens
 
@@ -59,16 +95,64 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
   `Statement` nested as an `«EvidenceLine»` or an `«EvidenceItem»`). Use a `.stereo` line
   (`&laquo;RoleName&raquo;`) above the class name to name the role. Never invent a new dashed-box
   meaning — it always means "additional role of a class shown solidly elsewhere," per the legend.
+- **`«abstract»` stereotype** — the same `.stereo` line (plain solid box, not `.cls.role` — border
+  stays solid, this is a different, unrelated meaning from the role stereotype above) on any class
+  whose source YAML has `abstract: true` (e.g. `Proposition`, `StudyResult`). Verify this per class in
+  `schema/va-spec/*.yaml` — don't assume from a class "sounding" abstract. Add a legend entry
+  (`&laquo;abstract&raquo; = open base class`) whenever a diagram uses this.
 - **`.badge`** (`.tu` / `.d`) — small maturity marker, fixed to the box's top-right corner. Source the
   letter from that class's actual `maturity:` value in the relevant `*-source.yaml`: `TU` (trial use),
   `D` (draft), `N` (normative, if it ever comes up). Every class box gets one — don't skip it.
 - **`.vconnector`** — a vertical arrow between two stacked boxes, with a `.role` label (the property
-  name) and a `.card` cardinality label (`0..1`, `0..m`, `1..1`, etc.).
+  name) and a `.card` cardinality label (`0..1`, `0..m`, `1..1`, etc.). Structure: two `.vline`
+  elements (`flex: 1 1 auto`, so each grows to fill whatever space is left after the label's own
+  height is subtracted) sandwiching the `.role` label, with the arrowhead on the *second* `.vline`
+  (`class="vline arrow"`) — never the first. `.vconnector` itself has `padding: 0`, so its top/bottom
+  edges touch the boxes directly above/below with zero gap. This means the line must span the
+  connector's **entire** height (touching the upper box's bottom edge and the lower box's top edge),
+  broken only where the label needs the room — not a short stub line with dead space around it. Get
+  this wrong (e.g. a single fixed-height `.line` plus a label that just follows it, with no second
+  segment) and the result looks disconnected: an arrow that stops in mid-air above a label that
+  isn't visually attached to the box below it.
 - **`.side-connector`** — a short horizontal arrow used when boxes sit side-by-side (e.g. peripheral
   classes like `Proposition`/`Method`/`Contribution`/`Document` flanking a central class). Add the
   `.reverse` modifier when the arrowhead needs to point left instead of right (see arrow-direction
   rule below). Give every `.side-connector` a fixed width (see `example.html`) so parallel connectors
   in a stacked column line up — don't let label text length change the box alignment.
+  - **Boxes in a row are top-aligned** (`align-items: flex-start` on the `.side-row`), not vertically
+    centered. This is deliberate, not cosmetic: a straight `.side-connector` line sits at its own row's
+    natural center (the *source* box's own vertical center, since each stacked row is independently
+    centered by flexbox) — and every such line must land within the vertical span of *both* boxes it
+    connects, or the arrowhead visually floats outside the box it's supposedly pointing at.
+  - **Before shipping a `.side-connector`, verify this with real measurements, not by eye** — measure
+    each box's rendered `top`/`bottom` and the connector line's vertical midpoint (e.g. via a quick
+    Selenium/JS check: `getBoundingClientRect()` on the two `.cls` boxes and the connector's `.line`),
+    and confirm the midpoint falls inside *both* boxes' `[top, bottom]` ranges. This routinely fails
+    for the second box in a two-box `.side-stack` (e.g. `Method` above `StudyGroup`, both connecting
+    sideways to one shorter central box) — the second row's natural center is measurably below the
+    central box's bottom edge even though it looks plausible in a quick glance at a screenshot.
+  - **When a straight line would exit either box's bounds, use `.elbow-path` instead** — a bent
+    (horizontal→vertical→horizontal) connector, not a straight line drawn at the wrong angle. Structure:
+    ```html
+    <div class="side-connector elbow">
+      <span class="role">focus</span>
+      <div class="elbow-path" style="height:70px;">
+        <div class="seg-source" style="top:35px;"></div>
+        <div class="seg-v" style="top:7px; height:28px;"></div>
+        <div class="seg-target" style="top:7px;"></div>
+      </div>
+      <span class="card">1..1</span>
+    </div>
+    ```
+    `seg-source` (with the arrowhead, via `::after`) stays at the connector's natural row-centered
+    position — it's already inside the source box's bounds, so it never needs to move. `seg-target`
+    and the connecting `seg-v` jog to a `top` that lands inside the *target* box's bounds instead
+    (pick a value with a comfortable margin from the target's edge, not the bare minimum). The three
+    `top`/`height` values are specific to that connector's actual measured geometry — recompute them
+    (same measurement method as above) whenever the connected boxes' content changes; don't reuse
+    old offsets. See `.elbow-path` in `example.html`/`study-result-model.html` for the full CSS.
+    This pattern currently only implements the arrow-points-left (`reverse`) case; a forward-pointing
+    elbow would mirror `seg-source`/`seg-target` (arrowhead moves to `seg-target`'s far edge instead).
 - **`.frame`** — a large dashed grouping rectangle with a small `.frame-label` tab in the top-left
   corner, used to show that several sibling boxes are all subclasses/shapes of one abstract parent
   (e.g. wrapping `StudyResult`/`DataItem`/`Statement «EvidenceItem»` in an `InformationEntity` frame).
@@ -128,6 +212,33 @@ narrow, explicit exception:
   lower-opacity text) so it doesn't read as authoritative at a glance. Do not reuse the `.badge`
   maturity markers (`TU`/`D`/`N`) for this — those describe maturity of something that exists, not
   existence itself.
+- **Standing policy: always reclaim avoidable dead vertical space — check this on every diagram, not
+  just when it's pointed out.** A lower section doesn't have to wait for the *tallest* sibling in the
+  row above it; it only has to clear whatever it would actually collide with. A `.diagram`'s vertical
+  flow (flex-direction: column) naturally starts each new element below the previous row's tallest
+  column, even when that height came from a peripheral side-stack the lower section has no horizontal
+  overlap with (e.g. a central `Statement`/`StudyResult` box that's shorter than the
+  `Proposition`/`Method` stack, or the `Contribution`/`Document` stack, beside it). Unreclaimed dead
+  space like this reads as visually unbalanced — treat it as a defect to fix proactively, on every row
+  transition in every diagram, the same way you'd check width-clipping or box overlap, not as
+  something to wait for explicit feedback on.
+  - Before shipping, measure **every** box's rendered `left`/`right`/`top`/`bottom` (not just the ones
+    you changed) and run a pairwise overlap check across all of them (`a.left < b.right && b.left <
+    a.right && a.top < b.bottom && b.top < a.bottom` for every pair) — don't eyeball this from a
+    screenshot, since a few px of accidental overlap is easy to miss visually but breaks the diagram.
+  - For each row transition, compare the row's actual height against the height of the specific
+    column the *next* element depends on. If a lower-section box's horizontal range doesn't intersect
+    a taller sibling's, pull the connector immediately above it up via a negative `margin-top` (see
+    `example.html`'s `hasEvidenceLines` vconnector, or `study-result-model.html`'s `sourceDataSet`
+    vconnector) equal to roughly (row height − the depended-on column's height), leaving a small
+    breathing-room gap (don't use the bare-minimum gap — a few extra px of margin costs nothing and
+    protects against small content changes tipping it into overlap).
+  - Comment the exact measured x-ranges that make each pull-up safe, since the safety argument (no
+    horizontal overlap) isn't obvious from the CSS alone and won't survive a future content change
+    unless it's re-verified the same way. Re-run the full measurement whenever any box's content
+    changes — a footnote edit alone can change which column is tallest (this happened in practice:
+    lengthening a `.foot` note made the central box the tallest column, eliminating the pull-up
+    headroom that existed before the edit).
 
 ## Output and delivery
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<title>Statement / EvidenceLine / EvidenceItem class diagram</title>
+<title>Statement / EvidenceLine / EvidenceItem worked example</title>
 <style>
   :root {
     --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
@@ -91,15 +91,15 @@
 
   .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 220px; font-size: 11.5px; }
   .cls.role { border-style: dashed; background: var(--box-role); }
-  .cls.small { width: 160px; }
-  /* Proposition/Method/Contribution/Document have short field lists that left
-     visible slack at 220px -- narrower boxes here also narrow the whole
-     diagram, letting the scale-to-fit script render everything larger. 160px
-     is a measured safety margin above the ~145px point where the longest
-     field line ("activityType: string") starts clipping under text-overflow:
-     ellipsis -- see the va-spec-class-diagram skill for the measurement
-     method before narrowing further. */
-  .cls.narrow { width: 160px; }
+  .cls.small { width: 220px; }
+  /* Unlike the formal class diagram (statement-evidence-model.html), boxes
+     here are NOT narrowed to 160px: worked-example values (quoted strings,
+     concrete data) run longer than terse type names like "string" or
+     "0..m", and 160px clips them under text-overflow:ellipsis. Measured
+     against this file's actual example content -- see the
+     va-spec-class-diagram skill's width-measurement method before changing
+     either this or the example values. */
+  .cls.narrow { width: 220px; }
   .cls .head { padding: 7px 10px 6px; border-bottom: 1.3px solid var(--line-strong); }
   .cls.role .head { border-bottom-style: dashed; }
   .cls .stereo { font-family: ui-monospace, monospace; font-size: 9px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
@@ -107,7 +107,7 @@
   .cls .body { padding: 6px 10px 8px; display: flex; flex-direction: column; gap: 2.5px; }
   .cls .prop { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .cls .prop b { color: var(--ink); font-weight: 600; }
-  .cls .prop .ty { color: var(--accent); }
+  .cls .prop .ty { color: var(--accent); font-style: italic; }
   .badge { position: absolute; top: -8px; right: 8px; font-family: ui-monospace, monospace; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
   .badge.d { border-color: var(--d); color: var(--d); }
   .foot { font-size: 9.5px; color: var(--ink-soft); font-style: italic; line-height: 1.35; padding: 5px 10px 8px; border-top: 1px dotted var(--line); margin-top: 2px; }
@@ -130,8 +130,8 @@
 <div class="wrap">
  <div id="stage">
   <div id="scale-inner">
-  <div class="title-row"><h1>Statement &amp; Evidence composition</h1><span class="src">va-spec-source.yaml</span></div>
-  <p class="caption">A <code>Statement</code> can appear in three roles: the top-level claim, a nested <code>&laquo;EvidenceLine&raquo;</code> argument for it, and even an <code>&laquo;EvidenceItem&raquo;</code> cited by one. Same class throughout &mdash; only the position in the structure changes.</p>
+  <div class="title-row"><h1>Statement &amp; Evidence composition &mdash; worked example</h1><span class="src">va-spec-source.yaml</span></div>
+  <p class="caption">The same structure as the <a href="statement-evidence-model.html">class diagram</a>, filled in with illustrative example data for a variant pathogenicity assessment. Field names are the same; values here are example data, not type declarations.</p>
 
   <div class="diagram">
     <div class="side-row" style="align-items:flex-start;">
@@ -141,9 +141,9 @@
             <span class="badge tu">TU</span>
             <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Proposition</div></div>
             <div class="body">
-              <div class="prop"><b>subject</b>: <span class="ty">Entity|IRI</span></div>
-              <div class="prop"><b>predicate</b>: <span class="ty">string</span></div>
-              <div class="prop"><b>object</b>: <span class="ty">Entity|IRI</span></div>
+              <div class="prop"><b>subject</b>: <span class="ty">"HRAS:c.173C&gt;T"</span></div>
+              <div class="prop"><b>predicate</b>: <span class="ty">"is causal for"</span></div>
+              <div class="prop"><b>object</b>: <span class="ty">"Costello Syndrome"</span></div>
             </div>
           </div>
           <div class="side-connector reverse"><span class="role">proposition</span><div class="line"></div><span class="card">1..1</span></div>
@@ -153,16 +153,16 @@
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Method</div></div>
             <div class="body">
-              <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-              <div class="prop"><b>methodType</b>: <span class="ty">string</span></div>
+              <div class="prop"><b>name</b>: <span class="ty">"ACMG/AMP Guidelines 2015"</span></div>
+              <div class="prop"><b>methodType</b>: <span class="ty">"ACMG guidelines"</span></div>
             </div>
           </div>
           <div class="side-connector elbow">
             <span class="role">specifiedBy</span>
             <div class="elbow-path" style="height:60px;">
               <div class="seg-source" style="top:30px;"></div>
-              <div class="seg-v" style="top:7px; height:23px;"></div>
-              <div class="seg-target" style="top:7px;"></div>
+              <div class="seg-v" style="top:8px; height:22px;"></div>
+              <div class="seg-target" style="top:8px;"></div>
             </div>
             <span class="card">0..1</span>
           </div>
@@ -173,10 +173,10 @@
         <span class="badge tu">TU</span>
         <div class="head"><div class="name">Statement</div></div>
         <div class="body">
-          <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
-          <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
-          <div class="prop"><b>score</b>: <span class="ty">number</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
+          <div class="prop"><b>strength</b>: <span class="ty">"high confidence"</span></div>
+          <div class="prop"><b>score</b>: <span class="ty">0.95</span></div>
+          <div class="prop"><b>outcome</b>: <span class="ty">"pathogenic"</span></div>
         </div>
         <div class="foot"><b style="color:var(--ink)">outcome</b> is typically translatable with the direction/strength/score tuple of values</div>
       </div>
@@ -188,9 +188,9 @@
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Contribution</div></div>
             <div class="body">
-              <div class="prop"><b>contributor</b>: <span class="ty">Agent</span></div>
-              <div class="prop"><b>activityType</b>: <span class="ty">string</span></div>
-              <div class="prop"><b>date</b>: <span class="ty">datetime</span></div>
+              <div class="prop"><b>contributor</b>: <span class="ty">"Jane Doe, MD"</span></div>
+              <div class="prop"><b>activityType</b>: <span class="ty">"curation"</span></div>
+              <div class="prop"><b>date</b>: <span class="ty">2024-03-15</span></div>
             </div>
           </div>
         </div>
@@ -200,8 +200,8 @@
             <span class="badge tu">TU</span>
             <div class="head"><div class="name">Document</div></div>
             <div class="body">
-              <div class="prop"><b>title</b>: <span class="ty">string</span></div>
-              <div class="prop"><b>urls</b>: <span class="ty">0..m</span></div>
+              <div class="prop"><b>title</b>: <span class="ty">"ClinVar SCV0012345"</span></div>
+              <div class="prop"><b>urls</b>: <span class="ty">"clinvar.nih.gov"</span></div>
             </div>
           </div>
         </div>
@@ -212,8 +212,8 @@
          dead space left by the top row's taller side-stacks (Proposition/Method,
          Contribution/Document) -- safe because the EvidenceLine box below is the
          same width/position as Statement, with no horizontal overlap with either
-         stack (measured: EvidenceLine x=[440,660] vs Method x=[200,360] and
-         Document x=[740,900]). Value = row-height minus Statement's own height,
+         stack (measured: EvidenceLine x=[440,660] vs Method x=[140,360] and
+         Document x=[740,960]). Value = row-height minus Statement's own height,
          minus a small breathing-room gap -- re-measure if content changes. -->
     <div class="vconnector" style="margin-top:-46px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
@@ -224,10 +224,10 @@
         <div class="name">Statement</div>
       </div>
       <div class="body">
-        <div class="prop"><b>proposition</b>: <span class="ty">0..1</span></div>
-        <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
-        <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
-        <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+        <div class="prop"><b>proposition</b>: <span class="ty">(omitted)</span></div>
+        <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
+        <div class="prop"><b>strength</b>: <span class="ty">"moderate"</span></div>
+        <div class="prop"><b>outcome</b>: <span class="ty">"contributing"</span></div>
       </div>
       <div class="foot"><b style="color:var(--ink)">proposition</b> usually omitted &mdash; inherits the parent's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">direction</b>: neutral, with <b style="color:var(--ink)">strength</b> marking it as additional evidence.</div>
     </div>
@@ -241,16 +241,16 @@
           <span class="badge tu">TU</span>
           <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
           <div class="body">
-            <div class="prop"><b>focus</b>: <span class="ty">Entity|IRI</span></div>
-            <div class="prop"><b>sourceDataSet</b>: <span class="ty">DataSet</span></div>
+            <div class="prop"><b>focus</b>: <span class="ty">"HRAS:c.173C&gt;T"</span></div>
+            <div class="prop"><b>sourceDataSet</b>: <span class="ty">"gnomAD v3.1.2"</span></div>
           </div>
         </div>
         <div class="cls small">
           <span class="badge d">D</span>
           <div class="head"><div class="name">DataItem</div></div>
           <div class="body">
-            <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-            <div class="prop"><b>value</b>: <span class="ty">obj|str|IRI</span></div>
+            <div class="prop"><b>name</b>: <span class="ty">"alleleFrequency"</span></div>
+            <div class="prop"><b>value</b>: <span class="ty">0.002</span></div>
           </div>
           <div class="foot">polymorphic &mdash; any shape a method needs</div>
         </div>
@@ -261,8 +261,8 @@
             <div class="name">Statement</div>
           </div>
           <div class="body">
-            <div class="prop"><b>proposition</b>: <span class="ty">0..1</span></div>
-            <div class="prop"><b>&hellip;</b> <span class="ty">(recursive)</span></div>
+            <div class="prop"><b>proposition</b>: <span class="ty">(omitted)</span></div>
+            <div class="prop"><b>&hellip;</b> <span class="ty">co-segregation data</span></div>
           </div>
           <div class="foot">evidence can itself be a Statement</div>
         </div>

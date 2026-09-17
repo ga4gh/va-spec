@@ -20,7 +20,7 @@ Statement Structure
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/statement-evidence-model.html" style="width:100%; height:750px; border:0;" title="Statement, Proposition, and Evidence class diagram"></iframe>
+   <iframe src="../_static/diagrams/statement-evidence-example.html" style="width:100%; height:750px; border:0;" title="Statement, Proposition, and Evidence worked example"></iframe>
 
 **Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item).
 
@@ -71,15 +71,16 @@ As seen in the previous diagrams, **Study Results** may be linked to **Evidence 
 
 .. core-im-study-result-data-structure:
 
-.. figure:: ../images/study-result-data-structure.png
+.. raw:: html
 
-   Study Result Data Structure
+   <iframe src="../_static/diagrams/study-result-example.html" style="width:100%; height:550px; border:0;" title="Study Result worked example"></iframe>
 
-   **Legend** A class-level view of the Study Result-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
+**Legend** A class-level view of the Study Result-based structures supported in VA-Spec data, filled in with illustrative example data for a gnomAD population-frequency result.
 
 In this structure:
 
-* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came, and a description of the **Study Group** from which the data was collected.
+* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came.
+* Some profiles narrow **focus** and add their own dedicated group fields -- e.g. a Cohort Allele Frequency Study Result's ``cohort`` attribute, which references the **Study Group** the data was collected from. This is not part of the base **Study Result** class itself.
 * Note that no **Proposition** object is used here, because **Study Results** represent more foundational data, and do not assert or assess evidence for possible facts about the domain.
 * As with **Statements** and **Evidence Lines**, classes surrounding a **Study Result** can be used to describe the provenance of the  data it contains.
 

@@ -13,15 +13,16 @@ In VA-Spec, the :ref:`Study Result <StudyResult>` class and its :ref:`profiles <
 
 .. core-im-study-result-data-structure:
 
-.. figure:: ../../../images/study-result-data-structure.png
+.. raw:: html
 
-   Study Result Data Structure
+   <iframe src="../../../_static/diagrams/study-result-example.html" style="width:100%; height:550px; border:0;" title="Study Result worked example"></iframe>
 
-   **Legend** A class-level view of the Study Result-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
+**Legend** A class-level view of the Study Result-based structures supported in VA-Spec data, filled in with illustrative example data for a gnomAD population-frequency result.
 
 In this structure:
 
-* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came, and a description of the **Study Group** from which the data was collected.
+* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came.
+* Some profiles narrow **focus** and add their own dedicated group fields -- e.g. a Cohort Allele Frequency Study Result's ``cohort`` attribute, which references the **Study Group** the data was collected from. This is not part of the base **Study Result** class itself.
 * Note that no **Proposition** object is used here, because Study Results represent more foundational data, and do not assert or assess evidence for possible facts about the domain.
 * As with Statements and Evidence Lines, surrounding classes can be used to describe the provenance of the Study Result and its data items.
 
