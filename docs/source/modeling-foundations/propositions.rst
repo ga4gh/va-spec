@@ -11,7 +11,7 @@ As illustrated in the :ref:`Data Structures <data-structures>` section, the job 
 Propositions in Statements
 ##########################
 
-In a **Statement**, a given **Proposition** may be *asserted* to be true or false, or *assessed* to report the strength of existing evidence supporting it (e.g. "there is presently *moderate* evidence *supporting* the proposition that *'HRAS:c.173C>T causes Costello Syndrome'"*).
+In a **Statement**, a given **Proposition** may be *asserted* to be true or false, or *assessed* to report the strength of existing evidence for or against it (e.g. "there is presently *likely* evidence *disputing* the proposition that *'SOS1:c.3322G>A is causal for RASopathy'"*).
 
 An example of a **Proposition** as an *assessed* possible fact is illustrated below.
 
@@ -25,7 +25,7 @@ Legend: **Left panel (Model).** Abridged version of the Variant Pathogenicity St
 Propositions in Evidence Lines
 ##############################
 
-In a **Statement** used as an **Evidence Line**, the ``proposition`` attribute captures the possible fact toward which **Evidence Items** are assessed and scored (e.g. that gnomAD population frequency evidence items are evaluated toward proposition that *"HRAS:c.173C>T causes Costello Syndrome"* when assessing the evidence as   providing *moderate* *support*). An example of a *Proposition** in this role is illustrated below.
+In a **Statement** used as an **Evidence Line**, the ``proposition`` attribute captures the possible fact toward which **Evidence Items** are assessed and scored (e.g. that a gnomAD population frequency evidence item is evaluated toward the proposition that *"SOS1:c.3322G>A is causal for RASopathy"* when assessing the evidence as providing *strong* support *against* it). An example of a *Proposition** in this role is illustrated below.
 
 .. raw:: html
 
