@@ -27,7 +27,7 @@ The diagrams below illustrate where subclass- and composition-based mechanisms a
 .. image:: /images/core-model-classes-mechanism.png
 
 
-The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes must first be 'specialized' through subclassing. Note that some classes in the model are imported from gkm-core, vrs, and cat-vrs models, as indicated by annotations in green which indicate the GKM specification in which each is defined.
+The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes (shown with dashed borders) must first be 'specialized' through subclassing.
 
 
 -------
