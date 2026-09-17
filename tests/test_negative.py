@@ -10,6 +10,7 @@ class's `$ref`s.
 """
 import yaml
 import pytest
+from copy import deepcopy
 from jsonschema import ValidationError
 from config import validator, fixtures_path
 
@@ -125,3 +126,29 @@ def test_aac_2017_tier_i_requires_strong_strength():
     instance["strength"]["primaryCoding"]["code"] = "potential"
     with pytest.raises(ValidationError):
         validator["va-spec.aac-2017:VariantClinicalSignificanceStatement"].validate(instance)
+
+
+@pytest.mark.parametrize(
+    "cls,fixture",
+    [
+        ("va-spec.acmg-2015:VariantPathogenicityEvidenceLine", "acmg-no-criteria-met-evidence-line.yaml"),
+        ("va-spec.acmg-2015:VariantPathogenicityEvidenceLine", "acmg-code-not-met-evidence-line.yaml"),
+        ("va-spec.ccv-2022:VariantOncogenicityEvidenceLine", "ccv-no-criteria-met-evidence-line.yaml"),
+        ("va-spec.ccv-2022:VariantOncogenicityEvidenceLine", "ccv-code-not-met-evidence-line.yaml"),
+    ],
+)
+def test_not_met_evidence_requires_neutral_without_strength(cls, fixture):
+    instance = _load_fixture(fixture)
+
+    invalid_direction = deepcopy(instance)
+    invalid_direction["direction"] = "supports"
+    with pytest.raises(ValidationError):
+        validator[cls].validate(invalid_direction)
+
+    invalid_strength = deepcopy(instance)
+    invalid_strength["strength"] = {
+        "type": "MappableConcept",
+        "primaryCoding": {"code": "supporting", "system": invalid_strength["specifiedBy"]["reportedIn"]["name"]},
+    }
+    with pytest.raises(ValidationError):
+        validator[cls].validate(invalid_strength)

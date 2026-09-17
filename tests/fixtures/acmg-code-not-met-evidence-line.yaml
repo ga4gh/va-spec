@@ -1,0 +1,24 @@
+id: acmgCodeNotMetEvidenceLine
+type: Statement
+proposition:
+  type: VariantPathogenicityProposition
+  subject:
+    type: CategoricalVariant
+    name: NP_000305.3:p.Arg11Thr
+  predicate: isCausalFor
+  object:
+    type: MappableConcept
+    conceptType: Disease
+    name: Unspecified
+direction: neutral
+specifiedBy:
+  type: Method
+  methodType: case_control_enrichment_assessment
+  reportedIn:
+    type: Document
+    name: ACMG Guidelines, 2015
+outcome:
+  type: MappableConcept
+  primaryCoding:
+    code: BS2_not_met
+    system: ACMG Guidelines, 2015

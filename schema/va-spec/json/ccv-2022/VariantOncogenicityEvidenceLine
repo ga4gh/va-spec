@@ -90,12 +90,12 @@
                ]
             },
             "outcome": {
-               "description": "The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met').",
+               "description": "The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'OS2_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.",
                "properties": {
                   "primaryCoding": {
                      "code": {
-                        "pattern": "^((?:OVS1|SBVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:OS[1-3]|SBS[1-2])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|(?:OM[1-4])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(OP[1-4]|SBP[1-2])(?:_(?:not_met|very_strong|strong|moderate))?)$",
-                        "example": "OS3_moderate, OS3_not_met, OVS1, SBVS1_not_met"
+                        "pattern": "^(?:no_criteria_met|((?:OVS1|SBVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:OS[1-3]|SBS[1-2])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|(?:OM[1-4])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(OP[1-4]|SBP[1-2])(?:_(?:not_met|very_strong|strong|moderate))?))$",
+                        "example": "OS3_moderate, OS3_not_met, OVS1, SBVS1_not_met, no_criteria_met"
                      },
                      "system": {
                         "const": "ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022"
@@ -150,7 +150,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^(SBVS1|SBS1|OP4)(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|(SBVS1|SBS1|OP4)(_.+)?)$"
                            }
                         }
                      }
@@ -184,7 +184,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^(OS2|SBS2)(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|(OS2|SBS2)(_.+)?)$"
                            }
                         }
                      }
@@ -218,7 +218,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^(OVS1|OM2|SBP2)(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|(OVS1|OM2|SBP2)(_.+)?)$"
                            }
                         }
                      }
@@ -252,7 +252,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^OM1(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|OM1(_.+)?)$"
                            }
                         }
                      }
@@ -286,7 +286,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^(OS1|OM4)(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|(OS1|OM4)(_.+)?)$"
                            }
                         }
                      }
@@ -320,7 +320,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^(OS3|OM3|OP3)(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|(OS3|OM3|OP3)(_.+)?)$"
                            }
                         }
                      }
@@ -354,7 +354,7 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^(OP1|SBP1)(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|(OP1|SBP1)(_.+)?)$"
                            }
                         }
                      }
@@ -388,12 +388,50 @@
                      "primaryCoding": {
                         "properties": {
                            "code": {
-                              "pattern": "^OP2(_.+)?$"
+                              "pattern": "^(?:no_criteria_met|OP2(_.+)?)$"
                            }
                         }
                      }
                   }
                }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "outcome"
+            ]
+         },
+         "then": {
+            "properties": {
+               "direction": {
+                  "const": "neutral"
+               }
+            },
+            "not": {
+               "required": [
+                  "strength"
+               ]
             }
          }
       }

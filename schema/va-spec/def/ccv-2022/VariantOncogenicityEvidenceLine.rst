@@ -113,7 +113,7 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a criterion is not met, the outcome is the criterion code plus the string 'not_met' (e.g. 'OS2_not_met').
+      - The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'OS2_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.
    *  - hasEvidenceItems
       -
                         .. raw:: html
@@ -150,35 +150,39 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
    *  - *specifiedBy.methodType*
       - **population_data_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^(SBVS1|SBS1|OP4)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(SBVS1|SBS1|OP4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **functional_data_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^(OS2|SBS2)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(OS2|SBS2)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **primary_sequence_consequence_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^(OVS1|OM2|SBP2)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(OVS1|OM2|SBP2)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **functional_domain_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^OM1(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|OM1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **amino_acid_analogy_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^(OS1|OM4)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(OS1|OM4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **somatic_hotspot_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^(OS3|OM3|OP3)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(OS3|OM3|OP3)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **in_silico_impact_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^(OP1|SBP1)(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|(OP1|SBP1)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **single_genetic_etiology_assessment**
       - *outcome.primaryCoding.code*
-      - match the pattern **^OP2(_.+)?$**
+      - match the pattern **^(?:no_criteria_met|OP2(_.+)?)$**
+
+If *outcome.primaryCoding.code* must match the pattern **^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$**, then:
+
+* *direction* must be: **neutral**
 
 
 **Composes:** :ref:`Statement`
