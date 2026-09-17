@@ -202,22 +202,65 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
 - **`.legend`** — keep it minimal. Only call out things that aren't self-evident from the boxes
   themselves (e.g. what a dashed box means, what the badges mean). Don't legend obvious things like
   "solid box = a class."
-- **`.inherit`** — a vertical **inheritance** connector: a plain line with a small hollow (open)
-  triangle pointing at the parent, per UML convention. Visually distinct from `.vconnector`'s filled
-  arrowhead on purpose — inheritance and association are different relationships and shouldn't look
-  the same. No `.role`/`.card` label; inheritance doesn't carry one. Only use this for genuine
-  `inherits:` relationships confirmed in the source YAML (see `core-class-hierarchy-model.html`) —
-  never for composition/association, even loosely-worded ones.
-- **`.bus-group`/`.bus-row`/`.bus-stub`/`.bus-line`** — when *several* sibling classes inherit the
-  same parent and, laid out side by side, are collectively wider than the parent box below them, a
-  single `.inherit` connector per child has nowhere valid to land (the parent's bounds don't span
-  that far — the exact "connector exits box bounds" failure mode, at the scale of N children instead
-  of one). Use a bus instead: each child gets a short `.bus-stub` line of equal height, a `.bus-line`
-  spans the full row (an auto-width block sibling of `.bus-row` inside a `.bus-group` with
-  `align-items: stretch`, so it matches the row's width with no manual measurement), and a *single*
-  `.inherit` connector runs from the bus down into the parent. Reserve this for genuine one-parent-
-  many-children inheritance fan-out; don't reach for it as a generic "many boxes, one arrow" shortcut
-  for association connectors, where each individual relationship should stay visually distinct.
+- **`.inherit`** — a vertical **inheritance** connector for two boxes stacked in a plain parent-above/
+  child-below column, with **no** other siblings offset to the side: a plain line with a small hollow
+  (open) triangle pointing at the parent, per UML convention. Visually distinct from `.vconnector`'s
+  filled arrowhead on purpose — inheritance and association are different relationships and shouldn't
+  look the same. No `.role`/`.card` label; inheritance doesn't carry one. Only use this for genuine
+  `inherits:` relationships confirmed in the source YAML — never for composition/association, even
+  loosely-worded ones. **The parent must be positioned above the child** — the component's CSS (a
+  `border-bottom` triangle placed *after* the connecting line in DOM order) only reads as "hollow
+  triangle apex touching the parent" when the parent sits above; used the other way round (as an
+  earlier draft of `core-class-hierarchy-model.html` did, with `Entity` drawn *below* its children) it
+  silently renders backwards — apex toward the child, wide base toward the parent — which is easy to
+  miss without deliberately checking triangle orientation against which box is actually the parent.
+- **Per-edge SVG inheritance router** (see `core-class-hierarchy-model.html`'s `drawTree()` script) —
+  for a hierarchy diagram where **every child needs its own individually-traceable arrow** to a shared
+  parent (rather than one converged `.bus-group` arrow standing in for all of them — appropriate when
+  the diagram's whole point is to formally enumerate each `inherits:` edge), plain CSS connectors don't
+  scale: a parent flanked by children stacked in side columns needs elbow-routed lines whose exact
+  bend points depend on every box's rendered position, which CSS alone can't compute. The pattern is a
+  small `<svg class="connector-svg">` overlay (absolutely positioned, sized to its `.hier-tree`
+  container) plus a `drawTree()` function that runs after layout (on load/resize, same triggers as
+  `fit()`) and, per parent→child pair declared in a `data-edges='[["Parent","Child","mode"],...]'`
+  JSON attribute:
+  - **`"straight"`** — child and parent have no intervening siblings between them (e.g. `Element`
+    directly above its row of children with nothing else in the way); a single edge-to-edge line is
+    fine, using `getBoundingClientRect()`-based box rects to find where the line crosses each box's
+    border.
+  - **`"left-fan"` / `"right-fan"`** — child is one of several stacked in a side column beside the
+    parent. A straight diagonal here would cut across whichever siblings sit between it and the
+    parent's row (verify this the same way as any other connector — a script that walks every
+    drawn segment against every *other* box's rect and flags an intersection; this is what caught the
+    bug in the first draft here, where `Entity → StudyGroup` cut straight through the `Agent` box
+    above it). Route each through a **private lane** in the gap between the column and the parent
+    instead: horizontal stub out to a lane X clear of the column, vertical run up the lane, then a
+    short horizontal jog into a unique point along the parent's edge (offset per sibling index so
+    several convergent arrowheads don't stack on the same pixel).
+  - **`"bottom-fan"`** — parent sits above a row wider than itself with off-center targets (e.g.
+    `InformationEntity` above a `StudyResult | Statement | DataItem` row). Drop straight down from the
+    parent to a trunk Y that clears every satellite column *first*, fan out horizontally at that safe
+    Y, then drop into each target — not a direct diagonal, which risks clipping through whatever sits
+    between the parent and an off-center target (this bit too: `InformationEntity → DataItem` cut
+    through `ConceptSet` before the trunk-Y fix). **The polyline's points must run child → parent**,
+    even though the drop visually reads top-to-bottom — `marker-end` (the arrowhead) renders on the
+    *last* point, and it must land on the parent per UML convention, which is easy to get backwards
+    when the parent happens to be the visual starting point of the "drop."
+  Use an SVG `<marker>` (a small hollow polygon, `fill: var(--bg)`, `stroke: var(--line-strong)`,
+  `orient="auto"` so it auto-rotates to the line's arrival angle) for the arrowhead rather than nested
+  CSS border-triangles — far more reliable for a marker that has to sit at the end of a multi-segment
+  bent path instead of a fixed vertical line.
+- **`.bus-group`/`.bus-row`/`.bus-stub`/`.bus-line`** — when several sibling classes inherit the same
+  parent and a single **shared, converged** arrow (not individually-traceable per child) is
+  acceptable for the diagram's purpose, and a single `.inherit` connector per child would have nowhere
+  valid to land (the parent's bounds don't span the full width of the row above it — the "connector
+  exits box bounds" failure mode, at N-children scale). Each child gets a short `.bus-stub` line of
+  equal height, a `.bus-line` spans the full row (an auto-width block sibling of `.bus-row` inside a
+  `.bus-group` with `align-items: stretch`, so it matches the row's width with no manual measurement),
+  and a *single* `.inherit` connector runs from the bus down into the parent. Don't reach for this as
+  a generic "many boxes, one arrow" shortcut for association connectors (each individual relationship
+  there should stay visually distinct), and don't reach for it over the per-edge SVG router above when
+  the diagram is specifically meant to formally enumerate every inheritance edge.
 - **`.frame-content`** — `.frame` itself stays just the dashed border + label (its meaning is
   established elsewhere in this file and other diagrams already rely on that); if a frame needs to
   center multiple direct children as a column (rather than delegating layout to one single child, the
