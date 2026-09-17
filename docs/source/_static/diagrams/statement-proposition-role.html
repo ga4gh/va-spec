@@ -31,10 +31,11 @@
 
   .role-diagram { display: flex; align-items: flex-start; gap: 0; width: max-content; margin: 0 auto; }
 
-  .panel { display: flex; flex-direction: column; align-items: center; width: 300px; }
+  .panel { display: flex; flex-direction: column; align-items: center; width: 246px; }
   .panel-label { font-family: ui-monospace, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 8px; text-transform: uppercase; }
 
-  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 290px; font-size: 11px; }
+  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 236px; font-size: 11px; text-decoration: none; color: inherit; cursor: pointer; }
+  a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
   .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
   .cls .body { padding: 6px 8px 7px; display: flex; flex-direction: column; gap: 3px; }
@@ -47,18 +48,18 @@
   .cls .foot { font-size: 8.5px; color: var(--ink-soft); font-style: italic; line-height: 1.35; padding: 5px 8px 6px; border-top: 1px dotted var(--line); margin-top: 1px; }
   .cls .foot b { color: var(--ink); font-style: normal; font-weight: 600; }
 
-  .json-box { font-family: ui-monospace, monospace; font-size: 9.5px; line-height: 1.55; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 8px 10px; width: 290px; }
+  .json-box { font-family: ui-monospace, monospace; font-size: 9.5px; line-height: 1.55; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 8px 10px; width: 236px; }
   .jline { white-space: nowrap; color: var(--ink-soft); }
   .jline b { color: var(--ink); font-weight: 600; }
   .jline.hl, .jline.hl b { color: var(--hl); }
   .jline .ind1 { padding-left: 12px; }
   .jline .ind2 { padding-left: 24px; }
 
-  .meaning-box { font-size: 11.5px; line-height: 1.6; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 10px 12px; width: 290px; }
+  .meaning-box { font-size: 11.5px; line-height: 1.6; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 10px 12px; width: 236px; }
   .meaning-box .hl { color: var(--hl); font-weight: 600; }
   .meaning-box u { text-decoration-color: var(--ink-soft); }
 
-  .role-connector { display: flex; align-items: center; justify-content: center; width: 44px; flex: 0 0 44px; padding-top: 60px; }
+  .role-connector { display: flex; align-items: center; justify-content: center; width: 28px; flex: 0 0 28px; padding-top: 60px; }
   .role-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
   .role-connector .line::after {
     content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
@@ -80,11 +81,12 @@
   <div class="role-diagram">
     <div class="panel">
       <div class="panel-label">Model</div>
-      <div class="cls">
+      <a class="cls" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicitystatement" target="_top">
         <span class="badge">D</span>
         <div class="head"><div class="name">VariantPathogenicityStatement</div></div>
         <div class="body">
-          <div class="prop hl"><b>proposition</b>: <span class="ty">VariantPathogenicityProposition</span></div>
+          <div class="prop hl"><b>proposition</b>: <span class="ty">VariantPathogenicity-</span></div>
+          <div class="prop hl">&nbsp;&nbsp;<span class="ty">Proposition</span></div>
           <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
           <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
           <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
@@ -93,7 +95,7 @@
           <div class="prop"><b>contributions</b>: <span class="ty">0..m</span></div>
         </div>
         <div class="foot"><b>quality</b> is populated on the top-level Statement only &mdash; a trust/review-status signal for the assessment as a whole, distinct from (but analogous to) the rigor of its <b>specifiedBy</b> Method or the trust of a <b>contributions</b> entry's contributor.</div>
-      </div>
+      </a>
     </div>
 
     <div class="role-connector"><div class="line"></div></div>
@@ -104,7 +106,8 @@
         <div class="jline">{</div>
         <div class="jline ind1"><b>"type"</b>: "Statement",</div>
         <div class="jline hl ind1"><b>"proposition"</b>: {</div>
-        <div class="jline hl ind2"><b>"type"</b>: "VariantPathogenicityProposition",</div>
+        <div class="jline hl ind2"><b>"type"</b>: "VariantPathogenicity</div>
+        <div class="jline hl ind2">&nbsp;&nbsp;Proposition",</div>
         <div class="jline hl ind2"><b>"subject"</b>: "SOS1:c.3322G&gt;A",</div>
         <div class="jline hl ind2"><b>"predicate"</b>: "isCausalFor",</div>
         <div class="jline hl ind2"><b>"object"</b>: "RASopathy"</div>

@@ -52,7 +52,8 @@
   .side-connector .card { font-family: ui-monospace, monospace; font-size: 8px; color: var(--ink-soft); opacity: 0.75; margin-top: 2px; }
   .side-row { display: flex; align-items: flex-start; }
 
-  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 235px; font-size: 10.5px; }
+  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 235px; font-size: 10.5px; text-decoration: none; color: inherit; cursor: pointer; }
+  a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .cls.role { border-style: dashed; background: var(--box-role); }
   .cls.narrow { width: 190px; }
   .cls .head { padding: 6px 9px 5px; border-bottom: 1.3px solid var(--line-strong); }
@@ -77,73 +78,74 @@
  <div id="stage">
   <div id="scale-inner">
   <div class="title-row"><h1>ACMG Pathogenicity Statement with Evidence &mdash; detailed example</h1><span class="src">ex:Statement001</span></div>
-  <p class="caption">A subset of the full data example on this page: the root Statement, its first Evidence Line (population frequency), and that line's Study Result &mdash; with real identifiers/values from the example. The second Evidence Line (functional impact, itself supported by a further nested Evidence Line and Study Result) is omitted here for space; see the full YAML above.</p>
+  <p class="caption">A real ClinGen classification illustrating this structure: the root Statement, its population-frequency Evidence Line, and that line's Study Result. Source: ClinGen Hearing Loss VCEP classification of <i>MYO15A</i>:c.4642G&gt;A (<a href="https://erepo.clinicalgenome.org/evrepo/ui/classification/99de4974-7876-4054-8f80-a4970421a472" style="color:inherit;">erepo</a>). Three further Evidence Lines this classification also relies on (PM3_Strong, PS3_Supporting, PP3) are omitted here for space.</p>
 
   <div class="diagram">
     <div class="side-row">
-      <div class="cls narrow">
+      <a class="cls narrow" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">Method</div></div>
         <div class="body">
           <div class="prop"><b>name</b>: <span class="ty">"ClinGen Hearing Loss</span></div>
-          <div class="prop">&nbsp;&nbsp;<span class="ty">Expert Panel..."</span></div>
+          <div class="prop">&nbsp;&nbsp;<span class="ty">Expert Panel (OTOF/</span></div>
+          <div class="prop">&nbsp;&nbsp;<span class="ty">MYO15A) v1"</span></div>
         </div>
-        <div class="foot">reportedIn: clinicalgenome.org/...</div>
-      </div>
+      </a>
       <div class="side-connector reverse"><span class="role">specifiedBy</span><div class="line"></div></div>
 
-      <div class="cls">
+      <a class="cls" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">Statement</div><div class="idline">ex:Statement001</div></div>
         <div class="body">
           <div class="prop"><b>proposition</b>: <span class="ty">ex:Proposition001</span></div>
           <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
-          <div class="prop"><b>strength</b>: <span class="ty">"definitive"</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">"pathogenic"</span></div>
+          <div class="prop"><b>strength</b>: <span class="ty">"likely"</span></div>
+          <div class="prop"><b>outcome</b>: <span class="ty">"likely pathogenic"</span></div>
         </div>
-        <div class="foot">proposition: <b style="color:var(--ink)">ex:Variant001</b> isCausalFor <b style="color:var(--ink)">"AD nonsyndromic hearing loss 2A"</b> &mdash; strength/outcome coded per ACMG Guidelines, 2015.</div>
-      </div>
+        <div class="foot">proposition: <b style="color:var(--ink)">ex:Variant001</b> isCausalFor <b style="color:var(--ink)">"Autosomal recessive nonsyndromic hearing loss 3"</b> &mdash; strength/outcome coded per ACMG Guidelines, 2015. ClinVar SCV007126591.1.</div>
+      </a>
 
       <div class="side-connector"><span class="role">contributions</span><div class="line"></div></div>
-      <div class="cls narrow">
+      <a class="cls narrow" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">Contribution</div></div>
         <div class="body">
-          <div class="prop"><b>contributor</b>: <span class="ty">"ClinVar Staff"</span></div>
+          <div class="prop"><b>contributor</b>: <span class="ty">"ClinGen Hearing</span></div>
+          <div class="prop">&nbsp;&nbsp;<span class="ty">Loss VCEP"</span></div>
           <div class="prop"><b>activityType</b>: <span class="ty">"evaluated"</span></div>
-          <div class="prop"><b>date</b>: <span class="ty">2015-08-20</span></div>
+          <div class="prop"><b>date</b>: <span class="ty">2025-12-19</span></div>
         </div>
-        <div class="foot">+1 more (activityType: "submitted", 2018-06-12)</div>
-      </div>
+        <div class="foot">First in ClinVar 2025-12-20.</div>
+      </a>
     </div>
 
     <div class="vconnector"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
     <div class="side-row">
-      <div class="cls narrow">
+      <a class="cls narrow" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">Method</div></div>
         <div class="body">
           <div class="prop"><b>methodType</b>: <span class="ty">"population_data_</span></div>
           <div class="prop">&nbsp;&nbsp;<span class="ty">assessment"</span></div>
         </div>
-      </div>
+      </a>
       <div class="side-connector reverse"><span class="role">specifiedBy</span><div class="line"></div></div>
 
-      <div class="cls role">
+      <a class="cls role" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="stereo">&laquo;EvidenceLine&raquo;</div><div class="name">Statement</div><div class="idline">ex:EvidenceLine001</div></div>
         <div class="body">
           <div class="prop"><b>proposition</b>: <span class="ty">ex:Proposition001</span></div>
           <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
-          <div class="prop"><b>strength</b>: <span class="ty">"moderate"</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">"PM2"</span></div>
+          <div class="prop"><b>strength</b>: <span class="ty">"supporting"</span></div>
+          <div class="prop"><b>outcome</b>: <span class="ty">"PM2_supporting"</span></div>
         </div>
-        <div class="foot">proposition references the <b style="color:var(--ink)">same</b> Proposition001 as the root Statement (explicit here, though omission would imply the same). outcome names the ACMG criterion met.</div>
-      </div>
+        <div class="foot">proposition references the <b style="color:var(--ink)">same</b> Proposition001 as the root Statement (explicit here, though omission would imply the same). outcome names the ACMG criterion met, adjusted down from PM2's default "moderate" strength.</div>
+      </a>
 
       <div class="side-connector"><span class="role">contributions</span><div class="line"></div></div>
-      <div class="cls narrow">
+      <a class="cls narrow" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">Contribution</div></div>
         <div class="body">
@@ -151,44 +153,45 @@
           <div class="prop"><b>activityType</b>: <span class="ty">"evidence</span></div>
           <div class="prop">&nbsp;&nbsp;<span class="ty">evaluation"</span></div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="vconnector"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
     <div class="side-row">
-      <div class="cls narrow">
+      <a class="cls narrow" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">Method</div></div>
         <div class="body">
           <div class="prop"><b>name</b>: <span class="ty">"gnomAD methods"</span></div>
         </div>
         <div class="foot">reportedIn: "gnomAD help documentation"</div>
-      </div>
+      </a>
       <div class="side-connector reverse"><span class="role">specifiedBy</span><div class="line"></div></div>
 
-      <div class="cls">
+      <a class="cls" href="../../va-standard-profiles/base-profiles/study-result-profiles.html#cohortallelefrequencystudyresult" target="_top">
         <span class="badge">TU</span>
-        <div class="head"><div class="stereo">CohortAlleleFrequency&laquo;StudyResult&raquo;</div><div class="name">StudyResult</div><div class="idline">ex:StudyResult001</div></div>
+        <div class="head"><div class="stereo">&laquo;StudyResult&raquo;</div><div class="name">CohortAllele-<br>FrequencyStudyResult</div><div class="idline">ex:StudyResult001</div></div>
         <div class="body">
           <div class="prop"><b>focus</b>: <span class="ty">ex:Variant001</span></div>
-          <div class="prop"><b>alleleFrequency</b>: <span class="ty">0</span></div>
-          <div class="prop"><b>focusCount</b> / <b>locusCount</b>: <span class="ty">0 / 34086</span></div>
-          <div class="prop"><b>sourceDataSet</b>: <span class="ty">"gnomAD v4.1.0"</span></div>
+          <div class="prop"><b>alleleFrequency</b>: <span class="ty">"0.005% (76/</span></div>
+          <div class="prop">&nbsp;&nbsp;<span class="ty">1180010)"</span></div>
+          <div class="prop"><b>sourceDataSet</b>: <span class="ty">"gnomAD v4"</span></div>
         </div>
-        <div class="foot">type is the profile <b style="color:var(--ink)">CohortAlleleFrequencyStudyResult</b> (a formal subclass) &mdash; unlike Statement/EvidenceLine, Base Profile objects carry their own specific <b style="color:var(--ink)">type</b>.</div>
-      </div>
+        <div class="foot">this box's <b style="color:var(--ink)">type</b> is literally <b style="color:var(--ink)">"CohortAlleleFrequencyStudyResult"</b> &mdash; unlike Statement/EvidenceLine, Base Profile objects carry their own specific type rather than the base class name.</div>
+      </a>
 
       <div class="side-connector"><span class="role">cohort</span><div class="line"></div></div>
-      <div class="cls narrow">
+      <a class="cls narrow" href="../../core-information-model/entities/study-group.html#studygroup" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="name">StudyGroup</div></div>
         <div class="body">
-          <div class="prop"><b>id</b>: <span class="ty">"ALL"</span></div>
-          <div class="prop"><b>name</b>: <span class="ty">"Overall"</span></div>
+          <div class="prop"><b>id</b>: <span class="ty">"nfe"</span></div>
+          <div class="prop"><b>name</b>: <span class="ty">"European</span></div>
+          <div class="prop">&nbsp;&nbsp;<span class="ty">(non-Finnish)"</span></div>
         </div>
         <div class="foot">cohort is CohortAlleleFrequencyStudyResult-specific &mdash; not a base StudyResult field.</div>
-      </div>
+      </a>
     </div>
   </div>
 

@@ -31,12 +31,14 @@
 
   .role-diagram { display: flex; align-items: flex-start; gap: 0; width: max-content; margin: 0 auto; }
 
-  .panel { display: flex; flex-direction: column; align-items: center; width: 300px; }
+  .panel { display: flex; flex-direction: column; align-items: center; width: 246px; }
   .panel-label { font-family: ui-monospace, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 8px; text-transform: uppercase; }
 
-  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 290px; font-size: 11px; }
+  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 236px; font-size: 11px; text-decoration: none; color: inherit; cursor: pointer; }
+  a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
   .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .name.long { font-size: 10.6px; letter-spacing: -0.01em; }
   .cls .body { padding: 6px 8px 7px; display: flex; flex-direction: column; gap: 3px; }
   .cls .prop { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .cls .prop b { color: var(--ink); font-weight: 600; }
@@ -45,18 +47,18 @@
   .cls .prop.hl b { color: var(--hl); }
   .badge { position: absolute; top: -8px; right: 6px; font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--d); color: var(--d); }
 
-  .json-box { font-family: ui-monospace, monospace; font-size: 9.5px; line-height: 1.55; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 8px 10px; width: 290px; }
+  .json-box { font-family: ui-monospace, monospace; font-size: 9.5px; line-height: 1.55; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 8px 10px; width: 236px; }
   .jline { white-space: nowrap; color: var(--ink-soft); }
   .jline b { color: var(--ink); font-weight: 600; }
   .jline.hl, .jline.hl b { color: var(--hl); }
   .jline .ind1 { padding-left: 12px; }
   .jline .ind2 { padding-left: 24px; }
 
-  .meaning-box { font-size: 11.5px; line-height: 1.6; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 10px 12px; width: 290px; }
+  .meaning-box { font-size: 11.5px; line-height: 1.6; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 10px 12px; width: 236px; }
   .meaning-box .hl { color: var(--hl); font-weight: 600; }
   .meaning-box u { text-decoration-color: var(--ink-soft); }
 
-  .role-connector { display: flex; align-items: center; justify-content: center; width: 44px; flex: 0 0 44px; padding-top: 60px; }
+  .role-connector { display: flex; align-items: center; justify-content: center; width: 28px; flex: 0 0 28px; padding-top: 60px; }
   .role-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
   .role-connector .line::after {
     content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
@@ -78,9 +80,9 @@
   <div class="role-diagram">
     <div class="panel">
       <div class="panel-label">Model</div>
-      <div class="cls">
+      <a class="cls" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
         <span class="badge">D</span>
-        <div class="head"><div class="name">VariantPathogenicityEvidenceLine</div></div>
+        <div class="head"><div class="name long">VariantPathogenicityEvidenceLine</div></div>
         <div class="body">
           <div class="prop hl"><b>proposition</b>: <span class="ty">0..1</span></div>
           <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
@@ -89,7 +91,7 @@
           <div class="prop"><b>specifiedBy</b>: <span class="ty">Method</span></div>
           <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
         </div>
-      </div>
+      </a>
     </div>
 
     <div class="role-connector"><div class="line"></div></div>

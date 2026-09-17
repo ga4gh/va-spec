@@ -348,6 +348,50 @@ narrow, explicit exception:
     lengthening a `.foot` note made the central box the tallest column, eliminating the pull-up
     headroom that existed before the edit).
 
+### Linkable class boxes
+
+Every `.cls` box should link to that class's own page in the built RTD docs, so a reader can jump
+straight from the diagram to the full attribute table. Implementation:
+
+- Change the box's outer element from `<div class="cls ...">` to `<a class="cls ..." href="..."
+  target="_top">` — keep every other attribute/class the same. `.cls` needs `display: block;
+  text-decoration: none; color: inherit; cursor: pointer;` added to its rule (an `<a>` defaults to
+  inline and blue/underlined) plus a `:hover`/`:focus-visible` affordance (e.g. `border-color:
+  var(--accent); box-shadow: 0 0 0 1px var(--accent);`) so it reads as interactive without
+  otherwise changing the box's look. `.badge`'s `position: absolute` still resolves against the
+  box's own `position: relative` unaffected by the tag change.
+- **`target="_top"` is required.** These diagrams are always embedded via `<iframe>`; without it, a
+  click would try to load the full RTD page inside the small iframe viewport instead of navigating
+  the real page. Verify this isn't just set but actually works — a headless-browser click test that
+  switches into the iframe, clicks the link, switches back to the top document, and asserts
+  `driver.current_url` changed is worth running once per diagram (not just checking the `href`/
+  `target` attribute values are present).
+- **The href is always `../../<page-path-relative-to-docs-source>.html#<anchor>`.** Diagram files
+  live at a fixed depth, `docs/source/_static/diagrams/<name>.html`, and Sphinx's build output
+  mirrors `docs/source`'s tree exactly — so `../../` from any diagram file reaches the docs root
+  regardless of which page happens to be embedding it. Get the exact page path from the class's `..
+  _ClassName:` Sphinx label (`grep -rl "^\.\. _ClassName:" docs/source`), and get the anchor by
+  building the docs and checking the actual emitted `id` (`grep -o 'id="[a-z-]*"'
+  docs/build/html/<page>.html` — Sphinx lowercases the label to form the id; don't assume the
+  casing, confirm it). A class with its own dedicated page (e.g. `Statement`) doesn't strictly need
+  the `#anchor` since the label matches the page's own top heading, but include it anyway for
+  classes documented as one of several on a shared page (e.g. `VariantPathogenicityStatement` and
+  `VariantPathogenicityEvidenceLine` both live on `acmg-2015-profiles.rst`) — omitting it there
+  would just land on the top of the page, not the right subsection.
+- When a box's displayed name is a role/profile stereotype rather than the literal base class (e.g.
+  a `CohortAlleleFrequency«StudyResult»` box, or a `«EvidenceLine»`-stereotyped `Statement` box),
+  link to whichever page is actually more specific and useful — the profile page for the former
+  (`study-result-profiles.html#cohortallelefrequencystudyresult`), the base `Statement` page for the
+  latter (since it genuinely is one, just playing a role) — not mechanically whatever the `.name`
+  div's literal text says.
+- For a diagram with several boxes sharing the same class name (e.g. `Method` appearing three times
+  in a worked example, once per tier), there's no `data-node`-style attribute to key off outside the
+  hierarchy diagram — edit each occurrence individually using its surrounding content as context,
+  the same way any other edit to a specific box in these files is made.
+- Re-run the full clipping/overlap/scale-to-fit verification after linkifying — wrapping a box's
+  content in `<a>` doesn't usually change layout, but confirm it with the same measurements rather
+  than assuming.
+
 ## Output and delivery
 
 - Self-contained single HTML file (inline `<style>`, no external requests — the Artifact CSP blocks
