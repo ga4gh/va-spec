@@ -7,7 +7,6 @@ Appendices
 .. toctree::
    :maxdepth: 1
 
-   how-to-participate
    sepio-framework
    design-decisions
    gkm-metaschema
