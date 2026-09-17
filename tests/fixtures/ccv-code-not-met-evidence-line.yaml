@@ -1,6 +1,6 @@
 id: ccvCodeNotMetEvidenceLine
-type: EvidenceLine
-targetProposition:
+type: Statement
+proposition:
   type: VariantOncogenicityProposition
   subject:
     type: CategoricalVariant
@@ -10,14 +10,14 @@ targetProposition:
     type: MappableConcept
     conceptType: Disease
     name: Breast Carcinoma
-directionOfEvidenceProvided: neutral
+direction: neutral
 specifiedBy:
   type: Method
   methodType: functional_data_assessment
   reportedIn:
     type: Document
     name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-evidenceOutcome:
+outcome:
   type: MappableConcept
   primaryCoding:
     code: OS2_not_met

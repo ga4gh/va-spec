@@ -1,15 +1,14 @@
-.. admonition:: Trial Use
-    :class: note
+.. admonition:: Draft
+    :class: warning
 
-    May change in future releases. See |maturity-model|.
+    May change significantly in future releases. See |maturity-model|.
 
 **Computational Definition**
 
-An independent, evidence-based argument that may support or refute the validity of a specific Proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target Proposition.
+Therapeutic statement for AMP/ASCO/CAP
 
 **Information Model**
 
-Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
 
 .. list-table::
    :class: clean-wrap
@@ -31,7 +30,7 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       -
       - string
       - 1..1
-      - MUST be "EvidenceLine".
+      - MUST be "Statement".
    *  - name
       -
       - string
@@ -79,56 +78,59 @@ Some EvidenceLine attributes are inherited from :ref:`InformationEntity`.
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - targetProposition
+   *  - proposition
       -
-      - :ref:`Proposition` | :ref:`iriReference`
+      - :ref:`VariantTherapeuticResponseProposition`
+      - 1..1
+      - A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
+   *  - direction
+      -
+      - string
+      - 1..1
+      - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
+   *  - strength
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.
+      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be).  Implementers may choose to frame a strength assessment in terms of how *confident* an agent is that the Proposition is true or false, or in terms of the *strength of all evidence* they believe supports or disputes it.
+   *  - quality
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - A term used to report the quality of the assessment of a Proposition taking into consideration the reliability of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages and a governing framework for evaluating the quality of evidence. Also known as trust rating, review status or ranking.
+   *  - score
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - number
+      - 0..1
+      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
+   *  - outcome
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
    *  - hasEvidenceItems
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`InformationEntity` | :ref:`iriReference`
+      - :ref:`Statement` | :ref:`StudyResult` | :ref:`DataItem` | :ref:`iriReference`
       - 0..m
-      - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
+      - An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement.
    *  - hasEvidenceLines
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`EvidenceLine` | :ref:`iriReference`
+      - :ref:`Statement` | :ref:`iriReference`
       - 0..m
-      - A subordinate evidence-based argument that supports or disputes the validity of this Evidence Line's target Proposition. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items').
-   *  - directionOfEvidenceProvided
-      -
-      - string
-      - 1..1
-      - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)
-   *  - strengthOfEvidenceProvided
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
-   *  - qualityOfEvidenceProvided
-      -
-                        .. raw:: html
+      - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
 
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - :ref:`MappableConcept`
-      - 0..1
-      - A term used to report the quality of the assessment of a Proposition taking into consideration the reliability of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages and a governing framework for evaluating the quality of evidence. Also known as trust rating, review status or ranking.
-   *  - scoreOfEvidenceProvided
-      -
-      - number
-      - 0..1
-      - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
-   *  - evidenceOutcome
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.
+**Composes:** :ref:`AmpAscoCapStatement`
 
-**Inherits:** :ref:`InformationEntity`
-
-**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`Statement`, :ref:`VariantOncogenicityEvidenceLine`, :ref:`VariantPathogenicityEvidenceLine`
+**Used in:** :ref:`VariantClinicalSignificanceStatement`

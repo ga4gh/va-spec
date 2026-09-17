@@ -1,21 +1,21 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine",
-   "title": "PrognosticEvidenceLine",
-   "description": "Prognostic evidence line for AMP/ASCO/CAP",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticStatement",
+   "title": "PrognosticStatement",
+   "description": "Prognostic statement for AMP/ASCO/CAP",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapEvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapStatement"
       },
       {
          "properties": {
-            "targetProposition": {
+            "proposition": {
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
             }
          },
          "required": [
-            "targetProposition"
+            "proposition"
          ]
       }
    ],

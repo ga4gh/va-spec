@@ -38,12 +38,12 @@ Variant Clinical Significance Statement (AAC 2017)
 -----
 
 .. _variant-amp-asco-cap-evidence-line-aac-2017:
-.. _AmpAscoCapEvidenceLine:
+.. _AmpAscoCapStatement:
 
-Variant Amp/Asco/Cap Evidence Line (AAC 2017)
-#############################################
+Amp/Asco/Cap Statement (AAC 2017)
+##################################
 
-.. include::  ../../def/va-spec.aac-2017/AmpAscoCapEvidenceLine.rst
+.. include::  ../../def/va-spec.aac-2017/AmpAscoCapStatement.rst
 
 **Artifacts**
 
@@ -53,12 +53,12 @@ Variant Amp/Asco/Cap Evidence Line (AAC 2017)
 -----
 
 .. _variant-diagnostic-evidence-line-aac-2017:
-.. _DiagnosticEvidenceLine:
+.. _DiagnosticStatement:
 
-Variant Diagnostic Evidence Line (AAC 2017)
-###########################################
+Diagnostic Statement (AAC 2017)
+#################################
 
-.. include::  ../../def/va-spec.aac-2017/DiagnosticEvidenceLine.rst
+.. include::  ../../def/va-spec.aac-2017/DiagnosticStatement.rst
 
 **Artifacts**
 
@@ -68,12 +68,12 @@ Variant Diagnostic Evidence Line (AAC 2017)
 -----
 
 .. _variant-prognostic-evidence-line-aac-2017:
-.. _PrognosticEvidenceLine:
+.. _PrognosticStatement:
 
-Variant Prognostic Evidence Line (AAC 2017)
-###########################################
+Prognostic Statement (AAC 2017)
+#################################
 
-.. include::  ../../def/va-spec.aac-2017/PrognosticEvidenceLine.rst
+.. include::  ../../def/va-spec.aac-2017/PrognosticStatement.rst
 
 **Artifacts**
 
@@ -83,12 +83,12 @@ Variant Prognostic Evidence Line (AAC 2017)
 -----
 
 .. _variant-therapeutic-evidence-line-aac-2017:
-.. _TherapeuticEvidenceLine:
+.. _TherapeuticStatement:
 
-Variant Therapeutic Evidence Line (AAC 2017)
-############################################
+Therapeutic Statement (AAC 2017)
+##################################
 
-.. include::  ../../def/va-spec.aac-2017/TherapeuticEvidenceLine.rst
+.. include::  ../../def/va-spec.aac-2017/TherapeuticStatement.rst
 
 **Artifacts**
 

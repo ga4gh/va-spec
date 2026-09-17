@@ -62,7 +62,7 @@ A few additional notes about this example:
     primaryCoding:
       code: definitive         # the code here is a term based on language used in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
-  classification:              # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+  outcome:                      # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
     primaryCoding:
       code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
@@ -102,16 +102,16 @@ A few additional notes about this example:
         - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
   hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement
   - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
-    type: EvidenceLine         # uses the core EvidenceLine class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    targetProposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
+    type: Statement            # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
+    proposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
     hasEvidenceItems:          # the information interpreted as evidence in building this Evidence Line
     - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.
       type: CohortAlleleFrequencyStudyResult
       name: Overall Cohort Allele Frequency for 1-40819444_40819446-del
       focus: ex:Variant001  # the KCNQ4 variant that data included in this Result are about (the full representation of the variant is not included)
-      focusAlleleFrequency: 0
-      focusAlleleCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
-      locusAlleleCount: 34086
+      alleleFrequency: 0
+      focusCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
+      locusCount: 34086
       sourceDataSet:           # the gnomAD dataset from which the data included in this Result were pulled.
         id: gnomad4.1.0
         type: DataSet
@@ -129,12 +129,12 @@ A few additional notes about this example:
           name: gnomAD help documentation
           urls:
             - "https://gnomad.broadinstitute.org/help"
-    directionOfEvidenceProvided: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
-    strengthOfEvidenceProvided:
+    direction: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
+    strength:
       primaryCoding:
         code: moderate        # reports that this supporting evidence is of 'moderate' strength
         system: ACMG Guidelines, 2015
-    evidenceOutcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
+    outcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
       primaryCoding:
         code: PM2_moderate    # ... here, that the evidence line provides moderate evidence for Pathogenicity, based on the ACMG PM2 criteria
         system: ACMG Guidelines, 2015
@@ -156,8 +156,8 @@ A few additional notes about this example:
           name: evidence evaluation
         date: '2018-03-11'
   - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
-    type: EvidenceLine                   # uses the core EvidenceLine class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    targetProposition: ex:Proposition001
+    type: Statement                      # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
+    proposition: ex:Proposition001
     hasEvidenceItems:
       - id: ex:Statement002              # here the evidence item is another Statement about the functional impact of the variant
         type: Statement
@@ -183,7 +183,7 @@ A few additional notes about this example:
             profilingStrategy: barcode sequencing
             sequencingReadType: single-segment (short read)
         direction: supports           # indicates that the Statement supports the assessed impact Proposition above (i.e. says that the subject Variant does impact the function of the object Gene)
-        classification:               # summarizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
+        outcome:                      # summarizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
           primaryCoding:
             code: abnormal            # indicates the variant version of the gene has abnormal function (consistent with the 'impactsFunctionOf' proposition being 'supported')
             system: ga4gh-gkm-term:experimental-var-func-impact-classification
@@ -195,9 +195,9 @@ A few additional notes about this example:
             type: Document
             pmid: 29785012
         hasEvidenceLines:
-          id: EvidenceLine003
-          type: EvidenceLine
-          directionOfEvidenceProvided: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
+        - id: EvidenceLine003
+          type: Statement
+          direction: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
           specifiedBy:          # a Method followed in assessing the direction and strength of evidence provided by the Functional Impact StudyResult for the Functional Impact Statement
             type: Method
             name: MAVE bayesian threshold probability method 001
@@ -230,12 +230,12 @@ A few additional notes about this example:
                   type: Document
                   urls:
                     - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
-    directionOfEvidenceProvided: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
-    strengthOfEvidenceProvided:
+    direction: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
+    strength:
       primaryCoding:
         code: strong                      # indicates that this line of evidence provides 'strong' support for the variant's Pathogencity
         system: ACMG Guidelines, 2015
-    evidenceOutcome:
+    outcome:
       primaryCoding:
         code: PS3_strong
         system: ACMG Guidelines, 2015
@@ -280,4 +280,4 @@ It also highlights the kind of schema that specifies each objects in the data - 
 
    **Legend**: Diagrammatic representation of a subset of data in the json example above. Styling conventions indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
 
-A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement``, ``EvidenceLine``).
+A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement`` -- including Statements used as Evidence Lines).

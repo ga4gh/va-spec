@@ -1,4 +1,4 @@
-classification:
+outcome:
   type: MappableConcept
   name: Tier II
   primaryCoding:
@@ -10,7 +10,7 @@ description:
   diagnosis of diffuse intrinsic pontine glioma.
 direction: supports
 hasEvidenceLines:
-  - directionOfEvidenceProvided: supports
+  - direction: supports
     hasEvidenceItems:
       - description:
           Sequencing of 39 pediatric midline high-grade astrocytomas identified
@@ -140,12 +140,12 @@ hasEvidenceLines:
             code: B
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: C
         system: AMP/ASCO/CAP Guidelines, 2017
-    targetProposition:
+    proposition:
       alleleOriginQualifier:
         type: MappableConcept
         mappings:
@@ -368,7 +368,7 @@ hasEvidenceLines:
         name: ACVR1 G328V
         type: CategoricalVariant
       type: VariantDiagnosticProposition
-    type: EvidenceLine
+    type: Statement
 id: civic.aid:9
 proposition:
   alleleOriginQualifier:

@@ -27,18 +27,7 @@ va_abstract_classes = {
     'va-spec:Therapy',
 }
 
-# Pure `type: array` union-wrapper aliases (the value type of a Statement's
-# hasEvidenceLines): a list of AmpAscoCapEvidenceLine-or-iriReference. They have no
-# object identity of their own to instantiate standalone -- coverage of what they wrap
-# (AmpAscoCapEvidenceLine) and of the property that uses them (hasEvidenceLines) is
-# exercised via the AAC-2017 Statement fixtures.
-va_container_classes = {
-    'va-spec.aac-2017:DiagnosticEvidenceLine',
-    'va-spec.aac-2017:PrognosticEvidenceLine',
-    'va-spec.aac-2017:TherapeuticEvidenceLine',
-}
-
-va_excluded_classes = va_abstract_classes | va_container_classes
+va_excluded_classes = va_abstract_classes
 
 def test_examples():
     with open(test_path / 'test_definitions.yaml') as def_file:

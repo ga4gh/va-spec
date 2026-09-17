@@ -1,0 +1,22 @@
+type: DataItem
+name: Population allele frequency for BRCA2 c.8023A>G
+value: "0.00012"
+specifiedBy:
+  type: Method
+  name: gnomAD methods
+  reportedIn:
+    type: Document
+    name: gnomAD help documentation
+    urls:
+      - "https://gnomad.broadinstitute.org/help"
+contributions:
+  - type: Contribution
+    contributor:
+      type: Agent
+      name: gnomAD
+    activityType: generated
+reportedIn:
+  - type: Document
+    name: gnomAD v4.1.0
+    urls:
+      - "https://gnomad.broadinstitute.org/"

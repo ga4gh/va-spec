@@ -1,4 +1,4 @@
-classification:
+outcome:
   type: MappableConcept
   primaryCoding:
     code: likely oncogenic
@@ -44,13 +44,13 @@ description:
   that M918T is likely oncogenic, with a score of 9."
 direction: supports
 hasEvidenceLines:
-  - directionOfEvidenceProvided: supports
-    evidenceOutcome:
+  - direction: supports
+    outcome:
       type: MappableConcept
       primaryCoding:
         code: OM1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    scoreOfEvidenceProvided: 2
+    score: 2
     specifiedBy:
       methodType: functional_domain_assessment
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -69,19 +69,19 @@ hasEvidenceLines:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: moderate
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    evidenceOutcome:
+    type: Statement
+  - direction: supports
+    outcome:
       type: MappableConcept
       primaryCoding:
         code: OS2
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    scoreOfEvidenceProvided: 4
+    score: 4
     specifiedBy:
       methodType: functional_data_assessment
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -100,19 +100,19 @@ hasEvidenceLines:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: strong
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    evidenceOutcome:
+    type: Statement
+  - direction: supports
+    outcome:
       type: MappableConcept
       primaryCoding:
         code: OP4
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    scoreOfEvidenceProvided: 1
+    score: 1
     specifiedBy:
       methodType: population_data_assessment
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -131,19 +131,19 @@ hasEvidenceLines:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: supporting
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    evidenceOutcome:
+    type: Statement
+  - direction: supports
+    outcome:
       type: MappableConcept
       primaryCoding:
         code: OP1
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    scoreOfEvidenceProvided: 1
+    score: 1
     specifiedBy:
       methodType: in_silico_impact_assessment
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -162,19 +162,19 @@ hasEvidenceLines:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: supporting
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    type: EvidenceLine
-  - directionOfEvidenceProvided: supports
-    evidenceOutcome:
+    type: Statement
+  - direction: supports
+    outcome:
       type: MappableConcept
       primaryCoding:
         code: OP3
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    scoreOfEvidenceProvided: 1
+    score: 1
     specifiedBy:
       methodType: somatic_hotspot_assessment
       name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
@@ -193,12 +193,12 @@ hasEvidenceLines:
           - https://doi.org/10.1016/j.gim.2022.01.001
           - https://pubmed.ncbi.nlm.nih.gov/35101336/
       type: Method
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: supporting
         system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-    type: EvidenceLine
+    type: Statement
 id: civic.aid:202
 proposition:
   alleleOriginQualifier:

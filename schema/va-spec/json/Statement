@@ -121,7 +121,7 @@
          "maturity": "draft",
          "description": "A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute."
       },
-      "classification": {
+      "outcome": {
          "oneOf": [
             {
                "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
@@ -138,7 +138,13 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/InformationEntity"
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/StudyResult"
+               },
+               {
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataItem"
                },
                {
                   "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
@@ -153,7 +159,7 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
                },
                {
                   "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
@@ -165,7 +171,6 @@
    },
    "required": [
       "direction",
-      "proposition",
       "type"
    ],
    "type": "object",

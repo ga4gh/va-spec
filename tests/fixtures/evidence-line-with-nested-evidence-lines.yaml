@@ -1,7 +1,7 @@
 id: evidence-line-with-nested-evidence-lines-001
 name: Broader evidence line built from two subordinate evidence lines
-type: EvidenceLine
-targetProposition:
+type: Statement
+proposition:
   type: VariantPathogenicityProposition
   subject:
     name: NP_000305.3:p.Arg11Thr
@@ -39,19 +39,19 @@ targetProposition:
     type: MappableConcept
     conceptType: Gene
     name: PTEN
-directionOfEvidenceProvided: supports
-strengthOfEvidenceProvided:
+direction: supports
+strength:
   type: MappableConcept
   primaryCoding:
     code: strong
     system: ACMG Guidelines, 2015
-# Built from two more narrowly-scoped subordinate Evidence Lines, each independently
+# Built from two more narrowly-scoped subordinate Statements, each independently
 # assessed against the same target Proposition, rather than directly from individual
 # evidence items.
 hasEvidenceLines:
   - id: evLine01
-    type: EvidenceLine
-    targetProposition:
+    type: Statement
+    proposition:
       type: VariantPathogenicityProposition
       subject: ex:Variant001
       predicate: isCausalFor
@@ -59,13 +59,13 @@ hasEvidenceLines:
         type: MappableConcept
         conceptType: Disease
         name: Unspecified
-    directionOfEvidenceProvided: supports
-    strengthOfEvidenceProvided:
+    direction: supports
+    strength:
       type: MappableConcept
       primaryCoding:
         code: supporting
         system: ACMG Guidelines, 2015
-    evidenceOutcome:
+    outcome:
       type: MappableConcept
       primaryCoding:
         code: PS3_supporting

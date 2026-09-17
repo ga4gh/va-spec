@@ -56,8 +56,8 @@ NEGATIVE_CASES = [
     (
         "StudyResult subclass rejects a missing required 'focus'",
         "va-spec:CohortAlleleFrequencyStudyResult",
-        {"type": "CohortAlleleFrequencyStudyResult", "focusAlleleCount": 1,
-         "locusAlleleCount": 2, "focusAlleleFrequency": 0.5,
+        {"type": "CohortAlleleFrequencyStudyResult", "focusCount": 1,
+         "locusCount": 2, "alleleFrequency": 0.5,
          "cohort": {"type": "StudyGroup"}},
     ),
     (
@@ -69,8 +69,8 @@ NEGATIVE_CASES = [
         "va-spec:CohortAlleleFrequencyStudyResult",
         {"type": "CohortAlleleFrequencyStudyResult",
          "focus": {"type": "MappableConcept", "name": "not an allele"},
-         "focusAlleleCount": 1, "locusAlleleCount": 2,
-         "focusAlleleFrequency": 0.5, "cohort": {"type": "StudyGroup"}},
+         "focusCount": 1, "locusCount": 2,
+         "alleleFrequency": 0.5, "cohort": {"type": "StudyGroup"}},
     ),
     (
         # Covariant narrowing: GeneDiseaseValidityProposition narrows the
@@ -104,12 +104,12 @@ def _load_fixture(name):
 
 def test_aac_2017_tier_i_requires_supports_direction():
     # civic-assertion-combination-therapy-inline.yaml is a valid Tier I
-    # VariantClinicalSignificanceStatement (classification code 'tier i',
+    # VariantClinicalSignificanceStatement (outcome code 'tier i',
     # direction 'supports'). The profile's if/then constraint requires
-    # direction == 'supports' whenever classification is Tier I; flipping it
+    # direction == 'supports' whenever outcome is Tier I; flipping it
     # to 'disputes' must be rejected.
     instance = _load_fixture("civic-assertion-combination-therapy-inline.yaml")
-    assert instance["classification"]["primaryCoding"]["code"] == "tier i"
+    assert instance["outcome"]["primaryCoding"]["code"] == "tier i"
     assert instance["direction"] == "supports"
 
     instance["direction"] = "disputes"
@@ -141,12 +141,12 @@ def test_not_met_evidence_requires_neutral_without_strength(cls, fixture):
     instance = _load_fixture(fixture)
 
     invalid_direction = deepcopy(instance)
-    invalid_direction["directionOfEvidenceProvided"] = "supports"
+    invalid_direction["direction"] = "supports"
     with pytest.raises(ValidationError):
         validator[cls].validate(invalid_direction)
 
     invalid_strength = deepcopy(instance)
-    invalid_strength["strengthOfEvidenceProvided"] = {
+    invalid_strength["strength"] = {
         "type": "MappableConcept",
         "primaryCoding": {"code": "supporting", "system": invalid_strength["specifiedBy"]["reportedIn"]["name"]},
     }

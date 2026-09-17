@@ -1,4 +1,4 @@
-classification:
+outcome:
   type: MappableConcept
   name: Tier I
   primaryCoding:
@@ -17,7 +17,7 @@ description:
   5th ed.; vol. 7).
 direction: supports
 hasEvidenceLines:
-  - directionOfEvidenceProvided: supports
+  - direction: supports
     hasEvidenceItems:
       - description:
           Histological, molecular, and clinical analysis of 26 histologically
@@ -492,12 +492,12 @@ hasEvidenceLines:
             code: C
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: A
         system: AMP/ASCO/CAP Guidelines, 2017
-    targetProposition:
+    proposition:
       alleleOriginQualifier:
         type: MappableConcept
         mappings:
@@ -596,7 +596,7 @@ hasEvidenceLines:
         name: MYBL1 Rearrangement
         type: CategoricalVariant
       type: VariantDiagnosticProposition
-    type: EvidenceLine
+    type: Statement
 id: civic.aid:115
 proposition:
   alleleOriginQualifier:

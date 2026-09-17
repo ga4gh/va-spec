@@ -1,6 +1,6 @@
 id: acmgNoCriteriaMetEvidenceLine
-type: EvidenceLine
-targetProposition:
+type: Statement
+proposition:
   type: VariantPathogenicityProposition
   subject:
     type: CategoricalVariant
@@ -10,14 +10,14 @@ targetProposition:
     type: MappableConcept
     conceptType: Disease
     name: Unspecified
-directionOfEvidenceProvided: neutral
+direction: neutral
 specifiedBy:
   type: Method
   methodType: case_control_enrichment_assessment
   reportedIn:
     type: Document
     name: ACMG Guidelines, 2015
-evidenceOutcome:
+outcome:
   type: MappableConcept
   primaryCoding:
     code: no_criteria_met

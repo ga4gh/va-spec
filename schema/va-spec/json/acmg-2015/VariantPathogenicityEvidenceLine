@@ -6,25 +6,16 @@
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
       },
       {
          "properties": {
-            "targetProposition": {
+            "proposition": {
                "description": "A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.",
                "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
             },
-            "directionOfEvidenceProvided": {
-               "type": "string",
-               "enum": [
-                  "supports",
-                  "neutral",
-                  "disputes"
-               ],
-               "description": "The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral). For ACMG-based assessments, if a pathogenicity criterion is 'met' in the Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes', and if a criteria is 'not met' the direction is 'none'."
-            },
-            "strengthOfEvidenceProvided": {
-               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required. If it is 'none', then this attribute is not allowed.",
+            "strength": {
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.",
                "properties": {
                   "primaryCoding": {
                      "allOf": [
@@ -134,8 +125,8 @@
                   "reportedIn"
                ]
             },
-            "evidenceOutcome": {
-               "description": "The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and 'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'PS3_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.",
+            "outcome": {
+               "description": "The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'PS3_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.",
                "properties": {
                   "primaryCoding": {
                      "code": {
@@ -154,7 +145,7 @@
       {
          "if": {
             "properties": {
-               "directionOfEvidenceProvided": {
+               "direction": {
                   "enum": [
                      "supports",
                      "disputes"
@@ -162,12 +153,12 @@
                }
             },
             "required": [
-               "directionOfEvidenceProvided"
+               "direction"
             ]
          },
          "then": {
             "required": [
-               "strengthOfEvidenceProvided"
+               "strength"
             ]
          }
       },
@@ -191,7 +182,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -225,7 +216,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -259,7 +250,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -293,7 +284,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -327,7 +318,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -361,7 +352,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -395,7 +386,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -429,7 +420,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -463,7 +454,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -497,7 +488,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -531,7 +522,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -565,7 +556,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -599,7 +590,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -633,7 +624,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -667,7 +658,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -701,7 +692,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -735,7 +726,7 @@
          },
          "then": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -752,7 +743,7 @@
       {
          "if": {
             "properties": {
-               "evidenceOutcome": {
+               "outcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -771,25 +762,25 @@
                }
             },
             "required": [
-               "evidenceOutcome"
+               "outcome"
             ]
          },
          "then": {
             "properties": {
-               "directionOfEvidenceProvided": {
+               "direction": {
                   "const": "neutral"
                }
             },
             "not": {
                "required": [
-                  "strengthOfEvidenceProvided"
+                  "strength"
                ]
             }
          }
       }
    ],
    "required": [
-      "directionOfEvidenceProvided",
+      "direction",
       "specifiedBy"
    ],
    "type": "object",

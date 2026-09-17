@@ -1,10 +1,10 @@
-id: evLine01
 type: Statement
 proposition:
-  type: VariantPathogenicityProposition
+  type: VariantPrognosticProposition
+  name: EGFR R11T associated with better outcomes for Breast Cancer
   subject:
-    name: NP_000305.3:p.Arg11Thr
     type: CategoricalVariant
+    name: EGFR R11T
     constraints:
       - type: DefiningAlleleConstraint
         allele:
@@ -28,35 +28,25 @@ proposition:
           - type: MappableConcept
             primaryCoding:
               code: translation_of
-              system: http://www.sequenceontology.org
-              iris:
-                - http://www.sequenceontology.org/browser/current_release/term/translation_of
-  predicate: isCausalFor
+              system: http://bioportal.bioontology.org/ontologies/SO
+  predicate: associatedWithBetterOutcomeFor
   object:
     type: MappableConcept
-    conceptType: Disease
-    name: Unspecified
+    primaryCoding:
+      code: ncit:C4872
+      system: https://www.ebi.ac.uk/ols4/ontologies/ncit
+    name: Breast Carcinoma
   geneContextQualifier:
     type: MappableConcept
     conceptType: Gene
-    name: PTEN
+    name: EGFR
 direction: supports
 strength:
   type: MappableConcept
   primaryCoding:
-    code: supporting
-    system: ACMG Guidelines, 2015
+    code: B
+    system: AMP/ASCO/CAP Guidelines, 2017
 specifiedBy:
   type: Method
-  methodType: functional_data_assessment
-  name: ACMG 2015 PS3 Criterion
-  reportedIn:
-    type: Document
-    pmid: '25741868'
-    name: ACMG Guidelines, 2015
-outcome:
-  type: MappableConcept
-  primaryCoding:
-    code: PS3_supporting
-    system: ACMG Guidelines, 2015
-  name: ACMG 2015 PS3 Supporting Criterion Met
+  methodType: curation
+  name: CIViC Curation SOP (2019)

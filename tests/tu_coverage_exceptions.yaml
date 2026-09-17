@@ -106,19 +106,12 @@ va-spec:TumorVariantFrequencyStudyResult:
   - contributions
   - reportedIn
 
-va-spec:EvidenceLine:
+va-spec:DataItem:
   # Entity
   - description
   - extensions
-  - name
+  - id
   - aliases
-
-  # InformationEntity
-  - reportedIn
-  - contributions
-
-  # EvidenceLine
-  - hasEvidenceItems
 
 va-spec:Statement:
   # Entity

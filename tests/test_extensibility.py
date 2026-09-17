@@ -2,9 +2,9 @@
 
 The abstract bases (Proposition, StudyResult, SubjectVariantProposition,
 InformationEntity) are intentionally left *open* so that implementers can define
-and validate their OWN subclasses of Statement / Proposition / EvidenceLine /
-StudyResult against them. These tests lock in that behavior (and that the shared
-required attributes are still enforced on any subclass).
+and validate their OWN subclasses of Statement / Proposition / StudyResult against
+them. These tests lock in that behavior (and that the shared required attributes
+are still enforced on any subclass).
 """
 import pytest
 from jsonschema import ValidationError
