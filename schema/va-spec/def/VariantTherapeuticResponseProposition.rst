@@ -91,4 +91,4 @@ Some VariantTherapeuticResponseProposition attributes are inherited from :ref:`G
 
 **Inherits:** :ref:`GeneticContextVariantProposition`
 
-**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`TherapeuticEvidenceLine`
+**Used in:** :ref:`AmpAscoCapStatement`, :ref:`TherapeuticStatement`

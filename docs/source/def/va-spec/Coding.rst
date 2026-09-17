@@ -66,4 +66,4 @@ Some Coding attributes are inherited from :ref:`Element`.
 
 **Inherits:** :ref:`Element`
 
-**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`ConceptMapping`, :ref:`MappableConcept`, :ref:`VariantClinicalSignificanceStatement`, :ref:`VariantOncogenicityEvidenceLine`, :ref:`VariantOncogenicityStatement`, :ref:`VariantPathogenicityEvidenceLine`, :ref:`VariantPathogenicityStatement`
+**Used in:** :ref:`AmpAscoCapStatement`, :ref:`ConceptMapping`, :ref:`MappableConcept`, :ref:`VariantClinicalSignificanceStatement`, :ref:`VariantOncogenicityEvidenceLine`, :ref:`VariantOncogenicityStatement`, :ref:`VariantPathogenicityEvidenceLine`, :ref:`VariantPathogenicityStatement`

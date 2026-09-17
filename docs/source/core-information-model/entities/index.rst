@@ -26,6 +26,7 @@ This Entity class is imported from the `GKM-Core model <https://github.com/ga4gh
    information-entities/method
    information-entities/document
    information-entities/dataset
+   information-entities/data-item
    study-group
    subject-variant-proposition
    genetic-context-variant-proposition

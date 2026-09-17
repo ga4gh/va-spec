@@ -1,4 +1,4 @@
-directionOfEvidenceProvided: supports
+direction: supports
 hasEvidenceItems:
 - description: Sequencing of 39 pediatric midline high-grade astrocytomas identified 5 patients with ACVR1
     mutations. The authors identified an increase in endogenous phospho-SMAD1/5/8 signal in diffuse intrinsic
@@ -121,12 +121,12 @@ hasEvidenceItems:
       code: B
       system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
   type: Statement
-strengthOfEvidenceProvided:
+strength:
   type: MappableConcept
   primaryCoding:
     code: C
     system: AMP/ASCO/CAP Guidelines, 2017
-targetProposition:
+proposition:
   alleleOriginQualifier:
     type: MappableConcept
     mappings:
@@ -349,4 +349,4 @@ targetProposition:
     name: ACVR1 G328V
     type: CategoricalVariant
   type: VariantDiagnosticProposition
-type: EvidenceLine
+type: Statement

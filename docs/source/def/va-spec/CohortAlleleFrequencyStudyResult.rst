@@ -105,21 +105,21 @@ Some CohortAlleleFrequencyStudyResult attributes are inherited from :ref:`StudyR
       - object
       - 0..1
       - An object in which implementers can define custom fields to capture metadata about the quality/provenance of the primary data items captured in standard attributes in the main body of the Study Result. e.g. a sequencing coverage metric in a Cohort Allele Frequency Study Result.
-   *  - focusAlleleCount
+   *  - focusCount
       -
       - integer
       - 1..1
-      - The number of occurrences of the focusAllele in the cohort.
-   *  - locusAlleleCount
+      - The number of occurrences of the focus Allele in the cohort.
+   *  - locusCount
       -
       - integer
       - 1..1
       - The number of occurrences of all alleles at the locus in the cohort.
-   *  - focusAlleleFrequency
+   *  - alleleFrequency
       -
       - number
       - 1..1
-      - The frequency of the focusAllele in the cohort.
+      - The frequency of the focus Allele in the cohort.
    *  - cohort
       -
       - :ref:`StudyGroup` | :ref:`iriReference`

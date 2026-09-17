@@ -46,7 +46,7 @@ $defs:
                       system:
                         const: ACMG Guidelines, 2015
             required: [primaryCoding]
-          classification:
+          outcome:
             description: >-
               The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines.
               These classifications should coincide with the direction and strength values as follows:
@@ -94,7 +94,7 @@ $defs:
                 - $ref: "#/$defs/VariantPathogenicityEvidenceLine"
                 - $refCurie: gkm.core:iriReference
         required:
-          - classification
+          - outcome
           - specifiedBy
 
   VariantPathogenicityEvidenceLine:
@@ -105,30 +105,22 @@ $defs:
       (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-      - $refCurie: va-spec:EvidenceLine
+      - $refCurie: va-spec:Statement
       - properties:
-          targetProposition:
+          proposition:
             description: >-
               A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
               determine the strength and direction of support this evidence provides for or against the
               proposition's validity.
             $refCurie: va-spec:VariantPathogenicityProposition
-          directionOfEvidenceProvided:
-            type: string
-            enum: ["supports", "neutral", "disputes"]
-            description: >-
-              The direction of support that the Evidence Line is determined to provide toward its target Proposition
-              (supports, disputes, neutral). For ACMG-based assessments, if a pathogenicity criterion is 'met' in the
-              Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes',
-              and if a criteria is 'not met' the direction is 'none'.
-          strengthOfEvidenceProvided:
+          strength:
             description: >-
               The strength of support that an Evidence Line is determined to provide for or against the proposed
               pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
-              the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose
+              the 'direction' attribute, and captured using a MappableConcept, whose
               nested 'code' field is bound to an enumerated set of values. Conditional requirement: if
-              `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required.
-              If it is 'none', then this attribute is not allowed.
+              `direction` is either 'supports' or 'disputes', then this attribute is required.
+              If it is 'neutral', then this attribute is not allowed.
             properties:
               primaryCoding:
                 allOf:
@@ -158,79 +150,79 @@ $defs:
                   if it supports pathogenicity or benignity of a variant.
                 type: string
                 oneOf:
-                  - const: Population Data Assessment
+                  - const: population_data_assessment
                     description: >-
                       Assessment of whether population control frequency refutes
                       pathogenicity or whether absence/extreme rarity in controls provides
                       supporting evidence for pathogenicity.
-                  - const: Case-Control Enrichment Assessment
+                  - const: case_control_enrichment_assessment
                     description: >-
                       Prevalence in affected statistically increased over matched
                       controls, or enrichment in controls inconsistent with disease
                       penetrance
-                  - const: Null variant assessment
+                  - const: null_variant_assessment
                     description: >-
                       Predicted null variant in a gene where LOF is a known mechanism of
                       disease
-                  - const: Same amino acid change assessment
+                  - const: same_amino_acid_change_assessment
                     description: >-
                       Same amino acid change as an established pathogenic variant
-                  - const: Mutational hot spot and functional domain assessment
+                  - const: mutational_hot_spot_and_functional_domain_assessment
                     description: >-
                       Mutational hot spot or well-established functional domain without
                       benign variation
-                  - const: Protein length change assessment
+                  - const: protein_length_change_assessment
                     description: >-
                       Protein length change, or in-frame indels changing counts of repeats
                       with no known function
-                  - const: Novel missense position assessment
+                  - const: novel_missense_position_assessment
                     description: >-
                       Novel missense change at an amino acid where a different pathogenic
                       missense change has been seen before
-                  - const: Variant spectrum assessment
+                  - const: variant_spectrum_assessment
                     description: >-
                       Missense in a gene where only truncation causes disease, or with low
                       rate of benign missense variation
-                  - const: In silico functional impact assessment
+                  - const: in_silico_functional_impact_assessment
                     description: >-
                       Multiple lines of computational evidence support a deleterious
                       effect or no impact
-                  - const: Predicted silent variant assessment
+                  - const: predicted_silent_variant_assessment
                     description: >-
                       Silent variant with no predicted splicing impact
-                  - const: Functional Data Assessment
+                  - const: functional_data_assessment
                     description: >-
                       Well-established functional studies show or do not show deleterious
                       effect
-                  - const: Segregation Data Assessment
+                  - const: segregation_data_assessment
                     description: >-
                       Consegregation with disease in multiple family members, or
                       nonsegregation
-                  - const: De Novo Data Assessment
+                  - const: de_novo_data_assessment
                     description: >-
                       De novo, with or without paternity and maternity confirmed
-                  - const: Cis/trans variant assessment
+                  - const: cis_trans_variant_assessment
                     description: >-
                       Observed in trans with a dominant variant, in cis with a pathogenic
                       variant, or in trans with a pathogenic variant in a recessive
                       disorder
-                  - const: Reputable Source Assessment
+                  - const: reputable_source_assessment
                     description: >-
                       Benign or pathogenic according to a reputable source
-                  - const: Phenotype-gene specificity assessment
+                  - const: phenotype_gene_specificity_assessment
                     description: >-
                       Patient's phenotype or family history highly specific for the gene
                       and disorder
-                  - const: Alternative cause assessment
+                  - const: alternative_cause_assessment
                     description: >-
                       Found in a case with an alternate cause
             required:
               - methodType
               - reportedIn
-          evidenceOutcome:
+          outcome:
             description: >-
-              The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and
-              'strengthOfEvidenceProvided' assessments, along with the specific ACMG criterion used in these assessments.
+              The evidence outcome provides a single string that summarizes 'direction' and
+              'strength' assessments, along with the specific ACMG criterion used in these assessments.
               Rules for constructing this string are as follows, and enforced by a regex constraint:
               (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion
               code (e.g. 'PM2' when the PM2 criteria is met with moderate strength);
@@ -249,22 +241,22 @@ $defs:
                   const: ACMG Guidelines, 2015
       - if:
           properties:
-            directionOfEvidenceProvided:
+            direction:
               enum: [supports, disputes]
-          required: [directionOfEvidenceProvided]
+          required: [direction]
         then:
-          required: [strengthOfEvidenceProvided]
+          required: [strength]
       - if:
           properties:
             specifiedBy:
               properties:
                 methodType:
-                  const: Population Data Assessment
+                  const: population_data_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -275,12 +267,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Case-Control Enrichment Assessment
+                  const: case_control_enrichment_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -291,12 +283,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Null variant assessment
+                  const: null_variant_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -307,12 +299,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Same amino acid change assessment
+                  const: same_amino_acid_change_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -323,12 +315,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Mutational hot spot and functional domain assessment
+                  const: mutational_hot_spot_and_functional_domain_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -339,12 +331,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Protein length change assessment
+                  const: protein_length_change_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -355,12 +347,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Novel missense position assessment
+                  const: novel_missense_position_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -371,12 +363,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Variant spectrum assessment
+                  const: variant_spectrum_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -387,12 +379,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: In silico functional impact assessment
+                  const: in_silico_functional_impact_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -403,12 +395,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Predicted silent variant assessment
+                  const: predicted_silent_variant_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -419,12 +411,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Functional Data Assessment
+                  const: functional_data_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -435,12 +427,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Segregation Data Assessment
+                  const: segregation_data_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -451,12 +443,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: De Novo Data Assessment
+                  const: de_novo_data_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -467,12 +459,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Cis/trans variant assessment
+                  const: cis_trans_variant_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -483,12 +475,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Reputable Source Assessment
+                  const: reputable_source_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -499,12 +491,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Phenotype-gene specificity assessment
+                  const: phenotype_gene_specificity_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -515,17 +507,17 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: Alternative cause assessment
+                  const: alternative_cause_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
                     code:
                       pattern: "^BP5(_.+)?$"
     required:
-      - directionOfEvidenceProvided
+      - direction
       - specifiedBy

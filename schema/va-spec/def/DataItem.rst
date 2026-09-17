@@ -1,15 +1,15 @@
-.. admonition:: Trial Use
-    :class: note
+.. admonition:: Draft
+    :class: warning
 
-    May change in future releases. See |maturity-model|.
+    May change significantly in future releases. See |maturity-model|.
 
 **Computational Definition**
 
-A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.
+An Information Entity representing an individual piece of data, generated or acquired through methods which reliably produce truthful information about something.
 
 **Information Model**
 
-Some Document attributes are inherited from :ref:`gkm-core:Entity`.
+Some DataItem attributes are inherited from :ref:`InformationEntity`.
 
 .. list-table::
    :class: clean-wrap
@@ -31,7 +31,7 @@ Some Document attributes are inherited from :ref:`gkm-core:Entity`.
       -
       - string
       - 1..1
-      - Must be "Document"
+      - Must be "DataItem"
    *  - name
       -
       - string
@@ -58,38 +58,33 @@ Some Document attributes are inherited from :ref:`gkm-core:Entity`.
       - :ref:`Extension`
       - 0..m
       - A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model.
-   *  - documentType
+   *  - specifiedBy
+      -
+      - :ref:`Method` | :ref:`iriReference`
+      - 0..1
+      - A specification that describes all or part of the process that led to creation of the Information Entity
+   *  - contributions
       -
                         .. raw:: html
 
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - string
-      - 0..1
-      - A specific type of document that a Document instance represents (e.g.  'publication', 'patent', 'pathology report')
-   *  - title
-      -
-      - string
-      - 0..1
-      - The official title given to the document by its authors.
-   *  - urls
+                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Ordered">&#8595;</span>
+      - :ref:`Contribution`
+      - 0..m
+      - Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity.
+   *  - reportedIn
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - string
+      - :ref:`Document` | :ref:`iriReference`
       - 0..m
-      - One or more URLs from which the content of the Document can be retrieved.
-   *  - doi
+      - A document in which the the Information Entity is reported.
+   *  - value
       -
-      - string
+      - object | string | :ref:`iriReference`
       - 0..1
-      - A `Digital Object Identifier <https://www.doi.org/the-identifier/what-is-a-doi/>`_ for the document.
-   *  - pmid
-      -
-      - string
-      - 0..1
-      - A `PubMed unique identifier <https://en.wikipedia.org/wiki/PubMed#PubMed_identifier>`_ for the document.
+      - The value of the data item (could be a structured value, a quantitative or qualitative value, or an IRI reference to either).
 
-**Inherits:** :ref:`Entity`
+**Inherits:** :ref:`InformationEntity`
 
-**Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`DataItem`, :ref:`DataSet`, :ref:`ExperimentalVariantFunctionalImpactProposition`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`InformationEntity`, :ref:`Method`, :ref:`Statement`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`
+**Used in:** :ref:`Statement`

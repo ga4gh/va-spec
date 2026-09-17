@@ -115,15 +115,13 @@ model has been made consistent with that rule:
     ``subjectVariant`` / ``subjectGene`` :math:`\rightarrow` ``subject``;
     ``objectCondition`` / ``objectTumorType`` / ``objectSequenceFeature`` /
     ``objectTherapy`` / ``objectConsequence`` :math:`\rightarrow` ``object``;
-    ``focusAllele`` / ``focusVariant`` :math:`\rightarrow` ``focus``
-    (``focusAlleleCount`` / ``focusAlleleFrequency`` / ``locusAlleleCount`` are
-    unchanged). All examples and test fixtures were updated accordingly.
+    ``focusAllele`` / ``focusVariant`` :math:`\rightarrow` ``focus``. All
+    examples and test fixtures were updated accordingly.
   * The abstract base classes (:ref:`Proposition`, :ref:`StudyResult`,
     :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
     ``oneOf`` of their built-in subtypes, so implementers can define and validate
     **their own** subclasses of :ref:`Proposition` and :ref:`StudyResult` against
-    these bases. :ref:`Statement` and :ref:`EvidenceLine` remain concrete and
-    closed, as before.
+    these bases. :ref:`Statement` remains concrete and closed, as before.
   * :ref:`ComputationalVariantFunctionalImpactAnalysisResult` now inherits
     :ref:`StudyResult` (so it too requires ``focus``).
   * The 0.4.x processor now emits a JSON Schema for every abstract class
@@ -135,42 +133,17 @@ Other schema content changes
   * removes the draft ``CustomProposition`` class. Data providers defining their
     own proposition type should instead validate directly against the open
     abstract :ref:`Proposition` base (see above).
-  * adds a draft ``quality`` attribute to :ref:`Statement` and a draft
-    ``qualityOfEvidenceProvided`` attribute to :ref:`EvidenceLine`, for reporting
-    the quality of an assessment (e.g. a trust rating or review status) alongside
-    its direction and strength/score.
-  * adds ``hasEvidenceItems`` to :ref:`Statement` (so a Statement can cite
-    evidence items directly, without grouping them into a discrete Evidence
-    Line) and ``hasEvidenceLines`` to :ref:`EvidenceLine` (so Evidence Lines
-    can be nested, with a broader-scoped Evidence Line built from one or more
-    narrower-scoped subordinate ones). Both classes now declare
-    ``hasEvidenceItems`` immediately before ``hasEvidenceLines``, in the same
-    relative order.
   * fixes the 17 ``if``/``then`` tier-specific conditional constraints on
     :ref:`VariantPathogenicityEvidenceLine`, which checked a non-existent
     top-level ``methodType`` property instead of the correctly-nested
     ``specifiedBy.methodType`` (matching the equivalent, already-correct
     pattern on :ref:`VariantOncogenicityEvidenceLine`). As written, none of
     these conditions could ever be satisfied by a valid instance.
-  * fixes an array-wrapping defect on the AAC-2017 :ref:`DiagnosticEvidenceLine`,
-    :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine` classes:
-    each was declared as ``type: array`` (an array of itself-or-``iriReference``)
-    rather than as a plain ``allOf``-composed object, so the tier i/ii
-    ``hasEvidenceLines`` narrowing that referenced them (via a bare ``oneOf``,
-    with no ``type: array``/``items`` wrapper of its own) required the whole
-    ``hasEvidenceLines`` array to itself match one of these array-typed
-    branches, rather than letting each item independently be one of the
-    three evidence-line types. The array wrapping now lives at the narrowing
-    site instead, matching :ref:`AmpAscoCapEvidenceLine`'s composition
-    pattern; the def pages for these three classes now render their full
-    attribute tables and a **Composes:** line instead of the bare stub they
-    rendered as opaque array wrappers.
   * allows an :ref:`iriReference` as an alternative to an inline object on
     attributes that reference other, independently-identifiable Information
     Entities or concepts, so implementers can reference instead of inline
     them: :ref:`Contribution`.contributor, :ref:`Statement`.proposition/
-    .strength/.classification/.quality, :ref:`EvidenceLine`.targetProposition/
-    .strengthOfEvidenceProvided/.evidenceOutcome, :ref:`StudyResult`.sourceDataSet
+    .strength/.outcome/.quality, :ref:`StudyResult`.sourceDataSet
     (and the :ref:`ComputationalVariantFunctionalImpactAnalysisResult`
     subclass, which redeclares it), :ref:`CohortAlleleFrequencyStudyResult`.cohort,
     :ref:`TumorVariantFrequencyStudyResult`.sampleGroup, :ref:`DataSet`.license,
@@ -181,3 +154,84 @@ Other schema content changes
     by this release's removal of ``CustomProposition`` in favor of the open
     abstract :ref:`Proposition` base (see *Subject / object / focus model
     change* above).
+
+Evidence Line consolidated into Statement
+##########################################
+
+**Backwards-incompatible.** The core ``EvidenceLine`` class is removed. A
+"discrete evidence-based argument" is now just a :ref:`Statement` referenced
+via another Statement's ``hasEvidenceLines`` attribute, rather than an
+instance of a separate class:
+
+  * :ref:`Statement` gains ``hasEvidenceItems`` (so a Statement can cite
+    evidence items directly, without grouping them into a nested,
+    evidence-line-shaped Statement) and ``hasEvidenceLines`` (an array of
+    ``Statement | iriReference``, letting a broader-scoped Statement be built
+    from one or more narrower-scoped subordinate ones). ``hasEvidenceItems``
+    is declared immediately before ``hasEvidenceLines``, in that order.
+    ``hasEvidenceItems`` items are ``Statement | StudyResult | DataItem |
+    iriReference`` -- narrower than the removed ``EvidenceLine``'s open
+    ``InformationEntity`` -- so a bare :ref:`Document` or other
+    non-data-bearing Information Entity is no longer accepted directly; wrap
+    it in a new :ref:`DataItem` instead.
+  * ``EvidenceLine``'s former attributes move onto :ref:`Statement` under
+    Statement's own names: ``targetProposition`` :math:`\rightarrow`
+    ``proposition`` (already present, now optional -- omit it when it's the
+    same proposition as the Statement the evidence line supports);
+    ``directionOfEvidenceProvided`` :math:`\rightarrow` ``direction``;
+    ``strengthOfEvidenceProvided`` :math:`\rightarrow` ``strength``;
+    ``evidenceOutcome`` merges with Statement's own ``classification``
+    attribute, and the merged attribute is renamed ``outcome``;
+    ``qualityOfEvidenceProvided`` merges with Statement's own draft
+    ``quality`` attribute.
+  * adds a new draft :ref:`DataItem` class (an :ref:`InformationEntity`
+    subclass wrapping a structured, string, or IRI-reference ``value``) as
+    one of the concrete types citable via ``hasEvidenceItems``.
+  * the AAC-2017 ``AmpAscoCapEvidenceLine``, ``DiagnosticEvidenceLine``,
+    ``PrognosticEvidenceLine``, and ``TherapeuticEvidenceLine`` classes are
+    renamed :ref:`AmpAscoCapStatement`, :ref:`DiagnosticStatement`,
+    :ref:`PrognosticStatement`, and :ref:`TherapeuticStatement`, and now
+    compose :ref:`Statement` instead of the removed ``EvidenceLine``.
+    :ref:`VariantClinicalSignificanceStatement`'s ``classification``
+    attribute is renamed ``outcome`` to match.
+  * :ref:`VariantPathogenicityEvidenceLine` and
+    :ref:`VariantOncogenicityEvidenceLine` keep their names (they still
+    describe the evidence-line *role* these Statement instances play) but
+    now compose :ref:`Statement` and use its ``direction``/``strength``/
+    ``outcome`` attribute names instead of the removed
+    ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided``/
+    ``evidenceOutcome``. Each class's own ``methodType`` enumeration was
+    also normalized to ``snake_case`` codes (e.g. ACMG-2015's
+    ``"Population Data Assessment"`` :math:`\rightarrow`
+    ``population_data_assessment``; CCV-2022's ``population_frequency``
+    :math:`\rightarrow` ``population_data_assessment``,
+    ``functional_assay`` :math:`\rightarrow` ``functional_data_assessment``,
+    ``functional_domain_location`` :math:`\rightarrow`
+    ``functional_domain_assessment``, ``amino_acid_or_residue_analogy``
+    :math:`\rightarrow` ``amino_acid_analogy_assessment``,
+    ``somatic_hotspot_recurrence`` :math:`\rightarrow`
+    ``somatic_hotspot_assessment``, ``computational_prediction``
+    :math:`\rightarrow` ``in_silico_impact_assessment``, and
+    ``single_genetic_etiology_context`` :math:`\rightarrow`
+    ``single_genetic_etiology_assessment``), and
+    :ref:`VariantPathogenicityStatement`/:ref:`VariantOncogenicityStatement`'s
+    ``classification`` attribute is renamed ``outcome``.
+  * :ref:`CohortAlleleFrequencyStudyResult` renames ``focusAlleleCount``
+    :math:`\rightarrow` ``focusCount``, ``locusAlleleCount``
+    :math:`\rightarrow` ``locusCount``, and ``focusAlleleFrequency``
+    :math:`\rightarrow` ``alleleFrequency``.
+  * fixes an array-wrapping defect on the (now-renamed)
+    :ref:`DiagnosticStatement`, :ref:`PrognosticStatement`, and
+    :ref:`TherapeuticStatement` classes: each was declared as
+    ``type: array`` (an array of itself-or-``iriReference``) rather than as
+    a plain ``allOf``-composed object, so the tier i/ii ``hasEvidenceLines``
+    narrowing that referenced them (via a bare ``oneOf``, with no
+    ``type: array``/``items`` wrapper of its own) required the whole
+    ``hasEvidenceLines`` array to itself match one of these array-typed
+    branches, rather than letting each item independently be one of the
+    three types. The array wrapping now lives at the narrowing site instead,
+    matching :ref:`AmpAscoCapStatement`'s composition pattern; the def pages
+    for these three classes now render their full attribute tables and a
+    **Composes:** line instead of the bare stub they rendered as opaque
+    array wrappers.
+  * all examples and test fixtures were updated accordingly.

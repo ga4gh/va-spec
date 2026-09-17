@@ -108,7 +108,19 @@ tests:
     definition: VariantClinicalSignificanceProposition
   - test_file: amp-asco-cap-evidence-line.yaml
     namespace: va-spec.aac-2017
-    definition: AmpAscoCapEvidenceLine
+    definition: AmpAscoCapStatement
+  - test_file: amp-asco-cap-evidence-line.yaml
+    namespace: va-spec.aac-2017
+    definition: DiagnosticStatement
+  - test_file: prognostic-statement.yaml
+    namespace: va-spec.aac-2017
+    definition: PrognosticStatement
+  - test_file: therapeutic-statement.yaml
+    namespace: va-spec.aac-2017
+    definition: TherapeuticStatement
+  - test_file: data-item.yaml
+    namespace: va-spec
+    definition: DataItem
   - test_file: therapeutic-response-inline.yaml
     namespace: va-spec
     definition: Statement
@@ -129,10 +141,10 @@ tests:
     definition: VariantPathogenicityEvidenceLine
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec
-    definition: EvidenceLine
+    definition: Statement
   - test_file: evidence-line-with-nested-evidence-lines.yaml
     namespace: va-spec
-    definition: EvidenceLine
+    definition: Statement
   - test_file: statement-with-direct-evidence-items.yaml
     namespace: va-spec
     definition: Statement
@@ -147,7 +159,7 @@ tests:
     definition: VariantOncogenicityEvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec
-    definition: EvidenceLine
+    definition: Statement
   - test_file: Exp-Var-Func-Impact-Statement-01.yaml
     namespace: va-spec
     definition: Statement

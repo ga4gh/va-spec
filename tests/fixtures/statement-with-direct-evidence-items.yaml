@@ -27,7 +27,11 @@ direction: supports
 # provider wants to link supporting evidence without the additional structure of
 # scoring/directing it as a standalone argument.
 hasEvidenceItems:
-  - type: Document
-    pmid: "25741868"
-    title: Standards and guidelines for the interpretation of sequence variants
+  - type: DataItem
+    name: Standards and guidelines for the interpretation of sequence variants
+    value: Standards and guidelines for the interpretation of sequence variants
+    reportedIn:
+      - type: Document
+        pmid: "25741868"
+        title: Standards and guidelines for the interpretation of sequence variants
   - ex:evidence-item-002

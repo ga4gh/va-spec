@@ -50,28 +50,28 @@ The example below illustrates how such a scenario may be represented using the V
  # Note that values in this example are reported in shorthand form for human readability.
  # In actual VA-Spec data, many values would be wrapped in complex data type structures such as MappableConcepts.
 
-   # As a target proposition in an EvidenceLine based on functional impact data, created at t0 by Curator 1
+   # As a proposition in a Statement used as an Evidence Line, based on functional impact data, created at t0 by Curator 1
    id: EvidenceLine001
-   type: EvidenceLine
-   targetProposition:
+   type: Statement
+   proposition:
      - id: VarPathProposition001
        type: VariantPathogenicityProposition
        subject: NM_005343.4:c.173C>T:c.173C>T
        predicate: isCausalFor
        object: Costello Syndrome
        geneContextQualifier: HRAS
-   evidenceItems: FunctionalImpactStudyResult001       # full StudyResult object omitted for space
-   directionOfEvidenceProvided: supports
-   strengthOfEvidenceProvided: moderate
+   hasEvidenceItems: FunctionalImpactStudyResult001       # full StudyResult object omitted for space
+   direction: supports
+   strength: moderate
    specifiedBy: PM1
 
-   # As a target proposition in an EvidenceLine based on cohort allele frequency data, created at t1 by Curator 2
+   # As a proposition in a Statement used as an Evidence Line, based on cohort allele frequency data, created at t1 by Curator 2
    id: EvidenceLine002
-   type: EvidenceLine
-   targetProposition: VarPathProposition001    # no need to duplicate an inlined representation, as this Proposition is already defined in the message.
-   evidenceItems: AlleleCohortFrequencyStudyResult001   # full StudyResult object omitted for space
-   directionOfEvidenceProvided: supports
-   strengthOfEvidenceProvided: moderate
+   type: Statement
+   proposition: VarPathProposition001    # no need to duplicate an inlined representation, as this Proposition is already defined in the message.
+   hasEvidenceItems: AlleleCohortFrequencyStudyResult001   # full StudyResult object omitted for space
+   direction: supports
+   strength: moderate
    specifiedBy: PM2
 
    # As an asserted proposition in a VariantPathogenicityStatement, created at t2 by Curator 3 who puts forth the proposition as true and classifies the variant as 'pathogenic' based on the Evidence Lines above
@@ -80,8 +80,8 @@ The example below illustrates how such a scenario may be represented using the V
    proposition: VarPathProposition001          # no need to duplicate an inlined representation, as this Proposition is already defined in the message.
    direction: supports
    strength: definitive
-   classification: pathogenic
-   hasEvidenceLines
+   outcome: pathogenic
+   hasEvidenceLines:
      - EvidenceLine001
      - EvidenceLine002
    specifiedBy: 2015 ACMG Variant Interpretation Guidelines

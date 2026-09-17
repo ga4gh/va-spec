@@ -36,7 +36,7 @@ $defs:
               for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative
               to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested
               MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.
-              Conditional requirement: if directionOfEvidenceProvided is either 'supports' or 'disputes', then this
+              Conditional requirement: if direction is either 'supports' or 'disputes', then this
               attribute is required. If it is 'neutral', then this attribute is not allowed.
             properties:
               primaryCoding:
@@ -49,7 +49,7 @@ $defs:
                           - likely
                       system:
                         const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-          classification:
+          outcome:
             properties:
               primaryCoding:
                 allOf:
@@ -75,7 +75,7 @@ $defs:
                 - $ref: "#/$defs/VariantOncogenicityEvidenceLine"
                 - $refCurie: gkm.core:iriReference
         required:
-          - classification
+          - outcome
           - specifiedBy
 
   VariantOncogenicityEvidenceLine:
@@ -89,30 +89,22 @@ $defs:
       (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-      - $refCurie: va-spec:EvidenceLine
+      - $refCurie: va-spec:Statement
       - properties:
-          targetProposition:
+          proposition:
             description: >-
               A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to
               determine the strength and direction of support this evidence provides for or against the
               proposition's validity.
             $refCurie: va-spec:VariantOncogenicityProposition
-          directionOfEvidenceProvided:
-            type: string
-            enum: ["supports", "neutral", "disputes"]
-            description: >-
-              The direction of support that the Evidence Line is determined to provide toward its target Proposition
-              (supports, disputes, neutral). For CCV-based assessments, if a oncogenicity criterion is 'met' in the
-              Evidence Line the direction is 'supports', if a benignity criterion is 'met' the direction is 'disputes',
-              and if a criteria is 'not met' the direction is 'none'.
-          strengthOfEvidenceProvided:
+          strength:
             description: >-
               The strength of support that an Evidence Line is determined to provide for or against the proposed
               oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
-              the 'directionOfEvidenceProvided' attribute, and captured using a MappableConcept, whose
+              the 'direction' attribute, and captured using a MappableConcept, whose
               nested 'code' field is bound to an enumerated set of values. Conditional requirement: if
-              `directionOfEvidenceProvided` is either 'supports' or 'disputes', then this attribute is required.
-              If it is 'none', then this attribute is not allowed.
+              `direction` is either 'supports' or 'disputes', then this attribute is required.
+              If it is 'neutral', then this attribute is not allowed.
             properties:
               primaryCoding:
                 allOf:
@@ -141,43 +133,43 @@ $defs:
                   if it supports oncogenicity or benignity of a variant.
                 type: string
                 oneOf:
-                  - const: population_frequency
+                  - const: population_data_assessment
                     description: >-
                       Assessment of whether population control frequency refutes
                       oncogenicity or whether absence/extreme rarity in controls provides
                       supporting evidence for oncogenicity.
-                  - const: functional_assay
+                  - const: functional_data_assessment
                     description: >-
                       Assessment of well-established in vitro or in vivo functional
                       studies to determine whether experimental evidence supports or
                       refutes an oncogenic effect.
-                  - const: primary_sequence_consequence
+                  - const: primary_sequence_consequence_assessment
                     description: >-
                       Assessment of the primary sequence-level consequence of the variant,
                       including null/loss-of-function effects, protein-length changes,
                       stop-loss effects, or synonymous variants predicted to have no
                       splice or conservation impact.
-                  - const: functional_domain_location
+                  - const: functional_domain_assessment
                     description: >-
                       Assessment of whether the variant occurs in a critical and
                       well-established functional domain or region, such as an enzyme
                       active site.
-                  - const: amino_acid_or_residue_analogy
+                  - const: amino_acid_analogy_assessment
                     description: >-
                       Assessment by analogy to previously established oncogenic variants,
                       including the same amino acid change or a different missense change
                       at the same residue.
-                  - const: somatic_hotspot_recurrence
+                  - const: somatic_hotspot_assessment
                     description: >-
                       Assessment of somatic recurrence at cancer hotspots or recurrently
                       mutated residues, with evidence strength based on recurrence
                       thresholds.
-                  - const: computational_prediction
+                  - const: in_silico_impact_assessment
                     description: >-
                       Aggregate assessment of computational predictions, including
                       conservation, missense-effect, and splice-effect tools, supporting
                       either oncogenic effect or no effect.
-                  - const: single_genetic_etiology_context
+                  - const: single_genetic_etiology_assessment
                     description: >-
                       Assessment of whether the variant occurs in a gene and malignancy
                       context where the disease has a single genetic etiology, making that
@@ -185,10 +177,10 @@ $defs:
             required:
               - methodType
               - reportedIn
-          evidenceOutcome:
+          outcome:
             description: >-
-              The evidence outcome provides a single string that summarizes 'directionOfEvidenceProvided' and
-              'strengthOfEvidenceProvided' assessments, along with the specific CCV criterion used in these assessments.
+              The evidence outcome provides a single string that summarizes 'direction' and
+              'strength' assessments, along with the specific CCV criterion used in these assessments.
               Rules for constructing this string are as follows, and enforced by a regex constraint:
               (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion
               code (e.g. 'OM2' when the OM2 criteria is met with moderate strength);
@@ -204,22 +196,22 @@ $defs:
                   const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       - if:
           properties:
-            directionOfEvidenceProvided:
+            direction:
               enum: [supports, disputes]
-          required: [directionOfEvidenceProvided]
+          required: [direction]
         then:
-          required: [strengthOfEvidenceProvided]
+          required: [strength]
       - if:
           properties:
             specifiedBy:
               properties:
                 methodType:
-                  const: population_frequency
+                  const: population_data_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -230,12 +222,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: functional_assay
+                  const: functional_data_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -246,12 +238,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: primary_sequence_consequence
+                  const: primary_sequence_consequence_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -262,12 +254,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: functional_domain_location
+                  const: functional_domain_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -278,12 +270,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: amino_acid_or_residue_analogy
+                  const: amino_acid_analogy_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -294,12 +286,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: somatic_hotspot_recurrence
+                  const: somatic_hotspot_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -310,12 +302,12 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: computational_prediction
+                  const: in_silico_impact_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
@@ -326,17 +318,17 @@ $defs:
             specifiedBy:
               properties:
                 methodType:
-                  const: single_genetic_etiology_context
+                  const: single_genetic_etiology_assessment
               required: [methodType]
           required: [specifiedBy]
         then:
           properties:
-            evidenceOutcome:
+            outcome:
               properties:
                 primaryCoding:
                   properties:
                     code:
                       pattern: "^OP2(_.+)?$"
     required:
-      - directionOfEvidenceProvided
+      - direction
       - specifiedBy

@@ -31,7 +31,7 @@ coverage = dict()
 
 def _schema_ns(schema_path):
     # Namespace = module path with the 'json' segment removed and the class file dropped.
-    #   schema/va-spec/json/EvidenceLine              -> 'va-spec'
+    #   schema/va-spec/json/Statement                  -> 'va-spec'
     #   schema/va-spec/json/aac-2017/AmpAscoCap...     -> 'va-spec.aac-2017'
     #   schema/gkm-core/json/Entity                    -> 'gkm-core'
     parts = schema_path.parts

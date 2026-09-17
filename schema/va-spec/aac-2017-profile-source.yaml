@@ -15,18 +15,18 @@ namespaces:
   gkm.core: /ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/
 
 $defs:
-  AmpAscoCapEvidenceLine:
+  AmpAscoCapStatement:
     maturity: draft
-    description: Evidence line for AMP/ASCO/CAP
+    description: General statement for AMP/ASCO/CAP
     allOf:
-      - $refCurie: va-spec:EvidenceLine
+      - $refCurie: va-spec:Statement
       - properties:
-          targetProposition:
+          proposition:
             oneOf:
               - $refCurie: va-spec:VariantPrognosticProposition
               - $refCurie: va-spec:VariantDiagnosticProposition
               - $refCurie: va-spec:VariantTherapeuticResponseProposition
-          strengthOfEvidenceProvided:
+          strength:
             properties:
               primaryCoding:
                 allOf:
@@ -36,37 +36,37 @@ $defs:
                         enum: [A, B, C, D]
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
-    required: [targetProposition]
+    required: [proposition]
 
-  PrognosticEvidenceLine:
+  PrognosticStatement:
     maturity: draft
-    description: Prognostic evidence line for AMP/ASCO/CAP
+    description: Prognostic statement for AMP/ASCO/CAP
     allOf:
-      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+      - $ref: "#/$defs/AmpAscoCapStatement"
       - properties:
-          targetProposition:
+          proposition:
             $refCurie: va-spec:VariantPrognosticProposition
-        required: [targetProposition]
+        required: [proposition]
 
-  DiagnosticEvidenceLine:
+  DiagnosticStatement:
     maturity: draft
-    description: Diagnostic evidence line for AMP/ASCO/CAP
+    description: Diagnostic statement for AMP/ASCO/CAP
     allOf:
-      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+      - $ref: "#/$defs/AmpAscoCapStatement"
       - properties:
-          targetProposition:
+          proposition:
             $refCurie: va-spec:VariantDiagnosticProposition
-        required: [targetProposition]
+        required: [proposition]
 
-  TherapeuticEvidenceLine:
+  TherapeuticStatement:
     maturity: draft
-    description: Therapeutic evidence line for AMP/ASCO/CAP
+    description: Therapeutic statement for AMP/ASCO/CAP
     allOf:
-      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
+      - $ref: "#/$defs/AmpAscoCapStatement"
       - properties:
-          targetProposition:
+          proposition:
             $refCurie: va-spec:VariantTherapeuticResponseProposition
-        required: [targetProposition]
+        required: [proposition]
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -95,7 +95,7 @@ $defs:
                           - potential
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
-          classification:
+          outcome:
             description: >-
               A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of
               the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.
@@ -113,11 +113,11 @@ $defs:
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
         required:
-          - classification
+          - outcome
           - specifiedBy
       - if:
           properties:
-            classification:
+            outcome:
               type: object
               properties:
                 primaryCoding:
@@ -127,7 +127,7 @@ $defs:
                       const: tier i
                   required: [code]
               required: [primaryCoding]
-          required: [classification]
+          required: [outcome]
         then:
           properties:
             hasEvidenceLines:
@@ -135,10 +135,10 @@ $defs:
               items:
                 anyOf:
                   - $refCurie: gkm.core:iriReference
-                  - $ref: "#/$defs/DiagnosticEvidenceLine"
-                  - $ref: "#/$defs/PrognosticEvidenceLine"
-                  - $ref: "#/$defs/TherapeuticEvidenceLine"
-            classification:
+                  - $ref: "#/$defs/DiagnosticStatement"
+                  - $ref: "#/$defs/PrognosticStatement"
+                  - $ref: "#/$defs/TherapeuticStatement"
+            outcome:
               type: object
               properties:
                 name:
@@ -156,10 +156,10 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [classification, strength, direction]
+          required: [outcome, strength, direction]
       - if:
           properties:
-            classification:
+            outcome:
               type: object
               properties:
                 primaryCoding:
@@ -169,7 +169,7 @@ $defs:
                       const: tier ii
                   required: [code]
               required: [primaryCoding]
-          required: [classification]
+          required: [outcome]
         then:
           properties:
             hasEvidenceLines:
@@ -177,10 +177,10 @@ $defs:
               items:
                 anyOf:
                   - $refCurie: gkm.core:iriReference
-                  - $ref: "#/$defs/DiagnosticEvidenceLine"
-                  - $ref: "#/$defs/PrognosticEvidenceLine"
-                  - $ref: "#/$defs/TherapeuticEvidenceLine"
-            classification:
+                  - $ref: "#/$defs/DiagnosticStatement"
+                  - $ref: "#/$defs/PrognosticStatement"
+                  - $ref: "#/$defs/TherapeuticStatement"
+            outcome:
               type: object
               properties:
                 name:
@@ -198,10 +198,10 @@ $defs:
               required: [primaryCoding]
             direction:
               const: supports
-          required: [classification, strength, direction]
+          required: [outcome, strength, direction]
       - if:
           properties:
-            classification:
+            outcome:
               type: object
               properties:
                 primaryCoding:
@@ -211,10 +211,10 @@ $defs:
                       const: tier iii
                   required: [code]
               required: [primaryCoding]
-          required: [classification]
+          required: [outcome]
         then:
           properties:
-            classification:
+            outcome:
               type: object
               properties:
                 name:
@@ -223,10 +223,10 @@ $defs:
             strength: false
             direction:
               const: neutral
-          required: [direction]
+          required: [outcome, direction]
       - if:
           properties:
-            classification:
+            outcome:
               type: object
               properties:
                 primaryCoding:
@@ -236,10 +236,10 @@ $defs:
                       const: tier iv
                   required: [code]
               required: [primaryCoding]
-          required: [classification]
+          required: [outcome]
         then:
           properties:
-            classification:
+            outcome:
               type: object
               properties:
                 name:
@@ -248,4 +248,4 @@ $defs:
             strength: false
             direction:
               const: disputes
-          required: [direction]
+          required: [outcome, direction]
