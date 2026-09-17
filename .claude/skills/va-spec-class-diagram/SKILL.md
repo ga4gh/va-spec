@@ -98,6 +98,27 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
 - Keep prose annotations (`.foot`, `.caption`) short, and only use them for things a reader would
   otherwise get wrong or miss — not general restatement of what the box already shows.
 
+### Schema-validity policy
+
+Every class and field shown in a diagram must exist in the current schema sources, with one
+narrow, explicit exception:
+
+- Before publishing, check each class box and each field line against the current
+  `schema/va-spec/*.yaml` / `schema/gkm-core/*.yaml` (and cat-vrs/vrs sources, if referenced). This
+  is the same check as the cardinality-verification rule above, but framed as existence, not just
+  correctness — a class or property that doesn't exist at all is a different failure mode than one
+  with a stale cardinality.
+- If the diagram's author (the person directing this session, not a schema author found in git
+  history) wants to include a class or field that does **not** currently exist in the schema — e.g.
+  to represent a proposed or planned addition — confirm this is intentional with them before
+  including it. Don't silently drop it, and don't silently include it as if it were real.
+- If, after confirming, it's kept: annotate it visually as **"not currently available"** rather than
+  presenting it as equivalent to real schema content. Use a `.foot` annotation on the box (or the
+  specific `.prop` line) stating this plainly, and consider a distinct visual treatment (e.g. muted/
+  lower-opacity text) so it doesn't read as authoritative at a glance. Do not reuse the `.badge`
+  maturity markers (`TU`/`D`/`N`) for this — those describe maturity of something that exists, not
+  existence itself.
+
 ## Output and delivery
 
 - Self-contained single HTML file (inline `<style>`, no external requests — the Artifact CSP blocks
@@ -114,8 +135,35 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
 
   (`html_static_path = ["_static"]` is already configured in `docs/source/conf.py`, so files placed
   there ship with the built site automatically — no extra Sphinx config needed.) Pick the iframe
-  height to fit the diagram without a scrollbar at typical viewport widths; check the built page in
-  `sphinx-build` output before calling it done, since iframe height doesn't auto-fit to content.
+  height as the diagram's natural (unscaled) full height; check the built page in `sphinx-build`
+  output before calling it done, since iframe height doesn't auto-fit to content.
+- **The diagram must scale to fit its column like a raster image, not reflow or scroll.** The
+  sphinx_rtd_theme content column has a **fixed** `max-width` (currently 800px, confirmed via the
+  theme's built CSS — it does not grow with a wider browser window), so any diagram wider than that
+  will overflow a naively-embedded iframe. Two approaches were tried and rejected before landing on
+  the one below — don't reintroduce either:
+  - *Horizontal scroll* (`overflow-x: auto`) — rejected: the user explicitly called this
+    unacceptable; the diagram must fit by default, not require scrolling to see all of it.
+  - *Responsive reflow* (`@media` breakpoints that restack boxes vertically at narrow widths) —
+    rejected: it rearranges the approved positions of classes in the diagram, which must stay fixed.
+  - **Use instead: whole-diagram scale-to-fit.** Wrap everything after the opening `<div class="wrap">`
+    in `<div id="stage"><div id="scale-inner"> ... </div></div>`. `#scale-inner` gets
+    `width: max-content; margin: 0 auto; transform-origin: top left;` so it always lays out at its
+    natural, un-squished size — nothing inside it ever shrinks or reflows. `#stage` gets
+    `overflow: hidden`. A small inline script measures `#scale-inner`'s natural `scrollWidth` against
+    `#stage`'s `clientWidth`, computes `scale = Math.min(1, available / natural)`, and applies
+    `transform: scale(scale)` to `#scale-inner` plus `stage.style.height = naturalHeight * scale` so
+    the container collapses to match. Re-run it on `window.resize` and via `ResizeObserver` on
+    `#stage`. This shrinks the whole diagram uniformly (same behavior as an `<img>` with
+    `max-width:100%`) while leaving every box's position, relative to every other box, byte-for-byte
+    identical — see `example.html` for the exact script and the `transform-origin: top left` reasoning
+    (this must be `top left`, not `top center`: when `#scale-inner` overflows its container, `margin:
+    auto` resolves to 0 rather than centering it, so the box's real rendered position is flush left,
+    and the scale has to shrink from that same anchor or it drifts off-position and clips).
+  - Verify by taking headless-Chrome screenshots of the actual built `.rst` page (not just the
+    standalone diagram file) at a few window widths (e.g. 500px, ~1024px, and something wide like
+    1400px) — the RTD column's fixed max-width means a wide *browser* window alone won't catch
+    overflow bugs; a real narrow *column* case must be checked.
 - Before treating a diagram as final, publish it as an Artifact for review — these diagrams get
   iterated on with real design feedback (layout direction, what to include/exclude, arrow direction,
   alignment), so don't skip the review step even when the content itself seems obviously correct.

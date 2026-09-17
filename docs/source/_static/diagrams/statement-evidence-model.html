@@ -15,9 +15,19 @@
     }
   }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
-  body { padding: 20px; }
-  .wrap { max-width: 900px; margin: 0 auto; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; height: 100%; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  /* #stage is the fitted viewport; #scale-inner always renders at its natural
+     (max-content) size -- never squished, never reflowed -- and a script
+     scales it down uniformly to fit #stage, the same way a raster image
+     shrinks to fit its column. Layout/positions inside never change. */
+  #stage { overflow: hidden; }
+  /* transform-origin is top left (not center): when #scale-inner is wider
+     than #stage, "margin: auto" resolves to 0 (it only centers when there's
+     spare space), so the box's real rendered position is flush left -- the
+     scale must shrink from that same left edge or it drifts off-position. */
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
   .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
   .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
   .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
@@ -81,6 +91,8 @@
 </style>
 
 <div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
   <div class="title-row"><h1>Statement &amp; Evidence composition</h1><span class="src">va-spec-source.yaml</span></div>
   <p class="caption">A <code>Statement</code> can appear in three roles: the top-level claim, a nested <code>&laquo;EvidenceLine&raquo;</code> argument for it, and even an <code>&laquo;EvidenceItem&raquo;</code> cited by one. Same class throughout &mdash; only the position in the structure changes.</p>
 
@@ -211,4 +223,27 @@
     <span class="item"><span class="badge tu" style="position:static;">TU</span>&nbsp;Trial Use</span>
     <span class="item"><span class="badge d" style="position:static;">D</span>&nbsp;Draft</span>
   </div>
+  </div>
+ </div>
 </div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  function fit() {
+    inner.style.transform = 'none';
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+  window.addEventListener('resize', fit);
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(stage);
+  }
+  if (document.readyState === 'complete') { fit(); }
+  else { window.addEventListener('load', fit); }
+})();
+</script>
