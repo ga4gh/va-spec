@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<title>Role of Propositions in Statements</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
+    --box: #FAFAF8; --box-role: #F3F1EA; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+    --hl: #B4453C;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+    --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    --hl: #E38077;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+      --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+      --hl: #E38077;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+
+  .role-diagram { display: flex; align-items: flex-start; gap: 0; width: max-content; margin: 0 auto; }
+
+  .panel { display: flex; flex-direction: column; align-items: center; width: 300px; }
+  .panel-label { font-family: ui-monospace, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 8px; text-transform: uppercase; }
+
+  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 290px; font-size: 11px; }
+  .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
+  .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .body { padding: 6px 8px 7px; display: flex; flex-direction: column; gap: 3px; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop .ty { color: var(--accent); }
+  .cls .prop.hl { color: var(--hl); }
+  .cls .prop.hl b { color: var(--hl); }
+  .badge { position: absolute; top: -8px; right: 6px; font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--d); color: var(--d); }
+
+  .json-box { font-family: ui-monospace, monospace; font-size: 9.5px; line-height: 1.55; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 8px 10px; width: 290px; }
+  .jline { white-space: nowrap; color: var(--ink-soft); }
+  .jline b { color: var(--ink); font-weight: 600; }
+  .jline.hl, .jline.hl b { color: var(--hl); }
+  .jline .ind1 { padding-left: 12px; }
+  .jline .ind2 { padding-left: 24px; }
+
+  .meaning-box { font-size: 11.5px; line-height: 1.6; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 10px 12px; width: 290px; }
+  .meaning-box .hl { color: var(--hl); font-weight: 600; }
+  .meaning-box u { text-decoration-color: var(--ink-soft); }
+
+  .role-connector { display: flex; align-items: center; justify-content: center; width: 44px; flex: 0 0 44px; padding-top: 60px; }
+  .role-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
+  .role-connector .line::after {
+    content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--line-strong);
+  }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 5px; vertical-align: middle; background: var(--hl); }
+  .legend .badgesw { font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; border: 1.3px solid var(--d); color: var(--d); margin-right: 5px; }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Role of Propositions in Statements</h1><span class="src">acmg-2015-profile-source.yaml</span></div>
+  <p class="caption">How a <code>Proposition</code> flows from an abridged <code>Variant Pathogenicity Statement</code> model, through a concrete data example, to its plain-language meaning. <span style="color:var(--hl); font-weight:600;">Proposition-related content</span> is highlighted throughout.</p>
+
+  <div class="role-diagram">
+    <div class="panel">
+      <div class="panel-label">Model</div>
+      <div class="cls">
+        <span class="badge">D</span>
+        <div class="head"><div class="name">VariantPathogenicityStatement</div></div>
+        <div class="body">
+          <div class="prop hl"><b>proposition</b>: <span class="ty">VariantPathogenicityProposition</span></div>
+          <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
+          <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="role-connector"><div class="line"></div></div>
+
+    <div class="panel">
+      <div class="panel-label">Data Example</div>
+      <div class="json-box">
+        <div class="jline">{</div>
+        <div class="jline ind1"><b>"type"</b>: "Statement",</div>
+        <div class="jline hl ind1"><b>"proposition"</b>: {</div>
+        <div class="jline hl ind2"><b>"type"</b>: "VariantPathogenicityProposition",</div>
+        <div class="jline hl ind2"><b>"subject"</b>: "HRAS:c.173C&gt;T",</div>
+        <div class="jline hl ind2"><b>"predicate"</b>: "isCausalFor",</div>
+        <div class="jline hl ind2"><b>"object"</b>: "Costello Syndrome"</div>
+        <div class="jline hl ind1">},</div>
+        <div class="jline ind1"><b>"direction"</b>: "supports",</div>
+        <div class="jline ind1"><b>"strength"</b>: "moderate",</div>
+        <div class="jline ind1"><b>"outcome"</b>: "likely pathogenic"</div>
+        <div class="jline">}</div>
+      </div>
+    </div>
+
+    <div class="role-connector"><div class="line"></div></div>
+
+    <div class="panel">
+      <div class="panel-label">Meaning</div>
+      <div class="meaning-box">
+        "There is <u>moderate</u> evidence <u>supporting</u> the <span class="hl">proposition that HRAS:c.173C&gt;T is causal for Costello Syndrome</span> &mdash; assessed overall as <u>likely pathogenic</u>."
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="sw"></span>proposition-related content</span>
+    <span class="item"><span class="badgesw">D</span>Draft maturity</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.role-diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+    }
+  }
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
+  }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
+})();
+</script>

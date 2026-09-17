@@ -54,6 +54,48 @@ Every diagram subject can have two sibling files, same layout, different box con
     hierarchy) is inherently about the type relationships themselves — the class-diagram flavor
     alone is the right (and only) fit; there's no meaningful "worked example" of an inheritance edge.
 
+## A third format: Model / Data Example / Meaning
+
+For a diagram whose whole point is tracing *one attribute* across three registers at once — its
+place in the schema, a concrete value for it, and what that value actually asserts in plain
+language — neither the class-diagram nor the worked-example flavor above is the right shape (both
+show *one* register at a time, or overlay all fields of a class rather than a single one). Use a
+three-panel layout instead: **Model** (an abridged `.cls` box, reused as-is from the vocabulary
+below), **Data Example** (a literal JSON-shaped value), **Meaning** (a plain-language sentence),
+connected left-to-right by arrows. See `statement-proposition-role.html` /
+`evidence-line-proposition-role.html` for the reference implementation — copy their `<style>` block
+verbatim the same way `example.html` is copied for the other two flavors.
+
+- **`.panel`/`.panel-label`** — one of the three fixed-width columns; `.panel-label` is a small
+  uppercase caption (`MODEL`, `DATA EXAMPLE`, `MEANING`) above each column's content.
+- **Model column** — reuse `.cls` unchanged (same badge/head/body/prop structure as the other two
+  flavors) rather than inventing a new box style; keep it abridged to just the field(s) the diagram
+  is actually about, not the class's full field list.
+- **`.json-box`/`.jline`/`.ind1`/`.ind2`** — a literal, hand-built JSON-like rendering of one example
+  instance. Built as one `.jline` div per line rather than a `<pre>` block: the scale-to-fit
+  `transform` this skill uses elsewhere doesn't reliably preserve `white-space: pre` layout across
+  browsers, so indentation is applied manually per line via the `.ind1`/`.ind2` modifier classes
+  (12px/24px left padding) instead. Field values here are the same kind of concrete, sourced-from-
+  real-example data as the worked-example flavor (see that section's sourcing rule) — not invented.
+- **`.meaning-box`** — a plain-prose panel translating the data example into a sentence a non-
+  technical reader could follow; use `<u>` for terms that map directly to a specific field's value
+  (e.g. direction/strength/outcome) so the model→data→meaning thread stays visually traceable across
+  all three panels without needing a legend entry for every term.
+- **`--hl` token** (`#B4453C` light / `#E38077` dark, alongside this file's other design tokens) —
+  highlights the content the diagram is specifically about (e.g. everything proposition-related)
+  consistently across all three panels: `.prop.hl` in the Model column, `.jline.hl` in the Data
+  Example column, `.hl` inline span in the Meaning column. Reserve it for that one throughline; don't
+  reuse it as a generic emphasis color.
+- **`.role-connector`** — a short horizontal arrow between adjacent panels, analogous to
+  `.side-connector` but unlabeled (the panel headers already say what's flowing). Give it a
+  `padding-top` roughly matching the Model column's box-header height so the line visually lands near
+  panel content rather than at the very top of the column — verify with the same "connector midpoint
+  falls within both neighboring panels' bounds" check used for `.side-connector` elsewhere in this
+  file, not by eye.
+- This format doesn't have class-diagram/worked-example siblings — it *is* the worked-example-style
+  content already fused with the model, by construction. Don't build a separate `-model.html`/
+  `-example.html` pair for a diagram built this way.
+
 ## Reference implementation
 
 `example.html` in this skill's directory is the canonical, approved reference for the **class-diagram**
@@ -160,6 +202,29 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
 - **`.legend`** — keep it minimal. Only call out things that aren't self-evident from the boxes
   themselves (e.g. what a dashed box means, what the badges mean). Don't legend obvious things like
   "solid box = a class."
+- **`.inherit`** — a vertical **inheritance** connector: a plain line with a small hollow (open)
+  triangle pointing at the parent, per UML convention. Visually distinct from `.vconnector`'s filled
+  arrowhead on purpose — inheritance and association are different relationships and shouldn't look
+  the same. No `.role`/`.card` label; inheritance doesn't carry one. Only use this for genuine
+  `inherits:` relationships confirmed in the source YAML (see `core-class-hierarchy-model.html`) —
+  never for composition/association, even loosely-worded ones.
+- **`.bus-group`/`.bus-row`/`.bus-stub`/`.bus-line`** — when *several* sibling classes inherit the
+  same parent and, laid out side by side, are collectively wider than the parent box below them, a
+  single `.inherit` connector per child has nowhere valid to land (the parent's bounds don't span
+  that far — the exact "connector exits box bounds" failure mode, at the scale of N children instead
+  of one). Use a bus instead: each child gets a short `.bus-stub` line of equal height, a `.bus-line`
+  spans the full row (an auto-width block sibling of `.bus-row` inside a `.bus-group` with
+  `align-items: stretch`, so it matches the row's width with no manual measurement), and a *single*
+  `.inherit` connector runs from the bus down into the parent. Reserve this for genuine one-parent-
+  many-children inheritance fan-out; don't reach for it as a generic "many boxes, one arrow" shortcut
+  for association connectors, where each individual relationship should stay visually distinct.
+- **`.frame-content`** — `.frame` itself stays just the dashed border + label (its meaning is
+  established elsewhere in this file and other diagrams already rely on that); if a frame needs to
+  center multiple direct children as a column (rather than delegating layout to one single child, the
+  way the `InformationEntity` frame delegates to `.items-row`), wrap them in `.frame-content`
+  (`display:flex; flex-direction:column; align-items:center`) instead of adding layout properties to
+  `.frame` directly. A `.frame` with un-centered, left-aligned block children is a real bug that's
+  easy to miss visually at a glance — verify with the same overlap/centering check as everything else.
 
 ## Content rules
 

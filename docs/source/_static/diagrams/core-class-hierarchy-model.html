@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<title>Core Class Hierarchy class diagram</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
+    --box: #FAFAF8; --box-role: #F3F1EA; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+    --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+      --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+  .caption code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--ink); }
+
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
+
+  /* Inheritance connector: open (hollow) triangle pointing at the parent,
+     per UML convention -- distinct from the filled-arrowhead association
+     connectors used elsewhere in this skill. No role/cardinality label:
+     inheritance doesn't carry one. */
+  .inherit { display: flex; flex-direction: column; align-items: center; }
+  .inherit .iline { width: 1.5px; height: 22px; background: var(--line-strong); }
+  .inherit .itri {
+    width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent;
+    border-bottom: 11px solid var(--line-strong); margin-bottom: -1px;
+  }
+  .inherit .itri::after {
+    content: ""; position: relative; display: block; left: -5px; top: 3px;
+    width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent;
+    border-bottom: 7.5px solid var(--bg);
+  }
+
+  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 148px; font-size: 11px; }
+  .cls.role { border-style: dashed; background: var(--box-role); }
+  .cls.wide { width: 220px; }
+  .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
+  .cls.role .head { border-bottom-style: dashed; }
+  .cls .stereo { font-family: ui-monospace, monospace; font-size: 8.5px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
+  .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .body { padding: 5px 8px 6px; display: flex; flex-direction: column; gap: 2px; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 9px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop .ty { color: var(--accent); }
+  .badge { position: absolute; top: -8px; right: 6px; font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
+  .badge.d { border-color: var(--d); color: var(--d); }
+
+  .frame { position: relative; border: 1.3px dashed var(--line); border-radius: 6px; padding: 22px 20px 16px; }
+  .frame .frame-label {
+    position: absolute; top: -9px; left: 14px; background: var(--bg);
+    padding: 0 6px; font-family: ui-monospace, monospace; font-size: 10px; font-weight: 700;
+    color: var(--ink-soft); letter-spacing: 0.03em; opacity: 0.9;
+  }
+  /* .frame is just the dashed border + label (consistent with its use in the
+     Statement/Study Result diagrams); this wrapper does the actual
+     centered-column layout of whatever's inside a given frame here. */
+  .frame-content { display: flex; flex-direction: column; align-items: center; }
+  .frame-gap { height: 24px; }
+
+  /* "Bus" convergence: many siblings inheriting the same parent get one
+     short stub each (same height, so they all end at the same Y), a single
+     horizontal bus line spanning the row's width joining the stubs, and one
+     inherit connector from the bus down into the parent -- instead of N
+     separate arrows that would have nowhere to land when the parent box is
+     much narrower than the row of children above it. */
+  .bus-group { display: flex; flex-direction: column; align-items: stretch; }
+  .bus-row { display: flex; align-items: flex-end; gap: 10px; }
+  .bus-stub { display: flex; flex-direction: column; align-items: center; }
+  .bus-stub .stub-line { width: 1.5px; height: 20px; background: var(--line-strong); }
+  .bus-line { height: 1.5px; background: var(--line-strong); }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .sw { display: inline-block; width: 20px; height: 11px; border: 1.3px solid var(--line-strong); border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  .legend .sw.role { border-style: dashed; background: var(--box-role); }
+  .legend .tri { display: inline-block; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 9px solid var(--line-strong); margin-right: 6px; vertical-align: middle; position: relative; }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Core Class Hierarchy</h1><span class="src">va-spec-source.yaml / gkm-core-source.yaml</span></div>
+  <p class="caption">Inheritance structure of the domain-agnostic VA Core Model. Attributes shown are representative, not exhaustive &mdash; see each class's own page for the full attribute table.</p>
+
+  <div class="diagram">
+    <div class="frame">
+      <span class="frame-label">PRIMARY CLASSES</span>
+      <div class="frame-content">
+
+      <div class="bus-group">
+        <div class="bus-row">
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">Agent</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>agentType</b>: <span class="ty">string</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">StudyGroup</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>memberCount</b>: <span class="ty">integer</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">DataSet</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>version</b>: <span class="ty">string</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">Method</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>methodType</b>: <span class="ty">string</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Proposition</div></div>
+              <div class="body">
+                <div class="prop"><b>subject</b>: <span class="ty">Entity|IRI</span></div>
+                <div class="prop"><b>predicate</b>: <span class="ty">string</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">Contribution</div></div>
+              <div class="body">
+                <div class="prop"><b>contributor</b>: <span class="ty">Agent</span></div>
+                <div class="prop"><b>activityType</b>: <span class="ty">string</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">Document</div></div>
+              <div class="body">
+                <div class="prop"><b>title</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>urls</b>: <span class="ty">0..m</span></div>
+              </div>
+            </div>
+            <div class="stub-line"></div>
+          </div>
+        </div>
+        <div class="bus-line"></div>
+      </div>
+
+      <div class="inherit"><div class="iline"></div><div class="itri"></div></div>
+
+      <div class="cls wide">
+        <span class="badge tu">TU</span>
+        <div class="head"><div class="name">Entity</div></div>
+        <div class="body">
+          <div class="prop"><b>id</b>: <span class="ty">string</span></div>
+          <div class="prop"><b>type</b>: <span class="ty">string</span></div>
+          <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+        </div>
+      </div>
+
+      <div class="inherit"><div class="iline"></div><div class="itri"></div></div>
+
+      <div class="cls wide">
+        <span class="badge tu">TU</span>
+        <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">InformationEntity</div></div>
+        <div class="body">
+          <div class="prop"><b>specifiedBy</b>: <span class="ty">Method|IRI</span></div>
+          <div class="prop"><b>contributions</b>: <span class="ty">0..m</span></div>
+          <div class="prop"><b>reportedIn</b>: <span class="ty">0..m</span></div>
+        </div>
+      </div>
+
+      <div class="inherit"><div class="iline"></div><div class="itri"></div></div>
+
+      <div class="bus-group">
+        <div class="bus-row">
+          <div class="bus-stub">
+            <div class="cls wide">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="name">Statement</div></div>
+              <div class="body">
+                <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
+                <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="bus-stub">
+            <div class="cls wide">
+              <span class="badge tu">TU</span>
+              <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
+              <div class="body">
+                <div class="prop"><b>focus</b>: <span class="ty">Entity|IRI</span></div>
+                <div class="prop"><b>sourceDataSet</b>: <span class="ty">DataSet|IRI</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="frame-gap"></div>
+
+    <div class="frame">
+      <span class="frame-label">COMPLEX DATA TYPES</span>
+      <div class="frame-content">
+
+      <div class="bus-row" style="align-items:flex-start; gap:44px;">
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <div class="cls role">
+            <div class="head"><div class="stereo">(above)</div><div class="name">Entity</div></div>
+          </div>
+          <div class="bus-group">
+            <div class="inherit"><div class="iline"></div><div class="itri"></div></div>
+            <div class="bus-row">
+              <div class="bus-stub">
+                <div class="cls">
+                  <span class="badge tu">TU</span>
+                  <div class="head"><div class="name">MappableConcept</div></div>
+                  <div class="body">
+                    <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                    <div class="prop"><b>primaryCoding</b>: <span class="ty">Coding</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bus-stub">
+                <div class="cls">
+                  <span class="badge tu">TU</span>
+                  <div class="head"><div class="name">ConceptSet</div></div>
+                  <div class="body">
+                    <div class="prop"><b>concepts</b>: <span class="ty">2..m</span></div>
+                    <div class="prop"><b>membershipOperator</b>: <span class="ty">enum</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; align-items:center;">
+          <div class="cls">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Element</div></div>
+            <div class="body">
+              <div class="prop"><b>id</b>: <span class="ty">string</span></div>
+              <div class="prop"><b>extensions</b>: <span class="ty">0..m</span></div>
+            </div>
+          </div>
+          <div class="bus-group">
+            <div class="inherit"><div class="iline"></div><div class="itri"></div></div>
+            <div class="bus-row">
+              <div class="bus-stub">
+                <div class="cls">
+                  <span class="badge tu">TU</span>
+                  <div class="head"><div class="name">Coding</div></div>
+                  <div class="body">
+                    <div class="prop"><b>code</b>: <span class="ty">code</span></div>
+                    <div class="prop"><b>system</b>: <span class="ty">string</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bus-stub">
+                <div class="cls">
+                  <span class="badge tu">TU</span>
+                  <div class="head"><div class="name">ConceptMapping</div></div>
+                  <div class="body">
+                    <div class="prop"><b>coding</b>: <span class="ty">Coding</span></div>
+                    <div class="prop"><b>relation</b>: <span class="ty">enum</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="bus-stub">
+                <div class="cls">
+                  <span class="badge tu">TU</span>
+                  <div class="head"><div class="name">Extension</div></div>
+                  <div class="body">
+                    <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                    <div class="prop"><b>value</b>: <span class="ty">any</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="tri"></span>inherits (points to parent)</span>
+    <span class="item"><span class="sw role"></span>same class shown above</span>
+    <span class="item"><span class="badge tu" style="position:static;">TU</span>&nbsp;Trial Use</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+    }
+  }
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
+  }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
+})();
+</script>

@@ -269,10 +269,10 @@ The diagram shows a subset of data from the full json example. It provides a mor
 
 It also highlights the kind of schema that specifies each objects in the data - illustrating how **Core Model Classes**, **Base Profiles**, and **Community Profiles**  that rely on :ref:`different authoring mechanisms <profile-definition-mechanisms>` are used together in a structured data representation.
 
-.. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
+.. raw:: html
 
-  Detailed Data Example
+   <iframe src="../_static/diagrams/acmg-statement-with-evidence-example.html" style="width:100%; height:760px; border:0;" title="Detailed Data Example"></iframe>
 
-   **Legend**: Diagrammatic representation of a subset of data in the json example above. Styling conventions indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
+**Legend**: Diagrammatic representation of a subset of data in the json example above -- the root Statement, its first Evidence Line, and that Evidence Line's Study Result (the second Evidence Line, itself built from a nested functional-impact Statement and Study Result, is omitted here for space). The dashed ``«EvidenceLine»`` box shows that a **Statement** and an **Evidence Line** are the same underlying class, just playing a different structural role. The ``«StudyResult»`` box carries its own community/base-profile-specific ``type`` (``CohortAlleleFrequencyStudyResult``), unlike **Statement**, whose ``type`` is always literally ``"Statement"`` regardless of role. To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
 
 A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement`` -- including Statements used as Evidence Lines).

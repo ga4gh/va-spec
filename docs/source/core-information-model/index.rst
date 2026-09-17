@@ -9,11 +9,11 @@ A hierarchical view of the VA Core Model is below. See the :ref:`Modeling Founda
 
 .. core-class-hierarchy:
 
-.. figure:: ../images/core-model-class-hierarchy.png
+.. raw:: html
 
-   Core Class Hierarchy
+   <iframe src="../_static/diagrams/core-class-hierarchy-model.html" style="width:100%; height:650px; border:0;" title="Core Class Hierarchy"></iframe>
 
-   **Legend**: Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Classes in darker grey represent the key knowledge artifacts that root VA Profile data structures. Simple classes for representing :ref:`Domain Entities <domain-entities>` such Conditions and Therapies are defined in the VA Core Model, but are not shown here.
+**Legend**: Hierarchical structure of classes and attributes comprising the domain-agnostic VA Core Model. Simple classes for representing :ref:`Domain Entities <domain-entities>` such Conditions and Therapies are defined in the VA Core Model, but are not shown here.
 
 Links below (or menu to the left) provide detailed information about the attributes of each class, and guidance for their use.
 

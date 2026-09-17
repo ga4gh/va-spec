@@ -15,11 +15,11 @@ In a **Statement**, a given **Proposition** may be *asserted* to be true or fals
 
 An example of a **Proposition** as an *assessed* possible fact is illustrated below.
 
-.. figure:: ../images/statement-proposition-role.png
+.. raw:: html
 
-   Role of Propositions in Statements
+   <iframe src="../_static/diagrams/statement-proposition-role.html" style="width:100%; height:420px; border:0;" title="Role of Propositions in Statements"></iframe>
 
-   Legend: **Left panel.** Abridged version of the Variant Pathogenicity Statement model. **Center Panel.** An example of a Variant Pathogenicity Statement object (note use of shorthand syntax to capture values that should be wrapped in MappableConcepts). **Right Panel.** Plain language meaning of what structured data in the example reports to be true. Use of propositions in each panel is highlighted in red text.
+Legend: **Left panel (Model).** Abridged version of the Variant Pathogenicity Statement model. **Center Panel (Data Example).** An example of a Variant Pathogenicity Statement object (note use of shorthand syntax to capture values that should be wrapped in MappableConcepts). **Right Panel (Meaning).** Plain language meaning of what structured data in the example reports to be true. Proposition-related content in each panel is highlighted.
 
 
 Propositions in Evidence Lines
@@ -27,11 +27,11 @@ Propositions in Evidence Lines
 
 In a **Statement** used as an **Evidence Line**, the ``proposition`` attribute captures the possible fact toward which **Evidence Items** are assessed and scored (e.g. that gnomAD population frequency evidence items are evaluated toward proposition that *"HRAS:c.173C>T causes Costello Syndrome"* when assessing the evidence as   providing *moderate* *support*). An example of a *Proposition** in this role is illustrated below.
 
-.. figure:: ../images/evidence-line-proposition-role.png
+.. raw:: html
 
-   Role of Propositions in Evidence Lines
+   <iframe src="../_static/diagrams/evidence-line-proposition-role.html" style="width:100%; height:420px; border:0;" title="Role of Propositions in Evidence Lines"></iframe>
 
-   Legend: **Left panel.** Abridged version of a Pathogenicity Evidence Line model. **Center Panel:** An example of a Pathogenicity Evidence Line object (note use of shorthand syntax to capture values that should be wrapped in MappableConcepts). **Right Panel:** Plain language meaning of what structured data in the example reports to be true. Use of propositions in each panel is highlighted in red text.
+Legend: **Left panel (Model).** Abridged version of a Pathogenicity Evidence Line model. **Center Panel (Data Example).** An example of a Pathogenicity Evidence Line object (note use of shorthand syntax to capture values that should be wrapped in MappableConcepts). **Right Panel (Meaning).** Plain language meaning of what structured data in the example reports to be true. Proposition-related content in each panel is highlighted.
 
 ----------
 
