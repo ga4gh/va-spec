@@ -1002,7 +1002,7 @@ $defs:
         type: integer
         description: The number of occurrences of the focus Allele in the cohort.
       locusCount:
-        type: integer 
+        type: integer
         description: >-
           The number of occurrences of all alleles at the locus in the cohort.
       alleleFrequency:
