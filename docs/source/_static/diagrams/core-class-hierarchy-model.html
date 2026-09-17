@@ -210,6 +210,8 @@
             <div class="body">
               <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
               <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+              <div class="prop"><b>hasEvidenceLines</b>: <span class="ty">0..m</span></div>
+              <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
             </div>
           </a>
           <a class="cls wide" data-node="DataItem" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top">
@@ -416,7 +418,7 @@
       var idx = laneCounters[key] = (laneCounters[key] || 0) + 1;
       idx -= 1;
       var laneX = side === 'left' ? (s.right + 14 + idx * 9) : (s.left - 14 - idx * 9);
-      var entryX = side === 'left' ? (e.cx - 14 - idx * 16) : (e.cx + 14 + idx * 16);
+      var entryX = side === 'left' ? (e.cx - 28 - idx * 24) : (e.cx + 28 + idx * 24);
       entryX = side === 'left' ? Math.max(e.left + 10, entryX) : Math.min(e.right - 10, entryX);
       // The horizontal jog happens partway down the gap -- halfway between the
       // bottom of the arrowheads (Entity's own bottom edge) and the top of
