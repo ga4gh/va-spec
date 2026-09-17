@@ -17,12 +17,11 @@ In VA-Spec, the :ref:`Statement <Statement>` class and its :ref:`profiles <commu
 
 .. statement-proposition-data-structure:
 
-.. figure:: ../../../images/statement-proposition-data-structure.png
-   :width: 700
+.. raw:: html
 
-   Statement Data Structure
+   <iframe src="../../../_static/diagrams/statement-evidence-model.html" style="width:100%; height:820px; border:0;" title="Statement, Proposition, and Evidence class diagram"></iframe>
 
-   **Legend** A class-level view of the Statement-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+**Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item).
 
 In this structure:
 

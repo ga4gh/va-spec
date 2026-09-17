@@ -16,11 +16,11 @@ In VA-Spec, a Statement used as an :ref:`Evidence Line <EvidenceLine>`, and the 
 
 .. core-im-evidence-line-structure:
 
-.. figure:: ../../../images/evidence-line-proposition-data-structure.png
+.. raw:: html
 
-   Evidence Line Data Structure
+   <iframe src="../../../_static/diagrams/statement-evidence-model.html" style="width:100%; height:820px; border:0;" title="Statement, Proposition, and Evidence class diagram"></iframe>
 
-   **Legend** A class-level view of the Evidence Line-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
+**Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item). The same diagram appears on the :ref:`Statement <Statement>` page.
 
 In this structure:
 
@@ -48,9 +48,6 @@ The SEPIO-VA model can represent the fact that a piece of information (e.g. a Da
 * Evidence Lines are used to capture one or more pieces of information (i.e. **evidence items**, linked via ``hasEvidenceItems``) that are assessed together as an argument for or against some **proposition** - and report the **direction** (supports or disputes) and **strength** (e.g. strong, moderate, weak) that the argument is determined to make.
 * Because an Evidence Line is a Statement, it may itself carry ``hasEvidenceLines``. This lets a broadly-scoped argument be built from several finer-grained arguments it was derived from, to any depth.
 * For example, the allele count and frequency calculations for the BRCA2 c.8023A>G variant in the gnomAD database are evidence items that may be collectively assessed to build an Evidence Line making argument of moderate strength that supports a proposition that the variant is pathogenic for Breast Cancer.
-
-.. image:: ../../../images/evidence-line-semantics.png
-  :width: 700
 
 * In a Statement used as an Evidence Line, the ``proposition`` attribute reports the 'possible fact' that the evidence is assessed against (and may be omitted if it is the same as the proposition of the Statement it supports). The ``hasEvidenceItems`` attribute captures the information assessed as evidence. And the ``direction`` and ``strength`` attributes report the outcome of this assessment - whether the evidence line supports or disputes the proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc).
 
