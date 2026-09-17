@@ -80,7 +80,7 @@ A statement reporting a conclusion from a single study about whether a variant i
       - A document in which the the Information Entity is reported.
    *  - proposition
       -
-      - :ref:`VariantOncogenicityProposition`
+      - :ref:`VariantOncogenicityProposition` | :ref:`iriReference`
       - 0..1
       - A proposition about the oncogenicity of a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - direction

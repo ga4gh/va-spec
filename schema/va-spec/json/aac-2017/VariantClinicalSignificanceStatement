@@ -11,7 +11,14 @@
       {
          "properties": {
             "proposition": {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantClinicalSignificanceProposition"
+               "oneOf": [
+                  {
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantClinicalSignificanceProposition"
+                  },
+                  {
+                     "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+                  }
+               ]
             },
             "strength": {
                "description": "The strength of support that the Statement is determined to provide for or against the Variant Clinical Significance Proposition for the assessed variant, based on the curation and reporting conventions of the AMP/ASCO/CAP 2017 Guidelines.",

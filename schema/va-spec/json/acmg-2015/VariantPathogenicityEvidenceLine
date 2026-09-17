@@ -12,7 +12,14 @@
          "properties": {
             "proposition": {
                "description": "A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.",
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+               "oneOf": [
+                  {
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+                  },
+                  {
+                     "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+                  }
+               ]
             },
             "strength": {
                "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.",

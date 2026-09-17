@@ -26,6 +26,7 @@ $defs:
               - $refCurie: va-spec:VariantPrognosticProposition
               - $refCurie: va-spec:VariantDiagnosticProposition
               - $refCurie: va-spec:VariantTherapeuticResponseProposition
+              - $refCurie: gkm.core:iriReference
           strength:
             properties:
               primaryCoding:
@@ -45,7 +46,10 @@ $defs:
       - $ref: "#/$defs/AmpAscoCapStatement"
       - properties:
           proposition:
-            $refCurie: va-spec:VariantPrognosticProposition
+            oneOf:
+              - $refCurie: va-spec:VariantPrognosticProposition
+              - $refCurie: gkm.core:iriReference
+
         required: [proposition]
 
   DiagnosticStatement:
@@ -55,7 +59,9 @@ $defs:
       - $ref: "#/$defs/AmpAscoCapStatement"
       - properties:
           proposition:
-            $refCurie: va-spec:VariantDiagnosticProposition
+            oneOf:
+              - $refCurie: va-spec:VariantDiagnosticProposition
+              - $refCurie: gkm.core:iriReference
         required: [proposition]
 
   TherapeuticStatement:
@@ -65,7 +71,9 @@ $defs:
       - $ref: "#/$defs/AmpAscoCapStatement"
       - properties:
           proposition:
-            $refCurie: va-spec:VariantTherapeuticResponseProposition
+            oneOf:
+              - $refCurie: va-spec:VariantTherapeuticResponseProposition
+              - $refCurie: gkm.core:iriReference
         required: [proposition]
 
   VariantClinicalSignificanceStatement:
@@ -78,7 +86,9 @@ $defs:
       - $refCurie: va-spec:Statement
       - properties:
           proposition:
-            $refCurie: va-spec:VariantClinicalSignificanceProposition
+            oneOf:
+              - $refCurie: va-spec:VariantClinicalSignificanceProposition
+              - $refCurie: gkm.core:iriReference
           strength:
             description: >-
               The strength of support that the Statement is determined to provide for or against the Variant Clinical Significance Proposition

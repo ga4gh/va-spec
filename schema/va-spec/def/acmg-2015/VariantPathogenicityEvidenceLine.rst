@@ -80,7 +80,7 @@ An Evidence Line that describes how a specific type of information was interpret
       - A document in which the the Information Entity is reported.
    *  - proposition
       -
-      - :ref:`VariantPathogenicityProposition`
+      - :ref:`VariantPathogenicityProposition` | :ref:`iriReference`
       - 0..1
       - A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
    *  - direction

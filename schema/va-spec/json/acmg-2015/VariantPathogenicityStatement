@@ -11,8 +11,15 @@
       {
          "properties": {
             "proposition": {
-               "description": "A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.",
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+               "oneOf": [
+                  {
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+                  },
+                  {
+                     "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+                  }
+               ],
+               "description": "A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim."
             },
             "strength": {
                "description": "The strength of support that an ACMG 2015 Variant Pathogenicity statement is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute. The indicated enumeration constrains the nested MappableConcept.primaryCoding > Coding.code attribute when capturing evidence strength.",

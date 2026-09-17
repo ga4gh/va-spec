@@ -23,7 +23,9 @@ $defs:
       - $refCurie: va-spec:Statement
       - properties:
           proposition:
-            $refCurie: va-spec:VariantPathogenicityProposition
+            oneOf:
+              - $refCurie: va-spec:VariantPathogenicityProposition
+              - $refCurie: gkm.core:iriReference
             description: >-
               A proposition about the pathogenicity of a variant, the validity of which is assessed and reported by the Statement.
               A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the
@@ -112,7 +114,9 @@ $defs:
               A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to
               determine the strength and direction of support this evidence provides for or against the
               proposition's validity.
-            $refCurie: va-spec:VariantPathogenicityProposition
+            oneOf:
+              - $refCurie: va-spec:VariantPathogenicityProposition
+              - $refCurie: gkm.core:iriReference
           strength:
             description: >-
               The strength of support that an Evidence Line is determined to provide for or against the proposed

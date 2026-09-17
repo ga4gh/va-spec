@@ -80,7 +80,7 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - A document in which the the Information Entity is reported.
    *  - proposition
       -
-      - :ref:`VariantOncogenicityProposition`
+      - :ref:`VariantOncogenicityProposition` | :ref:`iriReference`
       - 0..1
       - A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
    *  - direction
