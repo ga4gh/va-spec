@@ -24,7 +24,25 @@ The diagrams below illustrate where subclass- and composition-based mechanisms a
 ------
 
 
-.. image:: /images/core-model-classes-mechanism.png
+.. raw:: html
+
+   <img src="_static/images/core-model-classes-mechanism.png" usemap="#core-model-classes-map" alt="Core Model Classes diagram" style="max-width:100%; height:auto;">
+   <map name="core-model-classes-map">
+     <area shape="rect" coords="817,198,1197,358" href="core-information-model/entities/index.html#gkm-core-entity" alt="Entity">
+     <area shape="rect" coords="20,538,154,657" href="core-information-model/entities/agent.html#agent" alt="Agent">
+     <area shape="rect" coords="190,538,408,657" href="core-information-model/entities/contribution.html#contribution" alt="Contribution">
+     <area shape="rect" coords="444,538,612,657" href="appendices/imported-models/concept-set.html#concept-set" alt="Concept Set">
+     <area shape="rect" coords="648,538,821,657" href="core-information-model/entities/information-entities/dataset.html#data-set" alt="Data Set">
+     <area shape="rect" coords="857,538,1049,657" href="core-information-model/entities/information-entities/document.html#document" alt="Document">
+     <area shape="rect" coords="1205,538,1393,657" href="core-information-model/elements/mappable-concept.html#mappableconcept" alt="Mappable Concept">
+     <area shape="rect" coords="1429,538,1585,657" href="core-information-model/entities/information-entities/method.html#method" alt="Method">
+     <area shape="rect" coords="1621,538,1819,657" href="core-information-model/entities/proposition.html#proposition" alt="Proposition">
+     <area shape="rect" coords="1855,538,1994,657" href="core-information-model/entities/study-group.html#study-group" alt="Study Group">
+     <area shape="rect" coords="809,837,1205,997" href="core-information-model/entities/information-entities/index.html#information-entity" alt="Information Entity">
+     <area shape="rect" coords="357,1177,737,1337" href="core-information-model/entities/information-entities/study-result.html#study-result" alt="Study Result">
+     <area shape="rect" coords="817,1177,1197,1337" href="core-information-model/entities/information-entities/statement.html#statement" alt="Statement">
+     <area shape="rect" coords="1277,1177,1657,1337" href="core-information-model/entities/information-entities/data-item.html#data-item" alt="Data Item">
+   </map>
 
 
 The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes (shown with dashed borders) must first be 'specialized' through subclassing.
