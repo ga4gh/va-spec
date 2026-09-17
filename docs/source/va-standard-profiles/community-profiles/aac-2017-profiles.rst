@@ -38,6 +38,7 @@ Variant Clinical Significance Statement (AAC 2017)
 -----
 
 .. _variant-amp-asco-cap-evidence-line-aac-2017:
+.. _variant-amp-asco-cap-statement-aac-2017:
 .. _AmpAscoCapStatement:
 
 Amp/Asco/Cap Statement (AAC 2017)
@@ -47,12 +48,13 @@ Amp/Asco/Cap Statement (AAC 2017)
 
 **Artifacts**
 
- - |amp_asco_cap_evidence_line_source_yaml|
- - |amp_asco_cap_evidence_line_json_schema|
+ - |amp_asco_cap_statement_source_yaml|
+ - |amp_asco_cap_statement_json_schema|
 
 -----
 
 .. _variant-diagnostic-evidence-line-aac-2017:
+.. _variant-diagnostic-statement-aac-2017:
 .. _DiagnosticStatement:
 
 Diagnostic Statement (AAC 2017)
@@ -62,12 +64,13 @@ Diagnostic Statement (AAC 2017)
 
 **Artifacts**
 
- - |diagnostic_evidence_line_source_yaml|
- - |diagnostic_evidence_line_json_schema|
+ - |diagnostic_statement_source_yaml|
+ - |diagnostic_statement_json_schema|
 
 -----
 
 .. _variant-prognostic-evidence-line-aac-2017:
+.. _variant-prognostic-statement-aac-2017:
 .. _PrognosticStatement:
 
 Prognostic Statement (AAC 2017)
@@ -77,12 +80,13 @@ Prognostic Statement (AAC 2017)
 
 **Artifacts**
 
- - |prognostic_evidence_line_source_yaml|
- - |prognostic_evidence_line_json_schema|
+ - |prognostic_statement_source_yaml|
+ - |prognostic_statement_json_schema|
 
 -----
 
 .. _variant-therapeutic-evidence-line-aac-2017:
+.. _variant-therapeutic-statement-aac-2017:
 .. _TherapeuticStatement:
 
 Therapeutic Statement (AAC 2017)
@@ -92,5 +96,5 @@ Therapeutic Statement (AAC 2017)
 
 **Artifacts**
 
- - |therapeutic_evidence_line_source_yaml|
- - |therapeutic_evidence_line_json_schema|
+ - |therapeutic_statement_source_yaml|
+ - |therapeutic_statement_json_schema|

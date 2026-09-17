@@ -26,6 +26,7 @@ ACMG Variant Pathogenicity Statement Example
     predicate: isCausalFor     # the predicate for this Statement profile is fixed at 'isCausalFor'
     object:           # the 'object' of the Proposition, narrowed to a Condition.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
+      type: MappableConcept
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
       primaryCoding:           # holds a Coding object, where the concept is defined in the 'code' or 'name' field
@@ -34,16 +35,19 @@ ACMG Variant Pathogenicity Statement Example
         iris:
           - http://identifiers.org/medgen/C2677637
     penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
+      type: MappableConcept
       primaryCoding:
         code: high
         system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
       name: high
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
+    type: MappableConcept
     primaryCoding:
       code: definitive         # the code here is a term based on language used in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
-  classification:              # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+  outcome:                     # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+    type: MappableConcept
     primaryCoding:
       code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
@@ -66,5 +70,5 @@ ACMG Variant Pathogenicity Statement Example
     type: Method
     reportedIn:                # a document that describes the Method (this is all we are given about this Method in the source data)
       type: Document
-      pmid: 25741868
+      pmid: '25741868'
       name: ACMG Guidelines, 2015

@@ -45,6 +45,7 @@ A few additional notes about this example:
     predicate: isCausalFor           # the predicate for this Statement profile is fixed at 'isCausalFor'
     object:                 # the 'object' of the Proposition, narrowed to a Condition.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
+      type: MappableConcept
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
       primaryCoding:           # holds a Coding object, where the concept is defined in the 'code' or 'name' field
@@ -53,16 +54,19 @@ A few additional notes about this example:
         iris:
           - http://identifiers.org/medgen/C2677637
     penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
+      type: MappableConcept
       primaryCoding:
         code: high
         system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
       name: high
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
+    type: MappableConcept
     primaryCoding:
       code: definitive         # the code here is a term based on language used in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
   outcome:                      # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+    type: MappableConcept
     primaryCoding:
       code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
@@ -72,26 +76,14 @@ A few additional notes about this example:
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:            # reports the type of contribution that was made (here an evaluation activity)
-        name: evaluated
-        mappings:
-          - coding:
-              code: cg000011
-              system: https://dataexchange.clinicalgenome.org/codes/
-            relation: exactMatch
+      activityType: evaluated  # a string naming the type of contribution that was made (here an evaluation activity)
       date: '2015-08-20'       # reports when this contribution was performed
     - type: Contribution
       contributor:
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:
-        name: submitted
-        mappings:
-          - coding:
-              code: cg000010
-              system: https://dataexchange.clinicalgenome.org/codes/
-            relation: exactMatch
+      activityType: submitted
       date: '2018-06-12'
   specifiedBy:                 # holds a Method object describing guidelines followed in generating the knowledge reported in the Statement
     type: Method
@@ -131,17 +123,19 @@ A few additional notes about this example:
             - "https://gnomad.broadinstitute.org/help"
     direction: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
     strength:
+      type: MappableConcept
       primaryCoding:
         code: moderate        # reports that this supporting evidence is of 'moderate' strength
         system: ACMG Guidelines, 2015
     outcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
+      type: MappableConcept
       primaryCoding:
-        code: PM2_moderate    # ... here, that the evidence line provides moderate evidence for Pathogenicity, based on the ACMG PM2 criteria
-        system: ACMG Guidelines, 2015
-      name: ACMG 2015 PM2 Moderate Criterion Met
+        code: PM2             # ... here, that the ACMG PM2 criterion was met. Because PM2 was met at its default 'moderate' strength,
+        system: ACMG Guidelines, 2015    # the bare criterion code is used (a code like 'PM2_supporting' would signal an adjusted strength,
+      name: ACMG 2015 PM2 Criterion Met  # and 'PM2_not_met' that the criterion was assessed but not met).
     specifiedBy:              # holds a Method object describing guidelines followed in generating the evidence assessment in this Evidence Line
       type: Method
-      methodType: PM2
+      methodType: population_data_assessment   # names the kind of evidence assessed; constrains which ACMG codes the 'outcome' may use
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
       reportedIn:             # a document that describes the Method (this is all we are given about this Method in the source data)
         type: Document
@@ -152,8 +146,7 @@ A few additional notes about this example:
         contributor:
           id: curator001
           type: Agent
-        activityType:
-          name: evidence evaluation
+        activityType: evidence evaluation
         date: '2018-03-11'
   - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
     type: Statement                      # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
@@ -167,6 +160,7 @@ A few additional notes about this example:
           predicate: impactsFunctionOf   # the predicate for this type of Statement is fixed at 'impactsFunctionOf'
           object:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
             id: clinvar-gene:9132
+            type: MappableConcept
             conceptType: Gene
             primaryCoding:
               code: ncbigene:9132
@@ -184,16 +178,16 @@ A few additional notes about this example:
             sequencingReadType: single-segment (short read)
         direction: supports           # indicates that the Statement supports the assessed impact Proposition above (i.e. says that the subject Variant does impact the function of the object Gene)
         outcome:                      # summarizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
+          type: MappableConcept
           primaryCoding:
             code: abnormal            # indicates the variant version of the gene has abnormal function (consistent with the 'impactsFunctionOf' proposition being 'supported')
             system: ga4gh-gkm-term:experimental-var-func-impact-classification
         specifiedBy:                  # a Method followed to produce the Statement, which is described by the publication indicated below
           type: Method
-          methodType:
-            name: variant interpretation guideline
+          methodType: variant interpretation guideline   # 'methodType' is a plain string
           reportedIn:
             type: Document
-            pmid: 29785012
+            pmid: '29785012'
         hasEvidenceLines:
         - id: EvidenceLine003
           type: Statement
@@ -212,15 +206,15 @@ A few additional notes about this example:
               functionalImpactScore: 1.29395467005388        # this is the only data item included right now in this StudyResult
               specifiedBy:
                 type: Method
-                methodType:
-                  name: Experimental protocol
+                methodType: Experimental protocol
                 reportedIn:
                   type: Document
-                  pmid: 29785012
+                  pmid: '29785012'
               sourceDataSet:
                 type: DataSet
                 name: variant effect data set
                 license:
+                  type: MappableConcept
                   primaryCoding:
                     code: CC0
                     system: https://spdx.org/licenses/
@@ -232,17 +226,19 @@ A few additional notes about this example:
                     - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
     direction: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
     strength:
+      type: MappableConcept
       primaryCoding:
         code: strong                      # indicates that this line of evidence provides 'strong' support for the variant's Pathogencity
         system: ACMG Guidelines, 2015
     outcome:
+      type: MappableConcept
       primaryCoding:
-        code: PS3_strong
+        code: PS3                         # the ACMG PS3 criterion was met at its default 'strong' strength
         system: ACMG Guidelines, 2015
-      name: ACMG 2015 PS3 Supporting Criterion Met
+      name: ACMG 2015 PS3 Criterion Met
     specifiedBy:          # holds a Method object describing guidelines followed in assessing the evidence provided by the Functional Impact Statement for the root Pathogenicity Statement
       type: Method
-      methodType: PS3
+      methodType: functional_data_assessment
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
       reportedIn:
         type: Document
@@ -253,8 +249,7 @@ A few additional notes about this example:
         contributor:
           id: curator002       # the curator who assessed functional impact statement as evidence for pathogenicity
           type: Agent
-        activityType:
-          name: evidence evaluation
+        activityType: evidence evaluation
         date: '2018-04-03'
   extensions:      # holds Extension objects which allow data providers to define key-value pairs for capturing additional info not supported by the VA model.
   - name: clinvarMethodCategory   # here, Extensions are used to report clinvar-specific values that the data provider does not want to lose

@@ -26,8 +26,8 @@ In VA-Spec, the :ref:`Statement <Statement>` class and its :ref:`profiles <commu
 
 In this structure:
 
-* A **Statement** roots a central axis where it is linked to zero or more **Evidence Lines** representing discrete arguments for or against it.
-* Each Evidence Line may be linked to zero or more pieces of information (e.g. **Study Results**) that were used to build its evidence-based argument.
+* A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more nested **Statements** serving as **Evidence Lines** - discrete arguments for or against it.
+* Each Evidence Line may in turn be linked, via ``hasEvidenceItems``, to zero or more pieces of information (e.g. **Study Results**) that were used to build its evidence-based argument.
 * The **Proposition** contained in the Statement object encapsulates a structured representation of the possible fact that the Statement may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in supporting Evidence Lines.
 * Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
 
@@ -51,16 +51,17 @@ Statements put forth a Proposition that expresses some possible fact about the w
 
 This **'SPOQ-DS'** Proposition pattern is used to explicitly represent the semantics of the central piece of knowledge reported in any Statement, which is supported by evidence and provenance information captured in other Statement attributes.
 
-2. Statement 'Modes of Use'
-===========================
 
-The model supports two "modes of use" for Statements, which differ in what they say about their Proposition, and can be distinguished by how ``direction`` and ``strength`` or ``score`` attributes are populated.
+2. Statements as Evidence Lines
+===============================
 
-* In **"Assertion Mode"**, a Statement simply reports its SPOQ Proposition to be true or false (e.g. that "BRCA2 c.8023A>G is pathogenic for Breast Cancer"). The ``strength` and ``score`` attributes are not populated, and ``direction`` is assumed true/supports if not otherwise indicated.  This mode is used by projects reporting conclusive assertions about a domain of discourse, but not providing overall confidence or evidence level assessments.
+The core model does not define a separate ``EvidenceLine`` class. A discrete, evidence-based argument for or against a Proposition is simply another **Statement**, attached to the Statement it argues about via ``hasEvidenceLines``. A Statement in that role uses the same attributes as any other:
 
-* In **"Proposition Assessment Mode"**, a Statement describes the overall state of evidence and/or confidence surrounding the SPOQ Proposition which is not necessarily being asserted as true or false. The ``strength`` or ``score`` attributes are populated, which allows for Statements to report things like "there is *weak* evidence *supporting* the proposition that 'BRCA2 c.8023A>G is causal for Breast Cancer'", or "we have *high confidence* that the proposition 'PAH:c.1285C>A is causal for Phenylketonuria is *false*").  This mode is used in projects to track the evolving state of support for propositions of interest, as curators actively collect evidence and work toward a conclusive assertion.
+* ``proposition`` holds the possible fact the evidence is assessed against. It may be omitted when it would merely repeat the ``proposition`` of the Statement it supports.
+* ``hasEvidenceItems`` holds the information that was assessed - a :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, :ref:`Data Item <DataItem>`, or an IRI reference to one of these.
+* ``direction``, ``strength`` and/or ``score`` report the outcome of that assessment, and ``outcome`` summarizes it in a single community-familiar term.
 
-.. note::  Many VA Standard Profiles, including the Variant Pathogenicity Statement Profile, contain the ``direction``, ``strength``, and ``score`` attributes, and thus could be use to support either Mode of Use. Implementations should choose the mode that best fits their data and use case when generating VA-compliant datasets - leveraging Proposition Assessment Mode if they wish to provide nuanced representations of the state of evidence or confidence surrounding a possible fact.
+See the :ref:`Evidence Line <EvidenceLine>` page for when to use this pattern rather than citing evidence items directly, how deeply to nest it, and how broadly to scope each argument.
 
 
 3. Use of the ``Proposition.qualifier`` Attribute:

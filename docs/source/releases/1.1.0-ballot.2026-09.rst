@@ -234,4 +234,19 @@ instance of a separate class:
     for these three classes now render their full attribute tables and a
     **Composes:** line instead of the bare stub they rendered as opaque
     array wrappers.
+  * the ACMG-2015 ``de_novo_data_assessment`` method type is renamed
+    ``de_novo_occurrence_assessment``.
+  * both :ref:`VariantPathogenicityEvidenceLine` and
+    :ref:`VariantOncogenicityEvidenceLine` add ``no_criteria_met`` as an
+    allowed ``outcome`` code, alongside the existing ``{criterion_code}``
+    and ``{criterion_code}_not_met`` forms. Use it to report that the
+    criteria associated with the evidence line's ``methodType`` were
+    assessed, but none of them were met. It is accepted both by each class's
+    overall outcome pattern and by every per-``methodType`` pattern.
+  * **Backwards-incompatible.** Both classes now constrain the *direction*
+    and *strength* that may accompany a negative outcome: when ``outcome``
+    is ``no_criteria_met`` or any ``{criterion_code}_not_met`` code,
+    ``direction`` MUST be ``neutral`` and ``strength`` MUST NOT be present.
+    Previously a not-met outcome could be paired with a
+    ``supports``/``disputes`` direction and a strength value.
   * all examples and test fixtures were updated accordingly.

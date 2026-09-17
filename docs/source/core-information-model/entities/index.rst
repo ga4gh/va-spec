@@ -19,7 +19,6 @@ This Entity class is imported from the `GKM-Core model <https://github.com/ga4gh
    proposition
    information-entities/statement
    information-entities/study-result
-   information-entities/evidence-line
    ../elements/mappable-concept
    contribution
    agent
@@ -30,3 +29,14 @@ This Entity class is imported from the `GKM-Core model <https://github.com/ga4gh
    study-group
    subject-variant-proposition
    genetic-context-variant-proposition
+
+
+**Usage Patterns**
+
+An :ref:`Evidence Line <EvidenceLine>` is not a class of its own, but a role a :ref:`Statement <Statement>` plays when referenced from another Statement's ``hasEvidenceLines`` attribute:
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   information-entities/evidence-line

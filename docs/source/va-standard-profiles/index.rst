@@ -7,11 +7,11 @@ VA Profiles extend generic Core Model classes with specializations to support a 
 
 The VA-Spec provides a :ref:`Profile authoring approach <profile-authoring-mechanisms>` that specifies how profiles are defined as YAML-based specifications, from which machine-readable JSON Schema are derived and used by implementers to structure, validate, and exchange variant data in their systems.
 
-The VA-Spec currently supports profiles of four Core Model classes:
+The VA-Spec currently supports profiles of three Core Model classes, plus the Evidence Line usage pattern of the Statement class:
 
  - :ref:`Statement Profiles <Statement>` support assertions of general knowledge about a variant (e.g. classification of the *PTEN:c.35A>T(p.Asn12Ile)* variant as likely pathogenic in the `ClinVar knowledgebase <https://www.ncbi.nlm.nih.gov/clinvar/RCV001214844.7/>`_).
 
- - :ref:`Evidence Line Profiles <EvidenceLine>` describe how information is interpreted as evidence supporting or disputing a proposition that may ultimately be asserted as true in a Statement (e.g. how data from an experimental functional impact analysis are interpreted to provide strong evidence supporting  an assertion that *PTEN:c.35A>T(p.Asn12Ile)* is pathogenic).
+ - :ref:`Evidence Line Profiles <EvidenceLine>` constrain the same Statement class for use as an evidence-based argument, describing how information is interpreted as evidence supporting or disputing a proposition that may ultimately be asserted as true in another Statement (e.g. how data from an experimental functional impact analysis are interpreted to provide strong evidence supporting  an assertion that *PTEN:c.35A>T(p.Asn12Ile)* is pathogenic).
 
  - :ref:`Study Result Profiles <StudyResult>` capture collections of data items about a specific variant from a particular study or analysis, which often represent evidence for higher order Statements about the variant (e.g. functional impact data about *PTEN:c.35A>T(p.Asn12Ile)* from the `MAVE dataset <https://www.mavedb.org/score-sets/urn:mavedb:00000013-a-1>`_).
 
