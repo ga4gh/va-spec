@@ -185,28 +185,37 @@ narrow, explicit exception:
     title/caption/legend elements *before* measuring `#scale-inner`'s `scrollWidth` for the scale
     calculation — see `example.html`'s `textBlocks`/`diagramWidth` logic. This keeps the figure at
     the largest size the available space allows; text wraps to match it, never the reverse.
-  - **No leftover blank space below the diagram, and pad top/bottom equally.** Because the whole
-    file is a same-origin embed (served from the same site as the doc page that iframes it), the fit
-    script can reach the embedding `<iframe>` element directly via `window.frameElement` and set its
-    `style.height` on every `fit()` call — so the iframe always matches the content's true rendered
-    height (which shrinks along with the scaled-down diagram at narrow widths) instead of sitting at
-    a fixed placeholder height with dead space under a smaller figure.
-    - **Do not measure this via `document.documentElement.scrollHeight` (or `document.body.scrollHeight`)
-      — it's a trap.** For the document's designated scrolling element, `scrollHeight` is *floored to
-      the current viewport height* — i.e. the iframe's own *existing* height — even when the actual
-      content is shorter. Since the iframe starts at whatever placeholder height the `.rst` embed
-      declares, this measurement just keeps confirming that same starting height forever and never
-      shrinks, which is exactly the "large dead space below the figure, small/uneven padding above
-      it" bug this caused in practice. Compute the true content height directly instead: take the
-      scaled diagram's own rendered height (`naturalHeight * scale`, the same value already used for
-      `stage.style.height`) and add the `<body>`'s own top+bottom padding (read via
-      `getComputedStyle`, not hardcoded, so it stays correct if the padding value ever changes) — see
-      `example.html`'s `bodyPad`/`visualHeight` logic. This is a plain geometry sum, not a
-      scrolling-element query, so it isn't subject to the viewport floor.
-    - Also give the file its own `<!DOCTYPE html>` (it's parsed as an independent document via
+  - **No leftover blank space below the diagram, and the iframe height must never be a fixed/guessed
+    number — treat it as continuously reactive, not something computed once.** A static iframe
+    height (even one "corrected" a single time on load) goes stale the moment the available width
+    changes again later for any reason — the RTD column resizing, a sidebar toggling, a font
+    finishing load — and a stale height either leaves dead space or clips content. Because the whole
+    file is a same-origin embed (served from the same site as the doc page that iframes it), reach
+    the embedding `<iframe>` element via `window.frameElement` and keep its `style.height` mirrored
+    to this document's own rendered height with a dedicated `ResizeObserver` on `document.body` (see
+    `example.html`'s `syncFrameHeight`) — separate from the `ResizeObserver` on `#stage` that drives
+    `fit()`'s width-based rescale. They're separate observers because scaling `#stage` is what
+    *causes* `body` to change size, not the other way around; each end needs its own hook rather than
+    threading one call through the other. This makes the sync reactive-by-construction to *any*
+    layout change, not just the ones a hand-picked call site remembers to trigger.
+    - **Measure the height via `document.body.getBoundingClientRect().height`, not
+      `document.documentElement.scrollHeight` (or `document.body.scrollHeight`) — the latter is a
+      trap.** For the document's designated scrolling element, `scrollHeight` is *floored to the
+      current viewport height* — i.e. the iframe's own *existing* height — even when actual content
+      is shorter, so it can only ever confirm whatever height the iframe already happens to have,
+      never correct it (this is exactly what caused a real "large dead space below the figure"
+      regression here). `getBoundingClientRect().height` on `body` is a plain geometry read, not a
+      scrolling-element query, so it isn't subject to that floor — and since `*{box-sizing:
+      border-box}` applies to `body` too, it already includes body's own top+bottom padding with no
+      extra math needed.
+    - Give the file its own `<!DOCTYPE html>` (it's parsed as an independent document via
       `iframe src=`, not inlined into the parent page) — without one it renders in quirks mode, which
       changes which element (`html` vs `body`) is the "scrolling element" the floor above applies to,
       making the bug even less predictable to reason about.
+    - The `height:<Npx>` placeholder in the `.rst` embed snippet only matters for the brief instant
+      before this script's first run — pick something reasonably close (measure the diagram's actual
+      rendered height at a typical RTD column width) purely to avoid a visible flash, but don't treat
+      getting that number exactly right as the fix; the fix is the continuous reactive sync above.
 - Before treating a diagram as final, publish it as an Artifact for review — these diagrams get
   iterated on with real design feedback (layout direction, what to include/exclude, arrow direction,
   alignment), so don't skip the review step even when the content itself seems obviously correct.

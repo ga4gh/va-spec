@@ -18,7 +18,7 @@ In VA-Spec, a Statement used as an :ref:`Evidence Line <EvidenceLine>`, and the 
 
 .. raw:: html
 
-   <iframe src="../../../_static/diagrams/statement-evidence-model.html" style="width:100%; height:820px; border:0;" title="Statement, Proposition, and Evidence class diagram"></iframe>
+   <iframe src="../../../_static/diagrams/statement-evidence-model.html" style="width:100%; height:750px; border:0;" title="Statement, Proposition, and Evidence class diagram"></iframe>
 
 **Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item). The same diagram appears on the :ref:`Statement <Statement>` page.
 

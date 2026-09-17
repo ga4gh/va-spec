@@ -248,6 +248,10 @@
   var inner = document.getElementById('scale-inner');
   var diagram = document.querySelector('.diagram');
   var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  // Fits the fixed-layout diagram to the available width by scaling
+  // #scale-inner uniformly, like an <img> with max-width:100%. Box positions
+  // never change -- only the whole diagram's rendered size does.
   function fit() {
     inner.style.transform = 'none';
     textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
@@ -260,28 +264,41 @@
     var naturalHeight = inner.scrollHeight;
     var scale = Math.min(1, stage.clientWidth / naturalWidth);
     inner.style.transform = 'scale(' + scale + ')';
-    var visualHeight = Math.ceil(naturalHeight * scale);
-    stage.style.height = visualHeight + 'px';
-    // Same-origin iframe embed: shrink the outer <iframe> itself to the
-    // content's true rendered height so there's no leftover blank space
-    // below a diagram that scaled down to fit a narrower column. Deliberately
-    // NOT document.documentElement.scrollHeight: for the document's root
-    // scrolling element, scrollHeight is floored to the current viewport
-    // height (i.e. the iframe's *existing* height) even when the actual
-    // content is shorter, so it can only ever confirm the iframe's current
-    // size, never shrink it. bodyPadTop/Bottom + visualHeight is the true
-    // rendered content height, independent of the iframe's current size.
-    if (window.frameElement) {
-      var bodyStyle = getComputedStyle(document.body);
-      var bodyPad = parseFloat(bodyStyle.paddingTop) + parseFloat(bodyStyle.paddingBottom);
-      window.frameElement.style.height = Math.ceil(bodyPad + visualHeight) + 'px';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  // Same-origin iframe embed: continuously mirrors the outer <iframe>'s
+  // height to this document's actual rendered content height, so there's
+  // never a fixed/guessed height to go stale -- not on first load, and not
+  // later when the available width (and therefore the scaled diagram's
+  // height) changes. Deliberately NOT document.documentElement.scrollHeight:
+  // for the document's root scrolling element, scrollHeight is floored to
+  // the current viewport height (i.e. the iframe's *existing* height) even
+  // when actual content is shorter, so it can only ever confirm the
+  // iframe's current size, never correct it. getBoundingClientRect().height
+  // on body is a plain geometry read (border-box, so it already includes
+  // body's own padding) with no such floor.
+  function syncFrameHeight() {
+    if (!window.frameElement) return;
+    var h = Math.ceil(document.body.getBoundingClientRect().height) + 'px';
+    if (window.frameElement.style.height !== h) {
+      window.frameElement.style.height = h;
     }
   }
-  window.addEventListener('resize', fit);
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
   if (window.ResizeObserver) {
+    // #stage reacts to available-width changes (recomputes the scale); body
+    // reacts to the resulting height change (syncs the iframe) -- two
+    // observers because scaling #stage is what *causes* body to change
+    // size, not the other way around, so each end needs its own hook rather
+    // than threading one call through the other.
     new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
   }
-  if (document.readyState === 'complete') { fit(); }
-  else { window.addEventListener('load', fit); }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
 })();
 </script>
