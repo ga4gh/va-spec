@@ -1,7 +1,7 @@
 type: Statement
 proposition:
   type: ExperimentalVariantFunctionalImpactProposition
-  subjectVariant:
+  subject:
     name: NP_000305.3:p.Arg11Thr
     type: CategoricalVariant
     constraints:
@@ -31,7 +31,7 @@ proposition:
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: impactsFunctionOf
-  objectSequenceFeature:
+  object:
     type: MappableConcept
     id: clinvar-gene:5728
     conceptType: Gene
@@ -142,7 +142,7 @@ proposition:
             name: Homo sapiens
       profilingStrategy: barcode sequencing
       sequencingReadType: single-segment (short read)
-classification:
+outcome:
   type: MappableConcept
   primaryCoding:
     code: normal

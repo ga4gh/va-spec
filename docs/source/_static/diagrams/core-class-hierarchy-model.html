@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<title>Core Class Hierarchy class diagram</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
+    --box: #FAFAF8; --box-role: #F3F1EA; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+    --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+      --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
+
+  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 148px; font-size: 11px; z-index: 1; text-decoration: none; color: inherit; cursor: pointer; }
+  a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .cls.wide { width: 220px; }
+  .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
+  .cls .stereo { font-family: ui-monospace, monospace; font-size: 8.5px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
+  .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .body { padding: 5px 8px 6px; display: flex; flex-direction: column; gap: 2px; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 9px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop .ty { color: var(--accent); }
+  .badge { position: absolute; top: -8px; right: 6px; font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
+  .badge.d { border-color: var(--d); color: var(--d); }
+
+  .frame { position: relative; border: 1.3px dashed var(--line); border-radius: 6px; padding: 22px 26px 20px; }
+  .frame .frame-label {
+    position: absolute; top: -9px; left: 14px; background: var(--bg);
+    padding: 0 6px; font-family: ui-monospace, monospace; font-size: 10px; font-weight: 700;
+    color: var(--ink-soft); letter-spacing: 0.03em; opacity: 0.9;
+  }
+  .frame-content { display: flex; flex-direction: column; align-items: center; }
+  .frame-gap { height: 24px; }
+
+  /* Explicit inheritance tree: every child gets its own hollow-triangle arrow to
+     its immediate parent (drawn by JS once box positions are known, since the
+     arrows must reach precise edge points on boxes that aren't stacked in a
+     simple straight line -- see the drawTree() script below). No bus/convergence
+     lines here; per-class arrows are the point (formally represents the
+     hierarchy edge-by-edge). */
+  .hier-tree { position: relative; display: flex; flex-direction: column; align-items: center; gap: 34px; }
+  /* Top row: left/right satellite columns and the Entity->InformationEntity
+     spine all top-aligned together, so a column's first box lines up with
+     Entity's own top edge rather than starting below a separate Entity row. */
+  .top-row { display: flex; align-items: flex-start; justify-content: center; gap: 110px; }
+  .side-col { display: flex; flex-direction: column; gap: 16px; }
+  .center-col { display: flex; flex-direction: column; align-items: center; gap: 46px; }
+  .bottom-row { display: flex; align-items: flex-start; gap: 24px; }
+  .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; z-index: 0; }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .tri { display: inline-block; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid var(--bg); position: relative; margin-right: 7px; vertical-align: middle; }
+  .legend .tri::after { content: ""; position: absolute; left: -8px; top: -5px; width: 0; height: 0; border-top: 5px solid transparent; border-bottom: 5px solid transparent; border-left: 8px solid transparent; border-right: none; }
+  .legend .tri-outline { display: inline-block; width: 9px; height: 11px; margin-right: 6px; vertical-align: middle; position: relative; top: 1px; }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Core Class Hierarchy</h1><span class="src">va-spec-source.yaml / gkm-core-source.yaml</span></div>
+  <p class="caption">Inheritance structure of the domain-agnostic VA Core Model. Attributes shown are representative, not exhaustive &mdash; see each class's own page for the full attribute table.</p>
+
+  <div class="diagram">
+    <div class="frame">
+      <span class="frame-label">PRIMARY CLASSES</span>
+      <div class="frame-content">
+
+      <div class="hier-tree" id="primary-tree" data-edges='[
+        ["Entity","Agent","left-fan"],["Entity","StudyGroup","left-fan"],["Entity","DataSet","left-fan"],["Entity","Method","left-fan"],
+        ["Entity","Proposition","right-fan"],["Entity","Contribution","right-fan"],["Entity","Document","right-fan"],
+        ["Entity","MappableConcept","right-fan"],["Entity","ConceptSet","right-fan"],
+        ["Entity","InformationEntity","straight"],
+        ["InformationEntity","StudyResult","bottom-fan"],["InformationEntity","Statement","bottom-fan"],["InformationEntity","DataItem","bottom-fan"]
+      ]'>
+        <svg class="connector-svg"></svg>
+
+        <div class="top-row">
+          <div class="side-col">
+            <a class="cls" data-node="Agent" href="../../core-information-model/entities/agent.html#agent" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">Agent</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>agentType</b>: <span class="ty">string</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="StudyGroup" href="../../core-information-model/entities/study-group.html#studygroup" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">StudyGroup</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>memberCount</b>: <span class="ty">integer</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="DataSet" href="../../core-information-model/entities/information-entities/dataset.html#dataset" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">DataSet</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>version</b>: <span class="ty">string</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="Method" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">Method</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>methodType</b>: <span class="ty">string</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="center-col">
+            <a class="cls wide" data-node="Entity" href="../../core-information-model/entities/index.html#entity" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Entity</div></div>
+              <div class="body">
+                <div class="prop"><b>id</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>type</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+              </div>
+            </a>
+          </div>
+
+          <div class="side-col">
+            <a class="cls" data-node="Proposition" href="../../core-information-model/entities/proposition.html#proposition" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Proposition</div></div>
+              <div class="body">
+                <div class="prop"><b>subject</b>: <span class="ty">Entity|IRI</span></div>
+                <div class="prop"><b>predicate</b>: <span class="ty">string</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="Contribution" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">Contribution</div></div>
+              <div class="body">
+                <div class="prop"><b>contributor</b>: <span class="ty">Agent</span></div>
+                <div class="prop"><b>activityType</b>: <span class="ty">string</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="Document" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">Document</div></div>
+              <div class="body">
+                <div class="prop"><b>title</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>urls</b>: <span class="ty">0..m</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="MappableConcept" href="../../core-information-model/elements/mappable-concept.html#mappableconcept" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">MappableConcept</div></div>
+              <div class="body">
+                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><b>primaryCoding</b>: <span class="ty">Coding</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="ConceptSet" href="../../appendices/imported-models/concept-set.html#conceptset" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">ConceptSet</div></div>
+              <div class="body">
+                <div class="prop"><b>concepts</b>: <span class="ty">2..m</span></div>
+                <div class="prop"><b>membershipOperator</b>: <span class="ty">enum</span></div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a class="cls wide" data-node="InformationEntity" id="info-entity-box" href="../../core-information-model/entities/information-entities/index.html#informationentity" target="_top" style="position:absolute; visibility:hidden;">
+          <span class="badge">TU</span>
+          <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">InformationEntity</div></div>
+          <div class="body">
+            <div class="prop"><b>specifiedBy</b>: <span class="ty">Method|IRI</span></div>
+            <div class="prop"><b>contributions</b>: <span class="ty">0..m</span></div>
+            <div class="prop"><b>reportedIn</b>: <span class="ty">0..m</span></div>
+          </div>
+        </a>
+
+        <div class="bottom-row">
+          <a class="cls wide" data-node="StudyResult" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
+            <div class="body">
+              <div class="prop"><b>focus</b>: <span class="ty">Entity|IRI</span></div>
+              <div class="prop"><b>sourceDataSet</b>: <span class="ty">DataSet|IRI</span></div>
+            </div>
+          </a>
+          <a class="cls wide" data-node="Statement" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="name">Statement</div></div>
+            <div class="body">
+              <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
+              <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+              <div class="prop"><b>hasEvidenceLines</b>: <span class="ty">0..m</span></div>
+              <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
+            </div>
+          </a>
+          <a class="cls wide" data-node="DataItem" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top">
+            <span class="badge d">D</span>
+            <div class="head"><div class="name">DataItem</div></div>
+            <div class="body">
+              <div class="prop"><b>value</b>: <span class="ty">object|string|IRI</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="frame-gap"></div>
+
+    <div class="frame">
+      <span class="frame-label">COMPLEX DATA TYPES</span>
+      <div class="frame-content">
+
+      <div class="hier-tree" id="complex-tree" data-edges='[
+        ["Element","Coding","straight"],["Element","ConceptMapping","straight"],["Element","Extension","straight"]
+      ]' style="gap: 22px;">
+        <svg class="connector-svg"></svg>
+
+        <a class="cls" data-node="Element" href="../../core-information-model/elements/index.html#element" target="_top">
+          <span class="badge">TU</span>
+          <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Element</div></div>
+          <div class="body">
+            <div class="prop"><b>id</b>: <span class="ty">string</span></div>
+            <div class="prop"><b>extensions</b>: <span class="ty">0..m</span></div>
+          </div>
+        </a>
+
+        <div class="bottom-row">
+          <a class="cls" data-node="Coding" href="../../core-information-model/elements/coding.html#coding" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="name">Coding</div></div>
+            <div class="body">
+              <div class="prop"><b>code</b>: <span class="ty">code</span></div>
+              <div class="prop"><b>system</b>: <span class="ty">string</span></div>
+            </div>
+          </a>
+          <a class="cls" data-node="ConceptMapping" href="../../core-information-model/elements/concept-mapping.html#conceptmapping" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="name">ConceptMapping</div></div>
+            <div class="body">
+              <div class="prop"><b>coding</b>: <span class="ty">Coding</span></div>
+              <div class="prop"><b>relation</b>: <span class="ty">enum</span></div>
+            </div>
+          </a>
+          <a class="cls" data-node="Extension" href="../../core-information-model/elements/extension.html#extension" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="name">Extension</div></div>
+            <div class="body">
+              <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+              <div class="prop"><b>value</b>: <span class="ty">any</span></div>
+            </div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="tri-outline"><svg width="9" height="11" viewBox="0 0 12 14"><polygon points="6,0 12,14 0,14" style="fill:var(--bg); stroke:var(--line-strong); stroke-width:1.6;"/></svg></span>inherits (hollow triangle points to parent)</span>
+    <span class="item">&laquo;abstract&raquo; = open base class</span>
+    <span class="item"><span class="badge" style="position:static;">TU</span>&nbsp;Trial Use&nbsp;&nbsp;<span class="badge d" style="position:static;">D</span>&nbsp;Draft</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  function drawTree(treeEl) {
+    var svg = treeEl.querySelector('.connector-svg');
+    var w = treeEl.scrollWidth, h = treeEl.scrollHeight;
+    svg.setAttribute('width', w);
+    svg.setAttribute('height', h);
+    var markerId = 'tri-' + treeEl.id;
+    // Two markers: the default follows the line's own arrival angle (correct
+    // for a straight or genuinely-vertical-at-the-end approach). The "-up"
+    // variant is pinned to point straight up regardless of the final segment's
+    // literal direction -- needed for a side-fan connector whose last segment
+    // is a short horizontal alignment nub into the parent's *bottom* edge:
+    // horizontal arrowheads only read correctly entering a box's side, so an
+    // entry through the bottom must visually point vertically even though the
+    // routed path's last leg is technically horizontal.
+    svg.innerHTML =
+      '<defs>' +
+      '<marker id="' + markerId + '" viewBox="0 0 12 14" refX="11.5" refY="7" ' +
+      'markerWidth="10" markerHeight="11" orient="auto">' +
+      '<polygon points="0,0 12,7 0,14" style="fill:var(--bg); stroke:var(--line-strong); stroke-width:1.6; stroke-linejoin:round;"/>' +
+      '</marker>' +
+      '<marker id="' + markerId + '-up" viewBox="0 0 12 14" refX="11.5" refY="7" ' +
+      'markerWidth="10" markerHeight="11" orient="270">' +
+      '<polygon points="0,0 12,7 0,14" style="fill:var(--bg); stroke:var(--line-strong); stroke-width:1.6; stroke-linejoin:round;"/>' +
+      '</marker>' +
+      '</defs>';
+
+    var lineColor = getComputedStyle(document.documentElement).getPropertyValue('--line-strong').trim();
+
+    function rect(el) {
+      var r = el.getBoundingClientRect();
+      var cr = treeEl.getBoundingClientRect();
+      return {
+        left: r.left - cr.left, top: r.top - cr.top, right: r.right - cr.left, bottom: r.bottom - cr.top,
+        cx: (r.left + r.right) / 2 - cr.left, cy: (r.top + r.bottom) / 2 - cr.top, w: r.width, h: r.height
+      };
+    }
+
+    function edgePoint(box, dx, dy) {
+      if (dx === 0 && dy === 0) return { x: box.cx, y: box.cy };
+      var inset = 8;
+      var candidates = [];
+      if (dx !== 0) {
+        var xEdge = dx > 0 ? box.right : box.left;
+        var tX = (xEdge - box.cx) / dx;
+        if (tX > 0) {
+          var yAtX = box.cy + dy * tX;
+          if (yAtX >= box.top - 0.5 && yAtX <= box.bottom + 0.5) {
+            candidates.push({ x: xEdge, y: Math.max(box.top + inset, Math.min(box.bottom - inset, yAtX)), t: tX });
+          }
+        }
+      }
+      if (dy !== 0) {
+        var yEdge = dy > 0 ? box.bottom : box.top;
+        var tY = (yEdge - box.cy) / dy;
+        if (tY > 0) {
+          var xAtY = box.cx + dx * tY;
+          if (xAtY >= box.left - 0.5 && xAtY <= box.right + 0.5) {
+            candidates.push({ x: Math.max(box.left + inset, Math.min(box.right - inset, xAtY)), y: yEdge, t: tY });
+          }
+        }
+      }
+      candidates.sort(function (a, b) { return a.t - b.t; });
+      return candidates[0] || { x: box.cx, y: box.cy };
+    }
+
+    function drawPolyline(points, markerSuffix) {
+      var poly = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+      poly.setAttribute('points', points.map(function (p) { return p.x + ',' + p.y; }).join(' '));
+      poly.setAttribute('fill', 'none');
+      poly.setAttribute('stroke', lineColor);
+      poly.setAttribute('stroke-width', '1.5');
+      poly.setAttribute('marker-end', 'url(#' + markerId + (markerSuffix || '') + ')');
+      svg.appendChild(poly);
+    }
+
+    // Straight mode: for boxes that are directly vertically aligned (or have
+    // no intervening siblings between them), a single edge-to-edge line is fine.
+    function connectStraight(parentEl, childEl) {
+      var p = rect(parentEl), c = rect(childEl);
+      var dx = c.cx - p.cx, dy = c.cy - p.cy;
+      var pEdge = edgePoint(p, dx, dy);
+      var cEdge = edgePoint(c, -dx, -dy);
+      drawPolyline([cEdge, pEdge]);
+    }
+
+    // Side-fan mode: for a satellite stacked in a column beside the parent,
+    // two genuinely different cases:
+    //  - The satellite's own vertical span overlaps the parent's (this is only
+    //    ever true for a column's topmost box, once columns are top-aligned
+    //    with the parent) -- a real side-edge connection, so a short straight
+    //    line with a normally-oriented (horizontal) arrowhead into the
+    //    parent's left/right edge is correct as-is.
+    //  - Otherwise the satellite sits entirely below the parent's bottom edge,
+    //    where a straight diagonal would cut across sibling boxes stacked
+    //    between them in the same column. Route via a private lane in the gap
+    //    between the column and the parent instead: horizontal stub out to
+    //    the lane (clear of every box in the column), vertical run up the
+    //    lane, then a short horizontal jog into a unique point along the
+    //    parent's bottom edge (offset by index so several convergent
+    //    arrowheads don't stack on the same pixel). Horizontal arrowheads are
+    //    only correct for a genuine side entry, so this bottom-edge entry
+    //    uses the fixed "-up" marker (see drawTree's marker defs) rather than
+    //    following that last segment's literal (horizontal) direction.
+    var laneCounters = {};
+    function connectSideFan(entityEl, satEl, side) {
+      var e = rect(entityEl), s = rect(satEl);
+      // Center-based, not range-overlap: a box whose top edge barely grazes the
+      // parent's bottom while the rest of it sits below (e.g. the 2nd box in a
+      // column, right after one that's fully side-aligned) must NOT be treated
+      // as a side connection just because of that sliver of edge overlap -- it
+      // reads as a stray diagonal line instead of a clean side or bottom entry.
+      var overlapsY = s.cy > e.top && s.cy < e.bottom;
+      var startX = side === 'left' ? s.right : s.left;
+
+      if (overlapsY) {
+        var sideEntryX = side === 'left' ? e.left : e.right;
+        var sideEntryY = Math.max(e.top + 10, Math.min(e.bottom - 10, s.cy));
+        drawPolyline([{ x: startX, y: s.cy }, { x: sideEntryX, y: sideEntryY }]);
+        return;
+      }
+
+      var key = treeEl.id + '-' + side;
+      var idx = laneCounters[key] = (laneCounters[key] || 0) + 1;
+      idx -= 1;
+      var laneX = side === 'left' ? (s.right + 14 + idx * 9) : (s.left - 14 - idx * 9);
+      var entryX = side === 'left' ? (e.cx - 28 - idx * 24) : (e.cx + 28 + idx * 24);
+      entryX = side === 'left' ? Math.max(e.left + 10, entryX) : Math.min(e.right - 10, entryX);
+      // The horizontal jog happens partway down the gap -- halfway between the
+      // bottom of the arrowheads (Entity's own bottom edge) and the top of
+      // InformationEntity below it -- rather than landing flush against
+      // Entity's edge, then a final short vertical segment carries it the
+      // rest of the way up into Entity so the arrowhead still enters
+      // correctly from below.
+      var infoEntityEl = treeEl.querySelector('[data-node="InformationEntity"]');
+      var jogY = infoEntityEl ? (e.bottom + rect(infoEntityEl).top) / 2 : e.bottom;
+      drawPolyline([
+        { x: startX, y: s.cy },
+        { x: laneX, y: s.cy },
+        { x: laneX, y: jogY },
+        { x: entryX, y: jogY },
+        { x: entryX, y: e.bottom }
+      ], '-up');
+    }
+
+    // Bottom-fan mode: for the row below a parent spanning wider than the
+    // parent itself, drop straight down from the parent to a trunk Y that
+    // clears every satellite column first, then fan out horizontally at that
+    // safe Y before dropping into each target -- avoids cutting through
+    // whatever sits directly between the parent and an off-center target.
+    var maxColBottom = 0;
+    treeEl.querySelectorAll('.side-col .cls').forEach(function (el) {
+      var r = rect(el);
+      if (r.bottom > maxColBottom) maxColBottom = r.bottom;
+    });
+    function connectBottomFan(parentEl, childEl) {
+      // Polyline must run child -> parent so marker-end (the arrowhead) lands
+      // on the parent, per UML convention -- points are listed in that order
+      // even though the visual "drop" reads top-to-bottom.
+      var p = rect(parentEl), c = rect(childEl);
+      var trunkY = maxColBottom + 20;
+      var parentX = p.cx, parentY = p.bottom;
+      var childX = c.cx, childY = c.top;
+      if (Math.abs(childX - parentX) < 2) {
+        drawPolyline([{ x: childX, y: childY }, { x: parentX, y: parentY }]);
+      } else {
+        drawPolyline([
+          { x: childX, y: childY },
+          { x: childX, y: trunkY },
+          { x: parentX, y: trunkY },
+          { x: parentX, y: parentY }
+        ]);
+      }
+    }
+
+    var edges = JSON.parse(treeEl.dataset.edges);
+    edges.forEach(function (e) {
+      var p = treeEl.querySelector('[data-node="' + e[0] + '"]');
+      var c = treeEl.querySelector('[data-node="' + e[1] + '"]');
+      if (!p || !c) return;
+      var mode = e[2] || 'straight';
+      if (mode === 'left-fan') connectSideFan(p, c, 'left');
+      else if (mode === 'right-fan') connectSideFan(p, c, 'right');
+      else if (mode === 'bottom-fan') connectBottomFan(p, c);
+      else connectStraight(p, c);
+    });
+  }
+
+  function drawAllTrees() {
+    document.querySelectorAll('.hier-tree').forEach(drawTree);
+  }
+
+  // InformationEntity sits halfway between Entity's bottom and the bottom
+  // row's top, not immediately below Entity -- pulled out of normal flow
+  // (position:absolute) and placed by measurement so its Y position tracks
+  // the actual gap regardless of how tall the flanking satellite columns end
+  // up. Removing it from flow doesn't change where Entity or the bottom row
+  // land: the side columns (4-5 boxes each) are already taller than Entity
+  // alone, so they -- not the center column -- determine the top row's
+  // height either way. Must run before drawTree(), which reads this box's
+  // final position to route every connector into/out of it.
+  function positionInformationEntity() {
+    var tree = document.getElementById('primary-tree');
+    if (!tree) return;
+    var box = document.getElementById('info-entity-box');
+    var entity = tree.querySelector('[data-node="Entity"]');
+    var bottomRow = tree.querySelector('.bottom-row');
+    var tr = tree.getBoundingClientRect();
+    var er = entity.getBoundingClientRect();
+    var br = bottomRow.getBoundingClientRect();
+    var midY = ((er.bottom - tr.top) + (br.top - tr.top)) / 2;
+    var boxH = box.getBoundingClientRect().height;
+    var entityCx = (er.left + er.right) / 2 - tr.left;
+    box.style.left = entityCx + 'px';
+    box.style.transform = 'translateX(-50%)';
+    box.style.top = (midY - boxH / 2) + 'px';
+    box.style.visibility = 'visible';
+  }
+
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    positionInformationEntity();
+    drawAllTrees();
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+    }
+  }
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
+  }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
+})();
+</script>

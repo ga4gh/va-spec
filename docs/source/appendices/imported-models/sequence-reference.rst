@@ -3,4 +3,4 @@
 SequenceReference
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../../def/vrs/SequenceReference.rst
+.. include::  ../../def/va-spec/SequenceReference.rst

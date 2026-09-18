@@ -55,7 +55,7 @@ Variation subjects of VA knowledge may be discrete instances of sequence variati
 
 **Information Model**
 
-To represent these diverse types of variation, the VA-Spec imports two complementary GKS standards:
+To represent these diverse types of variation, the VA-Spec imports two complementary GKM standards:
 
   - The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers.
 
@@ -154,7 +154,7 @@ A gene is a region (or regions) of genetic sequence that includes all of the ele
 No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
 
 **Examples**
-  - :gks_core_source:`BRCA2 <examples/mappable-concept-gene.yaml>` as a MappableConcept
+  - :gkm_core_source:`BRCA2 <examples/mappable-concept-gene.yaml>` as a MappableConcept
 
 
 -----------

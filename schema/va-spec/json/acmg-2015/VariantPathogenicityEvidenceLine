@@ -1,0 +1,795 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/acmg-2015/VariantPathogenicityEvidenceLine",
+   "title": "VariantPathogenicityEvidenceLine",
+   "description": "An Evidence Line that describes how a specific type of information was interpreted as evidence for or against a variant's pathogenicity. In the ACMG Framework, evidence is assessed by determining if a specific criterion (e.g. 'PM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.",
+   "maturity": "draft",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+      },
+      {
+         "properties": {
+            "proposition": {
+               "description": "A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.",
+               "oneOf": [
+                  {
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPathogenicityProposition"
+                  },
+                  {
+                     "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+                  }
+               ]
+            },
+            "strength": {
+               "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.",
+               "properties": {
+                  "primaryCoding": {
+                     "allOf": [
+                        {
+                           "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/Coding"
+                        },
+                        {
+                           "properties": {
+                              "code": {
+                                 "enum": [
+                                    "standalone",
+                                    "very strong",
+                                    "strong",
+                                    "moderate",
+                                    "supporting"
+                                 ]
+                              },
+                              "system": {
+                                 "const": "ACMG Guidelines, 2015"
+                              }
+                           }
+                        }
+                     ]
+                  }
+               }
+            },
+            "specifiedBy": {
+               "description": "The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction of support that it provides for or against a variant's pathogenicity. While the ACMG Criteria themselves provide minimal guidance, typically a more detailed, disease- or gene- specific rubric is followed to determine if a given criterion was met, and how strongly (e.g. the ClinGen Hearing Loss Expert Panel guidelines for ACMG interpretations).",
+               "properties": {
+                  "methodType": {
+                     "description": "A term representing the type of method used to assess evidence for or against the pathogenicity of a variant. Method type is reported as the ACMG Code that defines criteria against which evidence is assessed to determine if it supports pathogenicity or benignity of a variant.",
+                     "type": "string",
+                     "oneOf": [
+                        {
+                           "const": "population_data_assessment",
+                           "description": "Assessment of whether population control frequency refutes pathogenicity or whether absence/extreme rarity in controls provides supporting evidence for pathogenicity."
+                        },
+                        {
+                           "const": "case_control_enrichment_assessment",
+                           "description": "Prevalence in affected statistically increased over matched controls, or enrichment in controls inconsistent with disease penetrance"
+                        },
+                        {
+                           "const": "null_variant_assessment",
+                           "description": "Predicted null variant in a gene where LOF is a known mechanism of disease"
+                        },
+                        {
+                           "const": "same_amino_acid_change_assessment",
+                           "description": "Same amino acid change as an established pathogenic variant"
+                        },
+                        {
+                           "const": "mutational_hot_spot_and_functional_domain_assessment",
+                           "description": "Mutational hot spot or well-established functional domain without benign variation"
+                        },
+                        {
+                           "const": "protein_length_change_assessment",
+                           "description": "Protein length change, or in-frame indels changing counts of repeats with no known function"
+                        },
+                        {
+                           "const": "novel_missense_position_assessment",
+                           "description": "Novel missense change at an amino acid where a different pathogenic missense change has been seen before"
+                        },
+                        {
+                           "const": "variant_spectrum_assessment",
+                           "description": "Missense in a gene where only truncation causes disease, or with low rate of benign missense variation"
+                        },
+                        {
+                           "const": "in_silico_functional_impact_assessment",
+                           "description": "Multiple lines of computational evidence support a deleterious effect or no impact"
+                        },
+                        {
+                           "const": "predicted_silent_variant_assessment",
+                           "description": "Silent variant with no predicted splicing impact"
+                        },
+                        {
+                           "const": "functional_data_assessment",
+                           "description": "Well-established functional studies show or do not show deleterious effect"
+                        },
+                        {
+                           "const": "segregation_data_assessment",
+                           "description": "Consegregation with disease in multiple family members, or nonsegregation"
+                        },
+                        {
+                           "const": "de_novo_occurrence_assessment",
+                           "description": "De novo, with or without paternity and maternity confirmed"
+                        },
+                        {
+                           "const": "cis_trans_variant_assessment",
+                           "description": "Observed in trans with a dominant variant, in cis with a pathogenic variant, or in trans with a pathogenic variant in a recessive disorder"
+                        },
+                        {
+                           "const": "reputable_source_assessment",
+                           "description": "Benign or pathogenic according to a reputable source"
+                        },
+                        {
+                           "const": "phenotype_gene_specificity_assessment",
+                           "description": "Patient's phenotype or family history highly specific for the gene and disorder"
+                        },
+                        {
+                           "const": "alternative_cause_assessment",
+                           "description": "Found in a case with an alternate cause"
+                        }
+                     ]
+                  }
+               },
+               "required": [
+                  "methodType",
+                  "reportedIn"
+               ]
+            },
+            "outcome": {
+               "description": "The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'PS3_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.",
+               "properties": {
+                  "primaryCoding": {
+                     "code": {
+                        "pattern": "^(?:no_criteria_met|((?:PVS1)(?:_(?:not_met|(?:strong|moderate|supporting)))?|(?:PS[1-4]|BS[1-4])(?:_(?:not_met|(?:very_strong|moderate|supporting)))?|BA1(?:_not_met)?|(?:PM[1-6])(?:_(?:not_met|(?:very_strong|strong|supporting)))?|(PP[1-5]|BP[1-7])(?:_(?:not_met|very_strong|strong|moderate))?))$",
+                        "example": "PS3, PS3_moderate, PS3_not_met, BP6, BP6_strong, BP6_not_met, no_criteria_met",
+                        "description": "The code for the evidence outcome, which is based on the ACMG criterion code, used, and the assessed direction and strength of evidence provided."
+                     },
+                     "system": {
+                        "const": "ACMG Guidelines, 2015"
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "direction": {
+                  "enum": [
+                     "supports",
+                     "disputes"
+                  ]
+               }
+            },
+            "required": [
+               "direction"
+            ]
+         },
+         "then": {
+            "required": [
+               "strength"
+            ]
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "population_data_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(BA1|BS1|PM2)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "case_control_enrichment_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(BS2|PM4)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "null_variant_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|PVS1(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "same_amino_acid_change_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|PS1(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "mutational_hot_spot_and_functional_domain_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|PM1(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "protein_length_change_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PM4|BP3)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "novel_missense_position_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|PM5(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "variant_spectrum_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PP2|BP1)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "in_silico_functional_impact_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PP3|BP4)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "predicted_silent_variant_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|BP7(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "functional_data_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PS3|BS3)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "segregation_data_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PP1|BS4)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "de_novo_occurrence_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PS2|PM6)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "cis_trans_variant_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PM3|BP2)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "reputable_source_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(PP5|BP6)(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "phenotype_gene_specificity_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|PP4(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "specifiedBy": {
+                  "properties": {
+                     "methodType": {
+                        "const": "alternative_cause_assessment"
+                     }
+                  },
+                  "required": [
+                     "methodType"
+                  ]
+               }
+            },
+            "required": [
+               "specifiedBy"
+            ]
+         },
+         "then": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|BP5(_.+)?)$"
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      },
+      {
+         "if": {
+            "properties": {
+               "outcome": {
+                  "properties": {
+                     "primaryCoding": {
+                        "properties": {
+                           "code": {
+                              "pattern": "^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$"
+                           }
+                        },
+                        "required": [
+                           "code"
+                        ]
+                     }
+                  },
+                  "required": [
+                     "primaryCoding"
+                  ]
+               }
+            },
+            "required": [
+               "outcome"
+            ]
+         },
+         "then": {
+            "properties": {
+               "direction": {
+                  "const": "neutral"
+               }
+            },
+            "not": {
+               "required": [
+                  "strength"
+               ]
+            }
+         }
+      }
+   ],
+   "required": [
+      "direction",
+      "specifiedBy"
+   ],
+   "type": "object",
+   "unevaluatedProperties": false
+}

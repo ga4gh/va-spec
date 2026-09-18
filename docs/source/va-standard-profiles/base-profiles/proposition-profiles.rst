@@ -5,12 +5,13 @@ Proposition Profiles
 
 Proposition Profiles are defined as concrete subclasses of the core :ref:`Proposition<Proposition>` class - each tailored to represent a specific type of possible fact that may be true in a domain of discourse. For example, the :ref:`VariantPathogenicityProposition<variant-pathogenicity-proposition>` profile defines a model for describing causal relationships between genetic variants and specific diseases.
 
-Such Propositions are used within the context of generic ``Statement`` or ``EvidenceLine`` classes from the core model, to provide domain specific semantics for the respective assessments that these core classes provide (e.g. in the :ref:`example here<proposition-utility-example>`). This avoids the need to define Statement or Evidence Line profiles for many use cases. (The VA-Spec only defines Statement or Evidence Line profiles to support strict alignment with terminological conventions of a particular community guideline, e.g. the :Ref:`ACMG 2015 Variant Pathogenicity Statement<variant-pathogenicity-statement-acmg-2015>` profile).
+Such Propositions are used within the context of the generic ``Statement`` class from the core model - whether that Statement stands on its own or serves as an :ref:`Evidence Line <EvidenceLine>` - to provide domain specific semantics for the assessments that the core class provides (e.g. in the :ref:`example here<proposition-utility-example>`). This avoids the need to define Statement or Evidence Line profiles for many use cases. (The VA-Spec only defines Statement or Evidence Line profiles to support strict alignment with terminological conventions of a particular community guideline, e.g. the :Ref:`ACMG 2015 Variant Pathogenicity Statement<variant-pathogenicity-statement-acmg-2015>` profile).
 
 Below are the **VA Standard Proposition Profiles** currently defined as part of the VA-Spec, and available for adoption or extension by implementations.
 
 
 .. _variant-pathogenicity-proposition:
+.. _VariantPathogenicityProposition:
 
 Variant Pathogenicity Proposition
 #################################
@@ -30,6 +31,7 @@ Variant Pathogenicity Proposition
 
 
 .. _variant-oncogenicity-proposition:
+.. _VariantOncogenicityProposition:
 
 Variant Oncogenicity Proposition
 #################################
@@ -46,6 +48,7 @@ Variant Oncogenicity Proposition
  - These specific attributes were defined to support the needs of early :ref:`VA-Spec implementations <implementations>`, but may be refined or expanded as additional use cases emerge.
 
 .. _clinical-significance-proposition:
+.. _VariantClinicalSignificanceProposition:
 
 Variant Clinical Significance Proposition
 #########################################
@@ -57,6 +60,7 @@ Variant Clinical Significance Proposition
  - |clinical_significance_proposition_json_schema|
 
 .. _variant-therapeutic-response-proposition:
+.. _VariantTherapeuticResponseProposition:
 
 Variant Therapeutic Response Proposition
 ########################################
@@ -76,6 +80,7 @@ Variant Therapeutic Response Proposition
 
 
 .. _variant-diagnostic-proposition:
+.. _VariantDiagnosticProposition:
 
 Variant Diagnostic Proposition
 ##############################
@@ -93,6 +98,7 @@ Variant Diagnostic Proposition
 
 
 .. _variant-prognostic-proposition:
+.. _VariantPrognosticProposition:
 
 Variant Prognostic Proposition
 ##############################
@@ -111,6 +117,7 @@ Variant Prognostic Proposition
 
 
 .. _experimental-variant-functional-impact-proposition:
+.. _ExperimentalVariantFunctionalImpactProposition:
 
 Experimental Variant Functional Impact Proposition
 ##################################################
@@ -136,11 +143,10 @@ Gene Disease Validity Proposition
 
 .. include::  ../../def/va-spec/GeneDiseaseValidityProposition.rst
 
+.. _variant-molecular-consequence-proposition:
+.. _VariantMolecularConsequenceProposition:
 
-.. _custom-proposition:
-.. _CustomProposition:
+Variant Molecular Consequence Proposition
+#########################################
 
-Custom Proposition
-##################
-
-.. include::  ../../def/va-spec/CustomProposition.rst
+.. include::  ../../def/va-spec/VariantMolecularConsequenceProposition.rst

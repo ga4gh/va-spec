@@ -5,15 +5,15 @@ Custom Variant Pathogenicity Statement Example
 
 **Building Custom Statement Models:**
 
-* Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a Profile to be specifically defined for it.
-* The :ref:`Statement and Evidence Line Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
-* Implementers who do not seek such alignment can build their own schema for Statements or Evidence Lines to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
+* Representation of a particular type of **Statement** - including a Statement used as an :ref:`Evidence Line <EvidenceLine>` - using the VA-Spec does not always require a Profile to be specifically defined for it.
+* The :ref:`Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
+* Implementers who do not seek such alignment can build their own schema for Statements to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
 * For example, starting with the core Statement<Statement> class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and the permissive core Statement attributes will not impose community-specific constraints around representation of additional information about the Statement (e.g. strength, provenance, source documents, etc).
 
 **Example Description:**
 
  * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this |simple_test_fixtures_example|, but does not conform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type.
- * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``classification``.
+ * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``outcome``.
  * Annotations in the example point out where the implementers preferred codes are used instead of ACMG-based terms.
 
 **Data**:
@@ -28,10 +28,11 @@ Custom Variant Pathogenicity Statement Example
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: clinvar/208366    # 'subjectVariant' specializes the VA Core 'subject' attribute, and holds a CatVRS 'Categorical Variant' whose full representation is not shown here.
+    subject: clinvar/208366    # the 'subject' of the Proposition, narrowed to a variant, and holds a CatVRS 'Categorical Variant' whose full representation is not shown here.
     predicate: isCausalFor     # the predicate for this Statement profile is fixed at 'isCausalFor'
-    objectCondition:           # 'objectCondition' specializes the VA Core 'object' attribute.
+    object:           # the 'object' of the Proposition, narrowed to a Condition.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
+      type: MappableConcept
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
       primaryCoding:           # holds a Coding object, where the concept is defined in the 'code' or 'name' field
@@ -40,16 +41,19 @@ Custom Variant Pathogenicity Statement Example
         iris:
           - http://identifiers.org/medgen/C2677637
     penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
+      type: MappableConcept
       primaryCoding:
         code: high
-        system: ga4gh-gks-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
+        system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
       name: high
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
+    type: MappableConcept
     primaryCoding:
       code: established        # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminological conventions)
       system: Implementer System 1
-  classification:              # holds a MappableConcept reporting the final classification of the subject variant to be 'disease-causing'
+  outcome:                     # holds a MappableConcept reporting the final classification of the subject variant to be 'disease-causing'
+    type: MappableConcept
     primaryCoding:
       code: disease-causing    # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminological conventions)
       system: ACMG Guidelines, 2015
@@ -59,16 +63,14 @@ Custom Variant Pathogenicity Statement Example
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:            # reports the type of contribution that was made (here an evaluation activity)
-        name: evaluated
+      activityType: evaluated  # reports the type of contribution that was made (here an evaluation activity)
       date: '2015-08-20'       # reports when this contribution was performed
     - type: Contribution
       contributor:
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:
-        name: submitted
+      activityType: submitted
       date: '2018-06-12'
   specifiedBy:                 # holds a Method object describing the implementers guidelines and terminology for recording the knowledge reported in the Statement
     type: Method

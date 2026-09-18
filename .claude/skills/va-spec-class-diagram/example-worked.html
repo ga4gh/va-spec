@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<title>Statement / EvidenceLine / EvidenceItem worked example</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
+    --box: #FAFAF8; --box-role: #F3F1EA; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+    --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+      --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  /* #stage is the fitted viewport; #scale-inner always renders at its natural
+     (max-content) size -- never squished, never reflowed -- and a script
+     scales it down uniformly to fit #stage, the same way a raster image
+     shrinks to fit its column. Layout/positions inside never change. */
+  #stage { overflow: hidden; }
+  /* transform-origin is top left (not center): when #scale-inner is wider
+     than #stage, "margin: auto" resolves to 0 (it only centers when there's
+     spare space), so the box's real rendered position is flush left -- the
+     scale must shrink from that same left edge or it drifts off-position. */
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  /* The figure (.diagram) is the width driver, not the prose above/below it --
+     .diagram gets its own max-content width so it always sizes to its true
+     natural width regardless of its container; the script then caps
+     .text-block elements (title/caption/legend) to that same width so a long
+     caption line can't force the whole diagram to scale down further than
+     the figure itself needs. */
+  .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+  .caption code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--ink); }
+
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
+
+  /* Two flex-grow line segments sandwich the role label, so the line spans
+     the connector's FULL height (touching the upper box's bottom edge and
+     the lower box's top edge directly, padding:0) and only breaks where the
+     label actually needs the space -- not a short stub line floating above
+     a gap. Arrowhead sits at the bottom segment's end, right at the lower
+     box's edge. */
+  .vconnector { display: flex; flex-direction: column; align-items: center; min-height: 46px; position: relative; padding: 0; }
+  .vconnector .vline { width: 1.5px; flex: 1 1 auto; min-height: 8px; background: var(--line-strong); position: relative; }
+  .vconnector .vline.arrow::after {
+    content: ""; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--line-strong);
+  }
+  .vconnector .role { flex: 0 0 auto; margin: 3px 0; font-family: ui-monospace, "SF Mono", Consolas, monospace; font-size: 10.5px; color: var(--ink-soft); white-space: nowrap; }
+  .vconnector .card { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); opacity: 0.75; }
+
+  .side-connector { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; flex: 0 0 80px; padding: 0 2px; }
+  .side-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
+  .side-connector .line::after {
+    content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--line-strong);
+  }
+  .side-connector.reverse .line::after {
+    right: auto; left: -1px;
+    border-left: none; border-right: 6px solid var(--line-strong);
+  }
+  .side-connector .role { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); margin-bottom: 2px; white-space: nowrap; }
+  .side-connector .card { font-family: ui-monospace, monospace; font-size: 8.5px; color: var(--ink-soft); opacity: 0.75; margin-top: 2px; }
+  /* Bent (elbow) connector: used instead of a straight .line whenever the two
+     boxes' vertical spans don't overlap at the connector's natural (row-
+     centered) position, so a straight horizontal line would exit one box's
+     bounds. seg-source stays at the connector's natural center (matching the
+     source box's own row); seg-target/seg-v jog to a Y that lands inside the
+     target box instead. Exact top/height offsets are computed per instance
+     from measured box positions (see the va-spec-class-diagram skill) --
+     re-measure and adjust if box content changes. */
+  .elbow-path { position: relative; width: 100%; }
+  .elbow-path .seg-source { position: absolute; left: 0; width: 50%; height: 1.5px; background: var(--line-strong); }
+  .elbow-path .seg-target { position: absolute; left: 50%; width: 50%; height: 1.5px; background: var(--line-strong); }
+  .elbow-path .seg-v { position: absolute; left: 50%; width: 1.5px; background: var(--line-strong); }
+  .elbow-path .seg-source::after {
+    content: ""; position: absolute; left: -1px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-right: 6px solid var(--line-strong);
+  }
+  .side-row { display: flex; align-items: center; }
+  .side-stack { display: flex; flex-direction: column; gap: 14px; }
+
+  .cls { position: relative; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 220px; font-size: 11.5px; }
+  .cls.role { border-style: dashed; background: var(--box-role); }
+  .cls.small { width: 220px; }
+  /* Unlike the formal class diagram (statement-evidence-model.html), boxes
+     here are NOT narrowed to 160px: worked-example values (quoted strings,
+     concrete data) run longer than terse type names like "string" or
+     "0..m", and 160px clips them under text-overflow:ellipsis. Measured
+     against this file's actual example content -- see the
+     va-spec-class-diagram skill's width-measurement method before changing
+     either this or the example values. */
+  .cls.narrow { width: 220px; }
+  .cls .head { padding: 7px 10px 6px; border-bottom: 1.3px solid var(--line-strong); }
+  .cls.role .head { border-bottom-style: dashed; }
+  .cls .stereo { font-family: ui-monospace, monospace; font-size: 9px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
+  .cls .name { font-weight: 700; font-size: 13px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .body { padding: 6px 10px 8px; display: flex; flex-direction: column; gap: 2.5px; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop .ty { color: var(--accent); font-style: italic; }
+  .badge { position: absolute; top: -8px; right: 8px; font-family: ui-monospace, monospace; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
+  .badge.d { border-color: var(--d); color: var(--d); }
+  .foot { font-size: 9.5px; color: var(--ink-soft); font-style: italic; line-height: 1.35; padding: 5px 10px 8px; border-top: 1px dotted var(--line); margin-top: 2px; }
+
+  .items-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+  .frame { position: relative; border: 1.3px dashed var(--line); border-radius: 6px; padding: 20px 16px 14px; }
+  .frame .frame-label {
+    position: absolute; top: -9px; left: 14px; background: var(--bg);
+    padding: 0 6px; font-family: ui-monospace, monospace; font-size: 9.5px;
+    color: var(--ink-soft); letter-spacing: 0.03em; opacity: 0.8;
+  }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .sw { display: inline-block; width: 20px; height: 11px; border: 1.3px solid var(--line-strong); border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+  .legend .sw.role { border-style: dashed; background: var(--box-role); }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Statement &amp; Evidence composition &mdash; worked example</h1><span class="src">va-spec-source.yaml</span></div>
+  <p class="caption">The same structure as the <a href="statement-evidence-model.html">class diagram</a>, filled in with illustrative example data for a variant pathogenicity assessment. Field names are the same; values here are example data, not type declarations.</p>
+
+  <div class="diagram">
+    <div class="side-row" style="align-items:flex-start;">
+      <div class="side-stack">
+        <div class="side-row">
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Proposition</div></div>
+            <div class="body">
+              <div class="prop"><b>subject</b>: <span class="ty">"HRAS:c.173C&gt;T"</span></div>
+              <div class="prop"><b>predicate</b>: <span class="ty">"is causal for"</span></div>
+              <div class="prop"><b>object</b>: <span class="ty">"Costello Syndrome"</span></div>
+            </div>
+          </div>
+          <div class="side-connector reverse"><span class="role">proposition</span><div class="line"></div><span class="card">1..1</span></div>
+        </div>
+        <div class="side-row">
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Method</div></div>
+            <div class="body">
+              <div class="prop"><b>name</b>: <span class="ty">"ACMG/AMP Guidelines 2015"</span></div>
+              <div class="prop"><b>methodType</b>: <span class="ty">"ACMG guidelines"</span></div>
+            </div>
+          </div>
+          <div class="side-connector elbow">
+            <span class="role">specifiedBy</span>
+            <div class="elbow-path" style="height:60px;">
+              <div class="seg-source" style="top:30px;"></div>
+              <div class="seg-v" style="top:8px; height:22px;"></div>
+              <div class="seg-target" style="top:8px;"></div>
+            </div>
+            <span class="card">0..1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cls">
+        <span class="badge tu">TU</span>
+        <div class="head"><div class="name">Statement</div></div>
+        <div class="body">
+          <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
+          <div class="prop"><b>strength</b>: <span class="ty">"high confidence"</span></div>
+          <div class="prop"><b>score</b>: <span class="ty">0.95</span></div>
+          <div class="prop"><b>outcome</b>: <span class="ty">"pathogenic"</span></div>
+        </div>
+        <div class="foot"><b style="color:var(--ink)">outcome</b> is typically translatable with the direction/strength/score tuple of values</div>
+      </div>
+
+      <div class="side-stack">
+        <div class="side-row">
+          <div class="side-connector"><span class="role">contributions</span><div class="line"></div><span class="card">0..m</span></div>
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Contribution</div></div>
+            <div class="body">
+              <div class="prop"><b>contributor</b>: <span class="ty">"Jane Doe, MD"</span></div>
+              <div class="prop"><b>activityType</b>: <span class="ty">"curation"</span></div>
+              <div class="prop"><b>date</b>: <span class="ty">2024-03-15</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="side-row">
+          <div class="side-connector"><span class="role">reportedIn</span><div class="line"></div><span class="card">0..m</span></div>
+          <div class="cls narrow">
+            <span class="badge tu">TU</span>
+            <div class="head"><div class="name">Document</div></div>
+            <div class="body">
+              <div class="prop"><b>title</b>: <span class="ty">"ClinVar SCV0012345"</span></div>
+              <div class="prop"><b>urls</b>: <span class="ty">"clinvar.nih.gov"</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- margin-top pulls this connector (and everything below it) up out of the
+         dead space left by the top row's taller side-stacks (Proposition/Method,
+         Contribution/Document) -- safe because the EvidenceLine box below is the
+         same width/position as Statement, with no horizontal overlap with either
+         stack (measured: EvidenceLine x=[440,660] vs Method x=[140,360] and
+         Document x=[740,960]). Value = row-height minus Statement's own height,
+         minus a small breathing-room gap -- re-measure if content changes. -->
+    <div class="vconnector" style="margin-top:-46px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
+
+    <div class="cls role">
+      <span class="badge tu">TU</span>
+      <div class="head">
+        <div class="stereo">&laquo;EvidenceLine&raquo;</div>
+        <div class="name">Statement</div>
+      </div>
+      <div class="body">
+        <div class="prop"><b>proposition</b>: <span class="ty">(omitted)</span></div>
+        <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
+        <div class="prop"><b>strength</b>: <span class="ty">"moderate"</span></div>
+        <div class="prop"><b>outcome</b>: <span class="ty">"contributing"</span></div>
+      </div>
+      <div class="foot"><b style="color:var(--ink)">proposition</b> usually omitted &mdash; inherits the parent's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">direction</b>: neutral, with <b style="color:var(--ink)">strength</b> marking it as additional evidence.</div>
+    </div>
+
+    <div class="vconnector"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
+
+    <div class="frame">
+      <span class="frame-label">InformationEntity</span>
+      <div class="items-row">
+        <div class="cls small">
+          <span class="badge tu">TU</span>
+          <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
+          <div class="body">
+            <div class="prop"><b>focus</b>: <span class="ty">"HRAS:c.173C&gt;T"</span></div>
+            <div class="prop"><b>sourceDataSet</b>: <span class="ty">"gnomAD v3.1.2"</span></div>
+          </div>
+        </div>
+        <div class="cls small">
+          <span class="badge d">D</span>
+          <div class="head"><div class="name">DataItem</div></div>
+          <div class="body">
+            <div class="prop"><b>name</b>: <span class="ty">"alleleFrequency"</span></div>
+            <div class="prop"><b>value</b>: <span class="ty">0.002</span></div>
+          </div>
+          <div class="foot">polymorphic &mdash; any shape a method needs</div>
+        </div>
+        <div class="cls small role">
+          <span class="badge tu">TU</span>
+          <div class="head">
+            <div class="stereo">&laquo;EvidenceItem&raquo;</div>
+            <div class="name">Statement</div>
+          </div>
+          <div class="body">
+            <div class="prop"><b>proposition</b>: <span class="ty">(omitted)</span></div>
+            <div class="prop"><b>&hellip;</b> <span class="ty">co-segregation data</span></div>
+          </div>
+          <div class="foot">evidence can itself be a Statement</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="sw role"></span>additional roles</span>
+    <span class="item">&laquo;abstract&raquo; = open base class</span>
+    <span class="item"><span class="badge tu" style="position:static;">TU</span>&nbsp;Trial Use</span>
+    <span class="item"><span class="badge d" style="position:static;">D</span>&nbsp;Draft</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  // Fits the fixed-layout diagram to the available width by scaling
+  // #scale-inner uniformly, like an <img> with max-width:100%. Box positions
+  // never change -- only the whole diagram's rendered size does.
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    // The figure, not the prose above/below it, drives the natural width --
+    // cap title/caption/legend to the figure's own width so a long caption
+    // line can't force the whole diagram to scale down further than needed.
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  // Continuously mirrors the outer <iframe>'s height to this document's
+  // actual rendered content height, so there's never a fixed/guessed height
+  // to go stale -- not on first load, and not later when the available
+  // width (and therefore the scaled diagram's height) changes. Deliberately
+  // NOT document.documentElement.scrollHeight: for the document's root
+  // scrolling element, scrollHeight is floored to the current viewport
+  // height (i.e. the iframe's *existing* height) even when actual content
+  // is shorter, so it can only ever confirm the iframe's current size,
+  // never correct it. getBoundingClientRect().height on body is a plain
+  // geometry read (border-box, so it already includes body's own padding)
+  // with no such floor.
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      // Same-origin embed (e.g. the built RTD site): reach the iframe
+      // directly -- simplest, synchronous, no listener needed on the
+      // parent page.
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      // window.frameElement is null whenever this document and its parent
+      // aren't same-origin -- notably, a locally opened file:// build,
+      // where every file:// document gets its own opaque origin even when
+      // "embedded" by a sibling file on disk. That's exactly how
+      // contributors preview docs before pushing, so silently no-op'ing
+      // here would mean the height-sync never works locally. postMessage
+      // works regardless of origin; the parent page's
+      // _static/diagram-iframe-height.js listens for this and applies the
+      // height to whichever iframe sent it.
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+    }
+  }
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) {
+    // #stage reacts to available-width changes (recomputes the scale); body
+    // reacts to the resulting height change (syncs the iframe) -- two
+    // observers because scaling #stage is what *causes* body to change
+    // size, not the other way around, so each end needs its own hook rather
+    // than threading one call through the other.
+    new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
+  }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
+})();
+</script>

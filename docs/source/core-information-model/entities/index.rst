@@ -1,12 +1,12 @@
 .. _Entity:
-.. _gks-core:Entity:
+.. _gkm-core:Entity:
 
 Entity
 !!!!!!
 
-This Entity class is imported from the `GKS-Core model <https://github.com/ga4gh/gks-core>`_, which defines common classes that are used across several GKS Specifications. All VA Core Model classes inherit from GKS-Core Entity or Element classes.
+This Entity class is imported from the `GKM-Core model <https://github.com/ga4gh/gkm-core>`_, which defines common classes that are used across several GKM Specifications. All VA Core Model classes inherit from GKM-Core Entity or Element classes.
 
-.. include::  ../../def/gks-core/Entity.rst
+.. include::  ../../def/va-spec/Entity.rst
 
 
 **Subclasses**
@@ -19,13 +19,24 @@ This Entity class is imported from the `GKS-Core model <https://github.com/ga4gh
    proposition
    information-entities/statement
    information-entities/study-result
-   information-entities/evidence-line
    ../elements/mappable-concept
    contribution
    agent
    information-entities/method
    information-entities/document
    information-entities/dataset
+   information-entities/data-item
    study-group
    subject-variant-proposition
    genetic-context-variant-proposition
+
+
+**Usage Patterns**
+
+An :ref:`Evidence Line <EvidenceLine>` is not a class of its own, but a role a :ref:`Statement <Statement>` plays when referenced from another Statement's ``hasEvidenceLines`` attribute:
+
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   information-entities/evidence-line

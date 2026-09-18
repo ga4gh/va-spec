@@ -1,0 +1,67 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Contribution",
+   "title": "Contribution",
+   "maturity": "trial use",
+   "description": "An action taken by an agent in contributing to the creation, modification, assessment, or deprecation of a particular entity (e.g. a Statement, DataSet, Publication, etc.)",
+   "properties": {
+      "id": {
+         "type": "string",
+         "description": "The 'logical' identifier of the Entity in the system of record, e.g. a UUID.  This 'id' is unique within a given system, but may or may not be globally unique outside the system. It is used within a system to reference an object from another."
+      },
+      "type": {
+         "type": "string",
+         "description": "MUST be \"Contribution\".",
+         "const": "Contribution",
+         "default": "Contribution"
+      },
+      "name": {
+         "type": "string",
+         "description": "A primary name for the entity."
+      },
+      "description": {
+         "type": "string",
+         "description": "A free-text description of the Entity."
+      },
+      "aliases": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "type": "string"
+         },
+         "description": "Alternative name(s) for the Entity."
+      },
+      "extensions": {
+         "type": "array",
+         "ordered": false,
+         "items": {
+            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/Extension"
+         },
+         "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model."
+      },
+      "contributor": {
+         "oneOf": [
+            {
+               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Agent"
+            },
+            {
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+            }
+         ],
+         "description": "The agent that made the contribution."
+      },
+      "activityType": {
+         "type": "string",
+         "description": "The specific type of activity performed or role played by an agent in making the contribution (e.g. for a publication, agents may contribute as a primary author, editor, figure designer, data generator, etc.). Values of this property may be framed as activities, or as contribution roles (e.g. using terms from the Contribution Role Ontology (CRO))."
+      },
+      "date": {
+         "description": "When the contributing activity was completed.",
+         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/datetime"
+      }
+   },
+   "type": "object",
+   "required": [
+      "type"
+   ],
+   "additionalProperties": false
+}

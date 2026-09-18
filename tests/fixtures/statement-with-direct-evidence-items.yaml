@@ -1,0 +1,37 @@
+id: statement-with-direct-evidence-items-001
+name: Variant pathogenicity statement citing evidence items directly
+type: Statement
+proposition:
+  type: VariantPathogenicityProposition
+  subject:
+    id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+    type: Allele
+    location:
+      type: SequenceLocation
+      sequenceReference:
+        refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+        type: SequenceReference
+      start: 10
+      end: 11
+      sequence: R
+    state:
+      type: LiteralSequenceExpression
+      sequence: T
+  predicate: isCausalFor
+  object:
+    type: MappableConcept
+    conceptType: Disease
+    name: Costello Syndrome
+direction: supports
+# Cited directly, without grouping into a discrete EvidenceLine -- e.g. when a data
+# provider wants to link supporting evidence without the additional structure of
+# scoring/directing it as a standalone argument.
+hasEvidenceItems:
+  - type: DataItem
+    name: Standards and guidelines for the interpretation of sequence variants
+    value: Standards and guidelines for the interpretation of sequence variants
+    reportedIn:
+      - type: Document
+        pmid: "25741868"
+        title: Standards and guidelines for the interpretation of sequence variants
+  - ex:evidence-item-002

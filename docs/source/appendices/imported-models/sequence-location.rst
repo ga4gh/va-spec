@@ -3,4 +3,4 @@
 SequenceLocation
 !!!!!!!!!!!!!!!!
 
-.. include::  ../../def/vrs/SequenceLocation.rst
+.. include::  ../../def/va-spec/SequenceLocation.rst

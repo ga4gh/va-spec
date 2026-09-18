@@ -3,4 +3,4 @@
 Allele
 !!!!!!
 
-.. include::  ../../def/vrs/Allele.rst
+.. include::  ../../def/va-spec/Allele.rst

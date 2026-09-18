@@ -17,10 +17,10 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
       - A guide for new users on how to get started with VA-Spec.
    *  - :ref:`Modeling Foundations <modeling-foundations>`
       - An overview of the modeling design patterns and principles that underpin the VA-Spec.
-   *  - :ref:`VA Core Model <va-core-model>`
+   *  - :ref:`Model <va-core-model>`
       - Detailed descriptions of the classes and attributes in the domain-agnostic VA Core Model, and how to use them.
-   *  - :ref:`VA Profiles <va-profiles>`
-      - Detailed descriptions of the domain-specific Statement, Evidence Line, Proposition, and Study Result Profiles included in the VA-Spec.
+   *  - :ref:`Profiles <va-profiles>`
+      - Detailed descriptions of the domain-specific Statement, Proposition, and Study Result Profiles included in the VA-Spec.
    *  - :ref:`Reference Implementation <reference-implementation>`
       - Information about code libraries provided to facilitate implementation of the VA-Spec.
    *  - :ref:`Developer Guide <developer-guide>`
@@ -29,6 +29,8 @@ The **Variant Annotation Specification (VA-Spec)** is a standard developed by th
       - A set of annotated data examples and scenarios that demonstrate use of VA Models.
    *  - :ref:`Getting Involved <getting-involved>`
       - Join the VA-Spec community!
+   *  - :ref:`Releases <releases>`
+      - A summary of changes introduced in each VA-Spec release.
    *  - :ref:`Appendices <appendices>`
       - A collection of pages with additional information on various aspects of the VA-Spec.
 
@@ -50,4 +52,5 @@ If you have questions or feedback, please reach out to the VA Team through our `
    developer-guide
    examples/index
    getting_involved
+   releases/index
    appendices/index

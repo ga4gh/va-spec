@@ -1,6 +1,6 @@
 id: vep:NC_000024.10:g.56673840G>C
 type: VariantMolecularConsequenceProposition
-subjectVariant:
+subject:
   id: ga4gh:VA.FbMsdwP5X2_3OJbC8TefXFfrmUvOHi2k
   type: Allele
   digest: FbMsdwP5X2_3OJbC8TefXFfrmUvOHi2k
@@ -18,7 +18,7 @@ subjectVariant:
     type: LiteralSequenceExpression
     sequence: C
 predicate: "hasMolecularConsequence"
-objectConsequence:
+object:
   type: MappableConcept
   name: intergenic_variant
   conceptType: MolecularConsequence

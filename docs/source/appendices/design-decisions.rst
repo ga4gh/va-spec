@@ -38,7 +38,7 @@ Organization of variant knowledge into discrete Statement objects allows clear a
 Use of Propositions
 ###################
 
-As noted above, **Proposition** objects are used to encapsulate the "SPOQ" semantics of possible facts that are asserted or evaluated in Statements, and against which evidence is evaluated in Evidence Lines.  The ``type`` of a given Statement or Evidence Line object is not directly declared in the data, but instead inferred from the ``type`` of the Proposition is holds. This avoids the need to create parallel hierarchies of Statement and Proposition types.
+As noted above, **Proposition** objects are used to encapsulate the "SPOQ" semantics of possible facts that are asserted or evaluated in Statements, and against which evidence is evaluated in Evidence Lines.  The domain-specific information of a given Statement (including one serving as an Evidence Line) is declared in the ``type`` of the Proposition it holds. This avoids the need to create parallel hierarchies of Statement and Proposition types.
 
 This design pattern also provides re-usable Proposition objects that can be referenced and re-used in these contexts (see :ref:`example here <proposition-utility-example>`). This can avoid the need to duplicate SPOQ semantics in the data across Statements and Evidence Lines with the same proposition.  Proposition objects may also provide a focal point for aggregating evidence across different Statements and Evidence Lines that all assess the same proposition - to provide a comprehensive view of the support for or against this possible fact, or help identify undiscovered evidence that may be used to reach a conclusive interpretation of a variant of uncertain significance.
 

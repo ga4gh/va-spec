@@ -1,4 +1,4 @@
-classification:
+outcome:
   type: MappableConcept
   name: Tier I
   primaryCoding:
@@ -15,7 +15,7 @@ description:
   inhibitor alone.
 direction: supports
 hasEvidenceLines:
-  - directionOfEvidenceProvided: supports
+  - direction: supports
     hasEvidenceItems:
       - description:
           Adjuvant dual treatment with BRAF inhibitor dabrafenib and MEK inhibitor
@@ -102,7 +102,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapy:
+          object:
             type: ConceptSet
             membershipOperator: AND
             concepts:
@@ -153,7 +153,7 @@ hasEvidenceLines:
                     relation: exactMatch
                 name: Trametinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - VAL600GLU
               - V640E
@@ -477,7 +477,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapy:
+          object:
             type: ConceptSet
             membershipOperator: AND
             concepts:
@@ -528,7 +528,7 @@ hasEvidenceLines:
                     relation: exactMatch
                 name: Trametinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - VAL600GLU
               - V640E
@@ -850,7 +850,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapy:
+          object:
             type: ConceptSet
             membershipOperator: AND
             concepts:
@@ -901,7 +901,7 @@ hasEvidenceLines:
                     relation: exactMatch
                 name: Trametinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - VAL600GLU
               - V640E
@@ -1222,7 +1222,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: BRAF
-          objectTherapy:
+          object:
             type: ConceptSet
             membershipOperator: AND
             concepts:
@@ -1273,7 +1273,7 @@ hasEvidenceLines:
                     relation: exactMatch
                 name: Trametinib
           predicate: predictsSensitivityTo
-          subjectVariant:
+          subject:
             aliases:
               - VAL600GLU
               - V640E
@@ -1511,12 +1511,12 @@ hasEvidenceLines:
             code: B
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: A
         system: AMP/ASCO/CAP Guidelines, 2017
-    targetProposition:
+    proposition:
       alleleOriginQualifier:
         type: MappableConcept
         mappings:
@@ -1589,7 +1589,7 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: BRAF
-      objectTherapy:
+      object:
         type: ConceptSet
         membershipOperator: AND
         concepts:
@@ -1640,7 +1640,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Trametinib
       predicate: predictsSensitivityTo
-      subjectVariant:
+      subject:
         aliases:
           - VAL600GLU
           - V640E
@@ -1834,7 +1834,7 @@ hasEvidenceLines:
         name: BRAF V600E
         type: CategoricalVariant
       type: VariantTherapeuticResponseProposition
-    type: EvidenceLine
+    type: Statement
 id: civic.aid:7
 proposition:
   alleleOriginQualifier:
@@ -1899,7 +1899,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: BRAF
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     id: civic.did:7
@@ -1910,7 +1910,7 @@ proposition:
         relation: exactMatch
     name: Melanoma
   predicate: hasClinicalSignificanceFor
-  subjectVariant:
+  subject:
     aliases:
       - VAL600GLU
       - V640E

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<title>Role of Propositions in Evidence Lines</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line: #B9C0C8; --line-strong: #1B2430;
+    --box: #FAFAF8; --box-role: #F3F1EA; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+    --hl: #B4453C;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+    --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    --hl: #E38077;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line: #3A434D; --line-strong: #C7CDD3;
+      --box: #1E252D; --box-role: #212A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+      --hl: #E38077;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .title-row h1 { font-size: 15px; margin: 0; font-weight: 700; }
+  .title-row .src { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
+
+  .role-diagram { display: flex; align-items: flex-start; gap: 0; width: max-content; margin: 0 auto; }
+
+  .panel { display: flex; flex-direction: column; align-items: center; width: 246px; }
+  .panel-label { font-family: ui-monospace, monospace; font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 8px; text-transform: uppercase; }
+
+  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 236px; font-size: 11px; text-decoration: none; color: inherit; cursor: pointer; }
+  a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
+  .cls .stereo { font-family: ui-monospace, monospace; font-size: 8.5px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
+  .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
+  .cls .name.long { font-size: 10.6px; letter-spacing: -0.01em; }
+  .cls .body { padding: 6px 8px 7px; display: flex; flex-direction: column; gap: 3px; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop .ty { color: var(--accent); }
+  .cls .prop.hl { color: var(--hl); }
+  .cls .prop.hl b { color: var(--hl); }
+  .badge { position: absolute; top: -8px; right: 6px; font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--d); color: var(--d); }
+
+  .json-box { font-family: ui-monospace, monospace; font-size: 9.5px; line-height: 1.55; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 8px 10px; width: 236px; }
+  .jline { white-space: nowrap; color: var(--ink-soft); }
+  .jline b { color: var(--ink); font-weight: 600; }
+  .jline.hl, .jline.hl b { color: var(--hl); }
+  .jline .ind1 { padding-left: 12px; }
+  .jline .ind2 { padding-left: 24px; }
+
+  .meaning-box { font-size: 11.5px; line-height: 1.6; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; padding: 10px 12px; width: 236px; }
+  .meaning-box .hl { color: var(--hl); font-weight: 600; }
+  .meaning-box u { text-decoration-color: var(--ink-soft); }
+
+  .role-connector { display: flex; align-items: center; justify-content: center; width: 28px; flex: 0 0 28px; padding-top: 60px; }
+  .role-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
+  .role-connector .line::after {
+    content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
+    width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--line-strong);
+  }
+
+  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 16px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 5px; vertical-align: middle; background: var(--hl); }
+  .legend .badgesw { font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; border: 1.3px solid var(--d); color: var(--d); margin-right: 5px; }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Role of Propositions in Evidence Lines</h1><span class="src">acmg-2015-profile-source.yaml</span></div>
+  <p class="caption">How a <code>Proposition</code> flows from an abridged <code>Pathogenicity Evidence Line</code> model (a <code>Statement</code> playing the Evidence Line role), through a concrete data example, to its plain-language meaning. <span style="color:var(--hl); font-weight:600;">Proposition-related content</span> is highlighted throughout.</p>
+
+  <div class="role-diagram">
+    <div class="panel">
+      <div class="panel-label">Model</div>
+      <a class="cls" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
+        <span class="badge">D</span>
+        <div class="head"><div class="stereo">&laquo;Statement&raquo;</div><div class="name long">VariantPathogenicityEvidenceLine</div></div>
+        <div class="body">
+          <div class="prop hl"><b>proposition</b>: <span class="ty">0..1</span></div>
+          <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
+          <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>specifiedBy</b>: <span class="ty">Method</span></div>
+          <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
+        </div>
+      </a>
+    </div>
+
+    <div class="role-connector"><div class="line"></div></div>
+
+    <div class="panel">
+      <div class="panel-label">Data Example</div>
+      <div class="json-box">
+        <div class="jline">{</div>
+        <div class="jline ind1"><b>"type"</b>: "Statement",</div>
+        <div class="jline hl ind1"><b>"proposition"</b>: "Proposition001",</div>
+        <div class="jline ind1"><b>"direction"</b>: "disputes",</div>
+        <div class="jline ind1"><b>"strength"</b>: "strong",</div>
+        <div class="jline ind1"><b>"outcome"</b>: "BS1",</div>
+        <div class="jline ind1"><b>"specifiedBy"</b>: {</div>
+        <div class="jline ind2"><b>"methodType"</b>: "population_</div>
+        <div class="jline ind2">&nbsp;&nbsp;data_assessment"</div>
+        <div class="jline ind1">},</div>
+        <div class="jline ind1"><b>"hasEvidenceItems"</b>: [{</div>
+        <div class="jline ind2"><b>"type"</b>: "CohortAllele</div>
+        <div class="jline ind2">&nbsp;&nbsp;FrequencyStudyResult",</div>
+        <div class="jline ind2"><b>"focus"</b>: "SOS1:c.3322G&gt;A",</div>
+        <div class="jline ind2"><b>"alleleFrequency"</b>: "0.039%</div>
+        <div class="jline ind2">&nbsp;&nbsp;(Latino)",</div>
+        <div class="jline ind2"><b>"sourceDataSet"</b>: "gnomAD v3"</div>
+        <div class="jline ind1">}]</div>
+        <div class="jline">}</div>
+      </div>
+    </div>
+
+    <div class="role-connector"><div class="line"></div></div>
+
+    <div class="panel">
+      <div class="panel-label">Meaning</div>
+      <div class="meaning-box">
+        "A gnomAD v3 Cohort Allele Frequency record &mdash; SOS1:c.3322G&gt;A present in <u>0.039%</u> of Latino alleles &mdash; is assessed via a population-frequency method toward the <span class="hl">same proposition assessed by the parent Statement</span> (that SOS1:c.3322G&gt;A is causal for RASopathy), providing <u>strong</u> evidence <u>disputing</u> it &mdash; meeting the <u>BS1</u> criterion."
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="sw"></span>proposition-related content</span>
+    <span class="item"><span class="badgesw">D</span>Draft maturity</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.role-diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    var diagramWidth = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = diagramWidth + 'px'; });
+    var naturalWidth = inner.scrollWidth;
+    var naturalHeight = inner.scrollHeight;
+    var scale = Math.min(1, stage.clientWidth / naturalWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(naturalHeight * scale) + 'px';
+  }
+
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) {
+      var px = h + 'px';
+      if (window.frameElement.style.height !== px) {
+        window.frameElement.style.height = px;
+      }
+    } else if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+    }
+  }
+
+  function run() { fit(); syncFrameHeight(); }
+
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) {
+    new ResizeObserver(fit).observe(stage);
+    new ResizeObserver(syncFrameHeight).observe(document.body);
+  }
+  if (document.readyState === 'complete') { run(); }
+  else { window.addEventListener('load', run); }
+})();
+</script>

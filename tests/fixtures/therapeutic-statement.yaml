@@ -1,0 +1,49 @@
+type: Statement
+proposition:
+  type: VariantTherapeuticResponseProposition
+  name: EGFR L858R predicts sensitivity to Afatinib in Lung Adenocarcinoma
+  predicate: predictsSensitivityTo
+  subject:
+    type: CategoricalVariant
+    name: EGFR L858R
+    constraints:
+      - type: DefiningAlleleConstraint
+        allele:
+          id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+          type: Allele
+          location:
+            type: SequenceLocation
+            sequenceReference:
+              refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+              type: SequenceReference
+            start: 10
+            end: 11
+            sequence: R
+          state:
+            type: LiteralSequenceExpression
+            sequence: T
+  object:
+    type: MappableConcept
+    conceptType: Drug
+    name: Afatinib
+    primaryCoding:
+      code: ncit:C66940
+      system: https://evsexplore.semantics.cancer.gov/evsexplore/welcome?terminology=ncit
+  conditionQualifier:
+    type: MappableConcept
+    conceptType: Disease
+    name: Lung Adenocarcinoma
+  geneContextQualifier:
+    type: MappableConcept
+    conceptType: Gene
+    name: EGFR
+direction: supports
+strength:
+  type: MappableConcept
+  primaryCoding:
+    code: B
+    system: AMP/ASCO/CAP Guidelines, 2017
+specifiedBy:
+  type: Method
+  methodType: curation
+  name: CIViC Curation SOP (2019)

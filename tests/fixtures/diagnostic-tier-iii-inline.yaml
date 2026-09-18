@@ -1,4 +1,4 @@
-classification:
+outcome:
   type: MappableConcept
   name: Tier III
   primaryCoding:
@@ -10,7 +10,7 @@ description:
   diagnosis of diffuse intrinsic pontine glioma.
 direction: neutral
 hasEvidenceLines:
-  - directionOfEvidenceProvided: supports
+  - direction: supports
     hasEvidenceItems:
       - description:
           Sequencing of 39 pediatric midline high-grade astrocytomas identified
@@ -57,7 +57,7 @@ hasEvidenceLines:
                   system: https://www.ncbi.nlm.nih.gov/gene/
                 relation: exactMatch
             name: ACVR1
-          objectCondition:
+          object:
             type: MappableConcept
             conceptType: Disease
             id: civic.did:2950
@@ -68,7 +68,7 @@ hasEvidenceLines:
                 relation: exactMatch
             name: Diffuse Midline Glioma, H3 K27-altered
           predicate: isDiagnosticInclusionCriterionFor
-          subjectVariant:
+          subject:
             extensions:
               - name: molecularProfileScore
                 value: 15.0
@@ -140,12 +140,12 @@ hasEvidenceLines:
             code: B
             system: https://civic.readthedocs.io/en/latest/model/evidence/level.html
         type: Statement
-    strengthOfEvidenceProvided:
+    strength:
       type: MappableConcept
       primaryCoding:
         code: C
         system: AMP/ASCO/CAP Guidelines, 2017
-    targetProposition:
+    proposition:
       alleleOriginQualifier:
         type: MappableConcept
         mappings:
@@ -178,7 +178,7 @@ hasEvidenceLines:
               system: https://www.ncbi.nlm.nih.gov/gene/
             relation: exactMatch
         name: ACVR1
-      objectCondition:
+      object:
         type: MappableConcept
         conceptType: Disease
         id: civic.did:2950
@@ -189,7 +189,7 @@ hasEvidenceLines:
             relation: exactMatch
         name: Diffuse Midline Glioma, H3 K27-altered
       predicate: isDiagnosticInclusionCriterionFor
-      subjectVariant:
+      subject:
         aliases:
           - GLY328VAL
         constraints:
@@ -368,7 +368,7 @@ hasEvidenceLines:
         name: ACVR1 G328V
         type: CategoricalVariant
       type: VariantDiagnosticProposition
-    type: EvidenceLine
+    type: Statement
 id: tier3-example.civic.aid:9
 proposition:
   alleleOriginQualifier:
@@ -403,7 +403,7 @@ proposition:
           system: https://www.ncbi.nlm.nih.gov/gene/
         relation: exactMatch
     name: ACVR1
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     id: civic.did:2950
@@ -414,7 +414,7 @@ proposition:
         relation: exactMatch
     name: Diffuse Midline Glioma, H3 K27-altered
   predicate: hasClinicalSignificanceFor
-  subjectVariant:
+  subject:
     aliases:
       - GLY328VAL
     constraints:

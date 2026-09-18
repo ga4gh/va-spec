@@ -3,7 +3,7 @@
 Data Structures
 !!!!!!!!!!!!!!!
 
-Below we describe the data structures that can be built around three key classes in the VA Core Model: :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, and :ref:`Evidence Line <EvidenceLine>`.
+Below we describe the data structures that can be built around the two key classes in the VA Core Model: :ref:`Statement <Statement>` and :ref:`Study Result <StudyResult>`. We then describe the :ref:`Evidence Line <EvidenceLine>` structure, which is a *pattern of use* of the Statement class rather than a class of its own -- a Statement referenced from another Statement's ``hasEvidenceLines`` attribute.
 
 These classes represent the kinds of artifacts provided by most community databases and interpretation platforms.
 
@@ -18,16 +18,16 @@ Statement Structure
 
 .. core-im-statement-data-structure:
 
-.. figure:: ../images/statement-proposition-data-structure.png
+.. raw:: html
 
-   Statement Data Structure
+   <iframe src="../_static/diagrams/statement-evidence-example.html" style="width:100%; height:750px; border:0;" title="Statement, Proposition, and Evidence worked example"></iframe>
 
-   **Legend** A class-level view of the Statement-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
+**Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item).
 
 In this structure:
 
-* A **Statement** roots a central axis where it is linked to zero or more **Evidence Lines** representing discrete arguments for or against it.
-* Each **Evidence Line** may be linked to zero or more **Evidence Items** - which can be any information used to build its evidence-based argument (here, a single **Study Result**).
+* A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more nested **Statements** that serve as **Evidence Lines** -- discrete arguments for or against it.
+* Each **Evidence Line** may in turn be linked to zero or more **Evidence Items** - which can be any information used to build its evidence-based argument (here, a single **Study Result**).
 * The **Proposition** contained in the **Statement** object encapsulates a structured representation of the possible fact that the **Statement** may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in any supporting Evidence Lines.
 * Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
 
@@ -40,31 +40,25 @@ More on the internal semantics of **Statement** objects can be found in the :ref
 Evidence Line Structure
 #######################
 
-:ref:`Evidence Lines <EvidenceLine>` represent assessments of how a specific set of evidence items is interpreted to build an argument for or against some possible fact (their *"target proposition"*), which may ultimately be asserted as true or false in a Statement.
+An :ref:`Evidence Line <EvidenceLine>` represents an assessment of how a specific set of evidence items is interpreted to build an argument for or against some possible fact (its *target proposition*), which may ultimately be asserted as true or false in a Statement.
+
+.. note:: An Evidence Line is **not a distinct class** in the VA Core Model. It is a :ref:`Statement <Statement>` playing the role of an evidence-based argument, reached through another Statement's ``hasEvidenceLines`` attribute. The structure described here is therefore the Statement structure above, viewed from the perspective of that role.
 
 These assessments report the *strength* and *direction* of such an argument. For example, an Evidence Line may report a set of gnomAD allele frequency data about HRAS:c.173C>T to provide *moderate* evidence *supporting* a proposition that it causes Costello Syndrome.
 
-As seen in the Statement diagram above, Evidence Lines may be linked to a Statement for which they represent a supporting or disputing argument. However some organizations 'pre-curate' such arguments in the absence of a definitive Statement they support, so that these Evidence Lines can be retrieved and collectively assessed once sufficient evidence exists to make a definitive assertion about their shared target proposition. In this context, an :ref:`Evidence Line <EvidenceLine>` roots the general data structure below.
-
-.. core-im-evidence-line-structure:
-
-.. figure:: ../images/evidence-line-proposition-data-structure.png
-
-   Evidence Line Data Structure
-
-   **Legend** A class-level view of the Evidence Line-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
+As seen in the Statement diagram above, Evidence Lines are linked to a Statement for which they represent a supporting or disputing argument. However some organizations 'pre-curate' such arguments in the absence of a definitive Statement they support, so that these Evidence Lines can be retrieved and collectively assessed once sufficient evidence exists to make a definitive assertion about their shared target proposition. In this context, a stand-alone **Statement** used as an :ref:`Evidence Line <EvidenceLine>` roots the same general data structure shown in the :ref:`Statement Structure <statement-structure>` diagram above -- just entered from the Evidence Line's own position in it, rather than from the root Statement's.
 
 In this structure:
 
-* An **Evidence Line** roots a central axis where it is linked zero or more **Evidence Items** that were used to build the argument it represents (here, a single **Study Result**).
-* The **Proposition** contained in the **Evidence Line** object encapsulates a structured representation of the *possible fact* toward which evidence is interpreted and scored - here, the possible fact that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide *moderate support*).
+* An **Evidence Line** roots a central axis where it is linked, via ``hasEvidenceItems``, to zero or more **Evidence Items** that were used to build the argument it represents (here, a single **Study Result**).
+* The **Proposition** referenced by the Evidence Line's ``proposition`` attribute encapsulates a structured representation of the *possible fact* toward which evidence is interpreted and scored - here, the possible fact that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide *moderate support*.
 
    * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition (as in the Statement diagram above) - but otherwise should be provided.
-* As with **Statements**, classes surrounding this central axis are used to describe the provenance of the **Evidence Lines** and its **Evidence Items**.
+* Because an Evidence Line is itself a Statement, the surrounding provenance classes are exactly the same ones available to any other Statement.
 
 A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 
-More on the internal semantics of Evidence Line objects can be found in the :ref:`Evidence Line Class <EvidenceLine>` page. More on **Propositions** in the :ref:`next section <propositions>`.
+More on the internal semantics of Evidence Lines can be found in the :ref:`Evidence Line <EvidenceLine>` page, and on the attributes they use in the :ref:`Statement <Statement>` page. More on **Propositions** in the :ref:`next section <propositions>`.
 
 .. _study-result-structure:
 
@@ -77,15 +71,16 @@ As seen in the previous diagrams, **Study Results** may be linked to **Evidence 
 
 .. core-im-study-result-data-structure:
 
-.. figure:: ../images/study-result-data-structure.png
+.. raw:: html
 
-   Study Result Data Structure
+   <iframe src="../_static/diagrams/study-result-example.html" style="width:100%; height:550px; border:0;" title="Study Result worked example"></iframe>
 
-   **Legend** A class-level view of the Study Result-based structures supported in VA-Spec data. Italicized text in each class exemplify the kind of information each may capture - here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
+**Legend** A class-level view of the Study Result-based structures supported in VA-Spec data, filled in with illustrative example data for a gnomAD population-frequency result.
 
 In this structure:
 
-* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came, and a description of the **Study Group** from which the data was collected.
+* A **Study Result** and the data items it holds can be linked to the larger **Data Set** from which they came.
+* Some profiles narrow **focus** and add their own dedicated group fields -- e.g. a Cohort Allele Frequency Study Result's ``cohort`` attribute, which references the **Study Group** the data was collected from. This is not part of the base **Study Result** class itself.
 * Note that no **Proposition** object is used here, because **Study Results** represent more foundational data, and do not assert or assess evidence for possible facts about the domain.
 * As with **Statements** and **Evidence Lines**, classes surrounding a **Study Result** can be used to describe the provenance of the  data it contains.
 

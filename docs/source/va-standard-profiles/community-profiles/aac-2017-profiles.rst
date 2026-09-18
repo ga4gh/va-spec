@@ -23,43 +23,78 @@ These initial profiles were developed to support the following implementations a
 The number and coverage of these profiles will grow as these implementations expand their scope, and additional adopters bring new use cases to the spec.
 
 .. _variant-clinical-significance-statement-aac-2017:
+.. _VariantClinicalSignificanceStatement:
 
-Variant Clinical Significance Statement
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Variant Clinical Significance Statement (AAC 2017)
+##################################################
 
 .. include::  ../../def/va-spec.aac-2017/VariantClinicalSignificanceStatement.rst
-
-This profile applies the following **constraints** on top of the core :ref:`Statement<Statement>` class definition:
-
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-
-   *  - Field
-      - Flags
-      - Type
-      - Limits
-      - Description
-   *  - proposition
-      -
-      - :ref:`Variant Clinical Significance Proposition<clinical-significance-proposition>`
-      - 1..1
-      - A proposition about the clinical significance of a variant with respect to a condition. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
-   *  - strength
-      -
-      - :ref:`MappableConcept` (nested enum:  strong | potential)
-      - 0..1
-      - A term used to report the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept.
-   *  - classification
-      -
-      - :ref:`MappableConcept`  (nested enum: tier i | tier ii | tier iii | tier iv)
-      - 0..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject. The indicated enumeration is bound to the 'code' field in the Coding object nested inside the MappableConcept. If `tier i` or `tier ii`, then a `PrognosticEvidenceLine`, `DiagnosticEvidenceLine`, or `TherapeuticEvidenceLine` MUST be used for any evidence lines (see Artifacts below for more information).
 
 **Artifacts**
 
  - |variant_clinical_significance_statement_source_yaml|
  - |variant_clinical_significance_statement_json_schema|
+
+-----
+
+.. _variant-amp-asco-cap-evidence-line-aac-2017:
+.. _variant-amp-asco-cap-statement-aac-2017:
+.. _AmpAscoCapStatement:
+
+Amp/Asco/Cap Statement (AAC 2017)
+##################################
+
+.. include::  ../../def/va-spec.aac-2017/AmpAscoCapStatement.rst
+
+**Artifacts**
+
+ - |amp_asco_cap_statement_source_yaml|
+ - |amp_asco_cap_statement_json_schema|
+
+-----
+
+.. _variant-diagnostic-evidence-line-aac-2017:
+.. _variant-diagnostic-statement-aac-2017:
+.. _DiagnosticStatement:
+
+Diagnostic Statement (AAC 2017)
+#################################
+
+.. include::  ../../def/va-spec.aac-2017/DiagnosticStatement.rst
+
+**Artifacts**
+
+ - |diagnostic_statement_source_yaml|
+ - |diagnostic_statement_json_schema|
+
+-----
+
+.. _variant-prognostic-evidence-line-aac-2017:
+.. _variant-prognostic-statement-aac-2017:
+.. _PrognosticStatement:
+
+Prognostic Statement (AAC 2017)
+#################################
+
+.. include::  ../../def/va-spec.aac-2017/PrognosticStatement.rst
+
+**Artifacts**
+
+ - |prognostic_statement_source_yaml|
+ - |prognostic_statement_json_schema|
+
+-----
+
+.. _variant-therapeutic-evidence-line-aac-2017:
+.. _variant-therapeutic-statement-aac-2017:
+.. _TherapeuticStatement:
+
+Therapeutic Statement (AAC 2017)
+##################################
+
+.. include::  ../../def/va-spec.aac-2017/TherapeuticStatement.rst
+
+**Artifacts**
+
+ - |therapeutic_statement_source_yaml|
+ - |therapeutic_statement_json_schema|

@@ -1,0 +1,32 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/TherapyGroup",
+   "title": "TherapyGroup",
+   "maturity": "trial use",
+   "description": "A specialization of ConceptSet representing a group of two or more therapies that are applied in combination to a single patient/subject, or applied individually to a different subset of participants in a research study. Concepts are restricted to Therapy and TherapyGroup members.",
+   "allOf": [
+      {
+         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/ConceptSet"
+      },
+      {
+         "properties": {
+            "concepts": {
+               "type": "array",
+               "ordered": false,
+               "items": {
+                  "oneOf": [
+                     {
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Therapy"
+                     },
+                     {
+                        "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/TherapyGroup"
+                     }
+                  ]
+               }
+            }
+         }
+      }
+   ],
+   "type": "object",
+   "unevaluatedProperties": false
+}

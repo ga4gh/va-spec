@@ -5,7 +5,7 @@ ACMG Variant Pathogenicity Statement Example (with Evidence)
 
 **Description:**
 
-The data below builds on the simple ClinVar-GKS example described :ref:`here <acmg-variant-pathogenicity-statement-example>`, embellishing its base ClinVar record with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
+The data below builds on the simple ClinVar-GKM example described :ref:`here <acmg-variant-pathogenicity-statement-example>`, embellishing its base ClinVar record with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
 
 Specifically, it stitches together several simpler **Statement**, **Study Result**, and **Evidence Line** data examples from the `test fixtures directory <https://github.com/ga4gh/va-spec/tree/1.0.0/tests/fixtures>`_, to reveal how these objects can be combined to build the rich evidence and provenance structure below.
 
@@ -26,7 +26,7 @@ A few additional notes about this example:
 * Comments in the yaml are provided to help readers better understand the structure, semantics, and utility of the data in the example.
 * Some identifiers not present in the source test fixture data were created for purposes of identifying and cross-referencing objects in this aggregate example (these are all prefixed with the string 'ex:').
 * Note that the variant subject of each Statement and Study Result objects is reported as the same, generic variation for simplicity (ex:Variant001). In reality these objects may describe subtly different variants that all map to each other in some way (e.g. a protein-level variant in the Functional Impact objects, a genomic-level variant in the Allele Frequency objects, and a Categorical Variant that covers both of these contextual variants in the Pathogenicity Statement and its direct Evidence Lines). Nuances around how variant subjects of Statements and those described by supporting evidence is a separate and complex topic addressed :ref:`here <variant-congruence>`.
-* The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKS Specifications.
+* The example omits full representations of these `VRS <https://github.com/ga4gh/vrs>`_ and `CatVRS <https://github.com/ga4gh/cat-vrs>`_ Variation objects - as these are large structures that are the remit of other GKM Specifications.
 
 **Data**:
 
@@ -41,10 +41,11 @@ A few additional notes about this example:
   proposition:                 # a Proposition object captures the possible fact assessed by the Statement, using a subject, predicate, object, qualifier (SPOQ) semantic modeling pattern.
     id: ex:Proposition001      # the proposition here is that "NM_004700.4:c.803CCT[1] is causal for AD nonsyndromic hearing loss 2A"
     type: VariantPathogenicityProposition
-    subjectVariant: ex:Variant001    # 'subjectVariant' specializes the VA Core 'subject' attribute. The full representation of the NM_004700.4:c.803CCT[1] KCNQ4 variant is not included.
+    subject: ex:Variant001    # the 'subject' of the Proposition, narrowed to a variant. The full representation of the NM_004700.4:c.803CCT[1] KCNQ4 variant is not included.
     predicate: isCausalFor           # the predicate for this Statement profile is fixed at 'isCausalFor'
-    objectCondition:                 # 'objectCondition' specializes the VA Core 'object' attribute.
+    object:                 # the 'object' of the Proposition, narrowed to a Condition.
       id: clinvar.trait/939    # this is a MappableConcept object that represents the Condition, using names/codes from existing code systems
+      type: MappableConcept
       conceptType: Disease
       name: Autosomal dominant nonsyndromic hearing loss 2A    # the name for the concept as assigned by the data provider
       primaryCoding:           # holds a Coding object, where the concept is defined in the 'code' or 'name' field
@@ -53,16 +54,19 @@ A few additional notes about this example:
         iris:
           - http://identifiers.org/medgen/C2677637
     penetranceQualifier:       # holds a MappableConcept that reports qualifying penetrance information about the object condition (here, that the statement holds for high penetrance AD hearing loss)
+      type: MappableConcept
       primaryCoding:
         code: high
-        system: ga4gh-gks-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
+        system: ga4gh-gkm-term:pathogenicity-penetrance-qualifier   # code system here is a locally defined placeholder, until we formalize terminological standards for use in the VA-Spec
       name: high
   direction: supports          # an enumerated string that indicates the Statement 'supports' the Proposition as true
   strength:                    # holds a MappableConcept reporting that confidence/evidence for this stated support
+    type: MappableConcept
     primaryCoding:
       code: definitive         # the code here is a term based on language used in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
-  classification:              # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+  outcome:                      # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+    type: MappableConcept
     primaryCoding:
       code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
@@ -72,26 +76,14 @@ A few additional notes about this example:
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:            # reports the type of contribution that was made (here an evaluation activity)
-        name: evaluated
-        mappings:
-          - coding:
-              code: cg000011
-              system: https://dataexchange.clinicalgenome.org/codes/
-            relation: exactMatch
+      activityType: evaluated  # a string naming the type of contribution that was made (here an evaluation activity)
       date: '2015-08-20'       # reports when this contribution was performed
     - type: Contribution
       contributor:
         id: clinvar.submitter/500139
         type: Agent
         name: ClinVar Staff, National Center for Biotechnology Information (NCBI)
-      activityType:
-        name: submitted
-        mappings:
-          - coding:
-              code: cg000010
-              system: https://dataexchange.clinicalgenome.org/codes/
-            relation: exactMatch
+      activityType: submitted
       date: '2018-06-12'
   specifiedBy:                 # holds a Method object describing guidelines followed in generating the knowledge reported in the Statement
     type: Method
@@ -102,16 +94,16 @@ A few additional notes about this example:
         - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
   hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement
   - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
-    type: EvidenceLine         # uses the core EvidenceLine class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    targetProposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
+    type: Statement            # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
+    proposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
     hasEvidenceItems:          # the information interpreted as evidence in building this Evidence Line
     - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.
       type: CohortAlleleFrequencyStudyResult
       name: Overall Cohort Allele Frequency for 1-40819444_40819446-del
-      focusAllele: ex:Variant001  # the KCNQ4 variant that data included in this Result are about (the full representation of the variant is not included)
-      focusAlleleFrequency: 0
-      focusAlleleCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
-      locusAlleleCount: 34086
+      focus: ex:Variant001  # the KCNQ4 variant that data included in this Result are about (the full representation of the variant is not included)
+      alleleFrequency: 0
+      focusCount: 0      # three specific data items produced by the analysis are collected in this StudyResult (focus allele frequency, focus allele count, and locus allele count)
+      locusCount: 34086
       sourceDataSet:           # the gnomAD dataset from which the data included in this Result were pulled.
         id: gnomad4.1.0
         type: DataSet
@@ -129,19 +121,21 @@ A few additional notes about this example:
           name: gnomAD help documentation
           urls:
             - "https://gnomad.broadinstitute.org/help"
-    directionOfEvidenceProvided: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
-    strengthOfEvidenceProvided:
+    direction: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
+    strength:
+      type: MappableConcept
       primaryCoding:
         code: moderate        # reports that this supporting evidence is of 'moderate' strength
         system: ACMG Guidelines, 2015
-    evidenceOutcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
+    outcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
+      type: MappableConcept
       primaryCoding:
-        code: PM2_moderate    # ... here, that the evidence line provides moderate evidence for Pathogenicity, based on the ACMG PM2 criteria
-        system: ACMG Guidelines, 2015
-      name: ACMG 2015 PM2 Moderate Criterion Met
+        code: PM2             # ... here, that the ACMG PM2 criterion was met. Because PM2 was met at its default 'moderate' strength,
+        system: ACMG Guidelines, 2015    # the bare criterion code is used (a code like 'PM2_supporting' would signal an adjusted strength,
+      name: ACMG 2015 PM2 Criterion Met  # and 'PM2_not_met' that the criterion was assessed but not met).
     specifiedBy:              # holds a Method object describing guidelines followed in generating the evidence assessment in this Evidence Line
       type: Method
-      methodType: PM2
+      methodType: population_data_assessment   # names the kind of evidence assessed; constrains which ACMG codes the 'outcome' may use
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
       reportedIn:             # a document that describes the Method (this is all we are given about this Method in the source data)
         type: Document
@@ -152,21 +146,21 @@ A few additional notes about this example:
         contributor:
           id: curator001
           type: Agent
-        activityType:
-          name: evidence evaluation
+        activityType: evidence evaluation
         date: '2018-03-11'
   - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
-    type: EvidenceLine                   # uses the core EvidenceLine class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    targetProposition: ex:Proposition001
+    type: Statement                      # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
+    proposition: ex:Proposition001
     hasEvidenceItems:
       - id: ex:Statement002              # here the evidence item is another Statement about the functional impact of the variant
         type: Statement
         proposition:
           type: ExperimentalVariantFunctionalImpactProposition
-          subjectVariant: ex:Variant001  # the full representation of the variant subject of this Statement is not included
+          subject: ex:Variant001  # the full representation of the variant subject of this Statement is not included
           predicate: impactsFunctionOf   # the predicate for this type of Statement is fixed at 'impactsFunctionOf'
-          objectSequenceFeature:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
+          object:         # holds a MappableConcept object that represents the Gene impacted by the variant, using names/codes from existing code systems
             id: clinvar-gene:9132
+            type: MappableConcept
             conceptType: Gene
             primaryCoding:
               code: ncbigene:9132
@@ -183,21 +177,21 @@ A few additional notes about this example:
             profilingStrategy: barcode sequencing
             sequencingReadType: single-segment (short read)
         direction: supports           # indicates that the Statement supports the assessed impact Proposition above (i.e. says that the subject Variant does impact the function of the object Gene)
-        classification:               # summarizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
+        outcome:                      # summarizes the Statement in terms of a final classification of the variant, using a term familiar in the community of use.
+          type: MappableConcept
           primaryCoding:
             code: abnormal            # indicates the variant version of the gene has abnormal function (consistent with the 'impactsFunctionOf' proposition being 'supported')
-            system: ga4gh-gks-term:experimental-var-func-impact-classification
+            system: ga4gh-gkm-term:experimental-var-func-impact-classification
         specifiedBy:                  # a Method followed to produce the Statement, which is described by the publication indicated below
           type: Method
-          methodType:
-            name: variant interpretation guideline
+          methodType: variant interpretation guideline   # 'methodType' is a plain string
           reportedIn:
             type: Document
-            pmid: 29785012
+            pmid: '29785012'
         hasEvidenceLines:
-          id: EvidenceLine003
-          type: EvidenceLine
-          directionOfEvidenceProvided: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
+        - id: EvidenceLine003
+          type: Statement
+          direction: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
           specifiedBy:          # a Method followed in assessing the direction and strength of evidence provided by the Functional Impact StudyResult for the Functional Impact Statement
             type: Method
             name: MAVE bayesian threshold probability method 001
@@ -208,19 +202,19 @@ A few additional notes about this example:
           hasEvidenceItems:             # a Study Result that captures the experimental data and scores on which the Functional Impact Statement was based.
             - id: ex:StudyResult002     # the evidence in this case is data captured in a Functional Impact Study Result
               type: ExperimentalVariantFunctionalImpactStudyResult
-              focusVariant: ex:Variant001   # the KCNQ4 variant that data are about (a full representation of the variant is not included)
+              focus: ex:Variant001   # the KCNQ4 variant that data are about (a full representation of the variant is not included)
               functionalImpactScore: 1.29395467005388        # this is the only data item included right now in this StudyResult
               specifiedBy:
                 type: Method
-                methodType:
-                  name: Experimental protocol
+                methodType: Experimental protocol
                 reportedIn:
                   type: Document
-                  pmid: 29785012
+                  pmid: '29785012'
               sourceDataSet:
                 type: DataSet
                 name: variant effect data set
                 license:
+                  type: MappableConcept
                   primaryCoding:
                     code: CC0
                     system: https://spdx.org/licenses/
@@ -230,19 +224,21 @@ A few additional notes about this example:
                   type: Document
                   urls:
                     - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
-    directionOfEvidenceProvided: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
-    strengthOfEvidenceProvided:
+    direction: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
+    strength:
+      type: MappableConcept
       primaryCoding:
         code: strong                      # indicates that this line of evidence provides 'strong' support for the variant's Pathogencity
         system: ACMG Guidelines, 2015
-    evidenceOutcome:
+    outcome:
+      type: MappableConcept
       primaryCoding:
-        code: PS3_strong
+        code: PS3                         # the ACMG PS3 criterion was met at its default 'strong' strength
         system: ACMG Guidelines, 2015
-      name: ACMG 2015 PS3 Supporting Criterion Met
+      name: ACMG 2015 PS3 Criterion Met
     specifiedBy:          # holds a Method object describing guidelines followed in assessing the evidence provided by the Functional Impact Statement for the root Pathogenicity Statement
       type: Method
-      methodType: PS3
+      methodType: functional_data_assessment
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
       reportedIn:
         type: Document
@@ -253,8 +249,7 @@ A few additional notes about this example:
         contributor:
           id: curator002       # the curator who assessed functional impact statement as evidence for pathogenicity
           type: Agent
-        activityType:
-          name: evidence evaluation
+        activityType: evidence evaluation
         date: '2018-04-03'
   extensions:      # holds Extension objects which allow data providers to define key-value pairs for capturing additional info not supported by the VA model.
   - name: clinvarMethodCategory   # here, Extensions are used to report clinvar-specific values that the data provider does not want to lose
@@ -274,10 +269,10 @@ The diagram shows a subset of data from the full json example. It provides a mor
 
 It also highlights the kind of schema that specifies each objects in the data - illustrating how **Core Model Classes**, **Base Profiles**, and **Community Profiles**  that rely on :ref:`different authoring mechanisms <profile-definition-mechanisms>` are used together in a structured data representation.
 
-.. figure:: ../images/variant-pathogenicity-statement-with-evidence-2.png
+.. raw:: html
 
-  Detailed Data Example
+   <iframe src="../_static/diagrams/acmg-statement-with-evidence-example.html" style="width:100%; height:760px; border:0;" title="Detailed Data Example"></iframe>
 
-   **Legend**: Diagrammatic representation of a subset of data in the json example above. Styling conventions indicate the type of model that specifies each object in the example (Core Class, Base Profile, Community Profile). To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
+**Legend**: Diagrammatic representation of this same general structure -- a root Statement, its first Evidence Line, and that Evidence Line's Study Result -- populated with a different real ClinGen classification (see the diagram's own caption) rather than the json example above, to keep this page anchored to two independently-sourced real examples instead of one. Each box's class name is the specific profile class actually used (``VariantPathogenicityStatement``, ``VariantPathogenicityEvidenceLine``, ``CohortAlleleFrequencyStudyResult``), with its formal base class as a ``«...»`` stereotype above the name. The root Statement (solid box) and the Evidence Line (dashed box, per this skill's "same class in a different role" convention) share the same ``«Statement»`` stereotype -- both are, formally, the same underlying **Statement** class playing different structural roles, and their ``type`` is always literally ``"Statement"`` regardless of role. The Study Result's ``«StudyResult»`` stereotype instead reflects its own community/base-profile-specific ``type``. To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
 
-A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement``, ``EvidenceLine``).
+A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement`` -- including Statements used as Evidence Lines).

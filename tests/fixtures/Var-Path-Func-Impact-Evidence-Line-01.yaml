@@ -1,8 +1,8 @@
 id: evLine01
-type: EvidenceLine
-targetProposition:
+type: Statement
+proposition:
   type: VariantPathogenicityProposition
-  subjectVariant:
+  subject:
     name: NP_000305.3:p.Arg11Thr
     type: CategoricalVariant
     constraints:
@@ -32,7 +32,7 @@ targetProposition:
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isCausalFor
-  objectCondition:
+  object:
     type: MappableConcept
     conceptType: Disease
     name: Unspecified
@@ -40,21 +40,21 @@ targetProposition:
     type: MappableConcept
     conceptType: Gene
     name: PTEN
-directionOfEvidenceProvided: supports
-strengthOfEvidenceProvided:
+direction: supports
+strength:
   type: MappableConcept
   primaryCoding:
     code: supporting
     system: ACMG Guidelines, 2015
 specifiedBy:
   type: Method
-  methodType: Functional Data Assessment
+  methodType: functional_data_assessment
   name: ACMG 2015 PS3 Criterion
   reportedIn:
     type: Document
     pmid: '25741868'
     name: ACMG Guidelines, 2015
-evidenceOutcome:
+outcome:
   type: MappableConcept
   primaryCoding:
     code: PS3_supporting

@@ -1,0 +1,73 @@
+id: evidence-line-with-nested-evidence-lines-001
+name: Broader evidence line built from two subordinate evidence lines
+type: Statement
+proposition:
+  type: VariantPathogenicityProposition
+  subject:
+    name: NP_000305.3:p.Arg11Thr
+    type: CategoricalVariant
+    constraints:
+      - type: DefiningAlleleConstraint
+        allele:
+          id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+          type: Allele
+          location:
+            type: SequenceLocation
+            sequenceReference:
+              refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+              type: SequenceReference
+            start: 10
+            end: 11
+            sequence: R
+          state:
+            type: LiteralSequenceExpression
+            sequence: T
+          expressions:
+            - syntax: hgvs.p
+              value: NP_000305.3:p.Arg11Thr
+        relations:
+          - type: MappableConcept
+            primaryCoding:
+              code: translation_of
+              system: http://www.sequenceontology.org
+  predicate: isCausalFor
+  object:
+    type: MappableConcept
+    conceptType: Disease
+    name: Unspecified
+  geneContextQualifier:
+    type: MappableConcept
+    conceptType: Gene
+    name: PTEN
+direction: supports
+strength:
+  type: MappableConcept
+  primaryCoding:
+    code: strong
+    system: ACMG Guidelines, 2015
+# Built from two more narrowly-scoped subordinate Statements, each independently
+# assessed against the same target Proposition, rather than directly from individual
+# evidence items.
+hasEvidenceLines:
+  - id: evLine01
+    type: Statement
+    proposition:
+      type: VariantPathogenicityProposition
+      subject: ex:Variant001
+      predicate: isCausalFor
+      object:
+        type: MappableConcept
+        conceptType: Disease
+        name: Unspecified
+    direction: supports
+    strength:
+      type: MappableConcept
+      primaryCoding:
+        code: supporting
+        system: ACMG Guidelines, 2015
+    outcome:
+      type: MappableConcept
+      primaryCoding:
+        code: PS3_supporting
+        system: ACMG Guidelines, 2015
+  - ex:evidence-line-002

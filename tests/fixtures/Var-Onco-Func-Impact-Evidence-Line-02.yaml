@@ -1,7 +1,7 @@
-type: EvidenceLine
-targetProposition:
+type: Statement
+proposition:
   type: VariantOncogenicityProposition
-  subjectVariant:
+  subject:
     type: CategoricalVariant
     name: EGFR R11T
     constraints:
@@ -31,7 +31,7 @@ targetProposition:
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isOncogenicFor
-  objectTumorType:
+  object:
     type: MappableConcept
     primaryCoding:
       code: ncit:C4872
@@ -48,21 +48,21 @@ targetProposition:
       system: https://identifiers.org/ncbigene/
       iris:
         - http://identifiers.org/ncbigene/1956
-directionOfEvidenceProvided: supports
-strengthOfEvidenceProvided:
+direction: supports
+strength:
   type: MappableConcept
   primaryCoding:
     code: supporting
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-scoreOfEvidenceProvided: 1
+score: 1
 specifiedBy:
   type: Method
-  methodType: functional_assay
+  methodType: functional_data_assessment
   reportedIn:
     type: Document
     pmid: '35101336'
     name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-evidenceOutcome:
+outcome:
   type: MappableConcept
   primaryCoding:
     code: OS2_supporting

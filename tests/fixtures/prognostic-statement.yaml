@@ -1,0 +1,52 @@
+type: Statement
+proposition:
+  type: VariantPrognosticProposition
+  name: EGFR R11T associated with better outcomes for Breast Cancer
+  subject:
+    type: CategoricalVariant
+    name: EGFR R11T
+    constraints:
+      - type: DefiningAlleleConstraint
+        allele:
+          id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
+          type: Allele
+          location:
+            type: SequenceLocation
+            sequenceReference:
+              refgetAccession: SQ.w7LxW0PSaVPNsPFvOL24weFjHcfaHyOi
+              type: SequenceReference
+            start: 10
+            end: 11
+            sequence: R
+          state:
+            type: LiteralSequenceExpression
+            sequence: T
+          expressions:
+            - syntax: hgvs.p
+              value: NP_000305.3:p.Arg11Thr
+        relations:
+          - type: MappableConcept
+            primaryCoding:
+              code: translation_of
+              system: http://bioportal.bioontology.org/ontologies/SO
+  predicate: associatedWithBetterOutcomeFor
+  object:
+    type: MappableConcept
+    primaryCoding:
+      code: ncit:C4872
+      system: https://www.ebi.ac.uk/ols4/ontologies/ncit
+    name: Breast Carcinoma
+  geneContextQualifier:
+    type: MappableConcept
+    conceptType: Gene
+    name: EGFR
+direction: supports
+strength:
+  type: MappableConcept
+  primaryCoding:
+    code: B
+    system: AMP/ASCO/CAP Guidelines, 2017
+specifiedBy:
+  type: Method
+  methodType: curation
+  name: CIViC Curation SOP (2019)

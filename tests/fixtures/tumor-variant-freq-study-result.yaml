@@ -14,7 +14,7 @@ specifiedBy:
 affectedSampleCount: 25
 totalSampleCount: 24592
 affectedFrequency: 0.00101659
-focusVariant:
+focus:
   type: CategoricalVariant
   name: CIC R215
 sampleGroup:
@@ -22,7 +22,7 @@ sampleGroup:
   type: StudyGroup
 subGroupFrequency:
   - type: TumorVariantFrequencyStudyResult
-    focusVariant:
+    focus:
       type: CategoricalVariant
       name: CIC R215W
     affectedSampleCount: 17
@@ -30,7 +30,7 @@ subGroupFrequency:
     affectedFrequency: 0.00069128
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
-        focusVariant:
+        focus:
           name: CIC R215W
           type: CategoricalVariant
         sampleGroup:
@@ -45,7 +45,7 @@ subGroupFrequency:
         totalSampleCount: 658
         affectedFrequency: 0.02431611
       - type: TumorVariantFrequencyStudyResult
-        focusVariant:
+        focus:
           name: CIC R215W
           type: CategoricalVariant
         sampleGroup:
@@ -60,7 +60,7 @@ subGroupFrequency:
         totalSampleCount: 1184
         affectedFrequency: 0.00084459
   - type: TumorVariantFrequencyStudyResult
-    focusVariant:
+    focus:
       name: CIC R215Q
       type: CategoricalVariant
     affectedSampleCount: 7
@@ -68,7 +68,7 @@ subGroupFrequency:
     affectedFrequency: 0.00028465
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
-        focusVariant:
+        focus:
           name: CIC R215Q
           type: CategoricalVariant
         sampleGroup:
@@ -83,7 +83,7 @@ subGroupFrequency:
         totalSampleCount: 658
         affectedFrequency: 0.00911854
       - type: TumorVariantFrequencyStudyResult
-        focusVariant:
+        focus:
           name: CIC R215Q
           type: CategoricalVariant
         sampleGroup:
@@ -98,7 +98,7 @@ subGroupFrequency:
         totalSampleCount: 1184
         affectedFrequency: 0.00084459
   - type: TumorVariantFrequencyStudyResult
-    focusVariant:
+    focus:
       name: CIC R215R
       type: CategoricalVariant
     affectedSampleCount: 1
@@ -106,7 +106,7 @@ subGroupFrequency:
     affectedFrequency: 0.00004066
     subGroupFrequency:
       - type: TumorVariantFrequencyStudyResult
-        focusVariant:
+        focus:
           name: CIC R215R
           type: CategoricalVariant
         sampleGroup:

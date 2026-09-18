@@ -1,4 +1,4 @@
-# GKS-based Representation of gnomAD Population Allele Frequency Data
+# GKM-based Representation of gnomAD Population Allele Frequency Data
 # Allele record used in data examples: https://gnomad.broadinstitute.org/variant/1-55505485-G-A
 
 # VA-SEPIO based proposals leverage the VA-SEPIO 'StudyResult' Class.

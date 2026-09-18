@@ -31,6 +31,8 @@ This Study Result profile was defined to support `gnomAD <https://gnomad.broadin
 
 .. _experimental-variant-functional-impact-study-result:
 
+.. _ExperimentalVariantFunctionalImpactStudyResult:
+
 Experimental Variant Functional Impact Study Result
 ###################################################
 
@@ -61,3 +63,11 @@ Tumor Variant Frequency Study Result
 **Use Cases and Implementations**
 
 This Study Result profile is intended to represent the frequency of a variant in a tumor sample cohort or subgroup, together with the study context and supporting provenance needed to interpret those measurements. This is designed for use cases such as aggregating somatic variant prevalence across tumor datasets, summarizing biomarker frequencies in disease-specific cohorts, or exchanging tumor variant frequency evidence derived from curated knowledgebases. The model may be generalized in the future to support broader use cases, as new requirements and implementers emerge.
+
+.. _computational-variant-functional-impact-analysis-result:
+.. _ComputationalVariantFunctionalImpactAnalysisResult:
+
+Computational Variant Functional Impact Analysis Result
+#######################################################
+
+.. include::  ../../def/va-spec/ComputationalVariantFunctionalImpactAnalysisResult.rst
