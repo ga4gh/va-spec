@@ -13,7 +13,7 @@ namespaces:
   domain-entities: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/
   gkm.core: /ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/
   vrs: /ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/
-  cat-vrs: /ga4gh/schema/cat-vrs/1.2.0-ballot.2026-09.1/json/
+  cat-vrs: /ga4gh/schema/cat-vrs/1.1.1-ballot.2026-09.1/json/
 
 $defs:
   # abstract core classes section -- InformationEntity, Activity, StudyResult, Proposition
