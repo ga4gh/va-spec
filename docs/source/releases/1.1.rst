@@ -105,9 +105,10 @@ instance of a separate class:
 
   * :ref:`Statement` gains ``hasEvidenceItems`` (so a Statement can cite
     evidence items directly, without grouping them into a nested,
-    evidence-line-shaped Statement) and ``hasEvidenceLines`` (an array of
-    ``Statement | iriReference``, letting a broader-scoped Statement be built
-    from one or more narrower-scoped subordinate ones). ``hasEvidenceItems``
+    evidence-line-shaped Statement), and its existing ``hasEvidenceLines`` now
+    holds ``Statement | iriReference`` instead of ``EvidenceLine |
+    iriReference``, letting a broader-scoped Statement be built from one or
+    more narrower-scoped subordinate ones. ``hasEvidenceItems``
     is declared immediately before ``hasEvidenceLines``, in that order.
     ``hasEvidenceItems`` items are ``Statement | StudyResult | DataItem |
     iriReference`` -- narrower than the removed ``EvidenceLine``'s open
