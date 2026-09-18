@@ -282,8 +282,8 @@ Dependency / version refresh
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
   * bumps the ``cat-vrs`` submodule to ``1.2.0-ballot.2026-09``, which pulls in
-    ``vrs`` ``2.2.0-ballot.2026-09`` and ``gkm-core`` ``1.3.0-ballot.2026-09``.
+    ``vrs`` ``2.1.1-ballot.2026-09`` and ``gkm-core`` ``1.3.0-ballot.2026-09``.
   * retargets the imported namespace mappings in every VA-Spec source to the new
     imported ``$id`` tokens (``cat-vrs/1.2.0-ballot.2026-09.1``,
-    ``vrs/2.2.0-ballot.2026-09.1``, ``gkm-core/1.3.0-ballot.2026-09.1``).
+    ``vrs/2.1.1-ballot.2026-09.1``, ``gkm-core/1.3.0-ballot.2026-09.1``).
   * sets VA-Spec's own ``$id`` token to ``1.1.0``.
