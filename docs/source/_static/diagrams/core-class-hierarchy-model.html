@@ -64,6 +64,15 @@
   .side-col { display: flex; flex-direction: column; gap: 16px; }
   .center-col { display: flex; flex-direction: column; align-items: center; gap: 46px; }
   .bottom-row { display: flex; align-items: flex-start; gap: 24px; }
+  /* The four InformationEntity subclass boxes drive the primary tree's overall
+     width. Narrow them and tighten their gap so the whole diagram fits RTD's
+     ~800px column with less scale-down (more legible). 200px is the measured
+     floor: EvidenceLine's longest line, "directionOfEvidenceProvided: enum"
+     (~178px), still clears the 184px content area without ellipsis clipping.
+     Scoped to #primary-tree so the COMPLEX DATA TYPES row (narrower boxes) is
+     unaffected. */
+  #primary-tree .bottom-row { gap: 20px; }
+  #primary-tree .bottom-row .cls.wide { width: 200px; }
   .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; z-index: 0; }
 
   .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }

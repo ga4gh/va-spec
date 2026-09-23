@@ -178,8 +178,9 @@
           <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
           <div class="prop"><b>score</b>: <span class="ty">number</span></div>
           <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
         </div>
-        <div class="foot"><b style="color:var(--ink)">outcome</b> is typically translatable with the direction/strength/score tuple of values</div>
+        <div class="foot"><b style="color:var(--ink)">outcome</b> is typically translatable with the direction/strength/score tuple of values. A Statement may cite evidence directly via <b style="color:var(--ink)">hasEvidenceItems</b>.</div>
       </a>
 
       <div class="side-stack">
@@ -216,8 +217,11 @@
          stack: its half-width (155px) each side of the row center is well inside
          the gap to Method (left stack) and Document (right stack). Value =
          row-height minus Statement's own height, minus a small breathing-room
-         gap -- re-measure if content changes. -->
-    <div class="vconnector" style="margin-top:-46px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
+         gap -- re-measure if content changes. Reduced from -46px to -30px
+         when Statement gained a 5th attribute line (hasEvidenceItems), which
+         lowered its bottom edge by ~one prop row and so shrank the dead space
+         this pull-up may safely consume. -->
+    <div class="vconnector" style="margin-top:-30px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
     <a class="cls" style="width:310px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
       <span class="badge tu">TU</span>
