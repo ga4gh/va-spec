@@ -153,7 +153,7 @@ Custom Profile Development
 
 Representation of a particular type of **Statement** or **Evidence Line** using the VA-Spec does not always require a VA Profile to be specifically defined for it.
 
-Custom Profiles are Statement models -- including Statements used as Evidence Lines -- that are defined de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile.
+Custom Profiles are Statement or Evidence Line models that are defined de novo, to support a specific implementation use case where data cannot be made to conform to a particular guideline-based Community Profile.
 
 This section describes why these are useful, and how to create them.
 

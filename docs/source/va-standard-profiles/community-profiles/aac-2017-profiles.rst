@@ -38,63 +38,59 @@ Variant Clinical Significance Statement (AAC 2017)
 -----
 
 .. _variant-amp-asco-cap-evidence-line-aac-2017:
-.. _variant-amp-asco-cap-statement-aac-2017:
-.. _AmpAscoCapStatement:
+.. _AmpAscoCapEvidenceLine:
 
-Amp/Asco/Cap Statement (AAC 2017)
-##################################
+Variant Amp/Asco/Cap Evidence Line (AAC 2017)
+#############################################
 
-.. include::  ../../def/va-spec.aac-2017/AmpAscoCapStatement.rst
+.. include::  ../../def/va-spec.aac-2017/AmpAscoCapEvidenceLine.rst
 
 **Artifacts**
 
- - |amp_asco_cap_statement_source_yaml|
- - |amp_asco_cap_statement_json_schema|
+ - |amp_asco_cap_evidence_line_source_yaml|
+ - |amp_asco_cap_evidence_line_json_schema|
 
 -----
 
 .. _variant-diagnostic-evidence-line-aac-2017:
-.. _variant-diagnostic-statement-aac-2017:
-.. _DiagnosticStatement:
+.. _DiagnosticEvidenceLine:
 
-Diagnostic Statement (AAC 2017)
-#################################
+Variant Diagnostic Evidence Line (AAC 2017)
+###########################################
 
-.. include::  ../../def/va-spec.aac-2017/DiagnosticStatement.rst
+.. include::  ../../def/va-spec.aac-2017/DiagnosticEvidenceLine.rst
 
 **Artifacts**
 
- - |diagnostic_statement_source_yaml|
- - |diagnostic_statement_json_schema|
+ - |diagnostic_evidence_line_source_yaml|
+ - |diagnostic_evidence_line_json_schema|
 
 -----
 
 .. _variant-prognostic-evidence-line-aac-2017:
-.. _variant-prognostic-statement-aac-2017:
-.. _PrognosticStatement:
+.. _PrognosticEvidenceLine:
 
-Prognostic Statement (AAC 2017)
-#################################
+Variant Prognostic Evidence Line (AAC 2017)
+###########################################
 
-.. include::  ../../def/va-spec.aac-2017/PrognosticStatement.rst
+.. include::  ../../def/va-spec.aac-2017/PrognosticEvidenceLine.rst
 
 **Artifacts**
 
- - |prognostic_statement_source_yaml|
- - |prognostic_statement_json_schema|
+ - |prognostic_evidence_line_source_yaml|
+ - |prognostic_evidence_line_json_schema|
 
 -----
 
 .. _variant-therapeutic-evidence-line-aac-2017:
-.. _variant-therapeutic-statement-aac-2017:
-.. _TherapeuticStatement:
+.. _TherapeuticEvidenceLine:
 
-Therapeutic Statement (AAC 2017)
-##################################
+Variant Therapeutic Evidence Line (AAC 2017)
+############################################
 
-.. include::  ../../def/va-spec.aac-2017/TherapeuticStatement.rst
+.. include::  ../../def/va-spec.aac-2017/TherapeuticEvidenceLine.rst
 
 **Artifacts**
 
- - |therapeutic_statement_source_yaml|
- - |therapeutic_statement_json_schema|
+ - |therapeutic_evidence_line_source_yaml|
+ - |therapeutic_evidence_line_json_schema|

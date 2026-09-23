@@ -3,16 +3,12 @@
 Evidence Line
 !!!!!!!!!!!!!
 
-An Evidence Line is not a distinct schema class -- it is a :ref:`Statement <Statement>`
-referenced via another Statement's ``hasEvidenceLines`` attribute (see the
-:ref:`Statement <Statement>` page for its full attribute table). This page describes
-the *pattern* of using a nested Statement to build a discrete, scored, directional
-argument from evidence, as opposed to citing evidence items directly via
-``hasEvidenceItems``.
+.. include::  ../../../def/va-spec/EvidenceLine.rst
+
 
 **DATA STRUCTURE**
 
-In VA-Spec, a Statement used as an :ref:`Evidence Line <EvidenceLine>`, and the :ref:`community profiles <community-profiles>` that constrain it, can support the general data structure below.
+In VA-Spec, the :ref:`Evidence Line <EvidenceLine>` class, and the :ref:`community profiles <community-profiles>` that constrain it, can support the general data structure below.
 
 .. core-im-evidence-line-structure:
 
@@ -20,15 +16,15 @@ In VA-Spec, a Statement used as an :ref:`Evidence Line <EvidenceLine>`, and the 
 
    <iframe src="../../../_static/diagrams/statement-evidence-example.html" style="width:100%; height:750px; border:0;" title="Statement, Proposition, and Evidence worked example"></iframe>
 
-**Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item). The same diagram appears on the :ref:`Statement <Statement>` page.
+**Legend** A class-level view of the Statement- and Evidence Line-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item). The same diagram appears on the :ref:`Statement <Statement>` page.
 
 In this structure:
 
-* An **Evidence Line** roots a central axis where it is linked, via ``hasEvidenceItems``, to zero or more pieces of information (e.g. **Study Results**) that were used to build the argument it represents. It can also be linked to other Evidence Lines via ``hasEvidenceLines`` to capture the finer-grained arguments that were used to build it.
-* The **Proposition** referenced by the Evidence Line's ``proposition`` attribute encapsulates a structured representation of the possible fact toward which evidence is interpreted and scored (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide moderate support).
+* An **Evidence Line** roots a central axis where it is linked, via ``hasEvidenceItems``, to zero or more pieces of information (e.g. **Study Results** or **Data Items**) that were used to build the argument it represents. It can also be linked to other Evidence Lines via ``hasEvidenceLines`` to capture the finer-grained arguments that were used to build it.
+* The **Proposition** referenced by the Evidence Line's ``targetProposition`` attribute encapsulates a structured representation of the possible fact toward which evidence is interpreted and scored (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'* - for which gnomAD data is assessed to provide moderate support).
 
   * Note that this target proposition can be omitted if an Evidence Line is attached to a Statement with the same proposition - but otherwise should be provided.
-* Because an Evidence Line *is* a Statement, the classes surrounding this central axis are exactly the ones available to any Statement, and describe the provenance of the Evidence Line and its Evidence Items.
+* As with Statements, the classes surrounding this central axis are used to describe the provenance of the Evidence Line and its Evidence Items.
 
 A data example illustrating this structure for Evidence Lines supporting a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 
@@ -40,16 +36,16 @@ A data example illustrating this structure for Evidence Lines supporting a Varia
 
 The SEPIO-VA model can represent the fact that a piece of information (e.g. a Data Item, Study Result, or prior Statement) was used as **evidence** for or against a new Statement in one of two ways, depending on how much detail is provided/desired:
 
-* If the source data includes details about how the information was interpreted and applied as evidence (e.g. the direction and strength it provides for or against the target Statement, and provenance information about how this was assessed) - a nested Statement is added to the target Statement's ``hasEvidenceLines`` attribute to capture this detail (see below for more).
-* For simpler data that merely reports that some piece of information was used as evidence supporting a Statement, the ``hasEvidenceItems`` attribute can be used to link the Statement directly to objects representing the information used as evidence (without the need to create an intervening, nested Statement).
+* If the source data includes details about how the information was interpreted and applied as evidence (e.g. the direction and strength it provides for or against the target Statement, and provenance information about how this was assessed) - an ``EvidenceLine`` object is added to the target Statement's ``hasEvidenceLines`` attribute to capture this detail (see below for more).
+* For simpler data that merely reports that some piece of information was used as evidence supporting a Statement, the ``hasEvidenceItems`` attribute can be used to link the Statement directly to objects representing the information used as evidence (without the need to create an intervening ``EvidenceLine``).
 
 **2. Meaning and Utility of Evidence Lines**
 
-* Evidence Lines are used to capture one or more pieces of information (i.e. **evidence items**, linked via ``hasEvidenceItems``) that are assessed together as an argument for or against some **proposition** - and report the **direction** (supports or disputes) and **strength** (e.g. strong, moderate, weak) that the argument is determined to make.
-* Because an Evidence Line is a Statement, it may itself carry ``hasEvidenceLines``. This lets a broadly-scoped argument be built from several finer-grained arguments it was derived from, to any depth.
-* For example, the allele count and frequency calculations for the BRCA2 c.8023A>G variant in the gnomAD database are evidence items that may be collectively assessed to build an Evidence Line making argument of moderate strength that supports a proposition that the variant is pathogenic for Breast Cancer.
+* Evidence Lines are used to capture one or more pieces of information (i.e. **evidence items**, linked via ``hasEvidenceItems``) that are assessed together as an argument for or against some **target proposition** - and report the **direction** (supports or disputes) and **strength** (e.g. strong, moderate, weak) that the argument is determined to make.
+* Because an Evidence Line may itself carry ``hasEvidenceLines``, a broadly-scoped argument can be built from several finer-grained arguments it was derived from, to any depth.
+* For example, the allele count and frequency calculations for the BRCA2 c.8023A>G variant in the gnomAD database are evidence items that may be collectively assessed to build an Evidence Line making argument of moderate strength that supports a target proposition that the variant is pathogenic for Breast Cancer.
 
-* In a Statement used as an Evidence Line, the ``proposition`` attribute reports the 'possible fact' that the evidence is assessed against (and may be omitted if it is the same as the proposition of the Statement it supports). The ``hasEvidenceItems`` attribute captures the information assessed as evidence. And the ``direction`` and ``strength`` attributes report the outcome of this assessment - whether the evidence line supports or disputes the proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc).
+* In an ``EvidenceLine`` instance, the ``targetProposition`` attribute reports the 'possible fact' that the evidence is assessed against (and may be omitted if it is the same as the proposition of the Statement it supports). The ``hasEvidenceItems`` attribute captures the information assessed as evidence. And the ``directionOfEvidenceProvided`` and ``strengthOfEvidenceProvided`` attributes report the outcome of this assessment - whether the evidence line supports or disputes the target proposition, and how strongly. Additional attributes allow provenance information about the evidence assessment process to be captured (who did it, when, using what guidelines, etc).
 
 **3. Evidence Line Scope**
 
