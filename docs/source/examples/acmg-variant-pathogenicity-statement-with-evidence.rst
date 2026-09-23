@@ -94,8 +94,8 @@ A few additional notes about this example:
         - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
   hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement
   - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
-    type: Statement            # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    proposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
+    type: EvidenceLine         # a VariantPathogenicityEvidenceLine, a subclass of the core EvidenceLine class
+    targetProposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
     hasEvidenceItems:          # the information interpreted as evidence in building this Evidence Line
     - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.
       type: CohortAlleleFrequencyStudyResult
@@ -121,13 +121,13 @@ A few additional notes about this example:
           name: gnomAD help documentation
           urls:
             - "https://gnomad.broadinstitute.org/help"
-    direction: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
-    strength:
+    directionOfEvidenceProvided: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
+    strengthOfEvidenceProvided:
       type: MappableConcept
       primaryCoding:
         code: moderate        # reports that this supporting evidence is of 'moderate' strength
         system: ACMG Guidelines, 2015
-    outcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
+    evidenceOutcome:  # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
       type: MappableConcept
       primaryCoding:
         code: PM2             # ... here, that the ACMG PM2 criterion was met. Because PM2 was met at its default 'moderate' strength,
@@ -149,8 +149,8 @@ A few additional notes about this example:
         activityType: evidence evaluation
         date: '2018-03-11'
   - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
-    type: Statement                      # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    proposition: ex:Proposition001
+    type: EvidenceLine                   # a VariantPathogenicityEvidenceLine, a subclass of the core EvidenceLine class
+    targetProposition: ex:Proposition001
     hasEvidenceItems:
       - id: ex:Statement002              # here the evidence item is another Statement about the functional impact of the variant
         type: Statement
@@ -190,8 +190,8 @@ A few additional notes about this example:
             pmid: '29785012'
         hasEvidenceLines:
         - id: EvidenceLine003
-          type: Statement
-          direction: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
+          type: EvidenceLine
+          directionOfEvidenceProvided: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
           specifiedBy:          # a Method followed in assessing the direction and strength of evidence provided by the Functional Impact StudyResult for the Functional Impact Statement
             type: Method
             name: MAVE bayesian threshold probability method 001
@@ -224,13 +224,13 @@ A few additional notes about this example:
                   type: Document
                   urls:
                     - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
-    direction: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
-    strength:
+    directionOfEvidenceProvided: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
+    strengthOfEvidenceProvided:
       type: MappableConcept
       primaryCoding:
         code: strong                      # indicates that this line of evidence provides 'strong' support for the variant's Pathogencity
         system: ACMG Guidelines, 2015
-    outcome:
+    evidenceOutcome:
       type: MappableConcept
       primaryCoding:
         code: PS3                         # the ACMG PS3 criterion was met at its default 'strong' strength
