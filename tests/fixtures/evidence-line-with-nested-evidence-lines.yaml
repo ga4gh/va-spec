@@ -1,7 +1,7 @@
 id: evidence-line-with-nested-evidence-lines-001
 name: Broader evidence line built from two subordinate evidence lines
-type: Statement
-proposition:
+type: EvidenceLine
+targetProposition:
   type: VariantPathogenicityProposition
   subject:
     name: NP_000305.3:p.Arg11Thr
@@ -39,19 +39,33 @@ proposition:
     type: MappableConcept
     conceptType: Gene
     name: PTEN
-direction: supports
-strength:
+specifiedBy: "https://www.acmg.net/docs/standards_guidelines_for_the_interpretation_of_sequence_variants.pdf"
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided:
   type: MappableConcept
   primaryCoding:
     code: strong
     system: ACMG Guidelines, 2015
-# Built from two more narrowly-scoped subordinate Statements, each independently
+scoreOfEvidenceProvided: 4
+evidenceOutcome:
+  type: MappableConcept
+  primaryCoding:
+    code: PS3
+    system: ACMG Guidelines, 2015
+# A single evidence item assessed directly by this broader evidence line, in
+# addition to the subordinate evidence lines below.
+hasEvidenceItems:
+  - type: DataItem
+    name: Functional assay showing abrogated protein activity
+    value: "abrogated"
+  - ex:evidence-item-001
+# Built from two more narrowly-scoped subordinate Evidence Lines, each independently
 # assessed against the same target Proposition, rather than directly from individual
 # evidence items.
 hasEvidenceLines:
   - id: evLine01
-    type: Statement
-    proposition:
+    type: EvidenceLine
+    targetProposition:
       type: VariantPathogenicityProposition
       subject: ex:Variant001
       predicate: isCausalFor
@@ -59,13 +73,13 @@ hasEvidenceLines:
         type: MappableConcept
         conceptType: Disease
         name: Unspecified
-    direction: supports
-    strength:
+    directionOfEvidenceProvided: supports
+    strengthOfEvidenceProvided:
       type: MappableConcept
       primaryCoding:
         code: supporting
         system: ACMG Guidelines, 2015
-    outcome:
+    evidenceOutcome:
       type: MappableConcept
       primaryCoding:
         code: PS3_supporting

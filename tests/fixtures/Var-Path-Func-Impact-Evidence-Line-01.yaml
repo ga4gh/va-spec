@@ -1,6 +1,6 @@
 id: evLine01
-type: Statement
-proposition:
+type: EvidenceLine
+targetProposition:
   type: VariantPathogenicityProposition
   subject:
     name: NP_000305.3:p.Arg11Thr
@@ -40,8 +40,8 @@ proposition:
     type: MappableConcept
     conceptType: Gene
     name: PTEN
-direction: supports
-strength:
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided:
   type: MappableConcept
   primaryCoding:
     code: supporting
@@ -54,7 +54,7 @@ specifiedBy:
     type: Document
     pmid: '25741868'
     name: ACMG Guidelines, 2015
-outcome:
+evidenceOutcome:
   type: MappableConcept
   primaryCoding:
     code: PS3_supporting

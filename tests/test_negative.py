@@ -141,12 +141,12 @@ def test_not_met_evidence_requires_neutral_without_strength(cls, fixture):
     instance = _load_fixture(fixture)
 
     invalid_direction = deepcopy(instance)
-    invalid_direction["direction"] = "supports"
+    invalid_direction["directionOfEvidenceProvided"] = "supports"
     with pytest.raises(ValidationError):
         validator[cls].validate(invalid_direction)
 
     invalid_strength = deepcopy(instance)
-    invalid_strength["strength"] = {
+    invalid_strength["strengthOfEvidenceProvided"] = {
         "type": "MappableConcept",
         "primaryCoding": {"code": "supporting", "system": invalid_strength["specifiedBy"]["reportedIn"]["name"]},
     }
