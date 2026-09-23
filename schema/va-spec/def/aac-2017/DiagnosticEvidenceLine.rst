@@ -88,17 +88,9 @@ Diagnostic statement for AMP/ASCO/CAP
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Statement` | :ref:`StudyResult` | :ref:`DataItem` | :ref:`iriReference`
+      - :ref:`InformationEntity` | :ref:`iriReference`
       - 0..m
       - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
-   *  - hasEvidenceLines
-      -
-                        .. raw:: html
-
-                            <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`EvidenceLine` | :ref:`iriReference`
-      - 0..m
-      - A subordinate evidence-based argument that supports or disputes the validity of this Evidence Line's target Proposition. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items').
    *  - directionOfEvidenceProvided
       -
       - string

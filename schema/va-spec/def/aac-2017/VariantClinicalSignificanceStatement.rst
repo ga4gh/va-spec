@@ -114,12 +114,12 @@ A statement reporting a conclusion from a single study about the clinical signif
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
       - A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.
-   *  - hasEvidenceItems
+   *  - hasEvidence
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Statement` | :ref:`StudyResult` | :ref:`DataItem` | :ref:`iriReference`
+      - :ref:`InformationEntity` | :ref:`iriReference`
       - 0..m
       - An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement.
    *  - hasEvidenceLines
