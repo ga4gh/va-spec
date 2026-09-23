@@ -82,12 +82,12 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
    *  - proposition
       -
       - :ref:`Proposition` | :ref:`iriReference`
-      - 0..1
+      - 1..1
       - A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
    *  - direction
       -
       - string
-      - 1..1
+      - 0..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
    *  - strength
       -

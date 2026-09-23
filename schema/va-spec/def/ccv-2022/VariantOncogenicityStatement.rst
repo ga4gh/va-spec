@@ -81,12 +81,12 @@ A statement reporting a conclusion from a single study about whether a variant i
    *  - proposition
       -
       - :ref:`VariantOncogenicityProposition` | :ref:`iriReference`
-      - 0..1
+      - 1..1
       - A proposition about the oncogenicity of a variant, for which the study provides evidence. The validity of this proposition, and the level of confidence/evidence supporting it, may be assessed and reported by the Statement.
    *  - direction
       -
       - string
-      - 1..1
+      - 0..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
    *  - strength
       -

@@ -40,11 +40,9 @@ NEGATIVE_CASES = [
          "predicate": "notTheRightPredicate", "object": "ex:c"},
     ),
     (
-        "Statement rejects a missing required 'direction'",
+        "Statement rejects a missing required 'proposition'",
         "va-spec:Statement",
-        {"type": "Statement",
-         "proposition": {"type": "MyOrgProp", "subject": {"id": "x", "type": "G"},
-                         "predicate": "p", "object": "ex:o"}},
+        {"type": "Statement", "direction": "supports"},
     ),
     (
         "Statement rejects a proposition that violates the base contract",

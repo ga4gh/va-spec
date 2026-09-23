@@ -558,7 +558,7 @@ $defs:
           was assessed as evidence to generate and score different arguments for or against a Statement's
           Proposition. Evidence Lines can be omitted if such information is not available or needed.
     required:
-      - direction
+      - proposition
 
   EvidenceLine:
     inherits: InformationEntity

@@ -170,7 +170,7 @@
       }
    },
    "required": [
-      "direction",
+      "proposition",
       "type"
    ],
    "type": "object",
