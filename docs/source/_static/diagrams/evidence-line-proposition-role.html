@@ -76,19 +76,19 @@
  <div id="stage">
   <div id="scale-inner">
   <div class="title-row"><h1>Role of Propositions in Evidence Lines</h1><span class="src">acmg-2015-profile-source.yaml</span></div>
-  <p class="caption">How a <code>Proposition</code> flows from an abridged <code>Pathogenicity Evidence Line</code> model (a <code>Statement</code> playing the Evidence Line role), through a concrete data example, to its plain-language meaning. <span style="color:var(--hl); font-weight:600;">Proposition-related content</span> is highlighted throughout.</p>
+  <p class="caption">How a <code>Proposition</code> flows from an abridged <code>VariantPathogenicityEvidenceLine</code> model (a subclass of the distinct <code>EvidenceLine</code> class), through a concrete data example, to its plain-language meaning. <span style="color:var(--hl); font-weight:600;">Proposition-related content</span> is highlighted throughout.</p>
 
   <div class="role-diagram">
     <div class="panel">
       <div class="panel-label">Model</div>
       <a class="cls" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
         <span class="badge">D</span>
-        <div class="head"><div class="stereo">&laquo;Statement&raquo;</div><div class="name long">VariantPathogenicityEvidenceLine</div></div>
+        <div class="head"><div class="stereo">&laquo;EvidenceLine&raquo;</div><div class="name long">VariantPathogenicityEvidenceLine</div></div>
         <div class="body">
-          <div class="prop hl"><b>proposition</b>: <span class="ty">0..1</span></div>
-          <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
-          <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop hl"><b>targetProposition</b>: <span class="ty">0..1</span></div>
+          <div class="prop"><b>directionOfEvidenceProvided</b>: <span class="ty">enum</span></div>
+          <div class="prop"><b>strengthOfEvidenceProvided</b>: <span class="ty">0..1</span></div>
+          <div class="prop"><b>evidenceOutcome</b>: <span class="ty">0..1</span></div>
           <div class="prop"><b>specifiedBy</b>: <span class="ty">Method</span></div>
           <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
         </div>
@@ -101,11 +101,14 @@
       <div class="panel-label">Data Example</div>
       <div class="json-box">
         <div class="jline">{</div>
-        <div class="jline ind1"><b>"type"</b>: "Statement",</div>
-        <div class="jline hl ind1"><b>"proposition"</b>: "Proposition001",</div>
-        <div class="jline ind1"><b>"direction"</b>: "disputes",</div>
-        <div class="jline ind1"><b>"strength"</b>: "strong",</div>
-        <div class="jline ind1"><b>"outcome"</b>: "BS1",</div>
+        <div class="jline ind1"><b>"type"</b>: "EvidenceLine",</div>
+        <div class="jline hl ind1"><b>"targetProposition"</b>:</div>
+        <div class="jline hl ind2">"Proposition001",</div>
+        <div class="jline ind1"><b>"directionOfEvidenceProvided"</b>:</div>
+        <div class="jline ind2">"disputes",</div>
+        <div class="jline ind1"><b>"strengthOfEvidenceProvided"</b>:</div>
+        <div class="jline ind2">"strong",</div>
+        <div class="jline ind1"><b>"evidenceOutcome"</b>: "BS1",</div>
         <div class="jline ind1"><b>"specifiedBy"</b>: {</div>
         <div class="jline ind2"><b>"methodType"</b>: "population_</div>
         <div class="jline ind2">&nbsp;&nbsp;data_assessment"</div>

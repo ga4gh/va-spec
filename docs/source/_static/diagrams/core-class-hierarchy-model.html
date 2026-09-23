@@ -89,7 +89,7 @@
         ["Entity","Proposition","right-fan"],["Entity","Contribution","right-fan"],["Entity","Document","right-fan"],
         ["Entity","MappableConcept","right-fan"],["Entity","ConceptSet","right-fan"],
         ["Entity","InformationEntity","straight"],
-        ["InformationEntity","StudyResult","bottom-fan"],["InformationEntity","Statement","bottom-fan"],["InformationEntity","DataItem","bottom-fan"]
+        ["InformationEntity","StudyResult","bottom-fan"],["InformationEntity","Statement","bottom-fan"],["InformationEntity","EvidenceLine","bottom-fan"],["InformationEntity","DataItem","bottom-fan"]
       ]'>
         <svg class="connector-svg"></svg>
 
@@ -210,6 +210,16 @@
             <div class="body">
               <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
               <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+              <div class="prop"><b>hasEvidenceLines</b>: <span class="ty">0..m</span></div>
+              <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
+            </div>
+          </a>
+          <a class="cls wide" data-node="EvidenceLine" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="name">EvidenceLine</div></div>
+            <div class="body">
+              <div class="prop"><b>directionOfEvidenceProvided</b>: <span class="ty">enum</span></div>
+              <div class="prop"><b>evidenceOutcome</b>: <span class="ty">0..1</span></div>
               <div class="prop"><b>hasEvidenceLines</b>: <span class="ty">0..m</span></div>
               <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
             </div>

@@ -211,26 +211,26 @@
 
     <!-- margin-top pulls this connector (and everything below it) up out of the
          dead space left by the top row's taller side-stacks (Proposition/Method,
-         Contribution/Document) -- safe because the EvidenceLine box below is the
-         same width/position as Statement, with no horizontal overlap with either
-         stack (measured: EvidenceLine x=[440,660] vs Method x=[140,360] and
-         Document x=[740,960]). Value = row-height minus Statement's own height,
-         minus a small breathing-room gap -- re-measure if content changes. -->
+         Contribution/Document) -- safe because the EvidenceLine box below (320px,
+         centered under the 220px Statement) has no horizontal overlap with either
+         stack: its half-width (160px) each side of the row center stays inside
+         the gap to Method (left stack) and Document (right stack). Value =
+         row-height minus Statement's own height, minus a small breathing-room
+         gap -- re-measure if content changes. -->
     <div class="vconnector" style="margin-top:-46px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
-    <a class="cls role" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+    <a class="cls" style="width:320px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
       <span class="badge tu">TU</span>
       <div class="head">
-        <div class="stereo">&laquo;EvidenceLine&raquo;</div>
-        <div class="name">Statement</div>
+        <div class="name">EvidenceLine</div>
       </div>
       <div class="body">
-        <div class="prop"><b>proposition</b>: <span class="ty">(omitted)</span></div>
-        <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
-        <div class="prop"><b>strength</b>: <span class="ty">"moderate"</span></div>
-        <div class="prop"><b>outcome</b>: <span class="ty">"contributing"</span></div>
+        <div class="prop"><b>targetProposition</b>: <span class="ty">(omitted)</span></div>
+        <div class="prop"><b>directionOfEvidenceProvided</b>: <span class="ty">"supports"</span></div>
+        <div class="prop"><b>strengthOfEvidenceProvided</b>: <span class="ty">"moderate"</span></div>
+        <div class="prop"><b>evidenceOutcome</b>: <span class="ty">"contributing"</span></div>
       </div>
-      <div class="foot"><b style="color:var(--ink)">proposition</b> usually omitted &mdash; inherits the parent's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">direction</b>: neutral, with <b style="color:var(--ink)">strength</b> marking it as additional evidence.</div>
+      <div class="foot"><b style="color:var(--ink)">targetProposition</b> usually omitted &mdash; inherits the parent Statement's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">directionOfEvidenceProvided</b>: neutral, with <b style="color:var(--ink)">strengthOfEvidenceProvided</b> marking it as additional evidence.</div>
     </a>
 
     <div class="vconnector"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
