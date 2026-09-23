@@ -86,4 +86,4 @@ Some VariantDiagnosticProposition attributes are inherited from :ref:`GeneticCon
 
 **Inherits:** :ref:`GeneticContextVariantProposition`
 
-**Used in:** :ref:`AmpAscoCapStatement`, :ref:`DiagnosticStatement`
+**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`DiagnosticEvidenceLine`

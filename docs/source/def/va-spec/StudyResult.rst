@@ -112,4 +112,4 @@ Some StudyResult attributes are inherited from :ref:`InformationEntity`.
 
 **Subclasses:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`TumorVariantFrequencyStudyResult`
 
-**Used in:** :ref:`Statement`
+**Used in:** :ref:`EvidenceLine`, :ref:`Statement`

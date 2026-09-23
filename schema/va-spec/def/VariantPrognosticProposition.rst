@@ -86,4 +86,4 @@ Some VariantPrognosticProposition attributes are inherited from :ref:`GeneticCon
 
 **Inherits:** :ref:`GeneticContextVariantProposition`
 
-**Used in:** :ref:`AmpAscoCapStatement`, :ref:`PrognosticStatement`
+**Used in:** :ref:`AmpAscoCapEvidenceLine`, :ref:`PrognosticEvidenceLine`

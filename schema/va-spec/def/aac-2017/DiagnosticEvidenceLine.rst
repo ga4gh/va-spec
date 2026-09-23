@@ -5,7 +5,7 @@
 
 **Computational Definition**
 
-An Evidence Line that describes how evidence for a variant was interpreted to determine if a specific CCV 2022 criterion code is met, and the strength that evidence this provides for or against the variant's oncogenicity. An Evidence Line that describes how a specific type of information was interpreted as evidence for or against a variant's oncogenicity. In the CCV Framework, evidence is assessed by determining if a specific criterion (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the default strength based on the quality and abundance of evidence.
+Diagnostic statement for AMP/ASCO/CAP
 
 **Information Model**
 
@@ -60,8 +60,8 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
    *  - specifiedBy
       -
       - :ref:`Method` | :ref:`iriReference`
-      - 1..1
-      - The guidelines or rubrics followed in interpreting evidence, to determine the strength and direction of support that it provides for or against a variant's oncogenicity. While the CCV Criteria themselves provide minimal guidance, typically a more detailed, gene- or cancer- specific rubric is followed to determine if a given criterion was met, and how strongly.
+      - 0..1
+      - A specification that describes all or part of the process that led to creation of the Information Entity
    *  - contributions
       -
                         .. raw:: html
@@ -80,9 +80,9 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       - A document in which the the Information Entity is reported.
    *  - targetProposition
       -
-      - :ref:`VariantOncogenicityProposition` | :ref:`iriReference`
-      - 0..1
-      - A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
+      - :ref:`VariantDiagnosticProposition` | :ref:`iriReference`
+      - 1..1
+      - The possible fact against which evidence items contained in an Evidence Line were collectively evaluated, in determining the overall strength and direction of support they provide. For example, in an ACMG Guideline-based assessment of variant pathogenicity, the support provided by distinct lines of evidence are assessed against a target proposition that the variant is pathogenic for a specific disease.
    *  - hasEvidenceItems
       -
                         .. raw:: html
@@ -108,7 +108,7 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - The strength of support that an Evidence Line is determined to provide for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.
+      - The strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
    *  - qualityOfEvidenceProvided
       -
                         .. raw:: html
@@ -126,62 +126,8 @@ An Evidence Line that describes how evidence for a variant was interpreted to de
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'OS2_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.
+      - A term summarizing the overall outcome of the evidence assessment represented by the Evidence Line, in terms of the direction and strength of support it provides for or against the target Proposition.
 
-**Additional Constraints**
+**Composes:** :ref:`AmpAscoCapEvidenceLine`
 
-.. list-table::
-   :class: clean-wrap
-   :header-rows: 1
-   :align: left
-   :widths: auto
-
-   *  - If property...
-      - has value...
-      - then property...
-      - must...
-   *  - *directionOfEvidenceProvided*
-      - one of: **supports**, **disputes**
-      - *strengthOfEvidenceProvided*
-      - be provided
-   *  - *specifiedBy.methodType*
-      - **population_data_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|(SBVS1|SBS1|OP4)(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **functional_data_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|(OS2|SBS2)(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **primary_sequence_consequence_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|(OVS1|OM2|SBP2)(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **functional_domain_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|OM1(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **amino_acid_analogy_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|(OS1|OM4)(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **somatic_hotspot_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|(OS3|OM3|OP3)(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **in_silico_impact_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|(OP1|SBP1)(_.+)?)$**
-   *  - *specifiedBy.methodType*
-      - **single_genetic_etiology_assessment**
-      - *evidenceOutcome.primaryCoding.code*
-      - match the pattern **^(?:no_criteria_met|OP2(_.+)?)$**
-
-If *evidenceOutcome.primaryCoding.code* must match the pattern **^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$**, then:
-
-* *directionOfEvidenceProvided* must be: **neutral**
-
-
-**Composes:** :ref:`EvidenceLine`
-
-**Used in:** :ref:`VariantOncogenicityStatement`
+**Used in:** :ref:`VariantClinicalSignificanceStatement`

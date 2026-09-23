@@ -87,4 +87,4 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
 
 **Inherits:** :ref:`InformationEntity`
 
-**Used in:** :ref:`Statement`
+**Used in:** :ref:`EvidenceLine`, :ref:`Statement`

@@ -15,19 +15,19 @@ namespaces:
   gkm.core: /ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/
 
 $defs:
-  AmpAscoCapStatement:
+  AmpAscoCapEvidenceLine:
     maturity: draft
     description: General statement for AMP/ASCO/CAP
     allOf:
-      - $refCurie: va-spec:Statement
+      - $refCurie: va-spec:EvidenceLine
       - properties:
-          proposition:
+          targetProposition:
             oneOf:
               - $refCurie: va-spec:VariantPrognosticProposition
               - $refCurie: va-spec:VariantDiagnosticProposition
               - $refCurie: va-spec:VariantTherapeuticResponseProposition
               - $refCurie: gkm.core:iriReference
-          strength:
+          strengthOfEvidenceProvided:
             properties:
               primaryCoding:
                 allOf:
@@ -37,44 +37,44 @@ $defs:
                         enum: [A, B, C, D]
                       system:
                         const: AMP/ASCO/CAP Guidelines, 2017
-    required: [proposition]
+    required: [targetProposition]
 
-  PrognosticStatement:
+  PrognosticEvidenceLine:
     maturity: draft
     description: Prognostic statement for AMP/ASCO/CAP
     allOf:
-      - $ref: "#/$defs/AmpAscoCapStatement"
+      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
       - properties:
-          proposition:
+          targetProposition:
             oneOf:
               - $refCurie: va-spec:VariantPrognosticProposition
               - $refCurie: gkm.core:iriReference
 
-        required: [proposition]
+        required: [targetProposition]
 
-  DiagnosticStatement:
+  DiagnosticEvidenceLine:
     maturity: draft
     description: Diagnostic statement for AMP/ASCO/CAP
     allOf:
-      - $ref: "#/$defs/AmpAscoCapStatement"
+      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
       - properties:
-          proposition:
+          targetProposition:
             oneOf:
               - $refCurie: va-spec:VariantDiagnosticProposition
               - $refCurie: gkm.core:iriReference
-        required: [proposition]
+        required: [targetProposition]
 
-  TherapeuticStatement:
+  TherapeuticEvidenceLine:
     maturity: draft
     description: Therapeutic statement for AMP/ASCO/CAP
     allOf:
-      - $ref: "#/$defs/AmpAscoCapStatement"
+      - $ref: "#/$defs/AmpAscoCapEvidenceLine"
       - properties:
-          proposition:
+          targetProposition:
             oneOf:
               - $refCurie: va-spec:VariantTherapeuticResponseProposition
               - $refCurie: gkm.core:iriReference
-        required: [proposition]
+        required: [targetProposition]
 
   VariantClinicalSignificanceStatement:
     maturity: draft
@@ -145,9 +145,9 @@ $defs:
               items:
                 anyOf:
                   - $refCurie: gkm.core:iriReference
-                  - $ref: "#/$defs/DiagnosticStatement"
-                  - $ref: "#/$defs/PrognosticStatement"
-                  - $ref: "#/$defs/TherapeuticStatement"
+                  - $ref: "#/$defs/DiagnosticEvidenceLine"
+                  - $ref: "#/$defs/PrognosticEvidenceLine"
+                  - $ref: "#/$defs/TherapeuticEvidenceLine"
             outcome:
               type: object
               properties:
@@ -187,9 +187,9 @@ $defs:
               items:
                 anyOf:
                   - $refCurie: gkm.core:iriReference
-                  - $ref: "#/$defs/DiagnosticStatement"
-                  - $ref: "#/$defs/PrognosticStatement"
-                  - $ref: "#/$defs/TherapeuticStatement"
+                  - $ref: "#/$defs/DiagnosticEvidenceLine"
+                  - $ref: "#/$defs/PrognosticEvidenceLine"
+                  - $ref: "#/$defs/TherapeuticEvidenceLine"
             outcome:
               type: object
               properties:

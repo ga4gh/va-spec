@@ -127,7 +127,7 @@ A statement reporting a conclusion from a single study about the clinical signif
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Statement` | :ref:`iriReference`
+      - :ref:`EvidenceLine` | :ref:`iriReference`
       - 0..m
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
 
@@ -146,7 +146,7 @@ A statement reporting a conclusion from a single study about the clinical signif
    *  - *outcome.primaryCoding.code*
       - **tier i**
       - *hasEvidenceLines*
-      - be one of: :ref:`iriReference`, :ref:`DiagnosticStatement`, :ref:`PrognosticStatement`, :ref:`TherapeuticStatement`
+      - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
    *  - *outcome.primaryCoding.code*
       - **tier i**
       - *outcome.name*
@@ -162,7 +162,7 @@ A statement reporting a conclusion from a single study about the clinical signif
    *  - *outcome.primaryCoding.code*
       - **tier ii**
       - *hasEvidenceLines*
-      - be one of: :ref:`iriReference`, :ref:`DiagnosticStatement`, :ref:`PrognosticStatement`, :ref:`TherapeuticStatement`
+      - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
    *  - *outcome.primaryCoding.code*
       - **tier ii**
       - *outcome.name*

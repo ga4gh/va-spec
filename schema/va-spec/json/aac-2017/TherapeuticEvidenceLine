@@ -1,19 +1,19 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticStatement",
-   "title": "PrognosticStatement",
-   "description": "Prognostic statement for AMP/ASCO/CAP",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine",
+   "title": "TherapeuticEvidenceLine",
+   "description": "Therapeutic statement for AMP/ASCO/CAP",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapStatement"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapEvidenceLine"
       },
       {
          "properties": {
-            "proposition": {
+            "targetProposition": {
                "oneOf": [
                   {
-                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
+                     "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantTherapeuticResponseProposition"
                   },
                   {
                      "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
@@ -22,7 +22,7 @@
             }
          },
          "required": [
-            "proposition"
+            "targetProposition"
          ]
       }
    ],

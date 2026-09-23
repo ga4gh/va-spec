@@ -115,13 +115,13 @@
                            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine"
                         }
                      ]
                   }
@@ -204,13 +204,13 @@
                            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine"
                         }
                      ]
                   }

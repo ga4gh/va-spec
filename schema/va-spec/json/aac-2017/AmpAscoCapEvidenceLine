@@ -1,16 +1,16 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapStatement",
-   "title": "AmpAscoCapStatement",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/AmpAscoCapEvidenceLine",
+   "title": "AmpAscoCapEvidenceLine",
    "description": "General statement for AMP/ASCO/CAP",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
       },
       {
          "properties": {
-            "proposition": {
+            "targetProposition": {
                "oneOf": [
                   {
                      "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/VariantPrognosticProposition"
@@ -26,7 +26,7 @@
                   }
                ]
             },
-            "strength": {
+            "strengthOfEvidenceProvided": {
                "properties": {
                   "primaryCoding": {
                      "allOf": [
@@ -56,7 +56,7 @@
       }
    ],
    "required": [
-      "proposition"
+      "targetProposition"
    ],
    "type": "object",
    "unevaluatedProperties": false

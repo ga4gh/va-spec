@@ -30,7 +30,7 @@ An Evidence Line that describes how a specific type of information was interpret
       -
       - string
       - 1..1
-      - MUST be "Statement".
+      - MUST be "EvidenceLine".
    *  - name
       -
       - string
@@ -78,42 +78,11 @@ An Evidence Line that describes how a specific type of information was interpret
       - :ref:`Document` | :ref:`iriReference`
       - 0..m
       - A document in which the the Information Entity is reported.
-   *  - proposition
+   *  - targetProposition
       -
       - :ref:`VariantPathogenicityProposition` | :ref:`iriReference`
       - 0..1
       - A Variant Pathogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.
-   *  - direction
-      -
-      - string
-      - 1..1
-      - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
-   *  - strength
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.
-   *  - quality
-      -
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - A term used to report the quality of the assessment of a Proposition taking into consideration the reliability of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages and a governing framework for evaluating the quality of evidence. Also known as trust rating, review status or ranking.
-   *  - score
-      -
-                        .. raw:: html
-
-                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
-      - number
-      - 0..1
-      - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
-   *  - outcome
-      -
-      - :ref:`MappableConcept` | :ref:`iriReference`
-      - 0..1
-      - The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'PS3_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.
    *  - hasEvidenceItems
       -
                         .. raw:: html
@@ -121,15 +90,43 @@ An Evidence Line that describes how a specific type of information was interpret
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
       - :ref:`Statement` | :ref:`StudyResult` | :ref:`DataItem` | :ref:`iriReference`
       - 0..m
-      - An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement.
+      - An individual piece of information that was evaluated as evidence in building the argument represented by an Evidence Line.
    *  - hasEvidenceLines
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Statement` | :ref:`iriReference`
+      - :ref:`EvidenceLine` | :ref:`iriReference`
       - 0..m
-      - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
+      - A subordinate evidence-based argument that supports or disputes the validity of this Evidence Line's target Proposition. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items').
+   *  - directionOfEvidenceProvided
+      -
+      - string
+      - 1..1
+      - The direction of support that the Evidence Line is determined to provide toward its target Proposition (supports, disputes, neutral)
+   *  - strengthOfEvidenceProvided
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - The strength of support that an Evidence Line is determined to provide for or against the proposed pathogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.
+   *  - qualityOfEvidenceProvided
+      -
+                        .. raw:: html
+
+                            <span style="background-color: #D3D3D3; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Draft Maturity Level">D</span>
+      - :ref:`MappableConcept`
+      - 0..1
+      - A term used to report the quality of the assessment of a Proposition taking into consideration the reliability of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages and a governing framework for evaluating the quality of evidence. Also known as trust rating, review status or ranking.
+   *  - scoreOfEvidenceProvided
+      -
+      - number
+      - 0..1
+      - A quantitative score indicating the strength of support that an Evidence Line is determined to provide for or against its target Proposition, evaluated relative to the direction indicated by the directionOfEvidenceProvided value.
+   *  - evidenceOutcome
+      -
+      - :ref:`MappableConcept` | :ref:`iriReference`
+      - 0..1
+      - The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific ACMG criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'PM2' when the PM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'PS3_moderate' when PS3 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'PS3_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.
 
 **Additional Constraints**
 
@@ -143,84 +140,84 @@ An Evidence Line that describes how a specific type of information was interpret
       - has value...
       - then property...
       - must...
-   *  - *direction*
+   *  - *directionOfEvidenceProvided*
       - one of: **supports**, **disputes**
-      - *strength*
+      - *strengthOfEvidenceProvided*
       - be provided
    *  - *specifiedBy.methodType*
       - **population_data_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(BA1|BS1|PM2)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **case_control_enrichment_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(BS2|PM4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **null_variant_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|PVS1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **same_amino_acid_change_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|PS1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **mutational_hot_spot_and_functional_domain_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|PM1(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **protein_length_change_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PM4|BP3)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **novel_missense_position_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|PM5(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **variant_spectrum_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PP2|BP1)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **in_silico_functional_impact_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PP3|BP4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **predicted_silent_variant_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|BP7(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **functional_data_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PS3|BS3)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **segregation_data_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PP1|BS4)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **de_novo_occurrence_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PS2|PM6)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **cis_trans_variant_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PM3|BP2)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **reputable_source_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|(PP5|BP6)(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **phenotype_gene_specificity_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|PP4(_.+)?)$**
    *  - *specifiedBy.methodType*
       - **alternative_cause_assessment**
-      - *outcome.primaryCoding.code*
+      - *evidenceOutcome.primaryCoding.code*
       - match the pattern **^(?:no_criteria_met|BP5(_.+)?)$**
 
-If *outcome.primaryCoding.code* must match the pattern **^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$**, then:
+If *evidenceOutcome.primaryCoding.code* must match the pattern **^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$**, then:
 
-* *direction* must be: **neutral**
+* *directionOfEvidenceProvided* must be: **neutral**
 
 
-**Composes:** :ref:`Statement`
+**Composes:** :ref:`EvidenceLine`
 
 **Used in:** :ref:`VariantPathogenicityStatement`
