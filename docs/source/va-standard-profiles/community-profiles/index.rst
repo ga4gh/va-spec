@@ -28,6 +28,6 @@ See :ref:`here <profile-authoring-mechanisms>` for a description of how constrai
    :maxdepth: 4
    :titlesonly:
 
+   aac-2017-profiles
    acmg-2015-profiles
    ccv-2022-profiles
-   aac-2017-profiles
