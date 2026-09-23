@@ -132,7 +132,7 @@
  <div id="stage">
   <div id="scale-inner">
   <div class="title-row"><h1>Statement &amp; Evidence composition</h1><span class="src">va-spec-source.yaml</span></div>
-  <p class="caption">A <code>Statement</code> can appear in three roles: the top-level claim, a nested <code>&laquo;EvidenceLine&raquo;</code> argument for it, and even an <code>&laquo;EvidenceItem&raquo;</code> cited by one. Same class throughout &mdash; only the position in the structure changes.</p>
+  <p class="caption">A top-level <code>Statement</code> makes a claim; the distinct <code>EvidenceLine</code> class captures a scored, directional argument for it (via <code>hasEvidenceLines</code>) and cites the information assessed as evidence (via <code>hasEvidenceItems</code>) &mdash; a <code>StudyResult</code>, a <code>DataItem</code>, or another <code>Statement</code> playing an <code>&laquo;EvidenceItem&raquo;</code> role. A Statement is <em>not</em> itself an Evidence Line.</p>
 
   <div class="diagram">
     <div class="side-row" style="align-items:flex-start;">
@@ -211,26 +211,26 @@
 
     <!-- margin-top pulls this connector (and everything below it) up out of the
          dead space left by the top row's taller side-stacks (Proposition/Method,
-         Contribution/Document) -- safe because the EvidenceLine box below is the
-         same width/position as Statement, with no horizontal overlap with either
-         stack (measured: EvidenceLine x=[440,660] vs Method x=[200,360] and
-         Document x=[740,900]). Value = row-height minus Statement's own height,
-         minus a small breathing-room gap -- re-measure if content changes. -->
+         Contribution/Document) -- safe because the EvidenceLine box below (310px,
+         centered under the 220px Statement) has no horizontal overlap with either
+         stack: its half-width (155px) each side of the row center is well inside
+         the gap to Method (left stack) and Document (right stack). Value =
+         row-height minus Statement's own height, minus a small breathing-room
+         gap -- re-measure if content changes. -->
     <div class="vconnector" style="margin-top:-46px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
-    <a class="cls role" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+    <a class="cls" style="width:310px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
       <span class="badge tu">TU</span>
       <div class="head">
-        <div class="stereo">&laquo;EvidenceLine&raquo;</div>
-        <div class="name">Statement</div>
+        <div class="name">EvidenceLine</div>
       </div>
       <div class="body">
-        <div class="prop"><b>proposition</b>: <span class="ty">0..1</span></div>
-        <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
-        <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
-        <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+        <div class="prop"><b>targetProposition</b>: <span class="ty">0..1</span></div>
+        <div class="prop"><b>directionOfEvidenceProvided</b>: <span class="ty">enum</span></div>
+        <div class="prop"><b>strengthOfEvidenceProvided</b>: <span class="ty">MappableConcept</span></div>
+        <div class="prop"><b>evidenceOutcome</b>: <span class="ty">MappableConcept</span></div>
       </div>
-      <div class="foot"><b style="color:var(--ink)">proposition</b> usually omitted &mdash; inherits the parent's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">direction</b>: neutral, with <b style="color:var(--ink)">strength</b> marking it as additional evidence.</div>
+      <div class="foot"><b style="color:var(--ink)">targetProposition</b> usually omitted &mdash; inherits the parent Statement's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">directionOfEvidenceProvided</b>: neutral.</div>
     </a>
 
     <div class="vconnector"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
