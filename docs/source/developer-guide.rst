@@ -26,7 +26,7 @@ The diagrams below illustrate where subclass- and composition-based mechanisms a
 
 .. raw:: html
 
-   <iframe src="_static/diagrams/core-model-classes-model.html" style="width:100%; height:460px; border:0;" title="I. Core Model Classes"></iframe>
+   <iframe src="_static/diagrams/core-model-classes-model.html" style="width:100%; height:510px; border:0;" title="I. Core Model Classes"></iframe>
 
 
 The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes (shown with dashed borders) must first be 'specialized' through subclassing.
@@ -36,7 +36,7 @@ The **Core Data Model** consists of the domain-agnostic classes above. **Concret
 
 .. raw:: html
 
-   <iframe src="_static/diagrams/base-profiles-model.html" style="width:100%; height:900px; border:0;" title="II. Base Profiles"></iframe>
+   <iframe src="_static/diagrams/base-profiles-model.html" style="width:100%; height:720px; border:0;" title="II. Base Profiles"></iframe>
 
 The **Proposition** and **Study Result** Base Profiles above are defined using a subclassing mechanism, creating formal "VA Base Classes" that extend the Core Data Model. The specific syntax for this authoring mechanism leverages features outside the native JSON Schema language, as illustrated in the Proposition profile example :ref:`here <subclass-based-profiling-syntax>`.
 
@@ -44,7 +44,7 @@ The **Proposition** and **Study Result** Base Profiles above are defined using a
 
 .. raw:: html
 
-   <iframe src="_static/diagrams/community-profiles-model.html" style="width:100%; height:1080px; border:0;" title="III. Community Profiles"></iframe>
+   <iframe src="_static/diagrams/community-profiles-model.html" style="width:100%; height:930px; border:0;" title="III. Community Profiles"></iframe>
 
 The **Statement** and **Evidence Line** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes*, in the VA Model: the Statement profiles compose the core :ref:`Statement <Statement>` class, and the Evidence Line profiles (the ACMG-2015, CCV-2022, and AAC-2017 evidence lines) compose the core :ref:`EvidenceLine <EvidenceLine>` class. The domain-specificity of each profile is defined in the **Proposition** profile it encapsulates, as diagrammed. Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline. The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`.
 

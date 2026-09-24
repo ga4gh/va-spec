@@ -3,16 +3,16 @@
 <style>
   :root {
     --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line-strong: #1B2430;
-    --box: #EEF0F2; --accent: #3E6B6B; --tu: #3E6B6B; --d: #B4883C;
+    --box: #EEF0F2; --accent: #3E6B6B;
   }
   :root[data-theme="dark"] {
     --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
-    --box: #222A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+    --box: #222A33; --accent: #7FC4C4;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
-      --box: #222A33; --accent: #7FC4C4; --tu: #7FC4C4; --d: #D9AE66;
+      --box: #222A33; --accent: #7FC4C4;
     }
   }
   * { box-sizing: border-box; }
@@ -29,11 +29,11 @@
   .tier { display: flex; justify-content: center; align-items: flex-start; }
 
   .cls { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
-         background: var(--box); border: 2px solid var(--line-strong); border-radius: 3px;
+         background: var(--box); border: 2px solid var(--line-strong); border-radius: 3px; padding: 4px 6px;
          font-family: ui-monospace, "SF Mono", Consolas, monospace; text-decoration: none; color: inherit; cursor: pointer; z-index: 1; }
   a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .cls.abstract { border-style: dashed; }
-  .cls .name { font-weight: 700; }
+  .cls .name { font-weight: 700; line-height: 1.15; }
   .cls .stereo { font-family: ui-monospace, monospace; color: var(--ink-soft); font-style: italic; }
   .cls.abstract .name { font-style: italic; }
 
@@ -51,37 +51,36 @@
   <div class="title-row"><h1>I.&nbsp;&nbsp;Core Model Classes</h1></div>
   <p class="caption">The domain-agnostic classes of the VA Core Data Model. <b>Concrete</b> classes (solid) can capture data directly; <b>abstract</b> classes (dashed) must first be specialized through subclassing. Open triangles mark inheritance, pointing to the parent.</p>
 
-  <div class="diagram" id="tree" data-edges='[
-    ["Entity","Agent"],["Entity","Contribution"],["Entity","ConceptSet"],["Entity","DataSet"],["Entity","Document"],
-    ["Entity","InformationEntity"],["Entity","MappableConcept"],["Entity","Method"],["Entity","Proposition"],["Entity","StudyGroup"],
-    ["InformationEntity","StudyResult"],["InformationEntity","Statement"],["InformationEntity","EvidenceLine"],["InformationEntity","DataItem"]
-  ]'>
+  <div class="diagram" id="tree">
     <svg class="connector-svg"></svg>
 
-    <div class="tier" style="margin-bottom:64px;">
-      <a class="cls abstract" data-node="Entity" style="width:210px;height:78px;" href="../../core-information-model/entities/index.html#entity" target="_top">
-        <span class="name" style="font-size:17px;">Entity</span><span class="stereo" style="font-size:12px;">&laquo;abstract&raquo;</span>
+    <div class="tier" style="margin-bottom:52px;">
+      <a class="cls abstract" data-node="Entity" style="width:196px;height:72px;" href="../../core-information-model/entities/index.html#entity" target="_top">
+        <span class="name" style="font-size:16px;">Entity</span><span class="stereo" style="font-size:11px;">&laquo;abstract&raquo;</span>
       </a>
     </div>
 
-    <div class="tier" style="gap:22px; margin-bottom:64px;">
-      <a class="cls" data-node="Agent" style="width:132px;height:82px;" href="../../core-information-model/entities/agent.html#agent" target="_top"><span class="name" style="font-size:15px;">Agent</span></a>
-      <a class="cls" data-node="Contribution" style="width:132px;height:82px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top"><span class="name" style="font-size:15px;">Contribution</span></a>
-      <a class="cls" data-node="ConceptSet" style="width:132px;height:82px;" href="../../appendices/imported-models/concept-set.html#conceptset" target="_top"><span class="name" style="font-size:15px;">Concept Set</span></a>
-      <a class="cls" data-node="DataSet" style="width:132px;height:82px;" href="../../core-information-model/entities/information-entities/dataset.html#dataset" target="_top"><span class="name" style="font-size:15px;">Data Set</span></a>
-      <a class="cls" data-node="Document" style="width:132px;height:82px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top"><span class="name" style="font-size:15px;">Document</span></a>
-      <a class="cls abstract" data-node="InformationEntity" style="width:150px;height:82px;" href="../../core-information-model/entities/information-entities/index.html#informationentity" target="_top"><span class="name" style="font-size:14px;">Information Entity</span><span class="stereo" style="font-size:11px;">&laquo;abstract&raquo;</span></a>
-      <a class="cls" data-node="MappableConcept" style="width:132px;height:82px;" href="../../core-information-model/elements/mappable-concept.html#mappableconcept" target="_top"><span class="name" style="font-size:14px;">Mappable Concept</span></a>
-      <a class="cls" data-node="Method" style="width:132px;height:82px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top"><span class="name" style="font-size:15px;">Method</span></a>
-      <a class="cls abstract" data-node="Proposition" style="width:140px;height:82px;" href="../../core-information-model/entities/proposition.html#proposition" target="_top"><span class="name" style="font-size:14px;">Proposition</span><span class="stereo" style="font-size:11px;">&laquo;abstract&raquo;</span></a>
-      <a class="cls" data-node="StudyGroup" style="width:132px;height:82px;" href="../../core-information-model/entities/study-group.html#studygroup" target="_top"><span class="name" style="font-size:15px;">Study Group</span></a>
+    <div class="tier" style="gap:12px; margin-bottom:78px;">
+      <a class="cls" data-node="Agent" style="width:116px;height:66px;" href="../../core-information-model/entities/agent.html#agent" target="_top"><span class="name" style="font-size:13px;">Agent</span></a>
+      <a class="cls" data-node="Contribution" style="width:116px;height:66px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top"><span class="name" style="font-size:13px;">Contribution</span></a>
+      <a class="cls" data-node="ConceptSet" style="width:116px;height:66px;" href="../../appendices/imported-models/concept-set.html#conceptset" target="_top"><span class="name" style="font-size:13px;">Concept Set</span></a>
+      <a class="cls" data-node="DataSet" style="width:116px;height:66px;" href="../../core-information-model/entities/information-entities/dataset.html#dataset" target="_top"><span class="name" style="font-size:13px;">Data Set</span></a>
+      <a class="cls" data-node="Document" style="width:116px;height:66px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top"><span class="name" style="font-size:13px;">Document</span></a>
+      <a class="cls" data-node="MappableConcept" style="width:116px;height:66px;" href="../../core-information-model/elements/mappable-concept.html#mappableconcept" target="_top"><span class="name" style="font-size:13px;">Mappable<br>Concept</span></a>
+      <a class="cls" data-node="Method" style="width:116px;height:66px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top"><span class="name" style="font-size:13px;">Method</span></a>
+      <a class="cls" data-node="StudyGroup" style="width:116px;height:66px;" href="../../core-information-model/entities/study-group.html#studygroup" target="_top"><span class="name" style="font-size:13px;">Study Group</span></a>
     </div>
 
-    <div class="tier" style="gap:34px;">
-      <a class="cls abstract" data-node="StudyResult" style="width:186px;height:96px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top"><span class="name" style="font-size:19px;">Study Result</span><span class="stereo" style="font-size:12px;">&laquo;abstract&raquo;</span></a>
-      <a class="cls" data-node="Statement" style="width:186px;height:96px;" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top"><span class="name" style="font-size:22px;">Statement</span></a>
-      <a class="cls" data-node="EvidenceLine" style="width:210px;height:96px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top"><span class="name" style="font-size:21px;">EvidenceLine</span></a>
-      <a class="cls" data-node="DataItem" style="width:186px;height:96px;" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top"><span class="name" style="font-size:22px;">Data Item</span></a>
+    <div class="tier" style="gap:170px; margin-bottom:54px;">
+      <a class="cls abstract" data-node="InformationEntity" style="width:158px;height:76px;" href="../../core-information-model/entities/information-entities/index.html#informationentity" target="_top"><span class="name" style="font-size:15px;">Information<br>Entity</span><span class="stereo" style="font-size:11px;">&laquo;abstract&raquo;</span></a>
+      <a class="cls abstract" data-node="Proposition" style="width:158px;height:76px;" href="../../core-information-model/entities/proposition.html#proposition" target="_top"><span class="name" style="font-size:15px;">Proposition</span><span class="stereo" style="font-size:11px;">&laquo;abstract&raquo;</span></a>
+    </div>
+
+    <div class="tier" style="gap:30px;">
+      <a class="cls abstract" data-node="StudyResult" style="width:176px;height:90px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top"><span class="name" style="font-size:18px;">Study Result</span><span class="stereo" style="font-size:12px;">&laquo;abstract&raquo;</span></a>
+      <a class="cls" data-node="Statement" style="width:176px;height:90px;" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top"><span class="name" style="font-size:21px;">Statement</span></a>
+      <a class="cls" data-node="EvidenceLine" style="width:200px;height:90px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top"><span class="name" style="font-size:20px;">EvidenceLine</span></a>
+      <a class="cls" data-node="DataItem" style="width:176px;height:90px;" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top"><span class="name" style="font-size:21px;">Data Item</span></a>
     </div>
   </div>
 
@@ -100,41 +99,67 @@
   var diagram = document.querySelector('.diagram');
   var tree = document.getElementById('tree');
   var svg = tree.querySelector('.connector-svg');
+  var SVGNS = 'http://www.w3.org/2000/svg';
   var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
 
   function drawTree() {
     var tr = tree.getBoundingClientRect();
     svg.setAttribute('width', tree.scrollWidth);
     svg.setAttribute('height', tree.scrollHeight);
-    var color = getComputedStyle(document.documentElement).getPropertyValue('--line-strong').trim();
-    svg.innerHTML =
-      '<defs><marker id="cmc-tri" viewBox="0 0 14 12" refX="7" refY="11" markerWidth="14" markerHeight="12" markerUnits="userSpaceOnUse" orient="auto">' +
-      '<polygon points="7,0 14,12 0,12" fill="' + getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() + '" stroke="' + color + '" stroke-width="1.8"/></marker></defs>';
-    function rect(el) { var b = el.getBoundingClientRect(); return { cx: (b.left + b.right) / 2 - tr.left, top: b.top - tr.top, bottom: b.bottom - tr.top }; }
-    function line(pts, marker) {
-      var p = document.createElementNS('http://www.w3.org/2000/svg', 'polyline');
+    var cs = getComputedStyle(document.documentElement);
+    var color = cs.getPropertyValue('--line-strong').trim();
+    var bg = cs.getPropertyValue('--bg').trim();
+    svg.innerHTML = '';
+
+    function rect(name) {
+      var el = tree.querySelector('[data-node="' + name + '"]');
+      var b = el.getBoundingClientRect();
+      return { cx: (b.left + b.right) / 2 - tr.left, top: b.top - tr.top, bottom: b.bottom - tr.top };
+    }
+    function poly(pts) {
+      var p = document.createElementNS(SVGNS, 'polyline');
       p.setAttribute('points', pts.map(function (q) { return q[0] + ',' + q[1]; }).join(' '));
       p.setAttribute('fill', 'none'); p.setAttribute('stroke', color); p.setAttribute('stroke-width', '2');
-      if (marker) p.setAttribute('marker-end', 'url(#cmc-tri)');
       svg.appendChild(p);
     }
-    // group edges by parent
-    var edges = JSON.parse(tree.dataset.edges), byParent = {};
-    edges.forEach(function (e) { (byParent[e[0]] = byParent[e[0]] || []).push(e[1]); });
-    Object.keys(byParent).forEach(function (pname) {
-      var pEl = tree.querySelector('[data-node="' + pname + '"]'); if (!pEl) return;
-      var p = rect(pEl);
-      var kids = byParent[pname].map(function (n) { return tree.querySelector('[data-node="' + n + '"]'); }).filter(Boolean).map(rect);
-      if (!kids.length) return;
-      var busY = (p.bottom + Math.min.apply(null, kids.map(function (k) { return k.top; }))) / 2;
-      // parent stem + open triangle at the parent's bottom edge (child -> parent, marker at parent)
-      line([[p.cx, busY], [p.cx, p.bottom]], true);
-      // horizontal bus
+    // hollow inheritance triangle: apex up, touching the parent's bottom edge at (cx, apexY)
+    function tri(cx, apexY) {
+      var t = document.createElementNS(SVGNS, 'polygon');
+      t.setAttribute('points', cx + ',' + apexY + ' ' + (cx - 7) + ',' + (apexY + 12) + ' ' + (cx + 7) + ',' + (apexY + 12));
+      t.setAttribute('fill', bg); t.setAttribute('stroke', color); t.setAttribute('stroke-width', '1.8');
+      svg.appendChild(t);
+      return apexY + 12; // y of the triangle base (where the stem starts)
+    }
+    // standard bus fan: triangle at parent bottom, stem to bus, horizontal bus, drop to each child.
+    // returns the busY so callers can tap additional routing off it.
+    function busGroup(parentName, childNames) {
+      var p = rect(parentName);
+      var kids = childNames.map(rect);
+      var minTop = Math.min.apply(null, kids.map(function (k) { return k.top; }));
+      var busY = (p.bottom + minTop) / 2;
+      var baseY = tri(p.cx, p.bottom);
+      poly([[p.cx, baseY], [p.cx, busY]]);
       var xs = kids.map(function (k) { return k.cx; }).concat([p.cx]);
-      line([[Math.min.apply(null, xs), busY], [Math.max.apply(null, xs), busY]], false);
-      // drops to each child
-      kids.forEach(function (k) { line([[k.cx, busY], [k.cx, k.top]], false); });
-    });
+      poly([[Math.min.apply(null, xs), busY], [Math.max.apply(null, xs), busY]]);
+      kids.forEach(function (k) { poly([[k.cx, busY], [k.cx, k.top]]); });
+      return { p: p, busY: busY };
+    }
+
+    var leaves = ['Agent', 'Contribution', 'ConceptSet', 'DataSet', 'Document', 'MappableConcept', 'Method', 'StudyGroup'];
+    var e = busGroup('Entity', leaves);
+
+    // Entity also parents the two abstract branch classes in the middle band.
+    // Route them off Entity's bus: one drop straight down the centre gap of the leaf
+    // row to a sub-bus in the empty band, then out to InformationEntity and Proposition.
+    var ie = rect('InformationEntity'), pr = rect('Proposition');
+    var leafBottom = Math.max.apply(null, leaves.map(function (n) { return rect(n).bottom; }));
+    var subBusY = (leafBottom + Math.min(ie.top, pr.top)) / 2;
+    poly([[e.p.cx, e.busY], [e.p.cx, subBusY]]);
+    poly([[Math.min(ie.cx, pr.cx), subBusY], [Math.max(ie.cx, pr.cx), subBusY]]);
+    poly([[ie.cx, subBusY], [ie.cx, ie.top]]);
+    poly([[pr.cx, subBusY], [pr.cx, pr.top]]);
+
+    busGroup('InformationEntity', ['StudyResult', 'Statement', 'EvidenceLine', 'DataItem']);
   }
 
   function fit() {

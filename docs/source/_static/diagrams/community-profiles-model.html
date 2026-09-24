@@ -48,10 +48,12 @@
            padding: 30px 22px 22px; display: flex; flex-direction: row; align-items: flex-start; gap: 26px; }
   .outer-label { position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 8px;
                  font-size: 11px; font-style: italic; color: var(--ink-soft); font-family: ui-monospace, monospace; }
+  /* left column stacks two shorter communities to roughly match the tall one beside it */
+  .col { display: flex; flex-direction: column; gap: 22px; }
 
-  /* one dashed sub-frame per community */
+  /* one dashed sub-frame per community; hugs its own content so padding is consistent */
   .community { position: relative; background: transparent; border: 1.5px dashed var(--frame-line); border-radius: 6px;
-               padding: 26px 12px 12px; display: flex; flex-direction: column; gap: 10px; align-self: stretch; }
+               padding: 26px 12px 14px; display: flex; flex-direction: column; gap: 10px; }
   .community-label { position: absolute; top: -10px; left: 14px; background: var(--frame); padding: 0 7px;
                      font-size: 12px; font-weight: 700; color: var(--ink); font-family: ui-monospace, monospace; }
   .sub { font-size: 10px; font-style: italic; color: var(--ink-soft); font-family: ui-monospace, monospace;
@@ -85,17 +87,33 @@
     <div class="outer">
       <span class="outer-label">Community Profiles</span>
 
-      <!-- ACMG 2015 -->
-      <div class="community">
-        <span class="community-label">ACMG 2015</span>
-        <div class="sub">Statement</div>
-        <a class="profile" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicitystatement" target="_top">
-          <div class="pname">Variant Pathogenicity<br>Statement</div>
-          <div class="prop">Variant Pathogenicity Proposition</div></a>
-        <div class="sub">Evidence Line</div>
-        <a class="profile" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
-          <div class="pname">Variant Pathogenicity<br>Evidence Line</div>
-          <div class="prop">Variant Pathogenicity Proposition</div></a>
+      <!-- left column: two shorter communities stacked to match AAC's height -->
+      <div class="col">
+        <!-- ACMG 2015 -->
+        <div class="community">
+          <span class="community-label">ACMG 2015</span>
+          <div class="sub">Statement</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicitystatement" target="_top">
+            <div class="pname">Variant Pathogenicity<br>Statement</div>
+            <div class="prop">Variant Pathogenicity Proposition</div></a>
+          <div class="sub">Evidence Line</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
+            <div class="pname">Variant Pathogenicity<br>Evidence Line</div>
+            <div class="prop">Variant Pathogenicity Proposition</div></a>
+        </div>
+
+        <!-- CCV 2022 -->
+        <div class="community">
+          <span class="community-label">CCV 2022</span>
+          <div class="sub">Statement</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/ccv-2022-profiles.html#variantoncogenicitystatement" target="_top">
+            <div class="pname">Variant Oncogenicity<br>Statement</div>
+            <div class="prop">Variant Oncogenicity Proposition</div></a>
+          <div class="sub">Evidence Line</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/ccv-2022-profiles.html#variantoncogenicityevidenceline" target="_top">
+            <div class="pname">Variant Oncogenicity<br>Evidence Line</div>
+            <div class="prop">Variant Oncogenicity Proposition</div></a>
+        </div>
       </div>
 
       <!-- AAC 2017 -->
@@ -118,19 +136,6 @@
         <a class="profile" href="../../va-standard-profiles/community-profiles/aac-2017-profiles.html#therapeuticevidenceline" target="_top">
           <div class="pname">Therapeutic<br>Evidence Line</div>
           <div class="prop">Variant Therapeutic Response Proposition</div></a>
-      </div>
-
-      <!-- CCV 2022 -->
-      <div class="community">
-        <span class="community-label">CCV 2022</span>
-        <div class="sub">Statement</div>
-        <a class="profile" href="../../va-standard-profiles/community-profiles/ccv-2022-profiles.html#variantoncogenicitystatement" target="_top">
-          <div class="pname">Variant Oncogenicity<br>Statement</div>
-          <div class="prop">Variant Oncogenicity Proposition</div></a>
-        <div class="sub">Evidence Line</div>
-        <a class="profile" href="../../va-standard-profiles/community-profiles/ccv-2022-profiles.html#variantoncogenicityevidenceline" target="_top">
-          <div class="pname">Variant Oncogenicity<br>Evidence Line</div>
-          <div class="prop">Variant Oncogenicity Proposition</div></a>
       </div>
 
     </div>
