@@ -37,11 +37,15 @@
   a.parent:hover, a.parent:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
   .cls .name { font-weight: 700; font-size: 16px; }
 
+  /* two constrained core classes sit side by side above the community frame */
+  .parents { display: flex; flex-direction: row; justify-content: center; gap: 64px; }
+  .pgroup { display: flex; flex-direction: column; align-items: center; }
+
   /* filled triangle = constraint_over (schema composition), distinct from the open subclass_of triangle */
   .vconn { display: flex; flex-direction: column; align-items: center; }
   .vconn .tri { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 12px solid var(--line-strong); }
   .vconn .stem { width: 2px; height: 18px; background: var(--line-strong); }
-  .vconn .lbl { font-family: ui-monospace, monospace; font-size: 11px; font-style: italic; color: var(--ink-soft); margin: 2px 0 6px; }
+  .conn-label { font-family: ui-monospace, monospace; font-size: 11px; font-style: italic; color: var(--ink-soft); margin: 2px 0 8px; text-align: center; }
 
   /* large dashed, light-gray outer frame grouping the community sub-frames */
   .outer { position: relative; background: var(--frame); border: 2px dashed var(--frame-line); border-radius: 8px;
@@ -79,10 +83,21 @@
 
   <div class="diagram">
 
-    <a class="cls parent" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
-      <span class="name">Statement</span>
-    </a>
-    <div class="vconn"><span class="tri"></span><span class="stem"></span><span class="lbl">constraint_over</span></div>
+    <div class="parents">
+      <div class="pgroup">
+        <a class="cls parent" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+          <span class="name">Statement</span>
+        </a>
+        <div class="vconn"><span class="tri"></span><span class="stem"></span></div>
+      </div>
+      <div class="pgroup">
+        <a class="cls parent" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+          <span class="name">EvidenceLine</span>
+        </a>
+        <div class="vconn"><span class="tri"></span><span class="stem"></span></div>
+      </div>
+    </div>
+    <div class="conn-label">constraint_over</div>
 
     <div class="outer">
       <span class="outer-label">Community Profiles</span>
