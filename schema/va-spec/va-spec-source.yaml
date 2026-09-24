@@ -638,15 +638,6 @@ $defs:
           Values of this attribute can be defined by for a given profile based on domain/application needs, but should
           be framed in qualitative terms (e.g. 'strong', 'moderate', 'weak'). The 'scoreOfEvidenceProvided' attribute
           can be used to report quantitative assessments of evidence provided.
-      qualityOfEvidenceProvided:
-        maturity: draft
-        $refCurie: gkm.core:MappableConcept
-        description: >-
-          A term used to report the quality of the assessment of a Proposition taking into consideration the reliability
-          of the method, the contributor's self-reporting of the rigor of the evaluation, and the overall robustness of
-          the supporting or disputing evidence. This is useful when there is a consistent policy and authority that manages
-          and a governing framework for evaluating the quality of evidence.
-          Also known as trust rating, review status or ranking.
       scoreOfEvidenceProvided:
         type: number
         description: >-

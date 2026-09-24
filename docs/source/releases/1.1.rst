@@ -118,7 +118,7 @@ retained for callers that prefer a dedicated evidence-line object:
   * the :ref:`EvidenceLine` class is retained, keeping its
     ``targetProposition``, ``directionOfEvidenceProvided``,
     ``strengthOfEvidenceProvided``, ``scoreOfEvidenceProvided``,
-    ``evidenceOutcome``, ``qualityOfEvidenceProvided``, and ``hasEvidenceItems``
+    ``evidenceOutcome``, and ``hasEvidenceItems``
     attributes. ``hasEvidenceItems`` accepts any ``InformationEntity |
     iriReference``; because an Evidence Line is itself an Information Entity,
     Evidence Lines nest by listing subordinate Evidence Lines there (there is
