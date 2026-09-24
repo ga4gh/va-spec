@@ -63,6 +63,35 @@ def test_statement_accepts_a_user_defined_proposition():
     validator["va-spec:Statement"].validate(stmt)
 
 
+def test_statement_hasEvidence_accepts_any_information_entity():
+    # Statement.hasEvidence $refs the open InformationEntity base (was the narrow
+    # Statement | StudyResult | DataItem | iriReference union). An EvidenceLine --
+    # an InformationEntity that was NOT in the old union -- must now be accepted
+    # as a direct evidence item.
+    stmt = {
+        "type": "Statement",
+        "proposition": "ex:prop",
+        "direction": "supports",
+        "hasEvidence": [
+            {"type": "EvidenceLine", "directionOfEvidenceProvided": "supports"}
+        ],
+    }
+    validator["va-spec:Statement"].validate(stmt)
+
+
+def test_evidence_line_nests_via_hasEvidenceItems():
+    # EvidenceLine has no hasEvidenceLines; a subordinate Evidence Line is nested
+    # among hasEvidenceItems (which accepts any InformationEntity).
+    ev_line = {
+        "type": "EvidenceLine",
+        "directionOfEvidenceProvided": "supports",
+        "hasEvidenceItems": [
+            {"type": "EvidenceLine", "directionOfEvidenceProvided": "supports"}
+        ],
+    }
+    validator["va-spec:EvidenceLine"].validate(ev_line)
+
+
 def test_open_base_still_enforces_required_triple():
     # Extensibility does not weaken the contract: subject/predicate/object remain
     # required on any Proposition (here 'predicate' is omitted).

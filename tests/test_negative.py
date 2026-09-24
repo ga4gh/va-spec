@@ -52,6 +52,31 @@ NEGATIVE_CASES = [
                          "object": "ex:o"}},  # missing required predicate
     ),
     (
+        # Statement.hasEvidenceLines is EvidenceLine | iriReference. A bare
+        # Statement (not an EvidenceLine) must be rejected there -- this locks in
+        # the "a Statement is not itself an Evidence Line" guarantee.
+        "Statement.hasEvidenceLines rejects a bare Statement item",
+        "va-spec:Statement",
+        {"type": "Statement", "proposition": "ex:prop", "direction": "supports",
+         "hasEvidenceLines": [{"type": "Statement", "proposition": "ex:prop",
+                               "direction": "supports"}]},
+    ),
+    (
+        # EvidenceLine no longer defines hasEvidenceLines; a nested Evidence Line
+        # goes in hasEvidenceItems instead. The removed property must be rejected.
+        "EvidenceLine rejects a removed 'hasEvidenceLines' property",
+        "va-spec:EvidenceLine",
+        {"type": "EvidenceLine", "directionOfEvidenceProvided": "supports",
+         "hasEvidenceLines": []},
+    ),
+    (
+        # Statement.hasEvidenceItems was renamed to hasEvidence; the old name
+        # must be rejected (Statement is a closed class).
+        "Statement rejects the renamed-away 'hasEvidenceItems'",
+        "va-spec:Statement",
+        {"type": "Statement", "proposition": "ex:prop", "hasEvidenceItems": []},
+    ),
+    (
         "StudyResult subclass rejects a missing required 'focus'",
         "va-spec:CohortAlleleFrequencyStudyResult",
         {"type": "CohortAlleleFrequencyStudyResult", "focusCount": 1,
