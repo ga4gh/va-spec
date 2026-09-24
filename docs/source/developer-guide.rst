@@ -17,7 +17,7 @@ We have :Ref:`previously described <va-profiles>` two categories of profiles in 
 
 For **Proposition** and **Study Result** Base Profiles, a subclassing mechanism is required to rename and add additional attributes - including qualifier and data item fields used to collect domain-specific information in these profiles
 
-For **Statements**, including those used as **Evidence Lines**, any domain-specificity is specified in the **Propositions** these objects encapsulate, so there is no need to define formal subclasses here. However, VA-Spec includes **Community Profiles** of this class that constrain certain attribute values to align with the conventions of a particular community guideline - and here `schema composition <https://json-schema.org/understanding-json-schema/reference/combining>`_ is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating VA data.
+For **Statements** and **Evidence Lines**, any domain-specificity is specified in the **Propositions** these objects encapsulate, so there is no need to define formal subclasses here. However, VA-Spec includes **Community Profiles** of these classes that constrain certain attribute values to align with the conventions of a particular community guideline - and here `schema composition <https://json-schema.org/understanding-json-schema/reference/combining>`_ is sufficient to define these restrictions. This approach to profile definition reduces the number of classes that need to be created, managed, and parsed when creating and validating VA data.
 
 The diagrams below illustrate where subclass- and composition-based mechanisms are applied to define each profile included in the VA-Spec. Top to bottom, the increasingly dark colors reflect the increasing domain-specificity of the models.
 
@@ -26,23 +26,7 @@ The diagrams below illustrate where subclass- and composition-based mechanisms a
 
 .. raw:: html
 
-   <img src="_static/images/core-model-classes-mechanism.png" usemap="#core-model-classes-map" alt="Core Model Classes diagram" style="max-width:100%; height:auto;">
-   <map name="core-model-classes-map">
-     <area shape="rect" coords="817,198,1197,358" href="core-information-model/entities/index.html#gkm-core-entity" alt="Entity">
-     <area shape="rect" coords="20,538,154,657" href="core-information-model/entities/agent.html#agent" alt="Agent">
-     <area shape="rect" coords="190,538,408,657" href="core-information-model/entities/contribution.html#contribution" alt="Contribution">
-     <area shape="rect" coords="444,538,612,657" href="appendices/imported-models/concept-set.html#concept-set" alt="Concept Set">
-     <area shape="rect" coords="648,538,821,657" href="core-information-model/entities/information-entities/dataset.html#data-set" alt="Data Set">
-     <area shape="rect" coords="857,538,1049,657" href="core-information-model/entities/information-entities/document.html#document" alt="Document">
-     <area shape="rect" coords="1205,538,1393,657" href="core-information-model/elements/mappable-concept.html#mappableconcept" alt="Mappable Concept">
-     <area shape="rect" coords="1429,538,1585,657" href="core-information-model/entities/information-entities/method.html#method" alt="Method">
-     <area shape="rect" coords="1621,538,1819,657" href="core-information-model/entities/proposition.html#proposition" alt="Proposition">
-     <area shape="rect" coords="1855,538,1994,657" href="core-information-model/entities/study-group.html#study-group" alt="Study Group">
-     <area shape="rect" coords="809,837,1205,997" href="core-information-model/entities/information-entities/index.html#information-entity" alt="Information Entity">
-     <area shape="rect" coords="357,1177,737,1337" href="core-information-model/entities/information-entities/study-result.html#study-result" alt="Study Result">
-     <area shape="rect" coords="817,1177,1197,1337" href="core-information-model/entities/information-entities/statement.html#statement" alt="Statement">
-     <area shape="rect" coords="1277,1177,1657,1337" href="core-information-model/entities/information-entities/data-item.html#data-item" alt="Data Item">
-   </map>
+   <iframe src="_static/diagrams/core-model-classes-model.html" style="width:100%; height:460px; border:0;" title="I. Core Model Classes"></iframe>
 
 
 The **Core Data Model** consists of the domain-agnostic classes above. **Concrete** classes can be used to capture data directly. **Abstract** classes (shown with dashed borders) must first be 'specialized' through subclassing.
@@ -50,15 +34,19 @@ The **Core Data Model** consists of the domain-agnostic classes above. **Concret
 
 -------
 
-.. image:: /images/base-profiles-mechanism.png
+.. raw:: html
+
+   <iframe src="_static/diagrams/base-profiles-model.html" style="width:100%; height:900px; border:0;" title="II. Base Profiles"></iframe>
 
 The **Proposition** and **Study Result** Base Profiles above are defined using a subclassing mechanism, creating formal "VA Base Classes" that extend the Core Data Model. The specific syntax for this authoring mechanism leverages features outside the native JSON Schema language, as illustrated in the Proposition profile example :ref:`here <subclass-based-profiling-syntax>`.
 
 -------
 
-.. image:: /images/community-profiles-mechanism.png
+.. raw:: html
 
-The **Statement** profiles above -- including those, like the ACMG-2015 and CCV-2022 Evidence Line profiles, that play the **Evidence Line** role -- are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes*, in the VA Model, and all of them compose the same core :ref:`Statement <Statement>` class -- grouped above by the community guideline that defines them (ACMG-2015, CCV-2022, AAC-2017). The domain-specificity of each profile is defined in the **Proposition** profile it encapsulates, as diagrammed. Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline. The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`.
+   <iframe src="_static/diagrams/community-profiles-model.html" style="width:100%; height:1080px; border:0;" title="III. Community Profiles"></iframe>
+
+The **Statement** and **Evidence Line** profiles above are defined as "Schema Compositions" using a constraint-based mechanism. These profiles represent *sub-schema*, rather than *sub-classes*, in the VA Model: the Statement profiles compose the core :ref:`Statement <Statement>` class, and the Evidence Line profiles (the ACMG-2015, CCV-2022, and AAC-2017 evidence lines) compose the core :ref:`EvidenceLine <EvidenceLine>` class. The domain-specificity of each profile is defined in the **Proposition** profile it encapsulates, as diagrammed. Constraints may be added to restrict certain attributes to align with terminological conventions of a particular community guideline. The specific syntax for this authoring mechanism is illustrated in the Statement profile example :ref:`here <composition-based-profiling-syntax>`.
 
 ------
 
