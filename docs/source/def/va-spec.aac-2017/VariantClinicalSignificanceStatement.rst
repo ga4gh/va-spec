@@ -109,7 +109,7 @@ A statement reporting a conclusion from a single study about the clinical signif
       - number
       - 0..1
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
-   *  - outcome
+   *  - classification
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
@@ -143,59 +143,59 @@ A statement reporting a conclusion from a single study about the clinical signif
       - has value...
       - then property...
       - must...
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
       - *hasEvidenceLines*
       - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier I**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
       - *strength.primaryCoding.code*
       - have value **strong**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
       - *direction*
       - have value **supports**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
       - *hasEvidenceLines*
       - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier II**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
       - *strength.primaryCoding.code*
       - have value **potential**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
       - *direction*
       - have value **supports**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iii**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier III**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iii**
       - *strength*
       - not be provided
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iii**
       - *direction*
       - have value **neutral**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iv**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier IV**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iv**
       - *strength*
       - not be provided
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iv**
       - *direction*
       - have value **disputes**

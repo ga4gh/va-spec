@@ -1,4 +1,4 @@
-outcome:
+classification:
   type: MappableConcept
   primaryCoding:
     code: likely oncogenic

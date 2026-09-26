@@ -1,4 +1,4 @@
-outcome:
+classification:
   type: MappableConcept
   name: Tier IV
   primaryCoding:

@@ -51,7 +51,7 @@ $defs:
                           - likely
                       system:
                         const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-          outcome:
+          classification:
             properties:
               primaryCoding:
                 allOf:
@@ -77,7 +77,7 @@ $defs:
                 - $ref: "#/$defs/VariantOncogenicityEvidenceLine"
                 - $refCurie: gkm.core:iriReference
         required:
-          - outcome
+          - classification
           - specifiedBy
 
   VariantOncogenicityEvidenceLine:

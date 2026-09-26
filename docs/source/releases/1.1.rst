@@ -107,8 +107,8 @@ retained for callers that prefer a dedicated evidence-line object:
   * :ref:`Statement` gains the ``hasEvidence``, ``direction``,
     ``strength``, ``score``, and draft ``quality`` attributes -- so a Statement
     can cite evidence and report an assessment directly, without wrapping it in
-    a nested Evidence Line -- and its ``classification`` attribute is renamed
-    ``outcome``. ``hasEvidence`` is declared immediately before
+    a nested Evidence Line. It retains its ``classification`` attribute.
+    ``hasEvidence`` is declared immediately before
     ``hasEvidenceLines``, in that order. Its items are any
     ``InformationEntity | iriReference`` (a Study Result, Data Item, prior
     Statement, Evidence Line, etc.).
@@ -177,8 +177,7 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     compose the :ref:`EvidenceLine` class (using its
     ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided`` attributes),
     while the top-level :ref:`VariantClinicalSignificanceStatement` composes
-    :ref:`Statement` and has its ``classification`` attribute renamed
-    ``outcome``. This also
+    :ref:`Statement` and constrains its ``classification`` attribute. This also
     fixes an array-wrapping defect on the :ref:`DiagnosticEvidenceLine`,
     :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine` classes:
     each was declared as ``type: array`` (an array of itself-or-``iriReference``)
@@ -207,9 +206,9 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     :math:`\rightarrow` ``in_silico_impact_assessment``, and
     ``single_genetic_etiology_context`` :math:`\rightarrow`
     ``single_genetic_etiology_assessment``; ACMG-2015's
-    ``de_novo_data_assessment`` is renamed ``de_novo_occurrence_assessment``),
-    and :ref:`VariantPathogenicityStatement`/:ref:`VariantOncogenicityStatement`'s
-    ``classification`` attribute is renamed ``outcome``.
+    ``de_novo_data_assessment`` is renamed ``de_novo_occurrence_assessment``).
+    :ref:`VariantPathogenicityStatement` and :ref:`VariantOncogenicityStatement`
+    retain and constrain the core :ref:`Statement` ``classification`` attribute.
   * both :ref:`VariantPathogenicityEvidenceLine` and
     :ref:`VariantOncogenicityEvidenceLine` add ``no_criteria_met`` as an
     allowed ``outcome`` code, alongside the existing ``{criterion_code}``

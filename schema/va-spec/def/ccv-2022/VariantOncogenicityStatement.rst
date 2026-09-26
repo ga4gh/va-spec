@@ -109,7 +109,7 @@ A statement reporting a conclusion from a single study about whether a variant i
       - number
       - 0..1
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
-   *  - outcome
+   *  - classification
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1

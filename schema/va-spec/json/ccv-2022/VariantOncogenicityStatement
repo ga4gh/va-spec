@@ -46,7 +46,7 @@
                   }
                }
             },
-            "outcome": {
+            "classification": {
                "properties": {
                   "primaryCoding": {
                      "allOf": [
@@ -91,7 +91,7 @@
             }
          },
          "required": [
-            "outcome",
+            "classification",
             "specifiedBy"
          ]
       }

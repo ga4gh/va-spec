@@ -13,7 +13,7 @@ Custom Variant Pathogenicity Statement Example
 **Example Description:**
 
  * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this |simple_test_fixtures_example|, but does not conform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type.
- * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``outcome``.
+ * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``classification``.
  * Annotations in the example point out where the implementers preferred codes are used instead of ACMG-based terms.
 
 **Data**:

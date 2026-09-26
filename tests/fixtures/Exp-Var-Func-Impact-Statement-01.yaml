@@ -142,7 +142,7 @@ proposition:
             name: Homo sapiens
       profilingStrategy: barcode sequencing
       sequencingReadType: single-segment (short read)
-outcome:
+classification:
   type: MappableConcept
   primaryCoding:
     code: normal

@@ -127,12 +127,12 @@ def _load_fixture(name):
 
 def test_aac_2017_tier_i_requires_supports_direction():
     # civic-assertion-combination-therapy-inline.yaml is a valid Tier I
-    # VariantClinicalSignificanceStatement (outcome code 'tier i',
+    # VariantClinicalSignificanceStatement (classification code 'tier i',
     # direction 'supports'). The profile's if/then constraint requires
-    # direction == 'supports' whenever outcome is Tier I; flipping it
+    # direction == 'supports' whenever the classification is Tier I; flipping it
     # to 'disputes' must be rejected.
     instance = _load_fixture("civic-assertion-combination-therapy-inline.yaml")
-    assert instance["outcome"]["primaryCoding"]["code"] == "tier i"
+    assert instance["classification"]["primaryCoding"]["code"] == "tier i"
     assert instance["direction"] == "supports"
 
     instance["direction"] = "disputes"

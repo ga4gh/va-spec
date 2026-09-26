@@ -48,7 +48,7 @@ $defs:
                       system:
                         const: ACMG Guidelines, 2015
             required: [primaryCoding]
-          outcome:
+          classification:
             description: >-
               The classification of the variant's pathogenicity, based on the ACMG 2015 guidelines.
               These classifications should coincide with the direction and strength values as follows:
@@ -96,7 +96,7 @@ $defs:
                 - $ref: "#/$defs/VariantPathogenicityEvidenceLine"
                 - $refCurie: gkm.core:iriReference
         required:
-          - outcome
+          - classification
           - specifiedBy
 
   VariantPathogenicityEvidenceLine:

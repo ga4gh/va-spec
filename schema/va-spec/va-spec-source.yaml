@@ -496,7 +496,7 @@ $defs:
         $comment: >-
           The 'score' attribute serves the same purpose as 'strength', but allows for a quantitative assessment based
           on a numerical score.
-      outcome:
+      classification:
         oneOf:
           - $refCurie: gkm.core:MappableConcept
           - $refCurie: gkm.core:iriReference
