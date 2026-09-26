@@ -20,9 +20,9 @@ Statement Structure
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/statement-evidence-example.html" style="width:100%; height:750px; border:0;" title="Statement, Proposition, and Evidence worked example"></iframe>
+   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:600px; border:0;" title="Statement Data Structure"></iframe>
 
-**Legend** A class-level view of the Statement-based structures supported in VA-Spec data, including the classes that describe provenance (Proposition, Method, Contribution, Document) and evidence (Evidence Line, Study Result, Data Item).
+**Legend** A class-level view of the Statement-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure:
 
@@ -46,7 +46,15 @@ An :ref:`Evidence Line <EvidenceLine>` represents an assessment of how a specifi
 
 These assessments report the *strength* and *direction* of such an argument. For example, an Evidence Line may report a set of gnomAD allele frequency data about HRAS:c.173C>T to provide *moderate* evidence *supporting* a proposition that it causes Costello Syndrome.
 
-As seen in the Statement diagram above, Evidence Lines are linked to a Statement for which they represent a supporting or disputing argument. However some organizations 'pre-curate' such arguments in the absence of a definitive Statement they support, so that these Evidence Lines can be retrieved and collectively assessed once sufficient evidence exists to make a definitive assertion about their shared target proposition. In this context, a stand-alone :ref:`Evidence Line <EvidenceLine>` roots the same general data structure shown in the :ref:`Statement Structure <statement-structure>` diagram above -- just entered from the Evidence Line's own position in it, rather than from the root Statement's.
+As seen in the Statement diagram above, Evidence Lines are linked to a Statement for which they represent a supporting or disputing argument. However some organizations 'pre-curate' such arguments in the absence of a definitive Statement they support, so that these Evidence Lines can be retrieved and collectively assessed once sufficient evidence exists to make a definitive assertion about their shared target proposition. In this context, a stand-alone :ref:`Evidence Line <EvidenceLine>` roots the general data structure below.
+
+.. core-im-evidence-line-data-structure:
+
+.. raw:: html
+
+   <iframe src="../_static/diagrams/evidence-line-data-structure.html" style="width:100%; height:570px; border:0;" title="Evidence Line Data Structure"></iframe>
+
+**Legend** A class-level view of the Evidence Line-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
 
 In this structure:
 
@@ -73,9 +81,9 @@ As seen in the previous diagrams, **Study Results** may be linked to **Evidence 
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/study-result-example.html" style="width:100%; height:550px; border:0;" title="Study Result worked example"></iframe>
+   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:585px; border:0;" title="Study Result Data Structure"></iframe>
 
-**Legend** A class-level view of the Study Result-based structures supported in VA-Spec data, filled in with illustrative example data for a gnomAD population-frequency result.
+**Legend** A class-level view of the Study Result-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 
 In this structure:
 
