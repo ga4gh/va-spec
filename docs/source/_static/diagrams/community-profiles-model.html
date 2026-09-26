@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<title>III. Community Profiles</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line-strong: #1B2430;
+    --box: #EEF0F2; --box2: #DDE2E6; --inner: #F7F8F9;
+    --frame: #F1F2F4; --frame-line: #9AA3AD; --accent: #3E6B6B;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
+    --box: #222A33; --box2: #2C3640; --inner: #1B222A;
+    --frame: #1E252D; --frame-line: #545E69; --accent: #7FC4C4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
+      --box: #222A33; --box2: #2C3640; --inner: #1B222A;
+      --frame: #1E252D; --frame-line: #545E69; --accent: #7FC4C4;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { text-align: center; margin-bottom: 2px; }
+  .title-row h1 { font-size: 20px; margin: 0; font-weight: 700; }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 2px auto 18px; line-height: 1.5; text-align: center; }
+
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
+
+  .cls { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+         background: var(--box); border: 2px solid var(--line-strong); border-radius: 3px; padding: 8px 12px;
+         font-family: ui-monospace, "SF Mono", Consolas, monospace; text-decoration: none; color: inherit; }
+  .parent { width: 250px; min-height: 60px; position: relative; cursor: pointer; }
+  a.parent:hover, a.parent:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .cls .name { font-weight: 700; font-size: 16px; }
+
+  /* two constrained core classes sit side by side above the community frame */
+  .parents { display: flex; flex-direction: row; justify-content: center; gap: 64px; }
+  .pgroup { display: flex; flex-direction: column; align-items: center; }
+
+  /* filled triangle = constraint_over (schema composition), distinct from the open subclass_of triangle */
+  .vconn { display: flex; flex-direction: column; align-items: center; }
+  .vconn .tri { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 12px solid var(--line-strong); }
+  .vconn .stem { width: 2px; height: 18px; background: var(--line-strong); }
+  .conn-label { font-family: ui-monospace, monospace; font-size: 11px; font-style: italic; color: var(--ink-soft); margin: 2px 0 8px; text-align: center; }
+
+  /* large dashed, light-gray outer frame grouping the community sub-frames */
+  .outer { position: relative; background: var(--frame); border: 2px dashed var(--frame-line); border-radius: 8px;
+           padding: 30px 22px 22px; display: flex; flex-direction: row; align-items: flex-start; gap: 26px; }
+  .outer-label { position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 8px;
+                 font-size: 11px; font-style: italic; color: var(--ink-soft); font-family: ui-monospace, monospace; }
+  /* left column stacks two shorter communities to roughly match the tall one beside it */
+  .col { display: flex; flex-direction: column; gap: 22px; }
+
+  /* one dashed sub-frame per community; hugs its own content so padding is consistent */
+  .community { position: relative; background: transparent; border: 1.5px dashed var(--frame-line); border-radius: 6px;
+               padding: 26px 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .community-label { position: absolute; top: -10px; left: 14px; background: var(--frame); padding: 0 7px;
+                     font-size: 12px; font-weight: 700; color: var(--ink); font-family: ui-monospace, monospace; }
+  .sub { font-size: 10px; font-style: italic; color: var(--ink-soft); font-family: ui-monospace, monospace;
+         text-transform: uppercase; letter-spacing: 0.04em; margin: 4px 0 -3px 2px; }
+
+  .profile { position: relative; width: 258px; background: var(--box2); border: 2px solid var(--line-strong); border-radius: 3px;
+             padding: 7px 9px 9px; text-decoration: none; color: inherit; cursor: pointer; display: block; }
+  a.profile:hover, a.profile:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .profile .pname { font-family: ui-monospace, "SF Mono", Consolas, monospace; font-weight: 700; font-size: 13px; text-align: center; line-height: 1.2; }
+  .profile .prop { margin-top: 7px; background: var(--inner); border: 1.5px solid var(--line-strong); border-radius: 3px; padding: 5px 6px;
+                   font-family: ui-monospace, monospace; font-size: 11px; text-align: center; color: var(--ink-soft); line-height: 1.2; }
+
+  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; font-size: 11px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .tri-fill { display: inline-block; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 11px solid var(--line-strong); margin-right: 6px; vertical-align: middle; position: relative; top: 1px; }
+  .legend .dash { display: inline-block; width: 16px; height: 0; border-top: 1.5px dashed var(--frame-line); margin-right: 6px; vertical-align: middle; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>III.&nbsp;&nbsp;Community Profiles</h1></div>
+  <p class="caption">Community Profiles are defined as "Schema Compositions" that <b>constrain</b> a core class (rather than subclass it). Each community groups a set of Statement and Evidence Line profiles; the domain-specificity of each is set by the <b>Proposition</b> profile it encapsulates.</p>
+
+  <div class="diagram">
+
+    <div class="parents">
+      <div class="pgroup">
+        <a class="cls parent" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+          <span class="name">Statement</span>
+        </a>
+        <div class="vconn"><span class="tri"></span><span class="stem"></span></div>
+      </div>
+      <div class="pgroup">
+        <a class="cls parent" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+          <span class="name">EvidenceLine</span>
+        </a>
+        <div class="vconn"><span class="tri"></span><span class="stem"></span></div>
+      </div>
+    </div>
+    <div class="conn-label">constraint_over</div>
+
+    <div class="outer">
+      <span class="outer-label">Community Profiles</span>
+
+      <!-- left column: two shorter communities stacked to match AAC's height -->
+      <div class="col">
+        <!-- ACMG 2015 -->
+        <div class="community">
+          <span class="community-label">ACMG 2015</span>
+          <div class="sub">Statement</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicitystatement" target="_top">
+            <div class="pname">Variant Pathogenicity<br>Statement</div>
+            <div class="prop">Variant Pathogenicity Proposition</div></a>
+          <div class="sub">Evidence Line</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
+            <div class="pname">Variant Pathogenicity<br>Evidence Line</div>
+            <div class="prop">Variant Pathogenicity Proposition</div></a>
+        </div>
+
+        <!-- CCV 2022 -->
+        <div class="community">
+          <span class="community-label">CCV 2022</span>
+          <div class="sub">Statement</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/ccv-2022-profiles.html#variantoncogenicitystatement" target="_top">
+            <div class="pname">Variant Oncogenicity<br>Statement</div>
+            <div class="prop">Variant Oncogenicity Proposition</div></a>
+          <div class="sub">Evidence Line</div>
+          <a class="profile" href="../../va-standard-profiles/community-profiles/ccv-2022-profiles.html#variantoncogenicityevidenceline" target="_top">
+            <div class="pname">Variant Oncogenicity<br>Evidence Line</div>
+            <div class="prop">Variant Oncogenicity Proposition</div></a>
+        </div>
+      </div>
+
+      <!-- AAC 2017 -->
+      <div class="community">
+        <span class="community-label">AAC 2017</span>
+        <div class="sub">Statement</div>
+        <a class="profile" href="../../va-standard-profiles/community-profiles/aac-2017-profiles.html#variantclinicalsignificancestatement" target="_top">
+          <div class="pname">Variant Clinical<br>Significance Statement</div>
+          <div class="prop">Variant Clinical Significance Proposition</div></a>
+        <div class="sub">Evidence Lines</div>
+        <a class="profile" href="../../va-standard-profiles/community-profiles/aac-2017-profiles.html#ampascocapevidenceline" target="_top">
+          <div class="pname">AMP/ASCO/CAP<br>Evidence Line</div>
+          <div class="prop">Diagnostic / Prognostic / Therapeutic Response Proposition</div></a>
+        <a class="profile" href="../../va-standard-profiles/community-profiles/aac-2017-profiles.html#diagnosticevidenceline" target="_top">
+          <div class="pname">Diagnostic<br>Evidence Line</div>
+          <div class="prop">Variant Diagnostic Proposition</div></a>
+        <a class="profile" href="../../va-standard-profiles/community-profiles/aac-2017-profiles.html#prognosticevidenceline" target="_top">
+          <div class="pname">Prognostic<br>Evidence Line</div>
+          <div class="prop">Variant Prognostic Proposition</div></a>
+        <a class="profile" href="../../va-standard-profiles/community-profiles/aac-2017-profiles.html#therapeuticevidenceline" target="_top">
+          <div class="pname">Therapeutic<br>Evidence Line</div>
+          <div class="prop">Variant Therapeutic Response Proposition</div></a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="tri-fill"></span>constraint_over (schema composition)</span>
+    <span class="item"><span class="dash"></span>community grouping (not a schema class)</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    var w = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = w + 'px'; });
+    var scale = Math.min(1, stage.clientWidth / inner.scrollWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(inner.scrollHeight * scale) + 'px';
+  }
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) { var px = h + 'px'; if (window.frameElement.style.height !== px) window.frameElement.style.height = px; }
+    else if (window.parent && window.parent !== window) window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+  }
+  function run() { fit(); syncFrameHeight(); }
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) { new ResizeObserver(fit).observe(stage); new ResizeObserver(syncFrameHeight).observe(document.body); }
+  if (document.readyState === 'complete') { run(); } else { window.addEventListener('load', run); }
+})();
+</script>

@@ -21,7 +21,7 @@ strength:
   primaryCoding:
     code: likely
     system: ACMG Guidelines, 2015
-outcome:
+classification:
   type: MappableConcept
   primaryCoding:
     code: likely pathogenic

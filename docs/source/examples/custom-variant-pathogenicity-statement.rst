@@ -5,7 +5,7 @@ Custom Variant Pathogenicity Statement Example
 
 **Building Custom Statement Models:**
 
-* Representation of a particular type of **Statement** - including a Statement used as an :ref:`Evidence Line <EvidenceLine>` - using the VA-Spec does not always require a Profile to be specifically defined for it.
+* Representation of a particular type of **Statement** or :ref:`Evidence Line <EvidenceLine>` using the VA-Spec does not always require a Profile to be specifically defined for it.
 * The :ref:`Community Profiles <community-profiles>` included in version 1.0 of the VA-Spec are there to support data providers pursuing strict alignment with a particular community guidelines.
 * Implementers who do not seek such alignment can build their own schema for Statements to report on any of the knowledge types specified in VA :ref:`Base Proposition profiles<proposition-profiles>`.
 * For example, starting with the core Statement<Statement> class, simply bind its ``proposition`` attribute to the relevant Proposition base profile, and the permissive core Statement attributes will not impose community-specific constraints around representation of additional information about the Statement (e.g. strength, provenance, source documents, etc).
@@ -13,7 +13,7 @@ Custom Variant Pathogenicity Statement Example
 **Example Description:**
 
  * The example below represents the same ClinVar-based Variant Pathogenicity Statement as in this |simple_test_fixtures_example|, but does not conform to the :ref:`ACMG 2015 Community Profile<variant-pathogenicity-statement-acmg-2015>` for this statement type.
- * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``outcome``.
+ * Instead, the schema uses the core :ref:`Statement<Statement>` class with in a base :ref:`Variant Pathogenicity Proposition <variant-pathogenicity-proposition>`, and the looser constraints on the core class to allow use of the implementers preferred vocabularies for capturing things like Statement ``strength`` and ``classification``.
  * Annotations in the example point out where the implementers preferred codes are used instead of ACMG-based terms.
 
 **Data**:

@@ -86,5 +86,3 @@ Some DataItem attributes are inherited from :ref:`InformationEntity`.
       - The value of the data item (could be a structured value, a quantitative or qualitative value, or an IRI reference to either).
 
 **Inherits:** :ref:`InformationEntity`
-
-**Used in:** :ref:`Statement`

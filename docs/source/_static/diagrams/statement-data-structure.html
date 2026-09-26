@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<title>Statement Data Structure</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line-strong: #1B2430;
+    --box: #EEF0F2; --axis: #CFE0F3; --axis-line: #234; --inner: #F4F8FD; --accent: #3E6B6B;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
+    --box: #232B34; --axis: #24405C; --axis-line: #9DC3E6; --inner: #1C2A3A; --accent: #7FC4C4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
+      --box: #232B34; --axis: #24405C; --axis-line: #9DC3E6; --inner: #1C2A3A; --accent: #7FC4C4;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { text-align: center; margin-bottom: 2px; }
+  .title-row h1 { font-size: 19px; margin: 0; font-weight: 700; }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 2px auto 16px; line-height: 1.5; text-align: center; }
+
+  .canvas { position: relative; margin: 0 auto; }
+  .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; z-index: 0; }
+
+  .node { position: absolute; z-index: 1; background: var(--box); border: 1.6px solid var(--line-strong); border-radius: 4px;
+          padding: 8px 10px; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; }
+  a.node:hover, a.node:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .node .nm { font-weight: 700; font-size: 14px; font-family: ui-monospace, "SF Mono", Consolas, monospace; text-align: center; }
+  .node .eg { font-size: 11px; font-style: italic; color: var(--ink-soft); line-height: 1.35; text-align: center; margin-top: 4px; }
+
+  /* central-axis artifacts get the blue fill + heavier border */
+  .node.axis { background: var(--axis); border-color: var(--axis-line); border-width: 2.4px; }
+  .node.axis .eg { color: var(--ink); }
+  .node .prop-box { margin-top: 7px; background: var(--inner); border: 1.5px solid var(--line-strong); border-radius: 3px; padding: 6px 8px; }
+  .node .prop-box .pnm { font-weight: 700; font-size: 12px; font-family: ui-monospace, monospace; text-align: center; }
+  .node .prop-box .peg { font-size: 11px; font-style: italic; color: var(--ink-soft); text-align: center; line-height: 1.3; margin-top: 2px; }
+  .node .stereo { font-family: ui-monospace, monospace; font-size: 10px; font-style: italic; color: var(--ink-soft); text-align: center; }
+
+  .conn-label { position: absolute; z-index: 2; background: var(--bg); padding: 0 3px; font-family: ui-monospace, monospace;
+                font-size: 10.5px; color: var(--ink-soft); text-align: center; line-height: 1.25; white-space: nowrap; transform: translate(-50%, -50%); }
+  .conn-label .role { color: var(--ink); }
+
+  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 18px; font-size: 11px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .sw { display: inline-block; width: 16px; height: 11px; border-radius: 2px; margin-right: 6px; vertical-align: middle; border: 1.6px solid var(--line-strong); }
+  .legend .sw.axis { background: var(--axis); border-color: var(--axis-line); }
+  .legend .sw.prov { background: var(--box); }
+  .legend span.item { display: inline-flex; align-items: center; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>Statement Data Structure</h1></div>
+  <p class="caption">A class-level view of the Statement-based structure in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture &mdash; here a Variant Pathogenicity Statement supported by population allele-frequency evidence.</p>
+
+  <div class="canvas" id="canvas" style="width:1140px; height:720px;">
+    <svg class="connector-svg"></svg>
+
+    <!-- central axis -->
+    <a class="node axis" data-node="Statement" style="left:430px; top:24px; width:260px;" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+      <div class="nm">Statement</div>
+      <div class="prop-box">
+        <div class="pnm">Proposition</div>
+        <div class="peg">'HRAS:c.173C&gt;T is causal for Costello Syndrome'</div>
+      </div>
+      <div class="eg">is <u>supported</u> with <u>high confidence</u></div>
+    </a>
+
+    <a class="node axis" data-node="EvidenceLine" style="left:430px; top:334px; width:260px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+      <div class="nm">Evidence Line</div>
+      <div class="eg">e.g. pop-freq data provides a <u>moderate</u> argument <u>supporting</u> pathogenicity</div>
+    </a>
+
+    <a class="node axis" data-node="StudyResult" style="left:420px; top:566px; width:280px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+      <div class="nm">InformationEntity</div>
+      <div class="stereo">&laquo;Study Result&raquo;</div>
+      <div class="eg">e.g. pop-freq study data: alleleCount=341, alleleFreq=0.002, &hellip;</div>
+    </a>
+
+    <!-- provenance -->
+    <a class="node" data-node="Method" style="left:60px; top:70px; width:186px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
+      <div class="nm">Method</div>
+      <div class="eg">(e.g. interpretation guidelines, experimental protocols)</div>
+    </a>
+    <a class="node" data-node="Document" style="left:60px; top:346px; width:186px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
+      <div class="nm">Document</div>
+      <div class="eg">(e.g. publications, database records)</div>
+    </a>
+    <a class="node" data-node="Contribution" style="left:874px; top:340px; width:186px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
+      <div class="nm">Contribution</div>
+      <div class="eg">(who, when, and how an agent contributed to an artifact)</div>
+    </a>
+    <a class="node" data-node="Agent" style="left:874px; top:478px; width:186px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
+      <div class="nm">Agent</div>
+      <div class="eg">(e.g. persons, organizations, software)</div>
+    </a>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="sw axis"></span>central artifact (Information Entity)</span>
+    <span class="item"><span class="sw prov"></span>provenance class</span>
+    <span class="item">arrow points from a class to the object it references; label shows the attribute&nbsp;&amp;&nbsp;cardinality</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var canvas = document.getElementById('canvas');
+  var svg = canvas.querySelector('.connector-svg');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+  var SVGNS = 'http://www.w3.org/2000/svg';
+
+  function rect(id) {
+    var el = canvas.querySelector('[data-node="' + id + '"]');
+    var b = el.getBoundingClientRect(), c = canvas.getBoundingClientRect();
+    return { l: b.left - c.left, r: b.right - c.left, t: b.top - c.top, b: b.bottom - c.top,
+             cx: (b.left + b.right) / 2 - c.left, cy: (b.top + b.bottom) / 2 - c.top };
+  }
+
+  // connector list: each routes source -> target (arrowhead on target) with role+card label.
+  // pts is a function of measured rects returning the polyline; lab returns the label anchor {x,y}.
+  var CANVAS_R = parseFloat(canvas.style.width) || 1140;   // far-right lane for the hasEvidence loop
+  // Left lane (Document column) and right lane (Contribution column) X positions,
+  // plus a far-left lane for InformationEntity->Method and a far-right lane for
+  // Statement->hasEvidence looping around Contribution+Agent. Everything routes
+  // through these lanes so no two connectors overlap.
+  var C = [
+    // --- Statement (top) ---
+    { from:'Statement', to:'Method', role:'specifiedBy', card:'0..1',   // straight, uninterrupted
+      pts:function(S,M){ return [[S.l,M.cy],[M.r,M.cy]]; },
+      lab:function(S,M){ return {x:(S.l+M.r)/2, y:M.cy-11}; } },
+    { from:'Statement', to:'Document', role:'reportedIn', card:'0..m',  // into Document TOP
+      pts:function(S,D){ var y=S.b-28; var lx=D.r+70; return [[S.l,y],[lx,y],[lx,D.t+16],[D.r,D.t+16]]; },
+      lab:function(S,D){ return {x:D.r+70, y:(S.b-28+D.t+16)/2}; } },
+    { from:'Statement', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution TOP
+      pts:function(S,K){ var y=S.b-28; var rx=K.l-100; return [[S.r,y],[rx,y],[rx,K.t+16],[K.l,K.t+16]]; },
+      lab:function(S,K){ return {x:K.l-100, y:(S.b-28+K.t+16)/2}; } },
+    { from:'Statement', to:'EvidenceLine', role:'hasEvidenceLines', card:'0..m',
+      pts:function(S,E){ return [[S.cx,S.b],[E.cx,E.t]]; },
+      lab:function(S,E){ return {x:S.cx+2, y:(S.b+E.t)/2}; } },
+    { from:'Statement', to:'StudyResult', role:'hasEvidence', card:'0..m',  // far-right loop around Contribution+Agent
+      pts:function(S,R){ var y=S.t+18; var fx=CANVAS_R-14; return [[S.r,y],[fx,y],[fx,R.cy],[R.r,R.cy]]; },
+      lab:function(S,R){ return {x:(S.r+CANVAS_R-14)/2, y:S.t+9}; } },
+    // --- Evidence Line (middle, horizontally aligned with Document & Contribution) ---
+    { from:'EvidenceLine', to:'Document', role:'reportedIn', card:'0..m',
+      pts:function(E,D){ return [[E.l,E.cy],[D.r,E.cy]]; },
+      lab:function(E,D){ return {x:(E.l+D.r)/2, y:E.cy-11}; } },
+    { from:'EvidenceLine', to:'Contribution', role:'contributions', card:'0..m',
+      pts:function(E,K){ return [[E.r,E.cy],[K.l,E.cy]]; },
+      lab:function(E,K){ return {x:(E.r+K.l)/2, y:E.cy-11}; } },
+    { from:'EvidenceLine', to:'StudyResult', role:'hasEvidenceItems', card:'0..m',
+      pts:function(E,R){ return [[E.cx,E.b],[R.cx,R.t]]; },
+      lab:function(E,R){ return {x:E.cx+2, y:(E.b+R.t)/2}; } },
+    // --- InformationEntity (bottom) ---
+    { from:'StudyResult', to:'Document', role:'reportedIn', card:'0..m',  // into Document BOTTOM
+      pts:function(R,D){ var y=R.t+26; var lx=D.r+70; return [[R.l,y],[lx,y],[lx,D.b-16],[D.r,D.b-16]]; },
+      lab:function(R,D){ return {x:D.r+70, y:(R.t+26+D.b-16)/2}; } },
+    { from:'StudyResult', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution BOTTOM
+      pts:function(R,K){ var y=R.t+26; var rx=K.l-100; return [[R.r,y],[rx,y],[rx,K.b-16],[K.l,K.b-16]]; },
+      lab:function(R,K){ return {x:K.l-100, y:(R.t+26+K.b-16)/2}; } },
+    { from:'StudyResult', to:'Method', role:'specifiedBy', card:'0..1',  // starts below reportedIn, around Document, into Method
+      pts:function(R,M){ var y=R.b-26; var fx=M.l-26; return [[R.l,y],[fx,y],[fx,M.cy],[M.l,M.cy]]; },
+      lab:function(R,M){ return {x:(R.l+M.l)/2+18, y:R.b-26-11}; } },
+    { from:'Contribution', to:'Agent', role:'contributor', card:'0..1',
+      pts:function(K,A){ return [[K.cx,K.b],[A.cx,A.t]]; },
+      lab:function(K,A){ return {x:K.cx+2, y:(K.b+A.t)/2}; } }
+  ];
+
+  function draw() {
+    var color = getComputedStyle(document.documentElement).getPropertyValue('--line-strong').trim();
+    var bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim();
+    svg.setAttribute('width', canvas.clientWidth);
+    svg.setAttribute('height', canvas.clientHeight);
+    svg.innerHTML =
+      '<defs><marker id="ds-arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">' +
+      '<path d="M0,0 L10,5 L0,10 z" fill="' + color + '"/></marker></defs>';
+    // remove old labels
+    canvas.querySelectorAll('.conn-label').forEach(function (n) { n.remove(); });
+
+    C.forEach(function (c) {
+      var a = rect(c.from), b = rect(c.to);
+      var pts = c.pts(a, b);
+      var poly = document.createElementNS(SVGNS, 'polyline');
+      poly.setAttribute('points', pts.map(function (p) { return p[0] + ',' + p[1]; }).join(' '));
+      poly.setAttribute('fill', 'none');
+      poly.setAttribute('stroke', color);
+      poly.setAttribute('stroke-width', '1.6');
+      poly.setAttribute('marker-end', 'url(#ds-arrow)');
+      svg.appendChild(poly);
+      var L = c.lab(a, b);
+      var d = document.createElement('div');
+      d.className = 'conn-label';
+      d.style.left = L.x + 'px'; d.style.top = L.y + 'px';
+      d.innerHTML = '<span class="role">' + c.role + '</span><br>' + c.card;
+      canvas.appendChild(d);
+    });
+  }
+
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    draw();
+    var w = canvas.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = w + 'px'; });
+    var scale = Math.min(1, stage.clientWidth / inner.scrollWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(inner.scrollHeight * scale) + 'px';
+  }
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) { var px = h + 'px'; if (window.frameElement.style.height !== px) window.frameElement.style.height = px; }
+    else if (window.parent && window.parent !== window) window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+  }
+  function run() { fit(); syncFrameHeight(); }
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) { new ResizeObserver(fit).observe(stage); new ResizeObserver(syncFrameHeight).observe(document.body); }
+  if (document.readyState === 'complete') { run(); } else { window.addEventListener('load', run); }
+})();
+</script>

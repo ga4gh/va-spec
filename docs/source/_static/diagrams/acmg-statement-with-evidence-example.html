@@ -93,14 +93,14 @@
       </a>
       <div class="side-connector reverse"><span class="role">specifiedBy</span><div class="line"></div></div>
 
-      <a class="cls" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+      <a class="cls" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicitystatement" target="_top">
         <span class="badge">TU</span>
         <div class="head"><div class="stereo">&laquo;Statement&raquo;</div><div class="name">VariantPathogenicity-<br>Statement</div><div class="idline">ex:Statement001</div></div>
         <div class="body">
           <div class="prop"><b>proposition</b>: <span class="ty">ex:Proposition001</span></div>
           <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
           <div class="prop"><b>strength</b>: <span class="ty">"likely"</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">"likely pathogenic"</span></div>
+          <div class="prop"><b>classification</b>: <span class="ty">"likely pathogenic"</span></div>
         </div>
         <div class="foot">proposition: <b style="color:var(--ink)">ex:Variant001</b> isCausalFor <b style="color:var(--ink)">"Autosomal recessive nonsyndromic hearing loss 3"</b> &mdash; strength/outcome coded per ACMG Guidelines, 2015. ClinVar SCV007126591.1.</div>
       </a>
@@ -132,16 +132,16 @@
       </a>
       <div class="side-connector reverse"><span class="role">specifiedBy</span><div class="line"></div></div>
 
-      <a class="cls role" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+      <a class="cls" style="width:260px;" href="../../va-standard-profiles/community-profiles/acmg-2015-profiles.html#variantpathogenicityevidenceline" target="_top">
         <span class="badge">TU</span>
-        <div class="head"><div class="stereo">&laquo;Statement&raquo;</div><div class="name">VariantPathogenicity-<br>EvidenceLine</div><div class="idline">ex:EvidenceLine001</div></div>
+        <div class="head"><div class="stereo">&laquo;EvidenceLine&raquo;</div><div class="name">VariantPathogenicity-<br>EvidenceLine</div><div class="idline">ex:EvidenceLine001</div></div>
         <div class="body">
-          <div class="prop"><b>proposition</b>: <span class="ty">ex:Proposition001</span></div>
-          <div class="prop"><b>direction</b>: <span class="ty">"supports"</span></div>
-          <div class="prop"><b>strength</b>: <span class="ty">"supporting"</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">"PM2_supporting"</span></div>
+          <div class="prop"><b>targetProposition</b>: <span class="ty">ex:Proposition001</span></div>
+          <div class="prop"><b>directionOfEvidenceProvided</b>: <span class="ty">"supports"</span></div>
+          <div class="prop"><b>strengthOfEvidenceProvided</b>: <span class="ty">"supporting"</span></div>
+          <div class="prop"><b>evidenceOutcome</b>: <span class="ty">"PM2_supporting"</span></div>
         </div>
-        <div class="foot">proposition references the <b style="color:var(--ink)">same</b> Proposition001 as the root Statement (explicit here, though omission would imply the same). outcome names the ACMG criterion met, adjusted down from PM2's default "moderate" strength.</div>
+        <div class="foot">targetProposition references the <b style="color:var(--ink)">same</b> Proposition001 as the root Statement (explicit here, though omission would imply the same). evidenceOutcome names the ACMG criterion met, adjusted down from PM2's default "moderate" strength.</div>
       </a>
 
       <div class="side-connector"><span class="role">contributions</span><div class="line"></div></div>

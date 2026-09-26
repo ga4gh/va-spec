@@ -4,9 +4,11 @@
 1.1.0
 @@@@@
 
-This release consolidates the core ``EvidenceLine`` class into :ref:`Statement`:
-a "discrete evidence-based argument" is now a Statement referenced via another
-Statement's ``hasEvidenceLines``, rather than an instance of a separate class. It
+This release enriches :ref:`Statement` so it can carry an evidence assessment
+directly -- gaining ``hasEvidence`` and the ``direction``/``strength``/
+``score`` attributes -- while keeping the dedicated :ref:`EvidenceLine` class
+(referenced via ``hasEvidenceLines``) as the way to represent a nested, scored,
+directional argument. It
 also reworks how ``Proposition``/``StudyResult`` subclasses declare their
 ``subject``/``predicate``/``object``/``focus`` attributes, so they inherit under
 their canonical names instead of being renamed per subclass. It restructures the
@@ -95,36 +97,32 @@ renaming, so the model has been made consistent with that rule:
     :ref:`TumorVariantFrequencyStudyResult` (*draft*).sampleGroup, :ref:`DataSet`.license,
     and :ref:`StudyGroup`.characteristics.
 
-Evidence Line consolidated into Statement
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Statement enriched to carry evidence assessments
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-**Backwards-incompatible.** The core ``EvidenceLine`` class is removed. A
-"discrete evidence-based argument" is now just a :ref:`Statement` referenced
-via another Statement's ``hasEvidenceLines`` attribute, rather than an
-instance of a separate class:
+**Backwards-incompatible.** :ref:`Statement` is enriched so it can carry an
+evidence assessment directly, while the distinct :ref:`EvidenceLine` class is
+retained for callers that prefer a dedicated evidence-line object:
 
-  * :ref:`Statement` gains ``hasEvidenceItems`` (so a Statement can cite
-    evidence items directly, without grouping them into a nested,
-    evidence-line-shaped Statement), and its existing ``hasEvidenceLines`` now
-    holds ``Statement | iriReference`` instead of ``EvidenceLine |
-    iriReference``, letting a broader-scoped Statement be built from one or
-    more narrower-scoped subordinate ones. ``hasEvidenceItems``
-    is declared immediately before ``hasEvidenceLines``, in that order.
-    ``hasEvidenceItems`` items are ``Statement | StudyResult | DataItem |
-    iriReference`` -- narrower than the removed ``EvidenceLine``'s open
-    ``InformationEntity`` -- so a bare :ref:`Document` or other
-    non-data-bearing Information Entity is no longer accepted directly; wrap
-    it in a new :ref:`DataItem` instead.
-  * ``EvidenceLine``'s former attributes move onto :ref:`Statement` under
-    Statement's own names: ``targetProposition`` :math:`\rightarrow`
-    ``proposition`` (already present, now optional -- omit it when it's the
-    same proposition as the Statement the evidence line supports);
-    ``directionOfEvidenceProvided`` :math:`\rightarrow` ``direction``;
-    ``strengthOfEvidenceProvided`` :math:`\rightarrow` ``strength``;
-    ``evidenceOutcome`` merges with Statement's own ``classification``
-    attribute, and the merged attribute is renamed ``outcome``;
-    ``qualityOfEvidenceProvided`` merges with Statement's own draft
-    ``quality`` attribute.
+  * :ref:`Statement` gains the ``hasEvidence``, ``direction``,
+    ``strength``, ``score``, and draft ``quality`` attributes -- so a Statement
+    can cite evidence and report an assessment directly, without wrapping it in
+    a nested Evidence Line. It retains its ``classification`` attribute.
+    ``hasEvidence`` is declared immediately before
+    ``hasEvidenceLines``, in that order. Its items are any
+    ``InformationEntity | iriReference`` (a Study Result, Data Item, prior
+    Statement, Evidence Line, etc.).
+  * ``Statement``'s ``hasEvidenceLines`` holds ``EvidenceLine | iriReference``:
+    a Statement is **not** itself usable as an Evidence Line, so a nested,
+    scored, directional argument is always a dedicated :ref:`EvidenceLine`.
+  * the :ref:`EvidenceLine` class is retained, keeping its
+    ``targetProposition``, ``directionOfEvidenceProvided``,
+    ``strengthOfEvidenceProvided``, ``scoreOfEvidenceProvided``,
+    ``evidenceOutcome``, and ``hasEvidenceItems``
+    attributes. ``hasEvidenceItems`` accepts any ``InformationEntity |
+    iriReference``; because an Evidence Line is itself an Information Entity,
+    Evidence Lines nest by listing subordinate Evidence Lines there (there is
+    no separate ``hasEvidenceLines`` on Evidence Line).
   * :ref:`CohortAlleleFrequencyStudyResult` renames ``focusAlleleCount``
     :math:`\rightarrow` ``focusCount``, ``locusAlleleCount``
     :math:`\rightarrow` ``locusCount``, and ``focusAlleleFrequency``
@@ -172,16 +170,16 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
 
   * adds a new draft :ref:`DataItem` class (an :ref:`InformationEntity`
     subclass wrapping a structured, string, or IRI-reference ``value``) as
-    one of the concrete types citable via ``hasEvidenceItems``.
-  * the AAC-2017 ``AmpAscoCapEvidenceLine``, ``DiagnosticEvidenceLine``,
-    ``PrognosticEvidenceLine``, and ``TherapeuticEvidenceLine`` classes are
-    renamed :ref:`AmpAscoCapStatement`, :ref:`DiagnosticStatement`,
-    :ref:`PrognosticStatement`, and :ref:`TherapeuticStatement`, and now
-    compose :ref:`Statement` instead of the removed ``EvidenceLine``.
-    :ref:`VariantClinicalSignificanceStatement`'s ``classification``
-    attribute is renamed ``outcome`` to match. This also fixes an
-    array-wrapping defect on the (now-renamed) :ref:`DiagnosticStatement`,
-    :ref:`PrognosticStatement`, and :ref:`TherapeuticStatement` classes:
+    one of the concrete types citable as evidence (via a Statement's
+    ``hasEvidence`` or an Evidence Line's ``hasEvidenceItems``).
+  * the AAC-2017 :ref:`AmpAscoCapEvidenceLine`, :ref:`DiagnosticEvidenceLine`,
+    :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine` classes
+    compose the :ref:`EvidenceLine` class (using its
+    ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided`` attributes),
+    while the top-level :ref:`VariantClinicalSignificanceStatement` composes
+    :ref:`Statement` and constrains its ``classification`` attribute. This also
+    fixes an array-wrapping defect on the :ref:`DiagnosticEvidenceLine`,
+    :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine` classes:
     each was declared as ``type: array`` (an array of itself-or-``iriReference``)
     rather than as a plain ``allOf``-composed object, so the tier i/ii
     ``hasEvidenceLines`` narrowing that referenced them (via a bare ``oneOf``,
@@ -189,14 +187,12 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     ``hasEvidenceLines`` array to itself match one of these array-typed
     branches, rather than letting each item independently be one of the
     three types. The array wrapping now lives at the narrowing site instead,
-    matching :ref:`AmpAscoCapStatement`'s composition pattern.
+    matching :ref:`AmpAscoCapEvidenceLine`'s composition pattern.
   * :ref:`VariantPathogenicityEvidenceLine` and
-    :ref:`VariantOncogenicityEvidenceLine` keep their names (they still
-    describe the evidence-line *role* these Statement instances play) but
-    now compose :ref:`Statement` and use its ``direction``/``strength``/
-    ``outcome`` attribute names instead of the removed
-    ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided``/
-    ``evidenceOutcome``. Each class's own ``methodType`` enumeration was
+    :ref:`VariantOncogenicityEvidenceLine` compose the :ref:`EvidenceLine`
+    class and use its ``directionOfEvidenceProvided``/
+    ``strengthOfEvidenceProvided``/``evidenceOutcome`` attribute names. Each
+    class's own ``methodType`` enumeration was
     also normalized to ``snake_case`` codes (e.g. ACMG-2015's
     ``"Population Data Assessment"`` :math:`\rightarrow`
     ``population_data_assessment``; CCV-2022's ``population_frequency``
@@ -210,9 +206,9 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     :math:`\rightarrow` ``in_silico_impact_assessment``, and
     ``single_genetic_etiology_context`` :math:`\rightarrow`
     ``single_genetic_etiology_assessment``; ACMG-2015's
-    ``de_novo_data_assessment`` is renamed ``de_novo_occurrence_assessment``),
-    and :ref:`VariantPathogenicityStatement`/:ref:`VariantOncogenicityStatement`'s
-    ``classification`` attribute is renamed ``outcome``.
+    ``de_novo_data_assessment`` is renamed ``de_novo_occurrence_assessment``).
+    :ref:`VariantPathogenicityStatement` and :ref:`VariantOncogenicityStatement`
+    retain and constrain the core :ref:`Statement` ``classification`` attribute.
   * both :ref:`VariantPathogenicityEvidenceLine` and
     :ref:`VariantOncogenicityEvidenceLine` add ``no_criteria_met`` as an
     allowed ``outcome`` code, alongside the existing ``{criterion_code}``

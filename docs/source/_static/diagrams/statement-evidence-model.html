@@ -41,7 +41,7 @@
   .caption { font-size: 12px; color: var(--ink-soft); margin: 0 0 16px; line-height: 1.5; }
   .caption code { font-family: ui-monospace, monospace; font-size: 11px; color: var(--ink); }
 
-  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
+  .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; position: relative; }
 
   /* Two flex-grow line segments sandwich the role label, so the line spans
      the connector's FULL height (touching the upper box's bottom edge and
@@ -59,7 +59,10 @@
   .vconnector .card { font-family: ui-monospace, monospace; font-size: 9.5px; color: var(--ink-soft); opacity: 0.75; }
 
   .side-connector { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 80px; flex: 0 0 80px; padding: 0 2px; }
-  .side-connector .line { width: 100%; height: 1.5px; background: var(--line-strong); position: relative; }
+  /* 2px (not 1.5px like the vertical lines): a thin horizontal div anti-aliases
+     lighter than an equally-thin vertical one or an SVG stroke, so it needs a
+     touch more height to read at the same visual weight. */
+  .side-connector .line { width: 100%; height: 2px; background: var(--line-strong); position: relative; }
   .side-connector .line::after {
     content: ""; position: absolute; right: -1px; top: 50%; transform: translateY(-50%);
     width: 0; height: 0; border-top: 4px solid transparent; border-bottom: 4px solid transparent; border-left: 6px solid var(--line-strong);
@@ -79,8 +82,8 @@
      from measured box positions (see the va-spec-class-diagram skill) --
      re-measure and adjust if box content changes. */
   .elbow-path { position: relative; width: 100%; }
-  .elbow-path .seg-source { position: absolute; left: 0; width: 50%; height: 1.5px; background: var(--line-strong); }
-  .elbow-path .seg-target { position: absolute; left: 50%; width: 50%; height: 1.5px; background: var(--line-strong); }
+  .elbow-path .seg-source { position: absolute; left: 0; width: 50%; height: 2px; background: var(--line-strong); }
+  .elbow-path .seg-target { position: absolute; left: 50%; width: 50%; height: 2px; background: var(--line-strong); }
   .elbow-path .seg-v { position: absolute; left: 50%; width: 1.5px; background: var(--line-strong); }
   .elbow-path .seg-source::after {
     content: ""; position: absolute; left: -1px; top: 50%; transform: translateY(-50%);
@@ -132,9 +135,13 @@
  <div id="stage">
   <div id="scale-inner">
   <div class="title-row"><h1>Statement &amp; Evidence composition</h1><span class="src">va-spec-source.yaml</span></div>
-  <p class="caption">A <code>Statement</code> can appear in three roles: the top-level claim, a nested <code>&laquo;EvidenceLine&raquo;</code> argument for it, and even an <code>&laquo;EvidenceItem&raquo;</code> cited by one. Same class throughout &mdash; only the position in the structure changes.</p>
+  <p class="caption">A top-level <code>Statement</code> makes a claim; the distinct <code>EvidenceLine</code> class captures a scored, directional argument for it (via <code>hasEvidenceLines</code>). A Statement (via <code>hasEvidence</code>) or an Evidence Line (via <code>hasEvidenceItems</code>) may cite the information it assessed &mdash; a <code>StudyResult</code>, a <code>DataItem</code>, another <code>Statement</code>, or a nested <code>EvidenceLine</code> playing an <code>&laquo;EvidenceItem&raquo;</code> role. A Statement is <em>not</em> itself an Evidence Line.</p>
 
   <div class="diagram">
+    <!-- Overlay for the routed hasEvidence connector (Statement -> InformationEntity
+         frame), drawn by drawEvidence() once box positions are known. Absolutely
+         positioned so it never affects layout; pointer-events:none so links work. -->
+    <svg id="ev-overlay" style="position:absolute; top:0; left:0; overflow:visible; pointer-events:none; z-index:3;"></svg>
     <div class="side-row" style="align-items:flex-start;">
       <div class="side-stack">
         <div class="side-row">
@@ -170,16 +177,17 @@
         </div>
       </div>
 
-      <a class="cls" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+      <a class="cls" id="stmt-box" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
         <span class="badge tu">TU</span>
         <div class="head"><div class="name">Statement</div></div>
         <div class="body">
           <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
           <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
           <div class="prop"><b>score</b>: <span class="ty">number</span></div>
-          <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>classification</b>: <span class="ty">MappableConcept</span></div>
+          <div class="prop"><b>hasEvidence</b>: <span class="ty">0..m</span></div>
         </div>
-        <div class="foot"><b style="color:var(--ink)">outcome</b> is typically translatable with the direction/strength/score tuple of values</div>
+        <div class="foot"><b style="color:var(--ink)">classification</b> is typically translatable with the direction/strength/score tuple of values. A Statement may cite evidence directly via <b style="color:var(--ink)">hasEvidence</b>.</div>
       </a>
 
       <div class="side-stack">
@@ -209,33 +217,30 @@
       </div>
     </div>
 
-    <!-- margin-top pulls this connector (and everything below it) up out of the
-         dead space left by the top row's taller side-stacks (Proposition/Method,
-         Contribution/Document) -- safe because the EvidenceLine box below is the
-         same width/position as Statement, with no horizontal overlap with either
-         stack (measured: EvidenceLine x=[440,660] vs Method x=[200,360] and
-         Document x=[740,900]). Value = row-height minus Statement's own height,
-         minus a small breathing-room gap -- re-measure if content changes. -->
-    <div class="vconnector" style="margin-top:-46px;"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
+    <!-- No pull-up: with its fuller attribute list (through hasEvidence), the
+         Statement box is now about as tall as the flanking side-stacks, so the
+         connector sits at its natural position with clean space above the
+         EvidenceLine box. (An earlier negative margin-top reclaimed dead space
+         when Statement was shorter, but now overlaps the taller Statement.) -->
+    <div class="vconnector" id="hel-connector"><div class="vline"></div><span class="role">hasEvidenceLines <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
-    <a class="cls role" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+    <a class="cls" id="evline-box" style="width:310px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
       <span class="badge tu">TU</span>
       <div class="head">
-        <div class="stereo">&laquo;EvidenceLine&raquo;</div>
-        <div class="name">Statement</div>
+        <div class="name">EvidenceLine</div>
       </div>
       <div class="body">
-        <div class="prop"><b>proposition</b>: <span class="ty">0..1</span></div>
-        <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
-        <div class="prop"><b>strength</b>: <span class="ty">MappableConcept</span></div>
-        <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
+        <div class="prop"><b>targetProposition</b>: <span class="ty">0..1</span></div>
+        <div class="prop"><b>directionOfEvidenceProvided</b>: <span class="ty">enum</span></div>
+        <div class="prop"><b>strengthOfEvidenceProvided</b>: <span class="ty">MappableConcept</span></div>
+        <div class="prop"><b>evidenceOutcome</b>: <span class="ty">MappableConcept</span></div>
       </div>
-      <div class="foot"><b style="color:var(--ink)">proposition</b> usually omitted &mdash; inherits the parent's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">direction</b>: neutral, with <b style="color:var(--ink)">strength</b> marking it as additional evidence.</div>
+      <div class="foot"><b style="color:var(--ink)">targetProposition</b> usually omitted &mdash; inherits the parent Statement's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's outcome) has <b style="color:var(--ink)">directionOfEvidenceProvided</b>: neutral.</div>
     </a>
 
-    <div class="vconnector"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
+    <div class="vconnector" style="min-height:62px;"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
-    <div class="frame">
+    <div class="frame" id="ie-frame">
       <span class="frame-label">InformationEntity</span>
       <div class="items-row">
         <a class="cls small" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
@@ -262,10 +267,17 @@
             <div class="name">Statement</div>
           </div>
           <div class="body">
-            <div class="prop"><b>proposition</b>: <span class="ty">0..1</span></div>
+            <div class="prop"><b>proposition</b>: <span class="ty">1..1</span></div>
             <div class="prop"><b>&hellip;</b> <span class="ty">(recursive)</span></div>
           </div>
           <div class="foot">evidence can itself be a Statement</div>
+        </a>
+        <a class="cls small role" style="width:122px; align-self:flex-start;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+          <span class="badge tu">TU</span>
+          <div class="head" style="border-bottom:none;">
+            <div class="stereo">&laquo;EvidenceItem&raquo;</div>
+            <div class="name">EvidenceLine</div>
+          </div>
         </a>
       </div>
     </div>
@@ -288,12 +300,69 @@
   var diagram = document.querySelector('.diagram');
   var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
 
+  // Pulls the hasEvidenceLines connector up so its top edge lands exactly on the
+  // Statement box's bottom edge. The side-stacks (Proposition/Method,
+  // Contribution/Document) can be slightly taller than Statement, which would
+  // otherwise leave the connector starting below Statement's bottom (a visible
+  // gap); computing the offset from measured positions avoids a hand-tuned
+  // margin that goes stale whenever box content changes. Runs while unscaled.
+  function connectHasEvidenceLines() {
+    var S = document.getElementById('stmt-box');
+    var c = document.getElementById('hel-connector');
+    if (!S || !c) return;
+    c.style.marginTop = '0px';
+    var gap = c.getBoundingClientRect().top - S.getBoundingClientRect().bottom;
+    c.style.marginTop = (-Math.round(gap)) + 'px';
+  }
+
+  // Draws the routed hasEvidence connector: from the Statement box down, right
+  // around the EvidenceLine box, then left and down into the InformationEntity
+  // frame. Measured in the diagram's natural (unscaled) coordinates, so it must
+  // run while #scale-inner's transform is 'none' (fit() calls it before scaling).
+  function drawEvidence() {
+    var svg = document.getElementById('ev-overlay');
+    var S = document.getElementById('stmt-box');
+    var E = document.getElementById('evline-box');
+    var F = document.getElementById('ie-frame');
+    if (!svg || !S || !E || !F) return;
+    var d = diagram.getBoundingClientRect();
+    function rel(el) {
+      var b = el.getBoundingClientRect();
+      return { left: b.left - d.left, right: b.right - d.left, top: b.top - d.top,
+               bottom: b.bottom - d.top, cx: (b.left + b.right) / 2 - d.left };
+    }
+    var s = rel(S), e = rel(E), f = rel(F);
+    var cs = getComputedStyle(document.documentElement);
+    var lineColor = cs.getPropertyValue('--line-strong').trim();
+    var softColor = cs.getPropertyValue('--ink-soft').trim();
+    var startX = s.right - 30;                     // start right of the centered hasEvidenceLines line
+    var y1 = s.bottom + (e.top - s.bottom) * 0.5;  // bend right in the gap above EvidenceLine
+    var laneX = e.right + 18;                       // vertical lane just right of the EvidenceLine box
+    var y2 = e.bottom + (f.top - e.bottom) * 0.5;  // bend left in the gap below EvidenceLine
+    var entryX = e.cx + 100;                        // enter the frame top well right of the centered "hasEvidenceItems 0..m" label so nothing overlaps
+    var pts = [[startX, s.bottom], [startX, y1], [laneX, y1], [laneX, y2], [entryX, y2], [entryX, f.top]];
+    svg.setAttribute('width', diagram.scrollWidth);
+    svg.setAttribute('height', diagram.scrollHeight);
+    svg.innerHTML =
+      // markerUnits=userSpaceOnUse so the arrowhead is a fixed ~8px, not scaled
+      // by stroke-width (the default), which had rendered it oversized/heavy.
+      '<defs><marker id="ev-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto">' +
+      '<path d="M0.5,0.5 L9.5,5 L0.5,9.5 z" fill="' + lineColor + '"/></marker></defs>' +
+      '<polyline points="' + pts.map(function (p) { return p[0] + ',' + p[1]; }).join(' ') + '" ' +
+      'fill="none" stroke="' + lineColor + '" stroke-width="1.5" marker-end="url(#ev-arrow)"/>' +
+      '<text x="' + (laneX + 6) + '" y="' + ((y1 + y2) / 2) + '" dominant-baseline="middle" ' +
+      'font-family="ui-monospace, monospace" font-size="10.5" fill="' + softColor + '">hasEvidence ' +
+      '<tspan font-size="9.5" opacity="0.75">0..m</tspan></text>';
+  }
+
   // Fits the fixed-layout diagram to the available width by scaling
   // #scale-inner uniformly, like an <img> with max-width:100%. Box positions
   // never change -- only the whole diagram's rendered size does.
   function fit() {
     inner.style.transform = 'none';
     textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    connectHasEvidenceLines();
+    drawEvidence();
     // The figure, not the prose above/below it, drives the natural width --
     // cap title/caption/legend to the figure's own width so a long caption
     // line can't force the whole diagram to scale down further than needed.

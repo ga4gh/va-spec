@@ -28,16 +28,19 @@
 
   .diagram { display: flex; flex-direction: column; align-items: center; width: max-content; margin: 0 auto; }
 
-  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 148px; font-size: 11px; z-index: 1; text-decoration: none; color: inherit; cursor: pointer; }
+  .cls { position: relative; display: block; background: var(--box); border: 1.3px solid var(--line-strong); border-radius: 3px; width: 172px; font-size: 11px; z-index: 1; text-decoration: none; color: inherit; cursor: pointer; }
   a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-  .cls.wide { width: 220px; }
+  .cls.wide { width: 224px; }
   .cls .head { padding: 6px 8px 5px; border-bottom: 1.3px solid var(--line-strong); }
   .cls .stereo { font-family: ui-monospace, monospace; font-size: 8.5px; color: var(--accent); letter-spacing: 0.02em; margin-bottom: 1px; }
   .cls .name { font-weight: 700; font-size: 12px; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
   .cls .body { padding: 5px 8px 6px; display: flex; flex-direction: column; gap: 2px; }
-  .cls .prop { font-family: ui-monospace, monospace; font-size: 9px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .cls .prop b { color: var(--ink); font-weight: 600; }
+  .cls .prop { font-family: ui-monospace, monospace; font-size: 9px; color: var(--ink-soft); line-height: 1.35;
+               display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .cls .prop .pl { min-width: 0; }
+  .cls .prop .nm { color: var(--ink); font-weight: 600; }
   .cls .prop .ty { color: var(--accent); }
+  .cls .prop .card { flex: none; color: var(--ink-soft); font-variant-numeric: tabular-nums; }   /* min..max cardinality */
   .badge { position: absolute; top: -8px; right: 6px; font-family: ui-monospace, monospace; font-size: 8.5px; font-weight: 700; padding: 1px 4px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
   .badge.d { border-color: var(--d); color: var(--d); }
 
@@ -64,6 +67,20 @@
   .side-col { display: flex; flex-direction: column; gap: 16px; }
   .center-col { display: flex; flex-direction: column; align-items: center; gap: 46px; }
   .bottom-row { display: flex; align-items: flex-start; gap: 24px; }
+  /* The four InformationEntity subclass boxes drive the primary tree's overall
+     width. Narrow them and tighten their gap so the whole diagram fits RTD's
+     ~800px column with less scale-down (more legible). 200px is the measured
+     floor: EvidenceLine's longest line, "directionOfEvidenceProvided: enum"
+     (~178px), still clears the 184px content area without ellipsis clipping.
+     Scoped to #primary-tree so the COMPLEX DATA TYPES row (narrower boxes) is
+     unaffected. */
+  #primary-tree .bottom-row { gap: 20px; }
+  #primary-tree .bottom-row .cls.wide { width: 224px; }
+  /* Two stacked sub-rows (Statement/EvidenceLine above StudyResult/DataItem):
+     wider boxes so every attribute line fits on one line, recovering the
+     vertical space the extra row costs. */
+  #primary-tree .bottom-row.sub { gap: 30px; margin-top: 30px; }
+  #primary-tree .bottom-row.sub .cls.wide { width: 320px; }
   .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; z-index: 0; }
 
   .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
@@ -77,7 +94,7 @@
  <div id="stage">
   <div id="scale-inner">
   <div class="title-row"><h1>Core Class Hierarchy</h1><span class="src">va-spec-source.yaml / gkm-core-source.yaml</span></div>
-  <p class="caption">Inheritance structure of the domain-agnostic VA Core Model. Attributes shown are representative, not exhaustive &mdash; see each class's own page for the full attribute table.</p>
+  <p class="caption">Inheritance structure of the domain-agnostic VA Core Model. Each box lists the attributes that class introduces; inherited attributes appear on its ancestor boxes. The cardinality at the right of each attribute reads <code>min..max</code> (<code>1..1</code> required, <code>0..1</code> optional, <code>1..m</code> required list, <code>0..m</code> optional list).</p>
 
   <div class="diagram">
     <div class="frame">
@@ -89,7 +106,8 @@
         ["Entity","Proposition","right-fan"],["Entity","Contribution","right-fan"],["Entity","Document","right-fan"],
         ["Entity","MappableConcept","right-fan"],["Entity","ConceptSet","right-fan"],
         ["Entity","InformationEntity","straight"],
-        ["InformationEntity","StudyResult","bottom-fan"],["InformationEntity","Statement","bottom-fan"],["InformationEntity","DataItem","bottom-fan"]
+        ["InformationEntity","Statement","bottom-fan"],["InformationEntity","EvidenceLine","bottom-fan"],
+        ["InformationEntity","StudyResult","lower"],["InformationEntity","DataItem","lower"]
       ]'>
         <svg class="connector-svg"></svg>
 
@@ -99,32 +117,34 @@
               <span class="badge">TU</span>
               <div class="head"><div class="name">Agent</div></div>
               <div class="body">
-                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>agentType</b>: <span class="ty">string</span></div>
+                <div class="prop"><span class="pl"><span class="nm">agentType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
               </div>
             </a>
             <a class="cls" data-node="StudyGroup" href="../../core-information-model/entities/study-group.html#studygroup" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">StudyGroup</div></div>
               <div class="body">
-                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>memberCount</b>: <span class="ty">integer</span></div>
+                <div class="prop"><span class="pl"><span class="nm">memberCount</span>: <span class="ty">integer</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">characteristics</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..m</span></div>
               </div>
             </a>
             <a class="cls" data-node="DataSet" href="../../core-information-model/entities/information-entities/dataset.html#dataset" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">DataSet</div></div>
               <div class="body">
-                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>version</b>: <span class="ty">string</span></div>
+                <div class="prop"><span class="pl"><span class="nm">datasetType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">reportedIn</span>: <span class="ty">Document|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">releaseDate</span>: <span class="ty">date</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">version</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">license</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
               </div>
             </a>
             <a class="cls" data-node="Method" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">Method</div></div>
               <div class="body">
-                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>methodType</b>: <span class="ty">string</span></div>
+                <div class="prop"><span class="pl"><span class="nm">methodType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">reportedIn</span>: <span class="ty">Document|IRI</span></span><span class="card">0..1</span></div>
               </div>
             </a>
           </div>
@@ -134,9 +154,12 @@
               <span class="badge">TU</span>
               <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Entity</div></div>
               <div class="body">
-                <div class="prop"><b>id</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>type</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
+                <div class="prop"><span class="pl"><span class="nm">id</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">type</span>: <span class="ty">string</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">name</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">description</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">aliases</span>: <span class="ty">string</span></span><span class="card">0..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">extensions</span>: <span class="ty">Extension</span></span><span class="card">0..m</span></div>
               </div>
             </a>
           </div>
@@ -146,40 +169,47 @@
               <span class="badge">TU</span>
               <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Proposition</div></div>
               <div class="body">
-                <div class="prop"><b>subject</b>: <span class="ty">Entity|IRI</span></div>
-                <div class="prop"><b>predicate</b>: <span class="ty">string</span></div>
+                <div class="prop"><span class="pl"><span class="nm">subject</span>: <span class="ty">Entity|IRI</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">predicate</span>: <span class="ty">string</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">object</span>: <span class="ty">Entity|IRI</span></span><span class="card">1..1</span></div>
               </div>
             </a>
             <a class="cls" data-node="Contribution" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">Contribution</div></div>
               <div class="body">
-                <div class="prop"><b>contributor</b>: <span class="ty">Agent</span></div>
-                <div class="prop"><b>activityType</b>: <span class="ty">string</span></div>
+                <div class="prop"><span class="pl"><span class="nm">contributor</span>: <span class="ty">Agent|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">activityType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">date</span>: <span class="ty">datetime</span></span><span class="card">0..1</span></div>
               </div>
             </a>
             <a class="cls" data-node="Document" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">Document</div></div>
               <div class="body">
-                <div class="prop"><b>title</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>urls</b>: <span class="ty">0..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">documentType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">title</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">urls</span>: <span class="ty">string</span></span><span class="card">0..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">doi</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">pmid</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
               </div>
             </a>
             <a class="cls" data-node="MappableConcept" href="../../core-information-model/elements/mappable-concept.html#mappableconcept" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">MappableConcept</div></div>
               <div class="body">
-                <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-                <div class="prop"><b>primaryCoding</b>: <span class="ty">Coding</span></div>
+                <div class="prop"><span class="pl"><span class="nm">conceptType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">primaryCoding</span>: <span class="ty">Coding</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">mappings</span>: <span class="ty">ConceptMapping</span></span><span class="card">0..m</span></div>
               </div>
             </a>
             <a class="cls" data-node="ConceptSet" href="../../appendices/imported-models/concept-set.html#conceptset" target="_top">
               <span class="badge">TU</span>
               <div class="head"><div class="name">ConceptSet</div></div>
               <div class="body">
-                <div class="prop"><b>concepts</b>: <span class="ty">2..m</span></div>
-                <div class="prop"><b>membershipOperator</b>: <span class="ty">enum</span></div>
+                <div class="prop"><span class="pl"><span class="nm">conceptSetType</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">concepts</span>: <span class="ty">MappableConcept|ConceptSet</span></span><span class="card">2..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">membershipOperator</span>: <span class="ty">enum</span></span><span class="card">1..1</span></div>
               </div>
             </a>
           </div>
@@ -189,38 +219,59 @@
           <span class="badge">TU</span>
           <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">InformationEntity</div></div>
           <div class="body">
-            <div class="prop"><b>specifiedBy</b>: <span class="ty">Method|IRI</span></div>
-            <div class="prop"><b>contributions</b>: <span class="ty">0..m</span></div>
-            <div class="prop"><b>reportedIn</b>: <span class="ty">0..m</span></div>
-          </div>
-        </a>
+                <div class="prop"><span class="pl"><span class="nm">specifiedBy</span>: <span class="ty">Method|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">contributions</span>: <span class="ty">Contribution</span></span><span class="card">0..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">reportedIn</span>: <span class="ty">Document|IRI</span></span><span class="card">0..m</span></div>
+              </div>
+            </a>
 
-        <div class="bottom-row">
-          <a class="cls wide" data-node="StudyResult" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
-            <span class="badge">TU</span>
-            <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
-            <div class="body">
-              <div class="prop"><b>focus</b>: <span class="ty">Entity|IRI</span></div>
-              <div class="prop"><b>sourceDataSet</b>: <span class="ty">DataSet|IRI</span></div>
-            </div>
-          </a>
+        <div class="bottom-row sub" id="sub-top">
           <a class="cls wide" data-node="Statement" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
             <span class="badge">TU</span>
             <div class="head"><div class="name">Statement</div></div>
             <div class="body">
-              <div class="prop"><b>direction</b>: <span class="ty">enum</span></div>
-              <div class="prop"><b>outcome</b>: <span class="ty">MappableConcept</span></div>
-              <div class="prop"><b>hasEvidenceLines</b>: <span class="ty">0..m</span></div>
-              <div class="prop"><b>hasEvidenceItems</b>: <span class="ty">0..m</span></div>
-            </div>
-          </a>
+                <div class="prop"><span class="pl"><span class="nm">proposition</span>: <span class="ty">Proposition|IRI</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">direction</span>: <span class="ty">enum</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">strength</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">quality</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">score</span>: <span class="ty">number</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">classification</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">hasEvidence</span>: <span class="ty">InformationEntity|IRI</span></span><span class="card">0..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">hasEvidenceLines</span>: <span class="ty">EvidenceLine|IRI</span></span><span class="card">0..m</span></div>
+              </div>
+            </a>
+          <a class="cls wide" data-node="EvidenceLine" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="name">EvidenceLine</div></div>
+            <div class="body">
+                <div class="prop"><span class="pl"><span class="nm">targetProposition</span>: <span class="ty">Proposition|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">hasEvidenceItems</span>: <span class="ty">InformationEntity|IRI</span></span><span class="card">0..m</span></div>
+                <div class="prop"><span class="pl"><span class="nm">directionOfEvidenceProvided</span>: <span class="ty">enum</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">strengthOfEvidenceProvided</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">scoreOfEvidenceProvided</span>: <span class="ty">number</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">evidenceOutcome</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
+              </div>
+            </a>
+        </div>
+
+        <div class="bottom-row sub" id="sub-bottom">
+          <a class="cls wide" data-node="StudyResult" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
+            <div class="body">
+                <div class="prop"><span class="pl"><span class="nm">focus</span>: <span class="ty">Entity|IRI</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">sourceDataSet</span>: <span class="ty">DataSet|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">ancillaryResults</span>: <span class="ty">object</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">qualityMeasures</span>: <span class="ty">object</span></span><span class="card">0..1</span></div>
+              </div>
+            </a>
           <a class="cls wide" data-node="DataItem" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top">
             <span class="badge d">D</span>
             <div class="head"><div class="name">DataItem</div></div>
             <div class="body">
-              <div class="prop"><b>value</b>: <span class="ty">object|string|IRI</span></div>
-            </div>
-          </a>
+                <div class="prop"><span class="pl"><span class="nm">value</span>: <span class="ty">object|string|IRI</span></span><span class="card">0..1</span></div>
+              </div>
+            </a>
         </div>
       </div>
       </div>
@@ -241,36 +292,40 @@
           <span class="badge">TU</span>
           <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">Element</div></div>
           <div class="body">
-            <div class="prop"><b>id</b>: <span class="ty">string</span></div>
-            <div class="prop"><b>extensions</b>: <span class="ty">0..m</span></div>
-          </div>
-        </a>
+                <div class="prop"><span class="pl"><span class="nm">id</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">extensions</span>: <span class="ty">Extension</span></span><span class="card">0..m</span></div>
+              </div>
+            </a>
 
         <div class="bottom-row">
           <a class="cls" data-node="Coding" href="../../core-information-model/elements/coding.html#coding" target="_top">
             <span class="badge">TU</span>
             <div class="head"><div class="name">Coding</div></div>
             <div class="body">
-              <div class="prop"><b>code</b>: <span class="ty">code</span></div>
-              <div class="prop"><b>system</b>: <span class="ty">string</span></div>
-            </div>
-          </a>
+                <div class="prop"><span class="pl"><span class="nm">name</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">system</span>: <span class="ty">string</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">systemVersion</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">code</span>: <span class="ty">code</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">iris</span>: <span class="ty">IRI</span></span><span class="card">0..m</span></div>
+              </div>
+            </a>
           <a class="cls" data-node="ConceptMapping" href="../../core-information-model/elements/concept-mapping.html#conceptmapping" target="_top">
             <span class="badge">TU</span>
             <div class="head"><div class="name">ConceptMapping</div></div>
             <div class="body">
-              <div class="prop"><b>coding</b>: <span class="ty">Coding</span></div>
-              <div class="prop"><b>relation</b>: <span class="ty">enum</span></div>
-            </div>
-          </a>
+                <div class="prop"><span class="pl"><span class="nm">coding</span>: <span class="ty">Coding</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">relation</span>: <span class="ty">enum</span></span><span class="card">1..1</span></div>
+              </div>
+            </a>
           <a class="cls" data-node="Extension" href="../../core-information-model/elements/extension.html#extension" target="_top">
             <span class="badge">TU</span>
             <div class="head"><div class="name">Extension</div></div>
             <div class="body">
-              <div class="prop"><b>name</b>: <span class="ty">string</span></div>
-              <div class="prop"><b>value</b>: <span class="ty">any</span></div>
-            </div>
-          </a>
+                <div class="prop"><span class="pl"><span class="nm">name</span>: <span class="ty">string</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">value</span>: <span class="ty">any</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">description</span>: <span class="ty">string</span></span><span class="card">0..1</span></div>
+              </div>
+            </a>
         </div>
       </div>
       </div>
@@ -279,6 +334,7 @@
 
   <div class="legend">
     <span class="item"><span class="tri-outline"><svg width="9" height="11" viewBox="0 0 12 14"><polygon points="6,0 12,14 0,14" style="fill:var(--bg); stroke:var(--line-strong); stroke-width:1.6;"/></svg></span>inherits (hollow triangle points to parent)</span>
+    <span class="item"><span style="font-family:ui-monospace,monospace; color:var(--ink-soft);">1..1</span>&nbsp;= cardinality (min..max; m&nbsp;=&nbsp;many)</span>
     <span class="item">&laquo;abstract&raquo; = open base class</span>
     <span class="item"><span class="badge" style="position:static;">TU</span>&nbsp;Trial Use&nbsp;&nbsp;<span class="badge d" style="position:static;">D</span>&nbsp;Draft</span>
   </div>
@@ -467,6 +523,25 @@
       }
     }
 
+    // Lower mode: for a child stacked in a *second* row below the first row of
+    // the parent's children (StudyResult/DataItem sit under Statement/
+    // EvidenceLine). A straight drop would cut through the first sub-row, so
+    // route child -> up to the lane between the two sub-rows -> in to the tree
+    // centre -> straight up the clear gap between the two first-row boxes into
+    // the parent's bottom edge (where every InformationEntity arrowhead meets).
+    var subTopEl = treeEl.querySelector('#sub-top');
+    function connectLower(parentEl, childEl) {
+      var p = rect(parentEl), c = rect(childEl);
+      var stBottom = subTopEl ? rect(subTopEl).bottom : (p.bottom + 40);
+      var midY = (stBottom + c.top) / 2;
+      drawPolyline([
+        { x: c.cx, y: c.top },
+        { x: c.cx, y: midY },
+        { x: p.cx, y: midY },
+        { x: p.cx, y: p.bottom }
+      ]);
+    }
+
     var edges = JSON.parse(treeEl.dataset.edges);
     edges.forEach(function (e) {
       var p = treeEl.querySelector('[data-node="' + e[0] + '"]');
@@ -476,6 +551,7 @@
       if (mode === 'left-fan') connectSideFan(p, c, 'left');
       else if (mode === 'right-fan') connectSideFan(p, c, 'right');
       else if (mode === 'bottom-fan') connectBottomFan(p, c);
+      else if (mode === 'lower') connectLower(p, c);
       else connectStraight(p, c);
     });
   }

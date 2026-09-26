@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<title>II. Base Profiles</title>
+<style>
+  :root {
+    --bg: #FFFFFF; --ink: #1B2430; --ink-soft: #5B6572; --line-strong: #1B2430;
+    --box: #EEF0F2; --box2: #DfE3E7; --accent: #3E6B6B; --va: #2E7D74;
+  }
+  :root[data-theme="dark"] {
+    --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
+    --box: #222A33; --box2: #2C3640; --accent: #7FC4C4; --va: #7FC4C4;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171D24; --ink: #E7E9EC; --ink-soft: #97A1AC; --line-strong: #C7CDD3;
+      --box: #222A33; --box2: #2C3640; --accent: #7FC4C4; --va: #7FC4C4;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+  body { padding: 20px; overflow: hidden; }
+  .wrap { width: 100%; }
+  #stage { overflow: hidden; }
+  #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
+  .title-row { text-align: center; margin-bottom: 2px; }
+  .title-row h1 { font-size: 20px; margin: 0; font-weight: 700; }
+  .caption { font-size: 12px; color: var(--ink-soft); margin: 2px 0 18px; line-height: 1.5; text-align: center; }
+
+  .diagram { display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: 90px; width: max-content; margin: 0 auto; }
+  .group { display: flex; flex-direction: column; align-items: center; }
+
+  .cls { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+         background: var(--box); border: 2px solid var(--line-strong); border-radius: 3px; padding: 8px 12px;
+         font-family: ui-monospace, "SF Mono", Consolas, monospace; text-decoration: none; color: inherit; cursor: pointer; }
+  a.cls:hover, a.cls:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
+  .cls.abstract { border-style: dashed; }
+  .cls .name { font-weight: 700; font-size: 16px; }
+  .cls.abstract .name { font-style: italic; }
+  .cls .stereo { font-family: ui-monospace, monospace; color: var(--ink-soft); font-style: italic; font-size: 11px; }
+  .parent { width: 260px; min-height: 70px; position: relative; }
+  .va-tag { position: absolute; right: 7px; bottom: 4px; font-style: italic; font-size: 11px; color: var(--va); }
+
+  /* vertical inheritance connector: line + hollow triangle pointing up to the parent, + a subclass_of label */
+  .vconn { display: flex; flex-direction: column; align-items: center; }
+  .vconn .lbl { font-family: ui-monospace, monospace; font-size: 11px; font-style: italic; color: var(--ink-soft); margin: 6px 0 2px; }
+  .vconn .stem { width: 2px; height: 16px; background: var(--line-strong); }
+  .vconn .tri { width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 12px solid var(--line-strong); position: relative; }
+  .vconn .tri::after { content: ""; position: absolute; left: -6px; top: 2px; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-bottom: 9px solid var(--bg); }
+
+  .children { border: 2px solid var(--line-strong); border-radius: 4px; padding: 8px; display: flex; flex-direction: column; gap: 8px; }
+  .children .cls { width: 260px; min-height: 60px; background: var(--box2); position: relative; }
+  .children .cls .name { font-size: 14px; }
+
+  .legend { display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px; font-size: 11px; color: var(--ink-soft); align-items: center; justify-content: center; }
+  .legend .tri-outline { display: inline-block; margin-right: 6px; vertical-align: middle; position: relative; top: 1px; }
+  .legend .vaex { color: var(--va); font-style: italic; }
+</style>
+
+<div class="wrap">
+ <div id="stage">
+  <div id="scale-inner">
+  <div class="title-row"><h1>II.&nbsp;&nbsp;Base Profiles</h1></div>
+  <p class="caption">Proposition and Study Result Base Profiles are defined as VA "Base Classes" that <b>subclass</b> (extend) the Core Data Model &mdash; renaming and adding attributes.</p>
+
+  <div class="diagram">
+    <div class="group">
+      <a class="cls abstract parent" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+        <span class="name">Study Result</span><span class="stereo">&laquo;abstract&raquo;</span>
+      </a>
+      <div class="vconn"><span class="lbl">subclass_of</span><span class="tri"></span><span class="stem"></span></div>
+      <div class="children">
+        <a class="cls" href="../../va-standard-profiles/base-profiles/study-result-profiles.html#cohortallelefrequencystudyresult" target="_top"><span class="name">Cohort Allele Frequency<br>Study Result</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/study-result-profiles.html#tumorvariantfrequencystudyresult" target="_top"><span class="name">Tumor Variant Frequency<br>Study Result</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/study-result-profiles.html#experimentalvariantfunctionalimpactstudyresult" target="_top"><span class="name">Experimental Functional<br>Impact Study Result</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/study-result-profiles.html#computationalvariantfunctionalimpactanalysisresult" target="_top"><span class="name">Computational Functional<br>Impact Analysis Result</span></a>
+      </div>
+    </div>
+
+    <div class="group">
+      <a class="cls abstract parent" href="../../core-information-model/entities/proposition.html#proposition" target="_top">
+        <span class="name">Proposition</span><span class="stereo">&laquo;abstract&raquo;</span>
+      </a>
+      <div class="vconn"><span class="lbl">subclass_of</span><span class="tri"></span><span class="stem"></span></div>
+      <div class="children">
+        <a class="cls" href="../../va-standard-profiles/base-profiles/proposition-profiles.html#variantpathogenicityproposition" target="_top"><span class="name">Variant Pathogenicity<br>Proposition</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/proposition-profiles.html#variantoncogenicityproposition" target="_top"><span class="name">Variant Oncogenicity<br>Proposition</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/proposition-profiles.html#variantdiagnosticproposition" target="_top"><span class="name">Variant Diagnostic<br>Proposition</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/proposition-profiles.html#variantprognosticproposition" target="_top"><span class="name">Variant Prognostic<br>Proposition</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/proposition-profiles.html#varianttherapeuticresponseproposition" target="_top"><span class="name">Variant Therapeutic<br>Response Proposition</span></a>
+        <a class="cls" href="../../va-standard-profiles/base-profiles/proposition-profiles.html#experimentalvariantfunctionalimpactproposition" target="_top"><span class="name">Experimental Functional<br>Impact Proposition</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="item"><span class="tri-outline"><svg width="12" height="12" viewBox="0 0 14 14"><polygon points="7,1 13,13 1,13" style="fill:var(--bg); stroke:var(--line-strong); stroke-width:1.6;"/></svg></span>subclass_of (open triangle points to parent)</span>
+  </div>
+  </div>
+ </div>
+</div>
+
+<script>
+(function () {
+  var stage = document.getElementById('stage');
+  var inner = document.getElementById('scale-inner');
+  var diagram = document.querySelector('.diagram');
+  var textBlocks = document.querySelectorAll('.title-row, .caption, .legend');
+  function fit() {
+    inner.style.transform = 'none';
+    textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    var w = diagram.getBoundingClientRect().width;
+    textBlocks.forEach(function (el) { el.style.maxWidth = w + 'px'; });
+    var scale = Math.min(1, stage.clientWidth / inner.scrollWidth);
+    inner.style.transform = 'scale(' + scale + ')';
+    stage.style.height = Math.ceil(inner.scrollHeight * scale) + 'px';
+  }
+  function syncFrameHeight() {
+    var h = Math.ceil(document.body.getBoundingClientRect().height);
+    if (window.frameElement) { var px = h + 'px'; if (window.frameElement.style.height !== px) window.frameElement.style.height = px; }
+    else if (window.parent && window.parent !== window) window.parent.postMessage({ type: 'va-spec-diagram-height', height: h }, '*');
+  }
+  function run() { fit(); syncFrameHeight(); }
+  window.addEventListener('resize', run);
+  if (window.ResizeObserver) { new ResizeObserver(fit).observe(stage); new ResizeObserver(syncFrameHeight).observe(document.body); }
+  if (document.readyState === 'complete') { run(); } else { window.addEventListener('load', run); }
+})();
+</script>
