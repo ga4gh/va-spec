@@ -76,6 +76,11 @@
      unaffected. */
   #primary-tree .bottom-row { gap: 20px; }
   #primary-tree .bottom-row .cls.wide { width: 224px; }
+  /* Two stacked sub-rows (Statement/EvidenceLine above StudyResult/DataItem):
+     wider boxes so every attribute line fits on one line, recovering the
+     vertical space the extra row costs. */
+  #primary-tree .bottom-row.sub { gap: 30px; margin-top: 30px; }
+  #primary-tree .bottom-row.sub .cls.wide { width: 320px; }
   .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; z-index: 0; }
 
   .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 18px; font-size: 10px; color: var(--ink-soft); align-items: center; justify-content: center; }
@@ -101,7 +106,8 @@
         ["Entity","Proposition","right-fan"],["Entity","Contribution","right-fan"],["Entity","Document","right-fan"],
         ["Entity","MappableConcept","right-fan"],["Entity","ConceptSet","right-fan"],
         ["Entity","InformationEntity","straight"],
-        ["InformationEntity","StudyResult","bottom-fan"],["InformationEntity","Statement","bottom-fan"],["InformationEntity","EvidenceLine","bottom-fan"],["InformationEntity","DataItem","bottom-fan"]
+        ["InformationEntity","Statement","bottom-fan"],["InformationEntity","EvidenceLine","bottom-fan"],
+        ["InformationEntity","StudyResult","lower"],["InformationEntity","DataItem","lower"]
       ]'>
         <svg class="connector-svg"></svg>
 
@@ -219,17 +225,7 @@
               </div>
             </a>
 
-        <div class="bottom-row">
-          <a class="cls wide" data-node="StudyResult" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
-            <span class="badge">TU</span>
-            <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
-            <div class="body">
-                <div class="prop"><span class="pl"><span class="nm">focus</span>: <span class="ty">Entity|IRI</span></span><span class="card">1..1</span></div>
-                <div class="prop"><span class="pl"><span class="nm">sourceDataSet</span>: <span class="ty">DataSet|IRI</span></span><span class="card">0..1</span></div>
-                <div class="prop"><span class="pl"><span class="nm">ancillaryResults</span>: <span class="ty">object</span></span><span class="card">0..1</span></div>
-                <div class="prop"><span class="pl"><span class="nm">qualityMeasures</span>: <span class="ty">object</span></span><span class="card">0..1</span></div>
-              </div>
-            </a>
+        <div class="bottom-row sub" id="sub-top">
           <a class="cls wide" data-node="Statement" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
             <span class="badge">TU</span>
             <div class="head"><div class="name">Statement</div></div>
@@ -254,6 +250,19 @@
                 <div class="prop"><span class="pl"><span class="nm">strengthOfEvidenceProvided</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
                 <div class="prop"><span class="pl"><span class="nm">scoreOfEvidenceProvided</span>: <span class="ty">number</span></span><span class="card">0..1</span></div>
                 <div class="prop"><span class="pl"><span class="nm">evidenceOutcome</span>: <span class="ty">MappableConcept|IRI</span></span><span class="card">0..1</span></div>
+              </div>
+            </a>
+        </div>
+
+        <div class="bottom-row sub" id="sub-bottom">
+          <a class="cls wide" data-node="StudyResult" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+            <span class="badge">TU</span>
+            <div class="head"><div class="stereo">&laquo;abstract&raquo;</div><div class="name">StudyResult</div></div>
+            <div class="body">
+                <div class="prop"><span class="pl"><span class="nm">focus</span>: <span class="ty">Entity|IRI</span></span><span class="card">1..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">sourceDataSet</span>: <span class="ty">DataSet|IRI</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">ancillaryResults</span>: <span class="ty">object</span></span><span class="card">0..1</span></div>
+                <div class="prop"><span class="pl"><span class="nm">qualityMeasures</span>: <span class="ty">object</span></span><span class="card">0..1</span></div>
               </div>
             </a>
           <a class="cls wide" data-node="DataItem" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top">
@@ -514,6 +523,25 @@
       }
     }
 
+    // Lower mode: for a child stacked in a *second* row below the first row of
+    // the parent's children (StudyResult/DataItem sit under Statement/
+    // EvidenceLine). A straight drop would cut through the first sub-row, so
+    // route child -> up to the lane between the two sub-rows -> in to the tree
+    // centre -> straight up the clear gap between the two first-row boxes into
+    // the parent's bottom edge (where every InformationEntity arrowhead meets).
+    var subTopEl = treeEl.querySelector('#sub-top');
+    function connectLower(parentEl, childEl) {
+      var p = rect(parentEl), c = rect(childEl);
+      var stBottom = subTopEl ? rect(subTopEl).bottom : (p.bottom + 40);
+      var midY = (stBottom + c.top) / 2;
+      drawPolyline([
+        { x: c.cx, y: c.top },
+        { x: c.cx, y: midY },
+        { x: p.cx, y: midY },
+        { x: p.cx, y: p.bottom }
+      ]);
+    }
+
     var edges = JSON.parse(treeEl.dataset.edges);
     edges.forEach(function (e) {
       var p = treeEl.querySelector('[data-node="' + e[0] + '"]');
@@ -523,6 +551,7 @@
       if (mode === 'left-fan') connectSideFan(p, c, 'left');
       else if (mode === 'right-fan') connectSideFan(p, c, 'right');
       else if (mode === 'bottom-fan') connectBottomFan(p, c);
+      else if (mode === 'lower') connectLower(p, c);
       else connectStraight(p, c);
     });
   }
