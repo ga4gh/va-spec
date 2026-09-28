@@ -46,7 +46,7 @@ ACMG Variant Pathogenicity Statement Example
     primaryCoding:
       code: definitive         # the code here is a term based on language used in the ACMG guidelines, as ACMG does not provide a formal code system for this
       system: ACMG Guidelines, 2015
-  outcome:                     # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
+  classification:                     # holds a MappableConcept reporting the final ACMG classification of the subject variant  to be 'pathogenic'
     type: MappableConcept
     primaryCoding:
       code: pathogenic         # the code here is a term based on language in the ACMG guidelines, as ACMG does not provide a formal code system for this

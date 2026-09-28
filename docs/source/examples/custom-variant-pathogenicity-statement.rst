@@ -52,7 +52,7 @@ Custom Variant Pathogenicity Statement Example
     primaryCoding:
       code: established        # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminological conventions)
       system: Implementer System 1
-  outcome:                     # holds a MappableConcept reporting the final classification of the subject variant to be 'disease-causing'
+  classification:                     # holds a MappableConcept reporting the final classification of the subject variant to be 'disease-causing'
     type: MappableConcept
     primaryCoding:
       code: disease-causing    # the code here based on a term used in the implementers preferred guidelines or application (as opposed to ACMG terminological conventions)
