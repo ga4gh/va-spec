@@ -20,7 +20,7 @@ Statement Structure
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:615px; border:0;" title="Statement Data Structure"></iframe>
+   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:700px; border:0;" title="Statement Data Structure"></iframe>
 
 **Legend** A class-level view of the Statement-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
@@ -52,7 +52,7 @@ As seen in the Statement diagram above, Evidence Lines are linked to a Statement
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/evidence-line-data-structure.html" style="width:100%; height:500px; border:0;" title="Evidence Line Data Structure"></iframe>
+   <iframe src="../_static/diagrams/evidence-line-data-structure.html" style="width:100%; height:595px; border:0;" title="Evidence Line Data Structure"></iframe>
 
 **Legend** A class-level view of the Evidence Line-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
 
@@ -81,7 +81,7 @@ As seen in the previous diagrams, **Study Results** may be linked to **Evidence 
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:555px; border:0;" title="Study Result Data Structure"></iframe>
+   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:635px; border:0;" title="Study Result Data Structure"></iframe>
 
 **Legend** A class-level view of the Study Result-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 

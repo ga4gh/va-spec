@@ -63,38 +63,38 @@
   <div class="title-row"><h1>Study Result Data Structure</h1></div>
   <p class="caption">A class-level view of the Study Result-based structure in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture &mdash; here a Cohort Allele Frequency Study Result reporting gnomAD data about a variant. The <b>cohort</b> link (dashed) is added by that profile, not the base Study Result class.</p>
 
-  <div class="canvas" id="canvas" style="width:900px; height:466px;">
+  <div class="canvas" id="canvas" style="width:820px; height:466px;">
     <svg class="connector-svg"></svg>
 
     <!-- central axis (root class emphasized with .main) -->
-    <a class="node axis main" data-node="StudyResult" style="left:338px; top:18px; width:224px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+    <a class="node axis main" data-node="StudyResult" style="left:298px; top:18px; width:224px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
       <div class="nm">Study Result</div>
       <div class="eg">e.g. pop-freq data items about HRAS:c.173C&gt;T: alleleCount=341, alleleFreq=0.002, &hellip;</div>
     </a>
 
-    <a class="node axis" data-node="DataSet" style="left:342px; top:266px; width:216px;" href="../../core-information-model/entities/information-entities/dataset.html#dataset" target="_top">
+    <a class="node axis" data-node="DataSet" style="left:302px; top:266px; width:216px;" href="../../core-information-model/entities/information-entities/dataset.html#dataset" target="_top">
       <div class="nm">DataSet</div>
       <div class="eg">the larger data set from which the results data was derived (e.g. gnomAD v3.4.1)</div>
     </a>
 
     <!-- provenance (row 1 centered on Study Result, row 2 centered on the DataSet) -->
-    <a class="node" data-node="Method" data-cy-ref="StudyResult" style="left:34px; top:40px; width:150px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
+    <a class="node" data-node="Method" data-cy-ref="StudyResult" style="left:44px; top:40px; width:150px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
       <div class="nm">Method</div>
       <div class="eg">(e.g. curation guides, experiment protocols)</div>
     </a>
-    <a class="node" data-node="StudyGroup" data-cy-ref="StudyResult" style="left:716px; top:40px; width:150px;" href="../../core-information-model/entities/study-group.html#studygroup" target="_top">
+    <a class="node" data-node="StudyGroup" data-cy-ref="StudyResult" style="left:626px; top:40px; width:150px;" href="../../core-information-model/entities/study-group.html#studygroup" target="_top">
       <div class="nm">StudyGroup</div>
       <div class="eg">(e.g. non-Finnish European females)</div>
     </a>
-    <a class="node" data-node="Document" data-cy-ref="DataSet" style="left:34px; top:280px; width:150px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
+    <a class="node" data-node="Document" data-cy-ref="DataSet" style="left:44px; top:280px; width:150px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
       <div class="nm">Document</div>
       <div class="eg">(e.g. publications, database records)</div>
     </a>
-    <a class="node" data-node="Contribution" data-cy-ref="DataSet" style="left:716px; top:280px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
+    <a class="node" data-node="Contribution" data-cy-ref="DataSet" style="left:626px; top:280px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
       <div class="nm">Contribution</div>
       <div class="eg">(who, when, and how an agent contributed to an artifact)</div>
     </a>
-    <a class="node" data-node="Agent" data-below="Contribution" data-below-gap="20" style="left:716px; top:420px; width:150px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
+    <a class="node" data-node="Agent" data-below="Contribution" data-below-gap="40" style="left:626px; top:420px; width:150px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
       <div class="nm">Agent</div>
       <div class="eg">(e.g. persons, organizations, software)</div>
     </a>
@@ -152,7 +152,7 @@
     // --- DataSet (row 2) ---
     { from:'DataSet', to:'Document', role:'reportedIn', card:'0..1',  // into Document MIDDLE
       pts:function(B,D){ return [[B.l,D.cy],[D.r,D.cy]]; },
-      lab:function(B,D){ return {x:(B.l+D.r)/2, y:D.cy-11}; } },
+      lab:function(B,D){ return {x:D.r+82, y:D.cy-11}; } },
     { from:'Contribution', to:'Agent', role:'contributor', card:'0..1',
       pts:function(K,A){ return [[K.cx,K.b],[A.cx,A.t]]; },
       lab:function(K,A){ return {x:K.cx+2, y:(K.b+A.t)/2}; } }
