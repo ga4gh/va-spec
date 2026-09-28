@@ -96,7 +96,7 @@ renaming, so the model has been made consistent with that rule:
     them: :ref:`Contribution`.contributor,
     :ref:`VariantPathogenicityProposition`.modeOfInheritanceQualifier/
     .penetranceQualifier, :ref:`Statement`.proposition/
-    .strength/.outcome/.quality, :ref:`StudyResult`.sourceDataSet
+    .strength/.classification/.quality, :ref:`StudyResult`.sourceDataSet
     (and the :ref:`ComputationalVariantFunctionalImpactAnalysisResult`
     subclass, which redeclares it), :ref:`CohortAlleleFrequencyStudyResult`.cohort,
     :ref:`TumorVariantFrequencyStudyResult` (*draft*).sampleGroup, :ref:`DataSet`.license,
@@ -216,14 +216,14 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     retain and constrain the core :ref:`Statement` ``classification`` attribute.
   * both :ref:`VariantPathogenicityEvidenceLine` and
     :ref:`VariantOncogenicityEvidenceLine` add ``no_criteria_met`` as an
-    allowed ``outcome`` code, alongside the existing ``{criterion_code}``
+    allowed ``evidenceOutcome`` code, alongside the existing ``{criterion_code}``
     and ``{criterion_code}_not_met`` forms. Use it to report that the
     criteria associated with the evidence line's ``methodType`` were
     assessed, but none of them were met. It is accepted both by each class's
     overall outcome pattern and by every per-``methodType`` pattern.
     **Backwards-incompatible:** both classes now also constrain the
     *direction* and *strength* that may accompany a negative outcome: when
-    ``outcome`` is ``no_criteria_met`` or any ``{criterion_code}_not_met``
+    ``evidenceOutcome`` is ``no_criteria_met`` or any ``{criterion_code}_not_met``
     code, ``direction`` MUST be ``neutral`` and ``strength`` MUST NOT be
     present. Previously a not-met outcome could be paired with a
     ``supports``/``disputes`` direction and a strength value.

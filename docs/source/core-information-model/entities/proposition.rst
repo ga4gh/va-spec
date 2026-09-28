@@ -82,7 +82,7 @@ The example below illustrates how such a scenario may be represented using the V
    proposition: VarPathProposition001          # no need to duplicate an inlined representation, as this Proposition is already defined in the message.
    direction: supports
    strength: definitive
-   outcome: pathogenic
+   classification: pathogenic
    hasEvidenceLines:
      - EvidenceLine001
      - EvidenceLine002
