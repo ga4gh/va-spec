@@ -28,16 +28,20 @@
   .canvas { position: relative; margin: 0 auto; }
   .connector-svg { position: absolute; top: 0; left: 0; pointer-events: none; overflow: visible; z-index: 0; }
 
-  .node { position: absolute; z-index: 1; background: var(--box); border: 1.6px solid var(--line-strong); border-radius: 4px;
-          padding: 8px 10px; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; }
+  .node { position: absolute; z-index: 1; background: var(--box); border: 1.5px solid var(--line-strong); border-radius: 4px;
+          padding: 7px 8px; text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; }
   a.node:hover, a.node:focus-visible { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); }
-  .node .nm { font-weight: 700; font-size: 14px; font-family: ui-monospace, "SF Mono", Consolas, monospace; text-align: center; }
-  .node .eg { font-size: 11px; font-style: italic; color: var(--ink-soft); line-height: 1.35; text-align: center; margin-top: 4px; }
+  .node .nm { font-weight: 700; font-size: 13px; font-family: ui-monospace, "SF Mono", Consolas, monospace; text-align: center; }
+  .node .eg { font-size: 10.5px; font-style: italic; color: var(--ink-soft); line-height: 1.32; text-align: center; margin-top: 4px; }
 
-  /* central-axis artifacts get the blue fill + heavier border */
-  .node.axis { background: var(--axis); border-color: var(--axis-line); border-width: 2.4px; }
+  /* central-axis artifacts get the blue fill */
+  .node.axis { background: var(--axis); border-color: var(--axis-line); border-width: 1.8px; }
   .node.axis .eg { color: var(--ink); }
-  .node .prop-box { margin-top: 7px; background: var(--inner); border: 1.5px solid var(--line-strong); border-radius: 3px; padding: 6px 8px; }
+  /* the main/root class of the diagram is emphasized: larger text & box, heavier outline (not the inner proposition box) */
+  .node.main { border-width: 3px; }
+  .node.main .nm { font-size: 15.5px; }
+  .node.main .eg { font-size: 11.5px; }
+  .node .prop-box { margin-top: 7px; background: var(--inner); border: 1.4px solid var(--line-strong); border-radius: 3px; padding: 5px 7px; }
   .node .prop-box .pnm { font-weight: 700; font-size: 12px; font-family: ui-monospace, monospace; text-align: center; }
   .node .prop-box .peg { font-size: 11px; font-style: italic; color: var(--ink-soft); text-align: center; line-height: 1.3; margin-top: 2px; }
   .node .stereo { font-family: ui-monospace, monospace; font-size: 10px; font-style: italic; color: var(--ink-soft); text-align: center; }
@@ -59,11 +63,11 @@
   <div class="title-row"><h1>Statement Data Structure</h1></div>
   <p class="caption">A class-level view of the Statement-based structure in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture &mdash; here a Variant Pathogenicity Statement supported by population allele-frequency evidence.</p>
 
-  <div class="canvas" id="canvas" style="width:1140px; height:720px;">
+  <div class="canvas" id="canvas" style="width:900px; height:556px;">
     <svg class="connector-svg"></svg>
 
-    <!-- central axis -->
-    <a class="node axis" data-node="Statement" style="left:430px; top:24px; width:260px;" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
+    <!-- central axis (root class emphasized with .main) -->
+    <a class="node axis main" data-node="Statement" style="left:344px; top:18px; width:212px;" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
       <div class="nm">Statement</div>
       <div class="prop-box">
         <div class="pnm">Proposition</div>
@@ -72,31 +76,31 @@
       <div class="eg">is <u>supported</u> with <u>high confidence</u></div>
     </a>
 
-    <a class="node axis" data-node="EvidenceLine" style="left:430px; top:334px; width:260px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
+    <a class="node axis" data-node="EvidenceLine" style="left:356px; top:248px; width:188px;" href="../../core-information-model/entities/information-entities/evidence-line.html#evidenceline" target="_top">
       <div class="nm">Evidence Line</div>
       <div class="eg">e.g. pop-freq data provides a <u>moderate</u> argument <u>supporting</u> pathogenicity</div>
     </a>
 
-    <a class="node axis" data-node="StudyResult" style="left:420px; top:566px; width:280px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+    <a class="node axis" data-node="StudyResult" style="left:342px; top:446px; width:216px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
       <div class="nm">InformationEntity</div>
       <div class="stereo">&laquo;Study Result&raquo;</div>
       <div class="eg">e.g. pop-freq study data: alleleCount=341, alleleFreq=0.002, &hellip;</div>
     </a>
 
-    <!-- provenance -->
-    <a class="node" data-node="Method" style="left:60px; top:70px; width:186px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
+    <!-- provenance (vertically centered on the axis box they sit beside) -->
+    <a class="node" data-node="Method" data-cy-ref="Statement" style="left:34px; top:60px; width:150px;" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
       <div class="nm">Method</div>
       <div class="eg">(e.g. interpretation guidelines, experimental protocols)</div>
     </a>
-    <a class="node" data-node="Document" style="left:60px; top:346px; width:186px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
+    <a class="node" data-node="Document" data-cy-ref="EvidenceLine" style="left:34px; top:280px; width:150px;" href="../../core-information-model/entities/information-entities/document.html#document" target="_top">
       <div class="nm">Document</div>
       <div class="eg">(e.g. publications, database records)</div>
     </a>
-    <a class="node" data-node="Contribution" style="left:874px; top:340px; width:186px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
+    <a class="node" data-node="Contribution" data-cy-ref="EvidenceLine" style="left:716px; top:280px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
       <div class="nm">Contribution</div>
       <div class="eg">(who, when, and how an agent contributed to an artifact)</div>
     </a>
-    <a class="node" data-node="Agent" style="left:874px; top:478px; width:186px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
+    <a class="node" data-node="Agent" data-below="Contribution" data-below-gap="22" style="left:716px; top:420px; width:150px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
       <div class="nm">Agent</div>
       <div class="eg">(e.g. persons, organizations, software)</div>
     </a>
@@ -206,9 +210,30 @@
     });
   }
 
+  // Vertically center each provenance box on the axis box it sits beside (data-cy-ref),
+  // then place data-below boxes just under their reference. Because box heights vary with
+  // wrapped text, this is done after layout so association endpoints distribute evenly.
+  function layoutBoxes() {
+    var cc = canvas.getBoundingClientRect();
+    canvas.querySelectorAll('[data-cy-ref]').forEach(function (el) {
+      var ref = canvas.querySelector('[data-node="' + el.dataset.cyRef + '"]');
+      if (!ref) return;
+      var r = ref.getBoundingClientRect();
+      var refCy = (r.top + r.bottom) / 2 - cc.top;
+      el.style.top = Math.round(refCy - el.offsetHeight / 2) + 'px';
+    });
+    canvas.querySelectorAll('[data-below]').forEach(function (el) {
+      var ref = canvas.querySelector('[data-node="' + el.dataset.below + '"]');
+      if (!ref) return;
+      var r = ref.getBoundingClientRect();
+      el.style.top = Math.round((r.bottom - cc.top) + parseFloat(el.dataset.belowGap || '22')) + 'px';
+    });
+  }
+
   function fit() {
     inner.style.transform = 'none';
     textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
+    layoutBoxes();
     draw();
     var w = canvas.getBoundingClientRect().width;
     textBlocks.forEach(function (el) { el.style.maxWidth = w + 'px'; });

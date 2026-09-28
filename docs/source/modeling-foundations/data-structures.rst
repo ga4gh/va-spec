@@ -20,7 +20,7 @@ Statement Structure
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:600px; border:0;" title="Statement Data Structure"></iframe>
+   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:615px; border:0;" title="Statement Data Structure"></iframe>
 
 **Legend** A class-level view of the Statement-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
@@ -29,7 +29,7 @@ In this structure:
 * A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more :ref:`Evidence Lines <EvidenceLine>` -- discrete, scored arguments for or against it -- and/or, via ``hasEvidence``, directly to any information (an :ref:`Information Entity <InformationEntity>`) used as evidence.
 * Each **Evidence Line** may in turn be linked, via ``hasEvidenceItems``, to zero or more **Evidence Items** - any information used to build its evidence-based argument (here, a single **Study Result**).
 * The **Proposition** contained in the **Statement** object encapsulates a structured representation of the possible fact that the **Statement** may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in any supporting Evidence Lines.
-* Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
+* Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Methods** that specify their creation, and **Documents** that describe them.
 
 A data example illustrating this structure for a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 
@@ -52,7 +52,7 @@ As seen in the Statement diagram above, Evidence Lines are linked to a Statement
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/evidence-line-data-structure.html" style="width:100%; height:570px; border:0;" title="Evidence Line Data Structure"></iframe>
+   <iframe src="../_static/diagrams/evidence-line-data-structure.html" style="width:100%; height:500px; border:0;" title="Evidence Line Data Structure"></iframe>
 
 **Legend** A class-level view of the Evidence Line-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here for an Evidence Line representing a *moderate* argument *supporting* the pathogenicity of a particular variant, based on allele frequency data from gnomAD.
 
@@ -81,7 +81,7 @@ As seen in the previous diagrams, **Study Results** may be linked to **Evidence 
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:585px; border:0;" title="Study Result Data Structure"></iframe>
+   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:555px; border:0;" title="Study Result Data Structure"></iframe>
 
 **Legend** A class-level view of the Study Result-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 
