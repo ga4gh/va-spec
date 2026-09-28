@@ -17,7 +17,7 @@
   }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: var(--bg); color: var(--ink); font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
-  body { padding: 20px; overflow: hidden; }
+  body { padding: 20px; overflow-x: hidden; }
   .wrap { width: 100%; }
   #stage { overflow: hidden; }
   #scale-inner { width: max-content; margin: 0 auto; transform-origin: top left; }
@@ -61,7 +61,11 @@
      spine all top-aligned together, so a column's first box lines up with
      Entity's own top edge rather than starting below a separate Entity row. */
   .top-row { display: flex; align-items: flex-start; justify-content: center; gap: 58px; }
-  .side-col { display: flex; flex-direction: column; gap: 13px; }
+  .side-col { display: flex; flex-direction: column; gap: 13px; align-items: stretch; }
+  /* Uniform-width satellite boxes per column (right edges aligned) so every
+     inheritance connector shares one lane with an equal, short stub -- no long
+     ragged bends from the narrower boxes. */
+  .top-row > .side-col > .cls { width: auto; }
   .center-col { display: flex; flex-direction: column; align-items: center; gap: 46px; }
   .bottom-row { display: flex; align-items: flex-start; gap: 24px; }
   /* The four InformationEntity subclass boxes drive the primary tree's overall
@@ -96,9 +100,8 @@
       <div class="frame-content">
 
       <div class="hier-tree" id="primary-tree" data-edges='[
-        ["Entity","Agent","left-fan"],["Entity","StudyGroup","left-fan"],["Entity","DataSet","left-fan"],["Entity","Method","left-fan"],
-        ["Entity","Proposition","right-fan"],["Entity","Contribution","right-fan"],["Entity","Document","right-fan"],
-        ["Entity","MappableConcept","right-fan"],["Entity","ConceptSet","right-fan"],
+        ["Entity","Agent","left-fan"],["Entity","StudyGroup","left-fan"],["Entity","DataSet","left-fan"],["Entity","MappableConcept","left-fan"],["Entity","ConceptSet","left-fan"],
+        ["Entity","Proposition","right-fan"],["Entity","Contribution","right-fan"],["Entity","Document","right-fan"],["Entity","Method","right-fan"],
         ["Entity","InformationEntity","straight"],
         ["InformationEntity","Statement","bottom-fan"],["InformationEntity","EvidenceLine","bottom-fan"],
         ["InformationEntity","StudyResult","lower"],["InformationEntity","DataItem","lower"]
@@ -133,12 +136,22 @@
                 <div class="prop"><span class="nm">license</span>: <span class="ty">MappableConcept | IRI</span> <span class="card">[0..1]</span></div>
               </div>
             </a>
-            <a class="cls" data-node="Method" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
+            <a class="cls" data-node="MappableConcept" href="../../core-information-model/elements/mappable-concept.html#mappableconcept" target="_top">
               <span class="badge">TU</span>
-              <div class="head"><div class="name">Method</div></div>
+              <div class="head"><div class="name">MappableConcept</div></div>
               <div class="body">
-                <div class="prop"><span class="nm">methodType</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
-                <div class="prop"><span class="nm">reportedIn</span>: <span class="ty">Document | IRI</span> <span class="card">[0..1]</span></div>
+                <div class="prop"><span class="nm">conceptType</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
+                <div class="prop"><span class="nm">primaryCoding</span>: <span class="ty">Coding</span> <span class="card">[0..1]</span></div>
+                <div class="prop"><span class="nm">mappings</span>: <span class="ty">ConceptMapping</span> <span class="card">[0..m]</span></div>
+              </div>
+            </a>
+            <a class="cls" data-node="ConceptSet" href="../../appendices/imported-models/concept-set.html#conceptset" target="_top">
+              <span class="badge">TU</span>
+              <div class="head"><div class="name">ConceptSet</div></div>
+              <div class="body">
+                <div class="prop"><span class="nm">conceptSetType</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
+                <div class="prop"><span class="nm">concepts</span>: <span class="ty">MappableConcept | ConceptSet</span> <span class="card">[2..m]</span></div>
+                <div class="prop"><span class="nm">membershipOperator</span>: <span class="ty">enum</span> <span class="card">[1..1]</span></div>
               </div>
             </a>
           </div>
@@ -188,22 +201,12 @@
                 <div class="prop"><span class="nm">pmid</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
               </div>
             </a>
-            <a class="cls" data-node="MappableConcept" href="../../core-information-model/elements/mappable-concept.html#mappableconcept" target="_top">
+            <a class="cls" data-node="Method" href="../../core-information-model/entities/information-entities/method.html#method" target="_top">
               <span class="badge">TU</span>
-              <div class="head"><div class="name">MappableConcept</div></div>
+              <div class="head"><div class="name">Method</div></div>
               <div class="body">
-                <div class="prop"><span class="nm">conceptType</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
-                <div class="prop"><span class="nm">primaryCoding</span>: <span class="ty">Coding</span> <span class="card">[0..1]</span></div>
-                <div class="prop"><span class="nm">mappings</span>: <span class="ty">ConceptMapping</span> <span class="card">[0..m]</span></div>
-              </div>
-            </a>
-            <a class="cls" data-node="ConceptSet" href="../../appendices/imported-models/concept-set.html#conceptset" target="_top">
-              <span class="badge">TU</span>
-              <div class="head"><div class="name">ConceptSet</div></div>
-              <div class="body">
-                <div class="prop"><span class="nm">conceptSetType</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
-                <div class="prop"><span class="nm">concepts</span>: <span class="ty">MappableConcept | ConceptSet</span> <span class="card">[2..m]</span></div>
-                <div class="prop"><span class="nm">membershipOperator</span>: <span class="ty">enum</span> <span class="card">[1..1]</span></div>
+                <div class="prop"><span class="nm">methodType</span>: <span class="ty">string</span> <span class="card">[0..1]</span></div>
+                <div class="prop"><span class="nm">reportedIn</span>: <span class="ty">Document | IRI</span> <span class="card">[0..1]</span></div>
               </div>
             </a>
           </div>
@@ -446,6 +449,14 @@
     //    only correct for a genuine side entry, so this bottom-edge entry
     //    uses the fixed "-up" marker (see drawTree's marker defs) rather than
     //    following that last segment's literal (horizontal) direction.
+    // A side-fan lane must clear the *widest* box in its column, not just the
+    // satellite it starts from -- otherwise a narrow box below a wider one
+    // (e.g. MappableConcept under DataSet) routes its lane behind that wider box.
+    var sideCols = treeEl.querySelectorAll('.top-row > .side-col');
+    var leftColRight = -Infinity, rightColLeft = Infinity;
+    if (sideCols[0]) sideCols[0].querySelectorAll('.cls').forEach(function (el) { var r = rect(el); if (r.right > leftColRight) leftColRight = r.right; });
+    if (sideCols.length > 1) sideCols[sideCols.length - 1].querySelectorAll('.cls').forEach(function (el) { var r = rect(el); if (r.left < rightColLeft) rightColLeft = r.left; });
+
     var laneCounters = {};
     function connectSideFan(entityEl, satEl, side) {
       var e = rect(entityEl), s = rect(satEl);
@@ -467,7 +478,10 @@
       var key = treeEl.id + '-' + side;
       var idx = laneCounters[key] = (laneCounters[key] || 0) + 1;
       idx -= 1;
-      var laneX = side === 'left' ? (s.right + 14 + idx * 9) : (s.left - 14 - idx * 9);
+      var laneBase = side === 'left' ? (isFinite(leftColRight) ? leftColRight : s.right) : (isFinite(rightColLeft) ? rightColLeft : s.left);
+      // one shared lane per side (boxes are uniform width, so this is a short,
+      // equal stub for every box -- no per-box stagger)
+      var laneX = side === 'left' ? (laneBase + 12) : (laneBase - 12);
       var entryX = side === 'left' ? (e.cx - 28 - idx * 24) : (e.cx + 28 + idx * 24);
       entryX = side === 'left' ? Math.max(e.left + 10, entryX) : Math.min(e.right - 10, entryX);
       // The horizontal jog happens partway down the gap -- halfway between the
@@ -524,15 +538,26 @@
     // centre -> straight up the clear gap between the two first-row boxes into
     // the parent's bottom edge (where every InformationEntity arrowhead meets).
     var subTopEl = treeEl.querySelector('#sub-top');
+    // The two first-row boxes (Statement/EvidenceLine) are content-sized, so the
+    // gap between them is NOT at the parent's centre when they differ in width.
+    // Route the lower connectors up through the *measured* gap centre so the line
+    // is never overlaid by a box; fall back to the parent centre if unavailable.
+    function subTopGapX(fallback) {
+      var a = treeEl.querySelector('#sub-top .cls:first-child');
+      var b = treeEl.querySelector('#sub-top .cls:last-child');
+      if (!a || !b || a === b) return fallback;
+      return (rect(a).right + rect(b).left) / 2;
+    }
     function connectLower(parentEl, childEl) {
       var p = rect(parentEl), c = rect(childEl);
       var stBottom = subTopEl ? rect(subTopEl).bottom : (p.bottom + 40);
       var midY = (stBottom + c.top) / 2;
+      var gapX = subTopGapX(p.cx);
       drawPolyline([
         { x: c.cx, y: c.top },
         { x: c.cx, y: midY },
-        { x: p.cx, y: midY },
-        { x: p.cx, y: p.bottom }
+        { x: gapX, y: midY },
+        { x: gapX, y: p.bottom }
       ]);
     }
 
