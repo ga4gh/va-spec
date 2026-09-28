@@ -152,7 +152,7 @@ To represent these diverse types of variation, the VA-Spec imports two complemen
 
 **Examples**
   - A |discrete_allele| as a VRS object
-  - A :cat_vrs_source:`Canonical Allele<examples/canonicalAllele-ex1.yaml>` as a Cat-VRS object
+  - A :cat_vrs_source:`Canonical Allele<examples/yaml/canonicalAllele-ex1.yaml>` as a Cat-VRS object
 
 -----------
 

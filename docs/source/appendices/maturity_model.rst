@@ -192,7 +192,7 @@ and the class diagram tags each class with its maturity level.
 
 In JSON Schema, maturity is communicated using the ``maturity`` keyword, applied either to
 a data class (see the `maturity annotation on the VRS Allele class
-<https://github.com/ga4gh/vrs/blob/main/schema/vrs/json/Allele>`__) or to an individual
+<https://github.com/ga4gh/vrs/blob/v2/schema/vrs/json/Allele>`__) or to an individual
 data class property.
 
 .. _GA4GH Product Development and Approval Process: https://www.ga4gh.org/our-products/development-and-approval-process/
