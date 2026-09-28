@@ -81,7 +81,7 @@ As seen in the previous diagrams, **Study Results** may be linked to **Evidence 
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:635px; border:0;" title="Study Result Data Structure"></iframe>
+   <iframe src="../_static/diagrams/study-result-data-structure.html" style="width:100%; height:580px; border:0;" title="Study Result Data Structure"></iframe>
 
 **Legend** A class-level view of the Study Result-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Cohort Allele Frequency Study Result reporting data from the gnomAD dataset about a particular variant.
 

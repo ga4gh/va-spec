@@ -63,7 +63,7 @@
   <div class="title-row"><h1>Study Result Data Structure</h1></div>
   <p class="caption">A class-level view of the Study Result-based structure in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture &mdash; here a Cohort Allele Frequency Study Result reporting gnomAD data about a variant. The <b>cohort</b> link (dashed) is added by that profile, not the base Study Result class.</p>
 
-  <div class="canvas" id="canvas" style="width:820px; height:466px;">
+  <div class="canvas" id="canvas" style="width:820px; height:410px;">
     <svg class="connector-svg"></svg>
 
     <!-- central axis (root class emphasized with .main) -->
@@ -90,7 +90,7 @@
       <div class="nm">Document</div>
       <div class="eg">(e.g. publications, database records)</div>
     </a>
-    <a class="node" data-node="Contribution" data-cy-ref="DataSet" style="left:626px; top:280px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
+    <a class="node" data-node="Contribution" style="left:626px; top:150px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
       <div class="nm">Contribution</div>
       <div class="eg">(who, when, and how an agent contributed to an artifact)</div>
     </a>
@@ -150,9 +150,9 @@
       pts:function(S,B){ return [[S.cx,S.b],[B.cx,B.t]]; },
       lab:function(S,B){ return {x:S.cx+2, y:(S.b+B.t)/2}; } },
     // --- DataSet (row 2) ---
-    { from:'DataSet', to:'Document', role:'reportedIn', card:'0..1',  // into Document MIDDLE
-      pts:function(B,D){ return [[B.l,D.cy],[D.r,D.cy]]; },
-      lab:function(B,D){ return {x:D.r+82, y:D.cy-11}; } },
+    { from:'DataSet', to:'Document', role:'reportedIn', card:'0..1',  // low horizontal so the label sits in the clear gap below the boxes
+      pts:function(B,D){ var y=D.b-6; return [[B.l,y],[D.r,y]]; },
+      lab:function(B,D){ return {x:(B.l+D.r)/2, y:D.b+12}; } },
     { from:'Contribution', to:'Agent', role:'contributor', card:'0..1',
       pts:function(K,A){ return [[K.cx,K.b],[A.cx,A.t]]; },
       lab:function(K,A){ return {x:K.cx+2, y:(K.b+A.t)/2}; } }
