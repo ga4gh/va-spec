@@ -79,12 +79,17 @@ renaming, so the model has been made consistent with that rule:
     examples and test fixtures were updated accordingly.
   * The abstract base classes (:ref:`Proposition`, :ref:`StudyResult`,
     :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
-    ``oneOf`` of their built-in subtypes, so implementers can define and validate
-    **their own** subclasses of :ref:`Proposition` and :ref:`StudyResult` against
-    these bases (the *draft* ``CustomProposition`` class, briefly introduced in
-    an earlier 1.1.0 pre-release for the same purpose, is superseded by this and
-    was removed before this release). :ref:`Statement` remains concrete and
-    closed, as before.
+    ``oneOf`` of their built-in subtypes. Being open means a reference to one of
+    these bases is not restricted to the schema's own subtypes and -- as with any
+    abstract class -- carries no ``additionalProperties: false``, so any object
+    that satisfies the base's required properties validates against it, including
+    subclasses the schema does not itself declare (see the
+    :ref:`metaschema appendix <gkm-metaschema>` for how open vs. closed is
+    encoded). Implementers can therefore define and validate **their own**
+    subclasses of :ref:`Proposition` and :ref:`StudyResult` against these bases.
+    The *draft* ``CustomProposition`` class, briefly introduced in an earlier
+    1.1.0 pre-release for the same purpose, is superseded by this and was removed
+    before this release. :ref:`Statement` remains concrete and closed, as before.
   * allows an :ref:`iriReference` as an alternative to an inline object on
     attributes that reference other, independently-identifiable Information
     Entities or concepts, so implementers can reference instead of inline
