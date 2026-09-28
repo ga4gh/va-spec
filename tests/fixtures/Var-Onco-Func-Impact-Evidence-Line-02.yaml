@@ -1,5 +1,5 @@
-type: Statement
-proposition:
+type: EvidenceLine
+targetProposition:
   type: VariantOncogenicityProposition
   subject:
     type: CategoricalVariant
@@ -48,13 +48,13 @@ proposition:
       system: https://identifiers.org/ncbigene/
       iris:
         - http://identifiers.org/ncbigene/1956
-direction: supports
-strength:
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided:
   type: MappableConcept
   primaryCoding:
     code: supporting
     system: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-score: 1
+scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
   methodType: functional_data_assessment
@@ -62,7 +62,7 @@ specifiedBy:
     type: Document
     pmid: '35101336'
     name: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-outcome:
+evidenceOutcome:
   type: MappableConcept
   primaryCoding:
     code: OS2_supporting

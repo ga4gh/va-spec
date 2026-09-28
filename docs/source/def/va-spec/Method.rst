@@ -71,4 +71,4 @@ Some Method attributes are inherited from :ref:`gkm-core:Entity`.
 
 **Inherits:** :ref:`Entity`
 
-**Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`DataItem`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`InformationEntity`, :ref:`Statement`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`
+**Used in:** :ref:`CohortAlleleFrequencyStudyResult`, :ref:`ComputationalVariantFunctionalImpactAnalysisResult`, :ref:`DataItem`, :ref:`EvidenceLine`, :ref:`ExperimentalVariantFunctionalImpactStudyResult`, :ref:`InformationEntity`, :ref:`Statement`, :ref:`StudyResult`, :ref:`TumorVariantFrequencyStudyResult`

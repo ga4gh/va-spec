@@ -25,7 +25,7 @@ In VA-Spec, the :ref:`Statement <Statement>` class and its :ref:`profiles <commu
 
 In this structure:
 
-* A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more nested **Statements** serving as **Evidence Lines** - discrete arguments for or against it.
+* A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more :ref:`Evidence Lines <EvidenceLine>` - discrete arguments for or against it - and/or, via ``hasEvidence``, directly to any information used as evidence.
 * Each Evidence Line may in turn be linked, via ``hasEvidenceItems``, to zero or more pieces of information (e.g. **Study Results**) that were used to build its evidence-based argument.
 * The **Proposition** contained in the Statement object encapsulates a structured representation of the possible fact that the Statement may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in supporting Evidence Lines.
 * Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
@@ -51,16 +51,15 @@ Statements put forth a Proposition that expresses some possible fact about the w
 This **'SPOQ-DS'** Proposition pattern is used to explicitly represent the semantics of the central piece of knowledge reported in any Statement, which is supported by evidence and provenance information captured in other Statement attributes.
 
 
-2. Statements as Evidence Lines
-===============================
+2. Attaching Evidence to a Statement
+====================================
 
-The core model does not define a separate ``EvidenceLine`` class. A discrete, evidence-based argument for or against a Proposition is simply another **Statement**, attached to the Statement it argues about via ``hasEvidenceLines``. A Statement in that role uses the same attributes as any other:
+A Statement can cite the evidence behind its assessment in two complementary ways:
 
-* ``proposition`` holds the possible fact the evidence is assessed against. It may be omitted when it would merely repeat the ``proposition`` of the Statement it supports.
-* ``hasEvidenceItems`` holds the information that was assessed - a :ref:`Statement <Statement>`, :ref:`Study Result <StudyResult>`, :ref:`Data Item <DataItem>`, or an IRI reference to one of these.
-* ``direction``, ``strength`` and/or ``score`` report the outcome of that assessment, and ``outcome`` summarizes it in a single community-familiar term.
+* ``hasEvidence`` links the Statement directly to any information used as evidence - a :ref:`Study Result <StudyResult>`, :ref:`Data Item <DataItem>`, prior :ref:`Statement <Statement>`, :ref:`Evidence Line <EvidenceLine>`, or an IRI reference to any :ref:`Information Entity <InformationEntity>`. Use this when the data simply records *that* some information was used as evidence.
+* ``hasEvidenceLines`` links the Statement to one or more :ref:`Evidence Lines <EvidenceLine>` - discrete, scored, directional arguments (each with its own ``targetProposition``, ``directionOfEvidenceProvided``, ``strengthOfEvidenceProvided``, and ``evidenceOutcome``) built from the information they assessed. Use this when the data captures *how* information was interpreted and scored as an argument.
 
-See the :ref:`Evidence Line <EvidenceLine>` page for when to use this pattern rather than citing evidence items directly, how deeply to nest it, and how broadly to scope each argument.
+See the :ref:`Evidence Line <EvidenceLine>` page for when to use a structured Evidence Line rather than citing evidence directly, how deeply Evidence Lines nest, and how broadly to scope each argument.
 
 
 3. Use of the ``Proposition.qualifier`` Attribute:

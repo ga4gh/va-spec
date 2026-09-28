@@ -7,7 +7,7 @@ ACMG Variant Pathogenicity Statement Example (with Evidence)
 
 The data below builds on the simple ClinVar-GKM example described :ref:`here <acmg-variant-pathogenicity-statement-example>`, embellishing its base ClinVar record with additional evidence to demonstrate richer structures the :ref:`Variant Pathogenicity Statement (ACMG 2015) profile <variant-pathogenicity-statement-acmg-2015>` can support.
 
-Specifically, it stitches together several simpler **Statement**, **Study Result**, and **Evidence Line** data examples from the `test fixtures directory <https://github.com/ga4gh/va-spec/tree/1.0.0/tests/fixtures>`_, to reveal how these objects can be combined to build the rich evidence and provenance structure below.
+Specifically, it stitches together several simpler **Statement**, **Study Result**, and **Evidence Line** data examples from the |fixtures_dir| directory, to reveal how these objects can be combined to build the rich evidence and provenance structure below.
 
 .. variant-pathogenicity-statement-with-evidence:
 
@@ -94,8 +94,8 @@ A few additional notes about this example:
         - https://clinicalgenome.org/docs/clingen-hearing-loss-expert-panel-specifications-to-the-acmg-amp-variant-interpretation-guidelines/
   hasEvidenceLines:            # holds EvidenceLine objects describing how difference types of evidence was interpreted to support the root Statement
   - id: ex:EvidenceLine001     # an Evidence Line based on cohort allele frequency data from gnomAD (https://gnomad.broadinstitute.org/)
-    type: Statement            # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    proposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
+    type: EvidenceLine         # a VariantPathogenicityEvidenceLine, a subclass of the core EvidenceLine class
+    targetProposition: ex:Proposition001     # the possible fact against which evidence information is assessed in this EvidenceLine (typically, as here, this is the same proposition as asserted in the root Statement it supports)
     hasEvidenceItems:          # the information interpreted as evidence in building this Evidence Line
     - id: ex:StudyResult001    # here, the evidence consists of a single StudyResult, which collects several allele frequency data items about the 1-10120-T-G allele.
       type: CohortAlleleFrequencyStudyResult
@@ -121,13 +121,13 @@ A few additional notes about this example:
           name: gnomAD help documentation
           urls:
             - "https://gnomad.broadinstitute.org/help"
-    direction: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
-    strength:
+    directionOfEvidenceProvided: supports   # reports that the frequency evidence 'supports' the target proposition (as opposed to disputing it)
+    strengthOfEvidenceProvided:
       type: MappableConcept
       primaryCoding:
         code: moderate        # reports that this supporting evidence is of 'moderate' strength
         system: ACMG Guidelines, 2015
-    outcome:          # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
+    evidenceOutcome:  # holds a single term summarizing evidence direction and strength assessments, using community-specific vocabulary ...
       type: MappableConcept
       primaryCoding:
         code: PM2             # ... here, that the ACMG PM2 criterion was met. Because PM2 was met at its default 'moderate' strength,
@@ -149,8 +149,8 @@ A few additional notes about this example:
         activityType: evidence evaluation
         date: '2018-03-11'
   - id: ex:EvidenceLine002               # an Evidence Line based on functional impact data about the variant from MAVE (https://mavedb.org/)
-    type: Statement                      # uses the core Statement class as its type, but validated against the VariantPathogenicityEvidenceLine Profile
-    proposition: ex:Proposition001
+    type: EvidenceLine                   # a VariantPathogenicityEvidenceLine, a subclass of the core EvidenceLine class
+    targetProposition: ex:Proposition001
     hasEvidenceItems:
       - id: ex:Statement002              # here the evidence item is another Statement about the functional impact of the variant
         type: Statement
@@ -190,8 +190,8 @@ A few additional notes about this example:
             pmid: '29785012'
         hasEvidenceLines:
         - id: EvidenceLine003
-          type: Statement
-          direction: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
+          type: EvidenceLine
+          directionOfEvidenceProvided: supports  # indicates that EvidenceLine003 based on a Functional Impact Study Result 'supports' the Functional Impact Statement
           specifiedBy:          # a Method followed in assessing the direction and strength of evidence provided by the Functional Impact StudyResult for the Functional Impact Statement
             type: Method
             name: MAVE bayesian threshold probability method 001
@@ -224,13 +224,13 @@ A few additional notes about this example:
                   type: Document
                   urls:
                     - "https://mavedb.org/score-sets/urn:mavedb:00000013-a-1"
-    direction: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
-    strength:
+    directionOfEvidenceProvided: supports   # indicates that EvidenceLine002 based on a Functional Impact Statement 'supports' the root Pathogenicity Statement
+    strengthOfEvidenceProvided:
       type: MappableConcept
       primaryCoding:
         code: strong                      # indicates that this line of evidence provides 'strong' support for the variant's Pathogencity
         system: ACMG Guidelines, 2015
-    outcome:
+    evidenceOutcome:
       type: MappableConcept
       primaryCoding:
         code: PS3                         # the ACMG PS3 criterion was met at its default 'strong' strength
@@ -273,6 +273,6 @@ It also highlights the kind of schema that specifies each objects in the data - 
 
    <iframe src="../_static/diagrams/acmg-statement-with-evidence-example.html" style="width:100%; height:760px; border:0;" title="Detailed Data Example"></iframe>
 
-**Legend**: Diagrammatic representation of this same general structure -- a root Statement, its first Evidence Line, and that Evidence Line's Study Result -- populated with a different real ClinGen classification (see the diagram's own caption) rather than the json example above, to keep this page anchored to two independently-sourced real examples instead of one. Each box's class name is the specific profile class actually used (``VariantPathogenicityStatement``, ``VariantPathogenicityEvidenceLine``, ``CohortAlleleFrequencyStudyResult``), with its formal base class as a ``«...»`` stereotype above the name. The root Statement (solid box) and the Evidence Line (dashed box, per this skill's "same class in a different role" convention) share the same ``«Statement»`` stereotype -- both are, formally, the same underlying **Statement** class playing different structural roles, and their ``type`` is always literally ``"Statement"`` regardless of role. The Study Result's ``«StudyResult»`` stereotype instead reflects its own community/base-profile-specific ``type``. To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
+**Legend**: Diagrammatic representation of this same general structure -- a root Statement, its first Evidence Line, and that Evidence Line's Study Result -- populated with a different real ClinGen classification (see the diagram's own caption) rather than the json example above, to keep this page anchored to two independently-sourced real examples instead of one. Each box's class name is the specific profile class actually used (``VariantPathogenicityStatement``, ``VariantPathogenicityEvidenceLine``, ``CohortAlleleFrequencyStudyResult``), with its formal base class as a ``«...»`` stereotype above the name. Each is a solid box showing its formal base class as a ``«...»`` stereotype above the name: ``VariantPathogenicityStatement`` composes **Statement** (so its ``type`` is ``"Statement"``), ``VariantPathogenicityEvidenceLine`` composes the distinct **EvidenceLine** class (``type`` ``"EvidenceLine"``), and ``CohortAlleleFrequencyStudyResult`` is a Base Profile subclass carrying its own specific ``type``. To fit the data into this form and make it human readable, syntactic shortcuts were taken to simplify values normally wrapped in complex data structures like MappableConcepts and Codings.
 
-A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement`` -- including Statements used as Evidence Lines).
+A key thing to note in the example is that, because Base Profiles are defined as formal subclasses, these objects have a specific ``type``  that reflects this (e.g. ``CohortAlleleFrequencyStudyResult``). But because Community Profiles are defined using schema composition, the formal ``type`` of these objects is that of the Core Model class on which they are built (e.g. ``Statement`` for statement profiles, or ``EvidenceLine`` for evidence-line profiles).

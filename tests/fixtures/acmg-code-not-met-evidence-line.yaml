@@ -1,6 +1,6 @@
 id: acmgCodeNotMetEvidenceLine
-type: Statement
-proposition:
+type: EvidenceLine
+targetProposition:
   type: VariantPathogenicityProposition
   subject:
     type: CategoricalVariant
@@ -10,14 +10,14 @@ proposition:
     type: MappableConcept
     conceptType: Disease
     name: Unspecified
-direction: neutral
+directionOfEvidenceProvided: neutral
 specifiedBy:
   type: Method
   methodType: case_control_enrichment_assessment
   reportedIn:
     type: Document
     name: ACMG Guidelines, 2015
-outcome:
+evidenceOutcome:
   type: MappableConcept
   primaryCoding:
     code: BS2_not_met

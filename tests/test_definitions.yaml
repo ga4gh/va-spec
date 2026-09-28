@@ -108,16 +108,16 @@ tests:
     definition: VariantClinicalSignificanceProposition
   - test_file: amp-asco-cap-evidence-line.yaml
     namespace: va-spec.aac-2017
-    definition: AmpAscoCapStatement
+    definition: AmpAscoCapEvidenceLine
   - test_file: amp-asco-cap-evidence-line.yaml
     namespace: va-spec.aac-2017
-    definition: DiagnosticStatement
+    definition: DiagnosticEvidenceLine
   - test_file: prognostic-statement.yaml
     namespace: va-spec.aac-2017
-    definition: PrognosticStatement
+    definition: PrognosticEvidenceLine
   - test_file: therapeutic-statement.yaml
     namespace: va-spec.aac-2017
-    definition: TherapeuticStatement
+    definition: TherapeuticEvidenceLine
   - test_file: data-item.yaml
     namespace: va-spec
     definition: DataItem
@@ -141,7 +141,7 @@ tests:
     definition: VariantPathogenicityEvidenceLine
   - test_file: Var-Path-Func-Impact-Evidence-Line-01.yaml
     namespace: va-spec
-    definition: Statement
+    definition: EvidenceLine
   - test_file: acmg-no-criteria-met-evidence-line.yaml
     namespace: va-spec.acmg-2015
     definition: VariantPathogenicityEvidenceLine
@@ -150,7 +150,7 @@ tests:
     definition: VariantPathogenicityEvidenceLine
   - test_file: evidence-line-with-nested-evidence-lines.yaml
     namespace: va-spec
-    definition: Statement
+    definition: EvidenceLine
   - test_file: statement-with-direct-evidence-items.yaml
     namespace: va-spec
     definition: Statement
@@ -165,7 +165,7 @@ tests:
     definition: VariantOncogenicityEvidenceLine
   - test_file: Var-Onco-Func-Impact-Evidence-Line-02.yaml
     namespace: va-spec
-    definition: Statement
+    definition: EvidenceLine
   - test_file: ccv-no-criteria-met-evidence-line.yaml
     namespace: va-spec.ccv-2022
     definition: VariantOncogenicityEvidenceLine

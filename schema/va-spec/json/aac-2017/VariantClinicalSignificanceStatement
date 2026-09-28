@@ -45,7 +45,7 @@
                   }
                }
             },
-            "outcome": {
+            "classification": {
                "description": "A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.",
                "properties": {
                   "primaryCoding": {
@@ -74,14 +74,14 @@
             }
          },
          "required": [
-            "outcome",
+            "classification",
             "specifiedBy"
          ]
       },
       {
          "if": {
             "properties": {
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "primaryCoding": {
@@ -102,7 +102,7 @@
                }
             },
             "required": [
-               "outcome"
+               "classification"
             ]
          },
          "then": {
@@ -115,18 +115,18 @@
                            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine"
                         }
                      ]
                   }
                },
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "name": {
@@ -161,7 +161,7 @@
                }
             },
             "required": [
-               "outcome",
+               "classification",
                "strength",
                "direction"
             ]
@@ -170,7 +170,7 @@
       {
          "if": {
             "properties": {
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "primaryCoding": {
@@ -191,7 +191,7 @@
                }
             },
             "required": [
-               "outcome"
+               "classification"
             ]
          },
          "then": {
@@ -204,18 +204,18 @@
                            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/DiagnosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/PrognosticEvidenceLine"
                         },
                         {
-                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticStatement"
+                           "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/aac-2017/TherapeuticEvidenceLine"
                         }
                      ]
                   }
                },
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "name": {
@@ -250,7 +250,7 @@
                }
             },
             "required": [
-               "outcome",
+               "classification",
                "strength",
                "direction"
             ]
@@ -259,7 +259,7 @@
       {
          "if": {
             "properties": {
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "primaryCoding": {
@@ -280,12 +280,12 @@
                }
             },
             "required": [
-               "outcome"
+               "classification"
             ]
          },
          "then": {
             "properties": {
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "name": {
@@ -302,7 +302,7 @@
                }
             },
             "required": [
-               "outcome",
+               "classification",
                "direction"
             ]
          }
@@ -310,7 +310,7 @@
       {
          "if": {
             "properties": {
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "primaryCoding": {
@@ -331,12 +331,12 @@
                }
             },
             "required": [
-               "outcome"
+               "classification"
             ]
          },
          "then": {
             "properties": {
-               "outcome": {
+               "classification": {
                   "type": "object",
                   "properties": {
                      "name": {
@@ -353,7 +353,7 @@
                }
             },
             "required": [
-               "outcome",
+               "classification",
                "direction"
             ]
          }

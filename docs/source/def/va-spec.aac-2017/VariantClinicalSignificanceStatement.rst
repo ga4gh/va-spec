@@ -81,12 +81,12 @@ A statement reporting a conclusion from a single study about the clinical signif
    *  - proposition
       -
       - :ref:`VariantClinicalSignificanceProposition` | :ref:`iriReference`
-      - 0..1
+      - 1..1
       - A possible fact, the validity of which is assessed and reported by the Statement. A Statement can put forth the proposition as being true, false, or uncertain, and may provide an assessment of the level of confidence/evidence supporting this claim.
    *  - direction
       -
       - string
-      - 1..1
+      - 0..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
    *  - strength
       -
@@ -109,17 +109,17 @@ A statement reporting a conclusion from a single study about the clinical signif
       - number
       - 0..1
       - A quantitative score that indicates the strength of a Proposition's assessment in the direction indicated (i.e. how strongly supported or disputed the Proposition is believed to be). Depending on its implementation, a score may reflect how *confident* that agent is that the Proposition is true or false, or the *strength of evidence* they believe supports or disputes it. Instructions for how to interpret the meaning of a given score may be gleaned from the method or document referenced in 'specifiedBy' attribute.
-   *  - outcome
+   *  - classification
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
       - A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.
-   *  - hasEvidenceItems
+   *  - hasEvidence
       -
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Statement` | :ref:`StudyResult` | :ref:`DataItem` | :ref:`iriReference`
+      - :ref:`InformationEntity` | :ref:`iriReference`
       - 0..m
       - An individual piece of information that was evaluated as evidence in assessing the validity of the Proposition put forth by the Statement.
    *  - hasEvidenceLines
@@ -127,7 +127,7 @@ A statement reporting a conclusion from a single study about the clinical signif
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Statement` | :ref:`iriReference`
+      - :ref:`EvidenceLine` | :ref:`iriReference`
       - 0..m
       - An evidence-based argument that supports or disputes the validity of the proposition that a Statement assesses or puts forth as true. The strength and direction of this argument (whether it supports or disputes the proposition, and how strongly) is based on an interpretation of one or more pieces of information as evidence (i.e. 'Evidence Items).
 
@@ -143,59 +143,59 @@ A statement reporting a conclusion from a single study about the clinical signif
       - has value...
       - then property...
       - must...
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
       - *hasEvidenceLines*
-      - be one of: :ref:`iriReference`, :ref:`DiagnosticStatement`, :ref:`PrognosticStatement`, :ref:`TherapeuticStatement`
-   *  - *outcome.primaryCoding.code*
+      - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
+   *  - *classification.primaryCoding.code*
       - **tier i**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier I**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
       - *strength.primaryCoding.code*
       - have value **strong**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier i**
       - *direction*
       - have value **supports**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
       - *hasEvidenceLines*
-      - be one of: :ref:`iriReference`, :ref:`DiagnosticStatement`, :ref:`PrognosticStatement`, :ref:`TherapeuticStatement`
-   *  - *outcome.primaryCoding.code*
+      - be one of: :ref:`iriReference`, :ref:`DiagnosticEvidenceLine`, :ref:`PrognosticEvidenceLine`, :ref:`TherapeuticEvidenceLine`
+   *  - *classification.primaryCoding.code*
       - **tier ii**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier II**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
       - *strength.primaryCoding.code*
       - have value **potential**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier ii**
       - *direction*
       - have value **supports**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iii**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier III**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iii**
       - *strength*
       - not be provided
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iii**
       - *direction*
       - have value **neutral**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iv**
-      - *outcome.name*
+      - *classification.name*
       - have value **Tier IV**
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iv**
       - *strength*
       - not be provided
-   *  - *outcome.primaryCoding.code*
+   *  - *classification.primaryCoding.code*
       - **tier iv**
       - *direction*
       - have value **disputes**

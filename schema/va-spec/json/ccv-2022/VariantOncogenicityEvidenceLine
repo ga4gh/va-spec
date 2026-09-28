@@ -6,11 +6,11 @@
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Statement"
+         "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/EvidenceLine"
       },
       {
          "properties": {
-            "proposition": {
+            "targetProposition": {
                "description": "A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to determine the strength and direction of support this evidence provides for or against the proposition's validity.",
                "oneOf": [
                   {
@@ -21,7 +21,7 @@
                   }
                ]
             },
-            "strength": {
+            "strengthOfEvidenceProvided": {
                "description": "The strength of support that an Evidence Line is determined to provide for or against the proposed oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by the 'direction' attribute, and captured using a MappableConcept, whose nested 'code' field is bound to an enumerated set of values. Conditional requirement: if `direction` is either 'supports' or 'disputes', then this attribute is required. If it is 'neutral', then this attribute is not allowed.",
                "properties": {
                   "primaryCoding": {
@@ -96,7 +96,7 @@
                   "reportedIn"
                ]
             },
-            "outcome": {
+            "evidenceOutcome": {
                "description": "The evidence outcome provides a single string that summarizes 'direction' and 'strength' assessments, along with the specific CCV criterion used in these assessments. Rules for constructing this string are as follows, and enforced by a regex constraint: (1) If a criterion is met and its default strength is not altered, the outcome is simply the criterion code (e.g. 'OM2' when the OM2 criteria is met with moderate strength); (2) If a criterion is met and its default strength is altered, the outcome is the criterion code plus the altered strength value (e.g. 'OS2_moderate' when OS2 is met with an adjusted moderate strength); (3)  If a specific criterion was assessed but not met, the outcome is the criterion code plus '_not_met' (e.g. 'OS2_not_met'); (4)  If the criteria associated with the 'methodType' were assessed, but none were met, the outcome is 'no_criteria_met'.",
                "properties": {
                   "primaryCoding": {
@@ -115,7 +115,7 @@
       {
          "if": {
             "properties": {
-               "direction": {
+               "directionOfEvidenceProvided": {
                   "enum": [
                      "supports",
                      "disputes"
@@ -123,12 +123,12 @@
                }
             },
             "required": [
-               "direction"
+               "directionOfEvidenceProvided"
             ]
          },
          "then": {
             "required": [
-               "strength"
+               "strengthOfEvidenceProvided"
             ]
          }
       },
@@ -152,7 +152,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -186,7 +186,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -220,7 +220,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -254,7 +254,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -288,7 +288,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -322,7 +322,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -356,7 +356,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -390,7 +390,7 @@
          },
          "then": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -407,7 +407,7 @@
       {
          "if": {
             "properties": {
-               "outcome": {
+               "evidenceOutcome": {
                   "properties": {
                      "primaryCoding": {
                         "properties": {
@@ -426,25 +426,25 @@
                }
             },
             "required": [
-               "outcome"
+               "evidenceOutcome"
             ]
          },
          "then": {
             "properties": {
-               "direction": {
+               "directionOfEvidenceProvided": {
                   "const": "neutral"
                }
             },
             "not": {
                "required": [
-                  "strength"
+                  "strengthOfEvidenceProvided"
                ]
             }
          }
       }
    ],
    "required": [
-      "direction",
+      "directionOfEvidenceProvided",
       "specifiedBy"
    ],
    "type": "object",

@@ -80,4 +80,4 @@ Some Proposition attributes are inherited from :ref:`gkm-core:Entity`.
 
 **Subclasses:** :ref:`GeneDiseaseValidityProposition`, :ref:`SubjectVariantProposition`
 
-**Used in:** :ref:`Statement`
+**Used in:** :ref:`EvidenceLine`, :ref:`Statement`

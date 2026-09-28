@@ -1,5 +1,5 @@
-type: Statement
-proposition:
+type: EvidenceLine
+targetProposition:
   type: VariantTherapeuticResponseProposition
   name: EGFR L858R predicts sensitivity to Afatinib in Lung Adenocarcinoma
   predicate: predictsSensitivityTo
@@ -37,8 +37,8 @@ proposition:
     type: MappableConcept
     conceptType: Gene
     name: EGFR
-direction: supports
-strength:
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided:
   type: MappableConcept
   primaryCoding:
     code: B

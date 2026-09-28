@@ -122,6 +122,16 @@ va-spec:Statement:
   # Statement
   - hasEvidenceLines
 
+va-spec:EvidenceLine:
+  # Entity
+  - description
+  - extensions
+  - aliases
+
+  # InformationEntity
+  - reportedIn
+  - contributions
+
 va-spec:DataSet:
   # Entity
   - extensions

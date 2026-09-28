@@ -40,11 +40,9 @@ NEGATIVE_CASES = [
          "predicate": "notTheRightPredicate", "object": "ex:c"},
     ),
     (
-        "Statement rejects a missing required 'direction'",
+        "Statement rejects a missing required 'proposition'",
         "va-spec:Statement",
-        {"type": "Statement",
-         "proposition": {"type": "MyOrgProp", "subject": {"id": "x", "type": "G"},
-                         "predicate": "p", "object": "ex:o"}},
+        {"type": "Statement", "direction": "supports"},
     ),
     (
         "Statement rejects a proposition that violates the base contract",
@@ -52,6 +50,31 @@ NEGATIVE_CASES = [
         {"type": "Statement", "direction": "supports",
          "proposition": {"type": "MyOrgProp", "subject": {"id": "x", "type": "G"},
                          "object": "ex:o"}},  # missing required predicate
+    ),
+    (
+        # Statement.hasEvidenceLines is EvidenceLine | iriReference. A bare
+        # Statement (not an EvidenceLine) must be rejected there -- this locks in
+        # the "a Statement is not itself an Evidence Line" guarantee.
+        "Statement.hasEvidenceLines rejects a bare Statement item",
+        "va-spec:Statement",
+        {"type": "Statement", "proposition": "ex:prop", "direction": "supports",
+         "hasEvidenceLines": [{"type": "Statement", "proposition": "ex:prop",
+                               "direction": "supports"}]},
+    ),
+    (
+        # EvidenceLine no longer defines hasEvidenceLines; a nested Evidence Line
+        # goes in hasEvidenceItems instead. The removed property must be rejected.
+        "EvidenceLine rejects a removed 'hasEvidenceLines' property",
+        "va-spec:EvidenceLine",
+        {"type": "EvidenceLine", "directionOfEvidenceProvided": "supports",
+         "hasEvidenceLines": []},
+    ),
+    (
+        # Statement.hasEvidenceItems was renamed to hasEvidence; the old name
+        # must be rejected (Statement is a closed class).
+        "Statement rejects the renamed-away 'hasEvidenceItems'",
+        "va-spec:Statement",
+        {"type": "Statement", "proposition": "ex:prop", "hasEvidenceItems": []},
     ),
     (
         "StudyResult subclass rejects a missing required 'focus'",
@@ -104,12 +127,12 @@ def _load_fixture(name):
 
 def test_aac_2017_tier_i_requires_supports_direction():
     # civic-assertion-combination-therapy-inline.yaml is a valid Tier I
-    # VariantClinicalSignificanceStatement (outcome code 'tier i',
+    # VariantClinicalSignificanceStatement (classification code 'tier i',
     # direction 'supports'). The profile's if/then constraint requires
-    # direction == 'supports' whenever outcome is Tier I; flipping it
+    # direction == 'supports' whenever the classification is Tier I; flipping it
     # to 'disputes' must be rejected.
     instance = _load_fixture("civic-assertion-combination-therapy-inline.yaml")
-    assert instance["outcome"]["primaryCoding"]["code"] == "tier i"
+    assert instance["classification"]["primaryCoding"]["code"] == "tier i"
     assert instance["direction"] == "supports"
 
     instance["direction"] = "disputes"
@@ -141,12 +164,12 @@ def test_not_met_evidence_requires_neutral_without_strength(cls, fixture):
     instance = _load_fixture(fixture)
 
     invalid_direction = deepcopy(instance)
-    invalid_direction["direction"] = "supports"
+    invalid_direction["directionOfEvidenceProvided"] = "supports"
     with pytest.raises(ValidationError):
         validator[cls].validate(invalid_direction)
 
     invalid_strength = deepcopy(instance)
-    invalid_strength["strength"] = {
+    invalid_strength["strengthOfEvidenceProvided"] = {
         "type": "MappableConcept",
         "primaryCoding": {"code": "supporting", "system": invalid_strength["specifiedBy"]["reportedIn"]["name"]},
     }

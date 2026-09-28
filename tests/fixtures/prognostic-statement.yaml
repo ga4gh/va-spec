@@ -1,5 +1,5 @@
-type: Statement
-proposition:
+type: EvidenceLine
+targetProposition:
   type: VariantPrognosticProposition
   name: EGFR R11T associated with better outcomes for Breast Cancer
   subject:
@@ -40,8 +40,8 @@ proposition:
     type: MappableConcept
     conceptType: Gene
     name: EGFR
-direction: supports
-strength:
+directionOfEvidenceProvided: supports
+strengthOfEvidenceProvided:
   type: MappableConcept
   primaryCoding:
     code: B

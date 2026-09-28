@@ -12,13 +12,6 @@ code
 .. include::  ../def/va-spec/code.rst
 
 
-.. _iriReference:
-
-iriReference
-************
-
-.. include::  ../def/va-spec/iriReference.rst
-
 .. _date:
 
 date
@@ -33,3 +26,11 @@ datetime
 ********
 
 .. include::  ../def/va-spec/datetime.rst
+
+
+.. _iriReference:
+
+iriReference
+************
+
+.. include::  ../def/va-spec/iriReference.rst

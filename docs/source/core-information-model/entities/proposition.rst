@@ -33,7 +33,7 @@ Propositions are abstract representations of possible facts about a domain of di
 A proposition itself makes no claim as to whether the sentiment it expresses is true or not - its job is simply to convey the sharable meaning of a possible fact in a structured data object. Such propositions can then be referenced and reused by **Statements** and **Evidence Lines**, which make assertions about them. Specifically:
 
  - **Statements** may report that a proposition was asserted by a particular agent to be true or false, or may report the overall strength of confidence or evidence supporting or disputing a proposition for which a definitive assertion cannot yet be made. Such Statements are based on the agent's interpretation of evidence as providing discrete argument(s) for or against the proposition.
- - **Evidence Lines** represent each such discrete evidence-based argument. An Evidence Line is itself a Statement, attached to the Statement it argues about via ``hasEvidenceLines``; it reports that a particular collection of information (evidence items) was assessed and scored as evidence to support or dispute some target proposition. It is typically through the assessment of several distinct Evidence Lines that a particular Proposition is ultimately asserted to be true or false in a Statement.
+ - **Evidence Lines** represent each such discrete evidence-based argument. An :ref:`Evidence Line <EvidenceLine>`, attached to the Statement it argues about via ``hasEvidenceLines``, reports that a particular collection of information (evidence items) was assessed and scored as evidence to support or dispute some target proposition. It is typically through the assessment of several distinct Evidence Lines that a particular Proposition is ultimately asserted to be true or false in a Statement.
 
 -----
 
@@ -50,10 +50,10 @@ The example below illustrates how such a scenario may be represented using the V
  # Note that values in this example are reported in shorthand form for human readability.
  # In actual VA-Spec data, many values would be wrapped in complex data type structures such as MappableConcepts.
 
-   # As a proposition in a Statement used as an Evidence Line, based on functional impact data, created at t0 by Curator 1
+   # As the target proposition of an Evidence Line, based on functional impact data, created at t0 by Curator 1
    id: EvidenceLine001
-   type: Statement
-   proposition:
+   type: EvidenceLine
+   targetProposition:
      id: VarPathProposition001
      type: VariantPathogenicityProposition
      subject: NM_005343.4:c.173C>T
@@ -61,20 +61,20 @@ The example below illustrates how such a scenario may be represented using the V
      object: Costello Syndrome
      geneContextQualifier: HRAS
    hasEvidenceItems: FunctionalImpactStudyResult001       # full StudyResult object omitted for space
-   direction: supports
-   strength: moderate
-   outcome: PM1                                           # the ACMG criterion code this evidence line reports (bare code = met at the criterion's default strength)
-   specifiedBy: mutational_hot_spot_and_functional_domain_assessment   # the ACMG method type, which constrains the codes 'outcome' may use
+   directionOfEvidenceProvided: supports
+   strengthOfEvidenceProvided: moderate
+   evidenceOutcome: PM1                                   # the ACMG criterion code this evidence line reports (bare code = met at the criterion's default strength)
+   specifiedBy: mutational_hot_spot_and_functional_domain_assessment   # the ACMG method type, which constrains the codes 'evidenceOutcome' may use
 
-   # As a proposition in a Statement used as an Evidence Line, based on cohort allele frequency data, created at t1 by Curator 2
+   # As the target proposition of an Evidence Line, based on cohort allele frequency data, created at t1 by Curator 2
    id: EvidenceLine002
-   type: Statement
-   proposition: VarPathProposition001    # no need to duplicate an inlined representation, as this Proposition is already defined in the message.
+   type: EvidenceLine
+   targetProposition: VarPathProposition001    # no need to duplicate an inlined representation, as this Proposition is already defined in the message.
    hasEvidenceItems: AlleleCohortFrequencyStudyResult001   # full StudyResult object omitted for space
-   direction: supports
-   strength: moderate
-   outcome: PM2                              # the ACMG criterion code this evidence line reports
-   specifiedBy: population_data_assessment   # the ACMG method type, which constrains the codes 'outcome' may use
+   directionOfEvidenceProvided: supports
+   strengthOfEvidenceProvided: moderate
+   evidenceOutcome: PM2                      # the ACMG criterion code this evidence line reports
+   specifiedBy: population_data_assessment   # the ACMG method type, which constrains the codes 'evidenceOutcome' may use
 
    # As an asserted proposition in a VariantPathogenicityStatement, created at t2 by Curator 3 who puts forth the proposition as true and classifies the variant as 'pathogenic' based on the Evidence Lines above
    id: Statement001

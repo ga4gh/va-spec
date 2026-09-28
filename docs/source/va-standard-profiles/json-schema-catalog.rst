@@ -24,20 +24,20 @@ To facilitate developer access to these key resources, we provide this central c
  - |pathogenicity_statement_json_schema| (ACMG-2015)
  - |oncogenicity_study_statement_json_schema| (CCV-2022)
  - |variant_clinical_significance_statement_json_schema| (AAC-2017)
- - |amp_asco_cap_statement_json_schema| (AAC-2017) -- the shared base composed by the three AAC-2017 evidence-line profiles below
 
 **Evidence Line Community Profiles:**
 
-These profiles constrain the core **Statement** class for use as an :ref:`Evidence Line <EvidenceLine>`.
+These profiles constrain the core :ref:`EvidenceLine` class.
 
+ - |amp_asco_cap_evidence_line_json_schema| (AAC-2017) -- the shared base composed by the three AAC-2017 evidence-line profiles below
  - |pathogenicity_evidence_line_json_schema| (ACMG-2015)
  - |oncogenicity_evidence_line_json_schema| (CCV-2022)
- - |diagnostic_statement_json_schema| (AAC-2017)
- - |prognostic_statement_json_schema| (AAC-2017)
- - |therapeutic_statement_json_schema| (AAC-2017)
+ - |diagnostic_evidence_line_json_schema| (AAC-2017)
+ - |prognostic_evidence_line_json_schema| (AAC-2017)
+ - |therapeutic_evidence_line_json_schema| (AAC-2017)
 
 -------
 
 JSON schema for **concrete VA Core classes** that can also be used to create and validate data are housed in the directory here: |core_class_json_schema_files|.
 
-This includes schema for the **Statement** class that is the basis for all constraint-based Community Profiles - both those describing Statements proper and those describing Statements used as Evidence Lines - as well as schema for **Method**, **Document**, **Data Set**, **Contribution**, and **Agent** classes that support provenance representations within all Profiles.
+This includes schema for the **Statement** and **EvidenceLine** classes that are the basis for all constraint-based Community Profiles - both those describing Statements and those describing Evidence Lines - as well as schema for **Method**, **Document**, **Data Set**, **Contribution**, and **Agent** classes that support provenance representations within all Profiles.

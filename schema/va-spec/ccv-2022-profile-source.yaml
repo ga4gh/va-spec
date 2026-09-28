@@ -51,7 +51,7 @@ $defs:
                           - likely
                       system:
                         const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
-          outcome:
+          classification:
             properties:
               primaryCoding:
                 allOf:
@@ -77,7 +77,7 @@ $defs:
                 - $ref: "#/$defs/VariantOncogenicityEvidenceLine"
                 - $refCurie: gkm.core:iriReference
         required:
-          - outcome
+          - classification
           - specifiedBy
 
   VariantOncogenicityEvidenceLine:
@@ -91,9 +91,9 @@ $defs:
       (e.g. 'OM2') with a default strength (e.g. 'moderate') is 'met' or 'not met', and in some cases adjusting the
       default strength based on the quality and abundance of evidence.
     allOf:
-      - $refCurie: va-spec:Statement
+      - $refCurie: va-spec:EvidenceLine
       - properties:
-          proposition:
+          targetProposition:
             description: >-
               A Variant Oncogenicity Proposition against which a specific type of evidence was assessed, to
               determine the strength and direction of support this evidence provides for or against the
@@ -101,7 +101,7 @@ $defs:
             oneOf:
               - $refCurie: va-spec:VariantOncogenicityProposition
               - $refCurie: gkm.core:iriReference
-          strength:
+          strengthOfEvidenceProvided:
             description: >-
               The strength of support that an Evidence Line is determined to provide for or against the proposed
               oncogenicity of the assessed variant. Strength is evaluated relative to the direction indicated by
@@ -181,7 +181,7 @@ $defs:
             required:
               - methodType
               - reportedIn
-          outcome:
+          evidenceOutcome:
             description: >-
               The evidence outcome provides a single string that summarizes 'direction' and
               'strength' assessments, along with the specific CCV criterion used in these assessments.
@@ -203,11 +203,11 @@ $defs:
                   const: ClinGen/CGC/VICC Guidelines for Oncogenicity, 2022
       - if:
           properties:
-            direction:
+            directionOfEvidenceProvided:
               enum: [supports, disputes]
-          required: [direction]
+          required: [directionOfEvidenceProvided]
         then:
-          required: [strength]
+          required: [strengthOfEvidenceProvided]
       - if:
           properties:
             specifiedBy:
@@ -218,7 +218,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -234,7 +234,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -250,7 +250,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -266,7 +266,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -282,7 +282,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -298,7 +298,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -314,7 +314,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -330,7 +330,7 @@ $defs:
           required: [specifiedBy]
         then:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -338,7 +338,7 @@ $defs:
                       pattern: "^(?:no_criteria_met|OP2(_.+)?)$"
       - if:
           properties:
-            outcome:
+            evidenceOutcome:
               properties:
                 primaryCoding:
                   properties:
@@ -346,13 +346,13 @@ $defs:
                       pattern: "^(?:no_criteria_met|(?:[A-Z]+[0-9]+)_not_met)$"
                   required: [code]
               required: [primaryCoding]
-          required: [outcome]
+          required: [evidenceOutcome]
         then:
           properties:
-            direction:
+            directionOfEvidenceProvided:
               const: neutral
           not:
-            required: [strength]
+            required: [strengthOfEvidenceProvided]
     required:
-      - direction
+      - directionOfEvidenceProvided
       - specifiedBy

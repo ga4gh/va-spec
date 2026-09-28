@@ -20,17 +20,17 @@ two_co-occurring_phenotypes = tests/fixtures/conditionset.yaml
 nonsyndromic_genetic_hearing_loss = tests/fixtures/VA-ClinVar-SCV-Example-002.yaml#L7
 discrete_allele = tests/fixtures/allele.yaml
 
-variant_clinical_significance_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L71
+variant_clinical_significance_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L79
 variant_clinical_significance_statement_json_schema = schema/va-spec/json/aac-2017/VariantClinicalSignificanceStatement
 
-amp_asco_cap_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L18
-amp_asco_cap_statement_json_schema = schema/va-spec/json/aac-2017/AmpAscoCapStatement
-diagnostic_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L51
-diagnostic_statement_json_schema = schema/va-spec/json/aac-2017/DiagnosticStatement
-prognostic_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L41
-prognostic_statement_json_schema = schema/va-spec/json/aac-2017/PrognosticStatement
-therapeutic_statement_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L61
-therapeutic_statement_json_schema = schema/va-spec/json/aac-2017/TherapeuticStatement
+amp_asco_cap_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L18
+amp_asco_cap_evidence_line_json_schema = schema/va-spec/json/aac-2017/AmpAscoCapEvidenceLine
+diagnostic_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L55
+diagnostic_evidence_line_json_schema = schema/va-spec/json/aac-2017/DiagnosticEvidenceLine
+prognostic_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L42
+prognostic_evidence_line_json_schema = schema/va-spec/json/aac-2017/PrognosticEvidenceLine
+therapeutic_evidence_line_source_yaml = schema/va-spec/aac-2017-profile-source.yaml#L67
+therapeutic_evidence_line_json_schema = schema/va-spec/json/aac-2017/TherapeuticEvidenceLine
 
 pathogenicity_proposition_source_yaml = schema/va-spec/va-spec-source.yaml#L841
 pathogenicity_proposition_json_schema = schema/va-spec/json/VariantPathogenicityProposition

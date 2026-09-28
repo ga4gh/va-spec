@@ -44,27 +44,6 @@ Below we detail how different types of Domain Entities relevant to variant knowl
 
 Future versions of the VA-Spec may incorporate richer models for other Domain Entity types as suitable community standards emerge.
 
-.. _Variation:
-
-Variation
-@@@@@@@@@
-
-**Computational Definition**
-
-Variation subjects of VA knowledge may be discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes; or intensionally defined categories or sets of variations, based on criteria that must be met for inclusion in a given set (e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions").
-
-**Information Model**
-
-To represent these diverse types of variation, the VA-Spec imports two complementary GKM standards:
-
-  - The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers.
-
-  - The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts.
-
-**Examples**
-  - A |discrete_allele| as a VRS object
-  - A :cat_vrs_source:`Canonical Allele<examples/canonicalAllele-ex1.yaml>` as a Cat-VRS object
-
 .. _Condition:
 
 Condition
@@ -104,6 +83,21 @@ Condition Set
        - In such cases, it would be misleading to create separate statements about each condition on its own.
        - Conditions in such groups are typically related in their etiology or manifestation, and patients are pooled to make a single cohort that is large enough support a statistically significant results about this grouping of related conditions.
 
+.. _Gene:
+
+Gene
+@@@@
+
+**Computational Definition**
+
+A gene is a region (or regions) of genetic sequence that includes all of the elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions. (From SO:0000704)
+
+**Information Model**
+
+No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
+
+**Examples**
+  - :gkm_core_source:`BRCA2 <examples/mappable-concept-gene.yaml>` as a MappableConcept
 
 .. _Therapy:
 
@@ -139,23 +133,26 @@ At present, the VA-Spec includes  a ``TherapyGroup`` schema for representing gro
       - Therapies in such groups are typically related in their treatment mechanism (e.g. members of the same drug class), and recipients are pooled to make a single cohort that is large enough support a statistically significant results about that class of treatments.
       - Future iterations of the VA-Spec may support representation of these categorical groupings of therapies, but for now we capture the individual therapies used in the study in a TherapyGroup.
 
+.. _Variation:
 
-.. _Gene:
-
-Gene
-@@@@
+Variation
+@@@@@@@@@
 
 **Computational Definition**
 
-A gene is a region (or regions) of genetic sequence that includes all of the elements necessary to encode a functional transcript. A gene may include regulatory regions, transcribed regions and/or other functional sequence regions. (From SO:0000704)
+Variation subjects of VA knowledge may be discrete instances of sequence variation in a specified context (reference, location, state) - which may include single continuous alleles, haplotypes, genotypes, and copy number changes; or intensionally defined categories or sets of variations, based on criteria that must be met for inclusion in a given set (e.g. "BRAF V600 mutations", or "EGFR exon 19 deletions").
 
 **Information Model**
 
-No dedicated class or schema is defined for Genes at present. Rather, individual genes are referenced in data using an :ref:`IRI Reference <iriReference>` or a :ref:`Mappable Concept <mappable-concept>` that captures a code or name for the gene, along with optional mappings and metadata about the code system
+To represent these diverse types of variation, the VA-Spec imports two complementary GKM standards:
+
+  - The `GA4GH Variant Representation Specification (VRS) <https://vrs.ga4gh.org/en/latest/index.html>`_, which provides JSON Schema for representing many classes of discrete genetic variation, and tools for generating globally-unique computed variant identifiers.
+
+  - The `GA4GH Categorical Variation Representation Specification (Cat-VRS) <https://github.com/ga4gh/cat-vrs?tab=readme-ov-file>`_, which is built on top of VRS and provides a terminology and data model for describing 'categorical' variation concepts.
 
 **Examples**
-  - :gkm_core_source:`BRCA2 <examples/mappable-concept-gene.yaml>` as a MappableConcept
-
+  - A |discrete_allele| as a VRS object
+  - A :cat_vrs_source:`Canonical Allele<examples/canonicalAllele-ex1.yaml>` as a Cat-VRS object
 
 -----------
 
