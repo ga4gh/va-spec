@@ -135,7 +135,7 @@ A few additional notes about this example:
       name: ACMG 2015 PM2 Criterion Met  # and 'PM2_not_met' that the criterion was assessed but not met).
     specifiedBy:              # holds a Method object describing guidelines followed in generating the evidence assessment in this Evidence Line
       type: Method
-      methodType: population_data_assessment   # names the kind of evidence assessed; constrains which ACMG codes the 'outcome' may use
+      methodType: population_data_assessment   # names the kind of evidence assessed; constrains which ACMG codes the 'evidenceOutcome' may use
       name: ClinGen Hearing Loss Expert Panel Specifications to the ACMG/AMP Variant Interpretation Guidelines
       reportedIn:             # a document that describes the Method (this is all we are given about this Method in the source data)
         type: Document

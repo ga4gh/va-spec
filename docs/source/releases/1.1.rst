@@ -96,7 +96,7 @@ renaming, so the model has been made consistent with that rule:
     them: :ref:`Contribution`.contributor,
     :ref:`VariantPathogenicityProposition`.modeOfInheritanceQualifier/
     .penetranceQualifier, :ref:`Statement`.proposition/
-    .strength/.outcome/.quality, :ref:`StudyResult`.sourceDataSet
+    .strength/.classification/.quality, :ref:`StudyResult`.sourceDataSet
     (and the :ref:`ComputationalVariantFunctionalImpactAnalysisResult`
     subclass, which redeclares it), :ref:`CohortAlleleFrequencyStudyResult`.cohort,
     :ref:`TumorVariantFrequencyStudyResult` (*draft*).sampleGroup, :ref:`DataSet`.license,
