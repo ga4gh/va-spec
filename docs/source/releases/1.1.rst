@@ -81,7 +81,7 @@ renaming, so the model has been made consistent with that rule:
     :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
     ``oneOf`` of their built-in subtypes. Being open means a reference to one of
     these bases is not restricted to the schema's own subtypes and -- as with any
-    abstract class -- carries no ``additionalProperties: false``, so any object
+    sealed and abstract class -- carries no ``additionalProperties: false``, so any object
     that satisfies the base's required properties validates against it, including
     subclasses the schema does not itself declare (see the
     :ref:`metaschema appendix <gkm-metaschema>` for how open vs. closed is

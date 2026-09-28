@@ -60,6 +60,11 @@ expands, applying a consistent set of conventions across every GKM specification
   - **``sealed: true``**, meaningful only on an abstract class, auto-derives a closed
     ``oneOf`` over that class's concrete descendants, so reference sites are restricted to
     the schema's own known subtypes rather than staying open to implementer-defined ones.
+    A sealed class is still abstract, so it too carries no ``additionalProperties: false``
+    -- what closes it is the derived ``oneOf``, not a property-level restriction. VA-Spec's
+    own sources declare no sealed classes (``Proposition``/``StudyResult`` are left open);
+    the imported ``vrs``/``cat-vrs`` modules do (e.g. ``Variation``, ``Location``,
+    ``Constraint``).
   - **Properties and ``required`` are inherited directly** through a class's ``inherits:``
     chain -- there is no separate ``heritableProperties``/``heritableRequired`` mechanism,
     and no ``extends:`` keyword. A subclass specializes an inherited property by
