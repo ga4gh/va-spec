@@ -44,13 +44,19 @@ Authoring Conventions the Processor Understands
 The authoring YAML is not raw JSON Schema; it's a more compact format that the processor
 expands, applying a consistent set of conventions across every GKM specification:
 
-  - **``abstract: true``** marks a class as abstract and left *open* (no
-    ``additionalProperties: false`` injected), so a ``$ref``/``$refCurie`` to it validates
-    any structurally-conforming subclass -- including ones the schema itself doesn't
-    declare. Every other class is concrete and *closed*: the processor injects
-    ``additionalProperties: false`` (or ``unevaluatedProperties: false`` for classes
-    composed via ``allOf``/``anyOf``/``oneOf``) automatically, and there's no need to write
-    ``type: object`` explicitly -- the processor adds it.
+  - **``abstract: true``** marks a class as abstract and left *open*. ``abstract`` is an
+    authoring/annotation keyword, **not** part of the JSON Schema validation vocabulary --
+    a generic validator ignores it; its only effect is to tell the processor **not** to
+    inject the ``additionalProperties: false`` it adds to concrete classes. That omission
+    is what a validator actually enforces as "openness": with no
+    ``additionalProperties: false``, JSON Schema's default (additional properties are
+    allowed) applies, so a ``$ref``/``$refCurie`` to the class validates any object that
+    carries its required properties -- plus whatever extra fields a subclass adds,
+    including subclasses the schema itself never declares. Every other class is concrete
+    and *closed*: the processor injects ``additionalProperties: false`` (or
+    ``unevaluatedProperties: false`` for classes composed via ``allOf``/``anyOf``/``oneOf``)
+    automatically, and there's no need to write ``type: object`` explicitly -- the
+    processor adds it.
   - **``sealed: true``**, meaningful only on an abstract class, auto-derives a closed
     ``oneOf`` over that class's concrete descendants, so reference sites are restricted to
     the schema's own known subtypes rather than staying open to implementer-defined ones.

@@ -264,7 +264,8 @@ do not, by themselves, change the meaning of VA-Spec data:
     :ref:`MappableConcept`, which requires at least one of ``name`` or
     ``primaryCoding``).
   * adopts the 0.4.x source conventions in every VA-Spec module source: abstract
-    classes are marked ``abstract: true`` (and are left open), concrete classes
+    classes are marked ``abstract: true`` (left open by omitting
+    ``additionalProperties: false``), concrete classes
     are closed and drop the explicit ``type: object`` (the processor injects
     it), ``heritableProperties`` / ``heritableRequired`` become plain
     ``properties`` / ``required`` on abstract bases, and the removed ``extends:``
