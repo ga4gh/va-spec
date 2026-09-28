@@ -5,7 +5,7 @@
 
 **Computational Definition**
 
-Diagnostic statement for AMP/ASCO/CAP
+Diagnostic evidence line for AMP/ASCO/CAP
 
 **Information Model**
 

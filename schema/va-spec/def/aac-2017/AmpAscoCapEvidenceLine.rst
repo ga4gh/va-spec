@@ -5,7 +5,7 @@
 
 **Computational Definition**
 
-General statement for AMP/ASCO/CAP
+General evidence line for AMP/ASCO/CAP
 
 **Information Model**
 

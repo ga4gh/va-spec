@@ -66,7 +66,7 @@ Here we describe the technical mechanism and syntax used to define VA Profiles. 
 **Subclass-Based Authoring of Base Profiles**:
 
 - **Mechanism**: Specializes generic VA core classes for a particular type of knowledge, through formal definition of concrete subclasses.
-- **Syntax**: Relies on `GKM Metaschema Processor <https://github.com/ga4gh/gks-metaschema>`_  ``inherits`` keyword and requisite tooling to implement class inheritance which is not natively supported by JSON Schema.
+- **Syntax**: Relies on `GKM Metaschema Processor <https://github.com/ga4gh/gkm-metaschema>`_  ``inherits`` keyword and requisite tooling to implement class inheritance which is not natively supported by JSON Schema.
 - **Application**: Used in authoring "Base Profiles" for  :ref:`Propositions <proposition-profiles>` and :ref:`Study Results <study-result-profiles>`, which can be used/referenced within Statement profiles.
 - **Rationale**: Allows for the types of attribute extension and addition that are applied in these Base Profiles (e.g. to specialize Proposition ``subject`` and ``object`` attributes, and create specific Proposition qualifiers and StudyResult data items)
 - **Example**:
