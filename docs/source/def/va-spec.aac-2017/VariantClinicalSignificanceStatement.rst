@@ -113,7 +113,7 @@ A statement reporting a conclusion from a single study about the clinical signif
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
-      - A single term or phrase classifying the subject variant based on the outcome of direction and strength assessments of the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.
+      - A single term or phrase classifying the subject variant based on the result of direction and strength assessments of the Statement's Proposition, using terms from the AMP/ASCO/CAP 2017 Guidelines.
    *  - hasEvidence
       -
                         .. raw:: html

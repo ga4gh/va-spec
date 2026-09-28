@@ -113,7 +113,7 @@ A statement reporting a conclusion from a single study about whether a variant i
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 1..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
+      - A single term or phrase summarizing the result of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
    *  - hasEvidence
       -
                         .. raw:: html

@@ -501,7 +501,7 @@ $defs:
           - $refCurie: gkm.core:MappableConcept
           - $refCurie: gkm.core:iriReference
         description: >-
-          A single term or phrase summarizing the outcome of direction and strength
+          A single term or phrase summarizing the result of direction and strength
           assessments of a Statement's Proposition, in terms of a classification of
           its subject.
         $comment: >-

@@ -114,7 +114,7 @@ Some Statement attributes are inherited from :ref:`InformationEntity`.
       -
       - :ref:`MappableConcept` | :ref:`iriReference`
       - 0..1
-      - A single term or phrase summarizing the outcome of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
+      - A single term or phrase summarizing the result of direction and strength assessments of a Statement's Proposition, in terms of a classification of its subject.
    *  - hasEvidence
       -
                         .. raw:: html
