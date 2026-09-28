@@ -141,9 +141,9 @@
     { from:'EvidenceLine', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution MIDDLE
       pts:function(E,K){ return [[E.r,K.cy],[K.l,K.cy]]; },
       lab:function(E,K){ return {x:(E.r+K.l)/2, y:K.cy-11}; } },
-    { from:'EvidenceLine', to:'Document', role:'reportedIn', card:'0..m',  // into Document TOP
-      pts:function(E,D){ var y=E.b-24; var lx=D.r+44; return [[E.l,y],[lx,y],[lx,D.t+15],[D.r,D.t+15]]; },
-      lab:function(E,D){ return {x:D.r+44, y:(E.b-24+D.t+15)/2}; } },
+    { from:'EvidenceLine', to:'Document', role:'reportedIn', card:'0..m',  // down into Document's TOP edge
+      pts:function(E,D){ var y=E.b-24; var tx=D.cx-20; return [[E.l,y],[tx,y],[tx,D.t]]; },
+      lab:function(E,D){ return {x:D.cx-20, y:(E.b-24+D.t)/2}; } },
     { from:'EvidenceLine', to:'StudyResult', role:'hasEvidenceItems', card:'0..m',
       pts:function(E,R){ return [[E.cx,E.b],[R.cx,R.t]]; },
       lab:function(E,R){ return {x:E.cx+2, y:(E.b+R.t)/2}; } },
@@ -156,7 +156,7 @@
       lab:function(R,K){ return {x:K.l-46, y:(R.t+24+K.b-15)/2}; } },
     { from:'StudyResult', to:'Method', role:'specifiedBy', card:'0..1',  // drops below Document, then up the far-left lane into Method
       pts:function(R,M){ var y=R.b+12; var fx=M.l-24; return [[R.cx-38,R.b],[R.cx-38,y],[fx,y],[fx,M.cy],[M.l,M.cy]]; },
-      lab:function(R,M){ return {x:(R.cx-38+M.l)/2-6, y:R.b+12-10}; } },
+      lab:function(R,M){ return {x:M.r+66, y:R.b+2}; } },
     { from:'Contribution', to:'Agent', role:'contributor', card:'0..1',
       pts:function(K,A){ return [[K.cx,K.b],[A.cx,A.t]]; },
       lab:function(K,A){ return {x:K.cx+2, y:(K.b+A.t)/2}; } }

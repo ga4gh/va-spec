@@ -143,12 +143,12 @@
     { from:'Statement', to:'Method', role:'specifiedBy', card:'0..1',   // straight, uninterrupted
       pts:function(S,M){ return [[S.l,M.cy],[M.r,M.cy]]; },
       lab:function(S,M){ return {x:(S.l+M.r)/2, y:M.cy-11}; } },
-    { from:'Statement', to:'Document', role:'reportedIn', card:'0..m',  // into Document TOP
-      pts:function(S,D){ var y=S.b-28; var lx=D.r+70; return [[S.l,y],[lx,y],[lx,D.t+16],[D.r,D.t+16]]; },
-      lab:function(S,D){ return {x:D.r+70, y:(S.b-28+D.t+16)/2}; } },
-    { from:'Statement', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution TOP
-      pts:function(S,K){ var y=S.b-28; var rx=K.l-100; return [[S.r,y],[rx,y],[rx,K.t+16],[K.l,K.t+16]]; },
-      lab:function(S,K){ return {x:K.l-100, y:(S.b-28+K.t+16)/2}; } },
+    { from:'Statement', to:'Document', role:'reportedIn', card:'0..m',  // down into Document's TOP edge
+      pts:function(S,D){ var y=S.b-28; var tx=D.cx-22; return [[S.l,y],[tx,y],[tx,D.t]]; },
+      lab:function(S,D){ return {x:D.cx-22, y:(S.b-28+D.t)/2}; } },
+    { from:'Statement', to:'Contribution', role:'contributions', card:'0..m',  // down into Contribution's TOP edge
+      pts:function(S,K){ var y=S.b-28; var tx=K.cx-22; return [[S.r,y],[tx,y],[tx,K.t]]; },
+      lab:function(S,K){ return {x:K.cx-22, y:(S.b-28+K.t)/2}; } },
     { from:'Statement', to:'EvidenceLine', role:'hasEvidenceLines', card:'0..m',
       pts:function(S,E){ return [[S.cx,S.b],[E.cx,E.t]]; },
       lab:function(S,E){ return {x:S.cx+2, y:(S.b+E.t)/2}; } },
@@ -156,9 +156,9 @@
       pts:function(S,R){ var y=S.t+18; var fx=CANVAS_R-14; return [[S.r,y],[fx,y],[fx,R.cy],[R.r,R.cy]]; },
       lab:function(S,R){ return {x:(S.r+CANVAS_R-14)/2, y:S.t+9}; } },
     // --- Evidence Line (middle, horizontally aligned with Document & Contribution) ---
-    { from:'EvidenceLine', to:'Document', role:'reportedIn', card:'0..m',
+    { from:'EvidenceLine', to:'Document', role:'reportedIn', card:'0..m',  // into Document's RIGHT edge
       pts:function(E,D){ return [[E.l,E.cy],[D.r,E.cy]]; },
-      lab:function(E,D){ return {x:D.r+82, y:E.cy-11}; } },
+      lab:function(E,D){ return {x:(D.r+E.l)/2, y:E.cy-11}; } },
     { from:'EvidenceLine', to:'Contribution', role:'contributions', card:'0..m',
       pts:function(E,K){ return [[E.r,E.cy],[K.l,E.cy]]; },
       lab:function(E,K){ return {x:K.l-82, y:E.cy-11}; } },
@@ -166,12 +166,12 @@
       pts:function(E,R){ return [[E.cx,E.b],[R.cx,R.t]]; },
       lab:function(E,R){ return {x:E.cx+2, y:(E.b+R.t)/2}; } },
     // --- InformationEntity (bottom) ---
-    { from:'StudyResult', to:'Document', role:'reportedIn', card:'0..m',  // into Document BOTTOM
-      pts:function(R,D){ var y=R.t+26; var lx=D.r+70; return [[R.l,y],[lx,y],[lx,D.b-16],[D.r,D.b-16]]; },
-      lab:function(R,D){ return {x:D.r+70, y:(R.t+26+D.b-16)/2}; } },
-    { from:'StudyResult', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution BOTTOM
-      pts:function(R,K){ var y=R.t+26; var rx=K.l-100; return [[R.r,y],[rx,y],[rx,K.b-16],[K.l,K.b-16]]; },
-      lab:function(R,K){ return {x:K.l-100, y:(R.t+26+K.b-16)/2}; } },
+    { from:'StudyResult', to:'Document', role:'reportedIn', card:'0..m',  // up into Document's BOTTOM edge
+      pts:function(R,D){ var y=R.t+26; var bx=D.cx+22; return [[R.l,y],[bx,y],[bx,D.b]]; },
+      lab:function(R,D){ return {x:D.cx+22, y:(R.t+26+D.b)/2}; } },
+    { from:'StudyResult', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution's lower-LEFT edge
+      pts:function(R,K){ var y=R.t+26; var rx=K.l-64; return [[R.r,y],[rx,y],[rx,K.b-16],[K.l,K.b-16]]; },
+      lab:function(R,K){ return {x:K.l-64, y:(R.t+26+K.b-16)/2}; } },
     { from:'StudyResult', to:'Method', role:'specifiedBy', card:'0..1',  // starts below reportedIn, around Document, into Method
       pts:function(R,M){ var y=R.b-26; var fx=M.l-26; return [[R.l,y],[fx,y],[fx,M.cy],[M.l,M.cy]]; },
       lab:function(R,M){ return {x:(R.l+M.l)/2+18, y:R.b-26-11}; } },
