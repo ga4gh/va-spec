@@ -5,7 +5,7 @@
 
 **Computational Definition**
 
-Therapeutic statement for AMP/ASCO/CAP
+Therapeutic evidence line for AMP/ASCO/CAP
 
 **Information Model**
 

@@ -5,7 +5,7 @@
 
 **Computational Definition**
 
-Prognostic statement for AMP/ASCO/CAP
+Prognostic evidence line for AMP/ASCO/CAP
 
 **Information Model**
 

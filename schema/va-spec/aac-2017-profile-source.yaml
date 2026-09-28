@@ -17,7 +17,7 @@ namespaces:
 $defs:
   AmpAscoCapEvidenceLine:
     maturity: draft
-    description: General statement for AMP/ASCO/CAP
+    description: General evidence line for AMP/ASCO/CAP
     allOf:
       - $refCurie: va-spec:EvidenceLine
       - properties:
@@ -41,7 +41,7 @@ $defs:
 
   PrognosticEvidenceLine:
     maturity: draft
-    description: Prognostic statement for AMP/ASCO/CAP
+    description: Prognostic evidence line for AMP/ASCO/CAP
     allOf:
       - $ref: "#/$defs/AmpAscoCapEvidenceLine"
       - properties:
@@ -54,7 +54,7 @@ $defs:
 
   DiagnosticEvidenceLine:
     maturity: draft
-    description: Diagnostic statement for AMP/ASCO/CAP
+    description: Diagnostic evidence line for AMP/ASCO/CAP
     allOf:
       - $ref: "#/$defs/AmpAscoCapEvidenceLine"
       - properties:
@@ -66,7 +66,7 @@ $defs:
 
   TherapeuticEvidenceLine:
     maturity: draft
-    description: Therapeutic statement for AMP/ASCO/CAP
+    description: Therapeutic evidence line for AMP/ASCO/CAP
     allOf:
       - $ref: "#/$defs/AmpAscoCapEvidenceLine"
       - properties:
