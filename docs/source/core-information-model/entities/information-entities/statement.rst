@@ -28,7 +28,7 @@ In this structure:
 * A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more :ref:`Evidence Lines <EvidenceLine>` - discrete arguments for or against it - and/or, via ``hasEvidence``, directly to any information used as evidence.
 * Each Evidence Line may in turn be linked, via ``hasEvidenceItems``, to zero or more pieces of information (e.g. **Study Results**) that were used to build its evidence-based argument.
 * The **Proposition** contained in the Statement object encapsulates a structured representation of the possible fact that the Statement may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in supporting Evidence Lines.
-* Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Activities** performed in doing so, **Methods** that specify their creation, and **Documents** that describe them.
+* Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Methods** that specify their creation, and **Documents** that describe them.
 
 A data example illustrating this structure for a Variant Pathogenicity Statement can be found :ref:`here <acmg-variant-pathogenicity-statement-example-with-evidence>`.
 

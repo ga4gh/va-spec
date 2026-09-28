@@ -3,7 +3,7 @@
 Community Profiles
 !!!!!!!!!!!!!!!!!!
 
-Version 1 of the VA-Spec includes Community Profiles aligned with three established variant interpretation guidelines. Each profile constrains the core :ref:`Statement <Statement>` class -- some describing Statements proper, and others describing Statements used as :ref:`Evidence Lines <EvidenceLine>`:
+Version 1 of the VA-Spec includes Community Profiles aligned with three established variant interpretation guidelines. Each profile constrains a core class -- some describing :ref:`Statements <Statement>` proper, and others describing :ref:`Evidence Lines <EvidenceLine>`:
 
  - the `ACMG 2015 Pathogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/25741868/>`_
  - the `ClinGen/CGC/VICC (CCV) 2022 Oncogenicity Interpretation Guidelines <https://pubmed.ncbi.nlm.nih.gov/35101336/>`_

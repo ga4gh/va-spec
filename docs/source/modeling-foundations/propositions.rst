@@ -25,7 +25,7 @@ Legend: **Left panel (Model).** Abridged version of the Variant Pathogenicity St
 Propositions in Evidence Lines
 ##############################
 
-In a **Statement** used as an **Evidence Line**, the ``proposition`` attribute captures the possible fact toward which **Evidence Items** are assessed and scored (e.g. that a gnomAD population frequency evidence item is evaluated toward the proposition that *"SOS1:c.3322G>A is causal for RASopathy"* when assessing the evidence as providing *strong* support *against* it). An example of a *Proposition** in this role is illustrated below.
+In an **Evidence Line**, the ``targetProposition`` attribute captures the possible fact toward which **Evidence Items** are assessed and scored (e.g. that a gnomAD population frequency evidence item is evaluated toward the proposition that *"SOS1:c.3322G>A is causal for RASopathy"* when assessing the evidence as providing *strong* support *against* it). An example of a *Proposition** in this role is illustrated below.
 
 .. raw:: html
 
