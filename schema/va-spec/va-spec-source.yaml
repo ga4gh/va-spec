@@ -455,7 +455,9 @@ $defs:
         ordered: false
         items:
           anyOf:
-            - $ref: "#/$defs/InformationEntity"
+            - $ref: "#/$defs/Statement"
+            - $ref: "#/$defs/StudyResult"
+            - $ref: "#/$defs/DataItem"
             - $refCurie: gkm.core:iriReference
         description: >-
           An individual piece of information that was evaluated as evidence in assessing the validity of the
@@ -466,10 +468,11 @@ $defs:
           without organizing it into discrete Evidence Lines (see ``hasEvidenceLines`` for the alternative, more
           structured approach of grouping evidence into scored, directional arguments).
 
-          Any Information Entity can serve as evidence (a Study Result, Data Item, prior Statement, Evidence Line,
-          etc.) Only when assessed as evidence do we consider the information to be an 'Evidence Item'. For example,
-          a piece of population frequency data about BRCA2 c.8023A>G becomes an Evidence Item when it is assessed
-          for the support it may offer for the Statement's Proposition (e.g. the prospect of the variant's
+          The information cited here as evidence may be a Study Result, Data Item, or prior Statement -- but not an
+          Evidence Line, which is attached to a Statement via ``hasEvidenceLines`` rather than as a raw piece of
+          evidence. Only when assessed as evidence do we consider the information to be an 'Evidence Item'. For
+          example, a piece of population frequency data about BRCA2 c.8023A>G becomes an Evidence Item when it is
+          assessed for the support it may offer for the Statement's Proposition (e.g. the prospect of the variant's
           pathogenicity).
       hasEvidenceLines:
         type: array
