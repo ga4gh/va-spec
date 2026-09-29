@@ -20,7 +20,7 @@ Statement Structure
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:700px; border:0;" title="Statement Data Structure"></iframe>
+   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:745px; border:0;" title="Statement Data Structure"></iframe>
 
 **Legend** A class-level view of the Statement-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 

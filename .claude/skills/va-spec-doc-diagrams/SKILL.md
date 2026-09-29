@@ -92,6 +92,30 @@ references, labeled `role` over `cardinality`.
   it clear of lanes (nudge along its segment into open space), and put loop labels in the clear gap
   **below** the boxes. When space is tight, prefer separating the lines vertically over cramming
   labels.
+- **Shared associations -> a dashed group box, not per-box duplicates.** When several boxes play the
+  same role (e.g. two Information-Entity boxes at the bottom, both bearing `specifiedBy`/`reportedIn`/
+  `contributions`), wrap them in a **dashed, no-label group** -- a `.group-frame` element with its own
+  `data-node`, sized by a `layoutGroup()` that reads the members' rects and pads them (run it after
+  `layoutBoxes()`, before `draw()`). Source the **shared** associations from the *group* edges
+  (`from:'<Group>'`) so they draw once, and keep the **distinct** associations pointing at the
+  individual inner boxes (`hasEvidence` -> the 3-class box, `hasEvidenceItems` -> the InformationEntity
+  box). This is far cleaner than duplicating a whole line-set from each box (which forces crossings and
+  line-jumps) -- reach for the group wrapper first.
+- **Separate coincident arrowheads.** Two associations into the same box edge can land on the *same*
+  point when the target is `data-cy-ref`-centred on the source's axis box (their `cy` become equal --
+  e.g. Contribution centred on EvidenceLine, so an EvidenceLine and a group line both hit `K.cy`).
+  Offset one entry by ~16px (`K.cy+16`) so the two arrowheads sit apart with a small visible gap.
+- **Union-of-classes label.** A box standing for a class *union* uses a one-line label with **no
+  spaces** around **thin, non-bold, muted** pipe separators between the bold class names
+  (`Statement|StudyResult|DataItem`). Make the box wide enough that it never wraps -- widening the
+  canvas and shifting adjacent columns left/right if needed.
+- **Offset vertical connector.** To link two vertically-stacked boxes that are horizontally offset,
+  drop a straight vertical at their x-overlap midpoint `(max(l1,l2)+min(r1,r2))/2` (it lands on one
+  box's bottom and the other's top) rather than an angled line.
+- **Narrowing / reflowing a fixed canvas.** Box positions are absolute, so to make room (or narrow the
+  figure) shift whole columns and adjust the canvas `width`. Connectors that read rects auto-adjust;
+  only the canvas `width` (which feeds `CANVAS_R` for far-side loop lanes) and any hardcoded lane
+  constants need a manual pass.
 
 ## Archetype 3 -- developer-guide structural diagram
 
@@ -106,7 +130,10 @@ sub-profiles. Simple CSS bus/fan connectors or a small SVG `drawTree`.
 Match today's generated schema even when recreating an older figure: `Activity`/`outputOf` are
 gone (provenance is `Contribution`); `specifiedBy` is `0..1`; `Statement` uses `classification`
 (not `outcome`); `EvidenceLine` is a distinct class with `evidenceOutcome`; a Study Result's group
-link is the profile-level `cohort` -> `StudyGroup` (dashed), not a base attribute. When unsure,
+link is the profile-level `cohort` -> `StudyGroup` (dashed), not a base attribute.
+`Statement.hasEvidence` is the narrow union `Statement | StudyResult | DataItem | iriReference` (NOT
+open `InformationEntity`, and NOT `EvidenceLine`); `EvidenceLine.hasEvidenceItems` accepts any
+`InformationEntity` (all four subclasses); `Statement.hasEvidenceLines` holds `EvidenceLine`. When unsure,
 read `schema/va-spec/json/<Class>` / `schema/gkm-core/json/<Class>`.
 
 ## Render / verify workflow
@@ -124,6 +151,11 @@ CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
   style="width:100%;border:0;height:NNNpx"></iframe></div>` to review at true RTD width.
 - **Measure height** at device-scale 1: scan the PNG for the last non-white row (a few lines of
   PIL); set the `.rst` iframe `height:` to that + a small buffer. Re-measure when content changes.
+- **Headless Chrome gotchas.** Screenshotting a *wrapper page that iframes* the diagram over `file://`
+  often hangs; instead screenshot the diagram file **directly** (it self-fits to the window width, so
+  `--window-size=<canvasW+40>,<tall>` approximates RTD) with an isolated `--user-data-dir=<tmp>` to
+  avoid profile locks. A timeout exit (124) still writes the PNG -- check the file size, don't assume
+  failure. To inspect a busy region, crop the PNG with a few lines of PIL rather than re-rendering.
 - **Always eyeball connectors** for crossings and labels overlaying lines/box edges; fix by nudging
   lane offsets / label anchors or separating edges -- not by widening the whole canvas.
 - After editing, `cd docs && make html` must be warning-clean; commit the `*.html` plus any changed

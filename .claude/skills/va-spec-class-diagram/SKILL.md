@@ -199,6 +199,16 @@ big color blocks, no decorative illustration. It's a diagram, not a poster.
   corner, used to show that several sibling boxes are all subclasses/shapes of one abstract parent
   (e.g. wrapping `StudyResult`/`DataItem`/`Statement «EvidenceItem»` in an `InformationEntity` frame).
   Keep the label subtle — it should read as context, not compete with the boxes it contains.
+- **`.he-targets` / `.cls.tiny`** — a small **unlabeled** dashed box holding **name-only** dashed mini
+  class boxes (`.cls.tiny` = just a `.name`, no head/body/badge), used to render the target of an
+  association that references a *union of classes* (e.g. `Statement.hasEvidence` -> `Statement`,
+  `StudyResult`, `DataItem` — every InformationEntity subclass **except** `EvidenceLine`). Place it as
+  a distinct box beside the structure (e.g. right of the `EvidenceLine` box) and point the association
+  at it, while a *different* association that legitimately accepts all subtypes (e.g.
+  `hasEvidenceItems`) still points at the full `InformationEntity` `.frame`. Prefer this separate
+  dashed box over trying to bracket a subset of an existing frame's boxes — the frame's arrowheads and
+  a subset-staple crowd each other. Absolutely-position it and route the connector to its edge in JS
+  (see `statement-evidence-example.html`'s `drawEvidence()`).
 - **`.legend`** — keep it minimal. Only call out things that aren't self-evident from the boxes
   themselves (e.g. what a dashed box means, what the badges mean). Don't legend obvious things like
   "solid box = a class."
