@@ -20,13 +20,13 @@ Statement Structure
 
 .. raw:: html
 
-   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:700px; border:0;" title="Statement Data Structure"></iframe>
+   <iframe src="../_static/diagrams/statement-data-structure.html" style="width:100%; height:745px; border:0;" title="Statement Data Structure"></iframe>
 
 **Legend** A class-level view of the Statement-based structure supported in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture, here in the case of a Variant Pathogenicity Statement supported by Population Allele Frequency evidence.
 
 In this structure:
 
-* A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more :ref:`Evidence Lines <EvidenceLine>` -- discrete, scored arguments for or against it -- and/or, via ``hasEvidence``, directly to any information (an :ref:`Information Entity <InformationEntity>`) used as evidence.
+* A **Statement** roots a central axis where it is linked, via ``hasEvidenceLines``, to zero or more :ref:`Evidence Lines <EvidenceLine>` -- discrete, scored arguments for or against it -- and/or, via ``hasEvidence``, directly to a :ref:`Study Result <StudyResult>`, :ref:`Data Item <DataItem>`, or prior :ref:`Statement <Statement>` used as evidence.
 * Each **Evidence Line** may in turn be linked, via ``hasEvidenceItems``, to zero or more **Evidence Items** - any information used to build its evidence-based argument (here, a single **Study Result**).
 * The **Proposition** contained in the **Statement** object encapsulates a structured representation of the possible fact that the **Statement** may assert or assess (e.g. that *'HRAS:c.173C>T is causal for Costello Syndrome'*). Unless otherwise stated, this is the same proposition against which evidence is assessed in any supporting Evidence Lines.
 * Surrounding this central axis are classes that describe the provenance of the central artifacts, including **Contributions** made to them by **Agents**, **Methods** that specify their creation, and **Documents** that describe them.

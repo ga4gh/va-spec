@@ -114,9 +114,10 @@ retained for callers that prefer a dedicated evidence-line object:
     can cite evidence and report an assessment directly, without wrapping it in
     a nested Evidence Line. It retains its ``classification`` attribute.
     ``hasEvidence`` is declared immediately before
-    ``hasEvidenceLines``, in that order. Its items are any
-    ``InformationEntity | iriReference`` (a Study Result, Data Item, prior
-    Statement, Evidence Line, etc.).
+    ``hasEvidenceLines``, in that order. Its items are a
+    ``Statement | StudyResult | DataItem | iriReference`` (a prior Statement,
+    Study Result, or Data Item used directly as evidence); structured, scored
+    arguments are attached separately via ``hasEvidenceLines``.
   * ``Statement``'s ``hasEvidenceLines`` holds ``EvidenceLine | iriReference``:
     a Statement is **not** itself usable as an Evidence Line, so a nested,
     scored, directional argument is always a dedicated :ref:`EvidenceLine`.

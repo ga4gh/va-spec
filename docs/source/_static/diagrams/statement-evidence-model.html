@@ -135,10 +135,10 @@
  <div id="stage">
   <div id="scale-inner">
   <div class="title-row"><h1>Statement &amp; Evidence composition</h1><span class="src">va-spec-source.yaml</span></div>
-  <p class="caption">A top-level <code>Statement</code> makes a claim; the distinct <code>EvidenceLine</code> class captures a scored, directional argument for it (via <code>hasEvidenceLines</code>). A Statement (via <code>hasEvidence</code>) or an Evidence Line (via <code>hasEvidenceItems</code>) may cite the information it assessed &mdash; a <code>StudyResult</code>, a <code>DataItem</code>, another <code>Statement</code>, or a nested <code>EvidenceLine</code> playing an <code>&laquo;EvidenceItem&raquo;</code> role. A Statement is <em>not</em> itself an Evidence Line.</p>
+  <p class="caption">A top-level <code>Statement</code> makes a claim; the distinct <code>EvidenceLine</code> class captures a scored, directional argument for it (via <code>hasEvidenceLines</code>). A Statement may also cite information it assessed directly via <code>hasEvidence</code> &mdash; a <code>StudyResult</code>, <code>DataItem</code>, or another <code>Statement</code>. An Evidence Line, in turn, cites what it assessed via <code>hasEvidenceItems</code>, which may be any Information Entity &mdash; including a nested <code>EvidenceLine</code> playing an <code>&laquo;EvidenceItem&raquo;</code> role. A Statement is <em>not</em> itself an Evidence Line.</p>
 
   <div class="diagram">
-    <!-- Overlay for the routed hasEvidence connector (Statement -> InformationEntity
+    <!-- Overlay for the routed hasEvidence connector (Statement -> Statement/StudyResult/DataItem
          frame), drawn by drawEvidence() once box positions are known. Absolutely
          positioned so it never affects layout; pointer-events:none so links work. -->
     <svg id="ev-overlay" style="position:absolute; top:0; left:0; overflow:visible; pointer-events:none; z-index:3;"></svg>

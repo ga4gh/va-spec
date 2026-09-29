@@ -112,6 +112,14 @@
   .cls .prop { font-family: ui-monospace, monospace; font-size: 10px; color: var(--ink-soft); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .cls .prop b { color: var(--ink); font-weight: 600; }
   .cls .prop .ty { color: var(--accent); font-style: italic; }
+  /* hasEvidence target group: an unlabeled dashed box of name-only dashed mini
+     class boxes -- the three InformationEntity subclasses hasEvidence accepts
+     (Statement, StudyResult, DataItem), i.e. all except EvidenceLine (reachable
+     only via EvidenceLine.hasEvidenceItems). Absolutely positioned to the right
+     of the EvidenceLine box by drawEvidence(). */
+  .he-targets { position: absolute; display: flex; flex-direction: column; gap: 8px; padding: 11px 12px; border: 1.4px dashed var(--line-strong); border-radius: 5px; background: var(--bg); z-index: 2; }
+  .cls.tiny { width: 130px; padding: 6px 10px; border: 1.2px dashed var(--line-strong); border-radius: 3px; text-align: center; background: var(--box); }
+  .cls.tiny .name { font-size: 11.5px; font-weight: 700; font-family: ui-monospace, "SF Mono", Consolas, monospace; }
   .badge { position: absolute; top: -8px; right: 8px; font-family: ui-monospace, monospace; font-size: 9px; font-weight: 700; padding: 1px 5px; border-radius: 3px; background: var(--bg); border: 1.3px solid var(--tu); color: var(--tu); }
   .badge.d { border-color: var(--d); color: var(--d); }
   .foot { font-size: 9.5px; color: var(--ink-soft); font-style: italic; line-height: 1.35; padding: 5px 10px 8px; border-top: 1px dotted var(--line); margin-top: 2px; }
@@ -138,7 +146,7 @@
   <p class="caption">The same structure as the <a href="statement-evidence-model.html">class diagram</a>, filled in with illustrative example data for a variant pathogenicity assessment. Field names are the same; values here are example data, not type declarations.</p>
 
   <div class="diagram">
-    <!-- Overlay for the routed hasEvidence connector (Statement -> InformationEntity
+    <!-- Overlay for the routed hasEvidence connector (Statement -> Statement/StudyResult/DataItem
          frame), drawn by drawEvidence() once box positions are known. Absolutely
          positioned so it never affects layout; pointer-events:none so links work. -->
     <svg id="ev-overlay" style="position:absolute; top:0; left:0; overflow:visible; pointer-events:none; z-index:3;"></svg>
@@ -234,8 +242,17 @@
         <div class="prop"><b>strengthOfEvidenceProvided</b>: <span class="ty">"moderate"</span></div>
         <div class="prop"><b>evidenceOutcome</b>: <span class="ty">"contributing"</span></div>
       </div>
-      <div class="foot"><b style="color:var(--ink)">targetProposition</b> usually omitted &mdash; inherits the parent Statement's claim unless arguing a narrower point. A non&#8209;contributing Evidence Line (noted but not swaying the parent's classification) has <b style="color:var(--ink)">directionOfEvidenceProvided</b>: neutral, with <b style="color:var(--ink)">strengthOfEvidenceProvided</b> marking it as additional evidence.</div>
+      <div class="foot"><b style="color:var(--ink)">targetProposition</b> usually omitted &mdash; inherits the parent Statement's claim unless arguing a narrower point.</div>
     </a>
+
+    <!-- Unlabeled dashed box parked to the right of EvidenceLine by drawEvidence():
+         the three InformationEntity subclasses hasEvidence accepts. Name-only,
+         dashed, no attributes -- these are type references, not example instances. -->
+    <div class="he-targets" id="he-targets">
+      <a class="cls tiny" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top"><div class="name">Statement</div></a>
+      <a class="cls tiny" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top"><div class="name">StudyResult</div></a>
+      <a class="cls tiny" href="../../core-information-model/entities/information-entities/data-item.html#dataitem" target="_top"><div class="name">DataItem</div></a>
+    </div>
 
     <div class="vconnector" style="min-height:62px;"><div class="vline"></div><span class="role">hasEvidenceItems <span class="card">0..m</span></span><div class="vline arrow"></div></div>
 
@@ -320,24 +337,33 @@
     var svg = document.getElementById('ev-overlay');
     var S = document.getElementById('stmt-box');
     var E = document.getElementById('evline-box');
-    var F = document.getElementById('ie-frame');
-    if (!svg || !S || !E || !F) return;
+    var B = document.getElementById('he-targets');
+    if (!svg || !S || !E || !B) return;
     var d = diagram.getBoundingClientRect();
     function rel(el) {
       var b = el.getBoundingClientRect();
       return { left: b.left - d.left, right: b.right - d.left, top: b.top - d.top,
                bottom: b.bottom - d.top, cx: (b.left + b.right) / 2 - d.left };
     }
-    var s = rel(S), e = rel(E), f = rel(F);
+    var s = rel(S), e = rel(E);
+    // Park the dashed hasEvidence-target box just right of the EvidenceLine box,
+    // vertically centred on it, then measure it once positioned.
+    B.style.left = (e.right + 44) + 'px';
+    var bh = B.getBoundingClientRect().height;
+    B.style.top = ((e.top + e.bottom) / 2 - bh / 2) + 'px';
+    var b = rel(B);
     var cs = getComputedStyle(document.documentElement);
     var lineColor = cs.getPropertyValue('--line-strong').trim();
     var softColor = cs.getPropertyValue('--ink-soft').trim();
-    var startX = s.right - 30;
+    // hasEvidence: from the Statement box, down the clear gap right of the
+    // EvidenceLine box, into the LEFT edge of the dashed three-class target box.
+    // (EvidenceLine is not one of the three -- it is reachable only via
+    // EvidenceLine.hasEvidenceItems, the vertical connector into the frame below.)
+    var laneX = e.right + 22;
+    var startX = Math.min(s.right - 30, laneX);
     var y1 = s.bottom + (e.top - s.bottom) * 0.5;
-    var laneX = e.right + 18;
-    var y2 = e.bottom + (f.top - e.bottom) * 0.5;
-    var entryX = e.cx + 100;
-    var pts = [[startX, s.bottom], [startX, y1], [laneX, y1], [laneX, y2], [entryX, y2], [entryX, f.top]];
+    var entryY = (b.top + b.bottom) / 2;
+    var pts = [[startX, s.bottom], [startX, y1], [laneX, y1], [laneX, entryY], [b.left, entryY]];
     svg.setAttribute('width', diagram.scrollWidth);
     svg.setAttribute('height', diagram.scrollHeight);
     svg.innerHTML =
@@ -345,7 +371,7 @@
       '<path d="M0.5,0.5 L9.5,5 L0.5,9.5 z" fill="' + lineColor + '"/></marker></defs>' +
       '<polyline points="' + pts.map(function (p) { return p[0] + ',' + p[1]; }).join(' ') + '" ' +
       'fill="none" stroke="' + lineColor + '" stroke-width="1.5" marker-end="url(#ev-arrow)"/>' +
-      '<text x="' + (laneX + 6) + '" y="' + ((y1 + y2) / 2) + '" dominant-baseline="middle" ' +
+      '<text x="' + b.left + '" y="' + (b.top - 7) + '" ' +
       'font-family="ui-monospace, monospace" font-size="10.5" fill="' + softColor + '">hasEvidence ' +
       '<tspan font-size="9.5" opacity="0.75">0..m</tspan></text>';
   }

@@ -63,12 +63,22 @@ def test_statement_accepts_a_user_defined_proposition():
     validator["va-spec:Statement"].validate(stmt)
 
 
-def test_statement_hasEvidence_accepts_any_information_entity():
-    # Statement.hasEvidence $refs the open InformationEntity base (was the narrow
-    # Statement | StudyResult | DataItem | iriReference union). An EvidenceLine --
-    # an InformationEntity that was NOT in the old union -- must now be accepted
-    # as a direct evidence item.
-    stmt = {
+def test_statement_hasEvidence_is_narrow_union_excluding_evidence_line():
+    # Statement.hasEvidence is a narrow union -- Statement | StudyResult | DataItem |
+    # iriReference. It cites information assessed directly as evidence; an EvidenceLine
+    # is NOT a member of that union (it attaches to a Statement via hasEvidenceLines,
+    # not as a raw evidence item).
+    ok = {
+        "type": "Statement",
+        "proposition": "ex:prop",
+        "direction": "supports",
+        "hasEvidence": [
+            {"type": "StudyResult", "focus": "ex:allele"}
+        ],
+    }
+    validator["va-spec:Statement"].validate(ok)
+
+    bad = {
         "type": "Statement",
         "proposition": "ex:prop",
         "direction": "supports",
@@ -76,7 +86,8 @@ def test_statement_hasEvidence_accepts_any_information_entity():
             {"type": "EvidenceLine", "directionOfEvidenceProvided": "supports"}
         ],
     }
-    validator["va-spec:Statement"].validate(stmt)
+    with pytest.raises(ValidationError):
+        validator["va-spec:Statement"].validate(bad)
 
 
 def test_evidence_line_nests_via_hasEvidenceItems():

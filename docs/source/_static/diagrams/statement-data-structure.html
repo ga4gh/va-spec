@@ -45,6 +45,10 @@
   .node .prop-box .pnm { font-weight: 700; font-size: 12px; font-family: ui-monospace, monospace; text-align: center; }
   .node .prop-box .peg { font-size: 11px; font-style: italic; color: var(--ink-soft); text-align: center; line-height: 1.3; margin-top: 2px; }
   .node .stereo { font-family: ui-monospace, monospace; font-size: 10px; font-style: italic; color: var(--ink-soft); text-align: center; }
+  /* dashed wrapper around the two bottom Information-Entity boxes; shared
+     provenance (specifiedBy/reportedIn/contributions) starts from this group,
+     while hasEvidence/hasEvidenceItems point to the individual inner boxes. */
+  .group-frame { position: absolute; z-index: 1; border: 1.7px dashed var(--line-strong); border-radius: 9px; background: transparent; pointer-events: none; }
 
   .conn-label { position: absolute; z-index: 2; background: var(--bg); padding: 0 3px; font-family: ui-monospace, monospace;
                 font-size: 10.5px; color: var(--ink-soft); text-align: center; line-height: 1.25; white-space: nowrap; transform: translate(-50%, -50%); }
@@ -63,8 +67,9 @@
   <div class="title-row"><h1>Statement Data Structure</h1></div>
   <p class="caption">A class-level view of the Statement-based structure in VA-Spec data. Italicized text in each class exemplifies the kind of information it may capture &mdash; here a Variant Pathogenicity Statement supported by population allele-frequency evidence.</p>
 
-  <div class="canvas" id="canvas" style="width:820px; height:556px;">
+  <div class="canvas" id="canvas" style="width:850px; height:600px;">
     <svg class="connector-svg"></svg>
+    <div class="group-frame" data-node="EvidenceGroup"></div>
 
     <!-- central axis (root class emphasized with .main) -->
     <a class="node axis main" data-node="Statement" style="left:304px; top:18px; width:212px;" href="../../core-information-model/entities/information-entities/statement.html#statement" target="_top">
@@ -81,8 +86,18 @@
       <div class="eg">e.g. pop-freq data provides a <u>moderate</u> argument <u>supporting</u> pathogenicity</div>
     </a>
 
-    <a class="node axis" data-node="StudyResult" style="left:302px; top:446px; width:216px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+    <a class="node axis" data-node="StudyResult" style="left:180px; top:452px; width:224px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
       <div class="nm">InformationEntity</div>
+      <div class="stereo">&laquo;Study Result&raquo;</div>
+      <div class="eg">e.g. pop-freq study data: alleleCount=341, alleleFreq=0.002, &hellip;</div>
+    </a>
+
+    <!-- hasEvidence targets: the three InformationEntity subclasses hasEvidence
+         accepts (all except EvidenceLine). Informally labeled union, shown with a
+         representative StudyResult example -- the same example the InformationEntity
+         box uses. Same row as InformationEntity, small gap, pair centred on the axis. -->
+    <a class="node axis" data-node="HasEvidenceTargets" style="left:418px; top:452px; width:224px;" href="../../core-information-model/entities/information-entities/study-result.html#studyresult" target="_top">
+      <div class="nm" style="font-size:11px;">Statement<span style="font-weight:400;color:var(--ink-soft);">|</span>StudyResult<span style="font-weight:400;color:var(--ink-soft);">|</span>DataItem</div>
       <div class="stereo">&laquo;Study Result&raquo;</div>
       <div class="eg">e.g. pop-freq study data: alleleCount=341, alleleFreq=0.002, &hellip;</div>
     </a>
@@ -96,11 +111,11 @@
       <div class="nm">Document</div>
       <div class="eg">(e.g. publications, database records)</div>
     </a>
-    <a class="node" data-node="Contribution" data-cy-ref="EvidenceLine" style="left:626px; top:280px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
+    <a class="node" data-node="Contribution" data-cy-ref="EvidenceLine" style="left:670px; top:280px; width:150px;" href="../../core-information-model/entities/contribution.html#contribution" target="_top">
       <div class="nm">Contribution</div>
       <div class="eg">(who, when, and how an agent contributed to an artifact)</div>
     </a>
-    <a class="node" data-node="Agent" data-below="Contribution" data-below-gap="40" style="left:626px; top:420px; width:150px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
+    <a class="node" data-node="Agent" data-below="Contribution" data-below-gap="40" style="left:670px; top:420px; width:150px;" href="../../core-information-model/entities/agent.html#agent" target="_top">
       <div class="nm">Agent</div>
       <div class="eg">(e.g. persons, organizations, software)</div>
     </a>
@@ -152,7 +167,7 @@
     { from:'Statement', to:'EvidenceLine', role:'hasEvidenceLines', card:'0..m',
       pts:function(S,E){ return [[S.cx,S.b],[E.cx,E.t]]; },
       lab:function(S,E){ return {x:S.cx+2, y:(S.b+E.t)/2}; } },
-    { from:'Statement', to:'StudyResult', role:'hasEvidence', card:'0..m',  // far-right loop around Contribution+Agent
+    { from:'Statement', to:'HasEvidenceTargets', role:'hasEvidence', card:'0..m',  // far-right loop around Contribution+Agent
       pts:function(S,R){ var y=S.t+18; var fx=CANVAS_R-14; return [[S.r,y],[fx,y],[fx,R.cy],[R.r,R.cy]]; },
       lab:function(S,R){ return {x:(S.r+CANVAS_R-14)/2, y:S.t+9}; } },
     // --- Evidence Line (middle, horizontally aligned with Document & Contribution) ---
@@ -162,19 +177,19 @@
     { from:'EvidenceLine', to:'Contribution', role:'contributions', card:'0..m',
       pts:function(E,K){ return [[E.r,E.cy],[K.l,E.cy]]; },
       lab:function(E,K){ return {x:(E.r+K.l)/2, y:E.cy-11}; } },
-    { from:'EvidenceLine', to:'StudyResult', role:'hasEvidenceItems', card:'0..m',
-      pts:function(E,R){ return [[E.cx,E.b],[R.cx,R.t]]; },
-      lab:function(E,R){ return {x:E.cx+2, y:(E.b+R.t)/2}; } },
-    // --- InformationEntity (bottom) ---
-    { from:'StudyResult', to:'Document', role:'reportedIn', card:'0..m',  // up into Document's BOTTOM edge
-      pts:function(R,D){ var y=R.t+26; var bx=D.cx+22; return [[R.l,y],[bx,y],[bx,D.b]]; },
-      lab:function(R,D){ return {x:D.cx+22, y:(R.t+26+D.b)/2}; } },
-    { from:'StudyResult', to:'Contribution', role:'contributions', card:'0..m',  // into Contribution's lower-LEFT edge
-      pts:function(R,K){ var y=R.t+26; var rx=K.l-64; return [[R.r,y],[rx,y],[rx,K.b-16],[K.l,K.b-16]]; },
-      lab:function(R,K){ return {x:K.l-64, y:(R.t+26+K.b-16)/2}; } },
-    { from:'StudyResult', to:'Method', role:'specifiedBy', card:'0..1',  // starts below reportedIn, around Document, into Method
-      pts:function(R,M){ var y=R.b-26; var fx=M.l-26; return [[R.l,y],[fx,y],[fx,M.cy],[M.l,M.cy]]; },
-      lab:function(R,M){ return {x:M.l+26, y:R.b-26-11}; } },
+    { from:'EvidenceLine', to:'StudyResult', role:'hasEvidenceItems', card:'0..m',  // straight vertical drop in the boxes' x-overlap: EvidenceLine bottom -> InformationEntity top
+      pts:function(E,R){ var x=(Math.max(E.l,R.l)+Math.min(E.r,R.r))/2; return [[x,E.b],[x,R.t]]; },
+      lab:function(E,R){ var x=(Math.max(E.l,R.l)+Math.min(E.r,R.r))/2; return {x:x+2, y:(E.b+R.t)/2}; } },
+    // --- shared provenance from the dashed group wrapping both bottom boxes ---
+    { from:'EvidenceGroup', to:'Document', role:'reportedIn', card:'0..m',  // group left edge -> Document's BOTTOM edge
+      pts:function(G,D){ var y=G.t+22; var bx=D.cx+22; return [[G.l,y],[bx,y],[bx,D.b]]; },
+      lab:function(G,D){ return {x:D.cx+22, y:(G.t+22+D.b)/2}; } },
+    { from:'EvidenceGroup', to:'Contribution', role:'contributions', card:'0..m',  // group TOP -> up and right into Contribution's left edge, entering BELOW the EvidenceLine contributions arrowhead
+      pts:function(G,K){ var x=G.r-28; var ey=K.cy+16; return [[x,G.t],[x,ey],[K.l,ey]]; },
+      lab:function(G,K){ return {x:G.r-28-44, y:(G.t+K.cy+16)/2}; } },
+    { from:'EvidenceGroup', to:'Method', role:'specifiedBy', card:'0..1',  // group left edge -> around Document into Method
+      pts:function(G,M){ var y=G.b-22; var fx=M.l-26; return [[G.l,y],[fx,y],[fx,M.cy],[M.l,M.cy]]; },
+      lab:function(G,M){ return {x:M.l+26, y:G.b-22-11}; } },
     { from:'Contribution', to:'Agent', role:'contributor', card:'0..1',
       pts:function(K,A){ return [[K.cx,K.b],[A.cx,A.t]]; },
       lab:function(K,A){ return {x:K.cx+2, y:(K.b+A.t)/2}; } }
@@ -230,10 +245,23 @@
     });
   }
 
+  function layoutGroup() {
+    var g = canvas.querySelector('[data-node="EvidenceGroup"]');
+    var A = canvas.querySelector('[data-node="StudyResult"]');
+    var B = canvas.querySelector('[data-node="HasEvidenceTargets"]');
+    if (!g || !A || !B) return;
+    var cc = canvas.getBoundingClientRect(), a = A.getBoundingClientRect(), b = B.getBoundingClientRect();
+    var pad = 12;
+    var l = Math.min(a.left, b.left) - cc.left - pad, t = Math.min(a.top, b.top) - cc.top - pad;
+    var r = Math.max(a.right, b.right) - cc.left + pad, bo = Math.max(a.bottom, b.bottom) - cc.top + pad;
+    g.style.left = l + 'px'; g.style.top = t + 'px'; g.style.width = (r - l) + 'px'; g.style.height = (bo - t) + 'px';
+  }
+
   function fit() {
     inner.style.transform = 'none';
     textBlocks.forEach(function (el) { el.style.maxWidth = 'none'; });
     layoutBoxes();
+    layoutGroup();
     draw();
     var w = canvas.getBoundingClientRect().width;
     textBlocks.forEach(function (el) { el.style.maxWidth = w + 'px'; });
