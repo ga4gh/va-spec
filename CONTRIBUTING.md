@@ -21,12 +21,12 @@ versioning and feature additions. Version branches are to be created by
 repo administrators only. Feature branches must be associated with an
 open issue describing the desired feature, and named after the issue
 as <issue number>-<short-description>. For example, the associated
-branch for [issue 250](https://github.com/ga4gh/vrs/issues/250) could
+branch for [issue 250](https://github.com/ga4gh/va-spec/issues/250) could
 be `250-contributing`.
 
 ## Pull Requests
-[Pull Requests](https://github.com/ga4gh/vrs/pulls) (PRs) for new
-features should target the `main` branch. For version
+[Pull Requests](https://github.com/ga4gh/va-spec/pulls) (PRs) for new
+features should target the `v1` branch. For version
 patches, the PR should target the appropriate minor version branch.
 PRs must be approved by at least one project maintainer before they may
 be merged. PR titles must reflect the issue associated with the PR. For

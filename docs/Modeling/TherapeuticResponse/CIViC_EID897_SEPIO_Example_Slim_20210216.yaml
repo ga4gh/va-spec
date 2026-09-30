@@ -100,7 +100,7 @@
 # EVALUATED PROPOSITION (the target proposition representing the 'possible fact' that evidence was evaluated against to generate the Evidence Line
   - id: civic-data:Proposition001
      type: TherapeuticResponseProposition   # a specialization of VA-SEPIO 'Proposition'
-     subject: civic-data:33                 # EGFR L858R. This will ultimately be a GKS VariationDescriptor.
+     subject: civic-data:33                 # EGFR L858R. This will ultimately be a GKM VariationDescriptor.
      predicate:
        - id: ex:001                         # ideally this coded value will come from an external, established community terminology or code set.
          label: predicts_sensitivity_to

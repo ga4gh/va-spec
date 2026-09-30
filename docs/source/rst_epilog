@@ -1,0 +1,3 @@
+.. |maturity-model| replace:: :ref:`Maturity Model <maturity-model>`
+.. |fixtures_dir| replace:: `tests/fixtures <https://github.com/ga4gh/va-spec/tree/{release}/tests/fixtures>`__
+.. |examples_dir| replace:: `examples <https://github.com/ga4gh/va-spec/tree/{release}/examples>`__

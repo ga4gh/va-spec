@@ -45,7 +45,7 @@ geneContextQualifier:
         system: https://www.ncbi.nlm.nih.gov/gene/
       relation: exactMatch
   name: RET
-objectTumorType:
+object:
   type: MappableConcept
   conceptType: Disease
   id: civic.did:15
@@ -56,7 +56,7 @@ objectTumorType:
       relation: exactMatch
   name: Medullary Thyroid Carcinoma
 predicate: isOncogenicFor
-subjectVariant:
+subject:
   aliases:
     - MET918THR
   constraints:

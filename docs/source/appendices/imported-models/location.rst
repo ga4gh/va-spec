@@ -3,4 +3,4 @@
 Location
 !!!!!!!!
 
-.. include::  ../../def/vrs/Location.rst
+.. include::  ../../def/va-spec/Location.rst

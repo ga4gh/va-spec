@@ -3,4 +3,4 @@
 Ga4ghIdentifiableObject
 !!!!!!!!!!!!!!!!!!!!!!!
 
-.. include::  ../../def/vrs/Ga4ghIdentifiableObject.rst
+.. include::  ../../def/va-spec/Ga4ghIdentifiableObject.rst

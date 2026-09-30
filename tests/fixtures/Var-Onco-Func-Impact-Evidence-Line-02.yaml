@@ -1,7 +1,7 @@
 type: EvidenceLine
 targetProposition:
   type: VariantOncogenicityProposition
-  subjectVariant:
+  subject:
     type: CategoricalVariant
     name: EGFR R11T
     constraints:
@@ -31,7 +31,7 @@ targetProposition:
               iris:
                 - http://www.sequenceontology.org/browser/current_release/term/translation_of
   predicate: isOncogenicFor
-  objectTumorType:
+  object:
     type: MappableConcept
     primaryCoding:
       code: ncit:C4872
@@ -57,7 +57,7 @@ strengthOfEvidenceProvided:
 scoreOfEvidenceProvided: 1
 specifiedBy:
   type: Method
-  methodType: functional_assay
+  methodType: functional_data_assessment
   reportedIn:
     type: Document
     pmid: '35101336'
