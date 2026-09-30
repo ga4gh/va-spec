@@ -67,7 +67,7 @@ A specialization of ConceptSet representing a group of two or more therapies tha
                         .. raw:: html
 
                             <span style="background-color: #B2DFEE; color: black; padding: 2px 6px; border: 1px solid black; border-radius: 3px; font-weight: bold; display: inline-block; margin-bottom: 5px;" title="Unordered">&#8942;</span>
-      - :ref:`Therapy` | :ref:`TherapyGroup`
+      - :ref:`Therapy` | :ref:`TherapyGroup` | :ref:`iriReference`
       - 2..m
       - A list of concepts that are dependent (occurring together), or independent (existing separately), depending on the membership operator.
    *  - membershipOperator

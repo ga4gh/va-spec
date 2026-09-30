@@ -59,6 +59,7 @@ $defs:
               oneOf:
                 - $ref: "#/$defs/Condition"
                 - $ref: "#/$defs/ConditionSet"
+                - $refCurie: gkm.core:iriReference
 
   # Therapy data structure for defining single therapies as an extension of MappableConcept
   Therapy:
@@ -109,3 +110,4 @@ $defs:
             oneOf:
               - $ref: "#/$defs/Therapy"
               - $ref: "#/$defs/TherapyGroup"
+              - $refCurie: gkm.core:iriReference
