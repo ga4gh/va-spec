@@ -1,5 +1,5 @@
 $schema: "https://json-schema.org/draft/2020-12/schema"
-$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/aac-2017-profile-source.yaml"
+$id: "https://w3id.org/ga4gh/schema/va-spec/1.1.0/aac-2017-profile-source.yaml"
 title: AAC 2017 Profiles
 description: >-
   Profiles defined to align with terminology and conventions from the Association for Molecular Pathology (AMP),
@@ -11,8 +11,8 @@ imports:
   gkm-core: ../gkm-core/gkm-core-source.yaml
 
 namespaces:
-  va-spec: /ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/
-  gkm.core: /ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/
+  va-spec: /ga4gh/schema/va-spec/1.1.0/json/
+  gkm.core: /ga4gh/schema/gkm-core/1.3.0/json/
 
 $defs:
   AmpAscoCapEvidenceLine:

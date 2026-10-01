@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/TumorVariantFrequencyStudyResult",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/TumorVariantFrequencyStudyResult",
    "title": "TumorVariantFrequencyStudyResult",
    "maturity": "draft",
    "description": "A Study Result that reports measures related to the frequency of a variant in a particular tumor type.",
@@ -35,17 +35,17 @@
          "type": "array",
          "ordered": false,
          "items": {
-            "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/Extension"
+            "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/Extension"
          },
          "description": "A list of extensions to the Entity, that allow for capture of information not directly supported by elements defined in the model."
       },
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Method"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
             }
          ],
          "description": "A specification that describes all or part of the process that led to creation of the Information Entity"
@@ -54,7 +54,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity."
       },
@@ -64,10 +64,10 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Document"
                },
                {
-                  "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+                  "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
                }
             ]
          },
@@ -76,13 +76,13 @@
       "focus": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/vrs/2.1.1-ballot.2026-09.1/json/Allele"
+               "$ref": "/ga4gh/schema/vrs/2.1.1/json/Allele"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
             },
             {
-               "$ref": "/ga4gh/schema/cat-vrs/1.1.1-ballot.2026-09.1/json/CategoricalVariant"
+               "$ref": "/ga4gh/schema/cat-vrs/1.1.1/json/CategoricalVariant"
             }
          ],
          "description": "The variant for which frequency data is reported in the Study Result."
@@ -90,10 +90,10 @@
       "sourceDataSet": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/DataSet"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/DataSet"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
             }
          ],
          "description": "The dataset from which data in the Tumor Variant Frequency Study Result was taken."
@@ -125,10 +125,10 @@
       "sampleGroup": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/StudyGroup"
+               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/StudyGroup"
             },
             {
-               "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/iriReference"
+               "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
             }
          ],
          "description": "The set of samples about which the frequency data was generated."
@@ -138,7 +138,7 @@
          "ordered": false,
          "description": "A list of Tumor Variant Frequency Study Result objects describing variant frequency in different subsets of larger sample group described in the root Study Result. Subgroups can be further subdivided into more subgroups. This enables, for example, further breakdown of frequency measures in sample groups with a narrower categorical variant than the root focus variant, or sample groups with a more specific tumor type.",
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/TumorVariantFrequencyStudyResult"
+            "$ref": "/ga4gh/schema/va-spec/1.1.0/json/TumorVariantFrequencyStudyResult"
          }
       }
    },

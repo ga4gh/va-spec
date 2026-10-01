@@ -1,12 +1,12 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0-ballot.2026-09.1/json/Therapy",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/Therapy",
    "title": "Therapy",
    "maturity": "trial use",
    "description": "A specialization of MappableConcept representing an individual therapy (drug, procedure, behavioral intervention, etc.). Allowed conceptType values include: Therapy, Absent, Drug, Procedure, Behavioral Intervention.",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/gkm-core/1.3.0-ballot.2026-09.1/json/MappableConcept"
+         "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/MappableConcept"
       },
       {
          "properties": {
