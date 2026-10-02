@@ -7,7 +7,7 @@ This section provides a foundational understanding of key principles and pattern
 
 1. The :ref:`Hierarchy of Classes <core-class-hierarchy>` in domain-agnostic VA Core Model.
 2. The :ref:`Data Structures <data-structures>` that can be built using these classes, to support different use cases and levels of variant knowledge.
-3. The :ref:`Role of Propositions <propositions>` in VA Statement and Evidence Line Models.
+3. The :ref:`Role of Propositions <propositions>` in VA Statement Models.
 4. The :ref:`Profiling <profiles>` approach through which domain-specific schema are derived from the Core Model.
 
 ----

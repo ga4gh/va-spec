@@ -1,5 +1,5 @@
 type: ComputationalVariantFunctionalImpactAnalysisResult
-focusVariant:
+focus:
   id: ga4gh:VA.tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
   type: Allele
   digest: tf7CkktmeFBonmfF-r06u-GYpB1IXiDg

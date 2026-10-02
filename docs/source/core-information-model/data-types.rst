@@ -9,22 +9,15 @@ Data Types
 code
 ****
 
-.. include::  ../def/gks-core/Code.rst
+.. include::  ../def/va-spec/code.rst
 
-
-.. _iriReference:
-
-iriReference
-************
-
-.. include::  ../def/gks-core/iriReference.rst
 
 .. _date:
 
 date
 ****
 
-.. include::  ../def/gks-core/date.rst
+.. include::  ../def/va-spec/date.rst
 
 
 .. _datetime:
@@ -32,4 +25,12 @@ date
 datetime
 ********
 
-.. include::  ../def/gks-core/datetime.rst
+.. include::  ../def/va-spec/datetime.rst
+
+
+.. _iriReference:
+
+iriReference
+************
+
+.. include::  ../def/va-spec/iriReference.rst

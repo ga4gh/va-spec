@@ -1,6 +1,6 @@
 # See examples/vep_data/transcript-consequence-unformatted.jsonc for source data
 type: VariantMolecularConsequenceProposition
-subjectVariant:
+subject:
   id: ga4gh:VA.tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
   type: Allele
   digest: tf7CkktmeFBonmfF-r06u-GYpB1IXiDg
@@ -21,7 +21,7 @@ subjectVariant:
     - syntax: hgvs.g
       value: NC_000001.10:g.230845767G>T
 predicate: "hasMolecularConsequence"
-objectConsequence:
+object:
   type: MappableConcept
   name: missense_variant
   conceptType: MolecularConsequence

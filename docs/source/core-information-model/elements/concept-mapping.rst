@@ -5,7 +5,7 @@
 Concept Mapping
 ***************
 
-.. include::  ../../../../schema/gks-core/def/ConceptMapping.rst
+.. include::  ../../def/va-spec/ConceptMapping.rst
 
 
 **IMPLEMENTATION GUIDANCE**

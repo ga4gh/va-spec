@@ -1,5 +1,5 @@
 type: ExperimentalVariantFunctionalImpactStudyResult
-focusVariant:
+focus:
   id: ga4gh:VA.t0rDoiIessOWmP0SF0plhXtOwi8TRaZz
   type: Allele
   location:

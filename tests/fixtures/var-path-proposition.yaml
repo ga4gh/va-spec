@@ -1,7 +1,7 @@
 id: VarPathProp022
 name: Variant pathogenicity proposition example
 type: VariantPathogenicityProposition
-subjectVariant:
+subject:
   id: clinvar/208366
   type: CategoricalVariant
   constraints:
@@ -42,7 +42,7 @@ subjectVariant:
             iris:
               - http://www.sequenceontology.org/browser/current_release/term/transcribed_to
   name: NM_004700.4(KCNQ4):c.803CCT[1] (p.Ser269del)
-objectCondition:
+object:
   type: MappableConcept
   id: clinvar.trait/939
   conceptType: Disease
