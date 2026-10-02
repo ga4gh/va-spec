@@ -4,19 +4,20 @@
 1.1.0
 @@@@@
 
-This release enriches :ref:`Statement` so it can carry an evidence assessment
-directly -- gaining ``hasEvidence`` and the ``direction``/``strength``/
-``score`` attributes -- while keeping the dedicated :ref:`EvidenceLine` class
-(referenced via ``hasEvidenceLines``) as the way to represent a nested, scored,
-directional argument. It
+This release adds a ``hasEvidence`` attribute to :ref:`Statement`, for evidence
+that is associated with a Statement without saying how it supports or disputes
+the proposition. The dedicated :ref:`EvidenceLine` class
+(referenced via ``hasEvidenceLines``, as in 1.0) remains the way to represent
+how evidence was weighed, as a nested, scored, directional argument. It
 also reworks how ``Proposition``/``StudyResult`` subclasses declare their
 ``subject``/``predicate``/``object``/``focus`` attributes, so they inherit under
 their canonical names instead of being renamed per subclass. It restructures the
 domain entities around GKM Core's ``MappableConcept``/``ConceptSet``: ``Therapeutic``
 is renamed :ref:`Therapy`, and single concepts and sets are now separate classes.
-It also renames the abstract ``ClinicalVariantProposition`` class. These are
-backwards-incompatible changes to *trial use* classes. The release also adds
-several new *draft* propositions and substantially revises the *draft* community
+It also renames the abstract ``ClinicalVariantProposition`` class. The latter
+three are backwards-incompatible changes to *trial use* classes; the
+``hasEvidence`` addition is not. The release also adds
+several new *draft* classes and substantially revises the *draft* community
 profiles. Finally, it modernizes the schema-generation pipeline and refreshes the
 imported dependencies to Cat-VRS 1.1.1, VRS 2.1.1, and GKM Core 1.3.0.
 
@@ -48,12 +49,16 @@ per the :ref:`gkm-maturity-model` versioning rules:
       ``conceptType`` values that default to ``Condition``/``Therapy``.
     * the single-or-set union moves to the attributes that use these classes.
       For example, a proposition's ``object`` is now ``Condition |
-      ConditionSet | iriReference``, and
-      :ref:`VariantTherapeuticResponseProposition` ``conditionQualifier`` now
-      also accepts a :ref:`ConditionSet`.
+      ConditionSet | iriReference``, as is
+      :ref:`VariantTherapeuticResponseProposition` ``conditionQualifier``. These
+      attributes already accepted either a single concept or a set in 1.0,
+      through the ``Condition``/``Therapeutic`` union.
     * :ref:`ConditionSet` and :ref:`TherapyGroup` now specialize GKM Core's
       :ref:`ConceptSet`. Their required ``conditions``/``therapies`` arrays are
-      renamed ``concepts``, and their items may be nested sets.
+      renamed ``concepts``, and a member may now also be given as an
+      :ref:`iriReference`. A :ref:`TherapyGroup` may now contain nested Therapy
+      Groups; a :ref:`ConditionSet` could already contain nested Condition Sets
+      as of 1.0.1.
   * adopts GKM Core 1.3.0, which adds an optional ``conceptSetType`` to
     :ref:`ConceptSet`. Because :ref:`ConditionSet` and :ref:`TherapyGroup`
     specialize ``ConceptSet``, both *trial use* classes now accept this
@@ -72,11 +77,18 @@ renaming, so the model has been made consistent with that rule:
     ``object`` (all required); the abstract :ref:`StudyResult` declares ``focus``
     (required). Every subclass now **narrows these in place under the same name**
     rather than renaming them. Affected serialized property names change:
-    ``subjectVariant`` / ``subjectGene`` :math:`\rightarrow` ``subject``;
+    ``subjectVariant`` :math:`\rightarrow` ``subject``;
     ``objectCondition`` / ``objectTumorType`` / ``objectSequenceFeature`` /
-    ``objectTherapeutic`` / ``objectConsequence`` :math:`\rightarrow` ``object``;
-    ``focusAllele`` / ``focusVariant`` :math:`\rightarrow` ``focus``. All
+    ``objectTherapeutic`` :math:`\rightarrow` ``object``;
+    ``focusAllele`` / ``focusVariant`` :math:`\rightarrow` ``focus``. The
+    *draft* propositions added in this release follow the same rule; their
+    ``subjectGene`` and ``objectConsequence`` attributes appeared only in 1.1.0
+    pre-releases, never in a 1.0.x release. All
     examples and test fixtures were updated accordingly.
+  * :ref:`CohortAlleleFrequencyStudyResult` also renames ``focusAlleleCount``
+    :math:`\rightarrow` ``focusCount``, ``locusAlleleCount``
+    :math:`\rightarrow` ``locusCount``, and ``focusAlleleFrequency``
+    :math:`\rightarrow` ``alleleFrequency``.
   * The abstract base classes (:ref:`Proposition`, :ref:`StudyResult`,
     :ref:`SubjectVariantProposition`) are **open** and no longer carry a closed
     ``oneOf`` of their built-in subtypes. Being open means a reference to one of
@@ -96,43 +108,55 @@ renaming, so the model has been made consistent with that rule:
     them: :ref:`Contribution`.contributor,
     :ref:`VariantPathogenicityProposition`.modeOfInheritanceQualifier/
     .penetranceQualifier, :ref:`Statement`.proposition/
-    .strength/.classification/.quality, :ref:`StudyResult`.sourceDataSet
-    (and the :ref:`ComputationalVariantFunctionalImpactAnalysisResult`
-    subclass, which redeclares it), :ref:`CohortAlleleFrequencyStudyResult`.cohort,
+    .strength/.classification, :ref:`EvidenceLine`.targetProposition/
+    .strengthOfEvidenceProvided/.evidenceOutcome, :ref:`StudyResult`.sourceDataSet,
+    :ref:`CohortAlleleFrequencyStudyResult`.cohort,
     :ref:`TumorVariantFrequencyStudyResult` (*draft*).sampleGroup, :ref:`DataSet`.license,
-    and :ref:`StudyGroup`.characteristics.
+    and :ref:`StudyGroup`.characteristics. Attributes that are new in this
+    release follow the same pattern, including :ref:`Statement`.quality and
+    the ``sourceDataSet`` redeclared by the *draft*
+    :ref:`ComputationalVariantFunctionalImpactAnalysisResult`.
 
-Statement enriched to carry evidence assessments
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Associating evidence with a Statement
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-**Backwards-incompatible.** :ref:`Statement` is enriched so it can carry an
-evidence assessment directly, while the distinct :ref:`EvidenceLine` class is
-retained for callers that prefer a dedicated evidence-line object:
+:ref:`Statement` gains a ``hasEvidence`` attribute for evidence that is
+associated with the Statement. It complements the distinct :ref:`EvidenceLine`
+class rather than replacing it: ``hasEvidence`` gives no indication of how an
+item supports or disputes the proposition, whereas Evidence Lines (in
+``hasEvidenceLines``, as in 1.0) carry that information, as direction and
+strength or score, and are what a classification rests on. The changes in this
+subsection are additive, so, unlike the changes above, none of them
+by itself invalidates data that was valid in 1.0:
 
-  * :ref:`Statement` gains the ``hasEvidence``, ``direction``,
-    ``strength``, ``score``, and draft ``quality`` attributes -- so a Statement
-    can cite evidence and report an assessment directly, without wrapping it in
-    a nested Evidence Line. It retains its ``classification`` attribute.
-    ``hasEvidence`` is declared immediately before
-    ``hasEvidenceLines``, in that order. Its items are a
+  * :ref:`Statement` gains the ``hasEvidence`` attribute and a *draft*
+    ``quality`` attribute. ``hasEvidence`` associates evidence with a Statement
+    without indicating how it supports or disputes the proposition. It is declared
+    immediately before ``hasEvidenceLines``, and its items are a
     ``Statement | StudyResult | DataItem | iriReference`` (a prior Statement,
-    Study Result, or Data Item used directly as evidence); structured, scored
-    arguments are attached separately via ``hasEvidenceLines``.
-  * ``Statement``'s ``hasEvidenceLines`` holds ``EvidenceLine | iriReference``:
+    Study Result, or Data Item); structured, scored, directional
+    arguments are attached separately via ``hasEvidenceLines``. For example, in
+    a CIViC oncogenicity assertion the ClinGen/CGC/VICC criteria codes that
+    drive the classification are Evidence Lines, while the associated CIViC
+    evidence items, which are not part of that code system, go in
+    ``hasEvidence``.
+  * :ref:`Statement`'s ``direction``, ``strength``, ``score``, and
+    ``classification`` attributes were already present in 1.0, so a Statement
+    could already report its own assessment.
+  * ``Statement``'s ``hasEvidenceLines`` still holds ``EvidenceLine |
+    iriReference``, as in 1.0:
     a Statement is **not** itself usable as an Evidence Line, so a nested,
     scored, directional argument is always a dedicated :ref:`EvidenceLine`.
-  * the :ref:`EvidenceLine` class is retained, keeping its
+  * the :ref:`EvidenceLine` class keeps its 1.0 attributes:
     ``targetProposition``, ``directionOfEvidenceProvided``,
     ``strengthOfEvidenceProvided``, ``scoreOfEvidenceProvided``,
-    ``evidenceOutcome``, and ``hasEvidenceItems``
-    attributes. ``hasEvidenceItems`` accepts any ``InformationEntity |
-    iriReference``; because an Evidence Line is itself an Information Entity,
+    ``evidenceOutcome``, and ``hasEvidenceItems``. ``hasEvidenceItems`` is
+    widened from ``StudyResult | Statement | EvidenceLine | iriReference`` to
+    any ``InformationEntity | iriReference``, so it also accepts the new
+    :ref:`DataItem`. As in 1.0, because an Evidence Line is itself an
+    Information Entity,
     Evidence Lines nest by listing subordinate Evidence Lines there (there is
     no separate ``hasEvidenceLines`` on Evidence Line).
-  * :ref:`CohortAlleleFrequencyStudyResult` renames ``focusAlleleCount``
-    :math:`\rightarrow` ``focusCount``, ``locusAlleleCount``
-    :math:`\rightarrow` ``locusCount``, and ``focusAlleleFrequency``
-    :math:`\rightarrow` ``alleleFrequency``.
   * all examples and test fixtures were updated accordingly.
 
 Patch Version Increment
@@ -143,8 +167,9 @@ New product features at the *draft* maturity level, changes to existing
 compatibility:
 
   * adds :ref:`GeneDiseaseValidityProposition` (*draft*), a new proposition type for gene-disease validity assertions
-  * adds ``VariantMolecularConsequenceProposition`` (*draft*), for representing the functional consequences of a variant
-  * updates the ``ComputationalVariantFunctionalImpactAnalysisResult`` (*draft*) source schema
+  * adds :ref:`VariantMolecularConsequenceProposition` (*draft*), for representing the predicted molecular consequences of a variant
+  * adds :ref:`VariantClinicalSignificanceProposition` (*draft*), for describing the clinical significance of a variant with respect to a condition
+  * adds :ref:`ComputationalVariantFunctionalImpactAnalysisResult` (*draft*), a :ref:`StudyResult` (so it requires ``focus``) that reports the output of an in silico tool's analysis of a variant's functional impact
   * updates the AAC 2017 Aligned Profiles (*draft*) to better reflect the source guidelines
   * enforces enum validation in ``primaryCodings`` across the AAC/ACMG/CCV (*draft*) profiles
   * updates the :ref:`ConditionSet` VA-Spec version reference
@@ -178,30 +203,41 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     subclass wrapping a structured, string, or IRI-reference ``value``) as
     one of the concrete types citable as evidence (via a Statement's
     ``hasEvidence`` or an Evidence Line's ``hasEvidenceItems``).
-  * the AAC-2017 :ref:`AmpAscoCapEvidenceLine`, :ref:`DiagnosticEvidenceLine`,
-    :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine` classes
-    compose the :ref:`EvidenceLine` class (using its
-    ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided`` attributes),
-    while the top-level :ref:`VariantClinicalSignificanceStatement` composes
-    :ref:`Statement` and constrains its ``classification`` attribute. This also
-    fixes an array-wrapping defect on the :ref:`DiagnosticEvidenceLine`,
-    :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine` classes:
-    each was declared as ``type: array`` (an array of itself-or-``iriReference``)
-    rather than as a plain ``allOf``-composed object, so the tier i/ii
+  * restructures the AAC-2017 profiles. The 1.0
+    ``VariantDiagnosticStudyStatement``, ``VariantPrognosticStudyStatement``,
+    and ``VariantTherapeuticResponseStudyStatement`` classes are replaced by a
+    single top-level :ref:`VariantClinicalSignificanceStatement`, which
+    composes :ref:`Statement` and constrains its ``classification`` attribute,
+    and by four new classes that compose the :ref:`EvidenceLine` class (using
+    its ``directionOfEvidenceProvided``/``strengthOfEvidenceProvided``
+    attributes): :ref:`AmpAscoCapEvidenceLine`, :ref:`DiagnosticEvidenceLine`,
+    :ref:`PrognosticEvidenceLine`, and :ref:`TherapeuticEvidenceLine`. Earlier
+    1.1.0 pre-releases declared the last three as ``type: array`` (an array of
+    itself-or-``iriReference``) rather than as plain ``allOf``-composed
+    objects, so the tier i/ii
     ``hasEvidenceLines`` narrowing that referenced them (via a bare ``oneOf``,
     with no ``type: array``/``items`` wrapper of its own) required the whole
     ``hasEvidenceLines`` array to itself match one of these array-typed
     branches, rather than letting each item independently be one of the
-    three types. The array wrapping now lives at the narrowing site instead,
+    three types. That array-wrapping defect never shipped in a 1.0.x release,
+    and is fixed here: the array wrapping lives at the narrowing site,
     matching :ref:`AmpAscoCapEvidenceLine`'s composition pattern.
   * :ref:`VariantPathogenicityEvidenceLine` and
-    :ref:`VariantOncogenicityEvidenceLine` compose the :ref:`EvidenceLine`
+    :ref:`VariantOncogenicityEvidenceLine` still compose the :ref:`EvidenceLine`
     class and use its ``directionOfEvidenceProvided``/
-    ``strengthOfEvidenceProvided``/``evidenceOutcome`` attribute names. Each
-    class's own ``methodType`` enumeration was
-    also normalized to ``snake_case`` codes (e.g. ACMG-2015's
+    ``strengthOfEvidenceProvided``/``evidenceOutcome`` attribute names, as in
+    1.0. Each
+    class's own ``methodType`` enumeration is redefined. In 1.0 it listed the
+    individual criterion codes (``PVS1``, ``PS1``, ... for ACMG-2015;
+    ``OVS1``, ``OS1``, ... for CCV-2022). It now lists ``snake_case`` codes for
+    the type of assessment performed (17 for ACMG-2015, 8 for CCV-2022), and
+    new per-``methodType`` ``if``/``then`` constraints restrict the criterion
+    codes that ``evidenceOutcome`` may report for each one. Earlier 1.1.0
+    pre-releases used other names for these codes (e.g. ACMG-2015's
     ``"Population Data Assessment"`` :math:`\rightarrow`
-    ``population_data_assessment``; CCV-2022's ``population_frequency``
+    ``population_data_assessment`` and ``"De Novo Data Assessment"``
+    :math:`\rightarrow` ``de_novo_occurrence_assessment``; CCV-2022's
+    ``population_frequency``
     :math:`\rightarrow` ``population_data_assessment``,
     ``functional_assay`` :math:`\rightarrow` ``functional_data_assessment``,
     ``functional_domain_location`` :math:`\rightarrow`
@@ -211,10 +247,12 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     ``somatic_hotspot_assessment``, ``computational_prediction``
     :math:`\rightarrow` ``in_silico_impact_assessment``, and
     ``single_genetic_etiology_context`` :math:`\rightarrow`
-    ``single_genetic_etiology_assessment``; ACMG-2015's
-    ``de_novo_data_assessment`` is renamed ``de_novo_occurrence_assessment``).
-    :ref:`VariantPathogenicityStatement` and :ref:`VariantOncogenicityStatement`
-    retain and constrain the core :ref:`Statement` ``classification`` attribute.
+    ``single_genetic_etiology_assessment``).
+    The CCV-2022 statement profile is renamed from
+    ``VariantOncogenicityStudyStatement`` to
+    :ref:`VariantOncogenicityStatement`. It and
+    :ref:`VariantPathogenicityStatement` constrain the core :ref:`Statement`
+    ``classification`` attribute, as in 1.0.
   * both :ref:`VariantPathogenicityEvidenceLine` and
     :ref:`VariantOncogenicityEvidenceLine` add ``no_criteria_met`` as an
     allowed ``evidenceOutcome`` code, alongside the existing ``{criterion_code}``
@@ -225,21 +263,24 @@ but draft classes carry no compatibility guarantee, so they are patch-level:
     **Backwards-incompatible:** both classes now also constrain the
     *direction* and *strength* that may accompany a negative outcome: when
     ``evidenceOutcome`` is ``no_criteria_met`` or any ``{criterion_code}_not_met``
-    code, ``direction`` MUST be ``neutral`` and ``strength`` MUST NOT be
+    code, ``directionOfEvidenceProvided`` MUST be ``neutral`` and
+    ``strengthOfEvidenceProvided`` MUST NOT be
     present. Previously a not-met outcome could be paired with a
     ``supports``/``disputes`` direction and a strength value.
-  * fixes the 17 ``if``/``then`` tier-specific conditional constraints on
-    :ref:`VariantPathogenicityEvidenceLine`, which checked a non-existent
-    top-level ``methodType`` property instead of the correctly-nested
-    ``specifiedBy.methodType`` (matching the equivalent, already-correct
-    pattern on :ref:`VariantOncogenicityEvidenceLine`). As written, none of
-    these conditions could ever be satisfied by a valid instance.
-  * adds constraints to evidence line types for the ACMG (*draft*) and CCV
-    (*draft*) statement profiles
-  * updates ``hasEvidenceLines`` in the AAC/ACMG/CCV (*draft*) statement
-    profiles to accept IRIs
-  * :ref:`ComputationalVariantFunctionalImpactAnalysisResult` (*draft*) now inherits
-    :ref:`StudyResult` (so it too requires ``focus``).
+  * the 17 ACMG-2015 per-``methodType`` conditions on
+    :ref:`VariantPathogenicityEvidenceLine` check the correctly-nested
+    ``specifiedBy.methodType`` (matching the equivalent
+    pattern on :ref:`VariantOncogenicityEvidenceLine`). The 1.1.0 pre-releases
+    that introduced these conditions checked a non-existent top-level
+    ``methodType`` property instead, so none of them could ever be satisfied
+    by a valid instance. That defect never shipped in a 1.0.x release.
+  * constrains ``hasEvidenceLines`` in the ACMG-2015 (*draft*) and CCV-2022
+    (*draft*) statement profiles to the profile's own evidence line class or
+    an :ref:`iriReference`. In 1.0 these profiles did not narrow
+    ``hasEvidenceLines``, which therefore accepted any ``EvidenceLine |
+    iriReference``. The AAC-2017 :ref:`VariantClinicalSignificanceStatement`
+    narrows it the same way, to its three evidence line classes or an
+    :ref:`iriReference`, for tier i and tier ii classifications.
 
 Pipeline modernization
 $$$$$$$$$$$$$$$$$$$$$$
@@ -298,12 +339,11 @@ do not, by themselves, change the meaning of VA-Spec data:
     alongside ``va-spec-source.yaml`` and ``domain-entities-source.yaml``. This adopts
     the ``gks-metaschema`` processor's native **profile sub-namespace** convention
     (an ``XXX-profile-source.yaml`` file contributes ``XXX`` as a sub-namespace of the
-    folder it lives in): outputs still land at ``json/<community>/`` and
-    ``def/<community>/`` as before, but each profile class's ``$id`` is now
-    ``.../va-spec/<version>/json/<community>/<Class>`` — computed natively by the
-    processor rather than by VA-Spec's own post-processing script (removed:
-    ``tools/canonicalize-community-ids.py``, and the ``json-target``/``def-target``
-    overrides in each profile source). The four per-directory Makefiles/``prune.mk``
+    folder it lives in): outputs land at ``json/<community>/`` and
+    ``def/<community>/``, and each profile class's ``$id`` is now
+    ``.../va-spec/<version>/json/<community>/<Class>`` (in 1.0 it was
+    ``.../va-spec/<version>/<community>/json/<Class>``), computed natively by the
+    processor. The four per-directory Makefiles/``prune.mk``
     are replaced by one flat ``schema/va-spec/Makefile``/``prune.mk`` that builds
     every source in the folder. A side benefit: cross-reference ("Used in:") lists
     in the generated docs are computed across every source in a folder together, so
