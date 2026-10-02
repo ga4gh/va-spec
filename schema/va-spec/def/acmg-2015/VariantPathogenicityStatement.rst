@@ -86,7 +86,7 @@ A Statement describing the role of a variant in causing an inherited condition.
    *  - direction
       -
       - string
-      - 0..1
+      - 1..1
       - A term indicating whether the Statement supports, disputes, or remains neutral w.r.t. the validity of the Proposition it evaluates.
    *  - strength
       -
