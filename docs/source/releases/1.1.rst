@@ -126,8 +126,7 @@ class rather than replacing it: ``hasEvidence`` gives no indication of how an
 item supports or disputes the proposition, whereas Evidence Lines (in
 ``hasEvidenceLines``, as in 1.0) carry that information, as direction and
 strength or score, and are what a classification rests on. The changes in this
-subsection add optional
-attributes or relax a requirement, so, unlike the changes above, none of them
+subsection are additive, so, unlike the changes above, none of them
 by itself invalidates data that was valid in 1.0:
 
   * :ref:`Statement` gains the ``hasEvidence`` attribute and a *draft*
@@ -143,10 +142,7 @@ by itself invalidates data that was valid in 1.0:
     ``hasEvidence``.
   * :ref:`Statement`'s ``direction``, ``strength``, ``score``, and
     ``classification`` attributes were already present in 1.0, so a Statement
-    could already report its own assessment. ``direction`` is no longer
-    required: 1.0 required both ``proposition`` and ``direction``, and this
-    release requires only ``proposition``, so consumers can no longer rely on
-    ``direction`` being present.
+    could already report its own assessment.
   * ``Statement``'s ``hasEvidenceLines`` still holds ``EvidenceLine |
     iriReference``, as in 1.0:
     a Statement is **not** itself usable as an Evidence Line, so a nested,
