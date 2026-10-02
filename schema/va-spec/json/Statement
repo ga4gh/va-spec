@@ -170,6 +170,7 @@
       }
    },
    "required": [
+      "direction",
       "proposition",
       "type"
    ],

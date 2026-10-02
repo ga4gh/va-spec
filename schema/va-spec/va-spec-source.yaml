@@ -499,6 +499,7 @@ $defs:
           Proposition. Evidence Lines can be omitted if such information is not available or needed.
     required:
       - proposition
+      - direction
 
   EvidenceLine:
     inherits: InformationEntity

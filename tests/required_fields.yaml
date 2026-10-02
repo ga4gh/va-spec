@@ -1,0 +1,136 @@
+# Golden snapshot of required fields for every VA-Spec class.
+# Generated from the built JSON Schema; do not hand-edit.
+# Regenerate after an intentional required-field change with:
+#   (cd tests && python test_required_fields.py)
+# Guarded by tests/test_required_fields.py.
+va-spec.aac-2017:AmpAscoCapEvidenceLine:
+- targetProposition
+va-spec.aac-2017:DiagnosticEvidenceLine:
+- targetProposition
+va-spec.aac-2017:PrognosticEvidenceLine:
+- targetProposition
+va-spec.aac-2017:TherapeuticEvidenceLine:
+- targetProposition
+va-spec.aac-2017:VariantClinicalSignificanceStatement:
+- classification
+- specifiedBy
+va-spec.acmg-2015:VariantPathogenicityEvidenceLine:
+- directionOfEvidenceProvided
+- specifiedBy
+va-spec.acmg-2015:VariantPathogenicityStatement:
+- classification
+- specifiedBy
+va-spec.ccv-2022:VariantOncogenicityEvidenceLine:
+- directionOfEvidenceProvided
+- specifiedBy
+va-spec.ccv-2022:VariantOncogenicityStatement:
+- classification
+- specifiedBy
+va-spec:Agent:
+- type
+va-spec:CohortAlleleFrequencyStudyResult:
+- alleleFrequency
+- cohort
+- focus
+- focusCount
+- locusCount
+- type
+va-spec:ComputationalVariantFunctionalImpactAnalysisResult:
+- focus
+- impactScore
+- transcriptVariationContext
+- type
+va-spec:Contribution:
+- type
+va-spec:DataItem:
+- type
+va-spec:DataSet:
+- type
+va-spec:Document:
+- type
+va-spec:EvidenceLine:
+- directionOfEvidenceProvided
+- type
+va-spec:ExperimentalVariantFunctionalImpactProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:ExperimentalVariantFunctionalImpactStudyResult:
+- focus
+- type
+va-spec:GeneDiseaseValidityProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:GeneticContextVariantProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:InformationEntity:
+- type
+va-spec:Method:
+- type
+va-spec:Proposition:
+- object
+- predicate
+- subject
+- type
+va-spec:Statement:
+- direction
+- proposition
+- type
+va-spec:StudyGroup:
+- type
+va-spec:StudyResult:
+- focus
+- type
+va-spec:SubjectVariantProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:TumorVariantFrequencyStudyResult:
+- affectedFrequency
+- affectedSampleCount
+- focus
+- totalSampleCount
+- type
+va-spec:VariantClinicalSignificanceProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:VariantDiagnosticProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:VariantMolecularConsequenceProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:VariantOncogenicityProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:VariantPathogenicityProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:VariantPrognosticProposition:
+- object
+- predicate
+- subject
+- type
+va-spec:VariantTherapeuticResponseProposition:
+- conditionQualifier
+- object
+- predicate
+- subject
+- type
