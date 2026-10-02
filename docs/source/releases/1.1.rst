@@ -334,12 +334,11 @@ do not, by themselves, change the meaning of VA-Spec data:
     alongside ``va-spec-source.yaml`` and ``domain-entities-source.yaml``. This adopts
     the ``gks-metaschema`` processor's native **profile sub-namespace** convention
     (an ``XXX-profile-source.yaml`` file contributes ``XXX`` as a sub-namespace of the
-    folder it lives in): outputs still land at ``json/<community>/`` and
-    ``def/<community>/`` as before, but each profile class's ``$id`` is now
-    ``.../va-spec/<version>/json/<community>/<Class>`` — computed natively by the
-    processor rather than by VA-Spec's own post-processing script (removed:
-    ``tools/canonicalize-community-ids.py``, and the ``json-target``/``def-target``
-    overrides in each profile source). The four per-directory Makefiles/``prune.mk``
+    folder it lives in): outputs land at ``json/<community>/`` and
+    ``def/<community>/``, and each profile class's ``$id`` is now
+    ``.../va-spec/<version>/json/<community>/<Class>`` (in 1.0 it was
+    ``.../va-spec/<version>/<community>/json/<Class>``), computed natively by the
+    processor. The four per-directory Makefiles/``prune.mk``
     are replaced by one flat ``schema/va-spec/Makefile``/``prune.mk`` that builds
     every source in the folder. A side benefit: cross-reference ("Used in:") lists
     in the generated docs are computed across every source in a folder together, so
