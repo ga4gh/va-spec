@@ -4,10 +4,11 @@
 1.1.0
 @@@@@
 
-This release lets a :ref:`Statement` cite evidence directly, through a new
-``hasEvidence`` attribute, while keeping the dedicated :ref:`EvidenceLine` class
-(referenced via ``hasEvidenceLines``, as in 1.0) as the way to represent a
-nested, scored, directional argument. It
+This release adds a ``hasEvidence`` attribute to :ref:`Statement`, for evidence
+that is associated with a Statement without saying how it supports or disputes
+the proposition. The dedicated :ref:`EvidenceLine` class
+(referenced via ``hasEvidenceLines``, as in 1.0) remains the way to represent
+how evidence was weighed, as a nested, scored, directional argument. It
 also reworks how ``Proposition``/``StudyResult`` subclasses declare their
 ``subject``/``predicate``/``object``/``focus`` attributes, so they inherit under
 their canonical names instead of being renamed per subclass. It restructures the
@@ -116,25 +117,33 @@ renaming, so the model has been made consistent with that rule:
     the ``sourceDataSet`` redeclared by the *draft*
     :ref:`ComputationalVariantFunctionalImpactAnalysisResult`.
 
-Statement can cite evidence directly
-$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Associating evidence with a Statement
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 
-:ref:`Statement` gains a way to cite evidence directly, while the distinct
-:ref:`EvidenceLine` class is retained, as in 1.0, for callers that prefer a
-dedicated evidence-line object. The changes in this subsection add optional
+:ref:`Statement` gains a ``hasEvidence`` attribute for evidence that is
+associated with the Statement. It complements the distinct :ref:`EvidenceLine`
+class rather than replacing it: ``hasEvidence`` gives no indication of how an
+item supports or disputes the proposition, whereas Evidence Lines (in
+``hasEvidenceLines``, as in 1.0) carry that information, as direction and
+strength or score, and are what a classification rests on. The changes in this
+subsection add optional
 attributes or relax a requirement, so, unlike the changes above, none of them
 by itself invalidates data that was valid in 1.0:
 
   * :ref:`Statement` gains the ``hasEvidence`` attribute and a *draft*
-    ``quality`` attribute. ``hasEvidence`` lets a Statement cite evidence
-    directly, without wrapping it in a nested Evidence Line. It is declared
+    ``quality`` attribute. ``hasEvidence`` associates evidence with a Statement
+    without indicating how it supports or disputes the proposition. It is declared
     immediately before ``hasEvidenceLines``, and its items are a
     ``Statement | StudyResult | DataItem | iriReference`` (a prior Statement,
-    Study Result, or Data Item used directly as evidence); structured, scored
-    arguments are attached separately via ``hasEvidenceLines``.
+    Study Result, or Data Item); structured, scored, directional
+    arguments are attached separately via ``hasEvidenceLines``. For example, in
+    a CIViC oncogenicity assertion the ClinGen/CGC/VICC criteria codes that
+    drive the classification are Evidence Lines, while the associated CIViC
+    evidence items, which are not part of that code system, go in
+    ``hasEvidence``.
   * :ref:`Statement`'s ``direction``, ``strength``, ``score``, and
     ``classification`` attributes were already present in 1.0, so a Statement
-    could already report its assessment directly. ``direction`` is no longer
+    could already report its own assessment. ``direction`` is no longer
     required: 1.0 required both ``proposition`` and ``direction``, and this
     release requires only ``proposition``, so consumers can no longer rely on
     ``direction`` being present.
