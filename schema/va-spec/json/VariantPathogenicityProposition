@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/VariantPathogenicityProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/VariantPathogenicityProposition",
    "title": "VariantPathogenicityProposition",
    "maturity": "trial use",
    "description": "A proposition describing the role of a variant in causing a heritable condition.",
@@ -62,10 +62,10 @@
       "object": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/Condition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/ConditionSet"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/ConditionSet"
             },
             {
                "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"

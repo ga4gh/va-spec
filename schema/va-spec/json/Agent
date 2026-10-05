@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/Agent",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/Agent",
    "title": "Agent",
    "maturity": "trial use",
    "description": "An autonomous actor (person, organization, or software agent) that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity.",

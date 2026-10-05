@@ -1,19 +1,19 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/aac-2017/TherapeuticEvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/aac-2017/TherapeuticEvidenceLine",
    "title": "TherapeuticEvidenceLine",
    "description": "Therapeutic evidence line for AMP/ASCO/CAP",
    "maturity": "draft",
    "allOf": [
       {
-         "$ref": "/ga4gh/schema/va-spec/1.1.0/json/aac-2017/AmpAscoCapEvidenceLine"
+         "$ref": "/ga4gh/schema/va-spec/v1/json/aac-2017/AmpAscoCapEvidenceLine"
       },
       {
          "properties": {
             "targetProposition": {
                "oneOf": [
                   {
-                     "$ref": "/ga4gh/schema/va-spec/1.1.0/json/VariantTherapeuticResponseProposition"
+                     "$ref": "/ga4gh/schema/va-spec/v1/json/VariantTherapeuticResponseProposition"
                   },
                   {
                      "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
