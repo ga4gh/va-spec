@@ -1,5 +1,5 @@
 type: VariantMolecularConsequenceProposition
-subjectVariant:
+subject:
   id: ga4gh:VA.Ij_2rkQGZczhBHs4uFBqgUalWaaIU5mw
   type: Allele
   digest: Ij_2rkQGZczhBHs4uFBqgUalWaaIU5mw
@@ -22,7 +22,7 @@ subjectVariant:
     - syntax: hgvs.g
       value: NC_000002.11:g.7540648dup
 predicate: "hasMolecularConsequence"
-objectConsequence:
+object:
   type: ConceptSet
   concepts:
     - type: MappableConcept

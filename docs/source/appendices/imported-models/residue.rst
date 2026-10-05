@@ -3,4 +3,4 @@
 Residue
 !!!!!!!
 
-.. include::  ../../def/vrs/Residue.rst
+.. include::  ../../def/va-spec/residue.rst

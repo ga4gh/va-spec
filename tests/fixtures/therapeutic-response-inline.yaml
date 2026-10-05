@@ -21,7 +21,7 @@ strength:
 proposition:
   type: VariantTherapeuticResponseProposition
   predicate: predictsSensitivityTo
-  subjectVariant:
+  subject:
     id: civic.mpid:33
     type: CategoricalVariant
     description: >-
@@ -84,7 +84,7 @@ proposition:
           code: SO:0001583
           system: http://www.sequenceontology.org/browser/current_release/term/
           name: missense_variant
-  objectTherapy:
+  object:
     type: MappableConcept
     id: civic.tid:146
     conceptType: Drug

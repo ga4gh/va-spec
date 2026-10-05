@@ -1,7 +1,7 @@
 id: VarOncoProp052
 type: VariantPrognosticProposition
 name: EGFR R11T associated with better outcomes for Breast Cancer
-subjectVariant:
+subject:
   type: CategoricalVariant
   name: EGFR R11T
   constraints:
@@ -31,7 +31,7 @@ subjectVariant:
             iris:
               - http://www.sequenceontology.org/browser/current_release/term/translation_of
 predicate: associatedWithBetterOutcomeFor
-objectCondition:
+object:
   type: MappableConcept
   primaryCoding:
     code: ncit:C4872

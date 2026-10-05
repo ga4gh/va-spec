@@ -193,6 +193,7 @@ html_logo = "images/GA-logo.png"
 html_static_path = ["_static"]
 
 html_css_files = ["theme_overrides.css"]
+html_js_files = ["diagram-iframe-height.js"]
 
 # Sidebars
 
@@ -215,6 +216,6 @@ html_context = {
 # could probably be refactored to this
 
 extlinks = {
-    "gks_core_source": ("https://github.com/ga4gh/gks-core/blob/v1/%s", None),
+    "gkm_core_source": ("https://github.com/ga4gh/gkm-core/blob/v1/%s", None),
     "cat_vrs_source": ("https://github.com/ga4gh/cat-vrs/blob/v1/%s", None),
 }

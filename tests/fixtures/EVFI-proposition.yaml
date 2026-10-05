@@ -1,5 +1,5 @@
 type: ExperimentalVariantFunctionalImpactProposition
-subjectVariant:
+subject:
   name: NP_000305.3:p.Arg11Thr
   type: CategoricalVariant
   constraints:
@@ -29,7 +29,7 @@ subjectVariant:
             iris:
               - http://www.sequenceontology.org/browser/current_release/term/translation_of
 predicate: impactsFunctionOf
-objectSequenceFeature:
+object:
   type: MappableConcept
   id: clinvar-gene:5728
   conceptType: Gene

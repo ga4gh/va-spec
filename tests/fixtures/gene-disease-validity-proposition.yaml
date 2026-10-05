@@ -1,0 +1,22 @@
+id: gene-disease-validity-example-001
+name: BRCA1 gene-disease validity for hereditary breast-ovarian cancer
+type: GeneDiseaseValidityProposition
+subject:
+  type: MappableConcept
+  primaryCoding:
+    code: "HGNC:1100"
+    system: https://www.genenames.org/
+  name: BRCA1
+predicate: variantsInGeneCausalFor
+object:
+  type: MappableConcept
+  primaryCoding:
+    code: "MONDO:0007254"
+    system: https://www.ebi.ac.uk/ols/ontologies/mondo
+  name: breast-ovarian cancer, familial 1
+modeOfInheritanceQualifier:
+  type: MappableConcept
+  primaryCoding:
+    code: "HP:0000006"
+    system: https://hpo.jax.org/
+  name: autosomal dominant inheritance

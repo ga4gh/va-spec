@@ -3,4 +3,4 @@
 CategoricalVariant
 !!!!!!!!!!!!!!!!!!
 
-.. include::  ../../def/cat-vrs/CategoricalVariant.rst
+.. include::  ../../def/va-spec/CategoricalVariant.rst

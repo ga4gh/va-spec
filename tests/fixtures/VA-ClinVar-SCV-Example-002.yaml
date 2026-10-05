@@ -2,9 +2,9 @@ id: SCV001245167.1
 type: Statement
 proposition:
   type: VariantPathogenicityProposition
-  subjectVariant: catvars-mvp.jsonc#/208366 # NOQA: IRI resolution not tested; inline
+  subject: catvars-mvp.jsonc#/208366 # NOQA: IRI resolution not tested; inline
                                     # version of this object tested in SCV example 1
-  objectCondition:
+  object:
     type: MappableConcept
     id: clinvarTrait:9544 # This ID syntax is clinvar.trait/9544 in example 1. Both OK.
     conceptType: Disease
