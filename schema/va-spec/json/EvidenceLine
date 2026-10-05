@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/EvidenceLine",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/EvidenceLine",
    "title": "EvidenceLine",
    "maturity": "trial use",
    "description": "An independent, evidence-based argument that may support or refute the validity of a specific Proposition. The strength and direction of this argument is based on an interpretation of one or more pieces of information as evidence for or against the target Proposition.",
@@ -42,7 +42,7 @@
       "specifiedBy": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Method"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/Method"
             },
             {
                "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
@@ -54,7 +54,7 @@
          "type": "array",
          "ordered": true,
          "items": {
-            "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Contribution"
+            "$ref": "/ga4gh/schema/va-spec/v1/json/Contribution"
          },
          "description": "Specific actions taken by an Agent toward the creation, modification, validation, or deprecation of an Information Entity."
       },
@@ -64,7 +64,7 @@
          "items": {
             "oneOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Document"
+                  "$ref": "/ga4gh/schema/va-spec/v1/json/Document"
                },
                {
                   "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
@@ -76,7 +76,7 @@
       "targetProposition": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Proposition"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/Proposition"
             },
             {
                "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
@@ -90,7 +90,7 @@
          "items": {
             "anyOf": [
                {
-                  "$ref": "/ga4gh/schema/va-spec/1.1.0/json/InformationEntity"
+                  "$ref": "/ga4gh/schema/va-spec/v1/json/InformationEntity"
                },
                {
                   "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"

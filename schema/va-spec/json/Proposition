@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/Proposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/Proposition",
    "title": "Proposition",
    "abstract": true,
    "maturity": "trial use",
