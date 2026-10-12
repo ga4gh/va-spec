@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/GeneDiseaseValidityProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/GeneDiseaseValidityProposition",
    "title": "GeneDiseaseValidityProposition",
    "maturity": "draft",
    "description": "A proposition that variants affecting a particular Gene are valid for evaluation as causal for some Condition using appropriate variant classification criteria, given a specific mode of inheritance.",

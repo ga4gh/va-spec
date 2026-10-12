@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/VariantDiagnosticProposition",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/VariantDiagnosticProposition",
    "title": "VariantDiagnosticProposition",
    "maturity": "trial use",
    "description": "A Proposition about whether a variant is associated with a disease (a diagnostic inclusion criterion), or absence of a disease (diagnostic exclusion criterion).",
@@ -64,10 +64,10 @@
       "object": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Condition"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/Condition"
             },
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/ConditionSet"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/ConditionSet"
             },
             {
                "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"

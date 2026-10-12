@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/Document",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/Document",
    "title": "Document",
    "maturity": "trial use",
    "description": "A collection of information, usually in a text-based or graphic human-readable form, intended to be read and understood together as a whole.",

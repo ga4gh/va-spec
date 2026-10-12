@@ -1,6 +1,6 @@
 {
    "$schema": "https://json-schema.org/draft/2020-12/schema",
-   "$id": "https://w3id.org/ga4gh/schema/va-spec/1.1.0/json/DataSet",
+   "$id": "https://w3id.org/ga4gh/schema/va-spec/v1/json/DataSet",
    "title": "DataSet",
    "maturity": "trial use",
    "description": "A collection of related data items or records that are organized together in a common format or structure, to enable their computational manipulation as a unit.",
@@ -47,7 +47,7 @@
       "reportedIn": {
          "oneOf": [
             {
-               "$ref": "/ga4gh/schema/va-spec/1.1.0/json/Document"
+               "$ref": "/ga4gh/schema/va-spec/v1/json/Document"
             },
             {
                "$ref": "/ga4gh/schema/gkm-core/1.3.0/json/iriReference"
